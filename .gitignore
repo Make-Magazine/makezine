@@ -24,7 +24,6 @@ wp-blog-header.php
 wp-comments-post.php
 wp-config.php
 wp-cron.php
-wp-includes
 wp-links-opml.php
 wp-load.php
 wp-login.php
