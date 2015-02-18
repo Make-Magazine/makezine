@@ -40,6 +40,10 @@ wp-admin
 wp-content/mu-plugins
 wp-content/uploads
 wp-content/upgrade
+wp-content/advanced-cache.php
+wp-content/index.php
+wp-content/object-cache.php
+
 
 # these should be removed later
 wp-content/backup.zip
