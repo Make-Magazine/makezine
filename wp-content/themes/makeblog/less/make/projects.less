@@ -1,0 +1,370 @@
+@light-grey:		#cdcdcd;
+
+.projects-masthead {
+	font-family: @font;
+	padding-top:20px;
+	h3 {
+		font-size:22px;
+		text-transform: uppercase;
+		a {
+			color:@red;
+		}
+	}
+	h2 {
+		line-height: 100%;
+		margin-bottom: 0px;
+		font-size: 36px;
+	}
+	h1 {
+		font-size:60px !important;
+		line-height: 60px;
+		letter-spacing: -2px;
+		a {
+			color:@link-color;
+		}
+	}
+	p {
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+
+.projects-meta {
+	margin:10px 0;
+	padding:5px 0;
+	border-top:2px solid @light-grey;
+	border-bottom:2px solid @light-grey;
+	li {
+		display: inline;
+		margin-right:10px;
+		font-size:16px;
+		span {
+			color:@link-color;
+		}
+	}
+}
+
+a {
+	color:@link-color;
+}
+
+.parts-tools {
+	border-top: 7px solid @red;
+	border-bottom: 7px solid @red;
+	max-height:600px;
+	padding:10px;
+	margin-top:20px;
+	overflow: scroll;
+	.gradient(top, #EAEAEA, #ffffff);
+	.top {
+		font-size:18px;
+		margin-left:0px;
+		padding-top:0px;
+		text-transform: uppercase;
+		li {
+			display: inline;
+			font-weight:bold;
+			padding-bottom:7px;
+			// .transition(background-image, 0.5s, ease-in);
+			a {
+				color: @grey;
+			}
+		}
+		li.active {
+			background-image: url('../img/active-arrow.png');
+			background-repeat: no-repeat;
+			background-position: center bottom;
+			a {
+				color: @red;
+			}
+		}
+		li.divider {
+			color:#7cd5fc;
+		}
+	}
+	.lists {
+		margin-left:0px;
+		font-size:14px;
+		font-weight: bold;
+		li {
+			color:#0776b7;
+			border-bottom:1px solid #CCEFFB;
+			list-style-type: none;
+			line-height:22px;
+			.muted {
+				display: inline;
+				font-weight: light;
+				.muted;
+				color: lighten(#0776b7, 20%);
+			}
+		}
+	}
+}
+
+.top-steps {
+	.all {
+		a {
+			color:@light-grey;
+		}
+	}
+	h4 {
+		font-size:22px;
+		position:relative;
+		top:-39px;
+		left:1px;
+		background-color: #fff;
+		padding:10px;
+		width:198px;
+		opacity: .8;
+	}
+	img {
+		border:1px solid @border-color;
+		height: 80px;
+		width: 140px;
+
+	}
+	.span3 {
+	}
+}
+
+.project-print-btn {
+	margin: 20px 0 0 0;
+}
+
+.bottom-steps {
+	font-size:16px;
+	.smalls {
+		margin-top:10px;
+		img {
+			margin-right:5px;
+		}
+		img:last-child{
+			text-align: right;
+		}
+	}
+	ol {
+		margin-top:10px;
+		li {
+			font-size:18px;
+			margin-bottom:10px;
+		}
+	}
+	h4 {
+		color: @link-color;
+		font-size:28px;
+		line-height:24px;
+		margin-bottom:15px;
+	}
+	img {
+	}
+}
+
+.related-projects {
+	border-top: 7px solid @red;
+	border-bottom: 7px solid @red;
+	max-height:300px;
+	padding:10px;
+	.gradient(top, #EAEAEA, #ffffff);
+	overflow:scroll;
+	margin-top:10px;
+	h3 {
+		border-bottom:2px solid @light-grey;
+	}
+}
+
+.related {
+	margin: 10px 0;
+	position: relative;
+	.image {
+		width:100px;
+		float:left;
+		margin-bottom:10px;
+		img {
+			border:1px solid @border-color;
+		}
+	}
+	.blurb {
+		width:170px;
+		float:left;
+		margin-left:10px;
+		p {
+			font-size:16px;
+		}
+		h5 {
+			color:@link-color;
+			font-size:16px;
+		}
+	}
+}
+
+.black {
+	color:#333;
+}
+
+.nexter {
+	margin-bottom: 12px;
+	a {
+		float: left;
+		margin-right:10px;
+	}
+	span {
+		color:#333;
+		text-transform: none;
+		font-size:28px;
+		padding-top:10px;
+		display: block;
+		float: left;
+	}
+}
+
+.conclusion {
+	margin-top:20px;
+}
+
+.project-meta {
+	border-top:1px solid @border-color;
+	border-bottom:1px solid @border-color;
+	margin-bottom: 7px;
+	ul {
+		margin:0px;
+		li:first-child {
+			margin-right:5px;
+		}
+		li {
+			span {
+				color:@headings-color;
+			}
+			font-size:12px;
+			color:@red;
+			font-weight: bold;
+			display: inline;
+		}
+	}
+}
+
+.topper {
+	border-top:3px solid #DBDBDB;
+}
+
+.post-type-archive-projects {
+	.carousel-inner {
+		img {
+			border:@the-border solid @border-color;
+			margin-bottom:5px;
+		}
+	}
+}
+
+
+.projects-home {
+	.art {
+		width:940px;
+		padding-top:20px;
+		padding-bottom:20px;
+		margin:-20px auto 0px;
+		background:url('../img/project_placeholder_smaller.png') no-repeat;
+		background-position: 100% 50%;
+	}
+	padding-top:20px;
+	font-family: @font;
+	border-bottom: 3px solid #DBDBDB;
+	h1 {
+		font-size: 58px;
+		line-height:58px;
+		color:@link-color;
+	}
+	h3 {
+		font-size: 20px;
+		text-transform: uppercase;
+		color:@red;
+		margin-top:10px;
+	}
+	p {
+		font-size:18px;
+		a {
+			color:@link-color;
+			border-bottom:@the-border solid @link-color;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+	.subs {
+		margin:0px 0px 20px;
+		.dropdown {
+			float:left;
+			margin-right:7px;
+		}
+		li {
+			font-size:18px;
+			display: inline;
+			margin-right:10px;
+			a {
+				color:@link-color;
+				font-weight:bold;
+			}
+			ul {
+				li {
+					display: list-item;
+					margin:0px;
+					a:hover {
+						color:#fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.projects-top h3 a {
+	color:@red;
+}
+
+
+ul#tabs {
+	margin:0px;
+	cursor: pointer;
+	.nav-header {
+		color:@red;
+		font-weight: bold;
+		font-size: 24px;
+	}
+	.current > a,
+	.current > a:hover {
+		color: @white;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+		background-color: @linkColor;
+		}
+}
+
+.new-heading {
+	border-bottom:1px solid @border-color;
+	margin-bottom:20px;
+	color:@light-grey;
+	font-size:65px;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin-top:20px;
+}
+
+.tab-content {
+	span {
+		display: block;
+	}
+	.black {
+		display: inline;
+	}
+}
+
+.jstep {
+	margin-bottom:40px;
+	ul {
+		margin:20px 0px 20px 20px;
+	}
+}
+
+
+// Maker Shed ad on projects pages
+.maker-camp-promo {
+	margin-top:20px;
+}

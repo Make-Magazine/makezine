@@ -1,0 +1,21 @@
+.single-newsletter {
+	article {
+		section {
+			background-color: inherit;
+			.transition( background-color 0.5s ease );
+			.comment-link {
+				margin-bottom: 10px;
+				a {
+					color: transparent;
+					.transition( color 0.5s ease );
+				}
+			}
+			&:hover {
+				background-color: rgba( 100, 100, 100, 0.15 );
+				.comment-link a {
+					color: @linkColor;
+				}
+			}
+		}
+	}
+}

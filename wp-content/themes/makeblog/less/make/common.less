@@ -1,0 +1,47 @@
+.custom-feed {
+	&.simple {
+		border:1px solid #dadada;
+		border-radius:5px;
+		padding:13px;
+		margin-bottom:25px;
+		.feed-thumb {
+			display:block;
+		}
+		.feed-title {
+			font-size:16px;
+			font-weight:bold;
+			color:#005d8f;
+			line-height:20px;
+			display:block;
+			&.has-image {
+				margin-top:14px;
+			}
+		}
+	}
+	&.col-2 {
+		width:268px;
+		margin-left:27px;
+		background:#fff;
+		.pull-left;
+		&.odd {
+			clear:left;
+			margin-left:0;
+		}
+	}
+}
+.feed-wrapper {
+	.clearfix;
+}
+.share-email {
+	position:relative;
+	top:-2px;
+}
+.show-print {
+	display:none;
+}
+
+
+p:empty {
+	height: 0px;
+	margin: 0px;
+}
