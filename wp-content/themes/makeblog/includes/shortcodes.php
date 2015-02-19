@@ -1190,3 +1190,21 @@ function make_nikon_shortcode_iframe( $atts ) {
 
 
 add_shortcode( 'nikon', 'make_nikon_shortcode_iframe' );
+
+function rtmf_wizehive_shortcode() {
+	$output = '<iframe id="wizehiveportal" onload="parent.scrollTo(0,0);" height="1300px" width="940px" frameborder="0" scrolling="auto"></iframe>
+		<script type="text/javascript" src="http://review.wizehive.com/js/portaliframe.js"></script>
+		<script type="text/javascript">displayPortal(\'photocontest2015\');</script>';
+	return $output;
+}
+
+add_shortcode( 'rtmf_challenge', 'rtmf_wizehive_shortcode' );
+
+function prototype_wizehive_shortcode() {
+	$output = '<iframe id="wizehiveportal" onload="parent.scrollTo(0,0);" height="1300px" width="940px" frameborder="0" scrolling="auto"></iframe>
+		<script type="text/javascript" src="http://review.wizehive.com/js/portaliframe.js"></script>
+		<script type="text/javascript">displayPortal(\'febphotocontest2015\');</script>';
+	return $output;
+}
+
+add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );

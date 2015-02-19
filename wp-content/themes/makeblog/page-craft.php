@@ -91,6 +91,20 @@ Template Name: Craft Home Page
 									</div>
 
 								</div>
+								
+								<div class="row-fluid">
+
+									<div class="span12">
+
+										<div class="featured">
+
+											<?php echo make_featured_post(); ?>
+
+										</div>
+
+									</div>
+
+								</div>
 
 							</div>
 
@@ -98,29 +112,33 @@ Template Name: Craft Home Page
 
 					</div>
 
-					<div class="span4">
+						<div class="span4">
 
-						<div class="home-ads">
+							<div class="home-ads">
 
-							<a href="http://pubads.g.doubleclick.net/gampad/clk?id=17983018&iu=/11548178/Makezine">
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/img/Make_Money_298x144.jpg" alt="Make: Money Sell MAKE subscriptions and make money for your organization" />
-							</a>
+								<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
+								<div id='div-gpt-ad-664089004995786621-2'>
+									<script type='text/javascript'>
+										googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-2')});
+									</script>
+								</div>
+								<!-- End AdSlot 2 -->
 
-						</div>
-
-						<div class="home-ads bottom">
-
-							<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
-							<div id='div-gpt-ad-664089004995786621-2'>
-								<script type='text/javascript'>
-									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-2')});
-								</script>
 							</div>
-							<!-- End AdSlot 2 -->
+
+							<div class="home-ads bottom">
+
+								<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
+								<div id='div-gpt-ad-664089004995786621-3'>
+									<script type='text/javascript'>
+										googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
+									</script>
+								</div>
+								<!-- End AdSlot 2 -->
+
+							</div>
 
 						</div>
-
-					</div>
 
 				</div>
 
@@ -160,7 +178,7 @@ Template Name: Craft Home Page
 
 								<h4>
 									<a href="<?php the_permalink(); ?>">
-										<span class="arrows">&raquo;</span> <?php the_title(); ?>
+										<?php the_title(); ?>
 										<span class="blurb">
 											<?php echo wp_trim_words(strip_shortcodes(get_the_content()), 8, '...') ; ?>
 										</span>
@@ -173,7 +191,7 @@ Template Name: Craft Home Page
 
 						<?php endwhile; wp_reset_postdata(); ?>
 
-						<p><a href="http://makezine.com/craft/"><span class="pull-right light aqua seeall right">See All Posts</span></a></p>
+						<p><a href="http://makezine.com/craft/"><span class="pull-right light aqua seeall right">Read More News</span></a></p>
 
 					</div>
 					<!--<div class="shadow"></div>-->
@@ -225,26 +243,11 @@ Template Name: Craft Home Page
 							<div class="span4">
 
 								<div class="new-dotw">
-
-									<?php
-
-										$the_query = new WP_Query( 'post_type=from-the-maker-shed&posts_per_page=1' );
-
-										while ( $the_query->have_posts() ) : $the_query->the_post();
-											$ftms_link = get_post_custom_values( 'ftms_link' );
-											if( !isset($ftms_link[0]) ){
-												$ftms_link[0] = 'http://www.makershed.com/';
-											}
-											echo '<a href="'. esc_url( $ftms_link[0] ).'">';
-											the_post_thumbnail('ftms-thumb');
-											echo '</a>';
-										endwhile;
-
-										// Reset Post Data
-										wp_reset_postdata();
-
-									?>
-
+									<div id="div-gpt-ad-664089004995786621-9" class="text-center">
+										 <script type='text/javascript'>
+										  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
+										 </script>
+									</div>
 								</div>
 
 							</div>

@@ -125,7 +125,7 @@ $field_data = array (
 		'pages' => array( 'post', 'page' ),	// pages as in http://codex.wordpress.org/Function_Reference/add_meta_box
 	),
 );
-// // $easy_cf = new Easy_CF($field_data);
+$easy_cf = new Easy_CF($field_data);
 
 
 /**
@@ -280,11 +280,21 @@ function make_load_resources() {
 
 
 	// Load our common scripts first. These should not require jQuery
-	wp_enqueue_script( 'make-typekit', 'http://use.typekit.com/fzm8sgx.js', array() );
+	wp_enqueue_script( 'make-typekit', 'https://use.typekit.com/fzm8sgx.js', array() );
 	wp_enqueue_script( 'make-common', get_stylesheet_directory_uri() . '/js/common.js', array( 'make-typekit' ) );
 
 	// Load optimizely A/B testing script
 	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
+	
+	//load data finder
+	wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );	
+	
+	//load unbouncer, which pops something up when user goes to exit
+	// wp_enqueue_script( 'unbouncer', '//cdn.makezine.com/js/unbouncer-v14.js', array( 'make-optimizely','fancybox','user-data-script' ) );	
+	
+	//load fancybox
+	wp_enqueue_script( 'fancybox', '//cdn.makezine.com/js/fancybox.js', array( 'make-optimizely' ) );
+	wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/css/fancybox.css' );
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
@@ -1098,7 +1108,7 @@ $field_data = array (
 	),
 );
 
-// // $easy_cf = new Easy_CF($field_data);
+$easy_cf = new Easy_CF($field_data);
 
 function make_get_post_meta_rss( $term ) {
 	$term =  get_post_custom_values( $term );
@@ -1150,8 +1160,7 @@ function make_featured_post() {
 	$output .= get_the_post_thumbnail( $post->ID , $size = 'featured-thumb' );
 	$output .= '</div>';
 	$output .= '<div class="blurb">';
-	$output .= '<h3><span class="trending">What\'s hot:</span> ' . $post->post_title . '</h3>';
-	$output .= '<p><small>By: <strong>' . coauthors( ', ', ' & ', '', '', false ) . '</strong></small></p>';
+	$output .= '<h3>' . esc_attr( $post->post_title) . '</h3>';
 	$output .= '<p>' . wp_trim_words(strip_shortcodes( $post->post_content ), 20) . '</p>';
 	$output .= '</a></div>';
 	return $output;
@@ -1228,8 +1237,8 @@ function make_sitemap_add_gallery_post_type( $post_types ) {
 function make_register_menu() {
 
 	// Make Navigation menus
-	register_nav_menu( 'make-primary', __( 'Make Primary Nav', 'make' ) );
-	register_nav_menu( 'make-secondary', __( 'Make Secondary Nav', 'make' ) );
+	// register_nav_menu( 'make-primary', __( 'Make Primary Nav', 'make' ) );
+	// register_nav_menu( 'make-secondary', __( 'Make Secondary Nav', 'make' ) );
 
 	// Popdown Menus
 	register_nav_menu( 'popdown-menu-top', __( 'Popdown Top', 'make' ) );
@@ -1363,7 +1372,6 @@ function make_popdown_menu() { ?>
 				</div>
 				<div class="row">
 					<div class="span9 offset2 menu-bottom">
-						<p>What's Hot on Makezine.com:</p>
 						<?php wp_nav_menu( array(
 							'theme_location'  => 'popdown-menu-last',
 							'container'       => false,
@@ -1584,7 +1592,7 @@ $field_data = array (
 		'pages' => array( 'post', 'page', 'projects', 'review', 'craft', 'magazine' ),
 	),
 );
-// // $easy_cf = new Easy_CF( $field_data );
+$easy_cf = new Easy_CF( $field_data );
 
 function make_get_post_template() {
 	global $pagenow;
@@ -1611,7 +1619,7 @@ function make_get_post_template() {
 			),
 		);
 		if ( $template_file == 'page-weekend-projects-2013.php' ) {
-			// $easy_cf = new Easy_CF( $field_data );
+			$easy_cf = new Easy_CF( $field_data );
 		}
 	}
 }
@@ -1627,7 +1635,6 @@ function make_post_card( $args ) {
 
 	while ( $the_query->have_posts() ) : $the_query->the_post();
 		$output .= '<a href="' . esc_url( get_permalink() ) . '">';
-		$output .= ( isset( $args[ 'weekend-projects'] ) ) ? '<img class="weekend-project-image" src="' . get_stylesheet_directory_uri() . '/img/WP02_Feature_banner_02.jpg" alt="Powered by RadioShack">' : '';
 		$output .= get_the_post_thumbnail( get_the_id(), 'small-home-feature-boxes' );
 		$title = get_post_meta( get_the_ID(), 'title_override', true );
 		$output .= ( ! empty( $title ) ) ? '<h4>' . make_trim_characters( esc_html( $title ), get_theme_mod( 'make_home_title_text' ) ) . '</h4>' : '<h4>' . make_trim_characters( get_the_title(), get_theme_mod( 'make_home_caption_taxt' ) ) . '</h4>';

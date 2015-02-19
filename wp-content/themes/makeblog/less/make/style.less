@@ -129,13 +129,6 @@ input.parsley-error, select.parsley-error, textarea.parsley-error, div.parsley-e
   opacity: 1;
 }
 
-
-
-.waist {
-	background-image: url('../img/blue_bg1.jpg');
-	border-bottom:2px solid #DBDBDB;
-}
-
 .caption {
 	margin-top: -66px;
 	height: 65px;
@@ -276,7 +269,7 @@ input.parsley-error, select.parsley-error, textarea.parsley-error, div.parsley-e
 }
 
 .sand {
-	// background-image:url('../img/sand.png');
+	background-image:url('../img/sand.png');
 	text-shadow: 0px 1px 0px white;
 }
 
@@ -2211,9 +2204,7 @@ body#shop {
     margin: 0;
 }
 .new-footer .trending, .new-footer .newsletter, .new-footer .about-us, .new-footer .subscribe {
-    width:220px;
-    float:left;
-    border-top:1px solid #ccc;
+    font-size:18px;
     text-align:left;
     padding-top:10px;
 }
@@ -2749,3 +2740,31 @@ color:green;
 .sprite-forum{ background-position: 0 0; width: 620px; height: 174px; }
 .sprite-page2{ background-position: 0 -176px; width: 620px; height: 174px; }
 .sprite-sip{ background-position: 0 -352px; width: 620px; height: 174px; }
+
+
+// Maker Faire Challenge Contest
+
+.mf-challenge {
+	
+	.projects-masthead {
+		display:none;
+	}
+	
+	.secondary-hdr {
+		margin-top:10px;
+		margin-bottom:20px;
+		
+		.sidebar-ad {
+			height:250px;
+			overflow:hidden;
+		}
+	}
+	
+}
+
+/*** Contextly Modifications ***/
+.ctx_sidebar a.ctx_title {
+font-size: 100% !important; /*** !important used to avoid modifying Contextly core files ***/
+}
+
+

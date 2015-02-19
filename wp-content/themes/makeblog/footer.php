@@ -4,14 +4,14 @@
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * @author     Jake Spurlock <jspurlock@makermedia.com>
+ * @author     The Make Team webmaster@makermedia.com
  *
  */
 ?>
 
 				<div class="footer-ad <?php echo ( make_is_parent_page() && ! is_category( 'maker-pro' ) ) ? 'grey' : '' ; ?>" style="clear:both;">
 
-					<div style="width:728px; margin:0 auto;">
+					<div class="ad-slot">
 
 						<!-- Beginning Sync AdSlot 4 for Ad unit header ### size: [[728,90]]  -->
 						<div id='div-gpt-ad-664089004995786621-4'>
@@ -32,18 +32,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="span12 logo" >
-						<img class="footer_logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/make-logo.png" alt="MAKE Logo">
+						<img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo">
 					</div>
 					<div class="clear"></div>
 				<!-- END row -->
 				</div>
 				<div class="row">
 					<div class="span3 trending">
-						<h5>Trending Topics</h5>
+						<h5>Trending</h5>
 						<?php echo wp_kses_post( stripslashes( make_get_cap_option( 'hot_topics' ) ) ); ?>
 					<!-- END span trending -->
 					</div>
-					<div class="span newsletter">
+					<div class="span4 newsletter">
 						<h5>Get our Newsletters</h5>
 						<form action="http://makermedia.createsend.com/t/r/s/jrsydu/" method="post" id="subForm">
 							<fieldset>
@@ -76,25 +76,17 @@
 						</form>
 					<!-- END span newsletter -->
 					</div>
-					<div class="span3 about-us">
+					<div class="span5 about-us">
 						<h5>About Maker Media</h5>
 						<div class="about-column-01">
 							<ul>
-								<li><a href="http://makermedia.com" target="_blank">About Us</a></li>
-								<li><a href="<?php echo esc_url( home_url( '/contactus' ) ); ?>">Contact Us</a></li>
-								<li><a href="http://makermedia.com/privacy/" target="_blank">Privacy</a></li>
-								<li><a href="http://makermedia.com/work-with-us/job-openings/" target="_blank">Jobs</a></li>
+								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
+								<li><a href="//makermedia.com/work-with-us/advertising/" target="_blank">Advertise with Us</a></li>
+								<li><a href="//makermedia.com/work-with-us/job-openings/" target="_blank">Careers</a></li>
 							</ul>
-						<!-- END span about-column-01 --></div>
-						<div class="about-column-02">
-							<ul>
-								<li><a href="http://makermedia.com/work-with-us/advertising/" target="_blank">Advertise with Us</a></li>
-								<li><a href="http://www.makershed.com/Articles.asp?ID=322" target="_blank">Become an Affiliate</a></li>
-								<li><a href="<?php echo esc_url( home_url( '/makemoneyprogram' ) ); ?>">Make: Fundraising</a></li>
-							</ul>
-						<!-- END span about-column-02 -->
-						</div>
+							
 						<div class="clearfix"></div>
+							<h5  class="follow">Follow Make:</h5>
 						<div class="soc_icons">
 							<a class="sprite sprite-twitter"  href="http://twitter.com/make" title="Twitter" target="_blank"></a>
 							<a class="sprite sprite-youtube" href="http://youtube.com/make" title="Youtube" target="_blank"></a>
@@ -103,17 +95,22 @@
 							<a class="sprite sprite-google-plus" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank"></a>
 						<!-- END socialArea -->
 						</div>
+						<!-- END span about-column-01 --></div>
+						<div class="about-column-02">
+							<ul>
+								<li><a href="<?php echo esc_url( home_url( '/contactus' ) ); ?>">Contact Us</a></li>
+								<li><a href="//makermedia.com/privacy/" target="_blank">Privacy</a></li>
+								<li><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
+							</ul>
+							
+							<h5>
+								<a href="<?php echo esc_url( home_url( '/contribute/' ) ); ?>">Show Us Your Project</a>
+							</h5>
+							
+						<!-- END span about-column-02 -->
+						</div>
+	
 					<!-- END span3 about-us -->
-					</div>
-					<div class="span3 subscribe">
-						<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3AMZB" target="_blank">
-							<img src="<?php echo wpcom_vip_get_resized_remote_image_url( make_get_cover_image(), '130', '170' ); ?>" alt="MAKE Magazine Robotics" width="130" height="170" id="mag-cover">
-						</a>
-						<div class="sprite sprite-arrow-footer"></div>
-						<h5>Subscribe<br /> to MAKE!</h5>
-						<p class="p_footer">Get the print and digital versions when you subscribe</p>
-						<hr />
-					<!-- END span subscribe -->
 					</div>
 				<!-- END MAIN row (main) -->
 				</div>
@@ -180,6 +177,31 @@
 			a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/2533.js?"+Math.floor(new Date().getTime()/3600000);
 			a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 		</script>
-
+	<!-- Hidden Stuff -->
+    <div class="fancybox popup" style="display:none;">
+	    <h3>Don't Miss Out!</h3>
+	    <p>Get our free weekly newsletter and keep up with the latest Make: news and information</p>
+						<?
+							$isSecure = 'http://';
+							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+								$isSecure = "https://";
+							}
+						?>
+	    	    <form action="http://whatcounts.com/bin/listctrl" method="POST">
+						<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+						<input type="hidden" name="cmd" value="subscribe" />
+						<input type="hidden" name="custom_source" value="modal_light_blue" /> 
+						<input type="hidden" name="custom_incentive" value="none" /> 
+						<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+						<input type="hidden" id="format_mime" name="format" value="mime" />
+						<input type="hidden" name="goto" value="<?php echo $isSecure.$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+						<input type="hidden" name="errors_to" value="" />
+	      <div>
+	        <input name="email" id="makezinemain" placeholder="Email Address" required="required" type="text"><br>
+	        <input value="Join Now" class="btn-modal newsletter-set-cookie" id="newsletter-set-cookie" type="submit">
+	      </div>
+	    </form>
+    </div>
 	</body>
 </html>
