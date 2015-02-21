@@ -7,12 +7,12 @@
  */
  
   global $post;
-
-  $current_page = (is_object($wp_query) && is_array($wp_query->query) && ($wp_query->query['pagename'] != '') && ($wp_query->query['pagename'] != 'wp-cron.php' )) ? $wp_query->query: null;
+  
+  $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query: null;
 
   if($current_page !== null) {
 
-    $q_posts = get_posts(array('pagename' => $wp_query->query['pagename'], 'post_type' =>'any', 'post_status' => 'any'));
+    $q_posts = get_posts(array('pagename' => $wp_query['pagename'], 'post_type' =>'any', 'post_status' => 'any'));
     $q_post_id = $q_posts[0]->ID;
 	  $post_adslot_targeting_name = get_post_meta($q_post_id, '_adslot_targeting_name', true);
     $post_adslot_targeting_ids = get_post_meta($q_post_id, '_adslot_targeting_ids', true);
