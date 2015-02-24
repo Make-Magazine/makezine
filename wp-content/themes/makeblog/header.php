@@ -43,6 +43,7 @@
 		    s.parentNode.insertBefore(p, s);
 		})();
 		</script>
+		<!-- End Pingdom Code -->
 
 		<?php wp_head(); ?>
 
