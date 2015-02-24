@@ -45,6 +45,10 @@
 		</script>
 		<!-- End Pingdom Code -->
 
+		<!-- Begin Chartbeat Code -->
+		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+		<!-- End Chartbeat Code -->
+
 		<?php wp_head(); ?>
 
 		<?php get_template_part('dfp'); ?>
