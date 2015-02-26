@@ -103,7 +103,7 @@ include_once dirname( __FILE__ ) . '/includes/order-bender.php';
 include_once dirname( __FILE__ ) . '/includes/errata-cpt.php';
 
 // 28. Contextly
-include_once dirname( __FILE__ ) . '/includes/contextly-related-links/contextly-linker.php';
+//include_once dirname( __FILE__ ) . '/includes/contextly-related-links/contextly-linker.php';
 
 // 28. Markdown
 include_once dirname( __FILE__ ) . '/includes/markdown/markdown.php';
