@@ -234,7 +234,7 @@ Template Name: Home Page
 									<?php
 
 										$args = array(
-											'tag_id' => 3858,
+											'tag_id' => 3922,
  											'posts_per_page'  => 1,
  											'no_found_rows' => true,
  											'post__not_in'	=> $post_array,
@@ -260,7 +260,7 @@ Template Name: Home Page
 									<?php
 
 										$args = array(
-											'tag_id' => 1315,
+											'tag_id' => 1335,
 											'posts_per_page'  => 1,
 											'no_found_rows' => true,
 											'post_type' => array( 'post', 'projects', 'review', 'video', 'magazine' ),
