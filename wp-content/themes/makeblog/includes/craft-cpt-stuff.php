@@ -107,7 +107,7 @@ function make_get_header() {
 function make_craft_101() {
 
 	$craft_query = new WP_Query( array(
-		'tag_id' => 29038,
+		'tag_id' => 3,
 		'posts_per_page'  => 20,
 		'no_found_rows' => true,
 		'post_type' => 'craft',

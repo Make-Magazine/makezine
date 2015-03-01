@@ -225,7 +225,7 @@ Template Name: Craft Home Page
 									<?php
 
 										$args = array(
-											'tag_id'			=> 169525,
+											'tag_id'			=> 1469,
 											'posts_per_page'	=> 1,
 											'no_found_rows'		=> true,
 											'post_type'			=> 'craft'
@@ -265,7 +265,7 @@ Template Name: Craft Home Page
 									<?php
 
 										$args = array(
-											'category__in'		=> array( 2389, 1336 ),
+											'category__in'		=> array( 4, 11 ),
 											'posts_per_page'	=> 1,
 											'no_found_rows'		=> true,
 											'post_type'			=> 'craft'
@@ -289,7 +289,7 @@ Template Name: Craft Home Page
 									<?php
 
 										$args = array(
-											'cat'				=> 116504,
+											'cat'				=> 32,
 											'posts_per_page'	=> 1,
 											'no_found_rows'		=> true,
 											'post_type'			=> 'craft'
@@ -329,7 +329,7 @@ Template Name: Craft Home Page
 									<?php
 
 										$args = array(
-											'cat'				=> 44926,
+											'cat'				=> 40,
 											'posts_per_page'	=> 1,
 											'no_found_rows'		=> true,
 											'post_type'			=> 'craft'
