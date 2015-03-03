@@ -80,7 +80,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 /**
  * Generate the TOC for projects.
@@ -697,4 +697,4 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);

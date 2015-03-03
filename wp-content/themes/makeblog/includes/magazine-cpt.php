@@ -111,7 +111,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 // Add a description (aka Dek) field for posts - We are going to stick this here because
 // no other spot makes sense
@@ -125,7 +125,7 @@ $field_data = array (
 		'pages'		=> array( 'post', 'craft' ),
 	),
 );
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 
 $field_data = array (
@@ -141,7 +141,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 function make_post_loop( $args ) {
 	$defaults = array(
