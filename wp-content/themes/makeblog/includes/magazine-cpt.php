@@ -106,7 +106,7 @@ $field_data = array (
 									),
 	),
 	'title'		=> 'Magazine Meta',
-	'context'	=> 'side',
+	'context'	=> 'normal',
 	'pages'		=> array( 'magazine' ),
 	),
 );
