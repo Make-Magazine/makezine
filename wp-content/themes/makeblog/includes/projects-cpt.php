@@ -17,8 +17,7 @@ add_action( 'init', 'register_cpt_project' );
  */
 function register_cpt_project() {
 
-	add_rewrite_rule( 'projects/([^/]*)/([^/]*)/?$','index.php?projects=$matches[2]','top' );
-
+	
 	$labels = array(
 		'name' => _x( 'Projects', 'Project' ),
 		'singular_name' => _x( 'Project', 'Project' ),
@@ -49,12 +48,16 @@ function register_cpt_project() {
 		'has_archive' => true,
 		'query_var' => true,
 		'can_export' => true,
-		'rewrite' => true,
+		'rewrite' => array('slug'=>'','with_front'=>false),
 		'capability_type' => 'post',
 		'menu_position' => 40,
 	);
 
 	register_post_type( 'projects', $args );
+	
+	add_rewrite_rule( 'projects/([^/]*)/([^/]*)/?$','index.php?pagename=$matches[2]&page=$matches[2]','top' );
+	//add_rewrite_rule( 'projects/([^/]*)/?$','/index.php?pagename=$matches[1]','top' );
+	
 }
 
 $field_data = array (
