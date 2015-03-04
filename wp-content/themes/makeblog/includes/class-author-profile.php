@@ -193,7 +193,8 @@
 
 			if ( empty( $author ) )
 				$author = $this->get_author_data();
-
+				
+			//error_log('get_author_data:results:'.print_r($author));
 			// Get the Gravatar bio or return the Guest Author bio
 			if ( isset( $author->aboutMe ) ) {
 				$output = $author->aboutMe;

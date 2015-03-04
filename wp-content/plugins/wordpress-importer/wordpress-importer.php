@@ -14,7 +14,7 @@ if ( ! defined( 'WP_LOAD_IMPORTERS' ) )
 	return;
 
 /** Display verbose errors */
-define( 'IMPORT_DEBUG', false );
+define( 'IMPORT_DEBUG', true );
 
 // Load Importer API
 require_once ABSPATH . 'wp-admin/includes/import.php';
@@ -107,7 +107,7 @@ class WP_Import extends WP_Importer {
 
 		$this->import_start( $file );
 
-		$this->get_author_mapping();
+		//$this->get_author_mapping();
 
 		wp_suspend_cache_invalidation( true );
 		$this->process_categories();
@@ -262,7 +262,7 @@ class WP_Import extends WP_Importer {
 	<?php wp_nonce_field( 'import-wordpress' ); ?>
 	<input type="hidden" name="import_id" value="<?php echo $this->id; ?>" />
 
-<?php if ( ! empty( $this->authors ) ) : ?>
+<?php /* if ( ! empty( $this->authors ) ) : ?>
 	<h3><?php _e( 'Assign Authors', 'wordpress-importer' ); ?></h3>
 	<p><?php _e( 'To make it easier for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site. For example, you may want to import all the entries as <code>admin</code>s entries.', 'wordpress-importer' ); ?></p>
 <?php if ( $this->allow_create_users() ) : ?>
@@ -273,7 +273,7 @@ class WP_Import extends WP_Importer {
 		<li><?php $this->author_select( $j++, $author ); ?></li>
 <?php endforeach; ?>
 	</ol>
-<?php endif; ?>
+<?php endif; */ ?>
 
 <?php if ( $this->allow_fetch_attachments() ) : ?>
 	<h3><?php _e( 'Import Attachments', 'wordpress-importer' ); ?></h3>
@@ -532,7 +532,6 @@ class WP_Import extends WP_Importer {
 
 		foreach ( $this->posts as $post ) {
 			$post = apply_filters( 'wp_import_post_data_raw', $post );
-
 			if ( ! post_type_exists( $post['post_type'] ) ) {
 				printf( __( 'Failed to import &#8220;%s&#8221;: Invalid post type %s', 'wordpress-importer' ),
 					esc_html($post['post_title']), esc_html($post['post_type']) );
@@ -555,6 +554,7 @@ class WP_Import extends WP_Importer {
 			$post_type_object = get_post_type_object( $post['post_type'] );
 
 			$post_exists = post_exists( $post['post_title'], '', $post['post_date'] );
+			
 			if ( $post_exists && get_post_type( $post_exists ) == $post['post_type'] ) {
 				printf( __('%s &#8220;%s&#8221; already exists.', 'wordpress-importer'), $post_type_object->labels->singular_name, esc_html($post['post_title']) );
 				echo '<br />';
@@ -568,14 +568,23 @@ class WP_Import extends WP_Importer {
 					// otherwise record the parent for later
 					} else {
 						$this->post_orphans[intval($post['post_id'])] = $post_parent;
-						$post_parent = 0;
+						//$post_parent = 0;
 					}
 				}
-
+				echo '$post[post_author].'.$post['post_author'];
 				// map the post author
 				$author = sanitize_user( $post['post_author'], true );
+				$author_user = get_userdatabylogin($author);
+				var_dump($author_user);
+				echo 'authoruser='.$author_user->ID;
+				/*
 				if ( isset( $this->author_mapping[$author] ) )
 					$author = $this->author_mapping[$author];
+				else
+					$author = (int) get_current_user_id();
+					*/
+				if ( isset($author_user->ID ) )
+					$author =$author_user->ID;
 				else
 					$author = (int) get_current_user_id();
 

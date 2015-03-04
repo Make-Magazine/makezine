@@ -62,7 +62,6 @@ function volume_register_cpt_article() {
 		'parent_item_colon' => _x( 'Parent Volume:', 'volume' ),
 		'menu_name' => _x( 'Volumes', 'volume' ),
 	);
-
 	$args = array(
 		'labels' => $labels,
 		'hierarchical' => true,
@@ -71,7 +70,7 @@ function volume_register_cpt_article() {
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,
-		'show_in_menu' => false,
+		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
 		'publicly_queryable' => true,
 		'exclude_from_search' => true,
@@ -79,11 +78,10 @@ function volume_register_cpt_article() {
 		'query_var' => true,
 		'can_export' => true,
 		'rewrite' => true,
-		'capability_type' => 'post',
-		'menu_position' => 46,
+		'capability_type' => 'post'
 	);
 
-	register_post_type( 'volume', $args );
+	$results = register_post_type( 'volume', $args );
 }
 
 $field_data = array (
@@ -404,7 +402,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+$easy_cf = new Easy_CF($field_data);
 
 function make_page_number( $date = false ) {
 	global $post;

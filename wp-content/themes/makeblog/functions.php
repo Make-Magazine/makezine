@@ -1,4 +1,6 @@
 <?php
+// Easy Custom Fields Plugin
+require_once( WP_PLUGIN_DIR . '/easy-custom-fields/easy-custom-fields.php' );
 
 /*
 
@@ -175,8 +177,6 @@ include_once dirname( __FILE__ ) . '/includes/vip-helper.php';
 // 48. VIP Helper COM
 include_once dirname( __FILE__ ) . '/includes/vip-helper-wpcom.php';
 
-// Easy Custom Fields Plugin
-require_once( WP_PLUGIN_DIR . '/easy-custom-fields/easy-custom-fields.php' );
 
 function dfp_add_meta_boxes($postType) {
   $types = array('page', 'projects');

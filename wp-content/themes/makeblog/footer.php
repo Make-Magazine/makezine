@@ -182,7 +182,7 @@
 	    <h3>Don't Miss Out!</h3>
 	    <p>Get our free weekly newsletter and keep up with the latest Make: news and information</p>
 						<?
-							$isSecure = 'http://';
+							$isSecure = "http://";
 							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 								$isSecure = "https://";
 							}
@@ -194,7 +194,7 @@
 						<input type="hidden" name="custom_incentive" value="none" /> 
 						<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 						<input type="hidden" id="format_mime" name="format" value="mime" />
-						<input type="hidden" name="goto" value="<?php echo $isSecure.$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+						<input type="hidden" name="goto" value="<?php// echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 	      <div>

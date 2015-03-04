@@ -81,7 +81,7 @@ class QMT_URL {
 
 class QMT_Template {
 
-	public function get_title() {
+	public static function get_title() {
 		$title = array();
 
 		foreach ( qmt_get_query() as $tax => $value ) {
@@ -108,7 +108,7 @@ class QMT_Template {
 	}
 
 	function wp_title( $title, $sep, $seplocation ) {
-		$tax_title = QMT_Template::get_title();
+		$tax_title = self::get_title();
 
 		if ( empty( $tax_title ) )
 			return $title;
