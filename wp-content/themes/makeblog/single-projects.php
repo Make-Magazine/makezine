@@ -344,7 +344,7 @@ get_header(); ?>
 
 									<div id="contextly">
 
-										echo do_shortcode( '[contextly_main_module]' );
+										<?php echo do_shortcode('[contextly_main_module]'); ?>
 
 									</div>
 
