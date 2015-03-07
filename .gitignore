@@ -8,6 +8,8 @@ _wpeprivate
 .gitattributes
 .gitexcludes
 .htaccess
+robots.txt
+node_modules
 
 # wordpress core files
 apple-touch-icon-precomposed.png
