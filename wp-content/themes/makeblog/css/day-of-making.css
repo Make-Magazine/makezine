@@ -7974,23 +7974,23 @@ textarea.narrow,
   margin-top: 0;
   margin-bottom: 3px;
 }
-.ctx_widget .ctx_around_site {
+.ctx-module .ctx-sections-container {
   border-radius: 4px !important;
   border: 1px solid #e3e3e3;
 }
-.ctx_widget .ctx_blocks_widget2 .ctx_subhead {
+.ctx-module .ctx-content-block2 .ctx-links-header {
   background-color: transparent !important;
 }
-.ctx_widget .ctx_blocks_widget2 .ctx_link {
+.ctx-module .ctx-content-block2 .ctx-link {
   font-size: 13px !important;
   line-height: 16px !important;
 }
-.ctx_widget .ctx_blocks_widget2 .ctx_link span {
+.ctx-module .ctx-content-block2 .ctx-link span {
   color: #005d8f !important;
   font-weight: bold !important;
   font-family: proxima-nova, sans-serif !important;
 }
-.ctx_widget .ctx_blocks_widget2 .ctx_subhead_title {
+.ctx-module .ctx-content-block2 .ctx-nodefs {
   padding: 1% 0 !important;
   color: #ed1c24 !important;
   text-transform: uppercase !important;
@@ -8936,9 +8936,9 @@ ul#tabs .current > a:hover {
   z-index: 1;
   margin-left: 8px;
 }
-/*.weekend-projects-home .attachment-small-home-feature-boxes {
+.weekend-projects-home .attachment-small-home-feature-boxes {
   margin-top: -50px;
-}*/
+}
 .home-banner {
   margin-top: 10px;
 }
