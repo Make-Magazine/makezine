@@ -10,6 +10,20 @@
 
 add_action( 'init', 'register_cpt_project' );
 
+add_action('parse_request', function ($wp) {
+	// only if WP found a page
+	if (isset($wp->query_vars['projects']) && ! empty($wp->query_vars['projects'])) {
+		$post = get_page_by_path( // let's find the page object
+				$wp->query_vars['request'],
+				OBJECT,
+				array('page', 'projects', 'volume') // we need to set both post types
+		);
+		if ($post instanceof WP_Post) { // if we find a page
+			unset($wp->query_vars['projects']); // remove pagename var
+			$wp->query_vars['post_id'] = $post->ID; // replace with page_id query var
+		}
+	}
+});
 /**
  * Register the projects custom post type
  * @uses add_rewite_rule
@@ -48,14 +62,15 @@ function register_cpt_project() {
 		'has_archive' => true,
 		'query_var' => true,
 		'can_export' => true,
-		'rewrite' => array('slug'=>'','with_front'=>false),
+		'rewrite' => true,
 		'capability_type' => 'post',
 		'menu_position' => 40,
 	);
 
 	register_post_type( 'projects', $args );
 	
-	add_rewrite_rule( 'projects/([^/]*)/([^/]*)/?$','index.php?pagename=$matches[2]&page=$matches[2]','top' );
+
+	add_rewrite_rule( 'projects/([^/]*)/([^/]*)/?$','index.php?post_type=projects&slug=projects&projects=$matches[2]','top' );
 	//add_rewrite_rule( 'projects/([^/]*)/?$','/index.php?pagename=$matches[1]','top' );
 	
 }

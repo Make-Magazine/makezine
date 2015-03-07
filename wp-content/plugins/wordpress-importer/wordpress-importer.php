@@ -529,8 +529,11 @@ class WP_Import extends WP_Importer {
 	 */
 	function process_posts() {
 		$this->posts = apply_filters( 'wp_import_posts', $this->posts );
-
+		
 		foreach ( $this->posts as $post ) {
+			echo ('<BR /><br /><h1>Processing ('. $post['post_type'].') :'. $post['post_id'].'</h1><br />');
+			if  ($post['post_type'] != 'projects') continue;
+			
 			$post = apply_filters( 'wp_import_post_data_raw', $post );
 			if ( ! post_type_exists( $post['post_type'] ) ) {
 				printf( __( 'Failed to import &#8220;%s&#8221;: Invalid post type %s', 'wordpress-importer' ),
@@ -571,12 +574,10 @@ class WP_Import extends WP_Importer {
 						//$post_parent = 0;
 					}
 				}
-				echo '$post[post_author].'.$post['post_author'];
 				// map the post author
 				$author = sanitize_user( $post['post_author'], true );
 				$author_user = get_userdatabylogin($author);
 				var_dump($author_user);
-				echo 'authoruser='.$author_user->ID;
 				/*
 				if ( isset( $this->author_mapping[$author] ) )
 					$author = $this->author_mapping[$author];
@@ -714,7 +715,7 @@ class WP_Import extends WP_Importer {
 						do_action( 'wp_import_insert_comment', $inserted_comments[$key], $comment, $comment_post_ID, $post );
 
 						foreach( $comment['commentmeta'] as $meta ) {
-							$value = maybe_unserialize( $meta['value'] );
+							$value = $meta['value'];//maybe_unserialize( $meta['value'] );
 							add_comment_meta( $inserted_comments[$key], $meta['key'], $value );
 						}
 
@@ -730,7 +731,7 @@ class WP_Import extends WP_Importer {
 			$post['postmeta'] = apply_filters( 'wp_import_post_meta', $post['postmeta'], $post_id, $post );
 
 			// add/update post meta
-			if ( ! empty( $post['postmeta'] ) ) {
+		if ( ! empty( $post['postmeta'] ) ) {
 				foreach ( $post['postmeta'] as $meta ) {
 					$key = apply_filters( 'import_post_meta_key', $meta['key'], $post_id, $post );
 					$value = false;
@@ -745,11 +746,18 @@ class WP_Import extends WP_Importer {
 					if ( $key ) {
 						// export gets meta straight from the DB so could have a serialized string
 						if ( ! $value )
+						{
 							$value = maybe_unserialize( $meta['value'] );
-
-						add_post_meta( $post_id, $key, $value );
-						do_action( 'import_post_meta', $post_id, $key, $value );
-
+						
+							if ($key == 'Steps') {
+								//$value = unserialize($meta['value']);
+								$value=unserialize(trim($meta['value']));
+						  
+							}
+						}
+						$return=add_post_meta( $post_id, $key, $value );
+						$return=do_action( 'import_post_meta', $post_id, $key, $value );
+								
 						// if the post has a featured image, take note of this in case of remap
 						if ( '_thumbnail_id' == $key )
 							$this->featured_images[$post_id] = (int) $value;
