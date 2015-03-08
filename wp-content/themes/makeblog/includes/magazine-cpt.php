@@ -1,7 +1,20 @@
 <?php
 
 add_action( 'init', 'register_cpt_article' );
-
+add_action('parse_request', function ($wp) {
+	// only if WP found a page
+	if (isset($wp->query_vars['magazine']) && ! empty($wp->query_vars['magazine'])) {
+		$post = get_page_by_path( // let's find the page object
+				$wp->query_vars['request'],
+				OBJECT,
+				array('page', 'magazine', 'volume') // we need to set both post types
+		);
+		if ($post instanceof WP_Post) { // if we find a page
+			unset($wp->query_vars['magazine']); // remove pagename var
+			$wp->query_vars['post_id'] = $post->ID; // replace with page_id query var
+		}
+	}
+});
 function register_cpt_article() {
 
 	add_rewrite_rule( 'magazine/([^/]*)/([^/]*)/?$','index.php?magazine=$matches[2]','top' );
@@ -109,7 +122,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 // Add a description (aka Dek) field for posts - We are going to stick this here because
 // no other spot makes sense
@@ -123,7 +136,7 @@ $field_data = array (
 		'pages'		=> array( 'post', 'craft' ),
 	),
 );
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 
 $field_data = array (
@@ -139,7 +152,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+ $easy_cf = new Easy_CF($field_data);
 
 function make_post_loop( $args ) {
 	$defaults = array(

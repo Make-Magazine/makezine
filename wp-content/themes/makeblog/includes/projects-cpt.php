@@ -9,7 +9,7 @@
  */
 
 add_action( 'init', 'register_cpt_project' );
-
+/* THis code is required to handle the case where parent post type is not the same type*/
 add_action('parse_request', function ($wp) {
 	// only if WP found a page
 	if (isset($wp->query_vars['projects']) && ! empty($wp->query_vars['projects'])) {
