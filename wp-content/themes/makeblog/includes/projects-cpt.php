@@ -71,7 +71,7 @@ function register_cpt_project() {
 	
 
 	add_rewrite_rule( 'projects/([^/]*)/([^/]*)/?$','index.php?post_type=projects&slug=projects&projects=$matches[2]','top' );
-	add_rewrite_rule( '\/Project\/(.+)\/(\d+)\/(\d+)','index.php?post_type=projects&slug=projects&projects=$matches[1]','top' );
+	add_rewrite_rule( 'Project\/(.+)\/(\d+)\/(\d+)','index.php?post_type=projects&slug=projects&projects=$matches[1]','top' );
 	//add_rewrite_rule( 'projects/([^/]*)/?$','/index.php?pagename=$matches[1]','top' );
 	
 }
