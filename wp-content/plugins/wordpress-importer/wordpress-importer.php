@@ -532,7 +532,15 @@ class WP_Import extends WP_Importer {
 		
 		foreach ( $this->posts as $post ) {
 			echo ('<BR /><br /><h1>Processing ('. $post['post_type'].') :'. $post['post_id'].'</h1><br />');
-			if  ($post['post_type'] != 'post') continue;
+			if  (($post['post_type'] != 'post') 
+			&& ($post['post_type'] != 'from-the-maker-shed') 
+			&& ($post['post_type'] != 'review') 
+			&& ($post['post_type'] != 'slideshow') 
+			 && ($post['post_type'] != 'makers') 
+			&& ($post['post_type'] != 'page_2') 
+			 && ($post['post_type'] != 'video') 
+			 && ($post['post_type'] != 'craft') 
+				&& ($post['post_type'] != 'errata')) continue;
 			
 			$post = apply_filters( 'wp_import_post_data_raw', $post );
 			if ( ! post_type_exists( $post['post_type'] ) ) {
@@ -555,9 +563,8 @@ class WP_Import extends WP_Importer {
 			}
 
 			$post_type_object = get_post_type_object( $post['post_type'] );
-
-			$post_exists = post_exists( $post['post_title'], '', $post['post_date'] );
 			
+			$post_exists = (get_post_status($post['post_id'])) ? 0 : $post['post_id'] ; //post_exists( $post['post_title'], '', $post['post_date'] );
 			if ( $post_exists && get_post_type( $post_exists ) == $post['post_type'] ) {
 				printf( __('%s &#8220;%s&#8221; already exists.', 'wordpress-importer'), $post_type_object->labels->singular_name, esc_html($post['post_title']) );
 				echo '<br />';
@@ -715,7 +722,7 @@ class WP_Import extends WP_Importer {
 						do_action( 'wp_import_insert_comment', $inserted_comments[$key], $comment, $comment_post_ID, $post );
 
 						foreach( $comment['commentmeta'] as $meta ) {
-							$value = $meta['value'];//maybe_unserialize( $meta['value'] );
+							$value = maybe_unserialize( $meta['value'] );
 							add_comment_meta( $inserted_comments[$key], $meta['key'], $value );
 						}
 

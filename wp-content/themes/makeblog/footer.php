@@ -209,7 +209,7 @@
 	    var _sf_async_config={};
 	    /** CONFIGURATION START **/
 	    _sf_async_config.uid = 53627;
-	    _sf_async_config.domain = 'makezine.wpengine.com';
+	    _sf_async_config.domain = 'makezine.com';
 	    _sf_async_config.useCanonical = true;
 	    _sf_async_config.sections = 'Change this to your Section name';  //CHANGE THIS
 	    _sf_async_config.authors = 'Change this to your Author name';    //CHANGE THIS
