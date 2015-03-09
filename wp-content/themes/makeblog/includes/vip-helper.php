@@ -8,7 +8,7 @@ require_once( WP_CONTENT_DIR . '/themes/vip/plugins/vip-helper.php' );
  */
 
 // Add our caching helper functions
-require_once( dirname( __FILE__ ) . '/vip-do-not-include-on-wpcom/wpcom-caching.php' );
+//require_once( dirname( __FILE__ ) . '/vip-do-not-include-on-wpcom/wpcom-caching.php' );
 
 /**
  * Simple 301 redirects

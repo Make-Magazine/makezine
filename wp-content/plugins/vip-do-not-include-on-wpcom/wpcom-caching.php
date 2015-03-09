@@ -269,8 +269,8 @@ function wpcom_vip_old_slug_redirect() {
         exit;
     endif;
 }
-remove_filter( 'template_redirect', 'wp_old_slug_redirect' );
-add_action( 'template_redirect', 'wpcom_vip_old_slug_redirect' );
+//remove_filter( 'template_redirect', 'wp_old_slug_redirect' );
+//add_action( 'template_redirect', 'wpcom_vip_old_slug_redirect' );
 
 /**
  * Cached version of count_user_posts, which is uncached but doesn't always need to hit the db
