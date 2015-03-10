@@ -1208,3 +1208,13 @@ function prototype_wizehive_shortcode() {
 }
 
 add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );
+
+function make_prototype_shortcode() {
+	$output = ''<iframe id="wizehiveportal" scrolling="auto" frameborder="0" width="99%" height="2000px"></iframe>
+	<script src="http://review.wizehive.com/js/portaliframe.js" type="text/javascript"></script>
+	<script type="text/javascript">displayPortal('febphotocontest2015');</script>
+	<p><a href="http://www.wizehive.com/contest" target="_blank">Online Contest Software</a> provided by WizeHive</p>;
+	return $output;
+}
+
+add_shortcode( 'pitch_your_prototype_challenge', 'make_prototype_shortcode' );
