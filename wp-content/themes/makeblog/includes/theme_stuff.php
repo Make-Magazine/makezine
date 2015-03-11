@@ -396,7 +396,7 @@ function make_mf_remove_tag_from_home( $query ) {
 
 	// only impact the main WordPress query and if on homepage or feed
 	if( $query->is_main_query() && ( $query->is_home() || $query->is_feed() ) ) {
-		$query->set( 'tag__not_in', array( 5183, 22815, 9947 ) );
+		$query->set( 'tag__not_in', array( 5183, 4172, 9947 ) );
 	}
 }
 
