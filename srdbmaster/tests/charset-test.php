@@ -78,7 +78,7 @@ if ( method_exists( $charsets, 'fetch' ) ) {
 		// Reclaim what we just dumped into the db and compare
 		$q = $x->query( "SELECT serialised FROM encode.{$tbl_name} ORDER BY id DESC LIMIT 1;" );
 		if ( method_exists( $q, 'fetch' ) ) {
-			while(  $var = $q->fetch( )[0] ) {
+			while(  $var = $q->fetch()[0] ) {
 				$unserialized = @unserialize( $var );
 
 				if ( !$unserialized || array_diff( $unserialized, $original ) ) {
