@@ -532,15 +532,7 @@ class WP_Import extends WP_Importer {
 		
 		foreach ( $this->posts as $post ) {
 			echo ('<BR /><br /><h1>Processing ('. $post['post_type'].') :'. $post['post_id'].'</h1><br />');
-			if  (($post['post_type'] != 'post') 
-			&& ($post['post_type'] != 'from-the-maker-shed') 
-			&& ($post['post_type'] != 'review') 
-			&& ($post['post_type'] != 'slideshow') 
-			 && ($post['post_type'] != 'makers') 
-			&& ($post['post_type'] != 'page_2') 
-			 && ($post['post_type'] != 'video') 
-			 && ($post['post_type'] != 'craft') 
-				&& ($post['post_type'] != 'errata')) continue;
+			if  (($post['post_type'] != 'guest-author')) continue;
 			
 			$post = apply_filters( 'wp_import_post_data_raw', $post );
 			if ( ! post_type_exists( $post['post_type'] ) ) {
