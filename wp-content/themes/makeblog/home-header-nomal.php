@@ -16,7 +16,7 @@
 
 						<div class="span8">
 
-							<div class="checkers">
+							<div class="container checkers">
 
 								<div class="row">
 
@@ -55,7 +55,7 @@
 
 									</div>
 
-									<div class="span4">
+									<div class="span4 middle-featured">
 
 										<div class="row">
 
@@ -118,7 +118,7 @@
 
 									</div>
 
-									<div class="row-fluid">
+									<div class="row">
 
 										<div class="span12">
 
@@ -159,7 +159,7 @@
 								<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
 								<div id='div-gpt-ad-664089004995786621-3'>
 									<script type='text/javascript'>
-										googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
+										// googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
 									</script>
 								</div>
 								<!-- End AdSlot 2 -->
@@ -170,8 +170,9 @@
 
 					</div>
 					<div class="row">
-						<div class="span12 home-waist-banner">
-							<div id="div-gpt-ad-664089004995786621-6" class="text-center">
+						<div class="home-waist-banner">
+							<div id="div-gpt-ad-664089004995786621-6" class="span12 banner-canvas">
+								
 								 <script type='text/javascript'>
 								  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-6')});
 								 </script>
@@ -182,10 +183,12 @@
 
 						<?php if ( get_theme_mod( 'make_waist_banner' ) === 'on' ) : ?>
 
-							<div class="span12 home-waist-banner" style="margin-bottom:10px;">
+							<div class="container home-waist-banner" style="margin-bottom:10px;">
+								<div class="span12">
 								<a href="<?php echo esc_url( get_theme_mod( 'make_waist_banner_link', 'http://makezine.com/2014/03/24/enter-to-win-the-maker-faire-rome-arduino-challenge/' ) ); ?>">
 									<img src="<?php echo esc_url( get_theme_mod( 'make_waist_banner_image', get_stylesheet_directory_uri() . '/img/arduio_month.jpg' ) ); ?>">
 								</a>
+							</div>
 							</div>
 
 						<?php endif; ?>
