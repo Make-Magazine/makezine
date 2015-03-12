@@ -8957,7 +8957,7 @@ ul#tabs .current > a:hover {
 .home .span4 {
   width: 300px;
 }
-.home .span4 :first-child img {
+.home .span4 img {
   width: 290px;
 }
 .home .small {
@@ -9069,6 +9069,10 @@ ul#tabs .current > a:hover {
 }
 .home .seeall {
   margin-right: 15px;
+}
+.home img.weekend-project-image {
+  width: 138px;
+  height: 49px;
 }
 .home-waist-banner {
   width: 970px;
