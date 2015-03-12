@@ -16,7 +16,7 @@
 
 						<div class="span8">
 
-							<div class="container checkers">
+							<div class="checkers">
 
 								<div class="row">
 
