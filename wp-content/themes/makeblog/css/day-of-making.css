@@ -9143,6 +9143,9 @@ ul#tabs .current > a:hover {
 .home .row-fluid .span12 {
   width: 100%;
 }
+.home .seeall {
+  margin-right: 15px;
+}
 .home-waist-banner {
   width: 970px;
   margin-left: 20px;
