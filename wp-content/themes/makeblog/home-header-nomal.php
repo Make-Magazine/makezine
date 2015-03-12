@@ -171,7 +171,7 @@
 					</div>
 					<div class="row">
 						<div class="home-waist-banner">
-							<div id="div-gpt-ad-664089004995786621-6" class="span12 banner-canvas">
+							<div id="div-gpt-ad-664089004995786621-6" class="banner-canvas">
 								
 								 <script type='text/javascript'>
 								  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-6')});

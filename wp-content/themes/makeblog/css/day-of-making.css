@@ -9144,6 +9144,8 @@ ul#tabs .current > a:hover {
   width: 100%;
 }
 .home-waist-banner {
+  width: 970px;
+  margin-left: 20px;
   text-align: center;
 }
 .avatar-298 {
