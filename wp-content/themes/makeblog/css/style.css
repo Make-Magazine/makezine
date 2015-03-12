@@ -9046,6 +9046,7 @@ ul#tabs .current > a:hover {
   width: 290px;
   margin-left: 0px;
   margin-bottom: -9px;
+  margin-top: -65px;
 }
 .home .span4 img {
   width: 290px;
@@ -9064,6 +9065,9 @@ ul#tabs .current > a:hover {
 }
 .home-waist-banner {
   text-align: center;
+}
+.home .row-fluid .span12 {
+  width: 100%;
 }
 .avatar-298 {
   margin-bottom: 20px;
