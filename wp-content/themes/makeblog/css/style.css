@@ -8957,7 +8957,7 @@ ul#tabs .current > a:hover {
 .home .span4 {
   width: 300px;
 }
-.home .span4 img {
+.home .span4 :first-child img {
   width: 290px;
 }
 .home .small {
