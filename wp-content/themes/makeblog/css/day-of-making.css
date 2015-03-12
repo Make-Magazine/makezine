@@ -8933,8 +8933,8 @@ ul#tabs .current > a:hover {
 }
 .weekend-projects-home .weekend-project-image {
   margin-bottom: 0px;
-  position: relative;
-  margin-top: 0px;
+  position: absolute;
+  margin-top: 1px;
   z-index: 1;
   margin-left: 8px;
 }
