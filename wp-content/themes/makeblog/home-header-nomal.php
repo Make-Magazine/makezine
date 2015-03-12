@@ -118,7 +118,7 @@
 
 									</div>
 
-									<div class="row">
+									<div class="row-fluid">
 
 										<div class="span12">
 
