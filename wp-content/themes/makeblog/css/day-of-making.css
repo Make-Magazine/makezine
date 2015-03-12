@@ -9033,6 +9033,9 @@ ul#tabs .current > a:hover {
 .home .span4 {
   width: 300px;
 }
+.home .span4 img {
+  width: 290px;
+}
 .home .small {
   padding: 10px 15px;
 }
@@ -9043,9 +9046,11 @@ ul#tabs .current > a:hover {
 .home .featured {
   margin-top: 15px;
   margin-bottom: 15px;
+  margin-left: 20px;
 }
 .home .featured .blurb {
-  width: 520px;
+  width: 515px;
+  padding-right: 10px;
 }
 .home img.home-biggest {
   width: 320px;
@@ -9062,9 +9067,6 @@ ul#tabs .current > a:hover {
 .home .checkers {
   margin-top: 10px;
 }
-.home .waist .checkers .paddme {
-  padding: 0px;
-}
 .home .checkers .span4 {
   width: 320px;
   margin-left: 20px;
@@ -9075,6 +9077,24 @@ ul#tabs .current > a:hover {
 .home .checkers .span4.middle-featured .span4 {
   width: 320px;
   margin-left: 25px;
+}
+.home .waist .checkers .paddme {
+  padding: 0px;
+}
+.home .waist .checkers .paddme .caption {
+  width: 290px;
+  margin-left: 0px;
+  margin-bottom: -9px;
+  margin-top: -65px;
+}
+.home .waist .checkers .span4.middle-featured .paddme .caption {
+  width: 301px;
+}
+.home .waist .checkers .paddme.small:last-child {
+  padding: 0px;
+}
+.home .waist .checkers .span4 .span4:last-child .paddme.small {
+  padding: 0px;
 }
 .home .entry-content {
   padding-left: 0 !important;
@@ -9092,25 +9112,19 @@ ul#tabs .current > a:hover {
 .home .main-header .hdr-sub-ad-01 {
   margin-top: 10px;
 }
+.home .main-header .additional-content {
+  right: 0px;
+}
 .home .new-grid {
   width: 605px;
+  margin-left: 10px;
 }
 .home .small-youtube {
   padding: 15px 0;
 }
-.home .main-header .additional-content {
-  right: 0px;
-}
 .home .new-sand .span8 {
   width: 650px;
   margin-left: 20px;
-}
-.home .new-grid {
-  width: 605px;
-  margin-left: 10px;
-}
-.home .sand h3.red {
-  margin-left: 10px;
 }
 .home .new-sand .span4.posts {
   width: 300px;
@@ -9120,35 +9134,17 @@ ul#tabs .current > a:hover {
   width: 305px;
   margin-left: 30px;
 }
-.home .waist .checkers .paddme .caption {
-  width: 290px;
-  margin-left: 0px;
-  margin-bottom: -9px;
-  margin-top: -65px;
-}
-.home .span4 img {
-  width: 290px;
+.home .sand h3.red {
+  margin-left: 10px;
 }
 .home .span4.middle-featured img {
   width: 310px;
 }
-.home .waist .checkers .span4.middle-featured .paddme .caption {
-  width: 301px;
-}
-.home .waist .checkers .paddme.small:last-child {
-  padding: 0px;
-}
-.home .waist .checkers .span4 .span4:last-child .paddme.small {
-  padding: 0px;
-}
-.home-waist-banner {
-  text-align: center;
-}
 .home .row-fluid .span12 {
   width: 100%;
 }
-.home .featured {
-  margin-left: 20px;
+.home-waist-banner {
+  text-align: center;
 }
 .avatar-298 {
   margin-bottom: 20px;
