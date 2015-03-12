@@ -59,7 +59,7 @@
 		
 		<?php endwhile; endif; ?>
 
-		<h4><a href="http://blog.makezine.com/tag/maker-faire/">Read More &rarr;</a></h4>
+		<h4><a href="http://makezine.com/tag/maker-faire/">Read More &rarr;</a></h4>
 		
 	</div>
 
