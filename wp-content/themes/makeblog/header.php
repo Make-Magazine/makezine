@@ -104,20 +104,15 @@
 			})(window,document,'script','dataLayer','GTM-PC5R77');</script>
 		<!-- End Google Tag Manager  -->
 
-		<?php if ( is_front_page() || is_home() ) : ?>
-
-		<?php else : ?>
-			<div class="container hidden-print">
-				<div class="row">
-					<div id="div-gpt-ad-664089004995786621-1" class="text-center">
-						<script type='text/javascript'>
-							googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-						</script>
-					</div>
+		<div class="container hidden-print">
+			<div class="row">
+				<div id="div-gpt-ad-664089004995786621-1" class="text-center">
+					<script type='text/javascript'>
+						googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
+					</script>
 				</div>
 			</div>
-		<?php endif; ?>
-
+		</div>
 		<header class="top-navigation-wrapper">
 			<div class="main-header">
 				<div class="container">
@@ -139,7 +134,7 @@
 							<div class="clearfix"></div>
 							<div class="hdr-sub-ad-01" >
 								<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-mag-sub-43.jpg"  alt="Subscribe to Make Magazine Today!" /></a>
-							</div>
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -150,7 +145,7 @@
 						<nav class="span12 site-navigation secondary-navigation">
 							<ul id="menu-make-secondary-nav" class="nav navbar-nav ga-nav clearfix">
 								<li class="mega-box dropdown"><a href="#" class="dropdown-toggle">Projects</a>
-									<ul class="sub-menu dropdown-menu container dropdown" style="width:970px;">
+									<ul class="sub-menu dropdown-menu container dropdown" style="width:940px;">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/?path=FromNav' ) ); ?>">Electronics</a></li>
@@ -208,7 +203,7 @@
 												<li><a href="<?php echo esc_url( home_url( '/category/art-design/photography-video/?post_type=projects&amp;path=FromNav' ) ); ?>">Photography &amp; Video</a></li>
 											</ul>
 										</div>
-										<div class="span12 pull-right mega-nav-footer" style="width:970px;">
+										<div class="span12 pull-right mega-nav-footer">
 											<a href="<?php echo esc_url( home_url( '/projects/?path=FromNav' ) ); ?>">All Projects</a>
 											<a href="//pubads.g.doubleclick.net/gampad/clk?id=112551178&iu=/11548178/Makezine&amp;path=FromNav">Weekend Projects</a>
 										</div>
@@ -216,7 +211,7 @@
 									</ul>
 								</li>
 								<li id="nav-news" class="mega-box menu-item dropdown"><a href="#" class="dropdown-toggle">News</a>
-									<ul class="sub-menu dropdown-menu" style="width:970px;margin-left:-89px;">
+									<ul class="sub-menu dropdown-menu" style="width:940px;margin-left:-89px;">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/blog/?path=FromNav' ) ); ?>">All News</a></li>
@@ -287,23 +282,6 @@
 					</div>
 				</div>
 			</div>
-
-			<?php if ( is_front_page() || is_home() ) : ?>
-			<div class="container hidden-print">
-				<div class="row">
-					<div class="span12">
-						<div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
-
-							<script type='text/javascript'>
-								googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-							</script>
-						</div>
-					</div>
-				</div>
-			</div>
-			<?php else : ?>
-			<?php endif; ?>
-
 		</header>
 
 		<?php if ( ! is_page_template( 'page-home.php' ) ) :
@@ -313,7 +291,6 @@
 
 		<div class="canvas-ad">
 			<div id="div-gpt-ad-664089004995786621-7" class="banner-canvas">
-
 				<script type='text/javascript'>
 					googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-7')});
 				</script>
