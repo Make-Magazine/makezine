@@ -75,7 +75,7 @@
                   <ul>
                     <li><a href="<?php echo esc_url( home_url( '/how-to-get-help/' ) ); ?>">Help</a></li>
                     <li><a href="http://makermedia.com/contact-us/" target="_blank">Contact</a></li>
-                    <li><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3AMZF">Subscribe</a></li>
+                    <li><a href="https://www.readerservices.makezine.com/MK/subscribe.aspx?PC=MK&amp;PK=M3AMZF">Subscribe</a></li>
                     <li><a href="http://makermedia.com/work-with-us/advertising/" target="_blank">Advertise</a></li>
                     <li><a href="http://makermedia.com/privacy/" target="_blank">Privacy</a></li>
                   </ul>

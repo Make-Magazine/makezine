@@ -100,7 +100,7 @@
 							<ul>
 								<li><a href="https://help.makermedia.com" target="_blank">Help</a></li>
 								<li><a href="//makermedia.com/privacy/" target="_blank">Privacy</a></li>
-								<li><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
+								<li><a href="https://www.readerservices.makezine.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
 							</ul>
 							
 							<h5>
