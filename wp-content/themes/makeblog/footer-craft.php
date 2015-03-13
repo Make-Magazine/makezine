@@ -89,7 +89,7 @@
 							<ul>
 								<li><a href="<?php echo esc_url( home_url( '/contactus' ) ); ?>">Contact Us</a></li>
 								<li><a href="http://makermedia.com/privacy/" target="_blank">Privacy</a></li>
-								<li><a href="https://www.readerservices.makezine.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
+								<li><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
 							</ul>
 						<!-- END span about-column-02 -->
 						</div>
