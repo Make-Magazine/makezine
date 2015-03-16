@@ -64,20 +64,9 @@ if(!function_exists("pinit_js_config")) {
 				$return_string = "$return_string' data-pin-height='$size_op";
 			}
 		}
-		// add the shape if not default
-		if(isset($shape_op) && $shape_op != "rectangle") {
-		  $return_string = "$return_string' data-pin-shape='$shape_op";
-		}
-		// if shape is not round, add the color and language
-		if(isset($shape_op) && $shape_op != "round") {
-		  // add the color if not default
-		  if(isset($color_op) && $color_op != "gray") {
-		    $return_string = "$return_string' data-pin-color='$color_op";
-		  }
-		  // add the language if not default
-		  if(isset($lang_op) && $lang_op != "eng") {
-		    $return_string = "$return_string' data-pin-lang='$lang_op";
-		  }
+		// add the shape
+		if(isset($shape_op)) {
+			$return_string = "$return_string' data-pin-shape='$shape_op";
 		}
 		// if shape is not round, add the color and language
 		if(isset($shape_op) && $shape_op != "round") {

@@ -39,6 +39,7 @@ xmlrpc.php
 wp-admin
 
 wp-content/mu-plugins
+wp-content/plugins
 wp-content/uploads
 wp-content/upgrade
 wp-content/advanced-cache.php

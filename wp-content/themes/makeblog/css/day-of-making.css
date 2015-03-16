@@ -8122,6 +8122,204 @@ textarea.narrow,
   font-size: 100% !important;
   /*** !important used to avoid modifying Contextly core files ***/
 }
+.contact-form label {
+  text-align: left;
+}
+.pushbutton-wide {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  line-height: normal;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: white;
+  background-color: #0064CD;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  padding: 5px 14px 6px;
+}
+.headme {
+  margin-bottom: 25px;
+}
+.noborder {
+  border: 0 !important;
+}
+[for=image] {
+  margin-left: 50px;
+}
+.sidebar span.badge {
+  display: inline !important;
+}
+h3.jumbo {
+  font-size: 18px;
+}
+.sprite-images {
+  background-image: url(/wp-content/themes/vip/makeblog/images/sprite-images.jpg) !important;
+}
+.author-365883 {
+  float: none !important;
+}
+#jp-post-flair,
+h3.sd-title {
+  display: none !important;
+}
+.sd-social-official .sd-content ul > li {
+  margin-right: 6px !important;
+}
+li.share-email {
+  padding-top: 2px !important;
+}
+.sprite-images {
+  background-image: url(/wp-content/themes/vip/makeblog/images/sprite-images.jpg) !important;
+}
+.author-365883 {
+  float: none !important;
+}
+#jp-post-flair,
+h3.sd-title {
+  display: none !important;
+}
+.sd-social-official .sd-content ul > li {
+  margin-right: 6px !important;
+}
+li.share-email {
+  padding-top: 2px !important;
+}
+/* BREATHING ROOM FOR SHARE THIS WIDGET*/
+.sharedaddy {
+  margin-top: 15px;
+}
+/* HIDING TITLES ON PAGES THAT USE IMAGE INSTEAD*/
+.page-id-378544 h1,
+.page-id-381291 h1,
+.page-id-381951 h1,
+.page-id-381951 .well,
+.page-id-381951 .comments {
+  display: none;
+}
+/* CUSTOM PADDING FOR OL ON MAKERFAIRE DESING CONTENT RULES */
+.page-id-381951 ol li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* BREATHING ROOM FOR H4 TITLE TAGS*/
+h4 {
+  margin-top: 5px;
+}
+.attachment-small-home-feature-boxes h4 {
+  margin-top: 0 !important;
+}
+/*MAKER CAMP STYLE FIX FOR HOME PAGE*/
+.page-id-312816 .feature-box {
+  margin-top: 20px;
+}
+/*FIX FOR HIW LAYOUT ISSUE*/
+body.hiw .single .container {
+  margin-left: auto;
+}
+/*FIX FOR HIW SOCIAL ICONS LAYOUT*/
+body.hiw .sd-social-official .sd-content ul > li {
+  margin-left: 9px !important;
+}
+/*HIDING MAKE:40 (NOT COMPLETE) ON VOLUME PAGE
+.post-type-archive-volume .post-394422 {display:none;}*/
+/*Slide show caption background color */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+}
+.home h2.look_like_h3_blue a:link,
+.home h2.look_like_h3_blue a:visited {
+  color: #CC2229 !important;
+}
+.home h2.look_like_h3_blue a:hover {
+  color: #7F080D !important;
+}
+/* REMOVING AUTHOR BIO AND IMAGE FOR VOLUME PAGE */
+.postid-451386 .avatar,
+.postid-461061 .avatar,
+.postid-451386 .-author-profile-bio,
+.postid-461061 .-author-profile-bio {
+  display: none;
+}
+.page-id-304421 .comments,
+.page-id-304421 .look_like_h3,
+.page-id-304421 .carousel {
+  display: none;
+}
+.sd-social-official .sd-content > ul > li > a.sd-button {
+  line-height: 18px !important;
+}
+h3.heading.look_like_h4_cat {
+  display: none;
+}
+.page-id-463824 .projects-meta {
+  display: none;
+}
+/*PSOC Maker Challenge Header Hide*/
+.page-id-461313 .projects-masthead,
+.page-id-431313 .projects-masthead,
+.page-id-463824 .projects-masthead,
+.page-id-462353 .projects-masthead,
+.page-id-463460 .projects-masthead,
+.page-id-463441 .projects-masthead {
+  display: none;
+}
+/*Home page background styles*/
+.page-id-116357 .waist {
+  background-image: none !important;
+  border: none;
+}
+.page-id-116357 .new-sand,
+.page-id-116357 .waist .checkers {
+  background-image: none !important;
+}
+/*.page-id-116357 .grid-box {background-image:none !important;}*/
+/*.page-id-116357 .posts {margin-bottom:30px;}*/
+/*Videos page category links*/
+.post-type-archive-video h3,
+.post-type-archive-video .subs {
+  display: none;
+}
+/*CONTEST PAGE HEADER TITLES*/
+.page-id-466354 .projects-masthead,
+.page-id-466367 .projects-masthead,
+.page-id-466360 .projects-masthead,
+.page-id-466358 .projects-masthead,
+page-id-466367 .projects-masthead {
+  display: none;
+}
+.weekend-projects-home .attachment-small-home-feature-boxes {
+  margin-top: 0;
+}
+.sharedaddy ~ .sharedaddy,
+.projects-meta ~ .span8 .sharedaddy {
+  display: none !important;
+}
+li.share-pinterest .pinterest_button a {
+  background-image: url(https://makezine.com/wp-content/uploads/2015/03/pinit_fg_en_rect_white_20.jpg) !important;
+  cursor: pointer !important;
+  background-repeat: none !important;
+  background-size: 40px 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  vertical-align: baseline !important;
+  text-decoration: none !important;
+  width: 40px !important;
+  background-position: 0;
+}
+.li.share-pinterest .pinterest_button a {
+  cursor: pointer !important;
+  position: relative !important;
+  display: inline-block !important;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;
