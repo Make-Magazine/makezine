@@ -72,7 +72,7 @@ $field_data = array (
 	),
 );
 
-// $easy_cf = new Easy_CF($field_data);
+$easy_cf = new Easy_CF($field_data);
 
 function make_go_cpt_columns($columns) {
 
