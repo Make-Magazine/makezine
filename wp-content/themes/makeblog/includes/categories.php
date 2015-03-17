@@ -110,7 +110,7 @@ function make_category_list() {
 		echo '<div class="cat" id="' . $slug . '"><div class="cat-home">';
 		echo '<h2><a href="' . make_get_category_url( $slug ) .'">' . $slug . '</a></h2>';
 		echo '<ul class="drop-down">';
-		echo make_sub_category_list( wpcom_vip_get_category_by_slug( $slug ) );
+		echo make_sub_category_list( get_category_by_slug( $slug ) );
 		echo '</ul></div></div><!-- ' . $slug . ' -->';
 	}
 }
