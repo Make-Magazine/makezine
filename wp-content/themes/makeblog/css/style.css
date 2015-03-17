@@ -9182,6 +9182,8 @@ ul#tabs .current > a:hover {
 }
 .home .paddme.small {
   padding: 10px 0 10px 15px;
+  height: 188px;
+  overflow: hidden;
 }
 .home .home-ads {
   margin-top: 10px;
@@ -9194,35 +9196,44 @@ ul#tabs .current > a:hover {
   margin-left: 20px;
 }
 .home .checkers .span4.middle-featured {
-  margin-left: 0px;
+  margin-left: 0;
 }
 .home .checkers .span4.middle-featured .span4 {
   width: 320px;
   margin-left: 25px;
 }
 .home .waist .checkers .paddme {
-  padding: 0px;
+  padding: 0;
 }
 .home .waist .checkers .paddme .caption {
-  width: 290px;
-  margin-left: 0px;
-  margin-bottom: -9px;
-  margin-top: -65px;
+  width: 280px;
+  margin-left: 1px;
+  margin-bottom: 0;
+  margin-top: 0;
+  bottom: 0;
+  border-bottom: 1px solid #c3c5c5;
 }
 .home .waist .checkers .span4.middle-featured .paddme .caption {
-  width: 301px;
+  width: 300px;
+  margin-left: 1px;
+  border-bottom: 1px solid #c3c5c5;
 }
 .home .waist .checkers .paddme.small:last-child {
-  padding: 0px;
+  padding: 0;
 }
 .home .waist .checkers .span4 .span4:last-child .paddme.small {
-  padding: 0px;
+  padding: 0;
+  margin-top: 10px;
 }
 .home .entry-content {
   padding-left: 0 !important;
+  width: 268px;
+  padding: 10px 0 3px 8px !important;
 }
 .home .entry-content:first-child {
   padding-left: 0 !important;
+  width: 268px;
+  padding: 10px 12px 3px 8px !important;
 }
 .home .span12 {
   width: 970px;
@@ -9235,11 +9246,11 @@ ul#tabs .current > a:hover {
   margin-top: 10px;
 }
 .home .main-header .additional-content {
-  right: 0px;
+  right: 0;
 }
 .home .new-grid {
   width: 605px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .home .small-youtube {
   padding: 15px 0;
@@ -9254,7 +9265,7 @@ ul#tabs .current > a:hover {
 }
 .home .new-sand .span4 {
   width: 305px;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 .home .sand h3.red {
   margin-left: 10px;
@@ -9271,6 +9282,10 @@ ul#tabs .current > a:hover {
 .home img.weekend-project-image {
   width: 138px;
   height: 49px;
+}
+.home .footer-ad .ad-slot {
+  width: 0;
+  margin: 0 auto;
 }
 .home-waist-banner {
   width: 970px;
