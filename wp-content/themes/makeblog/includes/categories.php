@@ -24,7 +24,7 @@ $GLOBALS['catslugs'] = array( 'Electronics', 'Workshop', 'Craft', 'Science', 'Ho
 function make_category_page_fill() {
 	
 	$cat_name = get_queried_object()->name;
-	$page = wpcom_vip_get_page_by_title( $cat_name );
+	$page = get_page_by_title( $cat_name );
 	
 	$args = array(
 		'page_id' => $page->ID,
@@ -90,7 +90,7 @@ function make_sub_category_list( $id, $projects = false ) {
  * @return string Link to slug archive page.
  */
 function make_get_category_url( $slug, $taxonomy='category', $field = 'name' ) {
-	$category = wpcom_vip_get_term_by( $field, $slug, $taxonomy );
+	$category = get_term_by( $field, $slug, $taxonomy );
 	if ( ! $category ) {
 		return false;
 	} else {
