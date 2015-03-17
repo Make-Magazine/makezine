@@ -307,7 +307,6 @@
 }
 
 // Widen home page-break-inside: 
-
 .home {
     .container {
         width: 970px;
@@ -321,7 +320,7 @@
     .span4 {
         width: 300px;
         img {
-            width:290px;
+            width: 290px;
         }
     }
     .small {
@@ -334,10 +333,10 @@
     .featured {
         margin-top: 15px;
         margin-bottom: 15px;
-        margin-left:20px;
+        margin-left: 20px;
         .blurb {
             width: 515px;
-            padding-right:10px;
+            padding-right: 10px;
         }
     }
     img.home-biggest {
@@ -348,6 +347,8 @@
     }
     .paddme.small {
         padding: 10px 0 10px 15px;
+        height: 188px;
+        overflow: hidden;
     }
     .home-ads {
         margin-top: 10px;
@@ -355,13 +356,13 @@
     .checkers {
         margin-top: 10px;
         .span4 {
-            width:320px;
+            width: 320px;
             margin-left: 20px;
         }
         .span4.middle-featured {
-            margin-left: 0px;
+            margin-left: 0;
             .span4 {
-                width:320px;
+                width: 320px;
                 margin-left: 25px;
             }
         }
@@ -369,28 +370,33 @@
     .waist {
         .checkers {
             .paddme {
-                padding:0px;
+                padding: 0;
                 .caption {
-                    width:290px;
-                    margin-left:0px;
-                    margin-bottom:-9px;
-                    margin-top: -65px;
+                    width: 280px;
+                    margin-left: 1px;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    bottom: 0;
+                    border-bottom: 1px solid #c3c5c5;
                 }
             }
             .span4.middle-featured {
                 .paddme {
                     .caption {
-                        width:301px;
+                        width: 300px;
+                        margin-left: 1px;
+                        border-bottom: 1px solid #c3c5c5;
                     }
                 }
             }
             .paddme.small:last-child {
-                padding:0px;
+                padding: 0;
             }
             .span4 {
                 .span4:last-child {
                     .paddme.small {
-                        padding:0px;
+                        padding: 0;
+                        margin-top: 10px;
                     }
                 }
             }
@@ -398,9 +404,13 @@
     }
     .entry-content {
         padding-left: 0 !important;
+        width: 268px;
+        padding: 10px 0 3px 8px !important;
     }
     .entry-content:first-child {
         padding-left: 0 !important;
+        width: 268px;
+        padding: 10px 12px 3px 8px !important;
     }
     .span12 {
         width: 970px;
@@ -414,20 +424,19 @@
             margin-top: 10px;
         }
         .additional-content {
-            right: 0px;
+            right: 0;
         }
     }
     .new-grid {
         width: 605px;
-        width: 605px;
-        margin-left:10px;
+        margin-left: 5px;
     }
     .small-youtube {
         padding: 15px 0;
     }
     .new-sand {
         .span8 {
-            width:650px;
+            width: 650px;
             margin-left: 20px;
         }
         .span4.posts {
@@ -436,36 +445,40 @@
         }
         .span4 {
             width: 305px;
-            margin-left: 30px;
+            margin-left: 25px;
         }
     }
     .sand {
         h3.red {
-            margin-left:10px;
+            margin-left: 10px;
         }
     }
     .span4.middle-featured {
         img {
-            width:310px;
+            width: 310px;
         }
     }
     .row-fluid {
         .span12 {
-            width:100%;
+            width: 100%;
         }
     }
-.seeall {
-     margin-right:15px
-}
-     img.weekend-project-image {
-     	width:138px;
-     	height:49px;
-     }
+    .seeall {
+        margin-right: 15px;
+    }
+    img.weekend-project-image {
+        width: 138px;
+        height: 49px;
+    }
+    .footer-ad {
+        .ad-slot {
+            width: 0;
+            margin: 0 auto;
+        }
+    }
 }
 .home-waist-banner {
-    width:970px;
-    margin-left:20px;
-    text-align:center;
+    width: 970px;
+    margin-left: 20px;
+    text-align: center;
 }
-
-
