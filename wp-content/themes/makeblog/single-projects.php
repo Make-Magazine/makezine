@@ -357,6 +357,10 @@ get_header(); ?>
 
 									</div>
 
+									<?php if ( function_exists('make_shopify_featured_products_slider') ) {
+				     					echo make_shopify_featured_products_slider( 'row-fluid' );
+				    				} ?>
+
 									<?php else: ?>
 
 										<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
