@@ -5,11 +5,11 @@ jQuery(window).load(function() {
 
 
 	// We'll want to disable the publish button until we have set a status of "Published in Mag". Let's first make sure this post isn't already published
-	// if ( current_status !== 'publish' ) {
-	// 	if ( current_status !== 'published-in-mag' ) {
-	// 		jQuery( '#publish.button' ).addClass( 'disabled-publish' ).attr( 'disabled', 'disabled' );
-	// 	}
-	// }
+	if ( current_status !== 'publish' ) {
+		if ( current_status !== 'published-in-mag' ) {
+			jQuery( '#publish.button' ).addClass( 'disabled-publish' ).attr( 'disabled', 'disabled' );
+		}
+	}
 	
 
 	// What if we change the status? Let's handle that...
