@@ -256,6 +256,13 @@
 										<li><a target="_blank" href="//makercamp.com?path=FromNav">Maker Camp</a></li>
 									</ul>
 								</li>
+								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Contests</a>
+									<ul class="sub-menu dropdown-menu">
+										<li><a href="//makezine.com/pitch-your-prototype-2015/?path=FromNav">Pitch Your Prototype</a></li>
+										<li><a href="//makezine.com/psoc-maker-challenge/?path=FromNav">PSoC Maker Challenge 2015</a></li>
+										<li><a href="//makercon.com/launchpad-contest/?path=FromNav">Launchpad at MakerCon</a></li>
+									</ul>
+								</li>
 								<li class="menu-item dropdown"><a href="#">Shop</a>
 									<ul class="sub-menu dropdown-menu">
 										<li id="menu-item-318846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318846"><a target="_blank" href="http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=Maker+Shed+Store">Maker Shed Store</a></li>
