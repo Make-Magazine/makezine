@@ -8320,6 +8320,9 @@ li.share-pinterest .pinterest_button a {
   position: relative !important;
   display: inline-block !important;
 }
+#sthoverbuttons span {
+  break-word: normal;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;
