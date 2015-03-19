@@ -241,7 +241,7 @@
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/makers/?path=FromNav' ) ); ?>">Meet the Makers</a></li>
 											</ul>
 										</div>
-						
+
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Videos</a>
@@ -254,6 +254,13 @@
 										<li><a target="_blank" href="//makerfaire.com/?path=FromNav">Maker Faire</a></li>
 										<li><a target="_blank" href="//makercon.com?path=FromNav">MakerCon</a></li>
 										<li><a target="_blank" href="//makercamp.com?path=FromNav">Maker Camp</a></li>
+									</ul>
+								</li>
+								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Contests</a>
+									<ul class="sub-menu dropdown-menu">
+										<li><a href="<?php echo esc_url( home_url( '/pitch-your-prototype-2015/?path=FromNav' ) ); ?>">Pitch Your Prototype</a></li>
+										<li><a href="<?php echo esc_url( home_url( '/psoc-maker-challenge/?path=FromNav' ) ); ?> ">PSoC Maker Challenge 2015</a></li>
+										<li><a target="_blank" href="//makercon.com/launchpad-contest/">Launchpad at MakerCon</a></li>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#">Shop</a>
