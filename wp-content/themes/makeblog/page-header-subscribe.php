@@ -166,11 +166,11 @@ Template name: Header
 										<li class="menu-item"><a href="<?php echo esc_url( home_url( '/video?path=FromNav' ) ); ?>">All Videos</a>
 									</ul>
 								</li>
-								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Events</a>
+								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Contests</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="//makerfaire.com/?path=FromNav">Maker Faire</a></li>
-										<li><a target="_blank" href="//makercon.com?path=FromNav">MakerCon</a></li>
-										<li><a target="_blank" href="//makercamp.com?path=FromNav">Maker Camp</a></li>
+										<li><a target="_blank" href="<?php echo esc_url( home_url( '/pitch-your-prototype-2015/?path=FromNav' ) ); ?>">Pitch Your Prototype</a></li>
+										<li><a target="_blank" href="<?php echo esc_url( home_url( '/psoc-maker-challenge/?path=FromNav' ) ); ?> ">PSoC Maker Challenge 2015</a></li>
+										<li><a target="_blank" href="<?php echo esc_url( home_url( '/launchpad-contest/?path=FromNav' ) ); ?>">Launchpad at MakerCon</a></li>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Contests</a>
