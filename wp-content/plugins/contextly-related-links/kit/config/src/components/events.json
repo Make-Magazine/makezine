@@ -1,8 +1,6 @@
 {
     "include": [
-      "libraries/jquery",
-      "components/create-class",
-      "components/api-client"
+        "components/loader"
     ],
 
     "base": "components",

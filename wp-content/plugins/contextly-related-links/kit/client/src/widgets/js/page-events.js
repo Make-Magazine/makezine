@@ -1,76 +1,63 @@
-(function($) {
+/**
+ * @class
+ */
+Contextly.PageEvents = Contextly.createClass({
 
-  /**
-   * @class
-   */
-  Contextly.PageEvents = Contextly.createClass({
+  statics: /** @lends Contextly.PageEvents */{
 
-    statics: /** @lends Contextly.PageEvents */{
+    trackLink: function(widget_type, link_type, link_url, link_title) {
+      if (!widget_type || !link_type || !link_url || !link_title) {
+        return;
+      }
 
-      trackLink: function(widget_type, link_type, link_url, link_title) {
-        if (!widget_type || !link_type || !link_url || !link_title) {
-          return;
+      var category = 'Contextly';
+      var action = '';
+
+      if (widget_type === Contextly.widget.types.SIDEBAR) {
+          action = 'Sidebar_';
+      }
+      else {
+          action = 'Module_';
+      }
+
+      if ( link_type == Contextly.widget.linkTypes.WEB ) {
+        action += 'External_';
+      } else if ( link_type == Contextly.widget.linkTypes.PREVIOUS || link_type == Contextly.widget.linkTypes.RECENT ) {
+        action += 'Related_';
+      } else if ( link_type == Contextly.widget.linkTypes.PROMO ) {
+        action += 'Promo_';
+      } else {
+        action += link_type.charAt(0).toUpperCase() + link_type.slice(1) + '_';
+      }
+
+      var page_type = 'Post';
+      var url_parts = link_url.split('?');
+      var url_params = url_parts[1].split(':');
+      if (url_params.length >= 3 ) {
+        var algorithm_id = url_params[3];
+        if (algorithm_id == Contextly.widget.recommendationTypes.PRODUCT) {
+          page_type = 'Product';
         }
-
-        var category = 'Contextly';
-        var action = '';
-
-        if (widget_type === Contextly.widget.types.SIDEBAR) {
-            action = 'Sidebar_';
+        else if (algorithm_id == Contextly.widget.recommendationTypes.VIDEO) {
+          page_type = 'Video';
         }
-        else {
-            action = 'Module_';
-        }
+      }
+      action += page_type;
 
-        if ( link_type == Contextly.widget.linkTypes.WEB ) {
-          action += 'External_';
-        } else if ( link_type == Contextly.widget.linkTypes.PREVIOUS || link_type == Contextly.widget.linkTypes.RECENT ) {
-          action += 'Related_';
-        } else if ( link_type == Contextly.widget.linkTypes.PROMO ) {
-          action += 'Promo_';
-        } else {
-          action += link_type.charAt(0).toUpperCase() + link_type.slice(1) + '_';
-        }
+      var label_limit = 30;
+      var label = link_title;
 
-        var page_type = 'Post';
-        var url_parts = link_url.split('?');
-        var url_params = url_parts[1].split(':');
-        if (url_params.length >= 3 ) {
-          var algorithm_id = url_params[3];
-          if (algorithm_id == Contextly.widget.recommendationTypes.PRODUCT) {
-            page_type = 'Product';
-          }
-          else if (algorithm_id == Contextly.widget.recommendationTypes.VIDEO) {
-            page_type = 'Video';
-          }
-        }
-        action += page_type;
+      if (label.length > label_limit) {
+        label = label.substr(0, label_limit);
+      }
 
-        var label_limit = 30;
-        var label = link_title;
-
-        if (label.length > label_limit) {
-          label = label.substr(0, label_limit);
-        }
-
-        try {
-          // Try from modern to legacy.
-          if (typeof window.ga !== 'undefined' && $.isFunction(ga)) {
-            ga('send', 'event', category, action, label);
-          }
-          else if (typeof window._gaq != 'undefined') {
-            _gaq.push(['_trackEvent', category, action, label]);
-          }
-          else if (typeof window.pageTracker != 'undefined') {
-            pageTracker._trackEvent(category, action, label);
-          }
-        }
-        catch (e) {
-          Contextly.Utils.logError('Unable to track link click', e);
-        }
-
+      if (typeof window.pageTracker != 'undefined') {
+        pageTracker._trackEvent(category, action, label);
+      }
+      else if (typeof window._gaq != 'undefined') {
+        _gaq.push(['_trackEvent', category, action, label]);
       }
     }
+  }
 
-  });
-})(jQuery);
+});

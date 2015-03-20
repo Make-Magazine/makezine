@@ -1,10 +1,7 @@
 {
   "include": [
     "libraries/jquery",
-    "libraries/easy-xdm",
-    "components/settings",
-    "components/visitor",
-    "components/utils"
+    "libraries/easy-xdm"
   ],
 
   "base": "components",

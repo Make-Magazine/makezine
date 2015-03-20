@@ -3,13 +3,12 @@
  */
 
 Contextly.LogPluginEventsType = {
-  EMAIL: 'email',
-  LOG: 'log'
+    EMAIL: 'email'
 };
 
 Contextly.LogPluginEvents = Contextly.createClass({
 
-    statics: /** @lends Contextly.LogPluginEvents */ {
+    statics: {
 
         fireEvent: function (type, args)
         {

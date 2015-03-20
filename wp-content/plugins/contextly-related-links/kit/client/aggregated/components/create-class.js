@@ -131,8 +131,6 @@ Contextly.createClass = function (data) {
  *
  * @param {string} [name]
  *   Function name to include into the exception.
- *
- * @return {function}
  */
 Contextly.abstractMethod = function(name) {
   return function() {

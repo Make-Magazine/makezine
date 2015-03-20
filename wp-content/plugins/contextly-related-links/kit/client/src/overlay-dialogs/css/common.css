@@ -314,6 +314,10 @@ body.contextly-overlay .btn {
   margin-top: 10px;
 }
 
+.sidebar-add-to-related-wrapper {
+  margin-top: 20px;
+}
+
 .sidebar-chooser .search-results {
   min-width: 700px;
   max-width: 900px;

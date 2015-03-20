@@ -29,14 +29,13 @@ Contextly.RESTClient = Contextly.createClass({
                 site_path: s.getAppId(),
                 admin: s.isAdmin(),
                 page_id: s.getPageId(),
-                cookie_id: Contextly.Visitor.getId(),
+                cookie_id: s.getCookieId(),
                 type: s.getPostType(),
                 c_date: s.getPostCreatedDate(),
                 m_date: s.getPostModifiedDate(),
                 c_count: s.getPostCategoriesCount(),
                 t_count: s.getPostTagsCount(),
-                url: s.getPageUrl(),
-                guid: Contextly.Visitor.getGuid()
+                url: s.getPageUrl()
             });
 
             var self = this;
@@ -64,15 +63,10 @@ Contextly.RESTClient = Contextly.createClass({
                 var data = easyXDM.getJSONObject().parse(response.data);
                 callback(data);
             } catch (e) {
-              Contextly.Utils.logError('Unable to parse/handle API response', response, e);
+
             }
         }
 
     }
 
 });
-
-Contextly.RESTClient.errors = {
-  FORBIDDEN: 403,
-  SUSPENDED: 408
-};

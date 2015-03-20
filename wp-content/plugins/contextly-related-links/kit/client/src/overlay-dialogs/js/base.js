@@ -420,8 +420,18 @@
       return false;
     },
 
+    trim: function(str) {
+      if (!str) {
+        return '';
+      }
+
+      return str
+        .replace(/^\s+/, '')
+        .replace(/\s+$/, '');
+    },
+
     onSearchSubmit: function () {
-      var query = $.trim(this.e.searchInput.val());
+      var query = this.trim(this.e.searchInput.val());
       var searchInfo = this.getTabSearchInfo(this.getActiveSearchTab());
       if (!query && !this.searchTypes[searchInfo.type].emptyQuery) {
         // No search terms and search type doesn't support empty query.
@@ -649,7 +659,7 @@
     },
 
     onUrlSubmit: function () {
-      var url = $.trim(this.e.urlInput.val());
+      var url = this.trim(this.e.urlInput.val());
       if (url) {
         this.performUrlInfoRequest(url);
       }

@@ -66,7 +66,9 @@
       div += "</div>";
 
       if (this.isDisplayContextlyLogo()) {
-        div += this.getBrandingButtonHtml();
+        div += "<div class='ctx-branding ctx-clearfix'>";
+        div += "<a href='#' id='ctx-branding-link' class='ctx-nodefs'>Powered by</a>";
+        div += "</div>";
       }
 
       div += "</div>";

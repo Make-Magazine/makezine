@@ -1,8 +1,6 @@
 {
   "include": [
-    "libraries/jquery",
-    "components/create-class",
-    "components/metadata-parser"
+    "components/create-class"
   ],
 
   "base": "components",
