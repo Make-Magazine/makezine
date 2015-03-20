@@ -4,12 +4,10 @@
  * Module Name: Mobile Theme
  * Module Description: Optimize your site with a mobile-friendly theme for smartphones.
  * Sort Order: 21
- * Recommendation Order: 11
  * First Introduced: 1.8
  * Requires Connection: No
  * Auto Activate: No
- * Module Tags: Appearance, Mobile, Recommended
- * Feature: Recommended
+ * Module Tags: Appearance, Mobile
  */
 
 function jetpack_load_minileven() {

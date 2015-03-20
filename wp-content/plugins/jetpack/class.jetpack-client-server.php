@@ -91,8 +91,7 @@ class Jetpack_Client_Server {
 				Jetpack::activate_default_modules();
 			}
 
-			// Sync all registers options and constants
-			do_action( 'jetpack_sync_all_registered_options' );
+			$jetpack->sync->register( 'noop' ); // Spawn a sync to make sure the Jetpack Servers know what modules are active.
 
 			// Start nonce cleaner
 			wp_clear_scheduled_hook( 'jetpack_clean_nonces' );
@@ -109,7 +108,6 @@ class Jetpack_Client_Server {
 	}
 
 	public static function deactivate_plugin( $probable_file, $probable_title ) {
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( is_plugin_active( $probable_file ) ) {
 			deactivate_plugins( $probable_file );
 			return 1;

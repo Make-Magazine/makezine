@@ -106,17 +106,15 @@ class Jetpack_Gallery_Widget extends WP_Widget {
 	public function get_attachments( $instance ){
 		$ids = explode( ',', $instance['ids'] );
 
-		if ( isset( $instance['random'] ) && 'on' == $instance['random'] ) {
-			shuffle( $ids );
-		}
+		$order = ( isset( $instance['random'] ) && $instance['random'] ) ? 'rand' : 'post__in';
 
 		$attachments_query = new WP_Query( array(
-			'post__in'       => $ids,
-			'post_status'    => 'inherit',
-			'post_type'      => 'attachment',
-			'post_mime_type' => 'image',
-			'posts_per_page' => -1,
-			'orderby'        => 'post__in',
+			'post__in' 			=> $ids,
+			'post_status' 		=> 'inherit',
+			'post_type' 		=> 'attachment',
+			'post_mime_type' 	=> 'image',
+			'posts_per_page'	=> -1,
+			'orderby'			=> $order
 		) );
 
 		$attachments = $attachments_query->get_posts();

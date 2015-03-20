@@ -36,7 +36,7 @@ ul#adminmenu a.toplevel_page_jetpack:after {
 }
 
 .jp-content {
-	background: $clouds;
+	background: $green;
 	margin: 0;
 	height: auto;
 	min-height: 100%;
@@ -93,7 +93,7 @@ body {
 
 .wrap.inner {
 	@include breakpoint(large-desktop) {
-		background: $clouds;
+		background: #f9f9f9;
 		padding: 15px;
 	};
 	@include breakpoint(large-phone) {
@@ -103,7 +103,7 @@ body {
 
 .jetpack_page_jetpack_modules {
 	.header-nav  {
-		//max-width: auto;
+		max-width: auto;
 		margin: 0;
 	}
 	.page-content {
@@ -118,14 +118,14 @@ body {
 	z-index: 10;
 
 	@include breakpoint(large-desktop){
-		background: $clouds;
+		background: #f9f9f9;
 		padding: 15px;
 	};
 }
 
 .page-content.configure {
 	@include breakpoint(large-desktop){
-		background: $clouds;
+		background: #f9f9f9;
 	};
 }
 
@@ -142,12 +142,10 @@ body {
 .header {
 	left: 0;
 	right: 0;
-	background: $green;
 }
 .header-nav {
 	li {
 		line-height: 60px;
-		
 	}
 	a {
 		padding: 0 em(10px);
@@ -159,19 +157,12 @@ body {
 			position: relative;
 			width: 214px;
 			margin-right: 6px;
-			background: url(../images/jetpack-logo.png) center center no-repeat;
-			background: url(../images/jetpack-logo.svg) center center no-repeat, none;
-			background-size: 183px auto;
+			background-size: 183px 32px;
 			color: #fff;
 			line-height: 60px;
 			font-weight: normal;
-			
-			span {
-				text-indent: -9999px;
-				visibility: hidden;
-			}
+			text-indent: -9999px;
 
-			// needs to be cleaned up and removed - jeffgolenski
 			&:before {
 				content: '';
 				position: absolute;
@@ -179,13 +170,11 @@ body {
 				left: 0;
 				width: 100%;
 				height: 100%;
-				
+				background: url(../images/jetpack-logo.png) center center no-repeat;
+				background: url(../images/jetpack-logo.svg) center center no-repeat, none;
 				background-size: 183px 32px;
 			}
 		}
-	}
-	.jetpack-modules + .jetpack-modules {
-		margin-left:15px
 	}
 }
 
@@ -398,7 +387,7 @@ body {
 		z-index: 2;
 	}
 	@include breakpoint(large-phone){
-		height: 90px;
+		height: 90;
 	};
 }
 
@@ -434,11 +423,11 @@ body {
 }
 .featured h2,
 .module-grid h2 {
-	margin-top: 1em;
+	margin-top: em(22px, 36px);
 	color: #5d6d74;
-	font: 300 2em/1em $proxima; // 36/14
+	font: 300 2.5714285714em/1.4em $proxima; // 36/14
 	text-align: center;
-	//text-shadow: 0 1px 1px #fff;
+	text-shadow: 0 1px 1px #fff;
 
 	@include breakpoint(desktop){
 		font-size: 30px;
@@ -624,11 +613,10 @@ body {
 
 	h2 {
 		// Font size is 36
-		margin: 1em 0; // em(45px, 36px) 0 em(25px, 36px)
+		margin: em(45px, 36px) 0 em(25px, 36px);
 
 		@include breakpoint(large-phone){
-			padding-top: 16px;
-			margin-top: 0;
+			margin-top: 16px;
 			font-size: 25px;
 		};
 	}
@@ -730,6 +718,7 @@ body {
 	@extend .features; // Clearfix and margin
 }
 .module {
+	cursor: pointer;
 	display: block;
 	padding: em(10px) em(15px) em(14px);
 	text-align: left;
@@ -746,7 +735,6 @@ body {
 		display: none;
 	}
 	h3 {
-		cursor: pointer;
 		margin: 0 0 em(7px);
 		color: #1a8dba;
 		font-size: em(16px);
@@ -974,9 +962,6 @@ body {
 			font-size: 26px;
 		};
 	}
-	h5 {
-		clear: left;
-	}
 	p {
 		font-size: em(16px, 13px);
 	}
@@ -1108,7 +1093,7 @@ body {
 	position: relative;
 	padding: em(140px) 0 em(60px);
 	text-align: center;
-	//@include gradient--vertical(lighten($green, 5%), $green);
+	@include gradient--vertical(lighten($green, 5%), $green);
 
 	&:before,
 	&:after {
@@ -1122,7 +1107,7 @@ body {
 		margin-top: -1px; // Removes subpixel gap on retina landscape
 		width: 100%;
 		height: 195px;
-		//background: url('../images/the-undercloud.svg') center top repeat-x;
+		background: url('../images/the-undercloud.svg') center top repeat-x;
 	}
 	&:after {
 		bottom: 0;
@@ -1166,17 +1151,16 @@ body {
 }
 .footer nav {
 	max-width: 100%;
-	// color: #c8e3a2;
+	color: #c8e3a2;
 
 	a,
 	a:visited {
 		padding: 4px 6px;
-		//color: #c8e3a2;
-		color: #999;
+		color: #c8e3a2;
 
 		&:hover,
 		&:focus {
-			color: #81A844;
+			color: #fff;
 		}
 	}
 	@include breakpoint(large-desktop){
@@ -1207,7 +1191,7 @@ body {
 }
 .primary {
 	padding: 25px 15px 10px 15px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #6c954d;
 }
 .secondary-footer {
 	margin: 0 auto;
@@ -1226,14 +1210,13 @@ body {
 		font-weight: 400;
 
 		a {
-			border-top: 1px solid #eee;
+			border-top: 1px solid darken($green, 2%);
 		}
 	};
 }
 .footer .a8c-attribution {
-	margin: 0;
+	margin-top: 6px auto 0;
 	padding: 0 6px;
-	color: #bbb;
 	font-size: em(11px);
 	font-family: $gill;
 	text-transform: uppercase;
@@ -1254,7 +1237,7 @@ body {
 			top: 2px;
 			right: -9999px;
 			height: 100%;
-			color: #999;
+			color: #fff;
 			font-size: em(17px, 11px);
 			font-family: $automatticons;
 			text-align: center;
@@ -1265,13 +1248,13 @@ body {
 			}
 		}
 	}
-	/*@include breakpoint(large-desktop){
+	@include breakpoint(large-desktop){
 		display: none;
-	};*/
+	};
 }
 .secondary {
-	padding: 10px 15px 0 15px;
-	//border-top: 1px solid #8eb345;
+	padding: 14px 15px 0 15px;
+	border-top: 1px solid #8eb345;
 }
 
 
@@ -1362,10 +1345,6 @@ body {
 	}
 }
 
-.configure-module .jetpack-message {
-	max-width:100%;
-}
-
 // ==========================================================================
 // Icons
 // ==========================================================================
@@ -1451,10 +1430,6 @@ body {
 .jetpack-modules #minileven .info a:before {
 	content: '\f453';
 }
-.manage:before,
-.jetpack-modules #manage .info a:before {
-  content: '\f205';
-}
 .monitor:before,
 .jetpack-modules #monitor .info a:before {
 	content: '\f468';
@@ -1474,12 +1449,6 @@ body {
 .post-by-email:before,
 .jetpack-modules #post-by-email .info a:before {
 	content: '\f410';
-}
-.protect:before,
-.jetpack-modules #protect .info a:before {
-	content: '\f470';
-	position: relative;
-	top: -1px;
 }
 .modules h3.publicize:before,
 .jetpack-modules #publicize .info a:before {
@@ -1519,7 +1488,6 @@ body {
 	content: 'V';
 	font-family: $automatticons;
 }
-
 .videopress:before,
 .jetpack-modules #videopress .info a:before {
 	content: '\f104';
@@ -1563,14 +1531,6 @@ body {
 	}
 };
 
-
-@include breakpoint(phablet){
-	// clouds are nice, but occupy too much vert space on mobile
-	.clouds-sm {
-		display: none;
-	}
-};
-
 @include breakpoint(large-phone){
 	.wrap.inner.jp-support { // Used anywhere?
 		.jp-support-column-left {
@@ -1586,32 +1546,3 @@ body {
 		}
 	}
 };
-
-// ==========================================================================
-// Custom Breakpoints
-// ==========================================================================
-
-@media screen and (max-width: 400px) {
-	.jp-frame {
-		.header-nav {
-			padding-bottom: 10px;
-
-			li {
-				line-height: 30px;
-			}
-			.jetpack-logo {
-				width: 100%;
-				text-align: center;
-			}
-			.jetpack-modules {
-				margin: 0;
-				width: 50%;
-				text-align: right;
-				padding: 0 5px;
-			}
-			.jetpack-modules + .jetpack-modules {
-				text-align: left;
-			}
-		}
-	}
-} // max 400px

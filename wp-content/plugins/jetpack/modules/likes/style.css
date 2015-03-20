@@ -68,11 +68,12 @@ div.jetpack-likes-widget-wrapper.slim-likes-widget {
 #likes-other-gravatars {
 	display: none;
 	position: absolute;
-	padding: 10px 10px 12px 10px;
-	background-color: #2e4453;
+	padding: 10px;
+	background-color: #000;
 	border-width: 0;
-	box-shadow: 0 0 10px #2e4453;
-	box-shadow: 0 0 10px rgba(46,68,83,.6);
+	opacity: 0.88;
+	filter: alpha(opacity=88);
+	box-shadow: 0 0 10px black;
 	min-width: 130px;
 	z-index: 1000;
 }
@@ -83,8 +84,8 @@ div.jetpack-likes-widget-wrapper.slim-likes-widget {
 
 #likes-other-gravatars .likes-text {
 	color: white;
-	font-size: 12px;
-	padding-bottom: 8px;
+	font-size: 14px;
+	padding-bottom: 5px;
 }
 
 #likes-other-gravatars ul,
@@ -102,6 +103,7 @@ div.jetpack-likes-widget-wrapper.slim-likes-widget {
 #likes-other-gravatars ul.wpl-avatars {
 	overflow: auto;
 	display: block;
+	position: absolute;
 	max-height: 190px;
 }
 

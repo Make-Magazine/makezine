@@ -19,8 +19,7 @@ class Jetpack_Settings_Page extends Jetpack_Admin_Page {
 		$list_table = new Jetpack_Modules_List_Table;
 		?>
 		<div class="clouds-sm"></div>
-		<?php /** This action is documented in class.jetpack.php */
-		do_action( 'jetpack_notices' ) ?>
+		<?php do_action( 'jetpack_notices' ) ?>
 		<div class="page-content configure">
 			<div class="frame top hide-if-no-js">
 				<div class="wrap">
@@ -85,3 +84,4 @@ class Jetpack_Settings_Page extends Jetpack_Admin_Page {
 		wp_enqueue_script( 'jetpack-admin-js', plugins_url( '_inc/jetpack-admin.js', JETPACK__PLUGIN_FILE ), array( 'jquery' ), JETPACK__VERSION . '-20121111' );
 	}
 }
+?>
