@@ -125,6 +125,16 @@
 		<!-- Le javascript -->
 		<script>jQuery(".entry-content:odd").addClass('odd');</script>
 
+		<script type='text/javascript'>
+		    jQuery(window).scroll(function() {
+		        if (jQuery(document).scrollTop() > 500) {
+		            jQuery('.ssbp-wrap').show();
+		        } else {
+		            jQuery('.ssbp-wrap').hide();
+		        }
+		    });
+		</script>
+
 		<script type="text/javascript">
 		jQuery(document).ready(function(){
 			jQuery(".scroll").click(function(event){
