@@ -124,17 +124,6 @@
 
 		<!-- Le javascript -->
 		<script>jQuery(".entry-content:odd").addClass('odd');</script>
-
-		// <script type='text/javascript'>
-		//     jQuery(window).scroll(function() {
-		//         if (jQuery(document).scrollTop() > 500) {
-		//             jQuery('.ssbp-wrap').show();
-		//         } else {
-		//             jQuery('.ssbp-wrap').hide();
-		//         }
-		//     });
-		// </script> 
-
 		<script type="text/javascript">
 		jQuery(document).ready(function(){
 			jQuery(".scroll").click(function(event){
@@ -158,9 +147,6 @@
 		</script>
 
 		<?php wp_footer(); ?>
-		<?php if ( make_get_cap_option( 'survey_monkey_script' ) == true ) : ?>
-			<script src="https://www.surveymonkey.com/jsPop.aspx?sm=t5CAEJmb8Kj1m5yXEHUTOg_3d_3d"> </script>
-		<?php endif; ?>
 
 		<!-- AddRoll Retargeting Pixel -->
 		<script type="text/javascript">
