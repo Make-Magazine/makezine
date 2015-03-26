@@ -158,9 +158,6 @@
 		</script>
 
 		<?php wp_footer(); ?>
-		<?php if ( make_get_cap_option( 'survey_monkey_script' ) == true ) : ?>
-			<script src="https://www.surveymonkey.com/jsPop.aspx?sm=t5CAEJmb8Kj1m5yXEHUTOg_3d_3d"> </script>
-		<?php endif; ?>
 
 		<!-- AddRoll Retargeting Pixel -->
 		<script type="text/javascript">
