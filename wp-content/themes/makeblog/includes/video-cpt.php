@@ -146,13 +146,6 @@ function make_magazine_video_toc() {
 
 }
 
-
-add_action('add_meta_boxes', 'make_video_add_meta_box');
-
-function make_video_add_meta_box() { 
-	add_meta_box('volume-parent', 'Magazine Volume', 'make_magazine_parent_page', 'video', 'side', 'high');
-}
-
 add_action( 'admin_menu', 'make_video_remove_parent_meta_box' );
 
 function make_video_remove_parent_meta_box() { 

@@ -155,16 +155,6 @@ function make_magazine_projects_toc() {
 
 }
 
-add_action('add_meta_boxes', 'make_projects_add_meta_box');
-
-/**
- * Add the parent selector to assign to a project to a volume.
- *
- */
-function make_projects_add_meta_box() {
-	add_meta_box('volume-parent', 'Magazine Volume', 'make_magazine_parent_page', 'projects', 'side', 'high');
-}
-
 add_action( 'admin_menu', 'make_projects_remove_parent_meta_box' );
 
 /**

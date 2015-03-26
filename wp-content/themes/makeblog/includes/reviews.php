@@ -631,12 +631,6 @@ $field_data = array (
 // 	}
 // }
 
-add_action('add_meta_boxes', 'make_review_add_meta_box');
-
-function make_review_add_meta_box() { 
-	add_meta_box('volume-parent', 'Magazine Volume', 'make_magazine_parent_page', 'review', 'side', 'high');
-}
-
 add_action( 'admin_menu', 'make_review_remove_parent_meta_box' );
 
 function make_review_remove_parent_meta_box() { 
