@@ -124,6 +124,10 @@
 
 		<!-- Le javascript -->
 		<script>jQuery(".entry-content:odd").addClass('odd');</script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 8b2e674... Social share script and styles
 		<script type="text/javascript">
 		jQuery(document).ready(function(){
 			jQuery(".scroll").click(function(event){
