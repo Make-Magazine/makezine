@@ -74,12 +74,6 @@
 			 'page': location.pathname + location.search  + location.hash
 			  });
 		</script>
-		
-		<?php if ( is_404() ) : // Load this last. ?>
-			 <script>
-			ga('send', 'event', '404', document.location.pathname + document.location.search, document.referrer);
-			</script>
-		<?php endif; ?>
 
 		<!-- Google Tag Manager  Maker Shed-->
 		<noscript>
@@ -93,7 +87,7 @@
 			})(window,document,'script','dataLayer','GTM-WR8NLB');
 		</script>
 		<!-- End Google Tag Manager -->
-		
+
 		<!-- Google Tag Manager -->
 			<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77"
 			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -103,6 +97,12 @@
 			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','GTM-PC5R77');</script>
 		<!-- End Google Tag Manager  -->
+
+		<?php if ( is_404() ) : // Load this last. ?>
+			 <script>
+				ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
+			</script>
+		<?php endif; ?>
 
 		<?php if ( is_front_page() || is_home() ) : ?>
 
