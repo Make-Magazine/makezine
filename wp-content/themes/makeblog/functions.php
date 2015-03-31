@@ -223,3 +223,13 @@ function dfp_target_save_post($page_id, $page) {
       update_post_meta($page_id, '_adslot_targeting_ids', sanitize_text_field($_POST['adslot_targeting_ids']));
     }
 }
+
+function add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'contributor' );
+
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    $role->add_cap( 'upload_files' ); 
+}
+add_action( 'contributor_init', 'add_theme_caps');
