@@ -122,24 +122,37 @@
 			<div class="main-header">
 				<div class="container">
 					<div class="row">
-						<div class="logo span2">
+						<div class="span5 logo">
     						<?php if ( is_front_page() || is_home() ) : ?>
-								<h1 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png"  alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h1>
+								<h1 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-hdr-logo.png"  width="200" alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h1>
 							<?php else : ?>
-								<h2 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png"  alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h2>
+								<h2 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-hdr-logo.png"  width="200" alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h2>
 							<?php endif; ?>
 						</div>
-						<nav role="navigation" class="span7 site-navigation primary-navigation hidden-print">
-						</nav>
-						<div class="additional-content hidden-print">
-							<form action="<?php echo home_url(); ?>" class="search-make open">
-								<input type="text" class="search-field" name="s" placeholder="Search" />
-								<input type="submit" class="open submit" value="" />
-							</form>
-							<div class="clearfix"></div>
-							<div class="hdr-sub-ad-01" >
-								<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-mag-sub-44.jpg"  alt="Subscribe to Make Magazine Today!" /></a>
+
+						<div class="span4 hdr-sub-ad-01" >
+							<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-cover-vol44.jpg" width="85" alt="Subscribe to Make Magazine Today!" /></a>
+						<p>
+							<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <br />
+							Get a risk-free issue<br />
+							iPad Subscription</a>
+						</p>
+						</div>
+						<div class="span3 pull-right">
+							<div class="social-hdr-area">
+								<a href="//facebook.com/makemagazine"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/facebook-icon-hdr.png"  width="50" alt="Make on Facebook" /></a>
+								<a href="//twitter.com/make"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/twitter-icon-hdr.png"  width="50" alt="Make on Twitter" /></a>
+								<a href="//plus.google.com/+MAKE/posts"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/google-icon-hdr.png"  width="50" alt="Make on Google Plus" /></a>
+								<a href="//pinterest.com/makemagazine/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/pintrest-icon-hdr.png"  width="50" alt="Make on Pintrest" /></a>
 							</div>
+							<div class="additional-content hidden-print">
+								<form action="<?php echo home_url(); ?>" class="search-make open">
+									<input type="text" class="search-field" name="s" placeholder="Search" />
+									<input type="submit" class="open submit" value="" />
+								</form>
+								<div class="clearfix"></div>
+							</div>
+
 						</div>
 					</div>
 				</div>
