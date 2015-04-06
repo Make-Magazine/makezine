@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?php echo make_generate_title_tag(); ?></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="twitter:widgets:csp" content="on">
 		<meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
 		<meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
@@ -131,16 +130,18 @@
 							<?php endif; ?>
 						</div>
 
-						<div class="span4 hdr-sub-ad-01" >
-							<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-cover-vol44.jpg" width="85" alt="Subscribe to Make Magazine Today!" /></a>
-						<p>
-							<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <br />
-							Get a risk-free issue<br />
-							iPad Subscription</a>
-						</p>
+						<div class="span4" >
+							<div class="hdr-sub-ad-01 pull-right">
+								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-cover-vol44.jpg" width="85" alt="Subscribe to Make Magazine Today!" /></a>
+								<p>
+									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <br />
+									Get a risk-free issue<br />
+									iPad Subscription</a>
+								</p>
+							</div>
 						</div>
 						<div class="span3 pull-right">
-							<div class="social-hdr-area">
+							<div class="social-hdr-area pull-right">
 								<a href="//facebook.com/makemagazine"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/facebook-icon-hdr.png"  width="50" alt="Make on Facebook" /></a>
 								<a href="//twitter.com/make"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/twitter-icon-hdr.png"  width="50" alt="Make on Twitter" /></a>
 								<a href="//plus.google.com/+MAKE/posts"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/google-icon-hdr.png"  width="50" alt="Make on Google Plus" /></a>
