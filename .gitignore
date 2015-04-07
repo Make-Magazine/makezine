@@ -93,3 +93,4 @@ debug.log
 *.tar
 *.tgz
 *.gz
+config.codekit

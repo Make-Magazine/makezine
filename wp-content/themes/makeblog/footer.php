@@ -31,95 +31,91 @@
 		<section id="footer" class="new-footer">
 			<div class="container">
 				<div class="row">
-					<div class="span12 logo" >
+					<div class="span3 social-foot-col" >
 						<img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo">
+						<ul class="unstyled">
+							<li><a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB" target="_blank">Subscribe to Make:</a></li>
+							<li><a href="/projects">Make: Projects</a></li>
+							<li><a href="/weekendprojects">Weekend Projects</a></li>
+							<li><a href="/blog">Make: News</a></li>
+							<li><a href="/category/maker-pro">Maker Pro News</a></li>
+						</ul>
 					</div>
-					<div class="clear"></div>
-				<!-- END row -->
-				</div>
-				<div class="row">
-					<div class="span3 trending">
-						<h5>Trending</h5>
-						<?php echo wp_kses_post( stripslashes( make_get_cap_option( 'hot_topics' ) ) ); ?>
-					<!-- END span trending -->
-					</div>
-					<div class="span4 newsletter">
-						<h5>Get our Newsletters</h5>
-						<form action="http://makermedia.createsend.com/t/r/s/jrsydu/" method="post" id="subForm">
-							<fieldset>
-								<div class="control-group">
-								<label class="control-label" for="optionsCheckbox">Sign up to receive exclusive content and offers.</label>
-									<div class="controls">
-										<label for="MAKENewsletter">
-										<input type="checkbox" name="cm-ol-jjuylk" id="MAKENewsletter" /> Make: News
-										</label>
-										<label for="MarketWireNewsletter">
-										<input type="checkbox" name="cm-ol-jrsydu" id="MAKEMarketWirenewsletter" /> Maker Pro 
-										</label>
-										<label for="MakerFaireNewsletter">
-										<input type="checkbox" name="cm-ol-jjuruj" id="MakerFaireNewsletter" /> Maker Faire 
-										</label>
-										<label for="MakerShed-MasterList">
-										<input type="checkbox" name="cm-ol-tyvyh" id="MakerShed-MasterList" /> Maker Shed
-										</label>
-		
-									<!-- END controls -->
-									</div>
-								<!-- control-group -->
-								</div>
-								<div class="input-append control-group email-area">
-									<input class="span2" id="appendedInputButton" name="cm-jrsydu-jrsydu" id="jrsydu-jrsydu" type="text" placeholder="Enter your email">
-									<button type="submit" class="btn" value="Subscribe" onclick="ga('send', 'event', 'Newsletter Sub', 'Join', jQuery('[name|=cm]').serialize().replace(/&/g, ' ') );">JOIN</button>
-								<!-- control-group email-area -->
-								</div>
-							</fieldset>
-						</form>
-					<!-- END span newsletter -->
-					</div>
-					<div class="span5 about-us">
-						<h5>About Maker Media</h5>
-						<div class="about-column-01">
-							<ul>
-								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
-								<li><a href="//makermedia.com/work-with-us/advertising/" target="_blank">Advertise with Us</a></li>
-								<li><a href="//makermedia.com/work-with-us/job-openings/" target="_blank">Careers</a></li>
-							</ul>
-							
-						<div class="clearfix"></div>
-							<h5  class="follow">Follow Make:</h5>
-						<div class="soc_icons">
-							<a class="sprite sprite-twitter"  href="http://twitter.com/make" title="Twitter" target="_blank"></a>
-							<a class="sprite sprite-youtube" href="http://youtube.com/make" title="Youtube" target="_blank"></a>
-							<a class="sprite sprite-pinterest" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank"></a>
-							<a class="sprite sprite-facebook" href="http://facebook.com/makemagazine" title="Facebook" target="_blank"></a>
-							<a class="sprite sprite-google-plus" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank"></a>
-						<!-- END socialArea -->
-						</div>
-						<!-- END span about-column-01 --></div>
-						<div class="about-column-02">
-							<ul>
-								<li><a href="https://help.makermedia.com" target="_blank">Help</a></li>
-								<li><a href="//makermedia.com/privacy/" target="_blank">Privacy</a></li>
-								<li><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
-							</ul>
-							
-							<h5>
-								<a href="<?php echo esc_url( home_url( '/contribute/' ) ); ?>">Show Us Your Project</a>
-							</h5>
-							
-						<!-- END span about-column-02 -->
-						</div>
-	
-					<!-- END span3 about-us -->
-					</div>
-				<!-- END MAIN row (main) -->
-				</div>
-				<?php echo make_copyright_footer(); ?>
-			<!-- END container -->
-			</div>
-		<!-- END new-footer -->
-		</section>
 
+					<div class="span3 social-foot-col" >
+						<h4>Explore Making</h4>
+						<ul class="unstyled">
+							<li><a href="/blog">Make: News</a></li>
+							<li><a href="//makerfaire.com/" target="_blank">Maker Faire</a></li>
+							<li><a href="//www.makershed.com/" target="_blank">Maker Shed</a></li>
+							<li><a href="//makercon.com/" target="_blank">Maker Con</a></li>
+							<li><a href="//makercamp.com/" target="_blank">Maker Camp</a></li>
+						</ul>
+					</div>
+
+					<div class="span3 social-foot-col">
+						<h4>Our Company</h4>
+						<ul class="unstyled">
+							<li><a href="//makermedia.com" target="_blank">About Us</a></li>
+							<li><a href="//makermedia.com/work-with-us/advertising/" target="_blank">Advertise with Us</a></li>
+							<li><a href="//makermedia.com/work-with-us/job-openings/" target="_blank">Careers</a></li>
+							<li><a href="//help.makermedia.com/hc/en-us" target="_blank">Help</a></li>
+							<li><a href="//makermedia.com/privacy/" target="_blank">Privacy</a></li>
+						</ul>
+					</div>
+
+					<div class="span3 social-foot-col">
+						<h4 class="stay-connected">Stay Connected</h4>
+						<div class="social-profile-icons">
+							<a class="sprite-facebook-32" href="http://facebook.com/makemagazine" title="Facebook" target="_blank">
+								<div class="social-profile-cont">	
+									<span class="sprite"></span>
+								</div>
+							</a>
+							<a class="sprite-twitter-32" href="http://twitter.com/make" title="Twitter" target="_blank">
+								<div class="social-profile-cont">	
+									<span class="sprite"></span>
+								</div>
+							</a>
+							<a class="sprite-pinterest-32" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank">
+								<div class="social-profile-cont">	
+									<span class="sprite"></span>
+								</div>
+							</a>
+							<a class="sprite-googleplus-32" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
+								<div class="social-profile-cont">	
+									<span class="sprite"></span>
+								</div>
+							</a>
+						</div>
+						<?php
+							$isSecure = "http://";
+							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+								$isSecure = "https://";
+							}
+						?>
+			    	    <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+							<input type="hidden" name="cmd" value="subscribe" />
+							<input type="hidden" name="custom_source" value="footer" /> 
+							<input type="hidden" name="custom_incentive" value="none" /> 
+							<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+							<input type="hidden" id="format_mime" name="format" value="mime" />
+							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+							<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+							<input type="hidden" name="errors_to" value="" />
+							<div>
+								<input name="email" placeholder="Enter your Email" required="required" type="text"><br>
+								<input value="Sign Up for our Newsletter" class="btn-cyan" type="submit">
+							</div>
+					    </form>
+
+					</div>
+
+				</div><!-- END row -->	
+			</div><!-- END container -->
+			<?php echo make_copyright_footer(); ?>
+		</section><!-- END new-footer -->
 	</div> <!-- /container -->
 
 		<!-- Le javascript -->
