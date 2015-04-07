@@ -9161,7 +9161,7 @@ ul#tabs .current > a:hover {
   background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
   bottom: 10px;
-  width: 290px;
+  width: 100%;
   margin-bottom: 1px;
 }
 .waist .checkers .paddme.small:last-child {

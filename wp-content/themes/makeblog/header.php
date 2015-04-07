@@ -165,7 +165,7 @@
 						<nav class="span12 site-navigation secondary-navigation">
 							<ul id="menu-make-secondary-nav" class="nav navbar-nav ga-nav clearfix">
 								<li class="mega-box dropdown"><a href="#" class="dropdown-toggle">Projects</a>
-									<ul class="sub-menu dropdown-menu container dropdown" style="width:970px;">
+									<ul class="sub-menu dropdown-menu container dropdown">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/?path=FromNav' ) ); ?>">Electronics</a></li>
@@ -223,7 +223,7 @@
 												<li><a href="<?php echo esc_url( home_url( '/category/art-design/photography-video/?post_type=projects&amp;path=FromNav' ) ); ?>">Photography &amp; Video</a></li>
 											</ul>
 										</div>
-										<div class="span12 pull-right mega-nav-footer" style="width:970px;">
+										<div class="span12 pull-right mega-nav-footer">
 											<a href="<?php echo esc_url( home_url( '/projects/?path=FromNav' ) ); ?>">All Projects</a>
 											<a href="//pubads.g.doubleclick.net/gampad/clk?id=112551178&iu=/11548178/Makezine&amp;path=FromNav">Weekend Projects</a>
 										</div>
@@ -231,7 +231,7 @@
 									</ul>
 								</li>
 								<li id="nav-news" class="mega-box menu-item dropdown"><a href="#" class="dropdown-toggle">News</a>
-									<ul class="sub-menu dropdown-menu" style="width:970px;margin-left:-89px;">
+									<ul class="span12 sub-menu dropdown-menu" style="margin-left:-92px;">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/blog/?path=FromNav' ) ); ?>">All News</a></li>
