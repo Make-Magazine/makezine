@@ -10030,8 +10030,8 @@ li#nav-news ul.sub-menu:after {
 }
 @media screen and (min-width: 450px) and (max-width: 767px) {
   .social-foot-col {
-    width: 50%;
-    float: left;
+    width: 50% !important;
+    float: left !important;
   }
 }
 .page-template-page-weekend-projects-two-col-php .grey {

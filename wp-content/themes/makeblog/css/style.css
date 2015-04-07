@@ -8810,7 +8810,7 @@ textarea.narrow,
 .social-profile-icons a .social-profile-cont {
   background-position: center;
   display: inline-block;
-  width: 33px;
+  width: 32px;
 }
 .social-profile-icons a.sprite-facebook-32 {
   background-color: #335A8E;
@@ -10975,7 +10975,7 @@ li#nav-news ul.sub-menu:after {
   padding-bottom: 10px;
 }
 .new-footer h4 {
-  color: 005D8F;
+  color: #005D8F;
   font-size: 22px;
   padding-top: 17px;
   margin-bottom: 8px;
@@ -10988,11 +10988,14 @@ li#nav-news ul.sub-menu:after {
   margin-bottom: 20px;
 }
 .new-footer form input[name=email] {
-  padding: 15px 8px;
+  padding: 6px 8px;
   font-size: 15px;
   line-height: 1em;
   border: 2px solid #cccccc;
   width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .new-footer .btn-cyan {
   padding: 10px 8px;
@@ -11008,8 +11011,8 @@ li#nav-news ul.sub-menu:after {
 }
 @media screen and (min-width: 450px) and (max-width: 767px) {
   .social-foot-col {
-    width: 50%;
-    float: left;
+    width: 50% !important;
+    float: left !important;
   }
 }
 .page-template-page-weekend-projects-two-col-php .grey {
