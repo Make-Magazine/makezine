@@ -52,7 +52,7 @@
 							<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
 						</ul>
 					</div>
-
+					<div class="clearfix visible-phone"></div>
 					<div class="span3 social-foot-col">
 						<h4>Our Company</h4>
 						<ul class="unstyled">

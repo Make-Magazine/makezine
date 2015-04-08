@@ -354,4 +354,4 @@ Template Name: Craft Home Page
 
 		<div class="clear"></div>
 
-		<?php get_footer('craft'); ?>
+		<?php get_footer(); ?>
