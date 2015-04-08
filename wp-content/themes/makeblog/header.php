@@ -122,7 +122,7 @@
 			<div class="main-header">
 				<div class="container">
 					<div class="row">
-						<div class="span5 logo">
+						<div class="span6 hdr-col-area logo">
     						<?php if ( is_front_page() || is_home() ) : ?>
 								<h1 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-hdr-logo.png"  width="200" alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h1>
 							<?php else : ?>
@@ -130,22 +130,34 @@
 							<?php endif; ?>
 						</div>
 
-						<div class="span4" >
-							<div class="hdr-sub-ad-01 pull-right">
+						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
 								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-cover-vol44.jpg" width="85" alt="Subscribe to Make Magazine Today!" /></a>
 								<p>
-									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <br />
-									Get a risk-free issue<br />
-									iPad Subscription</a>
+									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <br />Get a risk-free issue<br />iPad Subscription</a>
 								</p>
-							</div>
 						</div>
-						<div class="span3 pull-right">
-							<div class="social-hdr-area pull-right">
-								<a href="//facebook.com/makemagazine"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/facebook-icon-hdr.png"  width="50" alt="Make on Facebook" /></a>
-								<a href="//twitter.com/make"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/twitter-icon-hdr.png"  width="50" alt="Make on Twitter" /></a>
-								<a href="//plus.google.com/+MAKE/posts"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/google-icon-hdr.png"  width="50" alt="Make on Google Plus" /></a>
-								<a href="//pinterest.com/makemagazine/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/pintrest-icon-hdr.png"  width="50" alt="Make on Pintrest" /></a>
+						<div class="span3 hdr-col-area social-hdr-area">
+							<div class="social-profile-icons">
+								<a class="sprite-facebook-32" href="http://facebook.com/makemagazine" title="Facebook" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-twitter-32" href="http://twitter.com/make" title="Twitter" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-pinterest-32" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-googleplus-32" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
 							</div>
 							<div class="additional-content hidden-print">
 								<form action="<?php echo home_url(); ?>" class="search-make open">

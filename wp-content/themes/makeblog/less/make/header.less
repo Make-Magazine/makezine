@@ -24,7 +24,7 @@
 
 // Wrapper containing the main navigaiton
 .main-header {
-	padding:15px 0 0 10px;
+	padding:10px 0 0 10px;
 	border-bottom:@the-border solid #a4a4a4;
 	.row { position:relative; }
     	.logo {
@@ -35,11 +35,8 @@
 	.hdr-sub-ad-01 {
 		img {
 			float:left;
-			padding-right:5px;
 		}
 		p {
-			float:left;
-			padding-left:5px;
 			padding-top:10px;
 			margin-bottom:5px;
 			a:link,
@@ -52,16 +49,18 @@
 		}
 	}
 	.social-hdr-area {
-	  padding-top: 5px;
-	  margin-bottom: 7px;
-	  height: 34px;
-		img {
+		position:relative;
+			img {
 			float:left;
-			padding-left:5px;
 		}
 	}
+	 .social-profile-icons {
+	 padding-top:10px;
+	  height: 33px;
+	  margin-bottom:5px;
+	}
 	.additional-content {
-		.subscribe, .search-make, { .pull-left; }
+		.subscribe, .search-make
 		.subscribe {
 			> a {
 				margin-right:6px;
@@ -94,18 +93,24 @@
 			}
 		}
 		.search-make {
-			float:right;
-			margin:0;
+			margin-bottom:0px;
 			input[type="text"] {
-				width:176px;
-				height:25px;
-				border: none;
-				padding:5px 0 4px 8px;
+				padding: 15px 8px;
+				font-size: 15px;
+				line-height: 1em;
+				border: 2px solid #cccccc;
+				width: 100%;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
 				color:#777;
 				.box-shadow(0 0 0 transparent);
 				// &:focus { .box-shadow(0 0 0 transparent); }
 			}
 			input[type="submit"] {
+				position:absolute;
+				top: 55px;
+				right: 7px;
 				background:url( '../img/search-btn-gray.png' );
 				width:18px;
 				height:18px;
@@ -114,12 +119,12 @@
 				outline:none;
 			}
 			&.open {
-				border:@the-border solid #ccc;
-				.border-bottom-right-radius(0px);
-				.border-bottom-left-radius(0px);
+				// border:@the-border solid #ccc;
+				// .border-bottom-right-radius(0px);
+				// .border-bottom-left-radius(0px);
 				input[type="text"] {
-					padding:3px 0 3px 8px;
-					margin-bottom:0;
+					// padding:3px 0 3px 8px;
+					// margin-bottom:0;
 				}
 			}
 		}
@@ -132,6 +137,66 @@
 		top:95px;
 	}
 }
+
+// Responsive styles for header
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .hdr-col-area.logo {
+        width: 25% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 33% !important;
+        float: left !important;
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 33% !important;
+        float: left !important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .hdr-col-area.logo {
+        width: 100% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 50% !important;
+        float: left !important;
+    } 
+    .hdr-col-area.social-hdr-area {
+        width: 50% !important;
+        float: left !important;
+    }
+}
+
+@media screen and (max-width: 480px)  {
+    .hdr-col-area.logo {
+        width: 50% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        // width: 50% !important;
+        // float: left !important;
+        padding-top:20px;
+        img {
+        	width:55px;
+        	padding-left:5px;
+        }
+        p {
+        	padding-top:5px;
+        	a:link {
+        	font-size:1em !important;
+        	line-height: 1em !important;
+	        }
+        }
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 100% !important;
+        float: left !important;
+    }
+}
+
+
 .makershed-banner {
 	background:#de231a;
 }
