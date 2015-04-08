@@ -1516,11 +1516,10 @@ function make_is_parent_page() {
  * Adds footer copyright information
  */
 function make_copyright_footer() { ?>
-	<div class="row">
-		<div class="span12 footer_copyright text-center">
-			<p><a href="http://makezine.com/">Make:</a> and <a href="http://makerfaire.com/">Maker Faire</a> are registered trademarks of <a href="http://makermedia.com/">Maker Media, Inc.</a></p>
-			<p>Copyright &copy; 2004-<?php echo date("Y") ?> Maker Media, Inc.  All rights reserved</p>
-			<p><?php if ( function_exists('vip_powered_wpcom') ) { echo vip_powered_wpcom(4); } ?></p>
+	<div class="row footer_copyright">
+		<div class="text-center">
+			<p class="muted"><small>Make: and Maker Faire are registered trademarks of Maker Media, Inc.</small></p>
+			<p class="muted"><small>Copyright &copy; 2004-<?php echo date("Y") ?> Maker Media, Inc.  All rights reserved</small></p>
 		</div>
 	</div>
 <?php }
