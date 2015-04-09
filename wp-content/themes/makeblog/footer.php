@@ -158,10 +158,10 @@
 							</div>
 					    </form>
 					</div>
-					<div class="span12 accordion" id="accordion2">
+					<div class="span12 accordion" id="accordionF">
 					  <div class="accordion-group">
 					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseOne">
 					        <h3>Make:</h3>
 					      </a>
 					    </div>
@@ -179,7 +179,7 @@
 					  </div>
 					  <div class="accordion-group">
 					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseTwo">
 					        <h3>Explore Making</h3>
 					      </a>
 					    </div>
@@ -197,7 +197,7 @@
 					  </div>
 					  <div class="accordion-group">
 					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseThree">
 					        <h3>Our Company</h3>
 					      </a>
 					    </div>
@@ -208,7 +208,7 @@
 								<li><a href="//makermedia.com/work-with-us/advertising" target="_blank">Advertise with Us</a></li>
 								<li><a href="//makermedia.com/work-with-us/job-openings" target="_blank">Careers</a></li>
 								<li><a href="//help.makermedia.com/hc/en-us" target="_blank">Help</a></li>
-								<li><a href="//makermedia.com/privacy" target="_blank">Privact</a></li>
+								<li><a href="//makermedia.com/privacy" target="_blank">Privacy</a></li>
 							</ul>
 					      </div>
 					    </div>
