@@ -161,11 +161,11 @@
 					<div class="span12 accordion" id="accordionF">
 					  <div class="accordion-group">
 					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseOne">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseOneF">
 					        <h3>Make:</h3>
 					      </a>
 					    </div>
-					    <div id="collapseOne" class="accordion-body collapse">
+					    <div id="collapseOneF" class="accordion-body collapse">
 					      <div class="accordion-inner">
 					        <ul class="nav nav-pills nav-stacked">
 								<li><a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB" target="_blank">Subscribe to Make:</a></li>
@@ -179,11 +179,11 @@
 					  </div>
 					  <div class="accordion-group">
 					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseTwo">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseTwoF">
 					        <h3>Explore Making</h3>
 					      </a>
 					    </div>
-					    <div id="collapseTwo" class="accordion-body collapse">
+					    <div id="collapseTwoF" class="accordion-body collapse">
 					      <div class="accordion-inner">
 					        <ul class="nav nav-pills nav-stacked">
 								<li><a href="/blog">Make: News</a></li>
@@ -197,11 +197,11 @@
 					  </div>
 					  <div class="accordion-group">
 					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseThree">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseThreeF">
 					        <h3>Our Company</h3>
 					      </a>
 					    </div>
-					    <div id="collapseThree" class="accordion-body collapse">
+					    <div id="collapseThreeF" class="accordion-body collapse">
 					      <div class="accordion-inner">
 					        <ul class="nav nav-pills nav-stacked">
 								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
