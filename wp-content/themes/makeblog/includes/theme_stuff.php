@@ -297,6 +297,10 @@ function make_load_resources() {
 	wp_enqueue_script( 'fancybox', '//cdn.makezine.com/js/fancybox.js', array( 'make-optimizely' ) );
 	wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/css/fancybox.css' );
 
+	//fitvid
+	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );	
+
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/js/projects.js', array( 'jquery' ), false, true );
