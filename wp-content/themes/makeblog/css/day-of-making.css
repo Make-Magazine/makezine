@@ -9037,6 +9037,10 @@ ul#tabs .current > a:hover {
 .waist .checkers .span4 .span4:last-child .paddme.small {
   padding: 12px 10px 10px 0;
 }
+/** responsive styles for mobile **/
+div.row {
+  text-align: center;
+}
 .avatar-298 {
   margin-bottom: 20px;
   border: 1px solid #cecece;
