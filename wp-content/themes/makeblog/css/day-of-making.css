@@ -9038,14 +9038,13 @@ ul#tabs .current > a:hover {
   padding: 12px 10px 10px 0;
 }
 /** responsive styles **/
-div.row {
-  text-align: center;
-}
-#div-gpt-ad-664089004995786621-1 {
-  display: none;
-}
-#div-gpt-ad-664089004995786621-4 {
-  display: none;
+@media screen and (max-width: 767px) {
+  div.row {
+    text-align: center;
+  }
+  #div-gpt-ad-664089004995786621-1 {
+    display: none;
+  }
 }
 .avatar-298 {
   margin-bottom: 20px;
