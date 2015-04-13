@@ -9604,6 +9604,9 @@ li.share-email {
 }
 /** responsive styles **/
 @media screen and (max-width: 767px) {
+  body {
+    padding: 0 !important;
+  }
   div.row {
     text-align: center;
   }
