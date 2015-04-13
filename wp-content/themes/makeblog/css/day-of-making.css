@@ -9045,6 +9045,9 @@ ul#tabs .current > a:hover {
   .home-waist-banner {
     display: none;
   }
+  .new-dotw {
+    display: none;
+  }
 }
 .avatar-298 {
   margin-bottom: 20px;
