@@ -258,6 +258,7 @@ function make_load_resources() {
 	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
+	//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
