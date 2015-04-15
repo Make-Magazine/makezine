@@ -125,7 +125,7 @@
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 25px !important;
+    margin-left: 10px !important;
   }
   .container,
   .navbar-static-top .container,
