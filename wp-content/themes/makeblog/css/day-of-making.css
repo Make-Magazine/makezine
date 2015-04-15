@@ -6145,10 +6145,6 @@ article h4 a:hover {
   -webkit-box-shadow: 1px 1px 3px #999;
   box-shadow: 1px 1px 3px #999;
 }
-.grid-box h4 {
-  height: 37px;
-  overflow: hidden;
-}
 .grid-box.camp {
   background-image: url('../img/camp.png');
   height: 264px;
@@ -6202,6 +6198,10 @@ article h4 a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   height: 39px;
+}
+.grid-box.boxy h4 {
+  height: 37px;
+  overflow: hidden;
 }
 .small-home-feature-boxes,
 .attachment-small-home-feature-boxes {
