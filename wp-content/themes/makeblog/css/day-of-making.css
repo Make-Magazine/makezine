@@ -10109,6 +10109,13 @@ li#nav-news ul.sub-menu:after {
     background: none;
   }
 }
+@media (min-width: 1200px) {
+  .span4 {
+    float: left;
+    min-height: 1px;
+    margin-left: 30px;
+  }
+}
 .new-footer {
   padding: 20px 0;
   border-top: 20px solid #3FAFED;
