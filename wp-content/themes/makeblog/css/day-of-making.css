@@ -10110,7 +10110,7 @@ li#nav-news ul.sub-menu:after {
   }
 }
 @media screen and (min-width: 1200px) {
-  .span4 {
+  .home .span4 {
     float: left;
     min-height: 1px;
     margin-left: 25px !important;
