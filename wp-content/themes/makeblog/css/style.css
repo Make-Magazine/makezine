@@ -6122,8 +6122,8 @@ article h4 a:hover {
   height: 39px;
 }
 .grid-box.boxy h4 {
-  height: 37px;
-  overflow: hidden;
+  height: 37px !important;
+  overflow: hidden !important;
 }
 .small-home-feature-boxes,
 .attachment-small-home-feature-boxes {
