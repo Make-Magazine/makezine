@@ -10029,7 +10029,7 @@ li#nav-news ul.sub-menu:after {
     background: none;
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .span4 {
     float: left;
     min-height: 1px;
