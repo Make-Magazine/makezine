@@ -191,6 +191,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/takeover.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -2031,17 +2040,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/facebook-icon-hdr.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1168,
-		"inputAbbreviatedPath": "\/img\/facebook-icon-hdr.png",
-		"outputAbbreviatedPath": "\/img\/facebook-icon-hdr.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/facebook.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2152,17 +2150,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/google-icon-hdr.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1609,
-		"inputAbbreviatedPath": "\/img\/google-icon-hdr.png",
-		"outputAbbreviatedPath": "\/img\/google-icon-hdr.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/google-plus-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2236,17 +2223,6 @@
 		"initialSize": 9192,
 		"inputAbbreviatedPath": "\/img\/happy-birthday.png",
 		"outputAbbreviatedPath": "\/img\/happy-birthday.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/hdr-cover-vol44.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 29369,
-		"inputAbbreviatedPath": "\/img\/hdr-cover-vol44.jpg",
-		"outputAbbreviatedPath": "\/img\/hdr-cover-vol44.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2489,17 +2465,6 @@
 		"initialSize": 2641,
 		"inputAbbreviatedPath": "\/img\/make-160-footer.png",
 		"outputAbbreviatedPath": "\/img\/make-160-footer.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/make-hdr-logo.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 9791,
-		"inputAbbreviatedPath": "\/img\/make-hdr-logo.png",
-		"outputAbbreviatedPath": "\/img\/make-hdr-logo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3109,17 +3074,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/pintrest-icon-hdr.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1593,
-		"inputAbbreviatedPath": "\/img\/pintrest-icon-hdr.png",
-		"outputAbbreviatedPath": "\/img\/pintrest-icon-hdr.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/placeholder.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3351,17 +3305,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/search-btn-gray.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1372,
-		"inputAbbreviatedPath": "\/img\/search-btn-gray.png",
-		"outputAbbreviatedPath": "\/img\/search-btn-gray.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/search.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3512,17 +3455,6 @@
 		"initialSize": 12380,
 		"inputAbbreviatedPath": "\/img\/supercap.jpg",
 		"outputAbbreviatedPath": "\/img\/supercap.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/twitter-icon-hdr.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1412,
-		"inputAbbreviatedPath": "\/img\/twitter-icon-hdr.png",
-		"outputAbbreviatedPath": "\/img\/twitter-icon-hdr.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -8156,12 +8088,12 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "David Beauchamp",
+"lastSavedByUser": "Matt Abernathy",
 "manualImportLinks": {
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "makeblog-staging",
+	"displayValue": "production",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "pencil_yellow"
 	},

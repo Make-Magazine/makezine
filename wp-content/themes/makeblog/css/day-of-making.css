@@ -10070,6 +10070,45 @@ ul.sub-menu {
 li#nav-news ul.sub-menu:after {
   left: 110px !important;
 }
+/** responsive styles **/
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    width: auto !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+  div.row {
+    text-align: center;
+  }
+  .home-waist-banner {
+    display: none;
+  }
+  .new-dotw {
+    display: none;
+  }
+  #div-gpt-ad-664089004995786621-1 {
+    display: none;
+  }
+  .projects-home .art {
+    width: 340px;
+    background: none;
+  }
+  .span8 {
+    width: auto !important;
+  }
+  .featured .blurb {
+    float: left;
+    width: 200px;
+  }
+  .span4 {
+    max-width: 350px;
+    padding: 0 0 0 27px !important;
+  }
+  .posts {
+    background: none;
+  }
+}
 .new-footer {
   padding: 20px 0;
   border-top: 20px solid #3FAFED;
