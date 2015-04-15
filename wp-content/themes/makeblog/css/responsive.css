@@ -94,6 +94,7 @@
 }
 @media (min-width: 1200px) {
   .row {
+    margin-left: -30px;
     *zoom: 1;
   }
   .row:before,
@@ -108,7 +109,7 @@
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 25px; /** 30px originally **/
+    margin-left: 25px !important; /** 30px originally **/
   }
   .container,
   .navbar-static-top .container,
