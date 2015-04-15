@@ -106,7 +106,7 @@
   .row:after {
     clear: both;
   }
-  [class*="span"] {
+  .home_ads {
     float: left;
     min-height: 1px;
     margin-left: 25px !important; /** 30px originally **/
