@@ -20,7 +20,7 @@
 
 								<div class="row">
 
-									<div class="span4">
+									<div class="span4 home_ads">
 
 										<div class="paddme">
 
