@@ -132,9 +132,12 @@
 						</div>
 
 						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
-								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-cover-vol44.jpg" width="85" alt="Subscribe to Make Magazine Today!" /></a>
+								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
 								<p>
-									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <br />Get a risk-free issue<br />iPad Subscription</a>
+									
+									<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe Today!</a><br />
+									<span><a href="https://www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Order Make: as a Gift</a><br />
+									<a href="https://www.pubservice.com/subcustomerservice.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscription Help</a></span>
 								</p>
 						</div>
 						<div class="span3 hdr-col-area social-hdr-area">
