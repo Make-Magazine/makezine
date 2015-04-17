@@ -110,24 +110,51 @@
 			<div class="main-header">
 				<div class="container">
 					<div class="row">
-						<div class="logo span2">
+						<div class="span6 hdr-col-area logo">
     						<?php if ( is_front_page() || is_home() ) : ?>
-								<h1 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png"  alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h1>
+								<h1 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-hdr-logo.png"  width="200" alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h1>
 							<?php else : ?>
-								<h2 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png"  alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h2>
+								<h2 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-hdr-logo.png"  width="200" alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h2>
 							<?php endif; ?>
 						</div>
-						<nav role="navigation" class="span7 site-navigation primary-navigation hidden-print">
-						</nav>
-						<div class="additional-content hidden-print">
-							<form action="<?php echo home_url(); ?>" class="search-make open">
-								<input type="text" class="search-field" name="s" placeholder="Search" />
-								<input type="submit" class="open submit" value="" />
-							</form>
-							<div class="clearfix"></div>
-							<div class="hdr-sub-ad-01" >
-								<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-mag-sub-44.jpg"  alt="Subscribe to Make Magazine Today!" /></a>
+
+						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
+								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-cover-vol44.jpg" width="85" alt="Subscribe to Make Magazine Today!" /></a>
+								<p>
+									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Sign up today! <span><br />Get a risk-free issue<br />iPad Subscription</span></a>
+								</p>
+						</div>
+						<div class="span3 hdr-col-area social-hdr-area">
+							<div class="social-profile-icons">
+								<a class="sprite-facebook-32" href="http://facebook.com/makemagazine" title="Facebook" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-twitter-32" href="http://twitter.com/make" title="Twitter" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-pinterest-32" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-googleplus-32" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
+									<div class="social-profile-cont">	
+										<span class="sprite"></span>
+									</div>
+								</a>
 							</div>
+							<div class="additional-content hidden-print">
+								<form action="<?php echo home_url(); ?>" class="search-make open">
+									<input type="text" class="search-field" name="s" placeholder="Search" />
+									<input type="submit" class="open submit" value="" />
+								</form>
+								<div class="clearfix"></div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -138,7 +165,7 @@
 						<nav class="span12 site-navigation secondary-navigation">
 							<ul id="menu-make-secondary-nav" class="nav navbar-nav ga-nav clearfix">
 								<li class="mega-box dropdown"><a href="#" class="dropdown-toggle">Projects</a>
-									<ul class="sub-menu dropdown-menu container dropdown" style="width:970px;">
+									<ul class="sub-menu dropdown-menu container dropdown">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/?path=FromNav' ) ); ?>">Electronics</a></li>
@@ -196,7 +223,7 @@
 												<li><a href="<?php echo esc_url( home_url( '/category/art-design/photography-video/?post_type=projects&amp;path=FromNav' ) ); ?>">Photography &amp; Video</a></li>
 											</ul>
 										</div>
-										<div class="span12 pull-right mega-nav-footer" style="width:970px;">
+										<div class="span12 pull-right mega-nav-footer">
 											<a href="<?php echo esc_url( home_url( '/projects/?path=FromNav' ) ); ?>">All Projects</a>
 											<a href="//pubads.g.doubleclick.net/gampad/clk?id=112551178&iu=/11548178/Makezine&amp;path=FromNav">Weekend Projects</a>
 										</div>
@@ -204,7 +231,7 @@
 									</ul>
 								</li>
 								<li id="nav-news" class="mega-box menu-item dropdown"><a href="#" class="dropdown-toggle">News</a>
-									<ul class="sub-menu dropdown-menu" style="width:970px;margin-left:-89px;">
+									<ul class="span12 sub-menu dropdown-menu" style="margin-left:-92px;">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/blog/?path=FromNav' ) ); ?>">All News</a></li>
@@ -229,7 +256,7 @@
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/makers/?path=FromNav' ) ); ?>">Meet the Makers</a></li>
 											</ul>
 										</div>
-
+						
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Videos</a>
