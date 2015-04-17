@@ -135,7 +135,7 @@
 								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
 								<p>
 									
-									<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe Today!</a><br />
+									<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">SUBSCRIBE TODAY</a><br />
 									<span><a href="https://www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Order Make: as a Gift</a><br />
 									<a href="https://www.pubservice.com/subcustomerservice.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscription Help</a></span>
 								</p>
