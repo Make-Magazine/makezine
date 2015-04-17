@@ -256,9 +256,9 @@ add_filter( 'wp_feed_cache_transient_lifetime', function() { return 900; } );
  */
 function make_load_resources() {
 	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
+	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
@@ -297,15 +297,15 @@ function make_load_resources() {
 	wp_enqueue_script( 'fancybox', '//cdn.makezine.com/js/fancybox.js', array( 'make-optimizely' ) );
 	wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/css/fancybox.css' );
 
+	//fitvid
+	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );	
+
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/js/projects.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
-
-	//fitvid
-	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );	
 
 	// File Input
 	wp_enqueue_script( 'make-fileinput', get_stylesheet_directory_uri() . '/js/fileinput.js', array( 'jquery' ) );
@@ -401,7 +401,7 @@ function make_mf_remove_tag_from_home( $query ) {
 
 	// only impact the main WordPress query and if on homepage or feed
 	if( $query->is_main_query() && ( $query->is_home() || $query->is_feed() ) ) {
-		$query->set( 'tag__not_in', array( 5183, 4172, 9947 ) );
+		$query->set( 'tag__not_in', array( 5183, 22815, 9947 ) );
 	}
 }
 
@@ -1605,7 +1605,7 @@ function make_post_card( $args ) {
 
 	while ( $the_query->have_posts() ) : $the_query->the_post();
 		$output .= '<a href="' . esc_url( get_permalink() ) . '">';
-		// $output .= ( isset( $args[ 'weekend-projects'] ) ) ? '<img class="weekend-project-image" src="' . get_stylesheet_directory_uri() . '/img/WP02_Feature_banner_02.jpg" alt="Powered by RadioShack">' : '';
+		$output .= ( isset( $args[ 'weekend-projects'] ) ) ? '<img class="weekend-project-image" src="' . get_stylesheet_directory_uri() . '/img/WP02_Feature_banner_02.jpg" alt="Powered by RadioShack">' : '';
 		$output .= get_the_post_thumbnail( get_the_id(), 'small-home-feature-boxes' );
 		$title = get_post_meta( get_the_ID(), 'title_override', true );
 		$output .= ( ! empty( $title ) ) ? '<h4>' . make_trim_characters( esc_html( $title ), get_theme_mod( 'make_home_title_text' ) ) . '</h4>' : '<h4>' . make_trim_characters( get_the_title(), get_theme_mod( 'make_home_caption_taxt' ) ) . '</h4>';
