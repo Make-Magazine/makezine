@@ -24,20 +24,51 @@
 
 // Wrapper containing the main navigaiton
 .main-header {
-	padding:15px 0 10px;
-	border-top:@the-border solid @red;
-	border-bottom:@the-border solid #a4a4a4;
+	min-width:320px;
+	padding:10px 0 0 10px;
+	border-top: 2px solid #ed1c24;
+	border-bottom: 2px solid #a4a4a4;
+	.contaner {
+		width:auto !important;
+	}
 	.row { position:relative; }
-	.logo {margin-top:67px;}
-	.craft_logo {margin-top:60px;}
+    	.logo {
+	text-align:left;
+	margin-top:20px;
+	padding-bottom:10px;
+    	}
+	.craft_logo {margin-top:12px;}
 	.hdr-sub-ad-01 {
-		margin-top:11px;
+		img {
+			float:left;
+		}
+		p {
+			padding-top:10px;
+			margin-bottom:5px;
+			text-align:left;
+			padding-left:10px;
+			a:link,
+			a:visited{
+				
+				font-size: 15px;
+				line-height:23px;
+				color:#006699;
+			}
+		}
+	}
+	.social-hdr-area {
+		position:relative;
+			img {
+			float:left;
+		}
+	}
+	 .social-profile-icons {
+	 padding-top:10px;
+	  height: 33px;
+	  margin-bottom:5px;
 	}
 	.additional-content {
-		position:absolute;
-		top:-15px;
-		right:0;
-		.subscribe, .search-make, { .pull-left; }
+		.subscribe, .search-make
 		.subscribe {
 			> a {
 				margin-right:6px;
@@ -70,32 +101,38 @@
 			}
 		}
 		.search-make {
-			float:right;
-			margin:0;
+			margin-bottom:0px;
 			input[type="text"] {
-				width:165px;
-				border: none;
-				padding:5px 0 4px 8px;
+				padding: 15px 8px;
+				font-size: 15px;
+				line-height: 1em;
+				border: 2px solid #cccccc;
+				width: 100%;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
 				color:#777;
 				.box-shadow(0 0 0 transparent);
 				// &:focus { .box-shadow(0 0 0 transparent); }
 			}
 			input[type="submit"] {
-				background:url( '../images/search-btn.png' );
-				width:19px;
-				height:19px;
+				position:absolute;
+				top: 55px;
+				right: 7px;
+				background:url( '../img/search-btn-gray.png' );
+				width:18px;
+				height:18px;
 				border:none;
 				margin-right:5px;
 				outline:none;
 			}
 			&.open {
-				border:@the-border solid @red;
-				border-top:none;
-				.border-bottom-right-radius(5px);
-				.border-bottom-left-radius(5px);
+				// border:@the-border solid #ccc;
+				// .border-bottom-right-radius(0px);
+				// .border-bottom-left-radius(0px);
 				input[type="text"] {
-					padding:3px 0 3px 8px;
-					margin-bottom:0;
+					// padding:3px 0 3px 8px;
+					// margin-bottom:0;
 				}
 			}
 		}
@@ -107,14 +144,200 @@
 		font-size:19px;
 		top:95px;
 	}
+	
 }
+
+    .shed-promo-mobile {
+    	p {
+    		font-size:1em;
+    		color:#333;
+    		text-transform: uppercase;
+    		text-align:center;
+    		padding-bottom:5px;
+    		margin-bottom:0px;
+    	}
+    	.shed-promo-nav {
+	    	padding-top:10px;
+	    	padding-bottom:10px;
+	    	text-align:center;
+	    	background-color:#fdb92c;
+	    	color:#fff;
+	    	font-size:1.em;
+		    	a:link, a:visited {
+		    	color:#fff;
+		    	}
+	    	img {
+	    		line-height:1em;
+	    		padding-right:10px;
+	    	}
+	}
+    }
+
+// Responsive styles for header
+
+// @media (max-width: 479px) {
+// .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
+//   padding: 9px 15px;
+//   font-weight: bold;
+//   color: #777777;
+//   -webkit-border-radius: 3px;
+//   -moz-border-radius: 3px;
+//   border-radius: 3px;
+// }
+// }
+
+// @media (max-width: 479px) {
+// .nav-collapse .nav > li > a {
+//   margin-bottom: 2px;
+// }
+// }
+
+@media screen and (min-width: 1200px) {
+	
+    .hdr-col-area.logo {
+        width: 46% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 25% !important;
+        float: left !important;
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 25% !important;
+        float: left !important;
+    }
+    // .shed-promo-mobile  {
+    // 	display:none;
+    // }
+}
+
+@media screen and (min-width: 979px) and (max-width: 1199px){
+    .hdr-col-area.logo {
+        width: 43% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 25% !important;
+        float: left !important;
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 25% !important;
+        float: left !important;
+    }
+    // .shed-promo-mobile  {
+    // 	display:none;
+    // }
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .hdr-col-area.logo {
+        width: 42% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 25% !important;
+        float: left !important;
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 25% !important;
+        float: left !important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	
+	.main-header {
+.container {
+	width:auto !important;
+}
+}
+.home {
+	.main-header {
+.container {
+	width:auto !important;
+}
+	
+}
+}
+    .hdr-col-area.logo {
+        width: 42% !important;
+	   float: left !important;
+	img{
+	        padding-right:20px;
+
+	}
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 45% !important;
+        float: left !important;
+    } 
+    .hdr-col-area.social-hdr-area {
+        width: 95% !important;
+        float: left !important;    }
+}
+
+// .makershed-banner {
+// 	display:none;
+// }
+
+@media screen and (max-width: 480px)  {
+	.main-header {
+.container {
+	width:auto !important;
+}
+}
+.home {
+	.main-header {
+.container {
+	width:auto !important;
+}
+	
+}
+}
+    .hdr-col-area.logo {
+        width: 40% !important;
+        float: left !important;
+        	img{
+	        padding-right:20px;
+
+	}
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 48% !important;
+        float: left !important;
+        padding-top:10px;
+        img {
+        	width:55px;
+        	padding-right:8px;
+        	padding-left:20px;
+        }
+        p {
+        	padding-top:5px;
+        	a:link {
+        	font-size:1.2em !important;
+        	line-height: 1.2em !important;
+        	font-weight:bold;
+	        }
+	        span {
+	        	display:none;
+	        }
+        }
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 95% !important;
+        float: left !important;    }
+    .makershed-banner {
+    	display:none !important;
+    }
+
+}
+
 .makershed-banner {
 	background:#de231a;
 }
 
 // Wrapper containing the secondary navigation
 .secondary-header {
-	// background:@secondary-color;
+	background:@secondary-color;
 	// .box-shadow( inset 0 10px 18px -10px #a4a4a4 );
 }
 
