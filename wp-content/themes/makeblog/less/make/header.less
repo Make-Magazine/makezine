@@ -24,8 +24,10 @@
 
 // Wrapper containing the main navigaiton
 .main-header {
+	min-width:320px;
 	padding:10px 0 0 10px;
-	border-bottom:@the-border solid #a4a4a4;
+	border-top: 2px solid #ed1c24;
+	border-bottom: 2px solid #a4a4a4;
 	.row { position:relative; }
     	.logo {
 	margin-top:20px;
@@ -35,15 +37,19 @@
 	.hdr-sub-ad-01 {
 		img {
 			float:left;
+			padding-left:8px;
+			padding-right:8px;
 		}
 		p {
 			padding-top:10px;
 			margin-bottom:5px;
+			text-align:left;
+			padding-left:10px;
 			a:link,
 			a:visited{
 				
 				font-size: 15px;
-				line-height:23px;
+				line-height:26px;
 				color:#006699;
 			}
 		}
@@ -136,66 +142,171 @@
 		font-size:19px;
 		top:95px;
 	}
+	
 }
 
+    .shed-promo-mobile {
+    	p {
+    		font-size:1em;
+    		color:#333;
+    		text-transform: uppercase;
+    		text-align:center;
+    		padding-bottom:5px;
+    		margin-bottom:0px;
+    	}
+    	.shed-promo-nav {
+	    	padding-top:10px;
+	    	padding-bottom:10px;
+	    	text-align:center;
+	    	background-color:#fdb92c;
+	    	color:#fff;
+	    	font-size:1.em;
+		    	a:link, a:visited {
+		    	color:#fff;
+		    	}
+	    	img {
+	    		line-height:1em;
+	    		padding-right:10px;
+	    	}
+	}
+    }
+
 // Responsive styles for header
-@media screen and (min-width: 768px) and (max-width: 979px) {
+
+@media (max-width: 479px) {
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
+  padding: 9px 15px;
+  font-weight: bold;
+  color: #777777;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+}
+
+@media (max-width: 479px) {
+.nav-collapse .nav > li > a {
+  margin-bottom: 2px;
+}
+}
+
+@media screen and (min-width: 1200px) {
     .hdr-col-area.logo {
-        width: 25% !important;
+        width: 42% !important;
         float: left !important;
     }
      .hdr-col-area.hdr-sub-ad-01 {
-        width: 33% !important;
+        width: 25% !important;
         float: left !important;
     }
     .hdr-col-area.social-hdr-area {
+        width: 25% !important;
+        float: left !important;
+    }
+    // .shed-promo-mobile  {
+    // 	display:none;
+    // }
+}
+
+@media screen and (min-width: 979px) and (max-width: 1199px){
+    .hdr-col-area.logo {
+        width: 43% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 25% !important;
+        float: left !important;
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 25% !important;
+        float: left !important;
+    }
+    // .shed-promo-mobile  {
+    // 	display:none;
+    // }
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .hdr-col-area.logo {
         width: 33% !important;
+        float: left !important;
+    }
+     .hdr-col-area.hdr-sub-ad-01 {
+        width: 32% !important;
+        float: left !important;
+    }
+    .hdr-col-area.social-hdr-area {
+        width: 25% !important;
         float: left !important;
     }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
     .hdr-col-area.logo {
-        width: 100% !important;
-        float: left !important;
+        width: 42% !important;
+	   float: left !important;
+	img{
+	        padding-right:20px;
+
+	}
     }
      .hdr-col-area.hdr-sub-ad-01 {
         width: 50% !important;
         float: left !important;
-    } 
-    .hdr-col-area.social-hdr-area {
-        width: 50% !important;
-        float: left !important;
     }
+    .hdr-col-area.social-hdr-area {
+        width: 95% !important;
+        float: left !important;    }
 }
 
+// .makershed-banner {
+// 	display:none;
+// }
+
 @media screen and (max-width: 480px)  {
+.main-header {
+	.logo {
+		margin-top:13px;
+	}
+}
     .hdr-col-area.logo {
-        width: 50% !important;
+        width: 40% !important;
         float: left !important;
+        	img{
+	        padding-right:20px;
+
+	}
     }
      .hdr-col-area.hdr-sub-ad-01 {
-        // width: 50% !important;
-        // float: left !important;
-        padding-top:20px;
+        width: 48% !important;
+        float: left !important;
+        padding-top:0px;
         img {
-        	width:55px;
-        	padding-left:5px;
+        	width:50px;
+        	padding-right:8px;
+        	padding-left:20px;
         }
         p {
-        	padding-top:5px;
+        	padding-top:10px;
+        	font-weight:normal;
+        	text-transform: initial;
         	a:link {
         	font-size:1em !important;
-        	line-height: 1em !important;
+        	line-height: 1.2em !important;
+        	font-weight:normal;
+	        }
+	        span {
+	        	display:none;
 	        }
         }
     }
     .hdr-col-area.social-hdr-area {
-        width: 100% !important;
-        float: left !important;
+        width: 95% !important;
+        float: left !important;    }
+    .makershed-banner {
+    	display:none !important;
     }
-}
 
+}
 
 .makershed-banner {
 	background:#de231a;
@@ -203,7 +314,7 @@
 
 // Wrapper containing the secondary navigation
 .secondary-header {
-	// background:@secondary-color;
+	background:@secondary-color;
 	// .box-shadow( inset 0 10px 18px -10px #a4a4a4 );
 }
 
@@ -477,4 +588,56 @@ padding-bottom:10px !important;
 
 li#nav-news ul.sub-menu:after {
 left:110px !important;
+}
+
+/** responsive styles **/
+
+@media screen and (max-width: 767px) {
+		
+	html, body {
+	  padding:0 !important;
+	  width: auto !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;	
+	}
+
+	div.row {
+	  text-align:center;
+	}
+
+	.home-waist-banner {
+	  display:none;
+	}
+
+	.new-dotw {
+	  display:none;
+	}
+
+	#div-gpt-ad-664089004995786621-1 {
+	  display:none;
+	}
+
+	.projects-home .art {
+	  width:340px;
+	  background:none;
+	}
+
+	.span8 {
+	  width:auto !important;
+	}
+
+	.featured .blurb {
+	  float:left;
+	  width:200px;
+	}
+
+	.span4 {
+	  max-width:350px;
+	  padding:0 0 0 27px !important;
+	}
+
+	.posts {
+	  background:none;
+	}
+
 }
