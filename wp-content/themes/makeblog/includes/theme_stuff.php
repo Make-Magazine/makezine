@@ -1476,7 +1476,7 @@ function make_generate_title_tag() {
 	} elseif ( is_singular( 'craft' ) ) {
 		$output .= wp_title( '', false ) . ' | MAKE: Craft';
 	} else {
-		$output .= wp_title( '', false ) . ' | ' . get_bloginfo('name');
+		$output .= wp_title( '', false );
 	}
 	return $output;
 }

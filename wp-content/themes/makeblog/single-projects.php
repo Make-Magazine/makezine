@@ -12,7 +12,7 @@ get_header(); ?>
 
 	<div class="category-top">
 
-		<div class="container">
+		<div class="container"><div>
 
 			<div class="row" style="position:relative;">
 
