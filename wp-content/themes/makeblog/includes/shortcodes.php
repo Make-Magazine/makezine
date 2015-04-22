@@ -80,28 +80,40 @@ add_shortcode( 'newsletter', 'make_newsletter' );
 
 function make_marketron_newsletter( $atts, $content = null ) {
 	return '
-		<form class="form-stacked" action="http://makermedia.createsend.com/t/r/s/jrsydu/" method="post" id="subForm">
+		<form class="form-stacked" action="http://whatcounts.com/bin/listctrl" method="POST">
+			<input type="hidden" name="slid" value="6B5869DC547D3D467B33E192ADD9BE4B" />
+			<input type="hidden" name="cmd" value="subscribe" />
+			<input type="hidden" name="custom_source" value="Newsletter Shortcode" /> 
+			<input type="hidden" name="custom_incentive" value="none" /> 
+			<input type="hidden" name="custom_url" value="' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] . '" />
+			<input type="hidden" id="format_mime" name="format" value="mime" />
+			<input type="hidden" name="goto" value="//makerfaire.com/thanks-for-signing-up" />
+			<input type="hidden" name="custom_host" value="' . $_SERVER["HTTP_HOST"] . '" />
+			<input type="hidden" name="errors_to" value="" />
 			<fieldset>
-				<legend><p><em>From the editors of MAKE magazine, the Maker Pro Newsletter is about the impact of makers on business and technology. Our coverage includes hardware startups, new products, incubators, innovators, along with technology and market trends. Please send items to us at <a href="mailto:makerpro@makermedia.com">makerpro@makermedia.com</a>.</em></p></legend>
-				<div>
-					<label for="name">Name:</label>
-					<div class="input">
-						<input class="xlarge" id="name" name="cm-name" size="30" type="text">
-					</div>
+                <legend><p><em>From the editors of MAKE magazine, the Maker Pro Newsletter is about the impact of makers on business and technology. Our coverage includes hardware startups, new products, incubators, innovators, along with technology and market trends. Please send items to us at <a href="mailto:makerpro@makermedia.com">makerpro@makermedia.com</a>.</em></p></legend>
+				<div class="control-group">
+				  <!-- Name -->
+				  <label class="control-label" for="first">Name</label>
+				  <div class="controls">
+				  	<input class="formfield input-xlarge" name="first" type="text">
+				  </div>
 				</div>
-				<div>
-					<label for="jrsydu-jrsydu">Email:</label>
-					<div class="input">
-						<input class="xlarge" id="jrsydu-jrsydu" name="cm-jrsydu-jrsydu" size="30" type="text">
-					</div>
+				<div class="control-group">
+				  <!-- Email -->
+				  <label class="control-label" for="email">Email</label>
+				  <div class="controls">
+				  	<input class="formfield input-xlarge" name="email" required="required" type="email">
+				  </div>
+				</div>
+				<div class="control-group">
+				  <!-- Button -->
+				  <div class="controls">
+				    <button class="btn-cyan" type="submit">Subscribe</button>
+				  </div>
 				</div>
 			</fieldset>
-			<div class="actions">
-				<button type="submit" class="btn btn-large btn-primary">Subscribe</button>
-			</div>
-			<p></p>
-			<legend></legend>
-		</form>';
+	    </form>';
 }
 add_shortcode( 'makerpro', 'make_marketron_newsletter' );
 
