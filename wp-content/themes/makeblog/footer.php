@@ -297,11 +297,6 @@
 	    </form>
     </div>
 
-	<!-- Open externatl URLs in new tab -->
-	<script>
-	jQuery('a[href^="http"]').not('a[href^="{{ makezine.com }}"]').attr('target', '_blank');
-	</script>
-
 	<!-- Begin Chartbeat Tracker -->
 	<script type='text/javascript'>
 	    var _sf_async_config={};
