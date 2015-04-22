@@ -1660,25 +1660,25 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
  * Set caption width to auto for responsive theme
  */
 
-add_filter( 'img_caption_shortcode', 'bs_responsive_img_caption_filter', 10, 3 );
-function bs_responsive_img_caption_filter( $val, $attr, $content = null ) {
-	extract( shortcode_atts( array(
-		'id' => '',
-		'align' => '',
-		'width' => '',
-		'caption' => ''
-		), $attr
-	) );
+// add_filter( 'img_caption_shortcode', 'bs_responsive_img_caption_filter', 10, 3 );
+// function bs_responsive_img_caption_filter( $val, $attr, $content = null ) {
+// 	extract( shortcode_atts( array(
+// 		'id' => '',
+// 		'align' => '',
+// 		'width' => '',
+// 		'caption' => ''
+// 		), $attr
+// 	) );
 
-	if ( 1 > (int) $width || empty( $caption ) )
-		return $val;
+// 	if ( 1 > (int) $width || empty( $caption ) )
+// 		return $val;
 
-	$new_caption = sprintf( '<div id="%1$s" class="wp-caption %2$s" style="max-width:100%% !important;height:auto;width:auto;">%4$s<p class="wp-caption-text">%5$s</p></div>',
-		esc_attr( $id ),
-		esc_attr( $align ),
-		'', //( 10 + (int) $width ),
-		do_shortcode( $content ),
-		$caption
-	);
-	return $new_caption;
-}
+// 	$new_caption = sprintf( '<div id="%1$s" class="wp-caption %2$s" style="max-width:100%% !important;height:auto;width:auto;">%4$s<p class="wp-caption-text">%5$s</p></div>',
+// 		esc_attr( $id ),
+// 		esc_attr( $align ),
+// 		'', //( 10 + (int) $width ),
+// 		do_shortcode( $content ),
+// 		$caption
+// 	);
+// 	return $new_caption;
+// }
