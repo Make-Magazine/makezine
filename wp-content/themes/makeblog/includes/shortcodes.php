@@ -91,7 +91,7 @@ function make_marketron_newsletter( $atts, $content = null ) {
 			<input type="hidden" name="custom_host" value="' . $_SERVER["HTTP_HOST"] . '" />
 			<input type="hidden" name="errors_to" value="" />
 			<fieldset>
-                <legend><p><em>From the editors of MAKE magazine, the Maker Pro Newsletter is about the impact of makers on business and technology. Our coverage includes hardware startups, new products, incubators, innovators, along with technology and market trends. Please send items to us at <a href="mailto:makerpro@makermedia.com">makerpro@makermedia.com</a>.</em></p></legend>
+                <legend><p>From the editors of <i>Make</i>:, the Maker Pro Newsletter covers hardware startups, new products, incubators, and innovators, plus technology and market trends. Sign up below for weekly Maker Pro updates in your inbox.</p></legend>
 				<div class="control-group">
 				  <!-- Name -->
 				  <label class="control-label" for="first">Name</label>
