@@ -79,33 +79,55 @@
 			</script>
 		<?php endif; ?>
 
-		<div class="container">
-			<div class="row">
-				<div id="div-gpt-ad-664089004995786621-1" class="text-center">
-					<script type='text/javascript'>
-						googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-					</script>
-				</div>
-			</div>
-		</div>
 		<header class="top-navigation-wrapper">
 			<div class="main-header">
 				<div class="container">
 					<div class="row">
-						<div class="logo span2 craft_logo">
+						<div class="span6 hdr-col-area logo craft_logo">
+
 							<a href="<?php echo esc_url( home_url( '/craftzine' ) ); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/craft-logo.png" alt="MAKE" title="MAKE" /></a>
+
 						</div>
-						<nav role="navigation" class="span7 site-navigation primary-navigation">
-						</nav>
-						<div class="additional-content hidden-print">
-							<form action="<?php echo home_url(); ?>" class="search-make open">
-								<input type="text" class="search-field" name="s" placeholder="Search" />
-								<input type="submit" class="open submit" value="" />
-							</form>
-							<div class="clearfix"></div>
-							<div class="hdr-sub-ad-01" >
-								<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdr-mag-sub-44.jpg"  alt="Subscribe to Make Magazine Today!" /></a>
+
+						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
+								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
+								<p>
+									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscribe Now</a><br />
+									<span><a href="//www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Give a Gift</a><br />
+									<a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscriber Services</a></span>
+								</p>
+						</div>
+						<div class="span3 hdr-col-area social-hdr-area">
+							<div class="social-profile-icons">
+								<a class="sprite-facebook-32" href="//facebook.com/makemagazine" title="Facebook" target="_blank">
+									<div class="social-profile-cont">
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-twitter-32" href="//twitter.com/make" title="Twitter" target="_blank">
+									<div class="social-profile-cont">
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-pinterest-32" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank">
+									<div class="social-profile-cont">
+										<span class="sprite"></span>
+									</div>
+								</a>
+								<a class="sprite-googleplus-32" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
+									<div class="social-profile-cont">
+										<span class="sprite"></span>
+									</div>
+								</a>
 							</div>
+							<div class="additional-content hidden-print">
+								<form action="<?php echo home_url(); ?>" class="search-make open">
+									<input type="text" class="search-field" name="s" placeholder="Search" />
+									<input type="submit" class="open submit" value="" />
+								</form>
+								<div class="clearfix"></div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -116,7 +138,7 @@
 						<nav class="span12 site-navigation secondary-navigation">
 							<ul id="menu-make-secondary-nav" class="nav navbar-nav ga-nav clearfix">
 								<li class="mega-box dropdown"><a href="#" class="dropdown-toggle">Projects</a>
-									<ul class="sub-menu dropdown-menu container dropdown" style="width:940px;">
+									<ul class="sub-menu dropdown-menu container dropdown">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/?path=FromNav' ) ); ?>">Electronics</a></li>
@@ -182,7 +204,7 @@
 									</ul>
 								</li>
 								<li id="nav-news" class="mega-box menu-item dropdown"><a href="#" class="dropdown-toggle">News</a>
-									<ul class="sub-menu dropdown-menu" style="width:940px;margin-left:-89px;">
+									<ul class="span12 sub-menu dropdown-menu" style="margin-left:-92px;">
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/blog/?path=FromNav' ) ); ?>">All News</a></li>
@@ -207,7 +229,7 @@
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/makers/?path=FromNav' ) ); ?>">Meet the Makers</a></li>
 											</ul>
 										</div>
-						
+
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Videos</a>
@@ -231,12 +253,12 @@
 								</li>
 								<li class="menu-item dropdown"><a href="#">Shop</a>
 									<ul class="sub-menu dropdown-menu">
-										<li id="menu-item-318846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318846"><a target="_blank" href="http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=Maker+Shed+Store">Maker Shed Store</a></li>
+										<li id="menu-item-318846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318846"><a target="_blank" href="//www.makershed.com/?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=Maker+Shed+Store">Maker Shed Store</a></li>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Publications</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe to Make:</a></li>
+										<li><a target="_blank" href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe to Make:</a></li>
 										<li><a target="_blank" href="//www.makershed.com/collections/make-magazine?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=make+magazine">Order Back Issues</a></li>
 										<li><a target="_blank" href="//www.makershed.com/collections/books-magazines?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=books+magazines">Buy Books</a></li>
 									</ul>
@@ -250,14 +272,29 @@
 				<div class="container">
 					<div class="row">
 						<div class="span10">
-							<a href="http://www.makershed.com?utm_source=makezine.com&utm_medium=ads&utm_term=Shop+Now&utm_campaign=makershed+banner" title="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!">
+							<a href="//makershed.com?utm_source=makezine.com&utm_medium=ads&utm_term=Shop+Now&utm_campaign=makershed+banner" title="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!">
 								<p>Find your DIY supplies in the Maker Shed &rarr; Kits, Books, Components, 3D Printers, Arduino, Raspberry Pi, More!</p>
 							</a>
 						</div>
-						<div class="span2">
-							<a href="http://www.makershed.com?utm_source=makezine.com&utm_medium=ads&utm_term=Shop+Now&utm_campaign=makershed+banner" title="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/maker-shed-banner-02.png" alt="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!" /></a>
+						<div class="span2 pull-right">
+							<a href="//makershed.com?utm_source=makezine.com&utm_medium=ads&utm_term=Shop+Now&utm_campaign=makershed+banner" title="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/maker-shed-banner-02.png" alt="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!" /></a>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<div class="container hidden-print">
+				<div class="row">
+					<div class="span12">
+						<div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
+
+							<script type='text/javascript'>
+								googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</header>
+
