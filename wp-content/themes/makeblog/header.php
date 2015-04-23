@@ -2,8 +2,8 @@
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo make_generate_title_tag(); ?></title>
 		<meta name="viewport" content="initial-scale=1">
+		<title><?php echo make_generate_title_tag(); ?></title>
 		<meta name="twitter:widgets:csp" content="on">
 		<meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
 		<meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
@@ -76,19 +76,6 @@
 			  });
 		</script>
 
-		<!-- Google Tag Manager  Maker Shed-->
-		<noscript>
-			<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WR8NLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-		</noscript>
-		<script>
-			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-WR8NLB');
-		</script>
-		<!-- End Google Tag Manager -->
-
 		<!-- Google Tag Manager -->
 			<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77"
 			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -134,31 +121,30 @@
 						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
 								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
 								<p>
-									
-									<a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA" target="_blank">SUBSCRIBE TODAY</a><br />
-									<span><a href="https://www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Order Make: as a Gift</a><br />
-									<a href="https://www.pubservice.com/subcustomerservice.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscription Help</a></span>
+									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscribe Now</a><br />
+									<span><a href="//www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Give a Gift</a><br />
+									<a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscriber Services</a></span>
 								</p>
 						</div>
 						<div class="span3 hdr-col-area social-hdr-area">
 							<div class="social-profile-icons">
-								<a class="sprite-facebook-32" href="http://facebook.com/makemagazine" title="Facebook" target="_blank">
-									<div class="social-profile-cont">	
+								<a class="sprite-facebook-32" href="//facebook.com/makemagazine" title="Facebook" target="_blank">
+									<div class="social-profile-cont">
 										<span class="sprite"></span>
 									</div>
 								</a>
-								<a class="sprite-twitter-32" href="http://twitter.com/make" title="Twitter" target="_blank">
-									<div class="social-profile-cont">	
+								<a class="sprite-twitter-32" href="//twitter.com/make" title="Twitter" target="_blank">
+									<div class="social-profile-cont">
 										<span class="sprite"></span>
 									</div>
 								</a>
-								<a class="sprite-pinterest-32" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank">
-									<div class="social-profile-cont">	
+								<a class="sprite-pinterest-32" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank">
+									<div class="social-profile-cont">
 										<span class="sprite"></span>
 									</div>
 								</a>
-								<a class="sprite-googleplus-32" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
-									<div class="social-profile-cont">	
+								<a class="sprite-googleplus-32" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
+									<div class="social-profile-cont">
 										<span class="sprite"></span>
 									</div>
 								</a>
@@ -272,7 +258,7 @@
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/makers/?path=FromNav' ) ); ?>">Meet the Makers</a></li>
 											</ul>
 										</div>
-						
+
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Videos</a>
@@ -296,12 +282,12 @@
 								</li>
 								<li class="menu-item dropdown"><a href="#">Shop</a>
 									<ul class="sub-menu dropdown-menu">
-										<li id="menu-item-318846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318846"><a target="_blank" href="http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=Maker+Shed+Store">Maker Shed Store</a></li>
+										<li id="menu-item-318846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318846"><a target="_blank" href="//www.makershed.com/?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=Maker+Shed+Store">Maker Shed Store</a></li>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Publications</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe to Make:</a></li>
+										<li><a target="_blank" href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe to Make:</a></li>
 										<li><a target="_blank" href="//www.makershed.com/collections/make-magazine?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=make+magazine">Order Back Issues</a></li>
 										<li><a target="_blank" href="//www.makershed.com/collections/books-magazines?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=books+magazines">Buy Books</a></li>
 									</ul>
