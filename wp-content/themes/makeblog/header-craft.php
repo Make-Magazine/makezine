@@ -254,13 +254,9 @@
 								<li class="menu-item dropdown"><a href="#">Shop</a>
 									<ul class="sub-menu dropdown-menu">
 										<li id="menu-item-318846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318846"><a target="_blank" href="//www.makershed.com/?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=Maker+Shed+Store">Maker Shed Store</a></li>
-									</ul>
-								</li>
-								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Publications</a>
-									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe to Make:</a></li>
-										<li><a target="_blank" href="//www.makershed.com/collections/make-magazine?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=make+magazine">Order Back Issues</a></li>
-										<li><a target="_blank" href="//www.makershed.com/collections/books-magazines?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=books+magazines">Buy Books</a></li>
+										<li><a target="_blank" href="//www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=ads&utm_campaign=Top+Nav+Menu&utm_term=books+magazines">Books for Makers</a></li>
+										<li><a target="_blank" href="//www.makershed.com/collections/make-magazine?utm_source=makezine.com&utm_medium=ads&utm_campaign=Top+Nav+Menu&utm_term=make+magazine">Make: Back Issues</a></li>
+										<li><a target="_blank" href="//www.makershed.com/collections/make-gearhttp://www.makershed.com/collections/make-gear?utm_source=makezine.com&utm_medium=ads&utm_campaign=Top+Nav+Menu&utm_term=make+gear+collections">Get Make: Gear </a></li>
 									</ul>
 								</li>
 							</ul>
