@@ -37,6 +37,7 @@ wpcom-meta.php
 wp-config-sample.php
 xmlrpc.php
 wp-admin
+wp-includes
 
 wp-content/mu-plugins
 wp-content/plugins
