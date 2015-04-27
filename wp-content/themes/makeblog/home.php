@@ -9,7 +9,6 @@
  */
 get_header(); ?>
 
-
 	<div class="single">
 
 		<div class="container">
