@@ -74,6 +74,8 @@
 			  ga('send', 'pageview', {
 			 'page': location.pathname + location.search  + location.hash
 			  });
+			  var dimensionValue = 'Post_Date';
+		      ga('set', 'dimension11', dimensionValue);
 		</script>
 
 		<!-- Google Tag Manager -->
