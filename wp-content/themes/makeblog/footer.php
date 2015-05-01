@@ -170,7 +170,7 @@
 					        <ul class="nav nav-pills nav-stacked">
 								<li><a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB" target="_blank">Subscribe to Make:</a></li>
 								<li><a href="/projects">Make: Projects</a></li>
-								<li><a href="/weekendprojects">Weekedn Projects</a></li>
+								<li><a href="/weekendprojects">Weekend Projects</a></li>
 								<li><a href="/video">Make: Videos</a></li>
 								<li><a href="/category/maker-pro">Maker Pro News</a></li>
 							</ul>
