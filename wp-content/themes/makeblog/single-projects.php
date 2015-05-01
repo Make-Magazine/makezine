@@ -16,14 +16,14 @@ get_header(); ?>
 
 			<div class="row" style="position:relative;">
 
-				<?php /* if( has_term( 'Weekend Project', 'flags' ) ) : ?>
+				<?php if( has_term( 'Weekend Project', 'flags' ) ) : ?>
 
 					<div style="position:absolute; right:0; top:-15px;">
 
 						<a href="http://pubads.g.doubleclick.net/gampad/clk?id=42844138&amp;iu=/11548178/Makezine"><img src="<?php echo get_template_directory_uri(); ?>/images/weekend-projects-btn.png" title="Weekend Projects Powered by Radio Shack" /></a>
 					</div>
 
-				<?php endif; */?>
+				<?php endif; ?>
 
 				<div class="span12">
 
@@ -33,7 +33,7 @@ get_header(); ?>
 
 							<div class="projects-masthead">
 
-								<h3><a href="//makezine.com/projects/">Make: Projects</a></h3>
+								<h3><a href="http://blog.makezine.com/projects/">Make: Projects</a></h3>
 
 								<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -78,19 +78,6 @@ get_header(); ?>
 							<div class="row">
 
 								<div class="span8">
-
-									<!-- ShareDaddy Jetpack Buttons -->
-									<?php 
-									if ( function_exists( 'sharing_display' ) ) {
-									    sharing_display( '', true );
-									}
-
-									if ( class_exists( 'Jetpack_Likes' ) ) {
-									    $custom_likes = new Jetpack_Likes;
-									    echo $custom_likes->post_likes( '' );
-									}
-
-									?>
 
 									<?php
 							 			$image = get_post_custom_values('Image');

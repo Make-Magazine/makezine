@@ -162,7 +162,7 @@ get_header(); ?>
 		if ($catslugs) {
 			echo '<div class="grey topper"><div class="container"><div class="row"><div class="span12"><h2>Projects by Category</h2></div></div></div></div>';
 			foreach ($catslugs as $category) {
-				$category = get_term_by('name', $category, 'category');
+				$category = wpcom_vip_get_term_by('name', $category, 'category');
 				echo '<div class="grey"><div class="container"><div class="row"><div class="span12">';							
 				$args = array(
 					'post_type'			=> 'projects',

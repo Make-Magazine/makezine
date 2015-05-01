@@ -26,3 +26,12 @@ jQuery( document ).ready( function( $ ) {
         }
     });
 });
+
+<span class="st_sharethis" st_url="http://sharethis.com" st_title="Sharing Rocks!"></span>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+    stLight.options({
+        publisher:'5c073b97-d6e5-4edd-abc6-a41f3b2c6ea1',
+                offsetLeft:'150'
+    });
+</script>

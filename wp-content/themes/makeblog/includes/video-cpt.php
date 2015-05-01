@@ -95,7 +95,7 @@ $field_data = array (
 	),
 );
 
-$easy_cf = new Easy_CF($field_data);
+// $easy_cf = new Easy_CF($field_data);
 
 
 function make_magazine_video_toc() {
@@ -144,6 +144,13 @@ function make_magazine_video_toc() {
 	// Reset Post Data
 	wp_reset_postdata();
 
+}
+
+
+add_action('add_meta_boxes', 'make_video_add_meta_box');
+
+function make_video_add_meta_box() { 
+	add_meta_box('volume-parent', 'Magazine Volume', 'make_magazine_parent_page', 'video', 'side', 'high');
 }
 
 add_action( 'admin_menu', 'make_video_remove_parent_meta_box' );

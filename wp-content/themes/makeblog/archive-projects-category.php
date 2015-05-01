@@ -128,7 +128,7 @@ get_header(); ?>
 		if ($difficulties) {
 			echo '<div class="grey topper"><div class="container"><div class="row"><div class="span12"><h2>' . $cat->name .' Projects by Difficulty</h2></div></div></div></div>';
 			foreach ($difficulties as $difficulty) {
-				$difficulty = get_term_by('name', $difficulty, 'difficulty');
+				$difficulty = wpcom_vip_get_term_by('name', $difficulty, 'difficulty');
 				echo '<div class="grey"><div class="container"><div class="row"><div class="span12">';							
 				$args = array(
 					'post_type'			=> 'projects',

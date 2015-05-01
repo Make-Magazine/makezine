@@ -52,7 +52,7 @@
 							<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
 						</ul>
 					</div>
-					<!-- div class="clearfix visible-phone"></div--><!-- ADD THIS BACK IN WHEN SITE IS RESPONSIVE -->
+					<div class="clearfix visible-phone"></div>
 					<div class="span3 social-foot-col">
 						<h4>Our Company</h4>
 						<ul class="unstyled">
@@ -221,6 +221,18 @@
 	</div> <!-- /container -->
 
 		<!-- Le javascript -->
+		<script>jQuery(".entry-content:odd").addClass('odd');</script>
+
+		<script type='text/javascript'>
+		    jQuery(window).scroll(function() {
+		        if (jQuery(document).scrollTop() > 500) {
+		            jQuery('.ssbp-wrap').show();
+		        } else {
+		            jQuery('.ssbp-wrap').hide();
+		        }
+		    });
+		</script>
+
 		<script type="text/javascript">
 		jQuery(document).ready(function(){
 			jQuery(".scroll").click(function(event){
@@ -274,7 +286,7 @@
     <div class="fancybox popup" style="display:none;">
 	    <h3>Don't Miss Out!</h3>
 	    <p>Get our free weekly newsletter and keep up with the latest Make: news and information</p>
-						<?php
+						<?
 							$isSecure = "http://";
 							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 								$isSecure = "https://";
@@ -287,7 +299,7 @@
 						<input type="hidden" name="custom_incentive" value="none" /> 
 						<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 						<input type="hidden" id="format_mime" name="format" value="mime" />
-						<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+						<input type="hidden" name="goto" value="<?php// echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 	      <div>
@@ -322,89 +334,6 @@
 	    })();
 	</script>
 	<!-- End Chartbeat Tracker -->
-
-	<!-- Video Tracker -->
-	<script type="text/javascript">
-	// note: this will cause the Youtube player to "flash" on the page when reloading to enable the JS API
-	for (var e = document.getElementsByTagName("iframe"), x = e.length; x--;)
-	  if (/youtube.com\/embed/.test(e[x].src))
-	    if(e[x].src.indexOf('enablejsapi=') === -1)
-	        e[x].src += (e[x].src.indexOf('?') ===-1 ? '?':'&') + 'enablejsapi=1';
-
-	var gtmYTListeners = []; // support multiple players on the same page
-	// attach our YT listener once the API is loaded
-	function onYouTubeIframeAPIReady() {
-	    for (var e = document.getElementsByTagName("iframe"), x = e.length; x--;) {
-	        if (/youtube.com\/embed/.test(e[x].src)) {
-	            gtmYTListeners.push(new YT.Player(e[x], {
-	                events: {
-	                    onStateChange: onPlayerStateChange,
-	                    onError: onPlayerError
-	                }
-	            }));
-	            YT.gtmLastAction = "p";
-	        }
-	    }
-	}
-
-	// listen for play/pause, other states such as rewind and end could also be added
-	// also report % played every second
-	function onPlayerStateChange(e) {
-	    e["data"] == YT.PlayerState.PLAYING && setTimeout(onPlayerPercent, 1000, e["target"]);
-	    var video_data = e.target["getVideoData"](),
-	        label = video_data.title;
-	    if (e["data"] == YT.PlayerState.PLAYING && YT.gtmLastAction == "p") {
-	        dataLayer.push({
-	            event: "videos",
-	            action: "play",
-	            label: label
-	        });
-	        YT.gtmLastAction = "";
-	    }
-	    if (e["data"] == YT.PlayerState.PAUSED) {
-	        dataLayer.push({
-	            event: "videos",
-	            action: "pause",
-	            label: label
-	        });
-	        YT.gtmLastAction = "p";
-	    }
-	}
-
-	// catch all to report errors through the GTM data layer
-	// once the error is exposed to GTM, it can be tracked in UA as an event!
-	function onPlayerError(e) {
-	    dataLayer.push({
-	        event: "error",
-	        action: "GTM",
-	        label: "videos:" + e["target"]["src"] + "-" + e["data"]
-	    })
-	}
-
-	// report the % played if it matches 0%, 25%, 50%, 75% or completed
-	function onPlayerPercent(e) {
-	    if (e["getPlayerState"]() == YT.PlayerState.PLAYING) {
-	        var t = e["getDuration"]() - e["getCurrentTime"]() <= 1.5 ? 1 : (Math.floor(e["getCurrentTime"]() / e["getDuration"]() * 4) / 4).toFixed(2);        if (!e["lastP"] || t > e["lastP"]) {
-	            var video_data = e["getVideoData"](),
-	                label = video_data.title;
-	            e["lastP"] = t;
-	            dataLayer.push({
-	                event: "videos",
-	                action: t * 100 + "%",
-	                label: label
-	            })
-	        }
-	        e["lastP"] != 1 && setTimeout(onPlayerPercent, 1000, e);
-	    }
-	}
-
-	// load the Youtube JS api and get going
-	var j = document.createElement("script"),
-	    f = document.getElementsByTagName("script")[0];
-	j.src = "//www.youtube.com/iframe_api";
-	j.async = true;
-	f.parentNode.insertBefore(j, f);
-</script>
 
 	</body>
 </html>

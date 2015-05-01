@@ -350,7 +350,7 @@ function make_carousel( $args, $title_link = true ) {
 							if ($args['limit'] == 4 ) {
 								$output .= '<div class="span3 ' . $type . '">';
 								if ($type == 'video') {
-									$output .= '<a class="" data-toggle="modal" onclick="ga(\'send\', \'pageview\', \'' . get_permalink( $post->ID ) . '\');" href="#myModal-' . $post->ID . '">';
+									$output .= '<a class="" data-toggle="modal" onclick="_gaq.push([\'_trackPageview\', \'' . get_permalink( $post->ID ) . '\']);" href="#myModal-' . $post->ID . '">';
 									$output .= '<span class="' . $type .'-icon"></span>';
 									$output .= '</a>';
 								} elseif ( $args['projects_landing'] == false ) {
@@ -380,7 +380,7 @@ function make_carousel( $args, $title_link = true ) {
 							} elseif ($args['limit'] == 2) {
 								$output .= '<div class="span4 ' . $type . '">';
 								if ($type == 'video') {
-									$output .= '<a class="" data-toggle="modal" onclick="ga(\'send\', \'pageview\', \'' . get_permalink( $post->ID ) . '\');" href="#myModal-' . $post->ID . '">';	
+									$output .= '<a class="" data-toggle="modal" onclick="_gaq.push([\'_trackPageview\', \'' . get_permalink( $post->ID ) . '\']);" href="#myModal-' . $post->ID . '">';
 									$output .= '<span class="' . $type .'-icon"></span>';
 									$output .= '</a>';
 								} else {

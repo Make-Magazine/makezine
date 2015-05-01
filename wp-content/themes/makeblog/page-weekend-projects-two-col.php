@@ -10,7 +10,7 @@
  */
 get_header(); ?>
 
-<!-- 	<div class="projects-home">
+	<div class="projects-home">
 
 		<div class="container">
 
@@ -18,7 +18,7 @@ get_header(); ?>
 
 				<div class="span12">
 
-					<img src="<?php /*echo get_stylesheet_directory_uri(); */?>/img/projects-banner.png" alt="Weekend Projects" style="margin-top:-20px;margin-bottom:-20px;">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/projects-banner.png" alt="Weekend Projects" style="margin-top:-20px;margin-bottom:-20px;">
 
 				</div>
 
@@ -26,7 +26,7 @@ get_header(); ?>
 
 		</div>
 
-	</div> -->
+	</div>
 
 	<div class="grey">
 

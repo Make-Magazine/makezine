@@ -339,6 +339,12 @@ function make_magazine_toc( $args ) {
 }
 
 
+add_action('add_meta_boxes', 'make_add_meta_box');
+
+function make_add_meta_box() {
+	add_meta_box('volume-parent', 'Magazine Volume', 'make_magazine_parent_page', 'magazine', 'side', 'high');
+}
+
 add_action( 'admin_menu', 'make_remove_parent_meta_box' );
 
 function make_remove_parent_meta_box() {

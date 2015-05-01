@@ -11,7 +11,7 @@
 global $catslugs;
 get_header(); ?>
 		
-<!-- 	<div class="projects-home">
+	<div class="projects-home">
 	
 		<div class="container">
 
@@ -19,7 +19,7 @@ get_header(); ?>
 
 				<div class="span12">
 				
-					<img src="<?php /*echo get_stylesheet_directory_uri(); */?>/img/WP_webheader_940x110-1.png" alt="Weekend Projects">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/WP_webheader_940x110-1.png" alt="Weekend Projects">
 					
 				</div>
 				
@@ -27,7 +27,7 @@ get_header(); ?>
 			
 		</div>
 
-	</div> -->
+	</div>
 					
 	<div class="grey">
 
