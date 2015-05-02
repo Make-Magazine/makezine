@@ -1657,6 +1657,79 @@ function make_get_banner_to_category_page() {
 add_action( 'category_top', 'make_get_banner_to_category_page' );
 
 /**
+ * Open all external links in new window
+ */
+function external_links_in_new_windows_client()
+{
+  echo "\n\n<!-- ".__("Plugin: Open external links a new window.","open-external-links-in-a-new-window"). " ". __("Plugin by","open-external-links-in-a-new-window"). " Kristian Risager Larsen, http://kristianrisagerlarsen.dk . ".__("Download it at","open-external-links-in-a-new-window")." http://wordpress.org/extend/plugins/open-external-links-in-a-new-window/ -->\n";
+
+  $blogdomain = parse_url(get_option('home'));  
+  echo "<script type=\"text/javascript\">//<![CDATA[";
+  echo "
+	function external_links_in_new_windows_loop() {
+		if (!document.links) {
+			document.links = document.getElementsByTagName('a');
+		}
+		var change_link = false;
+		var force = '".get_option("external_links_in_new_windows_force")."';
+		var ignore = '".get_option("external_links_in_new_windows_ignore")."';
+
+		for (var t=0; t<document.links.length; t++) {
+			var all_links = document.links[t];
+			change_link = false;
+			
+			if(document.links[t].hasAttribute('onClick') == false) {
+				// forced if the address starts with http (or also https), but does not link to the current domain
+				if(all_links.href.search(/^http/) != -1 && all_links.href.search('".$blogdomain['host']."') == -1) {
+					// alert('Changeda '+all_links.href);
+					change_link = true;
+				}
+					
+				if(force != '' && all_links.href.search(force) != -1) {
+					// forced
+					// alert('force '+all_links.href);
+					change_link = true;
+				}
+				
+				if(ignore != '' && all_links.href.search(ignore) != -1) {
+					// alert('ignore '+all_links.href);
+					// ignored
+					change_link = false;
+				}
+
+				if(change_link == true) {
+					// alert('Changed '+all_links.href);
+					document.links[t].setAttribute('onClick', 'javascript:window.open(\\''+all_links.href+'\\'); return false;');
+					document.links[t].removeAttribute('target');
+				}
+			}
+		}
+	}
+	
+	// Load
+	function external_links_in_new_windows_load(func)
+	{	
+		var oldonload = window.onload;
+		if (typeof window.onload != 'function'){
+			window.onload = func;
+		} else {
+			window.onload = function(){
+				oldonload();
+				func();
+			}
+		}
+	}
+
+	external_links_in_new_windows_load(external_links_in_new_windows_loop);
+	";
+
+  echo "//]]></script>\n\n";
+}
+
+add_action('wp_head', 'external_links_in_new_windows_client');
+
+
+/**
  * Set caption width to auto for responsive theme
  */
 
