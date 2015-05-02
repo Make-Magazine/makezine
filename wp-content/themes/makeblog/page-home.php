@@ -76,7 +76,7 @@ Template Name: Home Page
 								'posts_per_page'  => 6,
 								'no_found_rows' => true,
 								'post_type' => array( 'post', 'projects', 'review', 'video', 'magazine' ),
-								'tag__not_in' => array( 5183, 22815, 9947 ),
+								'tag__not_in' => array( 5183, 4172, 9947 ),
 							);
 
 							$the_query = new WP_Query( $args );

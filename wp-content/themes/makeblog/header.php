@@ -309,7 +309,6 @@
 					</div>
 				</div>
 			</div>
-
 			<?php if ( is_front_page() || is_home() ) : ?>
 			<div class="container hidden-print">
 				<div class="row">

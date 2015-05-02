@@ -42,12 +42,6 @@ function register_cpt_errata() {
 	register_post_type( 'errata', $args );
 }
 
-add_action('add_meta_boxes', 'make_errata_add_meta_box');
-
-function make_errata_add_meta_box() { 
-	add_meta_box('volume-parent', 'Magazine Volume', 'make_magazine_parent_page', 'errata', 'side', 'high');
-}
-
 add_action( 'admin_menu', 'make_errata_remove_parent_meta_box' );
 
 function make_errata_remove_parent_meta_box() { 

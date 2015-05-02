@@ -14,13 +14,13 @@
 
 						<?php endif; ?>
 
-						<div class="span8" style="width:820px;">
+						<div class="span8">
 
 							<div class="checkers">
 
 								<div class="row">
 
-									<div class="span4" style="width:395px;">
+									<div class="span4">
 
 										<div class="paddme">
 
@@ -35,7 +35,7 @@
 													if ( make_get_cap_option( 'main_id' ) ) {
 														echo wp_get_attachment_image( absint( make_get_cap_option( 'main_id' ) ), 'p1', 0, array( 'class' => $ribbon_class ) );
 													} else {
-														echo '<img style="width:395px" src="' . esc_url( make_get_cap_option( 'main_url' ) ) . '"';
+														echo '<img src="' . esc_url( make_get_cap_option( 'main_url' ) ) . '"';
 														if ( make_get_cap_option( 'ribbon_title_display' ) )
 															echo 'id="top-left" ';
 														echo '/>';
@@ -55,13 +55,13 @@
 
 									</div>
 
-									<div class="span4 middle-featured" style="width:395px;">
+									<div class="span4 middle-featured">
 
 										<div class="row">
 
-											<div class="span4" style="width:395px;">
+											<div class="span4">
 
-												<div class="paddme small" style="height:240px;overflow:hidden;padding-right:0px;">
+												<div class="paddme small">
 
 													<a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>">
 
@@ -75,7 +75,7 @@
 
 													</a>
 
-													<div class="caption" style="bottom:0px;">
+													<div class="caption">
 
 														<h3><a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'top_title' ) ); ?></a></h3>
 														<p><a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'top_subtitle' ) ); ?></a></p>
@@ -86,9 +86,9 @@
 
 											</div>
 
-											<div class="span4" style="width:395px;">
+											<div class="span4">
 
-												<div class="paddme small" style="height:240px;overflow:hidden;padding-right:0px;">
+												<div class="paddme small">
 
 													<a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>">
 
@@ -102,7 +102,7 @@
 
 													</a>
 
-													<div class="caption" style="bottom:0px;">
+													<div class="caption">
 
 														<h3><a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'bottom_title' ) ); ?></a></h3>
 														<p><a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'bottom_subtitle' ) ); ?></a></p>
@@ -140,7 +140,7 @@
 
 						</div>
 
-						<div class="span4" style="width:320px !important">
+						<div class="span4">
 
 							<div class="home-ads">
 
@@ -154,7 +154,7 @@
 
 							</div>
 
-							<div class="home-ads bottom" style="margin-top:10px;">
+							<div class="home-ads bottom">
 
 								<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
 								<div id='div-gpt-ad-664089004995786621-3'>

@@ -224,6 +224,16 @@ function dfp_target_save_post($page_id, $page) {
     }
 }
 
+function add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'contributor' );
+
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    $role->add_cap( 'upload_files' ); 
+}
+add_action( 'contributor_init', 'add_theme_caps');
+
 // Custom placement of jetpack share buttons
 function jptweak_remove_share() {
     remove_filter( 'the_content', 'sharing_display',19 );

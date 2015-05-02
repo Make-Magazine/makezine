@@ -283,7 +283,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="container hidden-print">
 				<div class="row">
 					<div class="span12">
@@ -296,6 +295,5 @@
 					</div>
 				</div>
 			</div>
-
 		</header>
 
