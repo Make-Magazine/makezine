@@ -290,6 +290,10 @@
 										<li><a target="_blank" href="//www.makershed.com/collections/make-gear?utm_source=makezine.com&utm_medium=ads&utm_campaign=Top+Nav+Menu&utm_term=make+gear+collections">Get Make: Gear </a></li>
 									</ul>
 								</li>
+								<li class="menu-item"><a href="#">|</a>								
+								</li>
+								<li class="menu-item"><a href="http://sprout.makezine.com" target="_blank"><img src="wp-content/themes/makeblog/images/sprout.png" alt="Sprout Logo" class="nav-sprout"/></a>									
+								</li>
 							</ul>
 						</nav>
 					</div>
