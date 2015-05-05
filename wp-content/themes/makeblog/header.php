@@ -125,7 +125,6 @@
 								<p>
 									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscribe Now</a><br />
 									<span><a href="//www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Give a Gift</a><br />
-									<a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscriber Services</a></span>
 								</p>
 						</div>
 						<div class="span3 hdr-col-area social-hdr-area">
