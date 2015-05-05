@@ -9909,7 +9909,7 @@ li.share-email {
   font-size: 17px !important;
 }
 .secondary-navigation {
-  height: 41px;
+  height: 40px;
   font-size: 16px;
   border-bottom: 1px solid lighter(#ebebeb);
 }
@@ -10091,7 +10091,7 @@ li#nav-news ul.sub-menu:after {
   left: 110px !important;
 }
 img.nav-sprout {
-  margin: -4px 0 0 0;
+  margin: -5px 0 0 0;
   height: 32px;
 }
 /** responsive styles **/
