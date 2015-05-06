@@ -509,7 +509,7 @@ function make_projects_to_s3( $haystack ) {
 		return $haystack;
 	}
 	$needle = 'guide-images.makeprojects.org/igi/';
-	$replace = 'make-images.s3.amazonaws.com/';
+	$replace = 'makezine.com/wp-content/uploads/make-images/';
 	if ( $haystack == 'http://cacher.dozuki.net/static/images/make/guide/NoImageMP_96x72.gif' or empty( $haystack ) ) {
 		return $haystack;
 	}
