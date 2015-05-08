@@ -1558,14 +1558,101 @@ blockquote p {
 	width:80px;
 }
 
-div.sharedaddy a.sd-button {
-	margin: 0 0 0 5px!important;
+/* SHARE WIDGET STYLES*/
+.sharedaddy {
+    margin-top: 15px;
+    height: 34px !important;
+    margin-top: 0 !important;
+    a.sd-button {
+        margin: 0 0 0 5px!important;
+    }
+    .sd-content {
+        li {
+            float: left;
+            margin: 0 12px 5px 0!important;
+            display: block;
+        }
+    }
 }
-div.sharedaddy .sd-content li {
-	float: left;
-	margin: 0 12px 5px 0!important;
-	display: block;
+.sharedaddy ~ .sharedaddy,.projects-meta ~ .span8 .sharedaddy {
+    display: none !important;
 }
+.content {
+    div.sharedaddy {
+        div.sd-block {
+            border: none;
+            padding: 0;
+        }
+        .sd-content {
+            float: left;
+            margin-bottom: 32px;
+        }
+        a.sd-button {
+            border: none !important;
+            box-shadow: none;
+        }
+    }
+    a.sd-button {
+        & > span {
+            background-image: none !important;
+            background: #111;
+            border: none;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+    a.sd-button:hover {
+        & > span {
+            background: #1dbec0;
+        }
+    }
+}
+.content .sd-social-icon-text a.sd-button &>span, a.sd-button &>span {
+    opacity: 1;
+    padding: 6px 12px;
+    padding: 0 !important;
+}
+.sd-content {
+    .sd-button {
+        span.share-count {
+            color: #cdf593 !important;
+            font-size: 100% !important;
+            display: none;
+        }
+    }
+    ul {
+        margin-left: -3px !important;
+    }
+}
+.sd-social-icon {
+    .sd-content {
+        ul {
+            li[class*='share-'] {
+                a.sd-button {
+                    border-radius: 0;
+                    height: 17px !important;
+                }
+            }
+        }
+    }
+}
+div.sharedaddy .sd-content li.share-twitter,div.sharedaddy .sd-content li.share-facebook,div.sharedaddy .sd-content li.share-google-plus-1,div.sharedaddy .sd-content li.share-reddit,div.sharedaddy .sd-content li.share-pinterest,div.sharedaddy .sd-content li.share-email {
+    margin-right: 3px !important;
+    width: 100px;
+    text-align: center;
+}
+.a.sd-button {
+    width: 90px;
+    margin-right: 3px !important;
+}
+.sd-social-icon .sd-content ul li[class*='share-'] a, .sd-social-icon .sd-content ul li[class*='share-'] a:hover, .sd-social-icon .sd-content ul li[class*='share-'] div.option a {
+    width: 82px;
+}
+
+
 
 #jjuylk-jjuylk, #jjurhj-jjurhj {
 	width:196px;
@@ -2659,10 +2746,6 @@ li.share-email {
 	padding-top: 2px !important;
 }
 
-/* BREATHING ROOM FOR SHARE THIS WIDGET*/
-.sharedaddy {
-	margin-top: 15px;
-}
 
 /* HIDING TITLES ON PAGES THAT USE IMAGE INSTEAD*/
 .page-id-378544 h1, .page-id-381291 h1, .page-id-381951 h1, .page-id-381951 .well, .page-id-381951 .comments {
@@ -2776,11 +2859,6 @@ h3.heading.look_like_h4_cat {
 
 .weekend-projects-home .attachment-small-home-feature-boxes {
 	margin-top: 0;
-}
-
-.sharedaddy ~ .sharedaddy,
-.projects-meta ~ .span8 .sharedaddy {
-	display: none !important;
 }
 
 // pinit custom button
