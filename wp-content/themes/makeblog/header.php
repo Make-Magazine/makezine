@@ -60,6 +60,10 @@
 
 	<body <?php body_class(); ?>
 		<!-- Google Universal Analytics -->
+		
+		<!-- Time-tracking for Custom Dimensions -->
+		<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
+
 		<script type="text/javascript">
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -73,8 +77,8 @@
 			  ga('require', 'displayfeatures');
 			  ga('send', 'pageview', {
 			 'page': location.pathname + location.search  + location.hash
-			  });
-			  var dimensionValue = 'Post_Date';
+			  });			  
+			  var dimensionValue = document.getElementsByTagName("time")[0].getAttribute("datetime");
 		      ga('set', 'dimension11', dimensionValue);
 		</script>
 
