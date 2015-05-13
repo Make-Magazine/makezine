@@ -8888,7 +8888,7 @@ ul#tabs .current > a:hover {
   font-weight: normal;
 }
 .maker-week-takeover .slider {
-  background-color: #003752;
+  background-color: #2b3b40;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -8916,10 +8916,10 @@ ul#tabs .current > a:hover {
   margin: 10px 5px;
 }
 .maker-week-takeover .slider h4 a {
-  color: #96dffa;
+  color: white;
 }
 .maker-week-takeover .slider .caption {
-  color: #5ebcf7;
+  color: white;
 }
 .maker-week-takeover .slider .carousel-control {
   top: 42px;
@@ -8949,7 +8949,6 @@ ul#tabs .current > a:hover {
   right: 0px;
 }
 .maker-week-takeover .slider.thumb {
-  padding: 4px;
   margin-bottom: 32px;
   margin-left: -20px;
   color: #5ebcf7;
@@ -8958,7 +8957,8 @@ ul#tabs .current > a:hover {
 }
 .maker-week-takeover .slider.thumb img {
   margin-right: 10px;
-  width: 145px;
+  width: 328px;
+  height: 128px;
 }
 .maker-week-takeover .slider.thumb > div p {
   margin-bottom: 0;
