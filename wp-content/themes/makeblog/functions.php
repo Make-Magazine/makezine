@@ -244,3 +244,20 @@ function jptweak_remove_share() {
 }
  
 add_action( 'loop_start', 'jptweak_remove_share' );
+
+function get_resized_remote_image_url( $url, $width, $height, $escape = true ) {
+if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'photon' ) ) :
+$width = (int) $width;
+$height = (int) $height;
+
+// Photon doesn't support redirects, so help it out by doing http://foobar.wordpress.com/files/ to http://foobar.files.wordpress.com/
+if ( function_exists( 'new_file_urls' ) )
+$url = new_file_urls( $url );
+
+$thumburl = jetpack_photon_url( $url, array( 'resize' => array( $width, $height ) ) );
+
+//return ( $escape ) ? esc_url( $thumburl ) : $thumburl;
+return $url;
+print_r($url);
+endif;
+}

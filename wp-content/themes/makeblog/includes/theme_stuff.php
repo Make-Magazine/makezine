@@ -40,7 +40,7 @@ function make_action_after_setup_theme() {
 	add_image_size( 'p1', 301, 400, true );							// Used as the top left featured image on home page.
 	add_image_size( 'p2', 290, 180, true );							// Used as the top right featured images on home page.
 	add_image_size( 'maker-week-home', 620, 400, true );			// Used on Maker Week take over page.
-	add_image_size( 'maker-week-thumb', 328, 128, true );			// Used on Maker Week take over page sidebar.
+	add_image_size( 'maker-week-thumb', 145, 110, true );			// Used on Maker Week take over page sidebar.
 	add_image_size( 'search-thumb', 110, 85, true );  				// Used on the Search page
 	add_image_size( 'slideshow-thumb', 620, 400 );  				// Used on the Huff-Po style slideshow
 	add_image_size( 'slideshow-small-thumb', 60, 60, true );  		// Used on the Huff-Po style thumbs
@@ -1728,37 +1728,6 @@ function external_links_in_new_windows_client()
 
 add_action('wp_head', 'external_links_in_new_windows_client');
 
-/**
-* Returns the URL to an image resized and cropped to the given dimensions.
-*
-* You can use this image URL directly -- it's cached and such by our servers.
-* Please use this function to generate the URL rather than doing it yourself as
-* this function uses staticize_subdomain() makes it serve off our CDN network.
-*
-* Somewhat contrary to the function's name, it can be used for ANY image URL, hosted by us or not.
-* So even though it says "remote", you can use it for attachments hosted by us, etc.
-*
-* @link http://vip.wordpress.com/documentation/image-resizing-and-cropping/ Image Resizing And Cropping
-* @param string $url The raw URL to the image (URLs that redirect are currently not supported with the exception of http://foobar.wordpress.com/files/ type URLs)
-* @param int $width The desired width of the final image
-* @param int $height The desired height of the final image
-* @param bool $escape Optional. If true (the default), the URL will be run through esc_url(). Set this to false if you need the raw URL.
-* @return string
-*/
-function get_resized_remote_image_url( $url, $width, $height, $escape = true ) {
-if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'photon' ) ) :
-$width = (int) $width;
-$height = (int) $height;
-
-// Photon doesn't support redirects, so help it out by doing http://foobar.wordpress.com/files/ to http://foobar.files.wordpress.com/
-if ( function_exists( 'new_file_urls' ) )
-$url = new_file_urls( $url );
-
-$thumburl = jetpack_photon_url( $url, array( 'resize' => array( $width, $height ) ) );
-
-return ( $escape ) ? esc_url( $thumburl ) : $thumburl;
-endif;
-}
 
 /**
  * Set caption width to auto for responsive theme
