@@ -256,8 +256,6 @@ $url = new_file_urls( $url );
 
 $thumburl = jetpack_photon_url( $url, array( 'resize' => array( $width, $height ) ) );
 
-//return ( $escape ) ? esc_url( $thumburl ) : $thumburl;
-return $url;
-print_r($url);
+return ( $escape ) ? esc_url( $thumburl ) : $thumburl;
 endif;
 }
