@@ -40,9 +40,10 @@
 				$posts = array_map( 'get_post', explode( ',', $featuredposts ) );
 				$output = '<div class="span8 mw-news">';
 				foreach ( $posts as $post ) {
+					$thumbnail_id = get_post_thumbnail_id($post->ID);
+					$thumbnail_object = wp_get_attachment_image_src($thumbnail_id);
 					$output .= '<div class="thumb slider">';
-					$output .= get_the_post_thumbnail($post->ID);
-					
+					$output .= '<img src="'.get_resized_remote_image_url($thumbnail_object[0],328,128).'" height="128" width="328" alt="">';
 					$output .= '<div class="mw-content">';
 					$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 					$output .= '<div class="clearfix"></div></div></div>';
