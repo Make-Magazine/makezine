@@ -58,11 +58,11 @@
 						  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
 						 </script>
 					</div>
-					<div id="div-gpt-ad-664089004995786621-1" class="text-center">
-						<script type='text/javascript'>
-							googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-						</script>
-					</div>		
+					<div id='div-gpt-ad-664089004995786621-3' class='mw-adslot'>
+								<script type='text/javascript'>
+									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
+								</script>
+							</div>	
 
 
 			</div>
