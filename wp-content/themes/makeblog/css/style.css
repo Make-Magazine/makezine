@@ -8871,6 +8871,10 @@ ul#tabs .current > a:hover {
   margin: 0 0 0 80px;
   width: 288px;
 }
+.maker-week-takeover .mw-news {
+  margin-top: 20px;
+  width: 602px;
+}
 .maker-week-takeover .tix {
   color: #fff;
   margin-top: 40px;
@@ -8947,6 +8951,7 @@ ul#tabs .current > a:hover {
 .maker-week-takeover .slider.thumb {
   padding: 4px;
   margin-bottom: 32px;
+  margin-left: -20px;
   color: #5ebcf7;
   font-size: 16px;
   line-height: 120%;

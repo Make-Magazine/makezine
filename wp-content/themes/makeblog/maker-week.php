@@ -31,14 +31,14 @@
 
 				<div class="slider">
 
-					<?php echo do_shortcode("[metaslider id=480077]"); ?>
+					<?php echo do_shortcode("[metaslider id=471480]"); ?>
 
 				</div>
 				
 				<?php 
 				$featuredposts = make_get_cap_option( 'make_week_takeover_posts' );
 				$posts = array_map( 'get_post', explode( ',', $featuredposts ) );
-				$output = '<div class="span4">';
+				$output = '<div class="span8 mw-news">';
 				foreach ( $posts as $post ) {
 					$output .= '<div class="thumb slider">';
 					$output .= get_the_image( array( 'image_scan' => true, 'size' => 'maker-week-thumb', 'image_class' => 'hide-thumbnail pull-left', 'echo' => false ) );
@@ -53,20 +53,17 @@
 			</div>
 
 			<div class="span4">
-				<div id="div-gpt-ad-664089004995786621-7" class="banner-canvas">
-
-				<script type='text/javascript'>
-					googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-7')});
-				</script>
-				
-				<div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
-
-					<script type='text/javascript'>
-						googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-					</script>
-				
+						<div id="div-gpt-ad-664089004995786621-9" class="text-center">
+						 <script type='text/javascript'>
+						  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
+						 </script>
+					</div>
 				</div>
-				
+						<div id="div-gpt-ad-664089004995786621-9" class="text-center">
+						 <script type='text/javascript'>
+						  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
+						 </script>
+					</div>
 				</div>
 
 			</div>
