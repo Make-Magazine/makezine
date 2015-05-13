@@ -8877,6 +8877,16 @@ ul#tabs .current > a:hover {
 .maker-week-takeover .mw-adslot {
   margin: 20px 0 20px 0;
 }
+.maker-week-takeover .mw-content {
+  float: right;
+  width: 275px;
+  margin: 20px 0 0 0;
+}
+.maker-week-takeover .caption {
+  color: black !important;
+  font-size: 24px;
+  line-height: 22pt;
+}
 .maker-week-takeover .tix {
   color: #fff;
   margin-top: 40px;
