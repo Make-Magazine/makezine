@@ -72,6 +72,7 @@
 		
 
 	</div>
+	<div id="mw-flags-btm"></div>
 	</div>
 </div>
 
