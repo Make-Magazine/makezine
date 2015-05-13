@@ -15,7 +15,7 @@
 
 				<div class="mw-10th">
 
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/10th-annual.png" alt="10th Annual Bay Area Makerfaire">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/10th-annual-high-res.png" alt="10th Annual Bay Area Makerfaire">
 
 				</div>
 
