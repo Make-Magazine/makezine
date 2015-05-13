@@ -40,7 +40,7 @@ function make_action_after_setup_theme() {
 	add_image_size( 'p1', 301, 400, true );							// Used as the top left featured image on home page.
 	add_image_size( 'p2', 290, 180, true );							// Used as the top right featured images on home page.
 	add_image_size( 'maker-week-home', 620, 400, true );			// Used on Maker Week take over page.
-	add_image_size( 'maker-week-thumb', 145, 110, true );			// Used on Maker Week take over page sidebar.
+	add_image_size( 'maker-week-thumb', 328, 128, true );			// Used on Maker Week take over page sidebar.
 	add_image_size( 'search-thumb', 110, 85, true );  				// Used on the Search page
 	add_image_size( 'slideshow-thumb', 620, 400 );  				// Used on the Huff-Po style slideshow
 	add_image_size( 'slideshow-small-thumb', 60, 60, true );  		// Used on the Huff-Po style thumbs
