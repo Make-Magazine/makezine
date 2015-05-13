@@ -41,7 +41,8 @@
 				$output = '<div class="span8 mw-news">';
 				foreach ( $posts as $post ) {
 					$output .= '<div class="thumb slider">';
-					$output .= get_the_image( array( 'image_scan' => true, 'size' => 'maker-week-thumb', 'image_class' => 'hide-thumbnail pull-left', 'echo' => false ) );
+					$output .= get_the_post_thumbnail($post->ID);
+					
 					$output .= '<div class="mw-content">';
 					$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 					$output .= '<div class="clearfix"></div></div></div>';
