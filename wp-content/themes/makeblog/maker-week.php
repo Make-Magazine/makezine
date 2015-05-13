@@ -9,19 +9,19 @@
 
 				<div class="mw-makerfaire">
 
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/makerfaire.png" alt="Makerfaire">
+					<a href="http://makerfaire.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/makerfaire.png" alt="Makerfaire"></a>
 
 				</div>
 
 				<div class="mw-10th">
 
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/10th-annual-high-res.png" alt="10th Annual Bay Area Makerfaire">
+					<a href="http://makerfaire.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/10th-annual-high-res.png" alt="10th Annual Bay Area Makerfaire"></a>
 
 				</div>
 
 				<div class="mw-makey">
 
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2015-makey.png" alt="2015 Makey">
+					<a href="http://www.eventbrite.com/e/maker-faire-bay-area-2015-tickets-5938495199" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2015-makey.png" alt="2015 Makey"></a>
 
 				</div>				
 
