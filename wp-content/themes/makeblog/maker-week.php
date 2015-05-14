@@ -78,3 +78,14 @@
 	</div>
 </div>
 
+<div class="row leaderboard">
+	<div class="home-waist-banner">
+		<div id="div-gpt-ad-664089004995786621-6" class="banner-canvas">
+			
+			 <script type='text/javascript'>
+			  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-6')});
+			 </script>
+		</div>
+	</div>
+</div>
+

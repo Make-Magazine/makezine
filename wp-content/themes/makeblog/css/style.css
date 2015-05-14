@@ -8986,6 +8986,9 @@ ul#tabs .current > a:hover {
 .maker-week-takeover .slider.thumb h4 {
   margin: 0px;
 }
+.leaderboard {
+  margin: 10px 0 0 0;
+}
 .Thumbnail {
   display: block;
 }
