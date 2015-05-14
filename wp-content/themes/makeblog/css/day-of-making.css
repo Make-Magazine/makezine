@@ -9013,7 +9013,7 @@ ul#tabs .current > a:hover {
   color: #96dffa;
   font-family: "proxima-nova", sans-serif;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 6px;
   margin-left: 13px;
 }
@@ -9022,7 +9022,7 @@ ul#tabs .current > a:hover {
 }
 .maker-week-takeover .slider h4 {
   font-family: "proxima-nova", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   margin: 10px 5px;
 }
 .maker-week-takeover .slider h4 a {
