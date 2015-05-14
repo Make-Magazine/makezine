@@ -458,7 +458,7 @@ new CheezCapGroup( 'Craft Featured Posts', 'second_CheezCapGroup',
 				),
 				new CheezCapTextOption(
 					'Maker Week Homepage Posts',
-					'Add three post IDs here, comma seperated, with no space.',
+					'Add SINGLE post ID here.',
 					'make_week_takeover_posts',
 					''
 				),
