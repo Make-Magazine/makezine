@@ -31,7 +31,7 @@
 
 				<div class="slider">
 
-					<?php echo do_shortcode("[metaslider id=471480]"); ?>
+					<?php echo do_shortcode("[metaslider id=480811]"); ?>
 
 				</div>
 				
