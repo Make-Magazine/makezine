@@ -8932,7 +8932,7 @@ ul#tabs .current > a:hover {
 .maker-week-takeover {
   border-top: 1px solid #005B85;
   font-family: "proxima-nova", sans-serif;
-  background-color: #075c78;
+  background-color: #075c78 !important;
 }
 .maker-week-takeover .flags {
   background-image: url('../images/maker-week-flags.png') !important;
