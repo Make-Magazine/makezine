@@ -8938,6 +8938,7 @@ ul#tabs .current > a:hover {
   background-image: url('../images/maker-week-flags.png') !important;
   background-position: center top;
   background-repeat: repeat-x;
+  margin-top: -3px;
 }
 .maker-week-takeover .mw-promotion {
   margin-top: 30px;
@@ -8974,7 +8975,7 @@ ul#tabs .current > a:hover {
   line-height: 22pt;
 }
 .maker-week-takeover #mw-flags-btm {
-  background: url("/wp-content/themes/makeblog/images/maker-week-flags-btm.png");
+  background: url("../images/maker-week-flags-btm.png");
   background-repeat: repeat-x;
   height: 20px;
 }
