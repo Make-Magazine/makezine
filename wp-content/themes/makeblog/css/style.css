@@ -8888,6 +8888,7 @@ ul#tabs .current > a:hover {
 .maker-week-takeover .caption {
   font-size: 18pt;
   line-height: 22pt;
+  background-color: rgba(51, 51, 51, 0.5);
 }
 .maker-week-takeover .tix {
   color: #fff;
@@ -8900,6 +8901,9 @@ ul#tabs .current > a:hover {
   line-height: 120%;
   margin-bottom: 10px;
   font-weight: normal;
+}
+.maker-week-takeover .caption-wrap {
+  opacity: 0 !important;
 }
 .maker-week-takeover .slider {
   background-color: #2b3b40;
