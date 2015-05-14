@@ -9215,6 +9215,9 @@ ul#tabs .current > a:hover {
   .posts {
     background: none;
   }
+  .mw-promotion {
+    display: none;
+  }
 }
 .avatar-298 {
   margin-bottom: 20px;
