@@ -8972,6 +8972,7 @@ ul#tabs .current > a:hover {
 }
 .maker-week-takeover .mw-content h4 {
   font-size: 18pt;
+  font-weight: 300;
   line-height: 22pt;
 }
 .maker-week-takeover #mw-flags-btm {
@@ -8981,6 +8982,7 @@ ul#tabs .current > a:hover {
 }
 .maker-week-takeover .caption {
   font-size: 18pt;
+  font-weight: 300;
   line-height: 22pt;
   background-color: rgba(51, 51, 51, 0.5);
 }
