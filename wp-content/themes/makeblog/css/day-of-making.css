@@ -8996,9 +8996,6 @@ ul#tabs .current > a:hover {
   margin-bottom: 10px;
   font-weight: normal;
 }
-.maker-week-takeover .caption-wrap {
-  opacity: 0 !important;
-}
 .maker-week-takeover .slider {
   background-color: #2b3b40;
   -webkit-border-radius: 3px;
