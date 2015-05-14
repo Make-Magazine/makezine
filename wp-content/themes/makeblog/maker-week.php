@@ -5,22 +5,25 @@
 
 		<div class="row">
 
-			<div class="span6 offset2">
+			<div class="span12 mw-promotion">
 
-				<div class="maker-week">
+				<div class="mw-makerfaire">
 
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/maker-week.png" alt="Maker Week">
+					<a href="http://makerfaire.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/makerfaire.png" alt="Makerfaire"></a>
 
 				</div>
 
-			</div>
+				<div class="mw-10th">
 
-			<div class="span2 offset2 tix">
+					<a href="http://makerfaire.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/10th-annual-high-res.png" alt="10th Annual Bay Area Makerfaire"></a>
 
-				<h3>Sept. 21 &amp; 22<br>Queens, NY</h3>
-				<a href="http://makerfairenyc.eventbrite.com/">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/buy-tickets.png" class="tickets" alt="Buy Tickets">
-				</a>
+				</div>
+
+				<div class="mw-makey">
+
+					<a href="http://www.eventbrite.com/e/maker-faire-bay-area-2015-tickets-5938495199" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2015-makey.png" alt="2015 Makey"></a>
+
+				</div>				
 
 			</div>
 
@@ -28,80 +31,50 @@
 
 				<div class="slider">
 
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/makey.png" class="makey" alt="Mr. Makey">
-					<h3>Come See The Greatest Show and Tell on Earth <span>&raquo;</span></h3>
-					<div class="clearfix"></div>
-
-					<?php
-
-					$args = array(
-						'post_type' => array( 'post', 'craft', 'magazine', 'video', 'projects' ),
-						'post_status' => 'publish',
-						'posts_per_page' => 7,
-						'ignore_sticky_posts' => 1,
-						'tag' => 'mf-featured'
-					);
-					
-					$query = new WP_Query($args);
-				
-					if( $query->have_posts() ) : $i = 1; ?>
-
-						<div class="carousel slide maker-week-carousel" id="myCarousel" data-interval="2000">
-
-							<div class="carousel-inner">
-
-							<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-								<div class="item<?php echo ( $i == 1 ) ? ' active' : ''; ?>">
-
-									<a href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail( 'maker-week-home' ); ?>
-									</a>
-
-									<h4><a href="<?php echo get_permalink(); ?>"><?php echo make_get_short_title( 65 ); ?></a></h4>
-
-								</div>
-
-							<?php $i++; endwhile; ?>
-
-							</div>
-							<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  							<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-
-						</div>
-
-					<?php endif; ?>
-
-					<script type="text/javascript" charset="utf-8">
-						jQuery('#myCarousel').carousel({
-							 interval: 5000
-						});
-					</script>
+					<?php echo do_shortcode("[metaslider id=480811]"); ?>
 
 				</div>
 				
-			</div>
-
-			<?php 
+				<?php 
 				$featuredposts = make_get_cap_option( 'make_week_takeover_posts' );
 				$posts = array_map( 'get_post', explode( ',', $featuredposts ) );
-				$output = '<div class="span4">';
+				$output = '<div class="span8 mw-news">';
 				foreach ( $posts as $post ) {
+					$thumbnail_id = get_post_thumbnail_id($post->ID);
+					$thumbnail_object = wp_get_attachment_image_src($thumbnail_id);
 					$output .= '<div class="thumb slider">';
-					$output .= get_the_image( array( 'image_scan' => true, 'size' => 'maker-week-thumb', 'image_class' => 'hide-thumbnail pull-left', 'echo' => false ) );
+					$output .= '<img src="'.get_resized_remote_image_url($thumbnail_object[0],328,128).'" height="128" width="328" alt="">';
 					$output .= '<div class="mw-content">';
 					$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 					$output .= '<div class="clearfix"></div></div></div>';
 				}
 				$output .= '</div>';
 				echo $output;
-			?>
+				?>
+
+			</div>
+
+			<div class="span4">
+					<div id="div-gpt-ad-664089004995786621-9" class="text-center">
+						 <script type='text/javascript'>
+						  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
+						 </script>
+					</div>
+					<div id='div-gpt-ad-664089004995786621-3' class='mw-adslot'>
+								<script type='text/javascript'>
+									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
+								</script>
+							</div>	
+
+
+			</div>
 
 		</div>
 		
 		
 
 	</div>
+	<div id="mw-flags-btm"></div>
 	</div>
 </div>
 
