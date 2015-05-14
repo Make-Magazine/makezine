@@ -8879,6 +8879,11 @@ ul#tabs .current > a:hover {
   font-size: 18pt;
   line-height: 22pt;
 }
+.maker-week-takeover #mw-flags-btm {
+  background: url("/wp-content/themes/makeblog/images/maker-week-flags-btm.png");
+  background-repeat: repeat-x;
+  height: 20px;
+}
 .maker-week-takeover .caption {
   font-size: 18pt;
   line-height: 22pt;
