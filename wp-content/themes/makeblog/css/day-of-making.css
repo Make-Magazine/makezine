@@ -8976,6 +8976,10 @@ ul#tabs .current > a:hover {
   width: 275px;
   margin: 20px 0 0 0;
 }
+.maker-week-takeover .mw-content h4 {
+  font-size: 22pt;
+  line-height: 22pt;
+}
 .maker-week-takeover .caption {
   font-size: 22pt;
   line-height: 22pt;
