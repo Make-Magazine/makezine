@@ -146,7 +146,7 @@
 									<ul class="sub-menu dropdown-menu container dropdown">
 										<div class="span2">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/?path=FromNav' ) ); ?>">Electronics</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/,/' ) ); ?>">Electronics</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/electronics/arduino/?post_type=projects&amp;path=FromNav' ) ); ?>">Arduino</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/electronics/computers-mobile/?post_type=projects&amp;path=FromNav' ) ); ?>">Computers &amp; Mobile</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/electronics/raspberry-pi/?post_type=projects&amp;path=FromNav' ) ); ?>">Raspberry Pi</a></li>
@@ -155,36 +155,36 @@
 										</div>
 										<div class="span2">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/workshop/?path=FromNav' ) ); ?>">Workshop</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/3d-printing-workshop/?path=FromNav' ) ); ?>">3D Printing</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/cnc-machining/?path=FromNav' ) ); ?>">CNC Machining</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/computer-controlled-cutting/?path=FromNav' ) ); ?>">Computer-Controlled Cutting</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/machining/?path=FromNav' ) ); ?>">Machining</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/tools/?path=FromNav' ) ); ?>">Tools</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/woodworking/?path=FromNav' ) ); ?>">Woodworking</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/workshop/,/' ) ); ?>">Workshop</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/3d-printing-workshop/,/' ) ); ?>">3D Printing</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/cnc-machining/,/' ) ); ?>">CNC Machining</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/computer-controlled-cutting/,/' ) ); ?>">Computer-Controlled Cutting</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/machining/,/' ) ); ?>">Machining</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/tools/,/' ) ); ?>">Tools</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/woodworking/,/' ) ); ?>">Woodworking</a></li>
 											</ul>
 
 										</div>
 										<div class="span2">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/craftzine/?path=FromNav' ) ); ?>">Craft</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/craft/crochet/?path=FromNav' ) ); ?>">Crochet</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/craft/knitting/?path=FromNav' ) ); ?>">Knitting</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/craft/paper-crafts/?path=FromNav' ) ); ?>">Paper Crafts</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/craft/sewing-craft/?path=FromNav' ) ); ?>">Sewing</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/craftzine/,/' ) ); ?>">Craft</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/craft/crochet/,/' ) ); ?>">Crochet</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/craft/knitting/,/' ) ); ?>">Knitting</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/craft/paper-crafts/,/' ) ); ?>">Paper Crafts</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/craft/sewing-craft/,/' ) ); ?>">Sewing</a></li>
 											</ul>
 										</div>
 										<div class="span2">
 
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/science/?path=FromNav' ) ); ?>">Science</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/science/,/' ) ); ?>">Science</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/science/energy/?post_type=projects&amp;path=FromNav' ) ); ?>">Energy</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/science/health-science/?post_type=projects&amp;path=FromNav' ) ); ?>">Health</a></li>
 											</ul>
 										</div>
 										<div class="span2">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/home/?path=FromNav' ) ); ?>">Home</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/home/,/' ) ); ?>">Home</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/home/food-beverage/?post_type=projects&amp;path=FromNav' ) ); ?>">Food &amp; Beverage</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/home/fun-games/?post_type=projects&amp;path=FromNav' ) ); ?>">Fun &amp; Games</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/home/furniture/?post_type=projects&amp;path=FromNav' ) ); ?>">Furniture</a></li>
@@ -195,14 +195,14 @@
 										</div>
 										<div class="span2">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/art-design/?path=FromNav' ) ); ?>">Art &amp; Design</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/art-design/,/' ) ); ?>">Art &amp; Design</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/art-design/architecture-art-design/?post_type=projects&amp;path=FromNav' ) ); ?>">Architecture</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/art-design/music/?post_type=projects&amp;path=FromNav' ) ); ?>">Music</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/art-design/photography-video/?post_type=projects&amp;path=FromNav' ) ); ?>">Photography &amp; Video</a></li>
 											</ul>
 										</div>
 										<div class="span12 pull-right mega-nav-footer">
-											<a href="<?php echo esc_url( home_url( '/projects/?path=FromNav' ) ); ?>">All Projects</a>
+											<a href="<?php echo esc_url( home_url( '/projects/,/' ) ); ?>">All Projects</a>
 											<a href="//pubads.g.doubleclick.net/gampad/clk?id=112551178&iu=/11548178/Makezine&amp;path=FromNav">Weekend Projects</a>
 										</div>
 
@@ -212,26 +212,26 @@
 									<ul class="span12 sub-menu dropdown-menu" style="margin-left:-92px;">
 										<div class="span2">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/blog/?path=FromNav' ) ); ?>">All News</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/blog/,/' ) ); ?>">All News</a></li>
 											</ul>
 										</div>
 										<div class="span3">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/maker-pro/?path=FromNav' ) ); ?>">Maker Pro</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/maker-pro/open-source-hardware/?path=FromNav' ) ); ?>">Open Source Hardware</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/maker-pro/makerspaces/?path=FromNav' ) ); ?>">Makerspaces</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/maker-pro/crowdfunding/?path=FromNav' ) ); ?>">Crowdfunding</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/maker-pro-newsletter/?path=FromNav' ) ); ?>">Maker Pro Newsletter</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/maker-pro/,/' ) ); ?>">Maker Pro</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/maker-pro/open-source-hardware/,/' ) ); ?>">Open Source Hardware</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/maker-pro/makerspaces/,/' ) ); ?>">Makerspaces</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/maker-pro/crowdfunding/,/' ) ); ?>">Crowdfunding</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/maker-pro-newsletter/,/' ) ); ?>">Maker Pro Newsletter</a></li>
 											</ul>
 										</div>
 										<div class="span3">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/tag/maker-faire/?path=FromNav' ) ); ?>">Maker Faire</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/tag/maker-faire/,/' ) ); ?>">Maker Faire</a></li>
 											</ul>
 										</div>
 										<div class="span3">
 											<ul class="mega-dropdown">
-												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/makers/?path=FromNav' ) ); ?>">Meet the Makers</a></li>
+												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/makers/,/' ) ); ?>">Meet the Makers</a></li>
 											</ul>
 										</div>
 
@@ -239,20 +239,20 @@
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Videos</a>
 									<ul class="sub-menu dropdown-menu">
-										<li class="menu-item"><a href="<?php echo esc_url( home_url( '/video?path=FromNav' ) ); ?>">All Videos</a>
+										<li class="menu-item"><a href="<?php echo esc_url( home_url( '/video,/' ) ); ?>">All Videos</a>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Events</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="//makerfaire.com/?path=FromNav">Maker Faire</a></li>
-										<li><a target="_blank" href="//makercon.com?path=FromNav">MakerCon</a></li>
-										<li><a target="_blank" href="//makercamp.com?path=FromNav">Maker Camp</a></li>
+										<li><a target="_blank" href="//makerfaire.com/,/">Maker Faire</a></li>
+										<li><a target="_blank" href="//makercon.com,/">MakerCon</a></li>
+										<li><a target="_blank" href="//makercamp.com,/">Maker Camp</a></li>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Contests</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a href="<?php echo esc_url( home_url( '/pitch-your-prototype-2015/?path=FromNav' ) ); ?>">Pitch Your Prototype</a></li>
-										<li><a href="<?php echo esc_url( home_url( '/psoc-maker-challenge/?path=FromNav' ) ); ?> ">PSoC Maker Challenge 2015</a></li>
+										<li><a href="<?php echo esc_url( home_url( '/pitch-your-prototype-2015/,/' ) ); ?>">Pitch Your Prototype</a></li>
+										<li><a href="<?php echo esc_url( home_url( '/psoc-maker-challenge/,/' ) ); ?> ">PSoC Maker Challenge 2015</a></li>
 										<li><a target="_blank" href="//makercon.com/launchpad-contest/">Launchpad at MakerCon</a></li>
 									</ul>
 								</li>
