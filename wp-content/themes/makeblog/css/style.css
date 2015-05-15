@@ -8893,6 +8893,7 @@ ul#tabs .current > a:hover {
   font-weight: 300;
   line-height: 22pt;
   background-color: rgba(51, 51, 51, 0.5);
+  padding-left: 50px;
 }
 .maker-week-takeover .tix {
   color: #fff;
