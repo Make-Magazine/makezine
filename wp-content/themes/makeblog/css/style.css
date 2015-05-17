@@ -6893,6 +6893,9 @@ blockquote p {
 .small-youtube {
   padding: 15px;
 }
+.playlist {
+  float: right;
+}
 .blue {
   color: #00315d;
 }

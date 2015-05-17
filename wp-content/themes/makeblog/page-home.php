@@ -139,6 +139,7 @@ Template Name: Home Page
 							} elseif ( $cap_youtube ) {
 								echo '<div class="small-youtube">';
 								echo do_shortcode('[youtube='. esc_url( $cap_youtube ) .'&amp;w=590&amp;h=332]');
+								echo '<div class="playlist"><a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">See all the Make: Videos from Maker Faire Bay Area 2015</a></div>';
 								echo '</div>';
 							};
 							?>
