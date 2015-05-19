@@ -7050,9 +7050,8 @@ blockquote p {
 }
 /* SHARE WIDGET STYLES*/
 .sharedaddy {
-  margin-top: 15px;
-  height: 34px !important;
-  margin-top: 0 !important;
+  height: 34px;
+  margin-top: 0;
 }
 .sharedaddy a.sd-button {
   margin: 0 0 0 5px!important;
@@ -7115,9 +7114,54 @@ div.sharedaddy .sd-content li.share-google-plus-1,
 div.sharedaddy .sd-content li.share-reddit,
 div.sharedaddy .sd-content li.share-pinterest,
 div.sharedaddy .sd-content li.share-email {
-  margin-right: 3px !important;
+  margin-right: 4px !important;
   width: 100px;
   text-align: center;
+}
+.a.sd-button {
+  width: 90px;
+  margin-right: 3px !important;
+}
+/*
+Jetpack Sharing
+---------------------------------------------------------------------------------------------------- */
+.content div.sharedaddy div.sd-block {
+  border: none;
+  padding: 0;
+}
+.content div.sharedaddy .sd-content {
+  float: left;
+  margin-bottom: 32px;
+}
+.content div.sharedaddy a.sd-button {
+  border: none !important;
+  box-shadow: none;
+}
+.content .sd-social-icon-text a.sd-button > span,
+a.sd-button > span {
+  opacity: 1;
+  padding: 6px 12px;
+}
+.content a.sd-button > span {
+  background-image: none !important;
+  background: #111;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.content a.sd-button:hover > span {
+  background: #1dbec0;
+}
+.sd-content .sd-button span.share-count {
+  color: #cdf593 !important;
+  font-size: 100% !important;
+}
+.sd-social-icon .sd-content ul li[class*='share-'] a.sd-button {
+  border-radius: 0;
+  height: 17px !important;
 }
 .a.sd-button {
   width: 90px;
@@ -7127,6 +7171,13 @@ div.sharedaddy .sd-content li.share-email {
 .sd-social-icon .sd-content ul li[class*='share-'] a:hover,
 .sd-social-icon .sd-content ul li[class*='share-'] div.option a {
   width: 82px;
+}
+.content .sd-social-icon-text a.sd-button > span,
+a.sd-button > span {
+  padding: 0 !important;
+}
+.sd-content .sd-button span.share-count {
+  display: none;
 }
 #jjuylk-jjuylk,
 #jjurhj-jjurhj {
