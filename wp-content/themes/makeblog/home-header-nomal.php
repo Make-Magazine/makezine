@@ -37,8 +37,6 @@
 													} else {
 														$main_url_id = make_get_cap_option( 'main_url' );
 														echo '<img src="'.get_resized_remote_image_url($main_url_id,328,128).'" height="128" width="328" alt="">;'
-														if ( make_get_cap_option( 'ribbon_title_display' ) )
-															echo 'id="top-left" ';
 													}
 												?>
 
