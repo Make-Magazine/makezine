@@ -1,7 +1,7 @@
 <script src='<?php echo plugins_url("js/chart.js",__FILE__); ?>'></script>
 <div class="wrap">
 	<h2>Title Experiments Statistics</h2>
-	<div class="tablenav top">
+	<div>
 		<div class="alignleft actions bulkactions" style='width: 100%;'>
 			<select id="page" onchange="wpex_page_change(this)" style='max-width: 50%;'>
 				<option value="-1" <?php echo isset($id) ? '' : 'selected="selected"' ?>>Select Page</option>

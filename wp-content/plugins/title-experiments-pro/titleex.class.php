@@ -85,7 +85,7 @@ class TitleEx {
 					$title = $wpdb->get_row($sql, ARRAY_A, 0);
 
 					if($title['title'] != "__WPEX_MAIN__") {
-						$wpdb->update($wpdb->prefix."posts", array('post_title' => $title['title']), array('ID' => $post['ID']));
+						$wpdb->update($wpdb->prefix."posts", array('post_title' => stripslashes($title['title'])), array('ID' => $post['ID']));
 					}
 
 					// remove the past titles
@@ -137,35 +137,35 @@ class TitleEx {
 		$pages = $wpdb->get_results($sql, ARRAY_A);	
 		
 		if(isset($_GET['id']) && preg_match('/^\d+$/', $_GET['id'])) {
-			$safe_post_id = $_GET['id']; // this is guarenteed to be an int above
+			$id = $_GET['id']; // this is guarenteed to be an int above
 			if(isset($_GET['reset-stats'])) {
-				$wpdb->query("UPDATE " . $wpex->titles_tbl ." SET clicks=0,impressions=0,stats='' WHERE post_id=".$safe_post_id);
+				$wpdb->query("UPDATE " . $wpex->titles_tbl ." SET clicks=0,impressions=0,stats='' WHERE post_id=".$id);
 				$wpdb->delete($wpex->stats_tbl, array("post_id"=>$_GET['id']));
 				$this->wpph->flash("Title statistics for the page have been cleared.");
-				$redirect_to = '/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&id='.$safe_post_id;
+				$redirect_to = '/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&id='.$id;
 				include 'redirect.php';
 			} else if(isset($_GET['clear-titles'])) {
-				$wpdb->delete($wpex->titles_tbl, array("post_id"=>$safe_post_id));
-				$wpdb->delete($wpex->stats_tbl, array("post_id"=>$safe_post_id));
+				$wpdb->delete($wpex->titles_tbl, array("post_id"=>$id));
+				$wpdb->delete($wpex->stats_tbl, array("post_id"=>$id));
 				$this->wpph->flash("Alternate titles for the page have been cleared.");
 				$redirect_to = '/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu';
 				include 'redirect.php';
 			} else if(isset($_GET['set-title']) && preg_match('/^\d+$/', $_GET['set-title'])) {
 				$safe_title_id = $_GET['set-title'];
 				//find the best title
-				$sql = "SELECT title FROM ".$wpex->titles_tbl." WHERE post_id=".$safe_post_id." AND id=".$safe_title_id;
+				$sql = "SELECT title FROM ".$wpex->titles_tbl." WHERE post_id=".$id." AND id=".$safe_title_id;
 				$title = $wpdb->get_row($sql, ARRAY_A, 0);
 
 				if($title['title'] != "__WPEX_MAIN__") {
-					$wpdb->update($wpdb->prefix."posts", array('post_title' => $title['title']), array('ID' => $safe_post_id));
+					$wpdb->update($wpdb->prefix."posts", array('post_title' => stripslashes($title['title'])), array('ID' => $id));
 				}
 
 				// remove the past titles
-				$sql = "DELETE FROM ".$wpex->titles_tbl." WHERE post_id=".$safe_post_id.";";
+				$sql = "DELETE FROM ".$wpex->titles_tbl." WHERE post_id=".$id.";";
 				$wpdb->query($sql);
 
 				// remove the stats
-				$sql = "DELETE FROM ".$wpex->stats_tbl." WHERE post_id=".$safe_post_id.";";
+				$sql = "DELETE FROM ".$wpex->stats_tbl." WHERE post_id=".$id.";";
 				$wpdb->query($sql);
 
 				$this->wpph->flash("The title has been set for the page.");
@@ -173,7 +173,7 @@ class TitleEx {
 				include 'redirect.php';
 			}
 
-			$sql = "select ID, post_title, post_date FROM ".$wpdb->prefix."posts WHERE ID='".$safe_post_id."';";
+			$sql = "select ID, post_title, post_date FROM ".$wpdb->prefix."posts WHERE ID='".$id."';";
 			$page = $wpdb->get_row($sql, ARRAY_A, 0);	
 
 			$months = array();
@@ -186,7 +186,7 @@ class TitleEx {
 				if($start > $now) break;
 			}
 
-			$sql = "SELECT * FROM ".$wpex->titles_tbl." WHERE post_id='".$safe_post_id."' ORDER BY id;";
+			$sql = "SELECT * FROM ".$wpex->titles_tbl." WHERE post_id='".$id."' ORDER BY id;";
 			$_stats = $wpdb->get_results($sql, ARRAY_A);	
 			$stats = array();
 			$titles = array();
@@ -214,7 +214,7 @@ class TitleEx {
 					$labels[] = date("jS", $d);
 				}
 
-				$sql = "SELECT * FROM ".$wpex->stats_tbl." WHERE ts>=$start_ts AND ts<$end_ts AND post_id='".$safe_post_id."' ORDER BY title_id;";
+				$sql = "SELECT * FROM ".$wpex->stats_tbl." WHERE ts>=$start_ts AND ts<$end_ts AND post_id='".$id."' ORDER BY title_id;";
 				$detailed_stats = $wpdb->get_results($sql, ARRAY_A);	
 				$by_test_clicks = array();
 				$by_test_views = array();
