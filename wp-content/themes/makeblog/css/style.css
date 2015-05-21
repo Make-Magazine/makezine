@@ -6896,6 +6896,12 @@ blockquote p {
 .playlist {
   float: right;
 }
+.playlist a {
+  color: #085a7e;
+}
+span.icon-rocket {
+  margin-right: 7px;
+}
 .blue {
   color: #00315d;
 }
@@ -7027,11 +7033,6 @@ div.sharedaddy .sd-content li.share-email {
 .a.sd-button {
   width: 90px;
   margin-right: 3px !important;
-}
-.sd-social-icon .sd-content ul li[class*='share-'] a,
-.sd-social-icon .sd-content ul li[class*='share-'] a:hover,
-.sd-social-icon .sd-content ul li[class*='share-'] div.option a {
-  width: 82px;
 }
 /*
 Jetpack Sharing

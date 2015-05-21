@@ -6990,6 +6990,12 @@ blockquote p {
 .playlist {
   float: right;
 }
+.playlist a {
+  color: #085a7e;
+}
+span.icon-rocket {
+  margin-right: 7px;
+}
 .blue {
   color: #00315d;
 }
