@@ -36,10 +36,9 @@
 														echo wp_get_attachment_image( absint( make_get_cap_option( 'main_id' ) ), 'p1', 0, array( 'class' => $ribbon_class ) );
 													} else {
 														$main_url_id = make_get_cap_option( 'main_url' );
-														echo '<img src="' . get_resized_remote_image_url( $main_url_id, 301, 400) . '"';
+														echo <img src="'.get_resized_remote_image_url( $main_url_id,328,128).'" height="128" width="328" alt=""></a>';
 														if ( make_get_cap_option( 'ribbon_title_display' ) )
 															echo 'id="top-left" ';
-														echo '/>';
 													}
 												?>
 
