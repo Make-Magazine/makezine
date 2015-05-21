@@ -104,17 +104,17 @@ class ContextlyKit {
    * @param string $filepath
    *   Path relative to the "client/src" folder on dev mode and to the
    *   "client/aggregated" folder on live mode.
-   * @return asset URL
+   * @return string
+   *   Asset URL.
    */
   function buildAssetUrl($filepath) {
-	if ( $this->isCdnEnabled() ) {
-      if ( strpos($filepath, '.css') === false || strpos($filepath, 'widgets--factory.css') !== false ) {
-	    // TODO Avoid hard-coding "_kit/assets" path.
-	    return $this->getServerUrl('cdn') . 'kit/assets/' . self::version() . '/' . $filepath;
-      }
+    if ($this->isCdnEnabled()) {
+      // TODO Avoid hard-coding "kit/assets" path.
+      return $this->getServerUrl('cdn') . 'kit/assets/' . self::version() . '/' . $filepath;
     }
-
-    return $this->buildFileUrl($this->getFolderPath('client') . '/' . $filepath);
+    else {
+      return $this->buildFileUrl($this->getFolderPath('client') . '/' . $filepath);
+    }
   }
 
   /**
