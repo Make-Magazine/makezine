@@ -208,7 +208,7 @@ Template Name: Home Page
 								<div class="new-dotw">
 									<div id='div-gpt-ad-664089004995786621-3'>
 								<script type='text/javascript'>
-									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
+									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
 								</script>
 							</div>	
 								</div>
