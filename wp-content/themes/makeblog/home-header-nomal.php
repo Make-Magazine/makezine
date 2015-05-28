@@ -68,10 +68,11 @@
 													<a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>">
 
 														<?php
+															$topurl = make_get_cap_option( 'top_url' );
 															if ( make_get_cap_option( 'top_url_id' ) ) {
 																echo wp_get_attachment_image( absint( make_get_cap_option( 'top_url_id' ) ), 'p2' );
 															} else {
-																echo '<img class="home-biggest" src="' . esc_url( make_get_cap_option( 'top_url' ) ) . '" />';
+																echo '<img src="'.get_resized_remote_image_url($topurl,290,180).'" height="180" width="290" alt="" />';
 															}
 														?>
 
@@ -95,10 +96,11 @@
 													<a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>">
 
 														<?php
+															$topurl = make_get_cap_option( 'bottom_url' );
 															if ( make_get_cap_option( 'bottom_url_id' ) ) {
 																echo wp_get_attachment_image( absint( make_get_cap_option( 'bottom_url_id' ) ), 'p2' );
 															} else {
-																echo '<img class="home-biggest" src="' . esc_url( make_get_cap_option( 'bottom_url' ) ) . '" />';
+																echo '<img src="'.get_resized_remote_image_url($bottomurl,290,180).'" height="180" width="290" alt="" />';
 															}
 														?>
 
