@@ -96,7 +96,7 @@
 													<a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>">
 
 														<?php
-															$topurl = make_get_cap_option( 'bottom_url' );
+															$bottomurl = make_get_cap_option( 'bottom_url' );
 															if ( make_get_cap_option( 'bottom_url_id' ) ) {
 																echo wp_get_attachment_image( absint( make_get_cap_option( 'bottom_url_id' ) ), 'p2' );
 															} else {
