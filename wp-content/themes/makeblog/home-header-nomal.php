@@ -36,16 +36,14 @@
 													if ( make_get_cap_option( 'main_id' ) ) {
 														echo wp_get_attachment_image( absint( make_get_cap_option( 'main_id' ) ), 'p1', 0, array( 'class' => $ribbon_class ) );
 													} else {
-<<<<<<< HEAD
 														$main_url_id = make_get_cap_option( 'main_url' );
 														$main_image = get_resized_remote_image_url($main_url_id,301,400);
 														echo "<img src=\"$main_image\" height=\"301\" width=\"400\" alt=\"\">";
-=======
+
 														echo '<img src="'.get_resized_remote_image_url($mainurl,301,400).'" height="400" width="301" alt="">';
 														if ( make_get_cap_option( 'ribbon_title_display' ) )
 															echo 'id="top-left" ';
 														echo '/>';
->>>>>>> 7e2e142c1becd1efaff482b8e0f7475c69ffcd67
 													}
 												?>
 
