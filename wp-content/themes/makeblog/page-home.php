@@ -152,14 +152,9 @@ Template Name: Home Page
                                                                 //echo do_shortcode('[youtube='. esc_url( $cap_youtube ) .'&amp;w=590&amp;h=332]');
 								echo '<div class="playlist">'
                                                                 . '     <strong>'
-                                                                        . '     <a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">'
-                                                                        . '         <span class="icon-play-circle red" style="color:blue">&nbsp;</span>'
+                                                                        . '<a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">'
+                                                                        . ' <span class="icon-play-circle red" style="color:blue">&nbsp;</span>'
                                                                         . '&nbsp;Watch more Make: videos on YouTube</a></strong></div>';
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
 								echo '</div>';
 							};
 							?>
