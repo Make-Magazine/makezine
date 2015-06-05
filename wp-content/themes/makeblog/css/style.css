@@ -8261,6 +8261,28 @@ p:empty {
   height: 0px;
   margin: 0px;
 }
+.embed-youtube,
+.embed-vimeo,
+.googlemaps {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  margin-bottom: 15px;
+  position: relative;
+  height: 0;
+}
+.embed-youtube iframe,
+.embed-vimeo iframe,
+.googlemaps iframe,
+.embed-youtube object,
+.embed-vimeo object,
+.googlemaps object {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 .category-top {
   font-family: "proxima-nova", sans-serif;
   border-bottom: 3px solid #DBDBDB;
