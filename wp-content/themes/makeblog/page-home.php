@@ -152,14 +152,9 @@ Template Name: Home Page
                                                                 //echo do_shortcode('[youtube='. esc_url( $cap_youtube ) .'&amp;w=590&amp;h=332]');
 								echo '<div class="playlist">'
                                                                 . '     <strong>'
-
-                                                                        . '<a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">'
+                                                                        . '     <a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">'
                                                                         . ' <span class="icon-play-circle">&nbsp;</span>'
-                                                                        . '&nbsp;Watch more Make: videos on YouTube</a></strong></div>';
-
-                                                                        . ' <a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">'
-                                                                        . ' <span class="icon-rocket"><img src="http://i2.wp.com/makerfaire.com/wp-content/uploads/2015/05/rocket@2x.png?zoom=2&amp;resize=16%2C16" alt="Maker Faire Rocket logo" width="16" height="16" src-orig="http://i2.wp.com/makerfaire.com/wp-content/uploads/2015/05/rocket@2x.png?resize=16%2C16" scale="2"></span>'
-                                                                        . 'See all the Make: Videos from Maker Faire Bay Area 2015</a></div>';
+                                                                        . '&nbsp;Watch more Make: videos on YouTube</a></div>';
 
 								echo '</div>';
 							};
