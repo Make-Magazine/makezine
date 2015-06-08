@@ -8209,6 +8209,10 @@ li.share-pinterest .pinterest_button a {
 .ssbp-wrap {
   display: none;
 }
+/*PSOC Contest About page header */
+.page-id-475507 .projects-masthead h1 {
+  display: none;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;
@@ -8340,7 +8344,9 @@ p:empty {
 }
 .category .item img {
   border: 1px solid #cecece;
-  max-width: 100%;
+  max-height: 147px;
+  width: 302px;
+  object-fit: cover;
 }
 .category .item h4 {
   margin: 5px 0;
@@ -8353,10 +8359,17 @@ p:empty {
   overflow: hidden;
 }
 .category .item .span4 {
-  height: 250px;
+  height: auto;
 }
 .category .item .span3 {
-  height: 282px;
+  height: auto;
+}
+@media (max-width: 979px) {
+  .category .item img {
+    max-height: 114px;
+    width: 230px;
+    object-fit: cover;
+  }
 }
 .icons {
   display: block;
@@ -8953,7 +8966,7 @@ ul#tabs .current > a:hover {
   width: 288px;
 }
 .maker-week-takeover .mw-news {
-  margin-top: 24px;
+  margin-top: -10px;
   width: 602px;
 }
 .maker-week-takeover .mw-adslot {
@@ -10282,6 +10295,9 @@ ul.sub-menu {
   font-size: 14px;
 }
 .secondary-navigation .dropdown-menu {
+  text-align: left;
+  padding-right: 30px;
+  padding-top: 10px;
   padding-bottom: 0px;
   border-top: 1px solid #ddd;
 }
