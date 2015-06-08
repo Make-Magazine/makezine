@@ -154,7 +154,7 @@ Template Name: Home Page
                                                                 . '     <strong>'
                                                                         . '     <a href="https://www.youtube.com/playlist?list=PLwhkA66li5vC06gyQNvo6I6nd9AXjN5us" target="_blank">'
                                                                         . ' <span class="icon-play-circle">&nbsp;</span>'
-                                                                        . '&nbsp;Watch more Make: videos on YouTube</a></div>';
+                                                                        . '&nbsp;Watch more Make: videos on YouTube</a></strong></div>';
 
 								echo '</div>';
 							};
