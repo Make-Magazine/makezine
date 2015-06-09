@@ -61,15 +61,12 @@ get_header(); ?>
 					<article <?php post_class(); ?>>
 
 						<?php the_content(); ?>
-
-					</article>
-
-					<?php endwhile; ?>
-					
-					<div class="tag-cloud">
+						
+						<div class="tag-cloud">
 							
+							<p>Related Topics</p>
 							<?php 
-								echo '<ul>'; // Begin list
+								echo '<ul class="tag-cloud-ul">'; // Begin list
 								// Get ID of current page
 								$postid = get_the_ID();
 								// Select term_taxonomy_id from relationships table
@@ -100,6 +97,10 @@ get_header(); ?>
 							?>
 
 						</div>
+
+					</article>
+
+					<?php endwhile; ?>
 
 					<div class="comments">
 						<?php comments_template(); ?>

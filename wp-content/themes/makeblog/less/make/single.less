@@ -175,16 +175,28 @@ Tag Cloud
 
 .tag-cloud {
     display: inline-block;
-    padding: 15px;
+    width: 620px;
+    padding: 20px 0;
 	border-top: 1px solid #cdcdcd;
     border-bottom: 1px solid #cdcdcd;
 }
 
-.tag-cloud ul li {
+.tag-cloud ul.tag-cloud-ul {
+	width: 390px;
 	float: left;
+	margin-left:100px;
+	display: inline-block;
 	list-style-type: none;
 	padding-right: 10px;
+
+}	
+
+.tag-cloud ul.tag-cloud-ul li {
+	float: left;
+	list-style-type: none;
+	padding-right: 25px;
 	font-size: 12pt;
+	line-height: 18pt;
 }
 
 .tag-cloud ul li a {
@@ -193,4 +205,12 @@ Tag Cloud
 
 .tag-cloud ul li a:hover {
 	color: #333333;
+}
+
+.tag-cloud p {
+	width: 115px;
+	float: left;
+	color: #333333;
+	font-size: 12pt !important;
+	font-weight: bold;
 }
