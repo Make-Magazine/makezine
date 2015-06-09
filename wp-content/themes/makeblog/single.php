@@ -66,9 +66,45 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 					
+					<div class="tag-cloud">
+							
+							<?php 
+								echo '<ul>'; // Begin list
+								// Get ID of current page
+								$postid = get_the_ID();
+								// Select term_taxonomy_id from relationships table
+								$term_tax = $wpdb->get_col("SELECT term_taxonomy_id
+								FROM $wpdb->term_relationships WHERE object_id = '$postid'" );
+								// Gather terms to relate
+								foreach($term_tax as $term_tax_id) {
+								// Get term ids
+								$term_id2 = $wpdb->get_col("SELECT term_id
+								FROM $wpdb->term_taxonomy WHERE term_taxonomy_id = '$term_tax_id' and taxonomy = 'post_tag'" );
+									// Gets rid of empty variables
+									if (empty($term_id2)) {
+										continue;
+									}
+									else {
+										$term_id3 = [$term_id2[0]];
+									}
+								// Get tag names
+								foreach($term_id3 as $cats) 
+								$the_cats = $wpdb->get_col("SELECT name
+								FROM $wpdb->terms WHERE term_id = '$cats'" );
+								// Get tag URLs
+								$tag_url = get_tag_link($term_id3[0]);
+								// Generate list of tags with links								
+								echo '<li><a href="' . $tag_url . '">#' . $the_cats[0] . '</a></li>';
+								}
+								echo '</ul>'; // End list
+							?>
+
+						</div>
+
 					<div class="comments">
 						<?php comments_template(); ?>
 					</div>
+					
 					<div id="contextly"></div>
 
 					<?php else: ?>
