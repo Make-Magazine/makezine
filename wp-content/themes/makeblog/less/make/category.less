@@ -65,7 +65,9 @@
 	.item {
 		img {
 			border:1px solid @border-color;
-			max-width: 100%;
+			max-height: 147px;
+			width: 302px;
+			object-fit: cover;
 		}
 		h4 {
 			a {
@@ -78,11 +80,19 @@
 			overflow:hidden;
 		}
 		.span4 {
-			height:250px;
+			height:auto;
 		}
 		.span3 {
-			height:282px;
+			height:auto;
 		}
+	}
+}
+
+@media (max-width: 979px) {
+	.category .item img {
+		max-height: 114px;
+		width: 230px;
+		object-fit: cover;
 	}
 }
 
