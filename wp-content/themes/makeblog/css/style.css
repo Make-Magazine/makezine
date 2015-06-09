@@ -8755,6 +8755,9 @@ a {
   border-top: 3px solid #DBDBDB;
 }
 .post-type-archive-projects .carousel-inner img {
+  max-height: 147px;
+  width: 302px;
+  object-fit: cover;
   border: 2px solid #cecece;
   margin-bottom: 5px;
 }
