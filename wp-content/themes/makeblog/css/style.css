@@ -13232,14 +13232,15 @@ Tag Cloud
 .tag-cloud {
   display: inline-block;
   width: 620px;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
   border-top: 1px solid #cdcdcd;
   border-bottom: 1px solid #cdcdcd;
 }
 .tag-cloud ul.tag-cloud-ul {
   width: 390px;
   float: left;
-  margin-left: 100px;
+  margin-left: 44px;
   display: inline-block;
   list-style-type: none;
   padding-right: 10px;
@@ -13248,7 +13249,7 @@ Tag Cloud
   float: left;
   list-style-type: none;
   padding-right: 25px;
-  font-size: 12pt;
+  font-size: 12px;
   line-height: 18pt;
   text-transform: uppercase;
 }
@@ -13262,6 +13263,6 @@ Tag Cloud
   width: 115px;
   float: left;
   color: #333333;
-  font-size: 12pt !important;
+  font-size: 12px !important;
   font-weight: bold;
 }
