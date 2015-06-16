@@ -80,27 +80,27 @@
 						<h5>About Maker Media</h5>
 						<div class="about-column-01">
 							<ul>
-								<li><a href="http://makermedia.com" target="_blank">About Us</a></li>
-								<li><a href="http://makermedia.com/work-with-us/advertising/" target="_blank">Advertise with Us</a></li>
-								<li><a href="http://makermedia.com/work-with-us/job-openings/" target="_blank">Work for Us</a></li>
+								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
+								<li><a href="//makermedia.com/work-with-us/advertising/" target="_blank">Advertise with Us</a></li>
+								<li><a href="//makermedia.com/work-with-us/job-openings/" target="_blank">Work for Us</a></li>
 							</ul>
 						<!-- END span about-column-01 --></div>
 						<div class="about-column-02">
 							<ul>
 								<li><a href="<?php echo esc_url( home_url( '/contactus' ) ); ?>">Contact Us</a></li>
-								<li><a href="http://makermedia.com/privacy/" target="_blank">Privacy</a></li>
-								<li><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></li>
+								<li><a href="//makermedia.com/privacy/" target="_blank">Privacy</a></li>
+								<li><a href="//readerservices.makezine.com/mk/">Subscribe to Make:</a></li>
 							</ul>
 						<!-- END span about-column-02 -->
 						</div>
 						<div class="clearfix"></div>
 							<h5  class="follow">Follow Make:</h5>
 						<div class="soc_icons">
-							<a class="sprite sprite-twitter"  href="http://twitter.com/make" title="Twitter" target="_blank"></a>
-							<a class="sprite sprite-youtube" href="http://youtube.com/make" title="Youtube" target="_blank"></a>
-							<a class="sprite sprite-pinterest" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank"></a>
-							<a class="sprite sprite-facebook" href="http://facebook.com/makemagazine" title="Facebook" target="_blank"></a>
-							<a class="sprite sprite-google-plus" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank"></a>
+							<a class="sprite sprite-twitter"  href="//twitter.com/make" title="Twitter" target="_blank"></a>
+							<a class="sprite sprite-youtube" href="//youtube.com/make" title="Youtube" target="_blank"></a>
+							<a class="sprite sprite-pinterest" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank"></a>
+							<a class="sprite sprite-facebook" href="//facebook.com/makemagazine" title="Facebook" target="_blank"></a>
+							<a class="sprite sprite-google-plus" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank"></a>
 						<!-- END socialArea -->
 						</div>
 					<!-- END span3 about-us -->
