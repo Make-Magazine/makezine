@@ -125,9 +125,9 @@
 						</div>
 
 						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
-								<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&amp;PK=M3BMZA" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
+								<a href="https://readerservices.makezine.com/mk/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
 								<p>
-									<a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA" target="_blank">Subscribe Now</a><br />
+									<a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe Now</a><br />
 									<span><a href="//www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Give a Gift</a><br />
 								</p>
 						</div>

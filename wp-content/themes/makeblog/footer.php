@@ -34,7 +34,7 @@
 					<div class="span3 social-foot-col" >
 						<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
 						<ul class="unstyled">
-							<li><a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB" target="_blank">Subscribe to Make:</a></li>
+							<li><a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 							<li><a href="/projects">Make: Projects</a></li>
 							<li><a href="/category/workshop/3d-printing-workshop/">3D Projects</a></li>
 							<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
@@ -67,22 +67,22 @@
 					<div class="span3 social-foot-col">
 						<h4 class="stay-connected">Stay Connected</h4>
 						<div class="social-profile-icons">
-							<a class="sprite-facebook-32" href="http://facebook.com/makemagazine" title="Facebook" target="_blank">
+							<a class="sprite-facebook-32" href="//facebook.com/makemagazine" title="Facebook" target="_blank">
 								<div class="social-profile-cont">	
 									<span class="sprite"></span>
 								</div>
 							</a>
-							<a class="sprite-twitter-32" href="http://twitter.com/make" title="Twitter" target="_blank">
+							<a class="sprite-twitter-32" href="//twitter.com/make" title="Twitter" target="_blank">
 								<div class="social-profile-cont">	
 									<span class="sprite"></span>
 								</div>
 							</a>
-							<a class="sprite-pinterest-32" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank">
+							<a class="sprite-pinterest-32" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank">
 								<div class="social-profile-cont">	
 									<span class="sprite"></span>
 								</div>
 							</a>
-							<a class="sprite-googleplus-32" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
+							<a class="sprite-googleplus-32" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
 								<div class="social-profile-cont">	
 									<span class="sprite"></span>
 								</div>
