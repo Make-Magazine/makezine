@@ -8274,10 +8274,13 @@ li.share-pinterest .pinterest_button a {
 .dom-arrow {
   margin-left: 140px;
 }
-.dom-featured-arrow {
+.dom-feature-arrow {
   margin-left: 420px;
 }
-.dom-feature-excerpt {
+.dom-rm-featured {
+  margin-left: 20px;
+}
+p.dom-feature-excerpt {
   margin-left: 20px;
   margin-top: 0;
   padding-bottom: 0;
