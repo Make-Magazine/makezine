@@ -491,6 +491,58 @@ new CheezCapGroup( 'Craft Featured Posts', 'second_CheezCapGroup',
 				),
 			)
 		),
+		new CheezCapGroup( 'Day of Making', 'campGroup',
+			array(
+				new CheezCapTextOption(
+					'Day of Making featured post',
+					'Add post ID',
+					'dom_featured',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 1',
+					'Add post ID',
+					'dom_1',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 2',
+					'Add post ID',
+					'dom_2',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 3',
+					'Add post ID',
+					'dom_3',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 4',
+					'Add post ID',
+					'dom_4',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 5',
+					'Add post ID',
+					'dom_5',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 6',
+					'Add post ID',
+					'dom_6',
+					''
+				),
+					new CheezCapTextOption(
+					'Day of Making post 7',
+					'Add post ID',
+					'dom_7',
+					''
+				),													
+			)
+		),		
 	), array(
 		'themename' => 'Home', // used on the title of the custom admin page
 		'req_cap_to_edit' => 'manage_options', // the user capability that is required to access the CheezCap settings page
