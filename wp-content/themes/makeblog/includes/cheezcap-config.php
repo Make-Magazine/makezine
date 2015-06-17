@@ -444,6 +444,58 @@ function cap_get_options() {
 				),
 			)
 		),
+		new Group( 'Day of Making', 'campGroup',
+			array(
+				new TextOption(
+					'Day of Making featured post',
+					'Add post ID',
+					'dom_featured',
+					''
+				),
+					new TextOption(
+					'Day of Making post 1',
+					'Add post ID',
+					'dom_1',
+					''
+				),
+					new TextOption(
+					'Day of Making post 2',
+					'Add post ID',
+					'dom_2',
+					''
+				),
+					new TextOption(
+					'Day of Making post 3',
+					'Add post ID',
+					'dom_3',
+					''
+				),
+					new TextOption(
+					'Day of Making post 4',
+					'Add post ID',
+					'dom_4',
+					''
+				),
+					new TextOption(
+					'Day of Making post 5',
+					'Add post ID',
+					'dom_5',
+					''
+				),
+					new TextOption(
+					'Day of Making post 6',
+					'Add post ID',
+					'dom_6',
+					''
+				),
+					new TextOption(
+					'Day of Making post 7',
+					'Add post ID',
+					'dom_7',
+					''
+				),													
+			)
+		),		
 		new Group( 'Maker Week', 'makerWeekGroup',
 			array(
 				new BooleanOption(

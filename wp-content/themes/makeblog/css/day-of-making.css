@@ -8308,6 +8308,39 @@ li.share-pinterest .pinterest_button a {
 .page-id-475507 .projects-masthead h1 {
   display: none;
 }
+/* Day of Making */
+.hr {
+  border: 1px solid #dbdbdb;
+}
+.header-dom {
+  margin: 25px 0 50px 0;
+}
+.dom-main-story {
+  width: 570px;
+  height: 375px;
+}
+.dom-story {
+  width: 275px;
+  height: 375px;
+}
+.domWH {
+  width: 275px;
+  height: 375px;
+  background-image: url("../images/day-of-making/domBG.png");
+}
+.second-row {
+  margin-top: 20px;
+}
+.third-row {
+  margin-top: 20px;
+}
+.fourth-row {
+  margin-top: 20px;
+}
+.second-column {
+  margin-left: -40px;
+  margin-top: 34px;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;
