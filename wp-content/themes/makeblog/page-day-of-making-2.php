@@ -58,7 +58,7 @@ get_header(); ?>
 								$output .= '<div class="clearfix"></div>';
 								$output .= '<div class="dom-read-more">';
 								$output .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-								$output .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+								$output .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 							}
 							echo $output;
 						?>
@@ -85,7 +85,7 @@ get_header(); ?>
 							$output1 .= '<div class="clearfix"></div>';
 							$output1 .= '<div class="dom-read-more">';
 							$output1 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output1 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+							$output1 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output1;
 					?>
@@ -108,7 +108,7 @@ get_header(); ?>
 							$output2 .= '<div class="clearfix"></div>';
 							$output2 .= '<div class="dom-read-more">';
 							$output2 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output2 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+							$output2 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output2;
 					?>
@@ -135,7 +135,7 @@ get_header(); ?>
 							$output3 .= '<div class="clearfix"></div>';
 							$output3 .= '<div class="dom-read-more">';
 							$output3 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output3 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+							$output3 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output3;
 					?>
@@ -158,7 +158,7 @@ get_header(); ?>
 							$output4 .= '<div class="clearfix"></div>';
 							$output4 .= '<div class="dom-read-more">';
 							$output4 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output4 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+							$output4 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output4;
 					?>
@@ -185,7 +185,7 @@ get_header(); ?>
 							$output5 .= '<div class="clearfix"></div>';
 							$output5 .= '<div class="dom-read-more">';
 							$output5 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output5 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';							
+							$output5 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';							
 						}
 						echo $output5;
 					?>
@@ -208,7 +208,7 @@ get_header(); ?>
 							$output6 .= '<div class="clearfix"></div>';
 							$output6 .= '<div class="dom-read-more">';
 							$output6 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output6 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+							$output6 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output6;
 					?>
@@ -232,7 +232,7 @@ get_header(); ?>
 		<div class="row second-row">
 			
 			<a class="twitter-timeline" href="https://twitter.com/search?q=%23NationOfMakers" width="275" height="775" data-widget-id="476445295467704320">Tweets about "#NationOfMakers"</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		
 		</div>
 		
@@ -254,7 +254,7 @@ get_header(); ?>
 								$output7 .= '<div class="clearfix"></div>';
 								$output7 .= '<div class="dom-read-more">';
 								$output7 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-								$output7 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_stylesheet_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+								$output7 .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 							}
 							echo $output7;
 						?>
