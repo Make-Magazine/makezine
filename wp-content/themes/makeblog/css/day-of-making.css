@@ -8368,6 +8368,14 @@ li.share-pinterest .pinterest_button a {
 .dom-arrow {
   margin-left: 140px;
 }
+.dom-featured-arrow {
+  margin-left: 420px;
+}
+.dom-feature-excerpt {
+  margin-left: 20px;
+  margin-top: 0;
+  padding-bottom: 0;
+}
 .second-row {
   margin-top: 20px;
 }
