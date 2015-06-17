@@ -56,9 +56,9 @@ get_header(); ?>
 								$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 								$output .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id) ), 15, '') . '</p>';
 								$output .= '<div class="clearfix"></div>';
-								$output .= '<div class="dom-read-more">';
+								$output .= '<div class="dom-read-more dom-rm-featured">';
 								$output .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-								$output .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
+								$output .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory_uri() . '/images/day-of-making/arrow.png" class="dom-feature-arrow" alt="Arrow"/></a></div>';
 							}
 							echo $output;
 						?>
