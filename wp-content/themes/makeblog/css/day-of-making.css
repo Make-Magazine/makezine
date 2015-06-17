@@ -8344,6 +8344,7 @@ li.share-pinterest .pinterest_button a {
   border-top: 1px solid;
   padding-top: 17px;
   padding-left: 20px;
+  margin-top: 10px;
 }
 .dom-read-more a {
   font-weight: 300;
@@ -8361,6 +8362,8 @@ li.share-pinterest .pinterest_button a {
 }
 .dom-container p {
   margin-left: 20px;
+  margin-top: 15px;
+  padding-bottom: 15px;
 }
 .dom-arrow {
   margin-left: 140px;

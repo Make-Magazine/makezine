@@ -54,7 +54,7 @@ get_header(); ?>
 								$output .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object[0],630,250).'" height="250" width="630" alt=""></a></div>';
 								$output .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 								$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-								$output .= '<p class="dom-story-excerpt">' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id) ), 15, '') . '</p>';
+								$output .= '<p class="dom-story-excerpt">' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id) ), 20, '') . '</p>';
 								$output .= '<div class="clearfix"></div>';
 								$output .= '<div class="dom-read-more dom-rm-featured">';
 								$output .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
