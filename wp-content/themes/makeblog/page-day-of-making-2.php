@@ -34,6 +34,8 @@ get_header(); ?>
 
 </header>
 
+<div class="dom-container">
+
 <div class="row"> <!-- Main Container Row -->
 
 	<div class="span8 offset2">
@@ -52,8 +54,11 @@ get_header(); ?>
 								$output .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object[0],630,250).'" height="250" width="630" alt=""></a></div>';
 								$output .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 								$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-								$output .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id) ), 30, '') . '</p>';
+								$output .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id) ), 15, '') . '</p>';
 								$output .= '<div class="clearfix"></div>';
+								$output .= '<div class="dom-read-more">';
+								$output .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+								$output .= '</div>';
 							}
 							echo $output;
 						?>
@@ -76,8 +81,11 @@ get_header(); ?>
 							$output1 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object1[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output1 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output1 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-							$output1 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id1) ), 30, '') . '</p>';
+							$output1 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id1) ), 15, '') . '</p>';
 							$output1 .= '<div class="clearfix"></div>';
+							$output1 .= '<div class="dom-read-more">';
+							$output1 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+							$output1 .= '</div>';
 						}
 						echo $output1;
 					?>
@@ -96,8 +104,11 @@ get_header(); ?>
 							$output2 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object2[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output2 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output2 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-							$output2 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id2) ), 30, '') . '</p>';
+							$output2 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id2) ), 15, '') . '</p>';
 							$output2 .= '<div class="clearfix"></div>';
+							$output2 .= '<div class="dom-read-more">';
+							$output2 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+							$output2 .= '</div>';
 						}
 						echo $output2;
 					?>
@@ -120,8 +131,11 @@ get_header(); ?>
 							$output3 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object3[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output3 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output3 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-							$output3 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id3) ), 30, '') . '</p>';
+							$output3 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id3) ), 15, '') . '</p>';
 							$output3 .= '<div class="clearfix"></div>';
+							$output3 .= '<div class="dom-read-more">';
+							$output3 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+							$output3 .= '</div>';
 						}
 						echo $output3;
 					?>
@@ -140,8 +154,11 @@ get_header(); ?>
 							$output4 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object4[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output4 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output4 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-							$output4 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id4) ), 30, '') . '</p>';
+							$output4 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id4) ), 15, '') . '</p>';
 							$output4 .= '<div class="clearfix"></div>';
+							$output4 .= '<div class="dom-read-more">';
+							$output4 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+							$output4 .= '</div>';
 						}
 						echo $output4;
 					?>
@@ -164,8 +181,11 @@ get_header(); ?>
 							$output5 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object5[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output5 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output5 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-							$output5 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id5) ), 30, '') . '</p>';
+							$output5 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id5) ), 15, '') . '</p>';
 							$output5 .= '<div class="clearfix"></div>';
+							$output5 .= '<div class="dom-read-more">';
+							$output5 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+							$output5 .= '</div>';							
 						}
 						echo $output5;
 					?>
@@ -184,8 +204,11 @@ get_header(); ?>
 							$output6 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object6[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output6 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output6 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-							$output6 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id6) ), 30, '') . '</p>';
+							$output6 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id6) ), 15, '') . '</p>';
 							$output6 .= '<div class="clearfix"></div>';
+							$output6 .= '<div class="dom-read-more">';
+							$output6 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+							$output6 .= '</div>';
 						}
 						echo $output6;
 					?>
@@ -208,7 +231,7 @@ get_header(); ?>
 
 		<div class="row second-row">
 			
-			<a class="twitter-timeline" href="https://twitter.com/search?q=%23NationOfMakers" width="275" height="750" data-widget-id="476445295467704320">Tweets about "#NationOfMakers"</a>
+			<a class="twitter-timeline" href="https://twitter.com/search?q=%23NationOfMakers" width="275" height="750" data-widget-id="476445785467704320">Tweets about "#NationOfMakers"</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		
 		</div>
@@ -227,8 +250,11 @@ get_header(); ?>
 								$output7 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object7[0],343,198).'" height="198" width="343" alt=""></a></div>';
 								$output7 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 								$output7 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
-								$output7 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id7) ), 30, '') . '</p>';
+								$output7 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id7) ), 15, '') . '</p>';
 								$output7 .= '<div class="clearfix"></div>';
+								$output7 .= '<div class="dom-read-more">';
+								$output7 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
+								$output7 .= '</div>';
 							}
 							echo $output7;
 						?>
@@ -239,6 +265,8 @@ get_header(); ?>
 	
 	</div> <!-- End span8 -->
 
-</div> <!-- End Main Container Row -->
+</div> <!-- End main container row -->
+
+</div> <!-- End dom-container
 
 <?php get_footer(); ?>

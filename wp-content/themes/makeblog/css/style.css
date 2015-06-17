@@ -8221,29 +8221,48 @@ li.share-pinterest .pinterest_button a {
 .header-dom {
   margin: 25px 0 50px 0;
 }
+.dom-container {
+  font-family: proxima-nova, sans-serif;
+  font-size: 10pt;
+  color: #606060;
+}
+.date {
+  text-transform: uppercase;
+  color: #929292;
+  font-size: 8pt;
+}
+.dom-container a {
+  font-family: proxima-nova, sans-serif;
+  color: #606060;
+  font-weight: 500;
+}
 .dom-main-story {
   width: 570px;
   height: 375px;
   background-color: #fafafa;
-  font-family: proxima-nova, sans-serif;
-  color: #606060;
 }
 .dom-story {
   width: 275px;
   height: 375px;
   background-color: #fafafa;
-  font-family: proxima-nova, sans-serif;
-  color: #606060;
 }
-.date {
-  text-transform: uppercase;
-  font-family: proxima-nova, sans-serif;
-  color: #929292;
+.dom-read-more {
+  border-top: 1px solid;
+  padding-top: 17px;
+  padding-left: 20px;
+}
+.dom-read-more a {
+  font-weight: 300;
 }
 .domWH {
   width: 275px;
   height: 375px;
   background-image: url("../images/day-of-making/domBG.png");
+}
+.date,
+.dom-main-story h4,
+p {
+  margin-left: 20px;
 }
 .second-row {
   margin-top: 20px;
