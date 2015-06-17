@@ -50,7 +50,7 @@ get_header(); ?>
 								$thumbnail_id = get_post_thumbnail_id($post->ID);
 								$thumbnail_object = wp_get_attachment_image_src($thumbnail_id);
 								$output .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object[0],630,250).'" height="250" width="630" alt=""></a></div>';
-								$output .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+								$output .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 								$output .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 								$output .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id) ), 30, '') . '</p>';
 								$output .= '<div class="clearfix"></div>';
@@ -74,7 +74,7 @@ get_header(); ?>
 							$thumbnail_id1 = get_post_thumbnail_id($post1->ID);
 							$thumbnail_object1 = wp_get_attachment_image_src($thumbnail_id1);
 							$output1 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object1[0],343,198).'" height="198" width="343" alt=""></a></div>';
-							$output1 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+							$output1 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output1 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 							$output1 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id1) ), 30, '') . '</p>';
 							$output1 .= '<div class="clearfix"></div>';
@@ -94,7 +94,7 @@ get_header(); ?>
 							$thumbnail_id2 = get_post_thumbnail_id($post2->ID);
 							$thumbnail_object2 = wp_get_attachment_image_src($thumbnail_id2);
 							$output2 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object2[0],343,198).'" height="198" width="343" alt=""></a></div>';
-							$output2 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+							$output2 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output2 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 							$output2 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id2) ), 30, '') . '</p>';
 							$output2 .= '<div class="clearfix"></div>';
@@ -118,7 +118,7 @@ get_header(); ?>
 							$thumbnail_id3 = get_post_thumbnail_id($post3->ID);
 							$thumbnail_object3 = wp_get_attachment_image_src($thumbnail_id3);
 							$output3 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object3[0],343,198).'" height="198" width="343" alt=""></a></div>';
-							$output3 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+							$output3 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output3 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 							$output3 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id3) ), 30, '') . '</p>';
 							$output3 .= '<div class="clearfix"></div>';
@@ -138,7 +138,7 @@ get_header(); ?>
 							$thumbnail_id4 = get_post_thumbnail_id($post4->ID);
 							$thumbnail_object4 = wp_get_attachment_image_src($thumbnail_id4);
 							$output4 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object4[0],343,198).'" height="198" width="343" alt=""></a></div>';
-							$output4 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+							$output4 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output4 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 							$output4 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id4) ), 30, '') . '</p>';
 							$output4 .= '<div class="clearfix"></div>';
@@ -162,7 +162,7 @@ get_header(); ?>
 							$thumbnail_id5 = get_post_thumbnail_id($post5->ID);
 							$thumbnail_object5 = wp_get_attachment_image_src($thumbnail_id5);
 							$output5 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object5[0],343,198).'" height="198" width="343" alt=""></a></div>';
-							$output5 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+							$output5 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output5 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 							$output5 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id5) ), 30, '') . '</p>';
 							$output5 .= '<div class="clearfix"></div>';
@@ -182,7 +182,7 @@ get_header(); ?>
 							$thumbnail_id6 = get_post_thumbnail_id($post6->ID);
 							$thumbnail_object6 = wp_get_attachment_image_src($thumbnail_id6);
 							$output6 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object6[0],343,198).'" height="198" width="343" alt=""></a></div>';
-							$output6 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+							$output6 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 							$output6 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 							$output6 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id6) ), 30, '') . '</p>';
 							$output6 .= '<div class="clearfix"></div>';
@@ -225,7 +225,7 @@ get_header(); ?>
 								$thumbnail_id7 = get_post_thumbnail_id($post7->ID);
 								$thumbnail_object7 = wp_get_attachment_image_src($thumbnail_id7);
 								$output7 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object7[0],343,198).'" height="198" width="343" alt=""></a></div>';
-								$output7 .= '<div class="date">' . get_the_date('d F Y') . '</div>';
+								$output7 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
 								$output7 .= '<h4><a href="' . get_permalink() . '">' . make_get_short_title( 78 ) . '</a></h4>';
 								$output7 .= '<p>' . wp_trim_words(strip_shortcodes( get_excerpt_by_id($post_id7) ), 30, '') . '</p>';
 								$output7 .= '<div class="clearfix"></div>';

@@ -8318,10 +8318,21 @@ li.share-pinterest .pinterest_button a {
 .dom-main-story {
   width: 570px;
   height: 375px;
+  background-color: #fafafa;
+  font-family: "proxima-nova", "sans-serif";
+  color: #606060;
 }
 .dom-story {
   width: 275px;
   height: 375px;
+  background-color: #fafafa;
+  font-family: "proxima-nova", "sans-serif";
+  color: #606060;
+}
+.date {
+  text-transform: uppercase;
+  font-family: "proxima-nova", "sans-serif";
+  color: #929292;
 }
 .domWH {
   width: 275px;
