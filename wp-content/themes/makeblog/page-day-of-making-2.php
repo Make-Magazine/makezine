@@ -58,7 +58,7 @@ get_header(); ?>
 								$output .= '<div class="clearfix"></div>';
 								$output .= '<div class="dom-read-more">';
 								$output .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-								$output .= '</div>';
+								$output .= '<a href="' . get_permalink() . '">' . '<img src="' . get_template_directory() . '/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 							}
 							echo $output;
 						?>
@@ -85,7 +85,7 @@ get_header(); ?>
 							$output1 .= '<div class="clearfix"></div>';
 							$output1 .= '<div class="dom-read-more">';
 							$output1 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output1 .= '</div>';
+							$output1 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output1;
 					?>
@@ -108,7 +108,7 @@ get_header(); ?>
 							$output2 .= '<div class="clearfix"></div>';
 							$output2 .= '<div class="dom-read-more">';
 							$output2 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output2 .= '</div>';
+							$output2 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output2;
 					?>
@@ -135,7 +135,7 @@ get_header(); ?>
 							$output3 .= '<div class="clearfix"></div>';
 							$output3 .= '<div class="dom-read-more">';
 							$output3 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output3 .= '</div>';
+							$output3 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output3;
 					?>
@@ -158,7 +158,7 @@ get_header(); ?>
 							$output4 .= '<div class="clearfix"></div>';
 							$output4 .= '<div class="dom-read-more">';
 							$output4 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output4 .= '</div>';
+							$output4 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output4;
 					?>
@@ -185,7 +185,7 @@ get_header(); ?>
 							$output5 .= '<div class="clearfix"></div>';
 							$output5 .= '<div class="dom-read-more">';
 							$output5 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output5 .= '</div>';							
+							$output5 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';							
 						}
 						echo $output5;
 					?>
@@ -208,7 +208,7 @@ get_header(); ?>
 							$output6 .= '<div class="clearfix"></div>';
 							$output6 .= '<div class="dom-read-more">';
 							$output6 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-							$output6 .= '</div>';
+							$output6 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 						}
 						echo $output6;
 					?>
@@ -254,7 +254,7 @@ get_header(); ?>
 								$output7 .= '<div class="clearfix"></div>';
 								$output7 .= '<div class="dom-read-more">';
 								$output7 .= '<a href="' . get_permalink() . '">' . 'READ MORE' . '</a>';
-								$output7 .= '</div>';
+								$output7 .= '<a href="' . get_permalink() . '">' . '<img src="http://localhost/~matt/temp/makezine/wp-content/themes/makeblog/images/day-of-making/arrow.png" class="dom-arrow" alt="Arrow"/></a></div>';
 							}
 							echo $output7;
 						?>

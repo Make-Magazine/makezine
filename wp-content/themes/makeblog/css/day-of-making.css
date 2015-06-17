@@ -8354,9 +8354,12 @@ li.share-pinterest .pinterest_button a {
   background-image: url("../images/day-of-making/domBG.png");
 }
 .date,
-.dom-main-story h4,
+.dom-container h4,
 p {
   margin-left: 20px;
+}
+.dom-arrow {
+  margin-left: 140px;
 }
 .second-row {
   margin-top: 20px;
