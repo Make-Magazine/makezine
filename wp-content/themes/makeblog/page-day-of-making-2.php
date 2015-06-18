@@ -34,6 +34,40 @@ get_header(); ?>
 
 </header>
 
+<!-- Grab posts from day-of-making tag -->
+<?php
+//get all terms (e.g. categories or post tags), then display all posts in each term
+$taxonomy = 'post_tag';//  e.g. post_tag, category
+$param_type = 'tag__in'; //  e.g. tag__in, category__in
+$term_args=array(
+  'orderby' => 'id',
+  'order' => 'DESC',
+  'include' => '1687'
+);
+$terms = get_terms($taxonomy,$term_args);
+$dom_posts = array();
+if ($terms) {
+  foreach( $terms as $term ) {
+    $args=array(
+      "$param_type" => array($term->term_id),
+      'post_type' => 'post',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'caller_get_posts'=> 1
+      );
+    $my_query = null;
+    $my_query = new WP_Query($args);
+    if( $my_query->have_posts() ) {
+      while ($my_query->have_posts()) : $my_query->the_post(); ?>
+        <?php $dom_posts[] = get_the_ID(); ?>
+       <?php
+      endwhile;
+    }
+  }
+}
+wp_reset_query();  // Restore global post data stomped by the_post().
+?>
+
 <div class="dom-container">
 
 <div class="row"> <!-- Main Container Row -->
@@ -45,7 +79,7 @@ get_header(); ?>
 				<div class="span dom-main-story">
 
 						<?php 
-							$featuredposts = make_get_cap_option( 'dom_featured' );
+							$featuredposts = $dom_posts[0];
 							$posts = array_map( 'get_post', explode( ',', $featuredposts ) );
 							
 							foreach ( $posts as $post ) {
@@ -72,7 +106,7 @@ get_header(); ?>
 				<div class="span4 dom-story">
 
 					<?php 
-						$featuredposts1 = make_get_cap_option( 'dom_1' );
+						$featuredposts1 = $dom_posts[1];
 						$posts = array_map( 'get_post', explode( ',', $featuredposts1 ) );
 						
 						foreach ( $posts as $post ) {
@@ -95,7 +129,7 @@ get_header(); ?>
 				<div class="span4 dom-story">
 
 					<?php 
-						$featuredposts2 = make_get_cap_option( 'dom_2' );
+						$featuredposts2 = $dom_posts[2];
 						$posts = array_map( 'get_post', explode( ',', $featuredposts2 ) );
 						
 						foreach ( $posts as $post ) {
@@ -122,7 +156,7 @@ get_header(); ?>
 				<div class="span4 dom-story">
 
 					<?php 
-						$featuredposts3 = make_get_cap_option( 'dom_3' );
+						$featuredposts3 = $dom_posts[3];
 						$posts = array_map( 'get_post', explode( ',', $featuredposts3 ) );
 						
 						foreach ( $posts as $post ) {
@@ -145,7 +179,7 @@ get_header(); ?>
 				<div class="span4 dom-story">
 
 					<?php 
-						$featuredposts4 = make_get_cap_option( 'dom_4' );
+						$featuredposts4 = $dom_posts[4];
 						$posts = array_map( 'get_post', explode( ',', $featuredposts4 ) );
 						
 						foreach ( $posts as $post ) {
@@ -172,7 +206,7 @@ get_header(); ?>
 				<div class="span4 dom-story">
 
 					<?php 
-						$featuredposts5 = make_get_cap_option( 'dom_5' );
+						$featuredposts5 = $dom_posts[5];
 						$posts = array_map( 'get_post', explode( ',', $featuredposts5 ) );
 						
 						foreach ( $posts as $post ) {
@@ -195,7 +229,7 @@ get_header(); ?>
 				<div class="span4 dom-story">
 
 					<?php 
-						$featuredposts6 = make_get_cap_option( 'dom_6' );
+						$featuredposts6 = $dom_posts[6];
 						$posts = array_map( 'get_post', explode( ',', $featuredposts6 ) );
 						
 						foreach ( $posts as $post ) {
@@ -242,7 +276,7 @@ get_header(); ?>
 			<div class="span4 dom-story">
 
 						<?php 
-							$featuredposts7 = make_get_cap_option( 'dom_7' );
+							$featuredposts7 = $dom_posts[7];
 							$posts = array_map( 'get_post', explode( ',', $featuredposts7 ) );
 							
 							foreach ( $posts as $post ) {
