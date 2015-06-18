@@ -18,7 +18,7 @@ get_header(); ?>
 
 		<h1>Make: Day of Making</h1>
 
-		<p>The Maker Movement today encourages everyone to think of themselves as makers, and see themselves as producers, not just consumers. We want to ensure that more and more people have access to the tools.</p>
+		<p class="dom-mf-movement">The Maker Movement today encourages everyone to think of themselves as makers, and see themselves as producers, not just consumers. We want to ensure that more and more people have access to the tools.</p>
 	
 	</div>
 
