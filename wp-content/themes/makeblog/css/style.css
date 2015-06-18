@@ -8255,6 +8255,9 @@ li.share-pinterest .pinterest_button a {
   background-color: #fafafa;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
+.dom-story p {
+  max-height: 35px;
+}
 .dom-read-more {
   border-top: 1px solid;
   padding-top: 17px;
