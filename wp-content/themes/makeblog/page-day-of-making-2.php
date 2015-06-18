@@ -224,7 +224,8 @@ get_header(); ?>
 		<div class="row first-row">
 			
 			<div class="domWH">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/day-of-making/national-mf-badge.png" alt="National MakerFaire Badge" />
+				<a href="http://nationalmakerfaire.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/day-of-making/national-mf-badge.png" alt="National MakerFaire Badge" class="mf-badge" /></a>
+				<p>In recognition of the history of American innovation, craftsmanship and entrepreneurship, President Barack Obama in 2014 declared June 18 the National Day of Making. The President's [Nation of Makers initiative <a href="https://www.whitehouse.gov/nation-of-makers" target="_blank">https://www.whitehouse.gov/nation-of-makers</a>] is a call to action for companies, colleges, communities and citizens to join the White House in lifting up makers and builders and doers across the country. In 2015, the Obama White House expanded these activities to a Week of Making from June 12-18, an event that coincides with the National Maker Faire in Washington D.C.</p>
 			</div>
 		
 		</div>

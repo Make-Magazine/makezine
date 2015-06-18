@@ -8380,6 +8380,10 @@ p.dom-feature-excerpt {
   margin-top: 0;
   padding-bottom: 0;
 }
+.mf-badge {
+  margin-left: 63px;
+  margin-top: 40px;
+}
 .second-row {
   margin-top: 20px;
 }
