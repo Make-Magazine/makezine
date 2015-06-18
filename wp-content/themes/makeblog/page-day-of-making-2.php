@@ -224,7 +224,7 @@ get_header(); ?>
 		<div class="row first-row">
 			
 			<div class="domWH">
-				
+				<img src="<?php echo get_template_directory_uri(); ?>/images/day-of-making/national-mf-badge.png" alt="National MakerFaire Badge" />
 			</div>
 		
 		</div>
