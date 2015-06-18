@@ -8268,6 +8268,7 @@ li.share-pinterest .pinterest_button a {
 .dom-rm-featured {
   border-top: 1px solid;
   padding-left: 20px;
+  padding-top: 6px;
 }
 .dom-read-more a {
   font-weight: 300;
@@ -8297,9 +8298,6 @@ li.share-pinterest .pinterest_button a {
 }
 .dom-feature-arrow {
   margin-left: 420px;
-}
-.dom-rm-featured {
-  margin-left: 20px;
 }
 p.dom-feature-excerpt {
   margin-left: 20px;
