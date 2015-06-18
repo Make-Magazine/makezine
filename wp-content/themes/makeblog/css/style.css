@@ -8243,6 +8243,10 @@ li.share-pinterest .pinterest_button a {
   color: #606060;
   font-weight: 500;
 }
+.dom-container h4 {
+  height: 36px;
+  overflow: hidden;
+}
 .dom-main-story {
   width: 570px;
   height: 375px;
@@ -8255,14 +8259,15 @@ li.share-pinterest .pinterest_button a {
   background-color: #fafafa;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
-.dom-story p {
-  max-height: 35px;
-}
 .dom-read-more {
   border-top: 1px solid;
   padding-top: 17px;
   padding-left: 20px;
   margin-top: 10px;
+}
+.dom-rm-featured {
+  border-top: 1px solid;
+  padding-left: 20px;
 }
 .dom-read-more a {
   font-weight: 300;
@@ -8279,9 +8284,13 @@ li.share-pinterest .pinterest_button a {
   margin-left: 20px;
 }
 .dom-container p {
+  height: 50px;
   margin-left: 20px;
   margin-top: 15px;
   padding-bottom: 15px;
+}
+.dom-main-story p {
+  height: 30px;
 }
 .dom-arrow {
   margin-left: 140px;

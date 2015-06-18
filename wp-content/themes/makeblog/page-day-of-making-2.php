@@ -78,7 +78,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 			
 			<div class="row first-row">
 			
-				<div class="span dom-main-story">
+				<div class="span8 dom-main-story">
 
 						<?php 
 							$featuredposts = $dom_posts[0];
