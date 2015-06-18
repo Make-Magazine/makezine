@@ -73,10 +73,10 @@ get_header(); ?>
 
 					<?php 
 						$featuredposts1 = make_get_cap_option( 'dom_1' );
-						$posts1 = array_map( 'get_post', explode( ',', $featuredposts1 ) );
+						$posts = array_map( 'get_post', explode( ',', $featuredposts1 ) );
 						
-						foreach ( $posts1 as $post1 ) {
-							$thumbnail_id1 = get_post_thumbnail_id($post1->ID);
+						foreach ( $posts as $post ) {
+							$thumbnail_id1 = get_post_thumbnail_id($post->ID);
 							$thumbnail_object1 = wp_get_attachment_image_src($thumbnail_id1);
 							$output1 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object1[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output1 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
@@ -96,10 +96,10 @@ get_header(); ?>
 
 					<?php 
 						$featuredposts2 = make_get_cap_option( 'dom_2' );
-						$posts2 = array_map( 'get_post', explode( ',', $featuredposts2 ) );
+						$posts = array_map( 'get_post', explode( ',', $featuredposts2 ) );
 						
-						foreach ( $posts2 as $post2 ) {
-							$thumbnail_id2 = get_post_thumbnail_id($post2->ID);
+						foreach ( $posts as $post ) {
+							$thumbnail_id2 = get_post_thumbnail_id($post->ID);
 							$thumbnail_object2 = wp_get_attachment_image_src($thumbnail_id2);
 							$output2 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object2[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output2 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
@@ -123,10 +123,10 @@ get_header(); ?>
 
 					<?php 
 						$featuredposts3 = make_get_cap_option( 'dom_3' );
-						$posts3 = array_map( 'get_post', explode( ',', $featuredposts3 ) );
+						$posts = array_map( 'get_post', explode( ',', $featuredposts3 ) );
 						
-						foreach ( $posts3 as $post3 ) {
-							$thumbnail_id3 = get_post_thumbnail_id($post3->ID);
+						foreach ( $posts as $post ) {
+							$thumbnail_id3 = get_post_thumbnail_id($post->ID);
 							$thumbnail_object3 = wp_get_attachment_image_src($thumbnail_id3);
 							$output3 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object3[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output3 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
@@ -146,10 +146,10 @@ get_header(); ?>
 
 					<?php 
 						$featuredposts4 = make_get_cap_option( 'dom_4' );
-						$posts4 = array_map( 'get_post', explode( ',', $featuredposts4 ) );
+						$posts = array_map( 'get_post', explode( ',', $featuredposts4 ) );
 						
-						foreach ( $posts4 as $post4 ) {
-							$thumbnail_id4 = get_post_thumbnail_id($post4->ID);
+						foreach ( $posts as $post ) {
+							$thumbnail_id4 = get_post_thumbnail_id($post->ID);
 							$thumbnail_object4 = wp_get_attachment_image_src($thumbnail_id4);
 							$output4 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object4[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output4 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
@@ -173,10 +173,10 @@ get_header(); ?>
 
 					<?php 
 						$featuredposts5 = make_get_cap_option( 'dom_5' );
-						$posts5 = array_map( 'get_post', explode( ',', $featuredposts5 ) );
+						$posts = array_map( 'get_post', explode( ',', $featuredposts5 ) );
 						
-						foreach ( $posts5 as $post5 ) {
-							$thumbnail_id5 = get_post_thumbnail_id($post5->ID);
+						foreach ( $posts as $post ) {
+							$thumbnail_id5 = get_post_thumbnail_id($post->ID);
 							$thumbnail_object5 = wp_get_attachment_image_src($thumbnail_id5);
 							$output5 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object5[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output5 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
@@ -196,10 +196,10 @@ get_header(); ?>
 
 					<?php 
 						$featuredposts6 = make_get_cap_option( 'dom_6' );
-						$posts6 = array_map( 'get_post', explode( ',', $featuredposts6 ) );
+						$posts = array_map( 'get_post', explode( ',', $featuredposts6 ) );
 						
-						foreach ( $posts6 as $post6 ) {
-							$thumbnail_id6 = get_post_thumbnail_id($post6->ID);
+						foreach ( $posts as $post ) {
+							$thumbnail_id6 = get_post_thumbnail_id($post->ID);
 							$thumbnail_object6 = wp_get_attachment_image_src($thumbnail_id6);
 							$output6 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object6[0],343,198).'" height="198" width="343" alt=""></a></div>';
 							$output6 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
@@ -243,10 +243,10 @@ get_header(); ?>
 
 						<?php 
 							$featuredposts7 = make_get_cap_option( 'dom_7' );
-							$posts7 = array_map( 'get_post', explode( ',', $featuredposts7 ) );
+							$posts = array_map( 'get_post', explode( ',', $featuredposts7 ) );
 							
-							foreach ( $posts7 as $post7 ) {
-								$thumbnail_id7 = get_post_thumbnail_id($post7->ID);
+							foreach ( $posts as $post ) {
+								$thumbnail_id7 = get_post_thumbnail_id($post->ID);
 								$thumbnail_object7 = wp_get_attachment_image_src($thumbnail_id7);
 								$output7 .= '<div class="dom-featured-thumb"><a href="' . get_permalink() . '"><img src="'.get_resized_remote_image_url($thumbnail_object7[0],343,198).'" height="198" width="343" alt=""></a></div>';
 								$output7 .= '<div class="date">Posted ' . get_the_date('d F Y') . '</div>';
