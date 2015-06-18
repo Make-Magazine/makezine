@@ -18,7 +18,7 @@ get_header(); ?>
 
 		<h1>Make: Day of Making</h1>
 
-		<p class="dom-mf-movement">The Maker Movement today encourages everyone to think of themselves as makers, and see themselves as producers, not just consumers. We want to ensure that more and more people have access to the tools.</p>
+		<p class="dom-mf-movement">We are a nation of makers, hackers, and out-of-the-box thinkers.  We don’t just consume, we create. It’s in our nature as individuals to take the materials around us and make them into things that are completely new. We support the national Day of Making, and we want to ensure that everybody who wants to participate has access to all the tools and techniques they need.</p>
 	
 	</div>
 
@@ -225,7 +225,7 @@ get_header(); ?>
 			
 			<div class="domWH">
 				<a href="http://nationalmakerfaire.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/day-of-making/national-mf-badge.png" alt="National MakerFaire Badge" class="mf-badge" /></a>
-				<p>In recognition of the history of American innovation, craftsmanship and entrepreneurship, President Barack Obama in 2014 declared June 18 the National Day of Making. The President's [Nation of Makers initiative <a href="https://www.whitehouse.gov/nation-of-makers" target="_blank">https://www.whitehouse.gov/nation-of-makers</a>] is a call to action for companies, colleges, communities and citizens to join the White House in lifting up makers and builders and doers across the country. In 2015, the Obama White House expanded these activities to a Week of Making from June 12-18, an event that coincides with the National Maker Faire in Washington D.C.</p>
+				<p>In recognition of the history of American innovation, craftsmanship and entrepreneurship, President Barack Obama in 2014 declared June 18 the National Day of Making. The President's [Nation of Makers initiative <a href="https://www.whitehouse.gov/nation-of-makers" target="_blank">https://www.whitehouse.gov/nation-of-makers</a>] is a call to action for companies, colleges, communities and citizens to join the White House in lifting up makers and builders and doers across the country. In 2015, the Obama White House expanded these activities to a <i>Week of Making</i> from June 12-18, an event that coincides with the National Maker Faire in Washington D.C.</p>
 			</div>
 		
 		</div>
