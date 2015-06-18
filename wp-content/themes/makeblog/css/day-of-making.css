@@ -8341,11 +8341,13 @@ li.share-pinterest .pinterest_button a {
   width: 570px;
   height: 375px;
   background-color: #fafafa;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .dom-story {
   width: 275px;
   height: 375px;
   background-color: #fafafa;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .dom-read-more {
   border-top: 1px solid;
