@@ -10,11 +10,13 @@
  */
 get_header(); ?>
 
+<div class="container">
+
 <header class="header-dom">
 
 <div class="row">
 	
-	<div class="span6 offset2">
+	<div class="span6">
 
 		<h1>Make: Day of Making</h1>
 
@@ -72,7 +74,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 <div class="row"> <!-- Main Container Row -->
 
-	<div class="span8 offset2">
+	<div class="span8">
 			
 			<div class="row first-row">
 			
@@ -302,6 +304,8 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 </div> <!-- End main container row -->
 
-</div> <!-- End dom-container
+</div> <!-- End dom-container -->
+
+</div> <!-- End container -->
 
 <?php get_footer(); ?>
