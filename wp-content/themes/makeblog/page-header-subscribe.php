@@ -181,9 +181,7 @@ Template name: Header
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Contests</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="//makezine.com/pitch-your-prototype-2015/,/">Pitch Your Prototype</a></li>
-										<li><a target="_blank" href="//makezine.com/psoc-maker-challenge/,/">PSoC Maker Challenge 2015</a></li>
-										<li><a target="_blank" href="//makercon.com/launchpad-contest/,/">Launchpad at MakerCon</a></li>
+										<li><a href="//makezine.com/pitch-your-prototype-2015/,/">Pitch Your Prototype</a></li>
 									</ul>
 								</li>
 								<li class="menu-item dropdown"><a href="#">Shop</a>
