@@ -193,7 +193,7 @@ Template name: Header
 								</li>
 								<li class="menu-item dropdown"><a href="#" class="dropdown-toggle">Publications</a>
 									<ul class="sub-menu dropdown-menu">
-										<li><a target="_blank" href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3BMZA">Subscribe to Make:</a></li>
+										<li><a target="_blank" href="https://readerservices.makezine.com/mk/">Subscribe to Make:</a></li>
 										<li><a target="_blank" href="//www.makershed.com/collections/make-magazine?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=make+magazine">Order Back Issues</a></li>
 										<li><a target="_blank" href="//www.makershed.com/collections/books-magazines?utm_source=makezine.com&amp;utm_medium=ads&amp;utm_campaign=Top+Nav+Menu&amp;utm_term=books+magazines">Buy Books</a></li>
 									</ul>
