@@ -222,9 +222,9 @@
 
 						<div class="span4 offset2">
 
-							<p class="stars"><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB"><img src="<?php echo esc_url( make_get_cover_image(), '120', '160'); ?>"></a></p>
+							<p class="stars"><a href="https://readerservices.makezine.com/mk/"><img src="<?php echo esc_url( make_get_cover_image(), '120', '160'); ?>"></a></p>
 
-							<h4><a href="https://www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB">Subscribe to Make:</a></h4>
+							<h4><a href="https://readerservices.makezine.com/mk/">Subscribe to Make:</a></h4>
 							<p>Get the Digital Edition</p>
 
 						</div>
