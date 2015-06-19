@@ -8309,28 +8309,11 @@ li.share-pinterest .pinterest_button a {
   display: none;
 }
 /* Day of Making */
-.hr {
-  border: 1px solid #dbdbdb;
-}
-.header-dom {
-  margin: 25px 0 50px 0;
-}
-.header-dom h1 {
-  color: #0071a0;
-}
-.dom-mf-movement {
-  margin-top: 10px;
-}
 .dom-container {
   font-family: proxima-nova, sans-serif;
   font-size: 10pt;
   color: #606060;
   margin-bottom: 30px;
-}
-.date {
-  text-transform: uppercase;
-  color: #929292;
-  font-size: 8pt;
 }
 .dom-container a {
   font-family: proxima-nova, sans-serif;
@@ -8340,6 +8323,14 @@ li.share-pinterest .pinterest_button a {
 .dom-container h4 {
   height: 36px;
   overflow: hidden;
+  margin-left: 20px;
+  padding-right: 10px;
+}
+.dom-container p {
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 15px;
+  padding-bottom: 15px;
 }
 .dom-main-story {
   width: 570px;
@@ -8353,36 +8344,39 @@ li.share-pinterest .pinterest_button a {
   background-color: #fafafa;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
+.header-dom {
+  margin: 25px 0 50px 0;
+}
+.header-dom h1 {
+  color: #0071a0;
+}
+.dom-mf-movement {
+  margin-top: 10px;
+}
+.date {
+  text-transform: uppercase;
+  color: #929292;
+  font-size: 8pt;
+  margin-left: 20px;
+}
 .dom-read-more {
   border-top: 1px solid;
   padding-top: 17px;
   padding-left: 20px;
   margin-top: 10px;
 }
+.dom-read-more a {
+  font-weight: 300;
+}
+.read-more-stories {
+  float: right;
+  margin-right: 43px;
+  margin-top: 20px;
+}
 .dom-rm-featured {
   border-top: 1px solid;
   padding-left: 20px;
   padding-top: 6px;
-}
-.dom-read-more a {
-  font-weight: 300;
-}
-.domWH {
-  width: 275px;
-  height: 375px;
-  background-image: url("../images/day-of-making/domBG.png");
-}
-.date {
-  margin-left: 20px;
-}
-.dom-container h4 {
-  margin-left: 20px;
-}
-.dom-container p {
-  height: 50px;
-  margin-left: 20px;
-  margin-top: 15px;
-  padding-bottom: 15px;
 }
 .dom-main-story p {
   height: 30px;
@@ -8399,6 +8393,9 @@ p.dom-feature-excerpt {
   padding-bottom: 0;
 }
 .domWH {
+  width: 275px;
+  height: 375px;
+  background-image: url("../images/day-of-making/domBG.png");
   font-size: 8pt;
   line-height: normal;
 }
@@ -8408,6 +8405,9 @@ p.dom-feature-excerpt {
 .mf-badge {
   margin-left: 63px;
   margin-top: 40px;
+}
+.hr {
+  border: 1px solid #dbdbdb;
 }
 .second-row {
   margin-top: 20px;
