@@ -168,7 +168,7 @@
 					    <div id="collapseOneF" class="accordion-body collapse">
 					      <div class="accordion-inner">
 					        <ul class="nav nav-pills nav-stacked">
-								<li><a href="//www.pubservice.com/MK/subscribe.aspx?PC=MK&PK=M3AMZB" target="_blank">Subscribe to Make:</a></li>
+								<li><a href="https://readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 								<li><a href="/projects">Make: Projects</a></li>
 								<li><a href="/category/workshop/3d-printing-workshop/">3D Projects</a></li>
 								<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
