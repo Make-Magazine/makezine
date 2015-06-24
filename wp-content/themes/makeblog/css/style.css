@@ -8341,7 +8341,7 @@ Tag Cloud
   border-top: 1px solid #cdcdcd;
   border-bottom: 1px solid #cdcdcd;
 }
-.tag-cloud ul.tag-cloud-ul {
+.tag-cloud .tag-cloud-ul ul {
   width: 390px;
   float: left;
   margin-left: 44px;
@@ -8349,7 +8349,7 @@ Tag Cloud
   list-style-type: none;
   padding-right: 10px;
 }
-.tag-cloud ul.tag-cloud-ul li.tag-cloud-ul {
+.tag-cloud .tag-cloud-ul li {
   float: left;
   list-style-type: none;
   padding-right: 25px;
@@ -8357,18 +8357,18 @@ Tag Cloud
   line-height: 18pt;
   text-transform: uppercase;
 }
-ul.tag-cloud li.tag-cloud a.tag-cloud {
+.tag-cloud a {
   color: #999999;
 }
-p.tag-cloud {
+.tag-cloud a:hover.tag-cloud {
+  color: #333333;
+}
+.tag-cloud p {
   width: 115px;
   float: left;
   color: #333333;
   font-size: 12px !important;
   font-weight: bold;
-}
-ul.tag-cloud li.tag-cloud a:hover.tag-cloud {
-  color: #333333;
 }
 .custom-feed.simple {
   border: 1px solid #dadada;
