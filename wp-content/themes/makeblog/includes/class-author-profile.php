@@ -450,19 +450,16 @@
 		}
 		return $content;
 	}
-
 	// For now we will stop displaying author blocks at the end of posts until we can fix it next week.
 	add_filter( 'the_content', 'hook_bio_into_content', 5 );
-
 	function create_tag_cloud() {
+        global $wpdb;
+
         $postid = get_the_ID();
         // Select term_taxonomy_id from relationships table
-        global $wpdb;
         $term_tax = $wpdb->get_col("SELECT term_taxonomy_id
         FROM $wpdb->term_relationships WHERE object_id = '$postid'" );
         // Gather terms to relate
-        $term_id3=array();
-        $tag_url=array();
         foreach($term_tax as $term_tax_id) {
             // Get term ids
             $term_id2 = $wpdb->get_col("SELECT term_id
@@ -472,17 +469,17 @@
                 continue;
             }
             else {
-                $term_id3[] = [$term_id2[0]];
+                $term_id3[] = $term_id2[0];
             }
-            // Get tag names
-            
-            foreach($term_id3 as $cats) { 
-                $the_cats = $wpdb->get_col("SELECT name
-                FROM $wpdb->terms WHERE term_id = '$cats'" );
-                // Get tag URLs
-                $tag_url .= get_tag_link($term_id3[0]);
-            }
-        }print_r($the_cats);
+        }
+    	// Get tag names
+        foreach($term_id3 as $cats) {
+            $the_cats = $wpdb->get_col("SELECT name
+            FROM $wpdb->terms WHERE term_id = '$cats'" );
+			// Get tag URLs
+			$categories[] = $the_cats[0];
+            $tag_url[] = get_tag_link($cats);
+        }
     }
 
     add_filter( 'the_content', 'create_tag_cloud', 5 );
