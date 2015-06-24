@@ -8360,7 +8360,7 @@ Tag Cloud
 .tag-cloud a {
   color: #999999;
 }
-.tag-cloud a:hover.tag-cloud {
+.tag-cloud a:hover {
   color: #333333;
 }
 .tag-cloud p {
