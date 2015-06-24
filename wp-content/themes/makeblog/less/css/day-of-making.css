@@ -8429,6 +8429,7 @@ Tag Cloud
 .tag-cloud {
   display: inline-block;
   width: 620px;
+  margin-bottom: 30px;
   padding-top: 20px;
   padding-bottom: 10px;
   border-top: 1px solid #cdcdcd;
@@ -8450,13 +8451,13 @@ Tag Cloud
   line-height: 18pt;
   text-transform: uppercase;
 }
-.tag-cloud ul li a {
+ul.tag-cloud li.tag-cloud a.tag-cloud {
   color: #999999;
 }
-.tag-cloud ul li a:hover {
+.tag-cloud ul.tag-cloud li.tag-cloud a:hover.tag-cloud {
   color: #333333;
 }
-.tag-cloud p {
+p.tag-cloud {
   width: 115px;
   float: left;
   color: #333333;

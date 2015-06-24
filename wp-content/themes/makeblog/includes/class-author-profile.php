@@ -433,26 +433,7 @@
 	}
 	add_action( 'template_redirect', 'capx_template_redirect' );
 
-
-	function hook_bio_into_content( $content ) {
-		global $post;
-
-		if ( class_exists( 'WPCOM_Liveblog' ) ) {
-			// There was a check for a post parent to == 0, I pulled that off. --JS
-			if( ! WPCOM_Liveblog::is_liveblog_post() && is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
-				$content .= make_author();
-			}
-		} else {
-			// There was a check for a post parent to == 0, I pulled that off. --JS
-			if( is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
-				$content .= make_author();
-			}
-		}
-		return $content;
-	}
-	// For now we will stop displaying author blocks at the end of posts until we can fix it next week.
-	add_filter( 'the_content', 'hook_bio_into_content', 5 );
-	function create_tag_cloud() {
+	function create_tag_cloud( $content ) {
         global $wpdb;
 
         $postid = get_the_ID();
@@ -478,8 +459,57 @@
             FROM $wpdb->terms WHERE term_id = '$cats'" );
 			// Get tag URLs
 			$categories[] = $the_cats[0];
-            $tag_url[] = get_tag_link($cats);
+            $tag_urls[] = get_tag_link($cats);
         }
+        // Build div
+        $tag_cloud_div = '';
+        $tag_cloud_div .= '<div class="tag-cloud">';
+        $tag_cloud_div .= '<p>Related Topics</p>';
+        $tag_cloud_div .= '<ul class="tag-cloud-ul">';
+        foreach (array_combine($categories, $tag_urls) as $category => $tag_url) {
+		$tag_cloud_div .= '<li><a href="' . $tag_url . '">#' . $category . '</a></li>';
+		}
+		$tag_cloud_div .= '</ul>'; // End list
+		$tag_cloud_div .= '</div>';
+        return $tag_cloud_div;
     }
 
-    add_filter( 'the_content', 'create_tag_cloud', 5 );
+    function display_tag_cloud( $content ) {
+    	global $post;
+
+    	if ( class_exists( 'WPCOM_Liveblog' ) ) {
+			// There was a check for a post parent to == 0, I pulled that off. --JS
+			if( ! WPCOM_Liveblog::is_liveblog_post() && is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				$content .= create_tag_cloud();
+			}
+		} else {
+			// There was a check for a post parent to == 0, I pulled that off. --JS
+			if( is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				$content .= create_tag_cloud();
+			}
+		}
+		return $content;
+    }
+    add_filter( 'the_content', 'display_tag_cloud', 4 );
+
+
+	function hook_bio_into_content( $content ) {
+		global $post;
+
+		if ( class_exists( 'WPCOM_Liveblog' ) ) {
+			// There was a check for a post parent to == 0, I pulled that off. --JS
+			if( ! WPCOM_Liveblog::is_liveblog_post() && is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				//$content .= display_tag_cloud();
+				$content .= make_author();
+			}
+		} else {
+			// There was a check for a post parent to == 0, I pulled that off. --JS
+			if( is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				//$content .= display_tag_cloud();
+				$content .= make_author();
+			}
+		}
+		return $content;
+	}
+	// For now we will stop displaying author blocks at the end of posts until we can fix it next week.
+	add_filter( 'the_content', 'hook_bio_into_content', 5 );
