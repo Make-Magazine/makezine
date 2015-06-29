@@ -360,10 +360,6 @@ get_header(); ?>
 
 									<?php echo make_author(); ?>
 
-									<div class="comments">
-										<?php comments_template(); ?>
-									</div>
-
 									<div id="contextly">
 
 										<?php echo do_shortcode('[contextly_main_module]'); ?>
@@ -375,6 +371,12 @@ get_header(); ?>
 										<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 
 									<?php endif; ?>
+
+									<div class="comments">
+										
+										<?php comments_template(); ?>
+									
+									</div>
 
 								</div>
 

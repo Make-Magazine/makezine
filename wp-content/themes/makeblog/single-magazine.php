@@ -64,12 +64,15 @@ get_header(); ?>
 					</article>
 
 					<?php endwhile; ?>
+
+					<div id="contextly"></div>
+					
 					<div class="comments">
 						<?php comments_template(); ?>
 					</div>
-					<div id="contextly"></div>
-
+					
 					<?php endif; ?>
+				
 				</div>
 
 

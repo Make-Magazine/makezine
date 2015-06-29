@@ -67,10 +67,11 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 					
-					<div class="comments">
-						<?php comments_template(); ?>
-					</div>
 					<div id="contextly"></div>
+
+					<div class="comments">
+					<?php comments_template(); ?>
+					</div>
 
 					<?php endif; ?>
 				

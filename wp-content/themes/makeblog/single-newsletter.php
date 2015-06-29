@@ -59,10 +59,12 @@ get_header(); ?>
 					<?php if ( function_exists( 'make_author_bio' ) ) { make_author_bio(); } ?>
 
 					<?php endwhile; ?>
+
+					<div id="contextly"></div>
+					
 					<div class="comments">
 						<?php comments_template(); ?>
-					</div>
-					<div id="contextly"></div>
+					</div>					
 					
 					<?php endif; ?>
 				</div>
