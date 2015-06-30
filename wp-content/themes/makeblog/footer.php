@@ -36,7 +36,7 @@
 						<ul class="unstyled">
 							<li><a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 							<li><a href="/projects">Make: Projects</a></li>
-							<li><a href="/category/workshop/3d-printing-workshop/">3D Projects</a></li>
+							<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
 							<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
 							<li><a href="/category/electronics/raspberry-pi/">Raspberry Pi Projects</a></li>
 						</ul>
@@ -170,7 +170,7 @@
 					        <ul class="nav nav-pills nav-stacked">
 								<li><a href="https://readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 								<li><a href="/projects">Make: Projects</a></li>
-								<li><a href="/category/workshop/3d-printing-workshop/">3D Projects</a></li>
+								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
 								<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
 								<li><a href="/category/electronics/raspberry-pi/">Raspberry Pi Projects</a></li>
 							</ul>

@@ -86,7 +86,7 @@ Template name: Header
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/workshop/,/' ) ); ?>">Workshop</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/workshop/3d-printing-workshop/,/' ) ); ?>">3D Printing</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/workshop/3d-printing-workshop/,/' ) ); ?>">3D Printing Projects</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/workshop/cnc-machining/,/' ) ); ?>">CNC Machining</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/workshop/computer-controlled-cutting/,/' ) ); ?>">Computer-Controlled Cutting</a></li>
 												<li><a href="<?php echo esc_url( home_url( '/category/workshop/machining/,/' ) ); ?>">Machining</a></li>
