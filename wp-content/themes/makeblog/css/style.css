@@ -8332,7 +8332,7 @@ p.dom-feature-excerpt {
 
 Tag Cloud
 ---------------------------------------------------------------------------------------------------- */
-.tag-cloud {
+.related-topics {
   display: inline-block;
   width: 620px;
   margin-bottom: 30px;
@@ -8341,7 +8341,7 @@ Tag Cloud
   border-top: 1px solid #cdcdcd;
   border-bottom: 1px solid #cdcdcd;
 }
-.tag-cloud .tag-cloud-ul ul {
+.related-topics .related-topics-ul ul {
   width: 390px;
   float: left;
   margin-left: 44px;
@@ -8349,7 +8349,7 @@ Tag Cloud
   list-style-type: none;
   padding-right: 10px;
 }
-.tag-cloud .tag-cloud-ul li {
+.related-topics .related-topics-ul li {
   float: left;
   list-style-type: none;
   padding-right: 25px;
@@ -8357,13 +8357,13 @@ Tag Cloud
   line-height: 18pt;
   text-transform: uppercase;
 }
-.tag-cloud a {
+.related-topics a {
   color: #999999;
 }
-.tag-cloud a:hover {
+.related-topics a:hover {
   color: #333333;
 }
-.tag-cloud p {
+.related-topics p {
   width: 115px;
   float: left;
   color: #333333;

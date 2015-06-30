@@ -379,6 +379,7 @@
 		return $make_author_class->author_photo();
 	}
 
+
 	function make_author_bio( $author = '' ) {
 		global $make_author_class;
 
@@ -399,6 +400,7 @@
 	 * @version  1.0
 	 * @since    1.0
 	 */
+
 	function make_author( $type = 'full' ) {
 		global $make_author_class;
 
@@ -415,7 +417,6 @@
 		// Send it out to the page.
 		return $output;
 	}
-
 
 	/**
 	 * Fixes guest authors with no posts to actually load their profile instead of returning 404
@@ -463,9 +464,9 @@
         }
         // Build div
         $tag_cloud_div = '';
-        $tag_cloud_div .= '<div class="tag-cloud">';
+        $tag_cloud_div .= '<div class="related-topics">';
         $tag_cloud_div .= '<p>Related Topics</p>';
-        $tag_cloud_div .= '<ul class="tag-cloud-ul">';
+        $tag_cloud_div .= '<ul class="related-topics-ul">';
         foreach (array_combine($categories, $tag_urls) as $category => $tag_url) {
 		$tag_cloud_div .= '<li><a href="' . $tag_url . '">#' . $category . '</a></li>';
 		}
@@ -492,7 +493,6 @@
     }
     add_filter( 'the_content', 'display_tag_cloud', 4 );
 
-
 	function hook_bio_into_content( $content ) {
 		global $post;
 
@@ -511,5 +511,6 @@
 		}
 		return $content;
 	}
+
 	// For now we will stop displaying author blocks at the end of posts until we can fix it next week.
 	add_filter( 'the_content', 'hook_bio_into_content', 5 );
