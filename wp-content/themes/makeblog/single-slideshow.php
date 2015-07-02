@@ -1,4 +1,4 @@
-<?php get_header('slideshow'); ?>
+<?php get_header(''); ?>
 
 		<div class="container">
 
@@ -29,6 +29,6 @@
 				</div>
 
 			
-				<?php get_sidebar('slideshow'); ?>
+				<?php get_sidebar(''); ?>
 			
-			<?php get_footer('slideshow'); ?>
+			<?php get_footer(''); ?>
