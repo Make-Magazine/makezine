@@ -166,7 +166,7 @@ $cap = new CheezCap( array(
 					'Camp - Paragraph Text',
 					'Paragraph Text in Camp Box',
 					'camp_paragraph',
-					'We add to our make:believe toolkit with a few quick costume hacks to add character to your characters'
+					'We add to our make:believe toolkit with a few quick costume hacks to add character to your characters. We add to our make:believe toolkit with a few quick costume hacks to add character to your characters. We add to our make:believe toolkit with a few quick costume hacks to add character to your characters.'
 				),
 
 				new CheezCapTextOption(
@@ -180,7 +180,7 @@ $cap = new CheezCap( array(
 					'Camp - Video Box Right',
 					'Right Video Thumbnail',
 					'camp_video_right',
-					'http://placehold.it/600x340'
+					'http://placehold.it/300x170'
 				),									
 			)
 		),

@@ -227,13 +227,13 @@
 
 							</div>
 
-							<div class="span3 pull-right">
+							<div class="span5 pull-right">
 
-								<div class="paddme-maker-camp">
+								<div class="paddme-maker-camp pull-right">
 								
 									<?php
 										$camp_video_img = make_get_cap_option( 'camp_video_right' );
-										echo '<a href="' . make_get_cap_option( 'camp_video_url' ) . '">' . '<img src="'.get_resized_remote_image_url($camp_video_img,340,600).'" height="340" width="600" alt=""' . '</a>';
+										echo '<a href="' . make_get_cap_option( 'camp_video_url' ) . '">' . '<img src="'.get_resized_remote_image_url($camp_video_img,170,300).'" height="170" width="300" alt="" />' . '</a>';
 									?>
 
 								</div>
