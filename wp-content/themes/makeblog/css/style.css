@@ -8397,9 +8397,11 @@ Maker Camp Banner Waist
 }
 .maker-camp p {
   margin: 0;
+  font-size: 16px;
 }
 .maker-camp p.maker-camp-small-text {
   font-size: 12px;
+  font-weight: bold;
   color: #666666;
 }
 .custom-feed.simple {
