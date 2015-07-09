@@ -180,7 +180,7 @@ $cap = new CheezCap( array(
 					'Camp - Video Box Right',
 					'Right Video Thumbnail',
 					'camp_video_right',
-					'http://placehold.it/183x103'
+					'http://placehold.it/600x340'
 				),									
 			)
 		),
