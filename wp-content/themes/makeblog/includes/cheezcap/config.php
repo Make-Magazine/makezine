@@ -150,6 +150,38 @@ $cap = new CheezCap( array(
 					'weekly',
 					'274361'
 				),
+				new CheezCapTextOption(
+					'Camp - Live From Top Line',
+					'First Line in Camp Box',
+					'camp_live_from',
+					'Live from Maker Camp: Week 1 Fantasy'
+				),
+				new CheezCapTextOption(
+					'Camp - Live From Top Line',
+					'Red Headline in Camp Box',
+					'camp_day_x',
+					'Day 3: Build some awesome costumes'
+				),
+				new CheezCapTextOption(
+					'Camp - Paragraph Text',
+					'Paragraph Text in Camp Box',
+					'camp_paragraph',
+					'We add to our make:believe toolkit with a few quick costume hacks to add character to your characters'
+				),
+
+				new CheezCapTextOption(
+					'Camp - Video URL',
+					'Video Thumbnail URL',
+					'camp_video_url',
+					'http://makezine.com'
+				),
+
+				new CheezCapTextOption(
+					'Camp - Video Box Right',
+					'Right Video Thumbnail',
+					'camp_video_right',
+					'http://placehold.it/183x103'
+				),									
 			)
 		),
 new CheezCapGroup( 'Craft Featured Posts', 'second_CheezCapGroup',

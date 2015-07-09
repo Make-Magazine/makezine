@@ -8370,6 +8370,38 @@ Tag Cloud
   font-size: 12px !important;
   font-weight: bold;
 }
+/*
+
+Maker Camp Banner Waist
+---------------------------------------------------------------------------------------------------- */
+.maker-camp {
+  margin-bottom: 15px;
+}
+.maker-camp-home-banner {
+  height: 105px;
+  padding-top: 5px;
+}
+.maker-camp-logo {
+  float: left;
+}
+.maker-camp-home-text {
+  float: left;
+}
+.paddme-maker-camp {
+  padding: 10px 0 10px 10px;
+}
+.maker-camp h3 a {
+  color: #cc2229;
+  font-size: 20px;
+  font-weight: bold;
+}
+.maker-camp p {
+  margin: 0;
+}
+.maker-camp p.maker-camp-small-text {
+  font-size: 14px;
+  color: #666666;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;

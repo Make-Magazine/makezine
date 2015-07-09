@@ -114,9 +114,9 @@ Template Name: Home Page
 
 					</div>
 					<!--<div class="shadow"></div>-->
-
+			
 					<div class="span8">
-
+						asdf
 						<?php
 							$feature_url = $cap->feature_url;
 							if ( ! empty( $feature_url ) && absint( $feature_url ) ) : // Add a URL by post ID ?>
