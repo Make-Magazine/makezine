@@ -149,38 +149,6 @@ $cap = new CheezCap( array(
 					'Add the post IDs of the five posts that you want to feature. They need to be in order, m->f.',
 					'weekly',
 					'274361'
-				),
-				new CheezCapTextOption(
-					'Camp - Live From Top Line',
-					'First Line in Camp Box',
-					'camp_live_from',
-					'Live from Maker Camp: Week 1 Fantasy'
-				),
-				new CheezCapTextOption(
-					'Camp - Live From Top Line',
-					'Red Headline in Camp Box',
-					'camp_day_x',
-					'Day 3: Build some awesome costumes'
-				),
-				new CheezCapTextOption(
-					'Camp - Paragraph Text',
-					'Paragraph Text in Camp Box',
-					'camp_paragraph',
-					'We add to our make:believe toolkit with a few quick costume hacks to add character to your characters. We add to our make:believe toolkit with a few quick costume hacks to add character to your characters.'
-				),
-
-				new CheezCapTextOption(
-					'Camp - Video URL',
-					'Video Thumbnail URL',
-					'camp_video_url',
-					'http://makezine.com'
-				),
-
-				new CheezCapTextOption(
-					'Camp - Video Box Right',
-					'Right Video Thumbnail',
-					'camp_video_right',
-					'http://placehold.it/300x170'
 				),									
 			)
 		),
@@ -586,109 +554,109 @@ new CheezCapGroup( 'Craft Featured Posts', 'second_CheezCapGroup',
 				new CheezCapTextOption(
 					'Ribbon Title',
 					'What do you want the ribbon to say, keep this short. Ten characters or so...',
-					'ribbon_title',
+					'camp_ribbon_title',
 					''
 				),
 				new CheezCapBooleanOption(
 					'Display Ribbon Title',
 					'Choose if you wish to display or hide the Ribbon Title.',
-					'ribbon_title_display',
+					'camp_ribbon_title_display',
 					'1'
 				),
 				new CheezCapTextOption(
 					'Main Item Title',
 					'This is the big image on the left...',
-					'main_title',
+					'camp_main_title',
 					''
 				),
 				new CheezCapTextOption(
 					'Main Item Subtitle',
 					'',
-					'main_subtitle',
+					'camp_main_subtitle',
 					''
 				),
 				new CheezCapTextOption(
 					'Main Item Link',
 					'This is the link that to the main post. Make sure to use add the http://',
-					'main_link',
+					'camp_main_link',
 					''
 				),
 				new CheezCapTextOption(
 					'Main Item Image URL',
 					'Add the uploaded image URL. Size should be 301px &times; 400px.',
-					'main_url',
+					'camp_main_url',
 					''
 				),
 				new CheezCapTextOption(
 					'Main Item Image ID',
 					'Add the ID of the image that you would like to use here. It will take the size from p1 thumbnail.',
-					'main_id',
+					'camp_main_id',
 					''
 				),
 				new CheezCapTextOption(
 					'Top Right Item Title',
 					'This is the big image on the top right.',
-					'top_title',
+					'camp_top_title',
 					''
 				),
 				new CheezCapTextOption(
 					'Top Right Item Subtitle',
 					'',
-					'top_subtitle',
+					'camp_top_subtitle',
 					''
 				),
 				new CheezCapTextOption(
 					'Top Right Item Link',
 					'This is the link that to the main post. Make sure to use add the http://',
-					'top_link',
+					'camp_top_link',
 					''
 				),
 				new CheezCapTextOption(
 					'Top Right Image URL',
 					'Add the uploaded image URL. Size should be 290px &times; 180px.',
-					'top_url',
+					'camp_top_url',
 					''
 				),
 				new CheezCapTextOption(
 					'Top Right Image ID',
 					'Add the ID of the image that you would like to use here. It will take the size from p2 thumbnail.',
-					'top_url_id',
+					'camp_top_url_id',
 					''
 				),
 				new CheezCapTextOption(
 					'Bottom Right Item Title',
 					'This is the big image on the top right.',
-					'bottom_title',
+					'camp_bottom_title',
 					''
 				),
 				new CheezCapTextOption(
 					'Bottom Right Item Subtitle',
 					'',
-					'bottom_subtitle',
+					'camp_bottom_subtitle',
 					''
 				),
 				new CheezCapTextOption(
 					'Bottom Right Item Link',
 					'This is the link that to the main post. Make sure to use add the http://',
-					'bottom_link',
+					'camp_bottom_link',
 					''
 				),
 				new CheezCapTextOption(
 					'Bottom Right Image URL',
 					'Add the uploaded image URL. Size should be 290px &times; 180px.',
-					'bottom_url',
+					'camp_bottom_url',
 					''
 				),
 				new CheezCapTextOption(
 					'Bottom Right Image ID',
 					'Add the ID of the image that you would like to use here. It will take the size from p2 thumbnail.',
-					'bottom_url_id',
+					'camp_bottom_url_id',
 					''
 				),
 				new CheezCapTextOption(
 					'Hot Topics',
 					'Add an ordered list with three items to be used in the Hot Topic section near the search bar at the top of the page.',
-					'hot_topics',
+					'camp_hot_topics',
 					'<ul class="terms">
 						<li><a href="http://blog.makezine.com/kids">Kids</a></li>
 						<li><a href="http://blog.makezine.com/arduino/">Arduino</a></li>
@@ -699,19 +667,19 @@ new CheezCapGroup( 'Craft Featured Posts', 'second_CheezCapGroup',
 				new CheezCapTextOption(
 					'Livestream Embed',
 					'When you add the src of the Flash embed of a Livestream video here, it will add it under the feature boxes on the home page.',
-					'livestream',
+					'camp_livestream',
 					''
 				),
 				new CheezCapTextOption(
 					'Featured Posts',
 					'Add the post IDs of one post that you want to feature.',
-					'daily',
+					'camp_daily',
 					'274361'
 				),
 				new CheezCapTextOption(
 					'Weekly Theme',
 					'Add the post IDs of the five posts that you want to feature. They need to be in order, m->f.',
-					'weekly',
+					'camp_weekly',
 					'274361'
 				),
 				new CheezCapTextOption(

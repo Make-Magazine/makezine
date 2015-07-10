@@ -26,20 +26,20 @@
 
 							<div class="paddme">
 
-								<?php if ( make_get_cap_option( 'ribbon_title_display' ) ) :
+								<?php if ( make_get_cap_option( 'camp_ribbon_title_display' ) ) :
 									$ribbon_class = 'attachment-p1'; ?>
-									<div class="ribbon"><?php echo esc_html( make_get_cap_option( 'ribbon_title' ) ); ?></div>
+									<div class="ribbon"><?php echo esc_html( make_get_cap_option( 'camp_ribbon_title' ) ); ?></div>
 								<?php else : $ribbon_class = ''; endif; ?>
 
-								<a href="<?php echo esc_html( make_get_cap_option( 'main_link' ) ); ?>">
+								<a href="<?php echo esc_html( make_get_cap_option( 'camp_main_link' ) ); ?>">
 
 									<?php
-										$mainurl = (make_get_cap_option( 'main_url' ));
-										if ( make_get_cap_option( 'main_id' ) ) {
-											echo wp_get_attachment_image( absint( make_get_cap_option( 'main_id' ) ), 'p1', 0, array( 'class' => $ribbon_class ) );
+										$mainurl = (make_get_cap_option( 'camp_main_url' ));
+										if ( make_get_cap_option( 'camp_main_id' ) ) {
+											echo wp_get_attachment_image( absint( make_get_cap_option( 'camp_main_id' ) ), 'p1', 0, array( 'class' => $ribbon_class ) );
 										} else {
 											echo '<img src="'.get_resized_remote_image_url($mainurl,301,400).'" height="400" width="301" alt=""';
-											if ( make_get_cap_option( 'ribbon_title_display' ) )
+											if ( make_get_cap_option( 'camp_ribbon_title_display' ) )
 												echo 'id="top-left" ';
 											echo '/>';
 
@@ -50,8 +50,8 @@
 
 								<div class="caption">
 
-									<h3><a href="<?php echo esc_html( make_get_cap_option( 'main_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'main_title' ) ); ?></a></h3>
-									<p><a href="<?php echo esc_html( make_get_cap_option( 'main_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'main_subtitle' ) ); ?></a></p>
+									<h3><a href="<?php echo esc_html( make_get_cap_option( 'camp_main_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'camp_main_title' ) ); ?></a></h3>
+									<p><a href="<?php echo esc_html( make_get_cap_option( 'camp_main_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'camp_main_subtitle' ) ); ?></a></p>
 
 								</div>
 
@@ -67,12 +67,12 @@
 
 									<div class="paddme small">
 
-										<a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>">
+										<a href="<?php echo esc_url( make_get_cap_option( 'camp_top_link' ) ); ?>">
 
 											<?php
-												$topurl = make_get_cap_option( 'top_url' );
-												if ( make_get_cap_option( 'top_url_id' ) ) {
-													echo wp_get_attachment_image( absint( make_get_cap_option( 'top_url_id' ) ), 'p2' );
+												$topurl = make_get_cap_option( 'camp_top_url' );
+												if ( make_get_cap_option( 'camp_top_url_id' ) ) {
+													echo wp_get_attachment_image( absint( make_get_cap_option( 'camp_top_url_id' ) ), 'p2' );
 												} else {
 													echo '<img src="'.get_resized_remote_image_url($topurl,290,180).'" height="180" width="290" alt="" />';
 												}
@@ -82,8 +82,8 @@
 
 										<div class="caption">
 
-											<h3><a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'top_title' ) ); ?></a></h3>
-											<p><a href="<?php echo esc_url( make_get_cap_option( 'top_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'top_subtitle' ) ); ?></a></p>
+											<h3><a href="<?php echo esc_url( make_get_cap_option( 'camp_top_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'camp_top_title' ) ); ?></a></h3>
+											<p><a href="<?php echo esc_url( make_get_cap_option( 'camp_top_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'camp_top_subtitle' ) ); ?></a></p>
 
 										</div>
 
@@ -98,9 +98,9 @@
 										<a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>">
 
 											<?php
-												$bottomurl = make_get_cap_option( 'bottom_url' );
-												if ( make_get_cap_option( 'bottom_url_id' ) ) {
-													echo wp_get_attachment_image( absint( make_get_cap_option( 'bottom_url_id' ) ), 'p2' );
+												$bottomurl = make_get_cap_option( 'camp_bottom_url' );
+												if ( make_get_cap_option( 'camp_bottom_url_id' ) ) {
+													echo wp_get_attachment_image( absint( make_get_cap_option( 'camp_bottom_url_id' ) ), 'p2' );
 												} else {
 													echo '<img src="'.get_resized_remote_image_url($bottomurl,290,180).'" height="180" width="290" alt="" />';
 												}
@@ -110,8 +110,8 @@
 
 										<div class="caption">
 
-											<h3><a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'bottom_title' ) ); ?></a></h3>
-											<p><a href="<?php echo esc_url( make_get_cap_option( 'bottom_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'bottom_subtitle' ) ); ?></a></p>
+											<h3><a href="<?php echo esc_url( make_get_cap_option( 'camp_bottom_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'camp_bottom_title' ) ); ?></a></h3>
+											<p><a href="<?php echo esc_url( make_get_cap_option( 'camp_bottom_link' ) ); ?>"><?php echo esc_html( make_get_cap_option( 'camp_bottom_subtitle' ) ); ?></a></p>
 
 										</div>
 
