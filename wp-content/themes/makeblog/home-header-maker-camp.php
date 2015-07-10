@@ -175,6 +175,82 @@
 		</div>
 
 		<div class="row">
+			
+			<div class="span12 maker-camp">
+					
+					<div class="paddme-maker-camp">
+
+						<div class="hr"></div>	
+
+							<div class="row">
+
+							<div class="span">
+								
+								<div class="paddme-maker-camp-left">
+
+									<img src="<?php echo get_template_directory_uri(); ?>/images/maker-camp/makercamp_logo.jpg" alt="Maker-Camp Logo" />
+								
+								</div>
+
+							</div>
+
+							<div class="span5">
+								
+								<div class="paddme-maker-camp-left">
+
+									<?php
+										echo '<p class="maker-camp-small-text">';
+										if ( make_get_cap_option( 'camp_live_from' ) ) {
+											echo make_get_cap_option( 'camp_live_from' );
+										}
+										echo '</p>';
+									?>
+
+									<?php
+										echo '<h3>';
+										if ( make_get_cap_option( 'camp_day_x' ) ) {
+											echo '<a href="' . make_get_cap_option( 'camp_video_url' ) . '">' . make_get_cap_option( 'camp_day_x' ) . '</a>';
+										}
+										echo '</h3>';
+									?>
+
+									<?php
+										$camp_first_line = make_get_cap_option( 'camp_paragraph' );
+										echo '<p>';
+										if ( make_get_cap_option( 'camp_paragraph' ) ) {
+											echo make_get_cap_option( 'camp_paragraph' );
+										}
+										echo '</p>';
+									?>
+
+								</div>	
+
+							</div>
+
+							<div class="span4 pull-right">
+
+								<div class="paddme-maker-camp-right pull-right">
+								
+									<?php
+										$camp_video_img = make_get_cap_option( 'camp_video_right' );
+										echo '<a href="' . make_get_cap_option( 'camp_video_url' ) . '">' . '<img src="'.get_resized_remote_image_url($camp_video_img,170,300).'" height="170" width="300" alt="" />' . '</a>';
+									?>
+
+								</div>
+
+							</div>
+
+						</div>
+				
+						<div class="hr"></div>
+
+					</div>
+
+			</div>
+			
+		</div>
+
+		<div class="row">
 		
 			<div class="home-waist-banner">
 		

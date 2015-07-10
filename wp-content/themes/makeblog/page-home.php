@@ -39,6 +39,10 @@ Template Name: Home Page
 
 			<?php get_template_part( 'home-faire' ); ?>
 
+		<<?php elseif ( make_get_cap_option( 'camp_banner_enabled' ) ) : ?>
+
+			<?php get_template_part( 'home-header-maker-camp' ); ?>	
+
 		<?php else : ?>
 
 			<?php get_template_part( 'home-header-nomal' ); ?>
