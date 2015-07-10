@@ -227,7 +227,7 @@
 
 							</div>
 
-							<div class="span5 pull-right">
+							<div class="span4 pull-right">
 
 								<div class="paddme-maker-camp pull-right">
 								

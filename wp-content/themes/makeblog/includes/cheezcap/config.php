@@ -166,7 +166,7 @@ $cap = new CheezCap( array(
 					'Camp - Paragraph Text',
 					'Paragraph Text in Camp Box',
 					'camp_paragraph',
-					'We add to our make:believe toolkit with a few quick costume hacks to add character to your characters. We add to our make:believe toolkit with a few quick costume hacks to add character to your characters. We add to our make:believe toolkit with a few quick costume hacks to add character to your characters.'
+					'We add to our make:believe toolkit with a few quick costume hacks to add character to your characters. We add to our make:believe toolkit with a few quick costume hacks to add character to your characters.'
 				),
 
 				new CheezCapTextOption(
