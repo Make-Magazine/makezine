@@ -186,7 +186,7 @@
 
 							<div class="span">
 								
-								<div class="paddme-maker-camp">
+								<div class="paddme-maker-camp-left">
 
 									<img src="<?php echo get_template_directory_uri(); ?>/images/maker-camp/makercamp_logo.jpg" alt="Maker-Camp Logo" />
 								
@@ -196,7 +196,7 @@
 
 							<div class="span5">
 								
-								<div class="paddme-maker-camp">
+								<div class="paddme-maker-camp-left">
 
 									<?php
 										echo '<p class="maker-camp-small-text">';
