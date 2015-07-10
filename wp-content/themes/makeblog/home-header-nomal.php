@@ -229,7 +229,7 @@
 
 							<div class="span4 pull-right">
 
-								<div class="paddme-maker-camp pull-right">
+								<div class="paddme-maker-camp-right pull-right">
 								
 									<?php
 										$camp_video_img = make_get_cap_option( 'camp_video_right' );
