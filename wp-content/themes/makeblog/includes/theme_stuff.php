@@ -1773,6 +1773,6 @@ function sumome_scroll_show_script() {
 			    }
 			});
 		</script>
-	<?php endif;
+	<?php }
 }
 add_action( 'wp_footer', 'sumome_scroll_show_script' );
