@@ -1763,7 +1763,9 @@ add_action('wp_head', 'external_links_in_new_windows_client');
 function sumome_scroll_show_script() {
 	if (! is_home()) { ?>
 		<script type="text/javascript">
-			jQuery( ".sumome-share-client-wrapper-right-page" ).hide();
+			jQuery( document ).ready(function() {
+				jQuery( ".sumome-share-client-wrapper-right-page" ).hide();
+			});
 			jQuery(document).scroll(function () {
 			    var y = jQuery(this).scrollTop();
 			    if (y > 800) {
