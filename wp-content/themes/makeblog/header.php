@@ -64,6 +64,9 @@
 		<!-- Time-tracking for Custom Dimensions -->
 		<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
 
+		<!-- Primary Categories Dimension Query -->
+		<?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
+		<?php $youtube_embed_query = get_post_meta( get_the_id(), 'youtube_embed' ); $primary_cat = $youtube_embed_query[0]; ?>
 		<script type="text/javascript">
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -78,8 +81,10 @@
 			  ga('send', 'pageview', {
 			 'page': location.pathname + location.search  + location.hash
 			  });			  
-			  var dimensionValue = document.getElementsByTagName("time")[0].getAttribute("datetime");
-		      ga('set', 'dimension11', dimensionValue);
+			  var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
+		      ga('set', 'dimension11', dimensionValue11);
+		      ga('set', 'dimension13', <?php echo $primary_cat ?>);
+		      ga('set', 'dimension14', <?php echo $youtube_embed ?>);
 		</script>
 
 		<!-- Google Tag Manager -->
