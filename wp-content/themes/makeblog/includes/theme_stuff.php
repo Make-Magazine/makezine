@@ -1760,21 +1760,18 @@ add_action('wp_head', 'external_links_in_new_windows_client');
 /**
  * Include hide/show script for SumoMe sharing widget attached to right side of browser
  */
-function sumome_scroll_show_script() {
-	if (! is_home()) { ?>
+function sumome_scroll_show_script() { ?>
 		<script type="text/javascript">
-			jQuery( document ).ready(function() {
-				jQuery( ".sumome-share-client-wrapper-right-page" ).hide();
-			});
 			jQuery(document).scroll(function () {
 			    var y = jQuery(this).scrollTop();
 			    if (y > 800) {
-			        jQuery('.sumome-share-client-wrapper-right-page').fadeIn();
+			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
+			        jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
 			    } else {
-			        jQuery('.sumome-share-client-wrapper-right-page').fadeOut();
+			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
 			    }
 			});
 		</script>
-	<?php }
+	<?php
 }
 add_action( 'wp_footer', 'sumome_scroll_show_script' );
