@@ -1758,7 +1758,7 @@ add_action('wp_head', 'external_links_in_new_windows_client');
 
 
 /**
- * Include hide/show script for SumoMe sharing widget attached to right side of browser
+ * Include hide/show script for SumoMe sharing widget attached to left side of browser
  */
 function sumome_scroll_show_script() { ?>
 		<script type="text/javascript">

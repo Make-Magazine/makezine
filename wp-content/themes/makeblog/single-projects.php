@@ -79,8 +79,6 @@ get_header(); ?>
 
 								<div class="span8">
 
-									<a data-sumome-share-id="002914e1-bbce-4a58-b59e-8846991ae71c"></a>
-
 									<?php
 							 			$image = get_post_custom_values('Image');
 										if ( !empty( $image[0] ) ) {
