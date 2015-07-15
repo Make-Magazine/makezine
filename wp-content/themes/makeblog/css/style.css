@@ -10089,6 +10089,9 @@ a.oembed {
     margin: 0 0 10px 0;
     padding: 0 0 10px 0;
   }
+  .main-header .social-profile-icons {
+    display: none;
+  }
 }
 @media (max-width: 540px) {
   body.makercamp .make-popdown .menu-bottom p {
