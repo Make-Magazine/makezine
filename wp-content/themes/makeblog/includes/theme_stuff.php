@@ -289,13 +289,6 @@ function make_load_resources() {
 	
 	//load data finder
 	wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );	
-	
-	//load unbouncer, which pops something up when user goes to exit
-	wp_enqueue_script( 'unbouncer', '//cdn.makezine.com/js/unbouncer-v17.js', array( 'make-optimizely','fancybox','user-data-script' ) );	
-	
-	//load fancybox
-	wp_enqueue_script( 'fancybox', '//cdn.makezine.com/js/fancybox.js', array( 'make-optimizely' ) );
-	wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/css/fancybox.css' );
 
 	//fitvid
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), false, true );
@@ -1755,3 +1748,23 @@ add_action('wp_head', 'external_links_in_new_windows_client');
 // 	);
 // 	return $new_caption;
 // }
+
+
+/**
+ * Include hide/show script for SumoMe sharing widget attached to left side of browser
+ */
+function sumome_scroll_show_script() { ?>
+		<script type="text/javascript">
+			jQuery(document).scroll(function () {
+			    var y = jQuery(this).scrollTop();
+			    if (y > 800) {
+			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
+			        jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
+			    } else {
+			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
+			    }
+			});
+		</script>
+	<?php
+}
+add_action( 'wp_footer', 'sumome_scroll_show_script' );
