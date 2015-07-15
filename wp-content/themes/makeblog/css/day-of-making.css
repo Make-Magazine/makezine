@@ -10186,6 +10186,9 @@ a.oembed {
   .main-header .social-profile-icons {
     display: none;
   }
+  .main-header .additional-content .search-make input[type="submit"] {
+    top: 9px;
+  }
 }
 @media (max-width: 540px) {
   body.makercamp .make-popdown .menu-bottom p {
