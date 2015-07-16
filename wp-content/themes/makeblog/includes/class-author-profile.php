@@ -379,6 +379,7 @@
 		return $make_author_class->author_photo();
 	}
 
+
 	function make_author_bio( $author = '' ) {
 		global $make_author_class;
 
@@ -399,6 +400,7 @@
 	 * @version  1.0
 	 * @since    1.0
 	 */
+
 	function make_author( $type = 'full' ) {
 		global $make_author_class;
 
@@ -416,7 +418,6 @@
 		return $output;
 	}
 
-
 	/**
 	 * Fixes guest authors with no posts to actually load their profile instead of returning 404
 	 * As per http://wordpress.org/support/topic/advice-for-showing-author-profile-page-for-authors-without-posts
@@ -433,6 +434,64 @@
 	}
 	add_action( 'template_redirect', 'capx_template_redirect' );
 
+	function create_tag_cloud( $content ) {
+        global $wpdb;
+
+        $postid = get_the_ID();
+        // Select term_taxonomy_id from relationships table
+        $term_tax = $wpdb->get_col("SELECT term_taxonomy_id
+        FROM $wpdb->term_relationships WHERE object_id = '$postid'" );
+        // Gather terms to relate
+        foreach($term_tax as $term_tax_id) {
+            // Get term ids
+            $term_id2 = $wpdb->get_col("SELECT term_id
+            FROM $wpdb->term_taxonomy WHERE term_taxonomy_id = '$term_tax_id' and taxonomy = 'post_tag'" );
+            // Gets rid of empty variables
+            if (empty($term_id2)) {
+                continue;
+            }
+            else {
+                $term_id3[] = $term_id2[0];
+            }
+        }
+    	// Get tag names
+        foreach($term_id3 as $cats) {
+            $the_cats = $wpdb->get_col("SELECT name
+            FROM $wpdb->terms WHERE term_id = '$cats'" );
+			// Get tag URLs
+			$categories[] = $the_cats[0];
+            $tag_urls[] = get_tag_link($cats);
+        }
+        // Build div
+        $tag_cloud_div = '';
+        $tag_cloud_div .= '<div class="related-topics">';
+        $tag_cloud_div .= '<p>Related Topics</p>';
+        $tag_cloud_div .= '<ul class="related-topics-ul">';
+        foreach (array_combine($categories, $tag_urls) as $category => $tag_url) {
+		$tag_cloud_div .= '<li><a href="' . $tag_url . '">#' . $category . '</a></li>';
+		}
+		$tag_cloud_div .= '</ul>'; // End list
+		$tag_cloud_div .= '</div>';
+        return $tag_cloud_div;
+    }
+
+    function display_tag_cloud( $content ) {
+    	global $post;
+
+    	if ( class_exists( 'WPCOM_Liveblog' ) ) {
+			// There was a check for a post parent to == 0, I pulled that off. --JS
+			if( ! WPCOM_Liveblog::is_liveblog_post() && is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				$content .= create_tag_cloud();
+			}
+		} else {
+			// There was a check for a post parent to == 0, I pulled that off. --JS
+			if( is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				$content .= create_tag_cloud();
+			}
+		}
+		return $content;
+    }
+    add_filter( 'the_content', 'display_tag_cloud', 4 );
 
 	function hook_bio_into_content( $content ) {
 		global $post;
@@ -440,11 +499,13 @@
 		if ( class_exists( 'WPCOM_Liveblog' ) ) {
 			// There was a check for a post parent to == 0, I pulled that off. --JS
 			if( ! WPCOM_Liveblog::is_liveblog_post() && is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				//$content .= display_tag_cloud();
 				$content .= make_author();
 			}
 		} else {
 			// There was a check for a post parent to == 0, I pulled that off. --JS
 			if( is_single() && is_main_query() && !in_array( get_post_type(),  array( 'page_2', 'projects' ) ) ) {
+				//$content .= display_tag_cloud();
 				$content .= make_author();
 			}
 		}

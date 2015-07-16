@@ -1,4 +1,4 @@
-<?php get_header('slideshow'); ?>
+<?php get_header(''); ?>
 
 		<div class="container">
 
@@ -18,24 +18,17 @@
 
 						<?php endwhile; ?>
 						
+						<div id="contextly"></div>
+						
 						<div class="comments">
 							<?php comments_template(); ?>
-						</div>
-						<div id="contextly"></div>
-
-						<?php if ( function_exists('make_shopify_featured_products_slider') ) {
-	     					echo make_shopify_featured_products_slider( 'row-fluid' );
-	    				} ?>
-						
-						<?php else: ?>
-						
-						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-						
+						</div>						
+					
 					<?php endif; ?>
 
 				</div>
 
 			
-				<?php get_sidebar('slideshow'); ?>
+				<?php get_sidebar(''); ?>
 			
-			<?php get_footer('slideshow'); ?>
+			<?php get_footer(''); ?>

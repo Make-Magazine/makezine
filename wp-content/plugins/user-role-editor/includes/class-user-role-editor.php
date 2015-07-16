@@ -900,13 +900,11 @@ class User_Role_Editor {
         wp_deregister_script('jqueryform');
         wp_deregister_script('tab');
         wp_deregister_script('shortcode_js');
-        wp_deregister_script('fancybox_js');
         wp_deregister_script('bootstrap-colorpicker');
         wp_deregister_script('logo_upload');
         wp_deregister_script('js_wd_menu_backend');
         
         wp_deregister_style('config_css');
-        wp_deregister_style('fancybox_css');
         wp_deregister_style('colorpicker');
         wp_deregister_style('font-awesome');
         wp_deregister_style('css_wd_menu_backend');

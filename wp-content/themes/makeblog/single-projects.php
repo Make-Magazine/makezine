@@ -29,7 +29,7 @@ get_header(); ?>
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-						<article <?php post_class(); ?>>
+						<div <?php post_class(); ?>>
 
 							<div class="projects-masthead">
 
@@ -78,19 +78,6 @@ get_header(); ?>
 							<div class="row">
 
 								<div class="span8">
-
-									<!-- ShareDaddy Jetpack Buttons -->
-									<?php 
-									if ( function_exists( 'sharing_display' ) ) {
-									    sharing_display( '', true );
-									}
-
-									if ( class_exists( 'Jetpack_Likes' ) ) {
-									    $custom_likes = new Jetpack_Likes;
-									    echo $custom_likes->post_likes( '' );
-									}
-
-									?>
 
 									<?php
 							 			$image = get_post_custom_values('Image');
@@ -205,7 +192,7 @@ get_header(); ?>
 
 							</div>
 
-						</article>
+						</div>
 
 							<?php
 								$stepscount = unserialize( $steps[0] );
@@ -360,10 +347,6 @@ get_header(); ?>
 
 									<?php echo make_author(); ?>
 
-									<div class="comments">
-										<?php comments_template(); ?>
-									</div>
-
 									<div id="contextly">
 
 										<?php echo do_shortcode('[contextly_main_module]'); ?>
@@ -375,6 +358,12 @@ get_header(); ?>
 										<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 
 									<?php endif; ?>
+
+									<div class="comments">
+										
+										<?php comments_template(); ?>
+									
+									</div>
 
 								</div>
 

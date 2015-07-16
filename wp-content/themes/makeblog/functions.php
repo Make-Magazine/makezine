@@ -99,7 +99,7 @@ include_once dirname( __FILE__ ) . '/includes/projects-cpt.php';
 include_once dirname( __FILE__ ) . '/includes/video-cpt.php';
 
 // 26. Order Bender
-include_once dirname( __FILE__ ) . '/includes/order-bender.php';
+//include_once dirname( __FILE__ ) . '/includes/order-bender.php';
 
 // 27. Errata CPT
 include_once dirname( __FILE__ ) . '/includes/errata-cpt.php';
