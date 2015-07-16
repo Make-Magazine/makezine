@@ -277,3 +277,12 @@ function get_excerpt_by_id($post_id){
 
     return $the_excerpt;
 }
+
+// Define our current Version number using the stylesheet version
+function my_wp_default_styles($styles)
+{
+	$my_theme = wp_get_theme();
+	$my_version=  $my_theme->get( 'Version' );
+	$styles->default_version=$my_version;
+}
+add_action("wp_default_styles","my_wp_default_styles");
