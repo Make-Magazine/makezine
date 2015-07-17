@@ -70,8 +70,8 @@
 			  });			  
 			  var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
 		      ga('set', 'dimension11', dimensionValue11);
-		      ga('set', 'dimension13', <?php echo $primary_cat ?>);
-		      ga('set', 'dimension14', <?php echo $youtube_embed ?>);
+		      ga('set', 'dimension13', "<?php echo $primary_cat ?>");
+		      ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
 		</script>
 		
 		<!-- Google Tag Manager -->
