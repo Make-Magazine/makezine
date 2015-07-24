@@ -1771,7 +1771,7 @@ function sumome_scroll_show_script() { ?>
 					jQuery("a[title='Google+']").addClass("SumoMeGplus")
 					jQuery("a[title='Reddit']").addClass("SumoMeReddit")
 					jQuery("a[title='LinkedIn']").addClass("SumoMeLinkedin")
-					//jQuery("a[title='More']").addClass("")
+					jQuery("a[title='Pinterest']").addClass("SumoMePinterest")
 			    };
 			    window.setTimeout( addSumoMeClasses, 3000 ); // 3 seconds
 			});
