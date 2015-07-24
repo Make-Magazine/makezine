@@ -1764,16 +1764,13 @@ function sumome_scroll_show_script() { ?>
 			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
 			    }
 			});
-			jQuery(document).ready(function(){
-			    function addSumoMeClasses(){
-					jQuery("a[title='Twitter']").addClass("SumoMeTwitter")
-					jQuery("a[title='Facebook']").addClass("SumoMeFacebook")
-					jQuery("a[title='Google+']").addClass("SumoMeGplus")
-					jQuery("a[title='Reddit']").addClass("SumoMeReddit")
-					jQuery("a[title='LinkedIn']").addClass("SumoMeLinkedin")
-					jQuery("a[title='Pinterest']").addClass("SumoMePinterest")
-			    };
-			    window.setTimeout( addSumoMeClasses, 3000 ); // 3 seconds
+			jQuery( "a.sumome-share-client-share" ).ready(function() {
+				jQuery("a[title='Twitter']").addClass("SumoMeTwitter")
+				jQuery("a[title='Facebook']").addClass("SumoMeFacebook")
+				jQuery("a[title='Google+']").addClass("SumoMeGplus")
+				jQuery("a[title='Reddit']").addClass("SumoMeReddit")
+				jQuery("a[title='LinkedIn']").addClass("SumoMeLinkedin")
+				jQuery("a[title='Pinterest']").addClass("SumoMePinterest")
 			});
 		</script>
 	<?php
