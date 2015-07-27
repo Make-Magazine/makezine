@@ -34,22 +34,22 @@
 					<div class="span3 social-foot-col" >
 						<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
 						<ul class="unstyled">
-							<li><a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 							<li><a href="/projects">Make: Projects</a></li>
 							<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
 							<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
 							<li><a href="/category/electronics/raspberry-pi/">Raspberry Pi Projects</a></li>
+							<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 						</ul>
 					</div>
 
 					<div class="span3 social-foot-col" >
 						<h4>Explore Making</h4>
 						<ul class="unstyled">
-							<li><a href="/blog">Make: News</a></li>
 							<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
 							<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
 							<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
 							<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
+							<li><a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 						</ul>
 					</div>
 					<!-- div class="clearfix visible-phone"></div--><!-- ADD THIS BACK IN WHEN SITE IS RESPONSIVE -->
@@ -168,11 +168,11 @@
 					    <div id="collapseOneF" class="accordion-body collapse">
 					      <div class="accordion-inner">
 					        <ul class="nav nav-pills nav-stacked">
-								<li><a href="https://readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 								<li><a href="/projects">Make: Projects</a></li>
 								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
 								<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
 								<li><a href="/category/electronics/raspberry-pi/">Raspberry Pi Projects</a></li>
+								<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 							</ul>
 					      </div>
 					    </div>
@@ -186,11 +186,11 @@
 					    <div id="collapseTwoF" class="accordion-body collapse">
 					      <div class="accordion-inner">
 					        <ul class="nav nav-pills nav-stacked">
-								<li><a href="/blog">Make: News</a></li>
 								<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
 								<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
 								<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
 								<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
+								<li><a href="//readerservices.makezine.com/mk/default.aspx?" target="_blank">Subscribe to Make:</a></li>
 							</ul>
 					      </div>
 					    </div>
