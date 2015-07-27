@@ -129,52 +129,29 @@
 							<?php endif; ?>
 						</div>
 
-						<div class="span3 hdr-sub-ad-01 hdr-col-area" >
+						<div class="span3 hdr-sub-ad-01 hdr-col-area offset3" >
 								<a href="https://readerservices.makezine.com/mk/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Cover-Promo-MAKE.jpg" width="75" alt="Subscribe to Make Magazine Today!" /></a>
 								<p>
 									<a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe Now</a><br />
 									<span><a href="//www.pubservice.com/mk/SubGiftSplash.aspx?PC=MK&PK=M3BMZA" target="_blank">Give a Gift</a><br />
 								</p>
 						</div>
-						<div class="span3 hdr-col-area social-hdr-area">
-							<div class="social-profile-icons">
-								<a class="sprite-facebook-32" href="//facebook.com/makemagazine" title="Facebook" target="_blank">
-									<div class="social-profile-cont">
-										<span class="sprite"></span>
-									</div>
-								</a>
-								<a class="sprite-twitter-32" href="//twitter.com/make" title="Twitter" target="_blank">
-									<div class="social-profile-cont">
-										<span class="sprite"></span>
-									</div>
-								</a>
-								<a class="sprite-pinterest-32" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank">
-									<div class="social-profile-cont">
-										<span class="sprite"></span>
-									</div>
-								</a>
-								<a class="sprite-googleplus-32" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
-									<div class="social-profile-cont">
-										<span class="sprite"></span>
-									</div>
-								</a>
-							</div>
-							<div class="additional-content hidden-print">
-								<form action="<?php echo home_url(); ?>" class="search-make open">
-									<input type="text" class="search-field" name="s" placeholder="Search" />
-									<input type="submit" class="open submit" value="" />
-								</form>
-								<div class="clearfix"></div>
-							</div>
-
-						</div>
+						
 					</div>
 				</div>
 			</div>
 			<div class="secondary-header hidden-print">
 				<div class="container">
 					<div class="row">
-						<?php ubermenu( 'main' , array( 'theme_location' => 'make-primary' ) ); ?>
+						<div class="span10"><?php ubermenu( 'main' , array( 'theme_location' => 'make-primary' ) ); ?></div>
+						<div class="span2 search-make-box"><div class="additional-content hidden-print">
+								<form action="<?php echo home_url(); ?>" class="search-make open">
+									<input type="text" class="search-field" name="s" placeholder="Search" />
+									<input type="submit" class="open submit" value="" />
+								</form>
+								<div class="clearfix"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

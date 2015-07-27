@@ -9815,17 +9815,6 @@ a.oembed {
   -moz-box-shadow: 0 0 0 transparent;
   box-shadow: 0 0 0 transparent;
 }
-.main-header .additional-content .search-make input[type="submit"] {
-  position: absolute;
-  top: 55px;
-  right: 7px;
-  background: url('../img/search-btn-gray.png');
-  width: 18px;
-  height: 18px;
-  border: none;
-  margin-right: 5px;
-  outline: none;
-}
 .main-header .login-wrapper {
   position: absolute;
   right: 300px;
@@ -9979,6 +9968,36 @@ a.oembed {
 }
 .secondary-header {
   background: #ebebeb;
+  height: 40px;
+}
+.secondary-header .search-make {
+  margin-bottom: 0px;
+}
+.secondary-header .search-make input[type="text"] {
+  height: 34px;
+  padding: 0 8px;
+  font-size: 15px;
+  line-height: 1em;
+  border: 2px solid #cccccc;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #777;
+  -webkit-box-shadow: 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
+}
+.secondary-header .search-make input[type="submit"] {
+  position: relative;
+  top: -36px;
+  right: -113px;
+  background: url('../img/search-btn-gray.png');
+  width: 18px;
+  height: 18px;
+  border: none;
+  margin-right: 5px;
+  outline: none;
 }
 .site-navigation li {
   float: left;
@@ -10187,6 +10206,15 @@ li.top-cat-item a:visited {
 }
 .ubermenu-item-level-2 {
   font-size: 20px;
+}
+.ubermenu .ubermenu-submenu-type-stack > .ubermenu-item-normal > .ubermenu-target {
+  font-weight: 300;
+}
+#ubermenu-main-22880-make-primary {
+  margin-top: -7px;
+}
+.search-make-box {
+  margin-top: 3px;
 }
 ul.sub-menu {
   border-top: 1px solid #ddd;
