@@ -119,7 +119,7 @@ Template Name: Home Page
 					</div>
 					<!--<div class="shadow"></div>-->
 			
-					<div class="span8">
+					<div class="span8 home-right-content">
 
 						<?php
 							$feature_url = $cap->feature_url;

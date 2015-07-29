@@ -10202,10 +10202,18 @@ a.oembed {
     padding: 0 0 10px 0;
   }
 }
-@media (max-width: 540px) {
-  body.makercamp .make-popdown .menu-bottom p {
-    margin: 0;
-    padding: 0;
+@media (max-width: 479px) {
+  .nav-collapse .nav > li > a,
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .secondary-header {
+    height: auto;
   }
 }
 .canvas-ad {
