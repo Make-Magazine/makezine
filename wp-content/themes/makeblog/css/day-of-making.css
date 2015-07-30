@@ -13477,12 +13477,12 @@ Maker Camp Banner Waist
     padding-top: 10px;
   }
   div.blurb {
-    width: 65% !important;
-    height: 108px !important;
-    overflow: hidden !important;
+    width: 60%;
+    height: 125px;
+    overflow: hidden;
   }
   div.entry-content {
-    width: auto !important;
+    width: auto;
   }
   div.posts {
     background-image: none;
@@ -13496,6 +13496,9 @@ Maker Camp Banner Waist
   }
   img.subscription-image {
     width: auto;
+  }
+  div.featured {
+    margin: 0;
   }
 }
 body {
