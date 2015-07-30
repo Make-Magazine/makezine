@@ -9506,46 +9506,25 @@ ul#tabs .current > a:hover {
 .home-ads {
   max-height: 250px;
 }
-/** responsive styles **/
-@media screen and (max-width: 767px) {
-  html,
-  body {
-    width: auto !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
-  }
-  div.row {
-    text-align: center;
-  }
-  .home-waist-banner {
-    display: none;
-  }
-  .new-dotw {
-    display: none;
-  }
-  #div-gpt-ad-664089004995786621-1 {
-    display: none;
-  }
-  .projects-home .art {
-    width: 340px;
-    background: none;
-  }
-  .span8 {
-    width: auto !important;
-  }
-  .featured .blurb {
-    float: left;
-    width: 200px;
-  }
+@media (max-width: 479px) {
   .span4 {
-    max-width: 350px;
-    padding: 0 0 0 27px !important;
+    max-width: 100%;
+    padding: 0;
   }
-  .posts {
-    background: none;
+  .paddme {
+    padding: 10px 0 0 0 !important;
   }
-  .mw-promotion {
-    display: none !important;
+  div.span8 img {
+    width: 360px;
+  }
+  div.span4 img {
+    width: 360px;
+  }
+  div.home-waist-banner {
+    display: none;
+  }
+  div.home-ads {
+    text-align: center;
   }
 }
 .avatar-298 {
@@ -10352,44 +10331,55 @@ img.nav-sprout {
   height: 32px;
 }
 /** responsive styles **/
-@media screen and (max-width: 767px) {
-  html,
-  body {
-    width: auto !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
-  }
-  div.row {
-    text-align: center;
-  }
-  .home-waist-banner {
-    display: none;
-  }
-  .new-dotw {
-    display: none;
-  }
-  #div-gpt-ad-664089004995786621-1 {
-    display: none;
-  }
-  .projects-home .art {
-    width: 340px;
-    background: none;
-  }
-  .span8 {
-    width: auto !important;
-  }
-  .featured .blurb {
-    float: left;
-    width: 200px;
-  }
-  .span4 {
-    max-width: 350px;
-    padding: 0 0 0 27px !important;
-  }
-  .posts {
-    background: none;
-  }
-}
+/*@media screen and (max-width: 767px) {
+		
+	html, body {
+	  padding:0 !important;
+	  width: auto !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;	
+	}
+
+	div.row {
+	  text-align:center;
+	}
+
+	.home-waist-banner {
+	  display:none;
+	}
+
+	.new-dotw {
+	  display:none;
+	}
+
+	#div-gpt-ad-664089004995786621-1 {
+	  display:none;
+	}
+
+	.projects-home .art {
+	  width:340px;
+	  background:none;
+	}
+
+	.span8 {
+	  width:auto !important;
+	}
+
+	.featured .blurb {
+	  float:left;
+	  width:200px;
+	}
+
+	.span4 {
+	  max-width:350px;
+	  padding:0 0 0 27px !important;
+	}
+
+	.posts {
+	  background:none;
+	}
+
+}*/
 .new-footer {
   padding: 20px 0;
   border-top: 20px solid #3FAFED;
