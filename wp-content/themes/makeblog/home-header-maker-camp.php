@@ -184,7 +184,7 @@
 
 							<div class="row">
 
-							<div class="span">
+							<div class="span maker-camp-makey">
 								
 								<div class="paddme-maker-camp-left">
 
