@@ -143,6 +143,7 @@
 						<div class="span2 search-make-box"><div class="additional-content hidden-print">
 								<form action="<?php echo home_url(); ?>" class="search-make open">
 									<input type="text" class="search-field" name="s" placeholder="Search" />
+									<div class="clearfix"></div>
 									<input type="submit" class="open submit" value="" />
 								</form>
 								<div class="clearfix"></div>

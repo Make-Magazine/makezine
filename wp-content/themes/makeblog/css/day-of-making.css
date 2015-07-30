@@ -7502,17 +7502,19 @@ li.top-cat-item a:visited {
 .mega-nav-footer a:link {
   background: transparent;
 }
-.ubermenu-item-level-2 {
-  font-size: 20px;
+li.ubermenu-item-level-0 a {
+  font-size: 18px;
+  color: #005d8f;
 }
-.ubermenu .ubermenu-submenu-type-stack > .ubermenu-item-normal > .ubermenu-target {
-  font-weight: 300;
+li.ubermenu-item-level-1 a {
+  font-weight: 400;
 }
-#ubermenu-main-22880-make-primary {
-  margin-top: -7px;
+li.ubermenu-item-level-3 a {
+  font-weight: 200;
 }
-.search-make-box {
-  margin-top: 3px;
+ul.ubermenu-submenu-id-486988 {
+  border-right: 1px solid #cdcdcd !important;
+  height: 348px !important;
 }
 ul.sub-menu {
   border-top: 1px solid #ddd;
@@ -7547,56 +7549,6 @@ img.nav-sprout {
   margin: -5px 0 0 0;
   height: 32px;
 }
-/** responsive styles **/
-/*@media screen and (max-width: 767px) {
-		
-	html, body {
-	  padding:0 !important;
-	  width: auto !important;
-      padding: 0 !important;
-      overflow-x: hidden !important;	
-	}
-
-	div.row {
-	  text-align:center;
-	}
-
-	.home-waist-banner {
-	  display:none;
-	}
-
-	.new-dotw {
-	  display:none;
-	}
-
-	#div-gpt-ad-664089004995786621-1 {
-	  display:none;
-	}
-
-	.projects-home .art {
-	  width:340px;
-	  background:none;
-	}
-
-	.span8 {
-	  width:auto !important;
-	}
-
-	.featured .blurb {
-	  float:left;
-	  width:200px;
-	}
-
-	.span4 {
-	  max-width:350px;
-	  padding:0 0 0 27px !important;
-	}
-
-	.posts {
-	  background:none;
-	}
-
-}*/
 .new-footer {
   padding: 20px 0;
   border-top: 20px solid #3FAFED;
@@ -13507,6 +13459,75 @@ Maker Camp Banner Waist
   }
   div.paddme-maker-camp-right {
     float: none;
+  }
+  div.secondary-header .search-make input {
+    top: -39px;
+    right: -332px;
+  }
+  ul.ubermenu-submenu-id-489196 {
+    border: none !important;
+    height: auto !important;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .span4 {
+    max-width: 100%;
+    padding: 0;
+  }
+  .paddme {
+    padding: 10px 0 0 0 !important;
+  }
+  div.span8 img {
+    width: 100%;
+  }
+  div.span4 img {
+    width: 100%;
+  }
+  div.home-waist-banner {
+    display: none;
+  }
+  div.home-ads {
+    text-align: center;
+  }
+  div.featured {
+    padding-top: 10px;
+  }
+  div.blurb {
+    width: 60% !important;
+    height: 125px;
+    overflow: hidden;
+  }
+  div.entry-content {
+    width: 100% !important;
+  }
+  div.posts {
+    background-image: none;
+  }
+  div.grid-box img {
+    width: 96%;
+  }
+  div.boxy {
+    height: 270px;
+    background-image: none;
+  }
+  img.subscription-image {
+    width: auto;
+    max-width: 300px;
+  }
+  div.featured {
+    margin: 0;
+  }
+  div.maker-camp-makey {
+    float: left;
+    width: 35%;
+    padding-right: 10px;
+  }
+  div.paddme-maker-camp-right {
+    float: none;
+  }
+  div.secondary-header .search-make input {
+    top: -39px;
+    right: -332px;
   }
 }
 body {
