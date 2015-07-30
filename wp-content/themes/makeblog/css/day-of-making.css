@@ -7232,11 +7232,6 @@ a.oembed {
     float: left !important;
     padding-top: 0px;
   }
-  .hdr-col-area.hdr-sub-ad-01 img {
-    width: 50px;
-    padding-right: 8px;
-    padding-left: 20px;
-  }
   .hdr-col-area.hdr-sub-ad-01 p {
     padding-top: 10px;
     font-weight: normal;
@@ -13498,6 +13493,9 @@ Maker Camp Banner Waist
   div.boxy {
     height: 270px;
     background-image: none;
+  }
+  img.subscription-image {
+    width: auto;
   }
 }
 body {

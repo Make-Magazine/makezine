@@ -130,7 +130,7 @@
 						</div>
 
 						<div class="span3 hdr-sub-ad-01 hdr-col-area offset3" >
-								<a href="https://readerservices.makezine.com/mk/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/subscription.png" alt="Subscribe to Make Magazine Today!" /></a>
+								<a href="https://readerservices.makezine.com/mk/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/subscription.png" alt="Subscribe to Make Magazine Today!" class="subscription-image" /></a>
 						</div>
 						
 					</div>
