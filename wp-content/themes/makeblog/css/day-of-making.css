@@ -7280,8 +7280,8 @@ a.oembed {
 }
 .secondary-header .search-make input[type="submit"] {
   position: relative;
-  top: -36px;
-  right: -113px;
+  top: -38px;
+  left: 80%;
   background: url('../img/search-btn-gray.png');
   width: 18px;
   height: 18px;
@@ -7523,6 +7523,12 @@ ul.sub-menu {
   border-top: 1px solid #ddd;
   padding-top: 10px;
   padding-bottom: 10px !important;
+}
+ul.ubermenu-submenu {
+  padding-right: 30px;
+}
+div.additional-content {
+  margin-top: 3px;
 }
 .browse-all {
   font-size: 14px;
@@ -13471,6 +13477,9 @@ Maker Camp Banner Waist
     border: none !important;
     height: auto !important;
   }
+  input[type="submit"] {
+    left: 92% !important;
+  }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .span4 {
@@ -13478,7 +13487,10 @@ Maker Camp Banner Waist
     padding: 0;
   }
   .paddme {
-    padding: 10px 0 0 0 !important;
+    padding: 0 !important;
+  }
+  .checkers {
+    margin: 0 !important;
   }
   div.span8 img {
     width: 100%;
@@ -13515,7 +13527,6 @@ Maker Camp Banner Waist
   }
   img.subscription-image {
     width: auto;
-    max-width: 300px;
   }
   div.featured {
     margin: 0;
@@ -13528,9 +13539,25 @@ Maker Camp Banner Waist
   div.paddme-maker-camp-right {
     float: none;
   }
+  div.span4 div.paddme {
+    padding: 0;
+  }
+  div.secondary-header {
+    height: auto;
+  }
   div.secondary-header .search-make input {
     top: -39px;
     right: -332px;
+  }
+  input[type="submit"] {
+    left: 92% !important;
+  }
+  ul.ubermenu-submenu-id-489196 {
+    border: none !important;
+    height: auto !important;
+  }
+  li.ubermenu-item-level-1 a {
+    font-size: 15px;
   }
 }
 body {
