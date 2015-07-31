@@ -7249,9 +7249,6 @@ a.oembed {
     width: 95% !important;
     float: left !important;
   }
-  .makershed-banner {
-    display: none !important;
-  }
 }
 .makershed-banner {
   background: #de231a;
@@ -13427,6 +13424,9 @@ Maker Camp Banner Waist
   }
   div.span4 img {
     width: 100%;
+  }
+  .page-id-116357 .waist {
+    margin-top: -25px;
   }
   div.home-waist-banner {
     display: none;
