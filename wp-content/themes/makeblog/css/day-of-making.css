@@ -7512,7 +7512,7 @@ li.ubermenu-item-level-1 a {
 li.ubermenu-item-level-3 a {
   font-weight: 200;
 }
-ul.ubermenu-submenu-id-489196 {
+ul.ubermenu-submenu-id-489695 {
   border-right: 1px solid #cdcdcd !important;
   height: 348px !important;
 }
@@ -13574,7 +13574,7 @@ ul.ubermenu-submenu-id-486943 {
 }
 .ubermenu .ubermenu-submenu .ubermenu-column-auto {
   min-width: 100px;
-  width: 0;
+  width: 0 !important;
 }
 body {
   font-size: 16px;
