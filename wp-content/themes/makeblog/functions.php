@@ -286,3 +286,47 @@ function my_wp_default_styles($styles)
 	$styles->default_version=$my_version;
 }
 add_action("wp_default_styles","my_wp_default_styles");
+
+// Force Parent Category selection
+
+function parent_category_toggle() {
+  
+  $taxonomies = apply_filters('parent_category_toggle',array());
+  for($x=0;$x<count($taxonomies);$x++)
+  {
+    $taxonomies[$x] = '#'.$taxonomies[$x].'div .selectit input';
+  }
+  $selector = implode(',',$taxonomies);
+  if($selector == '') $selector = '.selectit input';
+  
+  echo '
+    <script>
+    jQuery("'.$selector.'").change(function(){
+      var $chk = jQuery(this);
+      var ischecked = $chk.is(":checked");
+      $chk.parent().parent().siblings().children("label").children("input").each(function(){
+    var b = this.checked;
+    ischecked = ischecked || b;
+    })
+      checkParentNodes(ischecked, $chk);
+    });
+    function checkParentNodes(b, $obj)
+    {
+      $prt = findParentObj($obj);
+      if ($prt.length != 0)
+      {
+       $prt[0].checked = b;
+       checkParentNodes(b, $prt);
+      }
+    }
+    function findParentObj($obj)
+    {
+      return $obj.parent().parent().parent().prev().children("input");
+    }
+    </script>
+    ';
+  
+}
+add_action('admin_footer-post.php', 'parent_category_toggle');
+add_action('admin_footer-post-new.php', 'parent_category_toggle');
+?>
