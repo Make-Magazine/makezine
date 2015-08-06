@@ -66,6 +66,18 @@
 
 		<!-- Primary Categories Dimension Query -->
 		<?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
+		<?php 
+		$cats = get_the_category(); 
+			foreach ( $cats as $cat ) { 
+				if ( $cat->category_parent < 1 ) 
+					$primarycat[] = $cat->category_nicename; 
+				elseif ( $cat->category_parent > 0 )
+					$parent_cat_id = $cat->category_parent;
+					$cat2 = get_cat_name($parent_cat_id);
+					$primarycat[] = $cat2;
+				} 
+		$primary_cat_dimension = $primarycat[0];
+		?>
 		<?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
 		<script type="text/javascript">
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -86,7 +98,6 @@
 		      ga('set', 'dimension13', "<?php echo $primary_cat ?>");
 		      ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
 		</script>
-
 		<!-- Google Tag Manager -->
 			<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77"
 			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -181,7 +192,6 @@
 			</div>
 			<?php else : ?>
 			<?php endif; ?>
-
 		</header>
 
 		<?php if ( ! is_page_template( 'page-home.php' ) ) :
