@@ -13428,6 +13428,9 @@ Maker Camp Banner Waist
   .page-id-116357 .waist {
     margin-top: -25px;
   }
+  div.dom-featured-thumb img {
+    width: 100%;
+  }
   div.home-waist-banner {
     display: none;
   }
@@ -13484,6 +13487,31 @@ Maker Camp Banner Waist
   }
   input[type="submit"] {
     left: 92% !important;
+  }
+  /** Day of Making **/
+  img.dom-feature-arrow {
+    float: right;
+    margin-right: 30px;
+    margin-top: -18px;
+    width: 22px !important;
+  }
+  img.dom-arrow {
+    float: right;
+    margin-right: 30px;
+    width: 22px !important;
+  }
+  .dom-read-more {
+    margin-top: -25px;
+  }
+  .dom-rm-featured {
+    margin-top: 80px;
+  }
+  .mf-badge {
+    width: 154px !important;
+    margin-left: 60px !important;
+  }
+  .dom-middle-section {
+    margin-left: 43px !important;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {

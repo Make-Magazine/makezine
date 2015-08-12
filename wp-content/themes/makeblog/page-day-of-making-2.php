@@ -255,7 +255,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 	</div> <!-- End span8 -->		
 
-	<div class="span4">
+	<div class="span4 dom-middle-section">
 		
 		<div class="row first-row">
 			
