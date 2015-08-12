@@ -275,7 +275,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 		
 		<div class="row third-row second-column">
 		
-			<div class="span4 dom-story">
+			<div class="span4 dom-story dom-final-story">
 
 						<?php 
 							$featuredposts7 = $dom_posts[7];

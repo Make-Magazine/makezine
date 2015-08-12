@@ -13513,10 +13513,13 @@ Maker Camp Banner Waist
   .dom-middle-section {
     margin-left: 43px !important;
   }
-  .dom-story {
+  .dom-final-story {
     margin-left: -40px !important;
   }
   .hidden-print {
+    overflow-x: hidden;
+  }
+  .footer-ad {
     overflow-x: hidden;
   }
 }
