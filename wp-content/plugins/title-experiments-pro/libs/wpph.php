@@ -125,7 +125,7 @@ class WPPH {
 		$menu_cap = $this->options['license_menu_capability'];
 		$menu_icon = $this->options['license_menu_icon'];
 
-		$this->pages['license'] = "/wp-admin/admin.php?page=".$this->slug."-license";
+		$this->pages['license'] = admin_url("admin.php?page=".$this->slug."-license");
 		if($this->options['license_menu_slug']) {
 			$menu_hook = add_submenu_page(
 				$this->options['license_menu_slug'],
@@ -410,7 +410,7 @@ EOT;
 		$menu_cap = $this->options['support_menu_capability'];
 		$menu_icon = $this->options['support_menu_icon'];
 
-		$this->pages['tickets'] = "/wp-admin/admin.php?page=".$this->slug."-support";
+		$this->pages['tickets'] = admin_url("admin.php?page=".$this->slug."-support");
 		if($this->options['support_menu_slug']) {
 			add_submenu_page(
 				$this->options['support_menu_slug'],
@@ -422,7 +422,7 @@ EOT;
 				array($this,"support_menu"), $menu_icon, $menu_pos); 
 		}
 
-		$this->pages['open-ticket'] = "/wp-admin/admin.php?page=".$this->slug."-open-ticket";
+		$this->pages['open-ticket'] = admin_url("admin.php?page=".$this->slug."-open-ticket");
 		add_submenu_page( 
 			null,
 	        'Open Support Ticket', 'Open Support Ticket',
@@ -430,7 +430,7 @@ EOT;
         	array($this,"support_open_ticket")
 	    );
 
-	    $this->pages['view-ticket'] = "/wp-admin/admin.php?page=".$this->slug."-view-ticket";
+	    $this->pages['view-ticket'] = admin_url("admin.php?page=".$this->slug."-view-ticket");
 		add_submenu_page( 
 			null,
 	        'View Support Ticket', 'View Support Ticket',
@@ -455,20 +455,15 @@ EOT;
 				"name"=> stripslashes($_POST['comment']['name']),
 				"comment"=> stripslashes($_POST['comment']['comment'])
 			);
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $comment_url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_POST, count($request_string));
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-			curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-			$result = curl_exec($ch);
-
-			if(!$result) {
+			$response = wp_remote_post($comment_url, array(
+				'body' => $request_string,
+				'sslverify' => false
+			));
+			
+			if ( is_wp_error( $response ) ) {
 				echo $this->_alert("An error occurred when posting your comment");
-			} else{
-				$result = json_decode($result);
+			} else {
+				$result = json_decode($response['body']);
 				if($result === FALSE || $result->status !== "success") {
 					echo $this->_alert("An error occurred when posting your comment");
 				} else {
@@ -505,21 +500,17 @@ EOT;
 		}
 
 		$user = wp_get_current_user();
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $tickets_url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, count($request_string));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-		$result = curl_exec($ch);
 
 		$ticket = NULL;
-		if(!$result) {
-			echo $this->_alert("An error occurred when fetching tickets");
-		} else{
-			$result = json_decode($result);
+		$response = wp_remote_post($tickets_url, array(
+			'body' => $request_string,
+			'sslverify' => false
+		));
+			
+		if ( is_wp_error( $response ) ) {
+			echo $this->_alert("An error occurred when posting your comment");
+		} else {
+			$result = json_decode($response['body']);
 			if($result === FALSE || $result->status !== "success") {
 				echo $this->_alert("An error occurred when fetching tickets");
 			} else {
@@ -614,20 +605,16 @@ EOT;
 					"host" => $phpinfo,
 				));
 			}
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $open_url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_POST, count($request_string));
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-			curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-			$result = curl_exec($ch);
+
+			$response = wp_remote_post($open_url, array(
+				'body' => $request_string,
+				'sslverify' => false
+			));
 			
-			if(!$result) {
+			if(is_wp_error( $response )) {
 				$alert = "Whoops, an error occrred while submitting your ticket.";
 			} else {
-				$result_obj = json_decode($result);
+				$result_obj = json_decode($response['body']);
 				if($result_obj && $result_obj->status == "success") {
 					echo "<script>
 							window.location='".($this->pages['view-ticket'])."&tid=".$result_obj->ticket->id."&created=1';
@@ -726,21 +713,16 @@ EOT;
 			$close_current = '';
 		}
 
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $tickets_url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, count($request_string));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-		$result = curl_exec($ch);
+		$response = wp_remote_post($tickets_url, array(
+			"body" => $request_string,
+			"sslverify" => false
+		));
 		$tickets = array();
 		
-		if(!$result) {
-			echo $this->_alert("An error occurred when fetching tickets");
+		if(is_wp_error($response)) {
+			echo $this->_alert("An error occurred when fetching tickets:" . $response->get_error_message());
 		} else{
-			$result = json_decode($result);
+			$result = json_decode($response['body']);
 			if($result === FALSE || $result->status !== "success") {
 				echo $this->_alert("An error occurred when fetching tickets");
 			} else {
@@ -839,23 +821,17 @@ EOT;
 			"current-version" => $this->current_version,
 			"license"=>$this->license
 		);
+		
+		$response = wp_remote_post($this->invoices_url, array(
+			'body' => $request_string,
+			'sslverify' => false
+		));
 			
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $this->invoices_url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, count($request_string));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-		$result = curl_exec($ch);
-			
-		if (!$result) {
+		if (is_wp_error($response)) {
 			$jresult = FALSE;
-			error_log(curl_error($ch) . "(".curl_errno($ch).")");
-			$this->lastError = curl_error($ch) . "(".curl_errno($ch).")";
+			$this->lastError = $response->get_error_message(); 
 		} else {
-			$jresult = json_decode($result,true);
+			$jresult = json_decode($response['body'] ,true);
 		}
 
 		if($jresult !== FALSE && $jresult['status'] !== "error") {
@@ -905,21 +881,16 @@ EOT;
 				"license"=>$this->license
 			);
 
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $this->api_url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_POST, count($request_string));
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-			curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-			$result = curl_exec($ch);
+			$response = wp_remote_post($this->api_url, array(
+				'body' => $request_string,
+				'sslverify' => false
+			));
 
-			if (!$result) {
+			if (is_wp_error($response)) {
 				$jresult = FALSE;
-				$this->lastError = curl_error($ch) . "(". curl_errno($ch).")";
+				$this->lastError = $response->get_error_message(); 
 			} else {
-				$jresult = json_decode($result, true);
+				$jresult = json_decode($response['body'], true);
 			}
 
 			if($jresult === FALSE || (isset($jresult['status']) && $jresult['status'] == "error")) {
@@ -1066,18 +1037,13 @@ EOT;
 			'license' => $this->license
 		);
 
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $this->api_url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, count($request_string));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-		$result = curl_exec($ch);
+		$response = wp_remote_post($this->api_url, array(
+			'body' => $request_string,
+			'sslverify' => false
+		));
 
-		if ($result) {
-			$response_arr = json_decode($result, true);
+		if (!is_wp_error($response)) {
+			$response_arr = json_decode($response['body'], true);
 			$response = new stdClass();
 			if(is_array($response_arr)) {
 				foreach($response_arr as $k=>$v) {
@@ -1118,23 +1084,18 @@ EOT;
 			'license' => $this->license
 		);
 	
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $this->api_url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POST, count($request_string));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $request_string);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'WordPress/' . $wp_version . '; ' . get_bloginfo('url'));
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-		$result = curl_exec($ch);
+		$response = wp_remote_post($this->api_url, array(
+			'body' => $request_string,
+			'sslverify' => false
+		));
 	
-		if (!$result) {
-			$response = new WP_Error('plugins_api_failed', __('An Unexpected HTTP Error occurred during the API request.</p> <p><a href="?" onclick="document.location.reload(); return false;">Try again</a>'), $request->get_error_message());
+		if (is_wp_error($response)) {
+			$response = new WP_Error('plugins_api_failed', __('An Unexpected HTTP Error occurred during the API request.</p> <p><a href="?" onclick="document.location.reload(); return false;">Try again</a>'), $response->get_error_message());
 		} else {
-			$response_arr = json_decode($result, true);
+			$response_arr = json_decode($response['body'], true);
 			
 			if ($response_arr === false)
-				$response_arr = new WP_Error('plugins_api_failed', __('An unknown error occurred'), $request['body']);
+				$response_arr = new WP_Error('plugins_api_failed', __('An unknown error occurred'), $response['body']);
 
 			$response = new stdClass();
 			foreach($response_arr as $k=>$v) {

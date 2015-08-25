@@ -16,6 +16,12 @@ class MetaPostFeedSlide extends MetaSlide {
      * Register slide type
      */
     public function __construct() {
+    }
+
+    /**
+     * Register hooks
+     */
+    public function hooks() {
 
         if ( is_admin() ) {
             add_filter( "media_upload_tabs", array( $this, "custom_media_upload_tab_name" ), 999, 1 );
@@ -28,7 +34,6 @@ class MetaPostFeedSlide extends MetaSlide {
         add_filter( "metaslider_get_{$this->identifier}_slide", array( $this, "get_slide" ), 10, 2 );
 
     }
-
 
     /**
      *

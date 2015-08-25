@@ -429,7 +429,7 @@ class MetaYouTubeSlide extends MetaSlide {
             'autoHide' => "youtube.attr('data-autoHide') === '1'",
             'theme' => "youtube.attr('data-theme')",
             'color' => "youtube.attr('data-color')",
-            'autoPlay' => "youtube.attr('data-autoPlay') === '1' && youtube.parent().is('.flex-active-slide, .rslides1_on')"
+            'autoPlay' => "youtube.attr('data-autoPlay') === '1' && youtube.parents('.flex-active-slide, .rslides1_on').length"
         );
 
         $tubeplayer_params = apply_filters( 'metaslider_tubeplayer_params', $tubeplayer_params, $this->slider->ID, $this->slide->ID );
@@ -448,10 +448,12 @@ class MetaYouTubeSlide extends MetaSlide {
      */
     private function get_server_protocol() {
         if ( isset( $_SERVER['HTTPS'] ) && ( $_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1 ) || isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) &&$_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ) {
-            return 'https';
+            $protocol = 'https';
+        } else {
+            $protocol = 'http';
         }
 
-        return 'http';
+        return apply_filters("metaslider_tubeplayer_protocol", $protocol);
     }
 
     /**

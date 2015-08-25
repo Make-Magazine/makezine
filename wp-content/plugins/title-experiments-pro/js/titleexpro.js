@@ -1,7 +1,7 @@
 function titlexproShouldRunExp() {
 	var sample_cookie_name = '_titlex_in_sample';
     var in_sample = jQuery.cookie(sample_cookie_name);
-    if(typeof in_sample === "undefined") {
+    if(typeof in_sample === "undefined" || in_sample === null) {
         //include the user in the sample?
         var $sample_size = jQuery("[data-wpex-sample-size]:first");
         if($sample_size.length > 0) {

@@ -1,37 +1,44 @@
-<script src='<?php echo plugins_url("js/chart.js",__FILE__); ?>'></script>
+<script src='<?php echo plugins_url("js/chart.js", __FILE__); ?>'></script>
 <div class="wrap">
 	<h2>Title Experiments Statistics</h2>
 	<div>
 		<div class="alignleft actions bulkactions" style='width: 100%;'>
 			<select id="page" onchange="wpex_page_change(this)" style='max-width: 50%;'>
 				<option value="-1" <?php echo isset($id) ? '' : 'selected="selected"' ?>>Select Page</option>
-				<?php if(is_array($pages)): ?>
-					<?php foreach($pages as $_page): ?>
-						<option <?php echo (isset($id) && $_page['ID'] == $id) ? 'selected="selected"' : '' ?> value="<?php echo $_page['ID'] ?>"><?php echo $_page['post_title']; ?> (<?php echo $_page['title_count']; ?>)<?php echo ($_page['post_status'] != 'publish')?" [".$_page['post_status']."]":""; ?></option>
+				<?php if (is_array($pages)): ?>
+					<?php foreach ($pages as $_page): ?>
+						<?php if ($_page['post_status'] == 'publish'): ?>
+							<option <?php echo(isset($id) && $_page['ID'] == $id) ? 'selected="selected"' : '' ?> value="<?php echo $_page['ID'] ?>"><?php echo $_page['post_title']; ?> (<?php echo $_page['title_count']; ?>)</option>
+						<?php endif; ?>
+					<?php endforeach; ?>
+					<?php foreach ($pages as $_page): ?>
+						<?php if ($_page['post_status'] != 'publish'): ?>
+							<option <?php echo(isset($id) && $_page['ID'] == $id) ? 'selected="selected"' : '' ?> value="<?php echo $_page['ID'] ?>"><?php echo $_page['post_title']; ?> (<?php echo $_page['title_count']; ?>)<?php echo("[".$_page['post_status']."]"); ?></option>
+						<?php endif; ?>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</select>
 			<select id="date" onchange="wpex_date_change(this)">
 				<option value="-1">All time</option>
-				<?php if(is_array($months)): ?>
-					<?php foreach($months as $month): ?>
-						<option <?php echo (isset($_GET['ts']) && $_GET['ts'] == $month) ? 'selected="selected"' : '' ?> value="<?php echo $month; ?>"><?php echo date("M Y", $month); ?></option>
+				<?php if (is_array($months)): ?>
+					<?php foreach ($months as $month): ?>
+						<option <?php echo(isset($_GET['ts']) && $_GET['ts'] == $month) ? 'selected="selected"' : '' ?> value="<?php echo $month; ?>"><?php echo date("M Y", $month); ?></option>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</select>
-			<?php if(isset($_GET['ts'])): ?>
+			<?php if (isset($_GET['ts'])): ?>
 				<select id="day" onchange="wpex_day_change(this)">
 					<option value="-1">Select Day</option>
-					<?php for($day=1;$day<=date("t",$_GET['ts']);$day++): ?>
-						<option <?php echo (isset($_GET['d']) && $_GET['d'] == $day) ? 'selected="selected"' : '' ?> value="<?php echo $day; ?>"><?php echo $day; ?></option>
+					<?php for ($day=1;$day<=date("t", $_GET['ts']);$day++): ?>
+						<option <?php echo(isset($_GET['d']) && $_GET['d'] == $day) ? 'selected="selected"' : '' ?> value="<?php echo $day; ?>"><?php echo $day; ?></option>
 					<?php endfor; ?>
 				</select>
 			<?php endif; ?>
 		</div>
 	</div>
-	<?php if(isset($stats)): ?>
-		<?php if(!$by_test_clicks): ?>
-			<?php if(isset($_GET['ts'])): ?>
+	<?php if (isset($stats)): ?>
+		<?php if (!$by_test_clicks): ?>
+			<?php if (isset($_GET['ts'])): ?>
 				<div id="message" class="updated"><p>No data found for selected time period.</p></div>
 			<?php endif; ?>
 			<h3>Totals</h3>
@@ -47,15 +54,15 @@
 				</thead>
 				<tbody id="the-list">
 					<?php $c = 0; ?>
-					<?php foreach($stats as $stat): ?>
-						<tr class='<?php echo ($c++%2 ==0 ? "alternate" : "") ?>'>
-							<td><?php echo $stat['title'] == "__WPEX_MAIN__" ? edit_post_link($page['post_title'], '','',$page['ID']) : stripslashes($stat['title']); ?></td>
+					<?php foreach ($stats as $stat): ?>
+						<tr class='<?php echo($c++%2 ==0 ? "alternate" : "") ?>'>
+							<td><?php echo $stat['title'] == "__WPEX_MAIN__" ? edit_post_link($page['post_title'], '', '', $page['ID']) : stripslashes($stat['title']); ?></td>
 							<td><?php echo $stat['clicks']; ?></td>
-							<td><?php echo $stat['impressions']; ?></td>		
-							<?php if($stat['impressions'] == 0): ?>
+							<td><?php echo $stat['impressions']; ?></td>
+							<?php if ($stat['impressions'] == 0): ?>
 								<td>0%</td>
 							<?php else: ?>
-								<td><?php echo (round(($stat['clicks']/$stat['impressions'])*1000)/10)."%"; ?></td>		
+								<td><?php echo(round(($stat['clicks']/$stat['impressions'])*1000)/10)."%"; ?></td>
 							<?php endif; ?>
 							<td><a onclick='return confirm("This will clear all other titles and stop the experiment. Are you sure?");' href='/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&amp;id=<?php echo $_GET['id']; ?>&amp;set-title=<?php echo $stat['id']; ?>'>[set as title]</a></td>
 						</tr>
@@ -63,8 +70,8 @@
 				</tbody>
 			</table>
 		<?php endif; ?>
-		<?php if($by_test_clicks): ?>
-			<?php if(isset($_GET['d'])): ?>
+		<?php if ($by_test_clicks): ?>
+			<?php if (isset($_GET['d'])): ?>
 				<h3>Views/Impressions on <?php echo date("M jS Y", $_GET['ts']+(($_GET['d']-1)*86400)); ?></h3>
 				<div id="titlex_legend"></div>
 				<canvas id="myChart" height="150"></canvas>
@@ -73,16 +80,16 @@
 					var data = {
 						labels: ['<?php echo join($titles, "','"); ?> '],
 					    datasets: [
-							<?php 
-					    	$data = array();
-					        foreach($by_test_views as $id=>$_stats):
-								foreach ($_stats as $value) {
-									$data[] = $value;
-									break;
-								}
-					    	endforeach;
-					    	$color = $colors[0];
-					    	?>
+							<?php
+                            $data = array();
+                            foreach ($by_test_views as $id=>$_stats):
+                                foreach ($_stats as $value) {
+                                    $data[] = $value;
+                                    break;
+                                }
+                            endforeach;
+                            $color = $colors[0];
+                            ?>
 					        {
 					            label: "Impressions",
 					            fillColor: "rgba(<?php echo $color; ?>,0.2)",
@@ -94,15 +101,15 @@
 					            data: [<?php echo join($data, ","); ?>]
 					        },
 					        <?php
-				        	$data = array();
-					        foreach($by_test_clicks as $id=>$_stats):
-								foreach ($_stats as $value) {
-									$data[] = $value;
-									break;
-								}
-					    	endforeach;
-					    	$color = $colors[1];
-					    	?>
+                            $data = array();
+                            foreach ($by_test_clicks as $id=>$_stats):
+                                foreach ($_stats as $value) {
+                                    $data[] = $value;
+                                    break;
+                                }
+                            endforeach;
+                            $color = $colors[1];
+                            ?>
 					        {
 					            label: "Views",
 					            fillColor: "rgba(<?php echo $color; ?>,0.2)",
@@ -126,27 +133,27 @@
 					jQuery("#titlex_legend").html(myRadarChart.generateLegend());
 				</script>
 			<?php else: ?>
-				<?php if(isset($_GET['imp'])):
-					$title = "Impressions";	
-					$_data = $by_test_views;
-					$tmpl = "Impressions: <%= value %>";
-				elseif(isset($_GET['rates'])):
-					$_data = $by_test_rates;
-					$title = "View Rates";
-					$tmpl = "<%= value %>%";
-				else:
-					$_data = $by_test_clicks;
-					$title = "Views";
-					$tmpl = "Views: <%= value %>";
-				endif; ?>
+				<?php if (isset($_GET['imp'])):
+                    $title = "Impressions";
+                    $_data = $by_test_views;
+                    $tmpl = "Impressions: <%= value %>";
+                elseif (isset($_GET['rates'])):
+                    $_data = $by_test_rates;
+                    $title = "View Rates";
+                    $tmpl = "<%= value %>%";
+                else:
+                    $_data = $by_test_clicks;
+                    $title = "Views";
+                    $tmpl = "Views: <%= value %>";
+                endif; ?>
 				<h3 style="margin-bottom: 0.5em;">Title <?php echo $title; ?> for <?php echo date("M Y", $_GET['ts']); ?></h3>
-				<?php if(isset($_GET['imp']) || isset($_GET['rates'])):?>
+				<?php if (isset($_GET['imp']) || isset($_GET['rates'])):?>
 					<a href="/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&amp;id=<?php echo $_GET['id']; ?>&amp;ts=<?php echo $_GET['ts']; ?>">Show Views</a>
 				<?php endif; ?>
-				<?php if(!isset($_GET['rates'])):?>
+				<?php if (!isset($_GET['rates'])):?>
 					<a href="/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&amp;id=<?php echo $_GET['id']; ?>&amp;ts=<?php echo $_GET['ts']; ?>&amp;rates=1">Show Rates</a>
 				<?php endif; ?>
-				<?php if(!isset($_GET['imp'])):?>
+				<?php if (!isset($_GET['imp'])):?>
 					<a href="/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&amp;id=<?php echo $_GET['id']; ?>&amp;ts=<?php echo $_GET['ts']; ?>&amp;imp=1">Show Impressions</a>
 				<?php endif; ?>
 				<div id="titlex_legend"></div>
@@ -162,12 +169,12 @@
 						labels: ['<?php echo join($labels, "','"); ?> '],
 					    datasets: [
 					        <?php $counter=0;
-					        foreach($_data as $id=>$_stats):
-					        	$color = $colors[++$counter%count($colors)];
-					        	$data = array();
-							    	foreach($_stats as $d):
-										$data[] = $d;				    		
-						    		endforeach;?>
+                            foreach ($_data as $id=>$_stats):
+                                $color = $colors[++$counter%count($colors)];
+                                $data = array();
+                                    foreach ($_stats as $d):
+                                        $data[] = $d;
+                                    endforeach;?>
 
 					        {
 					            label: "<?php echo $stats[$id]['title'] == '__WPEX_MAIN__' ? $page['post_title'] : $stats[$id]['title']; ?>",
@@ -203,7 +210,7 @@
 								myLineChart.datasets = myDatasets;
 								myLineChart.update();
 								myTO = null;
-							}, 750);	
+							}, 750);
 						}
 					});
 
@@ -218,7 +225,7 @@
 			<a href='/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&amp;id=<?php echo $_GET['id']; ?>&amp;reset-stats=1'>[reset page statistics]</a>&nbsp;<a href='/wp-admin/admin.php?page=title-experiments-pro/title-experiments.php-menu&amp;id=<?php echo $_GET['id']; ?>&amp;clear-titles=1'>[delete alternate titles]</a><br/>
 			<b>Impressions</b> is the number of times that the title was displayed in post lists, sidebars, search results, etc.<br/>
 			<b>Views</b> is the number of times that the post/page was displayed with that title.<br/>
-			Views may be higher than impressions if a vistor lands on the post/page directly via a search engine, social media, etc. 
+			Views may be higher than impressions if a vistor lands on the post/page directly via a search engine, social media, etc.
 		</p>
 	<?php else: ?>
 		<h1 style="margin-top: 2em;">Totals</h1>
