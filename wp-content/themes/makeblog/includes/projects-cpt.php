@@ -222,7 +222,7 @@ function make_register_taxonomy_flags() {
 }
 
 
-add_action( 'init', 'make_register_taxonomy_difficulty' );
+//add_action( 'init', 'make_register_taxonomy_difficulty' );
 
 /**
  * Add the difficulty taxonomy
