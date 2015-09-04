@@ -402,7 +402,7 @@ function make_carousel( $args, $title_link = true ) {
 							
 							if ( $args['projects_landing'] == true ) {
 								$output .= '<div class="project-meta"><ul>';
-								$time = get_post_custom_values('TimeRequired', $post->ID);
+								/*$time = get_post_custom_values('TimeRequired', $post->ID);
 								if ($time[0]) {
 									$output .= '<li>Time: <span>' . esc_html( $time[0] ) . '</span></li>';
 								}
@@ -411,7 +411,7 @@ function make_carousel( $args, $title_link = true ) {
 									foreach ($terms as $term) {
 										$output .= '<li>Difficulty: <span>' . esc_html( $term->name ) . '</span></li>';
 									}
-								}
+								}*/
 								$output .= '</ul></div>';
 							}
 							$output .= '<h4><a href="';

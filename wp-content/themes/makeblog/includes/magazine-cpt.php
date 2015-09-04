@@ -213,7 +213,7 @@ function make_post_loop( $args ) {
 					</p>
 
 					<?php if ($args['post_type'] == 'projects' ) {
-						$time = get_post_custom_values( 'TimeRequired' );
+						/*$time = get_post_custom_values( 'TimeRequired' );
 						$terms = get_the_terms( $post->ID, 'difficulty' );
 						echo '<ul class="unstyled">';
 						if ($terms) {
@@ -223,7 +223,7 @@ function make_post_loop( $args ) {
 						}
 						if (!empty($time[0])) {
 							echo '<li><strong>Time Required:</strong> ' . esc_html( $time[0] ) . '</li>';
-						}
+						}*/
 
 					} else { ?>
 						<p>Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?> <?php edit_post_link('Fix me...', ' | '); ?></p>
