@@ -187,6 +187,8 @@ get_header(); ?>
 	
 		<?php
 
+			/* DEPRECATED:
+			 * 
 			$difficulties = array('easy', 'moderate', 'difficult' );
 
 			foreach ($difficulties as $difficulty) {
@@ -209,7 +211,7 @@ get_header(); ?>
 				);
 				echo make_carousel( $args, false );
 				echo '</div></div></div>';
-			}
+			} */
 		?>
 
 	<?php get_footer(); ?>

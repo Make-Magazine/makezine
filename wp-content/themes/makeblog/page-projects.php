@@ -99,7 +99,7 @@ get_header(); ?>
               <?php echo make_projects_grid( 'Craft', 4, 'category', 'paper-crafts' ); ?>
               <?php echo make_projects_grid( 'Science', 4, 'category', 'science' ); ?>
               <?php echo make_projects_grid( 'Electronics', 4, 'category', 'electronics' ); ?>
-              <?php echo make_projects_grid( 'Getting Started', 4, 'difficulty', 'easy' ); ?>
+              <?php //DEPRECATED: echo make_projects_grid( 'Getting Started', 4, 'difficulty', 'easy' ); ?>
             </div>
           </div>
         </div>

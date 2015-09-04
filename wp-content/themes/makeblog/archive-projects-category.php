@@ -123,7 +123,8 @@ get_header(); ?>
 				
 	<?php
 
-		$difficulties = array('Easy', 'Moderate', 'Difficult' );
+		/*DEPRECATED:
+		 * $difficulties = array('Easy', 'Moderate', 'Difficult' );
 
 		if ($difficulties) {
 			echo '<div class="grey topper"><div class="container"><div class="row"><div class="span12"><h2>' . $cat->name .' Projects by Difficulty</h2></div></div></div></div>';
@@ -142,6 +143,7 @@ get_header(); ?>
 				echo '</div></div></div>';
 			} 
 		} 
+		*/
 	?>
 
 	<?php get_footer(); ?>

@@ -60,6 +60,8 @@ get_header(); ?>
 								</li>
 
 								<?php
+									/* DEPRECATED:
+									 * 
 									$time = get_post_custom_values('TimeRequired');
 									if ($time[0]) {
 										echo '<li>Time Required: <span>' . esc_html( $time[0] ) . '</span></li>';
@@ -70,6 +72,7 @@ get_header(); ?>
 											echo '<li>Difficulty: <span>' . esc_html( $term->name ) . '</span></li>';
 										}
 									}
+									 */
 								?>
 
 								<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>

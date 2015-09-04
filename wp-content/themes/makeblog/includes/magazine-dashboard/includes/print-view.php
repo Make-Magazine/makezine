@@ -148,9 +148,12 @@ function make_print_production() {
 					<td><?php echo ( !empty( $meta['Conclusion'][0] ) ) ?  esc_html( $meta['Conclusion'][0] ) : ''; ?></td>
 				</tr>
 				<tr class="alternate">
-					<?php $terms = get_the_terms( $post->ID, 'difficulty' ); ?>
+					<?php /* DEPRECATED:
+					$terms = get_the_terms( $post->ID, 'difficulty' ); ?>
 					<td class="hider">Difficulty</td>
-					<td><?php if ($terms) : foreach ($terms as $term) : echo esc_html( $term->name ); endforeach; endif;?></td>
+					<td><?php if ($terms) : foreach ($terms as $term) : echo esc_html( $term->name ); endforeach; endif;
+					*/
+					?></td>
 				</tr>
 				<?php endif; ?>
 				<?php if ( $post_type == 'review' ) : ?>
