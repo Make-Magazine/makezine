@@ -229,8 +229,7 @@ Template Name: Home Page
 									<?php
 
 										$args = array(
-											'category_name' => 'Makers',
-											'tag__not_in' => array( 92075710, 22815 ),
+											'tag' => 'makers',
 											'posts_per_page'  => 1,
 											'no_found_rows' => true,
 											'post_type' => array( 'post', 'projects', 'review', 'video', 'magazine' ),
@@ -256,7 +255,7 @@ Template Name: Home Page
 									<?php
 
 										$args = array(
-											'tag_id' => 3922,
+											'tag' => 'maker-faire',
  											'posts_per_page'  => 1,
  											'no_found_rows' => true,
  											'post__not_in'	=> $post_array,
