@@ -81,28 +81,28 @@ include_once dirname( __FILE__ ) . '/includes/cheezcap/cheezcap.php';
 include_once dirname( __FILE__ ) . '/includes/house-ads-cpt.php';
 
 // 19. Magazine Articles
-include_once dirname( __FILE__ ) . '/includes/magazine-cpt.php';
+//include_once dirname( __FILE__ ) . '/includes/magazine-cpt.php';
 
 // 20. Craft Feed Meta Box
-include_once dirname( __FILE__ ) . '/includes/craft-cpt-stuff.php';
+//include_once dirname( __FILE__ ) . '/includes/craft-cpt-stuff.php';
 
 // 21. Slideshow CPT
 include_once dirname( __FILE__ ) . '/includes/slideshow.php';
 
 // 22. Reviews CPT
-include_once dirname( __FILE__ ) . '/includes/reviews.php';
+//include_once dirname( __FILE__ ) . '/includes/reviews.php';
 
 // 24. Projects CPT
 include_once dirname( __FILE__ ) . '/includes/projects-cpt.php';
 
 // 25. Video CPT
-include_once dirname( __FILE__ ) . '/includes/video-cpt.php';
+//include_once dirname( __FILE__ ) . '/includes/video-cpt.php';
 
 // 26. Order Bender
 //include_once dirname( __FILE__ ) . '/includes/order-bender.php';
 
 // 27. Errata CPT
-include_once dirname( __FILE__ ) . '/includes/errata-cpt.php';
+//include_once dirname( __FILE__ ) . '/includes/errata-cpt.php';
 
 // 28. Contextly
 //include_once dirname( __FILE__ ) . '/includes/contextly-related-links/contextly-linker.php';
