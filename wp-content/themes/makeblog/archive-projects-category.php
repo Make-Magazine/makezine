@@ -8,7 +8,7 @@
  * 
  */
 $cat = get_queried_object();
-get_header(); ?>
+get_header('version-2'); ?>
 		
 	<div class="projects-home">
 	
@@ -123,8 +123,7 @@ get_header(); ?>
 				
 	<?php
 
-		/*DEPRECATED:
-		 * $difficulties = array('Easy', 'Moderate', 'Difficult' );
+		$difficulties = array('Easy', 'Moderate', 'Difficult' );
 
 		if ($difficulties) {
 			echo '<div class="grey topper"><div class="container"><div class="row"><div class="span12"><h2>' . $cat->name .' Projects by Difficulty</h2></div></div></div></div>';
@@ -143,7 +142,6 @@ get_header(); ?>
 				echo '</div></div></div>';
 			} 
 		} 
-		*/
 	?>
 
 	<?php get_footer(); ?>

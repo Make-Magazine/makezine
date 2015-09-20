@@ -222,7 +222,7 @@ function make_register_taxonomy_flags() {
 }
 
 
-//	add_action( 'init', 'make_register_taxonomy_difficulty' );
+add_action( 'init', 'make_register_taxonomy_difficulty' );
 
 /**
  * Add the difficulty taxonomy
@@ -262,7 +262,7 @@ function make_register_taxonomy_difficulty() {
 	register_taxonomy( 'difficulty', array('projects', 'video'), $args );
 }
 
-//add_action( 'init', 'register_taxonomy_tools' );
+add_action( 'init', 'register_taxonomy_tools' );
 
 /**
  * Add the tools taxonomy

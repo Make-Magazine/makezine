@@ -7463,7 +7463,8 @@ img.nav-sprout {
 }
 .new-footer {
   padding: 20px 0;
-  border-top: 20px solid #3FAFED;
+  border-top: 5px solid #3FAFED;
+  background-color: #FFF;
 }
 .new-footer .container {
   padding-bottom: 15px;

@@ -269,8 +269,7 @@ function make_carousel( $args, $title_link = true ) {
 	$output = '<div class="row-fluid">
 		<div class="span10">
 			<h2 class="look_like_h3">';			
-					/*DEPRECATED
-					 * if ( isset( $args['difficulty'] ) ) {
+					if ( isset( $args['difficulty'] ) ) {
 						if ( $title_link )
 							$output .= '<a href="' . make_get_category_url($args['difficulty'], 'difficulty') . '?cat=' . intval($args['category__in']) . '">';
 
@@ -279,9 +278,7 @@ function make_carousel( $args, $title_link = true ) {
 						if ( $title_link )
 							$output .= '</a>';
 
-					} else
-					*/
-					if ( isset( $args['category__in'] ) ) {
+					} elseif ( isset( $args['category__in'] ) ) {
 						if ( $title_link ) {
 							$output .= '<a href="';
 							$output .= get_term_link( intval($args['category__in']), 'category', 'id');
@@ -317,12 +314,9 @@ function make_carousel( $args, $title_link = true ) {
 					}
 		$output .= '</h2></div><div class="span2">';
 				if ($args['all'] != null ) {
-					/* DEPRECATED:
-					 * if ( isset( $args['difficulty'] ) ) {
+					if ( isset( $args['difficulty'] ) ) {
 						$output .= '<p class="pull-right"><a href="' . make_get_category_url($args['difficulty'], 'difficulty') . '?cat=' . intval($args['category__in']) . '" class="all">View All</p>';
-					} else
-						*/
-						if ( isset($args['category__in']) && ($args['all']) == true ) {
+					} elseif ( isset($args['category__in']) && ($args['all']) == true ) {
 						$output .= '<p class="pull-right"><a href="';
 						$output .= get_term_link( intval($args['category__in']), 'category', 'id');
 						$output .= '?post_type=projects" class="all">';
@@ -408,7 +402,7 @@ function make_carousel( $args, $title_link = true ) {
 							
 							if ( $args['projects_landing'] == true ) {
 								$output .= '<div class="project-meta"><ul>';
-								/*$time = get_post_custom_values('TimeRequired', $post->ID);
+								$time = get_post_custom_values('TimeRequired', $post->ID);
 								if ($time[0]) {
 									$output .= '<li>Time: <span>' . esc_html( $time[0] ) . '</span></li>';
 								}
@@ -417,7 +411,7 @@ function make_carousel( $args, $title_link = true ) {
 									foreach ($terms as $term) {
 										$output .= '<li>Difficulty: <span>' . esc_html( $term->name ) . '</span></li>';
 									}
-								}*/
+								}
 								$output .= '</ul></div>';
 							}
 							$output .= '<h4><a href="';

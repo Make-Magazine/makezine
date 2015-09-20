@@ -351,68 +351,10 @@ add_action('admin_footer-post-new.php', 'parent_category_toggle');
 get_template_part('version-2/includes/pbd-ajax-load-posts');
 get_template_part('version-2/includes/Mobile_Detect.php');
 
-function make_shopify_featured_products($row = 'row')
-{
-    // Let's get the data feed
-
-    $output2 = '<li class="ads temp row">';
-    $url = 'https://my.datafeedwatch.com/static/files/1596/324605c6815f680a42b42b83010f9c5b886bb32e.xml';
-    $xml = wpcom_vip_file_get_contents($url, 3, 60 * 5, array('obey_cache_control_header' => false));
-    // If a bad response, bail.
-    if (!$xml) {
-        echo $output2;
-        die();
-    }
-    // If not XML, bail.
-    $simpleXmlElem = simplexml_load_string($xml);
-
-    if (!$simpleXmlElem) {
-        echo $output2;
-        die();
-    }
-
-    $products = $simpleXmlElem->children();
-
-    // Randomize the counter so that we can get random products.
-    $counter = range(0, ($simpleXmlElem->count() - 1));
-    shuffle($counter);
-
-
-    // Build the main link, and the carousel wrapper
-    $output2 .= '<div class="ads-wrapper">';
-    $output2 .= '<h2 class="look_like_h3"><a onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - Products\');" href="http://makershed.com?utm_source=makezine.com&utm_medium=product_ads&utm_term=shop+best+sellers">SHOP BEST SELLERS AT MAKER SHED</a> <a onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - Products\');" href="http://makershed.com?utm_source=makezine.com&utm_medium=product_ads&utm_term=official+store+of+make"><span class ="official_store">The official store of Make: and Maker Faire</span></a><a onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - Products\');" href="http://makershed.com?utm_source=makezine.com&utm_medium=product_ads&utm_term=find+more+at+maker+shed"><span class="find_more_ms">Find More at Maker Shed</span><span class="fa fa-external-link"></span></a></h2>';
-    // Start the product loop.
-    foreach ($counter as $i => $product) {
-        $output2 .= '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">';
-        // Add the same click tracker.
-        $output2 .= '<a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js($products[$product]->item_name) . '\']);" href="' . esc_url($products[$product]->item_page_url) . '?utm_source=makezine.com&utm_medium=product_ads&utm_term=' . str_replace(" ", "_", esc_js($products[$product]->item_name)) . '">';
-        $output2 .= '<img src="' . wpcom_vip_get_resized_remote_image_url($products[$product]->item_image_url, 218, 146) . '" class="img-responsive center-block" alt="' . esc_attr($products[$product]->item_name) . '" />';
-        $output2 .= '</a>';
-        $output2 .= '<h4><a target="_blank" href="';
-        // make_shed_url() has esc_url() on it already. But hey, let's add it again.
-        $output2 .= esc_url($products[$product]->item_page_url);
-        $output2 .= '?utm_source=makezine.com&utm_medium=product_ads&utm_term=' . str_replace(" ", "_", esc_js($products[$product]->item_name));
-        $output2 .= '">';
-        $output2 .= wp_kses_post($products[$product]->item_name);
-        $output2 .= '</a></h4>';
-        $output2 .= '<h5><a target="_blank" href="';
-        // make_shed_url() has esc_url() on it already. But hey, let's add it again.
-        $output2 .= esc_url($products[$product]->item_page_url);
-        $output2 .= '?utm_source=makezine.com&utm_medium=product_ads&utm_term=' . str_replace(" ", "_", esc_js($products[$product]->item_name));
-        $output2 .= '">';
-        $output2 .= '$' . wp_kses_post($products[$product]->item_price);
-        $output2 .= '</a></h5>';
-        $output2 .= '</div>';
-        // Just show four posts, for now.
-        if ($i == 3) {
-            break;
-        }
-    }
-    $output2 .= '</div>';
-    $output2 .= '</li>';
-    $output2 .= '';
-    // Return the content.
-    echo $output2;
+function make_shopify_featured_products($row = 'row') {
+    echo '<li class="ads temp ow product-wrapper shed-row">';
+    echo make_shopify_featured_products_slider_home('row-fluid' );
+    echo '</li>';
     die();
 }
 
@@ -481,12 +423,16 @@ function filter_list_output()
     return $output;
 }
 
+function truncate_with_ellipses($str, $len) {
+    return strlen($str) > $len ? substr($str,0,$len)."..." : $str;
+}
+
 function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 {
     require_once 'version-2/includes/Mobile_Detect.php';
     $device = '';
     $detect = new Mobile_Detect;
-    $post_per_page = 15;
+    $post_per_page = 18;
     if ($detect->isMobile()) {
         $post_per_page = 5;
         $device = 'mobile';
@@ -531,7 +477,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $counter++;
 
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
-            if (($ads_counter == 5) and ($device != 'tablet') and ($device != 'mobile')) {
+            if (($ads_counter == 17) and ($device != 'tablet') and ($device != 'mobile')) {
                 $output .= ' before-ads';
             }
             if (($ads_counter == 3) and ($device == 'tablet')) {
@@ -694,7 +640,11 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-            $output .= strip_tags(strip_shortcodes($excerpt));
+            /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
+                egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
+                here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
+            */
+            $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
             $output .= '<h2>';
@@ -703,7 +653,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $output .= $link;
             $output .= '">';
             $post_title = get_the_title();
-            $output .= $post_title;
+            $output .= truncate_with_ellipses($post_title, 90);
             $output .= '</a>';
             $output .= '</h2></li>';
             if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
@@ -1060,7 +1010,11 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-            $output .= $excerpt;
+             /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
+                egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
+                here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
+            */
+            $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
             $output .= '<h2>';
@@ -1069,7 +1023,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= $link;
             $output .= '">';
             $post_title = get_the_title();
-            $output .= $post_title;
+            $output .= truncate_with_ellipses($post_title, 90);
             $output .= '</a>';
             $output .= '</h2></li>';
 

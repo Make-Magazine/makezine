@@ -172,6 +172,9 @@ h6 {
     border-right: 1px solid #f0f0f0;
     padding-top: 15px;
   }
+  li.shed-row {
+    height: auto !important;
+  }
   div#shed-heading {
     padding-left: 2px;
     padding-right: 0;
@@ -601,8 +604,9 @@ div.ad-unit {
 
 /* SHED  */
 .product-height {
-  height: 130px;
-  margin-top: 20px;
+  height: 130px !important;
+  width: 130px !important;
+  margin-top: 20px !important;
 }
 .product-wrapper {
   background-color: #ffffff;
@@ -618,6 +622,13 @@ div.shed-header {
   background-color: #4A4A4A;
   height: 36px;
   margin: 0;
+}
+.shed-header h5 {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0 0 0 !important;
+  vertical-align: middle;
 }
 /*
 .shed-header h5 {
@@ -672,28 +683,21 @@ p.product-price {
   font-weight: bold;
   line-height: 30px;
   margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
+  text-align: center;
 }
 .text-box {
-  position: absolute;
   padding: 10px 5px 0 5px;
   left: 0px;
-  top: 150px;
   width: 100%;
-  height: 80px;
-  display: table;
+  height: 40px;
+  display: table-cell;
+  vertical-align: bottom;
 }
 .text-box h6 {
   display: table-cell;
   vertical-align: top;
   text-align: center;
-}
-.text-box p {
-  display: table-cell;
-  vertical-align: bottom;
-  text-align: center;
-  padding-bottom: 10px;
 }
 a:link {
   text-decoration: none;
@@ -717,7 +721,7 @@ a:active {
   padding-bottom: 10px;
 }
 .shed-product {
-  padding-bottom: 70px;
+  padding-bottom: 10px;
 }
 .story-caption {
   height: 100px;
@@ -923,6 +927,9 @@ div.caption.post-content {
     border-bottom: 1px solid #f0f0f0;
   }
   /* SHED  */
+  li.shed-row {
+    height: auto;
+  }
   .product-wrapper {
     border-bottom: 1px solid #DCDCDC;
     height: 275px;

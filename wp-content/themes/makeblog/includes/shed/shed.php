@@ -3,6 +3,21 @@
  * Functions for the Maker Shed
  */
 
+
+/**
+ * Display up to two lines of product name and append ellipsis
+ */
+function truncate_str( $name, $len = 35) {
+    if (strlen($name) > $len) {
+      $s = substr($name, 0, $len);
+      $result = substr($s, 0, strrpos($s, ' '));
+      return $result.' ...';
+    } else {
+        return $name;
+    }
+}
+
+
 /**
  * Build a featured products slider for Shed products
  */
@@ -199,11 +214,9 @@ function make_shopify_featured_products_slider_home( $row = 'row' ) {
       $output .= '        <a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js( $products[$product]->item_name ) . '\']);" href="' . esc_url( $products[$product]->item_page_url ) . '?utm_source=makezine.com&utm_medium=product_ads&utm_term='.str_replace(" ", "_", esc_js( $products[$product]->item_name )).'">';
       $output .= '          <img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 130, 170 ) . '" class="img-responsive center-block product-height"></img>';
       $output .= '          <div class="text-box">';
-      $output .= '            <h6 class="product-desc center">' . wp_kses_post( $products[$product]->item_name ) . '</h6>';
+      $output .= '            <h6 class="product-desc center">' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
       $output .= '          </div>';
-      $output .= '          <div class="text-box">';
       $output .= '            <p class="product-price center"> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
-       $output .= '         </div>';         
       $output .= '        </a>';
       $output .= '      </div>';
     // Just show four posts, for now.
