@@ -65,16 +65,13 @@ goog.scope(function () {
       t = document.documentElement;
     }
 
-    if (t && t.lastChild) {
-      // This is safer than appendChild in IE. appendChild causes random
-      // JS errors in IE. Sometimes errors in other JS exectution, sometimes
-      // complete 'This page cannot be displayed' errors. For our purposes,
-      // it's equivalent because we don't need to insert at any specific
-      // location.
-      t.insertBefore(e, t.lastChild);
-      return true;
-    }
-    return false;
+    // This is safer than appendChild in IE. appendChild causes random
+    // JS errors in IE. Sometimes errors in other JS exectution, sometimes
+    // complete 'This page cannot be displayed' errors. For our purposes,
+    // it's equivalent because we don't need to insert at any specific
+    // location.
+    t.insertBefore(e, t.lastChild);
+    return true;
   };
 
   /**
@@ -287,13 +284,17 @@ goog.scope(function () {
    * load. Note that the callback is *NOT* guaranteed to be called in all browsers. The first
    * argument to the callback is an error object that is falsy when there are no errors and
    * truthy when there are.
+   * @param {boolean=} opt_async True if the stylesheet should be loaded asynchronously. Defaults to false.
    * @return {Element} The link element
    */
-  DomHelper.prototype.loadStylesheet = function (href, opt_callback) {
+  DomHelper.prototype.loadStylesheet = function (href, opt_callback, opt_async) {
     var link = this.createElement('link', {
       'rel': 'stylesheet',
-      'href': href
+      'href': href,
+      'media': (opt_async ? 'only x' : 'all')
     });
+
+    var sheets = this.document_.styleSheets;
 
     var done = false;
 
@@ -317,7 +318,25 @@ goog.scope(function () {
       }
     };
 
+    function onAvailable(callback) {
+      for (var i = 0; i < sheets.length; i++) {
+        if (sheets[i].href && sheets[i].href.indexOf(href) !== -1) {
+          return callback();
+        }
+      }
+
+      setTimeout(function () {
+        onAvailable(callback);
+      }, 0);
+    }
+
     this.insertInto('head', link);
+
+    if (opt_async) {
+      onAvailable(function () {
+        link.media = "all";
+      });
+    }
 
     return link;
   };
@@ -352,7 +371,7 @@ goog.scope(function () {
       };
       head.appendChild(script);
 
-      window.setTimeout(function () {
+      setTimeout(function () {
         if (!done) {
           done = true;
           if (opt_callback) {

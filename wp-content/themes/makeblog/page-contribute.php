@@ -17,7 +17,7 @@
               
 ?>
 
-<?php get_header(); ?>
+<?php get_header('version-2'); ?>
 <div class="single">
   <div class="container">
     <div class="row">

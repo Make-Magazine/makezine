@@ -143,6 +143,7 @@ class ContextlyKitWidgetsEditor extends ContextlyKitBase {
       ->searchParam('name', ContextlyKitApiRequest::SEARCH_TYPE_LIKE_BOTH, $query)
       ->searchParam('id', ContextlyKitApiRequest::SEARCH_TYPE_NOT_EQUAL, $sidebarId)
       ->searchParam('type', ContextlyKitApiRequest::SEARCH_TYPE_EQUAL, 'all')
+      ->extraParam('filled', 1)
       ->param('page', $page)
       ->param('per_page', $perPage)
       ->requireSuccess()
@@ -326,6 +327,13 @@ class ContextlyKitWidgetsEditor extends ContextlyKitBase {
   public function queueSnippetSettingsLoading() {
     $this->api
       ->method('widgetsettings', 'get')
+      ->requireSuccess()
+      ->returnProperty('entry');
+  }
+
+  public function queueAutoSidebarSettingsLoading() {
+    $this->api
+      ->method('settings-auto-sidebar', 'get')
       ->requireSuccess()
       ->returnProperty('entry');
   }
@@ -542,11 +550,15 @@ class ContextlyKitWidgetsEditor extends ContextlyKitBase {
     $this->queuePageWidgetsLoading($postId);
     $this->queueAnnotationsLoading();
 
-    // When there are no snippets we need at least its settings to still
-    // work properly. Always load it in the same queue to save time.
+    // In case there are no snippets we need at least its settings to still
+    // work properly. We also need auto-sidebar defaults to fill the editor.
+    // Always load both in the same queue to save time.
     $this->queueSnippetSettingsLoading();
+    $this->queueAutoSidebarSettingsLoading();
 
-    list($widgets, $annotations, $snippetSettings) = $this->api->getMultiple();
+    list($widgets, $annotations, $snippetSettings, $autoSidebarSettings) = $this->api->getMultiple();
+
+    $result = array();
 
     if (!empty($widgets->snippets) && is_array($widgets->snippets)) {
       $snippet = reset($widgets->snippets);
@@ -556,35 +568,38 @@ class ContextlyKitWidgetsEditor extends ContextlyKitBase {
         'settings' => $snippetSettings,
       );
     }
+    $result['snippet'] = $snippet;
 
-    // Put both normal sidebars and auto-sidebars to the same collection. We can
-    // always get actual type from the sidebar itself.
-    $sidebars = array();
-    foreach (array('sidebars', 'auto_sidebars') as $key) {
-      if (!empty($widgets->{$key})) {
-        foreach ($widgets->{$key} as $sidebar) {
-          if (!empty($sidebar->id)) {
-            $sidebars[$sidebar->id] = $sidebar;
-          }
+    if (!empty($widgets->auto_sidebars)) {
+      $result['auto_sidebar'] = reset($widgets->auto_sidebars);
+    }
+    else {
+      $result['auto_sidebar'] = array(
+        'type' => 'auto-sidebar',
+        'settings' => $autoSidebarSettings,
+      );
+    }
+
+    $result['sidebars'] = array();
+    if (!empty($widgets->sidebars)) {
+      foreach ($widgets->sidebars as $sidebar) {
+        if (!empty($sidebar->id)) {
+          $result['sidebars'][$sidebar->id] = $sidebar;
         }
       }
     }
 
     // Force annotations to be zero-based array. Add default "Web" tab to the
     // end of the list with zero ID and empty URL.
-    $annotations = array_values($annotations);
-    $annotations[] = (object) array(
+    $result['annotations'] = array_values($annotations);
+    $result['annotations'][] = (object) array(
       'id' => '0',
       'site_name' => 'Web',
       'site_url' => '',
       'status' => 'active',
     );
 
-    return array(
-      'snippet' => $snippet,
-      'sidebars' => $sidebars,
-      'annotations' => $annotations,
-    );
+    return $result;
   }
 
 }

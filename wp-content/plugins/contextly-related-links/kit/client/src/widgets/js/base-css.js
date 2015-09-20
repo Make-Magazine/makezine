@@ -21,7 +21,7 @@ Contextly.widget.CssCustomBuilder = Contextly.createClass({
         }
         result += entry + ' ' + selectors[i];
       }
-      result += ' {' + property + ": " + Contextly.Utils.escape(value) + "}";
+      result += ' {' + property + ": " + value + "}";
       return result;
     }
 

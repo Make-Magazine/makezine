@@ -6,7 +6,7 @@
 * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
 *
 */
-get_header(); ?>
+get_header('version-2'); ?>
 <div class="single">
 	<div class="container">
 		<div class="row">

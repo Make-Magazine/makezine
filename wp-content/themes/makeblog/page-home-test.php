@@ -4,7 +4,7 @@ Template Name: Home Page Test
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header('version-2'); ?>
 
 		<div class="waist">
 

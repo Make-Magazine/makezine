@@ -13,8 +13,8 @@
     initState: function() {
       Contextly.overlayDialog.BaseWidget.prototype.initState.call(this);
 
-      var id = this.api.getSidebarId();
-      this.initSidebarContentState(id);
+      var info = this.getInitialSidebarInfo();
+      this.initSidebarContentState(info.id, info.type);
 
       this.state.previewTitle = null;
 
@@ -27,17 +27,55 @@
       };
     },
 
-    initSidebarContentState: function(id) {
-      if (id && this.settings.sidebars[id]) {
-        this.state.id = id;
-        this.state.sidebar = this.settings.sidebars[id];
-        this.state.layout = this.state.sidebar.layout;
+    getInitialSidebarInfo: function() {
+      if ($.isFunction(this.api.getSidebarInfo)) {
+        return this.api.getSidebarInfo();
+      }
+      else {
+        // TODO Drop this legacy API method in Kit 4.x
+        var id = this.api.getSidebarId();
+
+        // Since CMS plug-ins weren't able to create auto-sidebars with pre-3.3
+        // Kit it's safe to use sidebar type as default.
+        var type = 'sidebar';
+        if (this.settings.sidebars[id]) {
+          type = this.settings.sidebars[id].type || type;
+        }
+
+        return {
+          id: id,
+          type: type
+        };
+      }
+    },
+
+    /**
+     * Returns true in case current sidebar is the same dialog has been started
+     * with.
+     */
+    isInitialSidebar: function() {
+      if (this.state.id != null) {
+        return this.state.id == this.getInitialSidebarInfo().id;
+      }
+      else {
+        return this.state.type == this.getInitialSidebarInfo().type;
+      }
+    },
+
+    initSidebarContentState: function(id, type) {
+      var sidebar = this.getSidebar(id, type);
+      if (sidebar) {
+        this.state.id = sidebar.id || null;
+        this.state.type = sidebar.type;
+        this.state.layout = sidebar.layout;
+        this.state.sidebar = sidebar;
         this.state.pane = 'edit';
       }
       else {
         this.state.id = null;
-        this.state.sidebar = {};
+        this.state.type = 'sidebar';
         this.state.layout = 'left';
+        this.state.sidebar = {};
         this.state.pane = 'create';
       }
 
@@ -98,7 +136,12 @@
     alterTemplateVariables: function(name, vars) {
       Contextly.overlayDialog.BaseWidget.prototype.alterTemplateVariables.apply(this, arguments);
 
-      vars.editor.isSidebar = true;
+      switch (name) {
+        case 'sidebarContentEditor':
+          vars.editor.isSidebar = true;
+          vars.editor.isAutoSidebar = this.isAutoSidebar();
+          break;
+      }
     },
 
     getEditorVariables: function() {
@@ -108,7 +151,7 @@
     getSidebarPaneTypes: function() {
       var paneTypes = {};
 
-      if (this.state.id === null) {
+      if ($.isEmptyObject(this.state.sidebar)) {
         paneTypes['create'] = {
           type: 'create',
           icon: 'file-alt',
@@ -118,16 +161,27 @@
         };
       }
       else {
+        var title;
+        if (this.isAutoSidebar()) {
+          title = this.t('Edit auto-sidebar');
+        }
+        else if (this.isInitialSidebar()) {
+          title = this.t('Edit selected sidebar ');
+        }
+        else {
+          title = this.t('Edit sidebar');
+        }
+
         paneTypes['edit'] = {
           type: 'edit',
           icon: 'pencil',
-          title: this.t('Edit selected sidebar'),
+          title: title,
           changed: this.state.changed,
           render: this.renderSidebarContentEditor
         };
       }
 
-      if (!$.isEmptyObject(this.settings.sidebars)) {
+      if (!$.isEmptyObject(this.getEditableSidebars())) {
         paneTypes['choose'] = {
           type: 'choose',
           icon: 'th-list',
@@ -138,6 +192,28 @@
       }
 
       return paneTypes;
+    },
+
+    getSidebar: function(id, type) {
+      var sidebar;
+
+      if (type === 'auto-sidebar' && (sidebar = this.settings.auto_sidebar)) {
+        // Extend default auto-sidebar with default properties.
+        if (!sidebar.id) {
+          sidebar = $.extend({}, sidebar);
+          sidebar.type = type;
+          sidebar.name = sidebar.settings.default_name;
+          sidebar.description = sidebar.settings.default_description;
+          sidebar.layout = sidebar.settings.default_layout;
+        }
+
+        return sidebar;
+      }
+      else if (id && (sidebar = this.settings.sidebars[id])) {
+        return sidebar;
+      }
+
+      return null;
     },
 
     findEditorElements: function() {
@@ -203,14 +279,30 @@
       map[this.state.pane].render.call(this);
     },
 
+    getEditableSidebars: function() {
+      var sidebars = $.extend({}, this.settings.sidebars);
+
+      if (this.settings.auto_sidebar) {
+        sidebars['auto_sidebar'] = this.settings.auto_sidebar;
+      }
+
+      return sidebars;
+    },
+
     renderSidebarChooser: function() {
       if (this.e.sidebarChooser) {
         this.e.sidebarChooser.show();
         return;
       }
 
+      var sidebars = this.getEditableSidebars();
+      if (sidebars['auto_sidebar'] && !sidebars['auto_sidebar'].id) {
+        // Add title to the default auto-sidebar.
+        sidebars['auto_sidebar'].name = '[Default auto-sidebar]';
+      }
+
       var vars = {
-        sidebars: this.settings.sidebars
+        sidebars: sidebars
       };
       this.renderTemplate('sidebarChooser', vars, this.e.sidebarPaneContainer);
     },
@@ -240,9 +332,10 @@
       this.renderTemplate('sidebarContentEditor', vars, this.e.sidebarPaneContainer);
 
       // Render section links.
-      if (this.state.sidebar.links && this.state.sidebar.links.previous) {
+      var sidebar = this.state.sidebar;
+      if (sidebar.links && sidebar.links.previous && sidebar.links.previous.length) {
         vars = {
-          links: this.state.sidebar.links.previous
+          links: sidebar.links.previous
         };
         this.renderTemplate('sectionLinks', vars, this.e.sectionLinks);
       }
@@ -252,6 +345,9 @@
       // Call parent function suitable for the whole editor, since all of the
       // expected elements are inside the content editor.
       Contextly.overlayDialog.BaseWidget.prototype.findEditorElements.apply(this, arguments);
+
+      // Find reset button.
+      this.e.dialogReset = this.e.dialogActions.filter('.action-reset');
 
       // Find the content editor root.
       this.e.sidebarContentEditor = this.e.sidebarPaneContainer
@@ -272,6 +368,8 @@
       // Call parent function suitable for the whole editor, since all of the
       // expected elements are inside the content editor.
       Contextly.overlayDialog.BaseWidget.prototype.bindEditorEvents.apply(this, arguments);
+
+      this.onClick(this.e.dialogReset, this.onDialogReset);
 
       // Layout switch buttons.
       this.onClick(this.e.sidebarLayoutSwitches, this.onLayoutChange, true);
@@ -405,20 +503,31 @@
     },
 
     isAutoSidebar: function() {
-      return this.state.sidebar.type && this.state.sidebar.type === 'auto-sidebar';
+      return this.state.type === 'auto-sidebar';
     },
 
     refreshDialogActions: function() {
+      var isAutoSidebar = this.isAutoSidebar();
+
       // Remove action is available only if the sidebar has been saved.
-      if (this.state.id) {
+      if (isAutoSidebar || this.state.id) {
         this.e.dialogRemove.show();
       }
       else {
         this.e.dialogRemove.hide();
       }
 
+      if (isAutoSidebar) {
+        if (this.state.id) {
+          this.e.dialogReset.show();
+        }
+        else {
+          this.e.dialogReset.hide();
+        }
+      }
+
       // Save action is available for auto-sidebars or if there is at least 1 link.
-      if (this.isAutoSidebar() || this.e.sectionLinks.filter(':has(.section-link)').size()) {
+      if (isAutoSidebar || this.e.sectionLinks.filter(':has(.section-link)').size()) {
         this.e.dialogSave.show();
       }
       else {
@@ -494,30 +603,39 @@
       this.showUrlPreview($(target).attr('href'));
     },
 
-    onSidebarChooserEdit: function(target) {
-      var desiredId = $(target)
-        .closest('.search-result')
-        .attr('data-sidebar-id');
+    isCurrentlyEditedSidebar: function(id, type) {
+      if (this.state.id != null || id != null) {
+        return this.state.id === id;
+      }
+      else {
+        return type === this.state.type;
+      }
+    },
 
-      if (this.state.changed && desiredId !== this.state.id) {
+    onSidebarChooserEdit: function(target) {
+      var searchResult = $(target).closest('.search-result');
+      var desiredId = searchResult.attr('data-sidebar-id');
+      var desiredType = searchResult.attr('data-sidebar-type');
+
+      if (this.state.changed && !this.isCurrentlyEditedSidebar(desiredId, desiredType)) {
         this.showModal({
           title: this.t('All changes to the opened sidebar will be lost!'),
           body: this.t('Do you really want to discard all the changes made to the opened sidebar and edit selected one?'),
           dismiss: this.t('No, keep changes and current sidebar'),
           confirm: this.t('Yes, discard changes and edit selected'),
           onConfirm: function() {
-            this.changeSidebar(desiredId);
+            this.changeSidebar(desiredId, desiredType);
           }
         });
       }
       else {
-        this.changeSidebar(desiredId);
+        this.changeSidebar(desiredId, desiredType);
       }
     },
 
-    changeSidebar: function(desiredId) {
-      if (desiredId !== this.state.id) {
-        this.initSidebarContentState(desiredId);
+    changeSidebar: function(desiredId, desiredType) {
+      if (!this.isCurrentlyEditedSidebar(desiredId, desiredType)) {
+        this.initSidebarContentState(desiredId, desiredType);
         this.e.sidebarContentEditor.remove();
         delete this.e.sidebarContentEditor;
       }
@@ -528,6 +646,7 @@
       // Refresh tabs and pane content.
       this.renderSidebarPaneTypes();
       this.renderSidebarPane();
+      this.scrollToTopLeft();
     },
 
     closeUrlPreview: function() {
@@ -654,9 +773,7 @@
       if (this.state.id) {
         data.sidebar_id = this.state.id;
       }
-      if (this.state.sidebar.type) {
-        data.type = this.state.sidebar.type;
-      }
+      data.type = this.state.type;
       data.layout = this.state.layout;
 
       // Build the list of links to remove.
@@ -691,11 +808,23 @@
       // TODO Provide better API and drop this backward compatibility workaround.
       // Call the callback only in case the sidebar haven't been changed through
       // chooser tab.
-      if (this.state.id === this.api.getSidebarId()) {
+      if (this.isInitialSidebar()) {
         this.api.callback(data.sidebar);
       }
 
-      this.api.setSidebar(data.sidebar);
+      switch (this.state.type) {
+        case 'auto-sidebar':
+          if (typeof this.api.setAutoSidebar !== 'undefined') {
+            this.api.setAutoSidebar(data.sidebar);
+            break;
+          }
+          // Fallback into default behavior.
+
+        case 'sidebar':
+          this.api.setSidebar(data.sidebar);
+          break;
+      }
+
       this.api.closeOverlay();
     },
 
@@ -711,7 +840,7 @@
           this.performAjaxRequest('remove-sidebar', {
             data: {
               sidebar_id: this.state.id,
-              type: this.state.sidebar.type
+              type: this.state.type
             },
             success: this.onDialogRemoveSuccess,
             error: this.onDialogRemoveError
@@ -727,8 +856,19 @@
     },
 
     onDialogRemoveSuccess: function() {
-      if (this.state.id) {
-        this.api.removeSidebar(this.state.id);
+      switch (this.state.type) {
+        case 'auto-sidebar':
+          if (typeof this.api.removeAutoSidebar !== 'undefined') {
+            this.api.removeAutoSidebar(this.buildDefaultAutoSidebar());
+            break;
+          }
+          // Fallback to legacy behavior.
+
+        case 'sidebar':
+          if (this.state.id) {
+            this.api.removeSidebar(this.state.id);
+          }
+          break;
       }
 
       this.api.closeOverlay();
@@ -736,6 +876,66 @@
 
     onDialogRemoveError: function() {
       this.displayAlert('Unable to remove the sidebar. Something went wrong.');
+      this.hideProgressIndicator();
+    },
+
+    buildDefaultAutoSidebar: function() {
+      var defaultAutoSidebar = {
+        type: 'auto-sidebar',
+        settings: {}
+      };
+
+      if (this.settings.auto_sidebar) {
+        defaultAutoSidebar.settings = this.settings.auto_sidebar.settings;
+      }
+
+      return defaultAutoSidebar;
+    },
+
+    onDialogReset: function() {
+      if (window.confirm('All changes to the auto-sidebar will be removed. Are you sure?')) {
+        if (this.state.id) {
+          this.showProgressIndicator();
+          this.performAjaxRequest('remove-sidebar', {
+            data: {
+              sidebar_id: this.state.id,
+              type: this.state.type
+            },
+            success: this.onDialogResetSuccess,
+            error: this.onDialogResetError
+          });
+        }
+        else {
+          // The auto-sidebar is not yet created. Just call success function directly.
+          this.onDialogResetSuccess();
+        }
+      }
+
+      return false;
+    },
+
+    onDialogResetSuccess: function() {
+      if (this.isAutoSidebar()) {
+        if (typeof this.api.setAutoSidebar !== 'undefined') {
+          var autoSidebar = this.buildDefaultAutoSidebar();
+
+          // Call the callback to update code under cursor.
+          if (this.isInitialSidebar()) {
+            this.api.callback(autoSidebar);
+          }
+
+          this.api.setAutoSidebar(autoSidebar, this.state.id);
+        }
+        else if (this.state.id) {
+          this.api.removeSidebar(this.state.id);
+        }
+      }
+
+      this.api.closeOverlay();
+    },
+
+    onDialogResetError: function() {
+      this.displayAlert('Unable to reset the auto-sidebar. Something went wrong.');
       this.hideProgressIndicator();
     },
 

@@ -3,7 +3,7 @@
  * Template name: Page 2
  */
 
-get_header(); ?>
+get_header('version-2'); ?>
 
 <?php
 global $query_string;

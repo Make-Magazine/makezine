@@ -30,21 +30,21 @@
 
 		<section id="footer" class="new-footer">
 			<div class="container">
-				<div class="row social-foot-desktop">
-					<div class="span3 social-foot-col" >
+				<div class="row social-foot-desktop hidden-xs">
+					<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
 						<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
-						<ul class="unstyled">
-							<li><a href="/projects">Make: Projects</a></li>
-							<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
-							<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
-							<li><a href="/category/electronics/raspberry-pi/">Raspberry Pi Projects</a></li>
+						<ul class="list-unstyled">
+							<li><a href="/projects/">Make: Projects</a></li>
+							<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
+							<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
+							<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
 							<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 						</ul>
 					</div>
 
-					<div class="span3 social-foot-col" >
+					<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
 						<h4>Explore Making</h4>
-						<ul class="unstyled">
+						<ul class="list-unstyled">
 							<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
 							<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
 							<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
@@ -52,10 +52,10 @@
 							<li><a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
 						</ul>
 					</div>
-					<!-- div class="clearfix visible-phone"></div--><!-- ADD THIS BACK IN WHEN SITE IS RESPONSIVE -->
-					<div class="span3 social-foot-col">
+					<div class="clearfix visible-sm-block"></div>
+					<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
 						<h4>Our Company</h4>
-						<ul class="unstyled">
+						<ul class="list-unstyled">
 							<li><a href="//makermedia.com" target="_blank">About Us</a></li>
 							<li><a href="//makermedia.com/work-with-us/advertising" target="_blank">Advertise with Us</a></li>
 							<li><a href="//makermedia.com/work-with-us/job-openings" target="_blank">Careers</a></li>
@@ -64,85 +64,97 @@
 						</ul>
 					</div>
 
-					<div class="span3 social-foot-col">
-						<h4 class="stay-connected">Stay Connected</h4>
-						<div class="social-profile-icons">
-							<a class="sprite-facebook-32" href="//facebook.com/makemagazine" title="Facebook" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
+				<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
+					<h4 class="stay-connected">Follow Us</h4>
+            <div class="mz-footer-social">
+            	<div class="col-xs-3">
+	              <a href="http://facebook.com/makemagazine">
+	              	<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
+	              </a>
+	            </div>
+	            <div class="col-xs-3">
+	              <a href="http://twitter.com/make">
+	              	<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
+	              </a>
+	            </div>
+	            <div class="col-xs-3">
+	              <a href="http://pinterest.com/makemagazine/">
+	              	<img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="img-responsive"></img>
+	              </a>
+	            </div>
+	            <div class="col-xs-3">
+	              <a href="https://instagram.com/makemagazine/">
+	              	<img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="img-responsive"></img>
+	              </a>
+	            </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="mz-footer-subscribe"> 
+							<?php
+								$isSecure = "http://";
+								if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+									$isSecure = "https://";
+								}
+							?>
+							<h4>Sign Up</h4>
+							<p>Stay inspired and get fresh updates</p>
+				    	<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+								<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+								<input type="hidden" name="cmd" value="subscribe" />
+								<input type="hidden" name="custom_source" value="footer" /> 
+								<input type="hidden" name="custom_incentive" value="none" /> 
+								<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+								<input type="hidden" id="format_mime" name="format" value="mime" />
+								<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+								<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+								<input type="hidden" name="errors_to" value="" />
+								<div class="mz-form-horizontal">
+									<input name="email" placeholder="Enter your Email" required="required" type="text">
+									<input value="GO" class="btn-cyan" type="submit">
 								</div>
-							</a>
-							<a class="sprite-twitter-32" href="//twitter.com/make" title="Twitter" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-							<a class="sprite-pinterest-32" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-							<a class="sprite-googleplus-32" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-						</div>
-						<?php
-							$isSecure = "http://";
-							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-								$isSecure = "https://";
-							}
-						?>
-			    	    <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
-							<input type="hidden" name="cmd" value="subscribe" />
-							<input type="hidden" name="custom_source" value="footer" /> 
-							<input type="hidden" name="custom_incentive" value="none" /> 
-							<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-							<input type="hidden" id="format_mime" name="format" value="mime" />
-							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
-							<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-							<input type="hidden" name="errors_to" value="" />
-							<div>
-								<input name="email" placeholder="Enter your Email" required="required" type="text"><br>
-								<input value="Sign Up for our Newsletter" class="btn-cyan" type="submit">
-							</div>
-					    </form>
+						  </form>
+						</div><!-- end .mz-footer-subscribe -->
 					</div>
 				</div><!-- END desktop row -->
-				<div class="row social-foot-mobile">
-					<div class="span12 social-foot-col">
-						<h4 class="stay-connected">Stay Connected</h4>
-						<div class="social-profile-icons">
-							<a class="sprite-facebook-32" href="http://facebook.com/makemagazine" title="Facebook" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-							<a class="sprite-twitter-32" href="http://twitter.com/make" title="Twitter" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-							<a class="sprite-pinterest-32" href="http://pinterest.com/makemagazine/" title="Pinterest" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-							<a class="sprite-googleplus-32" href="https://plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
-								<div class="social-profile-cont">	
-									<span class="sprite"></span>
-								</div>
-							</a>
-						</div>
+
+				<div class="row social-foot-mobile visible-xs-block">
+				<div class="col-xs-12 social-foot-col">
+					<h4 class="stay-connected">Follow Us</h4>
+					 <div class="mz-footer-social">
+          	<div class="col-xs-3">
+              <a href="http://facebook.com/makemagazine">
+              	<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
+              </a>
+            </div>
+            <div class="col-xs-3">
+              <a href="http://twitter.com/make">
+              	<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
+              </a>
+            </div>
+            <div class="col-xs-3">
+              <a href="http://pinterest.com/makemagazine/">
+              	<img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="img-responsive"></img>
+              </a>
+            </div>
+            <div class="col-xs-3">
+              <a href="http://plus.google.com/+MAKE/posts">
+              	<img src="/wp-content/themes/makeblog/version-2/img/google.png" alt="google" class="img-responsive"></img>
+              </a>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="mz-footer-subscribe"> 
 						<?php
 							$isSecure = "http://";
 							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 								$isSecure = "https://";
 							}
 						?>
-			    	    <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+						<h4>Sign Up</h4>
+						<p>Stay inspired and get fresh updates</p>
+			    	<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
 							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 							<input type="hidden" name="cmd" value="subscribe" />
 							<input type="hidden" name="custom_source" value="footer" /> 
@@ -152,68 +164,70 @@
 							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
 							<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 							<input type="hidden" name="errors_to" value="" />
-							<div>
-								<input name="email" placeholder="Enter your Email" required="required" type="text"><br>
-								<input value="Sign Up for our Newsletter" class="btn-cyan" type="submit">
+							<div class="mz-form-horizontal">
+								<input name="email" placeholder="Enter your Email" required="required" type="text">
+								<input value="GO" class="btn-cyan" type="submit">
 							</div>
-					    </form>
+					  </form>
+					</div><!-- end .mz-footer-subscribe -->
+			</div>
+			<div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading1">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Make:</a>
+						</h4>
 					</div>
-					<div class="span12 accordion" id="accordionF">
-					  <div class="accordion-group">
-					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseOneF">
-					        <h3>Make:</h3>
-					      </a>
-					    </div>
-					    <div id="collapseOneF" class="accordion-body collapse">
-					      <div class="accordion-inner">
-					        <ul class="nav nav-pills nav-stacked">
-								<li><a href="/projects">Make: Projects</a></li>
-								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
-								<li><a href="/category/electronics/arduino/">Arduino Projects</a></li>
-								<li><a href="/category/electronics/raspberry-pi/">Raspberry Pi Projects</a></li>
+					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+						<div class="panel-body">
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="/projects/">Make: Projects</a></li>
+								<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
+								<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
+								<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
 								<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 							</ul>
-					      </div>
-					    </div>
-					  </div>
-					  <div class="accordion-group">
-					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseTwoF">
-					        <h3>Explore Making</h3>
-					      </a>
-					    </div>
-					    <div id="collapseTwoF" class="accordion-body collapse">
-					      <div class="accordion-inner">
-					        <ul class="nav nav-pills nav-stacked">
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading2">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Explore Making</a>
+						</h4>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+						<div class="panel-body">
+							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
+								<li><a href="/blog">Make: News</a></li>
 								<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
 								<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
 								<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
 								<li><a href="//readerservices.makezine.com/mk/default.aspx?" target="_blank">Subscribe to Make:</a></li>
 							</ul>
-					      </div>
-					    </div>
-					  </div>
-					  <div class="accordion-group">
-					    <div class="accordion-heading">
-					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionF" href="#collapseThreeF">
-					        <h3>Our Company</h3>
-					      </a>
-					    </div>
-					    <div id="collapseThreeF" class="accordion-body collapse">
-					      <div class="accordion-inner">
-					        <ul class="nav nav-pills nav-stacked">
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading3">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Our Company</a>
+						</h4>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+						<div class="panel-body">
+							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
 								<li><a href="//makermedia.com/work-with-us/advertising" target="_blank">Advertise with Us</a></li>
 								<li><a href="//makermedia.com/work-with-us/job-openings" target="_blank">Careers</a></li>
 								<li><a href="//help.makermedia.com/hc/en-us" target="_blank">Help</a></li>
 								<li><a href="//makermedia.com/privacy" target="_blank">Privacy</a></li>
 							</ul>
-					      </div>
-					    </div>
-					  </div>
+						</div>
 					</div>
+				</div>
+			</div>
 				</div><!-- End social-foot-mobile -->
 			</div><!-- END container -->
 			<?php echo make_copyright_footer(); ?>
@@ -379,30 +393,6 @@
 	j.async = true;
 	f.parentNode.insertBefore(j, f);
 </script>
-<!-- Quantcast Tag -->
-<script type="text/javascript">
-var _qevents = _qevents || [];
 
-(function() {
-var elem = document.createElement('script');
-elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
-elem.async = true;
-elem.type = "text/javascript";
-var scpt = document.getElementsByTagName('script')[0];
-scpt.parentNode.insertBefore(elem, scpt);
-})();
-
-_qevents.push({
-qacct:"p-JTeSvmhJ_hZT5"
-});
-</script>
-
-<noscript>
-<div style="display:none;">
-<img src="//pixel.quantserve.com/pixel/p-JTeSvmhJ_hZT5.gif" border="0" height="1" width="1" alt="Quantcast"/>
-</div>
-</noscript>
-<!-- End Quantcast tag -->
-	
 	</body>
 </html>

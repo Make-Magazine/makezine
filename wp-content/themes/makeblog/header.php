@@ -58,7 +58,7 @@
 		</script>
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?>
 		<!-- Google Universal Analytics -->
 		
 		<!-- Time-tracking for Custom Dimensions -->
@@ -129,6 +129,10 @@
 		<?php endif; ?>
 
 		<header class="top-navigation-wrapper">
+<!--			--><?php //$value = get_field( "flag_taxonomy", 491102 );
+//			var_dump($value);
+//			exit;
+//			?>
 			<div class="main-header">
 				<div class="container">
 					<div class="row">

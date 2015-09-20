@@ -2,21 +2,16 @@
 
   /**
    * @class
-   * @extends Contextly.widget.BaseLinksList
+   * @extends Contextly.widget.BaseFlatLinksList
    */
   Contextly.widget.Sidebar = Contextly.createClass( /** @lends Contextly.widget.Sidebar.prototype */ {
 
-    extend: Contextly.widget.BaseLinksList,
+    extend: Contextly.widget.BaseFlatLinksList,
 
     construct: function(widget) {
-      Contextly.widget.BaseLinksList.apply(this, arguments);
+      Contextly.widget.BaseFlatLinksList.apply(this, arguments);
 
       this.widget_type = Contextly.widget.types.SIDEBAR;
-      this.widget_html_id = 'contextly-' + widget.id;
-    },
-
-    getWidgetContainerClass: function() {
-      return 'ctx-sidebar-container--' + this.getWidget().id;
     },
 
     getWidgetStyleClass: function() {
@@ -37,7 +32,7 @@
       }
 
       html += "<div class='ctx-sb-content'>"
-        + this.getLinksHTMLOfType('previous')
+        + this.getLinksHTML()
         + "</div>";
 
       var classes = [
@@ -97,22 +92,7 @@
       }
       html += "<div class='" + classes.join(' ') + "'><p>" + a + "</p></div>";
 
-      html = "<div class='ctx-sb-fotmater ctx-clearfix'>" + html + "</div>";
-      return html;
-    },
-
-    getLinksHTMLOfType: function(type) {
-      var html = "";
-      if (this.widget && this.widget.links && this.widget.links[ type ]) {
-        for (var link_idx in this.widget.links[ type ]) {
-          var link = this.widget.links[ type ][ link_idx ];
-
-          if (link.id && link.title) {
-            html += "<div class='ctx-sb-link'>" + this.getLinkHTML(link) + "</div>";
-          }
-        }
-      }
-
+      html = "<div class='ctx-sb-link'><div class='ctx-sb-fotmater ctx-clearfix'>" + html + "</div></div>";
       return html;
     },
 
@@ -122,26 +102,53 @@
 
     getCustomCssCode: function() {
       return Contextly.widget.SidebarCssCustomBuilder
-        .buildCSS('.ctx-sidebar-container', this.getSettings());
+        .buildCSS('.' + this.containers.getTypeClass(), this.getSettings());
     },
 
-    getLayoutModes: function() {
-      return {
-        "mobile": [0, 200],
-        "default": [200]
-      };
-    },
-
-    checkLayoutThresholds: function() {
-      // TODO Avoid hard-coding screen condition.
-      if (this.getScreenWidth() <= 540) {
+    setUpResponsiveLayout: function() {
+      if (this.widget.layout === 'wide') {
+        // There is no sense in normal mode on wide layout as they look exactly
+        // the same, just set mobile mode once.
         var elements = this.getWidgetElements();
         this.eachElement(elements, function(element) {
           this.setLayoutMode(element, 'mobile');
         });
       }
       else {
-        Contextly.widget.BaseLinksList.fn.checkLayoutThresholds.apply(this, arguments);
+        Contextly.widget.BaseFlatLinksList.prototype.setUpResponsiveLayout.apply(this, arguments);
+      }
+    },
+
+    getLayoutModes: function() {
+      return {
+        "mobile": [0, 400],
+        "default": [400]
+      };
+    },
+
+    checkLayoutThresholds: function() {
+      var elements = this.getWidgetElements();
+
+      // TODO Avoid hard-coding screen condition.
+      if (this.getScreenWidth() <= 540) {
+        this.eachElement(elements, function(element) {
+          this.setLayoutMode(element, 'mobile');
+        });
+      }
+      else {
+        // Since the widget may be set to float left/right with no minimal width
+        // we can't measure its size for adaptive layout. We use containers
+        // instead (far from perfect, but should work for most cases).
+        var modes = this.getLayoutModes();
+        this.eachElement(elements, function(element) {
+          var width = element.parent().width();
+          this.each(modes, function(thresholds, name) {
+            if (this.sizeMatchesThresholds(width, thresholds)) {
+              this.setLayoutMode(element, name);
+              return false;
+            }
+          });
+        });
       }
     },
 

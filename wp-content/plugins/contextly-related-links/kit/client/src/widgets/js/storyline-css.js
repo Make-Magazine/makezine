@@ -11,6 +11,7 @@ Contextly.widget.StorylineSubscribeCssCustomBuilder = Contextly.createClass({
     buildCSS: function(entry, settings) {
       var result = "";
 
+      var id = entry.id;
       var container = entry.container;
       var widget = entry.widget;
 
@@ -20,6 +21,9 @@ Contextly.widget.StorylineSubscribeCssCustomBuilder = Contextly.createClass({
 
       if (typeof settings.css.alignment !== 'undefined') {
         result += this.buildCSSRule(container, '', 'text-align', settings.css.alignment);
+
+        // Make sure we also override alignment on the #id selector.
+        result += this.buildCSSRule(id, '', 'text-align', settings.css.alignment);
       }
 
       if (typeof settings.css.font_family !== 'undefined') {
@@ -94,7 +98,7 @@ Contextly.widget.StorylineSubscribeCssCustomBuilder = Contextly.createClass({
       }
 
       if (settings.css.custom_code) {
-        result += Contextly.Utils.escape(settings.css.custom_code);
+        result += settings.css.custom_code;
       }
 
       return result;

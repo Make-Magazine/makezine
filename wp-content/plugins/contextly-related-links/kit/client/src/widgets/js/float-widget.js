@@ -30,7 +30,7 @@
 
     getCustomCssCode: function() {
       return Contextly.widget.FloatCssCustomBuilder
-        .buildCSS('.ctx-module-container', this.getSettings());
+        .buildCSS('.' + this.containers.getTypeClass(), this.getSettings());
     },
 
     getLayoutModes: function() {

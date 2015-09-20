@@ -41,8 +41,14 @@
                 title="{{t 'Remove the sidebar'}}">
           <i class="icon-trash"></i> {{t 'Remove'}}
         </button>
+        {{#if editor.isAutoSidebar}}
+          <button class="dialog-action action-reset btn btn-danger"
+                  title="{{t 'Reset the auto-sidebar to defaults'}}">
+            <i class="icon-trash"></i> {{t 'Reset'}}
+          </button>
+        {{/if}}
         <button class="dialog-action action-cancel btn btn-warning"
-                title="{{t 'Reset all changes'}}">
+                title="{{t 'Cancel all changes'}}">
           <i class="icon-remove"></i> {{t 'Cancel'}}
         </button>
         <button class="dialog-action action-save btn btn-success"

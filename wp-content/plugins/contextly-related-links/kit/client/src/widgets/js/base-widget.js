@@ -65,6 +65,11 @@
     // TODO Replace with template rendering and drop.
     abstracts: [ 'getWidgetHTML' ],
 
+    construct: function(widget, containers) {
+      this.widget = widget;
+      this.containers = containers;
+    },
+
     getWidget: function() {
       return this.widget;
     },
@@ -77,22 +82,8 @@
       return this.getWidget().settings;
     },
 
-    /**
-     * @function
-     */
-    getWidgetContainerClass: Contextly.abstractMethod(),
-
     getWidgetContainers: function() {
-      if (this.widget_containers == null) {
-        this.widget_containers = $('.' + this.getWidgetContainerClass());
-
-        // Backward compatibility.
-        if (!this.widget_containers.length && this.widget_html_id != null) {
-          this.widget_containers = $('#' + this.widget_html_id);
-        }
-      }
-
-      return this.widget_containers;
+      return this.containers.getElements();
     },
 
     getEventsNamespace: function() {

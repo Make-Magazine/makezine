@@ -1,7 +1,7 @@
 <div class="container-fluid sidebar-pane sidebar-chooser">
   <ul class="search-results">
     {{#each sidebars}}
-      <li class="search-result" data-sidebar-id="{{id}}">
+      <li class="search-result"{{#if id}} data-sidebar-id="{{id}}"{{/if}} data-sidebar-type="{{type}}">
         <div class="search-result-action-wrapper left cell">
           <button class="sidebar-edit btn btn-mini">
             <i class="icon-pencil"></i> {{t 'Edit sidebar'}}

@@ -8,7 +8,7 @@ global $catslugs;
 
 $post_types = array( 'post', 'projects', 'review', 'video', 'magazine' );
 
-get_header(); ?>
+get_header('version-2'); ?>
 		
 	<div class="content-type">
 	

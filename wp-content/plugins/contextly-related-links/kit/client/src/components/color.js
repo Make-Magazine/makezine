@@ -11,14 +11,20 @@ Contextly.color.RGB = Contextly.createClass({
   construct: function() {
     if (arguments.length === 1) {
       var input = arguments[0];
-      var matches = input.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/);
-      if (!matches) {
+      var matches;
+      if (matches = input.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/)) {
+        this.red = parseInt(matches[1], 16);
+        this.green = parseInt(matches[2], 16);
+        this.blue = parseInt(matches[3], 16);
+      }
+      else if (matches = input.match(/^#([0-9a-f])([0-9a-f])([0-9a-f])$/)) {
+        this.red = parseInt(matches[1] + matches[1], 16);
+        this.green = parseInt(matches[2] + matches[2], 16);
+        this.blue = parseInt(matches[3] + matches[3], 16);
+      }
+      else {
         Contextly.Utils.error('Unable to parse color ' + input);
       }
-
-      this.red = parseInt(matches[1], 16);
-      this.green = parseInt(matches[2], 16);
-      this.blue = parseInt(matches[3], 16);
     }
     else if (arguments.length === 3) {
       this.red = arguments[0];

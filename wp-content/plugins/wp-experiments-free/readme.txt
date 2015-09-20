@@ -3,8 +3,8 @@ Contributors: jasonlfunk
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZMDLAG7TMAN3E
 Tags: conversions, ab testing, optimization, headlines, split testing, titles, t
 Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 7.0
+Tested up to: 4.2
+Stable tag: 7.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,6 +38,12 @@ Check out https://wpexperiments.com/title-experiments/
 
 == Changelog ==
 
+= 7.3 =
+* Add icon
+* Update the 'Tested up to'
+
+= 7.2 =
+= 7.1 =
 = 7.0 =
 * Bug fix for probabilities displaying over 100%
 

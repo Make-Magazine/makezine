@@ -134,8 +134,15 @@ class ContextlySettings {
 			'blog_url'          => site_url(),
 			'blog_title'        => get_bloginfo("name"),
 			'cms_settings_page' => $this->getWPPluginSettingsUrl(),
-			'kit_version'       => CONTEXTLY_KIT_VERSION
 		);
+
+		// Get MAJOR.MINOR version for the Control Panel.
+		$version = ContextlyWpKit::getInstance()
+			->version();
+		$verison_parsed = ContextlyWpKit::parseVersion( $version );
+		if ( $verison_parsed ) {
+			$url_params['kit_version'] = $verison_parsed[0] . '.' . $verison_parsed[1];
+		}
 
 		return Urls::getMainServerUrl() . 'cms-redirect/?' . http_build_query($url_params, NULL, '&');
 	}
@@ -276,12 +283,12 @@ class ContextlySettings {
     public function displaySettingsTabs() {
         $current_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : self::GENERAL_SETTINGS_KEY;
 
-        echo '<h2 class="nav-tab-wrapper">';
+        echo '<h1 class="nav-tab-wrapper">';
         foreach ( $this->tabs as $tab_key => $tab_caption ) {
             $active = $current_tab == $tab_key ? 'nav-tab-active' : '';
 	        echo '<a class="nav-tab ' . esc_attr( $active ) . '" href="' . esc_url( '?page=' . self::OPTIONS_KEY . '&tab=' . $tab_key ) . '">' . esc_html( $tab_caption ) . '</a>';
         }
-        echo '</h2>';
+        echo '</h1>';
     }
 
     public function apiLayoutSection() {
@@ -377,21 +384,21 @@ class ContextlySettings {
     }
 
 	public function settingsDisplayKitCdn() {
-		$kit_cdn = $this->getKitCdnValue();
-		$control_name = self::ADVANCED_SETTINGS_KEY . "[kit_cdn]";
-
-		echo "
-		<input type='hidden' name='{$control_name}' value='0' />
-		<input name='{$control_name}' type='checkbox' value='1' " . ( $kit_cdn ? "checked='checked'" : "" ) . " style='margin-left: 3px;'/>";
+		$checked = $this->getKitCdnValue();
+		$this->settingsDisplayAdvancedCheckbox( 'kit_cdn', $checked );
 	}
 
 	public function settingsDisplayPublishConfirmation() {
-		$publish_confirmation = $this->getPublishConfirmationValue();
-		$control_name = self::ADVANCED_SETTINGS_KEY . "[publish_confirmation]";
+		$checked = $this->getPublishConfirmationValue();
+		$this->settingsDisplayAdvancedCheckbox( 'publish_confirmation', $checked );
+	}
+
+	protected function settingsDisplayAdvancedCheckbox( $id, $checked ) {
+		$control_name = self::ADVANCED_SETTINGS_KEY . "[" . $id . "]";
 
 		echo "
 <input type='hidden' name='{$control_name}' value='0' />
-<input name='{$control_name}' type='checkbox' value='1' " . ( $publish_confirmation ? "checked='checked'" : "" ) . " style='margin-left: 3px;'/>";
+<input name='{$control_name}' type='checkbox' value='1' " . ( $checked ? "checked='checked'" : "" ) . " style='margin-left: 3px;'/>";
 	}
 
     public static function getPluginOptions() {

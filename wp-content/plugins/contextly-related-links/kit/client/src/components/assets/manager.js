@@ -49,7 +49,7 @@
         queue = queue || new Contextly.CallbackQueue();
 
         this.packages[name] = Contextly.AssetManager.packageStates.LOADING;
-        this.broadcast(Contextly.AssetManager.broadcastTypes.LOADING, name);
+        this.broadcast(Contextly.AssetManager.broadcastTypes.LOADING, name, config, queue);
         queue.prependResult(this.proxy(this.onRenderingComplete, false, true), name);
 
         // Render dependencies.

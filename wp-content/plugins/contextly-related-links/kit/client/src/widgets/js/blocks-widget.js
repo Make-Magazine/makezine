@@ -95,7 +95,7 @@
 
     getCustomCssCode: function() {
       return Contextly.widget.BlocksCssCustomBuilder
-        .buildCSS('.ctx-module-container', this.getSettings());
+        .buildCSS('.' + this.containers.getTypeClass(), this.getSettings());
     },
 
     getLayoutModes: function() {

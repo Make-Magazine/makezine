@@ -7,7 +7,7 @@
  * 
  */
 global $wp_query;
-get_header(); ?>
+get_header('version-2'); ?>
 		
 	<div class="single">
 	

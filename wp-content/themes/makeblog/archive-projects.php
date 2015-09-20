@@ -1,181 +1,62 @@
 <?php
 /**
- * Archive page template for projects custom post type.
- *
- * @package    makeblog
- * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * @author     Jake Spurlock <jspurlock@makermedia.com>
- * 
+ * Template Name: Project Page
  */
 global $catslugs;
 $type = ( isset( $_GET['post_type'] ) ) ? sanitize_title( $_GET['post_type'] ) : '';
-
-if ($type == 'projects') {
-	include_once 'archive-projects-category.php';
-	return;
+require_once 'version-2/includes/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$post_per_page = 15;
+$device = 'pc';
+if ( $detect->isMobile() ) {
+	$post_per_page = 5;
+	$device = 'mobile';
 }
 
-get_header(); ?>
-		
-	<div class="projects-home">
-	
-		<div class="">
-		
-			<div class="container">
+if( $detect->isTablet() ){
+	$post_per_page = 10;
+	$device = 'tablet';
+}
 
-				<div class="row">
+if ($type == 'projects') {
+	include_once 'archive-projects-category-new.php';
+	return;
+}
+get_header('version-2');
 
-					<div class="span12">
-					
-						<div class="projects-top">
-						
-							<div class="row">
-								
-								<div class="span12">
-									
-									<h1>Make: Projects</h1>
-									
-									<form class="form-search" action="<?php echo home_url(); ?>">
-										<label for="s">Search for Projects</label>
-										<input type="text" id="s" class="input-medium search-query" name="s">
-										<input type="hidden" name="post_type" value="projects">
-										<button type="submit" class="btn">Search</button>
-									</form>
-									
-									<h3>Find Projects by Category:</h3>
-									
-									<ul class="subs">
-										
-										<?php echo make_category_li( 'projects' ); ?>		
-										
-									</ul>
-									
-								</div>
-								
-							</div>
-						
-						</div>
-						
-					</div>
-					
-				</div>
-				
-			</div>
-		
+?>
+<div class="header-ad">
+	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
+        <div class="own">
+            <div class="home-ads">
+                <div id="div-gpt-ad-664089004995786621-1">
+                <script type="text/javascript">
+                googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-1")});
+                </script>
+                </div>
+            </div>
+        </div>
+	</li>
+</div>
+<div class="all-projects <?php echo $device ?>">
+	<div class="content container">
+		<?php
+		if ($device == 'mobile') {
+			get_template_part('version-2/includes/project_mobile_navigation');
+		} else {
+			get_template_part('version-2/includes/project_pc_tablet_navigation');
+			get_template_part('version-2/includes/project_mobile_navigation');
+		}
+		?>
+		<div class="posts-list container">
+				<?php
+				sorting_posts();  //TODO Rename Function
+				?>
 		</div>
+	</div>
+	<div id="temp_post_list" style="display: none">
 
 	</div>
-					
-	<div class="grey content">
+</div>
 
-		<div class="container">
-		
-			<div class="row">
-			
-				<div class="span8">
-					
-					<?php
-						$args = array(
-							'post_type'			=> 'projects',
-							'title'				=> 'Featured Projects',
-							'limit'				=> 2,
-							'tag'				=> 'Featured',
-							'projects_landing'	=> true,
-							'all'				=> true
-						);
-						echo make_carousel( $args ); ?>
-					
-				</div>
-				
-				<div class="span4">
-					
-					<div class="sidebar-ad">
-
-						<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
-						<div id='div-gpt-ad-664089004995786621-2'>
-							<script type='text/javascript'>
-								googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-2')});
-							</script>
-						</div>
-						<!-- End AdSlot 2 -->
-
-					</div>
-					
-				</div>
-				
-			</div>
-								
-			<div class="row">
-			
-				<div class="span12">
-				
-					<?php 
-
-						$args = array(
-							'post_type'			=> 'projects',
-							'title'				=> 'New Projects',
-							'projects_landing'	=> true,
-							'all'				=> true,
-						);
-						
-						echo make_carousel($args);
-					?>
-					
-				</div>
-			
-			</div>
-			
-			<div class="row">
-			
-				<div class="span12">
-				
-					<?php 
-
-						$args = array(
-							'post_type'			=> 'projects',
-							'title'				=> '<a href="' . home_url() . '/weekendprojects/">Weekend Projects</a>',
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'flags',
-									'field' => 'slug',
-									'terms' => 'weekend-project'
-								)
-							),
-							'projects_landing'	=> true,
-							'all'				=> true,
-							'posts_per_page'	=> 36
-						);
-
-						echo make_carousel($args);
-					?>
-					
-				</div>
-			
-			</div>
-			
-		</div>
-		
-	</div>
-				
-	<?php
-
-		if ($catslugs) {
-			echo '<div class="grey topper"><div class="container"><div class="row"><div class="span12"><h2>Projects by Category</h2></div></div></div></div>';
-			foreach ($catslugs as $category) {
-				$category = get_term_by('name', $category, 'category');
-				echo '<div class="grey"><div class="container"><div class="row"><div class="span12">';							
-				$args = array(
-					'post_type'			=> 'projects',
-					'category__in'		=> $category->term_id,
-					'title'				=> $category->name,
-					'projects_landing'	=> true,
-					'all'				=> true
-
-				);
-				echo make_carousel( $args );
-				echo '</div></div></div>';
-			} 
-		} 
-	?>
-
-	<?php get_footer(); ?>
+<?php get_footer(); ?>

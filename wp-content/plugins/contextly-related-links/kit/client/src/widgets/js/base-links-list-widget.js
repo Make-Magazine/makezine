@@ -11,7 +11,8 @@
     extend: Contextly.widget.Base,
 
     construct: function(widget) {
-      this.widget = widget;
+      Contextly.widget.Base.apply(this, arguments);
+
       this.widget_elements = null;
       this.widget_view_interval = null;
       this.widget_view_happened = false;
@@ -22,16 +23,9 @@
       return $(window).width();
     },
 
-    hasWidgetData: function () {
-        if ( this.widget && this.widget.links ) {
-            var links = this.widget.links;
-            for(var prop in links) {
-                if (links.hasOwnProperty(prop)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    hasWidgetData: function() {
+      // Descendants must override it.
+      return false;
     },
 
     isDisplaySection: function(section) {
@@ -443,8 +437,9 @@
       var modes = this.getLayoutModes();
       var elements = this.getWidgetElements();
       this.eachElement(elements, function(element) {
+        var width = element.width();
         this.each(modes, function(thresholds, name) {
-          if (this.sizeMatchesThresholds(element.width(), thresholds)) {
+          if (this.sizeMatchesThresholds(width, thresholds)) {
             this.setLayoutMode(element, name);
             return false;
           }

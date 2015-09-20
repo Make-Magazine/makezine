@@ -28,6 +28,7 @@
     "js/base-widget",
     "js/base-css",
     "js/base-links-list-widget",
+    "js/base-flat-links-widget",
     "js/text-widget",
     "js/text-css",
     "js/base-blocks-widget",
@@ -39,6 +40,7 @@
     "js/float-css",
     "js/sidebar-widget",
     "js/sidebar-css",
+    "js/autosidebar-widget",
     "js/siderail-widget",
     "js/siderail-css",
     "js/storyline-widget",
@@ -47,6 +49,7 @@
     "js/branding-overlay",
     "js/video-overlay",
     "js/page-events",
+    "js/containers",
     "js/factory"
   ],
   "css": [

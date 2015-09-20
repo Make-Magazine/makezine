@@ -2,20 +2,16 @@
 
   /**
    * @class
-   * @extends Contextly.widget.BaseLinksList
+   * @extends Contextly.widget.BaseFlatLinksList
    */
   Contextly.widget.Siderail = Contextly.createClass( /** @lends Contextly.widget.Siderail.prototype */ {
 
-    extend: Contextly.widget.BaseLinksList,
+    extend: Contextly.widget.BaseFlatLinksList,
 
     construct: function(widget) {
-      Contextly.widget.BaseLinksList.apply(this, arguments);
+      Contextly.widget.BaseFlatLinksList.apply(this, arguments);
 
       this.widget_type = Contextly.widget.types.SIDERAIL;
-    },
-
-    getWidgetContainerClass: function() {
-      return 'ctx-siderail-container';
     },
 
     getWidgetStyleClass: function() {
@@ -77,23 +73,8 @@
       return "<div class='" + classes.join(' ') + "'>" + a + "</div>";
     },
 
-    getLinksHTML: function() {
-      var html = "";
-      if (this.widget && this.widget.links) {
-        for (var link_idx in this.widget.links) {
-          var link = this.widget.links[link_idx];
-
-          if (link.id && link.title) {
-            html += this.getLinkHTML(link);
-          }
-        }
-      }
-
-      return html;
-    },
-
     getHandlers: function(widgetHasData) {
-      var handlers = Contextly.widget.BaseLinksList.prototype.getHandlers.apply(this, arguments);
+      var handlers = Contextly.widget.BaseFlatLinksList.prototype.getHandlers.apply(this, arguments);
 
       if (widgetHasData) {
         handlers.attachLinksPopups = true;

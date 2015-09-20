@@ -111,11 +111,13 @@
   content: "\2022";
 }
 /* Sidebar's styles for different screen sizes */
-.ctx-content-sidebar.ctx-sidebar-mobile {
+.ctx-content-sidebar.ctx-sidebar-mobile,
+.ctx-content-sidebar.ctx-sidebar-default.ctx-sidebar-wide {
   width: 100% !important;
   border: none !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  clear: both !important;
 }
 .ctx-content-sidebar.ctx-sidebar-default.ctx-sidebar-left {
   float: left !important;
@@ -129,11 +131,5 @@
   margin-left: 10px !important;
   max-width: 49% !important;
   border-right: none !important;
-  padding-right: 0 !important;
-}
-.ctx-content-sidebar.ctx-sidebar-default.ctx-sidebar-wide {
-  width: 100% !important;
-  border: none !important;
-  padding-left: 0 !important;
   padding-right: 0 !important;
 }

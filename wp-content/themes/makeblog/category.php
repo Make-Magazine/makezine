@@ -18,7 +18,7 @@ if ($type == 'projects') {
 // Setup our default list of post types
 $post_types = array( 'post', 'video', 'projects', 'review', 'craft', 'magazine' );
 
-get_header(); ?>
+get_header('version-2'); ?>
 
 	<div class="category-top">
 

@@ -5,7 +5,7 @@ Template Name: Articles Landing Page
 */
 
 global $catslugs;
-get_header(); ?>
+get_header('version-2'); ?>
 		
 	<div class="content-type">
 	

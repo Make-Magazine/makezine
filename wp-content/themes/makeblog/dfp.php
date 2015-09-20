@@ -221,7 +221,8 @@
 					echo "googletag.pubads().setTargeting('sponsor',['cornell']);";
 				}
 			?>
-
+			googletag.pubads().setTargeting('t', ['y']);
+			
 			googletag.pubads().collapseEmptyDivs();
 
 			googletag.enableServices();

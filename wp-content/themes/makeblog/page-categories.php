@@ -4,7 +4,7 @@ Template Name: Categories
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header('version-2'); ?>
 		
 		<div class="clear"></div>
 

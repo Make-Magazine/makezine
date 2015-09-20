@@ -75,11 +75,15 @@
       },
 
       loadCode: function(code, key) {
+        // CSS inside the STYLE tag only requires escaping of the closing STYLE
+        // tag with unicode sequence. Escaping with HTML entities is not valid.
+        code = code.replace('</style>', '\\3C/style>');
+
         // IE 8 won't let us modify innerHTML property on STYLE tag and we
         // can't set it with .html() jQuery method.
         var html = '<style type="text/css"'
           + ' data-ctx-key="' + Contextly.Utils.escape(key) + '">'
-          + Contextly.Utils.escape(code)
+          + code
           + '</style>';
 
         $(html).appendTo('head');

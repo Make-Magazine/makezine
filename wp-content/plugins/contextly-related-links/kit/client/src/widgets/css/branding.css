@@ -5,10 +5,11 @@
 }
 .ctx-branding .ctx-branding-link {
 	display: block !important;
-	width: 110px !important;
+  width: 110px !important;
 	height: 12px !important;
   margin-right: 1% !important;
 	float: right;
+  text-align: left !important;
 	line-height: 1.4 !important;
 	background: url(../img/brandedlogo.png) no-repeat right -12px !important;
 	text-decoration: none;

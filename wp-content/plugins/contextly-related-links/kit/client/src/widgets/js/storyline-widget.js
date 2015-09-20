@@ -9,13 +9,9 @@
     extend: Contextly.widget.Base,
 
     construct: function(widget) {
-      this.widget = widget;
-      this.widget_type = Contextly.widget.types.STORYLINE_SUBSCRIBE;
-      this.widget_html_id = 'ctx-sl-subscribe';
-    },
+      Contextly.widget.Base.apply(this, arguments);
 
-    getWidgetContainerClass: function() {
-      return 'ctx-subscribe-container';
+      this.widget_type = Contextly.widget.types.STORYLINE_SUBSCRIBE;
     },
 
     getWidgetLogo: function() {
@@ -75,8 +71,9 @@
 
     getCustomCssCode: function() {
       var entry = {
-        container: '.' + this.getWidgetContainerClass(),
-        widget: '.' + this.getWidgetContainerClass() + ' .ctx-subscribe-link.' + this.getWidgetStyleClass()
+        id: '#' + this.containers.getId(),
+        container: '.' + this.containers.getTypeClass(),
+        widget: '.' + this.containers.getTypeClass() + ' .ctx-subscribe-link.' + this.getWidgetStyleClass()
       };
       return Contextly.widget.StorylineSubscribeCssCustomBuilder.buildCSS(entry, this.getSettings());
     },

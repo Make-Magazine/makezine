@@ -12,11 +12,6 @@
       Contextly.widget.BaseLinksList.apply(this, arguments);
 
       this.widget_type = Contextly.widget.types.SNIPPET;
-      this.widget_html_id = 'ctx-module';
-    },
-
-    getWidgetContainerClass: function() {
-      return 'ctx-module-container';
     },
 
     getAssetsPackageName: function() {
@@ -66,6 +61,18 @@
       return div;
     },
 
+    hasWidgetData: function () {
+      if (this.widget.links) {
+        var links = this.widget.links;
+        for (var prop in links) {
+          if (links.hasOwnProperty(prop) && links[prop].length) {
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+
     getLinksHTMLOfType: function(type) {
       var html = "";
       var widget = this.widget;
@@ -109,7 +116,7 @@
 
     getCustomCssCode: function() {
       return Contextly.widget.TextCssCustomBuilder
-        .buildCSS('.ctx-module-container', this.getSettings());
+        .buildCSS('.' + this.containers.getTypeClass(), this.getSettings());
     },
 
     buildLayoutClass: function(mode) {

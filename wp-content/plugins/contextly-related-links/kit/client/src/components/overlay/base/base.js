@@ -25,7 +25,8 @@
         var map = {
           window: window,
           document: document,
-          html: 'html'
+          html: 'html',
+          body: 'body'
         };
         for (var key in map) {
           this[key] = $(map[key]);
@@ -321,7 +322,7 @@
             top: this.window.scrollTop(),
             left: this.window.scrollLeft()
           },
-          style: this.html.attr('style')
+          style: this.body.attr('style')
         };
 
         // The trick here is that the fixed element with dimensions larger than
@@ -339,18 +340,18 @@
           css['overflow-y'] = 'scroll';
         }
 
-        this.html
+        this.body
           .data(this.options.dataKey, data)
           .css(css);
       },
 
       unlockBodyScroll: function() {
-        var data = this.html.data(this.options.dataKey);
+        var data = this.body.data(this.options.dataKey);
         if (data) {
           // Restore "style" attribute back to its state before we locked the
           // document scrolling. This also removes the scroll lock and our styles.
           // Use non-empty string to be sure style is overwritten (IE 8 fix).
-          this.html.attr('style', data.style || ' ');
+          this.body.attr('style', data.style || ' ');
 
           // Scroll the page back to its original position.
           this.window

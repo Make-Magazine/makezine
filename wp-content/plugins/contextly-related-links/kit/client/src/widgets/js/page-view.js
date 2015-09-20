@@ -11,6 +11,28 @@
         this.lastWidgetsResponse = null;
       },
 
+      getWidgetLoadingFlags: function() {
+        var result = {};
+
+        var types = Contextly.widget.types;
+        var map = {
+          load_snippet: types.SNIPPET,
+          load_side_rail: types.SIDERAIL,
+          load_sidebar: types.SIDEBAR,
+          load_auto_sidebar: types.AUTO_SIDEBAR,
+          load_storyline_subscribe: types.STORYLINE_SUBSCRIBE
+        };
+
+        for (var flag in map) {
+          var type = map[flag];
+          result[flag] = !!Contextly.widget.Factory.getContainer(type)
+            .getElements()
+            .length;
+        }
+
+        return result;
+      },
+
       loadWidgets: function() {
         if (this.widgetsLoading) {
           return;
@@ -18,7 +40,8 @@
         this.widgetsLoading = true;
 
         var callback = this.proxy(this.onWidgetsLoadingComplete, false, true);
-        Contextly.RESTClient.call('pagewidgets', 'get', {}, callback);
+        var params = this.getWidgetLoadingFlags();
+        Contextly.RESTClient.call('pagewidgets', 'get', params, callback);
       },
 
       onWidgetsLoadingComplete: function(response) {

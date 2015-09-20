@@ -1,8 +1,8 @@
 === Contextly Recommends ===
 Contributors: rsingel, andrewcgg
-Tags: related links, SEO, promotion, related, custom posts, related posts, sidebars, similar, recommendations, see also, related stories, evergreen, personalization, popular, trending, video recommendations, product recommendations, curation, optimization, most popular, sidebar, siderail, 
+Tags: related links, SEO, promotion, related, custom posts, related posts, sidebars, similar, recommendations, see also, related stories, evergreen, personalization, popular, trending, video recommendations, product recommendations, curation, optimization, most popular, sidebar, siderail,
 Requires at least: 2.0.2
-Tested up to: 4.2.3
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -126,6 +126,11 @@ If you just want to choose some items, copy and paste your main RSS feed into th
 
 
 == Changelog ==
+
+
+= 3.2 =
+
+- Improved Auto-Sidebars to let writers insert them into any story from the editing interface, using the Sidebar button. The shortcode [contextly_auto_sidebar] can also be put in any post to show related content.
 
 
 = 3.1 =

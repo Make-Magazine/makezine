@@ -2,6 +2,8 @@
 
   /**
    * Tool to wait for multiple events/callbacks to fire.
+   *
+   * @todo It's not a queue actually. Rename to "Gates" or find a better name.
    */
   Contextly.CallbackQueue = Contextly.createClass({
 

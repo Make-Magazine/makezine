@@ -13,7 +13,7 @@ Contextly.widget.SidebarCssCustomBuilder = Contextly.createClass({
       var css = settings.css || {};
 
       if (css.custom_code) {
-        result += Contextly.Utils.escape(css.custom_code);
+        result += css.custom_code;
       }
 
       var selector = '.ctx-content-sidebar .ctx-sb-title p';

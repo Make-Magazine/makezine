@@ -254,11 +254,16 @@ add_filter( 'wp_feed_cache_transient_lifetime', function() { return 900; } );
  *
  * @version  1.1
  */
+
 function make_load_resources() {
+	global $wp_query;
+
 	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
+	wp_enqueue_style( 'project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css' );
+	wp_enqueue_style( 'header.css', get_stylesheet_directory_uri() . '/version-2/css/header.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
@@ -286,19 +291,21 @@ function make_load_resources() {
 
 	// Load optimizely A/B testing script
 	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
-	
+
 	//load data finder
-	wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );	
+	wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );
 
 	//fitvid
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );	
+	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/js/projects.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
+
+	// What page are we on? And what is the pages limit?
+	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 	// File Input
 	wp_enqueue_script( 'make-fileinput', get_stylesheet_directory_uri() . '/js/fileinput.js', array( 'jquery' ) );
@@ -306,6 +313,10 @@ function make_load_resources() {
 	// display our map sort plugin for Maker Camp
 	if ( is_page( 315793 ) )
 		wp_enqueue_script( 'make-sort-table', get_stylesheet_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), false, true );
+	if ( ! is_front_page() )
+		wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
+	if ( is_front_page() )
+		wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2/js/homegrid.js', array( 'jquery' ), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'make_load_resources' );
 
@@ -485,7 +496,6 @@ function make_add_custom_types( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'make_add_custom_types' );
-
 /**
  * Change the default look to be by added date for admin pages.
  */
@@ -573,7 +583,8 @@ function make_qualtrics_script() {
 	<?php endif;
 }
 
-add_action( 'wp_footer', 'make_qualtrics_script' );
+//TODO: In the redesign, the qualtrics_script cap got removed.  Until we put that back in, removing this script that uses it
+//add_action( 'wp_footer', 'make_qualtrics_script' );
 
 /**
  * Adds the popover javascript for review posts.
@@ -1514,8 +1525,8 @@ function make_is_parent_page() {
  * Adds footer copyright information
  */
 function make_copyright_footer() { ?>
-	<div class="row footer_copyright">
-		<div class="text-center">
+	<div class="footer_copyright">
+		<div class="col-xs-12 text-center">
 			<p class="muted"><small>Make: and Maker Faire are registered trademarks of Maker Media, Inc. | <a href="<?php echo esc_url( home_url( '/sitemap/' ) ); ?>">Make: Site Map</a></small></p>
 			<p class="muted"><small>Copyright &copy; 2004-<?php echo date("Y") ?> Maker Media, Inc.  All rights reserved</small></p>
 		</div>
@@ -1656,7 +1667,7 @@ function external_links_in_new_windows_client()
 {
   echo "\n\n<!-- ".__("Plugin: Open external links a new window.","open-external-links-in-a-new-window"). " ". __("Plugin by","open-external-links-in-a-new-window"). " Kristian Risager Larsen, http://kristianrisagerlarsen.dk . ".__("Download it at","open-external-links-in-a-new-window")." http://wordpress.org/extend/plugins/open-external-links-in-a-new-window/ -->\n";
 
-  $blogdomain = parse_url(get_option('home'));  
+  $blogdomain = parse_url(get_option('home'));
   echo "<script type=\"text/javascript\">//<![CDATA[";
   echo "
 	function external_links_in_new_windows_loop() {
@@ -1776,3 +1787,44 @@ function sumome_scroll_show_script() { ?>
 	<?php
 }
 add_action( 'wp_footer', 'sumome_scroll_show_script' );
+
+/**
+ * Populate Tag Blocks
+ */
+function home_tags($postid) {
+	$post_type = get_post_type( $postid );
+	$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
+	if ( $post_type == 'projects' ) {
+		$flag = get_post_meta( $postid, 'flag_taxonomy', true );
+
+		if ( ! empty( $flag ) ) {
+			$category = get_term( $flag, 'category' );
+		} else {
+			$categories = get_the_category( $postid );
+			$category = $categories[0];
+		}
+
+		$catname = $category->slug;
+		$caturl = get_category_link( $category ) . '?post_type=projects';
+
+		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
+	}
+	else {
+		$dc = get_post_meta( $postid, 'display_category', true );
+		$tag = get_the_tags( $postid );
+		if ( ! empty( $dc ) ) {
+			$term = get_term( $dc, 'post_tag' );
+			echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
+		}
+		elseif( ! empty( $tag ) ) {
+			echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+		}
+		else {
+			echo '';
+		}
+	}
+	if ( $post_video[0] > 0 ) {
+		echo '<div class="videoblock"><span class="video fa fa-video-camera"></span></div>';
+	}
+}
+

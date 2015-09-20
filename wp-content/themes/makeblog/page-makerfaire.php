@@ -7,7 +7,7 @@
  * @author     Cole Geissinger <cgeissinger@makermedia.com>
  * 
  */
-get_header(); ?>
+get_header('version-2'); ?>
 		
 	<div class="makerfaire-lp flags">
 	

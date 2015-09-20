@@ -451,8 +451,8 @@ class MetaLayerSlide extends MetaSlide {
         }
 
         return "<video {$attributes}>
-                    <source src='{$mp4}' type='video/mp4' />
                     <source src='{$webm}' type='video/webm' />
+                    <source src='{$mp4}' type='video/mp4' />
                 </video>";
 
     }
