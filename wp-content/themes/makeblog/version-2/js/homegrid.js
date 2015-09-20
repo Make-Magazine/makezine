@@ -434,7 +434,7 @@ jQuery(document).ready(function ($) {
                 }
 
                 $.ajax({
-                    url: 'http://alphamz.wpengine.com/wp-admin/admin-ajax.php',
+                    url: 'http://makezine.staging.wpengine.com/wp-admin/admin-ajax.php',
                     data: {
                         'action': 'make_shopify_featured_products'
                     },
