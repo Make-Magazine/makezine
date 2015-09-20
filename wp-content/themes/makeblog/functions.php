@@ -7,20 +7,20 @@ require_once(WP_PLUGIN_DIR . '/easy-custom-fields/easy-custom-fields.php');
 Table of Contents
 -----------------
 
-1.	Error Reporting
-2.	WordPress.com VIP Stuff
-3.	Page Numbering
-4.	Comments Function
-5.	Short Codes
-6.	Theme Stuff
-7.	Custom Taxonomies
-8.	Page 2 - Custom Post Type
-9.	YouTube Embed Function
-10.	Contribute Function
-11.	Scheduled Posts
-12.	From the Maker Shed
-13.	Search Engine
-14.	Search Terms Custom Post Type
+1.  Error Reporting
+2.  WordPress.com VIP Stuff
+3.  Page Numbering
+4.  Comments Function
+5.  Short Codes
+6.  Theme Stuff
+7.  Custom Taxonomies
+8.  Page 2 - Custom Post Type
+9.  YouTube Embed Function
+10. Contribute Function
+11. Scheduled Posts
+12. From the Maker Shed
+13. Search Engine
+14. Search Terms Custom Post Type
 
 Version 2 Includes
 15. Version
