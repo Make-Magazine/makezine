@@ -59,7 +59,7 @@
 				<?php if (has_tag('greatcreate')) { ?>
 					var slot7= googletag.defineSlot('/11548178/Makezine/Blog/<?php echo esc_js( $parent ); ?>', [[125,125]],'div-gpt-ad-664089004995786621-10').addService(googletag.pubads());
 				<?php } ?>
-		<?php } elseif(is_page(array('home-page-include', 'home-page', 'home', 116357))) { ?>
+		<?php } elseif(is_page(array('home-page-include', 'home-page', 'home', 'Humanity: At the Core of Robotics excitement', 116357))) { ?>
 			var slot1= googletag.defineSlot('/11548178/Makezine/Homepage', [[728,90],[940,250],[970,90],[970,250]],'div-gpt-ad-664089004995786621-1').addService(googletag.pubads()).setTargeting('pos', 'atf');
 			var slot2= googletag.defineSlot('/11548178/Makezine/Homepage', [[300,250]],'div-gpt-ad-664089004995786621-2').addService(googletag.pubads()).setTargeting('pos', 'atf');
 			var slot3= googletag.defineSlot('/11548178/Makezine/Homepage', [[300,250]],'div-gpt-ad-664089004995786621-3').addService(googletag.pubads()).setTargeting('pos', 'house');
