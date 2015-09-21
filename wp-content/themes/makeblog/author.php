@@ -52,7 +52,6 @@ get_header('version-2'); ?>
 								<?php make_get_author( asbint( $post->ID ) ); ?>
 							<?php endif ?>
 							<li><?php the_time('m/d/Y \@ g:i a'); ?></li>
-							<li>Category <?php the_category(', '); ?></li>
 							<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
 						</ul>
 
