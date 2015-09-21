@@ -216,7 +216,9 @@ function make_shopify_featured_products_slider_home( $row = 'row' ) {
       $output .= '          <div class="text-box">';
       $output .= '            <h6 class="product-desc center">' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
       $output .= '          </div>';
+      $output .= '          <div class="text-box">';
       $output .= '            <p class="product-price center"> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
+      $output .= '          </div>';
       $output .= '        </a>';
       $output .= '      </div>';
     // Just show four posts, for now.

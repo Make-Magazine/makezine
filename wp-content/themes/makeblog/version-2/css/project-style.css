@@ -277,12 +277,17 @@ body.page-template-project {
   }
 }
 @media screen and (min-width: 320px) {
+  .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.gradient-wrapper, .all-projects .posts-list ul.selected-posts-list > li.row ul li div.gradient-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
   .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li div.gradient_animation {
     position: absolute;
     left: 0;
-    bottom: 65px;
+    bottom: 0;
     width: 100%;
     height: 50%;
+    opacity: 0;
     background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(45%, rgba(0, 0, 0, 0.32)), color-stop(100%, rgba(0, 0, 0, 0.7)));
     background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
@@ -290,14 +295,22 @@ body.page-template-project {
     background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
-    transition: height 0.33s ease;
+    transition: all 0.33s ease;
   }
   .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.gradient_animation a, .all-projects .posts-list ul.selected-posts-list > li.row ul li div.gradient_animation a {
     display: block;
     height: 100%;
   }
+  .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.final_gradient, .all-projects .posts-list ul.selected-posts-list > li.row ul li div.final_gradient {
+    opacity: 0;
+    transition: opacity 0.12s ease 0.33s;
+  }
+  .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.final_gradient a, .all-projects .posts-list ul.selected-posts-list > li.row ul li div.final_gradient a {
+    display: block;
+    height: 100%;
+  }
 }
-.projects-cat .posts-list ul.selected-posts-list > li.row ul li > p, .all-projects .posts-list ul.selected-posts-list > li.row ul li > p {
+.projects-cat .posts-list ul.selected-posts-list > li.row ul li p.excerpt.trans, .all-projects .posts-list ul.selected-posts-list > li.row ul li p.excerpt.trans {
   position: absolute;
   left: 15px;
   max-width: 340px;
@@ -308,7 +321,7 @@ body.page-template-project {
   color: #FFF;
   opacity: 0;
 }
-.projects-cat .posts-list ul.selected-posts-list > li.row ul li > p a, .all-projects .posts-list ul.selected-posts-list > li.row ul li > p a {
+.projects-cat .posts-list ul.selected-posts-list > li.row ul li p.excerpt.trans a, .all-projects .posts-list ul.selected-posts-list > li.row ul li p.excerpt.trans a {
   color: #FFF;
 }
 .projects-cat .posts-list ul.selected-posts-list > li.row ul li a img, .all-projects .posts-list ul.selected-posts-list > li.row ul li a img {
@@ -402,93 +415,32 @@ body.page-template-project {
   font-weight: 400;
   line-height: 18px;
 }
-.projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover > p, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover > p {
+.projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover p.excerpt.trans, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover p.excerpt.trans {
   opacity: 1;
 }
 .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-  height: 79%;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+  height: 100%;
+  opacity: 1;
+  background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(45%, rgba(0, 0, 0, 0.32)), color-stop(100%, rgba(0, 0, 0, 0.7)));
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+  background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+  background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
 }
-@media screen and (min-width: 675px) and (max-width: 768px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 88.2%;
-  }
-}
-@media screen and (min-width: 640px) and (max-width: 674px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 86.5%;
-  }
-}
-@media screen and (min-width: 580px) and (max-width: 639px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 85%;
-  }
-}
-@media screen and (min-width: 530px) and (max-width: 579px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 84%;
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 529px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 82%;
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 529px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 82%;
-  }
-}
-@media screen and (min-width: 420px) and (max-width: 479px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 80%;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 419px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 79%;
-  }
-}
-@media screen and (min-width: 380px) and (max-width: 399px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 78%;
-  }
-}
-@media screen and (min-width: 360px) and (max-width: 379px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 77%;
-  }
-}
-@media screen and (min-width: 340px) and (max-width: 359px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 76%;
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 339px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 75%;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 860px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 71%;
-  }
-}
-@media screen and (min-width: 861px) and (max-width: 940px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 73%;
-  }
-}
-@media screen and (min-width: 941px) and (max-width: 1199px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.gradient_animation {
-    height: 75%;
-  }
+.projects-cat .posts-list ul.selected-posts-list > li.row ul li:hover div.final_gradient, .all-projects .posts-list ul.selected-posts-list > li.row ul li:hover div.final_gradient {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(45%, rgba(0, 0, 0, 0.32)));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
 }
 .projects-cat .posts-list ul.selected-posts-list li.row ul, .all-projects .posts-list ul.selected-posts-list li.row ul {
   margin: 0 -15px 0 -18px;
@@ -555,7 +507,7 @@ li.post:hover p.trans {
   top: 80px;
 }
 
-.mobile .posts-list ul.selected-posts-list > li.row ul li:hover > p {
+.mobile .posts-list ul.selected-posts-list > li.row ul li:hover p.excerpt.trans {
   display: none;
 }
 .mobile .gradient_animation {
@@ -626,6 +578,32 @@ li.post:hover p.trans {
   margin: 0 auto;
 }
 
+.tablet .content .project-navigation:nth-child(2) {
+  display: none;
+}
+.tablet .tooltip.fade.top.in .tooltip-inner,
+.tablet .tooltip-arrow {
+  display: none;
+}
+.tablet .clear {
+  margin-left: -20px;
+}
+.tablet .content .project-navigation.sticky .filter-list .filter-item > ul {
+  margin: 12px 0;
+  padding-left: 25px;
+  float: left;
+}
+.tablet .content .project-navigation.sticky .filter-list .fa.fa-chevron-up,
+.tablet .content .project-navigation.sticky .filter-list .fa.fa-chevron-down {
+  position: absolute;
+  top: 30%;
+  left: 11px;
+  margin-top: 18px;
+}
+.tablet .filter-item {
+  width: 95%;
+  margin: 0 auto;
+}
 @media (min-width: 769px) and (max-width: 1024px) {
   .tablet .own {
     padding: 62px 0;
@@ -1527,6 +1505,20 @@ ul.duration-item li.current {
   .tablet .content .project-navigation.sticky .filter-list .fa.fa-chevron-down {
     top: 0;
   }
+  .tablet .posts-list ul.selected-posts-list > li.row ul li {
+    margin: 15px 8px;
+  }
+  .tablet .posts-list ul.selected-posts-list > li.row ul li:first-child {
+    margin-left: 14px;
+  }
+}
+.tablet .project-navigation.sticky:first-child {
+  position: fixed;
+  top: 52px;
+  margin-top: 0;
+  z-index: 101;
+  width: 100%;
+  max-width: 1170px;
 }
 
 .mobile {
@@ -1833,4 +1825,12 @@ ul.duration-item li.current {
   .pc .content .project-navigation:nth-child(2) .filter_max .diff-item li {
     width: 94px;
   }
+}
+
+.mobile_cat form {
+  width: 95%;
+}
+
+.filter_mini {
+  display: none !important;
 }

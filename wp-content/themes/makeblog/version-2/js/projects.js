@@ -317,7 +317,7 @@ jQuery(document).ready(function ($) {
     if (scrollTop >= '530') {
         jQuery('.project-navigation').addClass('sticky');
         jQuery(indikator).show();
-        if ($window > '768') {
+        if ( ($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') ) ) {
             if (cat_wrapp_indicator == 0) {
                 jQuery('.cat-list-wrapp').hide();
             }
@@ -336,7 +336,7 @@ jQuery(document).ready(function ($) {
         if (scrollTop >= '300') {
             jQuery('.project-navigation').addClass('sticky');
             jQuery(indikator).show();
-            if ($window > '768') {
+            if ( ($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') ) ) {
                 if (cat_wrapp_indicator == 0) {
                     jQuery('.cat-list-wrapp').hide();
                 } else {

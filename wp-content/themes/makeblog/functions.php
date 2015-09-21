@@ -1,25 +1,26 @@
 <?php
 // Easy Custom Fields Plugin
 require_once(WP_PLUGIN_DIR . '/easy-custom-fields/easy-custom-fields.php');
+
 /*
 
 Table of Contents
 -----------------
 
-1.  Error Reporting
-2.  WordPress.com VIP Stuff
-3.  Page Numbering
-4.  Comments Function
-5.  Short Codes
-6.  Theme Stuff
-7.  Custom Taxonomies
-8.  Page 2 - Custom Post Type
-9.  YouTube Embed Function
-10. Contribute Function
-11. Scheduled Posts
-12. From the Maker Shed
-13. Search Engine
-14. Search Terms Custom Post Type
+1.	Error Reporting
+2.	WordPress.com VIP Stuff
+3.	Page Numbering
+4.	Comments Function
+5.	Short Codes
+6.	Theme Stuff
+7.	Custom Taxonomies
+8.	Page 2 - Custom Post Type
+9.	YouTube Embed Function
+10.	Contribute Function
+11.	Scheduled Posts
+12.	From the Maker Shed
+13.	Search Engine
+14.	Search Terms Custom Post Type
 
 Version 2 Includes
 15. Version
@@ -485,14 +486,27 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             if (($ads_counter == 1) and ($device == 'mobile')) {
                 $output .= ' before-ads';
             }
+
+
+
+
+
             $post_id = get_the_ID();
             $output .= '">';
-            $output .= '<div class="gradient_animation"></div>';
+            $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
+            $link = get_the_permalink();
+            $output .= $link;
+            $output .= '">';
+            $output .= '</a></div>';
+            $output .= '<div class="final_gradient"><a href="';
+            $link = get_the_permalink();
+            $output .= $link;
+            $output .= '">';
+            $output .= '</a></div>';
             $output .= '<a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-
             $args = array(
                 'resize' => '370,240',
             );
@@ -646,7 +660,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
-            $output .= '<h2>';
+            $output .= '</div><h2>';
             $output .= '<a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -838,12 +852,17 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $counter++;
 
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
-            if ( ( $ads_counter + 1 ) == $count_posts) {
+            if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
             }
             $post_id = get_the_ID();
             $output .= '">';
-            $output .= '<div class="gradient_animation final_gradient"><a href="';
+            $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
+            $link = get_the_permalink();
+            $output .= $link;
+            $output .= '">';
+            $output .= '</a></div>';
+            $output .= '<div class="final_gradient"><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
@@ -1016,7 +1035,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
-            $output .= '<h2>';
+            $output .= '</div><h2>';
             $output .= '<a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -1042,7 +1061,11 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
                     $output .= '<li class="row post_rows"> <ul>';
                 }
-                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">';
+                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
+                if ( $count_posts <= 2 ) {
+                    $output .= ' before-ads';
+                }
+                $output .= '">';
                 $output .= '<div class="own">';
                 $output .= '<div class="home-ads">';
                 $output .= '<div id="div-gpt-ad-664089004995786621-9">';
