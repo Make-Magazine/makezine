@@ -55,9 +55,6 @@ get_header('version-2'); ?>
 										the_author_posts_link();
 									} ?>
 								</li>
-								<li>
-									Category: <?php the_category(', '); ?>
-								</li>
 
 								<?php
 									$time = get_post_custom_values('TimeRequired');

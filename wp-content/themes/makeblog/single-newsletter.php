@@ -37,9 +37,6 @@ get_header('version-2'); ?>
 						<li>
 							<?php the_date('m/d/Y \@ g:i a'); ?>
 						</li>
-						<li>
-							Category <?php the_category(', '); ?>
-						</li>
 					</ul>
 		
 				</div>

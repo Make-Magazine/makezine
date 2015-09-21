@@ -5,7 +5,7 @@ Template Name: Home Page
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header('version-2'); ?>
 
 		<?php if ( $cap->make_camp_takeover ) : ?>
 

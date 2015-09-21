@@ -44,9 +44,6 @@ get_header('version-2'); ?>
 						<li>
 							<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F jS\, Y g:i a' ); ?></time>
 						</li>
-						<li>
-							Category <?php the_category(', '); ?>
-						</li>
 						<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
 					</ul>
 
