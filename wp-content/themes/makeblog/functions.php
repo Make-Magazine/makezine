@@ -1071,6 +1071,9 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '<div id="div-gpt-ad-664089004995786621-9">';
                 $output .= '<script type="text/javascript">';
                 $output .= 'googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-9")});';
+                if ($type !== 'load_more') {
+                    $output .= 'googletag.pubads().refresh();';
+                }
                 $output .= '</script>';
                 $output .= '</div>';
                 $output .= '</div>';
