@@ -68,10 +68,10 @@ include_once dirname(__FILE__) . '/includes/wordpress-scheduled-time.php';
 include_once dirname(__FILE__) . '/includes/ftms.php';
 
 // 13. Search Engine
-include_once dirname(__FILE__) . '/includes/search-terms.php';
+//include_once dirname(__FILE__) . '/includes/search-terms.php';
 
 // 14. Search Terms Custom Post Type
-include_once dirname(__FILE__) . '/includes/search-terms-cpt.php';
+//include_once dirname(__FILE__) . '/includes/search-terms-cpt.php';
 
 // 15. Search Terms Custom Post Type
 include_once dirname(__FILE__) . '/includes/featured-makers.php';
@@ -154,7 +154,7 @@ include_once dirname(__FILE__) . '/includes/stats/stats.php';
 include_once dirname(__FILE__) . '/includes/blog-dashboard/blog-dashboard.php';
 
 // 42. Search Facets
-include_once dirname(__FILE__) . '/includes/search/search.php';
+//include_once dirname(__FILE__) . '/includes/search/search.php';
 
 // 43. Maker Shed Functions
 include_once dirname(__FILE__) . '/includes/shed/shed.php';

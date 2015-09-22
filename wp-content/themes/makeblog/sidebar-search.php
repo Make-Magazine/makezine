@@ -12,22 +12,6 @@
 
 						<?php dynamic_sidebar( 'search' ); ?>
 
-						<div class="box">
-
-							<?php
-								$args = array(
-									'before_widget'		=> '<div class="inner">',
-									'before_title'		=> '<div class="heading">',
-									'title'				=> '<h3>Refine Search</h3>',
-									'after_title'		=> '</div>',
-									'after_widget'		=> '</div>',
-									);
-
-								make_search_facets( $args );
-							?>
-
-						</div>
-
 						<div class="sidebar-ad">
 
 							<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
