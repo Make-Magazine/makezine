@@ -1068,9 +1068,9 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '">';
                 $output .= '<div class="own">';
                 $output .= '<div class="home-ads">';
-                $output .= '<div id="div-gpt-ad-664089004995786621-9">';
+                $output .= '<div id="div-gpt-ad-664089004995786621-2">';
                 $output .= '<script type="text/javascript">';
-                $output .= 'googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-9")});';
+                $output .= 'googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-2")});';
                 if ($type !== 'load_more') {
                     $output .= 'googletag.pubads().refresh();';
                 }
