@@ -1834,3 +1834,11 @@ ul.duration-item li.current {
 .filter_mini {
   display: none !important;
 }
+
+.mobile .posts-list ul.selected-posts-list > li.row ul li:hover div.final_gradient {
+  background: none;
+}
+
+.mobile .posts-list ul.selected-posts-list > li.row ul li:hover h2 a {
+  color: #8f8e8e;
+}
