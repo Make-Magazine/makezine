@@ -84,18 +84,7 @@ $bottomid = make_get_cap_option( 'bottom_id' );
       </div>
       </div>
     </div>
-  </div> <!-- row -->    
-  
-  <!-- AD UNIT -->
-  <div class="ad-unit">  
-    <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
-      <div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
-        <script type='text/javascript'>
-          googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-        </script>
-      </div>
-    </div> 
-  </div>  
+  </div> <!-- row -->
 
   <!-- EVENTS PANEL -->
   <div class="container">
