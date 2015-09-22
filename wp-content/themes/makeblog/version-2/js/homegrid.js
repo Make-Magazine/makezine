@@ -433,6 +433,8 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
+                ga('send', 'pageview');
+
                 $.ajax({
                     url: '/wp-admin/admin-ajax.php',
                     data: {
