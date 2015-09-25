@@ -897,23 +897,8 @@ add_shortcode( 'volume', 'make_volume_tease' );
  * New Shortcode for articles. Kind of a big tease with the images of the cover.
  */
 function make_volume_tease( $atts, $content = null ) {
-	extract( shortcode_atts( array(
-		'volume'	=> '36',
-		'subscribe'	=> 'https://readerservices.makezine.com/mk/subscribe.aspx?PC=MK',
-		'buy'		=> 'http://www.makershed.com/MAKE_Volume_36_p/9781449363765-p.htm'
-	), $atts ) );
-
-	$output = '<div class="tease">';
-	$output .= '<h3>Preview</h3>';
-	$output .= '<h4><a href="' . esc_url( $buy ) . '">Buy Volume ' . intval( $volume ) . '</a> for complete access or</h4>';
-	$output .= '<div><a class="button big" href="' . esc_url ( $subscribe ) . '">Subscribe to MAKE and Save!</a></div>';
-	$output .= '<div class="cover"><a href="' . esc_url ( $subscribe ) . '"><img src="' . wpcom_vip_get_resized_remote_image_url( make_get_cover_image( absint( $volume ) ), 400, 566 ) .  '" alt="" /></a></div>';
-	$output .= '</div>';
-
-	return $output;
-
+	return "";
 }
-
 
 /**
  * Add Posts from a category/tag to the bottom of a post via a shortcode

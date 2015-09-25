@@ -310,7 +310,7 @@
 			}
 
 			// So, might come over as an array instead of an object...
-			if ( isset( $author['urls'] ) ) {
+			if ( is_array($author) && isset($author['urls'] ) ) {
 
 				$output = '<ul class="links">';
 
