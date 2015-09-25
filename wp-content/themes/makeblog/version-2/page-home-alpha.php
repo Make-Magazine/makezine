@@ -112,7 +112,7 @@ makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=meet+the+
 
         <a href="http://makerfaire.com/global/school/?utm_source=
 makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=maker+faire+101">    
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promo1.jpg' ?>" class="img-responsive center-block event" />
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/150915-cross-site-promos-r5-08a-2.jpg' ?>" class="img-responsive center-block event" />
         </a>
 
       </div> 
