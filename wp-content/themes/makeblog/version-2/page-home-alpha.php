@@ -102,21 +102,25 @@ $bottomid = make_get_cap_option( 'bottom_id' );
     <div class="row event-unit"> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp"> 
 
-        <a href="http://makercon.com/">
+        <a href="http://makercon.com?utm_source=makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=business+conference+3+images">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promo3.jpg' ?>" class="img-responsive center-block event" />
         </a>
 
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
 
-        <a href="http://makerfaire.com/new-york-2015/education-forum/">    
+
+        <a href="http://makerfaire.com/new-york-2015/education-forum/?utm_source=
+makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=education+classroom">    
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promo1.jpg' ?>" class="img-responsive center-block event" />
         </a>
 
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored"> 
 
-        <a href="http://makerfaire.com">             
+
+        <a href="http://makerfaire.com?utm_source=
+makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=wmf+location+logo">             
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promo2.jpg' ?>" class="img-responsive center-block event" />
         </a> 
 
