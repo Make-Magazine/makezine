@@ -102,7 +102,8 @@ $bottomid = make_get_cap_option( 'bottom_id' );
     <div class="row event-unit"> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp"> 
 
-        <a href="http://makerfaire.com/new-york-2015/meet-the-makers/?utm_source=makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=business+conference+3+images">          
+        <a href="http://makerfaire.com/new-york-2015/meet-the-makers/?utm_source=
+makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=meet+the+featured+makers">          
           <img src="<?php echo get_template_directory_uri().'/version-2/img/150915-cross-site-promos-r5-05-1.jpg' ?>" class="img-responsive center-block event" />
         </a>
 
