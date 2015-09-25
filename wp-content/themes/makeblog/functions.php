@@ -427,7 +427,7 @@ function truncate_with_ellipses($str, $len) {
     return strlen($str) > $len ? substr($str,0,$len)."..." : $str;
 }
 
-function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $ordered = '', $type = 'initial_load')
+function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 {
     require_once 'version-2/includes/Mobile_Detect.php';
     $device = '';
