@@ -174,14 +174,14 @@ get_header('version-2'); ?>
 
 
 					<?php
-						make_post_loop( array(
-							'title'          => 'Latest ' . $category->name . ' Projects',
-							'posts_per_page' => 2,
-							'post_type'      => 'projects',
-							'category__in'   => $category->term_id,
-							'orderby'        => 'date',
-							'order'          => 'dsc',
-						) );
+						// make_post_loop( array(
+						// 	'title'          => 'Latest ' . $category->name . ' Projects',
+						// 	'posts_per_page' => 2,
+						// 	'post_type'      => 'projects',
+						// 	'category__in'   => $category->term_id,
+						// 	'orderby'        => 'date',
+						// 	'order'          => 'dsc',
+						// ) );
 					?>
 
 				</div>
