@@ -110,9 +110,8 @@ makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=meet+the+
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
 
-
-        <a href="http://makerfaire.com/new-york-2015/education-forum/?utm_source=
-makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=education+classroom">    
+        <a href="http://makerfaire.com/global/school/?utm_source=
+makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=maker+faire+101">    
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promo1.jpg' ?>" class="img-responsive center-block event" />
         </a>
 
