@@ -100,31 +100,35 @@ $bottomid = make_get_cap_option( 'bottom_id' );
   <!-- EVENTS PANEL -->
   <div class="container">
     <div class="row event-unit"> 
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp"> 
 
-        <a href="http://makerfaire.com/new-york-2015/meet-the-makers/?utm_source=
-makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=meet+the+featured+makers">          
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/150915-cross-site-promos-r5-05-1.jpg' ?>" class="img-responsive center-block event" />
-        </a>
 
-      </div> 
+<!--  Berlin / School / World Maker Faire -->
+
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
+        <a href="http://makerfaire.berlin/en/">             
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promo_maker_faire_berlin.jpg' ?>" class="img-responsive center-block event" />
+        </a>
+      </div> 
 
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp"> 
+        <a href="http://makerfaire.com/new-york-2015/slideshow/?utm_source=makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=WMF+highlights">          
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promo_world_maker5.jpg' ?>" class="img-responsive center-block event" />
+        </a>
+      </div> 
+  
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored"> 
         <a href="http://makerfaire.com/global/school/?utm_source=
 makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=maker+faire+101">    
           <img src="<?php echo get_template_directory_uri().'/version-2/img/150915-cross-site-promos-r5-08a-2.jpg' ?>" class="img-responsive center-block event" />
         </a>
-
       </div> 
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored"> 
 
 
-        <a href="http://makerfaire.com?utm_source=
-makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=wmf+location+logo">             
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promo2.jpg' ?>" class="img-responsive center-block event" />
-        </a> 
 
-      </div> 
+
+
+
+
     </div>  
   </div>
   
