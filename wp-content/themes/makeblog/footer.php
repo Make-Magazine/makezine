@@ -68,24 +68,16 @@
 					<h4 class="stay-connected">Follow Us</h4>
             <div class="mz-footer-social">
             	<div class="col-xs-3">
-	              <a href="http://facebook.com/makemagazine">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
-	              </a>
+	              <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook"></i></a>
 	            </div>
 	            <div class="col-xs-3">
-	              <a href="http://twitter.com/make">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
-	              </a>
+	              <a href="http://twitter.com/make"><i class="fa fa-twitter"></i></a>
 	            </div>
 	            <div class="col-xs-3">
-	              <a href="http://pinterest.com/makemagazine/">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="img-responsive"></img>
-	              </a>
+	              <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p"></i></a>
 	            </div>
 	            <div class="col-xs-3">
-	              <a href="https://instagram.com/makemagazine/">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="img-responsive"></img>
-	              </a>
+	              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram"></i></a>
 	            </div>
             </div>
             <div class="clearfix"></div>
