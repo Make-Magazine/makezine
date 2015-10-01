@@ -66,18 +66,18 @@
 
 				<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
 					<h4 class="stay-connected">Follow Us</h4>
-            <div class="mz-footer-social">
+           <div class="mz-footer-social">
             	<div class="col-xs-3">
-	              <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook"></i></a>
+	              <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
 	            </div>
 	            <div class="col-xs-3">
-	              <a href="http://twitter.com/make"><i class="fa fa-twitter"></i></a>
+	              <a href="http://twitter.com/make"><i class="fa fa-twitter fa-lg"></i></a>
 	            </div>
 	            <div class="col-xs-3">
-	              <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p"></i></a>
+	              <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>
 	            </div>
 	            <div class="col-xs-3">
-	              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram"></i></a>
+	              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a>
 	            </div>
             </div>
             <div class="clearfix"></div>

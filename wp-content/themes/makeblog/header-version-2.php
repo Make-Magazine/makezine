@@ -185,12 +185,12 @@
 				</div>
 				<?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
 			
-				<div class="mz-social mobile-social">  
-					<h5>Follow Us</h5>
-          <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook"></i></a>
-          <a href="http://twitter.com/make"><i class="fa fa-twitter"></i></a>
-          <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p"></i></a>    
-          <a href="http://https://instagram.com/makemagazine/"><i class="fa fa-instagram"></i></a> 
+	       <div class="mz-social mobile-social">  
+          <h5>Follow Us</h5>
+          <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
+          <a href="http://twitter.com/make"><i class="fa fa-twitter sfa-lg"></i></a>
+          <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>    
+          <a href="http://https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a> 
         	
 					<div class="mz-footer-subscribe"> 
 							<?php
@@ -242,18 +242,18 @@
 						<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
 		  </div>
 			
-
           <!-- SOCIAL MEDIA ICONS -->
           <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
             <div class="mz-social">  
-              <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook"></i></a>
-              <a href="http://twitter.com/make"><i class="fa fa-twitter"></i></a>
-              <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p"></i></a>    
-              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram"></i></a> 
+              <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
+              <a href="http://twitter.com/make"><i class="fa fa-twitter  fa-lg"></i></a>
+              <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>    
+              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a> 
             </div>     
           </div>   
         </div> <!-- row -->  
       </nav>
+
     
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
