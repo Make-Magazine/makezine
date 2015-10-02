@@ -59,7 +59,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
             $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
-          
+          print_r($main_post);
         }
         if ($menu_items[1])
         {   
