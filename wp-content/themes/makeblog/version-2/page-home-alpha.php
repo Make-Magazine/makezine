@@ -59,7 +59,6 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
             $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
-          print_r($main_post);
         }
         if ($menu_items[1])
         {   
@@ -105,7 +104,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
           style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 813, 470 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
-            <h2><?php echo esc_html( $main_title ); ?></h2>
+            <h2><?php echo $main_title ; ?></h2>
             <p><?php echo esc_html( $main_subtitle ); ?></p>
           </div>
         </a>
@@ -124,7 +123,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
-          <h2><?php echo esc_html( $top_title ); ?></h2>
+          <h2><?php echo $top_title ; ?></h2>
         </div>
       </a>
       <div class="filter-display-wrapper">
@@ -142,7 +141,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
       <div class="featured-image-shadow"></div>
       <div class="mz-text-overlay mz-text-overlay-side">
-        <h2><?php echo esc_html( $bottom_title ); ?></h2>
+        <h2><?php echo  $bottom_title ; ?></h2>
       </div>
       </a>
       <div class="filter-display-wrapper">
