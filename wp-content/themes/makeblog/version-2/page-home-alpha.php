@@ -58,6 +58,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_url = $main_post->url;
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
+            if ($main_post->title_attr)
+            $main_image = $main_post->title_attr;
+            else
             $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
         }
         if ($menu_items[1])
@@ -68,7 +71,10 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $top_url = $top_post->url;
             $top_title = $top_post->title;
             $top_subtitle = $top_post->description;
-            $top_image = wp_get_attachment_url( get_post_thumbnail_id($top_id));
+            if ($top_post->title_attr)
+            $top_image = $top_post->title_attr;
+            else
+            $top_image = wp_get_attachment_url(get_post_thumbnail_id($top_id));
             
         }
         if ($menu_items[2])
@@ -79,7 +85,10 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $bottom_url = $bottom_post->url;
             $bottom_title = $bottom_post->title;
             $bottom_subtitle = $bottom_post->description;
-            $bottom_image = wp_get_attachment_url( get_post_thumbnail_id($bottom_id));
+            if ($bottom_post->title_attr)
+            $bottom_image = $bottom_post->title_attr;
+            else
+            $bottom_image = wp_get_attachment_url(get_post_thumbnail_id($bottom_id));
            
         }
         /*
