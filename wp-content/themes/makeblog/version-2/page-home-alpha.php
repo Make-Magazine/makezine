@@ -58,8 +58,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_url = $main_post->url;
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
-            if ($main_post->title_attr)
-            $main_image = $main_post->title_attr;
+            if ($main_post->attr_title)
+            $main_image = $main_post->attr_title;
             else
             $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
         }
@@ -71,8 +71,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $top_url = $top_post->url;
             $top_title = $top_post->title;
             $top_subtitle = $top_post->description;
-            if ($top_post->title_attr)
-            $top_image = $top_post->title_attr;
+            if ($top_post->attr_title)
+            $top_image = $top_post->attr_title;
             else
             $top_image = wp_get_attachment_url(get_post_thumbnail_id($top_id));
             
@@ -85,8 +85,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $bottom_url = $bottom_post->url;
             $bottom_title = $bottom_post->title;
             $bottom_subtitle = $bottom_post->description;
-            if ($bottom_post->title_attr)
-            $bottom_image = $bottom_post->title_attr;
+            if ($bottom_post->attr_title)
+            $bottom_image = $bottom_post->attr_title;
             else
             $bottom_image = wp_get_attachment_url(get_post_thumbnail_id($bottom_id));
            

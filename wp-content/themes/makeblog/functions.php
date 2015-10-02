@@ -78,7 +78,7 @@ include_once dirname(__FILE__) . '/includes/featured-makers.php';
 
 // 16. Search Terms Custom Post Type
 // 46. Cheezcap
-include_once dirname(__FILE__) . '/version-2/includes/cheezcap/cheezcap.php';
+// include_once dirname(__FILE__) . '/version-2/includes/cheezcap/cheezcap.php';
 
 // 17. House Ads Custom Post Type
 include_once dirname(__FILE__) . '/includes/house-ads-cpt.php';
