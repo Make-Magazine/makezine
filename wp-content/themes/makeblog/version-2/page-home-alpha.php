@@ -53,41 +53,34 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         if ($menu_items[0])
         {   
             $main_post = $menu_items[0];
-            $main_id= $main_post->ID;
+            $main_id= $main_post->object_id;
             $main_link = $main_post->url;
             $main_url = $main_post->url;
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
-            $main_image = wp_get_attachment_url( get_post_thumbnail_id($main_id),'large');
-            print_r(get_post_thumbnail_id($main_id));
-            print_r($main_post->url);
-            print_r($main_post->title);
+            $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
         }
         if ($menu_items[1])
         {   
             $top_post = $menu_items[1];
-            $top_id= $top_post->ID;
+            $top_id= $top_post->object_id;
             $top_link = $top_post->url;
             $top_url = $top_post->url;
             $top_title = $top_post->title;
             $top_subtitle = $top_post->description;
-            $top_image = wp_get_attachment_url( get_post_thumbnail_id($top_id),'large');
-            print_r(get_post_thumbnail_id($top_id));
-            print_r($top_post->url);
-            print_r($top_post->title);
+            $top_image = wp_get_attachment_url( get_post_thumbnail_id($top_id));
+            
         }
         if ($menu_items[2])
         {   
             $bottom_post = $menu_items[2];
-            $bottom_id= $bottom_post->ID;
+            $bottom_id= $bottom_post->object_id;
             $bottom_link = $bottom_post->url;
             $bottom_url = $bottom_post->url;
             $bottom_title = $bottom_post->title;
             $bottom_subtitle = $bottom_post->description;
-            $bottom_image = wp_get_attachment_url( get_post_thumbnail_id($bottom_id),'large');
-            print_r(get_post_thumbnail_id($bottom_id));
-            print_r($bottom_post->url);
-            print_r($bottom_post->title);
+            $bottom_image = wp_get_attachment_url( get_post_thumbnail_id($bottom_id));
+           
         }
         /*
 	foreach ( (array) $menu_items as $key => $menu_item ) {
