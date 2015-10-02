@@ -20,48 +20,122 @@ get_header( 'version-2' );
 ?>
 <?php
 // custom-fields for curated section
-$mainurl = make_get_cap_option( 'main_url' );
-$topurl = make_get_cap_option( 'top_url' );
-$bottomurl = make_get_cap_option( 'bottom_url' );
-$mainid = make_get_cap_option( 'main_id' );
-$topid = make_get_cap_option( 'top_id' );
-$bottomid = make_get_cap_option( 'bottom_id' );
+$main_link = '';
+$main_url = '';
+$main_title = '';
+$main_subtitle = '';
+$main_image = '';
+$main_id = '';
+
+$top_link = '';
+$top_url = '';
+$top_title = '';
+$top_subtitle = '';
+$top_image = '';
+$top_id = '';
+
+$bottom_link = '';
+$bottom_url = '';
+$bottom_title = '';
+$bottom_subtitle = '';
+$bottom_image = '';
+$bottom_id = '';
+
+// Check if the menu exists
+$menu_name = 'Home Page Curation';
+$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+
+    if ( $menu_exists ) {
+	$menu = wp_get_nav_menu_object(  $menu_name );
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        
+        if ($menu_items[0])
+        {   
+            $main_post = $menu_items[0];
+            $main_id= $main_post->ID;
+            $main_link = $main_post->url;
+            $main_url = $main_post->url;
+            $main_title = $main_post->title;
+            $main_subtitle = $main_post->description;
+            $main_image = wp_get_attachment_url( get_post_thumbnail_id($main_id),'large');
+            print_r(get_post_thumbnail_id($main_id));
+            print_r($main_post->url);
+            print_r($main_post->title);
+        }
+        if ($menu_items[1])
+        {   
+            $top_post = $menu_items[1];
+            $top_id= $top_post->ID;
+            $top_link = $top_post->url;
+            $top_url = $top_post->url;
+            $top_title = $top_post->title;
+            $top_subtitle = $top_post->description;
+            $top_image = wp_get_attachment_url( get_post_thumbnail_id($top_id),'large');
+            print_r(get_post_thumbnail_id($top_id));
+            print_r($top_post->url);
+            print_r($top_post->title);
+        }
+        if ($menu_items[2])
+        {   
+            $bottom_post = $menu_items[2];
+            $bottom_id= $bottom_post->ID;
+            $bottom_link = $bottom_post->url;
+            $bottom_url = $bottom_post->url;
+            $bottom_title = $bottom_post->title;
+            $bottom_subtitle = $bottom_post->description;
+            $bottom_image = wp_get_attachment_url( get_post_thumbnail_id($bottom_id),'large');
+            print_r(get_post_thumbnail_id($bottom_id));
+            print_r($bottom_post->url);
+            print_r($bottom_post->title);
+        }
+        /*
+	foreach ( (array) $menu_items as $key => $menu_item ) {
+	    $title = $menu_item->title;
+	    $url = $menu_item->url;
+            print_r($menu_item);
+            $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+            
+	}*/
+    } else {
+	$menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
+    }
 
 ?>
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">    
       <div class="row">
-        <a href="<?php echo esc_html( make_get_cap_option( 'main_link' ) ); ?>"
+        <a href="<?php echo esc_html( $main_link ); ?>"
           class="mz-featured-imageblock mz-imageblock-hero"
-          style="background-image:url('<?php echo get_resized_remote_image_url( $mainurl, 813, 470 ); ?>');">
+          style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 813, 470 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
-            <h2><?php echo esc_html( make_get_cap_option( 'main_title' ) ); ?></h2>
-            <p><?php echo esc_html( make_get_cap_option( 'main_subtitle' ) ); ?></p>
+            <h2><?php echo esc_html( $main_title ); ?></h2>
+            <p><?php echo esc_html( $main_subtitle ); ?></p>
           </div>
         </a>
       </div>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-        <p><?php home_tags( "$mainid" ) ?></p>
+        <p><?php home_tags( "$main_id" ) ?></p>
       </div>
     </div>
   </div>
 
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="row">
-      <a href="<?php echo esc_html( make_get_cap_option( 'top_link' ) ); ?>"
+      <a href="<?php echo esc_html( $top_link ); ?>"
         class="mz-featured-imageblock"
-        style="background-image:url('<?php echo get_resized_remote_image_url( $topurl, 813, 470 ); ?>');">
+        style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
-          <h2><?php echo esc_html( make_get_cap_option( 'top_title' ) ); ?></h2>
+          <h2><?php echo esc_html( $top_title ); ?></h2>
         </div>
       </a>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-          <p><?php home_tags( "$topid" ) ?></p>
+          <p><?php home_tags( "$top_id" ) ?></p>
         </div>
       </div>
     </div>
@@ -69,17 +143,17 @@ $bottomid = make_get_cap_option( 'bottom_id' );
             
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="row">
-      <a href="<?php echo esc_html( make_get_cap_option( 'bottom_link' ) ); ?>"
+      <a href="<?php echo esc_html( $bottom_link ); ?>"
         class="mz-featured-imageblock"
         style="background-image:url('<?php echo get_resized_remote_image_url( $bottomurl, 813, 470 ); ?>');">
       <div class="featured-image-shadow"></div>
       <div class="mz-text-overlay mz-text-overlay-side">
-        <h2><?php echo esc_html( make_get_cap_option( 'bottom_title' ) ); ?></h2>
+        <h2><?php echo esc_html( $bottom_title ); ?></h2>
       </div>
       </a>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-          <p><?php home_tags( "$bottomid" ) ?></p>
+          <p><?php home_tags( "$bottom_id" ) ?></p>
         </div>
       </div>
       </div>
