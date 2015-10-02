@@ -187,10 +187,16 @@
 			
 	       <div class="mz-social mobile-social">  
           <h5>Follow Us</h5>
-          <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
+          <a href="http://facebook.com/makemagazine"><img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="social-button"></img></a>
+          <a href="http://twitter.com/make"><img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="social-button"></img></a>
+          <a href="http://pinterest.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="social-button"></img></a>    
+          <a href="http://https://instagram.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="social-button"></img></a> 
+
+
+          <!--  <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
           <a href="http://twitter.com/make"><i class="fa fa-twitter sfa-lg"></i></a>
           <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>    
-          <a href="http://https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a> 
+          <a href="http://https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a>  -->
         	
 					<div class="mz-footer-subscribe"> 
 							<?php
@@ -245,10 +251,15 @@
           <!-- SOCIAL MEDIA ICONS -->
           <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
             <div class="mz-social">  
-              <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
+              <a href="http://facebook.com/makemagazine"><img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="social-button"></img></a>
+              <a href="http://twitter.com/make"><img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="social-button"></img></a>
+              <a href="http://pinterest.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="social-button"></img></a>    
+              <a href="https://instagram.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="social-button"></img></a> 
+      
+              <!--  <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
               <a href="http://twitter.com/make"><i class="fa fa-twitter  fa-lg"></i></a>
               <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>    
-              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a> 
+              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a>  -->
             </div>     
           </div>   
         </div> <!-- row -->  
