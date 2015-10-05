@@ -181,8 +181,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 <!--  Berlin / School / World Maker Faire -->
 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="http://makerfaire.berlin/en/">             
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promo_maker_faire_berlin.jpg' ?>" class="img-responsive center-block event" />
+        <a href="//makercamp.com">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promo-makercamp-01.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div> 
 
