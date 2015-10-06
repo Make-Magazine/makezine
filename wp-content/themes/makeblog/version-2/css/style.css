@@ -813,25 +813,16 @@ div.caption.post-content {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
   transition: all 0.5s ease;
 }
+.mz-featured-imageblock:hover .featured-image-shadow {
+  height: 90%;
+  transition: all 0.5s ease;
+}
 .mz-featured-imageblock .mz-text-overlay {
   bottom: 0;
   left: 0;
   position: absolute;
   padding: 15px;
   color: #fff;
-}
-.mz-featured-imageblock:hover .mz-text-overlay {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  padding: 15px;
-  color: #cbcbcb;
-}
-.mz-featured-imageblock:hover.mz-featured-imageblock p {
-  color: #cbcbcb;
-}
-.mz-featured-imageblock:hover .mz-text-overlay-side h2 {
-  color: #cbcbcb;
 }
 .filter-display-wrapper {
   position: absolute;
