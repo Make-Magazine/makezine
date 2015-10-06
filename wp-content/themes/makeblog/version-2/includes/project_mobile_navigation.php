@@ -1,6 +1,8 @@
 <?php
-$type = (isset($_GET['post_type'])) ? sanitize_title($_GET['post_type']) : '';
-if ($type == 'projects') { ?>
+$current_category = get_query_var('category_name');
+        
+$type = (isset($current_category)) ? sanitize_title($current_category) : '';
+if ($type != '') { ?>
     <div class="project-navigation">
         <?php
         $current_cat_id = get_query_var('cat');

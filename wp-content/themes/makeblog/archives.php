@@ -1,92 +1,56 @@
 <?php
 /**
- * The template for displaying the archive of Page:2 posts.
+ * Category page template for projects custom post type.
  *
- * @package    makeblog
- * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * @author     Jake Spurlock <jspurlock@makermedia.com>
- * Template Name: Archives Page
- * 
  */
+require_once 'version-2/includes/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$post_per_page = 15;
+$device = 'pc';
+if ( $detect->isMobile() ) {
+    $post_per_page = 5;
+    $device = 'mobile';
+}
+
+if( $detect->isTablet() ){
+    $post_per_page = 10;
+    $device = 'tablet';
+}
 
 get_header('version-2'); ?>
+<div class="header-ad">
+	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
+        <div class="own">
+            <div class="home-ads">
+                <div id="div-gpt-ad-664089004995786621-1">
+                <script type="text/javascript">
+                googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-1")});
+                </script>
+                </div>
+            </div>
+        </div>
+	</li>
+</div>
+<div class="projects-cat <?php echo $device ?>">
+    <div class="content container">
+        <?php
+        $current_cat_id = get_query_var('cat');
+        if ($device == 'mobile') {
+            get_template_part('version-2/includes/project_mobile_navigation');
+        } else {
+            get_template_part('version-2/includes/project_pc_tablet_navigation');
+            get_template_part('version-2/includes/project_mobile_navigation');
+        }
+        ?>
+        <div class="posts-list container">
+            <?php
+            sorting_posts($current_cat_id);  //TODO Rename Function
+            ?>
+        </div>
+    </div>
+    <div id="temp_post_list" style="display: none">
 
-		<div class="single">
-		
-			<div class="container">
+    </div>
+</div>
 
-				<div class="row">
-
-					<div class="span8">
-
-						<ul class="breadcrumb">
-		
-							<?php if(class_exists('bcn_breadcrumb_trail')) {
-								$breadcrumb_trail = new bcn_breadcrumb_trail;
-								$breadcrumb_trail->opt['home_title'] = "Home";
-								$breadcrumb_trail->opt['current_item_prefix'] = '<li class="current">';
-								$breadcrumb_trail->opt['current_item_suffix'] = '</li>';
-								$breadcrumb_trail->opt['separator'] = '<span class="divider">&nbsp;/&nbsp;</span>';
-								$breadcrumb_trail->opt['home_prefix'] = '<li>';
-								$breadcrumb_trail->opt['home_suffix'] = '</li>';
-								$breadcrumb_trail->opt['max_title_length'] = 70;
-								$breadcrumb_trail->fill();
-								$breadcrumb_trail->display();
-							} ?>
-									
-						</ul>
-
-						<div class="content">
-
-
-							 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			
-							 	<article <?php post_class(); ?>>
-
-
-							 	<div class="row">
-
-							 		<div class="span2">
-
-							 			<?php get_the_image(); ?>
-
-							 		</div>
-
-							 		<div class="span5">
-
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
-										<?php the_content(); ?>
-
-										<p class="meta top">By <?php the_author_link(); ?>, <?php the_time('m/d/Y \@ g:i a') ?></p>
-										<p><?php comments_popup_link(); ?> <?php edit_post_link('Fix me...', ' | '); ?></p>
-
-									</div>
-								
-								</div>
-								
-								</article>
-
-							<?php endwhile; ?>
-							<div class="comments">
-								<?php comments_template(); ?>
-							</div>
-							<div id="contextly"></div>
-
-							<?php if ( function_exists('make_shopify_featured_products_slider') ) {
-		     					echo make_shopify_featured_products_slider( 'row-fluid' );
-		    				} ?>
-							
-							<?php else: ?>
-							
-								<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-							
-							<?php endif; ?>
-
-						</div>
-
-					</div>
-
-					<?php get_sidebar(); ?>
-
-			<?php get_footer(); ?>
+<?php get_footer(); ?>
