@@ -83,6 +83,12 @@ get_header('version-2'); ?>
 
 			</div>
 
+			<div class="row">
+				
+				<div id="pubexchange_rail"></div>
+				
+			</div>
+
 		</div>
 
 	</div>
