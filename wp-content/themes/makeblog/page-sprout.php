@@ -8,7 +8,7 @@
  * @author     Matt Abernathy <matt@makermedia.com>
  * 
  */
-get_header(); ?>
+get_header('version-2'); ?>
 
 <div class="container">
 
@@ -28,7 +28,7 @@ get_header(); ?>
 
 </header>
 
-<!-- Grab posts from day-of-making tag -->
+<!-- Grab posts from hp-sprout tag -->
 <?php
 //get all terms (e.g. categories or post tags), then display all posts in each term
 $taxonomy = 'post_tag';//  e.g. post_tag, category
