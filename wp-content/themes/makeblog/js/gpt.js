@@ -6,7 +6,7 @@
 (function (make, window, document, undefined) {
 
   // Set global
-  make = make || {};
+  make = window.make = window.make || {};
 
   // Set object merge function
   /**
@@ -55,15 +55,15 @@
           googletag.pubads().collapseEmptyDivs();
 
           // page level targeting
-          if (window.make_gpt) {
-            if (make_gpt.sec) {
-              googletag.pubads().setTargeting("sec", make_gpt.sec);
+          if (window.ad_vars) {
+            if (ad_vars.sec) {
+              googletag.pubads().setTargeting("sec", ad_vars.sec);
             }
-            if (make_gpt.page) {
-              googletag.pubads().setTargeting("page", make_gpt.page);
+            if (ad_vars.page) {
+              googletag.pubads().setTargeting("page", ad_vars.page);
             }
-            if (make_gpt.cat) {
-              googletag.pubads().setTargeting("cat", make_gpt.cat);
+            if (ad_vars.cat) {
+              googletag.pubads().setTargeting("cat", ad_vars.cat);
             }
           }
 
@@ -92,12 +92,12 @@
             'adPos': 1,
             'tile': 1,
             'slot': "ad_300x250_1",
-            'zone': window.make_gpt ? make_gpt.zone : "/11548178/Makezine/",
+            'zone': window.ad_vars ? ad_vars.zone : "/11548178/Makezine/",
             'sizeMap': null,
             'viewport' : null,
-            'sec': window.make_gpt ? make_gpt.sec : null,
-            'page': window.make_gpt ? make_gpt.page : null,
-            'cat': window.make_gpt ? make_gpt.cat : null,
+            'sec': window.ad_vars ? ad_vars.sec : null,
+            'page': window.ad_vars ? ad_vars.page : null,
+            'cat': window.ad_vars ? ad_vars.cat : null,
             'companion': false
           },
           ad = make.extend(defaults, options),
