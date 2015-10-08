@@ -308,65 +308,64 @@ jQuery(document).ready(function ($) {
     });
 
 
-    var indikator = ".fa-chevron-down";
+    var indikator = ".minify .fa-chevron-down";
     var cat_wrapp_indicator = 0;
     var scrollTop = $(window).scrollTop();
     $(window).scroll(function () {
         $window = $(window).width();
     });
     if (scrollTop >= '530') {
-        jQuery('.project-navigation').addClass('sticky');
+        jQuery('.minify').addClass('sticky');
         jQuery(indikator).show();
         if ( ($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') ) ) {
             if (cat_wrapp_indicator == 0) {
-                jQuery('.cat-list-wrapp').hide();
+                jQuery('.minify .cat-list-wrapp').hide();
             }
             else {
-                jQuery('.cat-list-wrapp').show();
+                jQuery('.minify .cat-list-wrapp').slideDown();
             }
         }
     } else {
-        jQuery('.project-navigation').removeClass('sticky');
-        jQuery(".fa-chevron-up").hide();
-        jQuery(".fa-chevron-down").hide();
-        jQuery('.cat-list-wrapp').show();
+        jQuery('.minify').removeClass('sticky');
+        jQuery(".minify .fa-chevron-up").hide();
+        jQuery(".minify .fa-chevron-down").hide();
+        jQuery('.minify .cat-list-wrapp').show();
     }
     jQuery(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
         if (scrollTop >= '300') {
-            jQuery('.project-navigation').addClass('sticky');
+            jQuery('.minify').addClass('sticky').slideDown();
             jQuery(indikator).show();
             if ( ($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') ) ) {
                 if (cat_wrapp_indicator == 0) {
-                    jQuery('.cat-list-wrapp').hide();
+                    jQuery('.minify .cat-list-wrapp').hide();
                 } else {
-                    jQuery('.cat-list-wrapp').show();
+                    jQuery('.minify .cat-list-wrapp').show();
                 }
             }
         } else {
-            jQuery('.project-navigation').removeClass('sticky');
-            jQuery(".fa-chevron-up").hide();
-            jQuery(".fa-chevron-down").hide();
-            jQuery('.cat-list-wrapp').show();
+            jQuery('.minify').removeClass('sticky').hide();
+            jQuery(".minify .fa-chevron-up").hide();
+            jQuery(".minify .fa-chevron-down").hide();
+            jQuery('.minify .cat-list-wrapp').show();
         }
     });
 
-    jQuery(".fa-chevron-down").hide();
-    jQuery(".fa-chevron-up").click(function () {
-        jQuery('.cat-list-wrapp').slideToggle("slow");
-        jQuery(".fa-chevron-up").hide();
-        jQuery(".fa-chevron-down").show();
-        indikator = ".fa-chevron-down";
+    jQuery(".minify .fa-chevron-down").hide();
+    jQuery(".minify .fa-chevron-up").click(function () {
+        jQuery('.minify .cat-list-wrapp').slideToggle("slow");
+        jQuery(".minify .fa-chevron-up").hide();
+        jQuery(".minify .fa-chevron-down").show();
+        indikator = ".minify .fa-chevron-down";
         cat_wrapp_indicator = 0;
     });
-    jQuery(".fa-chevron-down").click(function () {
-        jQuery('.cat-list-wrapp').slideToggle("slow");
-        jQuery(".fa-chevron-down").hide();
-        jQuery(".fa-chevron-up").show();
-        indikator = ".fa-chevron-up";
+    jQuery(".minify .fa-chevron-down").click(function () {
+        jQuery('.minify .cat-list-wrapp').slideToggle("slow");
+        jQuery(".minify .fa-chevron-down").hide();
+        jQuery(".minify .fa-chevron-up").show();
+        indikator = ".minify .fa-chevron-up";
         cat_wrapp_indicator = 1;
     });
-    //jQuery(".ads").addClass('first-use');
     $.ajax({
         url: '/wp-admin/admin-ajax.php',
         data: {
@@ -374,7 +373,6 @@ jQuery(document).ready(function ($) {
         },
         success: function (data) {
             jQuery(".before-ads").after(data);
-            //jQuery(".ads").addClass('first-use');
         },
         error: function (errorThrown) {
         }
@@ -445,7 +443,6 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-                ga('send', 'pageview');
                 
                 $.ajax({
                     url: '/wp-admin/admin-ajax.php',
@@ -454,7 +451,6 @@ jQuery(document).ready(function ($) {
                     },
                     success: function (data) {
                         jQuery(".before-ads").after(data);
-                        //jQuery(".ads").addClass('first-use');
                     },
                     error: function (errorThrown) {
                     }
