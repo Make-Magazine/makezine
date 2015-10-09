@@ -136,10 +136,10 @@
 				</div><!-- END desktop row -->
 
 				<div class="row social-foot-mobile visible-xs-block">
-					<div class="hidden-xs social-foot-col">
+					<div class="col-xs-12 social-foot-col">
 					<h4 class="stay-connected">Follow Us</h4>
 					 <div class="mz-footer-social">
-						<div> 
+						<div class="col-xs-3"> 
 							<a href="http://facebook.com/makemagazine">
 								<span class="fa-stack fa-mz">
 									<i class="fa fa-circle fa-stack-2x"></i>
@@ -148,7 +148,7 @@
 							</a>
 						</div>
 
-						<div> 
+						<div class="col-xs-3"> 
 							<a href="http://twitter.com/make">
 								<span class="fa-stack fa-mz">
 									<i class="fa fa-circle fa-stack-2x"></i>
@@ -157,7 +157,7 @@
 							</a>
 						</div>
 
-						<div>
+						<div class="col-xs-3"> 
 							<a href="http://pinterest.com/makemagazine/">
 								<span class="fa-stack fa-mz">
 									<i class="fa fa-circle fa-stack-2x"></i>
@@ -166,7 +166,7 @@
 							</a> 
 						</div>
 
-						<div>
+						<div class="col-xs-3"> 
 							<a href="https://instagram.com/makemagazine/">
 								<span class="fa-stack fa-mz">
 									<i class="fa fa-circle fa-stack-2x"></i>
@@ -178,7 +178,7 @@
           	
           <div class="clearfix"></div>
 
-          <div class="hidden-xs mz-footer-subscribe"> 
+          <div class="mz-footer-subscribe"> 
 						<?php
 							$isSecure = "http://";
 							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
@@ -206,7 +206,7 @@
 			</div>
 
 
- 			<div class="hidden-xs panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+ 			<div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
  			<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="heading1">
 						<h4 class="panel-title">
