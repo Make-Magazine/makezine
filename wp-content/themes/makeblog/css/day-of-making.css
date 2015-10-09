@@ -5747,6 +5747,9 @@ a.button.small-button {
   background-color: #1490d4;
   transition: background-color 0.2s ease;
 }
+.make_ad {
+  text-align: center;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;

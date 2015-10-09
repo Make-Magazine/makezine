@@ -1,9 +1,11 @@
 /**
  * @file gpt.js
  * All javascript for ad creating.
+ *
+ * @Author Ben Voran
  */
 
-(function (make, window, document, undefined) {
+(function (make, window, document, $, undefined) {
 
   // Set global
   make = window.make = window.make || {};
@@ -56,9 +58,6 @@
 
           // page level targeting
           if (window.ad_vars) {
-            if (ad_vars.sec) {
-              googletag.pubads().setTargeting("sec", ad_vars.sec);
-            }
             if (ad_vars.page) {
               googletag.pubads().setTargeting("page", ad_vars.page);
             }
@@ -76,6 +75,40 @@
 
       }
 
+      // Try loading any placeholder for ads.
+      $(document).ready(function(){
+        make.gpt.loadDyn();
+      });
+
+    },
+
+    /**
+     * Function make.gpt.loadDyn()
+     *
+     * @description
+     *  renders ads from placeholders in the DOM. 
+     *  example placeholder: <div class='js-ad' data-size='[[300,250]]' data-pos='"btf"'></div>
+     */
+    loadDyn: function($elem) {
+      $elem = !$elem || !$elem.size() ? $('.js-ad') : $elem;
+      // Loop through js ads.
+      $elem.filter(':empty').each(function(){
+        var $t = $(this),
+            a = {};
+        // Attempt to parse data attributes.
+        a.size = [300,250]; // default.
+        try {
+          a.size =  $t.attr('data-size') ? JSON.parse($t.attr('data-size')) : null;
+          a.sizeMap = $t.attr('data-size-map') ? JSON.parse($t.attr('data-size-map')) : null;
+          a.pos = $t.attr('data-pos') ? JSON.parse($t.attr('data-pos')) : null;
+        }
+        catch (e) {}
+        // Generate ad from placeholder vars.
+        var ad = make.gpt.getVars(a.size),
+            adDiv = '<div id="' + ad.slot + '" class="make_ad ' + a.size.join().replace(/\[\]/g,'').replace(/,/g,'x') + '"></div>';
+        $t.append(adDiv);
+        make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile});
+      });
     },
 
     /**
@@ -95,10 +128,10 @@
             'zone': window.ad_vars ? ad_vars.zone : "/11548178/Makezine/",
             'sizeMap': null,
             'viewport' : null,
-            'sec': window.ad_vars ? ad_vars.sec : null,
             'page': window.ad_vars ? ad_vars.page : null,
             'cat': window.ad_vars ? ad_vars.cat : null,
-            'companion': false
+            'companion': false,
+            'custom': window.ad_vars && ad_vars.custom_target_name ? [ad_vars.custom_target_name, ad_vars.custom_target_value] : null
           },
           ad = make.extend(defaults, options),
           winWidth = document.documentElement.clientWidth,
@@ -122,23 +155,23 @@
           }
 
           // Set targeting
-          if (ad.sec) {
-            window[ad.slot].setTargeting("sec", ad.sec);
-          }
           if (ad.page) {
             window[ad.slot].setTargeting("page", ad.page);
           }
           if (ad.cat) {
             window[ad.slot].setTargeting("cat", ad.cat);
           }
+          if (ad.custom) {
+            window[ad.slot].setTargeting(ad.custom[0], ad.custom[1]);
+          }
 
           // Set pos & tile
           window[ad.slot].setTargeting("pos", [ad.pos]);
           window[ad.slot].setTargeting("adPos", [ad.adPos]);
           window[ad.slot].setTargeting("tile", [ad.tile]);
-          document.getElementById(ad.slot).setAttribute("data-adPos",ad.adPos);
-          document.getElementById(ad.slot).setAttribute("data-tile",ad.tile);
-          document.getElementById(ad.slot).setAttribute("data-tags",JSON.stringify(ad));
+          document.getElementById(ad.slot).setAttribute("data-adPos", ad.adPos);
+          document.getElementById(ad.slot).setAttribute("data-tile", ad.tile);
+          document.getElementById(ad.slot).setAttribute("data-tags", JSON.stringify(ad));
 
           // Display Ad
           googletag.enableServices();
@@ -172,4 +205,4 @@
 
   make.gpt.init();
 
-})(this.make, this, this.document);
+})(this.make, this, this.document, jQuery);

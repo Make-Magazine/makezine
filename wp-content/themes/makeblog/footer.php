@@ -7,12 +7,15 @@
  * @author     The Make Team webmaster@makermedia.com
  *
  */
+global $make;
 ?>
 
 				<div class="footer-ad <?php echo ( make_is_parent_page() && ! is_category( 'maker-pro' ) ) ? 'grey' : '' ; ?>" style="clear:both;">
-
+					
 					<div class="ad-slot">
-
+						<?php if (is_front_page()): ?>
+							<?php print $make->ads->leaderboard_alt_btf; ?>
+						<?php else: ?>
 						<!-- Beginning Sync AdSlot 4 for Ad unit header ### size: [[728,90]]  -->
 						<div id='div-gpt-ad-664089004995786621-4'>
 							<script type='text/javascript'>
@@ -20,7 +23,7 @@
 							</script>
 						</div>
 						<!-- End AdSlot 4 -->
-
+						<?php endif; ?>
 					</div></div>
 
 				</div></div></div>

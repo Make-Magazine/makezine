@@ -24,13 +24,13 @@ function make_ads_render(array $ad = array()) {
     'size' => '[300,250]',
     'sizeMap' => NULL,
     'viewport' => NULL,
-    'pos' => 'btf',
+    'pos' => 'btf', 
   );
 
   // Add JS vars & gpt methods.
   $js_string = "<script>";
   $js_string .= "var ad = make.gpt.getVars(" . $ad['size'] . ");\r\n";
-  $js_string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad "  . $ad['size'] . "\"></div>');\r\n";
+  $js_string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad ' + {$ad['size']}.join().replace(/\[\]/g,'').replace(/,/g,'x') + '\"></div>');\r\n";
   $js_string .= "make.gpt.setAd({";
   $js_string .= "'size' : {$ad['size']}";
   $js_string .= ", 'pos' : '{$ad['pos']}'";
@@ -59,11 +59,30 @@ $make->ads->leaderboard = make_ads_render(array(
     'pos' => 'atf',
 ));
 
-// General Leaderboard.
-$make->ads->leaderboard = make_ads_render(array(
-    'size' => '[[728,90],[940,250],[970,90],[970,250],[320,50]]',
-    'sizeMap' => '[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
+// Alternate Leaderboard ATF.
+$make->ads->leaderboard_alt_atf = make_ads_render(array(
+    'size' => '[[728,90],[970,90],[320,50]]',
+    'sizeMap' => '[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
     'pos' => 'atf',
+));
+
+// Alternate Leaderboard BTF.
+$make->ads->leaderboard_alt_btf = make_ads_render(array(
+    'size' => '[[728,90],[970,90],[320,50]]',
+    'sizeMap' => '[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
+    'pos' => 'btf',
+));
+
+// Medium Rectangle.
+$make->ads->square = make_ads_render(array(
+    'size' => '[[300,250]]',
+    'pos' => 'btf',
+));
+
+// Half Page.
+$make->ads->rectangle = make_ads_render(array(
+    'size' => '[[300,600]]',
+    'pos' => 'btf',
 ));
 
 /*
@@ -73,9 +92,12 @@ $make->ads->leaderboard = make_ads_render(array(
 $make->ad_vars = new stdClass();
 
 // Get current page info.
-$current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query: NULL;
+$current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
 $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
+$posttags = get_the_tags();
+$make->ad_vars->page = $_SERVER['REQUEST_URI'];
 
+// Post info.
 if ($current_page !== NULL) {
     $q_posts = get_posts(array('pagename' => $wp_query['pagename'], 'post_type' =>'any', 'post_status' => 'any'));
     $q_post_id = $q_posts[0]->ID;
@@ -86,6 +108,14 @@ if ($current_page !== NULL) {
 // Custom Targeting Key/Value pairings.
 $make->ad_vars->custom_target_name = !empty($post_adslot_targeting_name) ? $post_adslot_targeting_name : NULL;
 $make->ad_vars->custom_target_value = !empty($post_adslot_targeting_name) ? (!empty($post_adslot_targeting_ids) ? $post_adslot_targeting_ids : (string) $post->ID) : NULL;
+
+// Taxonomy.
+if ($posttags) {
+    $make->ad_vars->cat = array();
+    foreach($posttags as $tag) {
+        $make->ad_vars->cat[] = $tag->name; 
+    }
+}
 
 // Ad zone logic. (using switch block to contrast if block below).
 switch (TRUE) {
