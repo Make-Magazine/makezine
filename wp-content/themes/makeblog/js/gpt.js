@@ -136,7 +136,7 @@
           window[ad.slot].setTargeting("pos", [ad.pos]);
           window[ad.slot].setTargeting("adPos", [ad.adPos]);
           window[ad.slot].setTargeting("tile", [ad.tile]);
-          document.getElementById(ad.slot).setAttribute("data-pos",ad.pos);
+          document.getElementById(ad.slot).setAttribute("data-adPos",ad.adPos);
           document.getElementById(ad.slot).setAttribute("data-tile",ad.tile);
           document.getElementById(ad.slot).setAttribute("data-tags",JSON.stringify(ad));
 
@@ -159,11 +159,11 @@
       var sizeStr = adSize instanceof Array ? adSize.join("x").replace(/,/g,"x") : undefined ,
           a = sizeStr ? {} : sizeStr;
       if (sizeStr) {
-        this["pos" + sizeStr] = this["pos" + sizeStr] || 1;
-        a.pos = this["pos" + sizeStr]++;
+        this["adPos" + sizeStr] = this["adPos" + sizeStr] || 1;
+        a.adPos = this["adPos" + sizeStr]++;
         this.tile = this.tile || 1;
         a.tile = this.tile++;
-        a.slot = 'ad_' + sizeStr + '_' + a.pos;
+        a.slot = 'ad_' + sizeStr + '_' + a.adPos;
       }
       return a;
     }

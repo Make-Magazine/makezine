@@ -186,6 +186,8 @@ include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/home-menu-curator.php';
 
+// Define global make obj.
+$make = new stdClass();
 
 function dfp_add_meta_boxes($postType)
 {

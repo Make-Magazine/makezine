@@ -5,9 +5,74 @@
  * Initializes all of the ads for Maker Faire.
  *
  */
- 
+
+global $make;
+
 global $post;
 
+/*
+ * Set standard ad sizes.
+ */
+
+$make->ads = new stdClass();
+
+// A function used to render the <script> tags for ads.
+function make_ads_render(array $ad = array()) {
+
+  // Default vars.
+  $ad += array(
+    'size' => '[300,250]',
+    'sizeMap' => NULL,
+    'viewport' => NULL,
+    'pos' => 'btf',
+  );
+
+  // Add JS vars & gpt methods.
+  $js_string = "<script>";
+  $js_string .= "var ad = make.gpt.getVars(" . $ad['size'] . ");\r\n";
+  $js_string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad "  . $ad['size'] . "\"></div>');\r\n";
+  $js_string .= "make.gpt.setAd({";
+  $js_string .= "'size' : {$ad['size']}";
+  $js_string .= ", 'pos' : '{$ad['pos']}'";
+  $js_string .= ", 'adPos' : ad.adPos";
+  $js_string .= ", 'slot' : ad.slot";
+  $js_string .= ", 'tile' : ad.tile";
+  $js_string .= ", 'companion' : (window.ad_vars ? ad_vars.companion : false)";
+
+  if ($ad['sizeMap']) {
+    $js_string .= ", 'sizeMap' : {$ad['sizeMap']}";
+  }
+  if ($ad['viewport']) {
+    $js_string .= ", 'viewport' : '{$ad['viewport']}'";
+  }
+
+  $js_string .= "});\r\n </script>";
+
+  return $js_string;
+
+}
+
+// General Leaderboard.
+$make->ads->leaderboard = make_ads_render(array(
+    'size' => '[[728,90],[940,250],[970,90],[970,250],[320,50]]',
+    'sizeMap' => '[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
+    'pos' => 'atf',
+));
+
+// General Leaderboard.
+$make->ads->leaderboard = make_ads_render(array(
+    'size' => '[[728,90],[940,250],[970,90],[970,250],[320,50]]',
+    'sizeMap' => '[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
+    'pos' => 'atf',
+));
+
+/*
+ * Gather ad variables.
+ */
+
+$make->ad_vars = new stdClass();
+
+// Get current page info.
 $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query: NULL;
 $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
 
@@ -18,139 +83,132 @@ if ($current_page !== NULL) {
     $post_adslot_targeting_ids = get_post_meta($q_post_id, '_adslot_targeting_ids', TRUE);
 } 
 
+// Custom Targeting Key/Value pairings.
+$make->ad_vars->custom_target_name = !empty($post_adslot_targeting_name) ? $post_adslot_targeting_name : NULL;
+$make->ad_vars->custom_target_value = !empty($post_adslot_targeting_name) ? (!empty($post_adslot_targeting_ids) ? $post_adslot_targeting_ids : (string) $post->ID) : NULL;
+
+// Ad zone logic. (using switch block to contrast if block below).
+switch (TRUE) {
+    case isset($parent):
+        $make->ad_vars->zone = '/11548178/Makezine/Blog/' . esc_js($parent);
+        break;
+
+    case is_page(array('home-page-include', 'home-page', 'home', 'Humanity: At the Core of Robotics excitement', 116357)):
+        $make->ad_vars->zone = '/11548178/Makezine/Homepage';
+        break;
+
+    case is_category():
+        $make->ad_vars->zone = '/11548178/Makezine/Blog' . esc_js(make_get_category_name());
+        break;
+
+    case 'craft' == get_post_type():
+        $make->ad_vars->zone = '/11548178/Makezine/Craft/Blog' . esc_js(make_get_category_name());
+        break;
+
+    case 'slideshow' == get_post_type():
+        $make->ad_vars->zone = '/11548178/Makezine/Blog/Slideshow';
+        break;
+
+    case 'volume' == get_post_type():
+        $make->ad_vars->zone = '/11548178/Makezine/Blog/Magazine';
+        break;
+
+    case is_page(array('kids')):
+        $make->ad_vars->zone = '/11548178/Makezine/Blog/Kids';
+        break;
+
+    case is_page(array('craftzine', 235220 )):
+        $make->ad_vars->zone = '/11548178/Makezine/Craft/Homepage';
+        break;
+
+    case is_home() || is_archive():
+        $make->ad_vars->zone = '/11548178/Makezine/Blog' . esc_js(make_get_category_name_strip_slash());
+        break;
+
+    case is_page(array('craftzine', 'craft-home')):
+        $make->ad_vars->zone = '/11548178/Makezine/Craft/Homepage' . esc_js(make_get_category_name_strip_slash());
+        break;
+
+    default:
+        $make->ad_vars->zone = '/11548178/Makezine/Blog' . esc_js(make_get_category_name());
+        break;
+}
+
+// Ad sponsor logic.
+if (has_tag('project-remake')) {
+    $make->ad_vars->sponsor = 'schick';
+}
+elseif (has_tag('mcm')) {
+    $make->ad_vars->sponsor = 'mcm';
+}
+elseif ( ( has_tag( array( 'greatcreate', 'Weekend Projects' ) ) || is_page( array( 286853, 271492, 313151, 341320 ) ) ) && !is_category( 'electronics' )  ) {
+    $make->ad_vars->sponsor = 'radioshack';
+}
+elseif (has_tag('esurance') || is_page( array(313086, 316119, 316937) ) ) {
+    $make->ad_vars->sponsor = 'esurance';
+}
+elseif (has_tag('tinkernation')) {
+    $make->ad_vars->sponsor = 'tinkernation';
+}
+elseif (has_tag('bosch')) {
+    $make->ad_vars->sponsor = 'bosch';
+}
+elseif (is_single(array(109345,109347))) {
+    $make->ad_vars->sponsor = 'moneyball';
+}
+elseif (is_single(array(78509,120079,121013,121988,123191))) {
+    $make->ad_vars->sponsor = 'volt';
+}
+elseif (is_single(array(121818))) {
+    $make->ad_vars->sponsor = 'microchip';
+}
+elseif (is_single(array(333675))) {
+    $make->ad_vars->sponsor = 'energizer';
+}
+elseif (is_single(array(122575))) {
+    $make->ad_vars->sponsor = 'xobject';
+}
+elseif (is_page( array( 289746,271575 ) ) ) {
+    $make->ad_vars->sponsor = 'mcm';
+}
+elseif ( has_category( '3d-printing-workshop' ) ) {
+    $make->ad_vars->sponsor = 'sketchup';
+}
+elseif ( ! is_archive() && ( has_tag( 'nikon' ) || is_page( array( 388070 ) ) ) ) {
+    $make->ad_vars->sponsor = 'nikon';
+}
+elseif (is_single(array(424504))) {
+    $make->ad_vars->sponsor = 'element';
+}
+elseif (has_tag('lincolnelectric2014') || is_page( array(452017) ) ) {
+    $make->ad_vars->sponsor = 'lincolnelectric2014';
+}
+elseif (has_tag('dremel2014')) {
+    $make->ad_vars->sponsor = 'dremel2014';
+}
+elseif (has_tag('makerpro') || is_page( array(302792) ) ) {
+    $make->ad_vars->sponsor = 'makerpro';
+}
+elseif (has_tag('arrowcypress') || is_page( array(461313,463824,462353,463460,463441) ) ) {
+    $make->ad_vars->sponsor = 'arrowcypress';
+}
+elseif (has_tag('cornell') || is_page( array(466354,466367,466360,466358,466356) ) ) {
+    $make->ad_vars->sponsor = 'cornell';
+}
+else {
+    $make->ad_vars->sponsor = NULL;   
+}
+
+
+// Use new gpt.js on homepage only for now.
 if (is_front_page()): ?>
     
-    <?php
-
-    wp_enqueue_script('make-gpt',get_template_directory_uri() . '/js/gpt.js');
-
-    /*
-     * Gather ad variables.
-     */
-
-    $ad = new stdClass();
-
-    // Custom Targeting Key/Value pairings.
-    $ad->custom_target_name = !empty($post_adslot_targeting_name) ? $post_adslot_targeting_name : NULL;
-    $ad->custom_target_value = !empty($post_adslot_targeting_name) ? (!empty($post_adslot_targeting_ids) ? $post_adslot_targeting_ids : (string) $post->ID) : NULL;
-    
-    // Ad zone logic.
-    switch (TRUE) {
-        case isset($parent):
-            $ad->ad_zone = '/11548178/Makezine/Blog/' . esc_js($parent);
-            break;
-
-        case is_page(array('home-page-include', 'home-page', 'home', 'Humanity: At the Core of Robotics excitement', 116357)):
-            $ad->ad_zone = '/11548178/Makezine/Homepage';
-            break;
-
-        case is_category():
-            $ad->ad_zone = '/11548178/Makezine/Blog' . esc_js(make_get_category_name());
-            break;
-
-        case 'craft' == get_post_type():
-            $ad->ad_zone = '/11548178/Makezine/Craft/Blog' . esc_js(make_get_category_name());
-            break;
-
-        case 'slideshow' == get_post_type():
-            $ad->ad_zone = '/11548178/Makezine/Blog/Slideshow';
-            break;
-
-        case 'volume' == get_post_type():
-            $ad->ad_zone = '/11548178/Makezine/Blog/Magazine';
-            break;
-
-        case is_page(array('kids')):
-            $ad->ad_zone = '/11548178/Makezine/Blog/Kids';
-            break;
-
-        case is_page(array('craftzine', 235220 )):
-            $ad->ad_zone = '/11548178/Makezine/Craft/Homepage';
-            break;
-
-        case is_home() || is_archive():
-            $ad->ad_zone = '/11548178/Makezine/Blog' . esc_js(make_get_category_name_strip_slash());
-            break;
-
-        case is_page(array('craftzine', 'craft-home')):
-            $ad->ad_zone = '/11548178/Makezine/Craft/Homepage' . esc_js(make_get_category_name_strip_slash());
-            break;
-
-        default:
-            $ad->ad_zone = '/11548178/Makezine/Blog' . esc_js(make_get_category_name());
-            break;
-    }
-
-    // Ad sponsor logic.
-    if (has_tag('project-remake')) {
-        $ad->ad_sponsor = 'schick';
-    }
-    elseif (has_tag('mcm')) {
-        $ad->ad_sponsor = 'mcm';
-    }
-    elseif ( ( has_tag( array( 'greatcreate', 'Weekend Projects' ) ) || is_page( array( 286853, 271492, 313151, 341320 ) ) ) && !is_category( 'electronics' )  ) {
-        $ad->ad_sponsor = 'radioshack';
-    }
-    elseif (has_tag('esurance') || is_page( array(313086, 316119, 316937) ) ) {
-        $ad->ad_sponsor = 'esurance';
-    }
-    elseif (has_tag('tinkernation')) {
-        $ad->ad_sponsor = 'tinkernation';
-    }
-    elseif (has_tag('bosch')) {
-        $ad->ad_sponsor = 'bosch';
-    }
-    elseif (is_single(array(109345,109347))) {
-        $ad->ad_sponsor = 'moneyball';
-    }
-    elseif (is_single(array(78509,120079,121013,121988,123191))) {
-        $ad->ad_sponsor = 'volt';
-    }
-    elseif (is_single(array(121818))) {
-        $ad->ad_sponsor = 'microchip';
-    }
-    elseif (is_single(array(333675))) {
-        $ad->ad_sponsor = 'energizer';
-    }
-    elseif (is_single(array(122575))) {
-        $ad->ad_sponsor = 'xobject';
-    }
-    elseif (is_page( array( 289746,271575 ) ) ) {
-        $ad->ad_sponsor = 'mcm';
-    }
-    elseif ( has_category( '3d-printing-workshop' ) ) {
-        $ad->ad_sponsor = 'sketchup';
-    }
-    elseif ( ! is_archive() && ( has_tag( 'nikon' ) || is_page( array( 388070 ) ) ) ) {
-        $ad->ad_sponsor = 'nikon';
-    }
-    elseif (is_single(array(424504))) {
-        $ad->ad_sponsor = 'element';
-    }
-    elseif (has_tag('lincolnelectric2014') || is_page( array(452017) ) ) {
-        $ad->ad_sponsor = 'lincolnelectric2014';
-    }
-    elseif (has_tag('dremel2014')) {
-        $ad->ad_sponsor = 'dremel2014';
-    }
-    elseif (has_tag('makerpro') || is_page( array(302792) ) ) {
-        $ad->ad_sponsor = 'makerpro';
-    }
-    elseif (has_tag('arrowcypress') || is_page( array(461313,463824,462353,463460,463441) ) ) {
-        $ad->ad_sponsor = 'arrowcypress';
-    }
-    elseif (has_tag('cornell') || is_page( array(466354,466367,466360,466358,466356) ) ) {
-        $ad->ad_sponsor = 'cornell';
-    }
-    else {
-        $ad->ad_sponsor = NULL;   
-    }
-
-    ?>
     <!-- Page Ad Vars -->
     <script type='text/javascript'>
-        var ad_vars = <?php print json_encode($ad); ?>;
+        var ad_vars = <?php print json_encode($make->ad_vars); ?>;
     </script>
+    <!-- Make GPT -->
+    <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 
 <?php else: ?>
 
