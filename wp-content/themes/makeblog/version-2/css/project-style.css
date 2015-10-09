@@ -769,6 +769,9 @@ li.post:hover p.trans {
     position: relative;
   }
 }
+#pbd-alp-load-posts.row {
+  margin-top: 30px; 
+}
 #pbd-alp-load-posts {
   max-width: 540px;
   text-align: center;
@@ -1177,7 +1180,7 @@ ul.duration-item li.current {
 
   .projects-cat .posts-list .selected-posts-list,
   .all-projects .posts-list .selected-posts-list {
-    padding: 13px 0 20px;
+    padding: 13px 0 0;
   }
 }
 @media (max-width: 767px) {

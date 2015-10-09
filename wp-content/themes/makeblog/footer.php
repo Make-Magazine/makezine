@@ -66,36 +66,46 @@
 
 				<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
 					<h4 class="stay-connected">Follow Us</h4>
-           <div class="mz-footer-social">
-            	<div class="col-xs-3">
-				  <a href="http://facebook.com/makemagazine">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
-	              </a>            		
-				  <!-- <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a> -->	
-	            </div>
+					<div class="mz-footer-social">
+						<div class="col-xs-3">
+							<a href="http://facebook.com/makemagazine">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a>
+						</div>
 
-	            <div class="col-xs-3">
-	              <a href="http://twitter.com/make">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
-	              </a>
-				  <!-- <a href="http://twitter.com/make"><i class="fa fa-twitter fa-lg"></i></a> -->	            
-				</div>
+						<div class="col-xs-3">
+							<a href="http://twitter.com/make">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a>
+						</div>
 
-	            <div class="col-xs-3">
-				  <a href="http://pinterest.com/makemagazine/">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="img-responsive"></img>
-	              </a>	            	
-				  <!-- <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a> -->
-				</div>
+						<div class="col-xs-3">
+							<a href="http://pinterest.com/makemagazine/">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a> 
+						</div>
 
-	            <div class="col-xs-3">
-				  <a href="https://instagram.com/makemagazine/">
-	              	<img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="img-responsive"></img>
-	              </a>	            	
-				  <!-- <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a> -->
-				</div>
-            </div>
-            <div class="clearfix"></div>
+						<div class="col-xs-3">
+							<a href="https://instagram.com/makemagazine/">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a> 
+						</div>
+					</div>
+			<div class="clearfix"></div>
+
+  
 
             <div class="mz-footer-subscribe"> 
 							<?php
@@ -105,7 +115,7 @@
 								}
 							?>
 							<h4>Sign Up</h4>
-							<p>Stay inspired and get fresh updates</p>
+							<p>Stay inspired with the Make: newsletter</p>
 				    	<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
 								<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 								<input type="hidden" name="cmd" value="subscribe" />
@@ -126,33 +136,49 @@
 				</div><!-- END desktop row -->
 
 				<div class="row social-foot-mobile visible-xs-block">
-				<div class="col-xs-12 social-foot-col">
+					<div class="hidden-xs social-foot-col">
 					<h4 class="stay-connected">Follow Us</h4>
 					 <div class="mz-footer-social">
-          	<div class="col-xs-3">
-              <a href="http://facebook.com/makemagazine">
-              	<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
-              </a>
-            </div>
-            <div class="col-xs-3">
-              <a href="http://twitter.com/make">
-              	<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
-              </a>
-            </div>
-            <div class="col-xs-3">
-              <a href="http://pinterest.com/makemagazine/">
-              	<img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="img-responsive"></img>
-              </a>
-            </div>
-            <div class="col-xs-3">
-              <a href="http://plus.google.com/+MAKE/posts">
-              	<img src="/wp-content/themes/makeblog/version-2/img/google.png" alt="google" class="img-responsive"></img>
-              </a>
-            </div>
-          </div>
+						<div> 
+							<a href="http://facebook.com/makemagazine">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a>
+						</div>
+
+						<div> 
+							<a href="http://twitter.com/make">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a>
+						</div>
+
+						<div>
+							<a href="http://pinterest.com/makemagazine/">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a> 
+						</div>
+
+						<div>
+							<a href="https://instagram.com/makemagazine/">
+								<span class="fa-stack fa-mz">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+								</span> 
+							</a> 
+						</div>
+				</div>
+          	
           <div class="clearfix"></div>
 
-          <div class="mz-footer-subscribe"> 
+          <div class="hidden-xs mz-footer-subscribe"> 
 						<?php
 							$isSecure = "http://";
 							if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
@@ -160,7 +186,7 @@
 							}
 						?>
 						<h4>Sign Up</h4>
-						<p>Stay inspired and get fresh updates</p>
+						<p>Stay inspired with the Make: newsletter</p>
 			    	<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
 							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 							<input type="hidden" name="cmd" value="subscribe" />
@@ -178,8 +204,10 @@
 					  </form>
 					</div><!-- end .mz-footer-subscribe -->
 			</div>
-			<div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<div class="panel panel-default">
+
+
+ 			<div class="hidden-xs panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+ 			<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="heading1">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Make:</a>
