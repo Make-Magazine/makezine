@@ -1,8 +1,4 @@
  $( document ).ready(function() {
-	 $('.menu-item-has-children').each(function () {
-		 $li_item_name = $(this).children('a').attr('title');
-		 $(this).addClass($li_item_name);
-	 });
 	 $window = $(window).width() + 17;
 	$(window).scroll(function(){
 		$( window ).resize(function() {
@@ -93,6 +89,28 @@
 			e.preventDefault();
 			$('.menu-item-has-children').not($(this)).children("a").removeClass('active-button');
 			if (!$('.navbar-default').hasClass('sticky-header')) {
+				$item_name = $(this).children('a').attr('title');
+				if ($item_name == 'Projects'){
+					$('.latest-projects').show();
+					$('.latest-stories').hide();
+					$('.latest-events').hide();
+					$('.latest-shop').hide();
+				}else if ($item_name == 'Stories'){
+					$('.latest-projects').hide();
+					$('.latest-stories').show();
+					$('.latest-events').hide();
+					$('.latest-shop').hide();
+				}else if ($item_name == 'Events'){
+					$('.latest-projects').hide();
+					$('.latest-stories').hide();
+					$('.latest-events').show();
+					$('.latest-shop').hide();
+				}else if ($item_name == 'Shop'){
+					$('.latest-projects').hide();
+					$('.latest-stories').hide();
+					$('.latest-events').hide();
+					$('.latest-shop').show();
+				}
 				$('.dynamic-header-posts').slideDown('fast');
 			}
 			if (!$(this).children("a").hasClass('active-button')) {
@@ -111,10 +129,10 @@
 			$(this).children("a").addClass("active-button");
 		}).mouseleave(function(e) {
 				if ((!$('.navbar-nav').is(':hover')) && (!$('.dynamic-header-posts').is(':hover'))){
-			$(this).children("a").removeClass("active-button");
+					    $(this).children("a").removeClass("active-button");
 						$('.dynamic-header-posts').slideUp('fast');
 						$(this).find('.sub-menu').slideUp('fast');
-					$('.menu-item-has-children').addClass('first-hover');
+						$('.menu-item-has-children').addClass('first-hover');
 					if (!$(".menu-item-has-children > a").hasClass('active-button')){
 						$('.minify.sticky').css('transition', 'all 0.2s ease');
 						$('.minify.sticky').css('margin-top','0px');
@@ -140,17 +158,38 @@
 			 $('.menu-item-has-children').children("a").removeClass("active-button");
 		 }
 	 });
-	
 	$( window ).resize(function() {
 		$window = $(window).width() + 17;
 		if ($window >= '768') {
 			$('.menu-item-has-children').addClass('first-hover');
 			$('.menu-item-has-children').mouseover(function (e) {
-			e.preventDefault();
+				e.preventDefault();
 				$('.menu-item-has-children').not($(this)).children("a").removeClass('active-button');
 				if (!$('.navbar-default').hasClass('sticky-header')) {
-					$('.dynamic-header-posts').slideDown('fast');
-				}
+					$item_name = $(this).children('a').attr('title');
+					if ($item_name == 'Projects'){
+						$('.latest-projects').show();
+						$('.latest-stories').hide();
+						$('.latest-events').hide();
+						$('.latest-shop').hide();
+					}else if ($item_name == 'Stories'){
+						$('.latest-projects').hide();
+						$('.latest-stories').show();
+						$('.latest-events').hide();
+						$('.latest-shop').hide();
+					}else if ($item_name == 'Events'){
+						$('.latest-projects').hide();
+						$('.latest-stories').hide();
+						$('.latest-events').show();
+						$('.latest-shop').hide();
+					}else if ($item_name == 'Shop'){
+						$('.latest-projects').hide();
+						$('.latest-stories').hide();
+						$('.latest-events').hide();
+						$('.latest-shop').show();
+					}
+				$('.dynamic-header-posts').slideDown('fast');
+			}
 			if (!$(this).children("a").hasClass('active-button')) {
 				$('.minify.sticky').css('margin-top','36px');
 				$('.minify.sticky').css('transition-delay','0s');
@@ -168,9 +207,12 @@
 		}).mouseleave(function(e) {
 				if ((!$('.navbar-nav').is(':hover')) && (!$('.dynamic-header-posts').is(':hover'))){
 			$(this).children("a").removeClass("active-button");
-					$('.dynamic-header-posts').slideUp('fast');
-					$(this).find('.sub-menu').slideUp('fast');
+						$('.dynamic-header-posts').slideUp('fast');
+						$(this).find('.sub-menu').slideUp('fast');
 					$('.menu-item-has-children').addClass('first-hover');
+
+
+	
 					if (!$(".menu-item-has-children > a").hasClass('active-button')){
 						$('.minify.sticky').css('transition', 'all 0.2s ease');
 						$('.minify.sticky').css('margin-top','0px');
