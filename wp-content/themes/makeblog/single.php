@@ -67,6 +67,8 @@ get_header('version-2'); ?>
 						<?php comments_template(); ?>
 					</div>
 					
+					<div id="pubexchange_rail"></div>
+					
 					<div id="contextly"></div>
 
 					<?php else: ?>
@@ -81,12 +83,6 @@ get_header('version-2'); ?>
 				<?php get_sidebar(); ?>
 
 
-			</div>
-
-			<div class="row">
-				
-				<div id="pubexchange_rail"></div>
-				
 			</div>
 
 		</div>
