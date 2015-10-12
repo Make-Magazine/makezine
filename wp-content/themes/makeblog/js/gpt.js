@@ -67,9 +67,9 @@
           }
 
           // Test
-          // if (window.location.hostname !== "makezine.com") {
-          //   googletag.pubads().setTargeting('t','dev');
-          // }
+          if (window.location.hostname !== "makezine.com") {
+            googletag.pubads().setTargeting('t', ['y']);
+          }
 
         });
 
