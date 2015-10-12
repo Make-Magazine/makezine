@@ -162,7 +162,6 @@
 
   
           <!-- MENUS -->
-          <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -171,6 +170,7 @@
                 <span class="icon-bar"></span>
               </button>
             </div>  
+          <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
             <!-- Collapsible Menu -->
 			<div id="makezine-navbar-collapse-1" class="navbar-collapse">
 			<!-- Mobile search -->
@@ -270,4 +270,71 @@
     <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
 </div>
 <div class="second-nav"></div>
+</div>
+<div class="dynamic-header-posts">
+  <div class="dynamic-header-content">
+    <div class="latest-projects">
+      <?php query_posts('post_type=projects&showposts=5'); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="project-post">
+          <a href="<?php the_permalink(); ?>" class="pull-left">
+            <?php the_post_thumbnail(); ?>
+          </a>
+          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        </div>
+      <?php endwhile; ?>
+      <?php else: ?>
+        <?php echo '<h1>No content found</h1>' ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+    </div>
+    <div class="latest-stories">
+      <?php query_posts('showposts=5'); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="stories-post">
+          <a href="<?php the_permalink(); ?>" class="pull-left">
+            <?php the_post_thumbnail(); ?>
+          </a>
+          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        </div>
+      <?php endwhile; ?>
+      <?php else: ?>
+        <?php echo '<h1>No content found</h1>' ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+    </div>
+    <div class="latest-shop">
+      <div class="shop-post">
+          <a href="http://www.makershed.com/collections/3d-printing-fabrication" class="pull-left first-post"></a>
+      </div>
+      <div class="shop-post">
+        <a href="http://www.makershed.com/collections/drones-flight" class="pull-left second-post"></a>
+      </div>
+      <div class="shop-post">
+        <a href="http://www.makershed.com/collections/toys" class="pull-left third-post"></a>
+      </div>
+      <div class="shop-post">
+        <a href="http://www.makershed.com/collections/books-magazines" class="pull-left fourth-post"></a>
+      </div>
+    </div>
+    <div class="latest-events">
+      <?php query_posts('post_type=events&showposts=5'); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+        $id = get_the_ID();?>
+        <div class="events-post">
+          <div class="event-thumbnail">
+            <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
+              <?php the_post_thumbnail(); ?>
+            </a>
+          </div>
+          <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
+          <h2><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'date',true); ?></a></h2>
+        </div>
+      <?php endwhile; ?>
+      <?php else: ?>
+        <?php echo '<h1>No content found</h1>' ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+    </div>
+  </div>
 </div>
