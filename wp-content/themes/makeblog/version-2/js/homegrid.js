@@ -456,7 +456,7 @@ jQuery(document).ready(function ($) {
 
     var paged = 1;
     $(document).on('click', '#pbd-alp-load-posts a', function () {
-
+        
         paged++;
         // Show that we're working.
         $(this).text('Loading...');
