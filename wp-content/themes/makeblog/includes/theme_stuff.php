@@ -619,6 +619,25 @@ function make_get_rid_of_thumbnail_class() {
 add_action('wp_footer', 'make_get_rid_of_thumbnail_class');
 
 /**
+ * Halloween Bats for halloween tag.
+ */
+function make_get_bats() {
+
+	if ( is_tag( 'halloween' ) ) { ?>
+
+		  <!-- adds bat number 1 -->
+		  <script type="text/javascript" async src="//1abxf1rh6g01lhm2riyrt55k.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/jsbat.js"></script>
+		  <!-- adds bat number 2 -->
+		  <script type="text/javascript" async src="//1abxf1rh6g01lhm2riyrt55k.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/jsbat.js"></script>
+		  <!-- adds bat number 3 -->
+		  <script type="text/javascript" async src="//1abxf1rh6g01lhm2riyrt55k.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/jsbat.js"></script>
+
+	<?php }
+}
+
+add_action('wp_footer', 'make_get_bats');
+
+/**
  * Hides the post name from the breadcrumb.
  * Ideally, we would do this using PHP, but I couldn't figure out an easy method. While this might be a little jarring, it works for now.
  */
