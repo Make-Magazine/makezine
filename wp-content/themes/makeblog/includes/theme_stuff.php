@@ -619,7 +619,7 @@ function make_get_rid_of_thumbnail_class() {
 add_action('wp_footer', 'make_get_rid_of_thumbnail_class');
 
 /**
- * Halloween Bats for halloween tag.
+ * Halloween Bats for halloween tag
  */
 function make_get_bats() {
 
