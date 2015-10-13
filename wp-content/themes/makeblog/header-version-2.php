@@ -40,7 +40,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php bloginfo('siteurl'); ?>/apple-icon-120x120.png">
 
     <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png">
 
     <!-- For first- and second-generation iPad: -->
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('siteurl'); ?>/apple-icon-72x72.png">
