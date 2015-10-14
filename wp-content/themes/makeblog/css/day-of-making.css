@@ -5852,6 +5852,7 @@ p:empty {
   font-family: "proxima-nova", sans-serif;
   border-bottom: 3px solid #DBDBDB;
   padding-top: 15px;
+  background-color: white;
 }
 .category-top h1 {
   font-size: 38px;
@@ -9363,6 +9364,7 @@ body.makercamp a.button.small-button {
   font-family: "proxima-nova", sans-serif;
   border-bottom: 3px solid #DBDBDB;
   padding-top: 15px;
+  background-color: white;
   border-bottom: 0px;
   position: static;
   width: inherit;
@@ -10370,6 +10372,7 @@ body .single {
   font-family: "proxima-nova", sans-serif;
   border-bottom: 3px solid #DBDBDB;
   padding-top: 15px;
+  background-color: white;
   border-bottom: 0px;
 }
 body .single h1 {

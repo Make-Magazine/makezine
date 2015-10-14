@@ -45,6 +45,10 @@
 						</div>
 
 						<div class="sidebar-ad">
+							<div id="pubexchange_rail"></div>
+						</div>
+						
+						<div class="sidebar-ad">
 
 							<!-- Beginning Sync AdSlot 3 for Ad unit header ### size: [[300,250]]  -->
 							<div id='div-gpt-ad-664089004995786621-3'>
