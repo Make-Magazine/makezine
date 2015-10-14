@@ -1813,8 +1813,7 @@ function home_tags($postid) {
 	$post_type = get_post_type( $postid );
 	$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
 	if ( $post_type == 'projects' ) {
-		$flag = get_post_meta( $postid, 'flag_taxonomy', true );
-
+		$flag = get_post_meta( $postid, 'display_category', true );
 		if ( ! empty( $flag ) ) {
 			$category = get_term( $flag, 'category' );
 		} else {
