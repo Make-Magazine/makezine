@@ -1820,8 +1820,7 @@ function home_tags($postid) {
 			$categories = get_the_category( $postid );
 			$category = $categories[0];
 		}
-
-		$catname = $category->slug;
+		$catname = $category->name;
 		$caturl = get_category_link( $category ) . '?post_type=projects';
 
 		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
