@@ -179,7 +179,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 
 <!-- PROMO AREA-->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="//makercamp.com">
+        <a href="//makezine.com/tag/halloween/">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_halloween9.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div> 
