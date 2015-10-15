@@ -472,7 +472,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $max_num_pages = $query->max_num_pages;
     $output = '';
     // Add leadboard for additional pages.
-    if (isset($paged) && $paged > 1 && $post_per_page == 12) {
+    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
         $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
     }
     if ($type !== 'load_more') {
