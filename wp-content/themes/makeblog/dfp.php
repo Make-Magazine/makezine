@@ -88,6 +88,12 @@ $make->ads->rectangle = make_ads_render(array(
     'pos' => 'btf',
 ));
 
+// 1x1.
+$make->ads->out_of_page = make_ads_render(array(
+    'size' => '[[1,1]]',
+    'pos' => 'atf',
+));
+
 /*
  * Gather ad variables.
  */
@@ -257,6 +263,8 @@ if ($make->use_new): ?>
     
     <!-- Make GPT -->
     <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
+
+    <?php print $make->ads->out_of_page; ?>
 
 <?php else: ?>
 
