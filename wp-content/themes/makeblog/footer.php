@@ -13,7 +13,7 @@ global $make;
 				<div class="footer-ad <?php echo ( make_is_parent_page() && ! is_category( 'maker-pro' ) ) ? 'grey' : '' ; ?>" style="clear:both;">
 					
 					<div class="ad-slot">
-						<?php if (is_front_page()): ?>
+						<?php if ($make->use_new): ?>
 							<?php print $make->ads->leaderboard_alt_btf; ?>
 						<?php else: ?>
 						<!-- Beginning Sync AdSlot 4 for Ad unit header ### size: [[728,90]]  -->

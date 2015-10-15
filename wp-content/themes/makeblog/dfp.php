@@ -7,8 +7,11 @@
  */
 
 global $make;
-
+global $wp_query;
 global $post;
+
+// REMOVE WHEN USED GLOBABLY
+$make->use_new = is_front_page() || $_SERVER['REQUEST_URI'] == "/projects/" || is_category() ? TRUE : FALSE;
 
 /*
  * Set standard ad sizes.
@@ -94,7 +97,9 @@ $make->ad_vars = new stdClass();
 // Get current page info.
 $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
 $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
-$posttags = get_the_tags();
+$posttags = is_single() ? get_the_tags() : NULL;
+$postcat = is_single() ? get_the_category() : (is_category() ? explode(",", get_category_parents($wp_query->get_queried_object()->term_id, FALSE, ",")) : NULL);
+
 $make->ad_vars->page = $_SERVER['REQUEST_URI'];
 
 // Post info.
@@ -109,11 +114,21 @@ if ($current_page !== NULL) {
 $make->ad_vars->custom_target_name = !empty($post_adslot_targeting_name) ? $post_adslot_targeting_name : NULL;
 $make->ad_vars->custom_target_value = !empty($post_adslot_targeting_name) ? (!empty($post_adslot_targeting_ids) ? $post_adslot_targeting_ids : (string) $post->ID) : NULL;
 
-// Taxonomy.
+// Post Taxonomy.
 if ($posttags) {
-    $make->ad_vars->cat = array();
+    $make->ad_vars->tags = array();
     foreach($posttags as $tag) {
-        $make->ad_vars->cat[] = $tag->name; 
+        $make->ad_vars->tags[] = $tag->name; 
+    }
+}
+
+// Categories.
+if ($postcat) {
+    $make->ad_vars->cat = array();
+    foreach($postcat as $cat) {
+        if ($cat != "") {
+            $make->ad_vars->cat[] = is_object($cat) ? $cat->name : $cat;
+        }
     }
 }
 
@@ -229,14 +244,17 @@ else {
     $make->ad_vars->sponsor = NULL;   
 }
 
-
-// Use new gpt.js on homepage only for now.
-if (is_front_page()): ?>
-    
+?>
     <!-- Page Ad Vars -->
     <script type='text/javascript'>
         var ad_vars = <?php print json_encode($make->ad_vars); ?>;
     </script>
+
+<?php
+
+// Use new gpt.js on homepage & category pages for now.
+if ($make->use_new): ?>
+    
     <!-- Make GPT -->
     <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 

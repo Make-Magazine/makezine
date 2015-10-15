@@ -471,6 +471,10 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $ads_counter = 0;
     $max_num_pages = $query->max_num_pages;
     $output = '';
+    // Add leadboard for additional pages.
+    if (isset($paged) && $paged > 1 && $post_per_page == 12) {
+        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -507,10 +511,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 if (($ads_counter == 1) and ($device == 'mobile')) {
                     $output .= ' before-ads';
                 }
-
-
-
-
 
                 $post_id = get_the_ID();
                 $output .= '">';
@@ -760,10 +760,8 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
         $post_per_page_initial = 12;
         $device = 'tablet';
     }
-    if ($paged == 1) {
+    else {
         $post_per_page = $post_per_page_initial - 1;
-    } else { // in other page number of post (b=6),{equation: a+($paged -2)*b]
-        $post_per_page = $post_per_page_initial;
     }
     $current_cat_name = single_cat_title("", 0);
     $sub_meta_query = array(
@@ -861,6 +859,10 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     $max_num_pages = $query->max_num_pages;
     $count_posts = $query->post_count;
     $output = '';
+    // Add leadboard for additional pages.
+    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
+        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -1092,14 +1094,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '">';
                 $output .= '<div class="own">';
                 $output .= '<div class="home-ads">';
-                $output .= '<div id="div-gpt-ad-664089004995786621-2">';
-                $output .= '<script type="text/javascript">';
-                $output .= 'googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-2")});';
-                if ($type !== 'load_more') {
-                    $output .= 'googletag.pubads().refresh();';
-                }
-                $output .= '</script>';
-                $output .= '</div>';
+                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</li>';

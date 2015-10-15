@@ -478,6 +478,9 @@ jQuery(document).ready(function ($) {
             }
 
             $('#pbd-alp-load-posts a').text('More');
+
+            // Load placeholder ads.
+            make.gpt.loadDyn();
         });
 
         return false;

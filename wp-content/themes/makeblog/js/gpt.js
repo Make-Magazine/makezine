@@ -64,6 +64,9 @@
             if (ad_vars.cat) {
               googletag.pubads().setTargeting("cat", ad_vars.cat);
             }
+            if (ad_vars.tags) {
+              googletag.pubads().setTargeting("tags", ad_vars.tags);
+            }
           }
 
           // Test
@@ -130,6 +133,7 @@
             'viewport' : null,
             'page': window.ad_vars ? ad_vars.page : null,
             'cat': window.ad_vars ? ad_vars.cat : null,
+            'tags': window.ad_vars ? ad_vars.tags : null,
             'companion': false,
             'custom': window.ad_vars && ad_vars.custom_target_name ? [ad_vars.custom_target_name, ad_vars.custom_target_value] : null
           },
@@ -160,6 +164,9 @@
           }
           if (ad.cat) {
             window[ad.slot].setTargeting("cat", ad.cat);
+          }
+          if (ad.tags) {
+            window[ad.slot].setTargeting("tags", ad.tags);
           }
           if (ad.custom) {
             window[ad.slot].setTargeting(ad.custom[0], ad.custom[1]);
