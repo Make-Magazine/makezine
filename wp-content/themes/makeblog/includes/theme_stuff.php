@@ -1813,16 +1813,14 @@ function home_tags($postid) {
 	$post_type = get_post_type( $postid );
 	$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
 	if ( $post_type == 'projects' ) {
-		$flag = get_post_meta( $postid, 'flag_taxonomy', true );
-
+		$flag = get_post_meta( $postid, 'display_category', true );
 		if ( ! empty( $flag ) ) {
 			$category = get_term( $flag, 'category' );
 		} else {
 			$categories = get_the_category( $postid );
 			$category = $categories[0];
 		}
-
-		$catname = $category->slug;
+		$catname = $category->name;
 		$caturl = get_category_link( $category ) . '?post_type=projects';
 
 		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
