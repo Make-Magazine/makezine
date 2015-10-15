@@ -186,6 +186,8 @@ include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/home-menu-curator.php';
 
+// Define global make obj.
+$make = new stdClass();
 
 function dfp_add_meta_boxes($postType)
 {
@@ -469,6 +471,10 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $ads_counter = 0;
     $max_num_pages = $query->max_num_pages;
     $output = '';
+    // Add leadboard for additional pages.
+    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
+        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -479,212 +485,227 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $counter++;
 
-            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
-            if (($ads_counter == 17) and ($device != 'tablet') and ($device != 'mobile')) {
-                $output .= ' before-ads';
-            }
-            if (($ads_counter == 3) and ($device == 'tablet')) {
-                $output .= ' before-ads';
-            }
-            if (($ads_counter == 1) and ($device == 'mobile')) {
-                $output .= ' before-ads';
-            }
-
-
-
-
-
-            $post_id = get_the_ID();
-            $output .= '">';
-            $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
-            $link = get_the_permalink();
-            $output .= $link;
-            $output .= '">';
-            $output .= '</a></div>';
-            $output .= '<div class="final_gradient"><a href="';
-            $link = get_the_permalink();
-            $output .= $link;
-            $output .= '">';
-            $output .= '</a></div>';
-            $output .= '<a href="';
-            $link = get_the_permalink();
-            $output .= $link;
-            $output .= '">';
-            $args = array(
-                'resize' => '370,240',
-            );
-            $url = wp_get_attachment_image(get_post_thumbnail_id($post_id), 'project-thumb');
-            $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-            preg_match_all($re, $url, $matches);
-            $str = $matches[2][0];
-            $photon = jetpack_photon_url($str, $args);
-            $output .= '<img src="' . $photon . '" alt="thumbnail">';
-            $output .= '</a>';
-
-
-            $post_duration = get_post_meta($post_id, 'project_duration');
-            $post_difficulty = get_post_meta($post_id, 'project_difficulty');
-            $post_video = get_post_meta($post_id, 'ga_youtube_embed');
-            $post_flag = get_post_meta($post_id, 'flag_taxonomy');
-            $output .= '<div class="filter-display-wrapper">';
-            $output .= '<div class="red-box-category">';
-
-            $red_cat_name = '';
-            $cat_link = '';
-            if ('post' == get_post_type()) {
-                $post_display_category = get_post_meta($post_id, 'display_category');
-
-                if (!empty($post_display_category[0])) {
-                    $red_cat_name = get_tag(intval($post_display_category[0]))->name;
-                    $cat_link = get_tag_link($post_display_category[0]);
-                } else {
-                    if ($the_tags = get_the_tags()) {
-                        $the_tag = $the_tags[0]; //TODO: be smarter here.  Should probably get the tag with most things
-                        $red_cat_name = $the_tag->name;
-                        $cat_link = get_tag_link($the_tag->term_id);
-                    }
-                }
-            } elseif (!empty($post_flag[0])) {
-                $red_cat_name = get_cat_name(intval($post_flag[0]));
-                $cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
-            } else {
-                $post_categories = get_the_category();
-                foreach ($post_categories as $post_category) {
-                    if (!empty($current_cat_id)) {
-                        if ($post_category->parent == $current_cat_id) {
-                            $child_cat[] = $post_category->name;
-                        }
-                    } else {
-                        if ($post_category->category_parent == 0) {
-                            $parent_cat[] = $post_category->name;
-                            $parent_id[] = $post_category->term_id;
-                        }
-                    }
-                }
-
-
-                if (!empty($current_cat_id)) {
-                    $child_cat_length = count($child_cat);
-                    $child_cat_length--;
-                    $random_cat_number = rand(0, $child_cat_length);
-                    if ($child_cat_length >= 0) {
-                        $red_cat_name = $child_cat[$random_cat_number];
-                    } else {
-                        $red_cat_name = '';
-                    }
-                } else {
-                    $parent_cat_length = count($parent_cat);
-                    $parent_cat_length--;
-                    $random_cat_number = rand(0, $parent_cat_length);
-                    $red_cat_name = $parent_cat[$random_cat_number];
-                    $cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
-                }
-            }
-            $red_cat_name = htmlspecialchars_decode($red_cat_name);
-            $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
-            if ($cat_length > 13) {
-                $red_cat_name = substr($red_cat_name, 0, 13) . '...';
-            }
-            if (!empty($red_cat_name)) {
-                $output .= '<p><a href="';
-                $output .= $cat_link;
-                if ('post' == get_post_type()) {
-                    $output .= '">#';
-                } else {
-                    $output .= '"><span class="fa fa-wrench"></span>';
-                }
-                $output .= $red_cat_name;
-                $output .= '</a></p>';
-            }
-            if (!empty($post_video[0])) {
-                $output .= '<div class="videoblock">';
-                $output .= '<span class="video fa fa-video-camera"></span>';
+            if ( $ads_counter == 0 && $counter == 3 && $post_per_page == 18 ) {
+                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
+                $output .= '">';
+                $output .= '<div class="own">';
+                $output .= '<div class="home-ads">';
+                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</li>';
+                $counter++;
+                $output .= '</ul> </li>';
+                $counter = 0;
+                $ads_counter = 1;
             }
-            $output .= '</div>';
-            $difficulty_counter = 0;
-            $duration_counter = 0;
-            if (!empty($post_difficulty[0])) {
-                switch ($post_difficulty[0]) {
-                    case 'Easy':
-                        $difficulty_counter = 1;
-                        break;
-                    case 'Moderate':
-                        $difficulty_counter = 2;
-                        break;
-                    case 'Hard':
-                        $difficulty_counter = 3;
-                        break;
+            else {
+
+                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
+                if (($ads_counter == 16) and ($device != 'tablet') and ($device != 'mobile')) {
+                    $output .= ' before-ads';
                 }
+                if (($ads_counter == 3) and ($device == 'tablet')) {
+                    $output .= ' before-ads';
+                }
+                if (($ads_counter == 1) and ($device == 'mobile')) {
+                    $output .= ' before-ads';
+                }
+
+                $post_id = get_the_ID();
+                $output .= '">';
+                $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $output .= '</a></div>';
+                $output .= '<div class="final_gradient"><a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $output .= '</a></div>';
+                $output .= '<a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $args = array(
+                    'resize' => '370,240',
+                );
+                $url = wp_get_attachment_image(get_post_thumbnail_id($post_id), 'project-thumb');
+                $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+                preg_match_all($re, $url, $matches);
+                $str = $matches[2][0];
+                $photon = jetpack_photon_url($str, $args);
+                $output .= '<img src="' . $photon . '" alt="thumbnail">';
+                $output .= '</a>';
+
+
+                $post_duration = get_post_meta($post_id, 'project_duration');
+                $post_difficulty = get_post_meta($post_id, 'project_difficulty');
+                $post_video = get_post_meta($post_id, 'ga_youtube_embed');
+                $post_flag = get_post_meta($post_id, 'flag_taxonomy');
+                $output .= '<div class="filter-display-wrapper">';
+                $output .= '<div class="red-box-category">';
+
+                $red_cat_name = '';
+                $cat_link = '';
+                if ('post' == get_post_type()) {
+                    $post_display_category = get_post_meta($post_id, 'display_category');
+
+                    if (!empty($post_display_category[0])) {
+                        $red_cat_name = get_tag(intval($post_display_category[0]))->name;
+                        $cat_link = get_tag_link($post_display_category[0]);
+                    } else {
+                        if ($the_tags = get_the_tags()) {
+                            $the_tag = $the_tags[0]; //TODO: be smarter here.  Should probably get the tag with most things
+                            $red_cat_name = $the_tag->name;
+                            $cat_link = get_tag_link($the_tag->term_id);
+                        }
+                    }
+                } elseif (!empty($post_flag[0])) {
+                    $red_cat_name = get_cat_name(intval($post_flag[0]));
+                    $cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
+                } else {
+                    $post_categories = get_the_category();
+                    foreach ($post_categories as $post_category) {
+                        if (!empty($current_cat_id)) {
+                            if ($post_category->parent == $current_cat_id) {
+                                $child_cat[] = $post_category->name;
+                            }
+                        } else {
+                            if ($post_category->category_parent == 0) {
+                                $parent_cat[] = $post_category->name;
+                                $parent_id[] = $post_category->term_id;
+                            }
+                        }
+                    }
+
+
+                    if (!empty($current_cat_id)) {
+                        $child_cat_length = count($child_cat);
+                        $child_cat_length--;
+                        $random_cat_number = rand(0, $child_cat_length);
+                        if ($child_cat_length >= 0) {
+                            $red_cat_name = $child_cat[$random_cat_number];
+                        } else {
+                            $red_cat_name = '';
+                        }
+                    } else {
+                        $parent_cat_length = count($parent_cat);
+                        $parent_cat_length--;
+                        $random_cat_number = rand(0, $parent_cat_length);
+                        $red_cat_name = $parent_cat[$random_cat_number];
+                        $cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
+                    }
+                }
+                $red_cat_name = htmlspecialchars_decode($red_cat_name);
+                $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
+                if ($cat_length > 13) {
+                    $red_cat_name = substr($red_cat_name, 0, 13) . '...';
+                }
+                if (!empty($red_cat_name)) {
+                    $output .= '<p><a href="';
+                    $output .= $cat_link;
+                    if ('post' == get_post_type()) {
+                        $output .= '">#';
+                    } else {
+                        $output .= '"><span class="fa fa-wrench"></span>';
+                    }
+                    $output .= $red_cat_name;
+                    $output .= '</a></p>';
+                }
+                if (!empty($post_video[0])) {
+                    $output .= '<div class="videoblock">';
+                    $output .= '<span class="video fa fa-video-camera"></span>';
+                    $output .= '</div>';
+                }
+                $output .= '</div>';
+                $difficulty_counter = 0;
+                $duration_counter = 0;
+                if (!empty($post_difficulty[0])) {
+                    switch ($post_difficulty[0]) {
+                        case 'Easy':
+                            $difficulty_counter = 1;
+                            break;
+                        case 'Moderate':
+                            $difficulty_counter = 2;
+                            break;
+                        case 'Hard':
+                            $difficulty_counter = 3;
+                            break;
+                    }
+                }
+
+                if (!empty($post_duration[0])) {
+                    switch ($post_duration[0]) {
+                        case '1–3 Hours ':
+                            $duration_counter = 1;
+                            break;
+                        case '3-8 Hours':
+                            $duration_counter = 2;
+                            break;
+                        case '8–16 Hours (A Weekend)':
+                            $duration_counter = 3;
+                            break;
+                        case '>16 Hours':
+                            $duration_counter = 4;
+                            break;
+                    }
+                }
+
+                $output .= '<div class="difficulty-lvl">';
+                while ($difficulty_counter > 0) {
+                    $output .= '<span class="difficulty-level-image fa fa-wrench"></span>';
+                    $difficulty_counter--;
+                }
+                $output .= '</div>';
+                $output .= '<div class="duration-lvl">';
+                while ($duration_counter > 0) {
+                    $output .= '<span class="duration-level-image fa fa-clock-o"></span>';
+                    $duration_counter--;
+                }
+                $output .= '</div>';
+                $output .= '</div>';
+                $excerpt = get_the_excerpt();
+                if (!has_excerpt($post_id)) {
+                    $excerpt = strip_tags(strip_shortcodes(winwar_first_sentence($excerpt)));
+                }
+                $output .= '<p class="excerpt trans"><a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
+                    egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
+                    here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
+                */
+                $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
+                $output .= '</a>';
+                $output .= '</p>';
+                $output .= '</div><h2>';
+                $output .= '<a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $post_title = get_the_title();
+                $output .= truncate_with_ellipses($post_title, 90);
+                $output .= '</a>';
+                $output .= '</h2></li>';
+                if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
+                    $output .= '</ul> </li>';
+                    $counter = 0;
+                }
+                if (($counter == 2) and ($device == 'tablet')) {
+                    $output .= '</ul> </li>';
+                    $counter = 0;
+                }
+                if (($counter == 1) and ($device == 'mobile')) {
+                    $output .= '</ul> </li>';
+                    $counter = 0;
+                }
+
             }
 
-            if (!empty($post_duration[0])) {
-                switch ($post_duration[0]) {
-                    case '1–3 Hours ':
-                        $duration_counter = 1;
-                        break;
-                    case '3-8 Hours':
-                        $duration_counter = 2;
-                        break;
-                    case '8–16 Hours (A Weekend)':
-                        $duration_counter = 3;
-                        break;
-                    case '>16 Hours':
-                        $duration_counter = 4;
-                        break;
-                }
-            }
-
-            $output .= '<div class="difficulty-lvl">';
-            while ($difficulty_counter > 0) {
-                $output .= '<span class="difficulty-level-image fa fa-wrench"></span>';
-                $difficulty_counter--;
-            }
-            $output .= '</div>';
-            $output .= '<div class="duration-lvl">';
-            while ($duration_counter > 0) {
-                $output .= '<span class="duration-level-image fa fa-clock-o"></span>';
-                $duration_counter--;
-            }
-            $output .= '</div>';
-            $output .= '</div>';
-            $excerpt = get_the_excerpt();
-            if (!has_excerpt($post_id)) {
-                $excerpt = strip_tags(strip_shortcodes(winwar_first_sentence($excerpt)));
-            }
-            $output .= '<p class="excerpt trans"><a href="';
-            $link = get_the_permalink();
-            $output .= $link;
-            $output .= '">';
-            /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
-                egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
-                here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
-            */
-            $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
-            $output .= '</a>';
-            $output .= '</p>';
-            $output .= '</div><h2>';
-            $output .= '<a href="';
-            $link = get_the_permalink();
-            $output .= $link;
-            $output .= '">';
-            $post_title = get_the_title();
-            $output .= truncate_with_ellipses($post_title, 90);
-            $output .= '</a>';
-            $output .= '</h2></li>';
-            if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if (($counter == 2) and ($device == 'tablet')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if (($counter == 1) and ($device == 'mobile')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            $ads_counter++;
+            
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
             $output .= '</ul> </li>';
@@ -739,10 +760,8 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
         $post_per_page_initial = 12;
         $device = 'tablet';
     }
-    if ($paged == 1) {
+    else {
         $post_per_page = $post_per_page_initial - 1;
-    } else { // in other page number of post (b=6),{equation: a+($paged -2)*b]
-        $post_per_page = $post_per_page_initial;
     }
     $current_cat_name = single_cat_title("", 0);
     $sub_meta_query = array(
@@ -840,6 +859,10 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     $max_num_pages = $query->max_num_pages;
     $count_posts = $query->post_count;
     $output = '';
+    // Add leadboard for additional pages.
+    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
+        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -1071,14 +1094,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '">';
                 $output .= '<div class="own">';
                 $output .= '<div class="home-ads">';
-                $output .= '<div id="div-gpt-ad-664089004995786621-2">';
-                $output .= '<script type="text/javascript">';
-                $output .= 'googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-2")});';
-                if ($type !== 'load_more') {
-                    $output .= 'googletag.pubads().refresh();';
-                }
-                $output .= '</script>';
-                $output .= '</div>';
+                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</li>';
