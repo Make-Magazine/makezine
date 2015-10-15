@@ -179,8 +179,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 
 <!-- PROMO AREA-->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="//makezine.com/tag/halloween/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_halloween9.jpg' ?>" class="img-responsive center-block event" />
+        <a href="//makercamp.com/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-makercamp-02.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
@@ -189,9 +189,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-        <a href="http://makerfaire.com/global/school/?utm_source=
-makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=maker+faire+101">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/150915-cross-site-promos-r5-08a-2.jpg' ?>" class="img-responsive center-block event" />
+        <a href="//makezine.com/tag/halloween/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_halloween9.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div> 
     </div>  
