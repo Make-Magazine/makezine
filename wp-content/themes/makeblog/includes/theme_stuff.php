@@ -863,29 +863,6 @@ function make_get_better_tag_title( $title = null ) {
 }
 
 /**
- * For projects or reviews, filter the title to say New {post_type}: title
- */
-function make_projects_title_change( $title ) {
-	global $post;
-	switch ( get_post_type() ) {
-		case 'projects':
-			$title = 'New Project: ' . $title;
-			break;
-
-		case 'review':
-			$title = 'New Review: ' . $title;
-			break;
-
-		default:
-			$title;
-			break;
-	}
-	return $title;
-}
-
-add_filter( 'the_title_rss', 'make_projects_title_change' );
-
-/**
  * Adds the post thumbnail to the RSS feed.
  * Like a lot of people, I wish that we weren't truncating the RSS feed, but hey, not my decision!
  */
