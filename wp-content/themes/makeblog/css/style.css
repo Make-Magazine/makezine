@@ -5656,6 +5656,9 @@ a.badge:focus {
 .make_ad {
   text-align: center;
 }
+.js-ads {
+  margin-top: 15px;
+}
 .custom-feed.simple {
   border: 1px solid #dadada;
   border-radius: 5px;
