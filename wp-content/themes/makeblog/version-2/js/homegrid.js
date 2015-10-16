@@ -555,3 +555,4 @@ jQuery(document).ready(function ($) {
         $('.fade').removeClass('fade');
     });
 });
+
