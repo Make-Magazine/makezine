@@ -1174,3 +1174,4 @@ function projects_theme_setup_thumbnail()
 {
     add_image_size('project-thumb', 370, 240, true); // (cropped)
 }
+
