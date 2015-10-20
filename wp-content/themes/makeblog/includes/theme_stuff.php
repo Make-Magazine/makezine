@@ -619,6 +619,25 @@ function make_get_rid_of_thumbnail_class() {
 add_action('wp_footer', 'make_get_rid_of_thumbnail_class');
 
 /**
+ * Halloween Bats for halloween tag
+ */
+function make_get_bats() {
+
+	if ( is_tag( 'halloween' ) ) { ?>
+
+		  <!-- adds bat number 1 -->
+		  <script type="text/javascript" async src="//1abxf1rh6g01lhm2riyrt55k.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/jsbat.js"></script>
+		  <!-- adds bat number 2 -->
+		  <script type="text/javascript" async src="//1abxf1rh6g01lhm2riyrt55k.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/jsbat.js"></script>
+		  <!-- adds bat number 3 -->
+		  <script type="text/javascript" async src="//1abxf1rh6g01lhm2riyrt55k.wpengine.netdna-cdn.com/wp-content/uploads/2015/10/jsbat.js"></script>
+
+	<?php }
+}
+
+add_action('wp_footer', 'make_get_bats');
+
+/**
  * Hides the post name from the breadcrumb.
  * Ideally, we would do this using PHP, but I couldn't figure out an easy method. While this might be a little jarring, it works for now.
  */
@@ -842,29 +861,6 @@ function make_get_better_tag_title( $title = null ) {
 	return $newtag;
 
 }
-
-/**
- * For projects or reviews, filter the title to say New {post_type}: title
- */
-function make_projects_title_change( $title ) {
-	global $post;
-	switch ( get_post_type() ) {
-		case 'projects':
-			$title = 'New Project: ' . $title;
-			break;
-
-		case 'review':
-			$title = 'New Review: ' . $title;
-			break;
-
-		default:
-			$title;
-			break;
-	}
-	return $title;
-}
-
-add_filter( 'the_title_rss', 'make_projects_title_change' );
 
 /**
  * Adds the post thumbnail to the RSS feed.
@@ -1794,16 +1790,14 @@ function home_tags($postid) {
 	$post_type = get_post_type( $postid );
 	$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
 	if ( $post_type == 'projects' ) {
-		$flag = get_post_meta( $postid, 'flag_taxonomy', true );
-
+		$flag = get_post_meta( $postid, 'display_category', true );
 		if ( ! empty( $flag ) ) {
 			$category = get_term( $flag, 'category' );
 		} else {
 			$categories = get_the_category( $postid );
 			$category = $categories[0];
 		}
-
-		$catname = $category->slug;
+		$catname = $category->name;
 		$caturl = get_category_link( $category ) . '?post_type=projects';
 
 		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';

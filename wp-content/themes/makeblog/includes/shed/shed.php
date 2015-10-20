@@ -25,7 +25,7 @@ function make_featured_products_slider() {
   // Let's get the data feed
   #$url = 'http://makershed.com/net/webservice.aspx?api_name=generic\featured_products';
   // Use the new url
-  $url = 'https://my.datafeedwatch.com/static/files/1596/324605c6815f680a42b42b83010f9c5b886bb32e.xml';
+  $url = 'https://my.datafeedwatch.com/static/files/1596/8f1984b40946bfa7b4d9ca6cd862a2c59e56fcc6.xml';
   $xml = wpcom_vip_file_get_contents( $url, 3, 60,  array( 'obey_cache_control_header' => true ) );
   // If a bad response, bail.
   if ( ! $xml )
@@ -95,7 +95,7 @@ function make_shopify_featured_products_slider( $row = 'row' ) {
   // Let's get the data feed
   
   $output = '<!-- BEGIN ITMS: -->';
-  $url = 'https://my.datafeedwatch.com/static/files/1596/324605c6815f680a42b42b83010f9c5b886bb32e.xml';
+  $url = 'https://my.datafeedwatch.com/static/files/1596/8f1984b40946bfa7b4d9ca6cd862a2c59e56fcc6.xml';
   $xml = wpcom_vip_file_get_contents( $url, 3, 60*5,  array( 'obey_cache_control_header' => false ) );
 
   // If a bad response, bail.
@@ -161,7 +161,7 @@ function make_shopify_featured_products_slider_home( $row = 'row' ) {
   // Let's get the data feed
   
   $output = '<!-- BEGIN ITMS: -->';
-  $url = 'https://my.datafeedwatch.com/static/files/1596/324605c6815f680a42b42b83010f9c5b886bb32e.xml';
+  $url = 'https://my.datafeedwatch.com/static/files/1596/8f1984b40946bfa7b4d9ca6cd862a2c59e56fcc6.xml';
   $xml = wpcom_vip_file_get_contents( $url, 3, 60*5,  array( 'obey_cache_control_header' => false ) );
 
   // If a bad response, bail.

@@ -18,12 +18,53 @@
     <meta name="description" content="Version2">
     <meta name="author" content="">
 
-    <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico" />
-    <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico" />
+    <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
+    <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon.png?v=2"/>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-144x144.png"/>
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('siteurl'); ?>/apple-icon-57x57.png?v=2">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('siteurl'); ?>/apple-icon-60x60.png?v=2">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('siteurl'); ?>/apple-icon-76x76.png?v=2">
+
+    <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>apple-touch-icon.png?v=2"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>apple-icon-72x72.png?v=2"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>apple-icon-144x144.png?v=2"/>
+
+    <!-- IE 10 Metro tile icon. Replace #FFFFFF with desired tile color -->
+    <link rel="manifest" href="<?php bloginfo('siteurl'); ?>/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php bloginfo('siteurl'); ?>/ms-icon-144x144.png?v=2">
+    <meta name="theme-color" content="#ffffff"> 
+
+    <link rel="icon" sizes="192x192" href="<?php bloginfo('siteurl'); ?>/apple-icon-192x192.png?v=2">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('siteurl'); ?>/apple-icon-180x180.png?v=2">
+
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('siteurl'); ?>/apple-icon-152x152.png?v=2">
+
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('siteurl'); ?>/apple-icon-144x144.png?v=2">
+
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('siteurl'); ?>/apple-icon-120x120.png?v=2">
+
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png?v=2">
+
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>/apple-icon-72x72.png?v=2">
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon-precomposed.png?v=2">
+
+    <!-- For any additional png sizes that aren't covered above -->
+    <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >    
+    <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
+    <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
+
+
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
@@ -187,17 +228,36 @@
 			
 	       <div class="mz-social mobile-social">  
           <h5>Follow Us</h5>
-          <a href="http://facebook.com/makemagazine"><img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="social-button"></img></a>
-          <a href="http://twitter.com/make"><img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="social-button"></img></a>
-          <a href="http://pinterest.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="social-button"></img></a>    
-          <a href="http://https://instagram.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="social-button"></img></a> 
+          <a href="http://facebook.com/makemagazine">
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a>
+
+          <a href="http://twitter.com/make">
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a>
+
+          <a href="http://pinterest.com/makemagazine/">
+             <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a> 
+
+          <a href="https://instagram.com/makemagazine/">
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a> 
 
 
-          <!--  <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
-          <a href="http://twitter.com/make"><i class="fa fa-twitter sfa-lg"></i></a>
-          <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>    
-          <a href="http://https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a>  -->
-        	
+  
 					<div class="mz-footer-subscribe"> 
 							<?php
 								$isSecure = "http://";
@@ -248,22 +308,40 @@
 						<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
 		  </div>
 			
-          <!-- SOCIAL MEDIA ICONS -->
-          <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
-            <div class="mz-social">  
-              <a href="http://facebook.com/makemagazine"><img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="social-button"></img></a>
-              <a href="http://twitter.com/make"><img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="social-button"></img></a>
-              <a href="http://pinterest.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="social-button"></img></a>    
-              <a href="https://instagram.com/makemagazine/"><img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="social-button"></img></a> 
-      
-              <!--  <a href="http://facebook.com/makemagazine"><i class="fa fa-facebook fa-lg"></i></a>
-              <a href="http://twitter.com/make"><i class="fa fa-twitter  fa-lg"></i></a>
-              <a href="http://pinterest.com/makemagazine/"><i class="fa fa-pinterest-p fa-lg"></i></a>    
-              <a href="https://instagram.com/makemagazine/"><i class="fa fa-instagram fa-lg"></i></a>  -->
-            </div>     
-          </div>   
-        </div> <!-- row -->  
-      </nav>
+        <!-- SOCIAL MEDIA ICONS -->
+        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
+        <div class="mz-social">  
+          <a href="http://facebook.com/makemagazine">
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a>
+
+          <a href="http://twitter.com/make">
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a>
+
+          <a href="http://pinterest.com/makemagazine/">
+             <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a> 
+
+          <a href="https://instagram.com/makemagazine/">
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span> 
+          </a> 
+        </div>     
+      </div>      
+    </div> <!-- row -->  
+  </nav>
 
     
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
