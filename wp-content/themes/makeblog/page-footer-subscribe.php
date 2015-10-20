@@ -26,7 +26,7 @@
 				<div class="row">
 					<div class="span3 trending">
 						<h5>Trending</h5>
-						<?php echo wp_kses_post( stripslashes( make_get_cap_option( 'hot_topics' ) ) ); ?>
+						<?php echo wp_kses_post( stripslashes( 'hot_topics' ) ); ?>
 					<!-- END span trending -->
 					</div>
 					<div class="span4 newsletter">
