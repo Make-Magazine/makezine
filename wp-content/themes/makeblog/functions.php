@@ -400,11 +400,11 @@ function filter_list_output()
     $output .= '<li class="difficulty">';
     $output .= '<p>difficulty</p>';
     $output .= '<ul class="diff-item">';
-    $output .= '<li><span class="all-lvl fa fa-wrench clicks" data-value="diff1" data-original-title="For All Levels"></span></li>';
+    $output .= '<li><span class="all-lvl fa fa-wrench clicks" data-value="diff1" data-original-title="Easy for Everyone"></span></li>';
     $output .= '<li><span class="moderate fa fa-wrench clicks"  data-value="diff2" data-toggle="tooltip" data-placement="top"
-       data-original-title="Moderate Difficulty. But You Can Totally Make This."></span></li>';
+       data-original-title="Intermediate"></span></li>';
     $output .= '<li><span class="spec-skill fa fa-wrench clicks"  data-value="diff3" data-toggle="tooltip" data-placement="top"
-       data-original-title="Calls For Some Specific Skills...Nothing You Can\'t Learn!"></span></li>';
+       data-original-title="Advanced (But we`ll help you learn the required skills.)"></span></li>';
     $output .= '</ul>';
     $output .= '</li>';
     $output .= '<li class="duration">';
@@ -723,7 +723,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
 
     if ($max_num_pages > 1 && $type !== 'load_more') {
-        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="#">More</a></p>';
+        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0)">More</a></p>';
     }
     echo $output;
 }
@@ -1139,7 +1139,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     }
 
     if ($max_num_pages > 1 && $type !== 'load_more') {
-        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="#">More</a></p>';
+        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0)">More</a></p>';
     }
 
     echo $output;

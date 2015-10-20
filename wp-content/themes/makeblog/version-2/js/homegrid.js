@@ -433,7 +433,6 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-
                 $.ajax({
                     url: '/wp-admin/admin-ajax.php',
                     data: {
@@ -454,46 +453,24 @@ jQuery(document).ready(function ($) {
     }
 
     var paged = 1;
-    $(document).on('click', '#pbd-alp-load-posts a', function () {
-        
-        paged++;
-        // Show that we're working.
-        $(this).text('Loading...');
-        $(".before-ads:first").removeClass('before-ads');
-
-        getProjects('load_more', function () {
-            var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
-            if (parseInt(max_num_pages) === paged) {
-                $('#pbd-alp-load-posts').remove();
-                return;
-            }
-
-            $('#pbd-alp-load-posts a').text('More');
-
-            // Load placeholder ads.
-            make.gpt.loadDyn();
-        });
-
-        return false;
-    });
-    $(document).on('touchstart', '#pbd-alp-load-posts a', function () {
-
-        paged++;
-        // Show that we're working.
-        $(this).text('Loading...');
-        $(".before-ads:first").removeClass('before-ads');
-
-        getProjects('load_more', function () {
-            var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
-            if (parseInt(max_num_pages) === paged) {
-                $('#pbd-alp-load-posts').remove();
-                return;
-            }
-
-            $('#pbd-alp-load-posts a').text('More');
-        });
-
-        return false;
+    $(document).on('touchstart click', '#pbd-alp-load-posts a', function() {
+        if(!$(this).hasClass('first-click')) {
+            $(this).addClass('first-click');
+            paged++;
+            // Show that we're working.
+            $(this).text('Loading...');
+            $(".before-ads:first").removeClass('before-ads');
+            getProjects('load_more', function () {
+                var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
+                if (parseInt(max_num_pages) === paged) {
+                    $('#pbd-alp-load-posts').remove();
+                    return;
+                }
+                $('#pbd-alp-load-posts a').text('More');
+                $('#pbd-alp-load-posts a').removeClass('first-click');
+            });
+            return false;
+        }
     });
 
 
@@ -555,4 +532,3 @@ jQuery(document).ready(function ($) {
         $('.fade').removeClass('fade');
     });
 });
-

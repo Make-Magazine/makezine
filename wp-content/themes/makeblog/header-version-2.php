@@ -219,7 +219,7 @@
 		    
 					<form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
 					<label>
-					    <input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search">
+					    <input type="search" class="search-field" placeholder="" value="" name="s" title="">
 					</label>
     			    <input type="submit" class="search-submit" value="Search" />
 					</form>        
@@ -288,10 +288,10 @@
 				</div> 
 				
 			</div>
-			<div class="get-dark"></div>
+
           </div>
     
-
+          <div class="get-dark"></div>
           <!-- SEARCH -->                    
           <div class="col-md-1 hidden-xs mz-search search-bar">
 		    
@@ -350,6 +350,9 @@
 <div class="second-nav"></div>
 </div>
 <div class="dynamic-header-posts">
+  <div class="menu-container">
+    <div class="menu-sub-menu"></div>
+  </div>
   <div class="dynamic-header-content">
     <div class="latest-projects">
       <?php query_posts('post_type=projects&showposts=5'); ?>
@@ -416,3 +419,4 @@
     </div>
   </div>
 </div>
+    <div class="close-dynamic-content"></div>

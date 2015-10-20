@@ -183,9 +183,7 @@ jQuery(document).ready(function ($) {
     var currentDataDiff = '';
     var checkerSelectDiff = 0;
     var checkerSelectDur = 0;
-    jQuery('.all-lvl').hover(function () {
-        jQuery('.all-lvl').toggleClass('diff-hover');
-    }).click(function () {
+    $(document).on('touchstart click', '.all-lvl', function(){
         jQuery('.diff-item li span').removeClass('diff-selected filter_selected');
         if (checkerSelectDiff == 0) {
             jQuery('.all-lvl').addClass('diff-selected');
@@ -197,10 +195,40 @@ jQuery(document).ready(function ($) {
         }
         jQuery('.clear').addClass('show-me');
     });
-    jQuery('.moderate').hover(function () {
-        jQuery('.all-lvl').toggleClass('diff-hover');
-        jQuery('.moderate').toggleClass('diff-hover');
-    }).click(function () {
+    if (($('.all-projects').hasClass('pc')) || ($('.projects-cat').hasClass('pc'))){
+        jQuery('.all-lvl').hover(function () {
+            jQuery('.all-lvl').toggleClass('diff-hover');
+        });
+        jQuery('.moderate').hover(function () {
+            jQuery('.all-lvl').toggleClass('diff-hover');
+            jQuery('.moderate').toggleClass('diff-hover');
+        });
+        jQuery('.spec-skill').hover(function () {
+            jQuery('.spec-skill').toggleClass('diff-hover');
+            jQuery('.all-lvl').toggleClass('diff-hover');
+            jQuery('.moderate').toggleClass('diff-hover');
+        });
+        jQuery('.1-3h').hover(function () {
+            jQuery('.1-3h').toggleClass('dur-hover');
+        });
+        jQuery('.3-8h').hover(function () {
+            jQuery('.1-3h').toggleClass('dur-hover');
+            jQuery('.3-8h').toggleClass('dur-hover');
+        });
+        jQuery('.8-16h').hover(function () {
+            jQuery('.8-16h').toggleClass('dur-hover');
+            jQuery('.1-3h').toggleClass('dur-hover');
+            jQuery('.3-8h').toggleClass('dur-hover');
+        });
+        jQuery('.16h').hover(function () {
+            jQuery('.8-16h').toggleClass('dur-hover');
+            jQuery('.1-3h').toggleClass('dur-hover');
+            jQuery('.3-8h').toggleClass('dur-hover');
+            jQuery('.16h').toggleClass('dur-hover');
+        });
+    }
+
+    $(document).on('touchstart click', '.moderate', function(){
         jQuery('.diff-item li span').removeClass('diff-selected filter_selected');
         jQuery('.all-lvl').addClass('diff-selected');
         jQuery('.moderate').addClass('diff-selected');
@@ -208,11 +236,9 @@ jQuery(document).ready(function ($) {
         jQuery('.clear').addClass('show-me');
         checkerSelectDiff = 0;
     });
-    jQuery('.spec-skill').hover(function () {
-        jQuery('.spec-skill').toggleClass('diff-hover');
-        jQuery('.all-lvl').toggleClass('diff-hover');
-        jQuery('.moderate').toggleClass('diff-hover');
-    }).click(function () {
+
+
+    $(document).on('touchstart click', '.spec-skill', function(){
         jQuery('.diff-item li span').removeClass('diff-selected filter_selected');
         jQuery('.spec-skill').addClass('diff-selected');
         jQuery('.all-lvl').addClass('diff-selected');
@@ -221,9 +247,8 @@ jQuery(document).ready(function ($) {
         jQuery('.clear').addClass('show-me');
         checkerSelectDiff = 0;
     });
-    jQuery('.1-3h').hover(function () {
-        jQuery('.1-3h').toggleClass('dur-hover');
-    }).click(function () {
+
+    $(document).on('touchstart click', '.1-3h', function(){
         jQuery('.duration-item li span').removeClass('dur-selected filter_selected');
         if (checkerSelectDur == 0) {
             jQuery('.1-3h').addClass('dur-selected');
@@ -235,10 +260,8 @@ jQuery(document).ready(function ($) {
         }
         jQuery('.clear').addClass('show-me');
     });
-    jQuery('.3-8h').hover(function () {
-        jQuery('.1-3h').toggleClass('dur-hover');
-        jQuery('.3-8h').toggleClass('dur-hover');
-    }).click(function () {
+
+    $(document).on('touchstart click', '.3-8h', function() {
         jQuery('.duration-item li span').removeClass('dur-selected filter_selected');
         jQuery('.3-8h').addClass('dur-selected');
         jQuery('.1-3h').addClass('dur-selected');
@@ -246,11 +269,8 @@ jQuery(document).ready(function ($) {
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
-    jQuery('.8-16h').hover(function () {
-        jQuery('.8-16h').toggleClass('dur-hover');
-        jQuery('.1-3h').toggleClass('dur-hover');
-        jQuery('.3-8h').toggleClass('dur-hover');
-    }).click(function () {
+
+    $(document).on('touchstart click', '.8-16h', function() {
         jQuery('.duration-item li span').removeClass('dur-selected filter_selected');
         jQuery('.8-16h').addClass('dur-selected');
         jQuery('.1-3h').addClass('dur-selected');
@@ -259,12 +279,8 @@ jQuery(document).ready(function ($) {
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
-    jQuery('.16h').hover(function () {
-        jQuery('.8-16h').toggleClass('dur-hover');
-        jQuery('.1-3h').toggleClass('dur-hover');
-        jQuery('.3-8h').toggleClass('dur-hover');
-        jQuery('.16h').toggleClass('dur-hover');
-    }).click(function () {
+
+    $(document).on('touchstart click', '.16h', function() {
         jQuery('.duration-item li span').removeClass('dur-selected filter_selected');
         jQuery('.8-16h').addClass('dur-selected');
         jQuery('.1-3h').addClass('dur-selected');
@@ -274,7 +290,8 @@ jQuery(document).ready(function ($) {
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
-    jQuery('.clear').click(function () {
+
+    $(document).on('touchstart click', '.clear', function() {
         jQuery('.duration-item li span').removeClass('dur-selected dur-hover filter_selected');
         jQuery('.diff-item li span').removeClass('diff-selected diff-hover filter_selected');
         jQuery('div.post-filter p').removeClass('current');
@@ -287,26 +304,27 @@ jQuery(document).ready(function ($) {
         checkerSelectDur = 0;
         jQuery('.first-item').show().addClass('current');
     });
-    jQuery('.recent').click(function () {
+
+    $(document).on('touchstart click', '.recent', function() {
         jQuery('.popular').removeClass('current filter_selected');
         jQuery('.recent').addClass('current');
         $(this).addClass('filter_selected');
     });
-    jQuery('.popular').click(function () {
+
+    $(document).on('touchstart click', '.popular', function() {
         jQuery('.recent').removeClass('current filter_selected');
         jQuery('.popular').addClass('current');
         $(this).addClass('filter_selected');
     });
 
-    $('.mobile_diff ul.diff-item li').click(function () {
+    $(document).on('touchstart click', '.mobile_diff ul.diff-item li', function() {
         $('.mobile_diff ul.diff-item li').removeClass('filter_selected');
         $(this).addClass('filter_selected');
     });
 
-    $('.mobile-dur .duration-item li').click(function () {
+    $(document).on('touchstart click', '.mobile-dur .duration-item li', function() {
         $(this).addClass('filter_selected');
     });
-
 
     var indikator = ".minify .fa-chevron-down";
     var cat_wrapp_indicator = 0;
@@ -337,6 +355,7 @@ jQuery(document).ready(function ($) {
             jQuery('.minify').addClass('sticky').slideDown();
             jQuery(indikator).show();
             if ( ($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') ) ) {
+
                 if (cat_wrapp_indicator == 0) {
                     jQuery('.minify .cat-list-wrapp').hide();
                 } else {
@@ -378,28 +397,34 @@ jQuery(document).ready(function ($) {
         }
     });
 
+
     $('.filter-item ul li ul li span').click(function () {
         if ($(this).hasClass('clicks')) {
             getProjects();
         }
     });
-    $('.clear').click(function () {
-        getProjects();
-    });
-
-    $('.post-filter p').click(function () {
-        getProjects();
-    });
-
-    $('.mobile_diff .clicks').click(function () {
-        getProjects();
-    });
-    $('.mobile-dur ul li').click(function () {
+    $('.filter-item ul li ul li span').on('touchstart',function () {
+        $(this).addClass('diff-selected');
         if ($(this).hasClass('clicks')) {
             getProjects();
         }
     });
+    $(document).on('touchstart click', '.clear', function() {
+        getProjects();
+    });
+    $(document).on('touchstart click', '.post-filter p', function() {
+        getProjects();
+    });
 
+    $(document).on('touchstart click', '.mobile_diff .clicks', function() {
+        getProjects();
+    });
+
+    $(document).on('touchstart click', '.mobile-dur ul li', function() {
+        if ($(this).hasClass('clicks')) {
+            getProjects();
+        }
+    });
 
     function getProjects(type, callback) {
         if (typeof type === 'undefined') type = 'initial_load';
@@ -443,7 +468,6 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-                
                 $.ajax({
                     url: '/wp-admin/admin-ajax.php',
                     data: {
@@ -463,46 +487,25 @@ jQuery(document).ready(function ($) {
     }
 
     var paged = 1;
-    $(document).on('click', '#pbd-alp-load-posts a', function () {
 
-        paged++;
-        // Show that we're working.
-        $(this).text('Loading...');
-        $(".before-ads:first").removeClass('before-ads');
-
-        getProjects('load_more', function () {
-            var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
-            if (parseInt(max_num_pages) === paged) {
-                $('#pbd-alp-load-posts').remove();
-                return;
-            }
-
-            $('#pbd-alp-load-posts a').text('More');
-
-            // Load placeholder ads.
-            make.gpt.loadDyn();
-        });
-
-        return false;
-    });
-    $(document).on('touchstart', '#pbd-alp-load-posts a', function () {
-
-        paged++;
-        // Show that we're working.
-        $(this).text('Loading...');
-        $(".before-ads:first").removeClass('before-ads');
-
-        getProjects('load_more', function () {
-            var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
-            if (parseInt(max_num_pages) === paged) {
-                $('#pbd-alp-load-posts').remove();
-                return;
-            }
-
-            $('#pbd-alp-load-posts a').text('More');
-        });
-
-        return false;
+    $(document).on('touchstart click', '#pbd-alp-load-posts a', function() {
+        if(!$(this).hasClass('first-click')) {
+            $(this).addClass('first-click');
+            paged++;
+            // Show that we're working.
+            $(this).text('Loading...');
+            $(".before-ads:first").removeClass('before-ads');
+            getProjects('load_more', function () {
+                var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
+                if (parseInt(max_num_pages) === paged) {
+                    $('#pbd-alp-load-posts').remove();
+                    return;
+                }
+                $('#pbd-alp-load-posts a').text('More');
+                $('#pbd-alp-load-posts a').removeClass('first-click');
+            });
+                return false;
+        }
     });
 
 
