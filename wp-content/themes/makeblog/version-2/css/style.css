@@ -112,35 +112,6 @@ h6 {
 .search-form {
   margin-bottom: 0;
 }
-.mz-social a,
-.mz-footer-social a {
-  color: #474747;
-}
-.mz-footer-social {
-  font-size: 15px;
-}
-.mz-footer-social a:hover {
-  color: rgba(70, 70, 70, 0.4);
-}
-.mz-social .fa-mz {
-  font-size: 1.1em;
-}
-.mz-social .fa-facebook,
-.mz-social .fa-twitter,
-.mz-social .fa-pinterest-p,
-.mz-social .fa-instagram {
-  font-size: 15px;
-}
-.mobile-social .fa-mz {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-.mobile-social .fa-facebook,
-.mobile-social .fa-twitter,
-.mobile-social .fa-pinterest-p,
-.mobile-social .fa-instagram {
-  font-size: 15px;
-}
 /* Bootstrap BREAKPOINT SMALL */
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .mz-featured-imageblock h2 {
@@ -882,19 +853,15 @@ div.caption.post-content {
   color: #4a4a4a;
   font-size: 14px;
 }
-.footer_copyright a {
-  color: #999;
-}
 /* Bootstrap BREAKPOINT XSMALL */
 @media screen and (max-width: 767px) {
   .mz-featured-imageblock h2 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
   }
   .mz-featured-imageblock p {
     font-size: 12px;
     font-weight: 300;
-    display: none;
   }
   .col-lg-4 .mz-featured-imageblock {
     margin-left: 0;

@@ -188,12 +188,13 @@ h6 {
 	font-family: RobotoSlab-Regular;
 	font-size: 12px;
 	line-height: 16px;
-	color:#000000;
+	color: #000000;
 	text-transform: capitalize;
 	letter-spacing: 0.5px;
 	font-weight: 800;
 }
 /*End  Nav dynamic content for projects */
+
 /*Begin Nav dynamic content for stories */
 .latest-stories {
 	padding: 18px 19px 0px 15px;
@@ -224,12 +225,13 @@ h6 {
 	font-family: RobotoSlab-Regular;
 	font-size: 12px;
 	line-height: 16px;
-	color:#000000;
+	color: #000000;
 	text-transform: capitalize;
 	letter-spacing: 0.5px;
 	font-weight: 800;
 }
 /*End  Nav dynamic content for stories */
+
 /*Begin Nav dynamic content for shop */
 .latest-shop {
 	padding: 25px 16px 0px 15px;
@@ -253,6 +255,7 @@ h6 {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 .latest-shop .shop-post a.first-post {
 	background-image: url(/wp-content/themes/makeblog/version-2/img/shop1.png);
 }
@@ -266,6 +269,7 @@ h6 {
 	background-image: url(/wp-content/themes/makeblog/version-2/img/shop4.png);
 }
 /*End  Nav dynamic content for shop */
+
 /*Begin Nav dynamic content for events */
 .latest-events {
 	padding: 30px 0px 0px 0px;
@@ -318,6 +322,7 @@ h6 {
 	margin: auto;
 }
 /*End  Nav dynamic content for events */
+
 .mz-logo {
     padding-top: 0px !important;
 }
@@ -1052,7 +1057,6 @@ ul.sub-menu.moove-right {
 	}
 	.sticky-header #menu-make-main > li:nth-child(1).menu-item-has-children > ul.sub-menu {
 		margin-left: -2182px;
-		
 	}
 	.sticky-header #menu-make-main > li:nth-child(2).menu-item-has-children > ul.sub-menu {
 		margin-left: -2274.5px;
@@ -1093,6 +1097,7 @@ ul.sub-menu.moove-right {
 		margin-right: 10px;
 	}
 	.sticky-header #menu-make-main > li.menu-item-has-children > ul.sub-menu {
+
 		height: 40px;
 	}
 	.menu-sub-menu,
@@ -1140,14 +1145,12 @@ ul.sub-menu.moove-right {
 	.close-search.change-background {
 		right:0;
 		margin-right: 10px;
-		
 	}
 
 	.search-form {
 		position: absolute;
 		right: 0;
 		margin-right: 20px;
-		
 	}
 }
 @media only screen and (min-width: 1024px) and (max-width: 1200px){
