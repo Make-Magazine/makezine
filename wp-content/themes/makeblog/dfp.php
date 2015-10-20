@@ -246,6 +246,9 @@ elseif (has_tag('arrowcypress') || is_page( array(461313,463824,462353,463460,46
 elseif (has_tag('cornell') || is_page( array(466354,466367,466360,466358,466356) ) ) {
     $make->ad_vars->sponsor = 'cornell';
 }
+elseif (has_tag('halloween')) {
+    $make->ad_vars->sponsor = 'halloween';
+}
 else {
     $make->ad_vars->sponsor = NULL;   
 }
@@ -467,6 +470,10 @@ if ($make->use_new): ?>
                 elseif (has_tag('cornell') || is_page( array(466354,466367,466360,466358,466356) ) ) {
                     echo "googletag.pubads().setTargeting('sponsor',['cornell']);";
                 }
+                elseif (has_tag('halloween')) {
+                    echo "googletag.pubads().setTargeting('sponsor',['halloween']);";
+                }
+                
             ?>
             googletag.pubads().setTargeting('t', ['y']);
             
