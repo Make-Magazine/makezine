@@ -471,6 +471,10 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $ads_counter = 0;
     $max_num_pages = $query->max_num_pages;
     $output = '';
+    // Add leadboard for additional pages.
+    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
+        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -481,9 +485,24 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $counter++;
 
+            if ( $ads_counter == 0 && $counter == 3 && $post_per_page == 18 ) {
+                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
+                $output .= '">';
+                $output .= '<div class="own">';
+                $output .= '<div class="home-ads">';
+                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</li>';
+                $counter++;
+                $output .= '</ul> </li>';
+                $counter = 0;
+                $ads_counter = 1;
+            }
+            else {
 
                 $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
-            if (($ads_counter == 17) and ($device != 'tablet') and ($device != 'mobile')) {
+                if (($ads_counter == 16) and ($device != 'tablet') and ($device != 'mobile')) {
                     $output .= ' before-ads';
                 }
                 if (($ads_counter == 3) and ($device == 'tablet')) {
@@ -683,7 +702,8 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $output .= '</ul> </li>';
                     $counter = 0;
                 }
-            $ads_counter++;
+
+            }
 
             
         endwhile;
@@ -703,7 +723,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
 
     if ($max_num_pages > 1 && $type !== 'load_more') {
-        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0)">More</a></p>';
+        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="#">More</a></p>';
     }
     echo $output;
 }
