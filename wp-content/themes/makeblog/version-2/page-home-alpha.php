@@ -5,8 +5,6 @@
 Template Name: Home Page Alpha
 */
 
-// Get ad object.
-
 require_once 'includes/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 $device = 'pc';
@@ -47,6 +45,7 @@ $bottom_id = '';
 $menu_name = 'Home Page Curation';
 $menu_exists = wp_get_nav_menu_object( $menu_name );
 
+// Get ad object.
 
     if ( $menu_exists ) {
 	$menu = wp_get_nav_menu_object(  $menu_name );
@@ -180,25 +179,26 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <div class="container">
     <div class="row event-unit"> 
 
-<!-- PROMO AREA-->
+
+<!--  Berlin / School / World Maker Faire -->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="//makercamp.com/">
+                <a href="//makercamp.com/">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-makercamp-02.jpg' ?>" class="img-responsive center-block event" />
-        </a>
+ </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
         <a href="http://makerfaire.com/new-york-2015/slideshow/?utm_source=makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=WMF+highlights">          
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_world_maker5.jpg' ?>" class="img-responsive center-block event" />
-        </a>
+                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_world_maker5.jpg' ?>" class="img-responsive center-block event" />
+ </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-        <a href="//makezine.com/tag/halloween/">
+                <a href="//makezine.com/tag/halloween/">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_halloween10.jpg' ?>" class="img-responsive center-block event" />
-        </a>
+                </a>
       </div> 
     </div>  
   </div>
-  
+
   <!-- MAKER SHED PANEL -->
   <div class="container">
     <div class="row product-wrapper"> 
