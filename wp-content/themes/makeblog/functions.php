@@ -471,10 +471,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $ads_counter = 0;
     $max_num_pages = $query->max_num_pages;
     $output = '';
-    // Add leadboard for additional pages.
-    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
-        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
-    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -485,24 +481,9 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $counter++;
 
-            if ( $ads_counter == 0 && $counter == 3 && $post_per_page == 18 ) {
-                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
-                $output .= '">';
-                $output .= '<div class="own">';
-                $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
-                $output .= '</div>';
-                $output .= '</div>';
-                $output .= '</li>';
-                $counter++;
-                $output .= '</ul> </li>';
-                $counter = 0;
-                $ads_counter = 1;
-            }
-            else {
 
                 $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
-                if (($ads_counter == 16) and ($device != 'tablet') and ($device != 'mobile')) {
+            if (($ads_counter == 17) and ($device != 'tablet') and ($device != 'mobile')) {
                     $output .= ' before-ads';
                 }
                 if (($ads_counter == 3) and ($device == 'tablet')) {
@@ -702,8 +683,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $output .= '</ul> </li>';
                     $counter = 0;
                 }
-
-            }
+            $ads_counter++;
 
             
         endwhile;
@@ -752,7 +732,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     $detect = new Mobile_Detect;
     $post_per_page_initial = 18;
     if ($detect->isMobile()) {
-        $post_per_page_initial = 6;
+        $post_per_page_initial = 18;
         $device = 'mobile';
     }
 
@@ -760,8 +740,10 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
         $post_per_page_initial = 12;
         $device = 'tablet';
     }
-    else {
+    if ($paged == 1) {
         $post_per_page = $post_per_page_initial - 1;
+    } else { // in other page number of post (b=6),{equation: a+($paged -2)*b]
+        $post_per_page = $post_per_page_initial;
     }
     $current_cat_name = single_cat_title("", 0);
     $sub_meta_query = array(
@@ -840,11 +822,16 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
         $ordered = 'post__in';
     }
     $meta_query[] = $sub_meta_query;
+    $offset = ( $paged - 1 ) * $post_per_page;
+    if ( $paged > 1 ) {
+        $offset--;
+    }
     $args = array(
         'post_type' => 'projects',
         'meta_query' => $meta_query,
         'posts_per_page' => $post_per_page,
-        'paged' => $paged,
+        'page' => $paged,
+        'offset'     =>  $offset,
         'orderby' => $ordered,
         'post__in' => $top_ids,
         'post_status' => 'publish',
@@ -859,10 +846,6 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     $max_num_pages = $query->max_num_pages;
     $count_posts = $query->post_count;
     $output = '';
-    // Add leadboard for additional pages.
-    if (isset($paged) && $paged > 1 && $post_per_page > 12) {
-        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
-    }
     if ($type !== 'load_more') {
         $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
@@ -938,8 +921,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                     $check_parrent = get_category_parents($current_cat_id, false);
                     $check_parrent_counter = substr_count($check_parrent, '/');
                     if ($child_cat_length > 0) {
-                        $random_cat_number = rand(0, $child_cat_length);
-                        $red_cat_name = $child_cat[$random_cat_number];
+                        $red_cat_name = $child_cat[0];
                     } elseif ($check_parrent_counter > 1) {
                         $red_cat_name = '';
                     } else {
@@ -953,8 +935,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                         $child_cat_length = count($child_cat);
                         $child_cat_length--;
                         if ($child_cat_length > 0) {
-                            $random_cat_number = rand(0, $child_cat_length);
-                            $red_cat_name = $child_cat[$random_cat_number];
+                            $red_cat_name = $child_cat[0];
                         } else {
                             foreach ($find_sub_cats as $find_sub_cat) {
                                 $child_cat[] = $find_sub_cat->name;
@@ -962,17 +943,15 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                             }
                             $child_cat_length = count($child_cat);
                             $child_cat_length--;
-                            $random_cat_number = rand(0, $child_cat_length);
-                            $red_cat_name = $child_cat[$random_cat_number];
+                            $red_cat_name = $child_cat[0];
                         }
                     }
-                    $cat_link = get_category_link($child_id[$random_cat_number]) . '?post_type=projects';
+                    $cat_link = get_category_link($child_id[0]) . '?post_type=projects';
                 } else {
                     $parent_cat_length = count($parent_cat);
                     $parent_cat_length--;
-                    $random_cat_number = rand(0, $parent_cat_length);
-                    $red_cat_name = $parent_cat[$random_cat_number];
-                    $cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
+                    $red_cat_name = $parent_cat[0];
+                    $cat_link = get_category_link($parent_id[0]) . '?post_type=projects';
                 }
             }
             if (empty($red_cat_name)) {
@@ -1094,7 +1073,11 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '">';
                 $output .= '<div class="own">';
                 $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+                $output .= '<div id="div-gpt-ad-664089004995786621-9">';
+                $output .= '<script type="text/javascript">';
+                $output .= 'googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-9")});';
+                $output .= '</script>';
+                $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</li>';
@@ -1174,4 +1157,43 @@ function projects_theme_setup_thumbnail()
 {
     add_image_size('project-thumb', 370, 240, true); // (cropped)
 }
+add_action('after_setup_theme', 'events_nav_setup_thumbnail');
+function events_nav_setup_thumbnail()
+{
+    add_image_size('events-nav-thumb', 102, 102, true); // (cropped)
+}
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    register_post_type( 'Events',
+        array(
+            'labels' => array(
+                'name' => 'Events',
+                'singular_name' => 'Events',
+                'add_new' => 'Add new',
+                'add_new_item' => 'Add new item',
+                'edit_item' => 'Edit',
+                'new_item' => 'New item',
+                'view_item' => 'View',
+                'search_items' => 'Search',
+                'not_found' => 'Sorry, not found',
+                'not_found_in_trash' => 'Not found in trash',
+            ),
+            'description' => 'Events post type',
+            'public' => True,
+            'publicly_queryable' => null,
+            'exclude_from_search' => null,
+            'show_ui' => null,
+            'show_in_menu' => null,
+            'menu_position' => null,
+            'menu_icon' => null,
+            'hierarchical' => false,
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'taxonomies' => array(),
+            'has_archive' => false,
+            'query_var' => true,
+            'capability_type' => 'page',
+            'show_in_nav_menus' => null,
 
+        )
+    );
+}
