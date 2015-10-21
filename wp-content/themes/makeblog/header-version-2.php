@@ -359,7 +359,16 @@
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <div class="project-post">
           <a href="<?php the_permalink(); ?>" class="pull-left">
-            <?php the_post_thumbnail(); ?>
+            <?php
+            $args = array(
+            'resize' => '370,240',
+            );
+            $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+            $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+            preg_match_all($re, $url, $matches);
+            $str = $matches[2][0];
+            $photon = jetpack_photon_url($str, $args);?>
+            <img src="<?php echo $photon; ?>" alt="thumbnail">
           </a>
           <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         </div>
@@ -374,7 +383,16 @@
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <div class="stories-post">
           <a href="<?php the_permalink(); ?>" class="pull-left">
-            <?php the_post_thumbnail(); ?>
+            <?php
+            $args = array(
+                'resize' => '370,240',
+            );
+            $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+            $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+            preg_match_all($re, $url, $matches);
+            $str = $matches[2][0];
+            $photon = jetpack_photon_url($str, $args);?>
+            <img src="<?php echo $photon; ?>" alt="thumbnail">
           </a>
           <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         </div>
@@ -405,7 +423,16 @@
         <div class="events-post">
           <div class="event-thumbnail">
             <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
-              <?php the_post_thumbnail(); ?>
+              <?php
+              $args = array(
+                  'resize' => '102,102',
+              );
+              $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
+              $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+              preg_match_all($re, $url, $matches);
+              $str = $matches[2][0];
+              $photon = jetpack_photon_url($str, $args);?>
+              <img src="<?php echo $str; ?>" alt="thumbnail">
             </a>
           </div>
           <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
