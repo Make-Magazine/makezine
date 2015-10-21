@@ -45,6 +45,7 @@ $bottom_id = '';
 $menu_name = 'Home Page Curation';
 $menu_exists = wp_get_nav_menu_object( $menu_name );
 
+// Get ad object.
 
     if ( $menu_exists ) {
 	$menu = wp_get_nav_menu_object(  $menu_name );
@@ -165,11 +166,12 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <!-- AD UNIT -->
   <div class="ad-unit">  
     <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
-      <div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
+      <?php print $make->ads->leaderboard; ?>
+      <!-- <div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
         <script type='text/javascript'>
           googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
         </script>
-      </div>
+      </div> -->
     </div> 
   </div>  
 
