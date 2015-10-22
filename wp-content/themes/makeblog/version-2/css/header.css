@@ -164,7 +164,7 @@ h6 {
 }
 /*Begin Nav dynamic content for projects */
 .latest-projects {
-	padding: 22px 24px 0px 0px;
+	padding: 22px 18px 0px 0px;
 	display:none;
 	width:inherit;
 	position: absolute;
@@ -198,7 +198,7 @@ h6 {
 
 /*Begin Nav dynamic content for stories */
 .latest-stories {
-	padding: 22px 24px 0px 0px;
+	padding: 22px 18px 0px 0px;
 	display:none;
 	width:inherit;
 	position: absolute;
@@ -232,7 +232,7 @@ h6 {
 
 /*Begin Nav dynamic content for shop */
 .latest-shop {
-	padding: 22px 24px 0px 0px;
+	padding: 22px 18px 0px 0px;
 	display:none;
 	width:inherit;
 	position: absolute;
