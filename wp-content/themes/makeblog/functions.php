@@ -875,11 +875,15 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $parent_cat = array();
             $parent_id = array();
             $red_cat_name = '';
+            // Add leadboard for additional pages.
+            if (isset($paged) && $paged > 1 && $post_per_page > 12 && $ads_counter == 0) {
+                $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+            }
             if ($counter == 0) {
                 $output .= '<li class="row post_rows"> <ul>';
             }
             $counter++;
-
+            
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
@@ -1081,10 +1085,6 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             if (($counter == 1) and ($device == 'mobile')) {
                 $output .= '</ul> </li>';
                 $counter = 0;
-            }
-            // Add leadboard for additional pages.
-            if (isset($paged) && $paged > 1 && $post_per_page > 12) {
-                $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
             }
             if ( ( $ads_counter == 1 ) and ( $post_per_page == $post_per_page_initial - 1 ) ) {
                 if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
