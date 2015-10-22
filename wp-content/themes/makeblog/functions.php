@@ -760,10 +760,8 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
         $post_per_page_initial = 12;
         $device = 'tablet';
     }
-    if ($paged == 1) {
+    else {
         $post_per_page = $post_per_page_initial - 1;
-    } else { // in other page number of post (b=6),{equation: a+($paged -2)*b]
-        $post_per_page = $post_per_page_initial;
     }
     $current_cat_name = single_cat_title("", 0);
     $sub_meta_query = array(
