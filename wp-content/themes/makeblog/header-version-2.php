@@ -296,11 +296,11 @@
           <div class="col-md-1 hidden-xs mz-search search-bar">
 		    
                 <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+                  <input type="submit" class="sendsubmit" value="" />
 					<label>
 					    <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
 						<div class="close-search"></div>
 					</label>
-    			    <input type="submit" class="search-submit" value="Search" />
 			    </form>        
           </div>
 		  <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">

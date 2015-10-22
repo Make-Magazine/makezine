@@ -17,7 +17,8 @@
 			$( window ).resize(function() {
 				$window = $(window).width() + 17;
 			});
-			if (scrollTop >= '300')  {
+
+			if (scrollTop >= '54')  {
 				$('.container.header').addClass('width');
 				$('.navbar-default').addClass('sticky-header');
 				$('.dynamic-header-posts').addClass('sticky-header');
@@ -209,7 +210,7 @@
 	 });
 	if ($window >= '768') {
 		$('.menu-item-has-children').addClass('first-hover');
-		$('.menu-item-has-children').mouseover(function (e) {
+		$('.menu-item-has-children').mouseenter(function (e) {
 			$('.navbar-default .navbar-nav > li:first-child').addClass('first-child');
 			e.preventDefault();
 			$('.menu-item-has-children').not($(this)).children("a").removeClass('active-button');
@@ -262,7 +263,19 @@
 				$('.minify.sticky').css('margin-top','36px');
 				$('.minify.sticky').css('transition-delay','0s');
 			}
+			if (!$('.dynamic-header-posts').hasClass('sticky-header')) {
+				$('.latest-projects').addClass('nav-transition');
+				$('.latest-stories').addClass('nav-transition');
+				$('.latest-events').addClass('nav-transition');
+				$('.latest-shop').addClass('nav-transition');
+			}
+			$('.menu-sub-menu > .sub-menu').addClass('nav-transition');
 			if ($(this).hasClass('first-hover')) {
+				$('.latest-projects').removeClass('nav-transition');
+				$('.latest-stories').removeClass('nav-transition');
+				$('.latest-events').removeClass('nav-transition');
+				$('.latest-shop').removeClass('nav-transition');
+				$('.menu-sub-menu > .sub-menu').removeClass('nav-transition');
 				$('.menu-item-has-children').removeClass('first-hover');
 				$('.dynamic-header-posts').slideDown('fast');
 				if (!$('.dynamic-header-posts').hasClass('sticky-header')) {
@@ -273,14 +286,6 @@
 				}
 				$('.menu-sub-menu > .sub-menu').show();
 
-			}else {
-				if (!$('.dynamic-header-posts').hasClass('sticky-header')) {
-					$('.latest-projects').addClass('nav-transition');
-					$('.latest-stories').addClass('nav-transition');
-					$('.latest-events').addClass('nav-transition');
-					$('.latest-shop').addClass('nav-transition');
-				}
-				$('.menu-sub-menu > .sub-menu').addClass('nav-transition');
 			}
 			$(this).children("a").addClass("active-button");
 
