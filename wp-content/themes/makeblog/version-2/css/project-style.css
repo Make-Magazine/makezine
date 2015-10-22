@@ -98,7 +98,7 @@ body.page-template-project {
 }
 .projects-cat .content .cat-nav-wrapp .cat_list > li:last-child ul li, .all-projects .content .cat-nav-wrapp .cat_list > li:last-child ul li {
    margin-bottom: 0px;
-  margin-top: 3px;
+  margin-top: 2px;
  }
 .projects-cat .content .cat-nav-wrapp .cat_list > li:last-child ul li a, .all-projects .content .cat-nav-wrapp .cat_list > li:last-child ul li a {
   display: block;
