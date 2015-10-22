@@ -503,6 +503,8 @@ jQuery(document).ready(function ($) {
                 }
                 $('#pbd-alp-load-posts a').text('More');
                 $('#pbd-alp-load-posts a').removeClass('first-click');
+                // Load placeholder ads.
+                make.gpt.loadDyn();
             });
                 return false;
         }
