@@ -7,8 +7,12 @@
  * @author     Jake Spurlock <jspurlock@makermedia.com>
  *
  */
-get_header('version-2'); ?>
+$pagename = get_query_var('pagename');
 
+get_header('version-2');
+if ($pagename == 'blog') {
+	get_template_part( 'version-2/includes/blog' );
+} else {?>
 	<div class="single">
 
 		<div class="container">
@@ -71,5 +75,5 @@ get_header('version-2'); ?>
 		</div>
 
 	</div>
-
+<?php } ?>
 <?php get_footer(); ?>
