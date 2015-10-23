@@ -115,6 +115,12 @@ $make->ads->ad_300x250_atf = make_ads_render(array(
     'pos' => 'atf',
 ));
 
+// 300x250 house.
+$make->ads->ad_300x250_house = make_ads_render(array(
+    'size' => '[[300,250]]',
+    'pos' => 'house',
+));
+
 // 300x250 shed.
 $make->ads->ad_300x250_shed = make_ads_render(array(
     'size' => '[[300,250]]',
