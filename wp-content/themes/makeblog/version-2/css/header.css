@@ -155,7 +155,7 @@ h6 {
 	margin:auto;
 }
 .sticky-header .dynamic-header-content {
-	display:none;
+	display:none !important;
 }
 .close-dynamic-content {
 	width: 100%;
