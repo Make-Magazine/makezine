@@ -119,11 +119,7 @@
 		<?php else : ?>
 			<div class="container hidden-print">
 				<div class="row">
-					<div id="div-gpt-ad-664089004995786621-1" class="text-center">
-						<script type='text/javascript'>
-							googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-						</script>
-					</div>
+					<?php print $make->ads->ad_leaderboard; ?>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -185,12 +181,7 @@
 			<div class="container hidden-print">
 				<div class="row">
 					<div class="span12">
-						<div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
-
-							<script type='text/javascript'>
-								googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-							</script>
-						</div>
+						<?php print $make->ads->ad_leaderboard; ?>
 					</div>
 				</div>
 			</div>
