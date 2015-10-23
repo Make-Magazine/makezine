@@ -37,5 +37,8 @@
 
 						<div class="sidebar-ad">
 
-							<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
-							<?php global $make; print $make->ads->ad_300x250; ?>
+							<?php global $make; print $make->ads->ad_300x250_house; ?>
+
+						</div>
+
+				</div>

@@ -63,5 +63,10 @@
 					<?php global $make; print $make->ads->ad_300x250_atf; ?>
 				</div>
 				<div class="home-ads bottom">
-					<?php global $make; print $make->ads->ad_300x250; ?>
+					<?php global $make; print $make->ads->ad_300x250_house; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 

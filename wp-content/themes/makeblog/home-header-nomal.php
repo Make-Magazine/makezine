@@ -154,5 +154,44 @@
 
 				<div class="home-ads bottom">
 
-					<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
-					<?php global $make; print $make->ads->ad_300x250; ?>
+					<?php global $make; print $make->ads->ad_300x250_house; ?>
+
+				</div>
+
+			</div>
+		
+		</div>
+
+		<div class="row">
+		
+			<div class="home-waist-banner">
+		
+				<?php global $make; print $make->ads->ad_940x39; ?>
+		
+			</div>
+		
+		</div>
+		
+		<div class="row">
+
+			<?php if ( get_theme_mod( 'make_waist_banner' ) === 'on' ) : ?>
+
+				<div class="container home-waist-banner" style="margin-bottom:10px;">
+		
+					<div class="span12">
+		
+					<a href="<?php echo esc_url( get_theme_mod( 'make_waist_banner_link', 'http://makezine.com/2014/03/24/enter-to-win-the-maker-faire-rome-arduino-challenge/' ) ); ?>">
+						<img src="<?php echo esc_url( get_theme_mod( 'make_waist_banner_image', get_stylesheet_directory_uri() . '/img/arduio_month.jpg' ) ); ?>">
+					</a>
+		
+				</div>
+		
+				</div>
+
+			<?php endif; ?>
+	    
+	    </div>
+		
+	</div>
+
+</div>
