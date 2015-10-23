@@ -681,7 +681,7 @@ ul.sub-menu.moove-right {
 	content:"";
 }
 .navbar .nav > li > a:hover {
-	border-bottom:3px solid #F40B0B;
+	border-bottom:none;
 }
 
 	.navbar .nav > li.menu-item-has-children:hover {
