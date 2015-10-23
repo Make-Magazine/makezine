@@ -17,7 +17,7 @@ body.page-template-project {
 }
 .projects-cat.tablet, .all-projects.tablet{
   padding-left: 19px;
-  padding-right: 5px;
+  padding-right: 1px;
 }
 .projects-cat .content, .all-projects .content {
   border: none;
