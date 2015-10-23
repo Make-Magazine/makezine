@@ -55,41 +55,113 @@ function make_ads_render(array $ad = array()) {
 
 }
 
+/*
+ * Define ad sizes.
+ *
+ * Example template usage:
+ * <?php print $make->ads->ad_leaderboard; ?>
+ *
+ * Note: if `$make` is undefined then you should add `global $make;` to the
+ * top of the wordpress template file. 
+ */
+
 // General Leaderboard.
-$make->ads->leaderboard = make_ads_render(array(
+$make->ads->ad_leaderboard = make_ads_render(array(
     'size' => '[[728,90],[940,250],[970,90],[970,250],[320,50]]',
     'sizeMap' => '[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
     'pos' => 'atf',
 ));
 
-// Alternate Leaderboard ATF.
-$make->ads->leaderboard_alt_atf = make_ads_render(array(
+// General Leaderboard BTF.
+$make->ads->ad_leaderboard_btf = make_ads_render(array(
+    'size' => '[[728,90],[940,250],[970,90],[970,250],[320,50]]',
+    'sizeMap' => '[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
+    'pos' => 'btf',
+));
+
+// Alternate Leaderboard.
+$make->ads->ad_leaderboard_alt = make_ads_render(array(
     'size' => '[[728,90],[970,90],[320,50]]',
     'sizeMap' => '[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
     'pos' => 'atf',
 ));
 
 // Alternate Leaderboard BTF.
-$make->ads->leaderboard_alt_btf = make_ads_render(array(
+$make->ads->ad_leaderboard_alt_btf = make_ads_render(array(
     'size' => '[[728,90],[970,90],[320,50]]',
     'sizeMap' => '[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
     'pos' => 'btf',
 ));
 
-// Medium Rectangle.
-$make->ads->square = make_ads_render(array(
+// 728x90.
+$make->ads->ad_728x90 = make_ads_render(array(
+    'size' => '[[728,90],[320,50]]',
+    'sizeMap' => '[[[800,0],[[728,90]]],[[0,0],[[320,50]]]]',
+    'pos' => 'btf',
+));
+
+// 300x250.
+$make->ads->ad_300x250 = make_ads_render(array(
     'size' => '[[300,250]]',
     'pos' => 'btf',
 ));
 
-// Half Page.
-$make->ads->rectangle = make_ads_render(array(
+// 300x250 ATF.
+$make->ads->ad_300x250_atf = make_ads_render(array(
+    'size' => '[[300,250]]',
+    'pos' => 'atf',
+));
+
+// 300x250 shed.
+$make->ads->ad_300x250_shed = make_ads_render(array(
+    'size' => '[[300,250]]',
+    'pos' => 'shed',
+));
+
+// 300x250 flexible (300x250 or 300x600).
+$make->ads->ad_300x250_flex = make_ads_render(array(
+    'size' => '[[300,250],[300,600]]',
+    'pos' => 'btf',
+));
+
+// 300x250 flexible ATF (300x250 or 300x600).
+$make->ads->ad_300x250_flex_atf = make_ads_render(array(
+    'size' => '[[300,250],[300,600]]',
+    'pos' => 'atf',
+));
+
+// 300x600.
+$make->ads->ad_300x600 = make_ads_render(array(
     'size' => '[[300,600]]',
     'pos' => 'btf',
 ));
 
+// 247x96.
+$make->ads->ad_247x96 = make_ads_render(array(
+    'size' => '[[247,96]]',
+    'pos' => 'atf',
+));
+
+// 940x39.
+$make->ads->ad_940x39 = make_ads_render(array(
+    'size' => '[[940,39],[970,39]]',
+    'pos' => 'atf',
+));
+
+// 940x39 makefaire.
+$make->ads->ad_940x39_makefaire = make_ads_render(array(
+    'size' => '[[940,39]]',
+    'pos' => 'atf',
+));
+
+// 125x125.
+$make->ads->ad_125x125 = make_ads_render(array(
+    'size' => '[[125,125]]',
+    'pos' => 'btf',
+));
+
 // 1x1.
-$make->ads->out_of_page = make_ads_render(array(
+$make->ads->ad_1x1 = make_ads_render(array(
     'size' => '[[1,1]]',
     'pos' => 'atf',
 ));
@@ -267,7 +339,7 @@ if ($make->use_new): ?>
     <!-- Make GPT -->
     <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 
-    <?php print $make->ads->out_of_page; ?>
+    <?php print $make->ads->ad_1x1; ?>
 
 <?php else: ?>
 

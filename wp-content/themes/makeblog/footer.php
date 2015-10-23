@@ -14,7 +14,7 @@ global $make;
 					
 					<div class="ad-slot">
 						<?php if ($make->use_new): ?>
-							<?php print $make->ads->leaderboard_alt_btf; ?>
+							<?php print $make->ads->ad_leaderboard_alt_btf; ?>
 						<?php else: ?>
 						<!-- Beginning Sync AdSlot 4 for Ad unit header ### size: [[728,90]]  -->
 						<div id='div-gpt-ad-664089004995786621-4'>
