@@ -22,7 +22,7 @@ get_header('version-2'); ?>
 	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
         <div class="own">
             <div class="home-ads">
-                <?php print $make->ads->ad_leaderboard; ?>
+                <?php global $make; print $make->ads->ad_leaderboard; ?>
             </div>
         </div>
 	</li>

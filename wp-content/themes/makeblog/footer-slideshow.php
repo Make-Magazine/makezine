@@ -5,7 +5,7 @@
 
 				<div class="span12">
 
-					<?php print $make->ads->ad_leaderboard; ?>
+					<?php global $make; print $make->ads->ad_leaderboard; ?>
 
 				</div>
 

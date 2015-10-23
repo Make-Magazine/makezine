@@ -119,7 +119,7 @@
 		<?php else : ?>
 			<div class="container hidden-print">
 				<div class="row">
-					<?php print $make->ads->ad_leaderboard; ?>
+					<?php global $make; print $make->ads->ad_leaderboard; ?>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -181,7 +181,7 @@
 			<div class="container hidden-print">
 				<div class="row">
 					<div class="span12">
-						<?php print $make->ads->ad_leaderboard; ?>
+						<?php global $make; print $make->ads->ad_leaderboard; ?>
 					</div>
 				</div>
 			</div>
@@ -195,12 +195,7 @@
 					if ( ! is_page( 'weekendprojects' ) ) : ?>
 
 		<div class="canvas-ad">
-			<div id="div-gpt-ad-664089004995786621-7" class="banner-canvas">
-
-				<script type='text/javascript'>
-					googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-7')});
-				</script>
-			</div>
+			<?php global $make; print $make->ads->ad_2160x547; ?>
 		</div>
 
 		<?php endif; endif; endif; endif; ?>

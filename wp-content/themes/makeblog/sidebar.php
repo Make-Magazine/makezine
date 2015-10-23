@@ -17,13 +17,7 @@
 
 						<div class="sidebar-ad">
 
-							<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
-							<div id='div-gpt-ad-664089004995786621-2'>
-								<script type='text/javascript'>
-									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-2')});
-								</script>
-							</div>
-							<!-- End AdSlot 2 -->
+							<?php global $make; print $make->ads->ad_300x250_atf; ?>
 
 						</div>
 
@@ -37,11 +31,7 @@
 						</div>
 
 						<div class="new-dotw widget">
-							<div id="div-gpt-ad-664089004995786621-9" class="text-center">
-								 <script type='text/javascript'>
-								  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
-								 </script>
-							</div>
+							<?php global $make; print $make->ads->ad_300x250_shed; ?>
 						</div>
 
 						<div class="sidebar-ad">
@@ -51,16 +41,4 @@
 						<div class="sidebar-ad">
 
 							<!-- Beginning Sync AdSlot 3 for Ad unit header ### size: [[300,250]]  -->
-							<div id='div-gpt-ad-664089004995786621-3'>
-								<script type='text/javascript'>
-									googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
-								</script>
-							</div>
-							<!-- End AdSlot 3 -->
-
-						</div>
-
-						<?php dynamic_sidebar( 'sidebar_bottom' ); ?>
-
-
-				</div>
+							<?php global $make; print $make->ads->ad_300x250; ?>

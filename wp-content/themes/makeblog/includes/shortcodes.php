@@ -1140,6 +1140,10 @@ function make_printrbot_newsletter() {
 }
 add_shortcode( 'make_printrbot_newsletter', 'make_printrbot_newsletter' );
 
+/**
+ * The below function is now deprecated and will not render an ad correctly.
+ * @TODO: refactor to use new $make ad call.
+ */
 function make_get_dfp_ad_unit( $atts ) {
 	$defaults = array(
 		'unit' => '2',
