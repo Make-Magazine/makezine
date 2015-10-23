@@ -418,7 +418,12 @@ input[type=search] {
 .search-form , .search-form label {
 	height:30px;
 }
-
+input[type=search]::-ms-clear {
+	display: none; width : 0; height: 0;
+}
+input[type=search]::-ms-reveal {
+	display: none; width : 0; height: 0;
+}
 .logo-text h6 {
 	display:none;
 }
@@ -452,12 +457,6 @@ input[type=search] {
 	background-position: 0;
 	background-position-x: 2px;
     background-size: 15px !important;
-}
-.sticky-header .search-bar input.search-field[type="search"].search-click {
-	margin-top: 6px;
-}
-.sticky-header .search-bar input.search-field[type="search"] {
-	margin-top:6px;
 }
 .dynamic-header-posts.sticky-header .menu-container{
 	width:inherit;
@@ -738,6 +737,12 @@ ul.sub-menu.moove-right {
 }
 
 @media only screen and (min-width: 1201px) {
+	.sticky-header .search-bar input.search-field[type="search"].search-click {
+		margin-top: 6px;
+	}
+	.sticky-header .search-bar input.search-field[type="search"] {
+		margin-top:6px;
+	}
 	.search-form .sendsubmit {
 		width: 16px;
 		padding: 0;
@@ -801,6 +806,12 @@ ul.sub-menu.moove-right {
 	
 }
 @media only screen and (min-width: 1024px) and (max-width: 1200px){
+	.sticky-header .search-bar input.search-field[type="search"].search-click {
+		margin-top: 6px;
+	}
+	.sticky-header .search-bar input.search-field[type="search"] {
+		margin-top:6px;
+	}
 	.search-bar input.search-field[type="search"].search-click {
 		width: 169px;
 		background-position: 149px;
@@ -1000,6 +1011,12 @@ ul.sub-menu.moove-right {
 	}
 }
 @media only screen and (min-width: 991px) and (max-width: 1023px){
+	.sticky-header .search-bar input.search-field[type="search"].search-click {
+		margin-top: 6px;
+	}
+	.sticky-header .search-bar input.search-field[type="search"] {
+		margin-top:6px;
+	}
 	.search-bar input.search-field[type="search"].search-click {
 		width: 129px;
 		background-position: 149px;
@@ -1193,6 +1210,12 @@ ul.sub-menu.moove-right {
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
+	.sticky-header .search-bar input.search-field[type="search"].search-click {
+		margin-top: 48px;
+	}
+	.sticky-header .search-bar input.search-field[type="search"] {
+		margin-top:48px;
+	}
 	.search-bar input.search-field[type="search"].search-click {
 		width: 129px;
 		background-position: 149px;

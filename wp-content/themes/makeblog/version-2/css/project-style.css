@@ -813,6 +813,21 @@ li.post:hover p.trans {
   font-weight: 400;
   line-height: 35px;
 }
+#pbd-alp-load-posts.loading a{
+  margin-right: 25px;
+}
+.fa.more-button-spinner {
+  position: absolute;
+  margin-top: -26px;
+  margin-left: 25px;
+  display:none;
+}
+.loading .fa.more-button-spinner {
+  display:inline-block;
+}
+#pbd-alp-load-posts:hover .more-button-spinner {
+  color:white;
+}
 #pbd-alp-load-posts a:hover {
   text-decoration: none;
 }
