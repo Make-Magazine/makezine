@@ -60,18 +60,10 @@
 			</div>
 			<div class="span4">
 				<div class="home-ads">
-					<div id='div-gpt-ad-664089004995786621-2'>
-						<script type='text/javascript'>
-							googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-2')});
-						</script>
-					</div>
+					<?php global $make; print $make->ads->ad_300x250_atf; ?>
 				</div>
 				<div class="home-ads bottom">
-					<div id='div-gpt-ad-664089004995786621-3'>
-						<script type='text/javascript'>
-							googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
-						</script>
-					</div>
+					<?php global $make; print $make->ads->ad_300x250_house; ?>
 				</div>
 			</div>
 		</div>

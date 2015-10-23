@@ -34,13 +34,7 @@ function make_recent_arduino($atts){
 add_shortcode('recent_arduino', 'make_recent_arduino');
 
 function make_ad_block_shortcode( $atts, $content = null ) {
-	return 	'<div style="width:125px;height:125px;float:right;margin-top:0px;padding:0 10px 5px;">
-		<div id=\'div-gpt-ad-664089004995786621-10\'>
-			<script type=\'text/javascript\'>
-				googletag.cmd.push( function(){ googletag.display(\'div-gpt-ad-664089004995786621-10\') } );
-			</script>
-		</div>
-	</div>';
+	return 	'<div style="width:125px;height:125px;float:right;margin-top:0px;padding:0 10px 5px;">' . $make->ads->ad_leaderboard . '</div>';
 }
 
 add_shortcode( 'ad_block', 'make_ad_block_shortcode' );
@@ -1146,6 +1140,10 @@ function make_printrbot_newsletter() {
 }
 add_shortcode( 'make_printrbot_newsletter', 'make_printrbot_newsletter' );
 
+/**
+ * The below function is now deprecated and will not render an ad correctly.
+ * @TODO: refactor to use new $make ad call.
+ */
 function make_get_dfp_ad_unit( $atts ) {
 	$defaults = array(
 		'unit' => '2',

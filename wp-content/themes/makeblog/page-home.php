@@ -206,11 +206,8 @@ Template Name: Home Page
 							<div class="span4">
 
 								<div class="new-dotw">
-										<div id="div-gpt-ad-664089004995786621-9" class="text-center">
-										 <script type='text/javascript'>
-										  googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-9')});
-										 </script>
-									</div>
+									
+									<?php global $make; print $make->ads->ad_300x250_shed; ?>
 
 								</div>
 
