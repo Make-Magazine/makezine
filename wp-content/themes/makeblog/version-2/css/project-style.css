@@ -15,6 +15,10 @@ body.page-template-project {
 .projects-cat, .all-projects {
   background-color: #f0f0f0;
 }
+.projects-cat.tablet, .all-projects.tablet{
+  padding-left: 19px;
+  padding-right: 1px;
+}
 .projects-cat .content, .all-projects .content {
   border: none;
   max-width: 1200px;
@@ -85,6 +89,7 @@ body.page-template-project {
   padding-left: 35px;
   border-left: 1px solid #979797;
   display: flex;
+  display: -webkit-flex;
   flex-wrap: wrap;
   align-items: flex-end;
 }
@@ -813,6 +818,27 @@ li.post:hover p.trans {
   font-weight: 400;
   line-height: 35px;
 }
+#pbd-alp-load-posts.loading a{
+  margin-right: 25px;
+}
+.fa.more-button-spinner {
+  position: absolute;
+  margin-top: -26px;
+  margin-left: 25px;
+  display:none;
+}
+.mozilla .fa.more-button-spinner {
+  position: absolute;
+  margin-top: -25px;
+  margin-left: 295px;
+  display: none;
+}
+.loading .fa.more-button-spinner {
+  display:inline-block;
+}
+#pbd-alp-load-posts:hover .more-button-spinner {
+  color:white;
+}
 #pbd-alp-load-posts a:hover {
   text-decoration: none;
 }
@@ -848,6 +874,20 @@ li.post:hover p.trans {
 @media screen and (min-width: 1200px) {
   .ads.temp.first-use .ads-wrapper h2.look_like_h3 a .official_store {
     padding: 0 120px 0 20px;
+  }
+}
+@media screen and (min-width:992px){
+  .projects-cat .content .title-wrapp .breadcrump, .all-projects .content .title-wrapp .breadcrump {
+    position: absolute;
+    top: -9px;
+    left: 42px;
+  }
+}
+@media screen and (max-width:991px){
+  .projects-cat .content .title-wrapp .breadcrump, .all-projects .content .title-wrapp .breadcrump {
+    position: absolute;
+    top: -9px;
+    left: 40px;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (max-device-width: 1024px) {

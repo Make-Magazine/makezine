@@ -723,7 +723,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
 
     if ($max_num_pages > 1 && $type !== 'load_more') {
-        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="#">More</a></p>';
+        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
     }
     echo $output;
 }
@@ -1140,7 +1140,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     }
 
     if ($max_num_pages > 1 && $type !== 'load_more') {
-        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0)">More</a></p>';
+        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
     }
 
     echo $output;
