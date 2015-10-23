@@ -112,6 +112,7 @@ body.page-template-project {
   overflow-wrap: normal;
   width: 100%;
 }
+
 .projects-cat .content .cat-nav-wrapp .cat_list li.row li, .all-projects .content .cat-nav-wrapp .cat_list li.row li {
   display: inline-block;
   vertical-align: top;
