@@ -1284,3 +1284,4 @@ function subscribe_return_path_overlay() { ?>
       }
     );
   </script>
+  <?php }
