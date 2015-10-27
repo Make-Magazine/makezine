@@ -357,7 +357,7 @@ input:-webkit-autofill {
     border: none;
     cursor: pointer;
     height: 30px;
-    padding: 0 30px 0 17px;
+    padding: 0 18px 0 17px;
     position: relative;
     -webkit-transition: width 400ms ease, background 400ms ease;
     transition: width 400ms ease, background 400ms ease;
@@ -452,7 +452,6 @@ input[type=search]::-ms-reveal {
 .sticky-header .close-search {
 	width: 25px;
     height: 22px;
-	margin-top: 10px;
 	background-position-y: 3px;
 }
 
@@ -850,9 +849,9 @@ ul.sub-menu.moove-right {
 }
 
 @media only screen and (min-width: 1024px) {
-	/*.menu-sub-menu ul li a {*/
-		/*padding: 10px 17px 11px 16px;*/
-	/*}*/
+	.sticky-header .close-search{
+		margin-top:10px;
+	}
 	.latest-shop .shop-post a {
 		height:149px;
 	}
@@ -1014,6 +1013,12 @@ ul.sub-menu.moove-right {
 	}
 }
 @media only screen and (min-width: 991px) and (max-width: 1023px){
+	.sticky-header .close-search{
+		margin-top:9px;
+	}
+	.navbar-default.sticky-header .mz-search{
+		margin-left:30px !important;
+	}
 	.sticky-header .search-bar input.search-field[type="search"].search-click {
 		margin-top: 6px;
 	}
@@ -1022,7 +1027,6 @@ ul.sub-menu.moove-right {
 	}
 	.search-bar input.search-field[type="search"].search-click {
 		width: 129px;
-		background-position: 149px;
 	}
 	.latest-shop .shop-post a {
 		height:149px;
@@ -1051,9 +1055,7 @@ ul.sub-menu.moove-right {
 	
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px){
-	/*.menu-sub-menu ul li a {*/
-		/*padding: 10px 14px 11px 15px;*/
-	/*}*/
+
 	.latest-stories .stories-post a img,
 	.latest-projects .project-post a img{
 		max-height:115px;
@@ -1129,11 +1131,8 @@ ul.sub-menu.moove-right {
 		height: 27px;
 		width: 27px !important;
 		padding-top: 10px !important;
-		margin-left: 730px !important;
 	}
-	.navbar-default.sticky-header .mz-search .search-form{
-		margin-top:-48px;
-	}
+
 	.navbar-default.sticky-header .sticky-subscribe {
 		display:block;
 		height: 50px;
@@ -1213,11 +1212,11 @@ ul.sub-menu.moove-right {
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
-	.sticky-header .search-bar input.search-field[type="search"].search-click {
-		margin-top: 48px;
+	.sticky-header .close-search{
+		margin-top:3px;
 	}
-	.sticky-header .search-bar input.search-field[type="search"] {
-		margin-top:48px;
+	.navbar-default.sticky-header .mz-search {
+		margin-left:730px !important;
 	}
 	.search-bar input.search-field[type="search"].search-click {
 		width: 129px;
@@ -1226,9 +1225,7 @@ ul.sub-menu.moove-right {
 	.latest-events .events-post:first-child {
 		margin-left: 0px;
 	}
-	.sticky-header .close-search {
-		margin-top: 51px;
-	}
+
 	.latest-shop .shop-post a{
 		height:110px
 	}

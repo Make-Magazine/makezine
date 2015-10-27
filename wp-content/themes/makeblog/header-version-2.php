@@ -84,6 +84,7 @@
       <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
       <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
   	<script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
+    <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -411,16 +412,16 @@
           </div>
           <div class="latest-shop row">
             <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/3d-printing-fabrication" class="pull-left first-post"></a>
+              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
             </div>
             <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/drones-flight" class="pull-left second-post"></a>
+              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
             </div>
             <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/toys" class="pull-left third-post"></a>
+              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
             </div>
             <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/books-magazines" class="pull-left fourth-post"></a>
+              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
             </div>
           </div>
           <div class="latest-events row">
