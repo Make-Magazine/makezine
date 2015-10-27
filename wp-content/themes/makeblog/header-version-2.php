@@ -80,17 +80,19 @@
     <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
   	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
    
-      <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-      <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-      <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
   	<script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <!--[endif]-->
+
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fancybox.js"></script>
     
     <!-- Pingdom for site monitoring -->
     <script>
@@ -183,8 +185,9 @@
           <h6><a href="http://www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a></h6>
         </div>
         <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
-          <h6><a href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
+          <h6>
+            <a id="trigger-overlay" href="#">SUBSCRIBE<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a>
+          </h6>
         </div>
       </div> <!-- row -->    
     </header>
@@ -297,11 +300,11 @@
           <div class="col-md-1 hidden-xs mz-search search-bar">
 		    
                 <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-                  <input type="submit" class="sendsubmit" value="" />
 					<label>
-					    <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
+					    <input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search">
 						<div class="close-search"></div>
 					</label>
+    			    <input type="submit" class="search-submit" value="Search" />
 			    </form>        
           </div>
 		  <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
@@ -350,110 +353,101 @@
 </div>
 <div class="second-nav"></div>
 </div>
-    <div class="dynamic-header-posts">
-      <div class="dynamic-header-container container">
-        <div class="menu-container row">
-          <div class="menu-sub-menu"></div>
+<div class="dynamic-header-posts">
+  <div class="menu-container">
+    <div class="menu-sub-menu"></div>
+  </div>
+  <div class="dynamic-header-content">
+    <div class="latest-projects">
+      <?php query_posts('post_type=projects&showposts=5'); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="project-post">
+          <a href="<?php the_permalink(); ?>" class="pull-left">
+            <?php
+            $args = array(
+            'resize' => '370,240',
+            );
+            $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+            $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+            preg_match_all($re, $url, $matches);
+            $str = $matches[2][0];
+            $photon = jetpack_photon_url($str, $args);?>
+            <img src="<?php echo $photon; ?>" alt="thumbnail">
+          </a>
+          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         </div>
-        <div class="dynamic-header-content row">
-          <div class="latest-projects row">
-            <?php query_posts('post_type=projects&showposts=4'); ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <div class="project-post col-lg-3 col-md-3 col-sm-3">
-
-                <a href="<?php the_permalink(); ?>" class="pull-left">
-                  <?php
-                  $args = array(
-                      'resize' => '370,240',
-                  );
-                  $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-                  $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                  preg_match_all($re, $url, $matches);
-                  $str = $matches[2][0];
-                  $photon = jetpack_photon_url($str, $args);?>
-                  <img src="<?php echo $photon; ?>" alt="thumbnail">
-                </a>
-                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-              </div>
-            <?php endwhile; ?>
-
-            <?php else: ?>
-              <?php echo '<h1>No content found</h1>' ?>
-            <?php endif; ?>
-            <?php wp_reset_query(); ?>
-          </div>
-          <div class="latest-stories row">
-            <?php query_posts('showposts=4'); ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <div class="stories-post col-lg-3 col-md-3 col-sm-3">
-
-                <a href="<?php the_permalink(); ?>" class="pull-left">
-                  <?php
-                  $args = array(
-                      'resize' => '370,240',
-                  );
-                  $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-                  $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                  preg_match_all($re, $url, $matches);
-                  $str = $matches[2][0];
-                  $photon = jetpack_photon_url($str, $args);?>
-                  <img src="<?php echo $photon; ?>" alt="thumbnail">
-                </a>
-                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-              </div>
-            <?php endwhile; ?>
-
-            <?php else: ?>
-              <?php echo '<h1>No content found</h1>' ?>
-            <?php endif; ?>
-            <?php wp_reset_query(); ?>
-          </div>
-          <div class="latest-shop row">
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
-            </div>
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
-            </div>
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
-            </div>
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
-            </div>
-          </div>
-          <div class="latest-events row">
-            <?php query_posts('post_type=events&showposts=5'); ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-              $id = get_the_ID();?>
-              <div class="events-post col-lg-2 col-md-2 col-sm-2">
-                <div class="event-thumbnail">
-                  <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
-                    <?php
-                    $args = array(
-                        'resize' => '102,102',
-                    );
-                    $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
-                    $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                    preg_match_all($re, $url, $matches);
-                    $str = $matches[2][0];
-                    $photon = jetpack_photon_url($str, $args);?>
-                    <img src="<?php echo $str; ?>" alt="thumbnail">
-                  </a>
-                </div>
-                <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
-                <h2><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'date',true); ?></a></h2>
-              </div>
-            <?php endwhile; ?>
-
-            <?php else: ?>
-              <?php echo '<h1>No content found</h1>' ?>
-            <?php endif; ?>
-            <?php wp_reset_query(); ?>
-          </div>
+      <?php endwhile; ?>
+      <?php else: ?>
+        <?php echo '<h1>No content found</h1>' ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+    </div>
+    <div class="latest-stories">
+      <?php query_posts('showposts=5'); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="stories-post">
+          <a href="<?php the_permalink(); ?>" class="pull-left">
+            <?php
+            $args = array(
+                'resize' => '370,240',
+            );
+            $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+            $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+            preg_match_all($re, $url, $matches);
+            $str = $matches[2][0];
+            $photon = jetpack_photon_url($str, $args);?>
+            <img src="<?php echo $photon; ?>" alt="thumbnail">
+          </a>
+          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         </div>
+      <?php endwhile; ?>
+      <?php else: ?>
+        <?php echo '<h1>No content found</h1>' ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+    </div>
+    <div class="latest-shop">
+      <div class="shop-post">
+          <a href="http://www.makershed.com/collections/3d-printing-fabrication" class="pull-left first-post"></a>
+      </div>
+      <div class="shop-post">
+        <a href="http://www.makershed.com/collections/drones-flight" class="pull-left second-post"></a>
+      </div>
+      <div class="shop-post">
+        <a href="http://www.makershed.com/collections/toys" class="pull-left third-post"></a>
+      </div>
+      <div class="shop-post">
+        <a href="http://www.makershed.com/collections/books-magazines" class="pull-left fourth-post"></a>
       </div>
     </div>
+    <div class="latest-events">
+      <?php query_posts('post_type=events&showposts=5'); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+        $id = get_the_ID();?>
+        <div class="events-post">
+          <div class="event-thumbnail">
+            <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
+              <?php
+              $args = array(
+                  'resize' => '102,102',
+              );
+              $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
+              $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+              preg_match_all($re, $url, $matches);
+              $str = $matches[2][0];
+              $photon = jetpack_photon_url($str, $args);?>
+              <img src="<?php echo $str; ?>" alt="thumbnail">
+            </a>
+          </div>
+          <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
+          <h2><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'date',true); ?></a></h2>
+        </div>
+      <?php endwhile; ?>
+      <?php else: ?>
+        <?php echo '<h1>No content found</h1>' ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+    </div>
+  </div>
+</div>
     <div class="close-dynamic-content"></div>

@@ -297,6 +297,9 @@ global $make;
 
 		<?php wp_footer(); ?>
 
+		<!-- Subscribe return path overlay -->
+		<?php echo subscribe_return_path_overlay(); ?>
+
 		<!-- AddRoll Retargeting Pixel -->
 		<script type="text/javascript">
 		adroll_adv_id = "KNRSJHIPMNCYTPL6CH6ZAM";
@@ -439,6 +442,30 @@ global $make;
   js.src = "//cdn.pubexchange.com/modules/partner/make";
   pjs.parentNode.insertBefore(js, pjs);
 }(document, "script", "pubexchange-jssdk"));</script>
+
+<!--YOUTUBE FOR FANCYBOX MODALS-->
+<script>
+$(document).ready(function() {
+  $(".fancytube").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : false,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none',
+    padding : 0
+  });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancytube").fancybox();
+  });
+</script>
 
 	</body>
 </html>
