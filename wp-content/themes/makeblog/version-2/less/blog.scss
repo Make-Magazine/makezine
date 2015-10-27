@@ -1,0 +1,205 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+
+.all-stories {
+  h1 {
+    color: #4a4a4a;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    padding-left: 15px;
+  }
+  .post-list {
+    margin: 0 0 10px;
+    li.post {
+      list-style-type: none;
+      display: flex;
+      display: -webkit-flex;
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+
+      img {
+        width: 100%;
+      }
+      .post-wrapper {
+        position: relative;
+        margin-bottom: 18px;
+        display: flex;
+      }
+      .large-card {
+        div.gradient-wrapper {
+          overflow: hidden;
+          position: relative;
+        }
+        .gradient_animation {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 60%;
+          opacity: 1;
+          background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 1) 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(55%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 1)));
+          background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 1) 100%);
+          background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 1) 100%);
+          background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 1) 100%);
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
+          transition: all 0.33s ease;
+          a {
+            display: block;
+            height: 100%;
+          }
+        }
+        .final_gradient {
+          opacity: 0;
+          transition: opacity 0.12s ease 0.33s;
+          a {
+            display: block;
+            height: 100%;
+          }
+        }
+        &:hover {
+          .gradient_animation {
+            height: 100%;
+            opacity: 1;
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(45%, rgba(0, 0, 0, 0.32)), color-stop(100%, rgba(0, 0, 0, 0.7)));
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.7) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
+          }
+          .final_gradient {
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            opacity: 1;
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(45%, rgba(0, 0, 0, 0.32)));
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.32) 45%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
+          }
+        }
+        .story-type {
+          a {
+            color: white;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 18px;
+            text-transform: uppercase;
+          }
+        }
+        .title {
+          margin-bottom: 7px;
+          a {
+          color: white;
+          font-family: 'Roboto Slab';
+          font-size: 35px;
+          font-weight: 700;
+          line-height: 40px;
+        }
+        }
+        .about-post {
+          position: absolute;
+          left: 21px;
+          bottom: 15px;
+        }
+        .publish-date a {
+          color: white;
+          font-family: Roboto;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 14px;
+        }
+      }
+      .small-card {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        img {
+          height: 187px;
+          @media (max-width: 1200px) {
+            height: 147px;
+          }
+        }
+        .about-post {
+          padding: 14px 9px;
+          @media (max-width: 1200px) {
+            padding: 14px 9px 34px;
+          }
+          .story-type a {
+            color: #666;
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 15px;
+            text-transform: uppercase;
+          }
+          .title {
+            line-height: 22px;
+            @media (max-width: 1200px) {
+              font-size: 15px;
+              line-height: 18px;
+            }
+            a {
+              color: #4a4a4a;
+              font-family: 'Roboto Slab';
+              font-size: 18px;
+              font-weight: 700;
+              line-height: 22px;
+              @media (max-width: 1200px) {
+                font-size: 15px;
+                line-height: 18px;
+              }
+            }
+          }
+          .publish-date a {
+            color: #9b9b9b;
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            position: absolute;
+            left: 24px;
+            bottom: 15px;
+          }
+        }
+        .wrapp {
+          background-color: #FFF;
+          position: relative;
+          min-height: 373px;
+          .story-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      .red-box-category {
+        p {
+          margin-top: 3px;
+        }
+        .dies {
+          padding-right: 10px;
+          font-size: 18px;
+        }
+        span.cat_name {
+          margin-bottom: 3px;
+        }
+      }
+    }
+
+  }
+}
