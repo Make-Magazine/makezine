@@ -1,10 +1,50 @@
 <?php
-function story_pulling() {
+function story_pulling($offset=0) {
 	$outputs     = '';
+	$post_per_page = 0;
+	$arg = array(
+		'post_type'      => 'post',
+		'posts_per_page' => 32,
+		'post_status'    => 'publish',
+		'offset'         => $offset,
+	);
+	$query       = new WP_Query( $arg );
+	$post_weight = 0;
+	$row_weight  = 0;
+	$row_count   = 0;
+	while ( $query->have_posts() )  :
+		$query->the_post();
+
+		$post_id      = get_the_ID();
+		$type_array   = get_post_meta( $post_id, 'story_type' );
+		$story_type[] = $type_array[0];
+
+		if ( ( $type_array[0] == 'News & Features' ) or ( $type_array[0] == 'Skill Builders' ) or ( $type_array[0] == 'Reviews' ) ) {
+			$post_weight     = 2;
+		} else {
+			$post_weight     = 1;
+		}
+		$row_weight = $row_weight + $post_weight;
+		$post_per_page++;
+		if ( $row_weight > 4 ) {
+			$row_weight = $post_weight;
+			$row_count++;
+		}
+		if ($row_count == 8) {
+			$post_per_page--;
+			break;
+		}
+	endwhile;
+	do_action( 'custom_page_hook', $query );
+	wp_reset_query();
+
+
+
 	$arguments   = array(
 		'post_type'      => 'post',
-		'posts_per_page' => 140,
+		'posts_per_page' => $post_per_page,
 		'post_status'    => 'publish',
+		'offset'         => $offset,
 	);
 	$query       = new WP_Query( $arguments );
 	$post_weight = 0;
@@ -139,6 +179,7 @@ function story_pulling() {
 	endwhile;
 	do_action( 'custom_page_hook', $query );
 	wp_reset_query();
-
+	$offset = $offset + $post_per_page;
+	$outputs .= '<p id="blog-load-posts" class="row" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
 	return $outputs;
 }

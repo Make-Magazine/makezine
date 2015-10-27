@@ -7,6 +7,9 @@
   line-height: 35px;
   padding-left: 15px;
 }
+.all-stories .all-post-wrapper {
+  margin-right: 45px;
+}
 .all-stories .post-list {
   margin: 0 0 10px;
 }
@@ -28,6 +31,7 @@
 .all-stories .post-list li.post .large-card div.gradient-wrapper {
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 .all-stories .post-list li.post .large-card .gradient_animation {
   position: absolute;
@@ -173,7 +177,6 @@
   text-transform: uppercase;
   margin-bottom: 0;
   position: absolute;
-  left: 24px;
   bottom: 15px;
 }
 .all-stories .post-list li.post .small-card .wrapp {
@@ -197,4 +200,30 @@
 }
 .all-stories .post-list li.post .red-box-category span.cat_name {
   margin-bottom: 3px;
+}
+
+#blog-load-posts {
+  max-width: 540px;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background-color: #FFF;
+}
+#blog-load-posts a {
+  text-transform: uppercase;
+  display: block;
+  color: #4a4a4a;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 35px;
+}
+#blog-load-posts a:hover {
+  text-decoration: none;
+}
+#blog-load-posts:hover {
+  background-color: #4A4A4A;
+}
+#blog-load-posts:hover a {
+  color: #FFF;
 }

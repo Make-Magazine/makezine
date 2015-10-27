@@ -1216,8 +1216,17 @@ function create_post_type() {
         )
     );
 }
-function blog_output() {
+function blog_output($offset) {
     require_once 'version-2/includes/blog_output.php';
-    $puling_result = story_pulling();
+    $puling_result = story_pulling($offset);
     echo $puling_result;
 }
+function blog_output_with_ajax()
+{
+    $offset = $_POST['offset'];
+    blog_output($offset);
+
+    die();
+}
+add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
+add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');

@@ -9,6 +9,9 @@
     line-height: 35px;
     padding-left: 15px;
   }
+  .all-post-wrapper {
+    margin-right: 45px;
+  }
   .post-list {
     margin: 0 0 10px;
     li.post {
@@ -30,6 +33,7 @@
         div.gradient-wrapper {
           overflow: hidden;
           position: relative;
+          width: 100%;
         }
         .gradient_animation {
           position: absolute;
@@ -170,7 +174,7 @@
             text-transform: uppercase;
             margin-bottom: 0;
             position: absolute;
-            left: 24px;
+            //left: 24px;
             bottom: 15px;
           }
         }
@@ -201,5 +205,30 @@
       }
     }
 
+  }
+}
+#blog-load-posts {
+  max-width: 540px;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background-color: #FFF;
+  a {
+    text-transform: uppercase;
+    display: block;
+    color: #4a4a4a;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 35px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    background-color: #4A4A4A;
+    a {
+      color: #FFF;
+    }
   }
 }

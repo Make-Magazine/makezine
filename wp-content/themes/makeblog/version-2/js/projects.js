@@ -512,6 +512,25 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $(document).on('touchstart click', '#blog-load-posts a', function() {
+        var get_offset = $("#blog-load-posts").attr('data-offset');
+        var blog_output_with_ajax = '';
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action: 'blog_output_with_ajax',
+                offset: get_offset
+            },
+            success: function (data) {
+                $('#blog-load-posts').remove();
+                $('.container.all-stories .post-list').append('<li class="row post">' + data);
+            },
+            error: function (data) {
+
+            }
+        });
+    });
 
     // MOBILE NAVIGATION
 
