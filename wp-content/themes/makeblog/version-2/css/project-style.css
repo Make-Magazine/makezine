@@ -89,9 +89,11 @@ body.page-template-project {
   padding-left: 35px;
   border-left: 1px solid #979797;
   display: flex;
-  display: -webkit-flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  display: -webkit-flex;
+  -webkit-align-items: flex-end;
+  -webkit-flex-wrap: wrap;
 }
 .projects-cat .content .cat-nav-wrapp .cat_list, .all-projects .content .cat-nav-wrapp .cat_list {
   margin: 0;
@@ -758,7 +760,9 @@ li.post:hover p.trans {
 .show-me {
   display: inline-block;
 }
-
+.projects-cat .content .minify.sticky, .all-projects .content .minify.sticky {
+  overflow: initial !important;
+}
 @media screen and (min-width: 769px) {
   .projects-cat .content .minify.sticky, .all-projects .content .minify.sticky {
     position: fixed;
@@ -819,7 +823,7 @@ li.post:hover p.trans {
   line-height: 35px;
 }
 #pbd-alp-load-posts.loading a{
-  margin-right: 25px;
+  padding-right: 25px;
 }
 .fa.more-button-spinner {
   position: absolute;
@@ -1555,8 +1559,14 @@ ul.duration-item li.current {
 }
 
 @media (max-width: 769px) {
-  .tablet .minify.sticky {
-    margin-left: 0;
+  .tablet .container .minify.sticky {
+    margin-left: -20px;
+  }
+  .projects-cat .filter-list, .all-projects .filter-list {
+    padding-left: 15px;
+  }
+  .tablet .content.container .minify.sticky .filter-list .fa.fa-chevron-up, .tablet .content.container .minify.sticky .filter-list .fa.fa-chevron-down {
+    left: 15px;
   }
   .tablet .content .minify.sticky .filter-list .fa.fa-chevron-up,
   .tablet .content .minify.sticky .filter-list .fa.fa-chevron-down {
