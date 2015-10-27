@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 			<div class="row navigator">
 				<div class="row hamburger">
 					<div class="hamburger-navigator col-lg-2 col-sm-2 col-xs-2">
-						<img src="/wp-content/themes/makeblog/version-2/img/hamburger.png" scale="0">
+						<img src="<?php echo get_template_directory_uri().'/version-2/img/hamburger.png' ?>" scale="0">
 						<h2>Reading list</h2>
 					</div>
 				</div>
