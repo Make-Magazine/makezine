@@ -12,7 +12,7 @@ get_header('version-2'); ?>
 	<div class="single">
 
 		<div class="container">
-			<div class="row navigator">
+			<div style="visibility: hidden" class="row navigator">
 				<div class="row hamburger">
 					<div class="hamburger-navigator col-lg-2 col-sm-2 col-xs-2">
 						<img src="<?php echo get_template_directory_uri().'/version-2/img/hamburger.png' ?>" scale="0">
