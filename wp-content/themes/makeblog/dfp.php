@@ -350,4 +350,5 @@ else {
 <!-- Make GPT -->
 <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 
+<!-- 1x1 ad unit -->
 <?php print $make->ads->ad_1x1; ?>
