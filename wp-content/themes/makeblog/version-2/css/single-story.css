@@ -1,0 +1,62 @@
+.posts-navigator {
+    position: absolute;
+    background: white;
+    width:217px;
+    display:none;
+    z-index: 1;
+    overflow-y:auto !important;
+    height:inherit;
+    margin-left:17px;
+}
+.highlighted {
+    background:gainsboro;
+}
+.latest-story a.highlighted:hover {
+    background: gainsboro !important;
+}
+.latest-story a {
+
+}
+.hamburger-navigator {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: white;
+    padding: 10px;
+    margin-left: 30px;
+    transition: all 0.25s ease;
+    overflow: hidden;
+    z-index:2;
+}
+.hamburger-navigator img {
+    cursor: pointer;
+}
+.hamburger-navigator.open {
+    width: 200px;
+    margin-left:0px;
+}
+.hamburger-navigator img {
+    float:left;
+}
+.hamburger-navigator h2{
+    font-size: 15px;
+    line-height: 30px;
+    padding-left: 43px;
+}
+.thumbnails{
+    margin:50px 0 -50px 0;
+    overflow:hidden;
+    position: absolute;
+    overflow: hidden;
+    margin-left: -17px;
+}
+.thumbnails.open{
+    width:217px;
+}
+.hamburger {
+    margin:0;
+}
+.navigator.sticky {
+    position:fixed;
+    margin-top:-1px;
+}
