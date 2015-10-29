@@ -1798,7 +1798,7 @@ function home_tags($postid) {
 			$category = $categories[0];
 		}
 		$catname = $category->name;
-		$caturl = get_category_link( $category ) . '?post_type=projects';
+		$caturl = get_category_link( $category ) . '';
 
 		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
 	}

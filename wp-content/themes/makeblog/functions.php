@@ -566,7 +566,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     }
                 } elseif (!empty($post_flag[0])) {
                     $red_cat_name = get_cat_name(intval($post_flag[0]));
-                    $cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
+                    $cat_link = get_category_link($post_flag[0]) . '';
                 } else {
                     $post_categories = get_the_category();
                     foreach ($post_categories as $post_category) {
@@ -597,7 +597,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                         $parent_cat_length--;
                         $random_cat_number = rand(0, $parent_cat_length);
                         $red_cat_name = $parent_cat[$random_cat_number];
-                        $cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
+                        $cat_link = get_category_link($parent_id[$random_cat_number]) . '';
                     }
                 }
                 $red_cat_name = htmlspecialchars_decode($red_cat_name);
@@ -921,7 +921,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
 
             if (!empty($post_flag[0])) {
                 $red_cat_name = get_cat_name(intval($post_flag[0]));
-                $cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
+                $cat_link = get_category_link($post_flag[0]) . '';
             } else {
                 $post_categories = get_the_category();
                 foreach ($post_categories as $post_category) {
@@ -970,19 +970,19 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                             $red_cat_name = $child_cat[0];
                         }
                     }
-                    $cat_link = get_category_link($child_id[0]) . '?post_type=projects';
+                    $cat_link = get_category_link($child_id[0]) . '';
                 } else {
                     $parent_cat_length = count($parent_cat);
                     $parent_cat_length--;
                     $red_cat_name = $parent_cat[0];
-                    $cat_link = get_category_link($parent_id[0]) . '?post_type=projects';
+                    $cat_link = get_category_link($parent_id[0]) . '';
                 }
             }
             if (empty($red_cat_name)) {
                 $red_cat_name = $post_category->name;
             }
             $red_car_id = get_cat_ID($red_cat_name);
-            $cat_link = get_category_link($red_car_id) . '?post_type=projects';
+            $cat_link = get_category_link($red_car_id) . '';
             $red_cat_name = htmlspecialchars_decode($red_cat_name);
             $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
             if ($cat_length > 13) {
