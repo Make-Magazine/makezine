@@ -18,15 +18,11 @@ if( $detect->isTablet() ){
 }
 
 get_header('version-2'); ?>
-<div class="header-ad">
-	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
-        <div class="own">
-            <div class="home-ads">
-                <?php global $make; print $make->ads->ad_leaderboard; ?>
-            </div>
-        </div>
-	</li>
+
+<div class="home-ads">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
 </div>
+ 
 <div class="projects-cat <?php echo $device ?>">
     <div class="content container">
         <?php
