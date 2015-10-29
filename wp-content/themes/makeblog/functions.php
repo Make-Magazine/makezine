@@ -1236,6 +1236,74 @@ add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
 add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');
 
 /**
+* Adds the Youtube inside Fancybox modal
+* To use: [youtube-modal "wnnWrLt_RCo"]
+* Place YT id in shortcade
+*/
+add_shortcode('youtube-modal', 'youtube_shortcode_modal'); 
+
+function youtube_shortcode_modal($atts){  
+
+  if(!isset($atts[0])) return;
+  $id = strip_tags($atts[0]);
+  ob_start();
+  ?>
+
+<div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
+  <div class="sprout-video">
+      <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/<?php echo $id; ?>?autoplay=1">
+        <img class="img-responsive" src="http://img.youtube.com/vi/<?php echo $id; ?>/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+        <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
+      </a>
+  </div>
+</div>
+
+  <?php
+  return ob_get_clean();
+}
+
+add_action('after_setup_theme', 'events_nav_setup_thumbnail');
+function events_nav_setup_thumbnail()
+{
+    add_image_size('events-nav-thumb', 102, 102, true); // (cropped)
+}
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    register_post_type( 'Events',
+        array(
+            'labels' => array(
+                'name' => 'Events',
+                'singular_name' => 'Events',
+                'add_new' => 'Add new',
+                'add_new_item' => 'Add new item',
+                'edit_item' => 'Edit',
+                'new_item' => 'New item',
+                'view_item' => 'View',
+                'search_items' => 'Search',
+                'not_found' => 'Sorry, not found',
+                'not_found_in_trash' => 'Not found in trash',
+            ),
+            'description' => 'Events post type',
+            'public' => True,
+            'publicly_queryable' => null,
+            'exclude_from_search' => null,
+            'show_ui' => null,
+            'show_in_menu' => null,
+            'menu_position' => null,
+            'menu_icon' => null,
+            'hierarchical' => false,
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'taxonomies' => array(),
+            'has_archive' => false,
+            'query_var' => true,
+            'capability_type' => 'page',
+            'show_in_nav_menus' => null,
+
+        )
+    );
+}
+
+/**
  * Adds the subscribe header return path overlay
  */
 function subscribe_return_path_overlay() { ?>
