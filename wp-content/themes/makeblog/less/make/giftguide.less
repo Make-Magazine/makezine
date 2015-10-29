@@ -1,0 +1,167 @@
+#gg2015 {
+  margin-top: 15px;
+
+  .gg2015-header {
+    background-color: red;
+    color: #fff;
+
+    .row {
+      height: 200px;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    .gg2015-border-right {
+      border-right: 1px solid #fff;
+      margin-top: 15px;
+      margin-bottom: 15px;
+
+      h3 {
+        font-size: 20px;
+      }
+
+      .gg2015-big-font {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 0px;
+      }
+    }
+
+    .gg2015-nav {
+      padding: 15px 0;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+
+      h2 {
+        color: #fff;
+        font-size: 20px;
+        padding: 5px 0;
+      }
+    }
+
+  }
+
+  .gg2015-hero {
+    background: url(../img/home_background.jpg) no-repeat;
+    background-size: cover;
+    height: 550px;
+    position: relative;
+
+    .col-sm-6 {
+      margin-top: 20px;
+
+      h1 {
+        color: #fff;
+        font-family: 'Roboto', arial, sans-serif;
+        padding: 0;
+        line-height: 40px;
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: 3px;
+
+        span {
+          color: #fff;
+          font-family: 'Roboto Slab', serif;
+          padding: 10px 15px;
+          line-height: 65px;
+          font-size: 65px;
+          border: 5px solid #fff;
+          display: block;
+          font-weight: bold;
+        }
+      }
+
+      h2 {
+        color: #fff;
+        font-family: 'Roboto', arial, sans-serif;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        padding: 10px 0;
+        line-height: 18px;
+        font-size: 21px;
+        font-weight: 300;
+      }
+    }
+
+    .gg2015-mobile-hero {
+      width: 100%;
+    }
+
+    .gg2015-snow {
+      background-image: url('../img/snow_layer_1.png'), url('../img/snow_layer_2.png'), url('../img/snow_layer_3.png'), url('../img/snow_layer_4.png');
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 100;
+      -webkit-animation: snow-items 20s linear infinite;
+      -moz-animation: snow-items 20s linear infinite;
+      -ms-animation: snow-items 20s linear infinite;
+      animation: snow-items 20s linear infinite;
+    }
+  }
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  #gg2015 .gg2015-hero {
+    height: 450px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  #gg2015 .gg2015-hero {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #gg2015 .gg2015-hero {
+    background: none;
+    height: auto;
+    padding: 0;
+  }
+  #gg2015 .gg2015-header .gg2015-border-right {
+    border-right: 0px;
+  }
+}
+
+/* SNOW ANIMATION ON THE HERO IMAGE */
+@keyframes snow-items {
+  from {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  to {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
+@-moz-keyframes snow-items {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
+@-webkit-keyframes snow-items {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
+@-ms-keyframes snow-items {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
