@@ -17,6 +17,7 @@ if( $detect->isTablet() ){
 
 get_header( 'version-2' );
 
+wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2/js/homegrid.js', array( 'jquery' ), false, true );
 ?>
 <?php
 // custom-fields for curated section
