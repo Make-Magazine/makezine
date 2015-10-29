@@ -91,25 +91,13 @@ get_header('version-2'); ?>
 
 									<div class="projects-ad">
 
-										<!-- Beginning Sync AdSlot 2 for Ad unit header ### size: [[300,250]]  -->
-										<div id='div-gpt-ad-664089004995786621-2'>
-											<script type='text/javascript'>
-												googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-2')});
-											</script>
-										</div>
-										<!-- End AdSlot 2 -->
+										<?php global $make; print $make->ads->ad_300x250_atf; ?>
 
 									</div>
 
 									<div class="sidebar-ad">
 
-										<!-- Beginning Sync AdSlot 3 for Ad unit sidebar ### size: [[300,250]]  -->
-										<div id='div-gpt-ad-664089004995786621-3'>
-											<script type='text/javascript'>
-												googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-3')});
-											</script>
-										</div>
-										<!-- End AdSlot 2 -->
+										<?php global $make; print $make->ads->ad_300x250_house; ?>
 
 									</div>
 
@@ -218,13 +206,7 @@ get_header('version-2'); ?>
 
 												<?php make_projects_steps_list( $steps ); ?>
 
-												<!-- Beginning Sync AdSlot 3 for Ad unit header ### size: [[300,250]]  -->
-												<div id='div-gpt-ad-664089004995786621-3'>
-													<script type='text/javascript'>
-														googletag.display('div-gpt-ad-664089004995786621-3');
-													</script>
-												</div>
-												<!-- End AdSlot 3 -->
+												<?php global $make; print $make->ads->ad_300x250_house; ?>
 
 											</div>
 
@@ -368,13 +350,7 @@ get_header('version-2'); ?>
 
 									<div class="span4" style="margin-top:20px;">
 
-										<!-- Beginning Sync AdSlot 3 for Ad unit sidebar ### size: [[300,250]]  -->
-										<div id='div-gpt-ad-664089004995786621-3'>
-											<script type='text/javascript'>
-												googletag.display('div-gpt-ad-664089004995786621-3');
-											</script>
-										</div>
-										<!-- End AdSlot 3 -->
+										<?php global $make; print $make->ads->ad_300x250_house; ?>
 
 										<div class="related-projects">
 

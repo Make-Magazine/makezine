@@ -4,11 +4,7 @@
 	<div class="home-banner">
 <?php endif; ?>
 
-	<div id="div-gpt-ad-664089004995786621-7" class="banner-canvas">
-		<script type='text/javascript'>
-			googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-7')});
-		</script>
-	</div>
+	<?php global $make; print $make->ads->ad_2160x547; ?>
 
 	<div class="container pull-up">
 

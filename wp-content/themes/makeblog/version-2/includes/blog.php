@@ -1,15 +1,19 @@
 <?php
 /**
- * Template Name: Interview
+ * This is a blog page template
  */ ?>
-<div class="container">
+<div class="container all-stories">
 	<div class="row">
-		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 post-wrapper">
-			test
+		<h1 class="all-story">All stories</h1>
+		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 all-post-wrapper">
+			<ul class="post-list">
+				<li class="row post">
+					<?php blog_output($offset=0); ?>
+				</li>
+			</ul>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar-wrapper">
-			sidebar
+			test sidebar
 		</div>
 	</div>
 </div>
-

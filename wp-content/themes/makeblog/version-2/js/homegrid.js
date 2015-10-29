@@ -458,7 +458,8 @@ jQuery(document).ready(function ($) {
             $(this).addClass('first-click');
             paged++;
             // Show that we're working.
-            $(this).text('Loading...');
+            $(this).text('Loading');
+            $(this).parent().addClass('loading');
             $(".before-ads:first").removeClass('before-ads');
             getProjects('load_more', function () {
                 var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
@@ -468,9 +469,9 @@ jQuery(document).ready(function ($) {
                 }
                 $('#pbd-alp-load-posts a').text('More');
                 $('#pbd-alp-load-posts a').removeClass('first-click');
+                $('#pbd-alp-load-posts').removeClass('loading');
                 // Load placeholder ads.
                 make.gpt.loadDyn();
-
             });
             return false;
         }
