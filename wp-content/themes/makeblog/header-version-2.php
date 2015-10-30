@@ -118,7 +118,7 @@
       dataLayer = [];
     </script>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
     <!-- Google Universal Analytics -->
     
     <!-- Time-tracking for Custom Dimensions -->
