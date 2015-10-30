@@ -8,6 +8,19 @@
  */
 
 ?>
+<?php require_once 'version-2/includes/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$post_per_page = 15;
+$device = 'pc';
+if ( $detect->isMobile() ) {
+  $post_per_page = 5;
+  $device = 'mobile';
+}
+
+if( $detect->isTablet() ){
+  $post_per_page = 10;
+  $device = 'tablet';
+} ?>
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
   <head>
@@ -189,7 +202,7 @@
       </div> <!-- row -->    
     </header>
 
-    <div class="container panel header">
+    <div class="container panel header <?php echo $device ?>">
       <!--nav class="navbar navbar-default"-->
       <nav class="navbar navbar-default">
         <div class="row">

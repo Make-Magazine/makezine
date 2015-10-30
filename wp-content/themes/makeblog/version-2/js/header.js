@@ -23,6 +23,20 @@
 				$('.navbar-default').addClass('sticky-header');
 				$('.dynamic-header-posts').addClass('sticky-header');
 				$('.close-dynamic-content').addClass('sticky-header');
+				$('.close-search').on('click', function() {
+					if (!$(this).hasClass('search-click')) {
+						if ($('.header').hasClass('tablet')) {
+							$(".container.header.width").css("position", "absolute");
+							$(".container.header.width").css("top", scrollTop);
+							$(".container.header.width").css("display", "block");
+							window.setTimeout(function(){
+								$(".container.header.width").css("position", "");
+								$(".container.header.width").css("top", "");
+								$(".container.header.width").css("display", "");
+							}, 100);
+						}
+					}
+				});
 				if ($('#wpadminbar').height() > 0 ){
 					$( window ).resize(function() {
 						$window = $(window).width() + 17;
@@ -203,6 +217,9 @@
 	 $('#menu-make-main > li').each(function(index){
 		 if ($(this).hasClass('menu-item-has-children')) {
 			 $menu_content = $(this).find('.sub-menu');
+			 if ($(this).children('a').attr('title') == "Projects"){
+				 $($menu_content).addClass('projects');
+			 }
 			 $($menu_content).clone().appendTo('.menu-sub-menu');
 		 }else {
 			 $('.menu-sub-menu').append('<ul class="sub-menu"></ul>');
@@ -568,6 +585,15 @@
 				$('.tablet .minify.sticky').css('overflow','inherit')
 			}
 	 });
+	 var $searchText = 0;
+	 $(".search-field").keyup(function(){
+		 $searchText = $(this).val();
+	 });
+	 $( ".search-form" ).submit(function( event ) {
+		 if ($searchText == 0) {
+			 event.preventDefault();
+		 }
+	 });
 	 $('.close-search').on('click', function() {
 		 $('.search-bar input.search-field[type="search"]').toggleClass('search-click');
 		 $('.close-search').toggleClass('change-background');
@@ -701,4 +727,14 @@
 			 }
 
 		 });
+	 var hiddenTitle;
+	 var currentItem;
+	 $("li > a").hover(function() {
+		 currentItem = $(this);
+		 hiddenTitle = $(this).attr('title'); //stores title
+		 setTimeout(function(){$(currentItem).attr('title','');}, 10);
+	 }, function() {
+		 $(this).attr('title',hiddenTitle); //restores title
+	 });
+	 
 });

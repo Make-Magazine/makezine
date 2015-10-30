@@ -341,20 +341,39 @@ input:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0 50px white !important;
 }
 .search-bar input.search-field[type="search"] {
-  margin-top: -1px;
-  color: #aeaeae;
+  margin-top: -2px;
+  color: black;
   border: none;
   cursor: pointer;
-  height: 30px;
-  padding: 0 18px 0 17px;
+  height: 35px;
+  padding: 0 30px 0 12px;
   position: relative;
   -webkit-transition: width 400ms ease, background 400ms ease;
   transition: width 400ms ease, background 400ms ease;
   width: 0;
   box-shadow: none;
   float: right;
-  border-radius: 10px;
+  border-radius: 100px;
   z-index: 2;
+}
+input.search-field::-webkit-input-placeholder {
+  color: black;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+input.search-field:-moz-placeholder { /* Firefox 18- */
+  color: black;
+}
+
+input.search-field::-moz-placeholder {  /* Firefox 19+ */
+  color: black;
+}
+
+input.search-field:-ms-input-placeholder {
+  color: black;
 }
 input[type=search] {
   -webkit-appearance: none;
@@ -366,14 +385,14 @@ input[type=search] {
   cursor: text;
   outline: 0;
   text-transform: uppercase;
-  color: #aeaeae;
+  color: black;
   font-family: Roboto;
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   padding: 0 30px 0 17px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 100px;
   z-index: 0;
   opacity: 1;
   border: 1px solid #686868;
@@ -484,6 +503,9 @@ input[type=search]::-ms-reveal {
   display: inline-block;
   margin-right: 33px;
 }
+.container.header.tablet.width {
+  height:53px;
+}
 .close-dynamic-content.sticky-header {
   position: fixed;
   z-index: 999;
@@ -499,7 +521,7 @@ input[type=search]::-ms-reveal {
   height: 196px;
   overflow: hidden;
   position: absolute;
-  padding: 18px 15px 0px 15px;
+  padding: 17px 15px 22px 15px;
 }
 .menu-sub-menu > ul.sub-menu {
   width: inherit;
@@ -507,12 +529,16 @@ input[type=search]::-ms-reveal {
   border: none;
   background: none;
   position: absolute;
+  max-height: 157px;
 }
 .menu-sub-menu > ul.sub-menu > li {
-  height: 22px;
+  height: 19px;
   list-style-type: none;
   list-style: none;
   line-height: 22px;
+}
+.menu-sub-menu > ul.sub-menu.projects > li:first-child {
+  margin-bottom:10px;
 }
 .menu-sub-menu ul li a {
   font-family: Roboto;
@@ -718,30 +744,31 @@ ul.sub-menu.moove-right {
 }
 @media only screen and (min-width: 1201px) {
   .sticky-header .search-bar input.search-field[type="search"].search-click {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .sticky-header .search-bar input.search-field[type="search"] {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .search-form .sendsubmit {
-    width: 16px;
+    width: 19px;
     padding: 0;
     border: 0;
     text-indent: -1000em;
     cursor: pointer;
     background: url(/wp-content/themes/makeblog/version-2/img/search.png);
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: 19px;
     position: absolute;
     z-index: 3;
-    margin-top: 5px;
+    margin-top: 6px;
     margin-left: 3px;
   }
   input.sendsubmit:focus {
     outline: none;
   }
   .sticky-header .search-form .sendsubmit {
-    margin-top: 12px;
+    margin-top: 10px;
+    margin-left:-4px;
   }
   .latest-events .events-post:first-child {
     margin-left: -10px;
@@ -756,7 +783,7 @@ ul.sub-menu.moove-right {
     padding-left: 5px;
   }
   .search-bar input.search-field[type="search"] {
-    width: 169px;
+    width: 181px;
   }
   .close-search {
     display: none;
@@ -786,10 +813,10 @@ ul.sub-menu.moove-right {
 }
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
   .sticky-header .search-bar input.search-field[type="search"].search-click {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .sticky-header .search-bar input.search-field[type="search"] {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .search-bar input.search-field[type="search"].search-click {
     width: 169px;
@@ -825,7 +852,7 @@ ul.sub-menu.moove-right {
 }
 @media only screen and (min-width: 1024px) {
   .sticky-header .close-search {
-    margin-top: 10px;
+    margin-top: 9px;
   }
   .latest-shop .shop-post a {
     height: 149px;
@@ -988,10 +1015,10 @@ ul.sub-menu.moove-right {
     margin-left: 30px !important;
   }
   .sticky-header .search-bar input.search-field[type="search"].search-click {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .sticky-header .search-bar input.search-field[type="search"] {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .search-bar input.search-field[type="search"].search-click {
     width: 129px;
@@ -1011,9 +1038,7 @@ ul.sub-menu.moove-right {
   .dynamic-header-content {
     width: 798px;
   }
-  /*.menu-sub-menu ul li a {*/
-  /*padding: 10px 17px 11px 16px;*/
-  /*}*/
+
   .navbar-default.sticky-header #menu-make-main {
     margin-top: 15px !important;
   }
