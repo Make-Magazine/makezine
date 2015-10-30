@@ -496,7 +496,7 @@ jQuery(document).ready(function ($) {
     var cat_href;
     $('#mobile_cat').change(function () {
         cat_link = $(this).val();
-        cat_href = $('a.' + cat_link).attr('href') + '/?post_type=projects';
+        cat_href = $('a.' + cat_link).attr('href') + '/';
         window.location.replace(cat_href);
     });
 

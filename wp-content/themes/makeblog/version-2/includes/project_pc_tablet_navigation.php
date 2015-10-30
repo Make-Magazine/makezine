@@ -26,7 +26,7 @@ if ($type != '') { ?>
                     <a href="<?php echo get_home_url() . '/projects' ?>">All projects</a> <?php
                     if ($parent_cat != 0) {
                         echo '/'; ?>
-                        <a href="<?php echo get_category_link($parent_cat) . '?post_type=projects' ?>">
+                        <a href="<?php echo get_category_link($parent_cat) . '' ?>">
                             <?php echo $parent_name ?>
                         </a>
                     <?php } ?>
@@ -47,7 +47,7 @@ if ($type != '') { ?>
                         $space_counter++;
                         ?>
                         <li class="col-sm-4 col-lg-4 col-md-4">
-                            <a href="<?php echo get_category_link($category->term_id) . '?post_type=projects' ?>"><?php echo $cat_name ?></a>
+                            <a href="<?php echo get_category_link($category->term_id) . '' ?>"><?php echo $cat_name ?></a>
                         </li>
                         <?php
                         if ($space_counter == 1) {
@@ -114,7 +114,7 @@ if ($type != '') { ?>
                         <a href="<?php echo get_home_url() . '/projects' ?>">All projects</a> <?php
                         if ($parent_cat != 0) {
                             echo '/'; ?>
-                            <a href="<?php echo get_category_link($parent_cat) . '?post_type=projects' ?>">
+                            <a href="<?php echo get_category_link($parent_cat) . '' ?>">
                                 <?php echo $parent_name ?>
                             </a>
                         <?php } ?>
@@ -135,7 +135,7 @@ if ($type != '') { ?>
                                 $space_counter++;
                                 ?>
                                 <li class="col-sm-4 col-lg-4 col-md-4">
-                                    <a href="<?php echo get_category_link($category->term_id) . '?post_type=projects' ?>"><?php echo $cat_name ?></a>
+                                    <a href="<?php echo get_category_link($category->term_id) . '' ?>"><?php echo $cat_name ?></a>
                                 </li>
                                 <?php
                                 if ($space_counter == 1) {
@@ -205,7 +205,7 @@ if ($type != '') { ?>
                         $space_counter++;
                         ?>
                         <li class="col-sm-4 col-lg-4 col-md-4">
-                            <a href="<?php echo get_category_link($category->term_id) . '?post_type=projects' ?>">
+                            <a href="<?php echo get_category_link($category->term_id) . '' ?>">
                                 <?php echo $cat_name ?>
                             </a>
                         </li>
@@ -277,7 +277,7 @@ if ($type != '') { ?>
                             $space_counter++;
                             ?>
                             <li class="col-sm-4 col-lg-4 col-md-4">
-                                <a href="<?php echo get_category_link($category->term_id) . '?post_type=projects' ?>">
+                                <a href="<?php echo get_category_link($category->term_id) . '' ?>">
                                     <?php echo $cat_name ?>
                                 </a>
                             </li>
