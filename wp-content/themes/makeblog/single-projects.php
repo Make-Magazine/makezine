@@ -9,6 +9,10 @@
  */
 $steps = get_post_custom_values('Steps');
 get_header('version-2'); ?>
+	
+	<div class="home-ads">
+   		<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
+	</div>
 
 	<div class="category-top">
 
