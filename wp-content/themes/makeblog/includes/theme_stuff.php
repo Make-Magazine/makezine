@@ -303,9 +303,6 @@ function make_load_resources() {
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
 
-	// fancybox
-	wp_enqueue_script( 'make-fancystyle', get_stylesheet_directory_uri() . '/js/fancybox.js' );
-
 	// What page are we on? And what is the pages limit?
 	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
