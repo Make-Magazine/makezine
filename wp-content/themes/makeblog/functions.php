@@ -474,7 +474,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
         $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
     }
     if ($type !== 'load_more') {
-        $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
+        $output .= '<ul class="selected-posts-list selected-posts-list-sprout" data-max_num_pages="' . $max_num_pages . '">';
     }
     if ($query->have_posts()) {
         while ($query->have_posts())  : $query->the_post();

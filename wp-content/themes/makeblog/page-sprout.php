@@ -20,7 +20,7 @@ get_header( 'version-2' );
 
 ?>
 <div class="container">
-  <div class="row"><h2 class="sponsored">SPROUT BY HP</h2><p class="sponsored">sponsored</p></div>
+  <div class="row sprout-sponsored-row"><h2 class="sponsored">SPROUT BY HP</h2><p class="sponsored">sponsored</p></div>
   <div class="row"><img src="<?php echo get_template_directory_uri(); ?>/images/sproutBanner.jpg" alt="Sprout Banner" class="img-responsive" width="100%" /></div>
 </div>
 <div class="all-projects <?php echo $device ?> all-projects-sprout">
@@ -100,8 +100,8 @@ get_header( 'version-2' );
   </div>
 </div>
 
-<div class="container">
-  <div class="sprout-margins">
+<div class="container sprout-instagram-container">
+  <div class="sprout-margins sprout-margins-instagram">
     <div class="row home-sprout-row">
       <?php echo do_shortcode( '[show_twitter_instagram]' ); ?>
     </div>
