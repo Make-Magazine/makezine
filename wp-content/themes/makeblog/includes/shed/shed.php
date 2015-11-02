@@ -244,6 +244,91 @@ function make_shopify_featured_products_slider_home( $row = 'row' ) {
   return $output;
 }
 
+function make_shopify_featured_products_slider_sprout( $row = 'row' ) {
+  // Let's get the data feed
+  
+  $output = '<!-- BEGIN ITMS: -->';
+  $url = 'https://my.datafeedwatch.com/static/files/1596/b1adcb547879a977a2c5151b7eab7f5ee32760a8.xml';
+  $xml = wpcom_vip_file_get_contents( $url, 3, 60*5,  array( 'obey_cache_control_header' => false ) );
+
+  // If a bad response, bail.
+  if ( ! $xml ) {
+    #$output .= "<!-- ITMS Error: (XML) \n";
+    #$output .= print_r($xml, true);
+    #$output .= '-->';
+    return $output;
+  }
+  // If not XML, bail.
+  $simpleXmlElem = simplexml_load_string( $xml );
+
+  if ( ! $simpleXmlElem ) {
+    #$output .= "<!-- ITMS Error: (simpleXml) \n";
+    #$output .= print_r($simpleXmlElem, true);
+    #$output .= '-->';
+    return $output;
+  }
+
+  #$products = $simpleXmlElem->item_data;
+  $products = $simpleXmlElem->children();
+
+  // Randomize the counter so that we can get random products.
+  $counter = range( 0, ( $simpleXmlElem->count() - 1 ) );
+  shuffle( $counter );
+
+  // Carousel ID
+  $id = 'shed-' . mt_rand(0, 100);
+
+  // Build the main link, and the carousel wrapper
+  $output .= '<!-- MAKER SHED PANEL -->';
+  $output .= '  <div class="shed-header home-sprout-row">';
+  $output .= '    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" id="shed-heading">';
+  $output .= '      <h5 class="text-nowrap">SHOP AT MAKER SHED</h5>';
+  $output .= '    </div>';
+  $output .= '    <div class="col-lg-6 col-md-5 col-sm-4 hidden-xs text-left" id="shed-tag">  ';
+  $output .= '      <h6 class="text-nowrap">The official store of Make: and Maker Faire</h6>';
+  $output .= '    </div>';
+  $output .= '    <div class="col-lg-3 col-md-4 col-sm-4 hidden-xs" id="shed-link">';
+  $output .= '      <a href="http://makershed.com">';
+  $output .= '        <h6 class="text-nowrap">Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
+  $output .= '      </a>  ';
+  $output .= '    </div> ';
+  $output .= '  </div> ';
+  $output .= '  <div class="row">';
+  $output .= '    <div class="col-xs-12">';
+  // Start the product loop.
+  foreach ( $counter as $i => $product ) {
+      $output .= '      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 white-panel shed-product" >';
+      $output .= '        <a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js( $products[$product]->item_name ) . '\']);" href="' . esc_url( $products[$product]->item_page_url ) . '?utm_source=makezine.com&utm_medium=product_ads&utm_term='.str_replace(" ", "_", esc_js( $products[$product]->item_name )).'">';
+      $output .= '          <img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 130, 170 ) . '" class="img-responsive center-block product-height"></img>';
+      $output .= '          <div class="text-box">';
+      $output .= '            <h6 class="product-desc center">' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
+      $output .= '          </div>';
+      $output .= '          <div class="text-box">';
+      $output .= '            <p class="product-price center"> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
+      $output .= '          </div>';
+      $output .= '        </a>';
+      $output .= '      </div>';
+    // Just show four posts, for now.
+    if ( $i == 3 ) {
+      break;
+    }
+  }
+  // Close out the markup.
+  $output .= '    </div>';
+  $output .= '    </div>';
+
+  $output .= '<div class="shed-final-wrapper">';
+  $output .= ' <div class="row shed-header" id="buy-link">';
+  $output .= '   <div class="hidden-lg hidden-md hidden-sm col-xs-12 ">';
+  $output .= '     <a href="http://makershed.com" ></a>';
+  $output .= '     <h6>Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
+  $output .= '   </div> ';
+  $output .= ' </div>';
+  $output .= '</div> <!-- MakerShed -->';
+  // Return the content.
+  return $output;
+}
+
 /**
   This is an abstraction of the xml feed results to handle failover
   @return results of xml results
