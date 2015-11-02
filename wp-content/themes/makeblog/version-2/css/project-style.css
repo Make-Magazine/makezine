@@ -153,7 +153,7 @@ body.page-template-project {
 .projects-cat .filter-list, .all-projects .filter-list {
   clear: both;
   position: relative;
-  background-color: #ededed;
+  background-color: white;
   margin: 0;
 }
 .projects-cat .minify.sticky .filter-list, .all-projects .minify.sticky .filter-list {
@@ -253,7 +253,7 @@ body.page-template-project {
   width: 20px;
   height: 23px;
   display: inline-block;
-  color: white;
+  color: #b2b2b2;
   font-size: 23px;
 }
 .projects-cat .sticky .filter-item ul li.difficulty span, .all-projects .sticky .filter-item ul li.difficulty span {
@@ -263,7 +263,7 @@ body.page-template-project {
   width: 20px;
   height: 23px;
   display: inline-block;
-  color: white;
+  color: #b2b2b2;
   font-size: 23px;
 }
 .projects-cat .sticky .filter-item ul li.duration span, .all-projects .sticky .filter-item ul li.duration span {
@@ -276,16 +276,16 @@ body.page-template-project {
   color: #666;
 }
 .projects-cat .sticky .filter-item ul li.difficulty span.diff-hover, .all-projects .sticky .filter-item ul li.difficulty span.diff-hover {
-  color: #4A4A4A;
+  color: #666;
 }
 .projects-cat .sticky .filter-item ul li.duration span.dur-hover, .all-projects .sticky .filter-item ul li.duration span.dur-hover {
-  color: #4A4A4A;
+  color: #666;
 }
 .projects-cat .filter-item ul li.difficulty span.diff-selected, .all-projects .filter-item ul li.difficulty span.diff-selected {
-  color: black;
+  color: #F40B0B;
 }
 .projects-cat .filter-item ul li.duration span.dur-selected, .all-projects .filter-item ul li.duration span.dur-selected {
-  color: black;
+  color: #F40B0B;
 }
 .projects-cat .sticky .filter-item ul li.difficulty span.diff-selected, .all-projects .sticky .filter-item ul li.difficulty span.diff-selected {
   color: #F40B0B;
