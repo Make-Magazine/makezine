@@ -761,7 +761,7 @@ li.post:hover p.trans {
   display: inline-block;
 }
 .projects-cat .content .minify.sticky, .all-projects .content .minify.sticky {
-  overflow: initial !important;
+  overflow: visible !important;
 }
 @media screen and (min-width: 769px) {
   .projects-cat .content .minify.sticky, .all-projects .content .minify.sticky {
@@ -1014,6 +1014,8 @@ ul.duration-item li.current {
   .all-projects .content .project-navigation .filter_max {
     background-color: #d8d8d8;
     padding: 15px 10px 20px;
+    position: relative;
+    z-index: 2;
   }
   .projects-cat .content .project-navigation .filter_max ul,
   .all-projects .content .project-navigation .filter_max ul {
@@ -1560,7 +1562,7 @@ ul.duration-item li.current {
 
 @media (max-width: 769px) {
   .tablet .container .minify.sticky {
-    margin-left: -20px;
+    margin-left: -19px;
   }
   .projects-cat .filter-list, .all-projects .filter-list {
     padding-left: 15px;
@@ -1891,7 +1893,12 @@ ul.duration-item li.current {
 }
 
 .filter_mini {
-  display: none !important;
+  display: none;
+}
+@media (max-width: 767px) {
+  .filter_mini {
+    display: block;
+  }
 }
 
 .mobile .posts-list ul.selected-posts-list > li.row ul li:hover div.final_gradient {

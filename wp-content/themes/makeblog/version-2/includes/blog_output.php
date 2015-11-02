@@ -1,45 +1,9 @@
 <?php
 function story_pulling($offset=0) {
 	$outputs     = '';
-	$post_per_page = 0;
-	$arg = array(
-		'post_type'      => 'post',
-		'posts_per_page' => 32,
-		'post_status'    => 'publish',
-		'offset'         => $offset,
-	);
-	$query       = new WP_Query( $arg );
-	$post_weight = 0;
-	$row_weight  = 0;
-	$row_count   = 0;
-	while ( $query->have_posts() )  :
-		$query->the_post();
-
-		$post_id      = get_the_ID();
-		$type_array   = get_post_meta( $post_id, 'story_type' );
-		$story_type[] = $type_array[0];
-
-		if ( ( $type_array[0] == 'News & Features' ) or ( $type_array[0] == 'Skill Builders' ) or ( $type_array[0] == 'Reviews' ) ) {
-			$post_weight     = 2;
-		} else {
-			$post_weight     = 1;
-		}
-		$row_weight = $row_weight + $post_weight;
-		$post_per_page++;
-		if ( $row_weight > 4 ) {
-			$row_weight = $post_weight;
-			$row_count++;
-		}
-		if ($row_count == 8) {
-			$post_per_page--;
-			break;
-		}
-	endwhile;
-	do_action( 'custom_page_hook', $query );
-	wp_reset_query();
-
-
-
+	$post_counter = 1;
+	$large_indicator = 0;
+	$post_per_page = 26;
 	$arguments   = array(
 		'post_type'      => 'post',
 		'posts_per_page' => $post_per_page,
@@ -51,18 +15,43 @@ function story_pulling($offset=0) {
 	$row_weight  = 0;
 	while ( $query->have_posts() )  :
 		$query->the_post();
+		switch ( $post_counter ) {
+			case 1:
+				$large_indicator = 1;
+				break;
+			case 5:
+				$large_indicator = 1;
+				break;
+			case 9:
+				$large_indicator = 1;
+				break;
+			case 14:
+				$large_indicator = 1;
+				break;
+			case 18:
+				$large_indicator = 1;
+				break;
+			case 22:
+				$large_indicator = 1;
+				break;
+			default:
+				$large_indicator = 0;
+		}
+
+
 		$post_id      = get_the_ID();
 		$type_array   = get_post_meta( $post_id, 'story_type' );
 		$story_type[] = $type_array[0];
-		if ( ( $type_array[0] == 'News & Features' ) or ( $type_array[0] == 'Skill Builders' ) or ( $type_array[0] == 'Reviews' ) ) {
+
+		if ( $large_indicator == 1 ) {
 			$post_weight     = 2;
-			$bootstrap_class = 'col-lg-6 col-md-6 col-sm-8 col-xs-12 large-card';
+			$bootstrap_class = 'col-lg-6 col-md-6 col-sm-6 col-xs-12 large-card ';
 			$args            = array(
 				'resize' => '397,374',
 			);
 		} else {
 			$post_weight     = 1;
-			$bootstrap_class = 'col-lg-3 col-md-3 col-sm-4 col-xs-12 small-card';
+			$bootstrap_class = 'col-lg-3 col-md-3 col-sm-3 col-xs-12 small-card';
 			$args            = array(
 				'resize' => '192,187',
 			);
@@ -79,7 +68,7 @@ function story_pulling($offset=0) {
 		preg_match_all( $re, $url, $matches );
 		$str    = $matches[2][0];
 		$photon = jetpack_photon_url( $str, $args );
-		if ( ( $type_array[0] == "News & Features" ) or ( $type_array[0] == "Skill Builders" ) or ( $type_array[0] == "Reviews" ) ) {
+		if ( $large_indicator == 1 ) {
 			$outputs .= '<div class="gradient-wrapper">';
 			$outputs .= '<div class="gradient_animation">';
 			$outputs .= '<a href="' . get_the_permalink() . '"></a>';
@@ -172,14 +161,15 @@ function story_pulling($offset=0) {
 		$outputs .= '<p class="publish-date"><a href="' . get_the_permalink() . '">' . get_the_time( "F d, Y" ) . '</a></p>';
 		$outputs .= '</div>';
 		$outputs .= '</div>';
-		if ( ( $type_array[0] == 'News & Features' ) or ( $type_array[0] == 'Skill Builders' ) or ( $type_array[0] == 'Reviews' ) ) {
+		if ( $large_indicator == 1 ) {
 			$outputs .= '</div>';
 		}
 		$outputs .= '</div>';
+		$post_counter++;
 	endwhile;
 	do_action( 'custom_page_hook', $query );
 	wp_reset_query();
 	$offset = $offset + $post_per_page;
-	$outputs .= '<p id="blog-load-posts" class="row" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
+	$outputs .= '<p id="blog-load-posts" class="row" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'" "><a href="javascript:void(0);">Show more</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
 	return $outputs;
 }
