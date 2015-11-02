@@ -752,7 +752,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     require_once 'version-2/includes/Mobile_Detect.php';
     $device = '';
     $detect = new Mobile_Detect;
-    $post_per_page_initial = 10;
+    $post_per_page_initial = 18;
     if ($detect->isMobile()) {
         $post_per_page_initial = 10;
         $device = 'mobile';
