@@ -69,7 +69,13 @@ class Make_Instagram {
     // TODO:  This whole function is a bit of a mess of entangled php and html.
     //      Would do a lot cleaner with some sort of templating engine.
 
-    $ps = $this->load_data();
+    $ps  = $this->load_data('https://api.instagram.com/v1/tags/sproutbyhp/media/recent');
+                $ps2 = $this->load_data('https://api.instagram.com/v1/tags/gomakethings/media/recent');
+                                                                             
+                $ps = array_merge($ps,$ps2);
+                
+                //sort by created
+                usort($ps, array($this, "cmp"));
 
     // make sure $output exists, otherwise we may get an error in local environment
     if(!isset($output) || !is_string($output)) {
@@ -78,20 +84,21 @@ class Make_Instagram {
 
 
     $images_per_page = 6;
+        array_splice($ps, $images_per_page);
     $num_images = count($ps);
         $pages = array_chunk($ps, $images_per_page);
         $num_pages = count($pages);
     ?>
     <?php
     // Twitter post
-    $output ="<div class=\"item-holder\"><div class=\"container\"><div class=\"row\"><div class=\"col-xs-12 col-sm-4\"><div class=\"social-holder twitter\"><div class=\"title\"><h1>#sproutbyhp</h1></div><a class='twitter-timeline' href='https://twitter.com/hashtag/sproutbyhp' data-widget-id='632328929018167296'>#sproutbyhp Tweets</a>
+    $output ="<div class=\"item-holder\"><div class=\"container\"><div class=\"row\"><div class=\"col-xs-12 col-sm-4\"><div class=\"social-holder twitter\"><div class=\"title\"><h1>#sproutbyhp, #gomakethings</h1></div><a class='twitter-timeline' href='https://twitter.com/hashtag/sproutbyhp' data-widget-id='632328929018167296'>#sproutbyhp Tweets</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script></div></div>";
     
     // Instagram photos
     $output .="<div class=\"col-xs-12 col-sm-8\">
               <div class=\"social-holder instagram\">
                 <div class=\"title\">
-                  <h1>Instagram, #sproutbyhp</h1>
+                  <h1>Instagram, #sproutbyhp, #gomakethings</h1>
                 </div>";
           foreach( $pages as $page ) {      
               $output .= "<ul class=\"img-list\">";
