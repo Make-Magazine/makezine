@@ -9,6 +9,10 @@
  */
 get_header('version-2'); ?>
 
+	<div class="home-ads">
+   		<?php global $make; print $make->ads->ad_leaderboard; ?>
+	</div>
+
 	<div class="single">
 
 		<div class="container">

@@ -77,10 +77,10 @@ Template name: Header
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/electronics/,/' ) ); ?>">Electronics</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/electronics/arduino/?post_type=projects&amp;path=FromNav' ) ); ?>">Arduino</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/electronics/computers-mobile/?post_type=projects&amp;path=FromNav' ) ); ?>">Computers &amp; Mobile</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/electronics/raspberry-pi/?post_type=projects&amp;path=FromNav' ) ); ?>">Raspberry Pi</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/electronics/robotics/?post_type=projects&amp;path=FromNav' ) ); ?>">Robotics</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/electronics/arduino/?path=FromNav' ) ); ?>">Arduino</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/electronics/computers-mobile/?path=FromNav' ) ); ?>">Computers &amp; Mobile</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/electronics/raspberry-pi/?path=FromNav' ) ); ?>">Raspberry Pi</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/electronics/robotics/?path=FromNav' ) ); ?>">Robotics</a></li>
 											</ul>
 										</div>
 										<div class="span2">
@@ -108,27 +108,27 @@ Template name: Header
 
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/science/,/' ) ); ?>">Science</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/science/energy/?post_type=projects&amp;path=FromNav' ) ); ?>">Energy</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/science/health-science/?post_type=projects&amp;path=FromNav' ) ); ?>">Health</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/science/energy/?path=FromNav' ) ); ?>">Energy</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/science/health-science/?path=FromNav' ) ); ?>">Health</a></li>
 											</ul>
 										</div>
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/home/,/' ) ); ?>">Home</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/home/food-beverage/?post_type=projects&amp;path=FromNav' ) ); ?>">Food &amp; Beverage</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/home/fun-games/?post_type=projects&amp;path=FromNav' ) ); ?>">Fun &amp; Games</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/home/furniture/?post_type=projects&amp;path=FromNav' ) ); ?>">Furniture</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/home/gardening/?post_type=projects&amp;path=FromNav' ) ); ?>">Gardening</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/home/hacks/?post_type=projects&amp;path=FromNav' ) ); ?>">Hacks</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/home/kids-family/?post_type=projects&amp;path=FromNav' ) ); ?>">Kids &amp; Family</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/home/food-beverage/?path=FromNav' ) ); ?>">Food &amp; Beverage</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/home/fun-games/?path=FromNav' ) ); ?>">Fun &amp; Games</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/home/furniture/?path=FromNav' ) ); ?>">Furniture</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/home/gardening/?path=FromNav' ) ); ?>">Gardening</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/home/hacks/?path=FromNav' ) ); ?>">Hacks</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/home/kids-family/?path=FromNav' ) ); ?>">Kids &amp; Family</a></li>
 											</ul>
 										</div>
 										<div class="span2">
 											<ul class="mega-dropdown">
 												<li class="top-cat-item"><a href="<?php echo esc_url( home_url( '/category/art-design/,/' ) ); ?>">Art &amp; Design</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/art-design/architecture-art-design/?post_type=projects&amp;path=FromNav' ) ); ?>">Architecture</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/art-design/music/?post_type=projects&amp;path=FromNav' ) ); ?>">Music</a></li>
-												<li><a href="<?php echo esc_url( home_url( '/category/art-design/photography-video/?post_type=projects&amp;path=FromNav' ) ); ?>">Photography &amp; Video</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/art-design/architecture-art-design/?path=FromNav' ) ); ?>">Architecture</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/art-design/music/?path=FromNav' ) ); ?>">Music</a></li>
+												<li><a href="<?php echo esc_url( home_url( '/category/art-design/photography-video/?path=FromNav' ) ); ?>">Photography &amp; Video</a></li>
 											</ul>
 										</div>
 										<div class="span12 pull-right mega-nav-footer">

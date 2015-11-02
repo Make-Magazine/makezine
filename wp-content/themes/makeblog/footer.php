@@ -29,9 +29,9 @@
 						<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
 						<ul class="list-unstyled">
 							<li><a href="/projects/">Make: Projects</a></li>
-							<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
-							<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
-							<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
+							<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
+							<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
+							<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
 							<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 						</ul>
 					</div>
@@ -211,9 +211,9 @@
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="/projects/">Make: Projects</a></li>
-								<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
-								<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
-								<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
+								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
+								<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
+								<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
 								<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 							</ul>
 						</div>

@@ -111,7 +111,7 @@ function story_pulling($offset=0) {
 			}
 		} elseif (!empty($post_flag[0])) {
 			$red_cat_name = get_cat_name(intval($post_flag[0]));
-			$cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
+			$cat_link = get_category_link($post_flag[0]) . '';
 		} else {
 			$post_categories = get_the_category();
 			foreach ($post_categories as $post_category) {
@@ -141,7 +141,7 @@ function story_pulling($offset=0) {
 				$parent_cat_length--;
 				$random_cat_number = rand(0, $parent_cat_length);
 				$red_cat_name = $parent_cat[$random_cat_number];
-				$cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
+				$cat_link = get_category_link($parent_id[$random_cat_number]) . '';
 			}
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);

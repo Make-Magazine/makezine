@@ -212,13 +212,13 @@ function make_get_arg_title( $args, $title ) {
 	} elseif (isset($args['tag'])) {
 		$output .= '<a href="' . esc_url( get_term_link( $args['tag'], 'post_tag' ) );
 		if( $args['post_type'] == 'projects' ){
-			$output .= '?post_type=projects';
+			$output .= '';
 		} 
 		$output .= '">' . $view . '</a>';
 	} elseif ( isset( $args['category__in'] ) && ($args['category__in'] > 0 )  ) {
 		$output .= '<a href="' . esc_url( get_term_link( intval( $args['category__in'] ), 'category' ) );
 		if( $args['post_type'] == 'projects' ){
-			$output .= '?post_type=projects';
+			$output .= '';
 		} 
 		$output .= '">' . $view . '</a>';
 	} else {
@@ -283,7 +283,7 @@ function make_carousel( $args, $title_link = true ) {
 							$output .= '<a href="';
 							$output .= get_term_link( intval($args['category__in']), 'category', 'id');
 							if ($args['projects_landing'] != false ) {
-								$output .= '?post_type=projects">';	
+								$output .= '">';	
 							} else {
 								$output .= '">';
 							}
@@ -299,7 +299,7 @@ function make_carousel( $args, $title_link = true ) {
 							$output .= '<a href="';
 							$output .= get_term_link( $args['tag'], 'post_tag');
 							if ($args['projects_landing'] != false ) {
-								$output .= '?post_type=projects">';	
+								$output .= '">';	
 							} else {
 								$output .= '">';
 							}
@@ -319,13 +319,13 @@ function make_carousel( $args, $title_link = true ) {
 					} elseif ( isset($args['category__in']) && ($args['all']) == true ) {
 						$output .= '<p class="pull-right"><a href="';
 						$output .= get_term_link( intval($args['category__in']), 'category', 'id');
-						$output .= '?post_type=projects" class="all">';
+						$output .= '" class="all">';
 						$output .= 'View All';
 						$output .= '</p>';	
 					} elseif ( isset($args['tag'] ) ) {
 						$output .= '<p class="pull-right"><a href="';
 						$output .= get_term_link( $args['tag'], 'post_tag');
-						$output .= '?post_type=projects" class="all">View All</a></p>';
+						$output .= '" class="all">View All</a></p>';
 					}
 				}
 
