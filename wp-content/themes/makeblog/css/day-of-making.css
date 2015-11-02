@@ -9374,9 +9374,11 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-header a {
   color: #fff;
+  transition: color 0.1s ease;
 }
 #gg2015 .gg2015-header a:hover {
-  color: #fff;
+  color: #f89a9a;
+  transition: color 0.1s ease;
 }
 #gg2015 .gg2015-header .gg2015-border-right {
   border-right: 1px solid #fff;
@@ -9399,38 +9401,28 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-header .gg2015-nav h2 {
   color: #fff;
-  font-size: 20px;
+  font-size: 14px;
   padding: 5px 0;
+  font-weight: 500;
+  transition: color 0.1s ease;
+}
+#gg2015 .gg2015-header .gg2015-nav h2:hover {
+  color: #f89a9a;
+  transition: color 0.1s ease;
 }
 #gg2015 .gg2015-hero {
-  background: url(../img/home_background.jpg) no-repeat;
+  background: url(../img/gift-guide-2015/home_background.jpg) no-repeat;
   background-size: cover;
   height: 550px;
   position: relative;
 }
-#gg2015 .gg2015-hero .col-sm-6 {
+#gg2015 .gg2015-hero .col-sm-7 {
   margin-top: 20px;
 }
-#gg2015 .gg2015-hero .col-sm-6 h1 {
-  color: #fff;
-  font-family: 'Roboto', arial, sans-serif;
-  padding: 0;
-  line-height: 40px;
-  font-size: 32px;
-  font-weight: 300;
-  letter-spacing: 3px;
+#gg2015 .gg2015-hero .col-sm-7 img {
+  margin-top: 30px;
 }
-#gg2015 .gg2015-hero .col-sm-6 h1 span {
-  color: #fff;
-  font-family: 'Roboto Slab', serif;
-  padding: 10px 15px;
-  line-height: 65px;
-  font-size: 65px;
-  border: 5px solid #fff;
-  display: block;
-  font-weight: bold;
-}
-#gg2015 .gg2015-hero .col-sm-6 h2 {
+#gg2015 .gg2015-hero .col-sm-7 h2 {
   color: #fff;
   font-family: 'Roboto', arial, sans-serif;
   border-top: 2px solid #fff;
@@ -9444,7 +9436,7 @@ body.makercamp a.button.small-button {
   width: 100%;
 }
 #gg2015 .gg2015-hero .gg2015-snow {
-  background-image: url('../img/snow_layer_1.png'), url('../img/snow_layer_2.png'), url('../img/snow_layer_3.png'), url('../img/snow_layer_4.png');
+  background-image: url('../img/gift-guide-2015/snow_layer_1.png'), url('../img/gift-guide-2015/snow_layer_2.png'), url('../img/gift-guide-2015/snow_layer_3.png'), url('../img/gift-guide-2015/snow_layer_4.png');
   width: 100%;
   height: 100%;
   position: absolute;
@@ -9456,14 +9448,203 @@ body.makercamp a.button.small-button {
   -ms-animation: snow-items 20s linear infinite;
   animation: snow-items 20s linear infinite;
 }
+#gg2015 .gg2015-sidelines {
+  background-color: #fff;
+  margin-top: 6px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#gg2015 .gg2015-sidelines h3 {
+  position: relative;
+  margin-top: 0;
+}
+#gg2015 .gg2015-sidelines h3:before {
+  content: "";
+  display: block;
+  border-top: solid 2px #9B9B9B;
+  color: #4a4a4a;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+#gg2015 .gg2015-sidelines h3 span {
+  background: #fff;
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+#gg2015 .gg2015-catimage {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 6px;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/GG-Auto-FullSpread.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-craft {
+  background: url(../img/gift-guide-2015/GGMobile-Craft-FullSpread.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-row1 {
+  padding-top: 14%;
+}
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-row2 {
+  padding-top: 19%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones {
+  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-landscape {
+  background-size: cover;
+  height: 780px;
+  position: relative;
+}
+#gg2015 .gg2015-catimage .gg2015-open h3 {
+  color: #262626;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+#gg2015 .gg2015-catimage .gg2015-open p {
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+#gg2015 .gg2015-catimage .gg2015-open .gg2015-co {
+  color: #262626;
+  margin-bottom: 2px;
+}
+#gg2015 .gg2015-catimage .gg2015-open .gg2015-details {
+  color: #4a4a4a;
+  margin-bottom: 7px;
+}
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus {
+  position: absolute;
+  top: -12px;
+  left: -25px;
+  float: left;
+  padding: 0;
+  margin: 0;
+  opacity: .8;
+}
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus .fa-circle {
+  color: #fff;
+}
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus .fa-plus-circle {
+  color: #262626;
+  font-size: 1.83em;
+  top: 2px;
+  transition: color 0.1s ease;
+}
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus:hover .fa-plus-circle {
+  color: #db0c0c;
+  transition: color 0.1s ease;
+}
+#gg2015 .gg2015-catimage .gg2015-buy-div p {
+  display: none;
+}
+#gg2015 .gg2015-catimage .gg2015-buy-div .gg2015-buy-btn {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#gg2015 .gg2015-buy-btn {
+  padding: 5px 20px;
+  color: #4a4a4a;
+  font-size: 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  transition: all 0.1s ease;
+}
+#gg2015 .gg2015-buy-btn:hover {
+  color: #fff;
+  background-color: #db0c0c !important;
+  font-weight: 700;
+}
+#gg2015 .gg2015-buy-btn:active {
+  color: #fff;
+  background-color: #b00116 !important;
+}
+#gg2015 .gg2015-shed {
+  margin-top: 30px;
+  padding-left: 0;
+  padding-right: 0;
+}
+#gg2015 .gg2015-shed .product-shed-grid {
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+#gg2015 .gg2015-shed .product-shed-grid:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+#gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 230px;
+}
+#gg2015 .gg2015-shed .product-shed-grid .product-shed-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#gg2015 .gg2015-shed .product-shed-grid h4 {
+  font-family: 'Roboto';
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#gg2015 .gg2015-shed .product-shed-grid p {
+  font-family: 'Roboto';
+  color: #4a4a4a;
+  font-size: 12px;
+}
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   #gg2015 .gg2015-hero {
     height: 450px;
+  }
+  #gg2015 .gg2015-catimage .gg2015-landscape {
+    height: 646px;
+  }
+  #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+    height: 180px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #gg2015 .gg2015-hero {
     height: 350px;
+  }
+  #gg2015 .gg2015-catimage .gg2015-landscape {
+    height: 500px;
+  }
+  #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+    height: 125px;
   }
 }
 @media screen and (max-width: 767px) {
