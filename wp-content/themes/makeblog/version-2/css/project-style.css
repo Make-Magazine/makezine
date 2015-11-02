@@ -1651,7 +1651,7 @@ ul.duration-item li.current {
   }
 }
 .search-field {
-  cursor: pointer !important;
+  cursor: text!important;
 }
 
 @media screen and (min-width: 769px) {
