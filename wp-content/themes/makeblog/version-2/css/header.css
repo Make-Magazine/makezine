@@ -344,7 +344,7 @@ input:-webkit-autofill {
   margin-top: -2px;
   color: black;
   border: none;
-  cursor: pointer;
+  cursor: text !important;
   height: 35px;
   padding: 0 30px 0 12px;
   position: relative;
