@@ -1,5 +1,6 @@
 @color-transition: color 0.1s ease;
 @all-transition: all 0.1s ease;
+@all-slow-transition: all 0.5s linear;
 
 #gg2015 {
   margin-top: 15px;
@@ -200,7 +201,7 @@
       &.gg2015-open-plus {
         position: absolute;
         top: -12px;
-        left: -25px;
+        left: -40px;
         float: left;
         padding: 0;
         margin: 0;
@@ -208,14 +209,15 @@
         .fa-circle {
           color: #fff;
         }
-        .fa-plus-circle {
+        .fa-plus-circle,
+        .fa-minus-circle {
           color: #262626;
           font-size: 1.83em;
           top: 2px;
           transition: @color-transition;
         }
         &:hover {
-          .fa-plus-circle {
+          .fa-plus-circle, {
             color: #db0c0c;
             transition: @color-transition;
           }
@@ -223,11 +225,70 @@
       }
     }
     .gg2015-buy-div {
+      transition: @all-slow-transition;
       p {
         display: none;
+        transition: @all-slow-transition;
       }
       .gg2015-buy-btn {
         background-color: rgba(255, 255, 255, 0.5);
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        transition: @all-slow-transition;
+      }
+    }
+    .gg2015-open-parent {
+      position: absolute;
+      width: 250px;
+      &.gg2015-open-parent-1 {
+        top: 19%;
+        left: 25%;
+      }
+      &.gg2015-open-parent-2 {
+        top: 15%;
+        left: 57%;
+      }
+      &.gg2015-open-parent-3 {
+        top: 4%;
+        left: 78%;
+      }
+      &.gg2015-open-parent-4 {
+        top: 75%;
+        left: 25%;
+      }
+      &.gg2015-open-parent-5 {
+        top: 48%;
+        left: 82%;
+      }
+      &.gg2015-open-parent-6 {
+        
+      }
+    }
+    .gg2015-open-parent-on {
+      min-height: 80px;
+      .gg2015-open.gg2015-open-plus .fa-plus-circle,
+      .gg2015-open.gg2015-open-plus .fa-minus-circle {
+        color: #db0c0c;
+        transition: @color-transition;
+      }
+      .gg2015-buy-div {
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        transition: @all-slow-transition;
+        p {
+          display: block;
+          padding: 15px;
+          margin-bottom: 0;
+          transition: @all-slow-transition;
+        }
+        .gg2015-buy-btn {
+          background-color: #db0c0c;
+          color: #fff;
+          display: block;
+          text-align: center;
+          margin: 0;
+          transition: @all-slow-transition;
+        }
       }
     }
   }

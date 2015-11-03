@@ -51,52 +51,106 @@ get_header('version-2'); ?>
   <div class="container gg2015-catimage hidden-xs">
     <div class="gg2015-landscape gg2015-craft">
 
-      <div class="row gg2015-row1">
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-sm-4">
-            </div>
-
-            <div class="col-sm-4">
-              <a class="gg2015-open gg2015-open-plus">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-plus-circle fa-stack-2x"></i>
-                </span>
-              </a>
-              <a class="gg2015-open">
-                <h3>Flora Budget Pack</h3>
-                <p class="gg2015-co">$40: ADAFUIT.COM</p>
-                <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
-              </a>
-              <div class="gg2015-buy-div">
-                <p>iuhs fiuh fiuhsd lifuh sdiufh siudh fiusdhf iush dfiuds fuhsd. iuh fiush fius hfiuhu hfuhd u  duhdf u udh ud u.</p>
-                <a href="#" class="gg2015-buy-btn">BUY IT NOW</a>
-              </div>
-            </div>
-
-            <div class="col-sm-4">
-dfgfdgbfdgb
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-
-        </div>
-        <div class="col-sm-3">
-
+      <!-- Product #1 -->
+      <div class="gg2015-open-parent gg2015-open-parent-1">
+        <a class="gg2015-open gg2015-open-plus">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus-circle fa-stack-2x"></i>
+          </span>
+        </a>
+        <a class="gg2015-open">
+          <h3>Flora Budget Pack</h3>
+          <p class="gg2015-co">$40: ADAFUIT.COM</p>
+          <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+        </a>
+        <div class="gg2015-buy-div">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
         </div>
       </div>
+      <!-- End Product #1 -->
 
-      <div class="row gg2015-row2">
-        <div class="col-sm-4 col-sm-offset-2">
-dfgdfg
-        </div>
-        <div class="col-sm-6">
-dfndn
+      <!-- Product #2 -->
+      <div class="gg2015-open-parent gg2015-open-parent-2">
+        <a class="gg2015-open gg2015-open-plus">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus-circle fa-stack-2x"></i>
+          </span>
+        </a>
+        <a class="gg2015-open">
+          <h3>Flora Budget Pack</h3>
+          <p class="gg2015-co">$40: ADAFUIT.COM</p>
+          <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+        </a>
+        <div class="gg2015-buy-div">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
         </div>
       </div>
+      <!-- End Product #2 -->
+
+      <!-- Product #3 -->
+      <div class="gg2015-open-parent gg2015-open-parent-3">
+        <a class="gg2015-open gg2015-open-plus">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus-circle fa-stack-2x"></i>
+          </span>
+        </a>
+        <a class="gg2015-open">
+          <h3>Flora Budget Pack</h3>
+          <p class="gg2015-co">$40: ADAFUIT.COM</p>
+          <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+        </a>
+        <div class="gg2015-buy-div">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <!-- End Product #3 -->
+
+      <!-- Product #4 -->
+      <div class="gg2015-open-parent gg2015-open-parent-4">
+        <a class="gg2015-open gg2015-open-plus">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus-circle fa-stack-2x"></i>
+          </span>
+        </a>
+        <a class="gg2015-open">
+          <h3>Flora Budget Pack</h3>
+          <p class="gg2015-co">$40: ADAFUIT.COM</p>
+          <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+        </a>
+        <div class="gg2015-buy-div">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <!-- End Product #4 -->
+
+      <!-- Product #5 -->
+      <div class="gg2015-open-parent gg2015-open-parent-5">
+        <a class="gg2015-open gg2015-open-plus">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plus-circle fa-stack-2x"></i>
+          </span>
+        </a>
+        <a class="gg2015-open">
+          <h3>Flora Budget Pack</h3>
+          <p class="gg2015-co">$40: ADAFUIT.COM</p>
+          <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+        </a>
+        <div class="gg2015-buy-div">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <!-- End Product #5 -->
+
     </div>
   </div>
 
@@ -116,42 +170,53 @@ dfndn
       </div>
       <div class="col-sm-3">
         <div class="product-shed-grid">
-          <a href="#">
+          <a href="#" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Product Title</h4>
           </a>
           <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="product-shed-grid">
-          <a href="#">
+          <a href="#" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Product Title</h4>
           </a>
           <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="product-shed-grid">
-          <a href="#">
+          <a href="#" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Product Title</h4>
           </a>
           <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $('.gg2015-open').on('click', function(e) {
+    $( event.target ).closest( '.gg2015-open-parent' ).toggleClass('gg2015-open-parent-on');
+    $( event.target ).closest( '.gg2015-open-parent' ).find( '.fa-stack i:last-child' ).toggleClass('fa-plus-circle fa-minus-circle');
+    
+    // $('.fa-toggle-class').toggleClass('');
+    // $('.fa-toggle-class').toggleClass('');
+    e.preventDefault();
+  });
+</script>
 
 <?php get_footer(); ?>

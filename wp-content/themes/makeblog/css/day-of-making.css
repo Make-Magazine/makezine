@@ -9543,7 +9543,7 @@ body.makercamp a.button.small-button {
 #gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus {
   position: absolute;
   top: -12px;
-  left: -25px;
+  left: -40px;
   float: left;
   padding: 0;
   margin: 0;
@@ -9552,7 +9552,8 @@ body.makercamp a.button.small-button {
 #gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus .fa-circle {
   color: #fff;
 }
-#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus .fa-plus-circle {
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus .fa-plus-circle,
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus .fa-minus-circle {
   color: #262626;
   font-size: 1.83em;
   top: 2px;
@@ -9562,11 +9563,69 @@ body.makercamp a.button.small-button {
   color: #db0c0c;
   transition: color 0.1s ease;
 }
+#gg2015 .gg2015-catimage .gg2015-buy-div {
+  transition: all 0.5s linear;
+}
 #gg2015 .gg2015-catimage .gg2015-buy-div p {
   display: none;
+  transition: all 0.5s linear;
 }
 #gg2015 .gg2015-catimage .gg2015-buy-div .gg2015-buy-btn {
   background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  transition: all 0.5s linear;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent {
+  position: absolute;
+  width: 250px;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-1 {
+  top: 19%;
+  left: 25%;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-2 {
+  top: 15%;
+  left: 57%;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-3 {
+  top: 4%;
+  left: 78%;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-4 {
+  top: 75%;
+  left: 25%;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-5 {
+  top: 48%;
+  left: 82%;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent-on {
+  min-height: 80px;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-open.gg2015-open-plus .fa-plus-circle,
+#gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-open.gg2015-open-plus .fa-minus-circle {
+  color: #db0c0c;
+  transition: color 0.1s ease;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  transition: all 0.5s linear;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div p {
+  display: block;
+  padding: 15px;
+  margin-bottom: 0;
+  transition: all 0.5s linear;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div .gg2015-buy-btn {
+  background-color: #db0c0c;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 0;
+  transition: all 0.5s linear;
 }
 #gg2015 .gg2015-buy-btn {
   padding: 5px 20px;
