@@ -855,7 +855,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
         'orderby' => $ordered,
         'post__in' => $top_ids,
         'post_status' => 'publish',
-        'category__not_in' => array(25624, 12, 8, 24794, 13, 1),
+        'tag__not_in' => '4172',
     );
     if (!empty($current_cat_id)) $args['cat'] = $current_cat_id;
     $query = new WP_Query($args);
