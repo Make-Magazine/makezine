@@ -1,5 +1,6 @@
  $( document ).ready(function() {
 	 var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+	 var $searchFocus = -1;
 	 $window = $(window).width() + 17;
 	 if ($window >= '768'){
 		 $counter = 0;
@@ -23,20 +24,28 @@
 				$('.navbar-default').addClass('sticky-header');
 				$('.dynamic-header-posts').addClass('sticky-header');
 				$('.close-dynamic-content').addClass('sticky-header');
-				$('.close-search').on('click', function() {
-					if (!$(this).hasClass('search-click')) {
-						if ($('.header').hasClass('tablet')) {
+				if ($('.header').hasClass('tablet width')){
+					$('input.search-field').bind('focusin focus', function (e) {
+						if ($('.header').hasClass('width')) {
 							$(".container.header.width").css("position", "absolute");
-							$(".container.header.width").css("top", scrollTop);
+							$(".container.header.width").css("margin-top", scrollTop);
 							$(".container.header.width").css("display", "block");
-							window.setTimeout(function(){
-								$(".container.header.width").css("position", "");
-								$(".container.header.width").css("top", "");
-								$(".container.header.width").css("display", "");
-							}, 100);
+							document.body.scrollTop = scrollTop;
 						}
+						$searchFocus = 1;
+
+					});
+					$('input.search-field').focusout(function () {
+						$(".container.header.width").css("position", "");
+						$(".container.header.width").css("margin-top", "");
+						$(".container.header.width").css("display", "");
+						$searchFocus = 0;
+					});
+					if ($searchFocus == 1) {
+						$(".container.header.width").css("margin-top", scrollTop);
+						$(".container.header.width").css("position", 'absolute');
 					}
-				});
+				}
 				if ($('#wpadminbar').height() > 0 ){
 					$( window ).resize(function() {
 						$window = $(window).width() + 17;
@@ -101,6 +110,13 @@
 				$('.project-navigation').css('margin-top','0px');
 				$('.menu-item-has-children').css('width','');
 				$('.second-nav').removeClass("displayNav");
+				if ($('.header').hasClass('tablet')) {
+					scrollTop = 0;
+					$(".container.header").css("position", "");
+					$(".container.header").css("margin-top", "");
+					$(".container.header").css("display", "");
+					$(".container.header").css("top", "");
+				}
 			}
 			if (scrollTop >= '55'){
 				$('.header-wrapper').addClass('mobile-sticky');
