@@ -570,9 +570,7 @@ jQuery(document).ready(function ($) {
 
     // MOBILE NAVIGATION
 
-    jQuery(document).mouseup(function (e, event) {
-        event.stopPropagation();
-        event.preventDefault();
+    jQuery(document).mouseup(function (e) {
         if (e.which != 1) return false;
         var container = $(".filter_max .filter" );
         if (container.has(e.target).length === 0) {
