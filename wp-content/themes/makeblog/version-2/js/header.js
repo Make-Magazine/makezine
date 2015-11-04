@@ -745,5 +745,5 @@ $( document ).ready(function() {
 	}, function() {
 		$(this).attr('title',hiddenTitle); //restores title
 	});
-
+	$('.search-field').attr('title','');
 });
