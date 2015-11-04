@@ -285,6 +285,7 @@ jQuery(document).ready(function ($) {
         checkerSelectDur = 0;
         jQuery('.first-item').show().addClass('current');
         jQuery('.filter-applied').hide();
+        jQuery('.filter_max .filter').removeClass('open-list chosen')
     });
 
     $(document).on('touchstart click', '.recent', function () {
@@ -443,34 +444,34 @@ jQuery(document).ready(function ($) {
             getProjects();
         }
     });
-
     function getProjects(type, callback) {
-        make.gpt.loadDyn();
+        var DataDiff, DataDur, DataCat, DataSort;
+
         if (typeof type === 'undefined') type = 'initial_load';
         if (typeof callback === 'undefined') callback = function () {
         };
 
         if (type === 'initial_load') paged = 1;
 
-        if ( what_filter == 'max' ) {
-        var DataDiff = $('.project-navigation ul.diff-item .filter_selected').attr('data-value');
+        //if ( what_filter == 'max' ) {
+        DataDiff = $('.project-navigation ul.diff-item .filter_selected').attr('data-value');
             $('.minify ul.diff-item .filter_selected').attr('data-value', DataDiff);
-        var DataDur = $('.project-navigation ul.duration-item .filter_selected').attr('data-value');
+        DataDur = $('.project-navigation ul.duration-item .filter_selected').attr('data-value');
             $('.minify ul.duration-item .filter_selected').attr('data-value', DataDur);
-        var DataSort = $('.project-navigation .post-filter .filter_selected').attr('data-value');
+        DataSort = $('.project-navigation .post-filter .filter_selected').attr('data-value');
             $('.minify .filter_selected').attr('data-value', DataSort);
-        var DataCat = $('.cat-list-wrapp h1').attr('data-value');
+        DataCat = $('.cat-list-wrapp h1').attr('data-value');
             $('.minify .cat-list-wrapp h1').attr('data-value', DataCat);
-        } else {
-            var DataDiff = $('.minify ul.diff-item .filter_selected').attr('data-value');
+        //} else {
+            DataDiff = $('.minify ul.diff-item .filter_selected').attr('data-value');
                 $('.project-navigation ul.diff-item .filter_selected').attr('data-value', DataDiff);
-            var DataDur = $('.minify ul.duration-item .filter_selected').attr('data-value');
+            DataDur = $('.minify ul.duration-item .filter_selected').attr('data-value');
                 $('.project-navigation ul.duration-item .filter_selected').attr('data-value', DataDur);
-            var DataSort = $('.minify .filter_selected').attr('data-value');
+            DataSort = $('.minify .filter_selected').attr('data-value');
                 $('.project-navigation .post-filter .filter_selected').attr('data-value', DataSort);
-            var DataCat = $('.minify .cat-list-wrapp h1').attr('data-value');
+            DataCat = $('.minify .cat-list-wrapp h1').attr('data-value');
                 $('.cat-list-wrapp h1').attr('data-value', DataCat);
-        }
+        //}
         console.log(DataDiff, ' ', DataDur, ' ',  DataCat);
         $.ajax({
             type: 'POST',

@@ -2187,6 +2187,7 @@ ul.duration-item li.current, ul.diff-item li.current {
   position: relative;
   text-transform: capitalize;
   top: auto;
+  z-index: 1;
 }
 .filter-applied span {
   font-weight: 600;
@@ -2196,4 +2197,9 @@ ul.duration-item li.current, ul.diff-item li.current {
 
 .video.fa-video-camera {
   margin-left: 0;
+}
+
+.projects-cat .content .project-navigation .filter_max .duration-item li.chosen.current span,
+.all-projects .content .project-navigation .filter_max .duration-item li.chosen.current span {
+  color: rgba(0, 0, 0, 0.87) !important;
 }
