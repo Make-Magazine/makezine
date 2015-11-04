@@ -255,7 +255,7 @@ jQuery(document).ready(function ($) {
         jQuery('.8-16h').addClass('dur-selected');
         jQuery('.1-3h').addClass('dur-selected');
         jQuery('.3-8h').addClass('dur-selected');
-        jQuery('.3-8h').addClass('filter_selected');
+        jQuery('.8-16h').addClass('filter_selected');
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
