@@ -444,6 +444,7 @@ jQuery(document).ready(function ($) {
             getProjects();
         }
     });
+
     function getProjects(type, callback) {
         var DataDiff, DataDur, DataCat, DataSort;
 
@@ -531,6 +532,7 @@ jQuery(document).ready(function ($) {
             $(this).parent().addClass('loading');
             $(".before-ads:first").removeClass('before-ads');
             getProjects('load_more', function () {
+
                 var max_num_pages = $(".selected-posts-list").attr('data-max_num_pages');
                 if (parseInt(max_num_pages) === paged) {
                     $('#pbd-alp-load-posts').remove();
