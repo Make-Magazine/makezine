@@ -91,9 +91,6 @@ if ( $type != '' ) { ?>
 						</ul>
 					</div>
 
-
-
-
 					<div class="mobile-dur row">
 						<ul class="duration-item">
 							<li class="col-xs-12 first-item current" data-value="dur0">
@@ -142,7 +139,7 @@ if ( $type != '' ) { ?>
 					<p>Sort By</p>
 
 					<div class="post-filter">
-						<p class="recent clicks" data-value="recent">Recent</p>
+						<p class="recent current clicks" data-value="recent">Recent</p>
 
 						<p class="popular clicks" data-value="popular">Popular</p>
 					</div>
@@ -167,12 +164,13 @@ if ( $type != '' ) { ?>
 			</div>
 
 			<div class="filter_max">
+				<div class="spinner">
+					<img src="<?php echo get_stylesheet_directory_uri() . '/images/spinner_60.gif'; ?>"
+					     alt="spinner">
+				</div>
 				<div class="filter">
 					<div class="mobile_cat row">
-						<div class="spinner">
-							<img src="<?php echo get_stylesheet_directory_uri() . '/images/spinner_60.gif'; ?>"
-							     alt="spinner">
-						</div>
+
 
 						<form action="#">
 							<select name="category" id="mobile_cat" class="category_select">
@@ -236,9 +234,6 @@ if ( $type != '' ) { ?>
 						</ul>
 					</div>
 
-
-
-
 					<div class="mobile-dur row">
 						<ul class="duration-item">
 							<li class="col-xs-12 first-item current" data-value="dur0">
@@ -287,7 +282,7 @@ if ( $type != '' ) { ?>
 					<p>Sort By</p>
 
 					<div class="post-filter">
-						<p class="recent clicks" data-value="recent">Recent</p>
+						<p class="recent current clicks" data-value="recent">Recent</p>
 
 						<p class="popular clicks" data-value="popular">Popular</p>
 					</div>

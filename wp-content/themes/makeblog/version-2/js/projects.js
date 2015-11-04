@@ -271,7 +271,9 @@ jQuery(document).ready(function ($) {
         checkerSelectDur = 0;
     });
 
-    $(document).on('touchstart click', '.clear', function () {
+    $(document).on('touchstart click', '.clear', function (event) {
+        event.stopPropagation();
+        event.preventDefault();
         jQuery('.duration-item li span').removeClass('dur-selected dur-hover filter_selected');
         jQuery('.diff-item li span').removeClass('diff-selected diff-hover filter_selected');
         jQuery('div.post-filter p').removeClass('current');
@@ -285,7 +287,8 @@ jQuery(document).ready(function ($) {
         checkerSelectDur = 0;
         jQuery('.first-item').show().addClass('current');
         jQuery('.filter-applied').hide();
-        jQuery('.filter_max .filter').removeClass('open-list chosen')
+        jQuery('.filter_max .filter').find('.open-list').removeClass('open-list');
+        jQuery('.filter_max .filter').find('.chosen').removeClass('chosen');
     });
 
     $(document).on('touchstart click', '.recent', function () {
@@ -567,7 +570,9 @@ jQuery(document).ready(function ($) {
 
     // MOBILE NAVIGATION
 
-    jQuery(document).mouseup(function (e) {
+    jQuery(document).mouseup(function (e, event) {
+        event.stopPropagation();
+        event.preventDefault();
         if (e.which != 1) return false;
         var container = $(".filter_max .filter" );
         if (container.has(e.target).length === 0) {
