@@ -187,10 +187,10 @@ jQuery(document).ready(function ($) {
         jQuery('.diff-item li span').removeClass('diff-selected filter_selected');
         if (checkerSelectDiff == 0) {
             jQuery('.all-lvl').addClass('diff-selected');
-            $(this).addClass('filter_selected');
+            jQuery('.all-lvl').addClass('filter_selected');
             checkerSelectDiff = 1;
         } else {
-            $(this).removeClass('filter_selected diff-selected');
+            jQuery('.all-lvl').removeClass('filter_selected diff-selected');
             checkerSelectDiff = 0;
         }
         jQuery('.clear').addClass('show-me');
@@ -199,10 +199,10 @@ jQuery(document).ready(function ($) {
         jQuery('.diff-item li span').removeClass('diff-selected filter_selected');
         if (checkerSelectDiff == 0) {
             jQuery('.all-lvl').addClass('diff-selected');
-            $(this).addClass('filter_selected');
+            jQuery('.all-lvl').addClass('filter_selected');
             checkerSelectDiff = 1;
         } else {
-            $(this).removeClass('filter_selected diff-selected');
+            jQuery('.all-lvl').removeClass('filter_selected diff-selected');
             checkerSelectDiff = 0;
         }
         jQuery('.clear').addClass('show-me');
@@ -212,7 +212,7 @@ jQuery(document).ready(function ($) {
         jQuery('.diff-item li span').removeClass('diff-selected filter_selected');
         jQuery('.all-lvl').addClass('diff-selected');
         jQuery('.moderate').addClass('diff-selected');
-        $(this).addClass('filter_selected');
+        jQuery('.moderate').addClass('filter_selected');
         jQuery('.clear').addClass('show-me');
         checkerSelectDiff = 0;
     });
@@ -223,7 +223,7 @@ jQuery(document).ready(function ($) {
         jQuery('.spec-skill').addClass('diff-selected');
         jQuery('.all-lvl').addClass('diff-selected');
         jQuery('.moderate').addClass('diff-selected');
-        $(this).addClass('filter_selected');
+        jQuery('.spec-skill').addClass('filter_selected');
         jQuery('.clear').addClass('show-me');
         checkerSelectDiff = 0;
     });
@@ -456,22 +456,14 @@ jQuery(document).ready(function ($) {
 
         //if ( what_filter == 'max' ) {
         DataDiff = $('.project-navigation ul.diff-item .filter_selected').attr('data-value');
-            $('.minify ul.diff-item .filter_selected').attr('data-value', DataDiff);
         DataDur = $('.project-navigation ul.duration-item .filter_selected').attr('data-value');
-            $('.minify ul.duration-item .filter_selected').attr('data-value', DataDur);
         DataSort = $('.project-navigation .post-filter .filter_selected').attr('data-value');
-            $('.minify .filter_selected').attr('data-value', DataSort);
         DataCat = $('.cat-list-wrapp h1').attr('data-value');
-            $('.minify .cat-list-wrapp h1').attr('data-value', DataCat);
         //} else {
-            DataDiff = $('.minify ul.diff-item .filter_selected').attr('data-value');
-                $('.project-navigation ul.diff-item .filter_selected').attr('data-value', DataDiff);
-            DataDur = $('.minify ul.duration-item .filter_selected').attr('data-value');
-                $('.project-navigation ul.duration-item .filter_selected').attr('data-value', DataDur);
-            DataSort = $('.minify .filter_selected').attr('data-value');
-                $('.project-navigation .post-filter .filter_selected').attr('data-value', DataSort);
-            DataCat = $('.minify .cat-list-wrapp h1').attr('data-value');
-                $('.cat-list-wrapp h1').attr('data-value', DataCat);
+        //    DataDiff = $('.minify ul.diff-item .filter_selected').attr('data-value');
+        //    DataDur = $('.minify ul.duration-item .filter_selected').attr('data-value');
+        //    DataSort = $('.minify .filter_selected').attr('data-value');
+        //    DataCat = $('.minify .cat-list-wrapp h1').attr('data-value');
         //}
         console.log(DataDiff, ' ', DataDur, ' ',  DataCat);
         $.ajax({
