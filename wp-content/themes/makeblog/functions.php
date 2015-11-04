@@ -995,7 +995,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $red_cat_name = $post_category->name;
             }
             $red_car_id = get_cat_ID($red_cat_name);
-            $cat_link = get_category_link($red_car_id) . '';
             $red_cat_name = htmlspecialchars_decode($red_cat_name);
             $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
             if ($cat_length > 13) {
