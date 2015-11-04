@@ -26,10 +26,7 @@ if ( $type != '' ) { ?>
 
 				<p class="sort-button">Sort</p>
 			</div>
-			<div class="filter-applied">
-				<span class="applied">Filter have been applied</span>
-				<span class="clear clicks">Clear All</span>
-			</div>
+
 			<div class="filter_max">
 				<div class="filter">
 					<div class="mobile_cat row">
@@ -69,7 +66,7 @@ if ( $type != '' ) { ?>
 					<div class="mobile_diff row">
 						<ul class="diff-item">
 							<li class="col-xs-12 first-item current" data-value="diff0">
-								<span>All Diffilculties</span>
+								<span>All Difficulties</span>
 							</li>
 							<li class="col-xs-12 clicks" data-value="diff1">
 								<div class="clock-wrapper">
@@ -151,23 +148,24 @@ if ( $type != '' ) { ?>
 					</div>
 				</div>
 			</div>
+			<div class="filter-applied">
+				<span class="applied">Filter have been applied</span>
+				<span class="clear clicks">Clear All</span>
+			</div>
 		</div>
 	</div>
 
 <?php } else { ?>
 	<div class="project-navigation">
 		<div class="cat-list-wrapp row">
-			<h1 class="project-category-title" data-value="">Project</h1>
+			<h1 class="project-category-title" data-value="">Projects</h1>
 
 			<div class="filter_mini">
 				<p class="filter-button current">Filter</p>
 
 				<p class="sort-button">Sort</p>
 			</div>
-			<div class="filter-applied">
-				<span class="applied">Filter have been applied</span>
-				<span class="clear clicks">Clear All</span>
-			</div>
+
 			<div class="filter_max">
 				<div class="filter">
 					<div class="mobile_cat row">
@@ -213,7 +211,7 @@ if ( $type != '' ) { ?>
 					<div class="mobile_diff row">
 						<ul class="diff-item">
 							<li class="col-xs-12 first-item current" data-value="diff0">
-								<span>All Diffilculties</span>
+								<span>All Difficulties</span>
 							</li>
 							<li class="col-xs-12 clicks" data-value="diff1">
 								<div class="clock-wrapper">
@@ -294,6 +292,10 @@ if ( $type != '' ) { ?>
 						<p class="popular clicks" data-value="popular">Popular</p>
 					</div>
 				</div>
+			</div>
+			<div class="filter-applied">
+				<span class="applied">Filter have been applied</span>
+				<span class="clear clicks">Clear All</span>
 			</div>
 		</div>
 	</div>

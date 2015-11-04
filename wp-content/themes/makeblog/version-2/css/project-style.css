@@ -1226,8 +1226,8 @@ ul.duration-item li.current, ul.diff-item li.current {
     margin-left: 0;
   }
 
-  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li.chosen span.fa-wrench,
-  .all-projects .content .project-navigation .filter_max .diff-item .open-list li.chosen span.fa-wrench {
+  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li span.fa-wrench,
+  .all-projects .content .project-navigation .filter_max .diff-item .open-list li span.fa-wrench {
     opacity: 0.65;
     color: black;
     font-size: 25px;
@@ -1235,8 +1235,8 @@ ul.duration-item li.current, ul.diff-item li.current {
     line-height: 43px;
   }
 
-  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li span.fa-wrench,
-  .all-projects .content .project-navigation .filter_max .diff-item .open-list li span.fa-wrench {
+  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li.chosen span.fa-wrench,
+  .all-projects .content .project-navigation .filter_max .diff-item .open-list li.chosen span.fa-wrench {
     color: #FFF;
   }
 
@@ -1245,13 +1245,9 @@ ul.duration-item li.current, ul.diff-item li.current {
     line-height: 30px;
   }
 
-  .projects-cat .content .project-navigation .filter_max .duration-item li > span:last-child,
-  .all-projects .content .project-navigation .filter_max .duration-item li > span:last-child {
-    color: rgba(0, 0, 0, 0.87);
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 15px;
+  .projects-cat .content .project-navigation .filter_max .duration-item li.chosen span,
+  .all-projects .content .project-navigation .filter_max .duration-item li.chosen span {
+    color: #FFF !important;
   }
 
   .projects-cat .content .project-navigation .filter_max .open-list,
