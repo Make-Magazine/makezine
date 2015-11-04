@@ -2224,5 +2224,5 @@ ul.duration-item li.current, ul.diff-item li.current {
 .all-projects .content .project-navigation .filter_max .post-filter .current {
   background-color: #3394de !important;
   border: 2px solid #3394de !important;
-  color: #FFF;
+  color: #FFF !important;
 }
