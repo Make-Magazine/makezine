@@ -232,10 +232,10 @@ jQuery(document).ready(function ($) {
         jQuery('.duration-item li span').removeClass('dur-selected filter_selected');
         if (checkerSelectDur == 0) {
             jQuery('.1-3h').addClass('dur-selected');
-            $(this).addClass('filter_selected');
+            jQuery('.1-3h').addClass('filter_selected');
             checkerSelectDur = 1;
         } else {
-            $(this).removeClass('filter_selected dur-selected');
+            jQuery('.1-3h').removeClass('filter_selected dur-selected');
             checkerSelectDur = 0;
         }
         jQuery('.clear').addClass('show-me');
@@ -245,7 +245,7 @@ jQuery(document).ready(function ($) {
         jQuery('.duration-item li span').removeClass('dur-selected filter_selected');
         jQuery('.3-8h').addClass('dur-selected');
         jQuery('.1-3h').addClass('dur-selected');
-        $(this).addClass('filter_selected');
+        jQuery('.3-8h').addClass('filter_selected');
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
@@ -255,7 +255,7 @@ jQuery(document).ready(function ($) {
         jQuery('.8-16h').addClass('dur-selected');
         jQuery('.1-3h').addClass('dur-selected');
         jQuery('.3-8h').addClass('dur-selected');
-        $(this).addClass('filter_selected');
+        jQuery('.3-8h').addClass('filter_selected');
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
@@ -266,7 +266,7 @@ jQuery(document).ready(function ($) {
         jQuery('.1-3h').addClass('dur-selected');
         jQuery('.3-8h').addClass('dur-selected');
         jQuery('.16h').addClass('dur-selected');
-        $(this).addClass('filter_selected');
+        jQuery('.16h').addClass('filter_selected');
         jQuery('.clear').addClass('show-me');
         checkerSelectDur = 0;
     });
@@ -290,14 +290,12 @@ jQuery(document).ready(function ($) {
 
     $(document).on('touchstart click', '.recent', function () {
         jQuery('.popular').removeClass('current filter_selected');
-        jQuery('.recent').addClass('current');
-        $(this).addClass('filter_selected');
+        jQuery('.recent').addClass('current filter_selected');
     });
 
     $(document).on('touchstart click', '.popular', function () {
         jQuery('.recent').removeClass('current filter_selected');
-        jQuery('.popular').addClass('current');
-        $(this).addClass('filter_selected');
+        jQuery('.popular').addClass('current filter_selected');
     });
 
     if (($('.all-projects').hasClass('pc')) || ($('.projects-cat').hasClass('pc'))) {
@@ -366,12 +364,10 @@ jQuery(document).ready(function ($) {
         jQuery(".minify .fa-chevron-down").hide();
         jQuery('.minify .cat-list-wrapp').show();
     }
-    var what_filter = 'max';
     jQuery(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
 
         if (scrollTop >= '300') {
-            what_filter = 'min';
             jQuery('.minify').addClass('sticky').slideDown();
             jQuery(indikator).show();
             if (($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') )) {
@@ -387,7 +383,6 @@ jQuery(document).ready(function ($) {
             jQuery(".minify .fa-chevron-up").hide();
             jQuery(".minify .fa-chevron-down").hide();
             jQuery('.minify .cat-list-wrapp').show();
-            what_filter = 'max';
         }
     });
 
@@ -454,18 +449,11 @@ jQuery(document).ready(function ($) {
 
         if (type === 'initial_load') paged = 1;
 
-        //if ( what_filter == 'max' ) {
         DataDiff = $('.project-navigation ul.diff-item .filter_selected').attr('data-value');
         DataDur = $('.project-navigation ul.duration-item .filter_selected').attr('data-value');
         DataSort = $('.project-navigation .post-filter .filter_selected').attr('data-value');
         DataCat = $('.cat-list-wrapp h1').attr('data-value');
-        //} else {
-        //    DataDiff = $('.minify ul.diff-item .filter_selected').attr('data-value');
-        //    DataDur = $('.minify ul.duration-item .filter_selected').attr('data-value');
-        //    DataSort = $('.minify .filter_selected').attr('data-value');
-        //    DataCat = $('.minify .cat-list-wrapp h1').attr('data-value');
-        //}
-        console.log(DataDiff, ' ', DataDur, ' ',  DataCat);
+
         $.ajax({
             type: 'POST',
             url: '/wp-admin/admin-ajax.php',
