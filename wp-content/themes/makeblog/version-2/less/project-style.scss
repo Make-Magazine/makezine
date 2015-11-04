@@ -1068,6 +1068,11 @@ ul.duration-item li.current, ul.diff-item li.current {
     border-radius: 4px;
     color: #FFF;
   }
+  .projects-cat .content .project-navigation .filter_max .post-filter p.current.filter_selected,
+  .projects-cat .content .project-navigation .filter_max .post-filter p.current.filter_selected {
+    color: black;
+  }
+
   .projects-cat .content .project-navigation .filter_max .diff-item .filter_selected span.fa-wrench,
   .projects-cat .content .project-navigation .filter_max .post-filter .filter_selected span.fa-wrench,
   .all-projects .content .project-navigation .filter_max .diff-item .filter_selected span.fa-wrench,
@@ -1085,24 +1090,23 @@ ul.duration-item li.current, ul.diff-item li.current {
     text-align: left;
   }
 }
-@media (max-width: 760px) and (max-device-width: 760px) and (max-width: 320px) {
-  .projects-cat .content .project-navigation .filter_max .diff-item li,
-  .all-projects .content .project-navigation .filter_max .diff-item li {
-    margin-left: 1%;
-  }
-}
+
 @media (max-width: 767px) and (max-device-width: 767px) {
   .projects-cat .content .project-navigation .filter_max .diff-item li:first-child,
   .all-projects .content .project-navigation .filter_max .diff-item li:first-child {
     margin-left: 0;
   }
-  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li span.fa-wrench,
-  .all-projects .content .project-navigation .filter_max .diff-item .open-list li span.fa-wrench {
+  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li.chosen span.fa-wrench,
+  .all-projects .content .project-navigation .filter_max .diff-item .open-list li.chosen span.fa-wrench {
     opacity: 0.65;
     color: black;
     font-size: 25px;
     padding-right: 0;
     line-height: 43px;
+  }
+  .projects-cat .content .project-navigation .filter_max .diff-item.open-list li span.fa-wrench,
+  .all-projects .content .project-navigation .filter_max .diff-item .open-list li span.fa-wrench {
+    color: #FFF;
   }
   .projects-cat .content .project-navigation .filter_max .duration-item li,
   .all-projects .content .project-navigation .filter_max .duration-item li {
@@ -1148,7 +1152,7 @@ ul.duration-item li.current, ul.diff-item li.current {
   }
   .projects-cat .content .project-navigation .filter_max .open-list .first-item span,
   .all-projects .content .project-navigation .filter_max .open-list .first-item span {
-    color: #FFF !important;
+    color: #4a4a4a;
   }
   .projects-cat .content .project-navigation .filter_max .open-list .chosen span,
   .all-projects .content .project-navigation .filter_max .open-list .chosen span {
@@ -1190,7 +1194,7 @@ ul.duration-item li.current, ul.diff-item li.current {
     float: left;
     display: inline-block;
     text-align: center;
-    line-height: 40px;
+    line-height: 36px;
   }
   .projects-cat .content .project-navigation .filter_max .reset-button,
   .all-projects .content .project-navigation .filter_max .reset-button {
@@ -1776,11 +1780,7 @@ ul.duration-item li.current, ul.diff-item li.current {
     opacity: 1;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 320px) {
-  .pc .content .project-navigation:nth-child(3) .filter_max .diff-item li {
-    margin-left: 1%;
-  }
-}
+
 @media screen and (max-width: 768px) {
   .pc .content .project-navigation:nth-child(3) .filter_max .diff-item li:first-child {
     margin-left: 0;
