@@ -457,13 +457,13 @@ jQuery(document).ready(function ($) {
         var DataDur = $('.project-navigation ul.duration-item .filter_selected').attr('data-value');
         var DataSort = $('.project-navigation .post-filter .filter_selected').attr('data-value');
         var DataCat = $('.cat-list-wrapp h1').attr('data-value');
+            console.log(DataDiff, ' ', DataDur, ' ',  DataCat);
         } else {
             var DataDiff = $('.minify ul.diff-item .filter_selected').attr('data-value');
             var DataDur = $('.minify ul.duration-item .filter_selected').attr('data-value');
             var DataSort = $('.minify .filter_selected').attr('data-value');
             var DataCat = $('.minify .cat-list-wrapp h1').attr('data-value');
         }
-        console.log (DataDiff, ' ', DataDur);
         $.ajax({
             type: 'POST',
             url: '/wp-admin/admin-ajax.php',
