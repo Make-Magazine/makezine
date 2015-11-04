@@ -7,6 +7,7 @@
  * @author     Maker Media Web Team <webmaster@makermedia.com>
  *
  */
+wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
 $steps = get_post_custom_values('Steps');
 get_header(); ?>
 
