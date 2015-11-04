@@ -503,8 +503,23 @@ jQuery(document).ready(function ($) {
 
     var paged = 1;
 
+    var ua = window.navigator.userAgent;
+
+    var msie = ua.indexOf('MSIE ');
+
+    var trident = ua.indexOf('Trident/');
+
+    var edge = ua.indexOf('Edge/');
+
+
+
+    if ((msie > 0) || (trident > 0) || (edge > 0)) {
+        $('#pbd-alp-load-posts').addClass('ie');
+    }
+
     $(document).on('touchstart click', '#pbd-alp-load-posts a', function () {
-        if (!$(this).hasClass('first-click')) {
+
+            if (!$(this).hasClass('first-click')) {
             $(this).addClass('first-click');
             paged++;
             // Show that we're working.

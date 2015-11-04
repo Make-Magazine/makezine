@@ -1083,7 +1083,7 @@ ul.duration-item li.current, ul.diff-item li.current {
 
   .cat-list-wrapp.row {
     min-height: 100% !important;
-    margin: 0 -20px 0 -18px;
+    margin: 0 -20px;
   }
 
   .projects-cat .content .project-navigation,
@@ -2202,4 +2202,20 @@ ul.duration-item li.current, ul.diff-item li.current {
 .projects-cat .content .project-navigation .filter_max .duration-item li.chosen.current span,
 .all-projects .content .project-navigation .filter_max .duration-item li.chosen.current span {
   color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.projects-cat .filter-item ul li.difficulty span.diff-hover, .all-projects .filter-item ul li.difficulty span.diff-hover {
+  color: #666;
+}
+
+.projects-cat .filter-item ul li.duration span.dur-hover, .all-projects .filter-item ul li.duration span.dur-hover {
+  color: #666;
+}
+
+.tablet .filter-list {
+  margin-left: -5px;
+}
+
+#pbd-alp-load-posts.ie .fa.more-button-spinner {
+  margin-left: 295px;
 }
