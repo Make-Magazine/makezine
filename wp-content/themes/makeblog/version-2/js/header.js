@@ -256,8 +256,10 @@ $( document ).ready(function() {
 							$dynamic_content = '.latest-shop';
 						}
 						if (index < $index) {
+							$($dynamic_content).removeClass('moove-right');
 							$($dynamic_content).addClass('moove-left');
 						} else if (index > $index) {
+							$($dynamic_content).removeClass('moove-left');
 							$($dynamic_content).addClass('moove-right');
 						} else {
 							$($dynamic_content).removeClass('moove-left moove-right');
