@@ -269,8 +269,10 @@ $( document ).ready(function() {
 			}
 			$('.menu-sub-menu > .sub-menu').each(function(index){
 				if (index < $index ){
+					$(this).removeClass('moove-right');
 					$(this).addClass('moove-left');
 				}else if (index > $index){
+					$(this).removeClass('moove-left');
 					$(this).addClass('moove-right');
 				}else{
 					$(this).removeClass('moove-left moove-right');
