@@ -13,13 +13,13 @@
 
 					<div class="span4 sidebar">
 
-						<?php dynamic_sidebar( 'sidebar_top' ); ?>
-
 						<div class="sidebar-ad">
 
 							<?php global $make; print $make->ads->ad_300x250_atf; ?>
 
 						</div>
+
+						<?php dynamic_sidebar( 'sidebar_top' ); ?>
 
 						<div class="maker-camp-promo">
 							<?php
