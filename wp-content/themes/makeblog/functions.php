@@ -1323,7 +1323,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             }
             $counter++;
 
-            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
+            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 test';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
             }
