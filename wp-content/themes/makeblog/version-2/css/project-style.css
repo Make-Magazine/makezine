@@ -101,12 +101,12 @@ body.page-template-project {
   max-height:60px;
 }
 .projects-cat .content .cat-nav-wrapp .cat_list > li:last-child, .all-projects .content .cat-nav-wrapp .cat_list > li:last-child {
-   margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .projects-cat .content .cat-nav-wrapp .cat_list > li:last-child ul li, .all-projects .content .cat-nav-wrapp .cat_list > li:last-child ul li {
-   margin-bottom: 0px;
+  margin-bottom: 0px;
   margin-top: 2px;
- }
+}
 .projects-cat .content .cat-nav-wrapp .cat_list > li:last-child ul li a, .all-projects .content .cat-nav-wrapp .cat_list > li:last-child ul li a {
   display: block;
   margin-bottom: -2px;
