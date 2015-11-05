@@ -10,9 +10,6 @@
 $pagename = get_query_var('pagename');
 
 get_header('version-2');
-if ($pagename == 'blog') {
-	get_template_part( 'version-2/includes/blog' );
-} else {?>
 	<div class="home-ads">
    		<?php global $make; print $make->ads->ad_leaderboard; ?>
 	</div>
@@ -78,5 +75,4 @@ if ($pagename == 'blog') {
 		</div>
 
 	</div>
-<?php } ?>
 <?php get_footer(); ?>
