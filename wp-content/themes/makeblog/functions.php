@@ -1333,7 +1333,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-            $output .= '</a></div>';
+			$output .= '</a></div>';
             $output .= '<div class="final_gradient"><a href="';
             $link = get_the_permalink();
             $output .= $link;
