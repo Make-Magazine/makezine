@@ -9364,13 +9364,14 @@ body.makercamp a.button.small-button {
 }
 #gg2015 {
   margin-top: 15px;
+  /* Mobile Stuff */
 }
 #gg2015 .gg2015-header {
   background-color: red;
   color: #fff;
 }
 #gg2015 .gg2015-header .row {
-  height: 200px;
+  height: 134px;
 }
 #gg2015 .gg2015-header a {
   color: #fff;
@@ -9384,6 +9385,7 @@ body.makercamp a.button.small-button {
   border-right: 1px solid #fff;
   margin-top: 15px;
   margin-bottom: 15px;
+  height: 100%;
 }
 #gg2015 .gg2015-header .gg2015-border-right h3 {
   font-size: 20px;
@@ -9393,8 +9395,11 @@ body.makercamp a.button.small-button {
   font-weight: bold;
   margin-top: 0px;
 }
+#gg2015 .gg2015-header .gg2015-border-right .gg2015-big-font span {
+  font-weight: 500;
+}
 #gg2015 .gg2015-header .gg2015-nav {
-  padding: 15px 0;
+  padding: 15px 0 0;
   height: 100%;
   display: flex;
   align-items: flex-end;
@@ -9453,6 +9458,7 @@ body.makercamp a.button.small-button {
   margin-top: 6px;
   padding-top: 15px;
   padding-bottom: 15px;
+  display: none;
 }
 #gg2015 .gg2015-sidelines h3 {
   position: relative;
@@ -9467,59 +9473,169 @@ body.makercamp a.button.small-button {
   height: 1px;
   position: absolute;
   top: 50%;
-  z-index: 1;
+  z-index: 0;
 }
 #gg2015 .gg2015-sidelines h3 span {
   background: #fff;
   padding: 0 20px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 300;
 }
 #gg2015 .gg2015-catimage {
-  padding-left: 0;
-  padding-right: 0;
   margin-top: 6px;
 }
 #gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/GG-Auto-FullSpread.jpg) no-repeat;
+  background: url(../img/gift-guide-2015/gift_guide_spread_drones.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-author {
+  top: 17%;
+  left: 12%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-1 {
+  top: 5%;
+  left: 39%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-2 {
+  top: 41%;
+  left: 83%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-3 {
+  top: 34%;
+  left: 26%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-4 {
+  top: 43%;
+  left: 55%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-5 {
+  top: 60%;
+  left: 79%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-6 {
+  top: 71%;
+  left: 44%;
+}
+#gg2015 .gg2015-catimage .gg2015-drones .gg2015-open-parent-7 {
+  top: 81%;
+  left: 82%;
 }
 #gg2015 .gg2015-catimage .gg2015-craft {
-  background: url(../img/gift-guide-2015/GGMobile-Craft-FullSpread.jpg) no-repeat;
+  background: url(../img/gift-guide-2015/gift_guide_spread_craft.jpg) no-repeat;
 }
-#gg2015 .gg2015-catimage .gg2015-craft .gg2015-row1 {
-  padding-top: 14%;
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-open-author {
+  top: 17%;
+  left: 11%;
 }
-#gg2015 .gg2015-catimage .gg2015-craft .gg2015-row2 {
-  padding-top: 19%;
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-open-parent-1 {
+  top: 13%;
+  left: 34%;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-open-parent-2 {
+  top: 11%;
+  left: 55%;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-open-parent-3 {
+  top: 37%;
+  left: 80%;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-open-parent-4 {
+  top: 54%;
+  left: 31%;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-craft .gg2015-open-parent-5 {
+  top: 59%;
+  left: 60%;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-kitchen {
+  background: url(../img/gift-guide-2015/gift_guide_spread_kitchen.jpg) no-repeat;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-author {
+  top: 17%;
+  left: 14%;
 }
-#gg2015 .gg2015-catimage .gg2015-drones {
-  background: url(../img/gift-guide-2015/.jpg) no-repeat;
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-1 {
+  top: 5%;
+  left: 44%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-2 {
+  top: 25%;
+  left: 54%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-3 {
+  top: 6%;
+  left: 80%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-4 {
+  top: 37%;
+  left: 11%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-5 {
+  top: 77%;
+  left: 23%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-6 {
+  top: 54%;
+  left: 42%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-7 {
+  top: 81%;
+  left: 54%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-8 {
+  top: 45%;
+  left: 63%;
+}
+#gg2015 .gg2015-catimage .gg2015-kitchen .gg2015-open-parent-9 {
+  top: 40%;
+  left: 80%;
+}
+#gg2015 .gg2015-catimage .gg2015-automotive {
+  background: url(../img/gift-guide-2015/gift_guide_spread_automotive.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-science {
+  background: url(../img/gift-guide-2015/gift_guide_spread_science.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-electronics {
+  background: url(../img/gift-guide-2015/gift_guide_spread_electronics.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-woodworking {
+  background: url(../img/gift-guide-2015/gift_guide_spread_woodworking.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe {
+  background: url(../img/gift-guide-2015/gift_guide_spread_make-believe.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-metal-shop {
+  background: url(../img/gift-guide-2015/gift_guide_spread_metal-shop.jpg) no-repeat;
 }
 #gg2015 .gg2015-catimage .gg2015-landscape {
   background-size: cover;
   height: 780px;
   position: relative;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent {
+  position: absolute;
+  width: 200px;
+}
+#gg2015 .gg2015-catimage .gg2015-open-parent:hover .gg2015-open-plus .fa-plus-circle {
+  color: #db0c0c;
+  transition: color 0.1s ease;
+}
+#gg2015 .gg2015-catimage .gg2015-open-author .gg2015-open.gg2015-open-plus {
+  top: 26px;
+  left: -22px;
+  z-index: 2;
+}
+#gg2015 .gg2015-catimage .gg2015-open-author img {
+  height: 50px;
+  width: 50px;
+}
+#gg2015 .gg2015-catimage .gg2015-open-author .gg2015-open h3 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
 }
 #gg2015 .gg2015-catimage .gg2015-open h3 {
   color: #262626;
@@ -9540,6 +9656,10 @@ body.makercamp a.button.small-button {
   color: #4a4a4a;
   margin-bottom: 7px;
 }
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-inverse-color h3,
+#gg2015 .gg2015-catimage .gg2015-open.gg2015-inverse-color p {
+  color: #E6E6E6;
+}
 #gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus {
   position: absolute;
   top: -12px;
@@ -9559,46 +9679,18 @@ body.makercamp a.button.small-button {
   top: 2px;
   transition: color 0.1s ease;
 }
-#gg2015 .gg2015-catimage .gg2015-open.gg2015-open-plus:hover .fa-plus-circle {
-  color: #db0c0c;
-  transition: color 0.1s ease;
-}
 #gg2015 .gg2015-catimage .gg2015-buy-div {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 #gg2015 .gg2015-catimage .gg2015-buy-div p {
   display: none;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 #gg2015 .gg2015-catimage .gg2015-buy-div .gg2015-buy-btn {
   background-color: rgba(255, 255, 255, 0.5);
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  transition: all 0.5s linear;
-}
-#gg2015 .gg2015-catimage .gg2015-open-parent {
-  position: absolute;
-  width: 250px;
-}
-#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-1 {
-  top: 19%;
-  left: 25%;
-}
-#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-2 {
-  top: 15%;
-  left: 57%;
-}
-#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-3 {
-  top: 4%;
-  left: 78%;
-}
-#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-4 {
-  top: 75%;
-  left: 25%;
-}
-#gg2015 .gg2015-catimage .gg2015-open-parent.gg2015-open-parent-5 {
-  top: 48%;
-  left: 82%;
+  transition: all 0.3s linear;
 }
 #gg2015 .gg2015-catimage .gg2015-open-parent-on {
   min-height: 80px;
@@ -9609,15 +9701,16 @@ body.makercamp a.button.small-button {
   transition: color 0.1s ease;
 }
 #gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
+  z-index: 1;
 }
 #gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div p {
   display: block;
   padding: 15px;
   margin-bottom: 0;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 #gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div .gg2015-buy-btn {
   background-color: #db0c0c;
@@ -9625,7 +9718,7 @@ body.makercamp a.button.small-button {
   display: block;
   text-align: center;
   margin: 0;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 #gg2015 .gg2015-buy-btn {
   padding: 5px 20px;
@@ -9678,11 +9771,144 @@ body.makercamp a.button.small-button {
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 5px;
+  min-height: 30px;
+  max-height: 30px;
 }
 #gg2015 .gg2015-shed .product-shed-grid p {
   font-family: 'Roboto';
   color: #4a4a4a;
   font-size: 12px;
+}
+#gg2015 .gg2015-mobile-naver {
+  background-color: #f40b0b;
+}
+#gg2015 .gg2015-mobile-naver h6 {
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Roboto-Slab';
+  letter-spacing: 1.8px;
+  margin: 0;
+  padding: 20px 0;
+}
+#gg2015 .gg2015-mobile-naver hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+#gg2015 .gg2015-mobile-naver h4 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  padding: 10px 0;
+}
+#gg2015 .gg2015-mobile-naver h4 .fa-chevron-down {
+  display: inline-block;
+}
+#gg2015 .gg2015-mobile-nav {
+  background-color: #fff;
+  border-bottom: 5px solid #f40b0b;
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+#gg2015 .gg2015-mobile-nav .col-xs-6:first-child {
+  padding: 0 5px 0 10px;
+}
+#gg2015 .gg2015-mobile-nav .col-xs-6:first-child a:last-child h5 {
+  border-bottom: none;
+}
+#gg2015 .gg2015-mobile-nav .col-xs-6:last-child {
+  padding: 0 10px 0 5px;
+}
+#gg2015 .gg2015-mobile-nav .gg2015-active-nav h5 {
+  color: #f40b0b;
+}
+#gg2015 .gg2015-mobile-nav h5 {
+  padding: 10px;
+  margin: 0;
+  color: #4a4a4a;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid #4a4a4a;
+}
+#gg2015 .gg2015-mobile-nav h5:hover {
+  color: #f40b0b;
+}
+#gg2015 .gg2015-mobile-nav-home {
+  background-color: #fff;
+  border-bottom: 5px solid #f40b0b;
+  width: 100%;
+  z-index: 2;
+}
+#gg2015 .gg2015-mobile-nav-home .col-xs-6:first-child {
+  padding: 0 5px 0 10px;
+}
+#gg2015 .gg2015-mobile-nav-home .col-xs-6:first-child a:last-child h5 {
+  border-bottom: none;
+}
+#gg2015 .gg2015-mobile-nav-home .col-xs-6:last-child {
+  padding: 0 10px 0 5px;
+}
+#gg2015 .gg2015-mobile-nav-home .gg2015-active-nav h5 {
+  color: #f40b0b;
+}
+#gg2015 .gg2015-mobile-nav-home h5 {
+  padding: 10px;
+  margin: 0;
+  color: #4a4a4a;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid #4a4a4a;
+}
+#gg2015 .gg2015-mobile-nav-home h5:hover {
+  color: #f40b0b;
+}
+#gg2015 .gg2015-mobile .col-xs-5 {
+  padding-right: 0;
+}
+#gg2015 .gg2015-mobile h3 {
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  padding: 3px 0 5px;
+  line-height: 1.3em;
+}
+#gg2015 .gg2015-mobile h4 {
+  color: #4a4a4a;
+  font-size: 12px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+#gg2015 .gg2015-mobile p {
+  font-size: 12px;
+  color: #333;
+}
+#gg2015 .gg2015-mobile .gg2015-buy-btn {
+  padding: 5px 20px;
+  display: inline;
+  color: #fff;
+  background-color: #db0c0c;
+}
+#gg2015 .gg2015-mobile-home h2 {
+  color: #f40b0b;
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 10px 0 5px;
+}
+#gg2015 .gg2015-mobile-home p {
+  color: #333;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#gg2015 .padbottom {
+  padding-bottom: 15px !important;
+}
+#gg2015 .padtop {
+  padding-top: 15px !important;
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   #gg2015 .gg2015-hero {
@@ -9693,6 +9919,9 @@ body.makercamp a.button.small-button {
   }
   #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
     height: 180px;
+  }
+  #gg2015 .gg2015-header .row {
+    height: 153px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -9705,6 +9934,18 @@ body.makercamp a.button.small-button {
   #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
     height: 125px;
   }
+  #gg2015 .gg2015-catimage .gg2015-open-parent {
+    width: 170px;
+  }
+  #gg2015 .gg2015-catimage .gg2015-open-parent-on .gg2015-buy-div p {
+    font-size: 13px;
+  }
+  #gg2015 .gg2015-header .row {
+    height: 207px;
+  }
+  #gg2015 .gg2015-header-home .row {
+    height: 174px;
+  }
 }
 @media screen and (max-width: 767px) {
   #gg2015 .gg2015-hero {
@@ -9714,6 +9955,43 @@ body.makercamp a.button.small-button {
   }
   #gg2015 .gg2015-header .gg2015-border-right {
     border-right: 0px;
+  }
+  .gg2015-shed .col-xs-6 {
+    margin-bottom: 15px;
+  }
+  #gg2015 .gg2015-buy-btn {
+    padding: 5px 10px;
+    display: block;
+  }
+  #gg2015 {
+    margin-top: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .gg2015-sidelines {
+    display: none;
+  }
+  #gg2015 .gg2015-shed {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+    height: 170px;
+  }
+  #gg2015 .gg2015-shed .product-shed-grid {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 430px) {
+  #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+    height: 135px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+    height: 100px;
   }
 }
 /* SNOW ANIMATION ON THE HERO IMAGE */

@@ -10,21 +10,21 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
-  <div class="container gg2015-header">
+  <div class="container gg2015-header gg2015-header-home hidden-xs">
 
     <div class="row">
 
-      <div class="col-sm-5 gg2015-border-right">
+      <div class="col-sm-5 col-md-6 gg2015-border-right">
 
         <a href="/giftguide2015">
           <h3>THE ULTIMATE MAKERS</h3>
           <h3 class="gg2015-big-font">GIFT GUIDE</h3>
         </a>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
-      <div class="col-sm-7 gg2015-nav">
+      <div class="col-sm-7 col-md-6 gg2015-nav">
 
         <div class="col-sm-4">
           <a href="/giftguide2015/craft"><h2>CRAFT</h2></a>
@@ -56,25 +56,47 @@ get_header('version-2'); ?>
     <div class="gg2015-snow"></div>
 
     <div class="col-sm-7 hidden-xs">
-
       <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/UltimateMakersGiftGuide_Title.png" />
-
     </div>
 
   </div>
 
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-xs-12">
-
-      </div>
-
+  <div class="container gg2015-mobile-naver text-center visible-xs-block">
+    <a id="gg2015-mobile-naver-a" href="#">
+      <h4>BROWSE <i class="fa fa-chevron-down"></i></h4>
+    </a>
+  </div>
+  <div class="gg2015-mobile-nav-home hidden-sm hidden-md hidden-lg">
+    <div class="col-xs-6">
+      <a href="/giftguide2015/automotive"><h5>AUTOMOTIVE</h5></a>
+      <a href="/giftguide2015/electronics"><h5>ELECTRONICS</h5></a>
+      <a href="/giftguide2015/kitchen"><h5>KITCHEN</h5></a>
+      <a href="/giftguide2015/wood-working"><h5>WOOD WORKING</h5></a>
+      <a href="/giftguide2015/metal-shop"><h5>METAL SHOP</h5></a>
     </div>
-
+    <div class="col-xs-6">
+      <a href="/giftguide2015/drones"><h5>DRONES</h5></a>
+      <a href="/giftguide2015/craft"><h5>CRAFT</h5></a>
+      <a href="/giftguide2015/make-believe"><h5>MAKE: BELIEVE</h5></a>
+      <a href="/giftguide2015/science"><h5>SCIENCE</h5></a>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="container gg2015-mobile-home visible-xs-block">
+    <h2>THE BEST TOOLS AND TOYS FOR THE ONES YOU LOVE</h2>
+    <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a peedy FPV micodrone.</p>
   </div>
 
 </div>
 
+<script>
+  $( "#gg2015-mobile-naver-a" ).on( "click", function() {
+    event.preventDefault();
+    if ( $( ".gg2015-mobile-nav" ).is( ":hidden" ) ) {
+      $( ".gg2015-mobile-nav" ).slideDown( "medium" );
+    } else {
+      $( ".gg2015-mobile-nav" ).hide();
+    }
+  });
+</script>
 <?php get_footer(); ?>
