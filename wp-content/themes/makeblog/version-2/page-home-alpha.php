@@ -185,8 +185,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="http://makerfaire.com/new-york-2015/slideshow/?utm_source=makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=WMF+highlights">          
-                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_world_maker5.jpg' ?>" class="img-responsive center-block event" />
+        <a href="//event.on24.com/wcc/r/1081553/0D8E15BD2D43C08E3578FE04A6A4406B">          
+                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_webcast02.jpg' ?>" class="img-responsive center-block event" />
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
