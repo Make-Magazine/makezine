@@ -1133,11 +1133,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 }
             }
 
-<<<<<<< HEAD
-
-=======
             $ads_counter++;
->>>>>>> cb45ad9e32f8491afafe552eae4fc4d80fc1665b
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
             $output .= '</ul> </li>';
