@@ -189,11 +189,11 @@ h6 {
   color:#8f8e8e;
 }
 .latest-projects .project-post h1 a {
-  font-family: RobotoSlab-Regular;
+  font-family: Roboto;
   font-size: 12px;
   line-height: 16px;
   color: #000000;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 400;
 }
@@ -223,11 +223,11 @@ h6 {
   color:#8f8e8e;
 }
 .latest-stories .stories-post h1 a {
-  font-family: RobotoSlab-Regular;
+  font-family: Roboto;
   font-size: 12px;
   line-height: 16px;
   color: #000000;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 400;
 }
@@ -764,10 +764,6 @@ ul.sub-menu.moove-right {
 }
 
 @media only screen and (min-width: 1201px) {
-  .latest-events .events-post h1 a,
-  .latest-events .events-post h2 a{
-    font-size: 13pt;
-  }
   .latest-events .events-post h1,
   .latest-events .events-post h2{
     min-width: 152px;
@@ -775,7 +771,7 @@ ul.sub-menu.moove-right {
   }
   .latest-events .events-post:first-child h1,
   .latest-events .events-post:first-child h2{
-    margin-left: -5px;
+    margin-left: -7px;
   }
   .sticky-header .search-bar input.search-field[type="search"].search-click {
     margin-top: 3px;
