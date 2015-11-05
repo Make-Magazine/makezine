@@ -563,7 +563,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                     }
                 } elseif (!empty($post_flag[0])) {
                     $red_cat_name = get_cat_name(intval($post_flag[0]));
-                    $cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
+                    $cat_link = get_category_link($post_flag[0]);
                 } else {
                     $post_categories = get_the_category();
                     foreach ($post_categories as $post_category) {
@@ -594,7 +594,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                         $parent_cat_length--;
                         $random_cat_number = rand(0, $parent_cat_length);
                         $red_cat_name = $parent_cat[$random_cat_number];
-                        $cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
+                        $cat_link = get_category_link($parent_id[$random_cat_number]);
                     }
                 }
                 $red_cat_name = htmlspecialchars_decode($red_cat_name);
@@ -1132,7 +1132,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $counter = 0;
                 }
             }
-
             $ads_counter++;
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
@@ -1191,11 +1190,13 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($detect->isMobile()) {
         $post_per_page_initial = 18;
         $device = 'mobile';
+		$post_per_page = $post_per_page_initial;
     }
 
     if ($detect->isTablet()) {
         $post_per_page_initial = 12;
         $device = 'tablet';
+		$post_per_page = $post_per_page_initial;
     }
     else {
         $post_per_page = $post_per_page_initial - 1;
@@ -1319,7 +1320,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             }
             $counter++;
 
-            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 test';
+            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
             }
