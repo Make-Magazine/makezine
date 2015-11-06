@@ -254,7 +254,18 @@ h6 {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.latest-shop .shop-post:hover a.first-post {
+  background-image: url(/wp-content/themes/makeblog/version-2/img/shop1hover.png);
+}
+.latest-shop .shop-post:hover a.second-post{
+  background-image: url(/wp-content/themes/makeblog/version-2/img/shop2hover.png);
+}
+.latest-shop .shop-post:hover a.third-post{
+  background-image: url(/wp-content/themes/makeblog/version-2/img/shop3hover.png);
+}
+.latest-shop .shop-post:hover a.fourth-post{
+  background-image: url(/wp-content/themes/makeblog/version-2/img/shop4hover.png);
+}
 .latest-shop .shop-post a.first-post {
   background-image: url(/wp-content/themes/makeblog/version-2/img/shop1.png);
 }
