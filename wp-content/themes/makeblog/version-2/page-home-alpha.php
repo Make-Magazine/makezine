@@ -186,7 +186,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
         <a href="//event.on24.com/wcc/r/1081553/0D8E15BD2D43C08E3578FE04A6A4406B">          
-                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_webcast01.jpg' ?>" class="img-responsive center-block event" />
+                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_webcast03.jpg' ?>" class="img-responsive center-block event" />
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
