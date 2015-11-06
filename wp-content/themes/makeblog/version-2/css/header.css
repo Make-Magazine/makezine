@@ -526,6 +526,7 @@ input[type=search]::-ms-reveal {
   background: #efefef;
   width:172px;
   float: left;
+  max-height: 196px;
 }
 .menu-sub-menu{
   width: 172px;
@@ -696,7 +697,7 @@ ul.sub-menu.moove-right {
     margin-left: 198px;
   }
   .navbar .nav > li:hover > a {
-    border-bottom: 3px solid #F40B0B;
+    border: none;
   }
   .navbar-default .navbar-nav>li>a , .navbar .nav > li ,.navbar .nav {
     height:38px;
@@ -708,7 +709,8 @@ ul.sub-menu.moove-right {
     content:"";
   }
   .navbar .nav > li > a:hover {
-    border-bottom:none;
+    border-bottom: 3px solid #F40B0B;
+    transition: all 0.15s ease;
   }
 
   .navbar .nav > li.menu-item-has-children:hover {
