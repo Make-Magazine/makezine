@@ -7,12 +7,12 @@
  * @author     Jake Spurlock <jspurlock@makermedia.com>
  *
  */
-get_header('version-2'); ?>
+$pagename = get_query_var('pagename');
 
+get_header('version-2');?>
 	<div class="home-ads">
    		<?php global $make; print $make->ads->ad_leaderboard; ?>
 	</div>
-
 	<div class="single">
 
 		<div class="container">
@@ -75,5 +75,4 @@ get_header('version-2'); ?>
 		</div>
 
 	</div>
-
 <?php get_footer(); ?>

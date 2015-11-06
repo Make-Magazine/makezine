@@ -367,6 +367,7 @@ add_action('wp_ajax_make_shopify_featured_products', 'make_shopify_featured_prod
 add_action('wp_ajax_nopriv_make_shopify_featured_products', 'make_shopify_featured_products');
 
 
+
 function theme_styles()
 {
     wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
@@ -562,7 +563,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                     }
                 } elseif (!empty($post_flag[0])) {
                     $red_cat_name = get_cat_name(intval($post_flag[0]));
-                    $cat_link = get_category_link($post_flag[0]) . '?post_type=projects';
+                    $cat_link = get_category_link($post_flag[0]);
                 } else {
                     $post_categories = get_the_category();
                     foreach ($post_categories as $post_category) {
@@ -593,7 +594,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                         $parent_cat_length--;
                         $random_cat_number = rand(0, $parent_cat_length);
                         $red_cat_name = $parent_cat[$random_cat_number];
-                        $cat_link = get_category_link($parent_id[$random_cat_number]) . '?post_type=projects';
+                        $cat_link = get_category_link($parent_id[$random_cat_number]);
                     }
                 }
                 $red_cat_name = htmlspecialchars_decode($red_cat_name);
@@ -1131,7 +1132,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $counter = 0;
                 }
             }
-
             $ads_counter++;
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
@@ -1172,7 +1172,7 @@ function get_homegrid_with_ajax()
     $duration = $_POST['dur'];
     $type = $_POST['type'];
     $paged = !empty($_POST['paged']) ? $_POST['paged'] : 1;
-        
+
     sorting_posts_home($current_cat_id, $difficulty, $how_to_sort, $duration, $paged, $type);
 
     die();
@@ -1190,11 +1190,13 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($detect->isMobile()) {
         $post_per_page_initial = 18;
         $device = 'mobile';
+		$post_per_page = $post_per_page_initial;
     }
 
     if ($detect->isTablet()) {
         $post_per_page_initial = 12;
         $device = 'tablet';
+		$post_per_page = $post_per_page_initial;
     }
     else {
         $post_per_page = $post_per_page_initial - 1;
@@ -1317,7 +1319,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '<li class="row post_rows"> <ul>';
             }
             $counter++;
-            
+
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
@@ -1328,7 +1330,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-            $output .= '</a></div>';
+$output .= '</a></div>';
             $output .= '<div class="final_gradient"><a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -1355,7 +1357,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
 
             if (!empty($post_flag[0])) {
                 $red_cat_name = get_cat_name(intval($post_flag[0]));
-                $cat_link = get_category_link($post_flag[0]) . '';
+                $cat_link = get_category_link($post_flag[0]);
             } else {
                 $post_categories = get_the_category();
                 foreach ($post_categories as $post_category) {
@@ -1404,19 +1406,19 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                             $red_cat_name = $child_cat[0];
                         }
                     }
-                    $cat_link = get_category_link($child_id[0]) . '';
+                    $cat_link = get_category_link($child_id[0]);
                 } else {
                     $parent_cat_length = count($parent_cat);
                     $parent_cat_length--;
                     $red_cat_name = $parent_cat[0];
-                    $cat_link = get_category_link($parent_id[0]) . '';
+                    $cat_link = get_category_link($parent_id[0]);
                 }
             }
             if (empty($red_cat_name)) {
                 $red_cat_name = $post_category->name;
             }
             $red_car_id = get_cat_ID($red_cat_name);
-            $cat_link = get_category_link($red_car_id) . '';
+            $cat_link = get_category_link($red_car_id);
             $red_cat_name = htmlspecialchars_decode($red_cat_name);
             $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
             if ($cat_length > 13) {
@@ -1590,7 +1592,7 @@ function get_projects_with_ajax()
     $duration = $_POST['dur'];
     $type = $_POST['type'];
     $paged = !empty($_POST['paged']) ? $_POST['paged'] : 1;
-        
+
     sorting_posts($current_cat_id, $difficulty, $how_to_sort, $duration, $paged, $type);
 
     die();
@@ -1598,7 +1600,47 @@ function get_projects_with_ajax()
 add_action('wp_ajax_sorting_posts', 'get_projects_with_ajax');
 add_action('wp_ajax_nopriv_sorting_posts', 'get_projects_with_ajax');
 
-
+function get_story_with_ajax() {
+    $exclude = $_POST['excludeId'];
+    $offset = $_POST['offset'];
+    $story = '';
+     $story .='<div class="row more-thumbnails">';
+        $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
+    query_posts(array('offset' => $offset ,'showposts' => '9', 'post__not_in' => array($exclude)));
+    if ( have_posts() ) : while ( have_posts() ) : the_post();
+            $story .='<div class="latest-story">';
+                $story .= '<a href="';
+                $story .= get_the_ID();
+                $story .= '"class="pull-left">';
+                $args = array(
+                    'resize' => '370,240',
+                );
+                $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+                $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+                preg_match_all($re, $url, $matches);
+                $str = $matches[2][0];
+                $photon = jetpack_photon_url($str, $args);
+                $story .= '<img src="';
+                $story .= $photon;
+                $story .= '"alt="thumbnail">';
+                $story .= '<h3>';
+                $story .= get_the_title();
+                $story .='</h3></a>';
+            $story .= '</div>';
+    endwhile;
+    else:
+        $story .= '<p>';
+        $story .= 'Sorry, no posts matched your criteria.';
+        $story .= '</p>';
+    endif;
+    $story .= '</div>';
+    $story .= '</div>';
+    $story .= '<div class="row infinity"></div>';
+    echo $story;
+    die();
+}
+add_action('wp_ajax_get_story_with_ajax', 'get_story_with_ajax');
+add_action('wp_ajax_nopriv_get_story_with_ajax', 'get_story_with_ajax');
 
 function sort_down($a, $b)
 {
@@ -1609,7 +1651,6 @@ function sort_down($a, $b)
 }
 
 add_action('after_setup_theme', 'projects_theme_setup_thumbnail');
-
 function projects_theme_setup_thumbnail()
 {
     add_image_size('project-thumb', 370, 240, true); // (cropped)
@@ -1700,49 +1741,122 @@ function youtube_shortcode_modal($atts){
  * Adds the subscribe header return path overlay
  */
 function subscribe_return_path_overlay() { ?>
-  <div class="overlay-div overlay-slidedown hidden-xs">
-    <div class="container-fluid-overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 overlay-1">
-            <img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/10/Magazine-cover-44-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
-          </div>
-          <div class="col-sm-4 overlay-2">
-            <h2>Get the Magazine</h2>
-            <p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
-            <a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/">SUBSCRIBE</a>
-          </div>
-          <div class="col-sm-4 overlay-3">
-            <h2>Sign up for the Make: Newsletter</h2>
-            <p>Stay inspired, keep making.</p>
-            <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-              <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
-              <input type="hidden" name="cmd" value="subscribe"/>
-              <input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
-              <input type="hidden" name="custom_incentive" value="none"/>
-              <input type="hidden" name="custom_url" value=""/>
-              <input type="hidden" id="format_mime" name="format" value="mime"/>
-              <input type="hidden" name="goto" value=""/>
-              <input type="hidden" name="custom_host" value="makezine.com" />
-              <input type="hidden" name="errors_to" value=""/>
-              <input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
-              <input value="GO" class="black-overlay-btn" type="submit">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-    jQuery('#trigger-overlay, .overlay-div').hover(
-      function () {
-          jQuery('.overlay-div').stop().addClass( 'open' );
-          jQuery( 'body' ).addClass( 'modal-open' );
-      },
-      function () {
-          jQuery('.overlay-div').stop().removeClass( 'open' );
-          jQuery( 'body' ).removeClass( 'modal-open' );
-      }
+	<div class="overlay-div overlay-slidedown hidden-xs">
+		<div class="container-fluid-overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 overlay-1">
+						<img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/10/Magazine-cover-44-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
+					</div>
+					<div class="col-sm-4 overlay-2">
+						<h2>Get the Magazine</h2>
+						<p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
+						<a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/">SUBSCRIBE</a>
+					</div>
+					<div class="col-sm-4 overlay-3">
+						<h2>Sign up for the Make: Newsletter</h2>
+						<p>Stay inspired, keep making.</p>
+						<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
+							<input type="hidden" name="cmd" value="subscribe"/>
+							<input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
+							<input type="hidden" name="custom_incentive" value="none"/>
+							<input type="hidden" name="custom_url" value=""/>
+							<input type="hidden" id="format_mime" name="format" value="mime"/>
+							<input type="hidden" name="goto" value=""/>
+							<input type="hidden" name="custom_host" value="makezine.com" />
+							<input type="hidden" name="errors_to" value=""/>
+							<input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
+							<input value="GO" class="black-overlay-btn" type="submit">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery('#trigger-overlay, .overlay-div').hover(
+			function () {
+				jQuery('.overlay-div').stop().addClass( 'open' );
+				jQuery( 'body' ).addClass( 'modal-open' );
+			},
+			function () {
+				jQuery('.overlay-div').stop().removeClass( 'open' );
+				jQuery( 'body' ).removeClass( 'modal-open' );
+			}
+		);
+	</script>
+<?php } 
+
+function register_widget_zone() {
+    register_sidebar(
+        array(
+            'id'=>'sidebar_blog_page',
+            'name'=>__('Blog Sidebar'),
+            'description'=>__('This widget area is only on the Blog page.' ),
+            'before_widget'=>'<div class="widget-zone">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="widget-title">',
+            'after_title'=>'</h3>'
+        )
     );
-  </script>
-  <?php }
+    register_sidebar(
+        array(
+            'id'=>'sidebar_blogpost_page',
+            'name'=>__('Single Post Sidebar'),
+            'description'=>__('This widget area is only on the single post.' ),
+            'before_widget'=>'<div class="widget">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="widget-title">',
+            'after_title'=>'</h3>'
+        )
+    );
+    register_sidebar(
+        array(
+            'id'=>'sidebar_tags_page',
+            'name'=>__('Tags Sidebar'),
+            'description'=>__('This widget area is only on the tags list page.' ),
+            'before_widget'=>'<div class="widget">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="widget-title">',
+            'after_title'=>'</h3>'
+        )
+    );
+}
+add_action('widgets_init', 'register_widget_zone');
+function kc_widget_form_extend( $instance, $widget ) {
+    if ( !isset($instance['classes']) )
+        $instance['classes'] = null;
+
+    $row .= "Class:\t<input type='text' name='widget-{$widget->id_base}[{$widget->number}][classes]' id='widget-{$widget->id_base}-{$widget->number}-classes' class='widefat' value='{$instance['classes']}'/>\n";
+    $row .= "</p>\n";
+
+    echo $row;
+    return $instance;
+}
+add_filter('widget_form_callback', 'kc_widget_form_extend', 10, 2);function kc_widget_update( $instance, $new_instance ) {
+    $instance['classes'] = $new_instance['classes'];
+    return $instance;
+}
+add_filter( 'widget_update_callback', 'kc_widget_update', 10, 2 );
+function kc_dynamic_sidebar_params( $params ) {
+    global $wp_registered_widgets;
+    $widget_id    = $params[0]['widget_id'];
+    $widget_obj    = $wp_registered_widgets[$widget_id];
+    $widget_opt    = get_option($widget_obj['callback'][0]->option_name);
+    $widget_num    = $widget_obj['params'][0]['number'];
+
+    if ( isset($widget_opt[$widget_num]['classes']) && !empty($widget_opt[$widget_num]['classes']) )
+        $params[0]['before_widget'] = preg_replace( '/class="/', "class=\"{$widget_opt[$widget_num]['classes']} ", $params[0]['before_widget'], 1 );
+    return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
+
+function related_posts( $atts ) {
+    $atts = shortcode_atts(array(
+        'type' => 'project'
+    ), $atts, 'posts_test');
+    require_once 'version-2/includes/blog_feed.php';
+    blog_feeds_output($atts['type']);
+}
+add_shortcode( 'feeds_posts', 'related_posts' );
