@@ -302,11 +302,14 @@ $(document).ready(function () {
 						if (index < $index) {
 							$($dynamic_content).removeClass('moove-right');
 							$($dynamic_content).addClass('moove-left');
+							$($dynamic_content).css('visibility','hidden');
 						} else if (index > $index) {
 							$($dynamic_content).removeClass('moove-left');
 							$($dynamic_content).addClass('moove-right');
+							$($dynamic_content).css('visibility','hidden');
 						} else {
 							$($dynamic_content).removeClass('moove-left moove-right');
+							$($dynamic_content).css('visibility','');
 						}
 					}
 				});
@@ -315,11 +318,14 @@ $(document).ready(function () {
 				if (index < $index) {
 					$(this).removeClass('moove-right');
 					$(this).addClass('moove-left');
+					$(this).css('visibility','hidden');
 				} else if (index > $index) {
 					$(this).removeClass('moove-left');
 					$(this).addClass('moove-right');
+					$(this).css('visibility','hidden');
 				} else {
 					$(this).removeClass('moove-left moove-right');
+					$(this).css('visibility','');
 				}
 			});
 			$('.menu-sub-menu > .sub-menu').addClass('nav-transition');

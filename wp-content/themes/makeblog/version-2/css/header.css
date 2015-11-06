@@ -493,6 +493,7 @@ input[type=search]::-ms-reveal {
   background: #efefef;
   width: 172px;
   float: left;
+  max-height: 196px;
 }
 .menu-sub-menu {
   width: 172px;
