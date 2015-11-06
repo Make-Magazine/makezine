@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Holiday Gift Guide 2015 - Kitchen
+ * Template Name: Holiday Gift Guide 2015 - Automotive
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
@@ -73,13 +73,13 @@ get_header('version-2'); ?>
 
   <!-- Desktop title bar -->
   <div class="container gg2015-sidelines">
-    <h3 class="text-center"><span>KITCHEN is brought to you by ...</span></h3>
+    <h3 class="text-center"><span>AUTOMOTIVE is brought to you by ...</span></h3>
   </div>
 
   <!-- Category Content -->
   <div class="container gg2015-catimage">
     <div class="row">
-      <div class="gg2015-landscape hidden-xs gg2015-kitchen">
+      <div class="gg2015-landscape hidden-xs gg2015-automotive">
 
         <!-- Author -->
         <div class="gg2015-open-parent gg2015-open-author">
@@ -90,11 +90,12 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Sophia-Smith-Headshot.jpg" alt="Author Headshot" />
-            <h3>Sophia Smith</h3>
+            <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jim-Burke-Headshot.jpg" alt="Author Headshot" />
+            <h3>Jim Burke</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Sophia is an assistant editor at Make: and former pastry chef. When she’s not greasing editorial gears, she likes to run, ride, climb, and lift things, and make lo-tech goods like zines, desserts, and altered clothing.</p>
+            <p>Jim Burke is a graphic designer & illustrator for Make: But he is also the Founder of the awesomely popular
+Power Racing Series where competitors from community makerspaces modify toy Power Wheels into racing machines.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,13 +109,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Contigo 16 oz. West Loop Stainless Travel Mug</h3>
-            <p class="gg2015-co">$21: gocontigo.com</p>
+            <h3>Telescopic Magnetic Pick-Up Tool</h3>
+            <p class="gg2015-co">$15: magnetsource.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Contigo mugs have a uniquely intuitive unlocking mechanism that only activates when you’re going through the motions. No more forgetting to snap closed your top and spilling your beverage across your work station. These mugs are also phenomenally insulated and the top pops open for easy cleaning.</p>
-            <a href="http://www.amazon.com/gp/product/B00NJ2ZX8U/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NJ2ZX8U&linkCode=as2&tag=makezine-20&linkId=PDBE4VKKGXQXJZ6E" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>You’ll rue the day you need one and don’t have it, so just be prepared now. Nobody likes losing that one nut in some hard to reach spot or — gasp — dropping a screw down a carburetor. This cheap tool could very well save you.</p>
+            <a href="http://www.amazon.com/gp/product/B0000DINDG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DINDG&linkCode=as2&tag=makezine-20&linkId=MZYZOJYFGQZCDLIF" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #1 -->
@@ -128,13 +129,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Cen-Tech Non-Contact Infrared Thermometer with Laser Targeting</h3>
-            <p class="gg2015-co">$36: harborfreight.com</p>
+            <h3>3 Ton Aluminum Jack Stands</h3>
+            <p class="gg2015-co">$79: torinjacksusa.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>For precise control over your cooking process, you’ll want to dial in exact temperatures. This noninvasive thermometer uses a laser for increased accuracy. While this is an invaluable tool in any chef’s arsenal, you’ll often find it handy for inedible projects as well.</p>
-            <a href="http://www.amazon.com/gp/product/B00O39GSOQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00O39GSOQ&linkCode=as2&tag=makezine-20&linkId=L4SVSAMIDIAWRO6C" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>If you’re a fan of not being crushed, grab a jack stand. While you can find plenty of cheaper ratchet stands there’s more security with a solid bolt. Also, this model from Torin has a flat base for even weight distribution so you won’t scrape away that sealer you just put on the shop floor.</p>
+            <a href="http://www.amazon.com/gp/product/B0007XTGCI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0007XTGCI&linkCode=as2&tag=makezine-20&linkId=QEY3WFLQJEEW62ST" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #2 -->
@@ -148,13 +149,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Microplane Zester</h3>
-            <p class="gg2015-co">$13: us.microplane.com</p>
+            <h3>Kafka Pinstriping Starter Kit</h3>
+            <p class="gg2015-co">$90: stevekafka.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Fun fact: This was originally a woodworking tool. Use it for cheeses, chocolates, citrus, spices, and anything else you need to grate precisely. The slight concave shape of the zester forces it to hug an item as it shaves off the surface, and the handle has the perfect amount of grip to grate with confidence.</p>
-            <a href="http://www.amazon.com/gp/product/B00004S7V8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00004S7V8&linkCode=as2&tag=makezine-20&linkId=STT5472IVIVY7KOZ" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>It’s hard to find a nice art kit — most are just cheap paints and pencils shoved in a “nice” box. Kafka is the exception, because it’s made for pinstriping. It’s an art form that is hardly Kafkaesque, and one that with dutiful practice can be mastered.</p>
+            <a href="http://www.amazon.com/gp/product/B002TIIR24/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002TIIR24&linkCode=as2&tag=makezine-20&linkId=TZBLQYDOO4IQTXLY" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #3 -->
@@ -168,13 +169,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Drop Smart Kitchen Scale </h3>
-            <p class="gg2015-co">$100: getdrop.com</p>
+            <h3>Park Tool Folding Hex Wrench Set</h3>
+            <p class="gg2015-co">$8: parktool.com/</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>The Drop kitchen scale is everything I pined over in my past life as a pastry chef. Its smart recipe rescaling means it will adapt the ingredient measurements in proportion to your last handful of flour. The scale connects wirelessly to its companion app so you can seamlessly follow recipes, and the heat resistant silicone makes it a resilient countertop appliance.</p>
-            <a href="http://www.amazon.com/gp/product/B00TTY34KG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00TTY34KG&linkCode=as2&tag=makezine-20&linkId=R3LOBY7FP4DDBS6U" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>I never bike without one. Durable, compact, and from a brand that’s an industry standard, you can do just about all the roadside fixes you’ll need with a pump, a spare tube, and one of these. They are also super tough.</p>
+            <a href="http://www.amazon.com/gp/product/B000OZ9VLA/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000OZ9VLA&linkCode=as2&tag=makezine-20&linkId=Z66VSH2ULL5YWCCD" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #4 -->
@@ -188,13 +189,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Nomiku Sous Vide Stick </h3>
-            <p class="gg2015-co">$200: nomiku.com</p>
+            <h3>T-9 Lubricant, 12oz bottle</h3>
+            <p class="gg2015-co">$18: boeshield.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>You’ve heard of slow cookers. Now take your hands-off cooking to the next level with Nomiku, the sous vide appliance. Drop some vacuum-sealed food in a pot and Nomiku does the rest, providing you with consistently delicious slow cooked results. The device has two models: the original and a Wi-Fi enabled iteration.</p>
-            <a href="http://www.amazon.com/gp/product/B00GB31I8I/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00GB31I8I&linkCode=as2&tag=makezine-20&linkId=BEGETA64DFJTJJBX" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>There’s a good reason why most bicycle shops have a can of T-9. If used sparingly, it’s great for metal-on-metal contact, chain lubrication, cleaning off components, and even protecting from corrosion in a pinch. But it’s not for bikes only; just about anything you need to lube on your car is a candidate for the T-9 treatment.</p>
+            <a href="http://www.amazon.com/gp/product/B001447PEK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B001447PEK&linkCode=as2&tag=makezine-20&linkId=LHDHBKFD74TDWIFF" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #5 -->
@@ -208,13 +209,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Oxo Food Mill</h3>
-            <p class="gg2015-co">$50: oxo.com</p>
+            <h3>Trim Removal Tools</h3>
+            <p class="gg2015-co">$7: harborfreight.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Cited as one of an executive chef’s must-have kitchen tools, a food mill will have you efficiently cranking out purees, sauces, and soups in no time. This three-legged model is a solid option, complete with three inserts offering varying textures.</p>
-            <a href="http://www.amazon.com/gp/product/B000I0MGKE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000I0MGKE&linkCode=as2&tag=makezine-20&linkId=XBOTKR3DFHEM5YJ3" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>You don’t have to overload your workshop, but it’s worth it to learn to love cheap, specialized tools. It’s very common for people to damage their car trim trying to work on something, so why not spend the $10 to make sure you don’t make a mistake everyone is going to see?</p>
+            <a href="http://www.amazon.com/gp/product/B00LPSOAX4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00LPSOAX4&linkCode=as2&tag=makezine-20&linkId=IWBLOAKNVKUT6RD3" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #6 -->
@@ -228,13 +229,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Whip Cream Whipper Canister</h3>
-            <p class="gg2015-co">$55: isi-store.com</p>
+            <h3>Telescoping Mirror</h3>
+            <p class="gg2015-co">$4: harborfreight.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>At first glance this may seem like a superfluous single-use appliance. However, unlike store bought whip creams, this canister can be reused again and again to make infusions for caffeine and cocktails, such as nitro-infused iced coffee. Want to liven up your whipped cream? Use chocolate milk or drop a smidge of peppermint oil in with your cream before charging.</p>
-            <a href="http://www.amazon.com/gp/product/B00X4515CK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00X4515CK&linkCode=as2&tag=makezine-20&linkId=7LPYQFBQK2RAIOBW" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>While older cars tend to have engine bays large enough to hide Connecticut, newer machines are a David Bowie Labyrinth of impossibly tight corners and baffling space oddities. Don’t let that discourage you though, this mirror paired with that fancy magnet-on-a-stick means you’ll never lose a bolt or screw in a tight space ever again.</p>
+            <a href="http://www.amazon.com/gp/product/B0062PBMUY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0062PBMUY&linkCode=as2&tag=makezine-20&linkId=SCHQX3ZSCO6NTDAM" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #7 -->
@@ -248,13 +249,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Dremel VersaFlame Butane Torch</h3>
-            <p class="gg2015-co">$33: dremel.com/</p>
+            <h3>RTV Silicone, 3oz.</h3>
+            <p class="gg2015-co">$3: harborfreight.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Crème brûlée is just the beginning. A powerful handheld torch gives you the perfect tool to flambé, brûlée, char, and toast to your heart’s content. The best part? Dremel’s model comes as a 9-piece kit, including a soldering tip, so like the thermometer, you’ll be using this for a lot more than just kitchen experiments.</p>
-            <a href="http://www.amazon.com/gp/product/B00MJW07Z0/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00MJW07Z0&linkCode=as2&tag=makezine-20&linkId=BN4HNGI4PG3HLI2N" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>If you work on a lot of small motors, you likely already have a bottle. For those that don’t, it’s a high temperature leak fixing “liquid gasket” that can buy you the time you need to get a replacement gasket, or just keep that old lawn mower running a few more summers.</p>
+            <a href="http://www.amazon.com/gp/product/B0002UEN1A/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0002UEN1A&linkCode=as2&tag=makezine-20&linkId=UA566JFAFGTA63H3" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #8 -->
@@ -268,13 +269,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>KitchenAid Pro 600 Series 6 Quart Mixer</h3>
-            <p class="gg2015-co">$570: kitchenaid.com</p>
+            <h3>Estwing 3lb Drilling Hammer</h3>
+            <p class="gg2015-co">$30: estwing.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>An electric stand mixer — complete with whisk, paddle, and hook attachments — will open up so many delicious possibilities, you’ll wonder how you made anything without it. KitchenAid is the choice of professional kitchens for good reason: It’s a reliable workhorse. Lower speeds are gentle enough for the most delicate creams, and even at high speed, the heavy-duty base keeps it grounded.</p>
-            <a href="http://www.amazon.com/gp/product/B0002Y5X9W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0002Y5X9W&linkCode=as2&tag=makezine-20&linkId=VSH42LPXB77ALIGX" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>Percussive maintenance — it’s pretty much the best kind. Instead of grabbing the biggest hammer you can find and bashing away, get precise with your pounding. A 3-pound drilling hammer has a short handle and a stout stance, so you can fit your swing in those tight spots.</p>
+            <a href="http://www.amazon.com/gp/product/B00002N5NI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00002N5NI&linkCode=as2&tag=makezine-20&linkId=ZGXNVQWJUUGCGMTT" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #9 -->
@@ -287,17 +288,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 1 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Contigo_Mug.jpg" alt="Contigo 16 oz. West Loop Stainless Travel Mug" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Contigo_Mug.jpg" alt="Telescopic Magnetic Pick-Up Tool" />
         </div>
         <div class="col-xs-7">
-          <h3>Contigo 16 oz. West Loop Stainless Travel Mug</h3>
-          <h4>$21: gocontigo.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00NJ2ZX8U/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NJ2ZX8U&linkCode=as2&tag=makezine-20&linkId=PDBE4VKKGXQXJZ6E" target="_blank">BUY IT NOW</a>
+          <h3>Telescopic Magnetic Pick-Up Tool</h3>
+          <h4>$15: magnetsource.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0000DINDG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DINDG&linkCode=as2&tag=makezine-20&linkId=MZYZOJYFGQZCDLIF" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Contigo mugs have a uniquely intuitive unlocking mechanism that only activates when you’re going through the motions. No more forgetting to snap closed your top and spilling your beverage across your work station. These mugs are also phenomenally insulated and the top pops open for easy cleaning.</p>
+          <p>You’ll rue the day you need one and don’t have it, so just be prepared now. Nobody likes losing that one nut in some hard to reach spot or — gasp — dropping a screw down a carburetor. This cheap tool could very well save you.</p>
         </div>
       </div>
       <!-- End mobile Product 1 -->
@@ -305,17 +306,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 2 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Infrared_Thermometer.jpg" alt="Cen-Tech Non-Contact Infrared Thermometer with Laser Targeting" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-Jack_Stands.jpg" alt="3 Ton Aluminum Jack Stands" />
         </div>
         <div class="col-xs-7">
-          <h3>Cen-Tech Non-Contact Infrared Thermometer with Laser Targeting</h3>
-          <h4>$36: harborfreight.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00O39GSOQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00O39GSOQ&linkCode=as2&tag=makezine-20&linkId=L4SVSAMIDIAWRO6C" target="_blank">BUY IT NOW</a>
+          <h3>3 Ton Aluminum Jack Stands</h3>
+          <h4>$79: torinjacksusa.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0007XTGCI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0007XTGCI&linkCode=as2&tag=makezine-20&linkId=QEY3WFLQJEEW62ST" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>For precise control over your cooking process, you’ll want to dial in exact temperatures. This noninvasive thermometer uses a laser for increased accuracy. While this is an invaluable tool in any chef’s arsenal, you’ll often find it handy for inedible projects as well.</p>
+          <p>If you’re a fan of not being crushed, grab a jack stand. While you can find plenty of cheaper ratchet stands there’s more security with a solid bolt. Also, this model from Torin has a flat base for even weight distribution so you won’t scrape away that sealer you just put on the shop floor.</p>
         </div>
       </div>
       <!-- End mobile Product 2 -->
@@ -323,17 +324,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 3 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Microplane_Zester.jpg" alt="Microplane Zester" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-Kafka_Pinstripe_Kit.jpg" alt="Kafka Pinstriping Starter Kit" />
         </div>
         <div class="col-xs-7">
-          <h3>Microplane Zester</h3>
-          <h4>$13: us.microplane.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00004S7V8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00004S7V8&linkCode=as2&tag=makezine-20&linkId=STT5472IVIVY7KOZ" target="_blank">BUY IT NOW</a>
+          <h3>Kafka Pinstriping Starter Kit</h3>
+          <h4>$90: stevekafka.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002TIIR24/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002TIIR24&linkCode=as2&tag=makezine-20&linkId=TZBLQYDOO4IQTXLY" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Fun fact: This was originally a woodworking tool. Use it for cheeses, chocolates, citrus, spices, and anything else you need to grate precisely. The slight concave shape of the zester forces it to hug an item as it shaves off the surface, and the handle has the perfect amount of grip to grate with confidence.</p>
+          <p>It’s hard to find a nice art kit — most are just cheap paints and pencils shoved in a “nice” box. Kafka is the exception, because it’s made for pinstriping. It’s an art form that is hardly Kafkaesque, and one that with dutiful practice can be mastered.</p>
         </div>
       </div>
       <!-- End mobile Product 3 -->
@@ -341,17 +342,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 4 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Drop_Kitchen_Scale.jpg" alt="Drop Smart Kitchen Scale" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-Folding_Hex_Wrench_Set.jpg" alt="Park Tool Folding Hex Wrench Set" />
         </div>
         <div class="col-xs-7">
-          <h3>Drop Smart Kitchen Scale</h3>
-          <h4>$100: getdrop.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00TTY34KG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00TTY34KG&linkCode=as2&tag=makezine-20&linkId=R3LOBY7FP4DDBS6U" target="_blank">BUY IT NOW</a>
+          <h3>Park Tool Folding Hex Wrench Set</h3>
+          <h4>$8: parktool.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000OZ9VLA/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000OZ9VLA&linkCode=as2&tag=makezine-20&linkId=Z66VSH2ULL5YWCCD" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>The Drop kitchen scale is everything I pined over in my past life as a pastry chef. Its smart recipe rescaling means it will adapt the ingredient measurements in proportion to your last handful of flour. The scale connects wirelessly to its companion app so you can seamlessly follow recipes, and the heat resistant silicone makes it a resilient countertop appliance.</p>
+          <p>I never bike without one. Durable, compact, and from a brand that’s an industry standard, you can do just about all the roadside fixes you’ll need with a pump, a spare tube, and one of these. They are also super tough.</p>
         </div>
       </div>
       <!-- End mobile Product 4 -->
@@ -359,17 +360,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 5 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Nomiku.jpg" alt="Nomiku Sous Vide Stick" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-T-9_Lubricant.jpg" alt="T-9 Lubricant, 12oz bottle" />
         </div>
         <div class="col-xs-7">
-          <h3>Nomiku Sous Vide Stick</h3>
-          <h4>$200: nomiku.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00GB31I8I/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00GB31I8I&linkCode=as2&tag=makezine-20&linkId=BEGETA64DFJTJJBX" target="_blank">BUY IT NOW</a>
+          <h3>T-9 Lubricant, 12oz bottle</h3>
+          <h4>$18: boeshield.com/</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B001447PEK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B001447PEK&linkCode=as2&tag=makezine-20&linkId=LHDHBKFD74TDWIFF" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>You’ve heard of slow cookers. Now take your hands-off cooking to the next level with Nomiku, the sous vide appliance. Drop some vacuum-sealed food in a pot and Nomiku does the rest, providing you with consistently delicious slow cooked results. The device has two models: the original and a Wi-Fi enabled iteration.</p>
+          <p>There’s a good reason why most bicycle shops have a can of T-9. If used sparingly, it’s great for metal-on-metal contact, chain lubrication, cleaning off components, and even protecting from corrosion in a pinch. But it’s not for bikes only; just about anything you need to lube on your car is a candidate for the T-9 treatment.</p>
         </div>
       </div>
       <!-- End mobile Product 5 -->
@@ -377,17 +378,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 6 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-OxoFoodMill.jpg" alt="Oxo Food Mill" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-Trim_and_Molding_Tools.jpg" alt="Trim Removal Tools" />
         </div>
         <div class="col-xs-7">
-          <h3>Oxo Food Mill</h3>
-          <h4>$50: oxo.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000I0MGKE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000I0MGKE&linkCode=as2&tag=makezine-20&linkId=XBOTKR3DFHEM5YJ3" target="_blank">BUY IT NOW</a>
+          <h3>Trim Removal Tools</h3>
+          <h4>$7: harborfreight.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00LPSOAX4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00LPSOAX4&linkCode=as2&tag=makezine-20&linkId=IWBLOAKNVKUT6RD3" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Cited as one of an executive chef’s must-have kitchen tools, a food mill will have you efficiently cranking out purees, sauces, and soups in no time. This three-legged model is a solid option, complete with three inserts offering varying textures.</p>
+          <p>You don’t have to overload your workshop, but it’s worth it to learn to love cheap, specialized tools. It’s very common for people to damage their car trim trying to work on something, so why not spend the $10 to make sure you don’t make a mistake everyone is going to see?</p>
         </div>
       </div>
       <!-- End mobile Product 6 -->
@@ -395,17 +396,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 7 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Whipped_Cream_Cannister.jpg" alt="Whip Cream Whipper Canister" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-Telescopic_Mirror.jpg" alt="Telescoping Mirror" />
         </div>
         <div class="col-xs-7">
-          <h3>Whip Cream Whipper Canister</h3>
-          <h4>$55: isi-store.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00X4515CK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00X4515CK&linkCode=as2&tag=makezine-20&linkId=7LPYQFBQK2RAIOBW" target="_blank">BUY IT NOW</a>
+          <h3>Telescoping Mirror</h3>
+          <h4>$4: harborfreight.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0062PBMUY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0062PBMUY&linkCode=as2&tag=makezine-20&linkId=SCHQX3ZSCO6NTDAM" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>At first glance this may seem like a superfluous single-use appliance. However, unlike store bought whip creams, this canister can be reused again and again to make infusions for caffeine and cocktails, such as nitro-infused iced coffee. Want to liven up your whipped cream? Use chocolate milk or drop a smidge of peppermint oil in with your cream before charging.</p>
+          <p>While older cars tend to have engine bays large enough to hide Connecticut, newer machines are a David Bowie Labyrinth of impossibly tight corners and baffling space oddities. Don’t let that discourage you though, this mirror paired with that fancy magnet-on-a-stick means you’ll never lose a bolt or screw in a tight space ever again.</p>
         </div>
       </div>
       <!-- End mobile Product 7 -->
@@ -413,17 +414,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 8 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-VersaFlame_Butane_Torch.jpg" alt="Dremel VersaFlame Butane Torch" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-RTV_Red_Silicon.jpg" alt="RTV Silicone, 3oz." />
         </div>
         <div class="col-xs-7">
-          <h3>Dremel VersaFlame Butane Torch</h3>
-          <h4>$33: dremel.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00MJW07Z0/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00MJW07Z0&linkCode=as2&tag=makezine-20&linkId=BN4HNGI4PG3HLI2N" target="_blank">BUY IT NOW</a>
+          <h3>RTV Silicone, 3oz.</h3>
+          <h4>$3: harborfreight.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0002UEN1A/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0002UEN1A&linkCode=as2&tag=makezine-20&linkId=UA566JFAFGTA63H3" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Crème brûlée is just the beginning. A powerful handheld torch gives you the perfect tool to flambé, brûlée, char, and toast to your heart’s content. The best part? Dremel’s model comes as a 9-piece kit, including a soldering tip, so like the thermometer, you’ll be using this for a lot more than just kitchen experiments.</p>
+          <p>If you work on a lot of small motors, you likely already have a bottle. For those that don’t, it’s a high temperature leak fixing “liquid gasket” that can buy you the time you need to get a replacement gasket, or just keep that old lawn mower running a few more summers.</p>
         </div>
       </div>
       <!-- End mobile Product 8 -->
@@ -431,17 +432,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 9 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-KitchenAid_Stand_Mixer.jpg" alt="KitchenAid Pro 600 Series 6 Quart Mixer" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-3lb_Drilling_Hammer.jpg" alt="Estwing 3lb Drilling Hammer" />
         </div>
         <div class="col-xs-7">
-          <h3>KitchenAid Pro 600 Series 6 Quart Mixer</h3>
-          <h4>$570: kitchenaid.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0002Y5X9W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0002Y5X9W&linkCode=as2&tag=makezine-20&linkId=VSH42LPXB77ALIGX" target="_blank">BUY IT NOW</a>
+          <h3>Estwing 3lb Drilling Hammer</h3>
+          <h4>$30: estwing.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00002N5NI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00002N5NI&linkCode=as2&tag=makezine-20&linkId=ZGXNVQWJUUGCGMTT" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>An electric stand mixer — complete with whisk, paddle, and hook attachments — will open up so many delicious possibilities, you’ll wonder how you made anything without it. KitchenAid is the choice of professional kitchens for good reason: It’s a reliable workhorse. Lower speeds are gentle enough for the most delicate creams, and even at high speed, the heavy-duty base keeps it grounded.</p>
+          <p>Percussive maintenance — it’s pretty much the best kind. Instead of grabbing the biggest hammer you can find and bashing away, get precise with your pounding. A 3-pound drilling hammer has a short handle and a stout stance, so you can fit your swing in those tight spots.</p>
         </div>
       </div>
       <!-- End mobile Product 9 -->
@@ -453,40 +454,40 @@ get_header('version-2'); ?>
     <div class="row">
       <div class="col-xs-6 col-sm-3">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Make:_Magazine_Subscription">
+          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
           <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-3">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-fitness-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Fitness_for_Geeks" target="_blank">
+          <a href="http://www.makershed.com/products/make-kuhl-jacket-black?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Logo_Kuhl_Burr_Jacket_(Black)" target="_blank">
             <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9781449399894-0_large.jpg" alt="Fitness for Geeks" />
+              <img src="" alt="" />
             </div>
-            <h4>Fitness for Geeks</h4>
+            <h4>Make: Logo Kuhl Burr Jacket (Black)</h4>
           </a>
-          <p>$10-14</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-fitness-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Fitness_for_Geeks" target="_blank">BUY IT NOW</a>
+          <p>$125</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-kuhl-jacket-black?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Logo_Kuhl_Burr_Jacket_(Black)" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-3">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/cooking-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Cooking_For_Geeks" target="_blank">
+          <a href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
             <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9780596805883-0_large.jpg" alt="Cooking For Geeks" />
+              <img src="" alt="" />
             </div>
-            <h4>Cooking For Geeks</h4>
+            <h4>Maker Faire 2015 Trucker Hat</h4>
           </a>
-          <p>$28-39</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/cooking-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Cooking_For_Geeks" target="_blank">BUY IT NOW</a>
+          <p>$25</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 

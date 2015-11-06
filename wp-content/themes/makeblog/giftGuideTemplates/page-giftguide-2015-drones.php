@@ -250,7 +250,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-54_Piece_Bit_Driver_Set.jpg" alt="54 Piece Bit Driver Set" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>54 Piece Bit Driver Set</h3>
           <h4>$25: makershed.com</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/54-piece-bit-driver-kit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=54_Piece_Bit_Driver_Set_" target="_blank">BUY IT NOW</a>
@@ -268,7 +268,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-DJI_Phantom_3_Pro.jpg" alt="DJI Phantom 3 Pro" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>DJI Phantom 3 Pro</h3>
           <h4>$1,259: DJI.COM</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00VYALUQ8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VYALUQ8&linkCode=as2&tag=makezine-20&linkId=7XWG7FFQR7C6LN43" target="_blank">BUY IT NOW</a>
@@ -286,7 +286,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-3D_Robotics_Solo.jpg" alt="3D Robotics Solo" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>3D Robotics Solo (complete)</h3>
           <h4>$1,400: 3drobotics.com</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00ZPM7BOG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00ZPM7BOG&linkCode=as2&tag=makezine-20&linkId=W6QNQXSCXDGJYP7R" target="_blank">BUY IT NOW</a>
@@ -304,7 +304,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-Hovercraft_Micro_Racer.jpg" alt="Hovership FLY FPV Racer" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Hovership FLY FPV Racer</h3>
           <h4>$100: hovership.com</h4>
           <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
@@ -322,7 +322,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-Tenergy_TB6-B_Charger.jpg" alt="Tenergy TB-6B 50W Balancing Charger" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Tenergy TB-6B 50W Balancing Charger</h3>
           <h4>$40: tenergy.com</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00466L0BW/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00466L0BW&linkCode=as2&tag=makezine-20&linkId=LBGHEZ5ONEJOOHGP" target="_blank">BUY IT NOW</a>
@@ -340,7 +340,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-GoPro_Hero_4_Black.jpg" alt="GoPro Hero4 Black" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>GoPro Hero4 Black</h3>
           <h4>$500: gopro.com</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00NIYNUF2/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NIYNUF2&linkCode=as2&tag=makezine-20&linkId=XKKL2ORCA53KQGP5" target="_blank">BUY IT NOW</a>
@@ -358,7 +358,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-Fatshark_FPV_Goggles.jpg" alt="Fat Shark Dominator V3 FPV Goggles" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Fat Shark Dominator V3 FPV Goggles</h3>
           <h4>$350: fatshark.COM</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0165SY9V6/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0165SY9V6&linkCode=as2&tag=makezine-20&linkId=AU5LMSGCQZDV5PQW" target="_blank">BUY IT NOW</a>

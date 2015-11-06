@@ -211,7 +211,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Craft-Flora_Budget_Pack.jpg" alt="Flora Budget Pack" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Flora Budget Pack</h3>
           <h4>$40: adafruit.com</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/flora-budget-pack?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Flora_Budget_Pack" target="_blank">BUY IT NOW</a>
@@ -229,7 +229,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Craft-HandStitch_Owl_Kit.jpg" alt="Hand Stiched Owl Kit" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Hand Stiched Owl Kit</h3>
           <h4>$20: makershed.com</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/flora-budget-pack?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Flora_Budget_Pack" target="_blank">BUY IT NOW</a>
@@ -247,7 +247,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Craft-Titanium_Scissors.jpg" alt="Westcott Titanium Bonded, Non-Stick Scissors " />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Westcott Titanium Bonded, Non-Stick Scissors</h3>
           <h4>$8-18: westcottbrand.com</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000P0LNRE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000P0LNRE&linkCode=as2&tag=makezine-20&linkId=J4K62PPADVVIWJ4E" target="_blank">BUY IT NOW</a>
@@ -265,7 +265,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Craft-Dremel_Moto.jpg" alt="Dremel Moto-Saw" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Dremel Moto-Saw</h3>
           <h4>$75: dremel.com</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00AFELU6O/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00AFELU6O&linkCode=as2&tag=makezine-20&linkId=BODLGE2BFFIF3Y4X" target="_blank">BUY IT NOW</a>
@@ -283,7 +283,7 @@ get_header('version-2'); ?>
         <div class="col-xs-5">
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Craft-Self-Healing_Cutting_Mat.jpg" alt="Dahle Self-Healing Cutting Mat" />
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
           <h3>Dahle Self-Healing Cutting Mat</h3>
           <h4>$12-120, depending on size: dahle.com</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0027RJ992/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0027RJ992&linkCode=as2&tag=makezine-20&linkId=4FF2CVJGHG52HTNH" target="_blank">BUY IT NOW</a>
