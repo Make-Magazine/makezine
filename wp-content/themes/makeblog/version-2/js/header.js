@@ -24,6 +24,8 @@ $(document).ready(function () {
 				$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
 				if ($('.dynamic-header-posts').hasClass('sticky-header')) {
 					$('.dynamic-header-posts').slideUp('fast');
+					$('.minify.sticky').css('transition', 'all 0.25s ease');
+					$('.minify.sticky').css('margin-top', '0px');
 				} else {
 					$('.dynamic-header-posts').hide();
 				}
