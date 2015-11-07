@@ -90,7 +90,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jim-Burke-Headshot.jpg" alt="Author Headshot" />
+            <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jordan-Bunker-Headshot.jpg" alt="Author Headshot" />
             <h3>Jordan Bunker</h3>
           </a>
           <div class="gg2015-buy-div">

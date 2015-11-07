@@ -9607,11 +9607,91 @@ body.makercamp a.button.small-button {
   top: 11%;
   left: 74%;
 }
-#gg2015 .gg2015-catimage .gg2015-woodworking {
+#gg2015 .gg2015-catimage .gg2015-wood-working {
   background: url(../img/gift-guide-2015/gift_guide_spread_wood-working.jpg) no-repeat;
 }
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-author {
+  top: 14%;
+  left: 14%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-1 {
+  top: 33%;
+  left: 75%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-2 {
+  top: 3%;
+  left: 76%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-3 {
+  top: 69%;
+  left: 75%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-4 {
+  top: 68%;
+  left: 6%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-5 {
+  top: 30%;
+  left: 7%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-6 {
+  top: 69%;
+  left: 28%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-7 {
+  top: 22%;
+  left: 51%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-8 {
+  top: 45%;
+  left: 81%;
+}
+#gg2015 .gg2015-catimage .gg2015-wood-working .gg2015-open-parent-9 {
+  top: 77%;
+  left: 47%;
+}
 #gg2015 .gg2015-catimage .gg2015-make-believe {
-  background: url(../img/gift-guide-2015/gift_guide_spread_make-believe.jpg) no-repeat;
+  background: url(../img/gift-guide-2015/makebelief_prod.jpg) no-repeat;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-author {
+  top: 14%;
+  left: 14%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-1 {
+  top: 33%;
+  left: 75%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-2 {
+  top: 3%;
+  left: 76%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-3 {
+  top: 69%;
+  left: 75%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-4 {
+  top: 68%;
+  left: 6%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-5 {
+  top: 30%;
+  left: 7%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-6 {
+  top: 69%;
+  left: 28%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-7 {
+  top: 22%;
+  left: 51%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-8 {
+  top: 45%;
+  left: 81%;
+}
+#gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-9 {
+  top: 77%;
+  left: 47%;
 }
 #gg2015 .gg2015-catimage .gg2015-metal-shop {
   background: url(../img/gift-guide-2015/gift_guide_spread_metal-shop.jpg) no-repeat;
@@ -9946,6 +10026,9 @@ body.makercamp a.button.small-button {
   #gg2015 .gg2015-hero {
     height: 450px;
   }
+  #gg2015 .gg2015-catimage .gg2015-portrait {
+    height: 835px;
+  }
   #gg2015 .gg2015-catimage .gg2015-landscape {
     height: 646px;
   }
@@ -9959,6 +10042,9 @@ body.makercamp a.button.small-button {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #gg2015 .gg2015-hero {
     height: 350px;
+  }
+  #gg2015 .gg2015-catimage .gg2015-portrait {
+    height: 646px;
   }
   #gg2015 .gg2015-catimage .gg2015-landscape {
     height: 500px;
