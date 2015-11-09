@@ -263,7 +263,6 @@ function make_load_resources() {
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 	wp_enqueue_style( 'project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css' );
-	wp_enqueue_style( 'header.css', get_stylesheet_directory_uri() . '/version-2/css/header.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )

@@ -375,7 +375,6 @@ function theme_styles()
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
     wp_enqueue_style('project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css');
     wp_enqueue_style('blogpage-css', get_stylesheet_directory_uri() . '/version-2/css/blog.css');
-    wp_enqueue_style('single-story-css', get_stylesheet_directory_uri() . '/version-2/css/single-story.css');
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles');
