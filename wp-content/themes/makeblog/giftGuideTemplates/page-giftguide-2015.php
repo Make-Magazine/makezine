@@ -34,7 +34,7 @@ get_header('version-2'); ?>
 
         <div class="col-sm-4">
           <a href="/giftguide2015/electronics"><h2>ELECTRONICS</h2></a>
-          <a href="/giftguide2015/woodworking"><h2>WOODWORKING</h2></a>
+          <a href="/giftguide2015/wood-working"><h2>WOODWORKING</h2></a>
           <a href="/giftguide2015/make-believe"><h2>MAKE: BELIEVE</h2></a>
         </div>
 

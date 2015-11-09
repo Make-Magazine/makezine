@@ -30,7 +30,7 @@ get_header('version-2'); ?>
 
         <div class="col-sm-4">
           <a href="/giftguide2015/electronics"><h2>ELECTRONICS</h2></a>
-          <a href="/giftguide2015/woodworking"><h2>WOODWORKING</h2></a>
+          <a href="/giftguide2015/wood-working"><h2>WOODWORKING</h2></a>
           <a href="/giftguide2015/make-believe"><h2>MAKE: BELIEVE</h2></a>
         </div>
 
@@ -288,7 +288,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
       <!-- Mobile Product 1 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Kitchen-Contigo_Mug.jpg" alt="Telescopic Magnetic Pick-Up Tool" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Auto-Telescopic_Pickup_Tool.jpg" alt="Telescopic Magnetic Pick-Up Tool" />
         </div>
         <div class="col-xs-7">
           <h3>Telescopic Magnetic Pick-Up Tool</h3>
