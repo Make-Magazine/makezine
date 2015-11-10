@@ -91,7 +91,7 @@ get_header('version-2'); ?>
           </a>
           <a class="gg2015-open">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jordan-Bunker-Headshot.jpg" alt="Author Headshot" />
-            <h3>Jordan Bunker</h3>
+            <h3>By Jordan Bunker</h3>
           </a>
           <div class="gg2015-buy-div">
             <p>Technical Editor at Maker Media. Maker. Hacker. Artist. Sometimes Scientist. Pretengineer. Builder of things. Maker of stuff.</p>
@@ -451,7 +451,7 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
@@ -464,20 +464,7 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-kuhl-jacket-black?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Logo_Kuhl_Burr_Jacket_(Black)" target="_blank">
-            <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/Makev43_800x800_large.jpg" alt="ELECTRONICS & WEARABLES ISSUE, Make: Magazine, V43" />
-            </div>
-            <h4>ELECTRONICS & WEARABLES ISSUE, Make: Magazine, V43</h4>
-          </a>
-          <p>$8-11</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-magazine-volume-43?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=ELECTRONICS_&_WEARABLES_ISSUE,_Make:_Magazine,_V43" target="_blank">BUY IT NOW</a>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
             <div class="product-shed-image">
@@ -490,17 +477,8 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="#" target="_blank">
-            <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
-            </div>
-            <h4>Product Title</h4>
-          </a>
-          <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
-        </div>
+      <div class="col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>

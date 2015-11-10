@@ -91,7 +91,7 @@ get_header('version-2'); ?>
           </a>
           <a class="gg2015-open">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Sophia-Smith-Headshot.jpg" alt="Author Headshot" />
-            <h3>Sophia Smith</h3>
+            <h3>By Sophia Smith</h3>
           </a>
           <div class="gg2015-buy-div">
             <p>Sophia is an assistant editor at Make: and former pastry chef. When she’s not greasing editorial gears, she likes to run, ride, climb, and lift things, and make lo-tech goods like zines, desserts, and altered clothing.</p>
@@ -451,7 +451,7 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
@@ -464,20 +464,7 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-fitness-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Fitness_for_Geeks" target="_blank">
-            <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9781449399894-0_large.jpg" alt="Fitness for Geeks" />
-            </div>
-            <h4>Fitness for Geeks</h4>
-          </a>
-          <p>$10-14</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-fitness-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Fitness_for_Geeks" target="_blank">BUY IT NOW</a>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/cooking-for-geeks?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Cooking_For_Geeks" target="_blank">
             <div class="product-shed-image">
@@ -490,17 +477,8 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="#" target="_blank">
-            <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
-            </div>
-            <h4>Product Title</h4>
-          </a>
-          <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
-        </div>
+      <div class="col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>

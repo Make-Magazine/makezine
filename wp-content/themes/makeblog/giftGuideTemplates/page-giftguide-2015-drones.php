@@ -91,7 +91,7 @@ get_header('version-2'); ?>
           </a>
           <a class="gg2015-open">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Mike-Senese-Headshot.jpg" alt="Author Headshot" />
-            <h3>Mike Senese</h3>
+            <h3>By Mike Senese</h3>
           </a>
           <div class="gg2015-buy-div">
             <p>Mike Senese is the Executive Editor of Make: magazine. An avid maker, Mike spends his spare time tinkering with remote-control aircraft, doing amateur woodworking, and attempting to cook the perfect pizza.</p>
@@ -227,7 +227,7 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
+          <a class="gg2015-open gg2015-inverse-color">
             <h3>Fat Shark Dominator V3 FPV Goggles</h3>
             <p class="gg2015-co">$350: fatshark.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
@@ -377,7 +377,7 @@ get_header('version-2'); ?>
   <div class="container gg2015-shed">
     <div class="row">
 
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
@@ -390,20 +390,7 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-magazine-volume-44?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=DRONE_ISSUE,_Make:_Magazine,_Volume_44" target="_blank">
-            <div class="product-shed-image">
-              <img src="https://cdn.shopify.com/s/files/1/0243/7593/products/Makev44_800x800_large_275642db-364d-4aae-8635-d9516ec7d0d8_large.jpg" alt="Make: Magazine Issue 44" />
-            </div>
-            <h4>DRONE ISSUE, Make: Magazine, Volume 44</h4>
-          </a>
-          <p>$8-$11</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-magazine-volume-44?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=DRONE_ISSUE,_Make:_Magazine,_Volume_44" target="_blank">BUY IT NOW</a>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-getting-started-with-drones?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Getting_Started_with_Drones" target="_blank">
             <div class="product-shed-image">
@@ -416,17 +403,8 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="#" target="_blank">
-            <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
-            </div>
-            <h4>Product Title</h4>
-          </a>
-          <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
-        </div>
+      <div class="col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>

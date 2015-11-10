@@ -91,7 +91,7 @@ get_header('version-2'); ?>
           </a>
           <a class="gg2015-open">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Caleb-Kraft-Headshot.jpg" alt="Author Headshot" />
-            <h3>Caleb Kraft</h3>
+            <h3>By Caleb Kraft</h3>
           </a>
           <div class="gg2015-buy-div">
             <p>Community Editor for Make: I get ridiculously excited seeing people make things. I just want to revel in the creativity of the masses! My favorite thing in the world is sharing the hard work of a maker.</p>
@@ -262,7 +262,7 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
@@ -275,7 +275,7 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-bicycle-projects?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Bicycle_Projects" target="_blank">
             <div class="product-shed-image">
@@ -288,30 +288,8 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-marshmallow-shooter-2-pack?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Marshmallow_Shooter_(2-Pack)" target="_blank">
-            <div class="product-shed-image">
-              <img src="https://cdn.shopify.com/s/files/1/0243/7593/products/MSMMS_marshmallow_box_800x800_large.jpg" alt="Make: Marshmallow Shooter" />
-            </div>
-            <h4>Make: Marshmallow Shooter (2-Pack)</h4>
-          </a>
-          <p>$20</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-marshmallow-shooter-2-pack?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Marshmallow_Shooter_(2-Pack)" target="_blank">BUY IT NOW</a>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="#" target="_blank">
-            <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
-            </div>
-            <h4>Product Title</h4>
-          </a>
-          <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
-        </div>
+      <div class="col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>

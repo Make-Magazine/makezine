@@ -15,7 +15,7 @@ get_header('version-2'); ?>
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
         <h3>THE ULTIMATE MAKERS</h3>
-        <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>WOOD WORKING</span></h3>
+        <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>WOODWORKING</span></h3>
         <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
@@ -51,7 +51,7 @@ get_header('version-2'); ?>
     </a>
     <hr />
     <a id="gg2015-mobile-naver-a" href="#">
-      <h4>WOOD WORKING <i class="fa fa-chevron-down"></i></h4>
+      <h4>WOODWORKING <i class="fa fa-chevron-down"></i></h4>
     </a>
   </div>
   <div class="gg2015-mobile-nav">
@@ -59,7 +59,7 @@ get_header('version-2'); ?>
       <a href="/giftguide/automotive"><h5>AUTOMOTIVE</h5></a>
       <a href="/giftguide/electronics"><h5>ELECTRONICS</h5></a>
       <a href="/giftguide/kitchen"><h5>KITCHEN</h5></a>
-      <a href="/giftguide/wood-working" class="gg2015-active-nav"><h5>WOOD WORKING</h5></a>
+      <a href="/giftguide/wood-working" class="gg2015-active-nav"><h5>WOODWORKING</h5></a>
       <a href="/giftguide/metal-shop"><h5>METAL SHOP</h5></a>
     </div>
     <div class="col-xs-6">
@@ -73,7 +73,7 @@ get_header('version-2'); ?>
 
   <!-- Desktop title bar -->
   <div class="container gg2015-sidelines">
-    <h3 class="text-center"><span>WOOD WORKING is brought to you by ...</span></h3>
+    <h3 class="text-center"><span>WOODWORKING is brought to you by ...</span></h3>
   </div>
 
   <!-- Category Content -->
@@ -91,7 +91,7 @@ get_header('version-2'); ?>
           </a>
           <a class="gg2015-open">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jordan-Bunker-Headshot.jpg" alt="Author Headshot" />
-            <h3>Jordan Bunker</h3>
+            <h3>By Jordan Bunker</h3>
           </a>
           <div class="gg2015-buy-div">
             <p>Technical Editor at Maker Media. Maker. Hacker. Artist. Sometimes Scientist. Pretengineer. Builder of things. Maker of stuff.</p>
@@ -451,7 +451,7 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
@@ -464,7 +464,7 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/makers-notebook-hard-bound?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker's_Notebook_(Hard-Bound)" target="_blank">
             <div class="product-shed-image">
@@ -477,30 +477,8 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
-            <div class="product-shed-image">
-              <img src="" alt="Make: Electronics, 2Ed" />
-            </div>
-            <h4>Maker Faire 2015 Trucker Hat</h4>
-          </a>
-          <p>$25</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">BUY IT NOW</a>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="#" target="_blank">
-            <div class="product-shed-image">
-              <img src="" alt="Make: Magazine Subscription" />
-            </div>
-            <h4>Product Title</h4>
-          </a>
-          <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
-        </div>
+      <div class="col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>

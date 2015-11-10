@@ -91,7 +91,7 @@ get_header('version-2'); ?>
           </a>
           <a class="gg2015-open">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jim-Burke-Headshot.jpg" alt="Author Headshot" />
-            <h3>Jim Burke</h3>
+            <h3>By Jim Burke</h3>
           </a>
           <div class="gg2015-buy-div">
             <p>Jim Burke is a graphic designer & illustrator for Make: But he is also the Founder of the awesomely popular
@@ -452,7 +452,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
 
   <div class="container gg2015-shed">
     <div class="row">
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
@@ -465,7 +465,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-kuhl-jacket-black?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Logo_Kuhl_Burr_Jacket_(Black)" target="_blank">
             <div class="product-shed-image">
@@ -478,30 +478,8 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
       </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
-            <div class="product-shed-image">
-              <img src="" alt="" />
-            </div>
-            <h4>Maker Faire 2015 Trucker Hat</h4>
-          </a>
-          <p>$25</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">BUY IT NOW</a>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
-        <div class="product-shed-grid">
-          <a href="#" target="_blank">
-            <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
-            </div>
-            <h4>Product Title</h4>
-          </a>
-          <p>$149.99</p>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
-        </div>
+      <div class="col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>
