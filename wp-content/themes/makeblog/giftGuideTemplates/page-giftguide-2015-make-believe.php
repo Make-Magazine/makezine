@@ -658,7 +658,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/vintage-tomorrows?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Vintage_Tomorrows,_1Ed" target="_blank">
             <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9780596519414-2_notebook_515x515_grande_6745f7ac-f2fc-4cf1-987c-b8c906b9411f_large.jpg" alt="Vintage Tomorrows, 1Ed" />
+              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9781449337995-0_large.jpg" alt="Vintage Tomorrows, 1Ed" />
             </div>
             <h4>Vintage Tomorrows, 1Ed</h4>
           </a>
@@ -671,7 +671,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-spinbot-kit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Spinbot_Kit" target="_blank">
             <div class="product-shed-image">
-              <img src="" alt="Make: Spinbot Kit" />
+              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/MSRSPIN-2_d59bdbdc-5ad6-4503-a38f-6da199eda67a_grande_large.jpg" alt="Make: Spinbot Kit" />
             </div>
             <h4>Make: Spinbot Kit</h4>
           </a>
