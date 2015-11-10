@@ -79,7 +79,7 @@ get_header('version-2'); ?>
   <!-- Category Content -->
   <div class="container gg2015-catimage">
     <div class="row">
-      <div class="gg2015-portrait hidden-xs gg2015-make-believe">
+      <div class="gg2015-portrait-mb hidden-xs gg2015-make-believe">
 
         <!-- Author -->
         <div class="gg2015-open-parent gg2015-open-author">
@@ -90,11 +90,11 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jordan-Bunker-Headshot.jpg" alt="Author Headshot" />
-            <h3>Jordan Bunker</h3>
+            <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Jason-Babler-Headshot.jpg" alt="Author Headshot" />
+            <h3>Jason Babler</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Technical Editor at Maker Media. Maker. Hacker. Artist. Sometimes Scientist. Pretengineer. Builder of things. Maker of stuff.</p>
+            <p>I'm the Creative Director of Make: magazine, and I love to sculpt monsters and toys.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,13 +108,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Rockler Silicone Glue Brush</h3>
-            <p class="gg2015-co">$5: rockler.com</p>
+            <h3>Stan Winston School of Character Arts</h3>
+            <p class="gg2015-co">From $30/month: stanwinstonschool.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Rockler’s silicone glue brush is easy to wash, and even dried glue peels right off. The paddle end can also be used for finer glue spreading, such as between box joints or inside mortises.</p>
-            <a href="http://www.amazon.com/gp/product/B0076WSG42/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0076WSG42&linkCode=as2&tag=makezine-20&linkId=5IS2R36CHWGY5DQT" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>I’ve subscribed for three years now, and believe this is the single most useful subscription you can get for real-world fabricating experience in FX and monster design, period.</p>
+            <a href="https://www.stanwinstonschool.com/subscriptions/plans" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #1 -->
@@ -128,13 +128,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Shark Corp 10" Long Reach Carpentry Saw</h3>
-            <p class="gg2015-co">$28: sharkcorp.com</p>
+            <h3>Painting and Weathering for Props and Replicas, ebook by Harrison Krix</h3>
+            <p class="gg2015-co">$8: volpinprops.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>This incredibly precise saw is wonderful for flush cutting and finish work. With a traditional Japanese design, it cuts on the pull stroke, instead of on the push stroke like a European saw. This allows for a thinner blade width, which translates to a narrower kerf.</p>
-            <a href="http://www.amazon.com/gp/product/B000078ONQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000078ONQ&linkCode=as2&tag=makezine-20&linkId=RA3JJHLFT4QFQGPA" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>The book doesn’t waste a word and covers all the topics I had hoped it would, and more. It’s an amazing resource, especially the chart on “Paint Interactions” — when to mix enamel, lacquer, and acrylic, and in which order — is worth twice the price of this whole book.</p>
+            <a href="http://www.volpinprops.com/product/painting-and-weathering-for-props-and-replicas-ebook/" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #2 -->
@@ -148,13 +148,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Incra 12" Precision Ruler</h3>
-            <p class="gg2015-co">$22: incra.com</p>
+            <h3>Foamsmith: How to Create Foam Armor Costumes, ebook by Bill Doran</h3>
+            <p class="gg2015-co">$12.50 eBook, $30 print: punishedprops.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>If you like precision, this is the ruler for you. Just insert your scribe or pencil in one of the marking holes or slots (located every 1/16", 1/32" and 1/64"), and mark with confidence. Also available in metric.</p>
-            <a href="http://www.amazon.com/gp/product/B0000DD2U7/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DD2U7&linkCode=as2&tag=makezine-20&linkId=6ZN67AB6JBYB7VPM" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>Looking to make a costume out of foam? Nothing will help more than the series by Bill Doran. Materials, suppliers, and techniques are broken down plainly, taking the mystery out of cosplay and faux armor.</p>
+            <a href="http://punishedprops.com/shop/foamsmith-ebook/" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #3 -->
@@ -168,13 +168,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Woodstock D4160 110-Volt Paddle Switch</h3>
-            <p class="gg2015-co">$12: woodstockint.com</p>
+            <h3>Sculpture Depot Adjustable Armature Stand</h3>
+            <p class="gg2015-co">$64 - $77: sculpturedepot.net</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Whenever a new tool enters my shop, one of the first things I do is add one of these big Woodstock International, Inc. paddle switches to it. These switches ensure that anyone who uses my tools knows exactly how to stop it in an emergency. Plus they look super professional.</p>
-            <a href="http://www.amazon.com/gp/product/B005W17HYY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B005W17HYY&linkCode=as2&tag=makezine-20&linkId=F77FWQS4QTGZPQVT" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>A good sculpting experience starts with a good armature stand, and nothing is more adaptable and sturdy than this one from Sculpture Depot. It’s the first, and last, stand you’ll need to buy.</p>
+            <a href="http://www.sculpturedepot.net/clay-wax-tools/product.asp?Armature_Stands" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #4 -->
@@ -188,13 +188,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Kreg Jig R3</h3>
-            <p class="gg2015-co">$45: kregtool.com</p>
+            <h3>Monster Clay</h3>
+            <p class="gg2015-co">$30 for 5 lbs.: monstermakers.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Pocket holes are a great way to assemble cabinets and other basic projects quickly, and the Kreg jig makes it simpler than ever. Just clamp the jig in place and drill into the guide holes, then add a couple screws. It makes joinery quick and easy.</p>
-            <a href="http://www.amazon.com/gp/product/B000J43A7W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000J43A7W&linkCode=as2&tag=makezine-20&linkId=3C7TGD3JVRXV3JHQ" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>This sulfur-free, oil-based smooth clay has replaced almost all other clays for me. I can crank out detail and organic shapes, yet it holds up to sanding and smoothing better than anything I have used. Monster Makers will soon offer hard and soft versions — I can’t wait.</p>
+            <a href="http://www.amazon.com/gp/product/B008UZHP6Y/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008UZHP6Y&linkCode=as2&tag=makezine-20&linkId=37A5KOEE3RTAGL33" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #5 -->
@@ -207,14 +207,14 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>JET 14-Inch Bandsaw</h3>
-            <p class="gg2015-co">$750: jettools.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>Ken’s Tools Itty Bitty 1</h3>
+            <p class="gg2015-co">$13.75: kenstools.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>JET is a trusted name in power tools, and their 14-inch deluxe pro bandsaw doesn’t disappoint. The 1.25 HP motor helps cut through hardwood and softwood alike, and the computer-balanced cast iron wheels reduce vibration significantly. The 12-inch capacity also means resawing wide boards isn’t a problem.</p>
-            <a href="http://www.amazon.com/gp/product/B00006ANS4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006ANS4&linkCode=as2&tag=makezine-20&linkId=RRV3KTCYXI2PUPUL" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>Ken Banks’ Itty Bitty line shines among his rake and loop tools. They hold up to abuse on hard wax detailing or large clay raking. These absolutely never leave my tool wrap.</p>
+            <a href="http://www.kenstools.com/shop/itty-bitty-1/" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #6 -->
@@ -228,13 +228,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>JET 12-Inch Disc Sander</h3>
-            <p class="gg2015-co">$500: jettools.com</p>
+            <h3>Casey Love Airbrush</h3>
+            <p class="gg2015-co">$165: caseylovestudio.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Disc sanders are great for removing lots of material quickly, and they make rounding corners, squaring up ends, and sanding mitered angles extremely easy. The big 1 HP motor that drives the 12" disc on this benchtop model is more than enough for most jobs.</p>
-            <a href="http://www.amazon.com/gp/product/B00006J6PS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006J6PS&linkCode=as2&tag=makezine-20&linkId=Q4SRPZR6NA5SV25T" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>This gravity feed airbrush co-designed by monster maker extraordinaire Casey Love is simply delightful to wield. Small details and fine lines are easy to dial in, and it’s comfortable to hold for long jobs.</p>
+            <a href="http://www.caseylovestudio.com/portfolio/3028/" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #7 -->
@@ -248,13 +248,13 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Stanley No. 4 Sweetheart Smoothing Bench Plane</h3>
-            <p class="gg2015-co">$150: stanleytools.com</p>
+            <h3>Casey Love Black Heart Models Paint Line</h3>
+            <p class="gg2015-co">$134: caseylovestudio.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>If you choose just one hand plane to have in your shop, it should be this one. The Stanley No. 4 is a great general-purpose plane, and can be used for flattening, smoothing, and chamfering. With proper care, it should last a lifetime.</p>
-            <a href="http://www.amazon.com/gp/product/B002B56CUO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002B56CUO&linkCode=as2&tag=makezine-20&linkId=D6WX44M6XAUWUWSC" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>You got Casey’s airbrush, now get his personal selection of paints to make your monster slime — err... shine. Don’t know where to start with skin tones (living or dead)? Start with these colors, because you can’t go wrong.</p>
+            <a href="http://www.caseylovestudio.com/portfolio/casey-love-paint-line/" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #8 -->
@@ -268,16 +268,116 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Knew Concepts 6½"Aluminum Coping Saw</h3>
-            <p class="gg2015-co">$150: knewconcepts.com</p>
+            <h3>Anatomía de Superhéroes by Ariel Olivetti and Martin Canale</h3>
+            <p class="gg2015-co">$42: amazon.com</p>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>This might be the most expensive coping saw in existence, but it’s also likely the best. Made of lightweight aluminum, the truss design and cam lock make sure that the frame stays rigid and the blade stays taut. Whether you’re cutting detailed shapes or just removing waste when cutting dovetail joints, this saw will deliver consistently good results.</p>
-            <a href="http://knewconcepts.com/copingSaws.php" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>It’s hard to find in the US, but take the time to track it down. Sculpture references for exaggerated superhero body types are hard to find, but this has gobs of detailed 3D turnarounds for when you want to make your next mutant-powered sculpt look real.</p>
+            <a href="http://www.amazon.com/gp/product/9872799822/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=9872799822&linkCode=as2&tag=makezine-20&linkId=KQRY4MXKUL3QKVQ7" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #9 -->
+
+        <!-- Product #10 -->
+        <div class="gg2015-open-parent gg2015-open-parent-10">
+          <a class="gg2015-open gg2015-open-plus">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-plus-circle fa-stack-2x"></i>
+            </span>
+          </a>
+          <a class="gg2015-open">
+            <h3>Master Airbrush G22 Kit</h3>
+            <p class="gg2015-co">$80: tcpglobal.com</p>
+            <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+          </a>
+          <div class="gg2015-buy-div">
+            <p>The perfect airbrush beginner package — an inexpensive gravity feed airbrush is included, but the real winner is the small, quiet 1/5 HP compressor. Before you go pro, go cheap.</p>
+            <a href="http://www.amazon.com/gp/product/B006HJCP8S/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B006HJCP8S&linkCode=as2&tag=makezine-20&linkId=P3EWAOWUM24FK2UJ" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+          </div>
+        </div>
+        <!-- End Product #10 -->
+
+        <!-- Product #11 -->
+        <div class="gg2015-open-parent gg2015-open-parent-11">
+          <a class="gg2015-open gg2015-open-plus">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-plus-circle fa-stack-2x"></i>
+            </span>
+          </a>
+          <a class="gg2015-open">
+            <h3>Wilton 301 Pow-R-Arm</h3>
+            <p class="gg2015-co">$350: wiltontools.com</p>
+            <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+          </a>
+          <div class="gg2015-buy-div">
+            <p>This is a buy-it-for-life carving stand, but look on eBay or Craigslist first, as they are super expensive now. It’s the workhorse of ball vices that allows you to tilt up to 70 lbs. in most directions to get at all parts of your sculpture.</p>
+            <a href="http://www.amazon.com/gp/product/B00101WGMI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00101WGMI&linkCode=as2&tag=makezine-20&linkId=N5AXEWR7GGGFALFB" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+          </div>
+        </div>
+        <!-- End Product #11 -->
+
+        <!-- Product #12 -->
+        <div class="gg2015-open-parent gg2015-open-parent-12">
+          <a class="gg2015-open gg2015-open-plus">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-plus-circle fa-stack-2x"></i>
+            </span>
+          </a>
+          <a class="gg2015-open">
+            <h3>Logan Deluxe Foamwerks Kit</h3>
+            <p class="gg2015-co">$108: logangraphic.com</p>
+            <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+          </a>
+          <div class="gg2015-buy-div">
+            <p>If you need to prototype tools, props, or scale models, this cutting set will handle all your foam core needs. Throw out your X-Acto and use this for bevels, rabbets, and joints — all are simply easier and more precise with this kit.</p>
+            <a href="http://www.amazon.com/gp/product/B00UUEA85S/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00UUEA85S&linkCode=as2&tag=makezine-20&linkId=2ATUACGKAKV4ZSXQ" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+          </div>
+        </div>
+        <!-- End Product #12 -->
+
+        <!-- Product #13 -->
+        <div class="gg2015-open-parent gg2015-open-parent-13">
+          <a class="gg2015-open gg2015-open-plus">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-plus-circle fa-stack-2x"></i>
+            </span>
+          </a>
+          <a class="gg2015-open">
+            <h3>Yasutomo Niji Roll</h3>
+            <p class="gg2015-co">$12: yasutomo.com</p>
+            <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+          </a>
+          <div class="gg2015-buy-div">
+            <p>My favorite, no frills tool wrap. What makes this so special? Most sculpting utensils have different tools on each end. This wrap shows off both, instead of the regular pocket design, allowing a fast glance for that perfect tool you are looking for.</p>
+            <a href="http://www.amazon.com/gp/product/B0027A5A9M/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0027A5A9M&linkCode=as2&tag=makezine-20&linkId=3PJBQAAYR34JDGU5" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+          </div>
+        </div>
+        <!-- End Product #13 -->
+
+        <!-- Product #14 -->
+        <div class="gg2015-open-parent gg2015-open-parent-14">
+          <a class="gg2015-open gg2015-open-plus">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-plus-circle fa-stack-2x"></i>
+            </span>
+          </a>
+          <a class="gg2015-open">
+            <h3>Sculpey Medium</h3>
+            <p class="gg2015-co">$10: sculpey.com</p>
+            <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
+          </a>
+          <div class="gg2015-buy-div">
+            <p>Hallelujah! No more mixing soft and hard to get that perfect blend. I think I cried a little when I got my first brick of this stuff. It still bakes perfectly to a rock-hard state and sands beautifully. </p>
+            <a href="http://www.amazon.com/gp/product/B00VFX5OJ8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VFX5OJ8&linkCode=as2&tag=makezine-20&linkId=TZQOXLOZPYYM2ZBI" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+          </div>
+        </div>
+        <!-- End Product #14 -->
       </div>
     </div>
 
@@ -287,17 +387,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 1 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-RocklerSiliconBrush.jpg" alt="Rockler Silicone Glue Brush" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-StanWinstonSubscription.jpg" alt="Stan Winston School of Character Arts" />
         </div>
         <div class="col-xs-7">
-          <h3>Rockler Silicone Glue Brush</h3>
-          <h4>$5: rockler.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0076WSG42/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0076WSG42&linkCode=as2&tag=makezine-20&linkId=5IS2R36CHWGY5DQT" target="_blank">BUY IT NOW</a>
+          <h3>Stan Winston School of Character Arts</h3>
+          <h4>From $30/month: stanwinstonschool.com</h4>
+          <a class="gg2015-buy-btn" href="https://www.stanwinstonschool.com/subscriptions/plans" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Rockler’s silicone glue brush is easy to wash, and even dried glue peels right off. The paddle end can also be used for finer glue spreading, such as between box joints or inside mortises.</p>
+          <p>I’ve subscribed for three years now, and believe this is the single most useful subscription you can get for real-world fabricating experience in FX and monster design, period.</p>
         </div>
       </div>
       <!-- End mobile Product 1 -->
@@ -305,17 +405,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 2 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-SharkFineCutSaw.jpg" alt="Shark Corp 10 Long Reach Carpentry Saw" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-VolpinPropsPaintingBook.jpg" alt="Painting and Weathering for Props and Replicas, ebook by Harrison Krix" />
         </div>
         <div class="col-xs-7">
-          <h3>Shark Corp 10" Long Reach Carpentry Saw</h3>
-          <h4>$28: sharkcorp.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000078ONQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000078ONQ&linkCode=as2&tag=makezine-20&linkId=RA3JJHLFT4QFQGPA" target="_blank">BUY IT NOW</a>
+          <h3>Painting and Weathering for Props and Replicas, ebook by Harrison Krix</h3>
+          <h4>$8: volpinprops.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.volpinprops.com/product/painting-and-weathering-for-props-and-replicas-ebook/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>This incredibly precise saw is wonderful for flush cutting and finish work. With a traditional Japanese design, it cuts on the pull stroke, instead of on the push stroke like a European saw. This allows for a thinner blade width, which translates to a narrower kerf.</p>
+          <p>The book doesn’t waste a word and covers all the topics I had hoped it would, and more. It’s an amazing resource, especially the chart on “Paint Interactions” — when to mix enamel, lacquer, and acrylic, and in which order — is worth twice the price of this whole book.</p>
         </div>
       </div>
       <!-- End mobile Product 2 -->
@@ -323,17 +423,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 3 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-IncraPrecisionRular.jpg" alt="Incra 12 inch Precision Ruler" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-foamsmith_cover.jpg" alt="Foamsmith: How to Create Foam Armor Costumes, ebook by Bill Doran" />
         </div>
         <div class="col-xs-7">
-          <h3>Incra 12" Precision Ruler</h3>
-          <h4>$22: incra.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0000DD2U7/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DD2U7&linkCode=as2&tag=makezine-20&linkId=6ZN67AB6JBYB7VPM" target="_blank">BUY IT NOW</a>
+          <h3>Foamsmith: How to Create Foam Armor Costumes, ebook by Bill Doran</h3>
+          <h4>$12.50 eBook, $30 print: punishedprops.com</h4>
+          <a class="gg2015-buy-btn" href="http://punishedprops.com/shop/foamsmith-ebook/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>If you like precision, this is the ruler for you. Just insert your scribe or pencil in one of the marking holes or slots (located every 1/16", 1/32" and 1/64"), and mark with confidence. Also available in metric.</p>
+          <p>Looking to make a costume out of foam? Nothing will help more than the series by Bill Doran. Materials, suppliers, and techniques are broken down plainly, taking the mystery out of cosplay and faux armor.</p>
         </div>
       </div>
       <!-- End mobile Product 3 -->
@@ -341,17 +441,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 4 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-WoodstockPaddleSwitch.jpg" alt="Woodstock D4160 110-Volt Paddle Switch" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-HeavyDutyArmatureStand.jpg" alt="Sculpture Depot Adjustable Armature Stand" />
         </div>
         <div class="col-xs-7">
-          <h3>Woodstock D4160 110-Volt Paddle Switch</h3>
-          <h4>$12: woodstockint.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B005W17HYY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B005W17HYY&linkCode=as2&tag=makezine-20&linkId=F77FWQS4QTGZPQVT" target="_blank">BUY IT NOW</a>
+          <h3>Sculpture Depot Adjustable Armature Stand</h3>
+          <h4>$64 - $77: sculpturedepot.net</h4>
+          <a class="gg2015-buy-btn" href="http://www.sculpturedepot.net/clay-wax-tools/product.asp?Armature_Stands" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Whenever a new tool enters my shop, one of the first things I do is add one of these big Woodstock International, Inc. paddle switches to it. These switches ensure that anyone who uses my tools knows exactly how to stop it in an emergency. Plus they look super professional.</p>
+          <p>A good sculpting experience starts with a good armature stand, and nothing is more adaptable and sturdy than this one from Sculpture Depot. It’s the first, and last, stand you’ll need to buy.</p>
         </div>
       </div>
       <!-- End mobile Product 4 -->
@@ -359,17 +459,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 5 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-KregJig.jpg" alt="Kreg Jig R3" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Monster-Clay.jpg" alt="Monster Clay" />
         </div>
         <div class="col-xs-7">
-          <h3>Kreg Jig R3</h3>
-          <h4>$45: kregtool.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000J43A7W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000J43A7W&linkCode=as2&tag=makezine-20&linkId=3C7TGD3JVRXV3JHQ" target="_blank">BUY IT NOW</a>
+          <h3>Monster Clay</h3>
+          <h4>$30 for 5 lbs.: monstermakers.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B008UZHP6Y/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008UZHP6Y&linkCode=as2&tag=makezine-20&linkId=37A5KOEE3RTAGL33" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Pocket holes are a great way to assemble cabinets and other basic projects quickly, and the Kreg jig makes it simpler than ever. Just clamp the jig in place and drill into the guide holes, then add a couple screws. It makes joinery quick and easy.</p>
+          <p>This sulfur-free, oil-based smooth clay has replaced almost all other clays for me. I can crank out detail and organic shapes, yet it holds up to sanding and smoothing better than anything I have used. Monster Makers will soon offer hard and soft versions — I can’t wait.</p>
         </div>
       </div>
       <!-- End mobile Product 5 -->
@@ -377,17 +477,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 6 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-JETBandSaw.jpg" alt="JET 14-Inch Bandsaw" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Kens-Tools.jpg" alt="Ken’s Tools Itty Bitty 1" />
         </div>
         <div class="col-xs-7">
-          <h3>JET 14-Inch Bandsaw</h3>
-          <h4>$750: jettools.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00006ANS4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006ANS4&linkCode=as2&tag=makezine-20&linkId=RRV3KTCYXI2PUPUL" target="_blank">BUY IT NOW</a>
+          <h3>Ken’s Tools Itty Bitty 1</h3>
+          <h4>$13.75: kenstools.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.kenstools.com/shop/itty-bitty-1/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>JET is a trusted name in power tools, and their 14-inch deluxe pro bandsaw doesn’t disappoint. The 1.25 HP motor helps cut through hardwood and softwood alike, and the computer-balanced cast iron wheels reduce vibration significantly. The 12-inch capacity also means resawing wide boards isn’t a problem.</p>
+          <p>Ken Banks’ Itty Bitty line shines among his rake and loop tools. They hold up to abuse on hard wax detailing or large clay raking. These absolutely never leave my tool wrap.</p>
         </div>
       </div>
       <!-- End mobile Product 6 -->
@@ -395,17 +495,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 7 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-JET-DiscSander.jpg" alt="JET 12-Inch Disc Sander" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-CaseyLove-Airbrush.jpg" alt="Casey Love Airbrush" />
         </div>
         <div class="col-xs-7">
-          <h3>JET 12-Inch Disc Sander</h3>
-          <h4>$500: jettools.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00006J6PS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006J6PS&linkCode=as2&tag=makezine-20&linkId=Q4SRPZR6NA5SV25T" target="_blank">BUY IT NOW</a>
+          <h3>Casey Love Airbrush</h3>
+          <h4>$165: caseylovestudio.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.caseylovestudio.com/portfolio/3028/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Disc sanders are great for removing lots of material quickly, and they make rounding corners, squaring up ends, and sanding mitered angles extremely easy. The big 1 HP motor that drives the 12" disc on this benchtop model is more than enough for most jobs.</p>
+          <p>This gravity feed airbrush co-designed by monster maker extraordinaire Casey Love is simply delightful to wield. Small details and fine lines are easy to dial in, and it’s comfortable to hold for long jobs.</p>
         </div>
       </div>
       <!-- End mobile Product 7 -->
@@ -413,17 +513,17 @@ get_header('version-2'); ?>
       <!-- Mobile Product 8 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-StanleyPlane.jpg" alt="Stanley No. 4 Sweetheart Smoothing Bench Plane" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-CaseyLove-Airbrush-Paints.jpg" alt="Casey Love Black Heart Models Paint Line" />
         </div>
         <div class="col-xs-7">
-          <h3>Stanley No. 4 Sweetheart Smoothing Bench Plane</h3>
-          <h4>$150: stanleytools.com</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002B56CUO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002B56CUO&linkCode=as2&tag=makezine-20&linkId=D6WX44M6XAUWUWSC" target="_blank">BUY IT NOW</a>
+          <h3>Casey Love Black Heart Models Paint Line</h3>
+          <h4>$134: caseylovestudio.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.caseylovestudio.com/portfolio/casey-love-paint-line/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>If you choose just one hand plane to have in your shop, it should be this one. The Stanley No. 4 is a great general-purpose plane, and can be used for flattening, smoothing, and chamfering. With proper care, it should last a lifetime.</p>
+          <p>You got Casey’s airbrush, now get his personal selection of paints to make your monster slime — err... shine. Don’t know where to start with skin tones (living or dead)? Start with these colors, because you can’t go wrong.</p>
         </div>
       </div>
       <!-- End mobile Product 8 -->
@@ -431,20 +531,110 @@ get_header('version-2'); ?>
       <!-- Mobile Product 9 -->
       <div class="row padbottom padtop">
         <div class="col-xs-5">
-          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Woodworking-KnewCopingSaw.jpg" alt="Knew Concepts 6½ inch Aluminum Coping Saw" />
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Anatomia-de-Superheroes-Book.jpg" alt="Anatomía de Superhéroes by Ariel Olivetti and Martin Canale" />
         </div>
         <div class="col-xs-7">
-          <h3>Knew Concepts 6½" Aluminum Coping Saw</h3>
-          <h4>$150: knewconcepts.com</h4>
-          <a class="gg2015-buy-btn" href="http://knewconcepts.com/copingSaws.php" target="_blank">BUY IT NOW</a>
+          <h3>Anatomía de Superhéroes by Ariel Olivetti and Martin Canale</h3>
+          <h4>$42: amazon.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/9872799822/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=9872799822&linkCode=as2&tag=makezine-20&linkId=KQRY4MXKUL3QKVQ7" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>This might be the most expensive coping saw in existence, but it’s also likely the best. Made of lightweight aluminum, the truss design and cam lock make sure that the frame stays rigid and the blade stays taut. Whether you’re cutting detailed shapes or just removing waste when cutting dovetail joints, this saw will deliver consistently good results.</p>
+          <p>It’s hard to find in the US, but take the time to track it down. Sculpture references for exaggerated superhero body types are hard to find, but this has gobs of detailed 3D turnarounds for when you want to make your next mutant-powered sculpt look real.</p>
         </div>
       </div>
       <!-- End mobile Product 9 -->
+
+      <!-- Mobile Product 10 -->
+      <div class="row padbottom padtop">
+        <div class="col-xs-5">
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Airbrush-Compressor.jpg" alt="Master Airbrush G22 Kit" />
+        </div>
+        <div class="col-xs-7">
+          <h3>Master Airbrush G22 Kit</h3>
+          <h4>$80: tcpglobal.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B006HJCP8S/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B006HJCP8S&linkCode=as2&tag=makezine-20&linkId=P3EWAOWUM24FK2UJ" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <div class="row padbottom">
+        <div class="col-xs-12">
+          <p>The perfect airbrush beginner package — an inexpensive gravity feed airbrush is included, but the real winner is the small, quiet 1/5 HP compressor. Before you go pro, go cheap.</p>
+        </div>
+      </div>
+      <!-- End mobile Product 10 -->
+
+      <!-- Mobile Product 11 -->
+      <div class="row padbottom padtop">
+        <div class="col-xs-5">
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Pow-R-Arm.jpg" alt="Wilton 301 Pow-R-Arm" />
+        </div>
+        <div class="col-xs-7">
+          <h3>Wilton 301 Pow-R-Arm</h3>
+          <h4>$350: wiltontools.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00101WGMI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00101WGMI&linkCode=as2&tag=makezine-20&linkId=N5AXEWR7GGGFALFB" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <div class="row padbottom">
+        <div class="col-xs-12">
+          <p>This is a buy-it-for-life carving stand, but look on eBay or Craigslist first, as they are super expensive now. It’s the workhorse of ball vices that allows you to tilt up to 70 lbs. in most directions to get at all parts of your sculpture.</p>
+        </div>
+      </div>
+      <!-- End mobile Product 11 -->
+
+      <!-- Mobile Product 12 -->
+      <div class="row padbottom padtop">
+        <div class="col-xs-5">
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Logan-Deluxe-Airbrush-Kit.jpg" alt="Logan Deluxe Foamwerks Kit" />
+        </div>
+        <div class="col-xs-7">
+          <h3>Logan Deluxe Foamwerks Kit</h3>
+          <h4>$108: logangraphic.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00UUEA85S/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00UUEA85S&linkCode=as2&tag=makezine-20&linkId=2ATUACGKAKV4ZSXQ" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <div class="row padbottom">
+        <div class="col-xs-12">
+          <p>If you need to prototype tools, props, or scale models, this cutting set will handle all your foam core needs. Throw out your X-Acto and use this for bevels, rabbets, and joints — all are simply easier and more precise with this kit.</p>
+        </div>
+      </div>
+      <!-- End mobile Product 12 -->
+
+      <!-- Mobile Product 13 -->
+      <div class="row padbottom padtop">
+        <div class="col-xs-5">
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Yasutomo-Niji-Roll.jpg" alt="Yasutomo Niji Roll" />
+        </div>
+        <div class="col-xs-7">
+          <h3>Yasutomo Niji Roll</h3>
+          <h4>$12: yasutomo.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0027A5A9M/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0027A5A9M&linkCode=as2&tag=makezine-20&linkId=3PJBQAAYR34JDGU5" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <div class="row padbottom">
+        <div class="col-xs-12">
+          <p>My favorite, no frills tool wrap. What makes this so special? Most sculpting utensils have different tools on each end. This wrap shows off both, instead of the regular pocket design, allowing a fast glance for that perfect tool you are looking for.</p>
+        </div>
+      </div>
+      <!-- End mobile Product 13 -->
+
+      <!-- Mobile Product 14 -->
+      <div class="row padbottom padtop">
+        <div class="col-xs-5">
+          <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MakeBelieve-Sculpey.jpg" alt="Sculpey Medium" />
+        </div>
+        <div class="col-xs-7">
+          <h3>Sculpey Medium</h3>
+          <h4>$10: sculpey.com</h4>
+          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00VFX5OJ8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VFX5OJ8&linkCode=as2&tag=makezine-20&linkId=TZQOXLOZPYYM2ZBI" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+      <div class="row padbottom">
+        <div class="col-xs-12">
+          <p>Hallelujah! No more mixing soft and hard to get that perfect blend. I think I cried a little when I got my first brick of this stuff. It still bakes perfectly to a rock-hard state and sands beautifully.</p>
+        </div>
+      </div>
+      <!-- End mobile Product 14 -->
 
     </div>
   </div>
@@ -453,40 +643,40 @@ get_header('version-2'); ?>
     <div class="row">
       <div class="col-xs-6 col-sm-3">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Make:_Magazine_Subscription" target="_blank">
+          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
           <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Make:_Magazine_Subscription" target="_blank">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Magazine_Subscription" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-3">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/makers-notebook-hard-bound?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker's_Notebook_(Hard-Bound)" target="_blank">
+          <a href="http://www.makershed.com/products/vintage-tomorrows?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Vintage_Tomorrows,_1Ed" target="_blank">
             <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9780596519414-2_notebook_515x515_grande_6745f7ac-f2fc-4cf1-987c-b8c906b9411f_large.jpg" alt="Maker's Notebook (Hard-Bound)" />
+              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/9780596519414-2_notebook_515x515_grande_6745f7ac-f2fc-4cf1-987c-b8c906b9411f_large.jpg" alt="Vintage Tomorrows, 1Ed" />
             </div>
-            <h4>Maker's Notebook (Hard-Bound)</h4>
+            <h4>Vintage Tomorrows, 1Ed</h4>
           </a>
           <p>$20</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/makers-notebook-hard-bound?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker's_Notebook_(Hard-Bound)" target="_blank">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/vintage-tomorrows?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Vintage_Tomorrows,_1Ed" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-3">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
+          <a href="http://www.makershed.com/products/make-spinbot-kit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Spinbot_Kit" target="_blank">
             <div class="product-shed-image">
-              <img src="" alt="Make: Electronics, 2Ed" />
+              <img src="" alt="Make: Spinbot Kit" />
             </div>
-            <h4>Maker Faire 2015 Trucker Hat</h4>
+            <h4>Make: Spinbot Kit</h4>
           </a>
           <p>$25</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-spinbot-kit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Spinbot_Kit" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 
