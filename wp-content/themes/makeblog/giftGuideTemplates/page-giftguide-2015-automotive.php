@@ -15,7 +15,7 @@ get_header('version-2'); ?>
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
         <h3>THE ULTIMATE MAKERS</h3>
-        <a href="/giftguide2015"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>AUTOMOTIVE</span></h3>
+        <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>AUTOMOTIVE</span></h3>
         <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
@@ -23,21 +23,21 @@ get_header('version-2'); ?>
       <div class="col-sm-7 col-md-6 gg2015-nav">
 
         <div class="col-sm-4">
-          <a href="/giftguide2015/craft"><h2>CRAFT</h2></a>
-          <a href="/giftguide2015/science"><h2>SCIENCE</h2></a>
-          <a href="/giftguide2015/drones"><h2>DRONES</h2></a>
+          <a href="/giftguide/craft"><h2>CRAFT</h2></a>
+          <a href="/giftguide/science"><h2>SCIENCE</h2></a>
+          <a href="/giftguide/drones"><h2>DRONES</h2></a>
         </div>
 
         <div class="col-sm-4">
-          <a href="/giftguide2015/electronics"><h2>ELECTRONICS</h2></a>
-          <a href="/giftguide2015/wood-working"><h2>WOODWORKING</h2></a>
-          <a href="/giftguide2015/make-believe"><h2>MAKE: BELIEVE</h2></a>
+          <a href="/giftguide/electronics"><h2>ELECTRONICS</h2></a>
+          <a href="/giftguide/wood-working"><h2>WOODWORKING</h2></a>
+          <a href="/giftguide/make-believe"><h2>MAKE: BELIEVE</h2></a>
         </div>
 
         <div class="col-sm-4">
-          <a href="/giftguide2015/metal-shop"><h2>METAL SHOP</h2></a>
-          <a href="/giftguide2015/automotive"><h2>AUTOMOTIVE</h2></a>
-          <a href="/giftguide2015/kitchen"><h2>KITCHEN</h2></a>
+          <a href="/giftguide/metal-shop"><h2>METAL SHOP</h2></a>
+          <a href="/giftguide/automotive"><h2>AUTOMOTIVE</h2></a>
+          <a href="/giftguide/kitchen"><h2>KITCHEN</h2></a>
         </div>
 
       </div>
@@ -46,7 +46,7 @@ get_header('version-2'); ?>
 
   <!-- Mobile Nav -->
   <div class="container gg2015-mobile-naver text-center visible-xs-block">
-    <a href="/giftguide2015">
+    <a href="/giftguide">
       <h6>GIFT GUIDE</h6>
     </a>
     <hr />
@@ -56,17 +56,17 @@ get_header('version-2'); ?>
   </div>
   <div class="gg2015-mobile-nav">
     <div class="col-xs-6">
-      <a href="/giftguide2015/automotive" class="gg2015-active-nav"><h5>AUTOMOTIVE</h5></a>
-      <a href="/giftguide2015/electronics"><h5>ELECTRONICS</h5></a>
-      <a href="/giftguide2015/kitchen"><h5>KITCHEN</h5></a>
-      <a href="/giftguide2015/wood-working"><h5>WOOD WORKING</h5></a>
-      <a href="/giftguide2015/metal-shop"><h5>METAL SHOP</h5></a>
+      <a href="/giftguide/automotive" class="gg2015-active-nav"><h5>AUTOMOTIVE</h5></a>
+      <a href="/giftguide/electronics"><h5>ELECTRONICS</h5></a>
+      <a href="/giftguide/kitchen"><h5>KITCHEN</h5></a>
+      <a href="/giftguide/wood-working"><h5>WOOD WORKING</h5></a>
+      <a href="/giftguide/metal-shop"><h5>METAL SHOP</h5></a>
     </div>
     <div class="col-xs-6">
-      <a href="/giftguide2015/drones"><h5>DRONES</h5></a>
-      <a href="/giftguide2015/craft"><h5>CRAFT</h5></a>
-      <a href="/giftguide2015/make-believe"><h5>MAKE: BELIEVE</h5></a>
-      <a href="/giftguide2015/science"><h5>SCIENCE</h5></a>
+      <a href="/giftguide/drones"><h5>DRONES</h5></a>
+      <a href="/giftguide/craft"><h5>CRAFT</h5></a>
+      <a href="/giftguide/make-believe"><h5>MAKE: BELIEVE</h5></a>
+      <a href="/giftguide/science"><h5>SCIENCE</h5></a>
     </div>
     <div class="clearfix"></div>
   </div>
