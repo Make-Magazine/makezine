@@ -505,7 +505,7 @@ jQuery(document).ready(function ($) {
         var blog_output_with_ajax = '';
         $.ajax({
             type: 'POST',
-            url: 'http://localhost/~matt/mz/wp-admin/admin-ajax.php',
+            url: '/admin-ajax.php',
             data: {
                 action: 'blog_output_with_ajax',
                 offset: get_offset
