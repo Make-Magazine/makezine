@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>METAL SHOP</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,7 +98,7 @@ get_header('version-2'); ?>
             <h3>By Caleb Kraft</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Community Editor for Make: I get ridiculously excited seeing people make things. I just want to revel in the creativity of the masses! My favorite thing in the world is sharing the hard work of a maker.</p>
+            <p>Community Editor for <em>Make:</em> I get ridiculously excited seeing people make things. I just want to revel in the creativity of the masses! My favorite thing in the world is sharing the hard work of a Maker.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,8 +112,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Bernzomatic TS4000 Trigger-Start Torch Head</h3>
-            <p class="gg2015-co">$35: bernzomatic.com</p>
+            <h3>Bernzomatic TS4000 Trigger-Start Torch Head, $35</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -128,13 +131,12 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Skil 3320 Drill Press</h3>
-            <p class="gg2015-co">$111: skiltools.com</p>
+            <h3>Milwaukee M18 Fuel 1/2" Drill/Driver, $129</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Let's face it. If you’re going to drill a straight hole into metal, you’re going to need a drill press. The Skil 3320 gives a strong and reliable tool without completely breaking the bank. If you’re picking up your first drill press, you’d have a hard time finding a better one at this price.</p>
-            <a href="http://www.amazon.com/gp/product/B003LSSS0W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003LSSS0W&linkCode=as2&tag=makezine-20&linkId=2D6MY2ZC2RXCMA5O" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>With 1,200 inch-pounds of torque, the M18 Fuel is an absolute beast of a driver. The only thing that surpasses its power is its battery life, coming stock with a 5 amp-hour 18V pack. LED lighting adds some luxury to this workhorse as well. A kit version adds a case, charger, extended battery pack, multi-voltage charger — and $135 to the price.</p>
+            <a href="https://www.milwaukeetool.com/power-tools/cordless/2703-20" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #2 -->
@@ -148,8 +150,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Lincoln Electric Mig 140 Welder</h3>
-            <p class="gg2015-co">$755: lincolnelectric.com</p>
+            <h3>Lincoln Electric Mig 140 Welder, $755</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -168,8 +169,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Estwing Ball Peen Hammer</h3>
-            <p class="gg2015-co">$25-$35, depending on weight: estwing.com</p>
+            <h3>Estwing Ball Peen Hammer, $25-$35, depending on weight</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -192,7 +192,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Bernzomatic TS4000 Trigger-Start Torch Head</h3>
-          <h4>$35: bernzomatic.com</h4>
+          <h4>$35</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00008ZA09/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00008ZA09&linkCode=as2&tag=makezine-20&linkId=V7VOVPU3V7CBRG7N" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -210,7 +210,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Skil 3320 Drill Press</h3>
-          <h4>$111: skiltools.com</h4>
+          <h4>$111</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B003LSSS0W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003LSSS0W&linkCode=as2&tag=makezine-20&linkId=2D6MY2ZC2RXCMA5O" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -228,7 +228,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Lincoln Electric Mig 140 Welder</h3>
-          <h4>$755: lincolnelectric.com</h4>
+          <h4>$755</h4>
           <a class="gg2015-buy-btn" href="http://www.lincolnelectric.com/en-us/Equipment/Pages/product.aspx?product=K2471-2(LincolnElectric)" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -246,7 +246,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Estwing Ball Peen Hammer</h3>
-          <h4>$25-$35, depending on weight: estwing.com</h4>
+          <h4>$25-$35, depending on weight</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00DT0OPMW/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00DT0OPMW&linkCode=as2&tag=makezine-20&linkId=DOPLNASLV5GDJSYH" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -266,7 +266,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>

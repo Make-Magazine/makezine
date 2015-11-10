@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>ELECTRONICS</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,7 +98,7 @@ get_header('version-2'); ?>
             <h3>By Jordan Bunker</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Technical Editor at Maker Media. Maker. Hacker. Artist. Sometimes Scientist. Pretengineer. Builder of things. Maker of stuff.</p>
+            <p>Technical Editor at <em>Make:</em>. Maker. Hacker. Artist. Sometimes scientist. Pretengineer. Builder of things. Maker of stuff.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,8 +112,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Rigol DS1054Z Digital Oscilloscope</h3>
-            <p class="gg2015-co">$399: rigolna.com</p>
+            <h3>Rigol DS1054Z Digital Oscilloscope, $399</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -128,8 +131,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>USB Portable Soldering Iron</h3>
-            <p class="gg2015-co">$20: makershed.com</p>
+            <h3>USB Portable Soldering Iron, $20</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -148,8 +150,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Hakko FX-888D Soldering Station</h3>
-            <p class="gg2015-co">$107: hakkousa.com</p>
+            <h3>Hakko FX-888D Soldering Station, $107</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -168,8 +169,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Hakko CHP-170 Flush Cutters</h3>
-            <p class="gg2015-co">$5: hakkousa.com</p>
+            <h3>Hakko CHP-170 Flush Cutters, $5</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -188,8 +188,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Getting Started with Arduino Kit v3.0</h3>
-            <p class="gg2015-co">$65: makershed.com</p>
+            <h3>Getting Started with Arduino Kit v3.0, $65</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -208,8 +207,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>MG Chemicals 400-NS Series #3 Super Wick</h3>
-            <p class="gg2015-co">$5: mgchemicals.com</p>
+            <h3>MG Chemicals 400-NS Series #3 Super Wick, $5</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -228,8 +226,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Engineer SS-02 Solder Sucker</h3>
-            <p class="gg2015-co">$23: engineer.jp</p>
+            <h3>Engineer SS-02 Solder Sucker, $23</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -248,8 +245,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>SOG Kilowatt Knife</h3>
-            <p class="gg2015-co">$68: sogknives.com</p>
+            <h3>SOG Kilowatt Knife, $68</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -268,8 +264,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Kester 951 Soldering Flux Pen</h3>
-            <p class="gg2015-co">$7: kester.com</p>
+            <h3>Kester 951 Soldering Flux Pen, $7</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -291,7 +286,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Rigol DS1054Z Digital Oscilloscope</h3>
-          <h4>$399: rigolna.com</h4>
+          <h4>$399</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B012938E76/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B012938E76&linkCode=as2&tag=makezine-20&linkId=2CTMRHGX4AFFEUKX" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -309,7 +304,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>USB Portable Soldering Iron</h3>
-          <h4>$20: makershed.com</h4>
+          <h4>$20</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/usb-precision-soldering-iron?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=USB_Portable_Soldering_Iron" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -327,7 +322,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Hakko FX-888D Soldering Station</h3>
-          <h4>$107: hakkousa.com</h4>
+          <h4>$107</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00AWUFVY8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00AWUFVY8&linkCode=as2&tag=makezine-20&linkId=QVXKX5IFAWNJF5QK" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -345,7 +340,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Hakko CHP-170 Flush Cutters</h3>
-          <h4>$5: hakkousa.com</h4>
+          <h4>$5</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00FZPDG1K/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00FZPDG1K&linkCode=as2&tag=makezine-20&linkId=TGR3ZMZDLROHBHRV" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -363,7 +358,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Getting Started with Arduino Kit v3.0</h3>
-          <h4>$65: makershed.com</h4>
+          <h4>$65</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-getting-started-kit-arduino-uno-r3?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Getting_Started_with_Arduino_Kit_v3.0" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -381,7 +376,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>MG Chemicals 400-NS Series #3 Super Wick</h3>
-          <h4>$5: mgchemicals.com</h4>
+          <h4>$5</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B005T8UPQC/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B005T8UPQC&linkCode=as2&tag=makezine-20&linkId=EYYPFHWXI6M5QH5A" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -399,7 +394,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Engineer SS-02 Solder Sucker</h3>
-          <h4>$23: engineer.jp</h4>
+          <h4>$23</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002MJMXD4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002MJMXD4&linkCode=as2&tag=makezine-20&linkId=5CFX6LZDQUF5PMFX" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -417,7 +412,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>SOG Kilowatt Knife</h3>
-          <h4>$68: sogknives.com</h4>
+          <h4>$68</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B003Z77ZP8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003Z77ZP8&linkCode=as2&tag=makezine-20&linkId=VFKCOBZVJH4QXWLV" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -435,7 +430,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Kester 951 Soldering Flux Pen</h3>
-          <h4>$7: kester.com</h4>
+          <h4>$7</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B004X4KOWS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B004X4KOWS&linkCode=as2&tag=makezine-20&linkId=N7YU3UHQPJYSYU64" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -455,7 +450,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>

@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>AUTOMOTIVE</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,8 +98,7 @@ get_header('version-2'); ?>
             <h3>By Jim Burke</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Jim Burke is a graphic designer & illustrator for Make: But he is also the Founder of the awesomely popular
-Power Racing Series where competitors from community makerspaces modify toy Power Wheels into racing machines.</p>
+            <p>Jim Burke is a graphic designer and illustrator for <em>Make:</em> But he is also the founder of the awesomely popular Power Racing Series where competitors from community makerspaces modify toy Power Wheels into racing machines.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -109,8 +112,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Telescopic Magnetic Pick-Up Tool</h3>
-            <p class="gg2015-co">$15: magnetsource.com</p>
+            <h3>Telescopic Magnetic Pick-Up Tool, $15</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -129,8 +131,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>3 Ton Aluminum Jack Stands</h3>
-            <p class="gg2015-co">$79: torinjacksusa.com</p>
+            <h3>3 Ton Aluminum Jack Stands, $79</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -149,8 +150,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Kafka Pinstriping Starter Kit</h3>
-            <p class="gg2015-co">$90: stevekafka.com</p>
+            <h3>Kafka Pinstriping Starter Kit, $90</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -169,8 +169,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Park Tool Folding Hex Wrench Set</h3>
-            <p class="gg2015-co">$8: parktool.com/</p>
+            <h3>Park Tool Folding Hex Wrench Set, $8</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -189,8 +188,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>T-9 Lubricant, 12oz bottle</h3>
-            <p class="gg2015-co">$18: boeshield.com</p>
+            <h3>T-9 Lubricant, 12oz bottle, $18</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -209,8 +207,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Trim Removal Tools</h3>
-            <p class="gg2015-co">$7: harborfreight.com</p>
+            <h3>Trim Removal Tools, $7</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -229,8 +226,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Telescoping Mirror</h3>
-            <p class="gg2015-co">$4: harborfreight.com</p>
+            <h3>Telescoping Mirror, $4</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -249,8 +245,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>RTV Silicone, 3oz.</h3>
-            <p class="gg2015-co">$3: harborfreight.com</p>
+            <h3>RTV Silicone, 3oz., $3</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -269,8 +264,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Estwing 3lb Drilling Hammer</h3>
-            <p class="gg2015-co">$30: estwing.com</p>
+            <h3>Estwing 3lb Drilling Hammer, $30</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -292,7 +286,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>Telescopic Magnetic Pick-Up Tool</h3>
-          <h4>$15: magnetsource.com</h4>
+          <h4>$15</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0000DINDG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DINDG&linkCode=as2&tag=makezine-20&linkId=MZYZOJYFGQZCDLIF" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -310,7 +304,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>3 Ton Aluminum Jack Stands</h3>
-          <h4>$79: torinjacksusa.com</h4>
+          <h4>$79</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0007XTGCI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0007XTGCI&linkCode=as2&tag=makezine-20&linkId=QEY3WFLQJEEW62ST" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -328,7 +322,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>Kafka Pinstriping Starter Kit</h3>
-          <h4>$90: stevekafka.com</h4>
+          <h4>$90</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002TIIR24/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002TIIR24&linkCode=as2&tag=makezine-20&linkId=TZBLQYDOO4IQTXLY" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -346,7 +340,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>Park Tool Folding Hex Wrench Set</h3>
-          <h4>$8: parktool.com</h4>
+          <h4>$8</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000OZ9VLA/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000OZ9VLA&linkCode=as2&tag=makezine-20&linkId=Z66VSH2ULL5YWCCD" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -364,7 +358,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>T-9 Lubricant, 12oz bottle</h3>
-          <h4>$18: boeshield.com/</h4>
+          <h4>$18</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B001447PEK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B001447PEK&linkCode=as2&tag=makezine-20&linkId=LHDHBKFD74TDWIFF" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -382,7 +376,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>Trim Removal Tools</h3>
-          <h4>$7: harborfreight.com</h4>
+          <h4>$7</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00LPSOAX4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00LPSOAX4&linkCode=as2&tag=makezine-20&linkId=IWBLOAKNVKUT6RD3" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -400,7 +394,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>Telescoping Mirror</h3>
-          <h4>$4: harborfreight.com</h4>
+          <h4>$4</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0062PBMUY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0062PBMUY&linkCode=as2&tag=makezine-20&linkId=SCHQX3ZSCO6NTDAM" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -418,7 +412,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>RTV Silicone, 3oz.</h3>
-          <h4>$3: harborfreight.com</h4>
+          <h4>$3</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0002UEN1A/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0002UEN1A&linkCode=as2&tag=makezine-20&linkId=UA566JFAFGTA63H3" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -436,7 +430,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         </div>
         <div class="col-xs-7">
           <h3>Estwing 3lb Drilling Hammer</h3>
-          <h4>$30: estwing.com</h4>
+          <h4>$30</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00002N5NI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00002N5NI&linkCode=as2&tag=makezine-20&linkId=ZGXNVQWJUUGCGMTT" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -456,7 +450,7 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
@@ -467,14 +461,14 @@ Power Racing Series where competitors from community makerspaces modify toy Powe
 
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-kuhl-jacket-black?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Logo_Kuhl_Burr_Jacket_(Black)" target="_blank">
+          <a href="http://www.makershed.com/products/pocket-reference-4th-edition-1" target="_blank">
             <div class="product-shed-image">
-              <img src="" alt="" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MKSQ1_PocketRef_800x800_large.jpg" alt="Pocket Reference - 4th Edition" />
             </div>
-            <h4>Make: Logo Kuhl Burr Jacket (Black)</h4>
+            <h4>Pocket Reference - 4th Edition</h4>
           </a>
-          <p>$125</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-kuhl-jacket-black?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Logo_Kuhl_Burr_Jacket_(Black)" target="_blank">BUY IT NOW</a>
+          <p>$12.99</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/pocket-reference-4th-edition-1" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 

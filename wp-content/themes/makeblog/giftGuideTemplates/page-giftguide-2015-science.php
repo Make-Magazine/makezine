@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>SCIENCE</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,7 +98,7 @@ get_header('version-2'); ?>
             <h3>By Caleb Kraft</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Community Editor for Make: I get ridiculously excited seeing people make things. I just want to revel in the creativity of the masses! My favorite thing in the world is sharing the hard work of a maker.</p>
+            <p>Community Editor for <em>Make:</em> I get ridiculously excited seeing people make things. I just want to revel in the creativity of the masses! My favorite thing in the world is sharing the hard work of a Maker.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -128,13 +132,12 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Public Lab Desktop Spectrometry Kit</h3>
-            <p class="gg2015-co">$40: makershed.com</p>
+            <h3>Public Lab Desktop Spectrometry Kit, $40</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
             <p>There is an incredible amount of data you can collect by analyzing the light emitted or reflected by a substance, not the least of which is oil pollutants in soil and water. This kit will allow you to easily break down the individual frequencies of light, revealing its material composition.</p>
-            <a href="" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <a href="http://store.publiclab.org/products/desktop-spectrometry-kit-3-0" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #2 -->
@@ -148,8 +151,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Gakken Real Star Planetarium</h3>
-            <p class="gg2015-co">$54: makershed.com</p>
+            <h3>Gakken Real Star Planetarium, $54</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -168,8 +170,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Celestron Handheld Digital Microscope Pro</h3>
-            <p class="gg2015-co">$120 celestron.com</p>
+            <h3>Celestron Handheld Digital Microscope Pro, $120</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -192,7 +193,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Glowing Putty Gels and Slime Kit</h3>
-          <h4>$16: makershed.com</h4>
+          <h4>$16</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/glowing-putty-gels-and-slime-kit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=SCIENCE&utm_term=Glowing_Putty_Gels_and_Slime_Kit" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -210,8 +211,8 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Public Lab Desktop Spectrometry Kit</h3>
-          <h4>$40: makershed.com</h4>
-          <a class="gg2015-buy-btn" href="" target="_blank">BUY IT NOW</a>
+          <h4>$40</h4>
+          <a class="gg2015-buy-btn" href="http://store.publiclab.org/products/desktop-spectrometry-kit-3-0" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
@@ -228,7 +229,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Gakken Real Star Planetarium</h3>
-          <h4>$54: makershed.com</h4>
+          <h4>$54</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/real-star-planetarium?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=SCIENCE&utm_term=Gakken_Real_Star_Planetarium" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -246,7 +247,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Celestron Handheld Digital Microscope Pro</h3>
-          <h4>$120 celestron.com</h4>
+          <h4>$120</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B004QF0A1Y/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B004QF0A1Y&linkCode=as2&tag=makezine-20&linkId=YGD5J6ISSUIDW6AZ" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -266,7 +267,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=SCIENCE&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>

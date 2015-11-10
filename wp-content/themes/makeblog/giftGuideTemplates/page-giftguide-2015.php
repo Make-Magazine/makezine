@@ -16,9 +16,9 @@ get_header('version-2'); ?>
 
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <h3 class="gg2015-big-font">GIFT GUIDE</h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 

@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>KITCHEN</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,7 +98,7 @@ get_header('version-2'); ?>
             <h3>By Sophia Smith</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Sophia is an assistant editor at Make: and former pastry chef. When she’s not greasing editorial gears, she likes to run, ride, climb, and lift things, and make lo-tech goods like zines, desserts, and altered clothing.</p>
+            <p>Sophia is an assistant editor at <em>Make:</em> and former pastry chef. When she’s not greasing editorial gears, she likes to run, ride, climb, and lift things, and make low-tech goods like zines, desserts, and altered clothing.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,8 +112,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Contigo 16 oz. West Loop Stainless Travel Mug</h3>
-            <p class="gg2015-co">$21: gocontigo.com</p>
+            <h3>Contigo 16 oz. West Loop Stainless Travel Mug, $21</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -128,8 +131,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Cen-Tech Non-Contact Infrared Thermometer with Laser Targeting</h3>
-            <p class="gg2015-co">$36: harborfreight.com</p>
+            <h3>Cen-Tech Non-Contact Infrared Thermometer with Laser Targeting, $36</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -148,8 +150,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Microplane Zester</h3>
-            <p class="gg2015-co">$13: us.microplane.com</p>
+            <h3>Microplane Zester, $13</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -168,8 +169,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Drop Smart Kitchen Scale </h3>
-            <p class="gg2015-co">$100: getdrop.com</p>
+            <h3>Drop Smart Kitchen Scale, $100</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -188,8 +188,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Nomiku Sous Vide Stick </h3>
-            <p class="gg2015-co">$200: nomiku.com</p>
+            <h3>Nomiku Sous Vide Stick, $200</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -208,8 +207,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Oxo Food Mill</h3>
-            <p class="gg2015-co">$50: oxo.com</p>
+            <h3>Oxo Food Mill, $50</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -228,8 +226,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Whip Cream Whipper Canister</h3>
-            <p class="gg2015-co">$55: isi-store.com</p>
+            <h3>Whip Cream Whipper Canister, $55</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -248,8 +245,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Dremel VersaFlame Butane Torch</h3>
-            <p class="gg2015-co">$33: dremel.com/</p>
+            <h3>Dremel VersaFlame Butane Torch, $33</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -268,8 +264,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>KitchenAid Pro 600 Series 6 Quart Mixer</h3>
-            <p class="gg2015-co">$570: kitchenaid.com</p>
+            <h3>KitchenAid Pro 600 Series 6 Quart Mixer, $570</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -291,7 +286,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Contigo 16 oz. West Loop Stainless Travel Mug</h3>
-          <h4>$21: gocontigo.com</h4>
+          <h4>$21</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00NJ2ZX8U/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NJ2ZX8U&linkCode=as2&tag=makezine-20&linkId=PDBE4VKKGXQXJZ6E" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -309,7 +304,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Cen-Tech Non-Contact Infrared Thermometer with Laser Targeting</h3>
-          <h4>$36: harborfreight.com</h4>
+          <h4>$36</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00O39GSOQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00O39GSOQ&linkCode=as2&tag=makezine-20&linkId=L4SVSAMIDIAWRO6C" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -327,7 +322,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Microplane Zester</h3>
-          <h4>$13: us.microplane.com</h4>
+          <h4>$13</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00004S7V8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00004S7V8&linkCode=as2&tag=makezine-20&linkId=STT5472IVIVY7KOZ" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -345,7 +340,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Drop Smart Kitchen Scale</h3>
-          <h4>$100: getdrop.com</h4>
+          <h4>$100</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00TTY34KG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00TTY34KG&linkCode=as2&tag=makezine-20&linkId=R3LOBY7FP4DDBS6U" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -363,7 +358,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Nomiku Sous Vide Stick</h3>
-          <h4>$200: nomiku.com</h4>
+          <h4>$200</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00GB31I8I/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00GB31I8I&linkCode=as2&tag=makezine-20&linkId=BEGETA64DFJTJJBX" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -381,7 +376,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Oxo Food Mill</h3>
-          <h4>$50: oxo.com</h4>
+          <h4>$50</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000I0MGKE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000I0MGKE&linkCode=as2&tag=makezine-20&linkId=XBOTKR3DFHEM5YJ3" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -399,7 +394,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Whip Cream Whipper Canister</h3>
-          <h4>$55: isi-store.com</h4>
+          <h4>$55</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00X4515CK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00X4515CK&linkCode=as2&tag=makezine-20&linkId=7LPYQFBQK2RAIOBW" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -417,7 +412,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Dremel VersaFlame Butane Torch</h3>
-          <h4>$33: dremel.com</h4>
+          <h4>$33</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00MJW07Z0/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00MJW07Z0&linkCode=as2&tag=makezine-20&linkId=BN4HNGI4PG3HLI2N" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -435,7 +430,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>KitchenAid Pro 600 Series 6 Quart Mixer</h3>
-          <h4>$570: kitchenaid.com</h4>
+          <h4>$570</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0002Y5X9W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0002Y5X9W&linkCode=as2&tag=makezine-20&linkId=VSH42LPXB77ALIGX" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -455,7 +450,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=KITCHEN&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>

@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>MAKE: BELIEVE</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,7 +98,7 @@ get_header('version-2'); ?>
             <h3>By Jason Babler</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>I'm the Creative Director of Make: magazine, and I love to sculpt monsters and toys.</p>
+            <p>I'm the Projects and Lab Director of <em>Make:</em> magazine, and I love to sculpt monsters and toys.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,8 +112,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Stan Winston School of Character Arts</h3>
-            <p class="gg2015-co">From $30/month: stanwinstonschool.com</p>
+            <h3>Stan Winston School of Character Arts, From $30/month</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -128,8 +131,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Painting and Weathering for Props and Replicas, ebook by Harrison Krix</h3>
-            <p class="gg2015-co">$8: volpinprops.com</p>
+            <h3>Painting and Weathering for Props and Replicas, ebook by Harrison Krix, $8</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -148,8 +150,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Foamsmith: How to Create Foam Armor Costumes, ebook by Bill Doran</h3>
-            <p class="gg2015-co">$12.50 eBook, $30 print: punishedprops.com</p>
+            <h3>Foamsmith: How to Create Foam Armor Costumes, ebook by Bill Doran, $12.50 eBook, $30 print</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -168,8 +169,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Sculpture Depot Adjustable Armature Stand</h3>
-            <p class="gg2015-co">$64 - $77: sculpturedepot.net</p>
+            <h3>Sculpture Depot Adjustable Armature Stand, $64 - $77</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -188,8 +188,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Monster Clay</h3>
-            <p class="gg2015-co">$30 for 5 lbs.: monstermakers.com</p>
+            <h3>Monster Clay, $30 for 5 lbs.</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -208,8 +207,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Ken’s Tools Itty Bitty 1</h3>
-            <p class="gg2015-co">$13.75: kenstools.com</p>
+            <h3>Ken’s Tools Itty Bitty 1, $13.75</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -228,8 +226,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Casey Love Airbrush</h3>
-            <p class="gg2015-co">$165: caseylovestudio.com</p>
+            <h3>Casey Love Airbrush, $165</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -248,8 +245,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Casey Love Black Heart Models Paint Line</h3>
-            <p class="gg2015-co">$134: caseylovestudio.com</p>
+            <h3>Casey Love Black Heart Models Paint Line, $134</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -268,8 +264,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Anatomía de Superhéroes by Ariel Olivetti and Martin Canale</h3>
-            <p class="gg2015-co">$42: amazon.com</p>
+            <h3>Anatomía de Superhéroes by Ariel Olivetti and Martin Canale, $42</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -288,8 +283,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Master Airbrush G22 Kit</h3>
-            <p class="gg2015-co">$80: tcpglobal.com</p>
+            <h3>Master Airbrush G22 Kit, $80</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -308,8 +302,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Wilton 301 Pow-R-Arm</h3>
-            <p class="gg2015-co">$350: wiltontools.com</p>
+            <h3>Wilton 301 Pow-R-Arm, $350</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -328,8 +321,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Logan Deluxe Foamwerks Kit</h3>
-            <p class="gg2015-co">$108: logangraphic.com</p>
+            <h3>Logan Deluxe Foamwerks Kit, $108</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -348,8 +340,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Yasutomo Niji Roll</h3>
-            <p class="gg2015-co">$12: yasutomo.com</p>
+            <h3>Yasutomo Niji Roll, $12</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -368,8 +359,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Sculpey Medium</h3>
-            <p class="gg2015-co">$10: sculpey.com</p>
+            <h3>Sculpey Medium, $10</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -391,7 +381,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Stan Winston School of Character Arts</h3>
-          <h4>From $30/month: stanwinstonschool.com</h4>
+          <h4>From $30/month</h4>
           <a class="gg2015-buy-btn" href="https://www.stanwinstonschool.com/subscriptions/plans" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -409,7 +399,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Painting and Weathering for Props and Replicas, ebook by Harrison Krix</h3>
-          <h4>$8: volpinprops.com</h4>
+          <h4>$8</h4>
           <a class="gg2015-buy-btn" href="http://www.volpinprops.com/product/painting-and-weathering-for-props-and-replicas-ebook/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -427,7 +417,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Foamsmith: How to Create Foam Armor Costumes, ebook by Bill Doran</h3>
-          <h4>$12.50 eBook, $30 print: punishedprops.com</h4>
+          <h4>$12.50 eBook, $30 print</h4>
           <a class="gg2015-buy-btn" href="http://punishedprops.com/shop/foamsmith-ebook/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -445,7 +435,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Sculpture Depot Adjustable Armature Stand</h3>
-          <h4>$64 - $77: sculpturedepot.net</h4>
+          <h4>$64 - $77</h4>
           <a class="gg2015-buy-btn" href="http://www.sculpturedepot.net/clay-wax-tools/product.asp?Armature_Stands" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -463,7 +453,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Monster Clay</h3>
-          <h4>$30 for 5 lbs.: monstermakers.com</h4>
+          <h4>$30 for 5 lbs.</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B008UZHP6Y/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008UZHP6Y&linkCode=as2&tag=makezine-20&linkId=37A5KOEE3RTAGL33" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -481,7 +471,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Ken’s Tools Itty Bitty 1</h3>
-          <h4>$13.75: kenstools.com</h4>
+          <h4>$13.75</h4>
           <a class="gg2015-buy-btn" href="http://www.kenstools.com/shop/itty-bitty-1/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -499,7 +489,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Casey Love Airbrush</h3>
-          <h4>$165: caseylovestudio.com</h4>
+          <h4>$165</h4>
           <a class="gg2015-buy-btn" href="http://www.caseylovestudio.com/portfolio/3028/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -517,7 +507,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Casey Love Black Heart Models Paint Line</h3>
-          <h4>$134: caseylovestudio.com</h4>
+          <h4>$134</h4>
           <a class="gg2015-buy-btn" href="http://www.caseylovestudio.com/portfolio/casey-love-paint-line/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -535,7 +525,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Anatomía de Superhéroes by Ariel Olivetti and Martin Canale</h3>
-          <h4>$42: amazon.com</h4>
+          <h4>$42</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/9872799822/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=9872799822&linkCode=as2&tag=makezine-20&linkId=KQRY4MXKUL3QKVQ7" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -553,7 +543,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Master Airbrush G22 Kit</h3>
-          <h4>$80: tcpglobal.com</h4>
+          <h4>$80</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B006HJCP8S/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B006HJCP8S&linkCode=as2&tag=makezine-20&linkId=P3EWAOWUM24FK2UJ" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -571,7 +561,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Wilton 301 Pow-R-Arm</h3>
-          <h4>$350: wiltontools.com</h4>
+          <h4>$350</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00101WGMI/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00101WGMI&linkCode=as2&tag=makezine-20&linkId=N5AXEWR7GGGFALFB" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -589,7 +579,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Logan Deluxe Foamwerks Kit</h3>
-          <h4>$108: logangraphic.com</h4>
+          <h4>$108</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00UUEA85S/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00UUEA85S&linkCode=as2&tag=makezine-20&linkId=2ATUACGKAKV4ZSXQ" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -607,7 +597,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Yasutomo Niji Roll</h3>
-          <h4>$12: yasutomo.com</h4>
+          <h4>$12</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0027A5A9M/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0027A5A9M&linkCode=as2&tag=makezine-20&linkId=3PJBQAAYR34JDGU5" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -625,7 +615,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Sculpey Medium</h3>
-          <h4>$10: sculpey.com</h4>
+          <h4>$10</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00VFX5OJ8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VFX5OJ8&linkCode=as2&tag=makezine-20&linkId=TZQOXLOZPYYM2ZBI" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -645,7 +635,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>

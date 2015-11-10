@@ -9363,7 +9363,7 @@ body.makercamp a.button.small-button {
   }
 }
 #gg2015 {
-  margin-top: 15px;
+  margin-top: 20px;
   /* Mobile Stuff */
 }
 #gg2015 .gg2015-header {
@@ -9396,7 +9396,7 @@ body.makercamp a.button.small-button {
   margin-top: 0px;
 }
 #gg2015 .gg2015-header .gg2015-border-right .gg2015-big-font span {
-  font-weight: 500;
+  font-weight: 300;
 }
 #gg2015 .gg2015-header .gg2015-nav {
   padding: 15px 0 0;
@@ -9780,7 +9780,7 @@ body.makercamp a.button.small-button {
   left: 53%;
 }
 #gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-8 {
-  top: 54%;
+  top: 51%;
   left: 5%;
 }
 #gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-9 {
@@ -9788,7 +9788,7 @@ body.makercamp a.button.small-button {
   left: 80%;
 }
 #gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-10 {
-  top: 42%;
+  top: 40%;
   left: 5%;
 }
 #gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-11 {
@@ -9804,7 +9804,7 @@ body.makercamp a.button.small-button {
   left: 47%;
 }
 #gg2015 .gg2015-catimage .gg2015-make-believe .gg2015-open-parent-14 {
-  top: 71%;
+  top: 67%;
   left: 5%;
 }
 #gg2015 .gg2015-catimage .gg2015-metal-shop {
@@ -9988,7 +9988,7 @@ body.makercamp a.button.small-button {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 230px;
+  height: 330px;
 }
 #gg2015 .gg2015-shed .product-shed-grid .product-shed-image img {
   max-width: 100%;
@@ -10015,11 +10015,11 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-mobile-naver h6 {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Roboto-Slab';
   letter-spacing: 1.8px;
   margin: 0;
-  padding: 20px 0;
+  padding: 19px 0;
 }
 #gg2015 .gg2015-mobile-naver hr {
   margin-top: 0;
@@ -10036,6 +10036,12 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-mobile-naver h4 .fa-chevron-down {
   display: inline-block;
+  font-size: .7em;
+  vertical-align: middle;
+  line-height: .4em;
+}
+#gg2015 .gg2015-mobile-naver h4 .fa-chevron-down:before {
+  vertical-align: text-top;
 }
 #gg2015 .gg2015-mobile-nav {
   background-color: #fff;
@@ -10110,7 +10116,7 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-mobile h4 {
   color: #4a4a4a;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0 0 10px;
   padding: 0;
 }
@@ -10141,6 +10147,9 @@ body.makercamp a.button.small-button {
 #gg2015 .padtop {
   padding-top: 15px !important;
 }
+#gg2015 #ad_1x1_1 {
+  display: none;
+}
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   #gg2015 .gg2015-hero {
     height: 450px;
@@ -10155,7 +10164,7 @@ body.makercamp a.button.small-button {
     height: 1022px;
   }
   #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
-    height: 180px;
+    height: 263px;
   }
   #gg2015 .gg2015-header .row {
     height: 153px;
@@ -10175,7 +10184,7 @@ body.makercamp a.button.small-button {
     height: 500px;
   }
   #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
-    height: 125px;
+    height: 300px;
   }
   #gg2015 .gg2015-catimage .gg2015-open-parent {
     width: 170px;
@@ -10191,6 +10200,15 @@ body.makercamp a.button.small-button {
   }
   .gg2015-ad {
     padding-top: 15px;
+  }
+  #gg2015 .gg2015-catimage .gg2015-open h3 {
+    font-size: 12px;
+  }
+  #gg2015 .gg2015-catimage .gg2015-open p {
+    font-size: 10px;
+  }
+  #gg2015 .gg2015-buy-btn {
+    padding: 3px 13px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -10221,8 +10239,12 @@ body.makercamp a.button.small-button {
     padding-left: 15px;
     padding-right: 15px;
   }
+  #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
+    height: 213px;
+  }
   .gg2015-ad {
     padding-top: 15px;
+    display: inline;
   }
 }
 @media screen and (max-width: 500px) {

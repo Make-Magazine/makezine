@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>WOODWORKING</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -94,7 +98,7 @@ get_header('version-2'); ?>
             <h3>By Jordan Bunker</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Technical Editor at Maker Media. Maker. Hacker. Artist. Sometimes Scientist. Pretengineer. Builder of things. Maker of stuff.</p>
+            <p>Technical Editor at <em>Make:</em>. Maker. Hacker. Artist. Sometimes scientist. Pretengineer. Builder of things. Maker of stuff.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -108,8 +112,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Rockler Silicone Glue Brush</h3>
-            <p class="gg2015-co">$5: rockler.com</p>
+            <h3>Rockler Silicone Glue Brush, $5</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -128,8 +131,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Shark Corp 10" Long Reach Carpentry Saw</h3>
-            <p class="gg2015-co">$28: sharkcorp.com</p>
+            <h3>Shark Corp 10" Long Reach Carpentry Saw, $28</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -148,12 +150,11 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Incra 12" Precision Ruler</h3>
-            <p class="gg2015-co">$22: incra.com</p>
+            <h3>Incra 12" Precision Ruler, $22</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>If you like precision, this is the ruler for you. Just insert your scribe or pencil in one of the marking holes or slots (located every 1/16", 1/32" and 1/64"), and mark with confidence. Also available in metric.</p>
+            <p>If you like precision, this is the ruler for you. Just insert your scribe or pencil in one of the marking holes or slots (located every 1/16", 1/32", and 1/64"), and mark with confidence. Also available in metric.</p>
             <a href="http://www.amazon.com/gp/product/B0000DD2U7/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DD2U7&linkCode=as2&tag=makezine-20&linkId=6ZN67AB6JBYB7VPM" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
@@ -168,8 +169,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Woodstock D4160 110-Volt Paddle Switch</h3>
-            <p class="gg2015-co">$12: woodstockint.com</p>
+            <h3>Woodstock D4160 110-Volt Paddle Switch, $12</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -188,8 +188,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Kreg Jig R3</h3>
-            <p class="gg2015-co">$45: kregtool.com</p>
+            <h3>Kreg Jig R3, $45</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -208,8 +207,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>JET 14-Inch Bandsaw</h3>
-            <p class="gg2015-co">$750: jettools.com</p>
+            <h3>JET 14-Inch Bandsaw, $750</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -228,8 +226,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>JET 12-Inch Disc Sander</h3>
-            <p class="gg2015-co">$500: jettools.com</p>
+            <h3>JET 12-Inch Disc Sander, $500</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -248,8 +245,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Stanley No. 4 Sweetheart Smoothing Bench Plane</h3>
-            <p class="gg2015-co">$150: stanleytools.com</p>
+            <h3>Stanley No. 4 Sweetheart Smoothing Bench Plane, $150</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -268,8 +264,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Knew Concepts 6½"Aluminum Coping Saw</h3>
-            <p class="gg2015-co">$150: knewconcepts.com</p>
+            <h3>Knew Concepts 6½"Aluminum Coping Saw, $150</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -291,7 +286,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Rockler Silicone Glue Brush</h3>
-          <h4>$5: rockler.com</h4>
+          <h4>$5</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0076WSG42/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0076WSG42&linkCode=as2&tag=makezine-20&linkId=5IS2R36CHWGY5DQT" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -309,7 +304,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Shark Corp 10" Long Reach Carpentry Saw</h3>
-          <h4>$28: sharkcorp.com</h4>
+          <h4>$28</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000078ONQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000078ONQ&linkCode=as2&tag=makezine-20&linkId=RA3JJHLFT4QFQGPA" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -327,13 +322,13 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Incra 12" Precision Ruler</h3>
-          <h4>$22: incra.com</h4>
+          <h4>$22</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0000DD2U7/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0000DD2U7&linkCode=as2&tag=makezine-20&linkId=6ZN67AB6JBYB7VPM" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>If you like precision, this is the ruler for you. Just insert your scribe or pencil in one of the marking holes or slots (located every 1/16", 1/32" and 1/64"), and mark with confidence. Also available in metric.</p>
+          <p>If you like precision, this is the ruler for you. Just insert your scribe or pencil in one of the marking holes or slots (located every 1/16", 1/32", and 1/64"), and mark with confidence. Also available in metric.</p>
         </div>
       </div>
       <!-- End mobile Product 3 -->
@@ -345,7 +340,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Woodstock D4160 110-Volt Paddle Switch</h3>
-          <h4>$12: woodstockint.com</h4>
+          <h4>$12</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B005W17HYY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B005W17HYY&linkCode=as2&tag=makezine-20&linkId=F77FWQS4QTGZPQVT" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -363,7 +358,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Kreg Jig R3</h3>
-          <h4>$45: kregtool.com</h4>
+          <h4>$45</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B000J43A7W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000J43A7W&linkCode=as2&tag=makezine-20&linkId=3C7TGD3JVRXV3JHQ" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -381,7 +376,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>JET 14-Inch Bandsaw</h3>
-          <h4>$750: jettools.com</h4>
+          <h4>$750</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00006ANS4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006ANS4&linkCode=as2&tag=makezine-20&linkId=RRV3KTCYXI2PUPUL" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -399,7 +394,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>JET 12-Inch Disc Sander</h3>
-          <h4>$500: jettools.com</h4>
+          <h4>$500</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00006J6PS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006J6PS&linkCode=as2&tag=makezine-20&linkId=Q4SRPZR6NA5SV25T" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -417,7 +412,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Stanley No. 4 Sweetheart Smoothing Bench Plane</h3>
-          <h4>$150: stanleytools.com</h4>
+          <h4>$150</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002B56CUO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002B56CUO&linkCode=as2&tag=makezine-20&linkId=D6WX44M6XAUWUWSC" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -435,7 +430,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Knew Concepts 6½" Aluminum Coping Saw</h3>
-          <h4>$150: knewconcepts.com</h4>
+          <h4>$150</h4>
           <a class="gg2015-buy-btn" href="http://knewconcepts.com/copingSaws.php" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -455,7 +450,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=WOODWORKING&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>

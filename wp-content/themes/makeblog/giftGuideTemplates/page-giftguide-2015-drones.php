@@ -10,13 +10,17 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="contaner gg2015-leaderboard">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS</h3>
+        <h3>THE ULTIMATE MAKERS'</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>DRONES</span></h3>
-        <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
       </div>
 
@@ -89,12 +93,12 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
+          <a class="gg2015-open gg2015-inverse-color">
             <img class="img-circle" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Mike-Senese-Headshot.jpg" alt="Author Headshot" />
             <h3>By Mike Senese</h3>
           </a>
           <div class="gg2015-buy-div">
-            <p>Mike Senese is the Executive Editor of Make: magazine. An avid maker, Mike spends his spare time tinkering with remote-control aircraft, doing amateur woodworking, and attempting to cook the perfect pizza.</p>
+            <p>Mike Senese is the Executive Editor of <em>Make:</em> magazine. An avid Maker, Mike spends his spare time tinkering with remote-control aircraft, doing amateur woodworking, and attempting to cook the perfect pizza.</p>
           </div>
         </div>
         <!-- End Author -->
@@ -107,9 +111,8 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>54 Piece Bit Driver Set </h3>
-            <p class="gg2015-co">$25: makershed.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>54 Piece Bit Driver Set, $25</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -127,9 +130,8 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>DJI Phantom 3 Pro</h3>
-            <p class="gg2015-co">$1,259: dji.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>DJI Phantom 3 Pro, $1,259</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -147,9 +149,8 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>3D Robotics Solo (complete)</h3>
-            <p class="gg2015-co">$1,400: 3drobotics.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>3D Robotics Solo (complete), $1,400</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -167,14 +168,13 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>Hovership FLY FPV Racer </h3>
-            <p class="gg2015-co">$100: hovership.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>Hovership 3DFLY FPV Racer, $100</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>Started as a full-scale 3D printable racing quadcopter, Hovership has since launched a variety of products geared towards the FPV enthusiast. The new 3DFly is a micro racer perfect for quick trips around the house or park. </p>
-            <a href="#" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <p>Started as a full-scale 3D printable racing quadcopter, Hovership has since launched a variety of products geared towards the FPV enthusiast. The new 3DFLY is a micro racer perfect for quick trips around the house or park.</p>
+            <a href="http://shop.hovership.com/3dfly-micro-quad-kit/" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #4 -->
@@ -187,9 +187,8 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>Tenergy TB-6B 50W Balancing Charger</h3>
-            <p class="gg2015-co">$40: tenergy.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>Tenergy TB-6B 50W Balancing Charger, $40</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -207,9 +206,8 @@ get_header('version-2'); ?>
               <i class="fa fa-plus-circle fa-stack-2x"></i>
             </span>
           </a>
-          <a class="gg2015-open">
-            <h3>GoPro Hero4 Black</h3>
-            <p class="gg2015-co">$500: gopro.com</p>
+          <a class="gg2015-open gg2015-inverse-color">
+            <h3>GoPro Hero4 Black, $500</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -228,8 +226,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Fat Shark Dominator V3 FPV Goggles</h3>
-            <p class="gg2015-co">$350: fatshark.com</p>
+            <h3>Fat Shark Dominator V3 FPV Goggles, $350</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -252,7 +249,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>54 Piece Bit Driver Set</h3>
-          <h4>$25: makershed.com</h4>
+          <h4>$25</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/54-piece-bit-driver-kit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=54_Piece_Bit_Driver_Set_" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -270,7 +267,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>DJI Phantom 3 Pro</h3>
-          <h4>$1,259: DJI.COM</h4>
+          <h4>$1,259</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00VYALUQ8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VYALUQ8&linkCode=as2&tag=makezine-20&linkId=7XWG7FFQR7C6LN43" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -288,7 +285,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>3D Robotics Solo (complete)</h3>
-          <h4>$1,400: 3drobotics.com</h4>
+          <h4>$1,400</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00ZPM7BOG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00ZPM7BOG&linkCode=as2&tag=makezine-20&linkId=W6QNQXSCXDGJYP7R" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -305,14 +302,14 @@ get_header('version-2'); ?>
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-Drones-Hovercraft_Micro_Racer.jpg" alt="Hovership FLY FPV Racer" />
         </div>
         <div class="col-xs-7">
-          <h3>Hovership FLY FPV Racer</h3>
-          <h4>$100: hovership.com</h4>
-          <a class="gg2015-buy-btn" href="#" target="_blank">BUY IT NOW</a>
+          <h3>Hovership 3DFLY FPV Racer</h3>
+          <h4>$100</h4>
+          <a class="gg2015-buy-btn" href="http://shop.hovership.com/3dfly-micro-quad-kit/" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Started as a full-scale 3D printable racing quadcopter, Hovership has since launched a variety of products geared towards the FPV enthusiast. The new 3DFly is a micro racer perfect for quick trips around the house or park.</p>
+          <p>Started as a full-scale 3D printable racing quadcopter, Hovership has since launched a variety of products geared towards the FPV enthusiast. The new 3DFLY is a micro racer perfect for quick trips around the house or park.</p>
         </div>
       </div>
       <!-- End mobile Product 4 -->
@@ -324,7 +321,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Tenergy TB-6B 50W Balancing Charger</h3>
-          <h4>$40: tenergy.com</h4>
+          <h4>$40</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00466L0BW/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00466L0BW&linkCode=as2&tag=makezine-20&linkId=LBGHEZ5ONEJOOHGP" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -342,7 +339,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>GoPro Hero4 Black</h3>
-          <h4>$500: gopro.com</h4>
+          <h4>$500</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B00NIYNUF2/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NIYNUF2&linkCode=as2&tag=makezine-20&linkId=XKKL2ORCA53KQGP5" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -360,7 +357,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Fat Shark Dominator V3 FPV Goggles</h3>
-          <h4>$350: fatshark.COM</h4>
+          <h4>$350</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B0165SY9V6/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B0165SY9V6&linkCode=as2&tag=makezine-20&linkId=AU5LMSGCQZDV5PQW" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -381,7 +378,7 @@ get_header('version-2'); ?>
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_medium.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
