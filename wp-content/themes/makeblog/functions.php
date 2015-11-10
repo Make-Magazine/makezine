@@ -784,7 +784,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 $output .= '</ul> </li>';
                 $counter = 0;
             }
-            if ( ( $ads_counter == 1 ) and ( $post_per_page == $post_per_page_initial - 1 ) ) {
+            if ( ( $ads_counter == 1 ) and ( $post_per_page == $post_per_page_initial - 1 ) and ( $paged == 1 ) ) {
                 if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
                     $output .= '<li class="row post_rows"> <ul>';
                 }
