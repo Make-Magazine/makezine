@@ -7,23 +7,14 @@
  * @author     The Make Team webmaster@makermedia.com
  *
  */
-global $make;
 ?>
 
 				<div class="footer-ad <?php echo ( make_is_parent_page() && ! is_category( 'maker-pro' ) ) ? 'grey' : '' ; ?>" style="clear:both;">
 					
 					<div class="ad-slot">
-						<?php if ($make->use_new): ?>
-							<?php print $make->ads->leaderboard_alt_btf; ?>
-						<?php else: ?>
-						<!-- Beginning Sync AdSlot 4 for Ad unit header ### size: [[728,90]]  -->
-						<div id='div-gpt-ad-664089004995786621-4'>
-							<script type='text/javascript'>
-								googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-4')});
-							</script>
-						</div>
-						<!-- End AdSlot 4 -->
-						<?php endif; ?>
+
+						<?php global $make; print $make->ads->ad_leaderboard_alt_btf; ?>
+
 					</div></div>
 
 				</div></div></div>
@@ -38,9 +29,9 @@ global $make;
 						<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
 						<ul class="list-unstyled">
 							<li><a href="/projects/">Make: Projects</a></li>
-							<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
-							<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
-							<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
+							<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
+							<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
+							<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
 							<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 						</ul>
 					</div>
@@ -217,9 +208,9 @@ global $make;
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="/projects/">Make: Projects</a></li>
-								<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
-								<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
-								<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
+								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
+								<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
+								<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
 								<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 							</ul>
 						</div>
@@ -293,6 +284,9 @@ global $make;
 		</script>
 
 		<?php wp_footer(); ?>
+
+		<!-- Subscribe return path overlay -->
+		<?php echo subscribe_return_path_overlay(); ?>
 
 		<!-- AddRoll Retargeting Pixel -->
 		<script type="text/javascript">
@@ -436,6 +430,30 @@ global $make;
   js.src = "//cdn.pubexchange.com/modules/partner/make";
   pjs.parentNode.insertBefore(js, pjs);
 }(document, "script", "pubexchange-jssdk"));</script>
+
+<!--YOUTUBE FOR FANCYBOX MODALS-->
+<script>
+$(document).ready(function() {
+  $(".fancytube").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : false,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none',
+    padding : 0
+  });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancytube").fancybox();
+  });
+</script>
 
 	</body>
 </html>

@@ -17,6 +17,7 @@ if( $detect->isTablet() ){
 
 get_header( 'version-2' );
 
+wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2/js/homegrid.js', array( 'jquery' ), false, true );
 ?>
 <?php
 // custom-fields for curated section
@@ -166,12 +167,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <!-- AD UNIT -->
   <div class="ad-unit">  
     <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
-      <?php print $make->ads->leaderboard; ?>
-      <!-- <div id="div-gpt-ad-664089004995786621-1" class="banner-canvas">
-        <script type='text/javascript'>
-          googletag.cmd.push(function(){googletag.display('div-gpt-ad-664089004995786621-1')});
-        </script>
-      </div> -->
+
+      <?php global $make; print $make->ads->ad_leaderboard; ?>
+
     </div> 
   </div>  
 
@@ -187,13 +185,13 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="http://makerfaire.com/new-york-2015/slideshow/?utm_source=makezine.com&utm_medium=ads&utm_campaign=cross+site+promo&utm_creative=WMF+highlights">          
-                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_world_maker5.jpg' ?>" class="img-responsive center-block event" />
+        <a href="//event.on24.com/wcc/r/1081553/0D8E15BD2D43C08E3578FE04A6A4406B">          
+                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_webcast03.jpg' ?>" class="img-responsive center-block event" />
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-                <a href="//makezine.com/tag/halloween/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_halloween10.jpg' ?>" class="img-responsive center-block event" />
+                <a href="//makerfaire.com/barnes-noble/?utm_source=makezine.com&utm_medium=nav+bar&utm_term=Barnes+Noble">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_BN_mini1.jpg' ?>" class="img-responsive center-block event" />
                 </a>
       </div> 
     </div>  

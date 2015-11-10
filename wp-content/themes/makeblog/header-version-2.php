@@ -8,6 +8,19 @@
  */
 
 ?>
+<?php require_once 'version-2/includes/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$post_per_page = 15;
+$device = 'pc';
+if ( $detect->isMobile() ) {
+  $post_per_page = 5;
+  $device = 'mobile';
+}
+
+if( $detect->isTablet() ){
+  $post_per_page = 10;
+  $device = 'tablet';
+} ?>
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
   <head>
@@ -68,24 +81,24 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
-	
+  
     <title><?php echo make_generate_title_tag(); ?></title>
     <meta name="twitter:widgets:csp" content="on">
     <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
     <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
     <meta property="fb:admins" content="1612614584" />
-	
+  
     <!-- javascript -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
-  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
    
       <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
       <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
       <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
-  	<script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
+    <script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
     <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
-
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -118,7 +131,7 @@
       dataLayer = [];
     </script>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
     <!-- Google Universal Analytics -->
     
     <!-- Time-tracking for Custom Dimensions -->
@@ -174,8 +187,8 @@
       </script>
     <?php endif; ?>
 
-	<!-- BANNER -->
-	<div class="header-wrapper">
+  <!-- BANNER -->
+  <div class="header-wrapper">
     <header class="hidden-xs page-banner">
       <div class="row" id="top-header">
         <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"></div>
@@ -183,13 +196,13 @@
           <h6><a href="http://www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a></h6>
         </div>
         <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
-          <h6><a href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
+          <h6><a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
             <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
         </div>
       </div> <!-- row -->    
     </header>
 
-    <div class="container panel header">
+    <div class="container panel header <?php echo $device ?>">
       <!--nav class="navbar navbar-default"-->
       <nav class="navbar navbar-default">
         <div class="row">
@@ -199,7 +212,7 @@
             <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
             <br>
             <h5 class="mz-tag">We are all Makers</h5>
-			<h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
+      <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
           </div></a>
 
   
@@ -214,20 +227,20 @@
             </div>  
           <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
             <!-- Collapsible Menu -->
-			<div id="makezine-navbar-collapse-1" class="navbar-collapse">
-			<!-- Mobile search -->
-				<div class="hidden-md mz-search search-bar-mobile">
-		    
-					<form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-					<label>
-					    <input type="search" class="search-field" placeholder="" value="" name="s" title="">
-					</label>
-    			    <input type="submit" class="search-submit" value="Search" />
-					</form>        
-				</div>
-				<?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
-			
-	       <div class="mz-social mobile-social">  
+      <div id="makezine-navbar-collapse-1" class="navbar-collapse">
+      <!-- Mobile search -->
+        <div class="hidden-md mz-search search-bar-mobile">
+        
+          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+          <label>
+              <input type="search" class="search-field" placeholder="" value="" name="s" title="">
+          </label>
+              <input type="submit" class="search-submit" value="Search" />
+          </form>        
+        </div>
+        <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
+      
+         <div class="mz-social mobile-social">  
           <h5>Follow Us</h5>
           <a href="http://facebook.com/makemagazine">
             <span class="fa-stack fa-mz">
@@ -259,56 +272,56 @@
 
 
   
-					<div class="mz-footer-subscribe"> 
-							<?php
-								$isSecure = "http://";
-								if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-									$isSecure = "https://";
-								}
-							?>
-							<h4>Subscribe</h4>
-							<p>Stay inspired and get fresh updates</p>
-				    	<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-								<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
-								<input type="hidden" name="cmd" value="subscribe" />
-								<input type="hidden" name="custom_source" value="footer" /> 
-								<input type="hidden" name="custom_incentive" value="none" /> 
-								<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-								<input type="hidden" id="format_mime" name="format" value="mime" />
-								<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
-								<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-								<input type="hidden" name="errors_to" value="" />
-								<div class="mz-form-horizontal">
-									<input name="email" placeholder="Enter your Email" required="required" type="text">
-									<input value="GO" class="btn-cyan" type="submit">
-								</div>
-						  </form>
-						</div>
-					<h6>Copyright © 2004-2015 Maker Media, Inc.</br>
-					All rights reserved</h6>
-				</div> 
-				
-			</div>
+          <div class="mz-footer-subscribe"> 
+              <?php
+                $isSecure = "http://";
+                if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                  $isSecure = "https://";
+                }
+              ?>
+              <h4>Subscribe</h4>
+              <p>Stay inspired and get fresh updates</p>
+              <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+                <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+                <input type="hidden" name="cmd" value="subscribe" />
+                <input type="hidden" name="custom_source" value="footer" /> 
+                <input type="hidden" name="custom_incentive" value="none" /> 
+                <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+                <input type="hidden" id="format_mime" name="format" value="mime" />
+                <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+                <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+                <input type="hidden" name="errors_to" value="" />
+                <div class="mz-form-horizontal">
+                  <input name="email" placeholder="Enter your Email" required="required" type="text">
+                  <input value="GO" class="btn-cyan" type="submit">
+                </div>
+              </form>
+            </div>
+          <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
+          All rights reserved</h6>
+        </div> 
+        
+      </div>
 
           </div>
     
           <div class="get-dark"></div>
           <!-- SEARCH -->                    
           <div class="col-md-1 hidden-xs mz-search search-bar">
-		    
+        
                 <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
                   <input type="submit" class="sendsubmit" value="" />
-					<label>
-					    <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-						<div class="close-search"></div>
-					</label>
-			    </form>        
+          <label>
+              <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
+            <div class="close-search"></div>
+          </label>
+          </form>        
           </div>
-		  <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
-				<h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><h5>Subscribe</h5>
-						<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
-		  </div>
-			
+      <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
+        <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><h5>Subscribe</h5>
+            <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
+      </div>
+      
         <!-- SOCIAL MEDIA ICONS -->
         <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
         <div class="mz-social">  

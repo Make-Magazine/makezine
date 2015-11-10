@@ -24,7 +24,7 @@ get_header('version-2'); ?>
                             $cat_link = get_category_link($category->cat_ID);
                             ?>
                             <li>
-                                <a href="<?php echo get_category_link($category->term_id) . '?post_type=projects' ?>"
+                                <a href="<?php echo get_category_link($category->term_id) . '' ?>"
                                    title="<?php echo 'View all posts in ' . $cat_name; ?>"><?php echo $cat_name ?></a>
                             </li>
                         <?php } ?>

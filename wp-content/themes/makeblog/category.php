@@ -17,21 +17,13 @@ if( $detect->isTablet() ){
     $device = 'tablet';
 }
 
+wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
 get_header('version-2'); ?>
-<div class="header-ad">
-	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
-        <div class="own">
-            <div class="home-ads">
-                <?php print $make->ads->leaderboard; ?>
-                <!-- <div id="div-gpt-ad-664089004995786621-1">
-                <script type="text/javascript">
-                googletag.cmd.push(function(){googletag.display("div-gpt-ad-664089004995786621-1")});
-                </script>
-                </div> -->
-            </div>
-        </div>
-	</li>
+
+<div class="home-ads">
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
 </div>
+
 <div class="projects-cat <?php echo $device ?>">
     <div class="content container">
         <?php
