@@ -10,15 +10,15 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
-  <div class="contaner gg2015-leaderboard">
+<!--   <div class="contaner gg2015-leaderboard">
     <?php global $make; print $make->ads->ad_leaderboard; ?>
-  </div>
+  </div> -->
 
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS'</h3>
+        <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>DRONES</span></h3>
         <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
@@ -84,6 +84,7 @@ get_header('version-2'); ?>
   <div class="container gg2015-catimage">
     <div class="row">
       <div class="gg2015-landscape hidden-xs gg2015-drones">
+        <div class="gg2015-disclamer"><p>* Street prices may vary</p></div>
 
         <!-- Author -->
         <div class="gg2015-open-parent gg2015-open-author">
@@ -169,7 +170,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Hovership 3DFLY FPV Racer, $100</h3>
+            <h3>Hovership 3DFLY FPV Racer, $110</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -303,7 +304,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Hovership 3DFLY FPV Racer</h3>
-          <h4>$100</h4>
+          <h4>$110</h4>
           <a class="gg2015-buy-btn" href="http://shop.hovership.com/3dfly-micro-quad-kit/" target="_blank">BUY IT NOW</a>
         </div>
       </div>

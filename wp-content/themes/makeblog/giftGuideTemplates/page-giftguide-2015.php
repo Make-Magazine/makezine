@@ -16,7 +16,7 @@ get_header('version-2'); ?>
 
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS'</h3>
+        <h3>THE ULTIMATE MAKERS</h3>
         <h3 class="gg2015-big-font">GIFT GUIDE</h3>
         <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
@@ -54,7 +54,8 @@ get_header('version-2'); ?>
     <div class="gg2015-snow"></div>
 
     <div class="col-sm-7 hidden-xs">
-      <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/UltimateMakersGiftGuide_Title.png" />
+      <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/UltimateMakersGiftGuide_Title.png" alt="The Ultimate Makers Gift Guide" />
+      <img class="img-responsive col-sm-4 col-sm-offset-4 gg2015-badge" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/Maker-Gift-Guide-Badge.jpg" alt="Maker Gift Guide Badge" />
     </div>
 
   </div>

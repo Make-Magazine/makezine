@@ -10,15 +10,15 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
-  <div class="contaner gg2015-leaderboard">
+<!--   <div class="contaner gg2015-leaderboard">
     <?php global $make; print $make->ads->ad_leaderboard; ?>
-  </div>
+  </div> -->
 
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS'</h3>
+        <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>SCIENCE</span></h3>
         <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
@@ -84,7 +84,8 @@ get_header('version-2'); ?>
   <div class="container gg2015-catimage">
     <div class="row">
       <div class="gg2015-portrait hidden-xs gg2015-science">
-
+        <div class="gg2015-disclamer"><p>* Street prices may vary</p></div>
+        
         <!-- Author -->
         <div class="gg2015-open-parent gg2015-open-author">
           <a class="gg2015-open gg2015-open-plus">
@@ -112,8 +113,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Glowing Putty Gels and Slime Kit</h3>
-            <p class="gg2015-co">$16: makershed.com</p>
+            <h3>Glowing Putty Gels and Slime Kit, $16</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -132,7 +132,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open gg2015-inverse-color">
-            <h3>Public Lab Desktop Spectrometry Kit, $40</h3>
+            <h3>Public Lab Desktop Spectrometry Kit, $45</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -211,7 +211,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Public Lab Desktop Spectrometry Kit</h3>
-          <h4>$40</h4>
+          <h4>$45</h4>
           <a class="gg2015-buy-btn" href="http://store.publiclab.org/products/desktop-spectrometry-kit-3-0" target="_blank">BUY IT NOW</a>
         </div>
       </div>

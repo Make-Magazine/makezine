@@ -10,15 +10,15 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
-  <div class="contaner gg2015-leaderboard">
+<!--   <div class="contaner gg2015-leaderboard">
     <?php global $make; print $make->ads->ad_leaderboard; ?>
-  </div>
+  </div> -->
 
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
-        <h3>THE ULTIMATE MAKERS'</h3>
+        <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>WOODWORKING</span></h3>
         <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
 
@@ -84,7 +84,8 @@ get_header('version-2'); ?>
   <div class="container gg2015-catimage">
     <div class="row">
       <div class="gg2015-portrait hidden-xs gg2015-wood-working">
-
+        <div class="gg2015-disclamer"><p>* Street prices may vary</p></div>
+        
         <!-- Author -->
         <div class="gg2015-open-parent gg2015-open-author">
           <a class="gg2015-open gg2015-open-plus">

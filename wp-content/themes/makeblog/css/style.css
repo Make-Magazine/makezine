@@ -9333,6 +9333,9 @@ body.makercamp a.button.small-button {
 #gg2015 .gg2015-hero .col-sm-7 img {
   margin-top: 30px;
 }
+#gg2015 .gg2015-hero .col-sm-7 .gg2015-badge {
+  padding: 0 35px;
+}
 #gg2015 .gg2015-hero .col-sm-7 h2 {
   color: #fff;
   font-family: 'Roboto', arial, sans-serif;
@@ -9392,6 +9395,14 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-catimage {
   margin-top: 6px;
+}
+#gg2015 .gg2015-catimage .gg2015-disclamer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px 0 0 10px;
+  color: #ccc;
+  font-size: 11px;
 }
 #gg2015 .gg2015-catimage .gg2015-drones {
   background: url(../img/gift-guide-2015/gift_guide_spread_drones.jpg) no-repeat;
@@ -10056,6 +10067,11 @@ body.makercamp a.button.small-button {
 #gg2015 #ad_1x1_1 {
   display: none;
 }
+#gg2015 .gg2015-ad #ad_300x250_1 {
+  box-shadow: 0 6px 6px -7px #000000, 0 -6px 6px -7px #000000;
+  height: 462px;
+  padding-top: 105px;
+}
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   #gg2015 .gg2015-hero {
     height: 450px;
@@ -10074,6 +10090,10 @@ body.makercamp a.button.small-button {
   }
   #gg2015 .gg2015-header .row {
     height: 153px;
+  }
+  #gg2015 .gg2015-ad #ad_300x250_1 {
+    height: 395px;
+    padding-top: 70px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -10104,8 +10124,10 @@ body.makercamp a.button.small-button {
   #gg2015 .gg2015-header-home .row {
     height: 174px;
   }
-  .gg2015-ad {
-    padding-top: 15px;
+  #gg2015 .gg2015-ad #ad_300x250_1 {
+    box-shadow: none;
+    height: auto;
+    padding-top: 40px;
   }
   #gg2015 .gg2015-catimage .gg2015-open h3 {
     font-size: 12px;
@@ -10148,9 +10170,11 @@ body.makercamp a.button.small-button {
   #gg2015 .gg2015-shed .product-shed-grid .product-shed-image {
     height: 213px;
   }
-  .gg2015-ad {
+  .gg2015-ad #ad_300x250_1 {
     padding-top: 15px;
     display: inline;
+    box-shadow: none;
+    height: auto;
   }
 }
 @media screen and (max-width: 500px) {
