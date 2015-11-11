@@ -98,9 +98,6 @@
 						</div>
 					</div>
 			<div class="clearfix"></div>
-
-  
-
             <div class="mz-footer-subscribe"> 
 							<?php
 								$isSecure = "http://";

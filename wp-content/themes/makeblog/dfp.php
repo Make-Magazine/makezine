@@ -211,7 +211,7 @@ $make->ad_vars->custom_target_value = !empty($post_adslot_targeting_name) ? (!em
 if ($posttags) {
     $make->ad_vars->tags = array();
     foreach($posttags as $tag) {
-        $make->ad_vars->tags[] = $tag->name; 
+        $make->ad_vars->tags[] = str_replace(" ", "-", strtolower($tag->name)); 
     }
 }
 
@@ -220,7 +220,7 @@ if ($postcat) {
     $make->ad_vars->cat = array();
     foreach($postcat as $cat) {
         if ($cat != "") {
-            $make->ad_vars->cat[] = is_object($cat) ? $cat->name : $cat;
+            $make->ad_vars->cat[] = str_replace(" ", "-", strtolower((is_object($cat) ? $cat->name : $cat)));
         }
     }
 }
@@ -344,7 +344,7 @@ else {
 
 <!-- Page Ad Vars -->
 <script type='text/javascript'>
-    var ad_vars = <?php print json_encode($make->ad_vars); ?>;
+    var ad_vars = <?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>;
 </script>
 
 <!-- Make GPT -->
