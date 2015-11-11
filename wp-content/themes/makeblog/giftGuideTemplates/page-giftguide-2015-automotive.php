@@ -151,7 +151,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Kafka Pinstriping Starter Kit, $90</h3>
+            <h3>Kafka Pinstriping Starter Kit, $160</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -323,7 +323,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Kafka Pinstriping Starter Kit</h3>
-          <h4>$90</h4>
+          <h4>$160</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002TIIR24/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002TIIR24&linkCode=as2&tag=makezine-20&linkId=TZBLQYDOO4IQTXLY" target="_blank">BUY IT NOW</a>
         </div>
       </div>
