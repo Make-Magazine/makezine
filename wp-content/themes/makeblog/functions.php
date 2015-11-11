@@ -373,9 +373,7 @@ function theme_styles()
     wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
     wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-    wp_enqueue_style('project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css');
-    wp_enqueue_style('blogpage-css', get_stylesheet_directory_uri() . '/version-2/css/blog.css');
-    wp_enqueue_style('single-story-css', get_stylesheet_directory_uri() . '/version-2/css/single-story.css');
+//    wp_enqueue_script('style', get_stylesheet_directory_uri() . '/js/gpt.js');
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles');
@@ -704,7 +702,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
 
             }
 
-            
+
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
             $output .= '</ul> </li>';
@@ -1132,6 +1130,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $counter = 0;
                 }
             }
+
             $ads_counter++;
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
@@ -1190,13 +1189,13 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($detect->isMobile()) {
         $post_per_page_initial = 18;
         $device = 'mobile';
-		$post_per_page = $post_per_page_initial;
+        $post_per_page = $post_per_page_initial;
     }
 
     if ($detect->isTablet()) {
         $post_per_page_initial = 12;
         $device = 'tablet';
-		$post_per_page = $post_per_page_initial;
+        $post_per_page = $post_per_page_initial;
     }
     else {
         $post_per_page = $post_per_page_initial - 1;
@@ -1279,9 +1278,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    if ( $paged > 1 ) {
-        $offset--;
-    }
+
     $args = array(
         'post_type' => 'projects',
         'meta_query' => $meta_query,
@@ -1330,7 +1327,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-$output .= '</a></div>';
+            $output .= '</a></div>';
             $output .= '<div class="final_gradient"><a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -1642,6 +1639,22 @@ function get_story_with_ajax() {
 add_action('wp_ajax_get_story_with_ajax', 'get_story_with_ajax');
 add_action('wp_ajax_nopriv_get_story_with_ajax', 'get_story_with_ajax');
 
+function the_titlesmall($before = '', $after = '', $echo = true, $length = false) {
+    $title = get_the_title();
+    
+    if ( $length && is_numeric($length) ) {
+        $title = substr( $title, 0, $length );
+    }
+
+    if ( strlen($title)> 0 ) {
+        $title = apply_filters('the_titlesmall', $before . $title . $after, $before, $after);
+        if ( $echo )
+            echo $title;
+        else
+            return $title;
+    }
+}
+
 function sort_down($a, $b)
 {
     if ($a['views'] == $b['views']) {
@@ -1695,20 +1708,6 @@ function create_post_type() {
         )
     );
 }
-function blog_output($offset) {
-    require_once 'version-2/includes/blog_output.php';
-    $puling_result = story_pulling($offset);
-    echo $puling_result;
-}
-function blog_output_with_ajax()
-{
-    $offset = $_POST['offset'];
-    blog_output($offset);
-
-    die();
-}
-add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
-add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');
 
 /**
 * Adds the Youtube inside Fancybox modal
@@ -1788,6 +1787,7 @@ function subscribe_return_path_overlay() { ?>
 	</script>
 <?php } 
 
+
 function register_widget_zone() {
     register_sidebar(
         array(
@@ -1850,6 +1850,8 @@ function kc_dynamic_sidebar_params( $params ) {
         $params[0]['before_widget'] = preg_replace( '/class="/', "class=\"{$widget_opt[$widget_num]['classes']} ", $params[0]['before_widget'], 1 );
     return $params;
 }
+
+add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 
 function related_posts( $atts ) {
@@ -1860,3 +1862,64 @@ function related_posts( $atts ) {
     blog_feeds_output($atts['type']);
 }
 add_shortcode( 'feeds_posts', 'related_posts' );
+
+function blog_output($offset) {
+    require_once 'version-2/includes/blog_output.php';
+    $puling_result = story_pulling($offset);
+    echo $puling_result;
+}
+function blog_output_with_ajax()
+{
+    $offset = $_POST['offset'];
+    blog_output($offset);
+
+    die();
+}
+
+add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
+add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');
+
+function tag_output($offset, $current_slug) {
+    require_once 'version-2/includes/tags_output.php';
+    $puling_result = tags_pulling($offset, $current_slug);
+    echo $puling_result;
+}
+function tag_output_with_ajax()
+{
+    $offset = $_POST['offset'];
+    $current_slug = $_POST['slug'];
+    tag_output($offset, $current_slug);
+
+    die();
+}
+add_action('wp_ajax_tag_output_with_ajax', 'tag_output_with_ajax');
+add_action('wp_ajax_nopriv_tag_output_with_ajax', 'tag_output_with_ajax');
+
+function top_ads_shortcode($atts) {
+    global $make;
+    print $make->ads->ad_300x250;
+    print $make->ads->ad_300x250;
+    print $make->ads->ad_300x250;
+}
+add_shortcode('top_ads', 'top_ads_shortcode');
+
+
+function middle_ads_shortcode($atts) {
+    global $make;
+    print $make->ads->ad_300x600;
+    print $make->ads->ad_300x600;
+}
+add_shortcode('middle_ads', 'middle_ads_shortcode');
+
+function second_rectangle_shortcode($atts) {
+    global $make;
+    print $make->ads->ad_300x250_flex;
+    print $make->ads->ad_300x250_flex;
+}
+add_shortcode('middle_ads_tag', 'second_rectangle_shortcode');
+
+function tag_ads_shortcode($atts) {
+    global $make;
+    print $make->ads->ad_300x250;
+}
+add_shortcode('tag_ads', 'tag_ads_shortcode');

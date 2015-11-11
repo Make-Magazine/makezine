@@ -1,16 +1,49 @@
 $( document ).ready(function() {
     if ($('div').hasClass('single')) {
+        $('.comments').hide();
         var scrollArray = [];
         var $top;
         var $flag = -1;
-        $navigatorHeight = $(window).height() - 102;
-        $('.thumbnails').css('height', $navigatorHeight);
+        var $offset = 0;
+        var $first_time = 0;
+        var $first_resize = 0;
+        var $navigatorMargin = $('.first-story .story-title').height() + 64;
+        $('.row.navigator').css('margin-top',$navigatorMargin);
+        $('.span8 iframe').css('max-width','100%');
+        $thumbnailsHeight = $(window).height() - 102;
+        $navigatorHeight = $(window).height() - 50;
+        $('.navigator .thumbnails').css('height', $thumbnailsHeight);
+        $(window).resize(function () {
+            var $navigatorMargin = $('.first-story .story-title').height() + 64;
+            $('.row.navigator').css('margin-top',$navigatorMargin);
+            $window = $(window).width() + 17;
+            if ($window <= 767) {
+                if ($first_resize == 0) {
+                    $first_resize = 1;
+                    //$('.thumbnails').css('height', '');
+                    $('.more-thumbnails .posts-navigator').css('display', '');
+                } else {
+                    //$('.thumbnails').css('height', $thumbnailsHeight);
+                }
+            }
+        });
         $(window).scroll(function () {
             $('.single .container .row.story-header').each(function (index) {
                 $top = $(this).offset().top - 100;
                 scrollArray[index] = $top;
             });
+            var infinity = $('.row.infinity').offset().top - $(window).height() - 1000;
             var $scrollTop = $(window).scrollTop();
+            if ($(window).width() <= 767) {
+                if ($scrollTop >= infinity) {
+                    if ($first_time == 0) {
+                        $first_time = 1;
+                        $('.row.infinity').addClass('current');
+                        getStory($offset);
+                        $offset = $offset + 9;
+                    }
+                }
+            }
             if ($scrollTop < scrollArray[1]) {
                 if (($flag == -1) || ($flag == 1)) {
                     $('.latest-story a').removeClass('highlighted');
@@ -81,15 +114,16 @@ $( document ).ready(function() {
                     $flag = 9;
                 }
             }
-            if ($scrollTop >= '54') {
+            if ($scrollTop >= '200') {
                 $('.navigator').addClass('sticky');
             } else {
                 $('.navigator').removeClass('sticky');
             }
         });
-        $('.latest-story a').click(function () {
+        $('.thumbnails .latest-story a').click(function () {
             $current = $(this);
             $newFlag = $(this).parent().index();
+            $id = $(this).attr('id');
             $('html, body').animate({
                 scrollTop: $($.attr(this, 'href')).offset().top
             }, 500);
@@ -98,13 +132,17 @@ $( document ).ready(function() {
                 $($current).addClass('highlighted');
                 $flag = $newFlag
             }, 501);
+            window.history.pushState('obj', 'newtitle', $id);
             return false;
         });
         $('.hamburger-navigator img').click(function () {
             if ($(this).parent().hasClass('open')) {
+                $('.row.navigator').css('height', '');
+                $('.row.navigator').css('border', '');
                 $('.posts-navigator').slideUp('250');
                 window.setTimeout(function () {
                     $('.hamburger-navigator').removeClass('open');
+                    $('.hamburger-navigator h2').hide();
                     $('.thumbnails').removeClass('open');
                 }, 390);
             }
@@ -112,9 +150,53 @@ $( document ).ready(function() {
                 $('.thumbnails').addClass('open');
                 $('.hamburger-navigator').addClass('open');
                 window.setTimeout(function () {
+                    $('.hamburger-navigator h2').show();
                     $('.posts-navigator').slideDown('250');
                 }, 250);
+                window.setTimeout(function () {
+                    $('.row.navigator').css('height', $navigatorHeight);
+                    $('.row.navigator').css('border', '1px solid #979797');
+                }, 600);
+
             }
         });
+        function getStory($offset) {
+            var firstPostId = $('.first-story').attr('id');
+            $.ajax({
+                type: 'POST',
+                url: '/wp-admin/admin-ajax.php',
+                data: {
+                    'offset': $offset,
+                    'excludeId': firstPostId,
+                    'action': 'get_story_with_ajax'
+                },
+                success: function (data) {
+                    jQuery(".row.infinity").after(data);
+                    jQuery(".row.infinity.current").remove();
+                    $first_time = 0;
+                },
+                error: function (errorThrown) {
+                }
+            });
+        }
+        $(document).on('click touchstart', '.comments-button', function () {
+            if (!$(this).hasClass('open')){
+                $(this).parent().parent().find('.comments').slideDown(500);
+                $(this).addClass('open');
+                var $commentsHeight = $(this).parent().parent().find('#disqus_thread').height();
+                $(this).parent().css('margin-top', $commentsHeight);
+            }else {
+                $(this).removeClass('open');
+                $(this).parent().css('margin-top','0');
+                $(this).parent().parent().find('.comments').slideUp(500);
+            }
+
+        });
+        $('blockquote').each(function(){
+            $quoteMarginTop = -($(this).height() + 175);
+            $(this).after('<div class="quote" style="margin-top: '+$quoteMarginTop+'px"></div>');
+        });
+        var $quoteMargin = ($('blockquote').width() + 62 -68) / 2;
+        $('.quote').css('margin-left',$quoteMargin);
     }
 });

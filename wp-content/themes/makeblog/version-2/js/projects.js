@@ -504,25 +504,9 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    var paged = 1;
-
-    var ua = window.navigator.userAgent;
-
-    var msie = ua.indexOf('MSIE ');
-
-    var trident = ua.indexOf('Trident/');
-
-    var edge = ua.indexOf('Edge/');
-
-
-
-    if ((msie > 0) || (trident > 0) || (edge > 0)) {
-        $('#pbd-alp-load-posts').addClass('ie');
-    }
-
     $(document).on('touchstart click', '#pbd-alp-load-posts a', function () {
 
-            if (!$(this).hasClass('first-click')) {
+        if (!$(this).hasClass('first-click')) {
             $(this).addClass('first-click');
             paged++;
             // Show that we're working.
@@ -546,33 +530,11 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $(document).on('touchstart click', '#blog-load-posts a', function () {
-        var get_offset = $("#blog-load-posts").attr('data-offset');
-        var blog_output_with_ajax = '';
-        $(this).text('Loading');
-        $(this).parent().addClass('loading');
-        $.ajax({
-            type: 'POST',
-            url: '/wp-admin/admin-ajax.php',
-            data: {
-                action: 'blog_output_with_ajax',
-                offset: get_offset
-            },
-            success: function (data) {
-                $('#blog-load-posts').remove();
-                $('.container.all-stories .post-list').append('<li class="row post">' + data);
-            },
-            error: function (data) {
-
-            }
-        });
-    });
-
     // MOBILE NAVIGATION
 
     jQuery(document).mouseup(function (e) {
         if (e.which != 1) return false;
-        var container = $(".filter_max .filter" );
+        var container = $(".filter_max .filter");
         if (container.has(e.target).length === 0) {
             container.hide('slow');
             $('.filter_max .sortby').hide('slow');
@@ -597,14 +559,14 @@ jQuery(document).ready(function ($) {
         $('.filter_max').addClass('show-now');
     });
 
-        $(document).on('touchstart click', '.close-button', function (event) {
-            event.stopPropagation();
-            event.preventDefault();
-            $('.filter_max .filter').hide('slow');
-            $('.filter_mini').show('slow');
-            $('.filter_max').removeClass('show-now');
-            $('.filter-applied').show();
-        });
+    $(document).on('touchstart click', '.close-button', function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        $('.filter_max .filter').hide('slow');
+        $('.filter_mini').show('slow');
+        $('.filter_max').removeClass('show-now');
+        $('.filter-applied').show();
+    });
 
     $(document).on('change', '#mobile_cat', function () {
         var cat_id;
@@ -675,4 +637,104 @@ jQuery(document).ready(function ($) {
     }).hover(function () {
         $('.fade').removeClass('fade');
     });
+
+    //blog//
+
+    var $first_time = 0;
+
+    function get_infinity_blog(get_offset) {
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action: 'blog_output_with_ajax',
+                offset: get_offset
+            },
+            success: function (data) {
+                $('.row.infinity-row').remove();
+                $('#blog-load-posts').remove();
+                $('.container.all-stories .post-list').append('<li class="row post">' + data);
+                $first_time = 0;
+            },
+            error: function (data) {
+
+            }
+        });
+    }
+
+    $(window).scroll(function () {
+        var infinity = $('.all-stories .row.infinity-row').offset().top - $(window).height() - 1500;
+        var $scrollTop = $(window).scrollTop();
+        var get_offset = $(".load-more-posts").attr('data-offset');
+        if ($(window).width() <= 767) {
+            if ($scrollTop >= infinity) {
+                if ($first_time == 0) {
+                    $first_time = 1;
+                    var get_offset = $(".load-more-posts").attr('data-offset');
+                    $('.row.infinity-row').addClass('current');
+                    get_infinity_blog(get_offset);
+                }
+            }
+        }
+    });
+
+    $(document).on('touchstart click', '#blog-load-posts a', function () {
+        var get_offset = $("#blog-load-posts").attr('data-offset');
+        var blog_output_with_ajax = '';
+        $(this).text('Loading');
+        $(this).parent().addClass('loading');
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action: 'blog_output_with_ajax',
+                offset: get_offset
+            },
+            success: function (data) {
+                $('#blog-load-posts').remove();
+                $('.container.all-stories .post-list').append('<li class="row post">' + data);
+            },
+            error: function (data) {
+
+            }
+        });
+    });
+
+
+    $(document).on('touchstart click', '#tag-load-posts a', function () {
+        var get_offset = jQuery("#tag-load-posts").attr('data-offset');
+        var current_tag = jQuery(".all-stories.tags").attr('data-slug');
+        //var blog_output_with_ajax = '';
+        $(this).text('Loading');
+        $(this).parent().addClass('loading');
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action: 'tag_output_with_ajax',
+                offset: get_offset,
+                slug: current_tag
+            },
+            success: function (data) {
+                $('#tag-load-posts').remove();
+                $('.container.all-stories .post-list').append('<li class="row post">' + data);
+            },
+            error: function (data) {
+
+            }
+        });
+    });
+
+    //sticky ads blog page
+    $(window).scroll(function () {
+        scrollTop = $(window).scrollTop();
+        var sticky_position = 745;
+        if ( scrollTop > sticky_position ) {
+            $('.all-stories .sidebar-wrapper.blog #ad_300x600_2').addClass('add_sticky');
+        } else {
+            $('.all-stories .sidebar-wrapper.blog #ad_300x600_2').removeClass('add_sticky');
+        }
+    });
+
+
 });
