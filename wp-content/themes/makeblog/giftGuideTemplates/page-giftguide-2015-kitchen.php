@@ -20,7 +20,7 @@ get_header('version-2'); ?>
 
         <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>KITCHEN</span></h3>
-        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
 
@@ -174,7 +174,7 @@ get_header('version-2'); ?>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
-            <p>The Drop kitchen scale is everything I pined over in my past life as a pastry chef. Its smart recipe rescaling means it will adapt the ingredient measurements in proportion to your last handful of flour. The scale connects wirelessly to its companion app so you can seamlessly follow recipes, and the heat resistant silicone makes it a resilient countertop appliance.</p>
+            <p>The Drop kitchen scale is everything I pined over in my past life as a pastry chef. Its smart recipe rescaling means it will adapt the ingredient measurements in proportion to your last handful of flour. The scale connects wirelessly to its companion app (currently iPhone-only) so you can seamlessly follow recipes, and the heat resistant silicone makes it a resilient countertop appliance.</p>
             <a href="http://www.amazon.com/gp/product/B00TTY34KG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00TTY34KG&linkCode=as2&tag=makezine-20&linkId=R3LOBY7FP4DDBS6U" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
@@ -347,7 +347,7 @@ get_header('version-2'); ?>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>The Drop kitchen scale is everything I pined over in my past life as a pastry chef. Its smart recipe rescaling means it will adapt the ingredient measurements in proportion to your last handful of flour. The scale connects wirelessly to its companion app so you can seamlessly follow recipes, and the heat resistant silicone makes it a resilient countertop appliance.</p>
+          <p>The Drop kitchen scale is everything I pined over in my past life as a pastry chef. Its smart recipe rescaling means it will adapt the ingredient measurements in proportion to your last handful of flour. The scale connects wirelessly to its companion app (currently iPhone-only) so you can seamlessly follow recipes, and the heat resistant silicone makes it a resilient countertop appliance.</p>
         </div>
       </div>
       <!-- End mobile Product 4 -->
@@ -473,7 +473,7 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-4 gg2015-ad">
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>

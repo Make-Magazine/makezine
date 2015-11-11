@@ -9295,6 +9295,7 @@ body.makercamp a.button.small-button {
 }
 #gg2015 .gg2015-header .gg2015-border-right h3 {
   font-size: 20px;
+  margin-top: 5px;
 }
 #gg2015 .gg2015-header .gg2015-border-right .gg2015-big-font {
   font-size: 30px;
@@ -10095,6 +10096,9 @@ body.makercamp a.button.small-button {
     height: 395px;
     padding-top: 70px;
   }
+  #gg2015 .gg2015-header .gg2015-border-right h3 {
+    margin-top: 20px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #gg2015 .gg2015-hero {
@@ -10137,6 +10141,9 @@ body.makercamp a.button.small-button {
   }
   #gg2015 .gg2015-buy-btn {
     padding: 3px 13px;
+  }
+  #gg2015 .gg2015-header .gg2015-border-right h3 {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 767px) {

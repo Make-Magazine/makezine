@@ -18,7 +18,7 @@ get_header('version-2'); ?>
 
         <h3>THE ULTIMATE MAKERS</h3>
         <h3 class="gg2015-big-font">GIFT GUIDE</h3>
-        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
 
@@ -83,7 +83,7 @@ get_header('version-2'); ?>
   </div>
   <div class="container gg2015-mobile-home visible-xs-block">
     <h2>THE BEST TOOLS AND TOYS FOR THE ONES YOU LOVE</h2>
-    <p>We scoured the world for some of out favorite products in four different fields - gifts for Makers of every type - from the best solder sucker to a peedy FPV micodrone.</p>
+    <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
   </div>
 
 </div>
