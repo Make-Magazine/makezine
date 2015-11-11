@@ -123,7 +123,6 @@ $(document).ready(function () {
 				$('.navbar-default').css('top', '0px');
 				$('.menu-item-has-children > a').removeClass("active-sticky");
 				$('.project-navigation').css('margin-top', '0px');
-				$('.menu-item-has-children').css('width', '');
 				$('.second-nav').removeClass("displayNav");
 				if ($('.header').hasClass('tablet')) {
 					$(".container.header").css("position", "");
@@ -165,6 +164,7 @@ $(document).ready(function () {
 			if ($counter == '1') {
 				$('div.navbar-collapse').show();
 				$('.dynamic-header-posts').hide();
+				$('li a').removeClass('active-button');
 				$counter = 0;
 			}
 			$('.menu-container').css('height', 'inherit');
@@ -397,5 +397,30 @@ $(document).ready(function () {
 			}
 		}
 	});
-
+	if ($('.header').hasClass('tablet')){
+		$('body').bind("touchstart", function (e) {
+			$window = $(window).width() + 17;
+			if ($window >= '768') {
+				var dynamicContainer = $(".dynamic-header-posts");
+				var headerContainer = $(".navbar-nav");
+				if ((dynamicContainer.has(e.target).length === 0) && (headerContainer.has(e.target).length === 0)) {
+					$('.minify.sticky').css('transition', 'all 0.2s ease');
+					$('.minify.sticky').css('margin-top', '0px');
+					$('.menu-item-has-children').children("a").removeClass("active-button");
+					$('.dynamic-header-posts').slideUp('fast');
+					$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
+					window.setTimeout(function () {
+						$('.latest-projects').hide().removeClass('nav-transition');
+						$('.latest-stories').hide().removeClass('nav-transition');
+						$('.latest-events').hide().removeClass('nav-transition');
+						$('.latest-shop').hide().removeClass('nav-transition');
+						$('.dynamic-header-content').children().removeClass('moove-left moove-right');
+						$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition');
+						$('.menu-sub-menu > .sub-menu').removeClass('moove-left moove-right');
+					}, 250);
+					$('.menu-item-has-children').addClass('first-hover');
+				}
+			}
+		});
+	}
 });
