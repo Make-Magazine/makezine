@@ -112,7 +112,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       <div class="row">
         <a href="<?php echo esc_html( $main_link ); ?>"
           class="mz-featured-imageblock mz-imageblock-hero"
-          style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 813, 470 ); ?>');">
+          style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 1200, 694 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
             <h2><?php echo $main_title ; ?></h2>
