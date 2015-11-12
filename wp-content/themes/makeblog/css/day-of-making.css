@@ -14910,7 +14910,7 @@ p.sponsored {
   top: 0;
   left: 0;
   background: rgba(243, 243, 243, 0);
-  z-index: 500;
+  z-index: 3;
 }
 .overlay-div .container-fluid-overlay {
   margin-right: auto;
@@ -14921,7 +14921,6 @@ p.sponsored {
   border-top: 1px solid #4a4a4a;
   background-color: #f3f3f3;
   margin-top: 34px;
-  z-index: 501;
 }
 .overlay-div .container {
   padding-top: 20px;
@@ -14986,18 +14985,14 @@ p.sponsored {
 }
 /* Effects */
 .overlay-slidedown {
-  visibility: hidden;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
-  opacity: 0;
   -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
   transition: transform 0.4s ease-in-out, visibility 0s 0.4s, opacity 0.4s ease-in-out;
 }
 .overlay-slidedown.open {
-  visibility: visible;
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
-  opacity: 1;
   -webkit-transition: -webkit-transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
