@@ -190,8 +190,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-                <a href="//makerfaire.com/barnes-noble/?utm_source=makezine.com&utm_medium=nav+bar&utm_term=Barnes+Noble">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_BN_mini1.jpg' ?>" class="img-responsive center-block event" />
+                <a href="/giftguide/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_giftguide2.jpg' ?>" class="img-responsive center-block event" />
                 </a>
       </div> 
     </div>  
