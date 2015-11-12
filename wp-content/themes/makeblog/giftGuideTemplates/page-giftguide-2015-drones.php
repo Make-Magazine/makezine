@@ -407,7 +407,12 @@ get_header('version-2'); ?>
     </div>
   </div>
 </div>
-
+<style>
+/* This is to keep the Sumome left social sharing icons from auto hiding */
+  .sumome-share-client-wrapper-left-page {
+    opacity: 1 !important;
+  }
+</style>
 <script>
   $('.gg2015-open').on('click', function(e) {
     $( event.target ).closest( '.gg2015-open-parent' ).toggleClass('gg2015-open-parent-on');

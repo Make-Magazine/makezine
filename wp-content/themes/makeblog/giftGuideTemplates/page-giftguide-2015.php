@@ -87,7 +87,12 @@ get_header('version-2'); ?>
   </div>
 
 </div>
-
+<style>
+/* This is to keep the Sumome left social sharing icons from auto hiding */
+  .sumome-share-client-wrapper-left-page {
+    opacity: 1 !important;
+  }
+</style>
 <script>
   $( "#gg2015-mobile-naver-a" ).on( "click", function() {
     event.preventDefault();
