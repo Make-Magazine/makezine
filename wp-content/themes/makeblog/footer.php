@@ -285,8 +285,8 @@
 
 		<?php wp_footer(); ?>
 
-		<!-- Subscribe return path overlay -->
-		<?php echo subscribe_return_path_overlay(); ?>
+    <!-- Subscribe return path overlay -->
+    <?php echo subscribe_return_path_overlay(); ?>
 
 		<!-- AddRoll Retargeting Pixel -->
 		<script type="text/javascript">

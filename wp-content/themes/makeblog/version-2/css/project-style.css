@@ -1721,7 +1721,7 @@ ul.duration-item li.current, ul.diff-item li.current {
 
 @media only screen and (min-width: 1200px) {
   .container.header.width {
-    z-index: 1 !important;
+    z-index: 4;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
