@@ -192,10 +192,8 @@ if( $detect->isTablet() ){
         <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs text-center top-nav">
           <h6><a href="http://www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a></h6>
         </div>
-        <!-- Subscribe return path overlay -->
-        <?php echo subscribe_return_path_overlay(); ?>
         <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
-          <h6><a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
+          <h6><a id="trigger-overlay" href="#">Subscribe
             <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
         </div>
       </div> <!-- row -->    
@@ -317,9 +315,10 @@ if( $detect->isTablet() ){
             </form>        
           </div>
 
+          <!-- Sticky Navbar -->
           <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
             <h6>
-              <a href="https://readerservices.makezine.com/mk/default.aspx?">
+              <a id="trigger-overlay" href="#">
                 <h5>Subscribe</h5>
                 <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>">
               </a>
