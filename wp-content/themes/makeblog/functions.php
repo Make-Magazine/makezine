@@ -839,7 +839,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     }
 
     if ($max_num_pages > 1 && $type !== 'load_more') {
-        $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
+        //$output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
     }
 
     echo $output;
