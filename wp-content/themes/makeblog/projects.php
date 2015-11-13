@@ -55,11 +55,7 @@ get_header('version-2'); ?>
                             </ul>
                         </li>
                     </ul>
-                    <div class="post-filter">
-                        <p class="recent current">Recent</p>
-
-                        <p class="popular">Popular</p>
-                    </div>
+                   
                 </div>
             </div>
         </div>

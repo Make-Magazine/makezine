@@ -420,10 +420,6 @@ function filter_list_output()
     $output .= '</li>';
     $output .= '</ul>';
     $output .= '<p class="clear clicks">Clear all</p>';
-    $output .= '<div class="post-filter col-lg-3 col-md-3 col-sm-4 col-xs-4">';
-    $output .= '<p class="recent current clicks" data-value="recent">Recent</p>';
-    $output .= '<p class="popular clicks" data-value="popular">Popular</p>';
-    $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
     echo $output;
