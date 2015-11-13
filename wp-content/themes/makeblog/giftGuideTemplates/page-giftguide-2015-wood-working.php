@@ -20,7 +20,7 @@ get_header('version-2'); ?>
 
         <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>WOODWORKING</span></h3>
-        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
 
@@ -270,7 +270,7 @@ get_header('version-2'); ?>
           </a>
           <div class="gg2015-buy-div">
             <p>This might be the most expensive coping saw in existence, but it’s also likely the best. Made of lightweight aluminum, the truss design and cam lock make sure that the frame stays rigid and the blade stays taut. Whether you’re cutting detailed shapes or just removing waste when cutting dovetail joints, this saw will deliver consistently good results.</p>
-            <a href="http://knewconcepts.com/copingSaws.php" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <a href="http://www.highlandwoodworking.com/knew-concepts-woodworkers-coping-saw.aspx" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #9 -->
@@ -432,7 +432,7 @@ get_header('version-2'); ?>
         <div class="col-xs-7">
           <h3>Knew Concepts 6½" Aluminum Coping Saw</h3>
           <h4>$150</h4>
-          <a class="gg2015-buy-btn" href="http://knewconcepts.com/copingSaws.php" target="_blank">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.highlandwoodworking.com/knew-concepts-woodworkers-coping-saw.aspx" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
@@ -473,13 +473,18 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-4 gg2015-ad">
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>
 </div>
-
+<style>
+/* This is to keep the Sumome left social sharing icons from auto hiding */
+  .sumome-share-client-wrapper-left-page {
+    opacity: 1 !important;
+  }
+</style>
 <script>
   $('.gg2015-open').on('click', function(e) {
     $( event.target ).closest( '.gg2015-open-parent' ).toggleClass('gg2015-open-parent-on');

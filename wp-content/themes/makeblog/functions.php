@@ -750,12 +750,12 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $detect = new Mobile_Detect;
     $post_per_page_initial = 18;
     if ($detect->isMobile()) {
-        $post_per_page_initial = 10;
+        $post_per_page_initial = 21;
         $device = 'mobile';
     }
 
     if ($detect->isTablet()) {
-        $post_per_page_initial = 12;
+        $post_per_page_initial = 21;
         $device = 'tablet';
     }
     else {

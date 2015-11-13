@@ -1054,7 +1054,7 @@ a,
 }
 
 a:hover {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 .filter_max .filter, .filter_max .sortby, .cat_hidden {
