@@ -1814,7 +1814,14 @@ function home_tags($postid) {
 		}
 	}
 	if ( $post_video[0] > 0 ) {
-		echo '<div class="videoblock"><span class="video fa fa-video-camera"></span></div>';
+		 $output .= '<div class="videoblock"><a href="';
+                $link = get_the_permalink($postid);
+                $output .= $link;
+                $output .= '">';
+                $output .= '';
+                $output .= '<span class="video fa fa-video-camera"></span>';
+                $output .= '</a></div>';
+                echo $output;
 	}
 }
 

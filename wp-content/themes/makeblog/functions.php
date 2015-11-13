@@ -691,9 +691,13 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 $output .= '</a></p>';
             }
             if (!empty($post_video[0])) {
-                $output .= '<div class="videoblock">';
+                $output .= '<div class="videoblock"><a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $output .= '';
                 $output .= '<span class="video fa fa-video-camera"></span>';
-                $output .= '</div>';
+                $output .= '</a></div>';
             }
             $output .= '</div>';
             $difficulty_counter = 0;
@@ -1124,9 +1128,13 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '</a></p>';
             }
             if (!empty($post_video[0])) {
-                $output .= '<div class="videoblock">';
+                $output .= '<div class="videoblock"><a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $output .= '';
                 $output .= '<span class="video fa fa-video-camera"></span>';
-                $output .= '</div>';
+                $output .= '</a></div>';
             }
             $output .= '</div>';
             $difficulty_counter = 0;
@@ -1544,9 +1552,13 @@ $output .= '</a></div>';
                 $output .= '</div>';
             }
             if (!empty($post_video[0])) {
-                $output .= '<div class="videoblock">';
+                $output .= '<div class="videoblock"><a href="';
+                $link = get_the_permalink();
+                $output .= $link;
+                $output .= '">';
+                $output .= '';
                 $output .= '<span class="video fa fa-video-camera"></span>';
-                $output .= '</div>';
+                $output .= '</a></div>';
             }
             $difficulty_counter = 0;
             $duration_counter = 0;

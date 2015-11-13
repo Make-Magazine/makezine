@@ -146,9 +146,13 @@ function story_pulling($offset=0) {
 			$outputs .= '</a></p>';
 		}
 		if (!empty($post_video[0])) {
-			$outputs .= '<div class="videoblock">';
-			$outputs .= '<span class="video fa fa-video-camera"></span>';
-			$outputs .= '</div>';
+                        $outputs .= '<div class="videoblock"><a href="';
+                       $link = get_the_permalink($post->ID);
+                       $outputs .= $link;
+                       $outputs .= '">';
+                       $outputs .= '';
+                       $outputs .= '<span class="video fa fa-video-camera"></span>';
+                       $outputs .= '</a></div>';
 		}
 		$outputs .= '</div>';
 		$outputs .= '</div>';
