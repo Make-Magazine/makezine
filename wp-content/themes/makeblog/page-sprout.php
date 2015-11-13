@@ -97,6 +97,18 @@ get_header( 'version-2' );
         </div>
       </div> 
     </div><!-- end sprout-video-row -->
+    <div class="row post_row home-sprout-row"> 
+      <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="sprout-video">
+            <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/LETmOKDkH-A?autoplay=1">
+              <img class="img-responsive" src="http://img.youtube.com/vi/LETmOKDkH-A/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
+            </a>
+        <p class="sprout-video-caption">Inspired by family mementos, this set of grandparents uses the HP Sprout to create a unique and lovely mobile for their baby granddaughter.</p>
+        </div>
+      </div>
+    </div><!-- end sprout-video-row -->  
+
   </div>
 </div>
 
