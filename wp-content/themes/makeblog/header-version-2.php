@@ -75,9 +75,6 @@ if( $detect->isTablet() ){
     <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
     <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
 
-
-
-
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
   
     <title><?php echo make_generate_title_tag(); ?></title>
@@ -194,173 +191,179 @@ if( $detect->isTablet() ){
           <h6><a href="http://www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a></h6>
         </div>
         <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
-          <h6><a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
+          <h6><a id="trigger-overlay" href="#">Subscribe
             <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
         </div>
       </div> <!-- row -->    
     </header>
 
     <div class="container panel header <?php echo $device ?>">
+
       <!--nav class="navbar navbar-default"-->
       <nav class="navbar navbar-default">
         <div class="row">
 
           <!-- LOGO & TAG LINE -->
-          <a href="<?php echo home_url(); ?>" class="logo-a"><div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
-            <br>
-            <h5 class="mz-tag">We are all Makers</h5>
-      <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
-          </div></a>
-
+          <a href="<?php echo home_url(); ?>" class="logo-a">
+            <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
+              <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+              <br>
+              <h5 class="mz-tag">We are all Makers</h5>
+              <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
+            </div>
+          </a>
   
           <!-- MENUS -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>  
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>  
+          
           <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
+
             <!-- Collapsible Menu -->
-      <div id="makezine-navbar-collapse-1" class="navbar-collapse">
-      <!-- Mobile search -->
-        <div class="hidden-md mz-search search-bar-mobile">
-        
-          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-          <label>
-              <input type="search" class="search-field" placeholder="" value="" name="s" title="">
-          </label>
-              <input type="submit" class="search-submit" value="Search" />
-          </form>        
-        </div>
-        <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
+            <div id="makezine-navbar-collapse-1" class="navbar-collapse">
+
+              <!-- Mobile search -->
+              <div class="hidden-md mz-search search-bar-mobile">
+                <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+                <label>
+                    <input type="search" class="search-field" placeholder="" value="" name="s" title="">
+                </label>
+                <input type="submit" class="search-submit" value="Search" />
+                </form>        
+              </div>
+              <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
       
-         <div class="mz-social mobile-social">  
-          <h5>Follow Us</h5>
-          <a href="http://facebook.com/makemagazine">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
+              <div class="mz-social mobile-social">  
+                <h5>Follow Us</h5>
+                <a href="http://facebook.com/makemagazine">
+                  <span class="fa-stack fa-mz">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span> 
+                </a>
 
-          <a href="http://twitter.com/make">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
+                <a href="http://twitter.com/make">
+                  <span class="fa-stack fa-mz">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span> 
+                </a>
 
-          <a href="http://pinterest.com/makemagazine/">
-             <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
+                <a href="http://pinterest.com/makemagazine/">
+                   <span class="fa-stack fa-mz">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+                  </span> 
+                </a> 
 
-          <a href="https://instagram.com/makemagazine/">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
+                <a href="https://instagram.com/makemagazine/">
+                  <span class="fa-stack fa-mz">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span> 
+                </a> 
 
-
-  
-          <div class="mz-footer-subscribe"> 
-              <?php
-                $isSecure = "http://";
-                if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                  $isSecure = "https://";
-                }
-              ?>
-              <h4>Subscribe</h4>
-              <p>Stay inspired and get fresh updates</p>
-              <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-                <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
-                <input type="hidden" name="cmd" value="subscribe" />
-                <input type="hidden" name="custom_source" value="footer" /> 
-                <input type="hidden" name="custom_incentive" value="none" /> 
-                <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-                <input type="hidden" id="format_mime" name="format" value="mime" />
-                <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
-                <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-                <input type="hidden" name="errors_to" value="" />
-                <div class="mz-form-horizontal">
-                  <input name="email" placeholder="Enter your Email" required="required" type="text">
-                  <input value="GO" class="btn-cyan" type="submit">
+                <div class="mz-footer-subscribe"> 
+                  <?php
+                    $isSecure = "http://";
+                    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                      $isSecure = "https://";
+                    }
+                  ?>
+                  <h4>Subscribe</h4>
+                  <p>Stay inspired and get fresh updates</p>
+                  <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+                    <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+                    <input type="hidden" name="cmd" value="subscribe" />
+                    <input type="hidden" name="custom_source" value="footer" /> 
+                    <input type="hidden" name="custom_incentive" value="none" /> 
+                    <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+                    <input type="hidden" id="format_mime" name="format" value="mime" />
+                    <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+                    <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+                    <input type="hidden" name="errors_to" value="" />
+                    <div class="mz-form-horizontal">
+                      <input name="email" placeholder="Enter your Email" required="required" type="text">
+                      <input value="GO" class="btn-cyan" type="submit">
+                    </div>
+                  </form>
                 </div>
-              </form>
+                <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
+                All rights reserved</h6>
+              </div>
             </div>
-          <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
-          All rights reserved</h6>
-        </div> 
-        
-      </div>
-
           </div>
     
           <div class="get-dark"></div>
+
           <!-- SEARCH -->                    
           <div class="col-md-1 hidden-xs mz-search search-bar">
-        
-                <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-                  <input type="submit" class="sendsubmit" value="" />
-          <label>
+            <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+              <input type="submit" class="sendsubmit" value="" />
+              <label>
               <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-            <div class="close-search"></div>
-          </label>
-          </form>        
+              <div class="close-search"></div>
+              </label>
+            </form>        
           </div>
-      <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
-        <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><h5>Subscribe</h5>
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
-      </div>
-      
-        <!-- SOCIAL MEDIA ICONS -->
-        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
-        <div class="mz-social">  
-          <a href="http://facebook.com/makemagazine">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
 
-          <a href="http://twitter.com/make">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
+          <!-- Sticky Navbar -->
+          <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
+            <h6>
+              <a id="trigger-overlay" href="#">
+                <h5>Subscribe</h5>
+                <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>">
+              </a>
+            </h6>
+          </div>
+        
+          <!-- SOCIAL MEDIA ICONS -->
+          <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
+            <div class="mz-social">  
+              <a href="http://facebook.com/makemagazine">
+                <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a>
 
-          <a href="http://pinterest.com/makemagazine/">
-             <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
+              <a href="http://twitter.com/make">
+                <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a>
 
-          <a href="https://instagram.com/makemagazine/">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
-        </div>     
-      </div>      
-    </div> <!-- row -->  
-  </nav>
+              <a href="http://pinterest.com/makemagazine/">
+                 <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a> 
 
-    
+              <a href="https://instagram.com/makemagazine/">
+                <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a> 
+            </div>     
+          </div>      
+        </div> <!-- row -->  
+      </nav>
+  
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
-</div>
-<div class="second-nav"></div>
-</div>
+
+  </div><!-- container panel header --> 
+  <div class="second-nav"></div>
+</div><!-- header-wrapper --> 
     <div class="dynamic-header-posts">
       <div class="dynamic-header-container container">
         <div class="menu-container row">
