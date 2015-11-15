@@ -210,14 +210,14 @@ get_header('version-2'); ?>
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MetalShop-Milwaukee_2702-22_Drill.jpg" alt="Skil 3320 Drill Press" />
         </div>
         <div class="col-xs-7">
-          <h3>Skil 3320 Drill Press</h3>
-          <h4>$111</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B003LSSS0W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003LSSS0W&linkCode=as2&tag=makezine-20&linkId=2D6MY2ZC2RXCMA5O" target="_blank">BUY IT NOW</a>
+          <h3>Milwaukee M18 Fuel 1/2" Drill/Driver, $129</h3>
+          <h4>$129</h4>
+          <a class="gg2015-buy-btn" href="https://www.milwaukeetool.com/power-tools/cordless/2703-20" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Let's face it. If you’re going to drill a straight hole into metal, you’re going to need a drill press. The Skil 3320 gives a strong and reliable tool without completely breaking the bank. If you’re picking up your first drill press, you’d have a hard time finding a better one at this price.</p>
+          <p>With 1,200 inch-pounds of torque, the M18 Fuel is an absolute beast of a driver. The only thing that surpasses its power is its battery life, coming stock with a 5 amp-hour 18V pack. LED lighting adds some luxury to this workhorse as well. A kit version adds a case, charger, extended battery pack, multi-voltage charger — and $135 to the price.</p>
         </div>
       </div>
       <!-- End mobile Product 2 -->
