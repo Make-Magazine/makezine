@@ -16,6 +16,45 @@ h6 {
   font-size: 12px;
 }
 
+/* TOP BRAND BAR */
+.top-header-bar-brand {
+  position: relative;
+  z-index: 5;
+  background: #F0F0F0;
+  overflow: hidden;
+  .container {
+    background: url('/wp-content/themes/makeblog/version-2/img/2-layers@2x.png') top right no-repeat;
+    background-size: 43px 50px;
+    background-position: right 11px bottom -18px;
+  }
+  p {
+    margin-bottom: 0;
+    line-height: 1.3em;
+    a {
+      font-size: 12px;
+      padding: 7px 5px 7px;
+      display: inline-block;
+    }
+  }
+  a {
+    color: #242424;
+  }
+  .header-sub-link a {
+    padding: 8px 5px 6px;
+    padding-right: 41px;
+    font-size: 11px;
+  }
+  .header-make-img img {
+    height: 12px;
+    padding-left: 2px;
+    vertical-align: baseline;
+  }
+  .header-sub-link img {
+    height: 12px;
+    padding-left: 2px;
+  }
+}
+
 .navbar-default {
   background-color: @white;
   margin: 0;
@@ -770,12 +809,12 @@ ul.sub-menu.moove-right {
   margin-left: 100%;
 }
 
-
 .mz-search {
   width: 34px ;
   padding: 0;
   margin-top: 43px;
 }
+
 @media only screen and (min-width: 768px) {
   #menu-make-main ul.sub-menu {
     display:none !important;

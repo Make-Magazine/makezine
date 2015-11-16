@@ -14920,7 +14920,7 @@ p.sponsored {
   border-bottom: 5px solid #f40b0b;
   border-top: 1px solid #4a4a4a;
   background-color: #f3f3f3;
-  margin-top: 38px;
+  margin-top: 32px;
 }
 .overlay-div .container {
   padding-top: 20px;
@@ -14984,7 +14984,7 @@ p.sponsored {
   padding-bottom: 1px;
 }
 .admin-bar .overlay-div .container-fluid-overlay {
-  margin-top: 70px;
+  margin-top: 64px;
 }
 /* Effects */
 .overlay-slidedown {
