@@ -11664,6 +11664,9 @@ li.share-email {
 .gsc-cursor .gsc-cursor-current-page {
   background-color: #005d8f;
 }
+a:hover {
+  text-decoration: none !important;
+}
 body {
   margin-top: 0;
   overflow-wrap: break-word;
@@ -15359,7 +15362,6 @@ div.caption404 {
 }
 p.headline404 {
   color: #ffffff;
-  font-family: Roboto-Slab;
   font-size: 25px;
 }
 p.body404 {
@@ -15367,8 +15369,7 @@ p.body404 {
   font-size: 20px;
   font-weight: lighter;
 }
-.body404 a.link404,
-.body404 a.link404:visited {
-  color: #ffffff;
-  text-decoration: underline;
+.body404 a {
+  color: #ffffff !important;
+  text-decoration: underline !important;
 }
