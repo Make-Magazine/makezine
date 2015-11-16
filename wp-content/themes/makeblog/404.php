@@ -14,7 +14,7 @@ get_header( 'version-2' );
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
       <div class="caption404">
         <p class="headline404">This is not the page you're looking for.</p>
-        <p class="body404">It must have moved or mysteriously departed. Use search in the top navigation to find a related story or head straight to the Makezine <a href="<?php get_home_url(); ?>" alt="Makezine Home" class="link404">home page</a>.</p>
+        <p class="body404">It must have moved or mysteriously departed. Use search in the top navigation to find a related story or head straight to the Makezine <a href="<?php get_site_url(); ?>" alt="Makezine Home" class="link404">home page</a>.</p>
       </div>
     </div>
   </div>
