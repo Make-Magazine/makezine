@@ -11664,9 +11664,6 @@ li.share-email {
 .gsc-cursor .gsc-cursor-current-page {
   background-color: #005d8f;
 }
-a:hover {
-  text-decoration: none !important;
-}
 body {
   margin-top: 0;
   overflow-wrap: break-word;
@@ -15368,4 +15365,12 @@ p.body404 {
   color: #ffffff;
   font-size: 20px;
   font-weight: lighter;
+}
+.body404 a,
+.body404 a:visited {
+  color: #ffffff;
+  text-decoration: underline;
+}
+a.link404 {
+  text-decoration: underline;
 }
