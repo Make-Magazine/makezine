@@ -369,7 +369,7 @@ if( $detect->isTablet() ){
 
   </div><!-- container panel header --> 
   <div class="second-nav"></div>
-</div><!-- header-wrapper --> 
+</header><!-- header-wrapper --> 
     <div class="dynamic-header-posts">
       <div class="dynamic-header-container container">
         <div class="menu-container row">
