@@ -8,6 +8,7 @@ class Theme {
 	public function __construct( $container ) {
 		$this->container = $container;
 		add_action( 'wp_enqueue_scripts', [ $this, 'load_resources' ], 50 );
+		add_action( 'wp_footer', [$this, 'inject_modal_markup'] );
 		add_filter( 'pre_option_gravatar_disable_hovercards', [ $this, 'disable_hovercards' ] );
 	}
 
@@ -66,6 +67,14 @@ class Theme {
 		}
 
 		return $partition;
+	}
+
+	public function inject_modal_markup() {
+
+		if ( is_singular( array_values( $this->container['post_types'] ) ) ) {
+			get_template_part( 'reviews/content/modal' );
+		}
+
 	}
 
 }
