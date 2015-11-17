@@ -1,0 +1,71 @@
+<?php
+namespace Reviews;
+
+
+class Theme {
+	private $container;
+
+	public function __construct( $container ) {
+		$this->container = $container;
+		add_action( 'wp_enqueue_scripts', [ $this, 'load_resources' ], 50 );
+		add_filter( 'pre_option_gravatar_disable_hovercards', [ $this, 'disable_hovercards' ] );
+	}
+
+	public function  load_resources() {
+
+		if ( ! is_singular( array_values( $this->container['post_types'] ) ) ) {
+			return;
+		}
+
+		// Enqueue our Product Review styles.
+		wp_enqueue_script( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/js/min/index.min.js', array( 'jquery' ) );
+		
+		// Enqueue Conformer script for How We Test authors.
+		wp_enqueue_script( 'conformer', get_stylesheet_directory_uri() . '/reviews/js/conformer.js', array( 'jquery' ) );
+
+		wp_localize_script( 'make-reviews', 'MakeReviews', array(
+			'ajax_url'    => admin_url( 'admin-ajax.php' ),
+			'ajax_action' => AJAX::FILTER_ACTION,
+			'post_id'     => get_the_ID()
+		) );
+
+		/**
+		 * Enqueue a clean version Font Awesome
+		 *
+		 * This is a duplicate of code that already exists in the theme,
+		 * but isn't called correctly so it's non-functional
+		 */
+		wp_enqueue_style( 'make-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
+
+		// Enqueue our Product Review styles.
+		wp_enqueue_style( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/css/master.css', array(
+			'make-font-awesome',
+			'bootstrap-css',
+			'style'
+		) );
+	}
+
+	public function disable_hovercards( $value ) {
+		if ( ! is_singular( array_values( $this->container['post_types'] ) ) ) {
+			return $value;
+		}
+
+		return 'disabled';
+	}
+
+	public static function partition_array( $list, $p ) {
+		$listlen   = count( $list );
+		$partlen   = floor( $listlen / $p );
+		$partrem   = $listlen % $p;
+		$partition = array();
+		$mark      = 0;
+		for ( $px = 0; $px < $p; $px ++ ) {
+			$incr             = ( $px < $partrem ) ? $partlen + 1 : $partlen;
+			$partition[ $px ] = array_slice( $list, $mark, $incr );
+			$mark += $incr;
+		}
+
+		return $partition;
+	}
+
+}

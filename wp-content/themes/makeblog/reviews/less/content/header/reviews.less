@@ -1,0 +1,325 @@
+/**
+ * Single Review Header
+ */
+
+
+
+.reviews-header {
+
+	margin: 0 -20px;
+
+	@media screen and (min-width: @mq-sm-min) {
+		margin: 0;
+	}
+
+}
+
+.review-title {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	color: @black-alt;
+
+	@media screen and (min-width: @mq-sm-min) {
+		margin-bottom: 0;
+		padding: 40px 25px 30px;
+		background: #F7F7F7;
+		text-align: left;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+}
+
+
+.review-nav {
+
+	margin-bottom: 0;
+
+	@media screen and (min-width: @mq-sm-min) {
+		background: #E7E7E7;
+		border: 0;
+		border-radius: 0;
+		margin-bottom: @spacer;
+		min-height: 0;
+	}
+
+	.nav {
+
+		margin: 0;
+		padding: 0 @spacer;
+		display: table;
+		width: 100%;
+		border-bottom: 1px solid @grey-light;
+
+		@media screen and (min-width: @mq-sm-min) {
+			display: block;
+			border-bottom: 0;
+			height: auto;
+			padding-right: 0;
+		}
+
+		> li {
+			display: table-cell;
+			float: none;
+			width: auto;
+			min-height: 0;
+			background: transparent;
+			border: none;
+			text-align: center;
+			height: auto;
+
+			@media screen and (min-width: @mq-sm-min) {
+				display: block;
+				float:left;
+				position: static;
+			}
+
+			> a, button {
+				display: block;
+				height: auto;
+				padding: 10px 5px;
+				font-size: 11.5px;
+				line-height: 1.2;
+				white-space: nowrap;
+				background: transparent;
+				box-shadow: none;
+				transition: all 150ms ease;
+				text-shadow: none;
+				border: 0;
+				text-transform: uppercase;
+				font-weight: 500;
+
+				@media screen and (min-width: @mq-sm-min) {
+					font-size: 16px;
+					font-weight: 400;
+					text-transform: none;
+					padding: 18px 12px;
+				}
+
+				@media screen and (min-width: @mq-md-min) {
+					padding: 18px 28px;
+				}
+
+				&:before {
+					content: ' ';
+					position: absolute;
+					bottom: 0;
+					left: 2px;
+					right: 2px;
+					height: 0;
+					background: @coral;
+					transition: all 150ms ease;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					border-bottom: 0;
+					color: @coral;
+					&:before {
+						height: 6px;
+						@media screen and (min-width: @mq-sm-min) {
+							display: none;
+						}
+					}
+				}
+
+				&.dropdown-toggle {
+
+					&:before {
+						@media screen and (max-width: @mq-xs-max) {
+							height: 0;
+						}
+					}
+
+					&:after {
+						//@media screen and (max-width: @mq-xs-max) {
+							position: relative;
+							top: -1px;
+							padding-left: 5px;
+							font-size: .8em;
+							font-family: 'FontAwesome';
+							content: "\f078";
+							@media screen and (min-width: @mq-sm-min) {
+								font-size: .7em;
+							}
+						//}
+					}
+
+					// CASE: Nav dropdown Active
+					.review-nav-open & {
+						&:after {
+							//@media screen and (max-width: @mq-xs-max) {
+								content: "\f077";
+							//}
+						}
+					}
+
+				}
+
+			}
+
+			&.active {
+
+				> a {
+
+					font-weight: 700;
+					background: transparent;
+					box-shadow: none;
+
+					@media screen and (min-width: @mq-sm-min) {
+						color: @coral;
+						font-weight: 400;
+					}
+
+					&:before {
+						height: 6px;
+						@media screen and (min-width: @mq-sm-min) {
+							display: none;
+						}
+					}
+
+					&:hover,
+					&:active,
+					&:focus {
+						background: transparent;
+						box-shadow: none;
+					}
+
+				}
+
+			}
+
+			&.mag {
+				display: none;
+				@media screen and (min-width: @mq-sm-min) {
+					display: block;
+					float: right;
+				}
+			}
+
+		}
+
+		.submenu {
+
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 140px;
+			bottom: 0;
+			z-index: 25;
+			transition: all 100ms ease-in-out;
+			overflow: hidden;
+			max-height: 0;
+
+			@media screen and (min-width: @mq-sm-min) {
+				position: absolute;
+				top: 55px;
+				bottom: auto;
+				border-top: 2px solid #F0F0F0;
+			}
+
+			.admin-bar & {
+				top: 184px;
+			}
+
+			// CASE: Nav Dropdown Active
+			.review-nav-open & {
+				transition: all 200ms ease-in-out;
+				max-height: 100%;
+				@media screen and (min-width: @mq-sm-min) {
+					max-height: 900px;
+					border-bottom: 4px solid @coral;
+				}
+			}
+
+		}
+
+		.submenu ol {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow-y: scroll;
+			padding: @spacer;
+			border: 0;
+			border-radius: 0;
+			text-align: left;
+			background: white;
+			list-style: none;
+			margin: 0;
+
+			@media screen and (min-width: @mq-sm-min) {
+				position: relative;
+				top: auto;
+				bottom: auto;
+				left: auto;
+				right: auto;
+				background: #e7e7e7;
+				column-count: 3;
+				padding: 20px;
+			}
+
+			@media screen and (min-width: @mq-md-min) {
+				column-count: 4;
+			}
+
+			&:after {
+				display: none;
+			}
+
+			a {
+
+				display: inline-block;
+				padding: 3px 5px;
+				color: @black-alt;
+				transition: all 150ms;
+				line-height: 2;
+
+				@media screen and (min-width: @mq-sm-min) {
+					font-size: 12px;
+					line-height: 1.4;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: @coral;
+					background: transparent;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+}
+
+.review-nav-btns {
+
+	margin:0 @spacer;
+	padding: 0 5px;
+
+	.btn {
+
+		background: transparent;
+		border: 1px solid @aqua-mid;
+		text-transform: uppercase;
+		padding: 4px 12px;
+		outline: 0;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: white;
+			background: @aqua-dark;
+		}
+
+	}
+
+}

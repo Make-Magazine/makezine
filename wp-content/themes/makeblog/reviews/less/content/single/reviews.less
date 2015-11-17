@@ -1,0 +1,134 @@
+/**
+ * Product Reviews Single
+ */
+
+html.filters-open,
+html.sort-open,
+html.review-nav-open {
+	@media screen and (max-width: @mq-xs-max) {
+		overflow: hidden;
+	}
+}
+
+body.single-reviews {
+
+	.footer-ad {
+		display: none;
+	}
+
+	// CASE: The Sort Bar is open on Mobile
+	html.sort-open & {
+		@media screen and (max-width: @mq-xs-max) {
+			&:before {
+				content: ' ';
+				position: absolute;
+				z-index: 4;
+				top: 105px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.8);
+			}
+		}
+	}
+
+}
+
+.btn {
+
+	font-weight: 500;
+	font-size: 12px;
+	border: 0;
+	color: @black-alt;
+	text-shadow: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: 0;
+	}
+
+}
+
+.btn-default {
+	background: @grey-light;
+	&:hover,
+	&:focus,
+	&:active {
+		outline: 0;
+		color: black;
+		background: @grey-mid;
+	}
+}
+
+.reviews-listings {
+
+	position: relative;
+	padding: 0;
+	min-height: 200px;
+
+	//CASE: The AJAX Filters are loading
+	body.filters-loading & {
+
+		&:before {
+			content: ' ';
+			position: absolute;
+			top: -2px;
+			bottom: -2px;
+			left: -2px;
+			right: -2px;
+			background: rgba(240,240,240,0.8);
+			z-index: 1;
+		}
+
+		&:after {
+			position: absolute;
+			top: 67px;
+			width: 100%;
+			text-align: center;
+			font-family: 'FontAwesome';
+			font-size: 48px;
+			margin-top: -24px;
+			content: '\f110';
+			color: @coral;
+			z-index: 2;
+			animation: fa-spin 1s infinite steps(8);
+
+			@media screen and (min-width: @mq-sm-min) {
+				top: 93px;
+			}
+
+		}
+
+	}
+
+}
+
+// the group of review items
+.reviews-items {
+	width: 100%;
+}
+
+
+// The message if there are no printers found.
+.no-results {
+
+	display: none;
+	padding: @spacer 0;
+
+	@media screen and (min-width:@mq-sm-min) {
+		padding: @spacer @spacer * 2;
+	}
+
+	h2 {
+
+		color: @aqua;
+		font-weight: 300;
+
+		@media screen and (min-width:@mq-sm-min) {
+			margin-bottom: .5em;
+		}
+
+	}
+
+}
