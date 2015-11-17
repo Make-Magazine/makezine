@@ -10,6 +10,19 @@
 // Hero: Large image with tour overlay
 #hero-products {
 	position: relative;
+	overflow: hidden;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@media screen and (max-width: 1199px) {
+		background-image: none !important;
+	}
+	@media screen and (min-width: 1200px) {
+		height: 600px;
+		.hero-single-products {
+			display: none;
+		}
+	}
 }
 
 

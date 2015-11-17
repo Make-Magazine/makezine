@@ -192,11 +192,44 @@
 			}
 
 			&.mag {
+
 				display: none;
+
 				@media screen and (min-width: @mq-sm-min) {
+					position: relative;
 					display: block;
 					float: right;
+					margin-right: 0;
 				}
+
+				// Issue modal pop up button
+				.modal-capture-btn {
+
+					position: relative;
+					margin-top: -26px;
+					padding:42px 5px 11px 100px;
+					font-size: 12px;
+					font-weight: 700;
+					width: 240px;
+					white-space: normal;
+					text-align: left;
+					overflow: hidden;
+
+					&:before {
+						content: none;
+					}
+
+					img {
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 80px;
+						margin: 5px;
+						height: auto;
+						box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+					}
+				}
+
 			}
 
 		}
@@ -208,7 +241,7 @@
 			right: 0;
 			top: 140px;
 			bottom: 0;
-			z-index: 25;
+			z-index: 3;
 			transition: all 100ms ease-in-out;
 			overflow: hidden;
 			max-height: 0;
@@ -221,7 +254,10 @@
 			}
 
 			.admin-bar & {
-				top: 184px;
+				top: 186px;
+				@media screen and (min-width: @mq-sm-min) {
+					top: 55px;
+				}
 			}
 
 			// CASE: Nav Dropdown Active
@@ -295,8 +331,6 @@
 		}
 
 	}
-
-
 
 }
 

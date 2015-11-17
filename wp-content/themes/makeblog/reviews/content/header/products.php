@@ -1,12 +1,19 @@
-<div id="hero-products">
-	<?php 
-	
-	$image = get_field('hero_image');
 
-	if ( ! empty( $image ) ):
-	?>
-		<img class="hero-single-products" src="<?php echo esc_attr( $image['url'] );?>" alt=""/>
-	<?php endif; ?>
+<?php 
+
+$image = get_field('hero_image');
+
+if ( ! empty( $image ) ) {
+?>
+<div id="hero-products" style="background-image: url(<?php echo esc_attr( $image['url'] );?>);">
+	<img class="hero-single-products" src="<?php echo esc_attr( $image['url'] );?>" alt=""/>
+<?php
+} else {
+?>
+<div id="hero-products">
+<?php
+}
+?>
 
 	<div id="tour-overlay">
 		<div class="inner">

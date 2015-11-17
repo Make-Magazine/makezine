@@ -1,12 +1,20 @@
-<?php
-get_header('version-2');
+<?php get_header('version-2'); ?>
 
-get_template_part( 'reviews/content/header/reviews' );
+<div class="header-ad">
+	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
+		<div class="own">
+			<div class="home-ads">
+				<?php global $make; print $make->ads->leaderboard; ?>
+			</div>
+		</div>
+	</li>
+</div><!-- .header-ad -->
 
-$image = get_field('scores_image');
+<div class="container">
+	<?php get_template_part( 'reviews/content/header/reviews' ); ?>
+</div>
 
-?>
-
+<?php $image = get_field('scores_image'); ?>
 	
 <main id="scores" class="container">
 
@@ -30,10 +38,14 @@ $image = get_field('scores_image');
 					$products = new WP_Query( $args );
 					foreach ( $products->posts as $product ):
 						$mobile_image = get_field( 'scores_image', $product->ID );
+						if( ! empty( $mobile_image ) ){
 						?>
-						<li>
-							<img src="<?php echo $mobile_image['url']; ?>" alt=""/>
-						</li>
+							<li>
+								<img src="<?php echo $mobile_image['url']; ?>" alt=""/>
+							</li>
+						<?php	
+						}
+						?>
 					<?php endforeach; ?>
 				</ul>
 

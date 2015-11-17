@@ -2,6 +2,10 @@
 /**
  * The Reviews Section Header
  */
+
+$modal_image    = get_field( 'magazine_thumbnail' );
+$modal_text     = get_field( 'magazine_label' );
+
 ?>
 <div class="row">
 	<header class="reviews-header">
@@ -33,7 +37,14 @@
 						</ol>
 					</section>
 				</li>
-				<li class="mag navbar-right"><a href="#">Magazine Link</a></li>
+				<?php if ( $modal_image ): ?>
+				<li class="mag navbar-right">
+					<button id="modal-capture-btn" class="modal-capture-btn">
+						<img alt="" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
+						<?php echo esc_attr( $modal_text ); ?>
+					</button>
+				</li>
+				<?php endif; ?>
 			</ol>
 		</nav>
 
