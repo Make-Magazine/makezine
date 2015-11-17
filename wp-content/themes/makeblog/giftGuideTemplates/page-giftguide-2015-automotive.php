@@ -20,7 +20,7 @@ get_header('version-2'); ?>
 
         <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>AUTOMOTIVE</span></h3>
-        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
 
@@ -151,7 +151,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Kafka Pinstriping Starter Kit, $90</h3>
+            <h3>Kafka Pinstriping Starter Kit, $160</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -323,7 +323,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Kafka Pinstriping Starter Kit</h3>
-          <h4>$90</h4>
+          <h4>$160</h4>
           <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B002TIIR24/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002TIIR24&linkCode=as2&tag=makezine-20&linkId=TZBLQYDOO4IQTXLY" target="_blank">BUY IT NOW</a>
         </div>
       </div>
@@ -473,13 +473,18 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-4 gg2015-ad">
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>
 </div>
-
+<style>
+/* This is to keep the Sumome left social sharing icons from auto hiding */
+  .sumome-share-client-wrapper-left-page {
+    opacity: 1 !important;
+  }
+</style>
 <script>
   $('.gg2015-open').on('click', function(e) {
     $( event.target ).closest( '.gg2015-open-parent' ).toggleClass('gg2015-open-parent-on');

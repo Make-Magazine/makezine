@@ -680,29 +680,6 @@ div.shed-header {
     vertical-align: middle;
   }
 
-/*
-.shed-header h5 {
-  color: @font-bold-header-color;
-  font-size: @font-bold-header-size-L;
-  font-style: @font-bold;
-  line-height: @font-bold-header-line-height;
-  // margin: 5px 30px 0 8px;
-  padding-right: 0;
-  text-align: left;
-  vertical-align: middle;
-}
-*/
-
-/*
-.shed-header h6 {
-  color: @font-shed-tagline-color;
-  font-size: @font-shed-tagline-size-L;
-  font-style: 500;
-  opacity: @font-shed-tagline-opacity; 
-  text-align: right;
-  vertical-align: middle;
-}
-*/
 
 .shed-header h5 :hover {
   background-color: @font-bold-header-color-rollover;
@@ -746,14 +723,14 @@ p.product-price {
 }
 
 .text-box { 
-      position: absolute; 
-      padding: 10px 5px 0 5px;
-      left: 0px; 
-      top: 150px; 
-      width: 100%;
-      height: 70px; 
-      display: table; 
-  }
+  position: absolute; 
+  padding: 10px 5px 0 5px;
+  left: 0px; 
+  top: 150px; 
+  width: 100%;
+  height: 70px; 
+  display: table; 
+}
 
 .text-box h6 { 
   display: table-cell; 
@@ -767,24 +744,10 @@ p.product-price {
   padding-bottom: 10px;
 }
 
-
-
-
-
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: @font-shed-product-price-color-rollover;
-  text-decoration: none;
-}
-
-a:active {
+a:link,
+a:active,
+a:visited,
+a:hover  {
   text-decoration: none;
 }
 
@@ -805,12 +768,6 @@ a:active {
 .story-caption {
   height: 100px;
   margin-bottom: 10px;
-}
-
-div.grid-infinite div.col-lg-4  {
-}
-
-div.grid-infinite div.col-lg-4 img {
 }
 
 div.caption.post-content {

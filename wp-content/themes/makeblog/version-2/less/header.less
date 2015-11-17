@@ -16,6 +16,45 @@ h6 {
   font-size: 12px;
 }
 
+/* TOP BRAND BAR */
+.top-header-bar-brand {
+  position: relative;
+  z-index: 5;
+  background: #F0F0F0;
+  overflow: hidden;
+  .container {
+    background: url('/wp-content/themes/makeblog/version-2/img/2-layers@2x.png') top right no-repeat;
+    background-size: 43px 50px;
+    background-position: right 11px bottom -18px;
+  }
+  p {
+    margin-bottom: 0;
+    line-height: 1.3em;
+    a {
+      font-size: 12px;
+      padding: 7px 5px 7px;
+      display: inline-block;
+    }
+  }
+  a {
+    color: #242424;
+  }
+  .header-sub-link a {
+    padding: 8px 5px 6px;
+    padding-right: 41px;
+    font-size: 11px;
+  }
+  .header-make-img img {
+    height: 12px;
+    padding-left: 2px;
+    vertical-align: baseline;
+  }
+  .header-sub-link img {
+    height: 12px;
+    padding-left: 2px;
+  }
+}
+
 .navbar-default {
   background-color: @white;
   margin: 0;
@@ -23,24 +62,18 @@ h6 {
   padding: 0;
 }
 
-.navbar-toggle {
+.navbar-toggle { 
   margin-top: 10px;
   margin-bottom: 0;
 }
 
-.page-banner {
-  margin: 0;
-  padding: 0;
-  height: 40px;
-}
+// .row {
+//   margin-top: 10px;
+// }
 
-.stand-out {
-  margin-left: 6px;
-  margin-right: 6px;
-}
-
-.red {
-  color: @red;
+.mz-logo {
+  padding-top: 5px;
+  padding-left: 10px;
 }
 
 .align-nav-icons {
@@ -91,12 +124,6 @@ h6 {
 .mz-logo {
   padding-top: 0px;
   padding-left: 15px;
-}
-
-.page-banner {
-  margin: 0;
-  padding: 0;
-  height: 40px;
 }
 
 .stand-out {
@@ -192,6 +219,12 @@ h6 {
 
 .page-banner {
   height: 38px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 5;
+  background: #F0F0F0;
+  overflow: hidden;
 }
 
 .top-nav {
@@ -217,6 +250,7 @@ h6 {
 
 .header-wrapper {
   background-color: #F0F0F0;
+  min-height: 115px;
 }
 
 .navbar-default {
@@ -245,6 +279,10 @@ h6 {
   border-radius: 0px;
   border: none;
   width: 100%;
+}
+
+.container.header.width {
+  z-index: 4;
 }
 
 .dynamic-header-container {
@@ -771,12 +809,12 @@ ul.sub-menu.moove-right {
   margin-left: 100%;
 }
 
-
 .mz-search {
   width: 34px ;
   padding: 0;
   margin-top: 43px;
 }
+
 @media only screen and (min-width: 768px) {
   #menu-make-main ul.sub-menu {
     display:none !important;
@@ -826,6 +864,7 @@ ul.sub-menu.moove-right {
 
   .navbar .nav > li > a.active-button {
     border-bottom: 3px solid #F40B0B ;
+    color:black;
   }
 
   #menu-make-main {
@@ -859,9 +898,6 @@ ul.sub-menu.moove-right {
     margin-left: 2px;
     position: absolute;
   }
-  .navbar .nav > li:hover > a {
-    border: none;
-  }
   .navbar-default .navbar-nav > li > a, .navbar .nav > li, .navbar .nav {
     height: 38px;
   }
@@ -884,7 +920,7 @@ ul.sub-menu.moove-right {
 
 }
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1200px) {
   .latest-events .events-post h1,
   .latest-events .events-post h2 {
     min-width: 152px;
@@ -970,7 +1006,6 @@ ul.sub-menu.moove-right {
 
   .container.header.width {
     position: fixed;
-    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -980,7 +1015,7 @@ ul.sub-menu.moove-right {
 
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
   .sticky-header .search-bar input.search-field[type="search"].search-click {
     margin-top: 3px;
   }
@@ -1018,7 +1053,6 @@ ul.sub-menu.moove-right {
 
   .container.header.width {
     position: fixed;
-    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1230,7 +1264,6 @@ ul.sub-menu.moove-right {
 
   .container.header.width {
     position: fixed;
-    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1804,6 +1837,10 @@ ul.sub-menu.moove-right {
     text-shadow: none;
   }
 
+  .navbar .nav > li:hover > a {
+    border: none;
+  }
+
   .navbar .nav > li.menu-item-has-children:hover {
     width: 100%;
   }
@@ -1917,6 +1954,10 @@ ul.sub-menu.moove-right {
     font-size: 11px;
     font-weight: 400;
     line-height: 18px;
+  }
+
+  .header-wrapper {
+    min-height: 0;
   }
 
 }

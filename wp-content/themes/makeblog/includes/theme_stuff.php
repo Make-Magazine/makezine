@@ -263,7 +263,6 @@ function make_load_resources() {
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 	wp_enqueue_style( 'project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css' );
-	wp_enqueue_style( 'header.css', get_stylesheet_directory_uri() . '/version-2/css/header.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
@@ -1759,6 +1758,7 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
 function sumome_scroll_show_script() { ?>
 		<script type="text/javascript">
 			jQuery(document).scroll(function () {
+					if(window.location.href.indexOf('/giftguide')) return;
 			    var y = jQuery(this).scrollTop();
 			    if (y > 800) {
 			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
@@ -1814,7 +1814,14 @@ function home_tags($postid) {
 		}
 	}
 	if ( $post_video[0] > 0 ) {
-		echo '<div class="videoblock"><span class="video fa fa-video-camera"></span></div>';
+		 $output .= '<div class="videoblock"><a href="';
+                $link = get_the_permalink($postid);
+                $output .= $link;
+                $output .= '">';
+                $output .= '';
+                $output .= '<span class="video fa fa-video-camera"></span>';
+                $output .= '</a></div>';
+                echo $output;
 	}
 }
 

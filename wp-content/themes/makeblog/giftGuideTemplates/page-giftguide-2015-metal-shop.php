@@ -20,7 +20,7 @@ get_header('version-2'); ?>
 
         <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>METAL SHOP</span></h3>
-        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
 
@@ -210,14 +210,14 @@ get_header('version-2'); ?>
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MetalShop-Milwaukee_2702-22_Drill.jpg" alt="Skil 3320 Drill Press" />
         </div>
         <div class="col-xs-7">
-          <h3>Skil 3320 Drill Press</h3>
-          <h4>$111</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B003LSSS0W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003LSSS0W&linkCode=as2&tag=makezine-20&linkId=2D6MY2ZC2RXCMA5O" target="_blank">BUY IT NOW</a>
+          <h3>Milwaukee M18 Fuel 1/2" Drill/Driver, $129</h3>
+          <h4>$129</h4>
+          <a class="gg2015-buy-btn" href="https://www.milwaukeetool.com/power-tools/cordless/2703-20" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Let's face it. If you’re going to drill a straight hole into metal, you’re going to need a drill press. The Skil 3320 gives a strong and reliable tool without completely breaking the bank. If you’re picking up your first drill press, you’d have a hard time finding a better one at this price.</p>
+          <p>With 1,200 inch-pounds of torque, the M18 Fuel is an absolute beast of a driver. The only thing that surpasses its power is its battery life, coming stock with a 5 amp-hour 18V pack. LED lighting adds some luxury to this workhorse as well. A kit version adds a case, charger, extended battery pack, multi-voltage charger — and $135 to the price.</p>
         </div>
       </div>
       <!-- End mobile Product 2 -->
@@ -289,13 +289,18 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-4 gg2015-ad">
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>
 </div>
-
+<style>
+/* This is to keep the Sumome left social sharing icons from auto hiding */
+  .sumome-share-client-wrapper-left-page {
+    opacity: 1 !important;
+  }
+</style>
 <script>
   $('.gg2015-open').on('click', function(e) {
     $( event.target ).closest( '.gg2015-open-parent' ).toggleClass('gg2015-open-parent-on');

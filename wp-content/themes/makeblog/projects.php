@@ -55,11 +55,7 @@ get_header('version-2'); ?>
                             </ul>
                         </li>
                     </ul>
-                    <div class="post-filter">
-                        <p class="recent current">Recent</p>
-
-                        <p class="popular">Popular</p>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -109,11 +105,18 @@ get_header('version-2'); ?>
                                     ?>
                                     <p><span class="fa fa-wrench"></span><?php echo $red_cat_name; ?></p>
                                     <?php
-                                    if ($post_video[0] != 0) { ?>
-                                        <div class="videoblock">
-                                            <span class="video fa fa-video-camera"></span>
-                                        </div>
-                                    <?php } ?>
+                                    if ($post_video[0] != 0) { 
+                                        $output .= '<div class="videoblock"><a href="';
+                                        $link = get_the_permalink($post->ID);
+                                        $output .= $link;
+                                        $output .= '">';
+                                        $output .= '';
+                                        $output .= '<span class="video fa fa-video-camera"></span>';
+                                        $output .= '</a></div>';
+                                        echo $output;
+
+                                        
+                                    } ?>
                                 </div>
 
                                 <?php

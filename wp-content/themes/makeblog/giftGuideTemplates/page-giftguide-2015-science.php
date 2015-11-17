@@ -20,7 +20,7 @@ get_header('version-2'); ?>
 
         <h3>THE ULTIMATE MAKERS</h3>
         <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>SCIENCE</span></h3>
-        <p>We scoured the world for some of out favorite products in nine different fields - gifts for Makers of every type - from the best solder sucker to a speedy FPV micodrone.</p>
+        <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
 
@@ -137,7 +137,7 @@ get_header('version-2'); ?>
           </a>
           <div class="gg2015-buy-div">
             <p>There is an incredible amount of data you can collect by analyzing the light emitted or reflected by a substance, not the least of which is oil pollutants in soil and water. This kit will allow you to easily break down the individual frequencies of light, revealing its material composition.</p>
-            <a href="http://store.publiclab.org/products/desktop-spectrometry-kit-3-0" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <a href="http://www.makershed.com/products/diy-desktop-spectrometry" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #2 -->
@@ -212,7 +212,7 @@ get_header('version-2'); ?>
         <div class="col-xs-7">
           <h3>Public Lab Desktop Spectrometry Kit</h3>
           <h4>$45</h4>
-          <a class="gg2015-buy-btn" href="http://store.publiclab.org/products/desktop-spectrometry-kit-3-0" target="_blank">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/diy-desktop-spectrometry" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
@@ -289,13 +289,18 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-4 gg2015-ad">
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>
 </div>
-
+<style>
+/* This is to keep the Sumome left social sharing icons from auto hiding */
+  .sumome-share-client-wrapper-left-page {
+    opacity: 1 !important;
+  }
+</style>
 <script>
   $('.gg2015-open').on('click', function(e) {
     $( event.target ).closest( '.gg2015-open-parent' ).toggleClass('gg2015-open-parent-on');
