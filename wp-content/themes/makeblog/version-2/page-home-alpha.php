@@ -174,8 +174,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   </div>  
 
   <!-- EVENTS PANEL -->
-  <div class="container">
-    <div class="row event-unit"> 
+  <div class="container event-unit">
+    <div class="row"> 
 
 
 <!--  Berlin / School / World Maker Faire -->
@@ -198,10 +198,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   </div>
 
   <!-- MAKER SHED PANEL -->
-  <div class="container">
-    <div class="row product-wrapper"> 
-        <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
-    </div>
+  <div class="container shed-row">
+    <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
   </div> <!-- MakerShed -->
 
   <div class="all-projects <?php echo $device ?>">
