@@ -75,21 +75,19 @@ class Relationships {
 
 
 	/**
-	 * @param        $review_id
-	 *
-	 * @param string $post_status
+	 * @param int   $review_id
+	 * @param array $args
 	 *
 	 * @return array
 	 */
-	public function get_products_in_review( $review_id, $post_status ='publish' ) {
-		$posts = get_posts( array(
+	public function get_products_in_review( $review_id, $args = [] ) {
+		$posts = get_posts( wp_parse_args( $args, array(
 			'connected_type'   => self::PRODUCTS_IN_REVIEW,
 			'connected_items'  => $review_id,
 			'suppress_filters' => false,
 			'post_type'        => $this->types['Products'],
-			'post_status'      => $post_status,
-			'posts_per_page'   => -1
-		) );
+			'posts_per_page'   => - 1
+		) ) );
 
 		return $posts;
 	}

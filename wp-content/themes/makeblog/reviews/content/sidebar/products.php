@@ -10,24 +10,24 @@ $scored_image     = get_field( 'scores_image' );
 	<div class="meta-block authored-by desktop">
 		<ul>
 			<?php
-			$i = new CoAuthorsIterator();
-			$i->iterate();
-			do {
-				?>
-				<?php
-				$user_description = get_user_meta($i->current_author->ID);
-				$user_description = esc_html( $user_description['description'][0] );
-				//echo $user_description;
-				?>
+
+			$authors = get_coauthors( get_the_ID() );
+			foreach ( $authors as $author ) {
+					?>
 				<li>
-					<a href="<?php echo get_author_posts_url( $i->current_author->ID ); ?>" class="image">
-						<?php echo get_avatar( $i->current_author->ID ); ?>
+					<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="image">
+						<?php echo get_avatar( $author->ID ); ?>
 					</a>
-					<!-- .image -->
+
 					<div class="author-info">
-						<p><a href="<?php echo get_author_posts_url( $i->current_author->ID ); ?>">By <?php echo esc_html( $i->current_author->display_name ); ?></a></p>
+						<p>
+							<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>">
+								By <?php echo esc_html( $author->display_name ); ?>
+							</a>
+
+						</p>
 						<?php
-						$twitter = get_user_meta( $i->current_author->ID, 'twitter', true );
+						$twitter = get_user_meta( $author->ID, 'twitter', true );
 						if ( ! empty( $twitter ) ):
 							?>
 							<p class="author-twitter"><a target="_blank" href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>"><i class="fa fa-twitter"></i>
@@ -37,7 +37,7 @@ $scored_image     = get_field( 'scores_image' );
 					<!-- .author-info -->
 				</li>
 				<?php
-			} while ( $i->iterate() );
+			}
 			?>
 		</ul>
 	</div><!-- .meta-block.authored-by -->

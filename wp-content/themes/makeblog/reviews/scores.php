@@ -29,14 +29,11 @@
 
 				<ul id="score-list">
 					<?php
-					$args = array(
-						'connected_type'  => \Reviews\Architecture\Relationships::PRODUCTS_IN_REVIEW,
-						'connected_items' => get_the_ID(),
-						'nopaging'        => true,
-					);
+					$container = Reviews()->container();
 
-					$products = new WP_Query( $args );
-					foreach ( $products->posts as $product ):
+					$products = $container['Relationships']->get_products_in_review( get_the_ID(), [ 'orderby' => 'post_title', 'order' => 'ASC' ] );
+
+					foreach ( $products as $product ):
 						$mobile_image = get_field( 'scores_image', $product->ID );
 						if( ! empty( $mobile_image ) ){
 						?>

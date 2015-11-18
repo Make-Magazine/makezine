@@ -166,7 +166,7 @@ class Reviews {
 			'fields'     => array(
 				array(
 					'key'   => 'field_56304984bd54d',
-					'label' => 'How we test',
+					'label' => 'How We Test',
 					'name'  => '',
 					'type'  => 'tab',
 				),
@@ -350,7 +350,7 @@ class Reviews {
 	 * Renders the metabox for the scoring table
 	 */
 	public function do_scoring_meta_box() {
-		$products = $this->container['Relationships']->get_products_in_review( get_the_ID(), 'any' );
+		$products = $this->container['Relationships']->get_products_in_review( get_the_ID(), [ 'post_status' => 'any' ] );
 
 		if ( empty( $products ) ) {
 			echo 'Please add your products to this review from within the product edit screen.';

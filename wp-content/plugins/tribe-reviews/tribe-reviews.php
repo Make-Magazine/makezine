@@ -2,9 +2,9 @@
 /*
 Plugin Name:	Reviews functionality
 Description:	Product reviews
-Author:		Modern Tribe
-Version:	1.0
-Author URI:	http://www.tri.be
+Author:		    Modern Tribe
+Version:	    1.0
+Author URI:	    http://www.tri.be
 */
 
 require_once trailingslashit( __DIR__ ) . 'vendor/autoload.php';

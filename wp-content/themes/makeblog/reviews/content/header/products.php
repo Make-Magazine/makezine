@@ -1,3 +1,16 @@
+<div class="header-ad">
+	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
+		<div class="own">
+			<div class="home-ads">
+				<?php global $make; print $make->ads->leaderboard; ?>
+			</div>
+		</div>
+	</li>
+</div><!-- .header-ad -->
+
+<div class="container">
+	<?php get_template_part( 'reviews/content/header/reviews' ); ?>
+</div>
 
 <?php 
 
@@ -94,7 +107,7 @@ if ( ! empty( $image ) ) {
 							if ( $asset_path && shortcode_exists( 'wr360embed' ) ):
 								global $post;
 								$wr_shortcode = sprintf(
-									'[%1$s name="%2$s" width="300" height="405" config="%3$s"]',
+									'[%1$s name="%2$s" width="300" height="400" config="%3$s"]',
 									'wr360embed',
 									$post->post_name,
 									esc_url( $asset_path )

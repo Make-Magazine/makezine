@@ -3,8 +3,19 @@
  * The Reviews Section Header
  */
 
-$modal_image    = get_field( 'magazine_thumbnail' );
-$modal_text     = get_field( 'magazine_label' );
+// Get the correct comaprison post ID
+$id        = get_the_ID();
+$container = Reviews()->container();
+
+if ( is_singular( \Reviews\Architecture\Post_Types\Products::NAME ) ) {
+	$review = $container['Relationships']->get_review_for_product( get_the_ID() );
+	if ( count( $review ) > 0 ) {
+		$id = $review[0]->ID;
+	}
+}
+
+$modal_image    = get_field( 'magazine_thumbnail', $id );
+$modal_text     = get_field( 'magazine_label', $id );
 
 ?>
 <div class="row">
@@ -15,18 +26,15 @@ $modal_text     = get_field( 'magazine_label' );
 		<nav class="review-nav navbar">
 			<ol class="nav navbar-nav">
 				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
-					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link(); ?>">How We Test</a>
+					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">How We Test</a>
 				</li>
 				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active"  <?php } ?> >
-					<a href="<?php echo get_permalink(); ?>">Compare</a>
+					<a href="<?php echo get_permalink( $id ); ?>">Compare</a>
 				</li>
 				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> >
-					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link(); ?>">Scores</a>
+					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>">Scores</a>
 				</li>
-				<?php
-				$container = Reviews()->container();
-				$products  = $container['Relationships']->get_products_in_review( get_the_ID() );
-				?>
+				<?php $products = $container['Relationships']->get_products_in_review( $id, [ 'orderby' => 'post_title', 'order' => 'ASC' ] ); ?>
 				<li class="has-submenu dropdown">
 					<button id="reviews-nav-btn" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reviews</button>
 					<section class="submenu" aria-labelledby="reviews-nav-btn">

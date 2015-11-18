@@ -17,16 +17,21 @@
 <?php $hero = get_field( 'hero_image' ); ?>
 
 <?php if ( ! empty( $hero ) ): ?>
-	<div id="hero-products">
+	<div id="hero-products" class="how-we-test" style="background-image: url(<?php echo esc_attr( $hero['url'] );?>);">
 		<img class="hero-single-products" src="<?php echo $hero['url']; ?>" alt=""/>
 	</div><!-- #hero-products -->
 <?php endif; ?>
+
+
+
 
 <div id="content-wrap" class="container <?php if ( empty( $hero ) ) {
 	echo 'no-hero';
 } ?>">
 	<div class="row cw-content">
 		<div id="product-content" class="col-sm-8">
+			
+			<a data-sumome-share-id="002914e1-bbce-4a58-b59e-8846991ae71c"></a>
 
 			<h2 class="product-title"><?php echo get_field('title'); ?></h2>
 
@@ -37,23 +42,19 @@
 			<div class="row testing-authors">
 
 				<?php if ( class_exists( 'CoAuthorsIterator' ) ):
-					$i = new CoAuthorsIterator();
-					$i->iterate();
-
-					do {
-						$user_description = get_user_meta( $i->current_author->ID );
-						$user_description = esc_html( $user_description['description'][0] );
+					$authors = get_coauthors( get_the_ID() );
+					foreach ( $authors as $author ) {
 						?>
 
 						<div class="author col-sm-3">
-							<a href="<?php echo get_author_posts_url( $i->current_author->ID ); ?>" class="author-target">
-								<?php echo get_avatar( $i->current_author->ID ); ?>
+							<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
+								<?php echo get_avatar( $author->ID ); ?>
 								
 								<?php
-								if( ! empty( $user_description ) ){
+								if( ! empty( $author->description ) ){
 								?>
 									<div class="description">
-										<p><?php echo $user_description; ?></p>
+										<p><?php echo $author->description; ?></p>
 	
 										<div class="gradient"></div>
 									</div><!-- .description -->
@@ -61,10 +62,10 @@
 								}
 								?>
 							</a><!-- .author-target -->
-							<h5><?php echo esc_html( $i->current_author->display_name ); ?></h5>
+							<h5><?php echo esc_html( $author->display_name ); ?></h5>
 
 							<?php
-							$twitter = get_user_meta( $i->current_author->ID, 'twitter', true );
+							$twitter = get_user_meta( $author->ID, 'twitter', true );
 							if ( ! empty( $twitter ) ):
 								?>
 								<p><a class="twitter-link" target="_blank"
@@ -75,7 +76,7 @@
 						</div>
 						<!-- .author -->
 						<?php
-					} while ( $i->iterate() );
+					}
 
 				endif; ?>
 
