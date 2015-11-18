@@ -54,8 +54,7 @@
 								if( ! empty( $author->description ) ){
 								?>
 									<div class="description">
-										<p><?php echo $author->description; ?></p>
-	
+										<p><?php echo strip_tags( $author->description ); ?></p>
 										<div class="gradient"></div>
 									</div><!-- .description -->
 								<?php

@@ -184,7 +184,7 @@ class Reviews {
 				),
 				array(
 					'key'           => 'field_563049b3bd54e',
-					'label'         => 'How we test',
+					'label'         => 'How We Test',
 					'name'          => 'how_we_test',
 					'type'          => 'wysiwyg',
 					'default_value' => '',

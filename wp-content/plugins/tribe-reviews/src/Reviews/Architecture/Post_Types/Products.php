@@ -168,13 +168,13 @@ class Products {
 					'key'           => 'field_563050d8d20ac',
 					'label'         => 'Filament Size',
 					'name'          => 'filament_size',
-					'type'          => 'text',
+					'type'          => 'radio',
+					'choices'       => array(
+						'1.75mm' => '1.75mm',
+						'3mm'    => '3mm',
+					),
 					'default_value' => '',
-					'placeholder'   => '',
-					'prepend'       => '',
-					'append'        => '',
-					'formatting'    => 'none',
-					'maxlength'     => '',
+					'layout'        => 'horizontal'
 				),
 				array(
 					'key'           => 'field_563050ebd20ad',

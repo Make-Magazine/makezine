@@ -91,11 +91,11 @@
 							</button>
 							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-filament-size-btn">
 								<label for="mm175">
-									<input id="mm175" type="checkbox" name="filament_size" value="1.75">
+									<input id="mm175" type="checkbox" name="filament_size" value="1.75mm">
 									<span>1.75 mm</span>
 								</label>
 								<label for="mm300">
-									<input id="mm300" type="checkbox" name="filament_size" value="3">
+									<input id="mm300" type="checkbox" name="filament_size" value="3mm">
 									<span>3.00 mm</span>
 								</label>
 							</div>
