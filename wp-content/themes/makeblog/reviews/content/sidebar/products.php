@@ -12,11 +12,12 @@ $scored_image     = get_field( 'scores_image' );
 			<?php
 
 			$authors = get_coauthors( get_the_ID() );
+			$author_data = new Make_Authors();
 			foreach ( $authors as $author ) {
 					?>
 				<li>
 					<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="image">
-						<?php echo get_avatar( $author->ID ); ?>
+						<?php echo $author_data->author_avatar( $author ); ?>
 					</a>
 
 					<div class="author-info">

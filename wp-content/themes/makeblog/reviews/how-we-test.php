@@ -40,44 +40,46 @@
 			<h4 class="authors-title">The Make: Digital Fabrication Team</h4>
 
 			<div class="row testing-authors">
+				<?php
+				$authors = get_coauthors( get_the_ID() );
+				$author_data = new Make_Authors();
+				foreach ( $authors as $author ) {
+					?>
 
-				<?php if ( class_exists( 'CoAuthorsIterator' ) ):
-					$authors = get_coauthors( get_the_ID() );
-					foreach ( $authors as $author ) {
-						?>
-
-						<div class="author col-sm-3">
-							<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
-								<?php echo get_avatar( $author->ID ); ?>
-								
-								<?php
-								if( ! empty( $author->description ) ){
-								?>
-									<div class="description">
-										<p><?php echo strip_tags( $author->description ); ?></p>
-										<div class="gradient"></div>
-									</div><!-- .description -->
-								<?php
-								}
-								?>
-							</a><!-- .author-target -->
-							<h5><?php echo esc_html( $author->display_name ); ?></h5>
+					<div class="author col-sm-3">
+						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
+							<?php echo $author_data->author_avatar( $author ); ?>
 
 							<?php
-							$twitter = get_user_meta( $author->ID, 'twitter', true );
-							if ( ! empty( $twitter ) ):
+							$description = $author_data->author_bio( $author );
+							if ( ! empty( $description ) ) {
 								?>
-								<p><a class="twitter-link" target="_blank"
-								      href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>"><i
-											class="fa fa-twitter"></i> <span><?php echo esc_html( $twitter ); ?></span></a></p>
-							<?php endif; ?>
+								<div class="description">
+									<p><?php echo strip_tags( $description ); ?></p>
 
-						</div>
-						<!-- .author -->
+									<div class="gradient"></div>
+								</div><!-- .description -->
+								<?php
+							}
+							?>
+						</a><!-- .author-target -->
+						<h5><?php echo esc_html( $author->display_name ); ?></h5>
+
 						<?php
-					}
+						$twitter = get_user_meta( $author->ID, 'twitter', true );
+						if ( ! empty( $twitter ) ):
+							?>
+							<p><a class="twitter-link" target="_blank"
+							      href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>"><i
+										class="fa fa-twitter"></i> <span><?php echo esc_html( $twitter ); ?></span></a></p>
+						<?php endif; ?>
 
-				endif; ?>
+					</div>
+					<!-- .author -->
+					<?php
+				}
+
+				?>
 
 
 			</div>

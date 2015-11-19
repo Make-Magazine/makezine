@@ -25,7 +25,7 @@ class Theme {
 		wp_enqueue_script( 'conformer', get_stylesheet_directory_uri() . '/reviews/js/conformer.js', array( 'jquery' ) );
 
 		wp_localize_script( 'make-reviews', 'MakeReviews', array(
-			'ajax_url'    => admin_url( 'admin-ajax.php' ),
+			'ajax_url'    => set_url_scheme( admin_url( 'admin-ajax.php' ), 'http' ),
 			'ajax_action' => AJAX::FILTER_ACTION,
 			'post_id'     => get_the_ID()
 		) );
