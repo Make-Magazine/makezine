@@ -78,8 +78,12 @@
 
       }
 
-      // Try loading any placeholder for ads.
       $(document).ready(function(){
+        // Ads are available (no adblock).
+        if (window.googletag && googletag.pubadsReady) {
+          ga('set', 'dimension1', 'true');
+        }
+        // Try loading any placeholder for ads.
         make.gpt.loadDyn();
       });
 
