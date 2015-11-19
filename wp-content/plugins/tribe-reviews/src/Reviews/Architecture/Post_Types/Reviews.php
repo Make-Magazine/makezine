@@ -72,6 +72,8 @@ class Reviews {
 			'supports'     => [ 'title', 'author' ],
 		] );
 
+		register_taxonomy_for_object_type( 'post_tag', self::NAME );
+
 	}
 
 	public function register_custom_endpoints() {
