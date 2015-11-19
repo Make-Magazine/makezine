@@ -115,14 +115,14 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
           style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 1200, 694 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
-            <h2><?php echo $main_title ; ?></h2>
+            <h2><?php echo $main_title; ?></h2>
             <p><?php echo esc_html( $main_subtitle ); ?></p>
           </div>
         </a>
       </div>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-        <p><?php home_tags( "$main_id" ) ?></p>
+        <?php home_tags( "$main_id" ) ?>
       </div>
     </div>
   </div>
@@ -134,12 +134,12 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
-          <h2><?php echo $top_title ; ?></h2>
+          <h2><?php echo $top_title; ?></h2>
         </div>
       </a>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-          <p><?php home_tags( "$top_id" ) ?></p>
+          <?php home_tags( "$top_id" ) ?>
         </div>
       </div>
     </div>
@@ -152,12 +152,12 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
       <div class="featured-image-shadow"></div>
       <div class="mz-text-overlay mz-text-overlay-side">
-        <h2><?php echo  $bottom_title ; ?></h2>
+        <h2><?php echo $bottom_title; ?></h2>
       </div>
       </a>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-          <p><?php home_tags( "$bottom_id" ) ?></p>
+          <?php home_tags( "$bottom_id" ) ?>
         </div>
       </div>
       </div>
