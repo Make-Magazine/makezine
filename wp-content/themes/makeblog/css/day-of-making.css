@@ -6233,6 +6233,16 @@ a {
   line-height: 24px;
   margin-bottom: 15px;
 }
+.bottom-steps .steps-list-nav #tabs {
+  padding-right: 0;
+}
+.bottom-steps .steps-list-nav .steps a {
+  padding: 10px 10px;
+  margin: 0;
+}
+.bottom-steps .tab-content {
+  overflow: visible;
+}
 .related-projects {
   border-top: 7px solid #ed1c24;
   border-bottom: 7px solid #ed1c24;
@@ -6393,6 +6403,8 @@ ul#tabs .nav-header {
   color: #ed1c24;
   font-weight: bold;
   font-size: 24px;
+  padding: 5px 10px;
+  margin: 0;
 }
 ul#tabs .current > a,
 ul#tabs .current > a:hover {
@@ -6417,6 +6429,9 @@ ul#tabs .current > a:hover {
 }
 .jstep {
   margin-bottom: 40px;
+}
+.jstep .span6 {
+  margin-left: 15px;
 }
 .jstep ul {
   margin: 20px 0px 20px 20px;
