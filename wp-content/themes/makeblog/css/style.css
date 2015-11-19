@@ -5656,7 +5656,14 @@ a.badge:focus {
 .make_ad {
   text-align: center;
 }
-.js-ad {
+.row.post_rows .own_ads {
+  background-color: transparent;
+  box-shadow: none !important;
+}
+.row.post_rows .own_ads .own {
+  box-shadow: 0 6px 6px -7px #000000, 0 -6px 6px -7px #000000;
+}
+.row.post_rows > .js-ad {
   margin-top: 15px;
 }
 .custom-feed.simple {
