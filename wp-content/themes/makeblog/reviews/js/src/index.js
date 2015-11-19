@@ -276,12 +276,5 @@ jQuery( document ).ready(function($) {
 		$(this).fadeOut();
 		$('.virtual-tour .webrotate360').addClass('show');
 	});
-	
-    var conformer = new Conformer({
-        debounceRate: 400,
-        selector: '.author',
-        //threshold: MOBILE_BREAKPOINT,
-        type: 'all'
-    });
 
 });

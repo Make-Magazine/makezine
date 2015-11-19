@@ -36,10 +36,20 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 				<?php
 				$authors = get_coauthors( get_the_ID() );
 				$author_data = new Make_Authors();
+				$postcount = -1;
 				foreach ( $authors as $author ) {
+					$postcount++;
+					if($postcount % 4 == 0){
+					    $clear_count = 'clear-4';
+					}else if($postcount % 3 == 0){
+					    $clear_count = 'clear-3';
+					}else{
+						$clear_count = '';
+					}
+					$evenOdd = ( ($postcount % 2) == 0 ) ? " clear-2" : "";
 					?>
 
-					<div class="author col-sm-3">
+					<div class="author col-sm-3 <?php echo $clear_count; echo $evenOdd; ?>">
 						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
 							<?php echo $author_data->author_avatar( $author ); ?>
 
