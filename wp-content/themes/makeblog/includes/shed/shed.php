@@ -193,31 +193,32 @@ function make_shopify_featured_products_slider_home( $row = 'row' ) {
 
   // Build the main link, and the carousel wrapper
   $output .= '<!-- MAKER SHED PANEL -->';
-  $output .= '  <div class="shed-header">';
-  $output .= '    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" id="shed-heading">';
-  $output .= '      <h5 class="text-nowrap">SHOP BEST SELLERS AT MAKER SHED</h5>';
+  $output .= '  <div class="row shed-row-header">';
+  $output .= '    <div class="col-md-4 col-sm-5 col-xs-12">';
+  $output .= '      <h5 class="shed-row-h5">SHOP BEST SELLERS AT MAKER SHED</h5>';
   $output .= '    </div>';
-  $output .= '    <div class="col-lg-6 col-md-5 col-sm-4 hidden-xs text-left" id="shed-tag">  ';
-  $output .= '      <h6 class="text-nowrap">The official store of Make: and Maker Faire</h6>';
+  $output .= '    <div class="col-md-4 col-sm-4 hidden-xs">  ';
+  $output .= '      <h6 class="text-center">The official store of Make: and Maker Faire</h6>';
   $output .= '    </div>';
-  $output .= '    <div class="col-lg-3 col-md-4 col-sm-4 hidden-xs" id="shed-link">';
-  $output .= '      <a href="http://makershed.com">';
-  $output .= '        <h6 class="text-nowrap">Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
+  $output .= '    <div class="col-md-4 col-sm-3 hidden-xs">';
+  $output .= '      <a href="http://makershed.com" target="_blank">';
+  $output .= '        <h6 class="pull-right">Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
   $output .= '      </a>  ';
   $output .= '    </div> ';
   $output .= '  </div> ';
-  $output .= '  <div class="row">';
-  $output .= '    <div class="col-xs-12">';
+  $output .= '  <div class="row shed-row-body">';
   // Start the product loop.
   foreach ( $counter as $i => $product ) {
-      $output .= '      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 white-panel shed-product" >';
+      $output .= '      <div class="col-sm-3 col-xs-6 shed-product" >';
       $output .= '        <a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js( $products[$product]->item_name ) . '\']);" href="' . esc_url( $products[$product]->item_page_url ) . '?utm_source=makezine.com&utm_medium=product_ads&utm_term='.str_replace(" ", "_", esc_js( $products[$product]->item_name )).'">';
-      $output .= '          <img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 130, 170 ) . '" class="img-responsive center-block product-height"></img>';
-      $output .= '          <div class="text-box">';
-      $output .= '            <h6 class="product-desc center">' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
+      $output .= '          <div class="shed-product-image">';
+      $output .= '            <img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 130, 170 ) . '" class="img-responsive"></img>';
       $output .= '          </div>';
-      $output .= '          <div class="text-box">';
-      $output .= '            <p class="product-price center"> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
+      $output .= '          <div class="shed-product-title">';
+      $output .= '            <h6>' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
+      $output .= '          </div>';
+      $output .= '          <div class="shed-product-price">';
+      $output .= '            <p> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
       $output .= '          </div>';
       $output .= '        </a>';
       $output .= '      </div>';
@@ -226,20 +227,14 @@ function make_shopify_featured_products_slider_home( $row = 'row' ) {
       break;
     }
   }
-  // Close out the markup.
-  $output .= '    </div>';
-  $output .= '  </div>';
-  $output .= '</div>';
+  // Close out the .row
   $output .= '</div>';
 
-  $output .= '<div class="shed-final-wrapper">';
-  $output .= ' <div class="row shed-header" id="buy-link">';
-  $output .= '   <div class="hidden-lg hidden-md hidden-sm col-xs-12 ">';
-  $output .= '     <a href="http://makershed.com" ></a>';
-  $output .= '     <h6>Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
-  $output .= '   </div> ';
-  $output .= ' </div>';
-  $output .= '</div> <!-- MakerShed -->';
+  // Mobile footer link
+  $output .= '<div class="row shed-row-footer visible-xs-block">';
+  $output .= '  <div class="col-xs-12 text-center"><a href="http://makershed.com" >Find More at Maker Shed <i class="fa fa-external-link"></i></a></div>';
+  $output .= '</div>';
+
   // Return the content.
   return $output;
 }
@@ -280,31 +275,30 @@ function make_shopify_featured_products_slider_sprout( $row = 'row' ) {
 
   // Build the main link, and the carousel wrapper
   $output .= '<!-- MAKER SHED PANEL -->';
-  $output .= '  <div class="shed-header home-sprout-row">';
-  $output .= '    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" id="shed-heading">';
-  $output .= '      <h5 class="text-nowrap">SHOP AT MAKER SHED</h5>';
+  $output .= '  <div class="shed-row-header row">';
+  $output .= '    <div class="col-md-4 col-sm-5 col-xs-12">';
+  $output .= '      <h5 class="shed-row-h5">SHOP AT MAKER SHED</h5>';
   $output .= '    </div>';
-  $output .= '    <div class="col-lg-6 col-md-5 col-sm-4 hidden-xs text-left" id="shed-tag">  ';
-  $output .= '      <h6 class="text-nowrap">The official store of Make: and Maker Faire</h6>';
+  $output .= '    <div class="col-md-4 col-sm-4 hidden-xs">  ';
+  $output .= '      <h6 class="text-center">The official store of Make: and Maker Faire</h6>';
   $output .= '    </div>';
-  $output .= '    <div class="col-lg-3 col-md-4 col-sm-4 hidden-xs" id="shed-link">';
-  $output .= '      <a href="http://makershed.com">';
-  $output .= '        <h6 class="text-nowrap">Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
-  $output .= '      </a>  ';
-  $output .= '    </div> ';
-  $output .= '  </div> ';
-  $output .= '  <div class="row">';
-  $output .= '    <div class="col-xs-12">';
+  $output .= '    <div class="col-md-4 col-sm-3 hidden-xs">';
+  $output .= '      <a href="http://makershed.com" target="_blank">';
+  $output .= '        <h6 class="pull-right">Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
+  $output .= '      </a>';
+  $output .= '    </div>';
+  $output .= '  </div>';
+  $output .= '  <div class="row shed-row-body">';
   // Start the product loop.
   foreach ( $counter as $i => $product ) {
-      $output .= '      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 white-panel shed-product" >';
+      $output .= '      <div class="col-sm-3 col-xs-6 shed-product" >';
       $output .= '        <a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js( $products[$product]->item_name ) . '\']);" href="' . esc_url( $products[$product]->item_page_url ) . '?utm_source=makezine.com&utm_medium=product_ads&utm_term='.str_replace(" ", "_", esc_js( $products[$product]->item_name )).'">';
-      $output .= '          <img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 130, 170 ) . '" class="img-responsive center-block product-height"></img>';
-      $output .= '          <div class="text-box">';
-      $output .= '            <h6 class="product-desc center">' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
+      $output .= '          <img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 130, 170 ) . '" class="img-responsive"></img>';
+      $output .= '          <div class="shed-product-title">';
+      $output .= '            <h6>' . wp_kses_post( truncate_str($products[$product]->item_name, 40 )) . '</h6>';
       $output .= '          </div>';
-      $output .= '          <div class="text-box">';
-      $output .= '            <p class="product-price center"> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
+      $output .= '          <div class="shed-product-price">';
+      $output .= '            <p> $' . wp_kses_post( $products[$product]->item_price ) . '</p>';  
       $output .= '          </div>';
       $output .= '        </a>';
       $output .= '      </div>';
@@ -313,18 +307,14 @@ function make_shopify_featured_products_slider_sprout( $row = 'row' ) {
       break;
     }
   }
-  // Close out the markup.
-  $output .= '    </div>';
-  $output .= '    </div>';
+  // Close out the .row
+  $output .= '</div>';
 
-  $output .= '<div class="shed-final-wrapper">';
-  $output .= ' <div class="row shed-header" id="buy-link">';
-  $output .= '   <div class="hidden-lg hidden-md hidden-sm col-xs-12 ">';
-  $output .= '     <a href="http://makershed.com" ></a>';
-  $output .= '     <h6>Find More at Maker Shed <i class="fa fa-external-link"></i></h6>';
-  $output .= '   </div> ';
-  $output .= ' </div>';
-  $output .= '</div> <!-- MakerShed -->';
+  // Mobile footer link
+  $output .= '<div class="row shed-row-footer visible-xs-block">';
+  $output .= '  <div class="col-xs-12 text-center"><a href="http://makershed.com" >Find More at Maker Shed <i class="fa fa-external-link"></i></a></div>';
+  $output .= '</div>';
+
   // Return the content.
   return $output;
 }
