@@ -36,7 +36,7 @@
         }
       ?>
       <h3>Yes, I would like my free PDF copy of the 3D Fabricator Quick Guide.</h3>
-      <form class="whatcounts-signup-footer" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
+      <form class="whatcounts-signup-footer" action="http://secure.whatcounts.com/bin/listctrl" method="POST">
         <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
         <input type="hidden" name="cmd" value="subscribe" />
         <input type="hidden" name="custom_source" value="modal-3Dpdf" />
