@@ -114,7 +114,7 @@
 								<input type="hidden" name="custom_incentive" value="none" /> 
 								<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 								<input type="hidden" id="format_mime" name="format" value="mime" />
-								<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+								<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
 								<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 								<input type="hidden" name="errors_to" value="" />
 								<div class="mz-form-horizontal">
@@ -185,7 +185,7 @@
 							<input type="hidden" name="custom_incentive" value="none" /> 
 							<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 							<input type="hidden" id="format_mime" name="format" value="mime" />
-							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
 							<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 							<input type="hidden" name="errors_to" value="" />
 							<div class="mz-form-horizontal">
@@ -284,6 +284,9 @@
 		</script>
 
 		<?php wp_footer(); ?>
+
+    <!-- Checks the URL for which thank you modal to how -->
+    <?php echo display_thank_you_modal_if_signed_up(); ?>
 
     <!-- Subscribe return path overlay -->
     <?php echo subscribe_return_path_overlay(); ?>

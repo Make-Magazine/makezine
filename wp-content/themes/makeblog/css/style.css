@@ -15259,7 +15259,7 @@ p.sponsored {
 .fancybox-close,
 .fancybox-prev span,
 .fancybox-next span {
-  background-image: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_sprite.png');
+  background-image: url('../img/fancybox_sprite.png');
 }
 #fancybox-loading {
   position: fixed;
@@ -15275,7 +15275,7 @@ p.sponsored {
 #fancybox-loading div {
   width: 44px;
   height: 44px;
-  background: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_loading.gif') center center no-repeat;
+  background: url('../img/fancybox_loading.gif') center center no-repeat;
 }
 .fancybox-close {
   position: absolute;
@@ -15297,7 +15297,7 @@ p.sponsored {
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  background: transparent url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/blank.gif');
+  background: transparent url('../img/blank.gif');
   /* helps IE */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 8040;
@@ -15356,7 +15356,7 @@ p.sponsored {
   overflow: hidden;
   display: none;
   z-index: 8010;
-  background: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_overlay.png');
+  background: url('../img/fancybox_overlay.png');
 }
 .fancybox-overlay-fixed {
   position: fixed;
@@ -15422,12 +15422,12 @@ p.sponsored {
   .fancybox-close,
   .fancybox-prev span,
   .fancybox-next span {
-    background-image: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_sprite@2x.png');
+    background-image: url('../img/fancybox_sprite@2x.png');
     background-size: 44px 152px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
   #fancybox-loading div {
-    background-image: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_loading@2x.gif');
+    background-image: url('../img/fancybox_loading@2x.gif');
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
@@ -15436,10 +15436,6 @@ p.sponsored {
 .fancybox-inner {
   text-align: center;
   height: auto;
-}
-.fancybox-skin {
-  background: #00ABCD !important;
-  color: #fff !important;
 }
 .fancybox-inner h2 {
   font-weight: bold;
@@ -15505,6 +15501,64 @@ p.sponsored {
   text-align: center;
   text-shadow: 1px 1px 0px #b23e35;
   padding: 9px 10px;
+}
+/* Thank you pop up */
+.nl-modal-cont {
+  padding: 15px 0;
+}
+.nl-modal-cont ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  margin-bottom: 0;
+  padding: 0;
+}
+.nl-modal-cont ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+.nl-modal-cont ul.social-network.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  background-color: #D3D3D3;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.nl-modal-cont ul.social-network.social-circle li a i {
+  color: #fff;
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+.nl-modal-cont ul.social-network.social-circle li a:hover {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.nl-modal-cont ul.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+.nl-modal-cont ul.social-network a.icoTwitter:hover {
+  background-color: #33ccff;
+}
+.fancybox-inner .nl-modal-cont h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  margin-top: 0;
+  color: #444;
 }
 @media all and (max-width: 530px) {
   .btn-modal,
