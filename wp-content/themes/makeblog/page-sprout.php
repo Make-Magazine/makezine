@@ -31,12 +31,12 @@ get_header( 'version-2' );
   </div>
   <div id="temp_post_list" style="display: none"></div>
 </div>
-<div class="container sprout-shed-container"> 
-  <div class="row product-row">
+
+<div class="container shed-row shed-row-sprout"> 
   <!-- HP Items Feed -->
   <?php echo make_shopify_featured_products_slider_sprout( 'row-fluid' ); ?>
-  </div>
-</div>  
+</div>
+
 <div class="container sprout-container">
   <div class="sprout-margins">
     <div class="row post_row home-sprout-row"> 
