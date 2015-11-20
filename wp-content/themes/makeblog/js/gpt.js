@@ -79,6 +79,7 @@
       }
 
       $(document).ready(function(){
+        console.log('document ready');
         // Ads are available (no adblock).
         if (window.googletag && googletag.pubadsReady) {
           console.log('pubadsReady');
