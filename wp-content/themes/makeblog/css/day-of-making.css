@@ -7576,6 +7576,13 @@ img.nav-sprout {
   margin: -5px 0 0 0;
   height: 32px;
 }
+/* Red navigation item. Add CSS class of nav-red within UberMenu settings. */
+.navbar .nav > li.nav-red a {
+  color: #e70c32;
+}
+.navbar .nav > li.menu-item-has-children.nav-red a:after {
+  color: #e70c32;
+}
 .new-footer {
   padding: 20px 0;
   border-top: 5px solid #3FAFED;
@@ -15532,7 +15539,7 @@ div.caption404 {
 }
 p.headline404 {
   color: #ffffff;
-  font-family: Roboto-Slab;
+  font-family: Roboto, Sans-serif;
   font-size: 25px;
 }
 p.body404 {
