@@ -1858,56 +1858,143 @@ function youtube_shortcode_modal($atts){
   return ob_get_clean();
 }
 
+
 /**
  * Adds the subscribe header return path overlay
  */
 function subscribe_return_path_overlay() { ?>
-	<div class="overlay-div overlay-slidedown hidden-xs">
-		<div class="container-fluid-overlay">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4 overlay-1">
-						<img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/10/Magazine-cover-44-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
-					</div>
-					<div class="col-sm-4 overlay-2">
-						<h2>Get the Magazine</h2>
-						<p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
-						<a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/">SUBSCRIBE</a>
-					</div>
-					<div class="col-sm-4 overlay-3">
-						<h2>Sign up for the Make: Newsletter</h2>
-						<p>Stay inspired, keep making.</p>
-						<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
-							<input type="hidden" name="cmd" value="subscribe"/>
-							<input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
-							<input type="hidden" name="custom_incentive" value="none"/>
-							<input type="hidden" name="custom_url" value=""/>
-							<input type="hidden" id="format_mime" name="format" value="mime"/>
-							<input type="hidden" name="goto" value=""/>
-							<input type="hidden" name="custom_host" value="makezine.com" />
-							<input type="hidden" name="errors_to" value=""/>
-							<input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
-							<input value="GO" class="black-overlay-btn" type="submit">
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		jQuery('#trigger-overlay, .overlay-div').hover(
-			function () {
-				jQuery('.overlay-div').stop().addClass( 'open' );
-				jQuery( 'body' ).addClass( 'modal-open' );
-			},
-			function () {
-				jQuery('.overlay-div').stop().removeClass( 'open' );
-				jQuery( 'body' ).removeClass( 'modal-open' );
-			}
-		);
-	</script>
+    <div class="overlay-div overlay-slidedown hidden-xs">
+        <div class="container-fluid-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 overlay-1">
+                        <img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/10/Magazine-cover-44-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
+                    </div>
+                    <div class="col-sm-4 overlay-2">
+                        <h2>Get the Magazine</h2>
+                        <p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
+                        <a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/">SUBSCRIBE</a>
+                    </div>
+                    <div class="col-sm-4 overlay-3">
+                        <h2>Sign up for the Make: Newsletter</h2>
+                        <p>Stay inspired, keep making.</p>
+                        <?php
+                            $isSecure = "http://";
+                            if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                              $isSecure = "https://";
+                            }
+                        ?>
+                        <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+                            <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
+                            <input type="hidden" name="cmd" value="subscribe"/>
+                            <input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
+                            <input type="hidden" name="custom_incentive" value="none"/>
+                            <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>"/>
+                            <input type="hidden" id="format_mime" name="format" value="mime"/>
+                            <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
+                            <input type="hidden" name="custom_host" value="makezine.com" />
+                            <input type="hidden" name="errors_to" value=""/>
+                            <input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
+                            <input value="GO" class="black-overlay-btn" type="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery('#trigger-overlay, .overlay-div').hover(
+            function () {
+                jQuery('.overlay-div').stop().addClass( 'open' );
+                jQuery( 'body' ).addClass( 'modal-open' );
+            },
+            function () {
+                jQuery('.overlay-div').stop().removeClass( 'open' );
+                jQuery( 'body' ).removeClass( 'modal-open' );
+            }
+        );
+    </script>
 <?php } 
+
+
+/**
+ * Checks the URL for which thank you modal to how.
+ * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
+ * URL with ?thankyou=true&subscribed-to=3d-printer-make-newsletter will show the 
+ */
+function display_thank_you_modal_if_signed_up() { ?>
+  <script>
+    $(document).ready(function(){
+      if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
+        $(".fancybox-thx").fancybox({
+          autoSize : false,
+          width  : 400,
+          autoHeight : true,
+          padding : 0,
+          afterLoad   : function() {
+            this.content = this.content.html();
+          }
+        });
+        $(".fancybox-thx").trigger('click');
+      }
+      else if(window.location.href.indexOf("?thankyou=true&subscribed-to=3d-printer") > -1) {
+        $(".fancybox-thx-3d-printer").fancybox({
+          autoSize : false,
+          width  : 580,
+          autoHeight : true,
+          padding : 0,
+          afterLoad   : function() {
+            this.content = this.content.html();
+          }
+        });
+        $(".fancybox-thx-3d-printer").trigger('click');
+      }
+    });
+  </script>
+  <div class="fancybox-thx" style="display:none;">
+    <div class="nl-modal-cont">
+      <div class="col-sm-4 hidden-xs nl-modal">
+      <span class="fa-stack fa-4x">
+        <i class="fa fa-circle-thin fa-stack-2x"></i>
+        <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+      </span>
+      </div>
+      <div class="col-sm-8 col-xs-12 nl-modal">
+        <h3>Awesome!</h3>
+        <p>Thanks for signing up.</p>
+        <div class="social-network-container text-center">
+          <ul class="social-network social-circle">
+            <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+          </ul>    
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="fancybox-thx-3d-printer" style="display:none;">
+    <div class="nl-modal-cont">
+      <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+          </span>
+      </div>
+      <div class="col-sm-9 col-xs-12 nl-modal">
+        <h3>Awesome!</h3>
+        <p>Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
+        <div class="social-network-container text-center">
+          <ul class="social-network social-circle">
+            <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+          </ul>    
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<?php }
+
 
 function register_widget_zone() {
     register_sidebar(
