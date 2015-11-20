@@ -20,9 +20,6 @@ class Theme {
 
 		// Enqueue our Product Review styles.
 		wp_enqueue_script( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/js/min/index.min.js', array( 'jquery' ) );
-		
-		// Enqueue Conformer script for How We Test authors.
-		wp_enqueue_script( 'conformer', get_stylesheet_directory_uri() . '/reviews/js/conformer.js', array( 'jquery' ) );
 
 		wp_localize_script( 'make-reviews', 'MakeReviews', array(
 			'ajax_url'    => set_url_scheme( admin_url( 'admin-ajax.php' ), 'http' ),

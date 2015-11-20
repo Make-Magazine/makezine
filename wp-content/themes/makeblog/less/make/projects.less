@@ -155,8 +155,16 @@ a {
 		line-height:24px;
 		margin-bottom:15px;
 	}
-	img {
+	.steps-list-nav #tabs {
+		padding-right: 0;
 	}
+	.steps-list-nav .steps a {
+		padding: 10px 10px;
+    margin: 0;
+	}
+	.tab-content {
+    overflow: visible;
+  }
 }
 
 .related-projects {
@@ -331,6 +339,8 @@ ul#tabs {
 		color:@red;
 		font-weight: bold;
 		font-size: 24px;
+		padding: 5px 10px;
+		margin: 0;
 	}
 	.current > a,
 	.current > a:hover {
@@ -361,6 +371,9 @@ ul#tabs {
 
 .jstep {
 	margin-bottom:40px;
+	.span6 {
+		margin-left: 15px;
+	}
 	ul {
 		margin:20px 0px 20px 20px;
 	}

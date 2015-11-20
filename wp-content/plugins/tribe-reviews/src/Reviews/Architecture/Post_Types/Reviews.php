@@ -72,6 +72,8 @@ class Reviews {
 			'supports'     => [ 'title', 'author' ],
 		] );
 
+		register_taxonomy_for_object_type( 'post_tag', self::NAME );
+
 	}
 
 	public function register_custom_endpoints() {
@@ -427,7 +429,7 @@ class Reviews {
 			$review_id = get_the_ID();
 		}
 
-		return trailingslashit( get_permalink( $review_id ) ) . 'how-we-test/' . $review_id;
+		return trailingslashit( get_permalink( $review_id ) ) . 'how-we-test/shootout/';
 	}
 
 	public static function get_scores_link( $review_id = null ) {
@@ -436,6 +438,6 @@ class Reviews {
 			$review_id = get_the_ID();
 		}
 
-		return trailingslashit( get_permalink( $review_id ) ) . 'scores/' . $review_id;
+		return trailingslashit( get_permalink( $review_id ) ) . 'scores/shootout/';
 	}
 }
