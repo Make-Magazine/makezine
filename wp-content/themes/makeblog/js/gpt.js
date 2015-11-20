@@ -79,14 +79,16 @@
       }
 
       $(document).ready(function(){
-        console.log('document ready');
-        // Ads are available (no adblock).
-        if (window.googletag && googletag.pubadsReady) {
-          console.log('pubadsReady');
-          ga('set', 'dimension1', 'true');
-        }
         // Try loading any placeholder for ads.
         make.gpt.loadDyn();
+        $(window).load(function(){
+          console.log('window loaded');
+          // Ads are available (no adblock).
+          if (window.googletag && googletag.pubadsReady) {
+            console.log('pubadsReady');
+            ga('set', 'dimension1', 'true');
+          }
+        });
       });
 
     },
