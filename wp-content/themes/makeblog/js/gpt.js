@@ -81,6 +81,7 @@
       $(document).ready(function(){
         // Ads are available (no adblock).
         if (window.googletag && googletag.pubadsReady) {
+          console.log('pubadsReady');
           ga('set', 'dimension1', 'true');
         }
         // Try loading any placeholder for ads.
