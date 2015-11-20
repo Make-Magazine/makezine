@@ -37,6 +37,8 @@ class Products {
 			'supports'    => [ 'title', 'editor', 'thumbnail', 'author' ],
 		] );
 
+		register_taxonomy_for_object_type( 'post_tag', self::NAME );
+
 	}
 
 	public function acf_fields() {

@@ -1,14 +1,7 @@
 <?php get_header('version-2'); ?>
 
-<div class="header-ad">
-	<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads">
-		<div class="own">
-			<div class="home-ads">
-				<?php global $make; print $make->ads->leaderboard; ?>
-			</div>
-		</div>
-	</li>
-</div><!-- .header-ad -->
+<?php // Reviews Section Header
+get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 
 <div class="container">
 	<?php get_template_part( 'reviews/content/header/reviews' ); ?>
@@ -43,10 +36,20 @@
 				<?php
 				$authors = get_coauthors( get_the_ID() );
 				$author_data = new Make_Authors();
+				$postcount = -1;
 				foreach ( $authors as $author ) {
+					$postcount++;
+					if($postcount % 4 == 0){
+					    $clear_count = 'clear-4';
+					}else if($postcount % 3 == 0){
+					    $clear_count = 'clear-3';
+					}else{
+						$clear_count = '';
+					}
+					$evenOdd = ( ($postcount % 2) == 0 ) ? " clear-2" : "";
 					?>
 
-					<div class="author col-sm-3">
+					<div class="author col-sm-3 <?php echo $clear_count; echo $evenOdd; ?>">
 						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
 							<?php echo $author_data->author_avatar( $author ); ?>
 
