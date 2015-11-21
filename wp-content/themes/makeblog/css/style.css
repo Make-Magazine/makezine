@@ -6683,10 +6683,6 @@ ul#tabs .current > a:hover {
 .home-ads {
   max-height: 250px;
 }
-.home .projects-cat .posts-list ul.selected-posts-list > li.row ul li.before-ads,
-.all-projects .posts-list ul.selected-posts-list > li.row ul li.before-ads {
-  margin-bottom: 0;
-}
 .avatar-298 {
   margin-bottom: 20px;
   border: 1px solid #cecece;

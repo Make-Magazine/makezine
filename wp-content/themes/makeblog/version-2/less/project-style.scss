@@ -1460,6 +1460,11 @@ ul.duration-item li.current, ul.diff-item li.current {
   margin-bottom: 30px;
 }
 
+.home .projects-cat .posts-list ul.selected-posts-list > li.row ul li.before-ads,
+.all-projects .posts-list ul.selected-posts-list > li.row ul li.before-ads {
+  margin-bottom: 0;
+}
+
 .projects-cat .posts-list ul.selected-posts-list li.row ul li.ads,
 .all-projects .posts-list ul.selected-posts-list li.row ul li.ads {
   margin-bottom: 15px;
