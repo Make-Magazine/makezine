@@ -77,7 +77,7 @@ get_header('version-2'); ?>
 
   <!-- Desktop title bar -->
   <div class="container gg2015-sidelines">
-    <h3 class="text-center"><span>ELECTRONICS is brought to you by <img width="150px" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/WDLABS_LOGO_blue.png" alt="WD Labs logo" /></span></h3>
+    <h3 class="text-center"><span>ELECTRONICS is sponsored by <img width="150px" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/WDLABS_LOGO_blue.png" alt="WD Labs logo" /></span></h3>
   </div>
 
   <!-- Category Content -->
