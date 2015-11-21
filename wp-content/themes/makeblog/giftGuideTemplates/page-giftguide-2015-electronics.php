@@ -77,7 +77,7 @@ get_header('version-2'); ?>
 
   <!-- Desktop title bar -->
   <div class="container gg2015-sidelines">
-    <h3 class="text-center"><span>ELECTRONICS is brought to you by ...</span></h3>
+    <h3 class="text-center"><span>ELECTRONICS is brought to you by <img width="150px" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/WDLABS_LOGO_blue.png" alt="WD Labs logo" /></span></h3>
   </div>
 
   <!-- Category Content -->
@@ -447,22 +447,57 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
+
+      <!-- Row 1 -->
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">
+          <a href="http://store.westerndigital.com/store/wdus/en_US/list/ThemeID.21986300/parentCategoryID.13092600/categoryID.70262300/Accessories/WD_PiDrive?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img style="width:100%;height:100%" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/WD-PiDrive-Kit.jpg" alt="WD PiDrive Kit" />
+            </div>
+            <h4>WD PiDrive Kit – 1TB storage expansion kit for your DIY projects</h4>
+          </a>
+          <p>$59.99</p>
+          <a class="gg2015-buy-btn" href="http://store.westerndigital.com/store/wdus/en_US/list/ThemeID.21986300/parentCategoryID.13092600/categoryID.70262300/Accessories/WD_PiDrive?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/lulzbot-taz-5-3d-printer?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/LulzBot_TAZ_5_Front.jpg" alt="LulzBot TAZ 5 Desktop 3D Printer" />
+            </div>
+            <h4>LulzBot® TAZ 5 Desktop 3D Printer – Named “Best Overall” by Make:</h4>
+          </a>
+          <p>$2,199.99</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/lulzbot-taz-5-3d-printer?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Magazine_Subscription">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
           <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
         </div>
       </div>
 
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/maker-faire-2015-hat?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=AUTOMOTIVE&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
+          <a href="http://www.makershed.com/products/make-electronics-2ed?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
             <div class="product-shed-image">
               <img src="https://cdn.shopify.com/s/files/1/0243/7593/products/Make_Electronics_2nd_Edition_large.jpg" alt="Make: Electronics, 2Ed" />
             </div>
@@ -473,14 +508,24 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
-        <?php global $make; print $make->ads->ad_300x250; ?>
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/make-electronics-deluxe-toolkit&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Deluxe_Electronics_Toolkit" target="_blank">
+            <div class="product-shed-image">
+              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/MKEE1-2_large.jpg" alt="Make: Deluxe Electronics Toolkit" />
+            </div>
+            <h4>Make: Deluxe Electronics Toolkit</h4>
+          </a>
+          <p>$129.99</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-electronics-deluxe-toolkit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Deluxe_Electronics_Toolkit" target="_blank">BUY IT NOW</a>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
 <style>
-/* This is to keep the Sumome left social sharing icons from auto hiding */
+  /* This is to keep the Sumome left social sharing icons from auto hiding */
   .sumome-share-client-wrapper-left-page {
     opacity: 1 !important;
   }

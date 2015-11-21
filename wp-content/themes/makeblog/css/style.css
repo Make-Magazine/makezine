@@ -9397,7 +9397,6 @@ body.makercamp a.button.small-button {
   margin-top: 6px;
   padding-top: 15px;
   padding-bottom: 15px;
-  display: none;
 }
 #gg2015 .gg2015-sidelines h3 {
   position: relative;
@@ -9921,6 +9920,12 @@ body.makercamp a.button.small-button {
   padding-left: 0;
   padding-right: 0;
 }
+#gg2015 .gg2015-shed .col-xs-6 {
+  margin-bottom: 30px;
+}
+#gg2015 .gg2015-shed .gg2015-shed-row-2 {
+  margin-top: 30px;
+}
 #gg2015 .gg2015-shed .product-shed-grid {
   padding: 20px;
   text-align: center;
@@ -9956,6 +9961,12 @@ body.makercamp a.button.small-button {
   font-family: 'Roboto';
   color: #4a4a4a;
   font-size: 12px;
+}
+#gg2015 .gg2015-shed .gg2015-sponsor-violator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40%;
 }
 #gg2015 .gg2015-mobile-naver {
   background-color: #f40b0b;
@@ -10097,6 +10108,9 @@ body.makercamp a.button.small-button {
 #gg2015 #ad_1x1_1 {
   display: none;
 }
+#gg2015 .gg2015-ad {
+  margin-bottom: 30px;
+}
 #gg2015 .gg2015-ad #ad_300x250_1 {
   box-shadow: 0 6px 6px -7px #000000, 0 -6px 6px -7px #000000;
   height: 462px;
@@ -10196,8 +10210,15 @@ body.makercamp a.button.small-button {
     margin-left: -20px;
     margin-right: -20px;
   }
-  .gg2015-sidelines {
-    display: none;
+  #gg2015 .gg2015-sidelines h3:before {
+    content: none;
+  }
+  #gg2015 .gg2015-sidelines {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #gg2015 .gg2015-sidelines h3 span {
+    padding: 0;
   }
   #gg2015 .gg2015-shed {
     padding-left: 15px;

@@ -76,7 +76,7 @@ get_header('version-2'); ?>
   </div>
 
   <!-- Desktop title bar -->
-  <div class="container gg2015-sidelines">
+  <div class="container gg2015-sidelines hidden">
     <h3 class="text-center"><span>MAKE: BELIEVE is brought to you by ...</span></h3>
   </div>
 
@@ -632,6 +632,68 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
+      <!-- Row 1 -->
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-AG0-330-x-330.jpg" alt="Arckit GO – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit GO – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$69.99</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-A60-330-x-330-04.jpg" alt="Arckit 60 – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit 60 – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$129</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-A120-330-x-330.jpg" alt="Arckit 120 – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit 120 – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$249</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-A240-330-x-330.jpg" alt="Arckit 240 – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit 240 – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$399</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
           <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=MAKE:_BELIEVE&utm_term=Make:_Magazine_Subscription" target="_blank">
@@ -658,8 +720,30 @@ get_header('version-2'); ?>
         </div>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
-        <?php global $make; print $make->ads->ad_300x250; ?>
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/make-wearable-electronics?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=Make:_Believe&utm_term=Make:_Wearable_Electronics_1Ed" target="_blank">
+            <div class="product-shed-image">
+              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/Untitled-6_large.jpg" alt="Make:_Wearable_Electronics_1Ed" />
+            </div>
+            <h4>Make: Wearable Electronics, 1Ed</h4>
+          </a>
+          <p>$14.99 - $38.49</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-wearable-electronics?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=Make:_Believe&utm_term=Make:_Wearable_Electronics_1Ed" target="_blank">BUY IT NOW</a>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/makey-robot-pin?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=Make:_Believe&utm_term=Makey_Robot_Pin" target="_blank">
+            <div class="product-shed-image">
+              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/MKPIN01_MakeyPin_800x800_large.jpg" alt="Makey Robot Pin" />
+            </div>
+            <h4>Makey Robot Pin</h4>
+          </a>
+          <p>$19.99</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/makey-robot-pin?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=Make:_Believe&utm_term=Makey_Robot_Pin" target="_blank">BUY IT NOW</a>
+        </div>
       </div>
 
     </div>

@@ -76,7 +76,7 @@ get_header('version-2'); ?>
   </div>
 
   <!-- Desktop title bar -->
-  <div class="container gg2015-sidelines">
+  <div class="container gg2015-sidelines hidden">
     <h3 class="text-center"><span>Science is brought to you by ...</span></h3>
   </div>
 
