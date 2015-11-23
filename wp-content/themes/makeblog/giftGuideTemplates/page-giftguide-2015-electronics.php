@@ -189,7 +189,7 @@ get_header('version-2'); ?>
             </span>
           </a>
           <a class="gg2015-open">
-            <h3>Getting Started with Arduino Kit v3.0, $65</h3>
+            <h3>Getting Started with Arduino Kit v3.0, $75</h3>
             <p class="gg2015-details"><i class="fa fa-plus"></i> SEE DETAILS</p>
           </a>
           <div class="gg2015-buy-div">
@@ -359,7 +359,7 @@ get_header('version-2'); ?>
         </div>
         <div class="col-xs-7">
           <h3>Getting Started with Arduino Kit v3.0</h3>
-          <h4>$65</h4>
+          <h4>$75</h4>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-getting-started-kit-arduino-uno-r3?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Getting_Started_with_Arduino_Kit_v3.0" target="_blank">BUY IT NOW</a>
         </div>
       </div>
