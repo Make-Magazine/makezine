@@ -1,0 +1,42 @@
+/* Widget colossus button theme */
+#ctx-sl-subscribe,
+.ctx-subscribe-container {
+  text-align: center;
+}
+
+.ctx-subscribe-link.ctx-theme-colossus {
+  display: inline-block !important;
+  font-weight: normal !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+  min-width: 70% !important;
+  width: 550px !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 0;
+  color: #ffffff;
+  border-color: #026ba0;
+  font-size: 18px;
+  background-color: #028dd3;
+
+  -webkit-transition: background-color .2s linear !important;
+  -moz-transition: background-color .2s linear !important;
+  -o-transition: background-color .2s linear !important;
+  transition: background-color .2s linear !important;
+}
+
+.ctx-subscribe-link.ctx-theme-colossus:hover {
+  background-color: #027cb9;
+}
+
+.ctx-subscribe-link.ctx-theme-colossus.ctx-box-shadow {
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ctx-subscribe-link.ctx-theme-colossus .ctx-subscribe-row {
+  display: table !important;
+  margin: 0 auto !important;
+}
+

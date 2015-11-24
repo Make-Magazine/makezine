@@ -9,7 +9,8 @@
     SIDEBAR: 'sidebar',
     AUTO_SIDEBAR: 'auto-sidebar',
     STORYLINE_SUBSCRIBE: 'storyline-subscribe',
-    SIDERAIL: 'side-rail'
+    SIDERAIL: 'side-rail',
+    SOCIAL: 'social'
   };
 
   // Snippet styles.
@@ -49,8 +50,12 @@
 
   // Widget-related API event names.
   Contextly.widget.eventNames = {
-    MODULE_VIEW: 'module_view'
+    MODULE_VIEW: 'module_view',
+    CAROUSEL_NAVIGATION: 'carousel_navigation'
   };
+
+  // Unique index of the widget.
+  Contextly.widget.index = 0;
 
   /**
    * Base abstract class for all widgets.
@@ -68,6 +73,9 @@
     construct: function(widget, containers) {
       this.widget = widget;
       this.containers = containers;
+
+      this.widget_elements = null;
+      this.widget_index = ++Contextly.widget.index;
     },
 
     getWidget: function() {
@@ -80,6 +88,32 @@
 
     getSettings: function() {
       return this.getWidget().settings;
+    },
+
+    getWidgetIndex: function() {
+      return this.widget_index;
+    },
+
+    markWithWidgetIndex: function(elements) {
+      $(elements)
+        .data('ctxWidgetIndex', this.getWidgetIndex());
+    },
+
+    widgetIndexMatches: function(element) {
+      return $(element).data('ctxWidgetIndex') === this.getWidgetIndex();
+    },
+
+    getWidgetStyleClass: function() {
+      return 'default-widget';
+    },
+
+    getWidgetElements: function() {
+      if (this.widget_elements === null) {
+        this.widget_elements = this.getWidgetContainers()
+          .find('.' + this.getWidgetStyleClass());
+      }
+
+      return this.widget_elements;
     },
 
     getWidgetContainers: function() {
@@ -95,8 +129,18 @@
      * Adds namespace to the passed jQuery event type.
      */
     nsEvent: function(type) {
-      // TODO Space-separated types list support.
-      return type + '.' + this.getEventsNamespace();
+      var ns = '.' + this.getEventsNamespace();
+
+      if (type) {
+        type = type.split(/\s+/)
+          .join(ns + ' ');
+      }
+      else {
+        type = '';
+      }
+      type += ns;
+
+      return type;
     },
 
     // TODO Replace use cases with template and drop.
@@ -221,6 +265,17 @@
     // TODO Check if any use cases left after moving to templates and drop.
     escape: function(text) {
       return Contextly.Utils.escape(text);
+    },
+
+    logEvent: function(name, params) {
+      params = this.alterLoggedEventParams(params);
+
+      Contextly.EventsLogger.logEvent(name, params);
+    },
+
+    alterLoggedEventParams: function(params) {
+      params.event_widget_type = this.getWidgetType();
+      return params;
     }
 
   });

@@ -18,6 +18,7 @@ Contextly.widget.StorylineSubscribeCssCustomBuilder = Contextly.createClass({
       var isTransparent = (settings.theme == 'transparent');
       var isButton = (settings.theme == 'button');
       var isSplitButton = (settings.theme == 'split-button');
+      var isColossus = (settings.theme == 'colossus');
 
       if (typeof settings.css.alignment !== 'undefined') {
         result += this.buildCSSRule(container, '', 'text-align', settings.css.alignment);
@@ -39,7 +40,7 @@ Contextly.widget.StorylineSubscribeCssCustomBuilder = Contextly.createClass({
       }
 
       if (typeof settings.css.text_color !== 'undefined') {
-        if (isTransparent || isButton) {
+        if (isTransparent || isButton || isColossus) {
           result += this.buildCSSRule(widget, '', 'color', settings.css.text_color);
         }
         else if (isSplitButton) {
@@ -65,7 +66,7 @@ Contextly.widget.StorylineSubscribeCssCustomBuilder = Contextly.createClass({
         else {
           var colors = this.generateBackgroundColors(settings.css.background_color);
 
-          if (isButton) {
+          if (isButton || isColossus) {
             result += this.buildCSSRule(widget, '', 'background-color', colors.normal);
             result += this.buildCSSRule(widget, '', 'border-color', colors.border);
             result += this.buildCSSRule(widget + ':hover', '', 'background-color', colors.hover);
