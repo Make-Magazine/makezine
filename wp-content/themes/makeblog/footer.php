@@ -118,7 +118,7 @@
 								<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 								<input type="hidden" name="errors_to" value="" />
 								<div class="mz-form-horizontal">
-									<input name="email" placeholder="Enter your Email" required="required" type="text">
+									<input name="email" placeholder="Enter your Email" required type="text">
 									<input value="GO" class="btn-cyan" type="submit">
 								</div>
 						  </form>
