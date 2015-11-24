@@ -23,6 +23,9 @@ Contextly.widget.Factory = Contextly.createClass({
         case Contextly.widget.types.SIDERAIL:
           return Contextly.widget.SiderailContainers;
 
+        case Contextly.widget.types.SOCIAL:
+          return Contextly.widget.SocialContainers;
+
         default:
           return Contextly.widget.SnippetContainers;
       }
@@ -54,6 +57,9 @@ Contextly.widget.Factory = Contextly.createClass({
 
         case Contextly.widget.types.SIDERAIL:
           return Contextly.widget.Siderail;
+
+        case Contextly.widget.types.SOCIAL:
+          return Contextly.widget.Social;
 
         default:
           // Snippet.

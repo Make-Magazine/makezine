@@ -18,10 +18,14 @@
           // - object.onload: for the rest we create an object pointing to the
           //   same URL and listen to its load event, see:
           //   http://www.phpied.com/preload-cssjavascript-without-execution/
+          var done = false;
           var onSuccess = function() {
+            if (done) {
+              return;
+            }
+
             link.onload = null;
             link.onreadystatechange = null;
-            $(obj).remove();
             if (timer !== null) {
               clearTimeout(timer);
               timer = null;
@@ -42,6 +46,11 @@
           obj.height = 1;
           obj.type = 'text/css';
           obj.onload = function() {
+            // Remove object on loading complete only to avoid stuck connections
+            // in Chrome and probably other browsers.
+            obj.onload = null;
+            obj.parentNode.removeChild(obj);
+
             // Defer a bit, to let CSS arrive to the link tag and apply to the
             // document.
             timer = setTimeout(onSuccess, 10);
