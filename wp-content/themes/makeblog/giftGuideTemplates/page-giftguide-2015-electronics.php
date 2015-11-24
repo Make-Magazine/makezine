@@ -457,7 +457,7 @@ get_header('version-2'); ?>
             </div>
             <h4>WD PiDrive Kit – 1TB storage expansion kit for your DIY projects</h4>
           </a>
-          <p>$59.99</p>
+          <p>$79.99</p>
           <a class="gg2015-buy-btn" href="http://store.westerndigital.com/store/wdus/en_US/list/ThemeID.21986300/parentCategoryID.13092600/categoryID.70262300/Accessories/WD_PiDrive?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
         </div>
         <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
