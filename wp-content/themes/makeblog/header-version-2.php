@@ -374,7 +374,7 @@ if( $detect->isTablet() ){
   </div><!-- container panel header --> 
   <div class="second-nav promo-text-under-nav">
     <div class="container hidden-xs">
-      <h3><a href="/comparison/3dprinters/">THE MAKE: 3D PRINTER BUYER'S GUIDE. <u>FIND THE PERFECT 3D PRINTER.</u></a></h3>
+      <h3><a href="/comparison/3dprinters/">THE MAKE: 3D PRINTER BUYER'S GUIDE. <u>FIND THE PERFECT PRINTER FOR YOU.</u></a></h3>
     </div>
   </div>
 </header><!-- header-wrapper -->
