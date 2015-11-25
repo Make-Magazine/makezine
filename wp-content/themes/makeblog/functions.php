@@ -526,9 +526,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    if ( $paged > 1 ) {
-        $offset--;
-    }
+    
     $args=array(
       'tag' => 'sprout-by-hp',
       'posts_per_page' => $post_per_page,
@@ -957,9 +955,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    if ( $paged > 1 ) {
-        $offset--;
-    }
+    
     $args = array(
         'post_type' => array('post', 'projects',),
         'meta_query' => $meta_query,
@@ -1396,9 +1392,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    if ( $paged > 1 ) {
-        $offset--;
-    }
+    
     $args = array(
         'post_type' => 'projects',
         'meta_query' => $meta_query,
