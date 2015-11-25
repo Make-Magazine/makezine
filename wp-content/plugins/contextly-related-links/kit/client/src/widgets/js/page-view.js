@@ -20,7 +20,8 @@
           load_side_rail: types.SIDERAIL,
           load_sidebar: types.SIDEBAR,
           load_auto_sidebar: types.AUTO_SIDEBAR,
-          load_storyline_subscribe: types.STORYLINE_SUBSCRIBE
+          load_storyline_subscribe: types.STORYLINE_SUBSCRIBE,
+          load_social: types.SOCIAL
         };
 
         for (var flag in map) {

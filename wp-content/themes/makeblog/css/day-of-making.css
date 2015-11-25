@@ -5750,7 +5750,14 @@ a.button.small-button {
 .make_ad {
   text-align: center;
 }
-.js-ad {
+.row.post_rows .own_ads {
+  background-color: transparent;
+  box-shadow: none !important;
+}
+.row.post_rows .own_ads .own {
+  box-shadow: 0 6px 6px -7px #000000, 0 -6px 6px -7px #000000;
+}
+.row.post_rows > .js-ad {
   margin-top: 15px;
 }
 .custom-feed.simple {
@@ -7575,6 +7582,13 @@ li#nav-news ul.sub-menu:after {
 img.nav-sprout {
   margin: -5px 0 0 0;
   height: 32px;
+}
+/* Red navigation item. Add CSS class of nav-red within UberMenu settings. */
+.navbar .nav > li.nav-red a {
+  color: #e70c32;
+}
+.navbar .nav > li.menu-item-has-children.nav-red a:after {
+  color: #e70c32;
 }
 .new-footer {
   padding: 20px 0;
@@ -9477,7 +9491,6 @@ body.makercamp a.button.small-button {
   margin-top: 6px;
   padding-top: 15px;
   padding-bottom: 15px;
-  display: none;
 }
 #gg2015 .gg2015-sidelines h3 {
   position: relative;
@@ -10001,6 +10014,12 @@ body.makercamp a.button.small-button {
   padding-left: 0;
   padding-right: 0;
 }
+#gg2015 .gg2015-shed .col-xs-6 {
+  margin-bottom: 30px;
+}
+#gg2015 .gg2015-shed .gg2015-shed-row-2 {
+  margin-top: 30px;
+}
 #gg2015 .gg2015-shed .product-shed-grid {
   padding: 20px;
   text-align: center;
@@ -10036,6 +10055,12 @@ body.makercamp a.button.small-button {
   font-family: 'Roboto';
   color: #4a4a4a;
   font-size: 12px;
+}
+#gg2015 .gg2015-shed .gg2015-sponsor-violator {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 40%;
 }
 #gg2015 .gg2015-mobile-naver {
   background-color: #f40b0b;
@@ -10177,6 +10202,9 @@ body.makercamp a.button.small-button {
 #gg2015 #ad_1x1_1 {
   display: none;
 }
+#gg2015 .gg2015-ad {
+  margin-bottom: 30px;
+}
 #gg2015 .gg2015-ad #ad_300x250_1 {
   box-shadow: 0 6px 6px -7px #000000, 0 -6px 6px -7px #000000;
   height: 462px;
@@ -10276,8 +10304,15 @@ body.makercamp a.button.small-button {
     margin-left: -20px;
     margin-right: -20px;
   }
-  .gg2015-sidelines {
-    display: none;
+  #gg2015 .gg2015-sidelines h3:before {
+    content: none;
+  }
+  #gg2015 .gg2015-sidelines {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #gg2015 .gg2015-sidelines h3 span {
+    padding: 0;
   }
   #gg2015 .gg2015-shed {
     padding-left: 15px;
@@ -15254,7 +15289,7 @@ p.sponsored {
 .fancybox-close,
 .fancybox-prev span,
 .fancybox-next span {
-  background-image: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_sprite.png');
+  background-image: url('../img/fancybox_sprite.png');
 }
 #fancybox-loading {
   position: fixed;
@@ -15270,7 +15305,7 @@ p.sponsored {
 #fancybox-loading div {
   width: 44px;
   height: 44px;
-  background: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_loading.gif') center center no-repeat;
+  background: url('../img/fancybox_loading.gif') center center no-repeat;
 }
 .fancybox-close {
   position: absolute;
@@ -15292,7 +15327,7 @@ p.sponsored {
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  background: transparent url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/blank.gif');
+  background: transparent url('../img/blank.gif');
   /* helps IE */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 8040;
@@ -15351,7 +15386,7 @@ p.sponsored {
   overflow: hidden;
   display: none;
   z-index: 8010;
-  background: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_overlay.png');
+  background: url('../img/fancybox_overlay.png');
 }
 .fancybox-overlay-fixed {
   position: fixed;
@@ -15417,12 +15452,12 @@ p.sponsored {
   .fancybox-close,
   .fancybox-prev span,
   .fancybox-next span {
-    background-image: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_sprite@2x.png');
+    background-image: url('../img/fancybox_sprite@2x.png');
     background-size: 44px 152px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
   #fancybox-loading div {
-    background-image: url('http://cdn.shopify.com/s/files/1/0439/6941/t/5/assets/fancybox_loading@2x.gif');
+    background-image: url('../img/fancybox_loading@2x.gif');
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
@@ -15431,10 +15466,6 @@ p.sponsored {
 .fancybox-inner {
   text-align: center;
   height: auto;
-}
-.fancybox-skin {
-  background: #00ABCD !important;
-  color: #fff !important;
 }
 .fancybox-inner h2 {
   font-weight: bold;
@@ -15501,6 +15532,64 @@ p.sponsored {
   text-shadow: 1px 1px 0px #b23e35;
   padding: 9px 10px;
 }
+/* Thank you pop up */
+.nl-modal-cont {
+  padding: 15px 0;
+}
+.nl-modal-cont ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  margin-bottom: 0;
+  padding: 0;
+}
+.nl-modal-cont ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+.nl-modal-cont ul.social-network.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  background-color: #D3D3D3;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.nl-modal-cont ul.social-network.social-circle li a i {
+  color: #fff;
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+.nl-modal-cont ul.social-network.social-circle li a:hover {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.nl-modal-cont ul.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+.nl-modal-cont ul.social-network a.icoTwitter:hover {
+  background-color: #33ccff;
+}
+.fancybox-inner .nl-modal-cont h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  margin-top: 0;
+  color: #444;
+}
 @media all and (max-width: 530px) {
   .btn-modal,
   #ittlurh-ittlurh {
@@ -15532,7 +15621,7 @@ div.caption404 {
 }
 p.headline404 {
   color: #ffffff;
-  font-family: Roboto-Slab;
+  font-family: Roboto, Sans-serif;
   font-size: 25px;
 }
 p.body404 {
