@@ -7504,6 +7504,9 @@ img.nav-sprout {
 .new-footer .container {
   padding-bottom: 15px;
 }
+.new-footer .footer_copyright {
+  overflow: auto;
+}
 .new-footer .footer_copyright p {
   margin: 0px;
   line-height: 16px;

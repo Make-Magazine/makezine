@@ -118,7 +118,7 @@
 								<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 								<input type="hidden" name="errors_to" value="" />
 								<div class="mz-form-horizontal">
-									<input name="email" placeholder="Enter your Email" required="required" type="text">
+									<input name="email" placeholder="Enter your Email" required type="text">
 									<input value="GO" class="btn-cyan" type="submit">
 								</div>
 						  </form>
@@ -204,7 +204,7 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Make:</a>
 						</h4>
 					</div>
-					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+					<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="/projects/">Make: Projects</a></li>
@@ -222,7 +222,7 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Explore Making</a>
 						</h4>
 					</div>
-					<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+					<div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
@@ -241,7 +241,7 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Our Company</a>
 						</h4>
 					</div>
-					<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+					<div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
