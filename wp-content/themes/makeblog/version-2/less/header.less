@@ -101,6 +101,7 @@ h6 {
 }
 
 .navbar-default {
+  background-color: @white;
   margin: 0;
   padding: 0;
   border: 0;
@@ -270,7 +271,7 @@ h6 {
 }
 
 .header .navbar .nav {
-  margin: 23px 10px 0px 10px;
+  margin: 0 10px 0 0;
 }
 
 .container.header {
@@ -687,6 +688,10 @@ input[type=search]::-ms-reveal {
   position: absolute;
   z-index: 1;
   display: none;
+  margin-top: -33px;
+  &.sticky-header {
+    margin-top: 0;
+  }
 }
 
 .dynamic-header-posts.sticky-header {
@@ -865,10 +870,6 @@ ul.sub-menu.moove-right {
   .navbar .nav > li > a.active-button {
     border-bottom: 3px solid #F40B0B ;
     color:black;
-  }
-
-  #menu-make-main {
-    padding-left: 5px;
   }
 
   .mobile-social {
@@ -1422,12 +1423,12 @@ ul.sub-menu.moove-right {
 
   .navbar-default .navbar-collapse {
     height: 48px;
-    margin-top: 13px;
+    margin-top: 10px;
   }
 
   #menu-make-main {
-    padding-left: 5px;
-    margin-top: 10px;
+    padding-left: 0px;
+    margin-top: 0px;
   }
 
   #top-header {
@@ -1442,7 +1443,7 @@ ul.sub-menu.moove-right {
     width: inherit;
   }
   .sticky-header #menu-make-main {
-    margin-top: 0;
+    margin-top: 15px;
   }
   .search-form, .search-form label {
     float: right;
@@ -1701,6 +1702,7 @@ ul.sub-menu.moove-right {
     background-color: #ecf0f1;
     position: absolute;
     padding: 0;
+    margin-top: 0;
     height: inherit !important;
     z-index: 2;
     display: none;
