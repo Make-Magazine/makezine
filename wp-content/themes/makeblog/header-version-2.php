@@ -215,7 +215,7 @@ if( $detect->isTablet() ){
             <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
             <br>
             <h5 class="mz-tag">We are all Makers</h5>
-            <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
+            <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
           </div>
         </a>
 
