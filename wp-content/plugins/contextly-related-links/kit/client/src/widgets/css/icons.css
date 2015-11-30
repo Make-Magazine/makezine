@@ -21,3 +21,6 @@
 .ctx-icon-logo:before { content: '\2000' !important; }
 .ctx-icon-video:before { content: '\2001' !important; }
 .ctx-icon-twitter:before { content: '\2002' !important; }
+.ctx-icon-left-circled:before { content: '\25C0' !important; }
+.ctx-icon-right-circled:before { content: '\25B6' !important; }
+.ctx-icon-hourglass:before { content: '\29D6' !important; }

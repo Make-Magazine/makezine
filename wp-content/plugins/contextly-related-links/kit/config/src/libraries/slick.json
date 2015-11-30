@@ -1,0 +1,9 @@
+{
+  "base": "libraries/slick/slick",
+  "css": [
+    "slick"
+  ],
+  "js": [
+    "slick"
+  ]
+}

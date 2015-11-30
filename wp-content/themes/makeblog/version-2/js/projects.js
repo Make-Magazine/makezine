@@ -481,6 +481,9 @@ jQuery(document).ready(function ($) {
                     $(".posts-list").html(data);
                 }
 
+                // Load Placeholder Ads.
+                make.gpt.loadDyn();
+
                 var error_message = $(".posts-list").find('.error_message');
                 if (error_message.length > 0) {
                     return;

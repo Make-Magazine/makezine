@@ -20,13 +20,18 @@
     "widgets/snippet/float",
     "widgets/storyline/button",
     "widgets/storyline/split-button",
-    "widgets/storyline/transparent"
+    "widgets/storyline/transparent",
+    "widgets/storyline/colossus",
+    "widgets/social/carousel"
   ],
 
   "base": "widgets",
   "js": [
     "js/base-widget",
     "js/base-css",
+    "js/responsive-layout",
+    "js/tweets-renderer",
+    "js/view-watcher",
     "js/base-links-list-widget",
     "js/base-flat-links-widget",
     "js/text-widget",
@@ -46,6 +51,8 @@
     "js/storyline-widget",
     "js/storyline-css",
     "js/storyline-overlay",
+    "js/social-css",
+    "js/social-widget",
     "js/branding-overlay",
     "js/video-overlay",
     "js/page-events",
