@@ -232,8 +232,6 @@ if( $detect->isTablet() ){
         <!-- Desktop and Mobile Menu -->
         <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
 
-          <h3 class="promo-text-above-nav hidden-xs"><a href="/comparison/3dprinters/">THE MAKE: 3D PRINTER BUYER'S GUIDE <i class="fa fa-chevron-circle-right"></i></a></h3>
-
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
