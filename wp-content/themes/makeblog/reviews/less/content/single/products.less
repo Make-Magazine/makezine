@@ -669,10 +669,21 @@
 		@media screen and (min-width: 915px) {
 			width: 25%;
 		}
-		
+		> p {
+			margin-bottom: 0 !important;
+			float: left;
+			width: 100%;
+			line-height: 1 !important;
+		}
+		> h5 {
+			float: left;
+			width: 100%;
+		}
 		.twitter-link {
 			position: relative;
 			color: @med-gray;
+			display: inline-block;
+			margin-bottom: 5px;
 			&:hover {
 				color: @dark-gray;
 			}
@@ -691,6 +702,7 @@
 	}
 	.author-target {
 		display: inline-block;
+		float: left;
 		img {
 			border-radius: 300px;
 			-webkit-border-radius: 300px;

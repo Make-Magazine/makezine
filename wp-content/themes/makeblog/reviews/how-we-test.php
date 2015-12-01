@@ -52,6 +52,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<div class="author col-sm-3 <?php echo $clear_count; echo $evenOdd; ?>">
 						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
 							<?php echo $author_data->author_avatar( $author ); ?>
+							
 
 							<?php
 							$description = $author_data->author_bio( $author );
