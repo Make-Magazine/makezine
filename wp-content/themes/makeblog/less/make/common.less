@@ -45,6 +45,10 @@ p:empty {
 	margin: 0px;
 }
 
+.craft .embed-youtube, 
+.page-template-page-home-php .embed-youtube {
+	float:none;
+}
 .embed-youtube, .embed-vimeo, .googlemaps {
 	clear: both;
 	overflow: hidden;
@@ -82,4 +86,15 @@ p:empty {
 }
 .sumome-share-client-wrapper-left-page {
 	opacity: 0;
+}
+/* Unhiding the SumoMe left sidebar widget on the 3D compaison pages. */
+.single-products .sumome-share-client-wrapper-left-page,
+.single-reviews .sumome-share-client-wrapper-left-page {
+	opacity: 1 !important;
+}
+/* Hiding the SumoMe sidebar in between these sizes as it blocks content. */
+@media (min-width:980px) and (max-width:1058px) {
+	.sumome-share-client-wrapper-left-page {
+		display: none !important;
+	}
 }

@@ -484,15 +484,16 @@ get_header('version-2'); ?>
       <!-- Row 2 -->
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Magazine_Subscription">
+          <a target="_blank" href="//www.makershed.com/products/lulzbot-mini?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=LulzBot_Mini">
             <div class="product-shed-image">
-              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
+              <img src="//cdn.shopify.com/s/files/1/0243/7593/products/lulzmini_1_opt_large.jpg" alt="LulzBot® Mini Desktop 3D Printer – Small-scale workhorse" />
             </div>
-            <h4>Make: Magazine Subscription</h4>
+            <h4>LulzBot® Mini Desktop 3D Printer – "Small-scale workhorse" - Make:</h4>
           </a>
-          <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
+          <p>$1,349.99</p>
+          <a target="_blank" class="gg2015-buy-btn" href="//www.makershed.com/products/lulzbot-mini?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=LulzBot_Mini">BUY IT NOW</a>
         </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
       </div>
 
       <div class="col-xs-6 col-md-4">
