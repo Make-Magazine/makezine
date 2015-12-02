@@ -76,7 +76,7 @@ get_header('version-2'); ?>
   </div>
 
   <!-- Desktop title bar -->
-  <div class="container gg2015-sidelines">
+  <div class="container gg2015-sidelines hidden">
     <h3 class="text-center"><span>AUTOMOTIVE is brought to you by ...</span></h3>
   </div>
 
@@ -210,14 +210,14 @@ get_header('version-2'); ?>
           <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/GGMobile-MetalShop-Milwaukee_2702-22_Drill.jpg" alt="Skil 3320 Drill Press" />
         </div>
         <div class="col-xs-7">
-          <h3>Skil 3320 Drill Press</h3>
-          <h4>$111</h4>
-          <a class="gg2015-buy-btn" href="http://www.amazon.com/gp/product/B003LSSS0W/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003LSSS0W&linkCode=as2&tag=makezine-20&linkId=2D6MY2ZC2RXCMA5O" target="_blank">BUY IT NOW</a>
+          <h3>Milwaukee M18 Fuel 1/2" Drill/Driver, $129</h3>
+          <h4>$129</h4>
+          <a class="gg2015-buy-btn" href="https://www.milwaukeetool.com/power-tools/cordless/2703-20" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">
         <div class="col-xs-12">
-          <p>Let's face it. If you’re going to drill a straight hole into metal, you’re going to need a drill press. The Skil 3320 gives a strong and reliable tool without completely breaking the bank. If you’re picking up your first drill press, you’d have a hard time finding a better one at this price.</p>
+          <p>With 1,200 inch-pounds of torque, the M18 Fuel is an absolute beast of a driver. The only thing that surpasses its power is its battery life, coming stock with a 5 amp-hour 18V pack. LED lighting adds some luxury to this workhorse as well. A kit version adds a case, charger, extended battery pack, multi-voltage charger — and $135 to the price.</p>
         </div>
       </div>
       <!-- End mobile Product 2 -->
@@ -265,14 +265,14 @@ get_header('version-2'); ?>
     <div class="row">
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Magazine_Subscription">
+          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
           <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=METAL_SHOP&utm_term=Make:_Magazine_Subscription" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 

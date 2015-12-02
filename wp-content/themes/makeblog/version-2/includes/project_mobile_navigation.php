@@ -135,15 +135,7 @@ if ( $type != '' ) { ?>
 						</div>
 					</div>
 				</div>
-				<div class="sortby row">
-					<p>Sort By</p>
-
-					<div class="post-filter">
-						<p class="recent current clicks" data-value="recent">Recent</p>
-
-						<p class="popular clicks" data-value="popular">Popular</p>
-					</div>
-				</div>
+				
 			</div>
 			<div class="filter-applied">
 				<span class="applied">Filter have been applied</span>

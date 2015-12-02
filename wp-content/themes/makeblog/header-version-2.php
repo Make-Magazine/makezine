@@ -28,8 +28,6 @@ if( $detect->isTablet() ){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Version2">
-    <meta name="author" content="">
 
     <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
     <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
@@ -76,9 +74,6 @@ if( $detect->isTablet() ){
     <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >    
     <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
     <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
-
-
-
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
   
@@ -187,286 +182,305 @@ if( $detect->isTablet() ){
       </script>
     <?php endif; ?>
 
-  <!-- BANNER -->
-  <div class="header-wrapper">
-    <header class="hidden-xs page-banner">
-      <div class="row" id="top-header">
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"></div>
-        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs text-center top-nav">
-          <h6><a href="http://www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a></h6>
+<header class="header-wrapper">
+  <!--<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"> -->
+
+  <!-- TOP BRAND BAR -->
+  <div class="hidden-xs top-header-bar-brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <p class="header-make-img">
+            <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
+          </p>
         </div>
-        <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
-          <h6><a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
-        </div>
-      </div> <!-- row -->    
-    </header>
-
-    <div class="container panel header <?php echo $device ?>">
-      <!--nav class="navbar navbar-default"-->
-      <nav class="navbar navbar-default">
-        <div class="row">
-
-          <!-- LOGO & TAG LINE -->
-          <a href="<?php echo home_url(); ?>" class="logo-a"><div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
-            <br>
-            <h5 class="mz-tag">We are all Makers</h5>
-      <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
-          </div></a>
-
-  
-          <!-- MENUS -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>  
-          <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
-            <!-- Collapsible Menu -->
-      <div id="makezine-navbar-collapse-1" class="navbar-collapse">
-      <!-- Mobile search -->
-        <div class="hidden-md mz-search search-bar-mobile">
-        
-          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-          <label>
-              <input type="search" class="search-field" placeholder="" value="" name="s" title="">
-          </label>
-              <input type="submit" class="search-submit" value="Search" />
-          </form>        
-        </div>
-        <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
-      
-         <div class="mz-social mobile-social">  
-          <h5>Follow Us</h5>
-          <a href="http://facebook.com/makemagazine">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
-
-          <a href="http://twitter.com/make">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
-
-          <a href="http://pinterest.com/makemagazine/">
-             <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
-
-          <a href="https://instagram.com/makemagazine/">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
-
-
-  
-          <div class="mz-footer-subscribe"> 
-              <?php
-                $isSecure = "http://";
-                if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                  $isSecure = "https://";
-                }
-              ?>
-              <h4>Subscribe</h4>
-              <p>Stay inspired and get fresh updates</p>
-              <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-                <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
-                <input type="hidden" name="cmd" value="subscribe" />
-                <input type="hidden" name="custom_source" value="footer" /> 
-                <input type="hidden" name="custom_incentive" value="none" /> 
-                <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-                <input type="hidden" id="format_mime" name="format" value="mime" />
-                <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
-                <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-                <input type="hidden" name="errors_to" value="" />
-                <div class="mz-form-horizontal">
-                  <input name="email" placeholder="Enter your Email" required="required" type="text">
-                  <input value="GO" class="btn-cyan" type="submit">
-                </div>
-              </form>
-            </div>
-          <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
-          All rights reserved</h6>
-        </div> 
-        
-      </div>
-
-          </div>
-    
-          <div class="get-dark"></div>
-          <!-- SEARCH -->                    
-          <div class="col-md-1 hidden-xs mz-search search-bar">
-        
-                <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-                  <input type="submit" class="sendsubmit" value="" />
-          <label>
-              <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-            <div class="close-search"></div>
-          </label>
-          </form>        
-          </div>
-      <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
-        <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><h5>Subscribe</h5>
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
-      </div>
-      
-        <!-- SOCIAL MEDIA ICONS -->
-        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
-        <div class="mz-social">  
-          <a href="http://facebook.com/makemagazine">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
-
-          <a href="http://twitter.com/make">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a>
-
-          <a href="http://pinterest.com/makemagazine/">
-             <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
-
-          <a href="https://instagram.com/makemagazine/">
-            <span class="fa-stack fa-mz">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span> 
-          </a> 
-        </div>     
-      </div>      
-    </div> <!-- row -->  
-  </nav>
-
-    
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
-</div>
-<div class="second-nav"></div>
-</div>
-    <div class="dynamic-header-posts">
-      <div class="dynamic-header-container container">
-        <div class="menu-container row">
-          <div class="menu-sub-menu"></div>
-        </div>
-        <div class="dynamic-header-content row">
-          <div class="latest-projects row">
-            <?php query_posts('post_type=projects&showposts=4'); ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <div class="project-post col-lg-3 col-md-3 col-sm-3">
-
-                <a href="<?php the_permalink(); ?>" class="pull-left">
-                  <?php
-                  $args = array(
-                      'resize' => '370,240',
-                  );
-                  $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-                  $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                  preg_match_all($re, $url, $matches);
-                  $str = $matches[2][0];
-                  $photon = jetpack_photon_url($str, $args);?>
-                  <img src="<?php echo $photon; ?>" alt="thumbnail">
-                </a>
-                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-              </div>
-            <?php endwhile; ?>
-
-            <?php else: ?>
-              <?php echo '<h1>No content found</h1>' ?>
-            <?php endif; ?>
-            <?php wp_reset_query(); ?>
-          </div>
-          <div class="latest-stories row">
-            <?php query_posts('showposts=4'); ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <div class="stories-post col-lg-3 col-md-3 col-sm-3">
-
-                <a href="<?php the_permalink(); ?>" class="pull-left">
-                  <?php
-                  $args = array(
-                      'resize' => '370,240',
-                  );
-                  $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-                  $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                  preg_match_all($re, $url, $matches);
-                  $str = $matches[2][0];
-                  $photon = jetpack_photon_url($str, $args);?>
-                  <img src="<?php echo $photon; ?>" alt="thumbnail">
-                </a>
-                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-              </div>
-            <?php endwhile; ?>
-
-            <?php else: ?>
-              <?php echo '<h1>No content found</h1>' ?>
-            <?php endif; ?>
-            <?php wp_reset_query(); ?>
-          </div>
-          <div class="latest-shop row">
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
-            </div>
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
-            </div>
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
-            </div>
-            <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
-            </div>
-          </div>
-          <div class="latest-events row">
-            <?php query_posts('post_type=events&showposts=5'); ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-              $id = get_the_ID();?>
-              <div class="events-post col-lg-2 col-md-2 col-sm-2">
-                <div class="event-thumbnail">
-                  <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
-                    <?php
-                    $args = array(
-                        'resize' => '102,102',
-                    );
-                    $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
-                    $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                    preg_match_all($re, $url, $matches);
-                    $str = $matches[2][0];
-                    $photon = jetpack_photon_url($str, $args);?>
-                    <img src="<?php echo $str; ?>" alt="thumbnail">
-                  </a>
-                </div>
-                <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
-                <h2><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'date',true); ?></a></h2>
-              </div>
-            <?php endwhile; ?>
-
-            <?php else: ?>
-              <?php echo '<h1>No content found</h1>' ?>
-            <?php endif; ?>
-            <?php wp_reset_query(); ?>
-          </div>
+        <div class="col-sm-3">
+          <p class="header-sub-link pull-right">
+            <a id="trigger-overlay" href="#">SUBSCRIBE </a>
+          </p>
         </div>
       </div>
     </div>
-    <div class="close-dynamic-content"></div>
+  </div>
+
+  <div class="container panel header <?php echo $device ?>">
+
+    <!--nav class="navbar navbar-default"-->
+    <nav class="navbar navbar-default">
+      <div class="row">
+
+        <!-- LOGO & TAG LINE -->
+        <a href="<?php echo home_url(); ?>" class="logo-a">
+          <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
+            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+            <br>
+            <h5 class="mz-tag">We are all Makers</h5>
+            <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
+          </div>
+        </a>
+
+        <!-- MENUS -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>  
+        
+        <!-- Desktop and Mobile Menu -->
+        <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
+
+          <!-- Collapsible Menu -->
+          <div id="makezine-navbar-collapse-1" class="navbar-collapse">
+
+            <!-- Mobile search -->
+            <div class="hidden-md mz-search search-bar-mobile">
+              <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+              <label>
+                <input type="search" class="search-field" placeholder="" value="" name="s" title="">
+              </label>
+              <input type="submit" class="search-submit" value="Search" />
+              </form>        
+            </div>
+
+            <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
+    
+            <div class="mz-social mobile-social">  
+              <h5>Follow Us</h5>
+              <a href="http://facebook.com/makemagazine">
+                <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a>
+
+              <a href="http://twitter.com/make">
+                <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a>
+
+              <a href="http://pinterest.com/makemagazine/">
+                 <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a> 
+
+              <a href="https://instagram.com/makemagazine/">
+                <span class="fa-stack fa-mz">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span> 
+              </a> 
+
+              <div class="mz-footer-subscribe"> 
+                <?php
+                  $isSecure = "http://";
+                  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                    $isSecure = "https://";
+                  }
+                ?>
+                <h4>Subscribe</h4>
+                <p>Stay inspired and get fresh updates</p>
+                <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+                  <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+                  <input type="hidden" name="cmd" value="subscribe" />
+                  <input type="hidden" name="custom_source" value="Mobile Header" /> 
+                  <input type="hidden" name="custom_incentive" value="none" /> 
+                  <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+                  <input type="hidden" id="format_mime" name="format" value="mime" />
+                  <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
+                  <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+                  <input type="hidden" name="errors_to" value="" />
+                  <div class="mz-form-horizontal">
+                    <input name="email" placeholder="Enter your Email" required="required" type="text">
+                    <input value="GO" class="btn-cyan" type="submit">
+                  </div>
+                </form>
+              </div><!-- End subscribe div -->
+              <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
+              All rights reserved</h6>
+            </div><!-- End mobile-social div -->
+          </div><!-- End #makezine-navbar-collapse-1 -->
+        </div><!-- End .menu-container -->
+  
+        <div class="get-dark"></div>
+
+        <!-- SEARCH -->
+        <div class="col-md-1 hidden-xs mz-search search-bar">
+          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+            <input type="submit" class="sendsubmit" value="" />
+            <label>
+            <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
+            <div class="close-search"></div>
+            </label>
+          </form>        
+        </div>
+
+        <!-- Sticky Navbar -->
+        <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
+          <h6>
+            <a id="trigger-overlay" href="#">
+              <h5>Subscribe</h5>
+              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>">
+            </a>
+          </h6>
+        </div>
+    
+        <!-- SOCIAL MEDIA ICONS -->
+        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
+          <div class="mz-social">  
+            <a href="http://facebook.com/makemagazine">
+              <span class="fa-stack fa-mz">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span> 
+            </a>
+
+            <a href="http://twitter.com/make">
+              <span class="fa-stack fa-mz">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span> 
+            </a>
+
+            <a href="http://pinterest.com/makemagazine/">
+               <span class="fa-stack fa-mz">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+              </span> 
+            </a> 
+
+            <a href="https://instagram.com/makemagazine/">
+              <span class="fa-stack fa-mz">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span> 
+            </a> 
+          </div>     
+        </div><!-- End .desktop-social -->
+      </div><!-- row -->
+    </nav>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
+
+  </div><!-- container panel header --> 
+  <div class="second-nav promo-text-under-nav">
+    <div class="container hidden-xs">
+      <h3><a href="/comparison/3dprinters/">THE MAKE: 3D PRINTER BUYER'S GUIDE. <u>FIND THE PERFECT PRINTER FOR YOU.</u></a></h3>
+    </div>
+  </div>
+</header><!-- header-wrapper -->
+
+<div class="dynamic-header-posts">
+  <div class="dynamic-header-container container">
+    <div class="menu-container row">
+      <div class="menu-sub-menu"></div>
+    </div>
+    <div class="dynamic-header-content row">
+      <div class="latest-projects row">
+        <?php query_posts('post_type=projects&showposts=4'); ?>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <div class="project-post col-lg-3 col-md-3 col-sm-3">
+
+            <a href="<?php the_permalink(); ?>" class="pull-left">
+              <?php
+              $args = array(
+                  'resize' => '370,240',
+              );
+              $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+              $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+              preg_match_all($re, $url, $matches);
+              $str = $matches[2][0];
+              $photon = jetpack_photon_url($str, $args);?>
+              <img src="<?php echo $photon; ?>" alt="thumbnail">
+            </a>
+            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+
+          </div>
+        <?php endwhile; ?>
+
+        <?php else: ?>
+          <?php echo '<h1>No content found</h1>' ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+      </div>
+      <div class="latest-stories row">
+        <?php query_posts('showposts=4'); ?>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <div class="stories-post col-lg-3 col-md-3 col-sm-3">
+
+            <a href="<?php the_permalink(); ?>" class="pull-left">
+              <?php
+              $args = array(
+                  'resize' => '370,240',
+              );
+              $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+              $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+              preg_match_all($re, $url, $matches);
+              $str = $matches[2][0];
+              $photon = jetpack_photon_url($str, $args);?>
+              <img src="<?php echo $photon; ?>" alt="thumbnail">
+            </a>
+            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+
+          </div>
+        <?php endwhile; ?>
+
+        <?php else: ?>
+          <?php echo '<h1>No content found</h1>' ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+      </div>
+      <div class="latest-shop row">
+        <div class="shop-post col-lg-3 col-md-3 col-sm-3">
+          <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
+        </div>
+        <div class="shop-post col-lg-3 col-md-3 col-sm-3">
+          <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
+        </div>
+        <div class="shop-post col-lg-3 col-md-3 col-sm-3">
+          <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
+        </div>
+        <div class="shop-post col-lg-3 col-md-3 col-sm-3">
+          <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
+        </div>
+      </div>
+      <div class="latest-events row">
+        <?php query_posts('post_type=events&showposts=5'); ?>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+          $id = get_the_ID();?>
+          <div class="events-post col-lg-2 col-md-2 col-sm-2">
+            <div class="event-thumbnail">
+              <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
+                <?php
+                $args = array(
+                    'resize' => '102,102',
+                );
+                $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
+                $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+                preg_match_all($re, $url, $matches);
+                $str = $matches[2][0];
+                $photon = jetpack_photon_url($str, $args);?>
+                <img src="<?php echo $str; ?>" alt="thumbnail">
+              </a>
+            </div>
+            <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
+            <h2><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'date',true); ?></a></h2>
+          </div>
+        <?php endwhile; ?>
+
+        <?php else: ?>
+          <?php echo '<h1>No content found</h1>' ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="close-dynamic-content"></div>

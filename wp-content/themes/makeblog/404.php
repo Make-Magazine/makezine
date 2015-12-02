@@ -1,62 +1,28 @@
+
 <?php
-/**
- * Single Page Template
- *
- * @package    makeblog
- * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * @author     Jake Spurlock <jspurlock@makermedia.com>
- * 
- */
-get_header('version-2'); ?>
-		
-	<div class="single">
-	
-		<div class="container">
 
-			<div class="row">
+/*
+Template Name: 404
+*/
 
-				<div class="span12">
-					
-					<div class="projects-masthead">
-						
-						<div class="row">
-							
-							<div class="span8">
-								
-								<h1 class="404">Oh Nooo! A 404 Page!</h1>
-								
-								<p>Looks like we can't find the page that you are looking for. Sorry about that.</p>
-								
-								<p>Let's see if we can make it up to you. First off, let's try searching for the content. You can do that in the search form below.</p>
-								
-								<form action="<?php echo home_url(); ?>" class="search-make open">
-									<div class="input-append">
-										<input type="text" class="search-field" name="s">
-										<button type="submit" class="btn btn-primary" value="Search"><i class="icon icon-search icon-white"></i> Search</button>
-									</div>
-								</form>
-								
-								<p>If that doesn't work, why not try browsing from popular categories?</p>
-								
-								<ul class="columns">
-									<?php wp_list_categories( 'title_li=' ); ?>	
-								</ul>
-								
-								
-							</div>
-							
-							<?php get_sidebar(); ?>
-							
-						</div>						
-						
-					</div>
-					
-				</div>
-					
-			</div>
+get_header( 'version-2' );
 
-		</div>
+?>
 
-	</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+      <div class="caption404">
+        <p class="headline404">This is not the page you're looking for.</p>
+        <p class="body404">It must have moved or mysteriously departed. Use search in the top navigation to find a related story or head straight to the <em>Make:</em> <a href="<?php echo get_site_url(); ?>" alt="Makezine Home" class="link404">home page</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-offset-1 col-sm-offset-4">
+      <img src="<?php echo get_template_directory_uri(). '/images/404-makey.png' ?>" alt="Makey 404" />
+    </div>
+  </div>
+</div>
 
 <?php get_footer(); ?>

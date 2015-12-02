@@ -1758,11 +1758,11 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
 function sumome_scroll_show_script() { ?>
 		<script type="text/javascript">
 			jQuery(document).scroll(function () {
-					if(window.location.href.indexOf('/giftguide')) return;
+					if(window.location.href.indexOf('/giftguide') != -1 ) return;
 			    var y = jQuery(this).scrollTop();
 			    if (y > 800) {
 			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
-			        jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
+			      jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
 			    } else {
 			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
 			    }
@@ -1785,36 +1785,49 @@ add_action( 'wp_footer', 'sumome_scroll_show_script' );
  */
 function home_tags($postid) {
 	$post_type = get_post_type( $postid );
-	$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
-	if ( $post_type == 'projects' ) {
-		$flag = get_post_meta( $postid, 'display_category', true );
-		if ( ! empty( $flag ) ) {
-			$category = get_term( $flag, 'category' );
-		} else {
-			$categories = get_the_category( $postid );
-			$category = $categories[0];
-		}
-		$catname = $category->name;
-		$caturl = get_category_link( $category ) . '';
-
-		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
+	if ( $post_type == 'page' ) {
+		return;
 	}
 	else {
-		$dc = get_post_meta( $postid, 'display_category', true );
-		$tag = get_the_tags( $postid );
-		if ( ! empty( $dc ) ) {
-			$term = get_term( $dc, 'post_tag' );
-			echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
-		}
-		elseif( ! empty( $tag ) ) {
-			echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+		echo '<p>';
+		$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
+		if ( $post_type == 'projects' ) {
+			$flag = get_post_meta( $postid, 'display_category', true );
+			if ( ! empty( $flag ) ) {
+				$category = get_term( $flag, 'category' );
+			} else {
+				$categories = get_the_category( $postid );
+				$category = $categories[0];
+			}
+			$catname = $category->name;
+			$caturl = get_category_link( $category ) . '';
+
+			echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
 		}
 		else {
-			echo '';
+			$dc = get_post_meta( $postid, 'display_category', true );
+			$tag = get_the_tags( $postid );
+			if ( ! empty( $dc ) ) {
+				$term = get_term( $dc, 'post_tag' );
+				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
+			}
+			elseif( ! empty( $tag ) ) {
+				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+			}
+			else {
+				echo '';
+			}
 		}
-	}
-	if ( $post_video[0] > 0 ) {
-		echo '<div class="videoblock"><span class="video fa fa-video-camera"></span></div>';
+		if ( $post_video[0] > 0 ) {
+			 $output .= '<div class="videoblock"><a href="';
+	                $link = get_the_permalink($postid);
+	                $output .= $link;
+	                $output .= '">';
+	                $output .= '';
+	                $output .= '<span class="video fa fa-video-camera"></span>';
+	                $output .= '</a></div>';
+	                echo $output;
+		}
+		echo '</p>';
 	}
 }
-

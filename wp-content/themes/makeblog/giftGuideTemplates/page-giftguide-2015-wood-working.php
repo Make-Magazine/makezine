@@ -76,7 +76,7 @@ get_header('version-2'); ?>
   </div>
 
   <!-- Desktop title bar -->
-  <div class="container gg2015-sidelines">
+  <div class="container gg2015-sidelines hidden">
     <h3 class="text-center"><span>WOODWORKING is brought to you by ...</span></h3>
   </div>
 
@@ -270,7 +270,7 @@ get_header('version-2'); ?>
           </a>
           <div class="gg2015-buy-div">
             <p>This might be the most expensive coping saw in existence, but it’s also likely the best. Made of lightweight aluminum, the truss design and cam lock make sure that the frame stays rigid and the blade stays taut. Whether you’re cutting detailed shapes or just removing waste when cutting dovetail joints, this saw will deliver consistently good results.</p>
-            <a href="http://knewconcepts.com/copingSaws.php" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
+            <a href="http://www.highlandwoodworking.com/knew-concepts-woodworkers-coping-saw.aspx" class="gg2015-buy-btn" target="_blank">BUY IT NOW</a>
           </div>
         </div>
         <!-- End Product #9 -->
@@ -432,7 +432,7 @@ get_header('version-2'); ?>
         <div class="col-xs-7">
           <h3>Knew Concepts 6½" Aluminum Coping Saw</h3>
           <h4>$150</h4>
-          <a class="gg2015-buy-btn" href="http://knewconcepts.com/copingSaws.php" target="_blank">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.highlandwoodworking.com/knew-concepts-woodworkers-coping-saw.aspx" target="_blank">BUY IT NOW</a>
         </div>
       </div>
       <div class="row padbottom">

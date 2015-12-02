@@ -115,14 +115,14 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
           style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 1200, 694 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
-            <h2><?php echo $main_title ; ?></h2>
+            <h2><?php echo $main_title; ?></h2>
             <p><?php echo esc_html( $main_subtitle ); ?></p>
           </div>
         </a>
       </div>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-        <p><?php home_tags( "$main_id" ) ?></p>
+        <?php home_tags( "$main_id" ) ?>
       </div>
     </div>
   </div>
@@ -134,12 +134,12 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
-          <h2><?php echo $top_title ; ?></h2>
+          <h2><?php echo $top_title; ?></h2>
         </div>
       </a>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-          <p><?php home_tags( "$top_id" ) ?></p>
+          <?php home_tags( "$top_id" ) ?>
         </div>
       </div>
     </div>
@@ -152,12 +152,12 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
       <div class="featured-image-shadow"></div>
       <div class="mz-text-overlay mz-text-overlay-side">
-        <h2><?php echo  $bottom_title ; ?></h2>
+        <h2><?php echo $bottom_title; ?></h2>
       </div>
       </a>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-          <p><?php home_tags( "$bottom_id" ) ?></p>
+          <?php home_tags( "$bottom_id" ) ?>
         </div>
       </div>
       </div>
@@ -174,13 +174,13 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   </div>  
 
   <!-- EVENTS PANEL -->
-  <div class="container">
-    <div class="row event-unit"> 
+  <div class="container event-unit">
+    <div class="row"> 
 
 
 <!--  Berlin / School / World Maker Faire -->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-                <a href="//makercamp.com/">
+                <a href="https://www.makercamp.com">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-makercamp-02.jpg' ?>" class="img-responsive center-block event" />
  </a>
       </div> 
@@ -190,18 +190,16 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
  </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-                <a href="//makerfaire.com/barnes-noble/?utm_source=makezine.com&utm_medium=nav+bar&utm_term=Barnes+Noble">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_BN_mini1.jpg' ?>" class="img-responsive center-block event" />
+                <a href="/giftguide/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_giftguide2.jpg' ?>" class="img-responsive center-block event" />
                 </a>
       </div> 
     </div>  
   </div>
 
   <!-- MAKER SHED PANEL -->
-  <div class="container">
-    <div class="row product-wrapper"> 
-        <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
-    </div>
+  <div class="container shed-row">
+    <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
   </div> <!-- MakerShed -->
 
   <div class="all-projects <?php echo $device ?>">

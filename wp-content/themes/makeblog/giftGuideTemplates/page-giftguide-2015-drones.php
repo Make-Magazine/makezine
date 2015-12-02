@@ -76,7 +76,7 @@ get_header('version-2'); ?>
   </div>
 
   <!-- Desktop title bar -->
-  <div class="container gg2015-sidelines">
+  <div class="container gg2015-sidelines hidden">
     <h3 class="text-center"><span>DRONES are brought to you by Parrot</span></h3>
   </div>
 
@@ -377,14 +377,14 @@ get_header('version-2'); ?>
 
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Magazine_Subscription">
+          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
           <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=DRONES&utm_term=Make:_Magazine_Subscription" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 

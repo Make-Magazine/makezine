@@ -1460,6 +1460,11 @@ ul.duration-item li.current, ul.diff-item li.current {
   margin-bottom: 30px;
 }
 
+.home .projects-cat .posts-list ul.selected-posts-list > li.row ul li.before-ads,
+.all-projects .posts-list ul.selected-posts-list > li.row ul li.before-ads {
+  margin-bottom: 0;
+}
+
 .projects-cat .posts-list ul.selected-posts-list li.row ul li.ads,
 .all-projects .posts-list ul.selected-posts-list li.row ul li.ads {
   margin-bottom: 15px;
@@ -1560,7 +1565,7 @@ ul.duration-item li.current, ul.diff-item li.current {
 
 @media only screen and (min-width: 1200px) {
   .container.header.width {
-    z-index: 1 !important;
+    z-index: 4;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {

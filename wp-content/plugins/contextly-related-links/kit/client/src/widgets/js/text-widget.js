@@ -3,10 +3,14 @@
   /**
    * @class
    * @extends Contextly.widget.BaseLinksList
+   * @extends Contextly.widget.ViewHandler
    */
   Contextly.widget.TextSnippet = Contextly.createClass( /** @lends Contextly.widget.TextSnippet.prototype */ {
 
-    extend: Contextly.widget.BaseLinksList,
+    extend: [
+      Contextly.widget.BaseLinksList,
+      Contextly.widget.ViewHandler
+    ],
 
     construct: function(widget) {
       Contextly.widget.BaseLinksList.apply(this, arguments);
@@ -128,6 +132,11 @@
         "mobile": [0, 450],
         "default": [450]
       }
+    },
+
+    findViewWatcherElement: function(widgetElement) {
+      // Return the first link.
+      return widgetElement.find('.ctx-section .ctx-link:first');
     }
 
   });

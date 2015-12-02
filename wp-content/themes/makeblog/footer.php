@@ -39,11 +39,11 @@
 					<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
 						<h4>Explore Making</h4>
 						<ul class="list-unstyled">
-							<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
-							<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
-							<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
-							<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
-							<li><a href="//readerservices.makezine.com/mk/" target="_blank">Subscribe to Make:</a></li>
+							<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
+							<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
+							<li><a href="//makercon.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercon" target="_blank">MakerCon</a></li>
+							<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
+							<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
 						</ul>
 					</div>
 					<div class="clearfix visible-sm-block"></div>
@@ -114,11 +114,11 @@
 								<input type="hidden" name="custom_incentive" value="none" /> 
 								<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 								<input type="hidden" id="format_mime" name="format" value="mime" />
-								<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+								<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
 								<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 								<input type="hidden" name="errors_to" value="" />
 								<div class="mz-form-horizontal">
-									<input name="email" placeholder="Enter your Email" required="required" type="text">
+									<input name="email" placeholder="Enter your Email" required type="text">
 									<input value="GO" class="btn-cyan" type="submit">
 								</div>
 						  </form>
@@ -185,7 +185,7 @@
 							<input type="hidden" name="custom_incentive" value="none" /> 
 							<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 							<input type="hidden" id="format_mime" name="format" value="mime" />
-							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
+							<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
 							<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 							<input type="hidden" name="errors_to" value="" />
 							<div class="mz-form-horizontal">
@@ -204,7 +204,7 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Make:</a>
 						</h4>
 					</div>
-					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+					<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="/projects/">Make: Projects</a></li>
@@ -222,15 +222,14 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Explore Making</a>
 						</h4>
 					</div>
-					<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+					<div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
-								<li><a href="/blog">Make: News</a></li>
-								<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
-								<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
-								<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
-								<li><a href="//readerservices.makezine.com/mk/default.aspx?" target="_blank">Subscribe to Make:</a></li>
+								<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
+								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
+								<li><a href="//makercon.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercon" target="_blank">MakerCon</a></li>
+								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
+								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
 							</ul>
 						</div>
 					</div>
@@ -241,7 +240,7 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Our Company</a>
 						</h4>
 					</div>
-					<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+					<div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
@@ -285,8 +284,11 @@
 
 		<?php wp_footer(); ?>
 
-		<!-- Subscribe return path overlay -->
-		<?php echo subscribe_return_path_overlay(); ?>
+    <!-- Checks the URL for which thank you modal to how -->
+    <?php echo display_thank_you_modal_if_signed_up(); ?>
+
+    <!-- Subscribe return path overlay -->
+    <?php echo subscribe_return_path_overlay(); ?>
 
 		<!-- AddRoll Retargeting Pixel -->
 		<script type="text/javascript">

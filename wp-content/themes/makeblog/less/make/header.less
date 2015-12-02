@@ -1,592 +1,48 @@
-// Top Banner Ad
-#div-gpt-ad-664089004995786621-1 {
-	margin-top:25px;
-	margin-bottom:15px;
-	text-align:center;
-}
-
-#div-gpt-ad-664089004995786621-6 {
-	text-align:center;
-}
-#div-gpt-ad-664089004995786621-4{
-	text-align:center;
-}
-
-// #div-gpt-ad-664089004995786621-6 {margin:auto;}
-
 // Set some variables that is only used in the main nav
 @secondary-color: #ebebeb;
 
-// Wrapper that contains both the main and secondary navigations
-.top-navigation-wrapper {
-	.nav { margin-bottom:0; }
+nav {
+  li.nav-item-mobile-only {
+    display: none;
+  }
+
+  // Maker Shed Promo Banner
+  .sub-menu {
+    z-index:10000;
+  }
 }
 
-// Wrapper containing the main navigaiton
-.main-header {
-	min-width:320px;
-	padding:10px 0 0 10px;
-	border-top: 2px solid #ed1c24;
-	border-bottom: 2px solid #a4a4a4;
-	.row { position:relative; }
-    	.logo {
-	margin-top: 40px;
-	padding-bottom: 10px;
-    	}
-	.craft_logo {margin-top:12px;}
-	.hdr-sub-ad-01 {
-		img {
-			float:left;
-			padding-left:8px;
-			padding-right:8px;
-		}
-		p {
-			padding-top:10px;
-			margin-bottom:5px;
-			text-align:left;
-			padding-left:10px;
-			a:link,
-			a:visited{
-				
-				font-size: 15px;
-				line-height:26px;
-				color:#006699;
-			}
-		}
-	}
-	.social-hdr-area {
-		position:relative;
-			img {
-			float:left;
-		}
-	}
-	.social-profile-icons {
-		padding-top:10px;
-		height: 33px;
-		margin-bottom:5px;
-	}
-	.additional-content {
-		.subscribe, .search-make
-		.subscribe {
-			> a {
-				margin-right:6px;
-				font-size:16px;
-				text-transform:uppercase;
-				background:@red;
-				color:#fff !important;
-				padding:5px 10px;
-				position:relative;
-				top:4px;
-				.border-bottom-right-radius(5px);
-				.border-bottom-left-radius(5px);
-			}
-			.dropdown-menu {
-				background:#fff;
-				border:1px solid @red;
-				margin-top:4px;
-				min-width:101px;
-				.border-radius(0px);
-				a {
-					color:#0c668d;
-					font-size:16px;
-					font-weight:bold;
-					padding:3px 9px;
-					&:hover {
-						background:transparent;
-						color:@red;
-					}
-				}
-			}
-		}
-		.search-make {
-			margin-bottom:0px;
-			input[type="text"] {
-				height:34px;
-				padding: 0 8px;
-				font-size: 15px;
-				line-height: 1em;
-				border: 2px solid #cccccc;
-				width: 100%;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-				color:#777;
-				.box-shadow(0 0 0 transparent);
-				// &:focus { .box-shadow(0 0 0 transparent); }
-			}
-			&.open {
-				// border:@the-border solid #ccc;
-				// .border-bottom-right-radius(0px);
-				// .border-bottom-left-radius(0px);
-				input[type="text"] {
-					// padding:3px 0 3px 8px;
-					// margin-bottom:0;
-				}
-			}
-		}
-	}
-	.login-wrapper {
-		position:absolute;
-		right:300px;
-		font-weight:bold;
-		font-size:19px;
-		top:95px;
-	}
-	
+.navbar-default .navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-top: 48px;
 }
 
-    .shed-promo-mobile {
-    	p {
-    		font-size:1em;
-    		color:#333;
-    		text-transform: uppercase;
-    		text-align:center;
-    		padding-bottom:5px;
-    		margin-bottom:0px;
-    	}
-    	.shed-promo-nav {
-	    	padding-top:10px;
-	    	padding-bottom:10px;
-	    	text-align:center;
-	    	background-color:#fdb92c;
-	    	color:#fff;
-	    	font-size:1.em;
-		    	a:link, a:visited {
-		    	color:#fff;
-		    	}
-	    	img {
-	    		line-height:1em;
-	    		padding-right:10px;
-	    	}
-	}
+.promo-text-under-nav {
+  background: #4A90E2;
+  h3 {
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    a {
+      font-size: 12px;
+      font-family: Roboto, Helvetica, Sans-serif;
+      font-weight: 500;
+      color: #fff;
     }
-
-// Responsive styles for header
-
-@media (max-width: 479px) {
-.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
-  padding: 9px 15px;
-  font-weight: bold;
-  color: #777777;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  }
 }
+nav.sticky-header {
+  #makezine-navbar-collapse-1 {
+    margin-top: 1px;
+  }
 }
-
-@media (max-width: 479px) {
-.nav-collapse .nav > li > a {
-  margin-bottom: 2px;
-}
-}
-
-@media screen and (min-width: 1200px) {
-    .hdr-col-area.logo {
-        width: 42% !important;
-        float: left !important;
-    }
-     .hdr-col-area.hdr-sub-ad-01 {
-        width: 25% !important;
-        float: left !important;
-    }
-    .hdr-col-area.social-hdr-area {
-        width: 25% !important;
-        float: left !important;
-    }
-    // .shed-promo-mobile  {
-    // 	display:none;
-    // }
-}
-
-@media screen and (min-width: 979px) and (max-width: 1199px){
-    .hdr-col-area.logo {
-        width: 43% !important;
-        float: left !important;
-    }
-     .hdr-col-area.hdr-sub-ad-01 {
-        width: 25% !important;
-        float: left !important;
-    }
-    .hdr-col-area.social-hdr-area {
-        width: 25% !important;
-        float: left !important;
-    }
-    // .shed-promo-mobile  {
-    // 	display:none;
-    // }
-}
-@media screen and (min-width: 768px) and (max-width: 979px) {
-    .hdr-col-area.logo {
-        width: 33% !important;
-        float: left !important;
-    }
-     .hdr-col-area.hdr-sub-ad-01 {
-        width: 32% !important;
-        float: left !important;
-    }
-    .hdr-col-area.social-hdr-area {
-        width: 25% !important;
-        float: left !important;
-    }
-}
-
-@media screen and (min-width: 480px) and (max-width: 767px) {
-    .hdr-col-area.logo {
-        width: 42% !important;
-	   float: left !important;
-	img{
-	        padding-right:20px;
-
-	}
-    }
-     .hdr-col-area.hdr-sub-ad-01 {
-        width: 50% !important;
-        float: left !important;
-    }
-    .hdr-col-area.social-hdr-area {
-        width: 95% !important;
-        float: left !important;    }
-}
-
-@media screen and (max-width: 480px)  {
-.main-header {
-	.logo {
-		margin-top:13px;
-	}
-}
-    .hdr-col-area.logo {
-        width: 40% !important;
-        float: left !important;
-        	img{
-	        padding-right:20px;
-
-	}
-    }
-     .hdr-col-area.hdr-sub-ad-01 {
-        width: 48% !important;
-        float: left !important;
-        padding-top:0px;
-        p {
-        	padding-top:10px;
-        	font-weight:normal;
-        	text-transform: initial;
-        	a:link {
-        	font-size:1em !important;
-        	line-height: 1.2em !important;
-        	font-weight:normal;
-	        }
-	        span {
-	        	display:none;
-	        }
-        }
-    }
-    .hdr-col-area.social-hdr-area {
-        width: 95% !important;
-        float: left !important;    }
-}
-
-.makershed-banner {
-	background:#de231a;
-}
-
-// Wrapper containing the secondary navigation
-.secondary-header {
-	background:@secondary-color;
-	// .box-shadow( inset 0 10px 18px -10px #a4a4a4 );
-	height: 40px;
-	.search-make {
-			margin-bottom:0px;
-			input[type="text"] {
-				height:34px;
-				padding: 0 8px;
-				font-size: 15px;
-				line-height: 1em;
-				border: 2px solid #cccccc;
-				width: 100%;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-				color:#777;
-				.box-shadow(0 0 0 transparent);
-				// &:focus { .box-shadow(0 0 0 transparent); }
-			}
-			input[type="submit"] {
-				position: relative;
-				top: -38px;
-				left: 80%;
-				background:url( '../img/search-btn-gray.png' );
-				width:18px;
-				height:18px;
-				border:none;
-				margin-right:5px;
-				outline:none;
-			}
-			&.open {
-				// border:@the-border solid #ccc;
-				// .border-bottom-right-radius(0px);
-				// .border-bottom-left-radius(0px);
-				input[type="text"] {
-					// padding:3px 0 3px 8px;
-					// margin-bottom:0;
-				}
-			}
-		}
-}
-
-// Global Navigation styles
-.site-navigation {
-	li { .pull-left; }
-	li.dropdown:hover {
-		> ul.dropdown-menu {
-			display:block; // Allows us to use hover on the dropdowns rather than click.
-		}
-	}
-	a, .dropdown-menu a {
-		color:@blue;
-		background:none;
-		&:hover {
-			color:@blue !important;
-			text-decoration:underline !important;
-			background:none !important;
-		}
-	}
-	.open > a {
-		color:@blue !important;
-		text-decoration:underline !important;
-		background:none !important;
-	}
-	.sub-menu, .dropdown-menu {
-		display:none; // Add this so our subnav doesn't display before the Bootstrap classes are added.
-		border-top:none;
-		.border-radius(2px);
-	}
-}
-
-// Main Navigation styles
-.primary-navigation {
-	font-size:20px !important;
-	font-weight:bold;
-	position:relative;
-	top:94px;
-	ul {
-		> li {
-			margin-right: 18px;
-			font-size:17px;
-			> a {
-				padding-bottom:3px;
-			}
-		}
-	}
-	.dropdown-menu {
-		margin-top:0px;
-		padding-right: 30px;
-		text-align: left;
-		font-size:17px !important;
-	}
-}
-
-// Secondary Navigation
-.secondary-navigation {
-	height:40px;
-	font-size:16px;
-	border-bottom:1px solid lighter(@secondary-color);
-	a { padding: 9px 13px; }
-	.first > a { padding-left:0;}
-	.dropdown-menu {
-		background:@secondary-color;
-		margin-top:-1px;
-		border-color:lighter(@secondary-color);
-		li { width:100%; }
-	}
-}
-
-// For now, only run our media queries on the Maker Camp pages as it trys to run on non-responsive pages...
-@media (max-width: 1200px) {
-	body.makercamp .make-popdown {
-		.menu-bottom {
-			p, ul { font-size:17px !important; }
-		}
-	}
-}
-
-@media (max-width: 980px) {
-	body.makercamp .make-popdown {
-		.side-text {
-			font-size:16px;
-			a { font-size:17px; }
-		}
-		.menu-bottom {
-			p, ul { font-size:13px !important; }
-		}
-		ul.nav {
-			&.first {
-				font-size:15px;
-				a { line-height:2.3em; }
-			}
-			&.second {
-				font-size:15px;
-				a { line-height:1.6em; }
-			}
-		}
-	}
-}
-
-@media (max-width: 767px) {
-	body.makercamp .make-popdown {
-		text-align:center;
-		.border-right {
-			border:none;
-			border-bottom:2px solid #b7b7b7;
-			margin:0 0 10px 0;
-			padding:0 0 10px 0;
-		}
-	}
-}
-
-@media (max-width: 979px) and (min-width: 768px) {
-
-}
-
-@media (max-width: 479px) {
-.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
-  padding: 9px 15px;
-  font-weight: bold;
-  color: #777777;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.secondary-header {
-	height: auto;
-}
-}
-
-.canvas-ad {
-	// height: 547px;
-	// margin-bottom: -547px;
-	// top: 0px;
-	// left: 50%;
-	// margin-left: -1080px;
-	// position: relative;
-	// z-index: 1;
-	display: none;
-}
-
-// Size minimum for dfp ads
-
-// .div-gpt-ad-664089004995786621-1  {min-height:90px;}
-// .div-gpt-ad-664089004995786621-2  {min-height:250px;}
-// .div-gpt-ad-664089004995786621-3  {min-height:250px;}
-// .div-gpt-ad-664089004995786621-4  {min-height:90px;}
-// .div-gpt-ad-664089004995786621-5  {min-height:96px;}
-// .div-gpt-ad-664089004995786621-6  {min-height:37px;}
-// .div-gpt-ad-664089004995786621-7  {min-height:125px;}
-// .div-gpt-ad-664089004995786621-9  {min-height:250px;}
-
-// Maker Shed Promo Banner
-
-.sub-menu {z-index:10000;}
-
-.makershed-banner .container .row p{
-font-size: 15px;
-line-height: 28px;
-margin-bottom: 0px;
-color: #fff;
-}
-
-ul.mega-dropdown,
-ul.mega-dropdown li {
-list-style-type:none !important;
-margin-left:0px !important;
-margin-right:0px !important;
-padding-left:0px !important;
-padding-right:0px !important;
-font-weight: 300;
-line-height:170%;
-}
-
-ul.mega-dropdown li a:link {
-color:#666;
-	padding:0px !important;
-	margin:0px !important;
-	font-weight:300;
-}
-
-ul.mega-dropdown li.top-cat-item  a:link,
-ul.mega-box ul li:first-child {
-	color:#005d8f;
-}
-
-ul.mega-box ul li:first-child,
-ul.mega-box ul li:first-child a:link,
-ul.mega-box ul li:first-child a:visited {
-	font-weight:700;
-	font-size:14px;
-	margin-bottom:5px;
-	color:#fff;
-}
-
-nav back {
-background-color: #00aeef
-}
-
-ul.mega-dropdown li.top-cat-item {
-font-size: 120%;
-margin-left:0px !important;
-margin-right:0px !important;
-padding-left:0px !important;
-padding-right:0px !important;
-}
-
-.mega-box {
-min-width: auto !important;
-margin: 0 !important;
-padding:5px 1 !important;
-}
-
-.mega-box ul.sub-menu .span2 {
-	margin-left:15px !important;
-}
-
-li.top-cat-item a:link,
-li.top-cat-item a:visited {
-	font-size: 120%;
-	color:#005d8f;
-}
-
-.site-navigation a,
-.site-navigation .dropdown-menu a:link,
-.site-navigation .dropdown-menu a:visited {
-	color:#005d8f;
-}
-
-#menu-make-secondary-nav>li>a:first-child{
-   color:#005d8f;
-   font-size:18px;
-   text-decoration:none !important;
-   cursor: pointer !important;
-
-}
-
-#menu-make-secondary-nav>li>a:first-child:hover{
-   text-decoration:none !important;
-   cursor: default !important;
-}
-
-.mega-nav-footer {
-border-top:1px solid #ddd;
-margin-top:15px;
-text-align: right;
-padding-top: 7px;
-padding-bottom: 0px;
-font-size: 130%;
-font-weight: 300;
- }
-
-.mega-nav-footer a:link {background:transparent}
 
 nav.ubermenu {
-  	margin-top: -5px
+  margin-top: -5px
 }
 
 li.ubermenu-item-level-0 a {
@@ -622,33 +78,77 @@ div.additional-content {
 } 
 
 .browse-all {
- font-size:14px;
-}
-
- .secondary-navigation .dropdown-menu {
-text-align: left;
-padding-right: 30px;
-padding-top: 10px;
-padding-bottom:0px;
-border-top: 1px solid #ddd;
+  font-size:14px;
 }
 
 .dropdown-menu:after {
- content: '';
- display: inline-block;
- border-left: 6px solid transparent;
- border-right: 6px solid transparent;
- border-bottom: 6px solid #ebebeb; /* change color here, modified for a black arrow */
- position: absolute;
- top: -6px;
- left: 20px;
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ebebeb; /* change color here, modified for a black arrow */
+  position: absolute;
+  top: -6px;
+  left: 20px;
 }
 
 li#nav-news ul.sub-menu:after {
-left:110px !important;
+  left:110px !important;
 }
 
 img.nav-sprout {
-margin: -5px 0 0 0;
-height:32px;
+  margin: -5px 0 0 0;
+  height:32px;
+}
+
+/* Red navigation item. Add CSS class of nav-red within UberMenu settings. */
+.navbar .nav>li.nav-red a {
+	color: #e70c32;
+}
+.navbar .nav>li.menu-item-has-children.nav-red a:after {
+	color: #e70c32;
+}
+
+
+// Responsive styles for header
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+  .nav-item-mobile-only {
+    display: block;
+  }
+}
+
+@media (max-width: 479px) {
+  .nav-collapse .nav > li > a, 
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .nav-collapse .nav > li > a {
+    margin-bottom: 2px;
+  }
+  .nav-collapse .nav > li > a, 
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
 }

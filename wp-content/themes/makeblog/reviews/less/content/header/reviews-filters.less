@@ -1,0 +1,443 @@
+/**
+ * Reviews Filters Header
+ */
+
+.review-filters {
+
+	@media screen and (max-width: @mq-xs-max) {
+		visibility: hidden;
+		position: fixed;
+		top: 103px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: white;
+		/* Very high z-index to go above the SumoMe share buttons on mobile */
+		z-index: 99999999;
+		overflow: scroll;
+		opacity: 0;
+		transition: visibility 0s, opacity 200ms;
+
+		.admin-bar & {
+			top: 157px;
+		}
+
+	}
+
+	@media screen and (min-width:@mq-sm-min) {
+		margin-bottom: 20px;
+		padding: 0;
+	}
+
+	html.filters-open & {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 200ms, opacity 150ms;
+		z-index: 999999999;
+		top: 0;
+	}
+
+	.btn-primary {
+		color: white;
+		background: @aqua-mid;
+		&:hover,
+		&:focus,
+		&:active {
+			background: @aqua-dark;
+		}
+	}
+
+}
+
+// Filters Nav
+.fl-filters-nav {
+	@media screen and (min-width:@mq-sm-min) {
+		background: white;
+		border-radius: 9px;
+		padding: @spacer;
+	}
+}
+
+// Filters Header Title
+.fl-header-title {
+	font-family: @roboto-slab;
+	font-weight: @font-bold;
+	margin: 4px 0 12px;
+}
+
+// Filter Header Description
+.fl-header-description, {
+	font-size: 12px;
+	line-height: 14px;
+	color: @grey-mid;
+
+	@media screen and (min-width:@mq-lg-min) {
+		max-width: 200px;
+	}
+}
+
+// List of filters
+.fl-filters-list {
+
+	margin-bottom: 0;
+	padding: 0;
+
+	@media screen and (min-width:@mq-sm-min) {
+		padding: 0 15px;
+		float: right;
+		display: table;
+	}
+
+}
+
+// Each filter
+.fl-filter {
+	float: left;
+	width: 50%;
+	position: relative;
+	padding: @spacer 0;
+
+	@media screen and (min-width:@mq-sm-min) {
+		float: none;
+		width: auto;
+		margin-bottom: @spacer;
+		padding: 0;
+	}
+
+	// Filter drop-down trigger
+	.dropdown-toggle {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font-size: 11px;
+		line-height: 1.2;
+		font-weight: @font-bold;
+		text-align: left;
+		text-transform: uppercase;
+		white-space: nowrap;
+		color: @black-alt;
+		transition: all 200ms;
+
+		@media screen and(min-width: @mq-sm-min) {
+			text-align: right;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: @aqua;
+		}
+
+		span {
+			text-transform: none;
+			font-size: 13px;
+		}
+
+		.fa {
+			display: none;
+			@media screen and (min-width: @mq-sm-min) {
+				margin-left: 10px;
+				font-size: 14px;
+				display: inline-block;
+			}
+		}
+
+	}
+
+	// Checkboxes
+	input[type="checkbox"] {
+		height: auto;
+		width: auto;
+		line-height: normal;
+		display: inline;
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-size: 12px;
+		padding: 0;
+
+		&:focus {
+			outline: none;
+		}
+
+	}
+
+	// Labels
+	label {
+		cursor: pointer;
+		text-transform: none;
+		margin: 12px 0;
+		display: block;
+		white-space: nowrap;
+		position: relative;
+		padding-left: 1.5em;
+		font-size: 16px;
+		font-weight: @font-normal;
+		transition: all 150ms;
+		color: @black-alt;
+
+		@media screen and (min-width: @mq-sm-min) {
+			margin: 2px 0;
+			font-size: 12px;
+		}
+
+		span {
+
+			display: block;
+			
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: all 150ms;
+			}
+
+			&:before {
+				background-color: white;
+				width: 18px;
+				height: 18px;
+			}
+
+			&:after {
+				font-family: 'FontAwesome';
+				content: "\f058";
+				font-size: 1.25em;
+				color: @grey-mid;
+			}
+
+		}
+
+		// Case: Hover Filters
+		input:hover,
+		input:focus {
+			+ span:after {
+				color: @aqua;
+			}
+		}
+
+		// CASE: Checked filters
+		input:checked + span {
+			font-weight: @font-bold;
+			&:after {
+				font-weight: @font-normal;
+				color: @aqua;
+			}
+		}
+
+	}
+
+	hr {
+		border-color: @review-item-border;
+		margin: 6px 0;
+	}
+
+}
+
+// The Filter set options
+.fl-filter-options {
+
+	display: block;
+	border-radius: 0;
+	border: 0;
+	position: relative;
+	right: auto;
+	top: auto;
+	box-shadow: none;
+	min-width: unset;
+	z-index: 1;
+
+	@media screen and (min-width:@mq-sm-min) {
+		display: none;
+		position: absolute;
+		padding: 12px;
+		z-index: 2;
+		right: 0;
+		top: 18px;
+		min-width: 120px;
+		background: white;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	}
+
+	&:after {
+		display: none;
+	}
+
+	.fl-recommended & {
+		float:none;
+		@media screen and (min-width: @mq-sm-min) {
+			float: left;
+			top: 38px;
+			right: 30px;
+		}
+	}
+
+	.fl-more-options & {
+		float:none;
+	}
+
+}
+
+// Recommended Filter & Filter Groups
+.fl-recommended,
+.fl-group {
+	@media screen and (min-width: @mq-sm-min) {
+		display: table-cell;
+		padding: 20px 30px;
+		vertical-align: top;
+	}
+	@media screen and (min-width: @mq-md-min) {
+		padding: 20px 25px;
+	}
+	@media screen and (min-width: @mq-lg-min) {
+		padding: 20px 30px;
+	}
+}
+
+// Full-Width filter sets
+.fl-recommended,
+.fl-more-options {
+	@media screen and (max-width: @mq-xs-max) {
+		float: none;
+		width: 100%;
+		clear: both;
+	}
+}
+
+.fl-recommended {
+	@media screen and (max-width: @mq-xs-max) {
+		margin-bottom: 15px;
+		&:after {
+			content: ' ';
+			position: absolute;
+			left: -15px;
+			right: -15px;
+			bottom: 0;
+			border-bottom: 1px solid @review-item-border;
+		}
+	}
+}
+
+
+
+// Filter Groups
+.fl-group {
+	@media screen and (min-width: @mq-sm-min) {
+		border-left: 1px solid @lt-gray;
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+}
+
+.more-filters-btn {
+	margin: 20px auto 90px;
+	width: 48%;
+}
+
+.more-filters {
+
+	display:none;
+
+	&.open {
+		display: block;
+	}
+
+	@media screen and (min-width: @mq-sm-min) {
+		display: block!important;
+		overflow: visible!important;
+	}
+
+}
+
+// Mobile apply cancel buttons
+.fl-actions {
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	padding: @spacer;
+	background: #F0F0F0;
+	text-align: center;
+
+	.btn {
+		width: 48%;
+		&:first-of-type {
+			margin-right: 5px;
+		}
+	}
+
+}
+
+// The selected filters bar
+.fl-filters-selected {
+	background: white;
+	border-radius: 9px;
+	margin: 2px 0 0;
+  display: none;
+}
+
+// Selected filters items
+.fs-selected {
+	float:left;
+	width: auto;
+}
+
+// The selected fitlers.
+.fs-selected-btn {
+
+	color: @black-alt;
+	font-size: 13px;
+	line-height: 1.15;
+	font-weight: @font-bold;
+
+	.fa {
+		display: inline-block;
+		margin-right: 5px;
+		height: 23px;
+		width: 23px;
+		line-height: 1.5;
+		font-size: 14px;
+		background: @grey-light;
+		border:1px solid @grey-mid;
+		border-radius: 50%;
+		text-shadow: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		color: @grey-mid;
+		text-decoration: none;
+		outline: 0;
+
+		.fa {
+			color: white;
+			background: @grey-mid;
+		}
+
+	}
+
+}
+
+// the reset filters button
+.rf-reset-btn {
+	float: right;
+	padding: 8px 12px;
+	font-size: 13px;
+	color: @black-alt;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: @grey-mid;
+		text-decoration: none;
+		outline: 0;
+	}
+}
