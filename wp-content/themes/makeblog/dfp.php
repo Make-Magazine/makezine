@@ -196,11 +196,6 @@ $postcat = is_single() ? get_the_category() : (is_category() ? explode(",", get_
 
 $make->ad_vars->page = substr($_SERVER['REQUEST_URI'], 0, 40);
 
-// Post id.
-if ($id) {
-    $make->ad_vars->id = strval($id);
-}
-
 // Post info.
 if ($current_page !== NULL) {
     $q_posts = get_posts(array('pagename' => $wp_query['pagename'], 'post_type' =>'any', 'post_status' => 'any'));
