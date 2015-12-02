@@ -190,7 +190,6 @@ $make->ad_vars = new stdClass();
 // Get current page info.
 $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
 $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
-$id = get_the_ID();
 $posttags = is_single() ? get_the_tags() : NULL;
 $postcat = is_single() ? get_the_category() : (is_category() ? explode(",", get_category_parents($wp_query->get_queried_object()->term_id, FALSE, ",")) : NULL);
 
