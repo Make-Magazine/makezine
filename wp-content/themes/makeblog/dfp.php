@@ -193,7 +193,7 @@ $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
 $posttags = is_single() ? get_the_tags() : NULL;
 $postcat = is_single() ? get_the_category() : (is_category() ? explode(",", get_category_parents($wp_query->get_queried_object()->term_id, FALSE, ",")) : NULL);
 
-$make->ad_vars->page = $_SERVER['REQUEST_URI'];
+$make->ad_vars->page = substr($_SERVER['REQUEST_URI'], 0, 40);
 
 // Post info.
 if ($current_page !== NULL) {
