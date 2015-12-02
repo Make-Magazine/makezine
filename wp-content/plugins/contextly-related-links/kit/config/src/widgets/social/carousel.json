@@ -1,0 +1,11 @@
+{
+  "aggregate": true,
+  "include": [
+    "libraries/slick"
+  ],
+
+  "base": "widgets/css/social",
+  "css": [
+    "carousel"
+  ]
+}

@@ -12,7 +12,8 @@
 		right: 0;
 		bottom: 0;
 		background: white;
-		z-index: 3;
+		/* Very high z-index to go above the SumoMe share buttons on mobile */
+		z-index: 99999999;
 		overflow: scroll;
 		opacity: 0;
 		transition: visibility 0s, opacity 200ms;
@@ -31,7 +32,9 @@
 	html.filters-open & {
 		visibility: visible;
 		opacity: 1;
-		transition: visibility 200ms, opacity 150ms
+		transition: visibility 200ms, opacity 150ms;
+		z-index: 999999999;
+		top: 0;
 	}
 
 	.btn-primary {
@@ -284,6 +287,7 @@
 	@media screen and (min-width: @mq-sm-min) {
 		display: table-cell;
 		padding: 20px 30px;
+		vertical-align: top;
 	}
 	@media screen and (min-width: @mq-md-min) {
 		padding: 20px 25px;

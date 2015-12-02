@@ -66,6 +66,7 @@
 
 .ctx-subscribe-link.ctx-theme-transparent.ctx-no-transitions,
 .ctx-subscribe-link.ctx-theme-button.ctx-no-transitions,
+.ctx-subscribe-link.ctx-theme-colossus,
 .ctx-subscribe-link.ctx-theme-split-button .ctx-subscribe-label.ctx-no-transitions,
 .ctx-subscribe-link.ctx-theme-split-button .ctx-subscribe-logo.ctx-no-transitions {
   -webkit-transition: none 0s ease 0s !important;

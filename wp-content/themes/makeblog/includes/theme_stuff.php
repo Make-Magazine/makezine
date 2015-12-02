@@ -1758,11 +1758,11 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
 function sumome_scroll_show_script() { ?>
 		<script type="text/javascript">
 			jQuery(document).scroll(function () {
-					if(window.location.href.indexOf('/giftguide')) return;
+					if(window.location.href.indexOf('/giftguide') != -1 ) return;
 			    var y = jQuery(this).scrollTop();
 			    if (y > 800) {
 			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
-			        jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
+			      jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
 			    } else {
 			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
 			    }

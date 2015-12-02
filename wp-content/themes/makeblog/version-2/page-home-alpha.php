@@ -174,13 +174,13 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   </div>  
 
   <!-- EVENTS PANEL -->
-  <div class="container">
-    <div class="row event-unit"> 
+  <div class="container event-unit">
+    <div class="row"> 
 
 
 <!--  Berlin / School / World Maker Faire -->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-                <a href="//makercamp.com/">
+                <a href="https://www.makercamp.com">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-makercamp-02.jpg' ?>" class="img-responsive center-block event" />
  </a>
       </div> 
@@ -198,10 +198,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   </div>
 
   <!-- MAKER SHED PANEL -->
-  <div class="container">
-    <div class="row product-wrapper"> 
-        <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
-    </div>
+  <div class="container shed-row">
+    <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
   </div> <!-- MakerShed -->
 
   <div class="all-projects <?php echo $device ?>">

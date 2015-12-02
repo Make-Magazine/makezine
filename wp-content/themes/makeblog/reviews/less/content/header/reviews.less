@@ -68,6 +68,7 @@
 			border: none;
 			text-align: center;
 			height: auto;
+			vertical-align: top;
 
 			@media screen and (min-width: @mq-sm-min) {
 				display: block;
@@ -244,7 +245,12 @@
 			z-index: 3;
 			transition: all 100ms ease-in-out;
 			overflow: hidden;
+			-ms-overflow-style: none;
 			max-height: 0;
+			background
+			&::-webkit-scrollbar { 
+				width: 0 !important;
+			}
 
 			@media screen and (min-width: @mq-sm-min) {
 				position: absolute;
@@ -279,6 +285,7 @@
 			left: 0;
 			right: 0;
 			overflow-y: scroll;
+			overflow: hidden;
 			padding: @spacer;
 			border: 0;
 			border-radius: 0;
@@ -294,12 +301,16 @@
 				left: auto;
 				right: auto;
 				background: #e7e7e7;
-				column-count: 3;
+				-webkit-column-count: 3; /* Chrome, Safari, Opera */
+			    -moz-column-count: 3; /* Firefox */
+			    column-count: 3;
 				padding: 20px;
 			}
 
 			@media screen and (min-width: @mq-md-min) {
-				column-count: 4;
+				-webkit-column-count: 4; /* Chrome, Safari, Opera */
+			    -moz-column-count: 4; /* Firefox */
+			    column-count: 4;
 			}
 
 			&:after {

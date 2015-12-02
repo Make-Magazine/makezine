@@ -56,10 +56,12 @@ $modal_text     = get_field( 'magazine_label', $id );
 			</ol>
 		</nav>
 
+		<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>
 		<div class="review-nav-btns visible-xs-block">
 			<button id="show-filters-btn" type="button" class="show-filters-btn btn btn-default" aria-haspopup="true" aria-expanded="false">Filter</button>
 			<button id="show-sort-btn" type="button" class="show-sort-btn btn btn-default" aria-haspopup="true" aria-expanded="false">Sort</button>
 		</div><!-- .review-nav-btns -->
+		<?php endif; ?>
 
 	</header>
 </div>
