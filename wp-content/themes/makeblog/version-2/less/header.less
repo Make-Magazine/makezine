@@ -291,10 +291,6 @@ h6 {
   margin: auto;
 }
 
-.sticky-header .dynamic-header-content {
-  display: none;
-}
-
 .close-dynamic-content {
   width: 100%;
   height: 200px;
@@ -310,6 +306,8 @@ h6 {
   display: none;
   width: inherit;
   position: absolute;
+  height: 192px;
+  overflow: hidden;
 }
 
 .latest-projects .project-post {
@@ -334,7 +332,7 @@ h6 {
 .latest-projects .project-post h1 a {
   font-family: Roboto;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 15px;
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -349,6 +347,8 @@ h6 {
   display: none;
   width: inherit;
   position: absolute;
+  height: 192px;
+  overflow: hidden;
 }
 
 .latest-stories .stories-post {
@@ -373,7 +373,7 @@ h6 {
 .latest-stories .stories-post h1 a {
   font-family: Roboto;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 15px;
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -675,18 +675,13 @@ input[type=search]::-ms-reveal {
   background-size: 15px;
 }
 
-.dynamic-header-posts.sticky-header .menu-container {
-  width: inherit;
-  background: none;
-}
-
 .dynamic-header-posts {
   width: 100%;
-  height: 200px;
+  height: 206px;
   border-bottom: 4px solid #ec1e21;
   background-color: #e6e6e6;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: none;
   margin-top: -33px;
   &.sticky-header {
@@ -696,30 +691,8 @@ input[type=search]::-ms-reveal {
 
 .dynamic-header-posts.sticky-header {
   position: fixed;
-  height: 38px;
   border-bottom: 3px solid #ec1e21;
   overflow: hidden;
-}
-
-.sticky-header .menu-sub-menu {
-  width: inherit;
-  padding: 0;
-  height: inherit;
-}
-
-.sticky-header ul.sub-menu.moove-right {
-  margin-left: 100%;
-}
-
-.sticky-header ul.sub-menu.moove-left {
-  margin-left: -100%;
-}
-
-.sticky-header .menu-sub-menu > ul.sub-menu > li {
-  height: 38px;
-  line-height: 38px;
-  display: inline-block;
-  margin-right: 33px;
 }
 
 .container.header.tablet.width {
@@ -736,7 +709,7 @@ input[type=search]::-ms-reveal {
   background: #efefef;
   width: 172px;
   float: left;
-  max-height: 196px;
+  max-height: 202px;
 }
 
 .menu-sub-menu {
@@ -777,11 +750,6 @@ input[type=search]::-ms-reveal {
   line-height: 21px;
 }
 
-.sticky-header .menu-sub-menu ul li a {
-  font-weight: 400;
-  line-height: 36px;
-}
-
 .menu-sub-menu > ul.sub-menu > li > a:hover {
   color: #8f8e8e;
 }
@@ -792,7 +760,7 @@ input[type=search]::-ms-reveal {
 
 .dynamic-header-content {
   margin: auto;
-  height: 189px;
+  height: 194px;
   overflow: hidden;
   position: absolute;
   margin-left: 185px;
@@ -976,10 +944,6 @@ ul.sub-menu.moove-right {
     border: 1px solid #686868;
   }
 
-  .dynamic-header-posts.sticky-header .menu-container {
-    padding-left: 5px;
-  }
-
   .search-bar input.search-field[type="search"] {
     width: 181px;
   }
@@ -1115,7 +1079,6 @@ ul.sub-menu.moove-right {
   }
 
   .navbar-default.sticky-header {
-    width: 1190px;
     border-radius: 0;
     height: 50px;
 
@@ -1247,6 +1210,12 @@ ul.sub-menu.moove-right {
 
   .dynamic-header-content {
     width: 798px;
+    .latest-projects {
+      height: 194px;
+    }
+    .latest-stories {
+      height: 194px;
+    }
   }
 
   .navbar-default.sticky-header #menu-make-main {
@@ -1281,7 +1250,6 @@ ul.sub-menu.moove-right {
   }
 
   .navbar-default.sticky-header {
-    width: 1190px;
     border-radius: 0;
     height: 50px;
   }
@@ -1373,6 +1341,9 @@ ul.sub-menu.moove-right {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-default.sticky-header .sticky-subscribe {
+    display:none;
+  }
   .sticky-header .close-search {
     margin-top: 3px;
   }
@@ -1481,10 +1452,6 @@ ul.sub-menu.moove-right {
 
   .sticky-header .close-search {
     background-size: 20px;
-  }
-
-  .dynamic-header-posts.sticky-header .menu-container {
-    padding-left: 15px;
   }
 
   .close-search:hover {
@@ -1968,4 +1935,7 @@ ul.sub-menu.moove-right {
   .get-dark {
     height: 0px !important;
   }
+}
+.projects-cat .content .minify.sticky, .all-projects .content .minify.sticky {
+  transition: all 0.25s ease;
 }
