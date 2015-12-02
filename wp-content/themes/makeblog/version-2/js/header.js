@@ -142,6 +142,7 @@ $(document).ready(function () {
 		$('body').css('overflow-y', '');
 		$('body').css('height', '');
 		if ($window <= '767') {
+			$('.menu-item-has-children').addClass('first-hover');
 			if ($counter == '0') {
 				$('div.navbar-collapse').hide();
 				$counter = 1;
