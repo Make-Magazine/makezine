@@ -23,8 +23,9 @@
 
 			// Get the true author data
 			$author = $authordata;
-
+                       
 			if ( ! empty( $author ) ) {
+                            
 				// If the user account is a guest-author, then it will always be used over Gravatar data
 				if ( $author->type === 'guest-author' ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
 					return $author;
@@ -64,8 +65,7 @@
 		 */
 		public function author_profile() {
 			$author = $this->get_author_data();
-
-			if ( $author ) : ?>
+                        if ( $author ) : ?>
 				<div class="span4">
 					<?php echo $this->author_avatar( $author ); ?>
 				</div>
@@ -419,6 +419,8 @@
 	}
 
 	/**
+         * This action addresses anyone without posts which can be authors and co-authors.
+         * Redirect is now going to generic make-editors page 
 	 * Fixes guest authors with no posts to actually load their profile instead of returning 404
 	 * As per http://wordpress.org/support/topic/advice-for-showing-author-profile-page-for-authors-without-posts
 	 * @return void
@@ -428,7 +430,7 @@
 
 		if ( false !== stripos( $_SERVER['REQUEST_URI'], '/author' ) && empty( $wp_query->posts ) ) {
 			$wp_query->is_404 = false;
-			get_template_part( 'author' );
+                        wp_redirect('/author/make-editors/');
 			exit;
 		}
 	}
@@ -514,3 +516,19 @@
 
 	// For now we will stop displaying author blocks at the end of posts until we can fix it next week.
 	add_filter( 'the_content', 'hook_bio_into_content', 5 );
+        
+       
+        /**
+	 * Hooks the WP filter coauthors_supported_post_types
+	 *
+	 * @filter coauthors_supported_post_types
+	 * @param $post_types
+	 *
+	 **/
+         add_filter('coauthors_supported_post_types', 'mz_coauthors_supported_post_types');
+      
+	function mz_coauthors_supported_post_types( $post_types ) {
+		$post_types[] = 'products';
+                $post_types[] = 'reviews';
+		return $post_types;
+	}
