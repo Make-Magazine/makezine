@@ -483,7 +483,7 @@ function make_add_custom_types( $query ) {
 		if ( is_home() ) {
 			$query->set( 'post_type', array( 'post', 'projects', 'video', 'review', 'magazine' ) );
 		} else {
-			$query->set( 'post_type', array( 'post', 'craft', 'projects', 'video', 'review', 'magazine' ) );
+			$query->set( 'post_type', array( 'post', 'craft', 'projects', 'video', 'review', 'magazine', 'products', 'reviews' ) );
 		}
 
 		return $query;
