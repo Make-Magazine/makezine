@@ -123,7 +123,7 @@ include_once dirname(__FILE__) . '/includes/json-endpoint.php';
 include_once dirname(__FILE__) . '/includes/projects-manager.php';
 
 // 31. Maker Camp
-include_once dirname(__FILE__) . '/includes/maker-camp.php';
+//include_once dirname(__FILE__) . '/includes/maker-camp.php';
 
 // 33. CLI CSV
 if (defined('WP_CLI') && WP_CLI)
