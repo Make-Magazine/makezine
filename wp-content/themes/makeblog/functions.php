@@ -790,6 +790,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 }
                 $output .= '">';
                 $output .= '<div class="own">';
+                $output .= '<p id="ads-title">Advertisement</p>';
                 $output .= '<div class="home-ads">';
                 $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
@@ -1225,6 +1226,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 }
                 $output .= '">';
                 $output .= '<div class="own">';
+                $output .= '<p id="ads-title">Advertisement</p>';
                 $output .= '<div class="home-ads">';
                 $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
@@ -1646,6 +1648,7 @@ $output .= '</a></div>';
                 }
                 $output .= '">';
                 $output .= '<div class="own">';
+                $output .= '<p id="ads-title">Advertisement</p>';
                 $output .= '<div class="home-ads">';
                 $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';

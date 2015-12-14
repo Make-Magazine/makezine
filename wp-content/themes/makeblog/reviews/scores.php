@@ -69,6 +69,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 		<aside class="reviews-sidebar tc-sidebar scores-sidebar">
 			
 			<div class="meta-block ad-1">
+				<p id="ads-title">Advertisement</p>
 				<?php global $make; print $make->ads->ad_300x250_atf; ?>
 			</div><!-- .meta-block.ad-1 -->
 			<?php $how_scoring_works = get_field( 'how_scoring_works' ); ?>

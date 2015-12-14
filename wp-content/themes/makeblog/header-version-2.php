@@ -84,7 +84,7 @@ if( $detect->isTablet() ){
     <meta property="fb:admins" content="1612614584" />
   
     <!-- javascript -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
    
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
