@@ -12,6 +12,7 @@
     construct: function() {
       this.left = 0;
       this.lastId = 0;
+      this.finished = false;
       this.reasons = {};
       this.results = [];
     },
@@ -50,6 +51,12 @@
     },
 
     onQueueComplete: function() {
+      // Block attempts to complete it twice and also set flag for isComplete().
+      if (this.finished) {
+        return;
+      }
+      this.finished = true;
+
       this.each(this.results, function(result) {
         var callback = result[0];
         var args = Array.prototype.slice.call(result, 1);
@@ -80,6 +87,10 @@
       if (this.left === 0) {
         this.onQueueComplete();
       }
+    },
+
+    isComplete: function() {
+      return this.finished;
     }
 
   });

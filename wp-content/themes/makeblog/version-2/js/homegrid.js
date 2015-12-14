@@ -451,6 +451,9 @@ jQuery(document).ready(function ($) {
                     $(".posts-list").html(data);
                 }
 
+                // Load Placeholder Ads.
+                make.gpt.loadDyn();
+
                 var error_message = $(".posts-list").find('.error_message');
                 if (error_message.length > 0) {
                     return;
@@ -493,8 +496,6 @@ jQuery(document).ready(function ($) {
                 $('#pbd-alp-load-posts a').text('More');
                 $('#pbd-alp-load-posts a').removeClass('first-click');
                 $('#pbd-alp-load-posts').removeClass('loading');
-                // Load placeholder ads.
-                make.gpt.loadDyn();
             });
                 return false;
         }

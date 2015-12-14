@@ -262,7 +262,6 @@ function make_load_resources() {
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
-	wp_enqueue_style( 'project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
@@ -484,7 +483,7 @@ function make_add_custom_types( $query ) {
 		if ( is_home() ) {
 			$query->set( 'post_type', array( 'post', 'projects', 'video', 'review', 'magazine' ) );
 		} else {
-			$query->set( 'post_type', array( 'post', 'craft', 'projects', 'video', 'review', 'magazine' ) );
+			$query->set( 'post_type', array( 'post', 'craft', 'projects', 'video', 'review', 'magazine', 'products', 'reviews' ) );
 		}
 
 		return $query;
@@ -1758,11 +1757,11 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
 function sumome_scroll_show_script() { ?>
 		<script type="text/javascript">
 			jQuery(document).scroll(function () {
-					if(window.location.href.indexOf('/giftguide')) return;
+					if(window.location.href.indexOf('/giftguide') != -1 ) return;
 			    var y = jQuery(this).scrollTop();
 			    if (y > 800) {
 			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
-			        jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
+			      jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
 			    } else {
 			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
 			    }
@@ -1785,43 +1784,49 @@ add_action( 'wp_footer', 'sumome_scroll_show_script' );
  */
 function home_tags($postid) {
 	$post_type = get_post_type( $postid );
-	$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
-	if ( $post_type == 'projects' ) {
-		$flag = get_post_meta( $postid, 'display_category', true );
-		if ( ! empty( $flag ) ) {
-			$category = get_term( $flag, 'category' );
-		} else {
-			$categories = get_the_category( $postid );
-			$category = $categories[0];
-		}
-		$catname = $category->name;
-		$caturl = get_category_link( $category ) . '';
-
-		echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
+	if ( $post_type == 'page' ) {
+		return;
 	}
 	else {
-		$dc = get_post_meta( $postid, 'display_category', true );
-		$tag = get_the_tags( $postid );
-		if ( ! empty( $dc ) ) {
-			$term = get_term( $dc, 'post_tag' );
-			echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
-		}
-		elseif( ! empty( $tag ) ) {
-			echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+		echo '<p>';
+		$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
+		if ( $post_type == 'projects' ) {
+			$flag = get_post_meta( $postid, 'display_category', true );
+			if ( ! empty( $flag ) ) {
+				$category = get_term( $flag, 'category' );
+			} else {
+				$categories = get_the_category( $postid );
+				$category = $categories[0];
+			}
+			$catname = $category->name;
+			$caturl = get_category_link( $category ) . '';
+
+			echo '<a href="'.$caturl.'" alt="category"><span class="fa fa-wrench"></span>'.$catname.'</a>';
 		}
 		else {
-			echo '';
+			$dc = get_post_meta( $postid, 'display_category', true );
+			$tag = get_the_tags( $postid );
+			if ( ! empty( $dc ) ) {
+				$term = get_term( $dc, 'post_tag' );
+				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
+			}
+			elseif( ! empty( $tag ) ) {
+				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+			}
+			else {
+				echo '';
+			}
 		}
-	}
-	if ( $post_video[0] > 0 ) {
-		 $output .= '<div class="videoblock"><a href="';
-                $link = get_the_permalink($postid);
-                $output .= $link;
-                $output .= '">';
-                $output .= '';
-                $output .= '<span class="video fa fa-video-camera"></span>';
-                $output .= '</a></div>';
-                echo $output;
+		if ( $post_video[0] > 0 ) {
+			 $output .= '<div class="videoblock"><a href="';
+	                $link = get_the_permalink($postid);
+	                $output .= $link;
+	                $output .= '">';
+	                $output .= '';
+	                $output .= '<span class="video fa fa-video-camera"></span>';
+	                $output .= '</a></div>';
+	                echo $output;
+		}
+		echo '</p>';
 	}
 }
-

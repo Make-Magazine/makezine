@@ -5,10 +5,14 @@
    *
    * @class
    * @extends Contextly.widget.TextSnippet
+   * @extends Contextly.widget.TweetsRenderer
    */
   Contextly.widget.BaseBlocksSnippet = Contextly.createClass( /** @lends Contextly.widget.BaseBlocksSnippet.prototype */ {
 
-    extend: Contextly.widget.TextSnippet,
+    extend: [
+      Contextly.widget.TextSnippet,
+      Contextly.widget.TweetsRenderer
+    ],
 
     getNumberOfLinksPerSection: function() {
       return 6;
@@ -104,6 +108,44 @@
       }
 
       return handlers;
+    },
+
+    getTweetContainers: function(widgetContainers) {
+      return widgetContainers.find('.ctx-link[data-tweet-id]')
+    },
+
+    getTweetContainer: function(frameElement) {
+      return $(frameElement)
+        .parents('.ctx-link.ctx-tweet:first');
+    },
+
+    onTweetTargetUrlClick: function(blockquote, e, tweetContainer) {
+      var contextlyUrl = tweetContainer.attr('data-contextly-url');
+      Contextly.MainServerAjaxClient.call(contextlyUrl);
+
+      // Prevent logging it as an ordinary click.
+      return false;
+    },
+
+    renderTweet: function(element) {
+      // Before actually rendering the tweet we:
+      // - Prepare the data-* attributes expected by the event handlers.
+      // - Cleanup the element content.
+      // - Mark widget section with special class.
+      var a = element.find('a[rel="ctx-tweet-dataurl"]:first');
+      var nativeUrl = a.attr('href');
+      var contextlyUrl = a.attr('contextly-url');
+      element
+        .attr('data-native-url', nativeUrl)
+        .attr('data-contextly-url', contextlyUrl)
+        .empty()
+        .addClass('ctx-tweet');
+      element
+        .parents('.ctx-section:first')
+        .not('.ctx-social-section')
+        .addClass('ctx-social-section');
+
+      Contextly.widget.TweetsRenderer.fn.renderTweet.apply(this, arguments);
     }
 
   });

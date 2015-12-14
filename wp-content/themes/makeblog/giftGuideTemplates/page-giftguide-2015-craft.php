@@ -76,7 +76,7 @@ get_header('version-2'); ?>
   </div>
 
   <!-- Desktop title bar -->
-  <div class="container gg2015-sidelines">
+  <div class="container gg2015-sidelines hidden">
     <h3 class="text-center"><span>CRAFT is brought to you by ...</span></h3>
   </div>
 
@@ -300,16 +300,108 @@ get_header('version-2'); ?>
 
   <div class="container gg2015-shed">
     <div class="row">
+
+      <!-- Row 1 -->
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Make:_Magazine_Subscription">
+          <a href="http://www.makershed.com/products/3doodler-2-0?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/doggy-makezine.png" alt="3D Doodler" />
+            </div>
+            <h4>3Doodler 2.0 – The World’s First 3D Printing Pen</h4>
+          </a>
+          <p>$99.99</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/3doodler-2-0?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-AG0-330-x-330.jpg" alt="Arckit GO – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit GO – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$69.99</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
+        <?php global $make; print $make->ads->ad_300x250; ?>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-A60-330-x-330-04.jpg" alt="Arckit 60 – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit 60 – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$129</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-A120-330-x-330.jpg" alt="Arckit 120 – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit 120 – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$249</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/makezine.com-advert-A240-330-x-330.jpg" alt="Arckit 240 – The Architectural Model Building Design Kit" />
+            </div>
+            <h4>Arckit 240 – The Architectural Model Building Design Kit</h4>
+          </a>
+          <p>$399</p>
+          <a class="gg2015-buy-btn" href="http://arckit.com/buy/?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <!-- Row 3 -->
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/lulzbot-taz-5-3d-printer?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">
+            <div class="product-shed-image">
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/LulzBot_TAZ_5_Front.jpg" alt="LulzBot TAZ 5 Desktop 3D Printer" />
+            </div>
+            <h4>LulzBot® TAZ 5 Desktop 3D Printer – Named “Best Overall” by Make:</h4>
+          </a>
+          <p>$2,199.99</p>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/lulzbot-taz-5-3d-printer?utm_source=Makezine&utm_medium=banner&utm_campaign=MakezineGiftGuide2015" target="_blank">BUY IT NOW</a>
+        </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="product-shed-grid">
+          <a href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Make:_Magazine_Subscription" target="_blank">
             <div class="product-shed-image">
               <img src="//cdn.shopify.com/s/files/1/0243/7593/products/MAKESUB_800x800_large.jpg" alt="Make: Magazine Subscription" />
             </div>
             <h4>Make: Magazine Subscription</h4>
           </a>
           <p>$35</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Make:_Magazine_Subscription">BUY IT NOW</a>
+          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-subscriptions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Make:_Magazine_Subscription" target="_blank">BUY IT NOW</a>
         </div>
       </div>
 
@@ -324,10 +416,6 @@ get_header('version-2'); ?>
           <p>$17 - $22</p>
           <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-paper-inventions?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=CRAFT&utm_term=Make:_Paper_Inventions" target="_blank">BUY IT NOW</a>
         </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
-        <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>
   </div>

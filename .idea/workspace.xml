@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3268a7f0-f8f8-45d3-9584-15b3b3ddbd8e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/resources/css/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/resources/js/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/views/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_07.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_07.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_08.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_08.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_09.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_09.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_23.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_23.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_25.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_25.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_26.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_26.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_29.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_29.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_31.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_31.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_32.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_32.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_33.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_33.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_34.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_34.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_35.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_35.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/Filename_36.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/highres/Filename_36.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/LulzBot_TAZ_5_Front.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/WD-PiDrive-Kit.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/WDLABS_LOGO_blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/img/badge-winner-3dprinters.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_rounded/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_square/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_rounded/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_square/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_rounded/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_square/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_rounded/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_square/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_rounded/contentPattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_square/contentPattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/contentPatternBottom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/contentPatternLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/contentPatternRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/contentPatternTop.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/default_thumb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_rounded/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_square/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_rounded/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_square/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/doggy-makezine.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/fancybox_loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/fancybox_loading@2x.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/fancybox_overlay.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/fancybox_sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/fancybox_sprite@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/fullscreenoff.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/fullscreenoff2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/fullscreenoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/fullscreenoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/fullscreenoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/fullscreenoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/fullscreenon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/fullscreenon2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/fullscreenon_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/fullscreenon_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/fullscreenon_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/spots/hotspot.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/infoico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/infoico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/infoico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/infoico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/left2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/left_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/left_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/left_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/load.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/load.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/load.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/load_js.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/load_js.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/load_js.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/load_js.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/load_js.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_rounded/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_square/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_rounded/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_square/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/images/spots/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/makezine.com-advert-A120-330-x-330.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/makezine.com-advert-A240-330-x-330.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/makezine.com-advert-A60-330-x-330-04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/makezine.com-advert-AG0-330-x-330.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/images/minus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/pause.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/pause2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/pause_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/pause_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/pause_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/pixel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/pixel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/pixel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/pixel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/pixel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/play.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/play2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/play_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/play_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/play_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/images/plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-da_DK.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-de_DE.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-es_ES.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-et_EE.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-fa_IR.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-fi.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-fr_FR.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-hr.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-it_IT.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-ja.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-nl_NL.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-pt_BR.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-ro_RO.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-ru_RU.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-sr_RS.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-sv_SE.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-tr_TR.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-zh_CN.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/promos/promo-contest-01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/promos/promo-humble2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/promos/promo-humble3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/promos/promo_giftguide_humble4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/right2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/right_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/right_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/right_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/images/sort.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/img/gift-guide-2015/sponsor_flag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_circle_plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_circle_plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_circle_plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_circle_plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_circle_plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape6_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape6_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape6_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape6_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape6_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape6_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape6_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape6_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape6_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape6_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape6_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape6_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape6_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape6_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape6_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape6_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape6_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape6_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape6_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape6_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape7_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape7_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape7_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape7_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape7_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape7_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape7_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape7_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape7_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape7_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape7_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape7_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape7_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape7_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape7_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape7_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape7_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape7_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape7_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape7_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape8_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape8_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape8_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape8_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape8_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape8_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape8_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape8_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape8_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape8_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape8_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape8_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape8_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape8_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape8_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape8_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape8_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape8_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape8_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape8_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape9_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape9_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape9_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape9_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape9_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape9_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape9_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape9_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape9_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape9_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape9_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape9_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape9_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape9_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape9_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape9_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape9_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape9_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape9_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape9_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spot_shape_demo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/empty/spot_shape_demo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spot_shape_demo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spot_shape_demo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spot_shape_demo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spotoff.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spotoff2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spotoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spotoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spotoff_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spoton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/spoton2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/spoton_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/spoton_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/spoton_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_rounded/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/dark_square/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/facebook/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_rounded/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/light_square/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/sprite_next.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/sprite_prev.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/sprite_x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/images/prettyPhoto/default/sprite_y.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/zoomin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/zoomin2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/zoomin_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/zoomin_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/zoomin_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/zoomout.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/retina/zoomout2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/basic/zoomout_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/round/zoomout_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/img/thin/zoomout_combined.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/.php_cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/.styleci.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/001.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/002.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/003.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/004.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/005.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/006.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/007.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/008.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/009.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/010.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/011.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/012.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/013.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/014.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/015.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/016.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/017.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/017_1.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/018.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/019.phpt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/AJAX.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Cache/AbstractCache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Logger/AbstractLogger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/AdminPage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/AdminUI.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader/ArrayLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Autoloader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/BoxesPage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/CHANGELOG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Cache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader/CascadingLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/ClassLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Compiler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Container.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Context.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/ContextlySocialWidget.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Core.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Cron.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Engine.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Cache/FilesystemCache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader/FilesystemLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Forms.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/HelperCollection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Hooks.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader/InlineLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/InvalidArgumentException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Invokable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/LambdaHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Logger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/LogicException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader/MutableLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/NonInvokable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Cache/NoopCache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Options.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Parser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/PimpleServiceProvider.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Tests/PimpleServiceProviderInterfaceTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Tests/PimpleTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/PostMetabox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Architecture/Taxonomies/ProductCategories.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Architecture/Post_Types/Products.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/README.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Architecture/Relationships.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Architecture/Post_Types/Reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/RuntimeException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Service.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/src/Pimple/ServiceProviderInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Logger/StreamLogger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Loader/StringLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/SyntaxException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Template.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Template.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/src/Reviews/Theme.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/src/Timer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/tests/TimerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Tokenizer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/UnknownFilterException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/UnknownHelperException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/src/Mustache/Exception/UnknownTemplateException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Util.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/Widget.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/_all.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/header/ads-leaderboard.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/api.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/autoload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/autoload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/autoload_classmap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/autoload_namespaces.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/autoload_psr4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/autoload_real.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/autosidebar-widget.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-flat-links-widget.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/libraries/webfontloader/src/base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/css/basic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/bench.phpb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/tests/bench_shared.phpb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/box-factory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/box.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/box.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/box.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/box.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/social/carousel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/aggregated/widgets/social/carousel.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/widgets/social/carousel.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/storyline/colossus.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/aggregated/widgets/storyline/colossus.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/widgets/storyline/colossus.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/column-create.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/column-delete-all.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/column-delete.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/column-factory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/column-post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/column-title.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/column-user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/column.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/command.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/phpunit/php-timer/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/composer.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/config.codekit" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/config.m4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/config.w32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/360_assets/sampleshoe/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/connection-type-factory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/connection-type.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/connection-types-form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/connection-types.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/containers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/debug-utils.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/determinate-connection-type.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/directed-connection-type.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/direction-strategy.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/dropdown-factory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/dropdown-post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/dropdown-user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/dropdown.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/css/empty.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/factory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-delete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-generic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-order.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-title-attachment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-title-post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-title-user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field-title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/field.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/how-we-test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/js/imagerotator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/include_paths.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/indeterminate-connection-type.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/indeterminate-directed-connection-type.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/js/src/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/js/min/index.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/js/min/index.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/composer/installed.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/item-any.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/item-attachment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/item-post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/item-user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/item.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/js/jquery.prettyPhoto.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/assets/js.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/layout.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/license.lic" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/list-renderer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/list.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/load-composer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/scb-framework/load.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/css/master.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/master.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/css/modal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/modal.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/modal.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/mustache.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/mustache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/optionspage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/php_pimple.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/mustache/mustache/phpunit.xml.dist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/phpunit.xml.dist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/pimple.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/vendor/pimple/pimple/ext/pimple/pimple_compat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-da_DK.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-de_DE.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-es_ES.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-et_EE.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-fa_IR.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-fi.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-fr_FR.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-hr.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-it_IT.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-ja.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-nl_NL.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-pt_BR.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-ro_RO.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-ru_RU.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-sr_RS.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-sv_SE.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-tr_TR.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts-zh_CN.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/posts-to-posts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/lang/posts-to-posts.pot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/prettyphoto/css/prettyphoto.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/single/products.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/header/products.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/sidebar/products.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/single/products.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/query-post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/query-user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/query.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/reciprocal-connection-type.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/responsive-layout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/css/retina.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/header/reviews-filters.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/header/reviews-filters.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/header/reviews-sort.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/header/reviews-sort.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/css/reviews.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/header/reviews.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/loop/reviews.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/single/reviews.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/header/reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/loop/reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/sidebar/reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/single/reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/css/round.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/content/single/scores.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/scores.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/views/scoring-meta-box.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/resources/js/scoring.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/shed.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/shortcodes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/side-attachment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/side-post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/side-user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/side.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/single-products.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/single-reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/libraries/slick/slick/slick.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/libraries/slick/slick/slick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/libraries/slick.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/libraries/slick/slick/slick.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/social-css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/social-widget.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/content/single/products/specs.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/storage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/tab-create-post.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/tab-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/tab-search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/templates/table-row.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/imagerotator/html/css/thin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/tools-page.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/admin/tools.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/tribe-reviews/tribe-reviews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/tweets-renderer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/url-query.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/util.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/reviews/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/view-watcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/viewloader_basic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/viewloader_empty.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/viewloader_retina.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/viewloader_round.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/viewloader_thin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/webrotate360.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/webrotate-360-product-viewer/webrotate360.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/widget.php" />
+      <change type="DELETED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\footer-makercamp.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\header-camp.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\header-makercamp.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\page-camp.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\page-footer-subscribe.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\page-header-subscribe.php" afterPath="" />
+      <change type="MOVED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\images\sproutBanner.jpg" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/images/sproutBanner.jpg.old.jpg" />
+      <change type="MOVED" beforePath="C:\Project\makezine\wp-content\themes\makeblog\version-2\css\project-style.css" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/project-style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.eot" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.ttf" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.woff" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop1.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop1hover.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop1hover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop2.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop2hover.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop2hover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop3.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop3hover.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop3hover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop4.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop4hover.png" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/img/shop4hover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/images/sproutBanner.jpg" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/images/sproutBanner.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/404.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/404.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/404.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/404.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/Contextly.php" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/Contextly.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/ads.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/ads.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/components/assets-manager.json" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/components/assets-manager.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-blocks-widget.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-blocks-widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-links-list-widget.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-links-list-widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-widget.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/base-widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/callback-queue.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/callback-queue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/includes/class-author-profile.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/includes/class-author-profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/common.css" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/storyline/common.css" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/storyline/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/common.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/common.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/contextly-linker.php" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/contextly-linker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/js/contextly-wordpress.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/js/contextly-wordpress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.svg" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/fonts/contextly.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/assets/css.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/assets/css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/css/day-of-making.css" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/css/day-of-making.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/dfp.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/dfp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/factory.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/factory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/widgets/factory.json" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/config/src/widgets/factory.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/fancybox.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/fancybox.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/footer.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/footer.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/footer.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/giftguide.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/giftguide.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/js/gpt.js" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/js/gpt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/header-version-2.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/header-version-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/js/header.js" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/js/header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/js/header.js" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/js/header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/header.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/header.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/header.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/header.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/header.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/js/homegrid.js" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/js/homegrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/icons.css" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/css/icons.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/licenses.txt" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/licenses.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/assets/manager.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/components/assets/manager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-automotive.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-automotive.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-craft.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-craft.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-drones.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-drones.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-electronics.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-electronics.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-kitchen.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-kitchen.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-make-believe.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-make-believe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-metal-shop.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-metal-shop.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-science.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-science.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-wood-working.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/giftGuideTemplates/page-giftguide-2015-wood-working.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/page-home-alpha.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/page-home-alpha.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/page-sprout.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/page-sprout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/page-view.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/page-view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/project-style.scss" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/project-style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/includes/project_mobile_navigation.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/includes/project_mobile_navigation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/js/projects.js" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/js/projects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/projects.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/projects.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/readme.txt" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/includes/shed/shed.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/includes/shed/shed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/storyline-css.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/storyline-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/css/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/css/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/style.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/style.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/less/make/style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/style.less" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/version-2/less/style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/text-widget.js" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/client/src/widgets/js/text-widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/makeblog/includes/theme_stuff.php" afterPath="$PROJECT_DIR$/wp-content/themes/makeblog/includes/theme_stuff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/version" afterPath="$PROJECT_DIR$/wp-content/plugins/contextly-related-links/kit/version" />
+    </list>
+    <ignored path="makezine.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="makezine" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/makeblog/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#5908#5927#0#HTML" expanded="true" />
+                <element signature="e#6029#6048#0#HTML" expanded="true" />
+                <element signature="e#6214#6233#0#HTML" expanded="true" />
+                <element signature="e#6334#6353#0#HTML" expanded="true" />
+                <element signature="e#74583#74604#0#HTML" expanded="true" />
+                <element signature="e#75524#75545#0#HTML" expanded="true" />
+                <element signature="e#75626#75651#0#HTML" expanded="true" />
+                <marker date="1450084668511" expanded="true" signature="9683:10336" placeholder="..." />
+                <marker date="1450084668511" expanded="true" signature="9734:10014" placeholder="{...}" />
+                <marker date="1450084668511" expanded="true" signature="9901:9966" placeholder="{...}" />
+                <marker date="1450084668511" expanded="true" signature="10060:10207" placeholder="{...}" />
+                <marker date="1450084668511" expanded="true" signature="10130:10201" placeholder="{...}" />
+                <marker date="1450084668511" expanded="true" signature="10245:10323" placeholder="{...}" />
+                <marker date="1450084668511" expanded="true" signature="12595:12755" placeholder="..." />
+                <marker date="1450084668511" expanded="true" signature="12701:12750" placeholder="..." />
+                <marker date="1450084668511" expanded="true" signature="12778:12984" placeholder="..." />
+                <marker date="1450084668511" expanded="true" signature="12886:12979" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/wp-content/themes/makeblog/functions.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1370" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makeblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makezine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3268a7f0-f8f8-45d3-9584-15b3b3ddbd8e" name="Default" comment="" />
+      <created>1450084248537</created>
+      <option name="number" value="Default" />
+      <updated>1450084248537</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.110044315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41393876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/makeblog/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#5908#5927#0#HTML" expanded="true" />
+            <element signature="e#6029#6048#0#HTML" expanded="true" />
+            <element signature="e#6214#6233#0#HTML" expanded="true" />
+            <element signature="e#6334#6353#0#HTML" expanded="true" />
+            <element signature="e#74583#74604#0#HTML" expanded="true" />
+            <element signature="e#75524#75545#0#HTML" expanded="true" />
+            <element signature="e#75626#75651#0#HTML" expanded="true" />
+            <marker date="1450084668511" expanded="true" signature="9683:10336" placeholder="..." />
+            <marker date="1450084668511" expanded="true" signature="9734:10014" placeholder="{...}" />
+            <marker date="1450084668511" expanded="true" signature="9901:9966" placeholder="{...}" />
+            <marker date="1450084668511" expanded="true" signature="10060:10207" placeholder="{...}" />
+            <marker date="1450084668511" expanded="true" signature="10130:10201" placeholder="{...}" />
+            <marker date="1450084668511" expanded="true" signature="10245:10323" placeholder="{...}" />
+            <marker date="1450084668511" expanded="true" signature="12595:12755" placeholder="..." />
+            <marker date="1450084668511" expanded="true" signature="12701:12750" placeholder="..." />
+            <marker date="1450084668511" expanded="true" signature="12778:12984" placeholder="..." />
+            <marker date="1450084668511" expanded="true" signature="12886:12979" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -16,31 +16,6 @@ jQuery( document ).ready( function( $ ) {
 		}
 	});
 
-	// Check each li item to see if it contains a ul, if so, add our dropdown class for Bootstrap's menu stuff
-	$( '.site-navigation li' ).each( function() {
-
-		if ( $(this).children( 'ul' ).length === 1 ) {
-
-			// Add our class to the parent LI, then a class and data attribute to the A tag and then a class on the UL
-			$(this).addClass( 'dropdown' ).children( 'a' ).addClass( 'dropdown-toggle' ).next().addClass( 'dropdown-menu' );
-
-		}
-	});
-
-
-	// Add our popdown slide effect yea?
-	$( '.make-popdown .popdown-btn' ).click( function() {
-
-		if ( $(this).hasClass('open') ) {
-			$(this).removeClass('open');
-		} else {
-			$(this).addClass('open');
-		}
-
-		$( '.make-popdown .container' ).slideToggle( 'fast' );
-	});
-
-
 	// Track links clicked
 	$( '.ga-nav a' ).click( function(e) {
 		var link_name = $(this).text();

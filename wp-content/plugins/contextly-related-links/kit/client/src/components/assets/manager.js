@@ -30,10 +30,13 @@
           });
         }
 
-        // Remove CSS.
+        // Remove CSS & JS.
         var base = config.base ? (config.base + '/') : '';
-        this.each(config.css, function(path) {
+        this.each(config.css || {}, function(path) {
           Contextly.CssManager.removeFile(base + path);
+        });
+        this.each(config.js || {}, function(path) {
+          Contextly.JsManager.removeFile(base + path);
         });
 
         delete this.packages[name];
@@ -59,11 +62,15 @@
           });
         }
 
-        // Render CSS.
+        // Render CSS & JS.
         var base = config.base ? (config.base + '/') : '';
-        this.each(config.css, function(path) {
+        this.each(config.css || {}, function(path) {
           var url = Contextly.Settings.getAssetUrl(base + path, 'css');
           Contextly.CssManager.loadFile(url, base + path, queue.addReason());
+        });
+        this.each(config.js || {}, function(path) {
+          var url = Contextly.Settings.getAssetUrl(base + path, 'js');
+          Contextly.JsManager.loadFile(url, base + path, queue.addReason());
         });
       },
 

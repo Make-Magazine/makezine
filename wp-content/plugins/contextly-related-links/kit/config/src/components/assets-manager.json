@@ -13,6 +13,7 @@
   "base": "components/assets",
   "js": [
     "css",
+    "js",
     "font",
     "manager"
   ]

@@ -123,7 +123,7 @@ include_once dirname(__FILE__) . '/includes/json-endpoint.php';
 include_once dirname(__FILE__) . '/includes/projects-manager.php';
 
 // 31. Maker Camp
-include_once dirname(__FILE__) . '/includes/maker-camp.php';
+//include_once dirname(__FILE__) . '/includes/maker-camp.php';
 
 // 33. CLI CSV
 if (defined('WP_CLI') && WP_CLI)
@@ -357,9 +357,9 @@ get_template_part('version-2/includes/pbd-ajax-load-posts');
 get_template_part('version-2/includes/Mobile_Detect.php');
 
 function make_shopify_featured_products($row = 'row') {
-    echo '<li class="ads temp ow product-wrapper shed-row">';
+    echo '<li class="ads shed-row-li"><div class="shed-row">';
     echo make_shopify_featured_products_slider_home('row-fluid' );
-    echo '</li>';
+    echo '</div></li>';
     die();
 }
 
@@ -373,12 +373,8 @@ function theme_styles()
     wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
     wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-<<<<<<< HEAD
-//    wp_enqueue_script('style', get_stylesheet_directory_uri() . '/js/gpt.js');
-=======
     wp_enqueue_style('project-css', get_stylesheet_directory_uri() . '/version-2/css/project-style.css');
     wp_enqueue_style('blogpage-css', get_stylesheet_directory_uri() . '/version-2/css/blog.css');
->>>>>>> e1a9a8d6a7200bb52ba8f60be51a9767c108191d
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles');
@@ -530,9 +526,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    if ( $paged > 1 ) {
-        $offset--;
-    }
+    
     $args=array(
       'tag' => 'sprout-by-hp',
       'posts_per_page' => $post_per_page,
@@ -816,12 +810,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                     $counter = 0;
                 }
             }
-<<<<<<< HEAD
-
-
-=======
             $ads_counter++;
->>>>>>> e1a9a8d6a7200bb52ba8f60be51a9767c108191d
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
             $output .= '</ul> </li>';
@@ -966,9 +955,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    if ( $paged > 1 ) {
-        $offset--;
-    }
+    
     $args = array(
         'post_type' => array('post', 'projects',),
         'meta_query' => $meta_query,
@@ -1258,7 +1245,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $counter = 0;
                 }
             }
-
             $ads_counter++;
         endwhile;
         if (($counter == 1) and ($device != 'mobile')) {
@@ -1317,7 +1303,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($detect->isMobile()) {
         $post_per_page_initial = 18;
         $device = 'mobile';
-        $post_per_page = $post_per_page_initial;
+		$post_per_page = $post_per_page_initial;
     }
 
     if ($detect->isTablet()) {
@@ -1406,7 +1392,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-
+    
     $args = array(
         'post_type' => 'projects',
         'meta_query' => $meta_query,
@@ -1872,52 +1858,138 @@ function youtube_shortcode_modal($atts){
  * Adds the subscribe header return path overlay
  */
 function subscribe_return_path_overlay() { ?>
-	<div class="overlay-div overlay-slidedown hidden-xs">
-		<div class="container-fluid-overlay">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4 overlay-1">
-						<img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/10/Magazine-cover-44-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
-					</div>
-					<div class="col-sm-4 overlay-2">
-						<h2>Get the Magazine</h2>
-						<p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
-						<a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/">SUBSCRIBE</a>
-					</div>
-					<div class="col-sm-4 overlay-3">
-						<h2>Sign up for the Make: Newsletter</h2>
-						<p>Stay inspired, keep making.</p>
-						<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-							<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
-							<input type="hidden" name="cmd" value="subscribe"/>
-							<input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
-							<input type="hidden" name="custom_incentive" value="none"/>
-							<input type="hidden" name="custom_url" value=""/>
-							<input type="hidden" id="format_mime" name="format" value="mime"/>
-							<input type="hidden" name="goto" value=""/>
-							<input type="hidden" name="custom_host" value="makezine.com" />
-							<input type="hidden" name="errors_to" value=""/>
-							<input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
-							<input value="GO" class="black-overlay-btn" type="submit">
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		jQuery('#trigger-overlay, .overlay-div').hover(
-			function () {
-				jQuery('.overlay-div').stop().addClass( 'open' );
-				jQuery( 'body' ).addClass( 'modal-open' );
-			},
-			function () {
-				jQuery('.overlay-div').stop().removeClass( 'open' );
-				jQuery( 'body' ).removeClass( 'modal-open' );
-			}
-		);
-	</script>
+    <div class="overlay-div overlay-slidedown hidden-xs">
+        <div class="container-fluid-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 overlay-1">
+                        <img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/10/Magazine-cover-44-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
+                    </div>
+                    <div class="col-sm-4 overlay-2">
+                        <h2>Get the Magazine</h2>
+                        <p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
+                        <a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ">SUBSCRIBE</a>
+                    </div>
+                    <div class="col-sm-4 overlay-3">
+                        <h2>Sign up for the Make: Newsletter</h2>
+                        <p>Stay inspired, keep making.</p>
+                        <?php
+                            $isSecure = "http://";
+                            if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                              $isSecure = "https://";
+                            }
+                        ?>
+                        <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+                            <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
+                            <input type="hidden" name="cmd" value="subscribe"/>
+                            <input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
+                            <input type="hidden" name="custom_incentive" value="none"/>
+                            <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>"/>
+                            <input type="hidden" id="format_mime" name="format" value="mime"/>
+                            <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
+                            <input type="hidden" name="custom_host" value="makezine.com" />
+                            <input type="hidden" name="errors_to" value=""/>
+                            <input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
+                            <input value="GO" class="black-overlay-btn" type="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery('#trigger-overlay, .overlay-div').hover(
+            function () {
+                jQuery('.overlay-div').stop().addClass( 'open' );
+                jQuery( 'body' ).addClass( 'modal-open' );
+            },
+            function () {
+                jQuery('.overlay-div').stop().removeClass( 'open' );
+                jQuery( 'body' ).removeClass( 'modal-open' );
+            }
+        );
+    </script>
 <?php } 
+
+
+/**
+ * Checks the URL for which thank you modal to how.
+ * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
+ * URL with ?thankyou=true&subscribed-to=3d-printer-make-newsletter will show the 
+ */
+function display_thank_you_modal_if_signed_up() { ?>
+  <script>
+    $(document).ready(function(){
+      if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
+        $(".fancybox-thx").fancybox({
+          autoSize : false,
+          width  : 400,
+          autoHeight : true,
+          padding : 0,
+          afterLoad   : function() {
+            this.content = this.content.html();
+          }
+        });
+        $(".fancybox-thx").trigger('click');
+      }
+      else if(window.location.href.indexOf("?thankyou=true&subscribed-to=3d-printer") > -1) {
+        $(".fancybox-thx-3d-printer").fancybox({
+          autoSize : false,
+          width  : 580,
+          autoHeight : true,
+          padding : 0,
+          afterLoad   : function() {
+            this.content = this.content.html();
+          }
+        });
+        $(".fancybox-thx-3d-printer").trigger('click');
+      }
+    });
+  </script>
+  <div class="fancybox-thx" style="display:none;">
+    <div class="nl-modal-cont">
+      <div class="col-sm-4 hidden-xs nl-modal">
+      <span class="fa-stack fa-4x">
+        <i class="fa fa-circle-thin fa-stack-2x"></i>
+        <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+      </span>
+      </div>
+      <div class="col-sm-8 col-xs-12 nl-modal">
+        <h3>Awesome!</h3>
+        <p>Thanks for signing up.</p>
+        <div class="social-network-container text-center">
+          <ul class="social-network social-circle">
+            <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+          </ul>    
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="fancybox-thx-3d-printer" style="display:none;">
+    <div class="nl-modal-cont">
+      <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+          </span>
+      </div>
+      <div class="col-sm-9 col-xs-12 nl-modal">
+        <h3>Awesome!</h3>
+        <p>Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
+        <div class="social-network-container text-center">
+          <ul class="social-network social-circle">
+            <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+          </ul>    
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<?php }
+
 
 
 function register_widget_zone() {
@@ -1982,8 +2054,6 @@ function kc_dynamic_sidebar_params( $params ) {
         $params[0]['before_widget'] = preg_replace( '/class="/', "class=\"{$widget_opt[$widget_num]['classes']} ", $params[0]['before_widget'], 1 );
     return $params;
 }
-
-add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 
 function related_posts( $atts ) {
@@ -1994,64 +2064,3 @@ function related_posts( $atts ) {
     blog_feeds_output($atts['type']);
 }
 add_shortcode( 'feeds_posts', 'related_posts' );
-
-function blog_output($offset) {
-    require_once 'version-2/includes/blog_output.php';
-    $puling_result = story_pulling($offset);
-    echo $puling_result;
-}
-function blog_output_with_ajax()
-{
-    $offset = $_POST['offset'];
-    blog_output($offset);
-
-    die();
-}
-
-add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
-add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');
-
-function tag_output($offset, $current_slug) {
-    require_once 'version-2/includes/tags_output.php';
-    $puling_result = tags_pulling($offset, $current_slug);
-    echo $puling_result;
-}
-function tag_output_with_ajax()
-{
-    $offset = $_POST['offset'];
-    $current_slug = $_POST['slug'];
-    tag_output($offset, $current_slug);
-
-    die();
-}
-add_action('wp_ajax_tag_output_with_ajax', 'tag_output_with_ajax');
-add_action('wp_ajax_nopriv_tag_output_with_ajax', 'tag_output_with_ajax');
-
-function top_ads_shortcode($atts) {
-    global $make;
-    print $make->ads->ad_300x250;
-    print $make->ads->ad_300x250;
-    print $make->ads->ad_300x250;
-}
-add_shortcode('top_ads', 'top_ads_shortcode');
-
-
-function middle_ads_shortcode($atts) {
-    global $make;
-    print $make->ads->ad_300x600;
-    print $make->ads->ad_300x600;
-}
-add_shortcode('middle_ads', 'middle_ads_shortcode');
-
-function second_rectangle_shortcode($atts) {
-    global $make;
-    print $make->ads->ad_300x250_flex;
-    print $make->ads->ad_300x250_flex;
-}
-add_shortcode('middle_ads_tag', 'second_rectangle_shortcode');
-
-function tag_ads_shortcode($atts) {
-    global $make;
-    print $make->ads->ad_300x250;
-}
-add_shortcode('tag_ads', 'tag_ads_shortcode');
