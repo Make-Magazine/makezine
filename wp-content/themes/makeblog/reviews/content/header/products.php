@@ -116,7 +116,7 @@ if ( ! empty( $image ) ) {
 									$directory = $bodytag;
 									$files = scandir ($directory);
 									$firstFile = $directory . $files[2];
-									$firstFile = '/'.$firstFile;
+									$firstFile = get_site_url() .'/'.$firstFile;
 									?>
 
 									<?php echo do_shortcode( $wr_shortcode ); ?>
