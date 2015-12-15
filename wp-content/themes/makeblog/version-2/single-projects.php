@@ -94,15 +94,13 @@ get_header(); ?>
 								<div class="span4 sidebar">
 
 									<div class="projects-ad">
-
+										<p id="ads-title">Advertisement</p>
 										<?php global $make; print $make->ads->ad_300x250_atf; ?>
-
 									</div>
 
 									<div class="sidebar-ad">
-
+										<p id="ads-title">Advertisement</p>
 										<?php global $make; print $make->ads->ad_300x250_house; ?>
-
 									</div>
 
 									<div class="maker-camp-promo">
@@ -210,7 +208,10 @@ get_header(); ?>
 
 												<?php make_projects_steps_list( $steps ); ?>
 
-												<?php global $make; print $make->ads->ad_300x250_house; ?>
+												<div class="projects-understeps-ad">
+													<p id="ads-title">Advertisement</p>
+													<?php global $make; print $make->ads->ad_300x250_house; ?>
+												</div>
 
 											</div>
 

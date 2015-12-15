@@ -9,11 +9,16 @@ module.exports = function( grunt ) {
 		// Each Grunt plugins configurations will go here
 		less: {
 			development: {
+		    options: {
+		      compress: true
+		    },
 				files: {
 					'css/style.css': 'less/style.less',
 					'css/print.css': 'less/make/print.less',
 					'css/takeover.css': 'less/make/takeover.less',
-					'css/day-of-making.css': 'less/day-of-making.less'
+					'css/day-of-making.css': 'less/day-of-making.less',
+					'version-2/css/style.css': 'version-2/less/style.less',
+					'reviews/css/master.css': 'reviews/less/master.less'
 				}
 			}
 		},
