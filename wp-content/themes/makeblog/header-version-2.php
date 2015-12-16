@@ -396,7 +396,10 @@ if( $detect->isTablet() ){
               $re = "/^(.*? src=\")(.*?)(\".*)$/m";
               preg_match_all($re, $url, $matches);
               $str = $matches[2][0];
-              $photon = jetpack_photon_url($str, $args);?>
+              $photon = jetpack_photon_url($str, $args);
+              if(strlen($url) == 0){
+                $photon = get_template_directory_uri().'/version-2/img/thumbhead.jpg' ;
+              } ?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -423,7 +426,10 @@ if( $detect->isTablet() ){
               $re = "/^(.*? src=\")(.*?)(\".*)$/m";
               preg_match_all($re, $url, $matches);
               $str = $matches[2][0];
-              $photon = jetpack_photon_url($str, $args);?>
+              $photon = jetpack_photon_url($str, $args);
+              if(strlen($url) == 0){
+                $photon = get_template_directory_uri().'/version-2/img/thumbhead.jpg' ;
+              } ?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -465,7 +471,10 @@ if( $detect->isTablet() ){
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
                 preg_match_all($re, $url, $matches);
                 $str = $matches[2][0];
-                $photon = jetpack_photon_url($str, $args);?>
+                $photon = jetpack_photon_url($str, $args);
+                if(strlen($url) == 0){
+                  $photon = get_template_directory_uri().'/version-2/img/thumbhead.jpg' ;
+                } ?>
                 <img src="<?php echo $str; ?>" alt="thumbnail">
               </a>
             </div>

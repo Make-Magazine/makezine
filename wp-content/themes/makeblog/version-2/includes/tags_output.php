@@ -85,7 +85,7 @@ function tags_pulling($offset=0, $tag) {
 		$str    = $matches[2][0];
 		$photon = jetpack_photon_url( $str, $args );
 		if(strlen($url) == 0){
-			$photon = get_template_directory_uri().'/version-2/img/make_logo.png' ;
+			$photon = get_template_directory_uri().'/version-2/img/thumbtag.jpg' ;
 		}
 		if ( $large_indicator == 1 ) {
 			$outputs .= '<div class="gradient-wrapper">';
