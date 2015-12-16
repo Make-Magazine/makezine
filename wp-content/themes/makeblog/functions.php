@@ -2064,3 +2064,8 @@ function related_posts( $atts ) {
     blog_feeds_output($atts['type']);
 }
 add_shortcode( 'feeds_posts', 'related_posts' );
+
+require_once 'version-2/includes/helpers/widget_shortcode.php';
+require_once 'version-2/includes/blog_feed.php';
+require_once 'version-2/includes/tags_output.php';
+require_once 'version-2/includes/blog_output.php';

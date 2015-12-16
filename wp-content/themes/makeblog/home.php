@@ -9,70 +9,40 @@
  */
 $pagename = get_query_var('pagename');
 
-get_header('version-2');?>
-	<div class="home-ads">
-   		<?php global $make; print $make->ads->ad_leaderboard; ?>
-	</div>
-	<div class="single">
+get_header('version-2'); ?>
+<div class="ad-unit adds">
+	<?php
+	global $make;
+	print $make->ads->ad_leaderboard;
+	?>
+</div>
+<?php $current_user = wp_get_current_user();
+if (user_can($current_user, 'administrator')) {
+	$login_admin = 'admin_is_login';
+}
+?>
 
-		<div class="container">
+<div class="container all-stories <?php echo $login_admin ?>">
+	<div class="row">
+		<h1 class="all-story">All Stories</h1>
 
-			<div class="row">
-
-				<div class="span8 add30" id="content">
-
-					<?php // create a new custom query so we can return posts,
-
-						if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-					<div class="projects-masthead">
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
-					</div>
-
-					<ul class="projects-meta">
-						<?php if ( make_get_author( $post->ID ) ) : ?>
-							<?php make_get_author( $post->ID ); ?>
-						<?php endif ?>
-						<li><?php the_time('m/d/Y \@ g:i a'); ?></li>
-					</ul>
-
-					<article <?php post_class(); ?>>
-
-						<div class="media">
-
-							<a href="<?php the_permalink(); ?>" class="pull-left">
-								<?php the_post_thumbnail( 'archive-thumb', array( 'class' => 'media-object' ) ); ?>
-							</a>
-
-							<div class="media-body">
-								<p><?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?> <a href="<?php the_permalink(); ?>">Read more &raquo;</a></p>
-							</div>
-
-							<div class="jetpack-sharing">
-								<?php if ( function_exists( 'sharing_display') ) echo sharing_display(); ?>
-							</div>
-
-
+		<div class="wrapper">
+			<div class="col-md-9 col-sm-7 col-xs-12 all-post-wrapper">
+				<ul class="post-list">
+					<li class="row">
+						<div class="post">
+							<?php story_pulling($offset = 0); ?>
 						</div>
-
-					</article>
-
-					<?php endwhile; else: ?>
-
-						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-
-					<?php endif; ?>
-
-				</div>
-
-
-				<?php get_sidebar(); ?>
-
-
+					</li>
+				</ul>
 			</div>
-
+			<div class="col-md-3 col-sm-5 col-xs-12 aside">
+				<div class="sidebar-wrapper blog">
+					<?php dynamic_sidebar('sidebar_blog_page'); ?>
+				</div>
+			</div>
 		</div>
-
 	</div>
+</div>
+
 <?php get_footer(); ?>
