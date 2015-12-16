@@ -373,7 +373,7 @@ function theme_styles()
     wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
     wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-    wp_enqueue_style('blogpage-css', get_stylesheet_directory_uri() . '/version-2/css/blog.css');
+    wp_enqueue_script('projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js');
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles');
@@ -525,11 +525,11 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    
+
     $args=array(
-      'tag' => 'sprout-by-hp',
-      'posts_per_page' => $post_per_page,
-      'paged' => $paged,
+        'tag' => 'sprout-by-hp',
+        'posts_per_page' => $post_per_page,
+        'paged' => $paged,
     );
     if (!empty($current_cat_id)) $args['cat'] = $current_cat_id;
     $query = new WP_Query($args);
@@ -557,7 +557,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 $output .= '<li class="row post_rows"> <ul>';
             }
             $counter++;
-            
+
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
@@ -676,7 +676,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             }
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
-                $output .= '<div class="red-box-category">';            
+                $output .= '<div class="red-box-category">';
                 $output .= '<p><a href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
@@ -751,10 +751,10 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-             /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
-                egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
-                here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
-            */
+            /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
+            egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
+            here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
+             */
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
@@ -955,7 +955,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    
+
     $args = array(
         'post_type' => array('post', 'projects',),
         'meta_query' => $meta_query,
@@ -993,7 +993,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '<li class="row post_rows"> <ul>';
             }
             $counter++;
-            
+
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
@@ -1112,7 +1112,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
-                $output .= '<div class="red-box-category">';            
+                $output .= '<div class="red-box-category">';
                 $output .= '<p><a href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
@@ -1187,10 +1187,10 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-             /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
-                egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
-                here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
-            */
+            /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
+            egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
+            here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
+             */
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
@@ -1304,13 +1304,13 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($detect->isMobile()) {
         $post_per_page_initial = 18;
         $device = 'mobile';
-		$post_per_page = $post_per_page_initial;
+        $post_per_page = $post_per_page_initial;
     }
 
     if ($detect->isTablet()) {
         $post_per_page_initial = 12;
         $device = 'tablet';
-		$post_per_page = $post_per_page_initial;
+        $post_per_page = $post_per_page_initial;
     }
     else {
         $post_per_page = $post_per_page_initial - 1;
@@ -1393,7 +1393,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     }
     $meta_query[] = $sub_meta_query;
     $offset = ( $paged - 1 ) * $post_per_page;
-    
+
     $args = array(
         'post_type' => 'projects',
         'meta_query' => $meta_query,
@@ -1442,7 +1442,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-$output .= '</a></div>';
+            $output .= '</a></div>';
             $output .= '<div class="final_gradient"><a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -1609,10 +1609,10 @@ $output .= '</a></div>';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
-             /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
-                egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
-                here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
-            */
+            /** strip_shortcodes did not seem to be working here for contextly - maybe it isn't r
+            egistered as a shortcode at this point.  I am duplicating the strip_shortcode call
+            here from WPSEO_Utils.  We should really figure out how to make strip_shortcodes work.
+             */
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
@@ -1721,29 +1721,29 @@ function get_story_with_ajax() {
     $exclude = $_POST['excludeId'];
     $offset = $_POST['offset'];
     $story = '';
-     $story .='<div class="row more-thumbnails">';
-        $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
+    $story .='<div class="row more-thumbnails">';
+    $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
     query_posts(array('offset' => $offset ,'showposts' => '9', 'post__not_in' => array($exclude)));
     if ( have_posts() ) : while ( have_posts() ) : the_post();
-            $story .='<div class="latest-story">';
-                $story .= '<a href="';
-                $story .= get_the_ID();
-                $story .= '"class="pull-left">';
-                $args = array(
-                    'resize' => '370,240',
-                );
-                $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-                $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                preg_match_all($re, $url, $matches);
-                $str = $matches[2][0];
-                $photon = jetpack_photon_url($str, $args);
-                $story .= '<img src="';
-                $story .= $photon;
-                $story .= '"alt="thumbnail">';
-                $story .= '<h3>';
-                $story .= get_the_title();
-                $story .='</h3></a>';
-            $story .= '</div>';
+        $story .='<div class="latest-story">';
+        $story .= '<a href="';
+        $story .= get_the_ID();
+        $story .= '"class="pull-left">';
+        $args = array(
+            'resize' => '370,240',
+        );
+        $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
+        $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+        preg_match_all($re, $url, $matches);
+        $str = $matches[2][0];
+        $photon = jetpack_photon_url($str, $args);
+        $story .= '<img src="';
+        $story .= $photon;
+        $story .= '"alt="thumbnail">';
+        $story .= '<h3>';
+        $story .= get_the_title();
+        $story .='</h3></a>';
+        $story .= '</div>';
     endwhile;
     else:
         $story .= '<p>';
@@ -1812,46 +1812,32 @@ function create_post_type() {
         )
     );
 }
-function blog_output($offset) {
-    require_once 'version-2/includes/blog_output.php';
-    $puling_result = story_pulling($offset);
-    echo $puling_result;
-}
-function blog_output_with_ajax()
-{
-    $offset = $_POST['offset'];
-    blog_output($offset);
-
-    die();
-}
-add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
-add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');
 
 /**
-* Adds the Youtube inside Fancybox modal
-* To use: [youtube-modal "wnnWrLt_RCo"]
-* Place YT id in shortcade
-*/
-add_shortcode('youtube-modal', 'youtube_shortcode_modal'); 
+ * Adds the Youtube inside Fancybox modal
+ * To use: [youtube-modal "wnnWrLt_RCo"]
+ * Place YT id in shortcade
+ */
+add_shortcode('youtube-modal', 'youtube_shortcode_modal');
 
-function youtube_shortcode_modal($atts){  
+function youtube_shortcode_modal($atts){
 
-  if(!isset($atts[0])) return;
-  $id = strip_tags($atts[0]);
-  ob_start();
-  ?>
+    if(!isset($atts[0])) return;
+    $id = strip_tags($atts[0]);
+    ob_start();
+    ?>
 
-<div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
-  <div class="sprout-video">
-      <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/<?php echo $id; ?>?autoplay=1">
-        <img class="img-responsive" src="http://img.youtube.com/vi/<?php echo $id; ?>/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
-        <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
-      </a>
-  </div>
-</div>
+    <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="sprout-video">
+            <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/<?php echo $id; ?>?autoplay=1">
+                <img class="img-responsive" src="http://img.youtube.com/vi/<?php echo $id; ?>/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+                <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
+            </a>
+        </div>
+    </div>
 
-  <?php
-  return ob_get_clean();
+    <?php
+    return ob_get_clean();
 }
 
 
@@ -1875,10 +1861,10 @@ function subscribe_return_path_overlay() { ?>
                         <h2>Sign up for the Make: Newsletter</h2>
                         <p>Stay inspired, keep making.</p>
                         <?php
-                            $isSecure = "http://";
-                            if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                              $isSecure = "https://";
-                            }
+                        $isSecure = "http://";
+                        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                            $isSecure = "https://";
+                        }
                         ?>
                         <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
                             <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
@@ -1910,85 +1896,85 @@ function subscribe_return_path_overlay() { ?>
             }
         );
     </script>
-<?php } 
+<?php }
 
 
 /**
  * Checks the URL for which thank you modal to how.
  * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
- * URL with ?thankyou=true&subscribed-to=3d-printer-make-newsletter will show the 
+ * URL with ?thankyou=true&subscribed-to=3d-printer-make-newsletter will show the
  */
 function display_thank_you_modal_if_signed_up() { ?>
-  <script>
-    $(document).ready(function(){
-      if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
-        $(".fancybox-thx").fancybox({
-          autoSize : false,
-          width  : 400,
-          autoHeight : true,
-          padding : 0,
-          afterLoad   : function() {
-            this.content = this.content.html();
-          }
+    <script>
+        $(document).ready(function(){
+            if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
+                $(".fancybox-thx").fancybox({
+                    autoSize : false,
+                    width  : 400,
+                    autoHeight : true,
+                    padding : 0,
+                    afterLoad   : function() {
+                        this.content = this.content.html();
+                    }
+                });
+                $(".fancybox-thx").trigger('click');
+            }
+            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=3d-printer") > -1) {
+                $(".fancybox-thx-3d-printer").fancybox({
+                    autoSize : false,
+                    width  : 580,
+                    autoHeight : true,
+                    padding : 0,
+                    afterLoad   : function() {
+                        this.content = this.content.html();
+                    }
+                });
+                $(".fancybox-thx-3d-printer").trigger('click');
+            }
         });
-        $(".fancybox-thx").trigger('click');
-      }
-      else if(window.location.href.indexOf("?thankyou=true&subscribed-to=3d-printer") > -1) {
-        $(".fancybox-thx-3d-printer").fancybox({
-          autoSize : false,
-          width  : 580,
-          autoHeight : true,
-          padding : 0,
-          afterLoad   : function() {
-            this.content = this.content.html();
-          }
-        });
-        $(".fancybox-thx-3d-printer").trigger('click');
-      }
-    });
-  </script>
-  <div class="fancybox-thx" style="display:none;">
-    <div class="nl-modal-cont">
-      <div class="col-sm-4 hidden-xs nl-modal">
+    </script>
+    <div class="fancybox-thx" style="display:none;">
+        <div class="nl-modal-cont">
+            <div class="col-sm-4 hidden-xs nl-modal">
       <span class="fa-stack fa-4x">
         <i class="fa fa-circle-thin fa-stack-2x"></i>
         <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
       </span>
-      </div>
-      <div class="col-sm-8 col-xs-12 nl-modal">
-        <h3>Awesome!</h3>
-        <p>Thanks for signing up.</p>
-        <div class="social-network-container text-center">
-          <ul class="social-network social-circle">
-            <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-          </ul>    
+            </div>
+            <div class="col-sm-8 col-xs-12 nl-modal">
+                <h3>Awesome!</h3>
+                <p>Thanks for signing up.</p>
+                <div class="social-network-container text-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-      </div>
-      <div class="clearfix"></div>
     </div>
-  </div>
-  <div class="fancybox-thx-3d-printer" style="display:none;">
-    <div class="nl-modal-cont">
-      <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
+    <div class="fancybox-thx-3d-printer" style="display:none;">
+        <div class="nl-modal-cont">
+            <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
           <span class="fa-stack fa-4x">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
             <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
           </span>
-      </div>
-      <div class="col-sm-9 col-xs-12 nl-modal">
-        <h3>Awesome!</h3>
-        <p>Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
-        <div class="social-network-container text-center">
-          <ul class="social-network social-circle">
-            <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-          </ul>    
+            </div>
+            <div class="col-sm-9 col-xs-12 nl-modal">
+                <h3>Awesome!</h3>
+                <p>Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
+                <div class="social-network-container text-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-      </div>
-      <div class="clearfix"></div>
     </div>
-  </div>
 <?php }
 
 
@@ -2056,11 +2042,34 @@ function kc_dynamic_sidebar_params( $params ) {
 }
 add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 
-function related_posts( $atts ) {
-    $atts = shortcode_atts(array(
-        'type' => 'project'
-    ), $atts, 'posts_test');
-    require_once 'version-2/includes/blog_feed.php';
-    blog_feeds_output($atts['type']);
+require_once('version-2/includes/helpers/widget_shortcode.php');
+require_once('version-2/includes/blog_feed.php');
+require_once('version-2/includes/tags_output.php');
+require_once('version-2/includes/blog_output.php');
+
+function catch_first_image_tags() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if(empty($first_img)) {
+        $first_img = get_template_directory_uri().'/version-2/img/thumbtag.jpg';
+    }
+    return $first_img;
 }
-add_shortcode( 'feeds_posts', 'related_posts' );
+function catch_first_image_nav() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if(empty($first_img)) {
+        $first_img = get_template_directory_uri().'/version-2/img/thumbhead.jpg';
+    }
+    return $first_img;
+}

@@ -4,7 +4,7 @@
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * 
+ *
  */
 
 ?>
@@ -23,163 +23,163 @@ if( $detect->isTablet() ){
 } ?>
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
-    <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
-    <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon.png?v=2"/>
+  <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
+  <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon.png?v=2"/>
 
-    
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('siteurl'); ?>/apple-icon-57x57.png?v=2">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('siteurl'); ?>/apple-icon-60x60.png?v=2">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('siteurl'); ?>/apple-icon-76x76.png?v=2">
 
-    <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>apple-touch-icon.png?v=2"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>apple-icon-72x72.png?v=2"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>apple-icon-144x144.png?v=2"/>
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('siteurl'); ?>/apple-icon-57x57.png?v=2">
+  <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('siteurl'); ?>/apple-icon-60x60.png?v=2">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('siteurl'); ?>/apple-icon-76x76.png?v=2">
 
-    <!-- IE 10 Metro tile icon. Replace #FFFFFF with desired tile color -->
-    <link rel="manifest" href="<?php bloginfo('siteurl'); ?>/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="<?php bloginfo('siteurl'); ?>/ms-icon-144x144.png?v=2">
-    <meta name="theme-color" content="#ffffff"> 
+  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>apple-touch-icon.png?v=2"/>
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>apple-icon-72x72.png?v=2"/>
+  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>apple-icon-144x144.png?v=2"/>
 
-    <link rel="icon" sizes="192x192" href="<?php bloginfo('siteurl'); ?>/apple-icon-192x192.png?v=2">
+  <!-- IE 10 Metro tile icon. Replace #FFFFFF with desired tile color -->
+  <link rel="manifest" href="<?php bloginfo('siteurl'); ?>/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="<?php bloginfo('siteurl'); ?>/ms-icon-144x144.png?v=2">
+  <meta name="theme-color" content="#ffffff">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('siteurl'); ?>/apple-icon-180x180.png?v=2">
+  <link rel="icon" sizes="192x192" href="<?php bloginfo('siteurl'); ?>/apple-icon-192x192.png?v=2">
 
-    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('siteurl'); ?>/apple-icon-152x152.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('siteurl'); ?>/apple-icon-180x180.png?v=2">
 
-    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('siteurl'); ?>/apple-icon-144x144.png?v=2">
+  <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('siteurl'); ?>/apple-icon-152x152.png?v=2">
 
-    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('siteurl'); ?>/apple-icon-120x120.png?v=2">
+  <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+  <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('siteurl'); ?>/apple-icon-144x144.png?v=2">
 
-    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png?v=2">
+  <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+  <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('siteurl'); ?>/apple-icon-120x120.png?v=2">
 
-    <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>/apple-icon-72x72.png?v=2">
+  <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png?v=2">
 
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon-precomposed.png?v=2">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>/apple-icon-72x72.png?v=2">
 
-    <!-- For any additional png sizes that aren't covered above -->
-    <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >    
-    <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
-    <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon-precomposed.png?v=2">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
-  
-    <title><?php echo make_generate_title_tag(); ?></title>
-    <meta name="twitter:widgets:csp" content="on">
-    <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
-    <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
-    <meta property="fb:admins" content="1612614584" />
-  
-    <!-- javascript -->
-    <script src="//code.jquery.com/jquery-latest.min.js"></script>
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
-   
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <!--[endif]-->
-    
-    <!-- Pingdom for site monitoring -->
-    <script>
+  <!-- For any additional png sizes that aren't covered above -->
+  <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >
+  <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
+  <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
+
+  <title><?php echo make_generate_title_tag(); ?></title>
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
+  <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
+  <meta property="fb:admins" content="1612614584" />
+
+  <!-- javascript -->
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
+  <script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
+  <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <!--[endif]-->
+
+  <!-- Pingdom for site monitoring -->
+  <script>
     var _prum = [['id', '53fcea2fabe53d341d4ae0eb'],
-                ['mark', 'firstbyte', (new Date()).getTime()]];
+      ['mark', 'firstbyte', (new Date()).getTime()]];
     (function() {
-        var s = document.getElementsByTagName('script')[0]
+      var s = document.getElementsByTagName('script')[0]
           , p = document.createElement('script');
-        p.async = 'async';
-        p.src = '//rum-static.pingdom.net/prum.min.js';
-        s.parentNode.insertBefore(p, s);
+      p.async = 'async';
+      p.src = '//rum-static.pingdom.net/prum.min.js';
+      s.parentNode.insertBefore(p, s);
     })();
-    </script>
-    <!-- End Pingdom Code -->
+  </script>
+  <!-- End Pingdom Code -->
 
-    <!-- Begin Chartbeat Code -->
-    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-    <!-- End Chartbeat Code -->
+  <!-- Begin Chartbeat Code -->
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+  <!-- End Chartbeat Code -->
 
-    <?php wp_head(); ?>
-    
-    <?php get_template_part('dfp'); ?>
+  <?php wp_head(); ?>
 
-    <script type="text/javascript">
-      dataLayer = [];
-    </script>
-  </head>
-  <body <?php body_class(); ?>>
-    <!-- Google Universal Analytics -->
-    
-    <!-- Time-tracking for Custom Dimensions -->
-    <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
+  <?php get_template_part('dfp'); ?>
 
-    <!-- Primary Categories Dimension Query -->
-    <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
-    <?php 
-    $cats = get_the_category(); 
-      foreach ( $cats as $cat ) { 
-        if ( $cat->category_parent < 1 ) 
-          $primarycat[] = $cat->category_nicename; 
-        elseif ( $cat->category_parent > 0 )
-          $parent_cat_id = $cat->category_parent;
-          $cat2 = get_cat_name($parent_cat_id);
-          $primarycat[] = $cat2;
-        } 
-    $primary_cat_dimension = $primarycat[0];
-    ?>
-    <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  <script type="text/javascript">
+    dataLayer = [];
+  </script>
+</head>
+<body <?php body_class(); ?>>
+<!-- Google Universal Analytics -->
+
+<!-- Time-tracking for Custom Dimensions -->
+<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
+
+<!-- Primary Categories Dimension Query -->
+<?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
+<?php
+$cats = get_the_category();
+foreach ( $cats as $cat ) {
+  if ( $cat->category_parent < 1 )
+    $primarycat[] = $cat->category_nicename;
+  elseif ( $cat->category_parent > 0 )
+    $parent_cat_id = $cat->category_parent;
+  $cat2 = get_cat_name($parent_cat_id);
+  $primarycat[] = $cat2;
+}
+$primary_cat_dimension = $primarycat[0];
+?>
+<?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-51157-1', 'auto');
-        // Optimizely Universal Analytics Integration
-        window.optimizely = window.optimizely || [];
-        window.optimizely.push("activateUniversalAnalytics");
-        ga('require', 'displayfeatures');
-        ga('send', 'pageview', {
-       'page': location.pathname + location.search  + location.hash
-        });       
-        var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
-          ga('set', 'dimension11', dimensionValue11);
-          ga('set', 'dimension13', "<?php echo $primary_cat ?>");
-          ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
-    </script>
-    <!-- Google Tag Manager -->
-      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  ga('create', 'UA-51157-1', 'auto');
+  // Optimizely Universal Analytics Integration
+  window.optimizely = window.optimizely || [];
+  window.optimizely.push("activateUniversalAnalytics");
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview', {
+    'page': location.pathname + location.search  + location.hash
+  });
+  var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
+  ga('set', 'dimension11', dimensionValue11);
+  ga('set', 'dimension13', "<?php echo $primary_cat ?>");
+  ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-PC5R77');</script>
-    <!-- End Google Tag Manager  -->
+  })(window,document,'script','dataLayer','GTM-PC5R77');</script>
+<!-- End Google Tag Manager  -->
 
-    <?php if ( is_404() ) : // Load this last. ?>
-       <script>
-        ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
-      </script>
-    <?php endif; ?>
+<?php if ( is_404() ) : // Load this last. ?>
+  <script>
+    ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
+  </script>
+<?php endif; ?>
 
 <header class="header-wrapper">
   <!--<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"> -->
@@ -226,8 +226,8 @@ if( $detect->isTablet() ){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        </div>  
-        
+        </div>
+
         <!-- Desktop and Mobile Menu -->
         <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
 
@@ -237,59 +237,59 @@ if( $detect->isTablet() ){
             <!-- Mobile search -->
             <div class="hidden-md mz-search search-bar-mobile">
               <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-              <label>
-                <input type="search" class="search-field" placeholder="" value="" name="s" title="">
-              </label>
-              <input type="submit" class="search-submit" value="Search" />
-              </form>        
+                <label>
+                  <input type="search" class="search-field" placeholder="" value="" name="s" title="">
+                </label>
+                <input type="submit" class="search-submit" value="Search" />
+              </form>
             </div>
 
             <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
-    
-            <div class="mz-social mobile-social">  
+
+            <div class="mz-social mobile-social">
               <h5>Follow Us</h5>
               <a href="http://facebook.com/makemagazine">
                 <span class="fa-stack fa-mz">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span> 
+                </span>
               </a>
 
               <a href="http://twitter.com/make">
                 <span class="fa-stack fa-mz">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span> 
+                </span>
               </a>
 
               <a href="http://pinterest.com/makemagazine/">
                  <span class="fa-stack fa-mz">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-                </span> 
-              </a> 
+                </span>
+              </a>
 
               <a href="https://instagram.com/makemagazine/">
                 <span class="fa-stack fa-mz">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                </span> 
-              </a> 
+                </span>
+              </a>
 
-              <div class="mz-footer-subscribe"> 
+              <div class="mz-footer-subscribe">
                 <?php
-                  $isSecure = "http://";
-                  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                    $isSecure = "https://";
-                  }
+                $isSecure = "http://";
+                if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                  $isSecure = "https://";
+                }
                 ?>
                 <h4>Subscribe</h4>
                 <p>Stay inspired and get fresh updates</p>
                 <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
                   <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
                   <input type="hidden" name="cmd" value="subscribe" />
-                  <input type="hidden" name="custom_source" value="Mobile Header" /> 
-                  <input type="hidden" name="custom_incentive" value="none" /> 
+                  <input type="hidden" name="custom_source" value="Mobile Header" />
+                  <input type="hidden" name="custom_incentive" value="none" />
                   <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
                   <input type="hidden" id="format_mime" name="format" value="mime" />
                   <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
@@ -302,11 +302,11 @@ if( $detect->isTablet() ){
                 </form>
               </div><!-- End subscribe div -->
               <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
-              All rights reserved</h6>
+                All rights reserved</h6>
             </div><!-- End mobile-social div -->
           </div><!-- End #makezine-navbar-collapse-1 -->
         </div><!-- End .menu-container -->
-  
+
         <div class="get-dark"></div>
 
         <!-- SEARCH -->
@@ -314,10 +314,10 @@ if( $detect->isTablet() ){
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
             <input type="submit" class="sendsubmit" value="" />
             <label>
-            <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-            <div class="close-search"></div>
+              <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
+              <div class="close-search"></div>
             </label>
-          </form>        
+          </form>
         </div>
 
         <!-- Sticky Navbar -->
@@ -329,38 +329,38 @@ if( $detect->isTablet() ){
             </a>
           </h6>
         </div>
-    
+
         <!-- SOCIAL MEDIA ICONS -->
-        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social"> 
-          <div class="mz-social">  
+        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social">
+          <div class="mz-social">
             <a href="http://facebook.com/makemagazine">
               <span class="fa-stack fa-mz">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span> 
+              </span>
             </a>
 
             <a href="http://twitter.com/make">
               <span class="fa-stack fa-mz">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span> 
+              </span>
             </a>
 
             <a href="http://pinterest.com/makemagazine/">
                <span class="fa-stack fa-mz">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-              </span> 
-            </a> 
+              </span>
+            </a>
 
             <a href="https://instagram.com/makemagazine/">
               <span class="fa-stack fa-mz">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-              </span> 
-            </a> 
-          </div>     
+              </span>
+            </a>
+          </div>
         </div><!-- End .desktop-social -->
       </div><!-- row -->
     </nav>
@@ -368,7 +368,7 @@ if( $detect->isTablet() ){
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
 
-  </div><!-- container panel header --> 
+  </div><!-- container panel header -->
   <div class="second-nav promo-text-under-nav">
     <div class="container hidden-xs">
       <h3><a href="/comparison/3dprinters/">THE MAKE: 3D PRINTER BUYER'S GUIDE. <u>FIND THE PERFECT PRINTER FOR YOU.</u></a></h3>
@@ -396,7 +396,11 @@ if( $detect->isTablet() ){
               $re = "/^(.*? src=\")(.*?)(\".*)$/m";
               preg_match_all($re, $url, $matches);
               $str = $matches[2][0];
-              $photon = jetpack_photon_url($str, $args);?>
+              $photon = jetpack_photon_url($str, $args);
+              if(strlen($url) == 0){
+                $photon = catch_first_image_nav();
+                $photon = jetpack_photon_url( $photon, $args );
+              } ?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -423,7 +427,11 @@ if( $detect->isTablet() ){
               $re = "/^(.*? src=\")(.*?)(\".*)$/m";
               preg_match_all($re, $url, $matches);
               $str = $matches[2][0];
-              $photon = jetpack_photon_url($str, $args);?>
+              $photon = jetpack_photon_url($str, $args);
+              if(strlen($url) == 0){
+                $photon = catch_first_image_nav();
+                $photon = jetpack_photon_url( $photon, $args );
+              } ?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -465,7 +473,11 @@ if( $detect->isTablet() ){
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
                 preg_match_all($re, $url, $matches);
                 $str = $matches[2][0];
-                $photon = jetpack_photon_url($str, $args);?>
+                $photon = jetpack_photon_url($str, $args);
+                if(strlen($url) == 0){
+                  $photon = catch_first_image_nav();
+                  $photon = jetpack_photon_url( $photon, $args );
+                } ?>
                 <img src="<?php echo $str; ?>" alt="thumbnail">
               </a>
             </div>
