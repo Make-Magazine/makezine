@@ -749,7 +749,16 @@ jQuery(document).ready(function ($) {
         }
         var $sticky_adds_block = $('.all-stories #ad_300x600_1');
         var ads_position = $sticky_adds_block.offset().top - 57;
+        var contentHeight;
+        var notSticky = 0;
         $(window).scroll(function () {
+            if ($('.all-stories').hasClass('tags')){
+                contentHeight = $('.all-post-wrapper').height();
+                if (contentHeight < 1500){
+                    notSticky = 1;
+                }
+            }
+
             scrollTop = $(window).scrollTop();
             if ($('p').is('#blog-load-posts')) {
                 var blogMorePosts = $('#blog-load-posts').offset().top - 2400;
@@ -778,15 +787,17 @@ jQuery(document).ready(function ($) {
                 /**
                  * if ads is footer sticky
                  */
-                if (scrollTop > footer_top_height) {
-                    $sticky_adds_block.removeClass('add_sticky').addClass('add_static_position').css('bottom', finish_ads_position);
-                } else {
-                    $sticky_adds_block.removeClass('add_static_position').css('bottom', '');
-                }
-                if ((scrollTop > ads_position) && (scrollTop < footer_top_height)) {
-                    $sticky_adds_block.removeClass('add_static_position').addClass('add_sticky').css('bottom', '');
-                } else {
-                    $sticky_adds_block.removeClass('add_sticky');
+                if (notSticky == 0){
+                    if (scrollTop > footer_top_height) {
+                        $sticky_adds_block.removeClass('add_sticky').addClass('add_static_position').css('bottom', finish_ads_position);
+                    } else {
+                        $sticky_adds_block.removeClass('add_static_position').css('bottom', '');
+                    }
+                    if ((scrollTop > ads_position) && (scrollTop < footer_top_height)) {
+                        $sticky_adds_block.removeClass('add_static_position').addClass('add_sticky').css('bottom', '');
+                    } else {
+                        $sticky_adds_block.removeClass('add_sticky');
+                    }
                 }
             }
         });
