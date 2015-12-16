@@ -2049,12 +2049,18 @@ require_once('version-2/includes/blog_output.php');
 
 function catch_first_image_tags() {
     global $post, $posts;
+    $args = array(
+        'resize' => '397,374',
+    );
     $first_img = '';
     ob_start();
     ob_end_clean();
     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches[1][0];
-
+    $re  = "/^(.*? src=\")(.*?)(\".*)$/m";
+    preg_match_all( $re, $first_img, $matches );
+    $str    = $matches[2][0];
+    $first_img = jetpack_photon_url( $str, $args );
     if(empty($first_img)) {
         $first_img = get_template_directory_uri().'/version-2/img/thumbtag.jpg';
     }
@@ -2062,12 +2068,18 @@ function catch_first_image_tags() {
 }
 function catch_first_image_nav() {
     global $post, $posts;
+    $args = array(
+        'resize' => '397,374',
+    );
     $first_img = '';
     ob_start();
     ob_end_clean();
     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches[1][0];
-
+    $re  = "/^(.*? src=\")(.*?)(\".*)$/m";
+    preg_match_all( $re, $first_img, $matches );
+    $str    = $matches[2][0];
+    $first_img = jetpack_photon_url( $str, $args );
     if(empty($first_img)) {
         $first_img = get_template_directory_uri().'/version-2/img/thumbhead.jpg';
     }
