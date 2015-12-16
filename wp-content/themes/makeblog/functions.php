@@ -2046,3 +2046,30 @@ require_once('version-2/includes/helpers/widget_shortcode.php');
 require_once('version-2/includes/blog_feed.php');
 require_once('version-2/includes/tags_output.php');
 require_once('version-2/includes/blog_output.php');
+
+function catch_first_image_tags() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if(empty($first_img)) {
+        $first_img = get_template_directory_uri().'/version-2/img/thumbtag.jpg';
+    }
+    return $first_img;
+}
+function catch_first_image_nav() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if(empty($first_img)) {
+        $first_img = get_template_directory_uri().'/version-2/img/thumbhead.jpg';
+    }
+    return $first_img;
+}

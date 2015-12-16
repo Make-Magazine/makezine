@@ -70,7 +70,7 @@ function story_pulling($offset) {
 		$str    = $matches[2][0];
 		$photon = jetpack_photon_url( $str, $args );
 		if(strlen($url) == 0){
-			$photon = get_template_directory_uri().'/version-2/img/thumbtag.jpg' ;
+			$photon = catch_first_image_tags();
 		}
 		if ( $large_indicator == 1 ) {
 			$outputs .= '<div class="gradient-wrapper">';

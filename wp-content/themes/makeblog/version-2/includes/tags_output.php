@@ -85,7 +85,7 @@ function tags_pulling($offset=0, $tag) {
 		$str    = $matches[2][0];
 		$photon = jetpack_photon_url( $str, $args );
 		if(strlen($url) == 0){
-			$photon = get_template_directory_uri().'/version-2/img/thumbtag.jpg' ;
+			$photon = catch_first_image_tags();
 		}
 		if ( $large_indicator == 1 ) {
 			$outputs .= '<div class="gradient-wrapper">';
@@ -128,7 +128,7 @@ function tags_pulling($offset=0, $tag) {
 		$ie = '';
 	}
 	if ( $post_counter > $post_per_page) {
-	$outputs .= '<p id="tag-load-posts" class="row load-more-posts'. $ie .'" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'" "><a href="javascript:void(0);">Show more</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
+		$outputs .= '<p id="tag-load-posts" class="row load-more-posts'. $ie .'" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'" "><a href="javascript:void(0);">Show more</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
 	}
 	echo $outputs;
 }
