@@ -399,6 +399,7 @@ $primary_cat_dimension = $primarycat[0];
               $photon = jetpack_photon_url($str, $args);
               if(strlen($url) == 0){
                 $photon = catch_first_image_nav();
+                $photon = jetpack_photon_url( $photon, $args );
               } ?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
@@ -429,6 +430,7 @@ $primary_cat_dimension = $primarycat[0];
               $photon = jetpack_photon_url($str, $args);
               if(strlen($url) == 0){
                 $photon = catch_first_image_nav();
+                $photon = jetpack_photon_url( $photon, $args );
               } ?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
@@ -474,6 +476,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = jetpack_photon_url($str, $args);
                 if(strlen($url) == 0){
                   $photon = catch_first_image_nav();
+                  $photon = jetpack_photon_url( $photon, $args );
                 } ?>
                 <img src="<?php echo $str; ?>" alt="thumbnail">
               </a>

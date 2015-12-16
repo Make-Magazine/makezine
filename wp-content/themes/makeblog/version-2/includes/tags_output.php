@@ -86,6 +86,7 @@ function tags_pulling($offset=0, $tag) {
 		$photon = jetpack_photon_url( $str, $args );
 		if(strlen($url) == 0){
 			$photon = catch_first_image_tags();
+			$photon = jetpack_photon_url( $photon, $args );
 		}
 		if ( $large_indicator == 1 ) {
 			$outputs .= '<div class="gradient-wrapper">';
