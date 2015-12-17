@@ -666,55 +666,13 @@ jQuery(document).ready(function ($) {
 
     //blog//
 
-    var $first_time = 0; //need when twice click to more button
-
-    //infinity scroll
-    function get_infinity_blog(get_offset) {
-        $.ajax({
-            type: 'POST',
-            url: '/wp-admin/admin-ajax.php',
-            data: {
-                action: 'blog_output_with_ajax',
-                offset: get_offset
-            },
-            success: function (data) {
-                $('.row.infinity-row').remove();
-                $('#blog-load-posts').remove();
-                $('.container.all-stories .post-list').append('<li class="row post">' + data);
-                $first_time = 0;
-            },
-            error: function (data) {
-
-            }
-        });
-    }
-
-    $(window).scroll(function () {
-        if ($('.container').hasClass('all-stories')) {
-            var infinity = $('.all-stories .row.infinity-row').offset().top - $(window).height() - 1500;
-        }
-        var $scrollTop = $(window).scrollTop();
-        var get_offset = $(".load-more-posts").attr('data-offset');
-        if ($(window).width() <= 767) {
-            if ($scrollTop >= infinity) {
-                if ($first_time == 0) {
-                    $first_time = 1;
-                    var get_offset = $(".load-more-posts").attr('data-offset');
-                    $('.row.infinity-row').addClass('current');
-                    get_infinity_blog(get_offset);
-                }
-            }
-        }
-    });
-
     //load more posts
 
-    $(document).on('touchstart click', '#blog-load-posts a', function () {
-        if (!$(this).hasClass('first-click')) {
-            $(this).addClass('first-click');
-            var get_offset = $("#blog-load-posts").attr('data-offset');
-            $(this).text('Loading');
-            $(this).parent().addClass('loading');
+    function loadMorePosts() {
+        var currentButton = $('#blog-load-posts');
+        if (!currentButton.hasClass('first-click')) {
+            currentButton.addClass('first-click');
+            var get_offset = currentButton.attr('data-offset');
             $.ajax({
                 type: 'POST',
                 url: '/wp-admin/admin-ajax.php',
@@ -725,24 +683,29 @@ jQuery(document).ready(function ($) {
                 success: function (data) {
                     $('#blog-load-posts').remove();
                     $('.container.all-stories .post-list').append('<li class="row "><div class="post">' + data);
-                    $('#blog-load-posts a').removeClass('first-click');
-                    $('.all-stories .sidebar-wrapper.blog #ad_300x600_1').css('top', '').removeClass('add_static_position').addClass('add_sticky');
+                    currentButton.removeClass('first-click');
+                    removeNbsp();
+                    if ($('p').is('#blog-load-posts') === false) {
+                        $('#footer').removeClass('non-visible');
+                    }
+                    ga('send', 'pageview',
+                        { 'page': location.pathname + location.search + location.hash }
+                    )
                 },
                 error: function (data) {
 
                 }
             });
         }
-    });
+    }
 
 //load more tag archive
-    $(document).on('touchstart click', '#tag-load-posts a', function () {
-        if (!$(this).hasClass('first-click')) {
-            $(this).addClass('first-click');
-            var get_offset = $("#tag-load-posts").attr('data-offset');
+    function loadMoreTag() {
+        var currentTagButton = $('#tag-load-posts');
+        if (!currentTagButton.hasClass('first-click')) {
+            currentTagButton.addClass('first-click');
+            var get_offset = currentTagButton.attr('data-offset');
             var current_tag = $(".all-stories.tags").attr('data-slug');
-            $(this).text('Loading');
-            $(this).parent().addClass('loading');
             $.ajax({
                 type: 'POST',
                 url: '/wp-admin/admin-ajax.php',
@@ -752,76 +715,107 @@ jQuery(document).ready(function ($) {
                     slug: current_tag
                 },
                 success: function (data) {
-                    $('#tag-load-posts').remove();
+                    currentTagButton.remove();
                     $('.container.all-stories .post-list').append('<li class="row "><div class="post">' + data);
-                    $('#tag-load-posts a').removeClass('first-click');
+                    currentTagButton.removeClass('first-click');
+                    removeNbsp();
+                    if ($('p').is('#tag-load-posts') === false) {
+                        $('#footer').removeClass('non-visible');
+                    }
+                    ga('send', 'pageview',
+                        { 'page': location.pathname + location.search + location.hash }
+                    )
                 },
                 error: function (data) {
 
                 }
             });
         }
-    });
+    }
+
     //*********************//
     //sticky ads blog page//
     //*******************//
     if ($('.container').hasClass('all-stories')) {
-        if ($(window).width() > 767) {
-            var $sticky_adds_block = $('.all-stories .sidebar-wrapper.blog #ad_300x600_1');
+        $('#footer').addClass('non-visible');
+        /**
+         * declarate sticky elements
+         */
+        if (($('.all-stories').hasClass('tags')) && ($('p').is('#tag-load-posts') === false)) {
+            $('#footer').removeClass('non-visible');
+        }
+        if ((!$('.all-stories').hasClass('tags')) && ($('p').is('#blog-load-posts') === false)) {
+            $('#footer').removeClass('non-visible');
+        }
+        var $sticky_adds_block = $('.all-stories #ad_300x600_1');
+        var ads_position = $sticky_adds_block.offset().top - 57;
+        var contentHeight;
+        var notSticky = 0;
+        $(window).scroll(function () {
+            if ($('.all-stories').hasClass('tags')){
+                contentHeight = $('.all-post-wrapper').height();
+                if (contentHeight < 1500){
+                    notSticky = 1;
+                }
+            }
 
-            /**
-             * get start sticky ads position
-             */
-            var ads_position = $sticky_adds_block.offset().top - 180;
-
-            $(window).scroll(function () {
-                /**
-                 * declarate sticky elements
-                 */
-                var footer_top_height = $('#footer').offset().top;
-                var distance = footer_top_height - $sticky_adds_block.offset().top - $sticky_adds_block.outerHeight();
-                scrollTop = $(window).scrollTop();
-                var finish_ads_position = footer_top_height - 787;
-                var scroll_top_size = $('.panel.header.width').offset().top - $sticky_adds_block.offset().top;
-
+            scrollTop = $(window).scrollTop();
+            if ($('p').is('#blog-load-posts')) {
+                var blogMorePosts = $('#blog-load-posts').offset().top - 2400;
+            } else if ($('p').is('#tag-load-posts')) {
+                var tagMorePosts = $('#tag-load-posts').offset().top - 2400;
+            }
+            if (scrollTop > blogMorePosts) {
+                loadMorePosts();
+            }
+            if (scrollTop > tagMorePosts) {
+                loadMoreTag();
+            }
+            $window = $(window).width() + 17;
+            var footerMargin;
+            if ($window > 767) {
+                if ($window < 992) {
+                    footerMargin = 58;
+                }else{
+                    footerMargin = 78;
+                }
+                var footer_top_height = $('#footer').offset().top - 678;
+                var finish_ads_position = $('#footer').height() + 57 + footerMargin;
+                if ((!$sticky_adds_block.hasClass('add_sticky')) && (!$sticky_adds_block.hasClass('add_static_position'))) {
+                    ads_position = $sticky_adds_block.offset().top - 57;
+                }
                 /**
                  * if ads is footer sticky
                  */
-                if (scroll_top_size < -52) {
-                    $sticky_adds_block.removeClass('add_static_position').css('top', '');
-                }
-
-                /**
-                 * if we scroll down to sticky position
-                 */
-                if (scrollTop > ads_position) {
-
-                    /**
-                     * if we scroll down to footer
-                     */
-                    if (( distance <= 20) && ( $sticky_adds_block.hasClass('add_sticky') )) {
-                        if (!$sticky_adds_block.hasClass('add_static_position')) {
-                            $sticky_adds_block.removeClass('add_sticky').addClass('add_static_position').css('top', finish_ads_position);
-                        }
-
+                if (notSticky == 0){
+                    if (scrollTop > footer_top_height) {
+                        $sticky_adds_block.removeClass('add_sticky').addClass('add_static_position').css('bottom', finish_ads_position);
                     } else {
-                        if (!$sticky_adds_block.hasClass('add_sticky')) {
-                            $sticky_adds_block.addClass('add_sticky');
-                        }
+                        $sticky_adds_block.removeClass('add_static_position').css('bottom', '');
                     }
-                } else {
-                    if ($sticky_adds_block.hasClass('add_sticky')) {
+                    if ((scrollTop > ads_position) && (scrollTop < footer_top_height)) {
+                        $sticky_adds_block.removeClass('add_static_position').addClass('add_sticky').css('bottom', '');
+                    } else {
                         $sticky_adds_block.removeClass('add_sticky');
                     }
                 }
+            }
+        });
 
-                /**
-                 * Exclude twice add class
-                 */
-                if (( scroll_top_size > -52 ) && ( $sticky_adds_block.hasClass('add_static_position') )) {
-                    $sticky_adds_block.removeClass('add_sticky');
-                }
+        var newTitle;
+
+        function removeNbsp() {
+            $('.about-post h2 a').each(function () {
+                newTitle = $(this).html().replace('&nbsp;', ' ');
+                $(this).html(newTitle);
+            });
+            $('.posts-feeds-wrapper .p-title').each(function () {
+                newTitle = $(this).html().replace('&nbsp;', ' ');
+                $(this).html(newTitle);
             });
         }
+
+        removeNbsp();
     }
+
 });

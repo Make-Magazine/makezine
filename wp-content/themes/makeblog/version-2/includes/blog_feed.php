@@ -4,10 +4,11 @@ function blog_feeds_output( $type = '' ) {
 		case 'Project':
 			$args  = array(
 				'post_type'      => 'projects',
-				'posts_per_page' => 4,
+				'posts_per_page' => 5,
 				'post_status'    => 'publish',
 			);
 			$title = 'Latest Projects';
+			$allProjects = 'See All Projects';
 			break;
 		case 'Reviews':
 			$meta_query = array(
@@ -15,16 +16,17 @@ function blog_feeds_output( $type = '' ) {
 				array(
 					'key'     => 'story_type',
 					'value'   => 'Reviews',
-					'compare' => '>=',
+					'compare' => '=',
 				),
 			);
 			$args       = array(
 				'post_type'      => 'post',
-				'posts_per_page' => 4,
+				'posts_per_page' => 5,
 				'post_status'    => 'publish',
 				'meta_query'     => $meta_query,
 			);
 			$title      = 'Latest Reviews';
+			$allReviews = 'See All Reviews';
 			break;
 		case 'Builders':
 			$meta_query = array(
@@ -32,21 +34,22 @@ function blog_feeds_output( $type = '' ) {
 				array(
 					'key'     => 'story_type',
 					'value'   => 'Skill Builders',
-					'compare' => '>=',
+					'compare' => '=',
 				),
 			);
 			$args       = array(
 				'post_type'      => 'post',
-				'posts_per_page' => 4,
+				'posts_per_page' => 5,
 				'post_status'    => 'publish',
 				'meta_query'     => $meta_query,
 			);
-			$title      = 'Skill Builders';
+			$title      = 'Latest Skill Builders';
+			$allBuilders = 'See All Skill Builders';
 			break;
 		default:
 			$args  = array(
 				'post_type'      => 'post',
-				'posts_per_page' => 4,
+				'posts_per_page' => 5,
 				'post_status'    => 'publish',
 			);
 			$title = 'Latest Posts';
@@ -79,9 +82,18 @@ function blog_feeds_output( $type = '' ) {
 					$photon = jetpack_photon_url( $str, $arg );
 					?>
 <!--					<div class="post-thumbnail"><img src="--><?php //echo $photon ?><!--" alt="thumbnail"></div>-->
-					<p class="title"><img src="<?php echo $photon ?>" alt="thumbnail"><?php the_title(); ?></p>
+					<div class="title"><img src="<?php echo $photon ?>" alt="thumbnail"><p class="p-title"><?php the_title(); ?></p></div>
 				</li>
 			<?php endwhile; ?>
+			<?php if (!empty($allProjects)){ ?>
+				<h3 class="all-projects-title"><a href="<?php echo site_url( '/projects', 'http' ); ?>">See All Projects</a></h3>
+			<?php } ?>
+			<?php if (!empty($allReviews)){ ?>
+				<h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/reviews', 'http' ); ?>">See All Reviews</a></h3>
+			<?php } ?>
+			<?php if (!empty($allBuilders)){ ?>
+				<h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/skill-builder', 'http' ); ?>">See All Skill Builders</a></h3>
+			<?php } ?>
 		</ul>
 	</div>
 <?php }

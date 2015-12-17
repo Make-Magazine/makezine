@@ -1,5 +1,5 @@
 <?php
-function story_pulling($offset=0) {
+function story_pulling($offset) {
 	$outputs     = '';
 	$post_counter = 1;
 	$large_indicator = 0;
@@ -45,29 +45,34 @@ function story_pulling($offset=0) {
 
 		if ( $large_indicator == 1 ) {
 			$post_weight     = 2;
-			$bootstrap_class = 'col-lg-6 col-md-6 col-sm-6 col-xs-12 large-card ';
+			$bootstrap_class = 'col-md-6 col-sm-6 col-xs-12 large-card ';
 			$args            = array(
 				'resize' => '397,374',
 			);
 		} else {
 			$post_weight     = 1;
-			$bootstrap_class = 'col-lg-3 col-md-3 col-sm-3 col-xs-12 small-card';
+			$bootstrap_class = 'col-md-3 col-sm-3 col-xs-12 small-card';
 			$args            = array(
-				'resize' => '192,187',
+				'resize' => '397,374',
 			);
 		}
 		$row_weight = $row_weight + $post_weight;
 		if ( $row_weight > 4 ) {
-			$outputs .= '</li>';
-			$outputs .= '<li class="row post">';
+			$outputs .= '</div></li>';
+			$outputs .= '<li class="row"><div class="post">';
 			$row_weight = $post_weight;
 		}
 		$outputs .= '<div class="post-wrapper ' . $bootstrap_class . '">';
+
 		$url = wp_get_attachment_image( get_post_thumbnail_id( $post_id ), 'project-thumb' );
 		$re  = "/^(.*? src=\")(.*?)(\".*)$/m";
 		preg_match_all( $re, $url, $matches );
 		$str    = $matches[2][0];
 		$photon = jetpack_photon_url( $str, $args );
+		if(strlen($url) == 0){
+			$photon = catch_first_image_tags();
+			$photon = jetpack_photon_url( $photon, $args );
+		}
 		if ( $large_indicator == 1 ) {
 			$outputs .= '<div class="gradient-wrapper">';
 			$outputs .= '<div class="gradient_animation">';
@@ -81,6 +86,8 @@ function story_pulling($offset=0) {
 
 		$post_video = get_post_meta($post_id, 'ga_youtube_embed');
 		$post_flag = get_post_meta($post_id, 'flag_taxonomy');
+		$outputs .= '<div class="wrapper-story-link"><a href="' . get_the_permalink() . '" class="story-link"></a></div>';
+
 		$outputs .= '<div class="filter-display-wrapper">';
 		$outputs .= '<div class="red-box-category">';
 
@@ -135,8 +142,8 @@ function story_pulling($offset=0) {
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);
 		$cat_length = iconv_strlen($red_cat_name, 'UTF-8');
-		if ($cat_length > 13) {
-			$red_cat_name = substr($red_cat_name, 0, 13) . '...';
+		if ($cat_length > 7) {
+			$red_cat_name = substr($red_cat_name, 0, 7) . '...';
 		}
 		if (!empty($red_cat_name)) {
 			$outputs .= '<p><a href="';
@@ -146,21 +153,15 @@ function story_pulling($offset=0) {
 			$outputs .= '</a></p>';
 		}
 		if (!empty($post_video[0])) {
-                        $outputs .= '<div class="videoblock"><a href="';
-                       $link = get_the_permalink($post->ID);
-                       $outputs .= $link;
-                       $outputs .= '">';
-                       $outputs .= '';
-                       $outputs .= '<span class="video fa fa-video-camera"></span>';
-                       $outputs .= '</a></div>';
+			$outputs .= '<a href="' . get_the_permalink() . '"><div class="videoblock">';
+			$outputs .= '<span class="video fa fa-video-camera"></span>';
+			$outputs .= '</div></a>';
 		}
 		$outputs .= '</div>';
 		$outputs .= '</div>';
-		$outputs .= '<a href="' . get_the_permalink() . '" class="story-link"></a>';
-		$outputs .= '<img src = "' . $photon . '" alt = "thumbnail" >';
+		$outputs .= '<div class="img-wrapper"><img src = "' . $photon . '" alt = "thumbnail" ></div>';
 
 		$outputs .= '<div class="about-post">';
-		$outputs .= '<p class="story-type" ><a href="' . get_the_permalink() . '">' . $type_array[0] . '</a></p>';
 		$outputs .= '<h2 class="title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
 		$outputs .= '<p class="publish-date"><a href="' . get_the_permalink() . '">' . get_the_time( "F d, Y" ) . '</a></p>';
 		$outputs .= '</div>';
@@ -173,7 +174,31 @@ function story_pulling($offset=0) {
 	endwhile;
 	do_action( 'custom_page_hook', $query );
 	wp_reset_query();
+	$outputs .= '<div class="row infinity-row"></div>';
 	$offset = $offset + $post_per_page;
-	$outputs .= '<p id="blog-load-posts" class="row" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'" "><a href="javascript:void(0);">Show more</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
-	return $outputs;
+
+	$ie6 = (ereg("MSIE", $_SERVER["HTTP_USER_AGENT"])) ? true : false;
+	$ie7 = (ereg("Trident/", $_SERVER["HTTP_USER_AGENT"])) ? true : false;
+	$ie8 = (ereg("Edge/", $_SERVER["HTTP_USER_AGENT"])) ? true : false;
+
+	if ($ie6 || $ie7 || $ie8) {
+		$ie = ' ie ';
+	} else {
+		$ie = '';
+	}
+
+	$outputs .= '<p id="blog-load-posts" class="row load-more-posts' . $ie .'" data-offset="'. $offset .'" data-ppp="'.$post_per_page.'" "><a href="javascript:void(0);">Show more</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
+	echo $outputs;
 }
+
+/**
+ * After press more button
+ */
+function blog_output_with_ajax() {
+	$offset = $_POST['offset'];
+	story_pulling($offset);
+
+	die();
+}
+add_action('wp_ajax_blog_output_with_ajax', 'blog_output_with_ajax');
+add_action('wp_ajax_nopriv_blog_output_with_ajax', 'blog_output_with_ajax');

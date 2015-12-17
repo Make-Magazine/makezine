@@ -65,28 +65,34 @@ $(document).ready(function () {
 						if (($window >= '601') && ($window <= '782')) {
 							$('.container.header.width').css('top', '46px');
 							$('.minify.sticky').css('top', '97px');
+							$('.navigator.open.sticky').css('top', '97px');
 							$('.dynamic-header-posts.sticky-header').css('top', '95px');
 						} else if ($window >= '783') {
 							$('.container.header.width').css('top', '32px');
 							$('.minify.sticky').css('top', '84px');
+							$('.navigator.open.sticky').css('top', '84px');
 							$('.dynamic-header-posts.sticky-header').css('top', '82px');
 						} else if ($window <= '600') {
 							$('.container.header.width').css('top', '0px');
 							$('.minify.sticky').css('top', '52px');
+							$('.navigator.open.sticky').css('top', '52px');
 							$('.dynamic-header-posts.sticky-header').css('top', '50px');
 						}
 					});
 					if (($window >= '601') && ($window <= '782')) {
 						$('.container.header.width').css('top', '46px');
 						$('.minify.sticky').css('top', '97px');
+						$('.navigator.open.sticky').css('top', '97px');
 						$('.dynamic-header-posts.sticky-header').css('top', '95px');
 					} else if ($window >= '783') {
 						$('.container.header.width').css('top', '32px');
 						$('.minify.sticky').css('top', '84px');
+						$('.navigator.open.sticky').css('top', '84px');
 						$('.dynamic-header-posts.sticky-header').css('top', '82px');
 					} else if ($window <= '600') {
 						$('.container.header.width').css('top', '0px');
 						$('.minify.sticky').css('top', '52px');
+						$('.navigator.open.sticky').css('top', '52px');
 						$('.dynamic-header-posts.sticky-header').css('top', '50px');
 
 					}
@@ -97,6 +103,7 @@ $(document).ready(function () {
 					});
 					if ($window >= '481') {
 						$('.minify.sticky').css('top', '52px');
+						$('.navigator.open.sticky').css('top', '52px');
 						$('.dynamic-header-posts.sticky-header').css('top', '50px');
 					}
 				}
@@ -109,6 +116,7 @@ $(document).ready(function () {
 				$('.navbar-default').removeClass('sticky-header');
 				$('.menu-item-has-children a').removeClass('sticky-a');
 				$('.dynamic-header-posts').removeClass('sticky-header').css('top', 'inherit');
+				$('.navigator').css('top', '');
 				$('.navbar-default').css('top', '0px');
 				$('.menu-item-has-children > a').removeClass("active-sticky");
 				$('.project-navigation').css('margin-top', '0px');
@@ -136,8 +144,17 @@ $(document).ready(function () {
 
 
 	});
+	$window = $(window).width();
+	if ($window <= '767') {
+		$deviceHeight = $(window).height();
+		$('.menu-container').css('height', $deviceHeight);
+	}
 	$(window).resize(function () {
-		$window = $(window).width() + 17;
+		if(window.navigator.userAgent.indexOf("Chrome") > 0){
+			$window = $(window).width() + 17;
+		}else {
+			$window = $(window).width() ;
+		}
 		$('.menu-container').css('overflow-y', 'inherit');
 		$('body').css('overflow-y', '');
 		$('body').css('height', '');
@@ -155,6 +172,7 @@ $(document).ready(function () {
 				$('div.navbar-collapse').show();
 				$('.dynamic-header-posts').hide();
 				$('li a').removeClass('active-button');
+				$(".menu-item-has-children .sub-menu").hide();
 				$counter = 0;
 			}
 			$('.menu-container').css('height', 'inherit');
@@ -184,7 +202,11 @@ $(document).ready(function () {
 		$('.menu-container').css('height', $deviceHeight);
 	}
 	$('.menu-item-has-children').children("a").click(function (e) {
-		$window = $(window).width() + 17;
+		if(window.navigator.userAgent.indexOf("Chrome") > 0){
+			$window = $(window).width() + 17;
+		}else {
+			$window = $(window).width() ;
+		}
 		if ($window <= '767') {
 			e.preventDefault();
 			$(".menu-item-has-children").not($($(this).parent().get(0))).find('.sub-menu').slideUp('slow');
@@ -267,7 +289,11 @@ $(document).ready(function () {
 	$('.search-field').attr('title', '');
 	$('.menu-item-has-children').addClass('first-hover');
 	$(document).on('touchstart click', '.menu-item-has-children', function (e) {
-		$window = $(window).width() + 17;
+		if(window.navigator.userAgent.indexOf("Chrome") > 0){
+			$window = $(window).width() + 17;
+		}else {
+			$window = $(window).width() ;
+		}
 		if ($window >= '768') {
 			$('.navbar-default .navbar-nav > li:first-child').addClass('first-child');
 			e.preventDefault();
