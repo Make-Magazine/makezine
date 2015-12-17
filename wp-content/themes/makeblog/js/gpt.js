@@ -212,6 +212,22 @@
         a.slot = 'ad_' + sizeStr + '_' + a.adPos;
       }
       return a;
+    },
+
+    /**
+     * Function make.gpt.refresh()
+     *
+     * @description
+     *  refreshes all ads with a given class name.
+     */
+    refresh: function(className) {
+      var $adElems = className ? $(className) : $('.ad-js-refresh');
+      // Loop through each ad element.
+      $adElems.each(function(){
+        // Trigger refresh.
+        var slotname = $(this).find('[id*="ad_"]').attr("id");
+        googletag.pubads().refresh([window[slotname]]);
+      });
     }
 
   };

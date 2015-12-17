@@ -690,7 +690,10 @@ jQuery(document).ready(function ($) {
                     }
                     ga('send', 'pageview',
                         { 'page': location.pathname + location.search + location.hash }
-                    )
+                    );
+                    // Try refreshing 300x600 ad.
+                    console.log('trigger ad refresh');
+                    make.gpt.refresh();
                 },
                 error: function (data) {
 
@@ -724,7 +727,10 @@ jQuery(document).ready(function ($) {
                     }
                     ga('send', 'pageview',
                         { 'page': location.pathname + location.search + location.hash }
-                    )
+                    );
+                    // Try refreshing 300x600 ad.
+                    console.log('trigger ad refresh');
+                    make.gpt.refresh();
                 },
                 error: function (data) {
 
