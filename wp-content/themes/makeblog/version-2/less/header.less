@@ -683,10 +683,15 @@ input[type=search]::-ms-reveal {
   position: absolute;
   z-index: 2;
   display: none;
-  margin-top: -33px;
+  margin-top: 0;
   &.sticky-header {
     margin-top: 0;
   }
+}
+
+// Optional class when toggling the under nav blue bar
+.dynamic-header-posts-margin {
+  margin-top: -33px;
 }
 
 .dynamic-header-posts.sticky-header {
@@ -694,6 +699,11 @@ input[type=search]::-ms-reveal {
   border-bottom: 3px solid #ec1e21;
   overflow: hidden;
 }
+
+#menu-make-main {
+  background: #fff;
+}
+
 
 .container.header.tablet.width {
   height: 53px;

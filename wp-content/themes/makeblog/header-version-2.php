@@ -231,6 +231,13 @@ if( $detect->isTablet() ){
         <!-- Desktop and Mobile Menu -->
         <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
 
+          <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
+          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') { ?>
+            <h3 class="promo-text-above-nav hidden-xs">
+              <a href="<?php echo get_theme_mod( 'make_header_promo_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_promo_text', '' ); ?></a>
+            </h3>
+          <?php } // end if ?>
+
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
@@ -369,14 +376,21 @@ if( $detect->isTablet() ){
     <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
 
   </div><!-- container panel header --> 
-  <div class="second-nav promo-text-under-nav">
-    <div class="container hidden-xs">
-      <h3><a href="/comparison/3dprinters/">THE MAKE: 3D PRINTER BUYER'S GUIDE. <u>FIND THE PERFECT PRINTER FOR YOU.</u></a></h3>
+
+  <!-- Optional Under Nav Promo Blue Bar and Message. Settings In Theme Customizer -->
+  <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>
+    <div class="second-nav promo-text-under-nav">
+      <div class="container hidden-xs">
+        <h3>
+          <a href="<?php echo get_theme_mod( 'make_header_bluebar_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_bluebar_text', '' ); ?></a>
+        </h3>
+      </div>
     </div>
-  </div>
+  <?php } // end if ?>
+
 </header><!-- header-wrapper -->
 
-<div class="dynamic-header-posts">
+<div class="dynamic-header-posts <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>dynamic-header-posts-margin<?php } ?>">
   <div class="dynamic-header-container container">
     <div class="menu-container row">
       <div class="menu-sub-menu"></div>

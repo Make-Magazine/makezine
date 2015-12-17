@@ -159,8 +159,8 @@ include_once dirname(__FILE__) . '/includes/blog-dashboard/blog-dashboard.php';
 // 43. Maker Shed Functions
 include_once dirname(__FILE__) . '/includes/shed/shed.php';
 
-// 44. Home Take Over - Theme Customizer API
-include_once dirname(__FILE__) . '/includes/theme-customizer/takeover.php';
+// 44. Custom Customizer Settings - Theme Customizer API
+include_once dirname(__FILE__) . '/includes/theme-customizer/customizer.php';
 
 // 45. Related Content Blocks
 include_once dirname(__FILE__) . '/includes/related.php';
