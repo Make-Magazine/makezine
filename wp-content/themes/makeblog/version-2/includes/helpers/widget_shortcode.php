@@ -24,7 +24,7 @@ add_shortcode('top_ads', 'top_ads_shortcode');
 
 function middle_ads_shortcode($atts) {
     global $make;
-    print $make->ads->ad_300x600;
+    print '<div class="ad-refresh">' . $make->ads->ad_300x600 . '</div>';
 }
 add_shortcode('middle_ads', 'middle_ads_shortcode');
 
