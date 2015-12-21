@@ -176,24 +176,22 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <!-- EVENTS PANEL -->
   <div class="container event-unit">
     <div class="row"> 
-
-
-<!--  Berlin / School / World Maker Faire -->
+<!--  Home "waist" Promos -->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-                <a href="https://www.humblebundle.com/books?view=dSGVKLYyMZxz">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-humble3.jpg' ?>" class="img-responsive center-block event" />
- </a>
+        <a href="https://www.makershed.com/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-shed-01.jpg' ?>" class="img-responsive center-block event" />
+        </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="//makezine.com/2015/12/03/contest-design-and-3d-print-an-ornament-win-an-ultimaker/">          
-                 <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-contest-01.jpg' ?>" class="img-responsive center-block event" />
- </a>
+        <a href="/comparison/3dprinters/">          
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-3d-guide16.jpg' ?>" class="img-responsive center-block event" />
+        </a>
       </div> 
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-                <a href="/giftguide/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo_giftguide2.jpg' ?>" class="img-responsive center-block event" />
-                </a>
-      </div> 
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
+        <a href="/2015/12/17/make-show-stopping-netflix-socks/">          
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-netflix20.jpg' ?>" class="img-responsive center-block event" />
+        </a>
+      </div>  
     </div>  
   </div>
 
