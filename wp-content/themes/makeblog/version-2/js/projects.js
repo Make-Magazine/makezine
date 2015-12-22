@@ -685,7 +685,7 @@ jQuery(document).ready(function ($) {
                 },
                 success: function (data) {
                     $('#blog-load-posts').remove();
-                    $('.container.all-stories .post-list').append('<li class="row "><div class="post">' + data);
+                    $('.container.all-stories .post-list').append('<li class="row page-break"><div class="post">' + data);
                     currentButton.removeClass('first-click');
                     removeNbsp();
                     if ($('p').is('#blog-load-posts') === false) {
@@ -702,6 +702,18 @@ jQuery(document).ready(function ($) {
                     if($window <= 991){
                         changeCardsSmallBreakpoints();
                     }
+                    // Load mobile ads or refresh sidebar ad.
+                    if ($(window).width() < 768) {
+                        var $start = $('.page-break:not(.rendered)').eq(0);
+                        make.gpt.injectAds($start.nextAll(), {
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'skipCount': 2,
+                            'max' : 3
+                        });
+                        $start.toggleClass('rendered', true);
+                    } else {
+                        make.gpt.refresh();
+                    }
                 },
                 error: function (data) {
 
@@ -710,7 +722,7 @@ jQuery(document).ready(function ($) {
         }
     }
 
-//load more tag archive
+    //load more tag archive
     function loadMoreTag() {
         var currentTagButton = $('#tag-load-posts');
         if (!currentTagButton.hasClass('first-click')) {
@@ -727,7 +739,7 @@ jQuery(document).ready(function ($) {
                 },
                 success: function (data) {
                     currentTagButton.remove();
-                    $('.container.all-stories .post-list').append('<li class="row "><div class="post">' + data);
+                    $('.container.all-stories .post-list').append('<li class="row page-break"><div class="post">' + data);
                     currentTagButton.removeClass('first-click');
                     removeNbsp();
                     if ($('p').is('#tag-load-posts') === false) {
@@ -744,6 +756,18 @@ jQuery(document).ready(function ($) {
                     if($window <= 991){
                         changeCardsSmallBreakpoints();
                     }
+                    // Load mobile ads or refresh sidebar ad.
+                    if ($(window).width() < 768) {
+                        var $start = $('.page-break:not(.rendered)').eq(0);
+                        make.gpt.injectAds($start.nextAll(), {
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'skipCount': 2,
+                            'max' : 3
+                        });
+                        $start.toggleClass('rendered', true);
+                    } else {
+                        make.gpt.refresh();
+                    }
                 },
                 error: function (data) {
 
@@ -752,10 +776,22 @@ jQuery(document).ready(function ($) {
         }
     }
 
+
     //*********************//
     //sticky ads blog page//
     //*******************//
     if ($('.container').hasClass('all-stories')) {
+
+        // Load mobile ads.
+        if ($(window).width() < 768) {
+            make.gpt.injectAds($('.post-list .row'), {
+                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                'skipCount': 2,
+                'max' : 3,
+                'renderIntial' : false
+            });
+        }
+
         $('#footer').addClass('non-visible');
         /**
          * declarate sticky elements

@@ -112,9 +112,12 @@
           a.sizeMap = $t.attr('data-size-map') ? JSON.parse($t.attr('data-size-map')) : null;
           a.pos = $t.attr('data-pos') ? JSON.parse($t.attr('data-pos')) : null;
           a.adVars = $t.attr('data-ad-vars') ? JSON.parse($t.attr('data-ad-vars')) : null;
+          a.viewport = $t.attr('data-viewport') ? JSON.parse($t.attr('data-viewport')) : null;
         }
         catch (e) {
-          console.log('error parsing ad data-attributes');
+          if (window.console && typeof console.log == 'function') {
+            console.log('error parsing ad data-attributes');
+          }
         }
         // Generate ad from placeholder vars.
         var ad = make.gpt.getVars(a.size),
@@ -122,11 +125,11 @@
         $t.append(adDiv);
         // Do with custom ad vars.
         if (a.adVars) {
-          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'page' : a.adVars.page, 'cat' : a.adVars.cat, 'tags' : a.adVars.tags, 'zone' : a.adVars.zone});
+          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'viewport' : a.viewport, 'page' : a.adVars.page, 'cat' : a.adVars.cat, 'tags' : a.adVars.tags, 'zone' : a.adVars.zone});
         }
         // Do with page defined ad vars.
         else {
-          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile});
+          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'viewport' : a.viewport});
         }
       });
     },
@@ -156,8 +159,7 @@
           },
           ad = make.extend(defaults, options),
           winWidth = document.documentElement.clientWidth,
-          display = ad.viewport == 'small' && winWidth > 800 || ad.viewport == 'large' && winWidth < 800 ? false : true;
-
+          display = ad.viewport == 'small' && winWidth > 767 || ad.viewport == 'large' && winWidth < 768 ? false : true;
       // Call the ad
       if (display) {
         googletag.cmd.push(function() {
