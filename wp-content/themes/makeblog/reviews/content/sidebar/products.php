@@ -1,9 +1,14 @@
 <?php
-$why_buy_content  = get_field( 'why_to_buy' );
-$link             = get_field( 'buy_link' );
-$pro_tips_title = get_field( 'pro_tips_title' );
-$pro_tips_content = get_field( 'pro_tips' );
-$scored_image     = get_field( 'scores_image' );
+$why_buy_content    = get_field( 'why_to_buy' );
+$why_buy_title      = get_field( 'why_to_buy_title' );
+$why_buy_title      = ! empty( $why_buy_title ) ? $why_buy_title : 'Why To Buy';
+$link               = get_field( 'buy_link' );
+$pro_tips_title     = get_field( 'pro_tips_title' );
+$pro_tips_content   = get_field( 'pro_tips' );
+$scored_image       = get_field( 'scores_image' );
+$scored_image_title = get_field( 'scores_image_title' );
+$scored_image_title = ! empty( $scored_image_title ) ? $scored_image_title : 'How this scored';
+
 ?>
 
 <?php if ( class_exists( 'CoAuthorsIterator' ) ): ?>
@@ -53,20 +58,18 @@ $scored_image     = get_field( 'scores_image' );
 
 $parent_link = '';
 
-if ( function_exists( 'Reviews' ) ) {
 
-	$container = Reviews()->container();
-	$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
+$container = Reviews()->container();
+$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
 
-	if ( ! empty( $parent ) ) {
-		$parent      = array_shift( $parent );
-		$parent_link = get_permalink( $parent->ID );
-	}
+if ( ! empty( $parent ) ) {
+	$parent      = array_shift( $parent );
+	$parent_link = get_permalink( $parent->ID );
 }
 
-if ( ! empty( $scored_image ) ): ?>
+if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
 	<div class="meta-block how-scored mobile">
-		<h4>How this scored</h4>
+		<h4><?php echo $scored_image_title; ?></h4>
 		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Scores"/>
 	</div><!-- .meta-block.how-scored -->
 <?php endif; ?>
@@ -74,7 +77,7 @@ if ( ! empty( $scored_image ) ): ?>
 <?php
 if ( ! empty( $why_buy_content ) ): ?>
 	<div class="meta-block why-buy mobile">
-		<h4>Why To Buy</h4>
+		<h4><?php echo $why_buy_title;?></h4>
 	
 		<?php echo $why_buy_content; ?>
 	</div><!-- .meta-block.why-buy -->
@@ -96,7 +99,6 @@ endif;
 
 
 <div class="meta-block ad-1">
-	<p id="ads-title">Advertisement</p>
 	<?php global $make; print $make->ads->ad_300x250_atf; ?>
 </div><!-- .meta-block.ad-1 -->
 
@@ -104,7 +106,7 @@ endif;
 <?php
 if ( ! empty( $why_buy_content ) ): ?>
 	<div class="meta-block why-buy desktop">
-		<h4>Why To Buy</h4>
+		<h4><?php echo $why_buy_title;?></h4>
 	
 		<?php echo $why_buy_content;
 	
@@ -134,7 +136,6 @@ endif;
 <?php endif; ?>
 
 <div class="meta-block ad-2 desktop">
-	<p id="ads-title">Advertisement</p>
 	<?php global $make; print $make->ads->ad_300x600; ?>
 </div><!-- .meta-block.ad-2 -->
 
@@ -153,9 +154,9 @@ if ( function_exists( 'Reviews' ) ) {
 	}
 }
 
-if ( ! empty( $scored_image ) ): ?>
+if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
 	<div class="meta-block how-scored desktop">
-		<h4>How this scored</h4>
+		<h4><?php echo $scored_image_title; ?></h4>
 		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Scores"/>
 		<p><a href="<?php echo esc_url( $parent_link ); ?>">See all the Scores</a></p>
 	</div><!-- .meta-block.how-scored -->

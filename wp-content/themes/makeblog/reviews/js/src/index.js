@@ -39,6 +39,7 @@ var ReviewsFilters = {
 				row.removeClass('reviews-model');
 				row.find('.ri-item-title').html(v.title);
 				row.find('.ri-price').find('.price').html(v.price);
+				row.find('.ri-type').html(v.type);
 				row.find('.ri-score').find('.score').html(v.score);
 				row.find('.ri-feature-image').html(v.thumbnail);
 				row.find('.ri-link').attr('href', v.link);

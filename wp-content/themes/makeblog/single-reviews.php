@@ -3,19 +3,22 @@
  * Single Reviews Template
  *
  */
-get_header('version-2');
+get_header( 'version-2' );
 ?>
 
 <?php // Reviews Section Header
 get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
-	
+
 <main class="container">
 
 	<?php // Reviews Section Header
-	get_template_part( 'reviews/content/header/reviews' ); ?>
 
-	<?php // Filter Bar
-	get_template_part( 'reviews/content/header/reviews-filters' ); ?>
+	$slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get_the_ID() );
+
+	get_template_part( 'reviews/content/header/reviews' );
+	get_template_part( 'reviews/content/header/filters/filters', $slug );
+
+	?>
 
 	<div class="row">
 
@@ -25,7 +28,8 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 		<?php // Reviews Section Sidebar
 		get_template_part( 'reviews/content/sidebar/reviews' ); ?>
 
-	</div><!-- .div -->
+	</div>
+	<!-- .div -->
 
 </main><!-- .container -->
 
