@@ -233,6 +233,10 @@ body.single-story.modal-open {
       transition: 0.5s ease all;
     }
     .story-header {
+      @media (min-width: 768px) and (max-width: 991px){
+        margin-left: 0;
+        margin-right: 0;
+      }
       .story-title {
         float: none;
         margin: 27px auto auto;
@@ -288,6 +292,9 @@ body.single-story.modal-open {
         }
         .row-fluid {
           display: none;
+        }
+        .wp-caption-text {
+          margin-right:0;
         }
       }
       .comments {
@@ -909,13 +916,15 @@ body.single-story.modal-open {
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   .single.story-detail {
-    .more-thumbnails {
-      .thumbnail-image {
-        height: 259px;
+    .container.wrapper{
+      .more-thumbnails {
+        .thumbnail-image {
+          height: 259px;
+        }
       }
-    }
-    .story-hero-image {
-      height: 300px;
+      .story-hero-image {
+        height: 300px;
+      }
     }
   }
 }

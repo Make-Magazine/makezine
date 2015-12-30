@@ -333,7 +333,12 @@ $(document).ready(function () {
                 if ($first_time == 0) {
                     $first_time = 1;
                     $('.row.infinity').addClass('current');
-                    if ($(window).width() <= 767) {
+                    if(window.navigator.userAgent.indexOf("Chrome") > 0){
+                        $window = $(window).width() + 17;
+                    }else {
+                        $window = $(window).width() ;
+                    }
+                    if ($window <= 767) {
                         getStoryThumbnail($offset);
                         $offset = $offset + 9;
                     } else {
