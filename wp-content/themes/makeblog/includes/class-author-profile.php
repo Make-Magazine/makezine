@@ -23,9 +23,9 @@
 
 			// Get the true author data
 			$author = $authordata;
-                       
+
 			if ( ! empty( $author ) ) {
-                            
+
 				// If the user account is a guest-author, then it will always be used over Gravatar data
 				if ( $author->type === 'guest-author' ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
 					return $author;
@@ -63,6 +63,56 @@
 		 * @version 1.0
 		 * @since   1.1
 		 */
+        public function author_twitter() {
+            $author = $this->get_author_data();
+            // Load this if we have either a list of links from Gravatar or a single website from Guest Authors
+
+            // Update our URLs into a one variable so we have less code. First is Gravatar, second is Guest Authors which only allows one option.
+            $output = '';
+            if ( isset( $author->accounts ) ) {
+                // Add social media accounts
+                foreach ( $author->accounts as $account ) {
+                    // Update the Google URL so we can do some Author appeneding magic stuff?
+                    if ( $account->shortname === 'twitter' ) {
+                        $str          = esc_url( $account->url . '?rel=author' );
+                        $result       = substr( $str, strpos( $str, 'com/' ) + 4, strlen( $str ) );
+                        $string_array = explode( "?", $result );
+                        $output .= '<a class="' . esc_attr( $account->shortname ) . '" href="' . esc_url( $account->url . '?rel=author' ) . '"><i class="fa fa-twitter"></i></a>';
+                        $output .= '<a class="twitter" href="' . esc_url( $account->url . '?rel=author' ) . '"><h3 class="twitter-nickname">@';
+                        $output .= $string_array[0];
+                        $output .= '</h3></a>';
+                    }
+
+                }
+
+            } else {
+
+                if ( isset( $author->urls ) || isset( $author->website ) ) {
+
+                    // Update our URLs into a one variable so we have less code. First is Gravatar, second is Guest Authors which only allows one option.
+                    if ( isset( $author->urls ) ) {
+                        $urls = $author->urls;
+                        foreach ( $urls as $url ) {
+                            $haystack = $url->value;
+                            $needle   = 'http://twitter';
+                            $pos      = strripos( $haystack, $needle );
+                            if ( $pos !== false ) {
+                                $output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><i class="fa fa-twitter"></i></a>';
+                                $str    = esc_url( $url->value );
+                                $result = substr( $str, strpos( $str, 'com/' ) + 4, strlen( $str ) );
+                                $output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><h3 class="twitter-nickname">@';
+                                $output .= $result;
+                                $output .= '</h3></a>';
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            return $output;
+        }
+
 		public function author_profile() {
 			$author = $this->get_author_data();
                         if ( $author ) : ?>
@@ -120,6 +170,48 @@
 			return $output;
 		}
 
+        public function author_block_story( $author ) {
+            // Let's get this going...
+            $output = '';
+            $output .= '<div class="author-wrapper"><div class="col-md-3 avatar">';
+            $output .= $this->author_avatar( $author, 198 );
+            $output .= '<div class="hover-info"><i class="fa fa-sort-asc sort-up fa-lg"></i><div class="author-wrapper">';
+            $output .= '<div class="author-name">';
+            $output .= '<h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+            $output .= '</div></div>';
+            if ( $author->type != 'guest-author' ) {
+                // Grab the meta information for WordPress.com users
+                $author_meta = wpcom_vip_get_user_profile( $author->ID );
+                $output .= $this->author_bio( $author_meta );
+            } elseif ( $author->type == 'guest-author' ) {
+                // Return the Guest Author information.
+                $output .= $this->author_bio( $author );
+            }
+            $output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
+            $output .= '</div></div>';
+            $output .= '<div class="author-name">';
+            $output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+
+            $output .= '<div class="hover-info"><i class="fa fa-sort-asc sort-up fa-lg"></i><div class="author-wrapper">';
+            $output .= '<div class="author-name">';
+            $output .= '<h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+            $output .= '</div></div>';
+            if ( $author->type != 'guest-author' ) {
+                // Grab the meta information for WordPress.com users
+                $author_meta = wpcom_vip_get_user_profile( $author->ID );
+                $output .= $this->author_bio( $author_meta );
+            } elseif ( $author->type == 'guest-author' ) {
+                // Return the Guest Author information.
+                $output .= $this->author_bio( $author );
+            }
+            $output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
+            $output .= '</div></div>';
+            $output .= '<div class="twitter-wrapper">';
+            $output .= $this->author_twitter();
+            $output .= '</div></div></div>';
+
+            return $output;
+        }
 		/**
 		 * Returns the profile photo of the author
 		 * @param  object $author The author object
@@ -193,7 +285,7 @@
 
 			if ( empty( $author ) )
 				$author = $this->get_author_data();
-				
+
 			// Get the Gravatar bio or return the Guest Author bio
 			if ( isset( $author->aboutMe ) ) {
 				$output = $author->aboutMe;
@@ -365,6 +457,14 @@
 		echo $make_author_class->author_profile();
 	}
 
+    function get_author_profile() {
+	    global $make_author_class;
+	    $authors = get_coauthors();
+	    // For each author, build a block.
+	    foreach ( $authors as $author ) {
+		    echo $make_author_class->author_block_story( $author );
+	    }
+    }
 
 	function make_author_name( $author = '' ) {
 		global $make_author_class;
@@ -420,7 +520,7 @@
 
 	/**
          * This action addresses anyone without posts which can be authors and co-authors.
-         * Redirect is now going to generic make-editors page 
+         * Redirect is now going to generic make-editors page
 	 * Fixes guest authors with no posts to actually load their profile instead of returning 404
 	 * As per http://wordpress.org/support/topic/advice-for-showing-author-profile-page-for-authors-without-posts
 	 * @return void
@@ -516,8 +616,8 @@
 
 	// For now we will stop displaying author blocks at the end of posts until we can fix it next week.
 	add_filter( 'the_content', 'hook_bio_into_content', 5 );
-        
-       
+
+
         /**
 	 * Hooks the WP filter coauthors_supported_post_types
 	 *
@@ -526,7 +626,7 @@
 	 *
 	 **/
          add_filter('coauthors_supported_post_types', 'mz_coauthors_supported_post_types');
-      
+
 	function mz_coauthors_supported_post_types( $post_types ) {
 		$post_types[] = 'products';
                 $post_types[] = 'reviews';
