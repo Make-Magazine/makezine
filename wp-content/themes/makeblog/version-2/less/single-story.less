@@ -8,13 +8,16 @@ body.no-padding {
 }
 body.single-story{
   overflow-y: hidden;
+  .grav-clone-a,#grav-throbber {
+    display:none;
+  }
 }
 body.single-story.modal-open {
   padding-right: inherit !important;
 }
 
-.single.admin_is_login {
-  .container {
+.single.story-detail.admin_is_login {
+  .container.wrapper {
     .row.navigator.open {
       top: 84px;
       overflow: hidden;
@@ -25,7 +28,7 @@ body.single-story.modal-open {
   }
 }
 
-.single {
+.single.story-detail {
   blockquote {
     padding: 60px 31px;
     border: none;
@@ -45,7 +48,7 @@ body.single-story.modal-open {
     width: 68px;
     position: absolute;
   }
-  .container {
+  .container.wrapper {
     .essb_right_flag{
       margin: 10px 0;
       height: 1px;
@@ -318,6 +321,9 @@ body.single-story.modal-open {
           min-height: 407px;
           box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), 0 0 0 4000px rgba(0, 0, 0, 0.6);
           transition: opacity .15s linear, top .15s ease-out;
+          @media only screen and (min-width: 768px) {
+            width:70%;
+          }
           button {
             width: 42px;
             font-size: 30px;
@@ -708,8 +714,8 @@ body.single-story.modal-open {
 
 @media only screen and (min-width: 768px) {
   .single-story {
-    .single {
-      .container{
+    .single.story-detail {
+      .container.wrapper{
         .posts-navigator {
           overflow-y: auto !important;
         }
@@ -742,9 +748,10 @@ body.single-story.modal-open {
 }
 
 @media only screen and (max-width: 767px) {
-  .single {
+
+  .single.story-detail {
     margin: 0 -20px;
-    .container {
+    .container.wrapper {
       .thumbnails {
         margin: 10px -15px 0px -15px;
         overflow: hidden;
@@ -891,7 +898,7 @@ body.single-story.modal-open {
 }
 
 @media only screen and (max-width: 480px) {
-  .single {
+  .single.story-detail {
     .more-thumbnails {
       .thumbnail-image{
         height: 153px;
@@ -901,7 +908,7 @@ body.single-story.modal-open {
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
-  .single {
+  .single.story-detail {
     .more-thumbnails {
       .thumbnail-image {
         height: 259px;
@@ -920,7 +927,7 @@ body.single-story.modal-open {
 }
 
 @media only screen and (max-width: 991px) {
-  .single {
+  .single.story-detail {
     .content {
       .sidebar {
         margin-right: 0;
@@ -955,7 +962,7 @@ body.single-story.modal-open {
 }
 
 @media only screen and (min-width: 1200px) {
-  .single {
+  .single.story-detail {
     .story-header {
       .story-title {
         padding-left: 55px;
@@ -1131,8 +1138,8 @@ body.single-story.modal-open {
     }
   }
 
-  .single {
-    .container {
+  .single.story-detail {
+    .container.wrapper {
       width: 768px;
       .content {
         .sidebar {
@@ -1146,13 +1153,13 @@ body.single-story.modal-open {
 }
 
 @media screen and (min-width: 992px) {
-  .single {
+  .single.story-detail {
     .content {
       article {
         margin: 0 15px 0 5px;
       }
     }
-    .container {
+    .container.wrapper {
       width: 960px;
       .story-header {
         div.story-title {

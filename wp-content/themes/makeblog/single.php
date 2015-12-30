@@ -15,9 +15,9 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	$login_admin = 'admin_is_login';
 }
 ?>
-<div class="single <?php echo $login_admin ?>">
+<div class="single <?php echo $login_admin ?> story-detail">
 
-	<div class="container">
+	<div class="container wrapper">
 		<div class="ad-unit first-ad">
 			<?php global $make;
 			print $make->ads->ad_leaderboard;

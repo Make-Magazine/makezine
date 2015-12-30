@@ -351,6 +351,7 @@ $(document).ready(function () {
                 if (($flag == -1) || ($flag == 1)) {
                     thePostChanges(1);
                     stop = 1;
+                    goTo = -1;
                     $('.content:nth-child(1) .essb_displayed_sidebar_right').show();
                 }
                 if ($scrollTop > 800) {
@@ -735,8 +736,11 @@ $(document).ready(function () {
         });
 
         $('.comments button').on('click', function() {
-            var windowHeight = $(window).height() - 40;
-            $('#disqus_thread').height(windowHeight)
+            $window = $(window).width();
+            if($window <= 767){
+                var windowHeight = $(window).height() - 40;
+                $('#disqus_thread').height(windowHeight)
+            }
         });
 
         var ctx = $('#ctx-module').remove();

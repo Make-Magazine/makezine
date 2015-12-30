@@ -682,7 +682,7 @@ jQuery(document).ready(function ($) {
                 },
                 success: function (data) {
                     $('#blog-load-posts').remove();
-                    $('.container.all-stories .post-list').append('<li class="row page-break"><div class="post">' + data);
+                    $('.container.all-stories .post-list').append('<li class="row "><div class="post">' + data);
                     currentButton.removeClass('first-click');
                     removeNbsp();
                     if ($('p').is('#blog-load-posts') === false) {
@@ -691,17 +691,13 @@ jQuery(document).ready(function ($) {
                     ga('send', 'pageview',
                         { 'page': location.pathname + location.search + location.hash }
                     );
-                    // Load mobile ads or refresh sidebar ad.
-                    if ($(window).width() < 768) {
-                        var $start = $('.page-break:not(.rendered)').eq(0);
-                        make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
-                            'skipCount': 2,
-                            'max' : 3
-                        });
-                        $start.toggleClass('rendered', true);
-                    } else {
-                        make.gpt.refresh();
+                    if(window.navigator.userAgent.indexOf("Chrome") > 0){
+                        $window = $(window).width() + 17;
+                    }else {
+                        $window = $(window).width() ;
+                    }
+                    if($window <= 991){
+                        changeCardsSmallBreakpoints();
                     }
                 },
                 error: function (data) {
@@ -711,7 +707,7 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    //load more tag archive
+//load more tag archive
     function loadMoreTag() {
         var currentTagButton = $('#tag-load-posts');
         if (!currentTagButton.hasClass('first-click')) {
@@ -728,7 +724,7 @@ jQuery(document).ready(function ($) {
                 },
                 success: function (data) {
                     currentTagButton.remove();
-                    $('.container.all-stories .post-list').append('<li class="row page-break"><div class="post">' + data);
+                    $('.container.all-stories .post-list').append('<li class="row "><div class="post">' + data);
                     currentTagButton.removeClass('first-click');
                     removeNbsp();
                     if ($('p').is('#tag-load-posts') === false) {
@@ -737,17 +733,13 @@ jQuery(document).ready(function ($) {
                     ga('send', 'pageview',
                         { 'page': location.pathname + location.search + location.hash }
                     );
-                    // Load mobile ads or refresh sidebar ad.
-                    if ($(window).width() < 768) {
-                        var $start = $('.page-break:not(.rendered)').eq(0);
-                        make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
-                            'skipCount': 2,
-                            'max' : 3
-                        });
-                        $start.toggleClass('rendered', true);
-                    } else {
-                        make.gpt.refresh();
+                    if(window.navigator.userAgent.indexOf("Chrome") > 0){
+                        $window = $(window).width() + 17;
+                    }else {
+                        $window = $(window).width() ;
+                    }
+                    if($window <= 991){
+                        changeCardsSmallBreakpoints();
                     }
                 },
                 error: function (data) {
@@ -757,22 +749,10 @@ jQuery(document).ready(function ($) {
         }
     }
 
-
     //*********************//
     //sticky ads blog page//
     //*******************//
     if ($('.container').hasClass('all-stories')) {
-
-        // Load mobile ads.
-        if ($(window).width() < 768) {
-            make.gpt.injectAds($('.post-list .row'), {
-                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
-                'skipCount': 2,
-                'max' : 3,
-                'renderIntial' : false
-            });
-        }
-
         $('#footer').addClass('non-visible');
         /**
          * declarate sticky elements
@@ -850,8 +830,49 @@ jQuery(document).ready(function ($) {
                 $(this).html(newTitle);
             });
         }
-
         removeNbsp();
+        var largeCard,index,newIndex;
+        function changeCardsSmallBreakpoints(){
+            $('.post-list li.row .post').each(function(){
+                largeCard = $(this).find('.large-card').remove();
+                $(this).prepend(largeCard);
+            });
+        }
+        function changeCardsLargeBreakpoints(){
+            newIndex = 3;
+            $('.post-list li.row').each(function(i){
+                index = i + 1;
+                if ((index%2 == 0) && (index%4 != 0)){
+                    largeCard = $(this).find('.large-card').remove();
+                    $(this).find('.small-card').eq(0).after(largeCard);
+                }
+                if ((index == newIndex)){
+                    largeCard = $(this).find('.large-card').remove();
+                    $(this).find('.post').append(largeCard);
+                    newIndex = newIndex + 4;
+                }
+            });
+        }
+        if(window.navigator.userAgent.indexOf("Chrome") > 0){
+            $window = $(window).width() + 17;
+        }else {
+            $window = $(window).width() ;
+        }
+        if($window <= 991){
+            changeCardsSmallBreakpoints();
+        }
+        $(window).resize(function () {
+            if(window.navigator.userAgent.indexOf("Chrome") > 0){
+                $window = $(window).width() + 17;
+            }else {
+                $window = $(window).width() ;
+            }
+            if ($window <= 991) {
+                changeCardsSmallBreakpoints();
+            }else{
+                changeCardsLargeBreakpoints();
+            }
+        });
     }
 
 });
