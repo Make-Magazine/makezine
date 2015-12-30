@@ -323,10 +323,12 @@ $(document).ready(function () {
                 bottomArray[index] = $top;
             });
             $window = $(window).width() + 17;
-            if ($window <= 767) {
-                infinity = $('.row.infinity').offset().top - $(window).height() - 1000;
-            } else {
-                infinity = $('.row.infinity').offset().top - 3100;
+            if($('.row').hasClass('infinity')){
+                if ($window <= 767) {
+                    infinity = $('.row.infinity').offset().top - $(window).height() - 1000;
+                } else {
+                    infinity = $('.row.infinity').offset().top - 3100;
+                }
             }
             var $scrollTop = $(window).scrollTop();
             if ($scrollTop >= infinity) {
