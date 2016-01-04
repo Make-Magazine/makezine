@@ -188,8 +188,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="/2015/12/17/make-show-stopping-netflix-socks/">          
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-netflix20.jpg' ?>" class="img-responsive center-block event" />
+        <a href="//makerfaire.com/bay-area-2016/call-for-makers/">          
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-call-ba16.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div>  
     </div>  
