@@ -96,7 +96,7 @@ get_header('version-2'); ?>
 
 									<div class="projects-ad">
 										<p id="ads-title">Advertisement</p>
-										<?php global $make; print $make->ads->ad_300x250_atf; ?>
+										<?php global $make; print $make->ads->ad_300x250_flex_atf; ?>
 									</div>
 
 									<div class="sidebar-ad">
