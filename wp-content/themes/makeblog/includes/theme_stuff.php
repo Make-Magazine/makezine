@@ -429,7 +429,7 @@ function make_infinite_scroll_render() {
  */
 function make_get_category_name() {
 	global $post;
-	if ( is_single() && has_category() ) {
+	if ( (is_single() || is_admin()) && has_category() ) {
 		$cats = get_the_terms($post->ID, 'category');
 		$sortcats = array_shift($cats);
 		if (!empty($sortcats)) {
@@ -439,7 +439,7 @@ function make_get_category_name() {
 	elseif ( is_category() ) { // category archives
 		$cat = get_queried_object();
 	}
-	if (is_single() || is_category()) {
+	if (is_single() || is_admin() || is_category()) {
 		$output = '/';
 	} else {
 		$output = null;
@@ -456,7 +456,7 @@ function make_get_category_name() {
  * @return string Main category name with a stripped slash.
  */
 function make_get_category_name_strip_slash() {
-	if ( is_single() ) {
+	if ( is_single() || is_admin() ) {
 		$cats =  get_the_category();
 		$cat = $cats[0]; // let's just assume the post has one category
 	}
