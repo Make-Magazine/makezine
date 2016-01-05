@@ -1784,13 +1784,15 @@ function get_story_with_ajax() {
     $offset = $_POST['offset'];
     $number = $_POST['number'];
     $the_query = new WP_Query(array('offset' => $offset ,'post_status' => 'publish', 'showposts' => $number, 'post__not_in' => array($exclude)));
-    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post(); global $make; print_r($make);
-    // Version-2 Includes
-    //include_once dirname(__FILE__) . '/dfp.php';
+    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post();
+    // Set Ads.
+    global $make;
+    $make->ad_vars = new MakeAdVars;
+    $make->ad_vars->getVars();
     ?>
-        
+
         <div class="ad-unit">
-            <div class="js-ad" data-size='[728,90]' data-size-map='[728,90]' data-pos=\'"btf"\'></div>
+            <div class="js-ad" data-size='[728,90]' data-size-map='[728,90]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
         </div>
         <div class="row story-header" id="<?php echo get_the_ID(); ?>">
             <div class="story-title">
@@ -1861,18 +1863,42 @@ function get_story_with_ajax() {
                         </ul>
                     <?php }
                     ?>
+<<<<<<< HEAD
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
-                        <div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div>
+                        <div class="js-ad" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
                     <div class="ctx-siderail-wrapper"></div>
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
-                        <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos=\'"btf"\'></div>
+                        <div class="js-ad" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
                 </aside>
                 <div class="essb_right_flag"></div>
             </div>
+=======
+                </div>
+                <?php
+                $posttags = get_the_tags();
+                if ($posttags) { ?>
+                    <h3>Related Topics</h3>
+                    <ul class="row post-tags">
+                        <?php foreach($posttags as $tag) { ?>
+                            <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
+                        <?php } ?>
+                    </ul>
+                <?php }
+                ?>
+                <div class="ad-unit">
+                    <div class="js-ad" data-size='[[728,90],[940,250],[970,90],[970,250],[320,50]]' data-size-map='[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+                </div>
+                <div class="ad-unit">
+                    <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+                </div>
+                <div class="ctx-siderail-wrapper"></div>
+            </aside>
+            <div class="essb_right_flag"></div>
+>>>>>>> cac9c16... updates to GPT and story ajax function
         </div>
         <div class="line-separator"></div>
         <?php

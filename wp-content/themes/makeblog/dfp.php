@@ -196,10 +196,12 @@ class MakeAdVars {
         $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
         $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
         $id = get_the_ID();
-        $posttags = is_single() ? get_the_tags() : NULL;
-        $postcat = is_single() ? get_the_category() : (is_category() ? explode(",", get_category_parents($wp_query->get_queried_object()->term_id, FALSE, ",")) : NULL);
-
-        $this->page = substr($_SERVER['REQUEST_URI'], 0, 40);
+        $posttags = is_single() || is_admin() ? get_the_tags() : NULL;
+        $postcat = is_single() || is_admin() ? get_the_category() : (is_category() ? explode(",", get_category_parents($wp_query->get_queried_object()->term_id, FALSE, ",")) : NULL);
+        $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $root_url = $protocol . $_SERVER['HTTP_HOST'];
+        // Grabs URI for unique tag.
+        $this->page = is_admin() ? substr(str_replace($root_url, "", get_permalink()), 0, 40) : substr($_SERVER['REQUEST_URI'], 0, 40);
 
         // Post info.
         if ($current_page !== NULL) {
