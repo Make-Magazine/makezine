@@ -95,42 +95,44 @@ if ( ! empty( $image ) ) {
 							/**
 							 * Setup the 3D View
 							 */
-							$asset_path = get_field( '3d_view_config' );
-
+							//Added get_site_url() to account for any environment.
+							$asset_path = get_site_url() . get_field( '3d_view_config' );
 							if ( $asset_path && shortcode_exists( 'wr360embed' ) ):
 								global $post;
+								//Determine the path to the product:
+								$rootpath = str_replace(".xml", "", $asset_path);
+								$rootpath = substr($rootpath, 0, strrpos( $rootpath, '/'));
+								$rootpath = ltrim($rootpath, '/');
+
 								$wr_shortcode = sprintf(
-									'[%1$s name="%2$s" width="300" height="400" config="%3$s"]',
-									'wr360embed',
-									$post->post_name,
-									esc_url( $asset_path )
+								'[%1$s name="%2$s" width="300" height="400" config="%3$s"]',
+								'wr360embed',
+								$post->post_name,
+								esc_url($asset_path),
+								$rootpath
 								);
 							?>
-								<div class="virtual-tour">
-									<?php
-									$bodytag = str_replace(".xml", "", $asset_path);
-									$bodytag = substr($bodytag, 0, strrpos( $bodytag, '/'));
-									$bodytag = $bodytag.'/images/';
-									$bodytag = ltrim($bodytag, '/');
-									
-									$directory = $bodytag;
-									$files = scandir ($directory);
-									$firstFile = $directory . $files[2];
-									$firstFile = '/'.$firstFile;
-									?>
-
-									<?php echo do_shortcode( $wr_shortcode ); ?>
-									
-									<div id="virtual-placeholder">
-										<div class="inner">
-											<img src="<?php echo $firstFile;?>" alt="<?php the_title();?>"/>
-											<i class="fa fa-search-plus"></i>
-											<div class="rotate-instructions">
-												<i class="fa fa-refresh"></i> see it in 360
-											</div><!-- .rotate-instructions -->
-										</div><!-- .inner -->
-									</div><!-- #virtual-placeholder -->
-								</div><!-- .virtual-tour -->
+							
+							<div class="virtual-tour">
+								<?php
+								$config_xml = simplexml_load_file($asset_path);
+								//Load first image from XML
+								$image1 = $config_xml->images->image[0]->attributes();
+								$firstFile = $rootpath . '/' . $image1;
+								?>
+								<?php echo do_shortcode( $wr_shortcode ); ?>
+								
+								<div id="virtual-placeholder">
+									<div class="inner">
+										<img src="<?php echo $firstFile;?>" alt="<?php the_title();?>"/>
+										<i class="fa fa-search-plus"></i>
+										<div class="rotate-instructions">
+											<i class="fa fa-refresh"></i> see it in 360
+										</div><!-- .rotate-instructions -->
+									</div><!-- .inner -->
+								</div><!-- #virtual-placeholder -->
+							</div><!-- .virtual-tour -->
+							
 							<?php endif; ?>
 
 						</div><!-- .meta-wrapper -->
