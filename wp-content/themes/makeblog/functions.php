@@ -1792,77 +1792,79 @@ function get_story_with_ajax() {
             </div>
             <?php
             $args = array(
-                'resize' => '1170,600',
+                'resize' => '1200,670',
             );
             $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
             preg_match_all($re, $url, $matches);
             $str = $matches[2][0];
             $photon = jetpack_photon_url($str, $args);
-            if(strlen($url) == 0){
-                $photon = catch_first_image_story();
-                $photon = jetpack_photon_url( $photon, $args );
-            } ?>
-            <div class="story-hero-image"
-                 style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
+            if(strlen($url) == 0){?>
+                <div class="hero-wrapper-clear"></div>
+            <?php } else { ?>
+                <img class="story-hero-image" src="<?php echo $photon ?>">
+                <div class="story-hero-image-l-xl"
+                     style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
+            <?php } ?>
         </div>
-
-        <div class="row content <?php echo get_the_ID(); ?>">
-            <div class="col-sm-7">
-                <article <?php post_class(); ?>>
-                    <?php
-                    $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
-                    $title = get_the_title();
-                    echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
-                    echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=0 total_counter_pos="hidden" style="button" nospace="yes" template="dark-retina" sidebar="yes" sidebar_pos="right" url="'.$url.'" text="'.$title.'"]');
-                    ?>
-                    <?php the_content(); ?>
-                </article>
-                <div class="comments">
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>', '<?php echo get_the_title(); ?>', 'en');">Show comments</button>
+        <div class="content-wrapper">
+            <div class="row content <?php echo get_the_ID(); ?>">
+                <div class="col-sm-7 col-md-8">
+                    <article <?php post_class(); ?>>
+                        <?php
+                        $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
+                        $title = get_the_title();
+                        echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
+                        echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=0 total_counter_pos="hidden" style="button" nospace="yes" template="dark-retina" sidebar="yes" sidebar_pos="right" url="'.$url.'" text="'.$title.'"]');
+                        ?>
+                        <?php the_content(); ?>
+                    </article>
+                    <div class="comments">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>', '<?php echo get_the_title(); ?>', 'en');">Show comments</button>
+                    </div>
                 </div>
-            </div>
-            <aside class="col-md-4 sidebar">
-                <div class="row author-info">
+                <aside class="col-md-4 sidebar">
+                    <div class="row author-info">
+                        <?php
+                        if (function_exists('coauthors_posts_links')) {
+                            get_author_profile();
+                        }else {
+                            the_author_posts_link();
+                        } ?>
+                    </div>
+                    <div class="date-time">
+                        <?php
+                        $post_time = get_post_time('U', true, $post, true);
+                        $time_now = date('U');
+                        $difference = $time_now - $post_time;
+                        if ( $difference > 86400 ) { ?>
+                            <time itemprop="startDate" datetime="<?php the_time('c'); ?>"><?php the_time('F j\, Y, g:i a T'); ?></time>
+                        <?php } else { ?>
+                            <time itemprop="startDate" datetime="<?php the_time('c'); ?>"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></time>
+                        <?php }
+                        ?>
+                    </div>
                     <?php
-                    if (function_exists('coauthors_posts_links')) {
-                        get_author_profile();
-                    }else {
-                        the_author_posts_link();
-                    } ?>
-                </div>
-                <div class="date-time">
-                    <?php
-                    $post_time = get_post_time('U', true, $post, true);
-                    $time_now = date('U');
-                    $difference = $time_now - $post_time;
-                    if ( $difference > 86400 ) { ?>
-                        <time itemprop="startDate" datetime="<?php the_time('c'); ?>"><?php the_time('F j\, Y, g:i a T'); ?></time>
-                    <?php } else { ?>
-                        <time itemprop="startDate" datetime="<?php the_time('c'); ?>"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></time>
+                    $posttags = get_the_tags();
+                    if ($posttags) { ?>
+                        <h3>Related Topics</h3>
+                        <ul class="row post-tags">
+                            <?php foreach($posttags as $tag) { ?>
+                                <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
+                            <?php } ?>
+                        </ul>
                     <?php }
                     ?>
-                </div>
-                <?php
-                $posttags = get_the_tags();
-                if ($posttags) { ?>
-                    <h3>Related Topics</h3>
-                    <ul class="row post-tags">
-                        <?php foreach($posttags as $tag) { ?>
-                            <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
-                        <?php } ?>
-                    </ul>
-                <?php }
-                ?>
-                <div class="ad-unit">
-                    <div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div>
-                </div>
-                <div class="ad-unit">
-                    <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos=\'"btf"\'></div>
-                </div>
-                <div class="ctx-siderail-wrapper"></div>
-            </aside>
-            <div class="essb_right_flag"></div>
+                    <div class="ad-unit">
+                        <div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div>
+                    </div>
+                    <div class="ad-unit">
+                        <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos=\'"btf"\'></div>
+                    </div>
+                    <div class="ctx-siderail-wrapper"></div>
+                </aside>
+                <div class="essb_right_flag"></div>
+            </div>
         </div>
         <div class="line-separator"></div>
         <?php

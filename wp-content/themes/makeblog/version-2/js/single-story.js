@@ -12,11 +12,6 @@ $(document).ready(function () {
         var button_counter_hidden = essb_settings.essb3_counter_button_min;
         var no_print_mail_counter = typeof(essb_settings.essb3_no_counter_mailprint) != "undefined" ? essb_settings.essb3_no_counter_mailprint : false;
         var force_single_ajax = typeof(essb_settings.essb3_single_ajax) != "undefined" ? essb_settings.essb3_single_ajax : false;
-        var twitter_counter = typeof(essb_settings.twitter_counter) != "undefined" ? essb_settings.twitter_counter : "";
-
-        if (twitter_counter == "") {
-            twitter_counter = "api";
-        }
 
         var essb_shorten_number = function (n) {
             if ('number' !== typeof n) n = Number(n);
@@ -103,14 +98,6 @@ $(document).ready(function () {
                                     nonapi_internal_count_networks.push(basic_networks[i]);
                                 }
                                 break;
-                            case "twitter":
-                                if (twitter_counter == "api") {
-                                    direct_access_networks.push(basic_networks[i]);
-                                }
-                                else if (twitter_counter == "self") {
-                                    nonapi_internal_count_networks.push(basic_networks[i]);
-                                }
-                                break;
                             default:
                                 direct_access_networks.push(basic_networks[i]);
                                 break;
@@ -145,14 +132,6 @@ $(document).ready(function () {
                                     else {
                                         counter_display(counter_pos, operating_elements['facebook' + instance_id], operating_elements['facebook_inside' + instance_id], data.data[0].share_count);
                                     }
-                                });
-                            break;
-
-                        case "twitter":
-                            var twitter_url = "https://cdn.api.twitter.com/1/urls/count.json?url=" + twitter_url + "&callback=?";
-                            $.getJSON(twitter_url)
-                                .done(function (data) {
-                                    counter_display(counter_pos, operating_elements['twitter' + instance_id], operating_elements['twitter_inside' + instance_id], data.count);
                                 });
                             break;
 
@@ -286,7 +265,7 @@ $(document).ready(function () {
         $('body').addClass('single-story');
         var topArray = [];
         var bottomArray = [];
-        var $top;
+        var $top, $lastStory, $bottom;
         var infinity;
         var $flag = -1;
         var $offset = 0;
@@ -305,6 +284,10 @@ $(document).ready(function () {
         $('.row.navigator').addClass('open').css('height', $navigatorHeight);
         $('.posts-navigator').show();
         $(window).resize(function () {
+            $thumbnailsHeight = $(window).height() - 76 - $('#wpadminbar').height();
+            $navigatorHeight = $(window).height() - 50;
+            $('.navigator .thumbnails').addClass('open').css('height', $thumbnailsHeight);
+            $('.row.navigator').addClass('open').css('height', $navigatorHeight);
             $window = $(window).width() + 17;
             if ($window <= 767) {
                 if ($first_resize == 0) {
@@ -319,8 +302,8 @@ $(document).ready(function () {
                 topArray[index] = $top;
             });
             $('.single .container .row.content').each(function (index) {
-                $top = $(this).find('.essb_right_flag').offset().top - 100;
-                bottomArray[index] = $top;
+                $bottom = $(this).find('.essb_right_flag').offset().top - 100;
+                bottomArray[index] = $bottom;
             });
             $window = $(window).width() + 17;
             if($('.row').hasClass('infinity')){
@@ -360,6 +343,9 @@ $(document).ready(function () {
                     stop = 1;
                     goTo = -1;
                     $('.content:nth-child(1) .essb_displayed_sidebar_right').show();
+                    if ($lastStory == 1){
+                        sendGA();
+                    }
                 }
                 if ($scrollTop > 800) {
                     showSocialSidebar(0);
@@ -397,6 +383,7 @@ $(document).ready(function () {
                     thePostChanges(2);
                     sendGA();
                     stop = 0;
+                    $lastStory = 1;
                 }
             }
             if (($scrollTop >= topArray[2]) && ($scrollTop < bottomArray[2])) {
@@ -526,16 +513,14 @@ $(document).ready(function () {
             document.title = $('.story-header').eq(PostId - 1).find('.story-title').text();
             $flag = PostId - 1;
         }
-        function showBio(){
-            $('.sidebar .author-name .bio-wrapper,.sidebar .avatar').mouseover(function () {
-                $(this).find('.hover-info').show();
-                $(this).addClass('hover');
-            }).mouseleave(function () {
-                $(this).find('.hover-info').hide();
-                $(this).removeClass('hover');
-            });
-        }
-        showBio();
+        $(document).on("mouseover",".sidebar .author-name .bio-wrapper,.sidebar .avatar", function(){
+            $(this).find('.hover-info').show();
+            $(this).addClass('hover');
+        });
+        $(document).on("mouseleave",".sidebar .author-name .bio-wrapper,.sidebar .avatar", function(){
+            $(this).find('.hover-info').hide();
+            $(this).removeClass('hover');
+        });
         $('.hamburger-navigator').mouseover(function () {
             if (!$(this).hasClass('open')) {
                 $(this).addClass('hover');
@@ -569,7 +554,7 @@ $(document).ready(function () {
         function sendGA() {
             ga('send', 'pageview',
                 { 'page': location.pathname + location.search + location.hash }
-            )
+            );
         }
         function getStoryThumbnail($offset) {
             var firstPostId = $('.first-story').attr('id');
@@ -618,7 +603,6 @@ $(document).ready(function () {
                         copyContextlyWidget();
                     }
                     essb_get_counters();
-                    showBio();
                     make.gpt.loadDyn();
                     $('.single .story-header .story-title h1').each(function () {
                         newTitle = $(this).html().replace('&nbsp;', ' ');
@@ -741,14 +725,18 @@ $(document).ready(function () {
             newTitle = $(this).html().replace('&nbsp;', ' ');
             $(this).html(newTitle);
         });
-
-        $('.comments button').on('click', function() {
+        var windowHeight;
+        $(document).on("click",".comments button", function(){
             $window = $(window).width();
             if($window <= 767){
-                var windowHeight = $(window).height() - 40;
-                $('#disqus_thread').height(windowHeight)
+                windowHeight = $(window).height() - 40;
+                $('#disqus_thread').height(windowHeight);
+            }else {
+                windowHeight = $(window).height() - 77;
+                $('#disqus_thread').css('max-height',windowHeight);
             }
         });
+
 
         var ctx = $('#ctx-module').remove();
         $('.essb_right_flag').before(ctx);
