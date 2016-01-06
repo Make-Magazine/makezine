@@ -213,7 +213,6 @@ $primary_cat_dimension = $primarycat[0];
             <a href="<?php echo home_url(); ?>" class="logo-a">
                 <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
             </a>
-            <br>
             <h5 class="mz-tag">We are all Makers</h5>
             <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
           </div>

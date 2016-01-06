@@ -1716,17 +1716,17 @@ function get_projects_with_ajax()
 add_action('wp_ajax_sorting_posts', 'get_projects_with_ajax');
 add_action('wp_ajax_nopriv_sorting_posts', 'get_projects_with_ajax');
 
-function get_story_with_ajax() {
+function get_story_thumbnail_with_ajax() {
     $exclude = $_POST['excludeId'];
     $offset = $_POST['offset'];
     $story = '';
     $story .='<div class="row more-thumbnails">';
     $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
-    query_posts(array('offset' => $offset ,'showposts' => '9', 'post__not_in' => array($exclude)));
-    if ( have_posts() ) : while ( have_posts() ) : the_post();
+    $the_query = new WP_Query(array('offset' => $offset ,'post_status' => 'publish','showposts' => '9', 'post__not_in' => array($exclude)));
+    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post();
         $story .='<div class="latest-story">';
         $story .= '<a href="';
-        $story .= get_the_ID();
+        $story .= get_the_permalink();
         $story .= '"class="pull-left">';
         $args = array(
             'resize' => '370,240',
@@ -1736,9 +1736,13 @@ function get_story_with_ajax() {
         preg_match_all($re, $url, $matches);
         $str = $matches[2][0];
         $photon = jetpack_photon_url($str, $args);
-        $story .= '<img src="';
+        if(strlen($url) == 0){
+            $photon = catch_first_image_story();
+            $photon = jetpack_photon_url( $photon, $args );
+        }
+        $story .= '<div class="thumbnail-image" style="background: url(';
         $story .= $photon;
-        $story .= '"alt="thumbnail">';
+        $story .= ')no-repeat center center;"></div>';
         $story .= '<h3>';
         $story .= get_the_title();
         $story .='</h3></a>';
@@ -1755,8 +1759,138 @@ function get_story_with_ajax() {
     echo $story;
     die();
 }
+add_action('wp_ajax_get_story_thumbnail_with_ajax', 'get_story_thumbnail_with_ajax');
+add_action('wp_ajax_nopriv_get_story_thumbnail_with_ajax', 'get_story_thumbnail_with_ajax');
+
+function get_story_with_ajax() {
+    add_shortcode('contextly_auto_sidebar', function($attrs) {
+        if ( isset( $attrs[ 'id' ] ) ) {
+            return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . "' id='" . esc_attr( 'contextly-' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
+        } else {
+            return '';
+        }
+    } );
+    add_shortcode('contextly_sidebar', function($attrs) {
+// We will display sidebar only if we have id for this sidebar
+        if ( isset( $attrs[ 'id' ] ) ) {
+            return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . "' id='" . esc_attr( 'contextly-' . $attrs[ 'id' ] ) ."'></div>";
+        } else {
+            return '';
+        }
+    } );
+    $exclude = $_POST['excludeId'];
+    $offset = $_POST['offset'];
+    $number = $_POST['number'];
+    $the_query = new WP_Query(array('offset' => $offset ,'post_status' => 'publish', 'showposts' => $number, 'post__not_in' => array($exclude)));
+    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post(); ?>
+        <div class="ad-unit">
+            <div class="js-ad" data-size='[728,90]' data-size-map='[728,90]' data-pos=\'"btf"\'></div>
+        </div>
+        <div class="row story-header" id="<?php echo get_the_ID(); ?>">
+            <div class="story-title">
+                <h1><?php the_titlesmall('', '', true, '90'); ?></h1>
+            </div>
+            <?php
+            $args = array(
+                'resize' => '1200,670',
+            );
+            $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
+            $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+            preg_match_all($re, $url, $matches);
+            $str = $matches[2][0];
+            $photon = jetpack_photon_url($str, $args);
+            if(strlen($url) == 0){?>
+                <div class="hero-wrapper-clear"></div>
+            <?php } else { ?>
+                <img class="story-hero-image" src="<?php echo $photon ?>">
+                <div class="story-hero-image-l-xl"
+                     style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
+            <?php } ?>
+        </div>
+        <div class="content-wrapper">
+            <div class="row content <?php echo get_the_ID(); ?>">
+                <div class="col-sm-7 col-md-8">
+                    <article <?php post_class(); ?>>
+                        <?php
+                        $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
+                        $title = get_the_title();
+                        echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
+                        echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=0 total_counter_pos="hidden" style="button" nospace="yes" template="dark-retina" sidebar="yes" sidebar_pos="right" url="'.$url.'" text="'.$title.'"]');
+                        ?>
+                        <?php the_content(); ?>
+                    </article>
+                    <div class="comments">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>', '<?php echo get_the_title(); ?>', 'en');">Show comments</button>
+                    </div>
+                </div>
+                <aside class="col-md-4 sidebar">
+                    <div class="row author-info">
+                        <?php
+                        if (function_exists('coauthors_posts_links')) {
+                            get_author_profile();
+                        }else {
+                            the_author_posts_link();
+                        } ?>
+                    </div>
+                    <div class="date-time">
+                        <?php
+                        $post_time = get_post_time('U', true, $post, true);
+                        $time_now = date('U');
+                        $difference = $time_now - $post_time;
+                        if ( $difference > 86400 ) { ?>
+                            <time itemprop="startDate" datetime="<?php the_time('c'); ?>"><?php the_time('F j\, Y, g:i a T'); ?></time>
+                        <?php } else { ?>
+                            <time itemprop="startDate" datetime="<?php the_time('c'); ?>"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></time>
+                        <?php }
+                        ?>
+                    </div>
+                    <?php
+                    $posttags = get_the_tags();
+                    if ($posttags) { ?>
+                        <h3>Related Topics</h3>
+                        <ul class="row post-tags">
+                            <?php foreach($posttags as $tag) { ?>
+                                <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    <?php }
+                    ?>
+                    <div class="ad-unit">
+                        <div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div>
+                    </div>
+                    <div class="ad-unit">
+                        <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos=\'"btf"\'></div>
+                    </div>
+                    <div class="ctx-siderail-wrapper"></div>
+                </aside>
+                <div class="essb_right_flag"></div>
+            </div>
+        </div>
+        <div class="line-separator"></div>
+        <?php
+    endwhile;
+    else:
+    endif;
+    die();
+}
 add_action('wp_ajax_get_story_with_ajax', 'get_story_with_ajax');
 add_action('wp_ajax_nopriv_get_story_with_ajax', 'get_story_with_ajax');
+
+function the_titlesmall($before = '', $after = '', $echo = true, $length = false) {
+    $title = get_the_title();
+
+    if ( $length && is_numeric($length) ) {
+        $title = substr( $title, 0, $length );
+    }
+
+    if ( strlen($title)> 0 ) {
+        $title = apply_filters('the_titlesmall', $before . $title . $after, $before, $after);
+        if ( $echo )
+            echo $title;
+        else
+            return $title;
+    }
+}
 
 function sort_down($a, $b)
 {
@@ -2069,6 +2203,32 @@ function catch_first_image_nav() {
 
     if(empty($first_img)) {
         $first_img = get_template_directory_uri().'/version-2/img/thumbhead.jpg';
+    }
+    return $first_img;
+}
+function catch_first_image_story() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if(empty($first_img)) {
+        $first_img = get_template_directory_uri().'/version-2/img/thumbstory.jpg';
+    }
+    return $first_img;
+}
+function catch_first_image_story_nav() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if(empty($first_img)) {
+        $first_img = get_template_directory_uri().'/version-2/img/thumbnav.jpg';
     }
     return $first_img;
 }
