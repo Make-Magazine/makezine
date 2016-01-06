@@ -312,8 +312,14 @@ body.single-story.modal-open {
       @media (min-width: 1350px) {
         width: 1173px;
       }
-      iframe, .wp-caption {
+      iframe{
         max-width: 100%;
+      }
+      .wp-caption {
+        max-width: 100%;
+        img {
+          width:100%;
+        }
       }
       @media (max-width: 767px) {
         iframe {
