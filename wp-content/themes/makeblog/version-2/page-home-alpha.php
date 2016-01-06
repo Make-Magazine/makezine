@@ -177,9 +177,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <div class="container event-unit">
     <div class="row"> 
 <!--  Home "waist" Promos -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="https://www.makershed.com/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-shed-01.jpg' ?>" class="img-responsive center-block event" />
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
+        <a href="/2015/12/17/make-show-stopping-netflix-socks/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-netflix20.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
@@ -187,7 +187,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-3d-guide16.jpg' ?>" class="img-responsive center-block event" />
         </a>
       </div> 
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
         <a href="//makerfaire.com/bay-area-2016/call-for-makers/">          
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-call-ba16.jpg' ?>" class="img-responsive center-block event" />
         </a>
