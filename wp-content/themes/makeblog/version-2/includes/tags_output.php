@@ -58,13 +58,13 @@ function tags_pulling($offset=0, $tag) {
 
 		if ( $large_indicator == 1 ) {
 			$post_weight     = 2;
-			$bootstrap_class = 'col-md-6 col-sm-6 col-xs-12 large-card ';
+			$bootstrap_class = 'col-md-6 col-sm-12 col-xs-12 large-card';
 			$args            = array(
 				'resize' => '397,374',
 			);
 		} else {
 			$post_weight     = 1;
-			$bootstrap_class = 'col-md-3 col-sm-3 col-xs-12 small-card';
+			$bootstrap_class = 'col-md-3 col-sm-6 col-xs-12 small-card';
 			$args            = array(
 				'resize' => '397,374',
 			);

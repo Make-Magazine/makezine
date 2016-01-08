@@ -209,14 +209,14 @@ $primary_cat_dimension = $primarycat[0];
       <div class="row">
 
         <!-- LOGO & TAG LINE -->
-        <a href="<?php echo home_url(); ?>" class="logo-a">
           <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
-            <br>
+            <a href="<?php echo home_url(); ?>" class="logo-a">
+                <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+            </a>
             <h5 class="mz-tag">We are all Makers</h5>
             <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
           </div>
-        </a>
+       
 
         <!-- MENUS -->
         <div class="navbar-header">

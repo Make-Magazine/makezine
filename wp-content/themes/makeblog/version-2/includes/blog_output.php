@@ -45,13 +45,13 @@ function story_pulling($offset) {
 
 		if ( $large_indicator == 1 ) {
 			$post_weight     = 2;
-			$bootstrap_class = 'col-md-6 col-sm-6 col-xs-12 large-card ';
+			$bootstrap_class = 'col-md-6 col-sm-12 col-xs-12 large-card ';
 			$args            = array(
 				'resize' => '397,374',
 			);
 		} else {
 			$post_weight     = 1;
-			$bootstrap_class = 'col-md-3 col-sm-3 col-xs-12 small-card';
+			$bootstrap_class = 'col-md-3 col-sm-6 col-xs-12 small-card';
 			$args            = array(
 				'resize' => '397,374',
 			);
@@ -89,8 +89,11 @@ function story_pulling($offset) {
 		$outputs .= '<div class="wrapper-story-link"><a href="' . get_the_permalink() . '" class="story-link"></a></div>';
 
 		$outputs .= '<div class="filter-display-wrapper">';
-		$outputs .= '<div class="red-box-category">';
-
+		if (!empty($post_video[0])) {
+			$outputs .= '<div class="red-box-category is-videoblock">';
+		} else {
+			$outputs .= '<div class="red-box-category">';
+		}
 		$red_cat_name = '';
 		$cat_link = '';
 		if ('post' == get_post_type()) {
@@ -141,10 +144,6 @@ function story_pulling($offset) {
 			}
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);
-		$cat_length = iconv_strlen($red_cat_name, 'UTF-8');
-		if ($cat_length > 7) {
-			$red_cat_name = substr($red_cat_name, 0, 7) . '...';
-		}
 		if (!empty($red_cat_name)) {
 			$outputs .= '<p><a href="';
 			$outputs .= $cat_link;
