@@ -99,7 +99,7 @@ endif;
 
 
 <div class="meta-block ad-1">
-	<?php global $make; print $make->ads->ad_300x250_atf; ?>
+	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
 </div><!-- .meta-block.ad-1 -->
 
 
@@ -136,7 +136,7 @@ endif;
 <?php endif; ?>
 
 <div class="meta-block ad-2 desktop">
-	<?php global $make; print $make->ads->ad_300x600; ?>
+	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
 </div><!-- .meta-block.ad-2 -->
 
 <?php

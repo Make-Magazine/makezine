@@ -207,11 +207,11 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						?>
 						<div class="ad-unit">
 							<?php global $make;
-							print $make->ads->ad_300x250; ?>
+							print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250; ?>
 						</div>
 						<div class="ad-unit">
 							<?php global $make;
-							print $make->ads->ad_300x600; ?>
+							print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
 						</div>
 						<div class="ctx-siderail-container"></div>
 						<div id="pubexchange_rail"></div>
