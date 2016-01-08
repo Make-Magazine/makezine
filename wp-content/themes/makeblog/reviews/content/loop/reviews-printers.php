@@ -26,7 +26,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="ri-badge ri-cell hidden-xs"></div>
+		<div class="ri-badge printers ri-cell hidden-xs"></div>
 
 		<div class="ri-item-meta"></div>
 

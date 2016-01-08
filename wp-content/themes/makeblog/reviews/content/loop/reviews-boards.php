@@ -22,7 +22,7 @@
 
 		<!-- .item-price -->
 
-		<div class="ri-badge ri-cell hidden-xs"></div>
+		<div class="ri-badge boards ri-cell hidden-xs"></div>
 
 		<div class="ri-item-meta"></div>
 

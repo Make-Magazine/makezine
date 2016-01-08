@@ -29,8 +29,11 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			<h2 class="product-title"><?php echo get_field('title'); ?></h2>
 
 			<p><?php echo get_field( 'how_we_test' ); ?></p>
-
-			<h4 class="authors-title">The Make: Digital Fabrication Team</h4>
+			<?php
+			$slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get_the_ID() );
+			$title = ( $slug === 'boards' ) ? 'The Make: Boards Team' : 'The Make: Digital Fabrication Team';
+			?>
+			<h4 class="authors-title"><?php echo $title; ?></h4>
 
 			<div class="row testing-authors">
 				<?php
