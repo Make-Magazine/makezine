@@ -1858,12 +1858,14 @@ function get_story_with_ajax() {
                     <?php }
                     ?>
                     <div class="ad-unit">
+                        <p id="ads-title">ADVERTISEMENT</p>
                         <div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div>
                     </div>
+                    <div class="ctx-siderail-wrapper"></div>
                     <div class="ad-unit">
+                        <p id="ads-title">ADVERTISEMENT</p>
                         <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos=\'"btf"\'></div>
                     </div>
-                    <div class="ctx-siderail-wrapper"></div>
                 </aside>
                 <div class="essb_right_flag"></div>
             </div>
