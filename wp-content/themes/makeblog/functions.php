@@ -867,11 +867,13 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     if ($detect->isMobile()) {
         $post_per_page_initial = 21;
         $device = 'mobile';
+        $post_per_page = $post_per_page_initial;
     }
 
     if ($detect->isTablet()) {
         $post_per_page_initial = 21;
         $device = 'tablet';
+        $post_per_page = $post_per_page_initial;
     }
     else {
         $post_per_page = $post_per_page_initial - 1;
