@@ -193,6 +193,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/badge-winner-boards.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20215,
+		"inputAbbreviatedPath": "\/img\/badge-winner-boards.png",
+		"outputAbbreviatedPath": "\/img\/badge-winner-boards.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/js\/min\/index.min.js": {
 		"fileType": 64,
 		"ignore": 1,

@@ -81,7 +81,7 @@ function blog_feeds_output( $type = '' ) {
 					$str    = $matches[2][0];
 					$photon = jetpack_photon_url( $str, $arg );
 					?>
-<!--					<div class="post-thumbnail"><img src="--><?php //echo $photon ?><!--" alt="thumbnail"></div>-->
+					<!--					<div class="post-thumbnail"><img src="--><?php //echo $photon ?><!--" alt="thumbnail"></div>-->
 					<div class="title"><img src="<?php echo $photon ?>" alt="thumbnail"><p class="p-title"><?php the_title(); ?></p></div>
 				</li>
 			<?php endwhile; ?>

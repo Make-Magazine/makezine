@@ -1,7 +1,11 @@
 $(document).ready(function () {
 	var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
 	var $searchFocus = -1;
-	$window = $(window).width() + 17;
+	if(window.navigator.userAgent.indexOf("Chrome") > 0){
+		$window = $(window).width() + 17;
+	}else {
+		$window = $(window).width() ;
+	}
 	if ($window >= '768') {
 		var $counter = 0;
 	} else {
@@ -144,7 +148,11 @@ $(document).ready(function () {
 
 
 	});
-	$window = $(window).width();
+	if(window.navigator.userAgent.indexOf("Chrome") > 0){
+		$window = $(window).width() + 17;
+	}else {
+		$window = $(window).width() ;
+	}
 	if ($window <= '767') {
 		$deviceHeight = $(window).height();
 		$('.menu-container').css('height', $deviceHeight);

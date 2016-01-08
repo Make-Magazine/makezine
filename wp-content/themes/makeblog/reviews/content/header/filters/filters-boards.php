@@ -9,9 +9,9 @@
 		<nav class="fl-filters-nav clearfix">
 
 			<div class="fl-filters-header col-sm-12 col-md-3 hidden-xs">
-				<h2 class="fl-header-title">The Maker's Guide to Boards</h2>
+				<h2 class="fl-header-title">Find the Right Board</h2>
 
-				<div class="fl-header-description">Use the filters to find the right board for your needs</div>
+				<div class="fl-header-description">Use the filters to determine the best fit for your project</div>
 			</div>
 
 			<form id="rf-filters-form" action="" class="fl-filters-list col-xs-12 col-md-9 col-lg-8 col-lg-offset-1">
