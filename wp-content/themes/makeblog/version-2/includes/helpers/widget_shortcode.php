@@ -18,13 +18,13 @@ add_shortcode('content_ads', 'content_ads_shortcode');
 
 function top_ads_shortcode($atts) {
     global $make;
-    print $make->ads->ad_300x250;
+    print '<div class="sidebar-ad"><p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250 . '</div>';
 }
 add_shortcode('top_ads', 'top_ads_shortcode');
 
 function middle_ads_shortcode($atts) {
     global $make;
-    print '<div class="ad-refresh">' . $make->ads->ad_300x600 . '</div>';
+    print '<div class="ad-refresh"><p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600 . '</div>';
 }
 add_shortcode('middle_ads', 'middle_ads_shortcode');
 
