@@ -1863,7 +1863,6 @@ function get_story_with_ajax() {
                         </ul>
                     <?php }
                     ?>
-<<<<<<< HEAD
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
                         <div class="js-ad" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
@@ -1876,29 +1875,6 @@ function get_story_with_ajax() {
                 </aside>
                 <div class="essb_right_flag"></div>
             </div>
-=======
-                </div>
-                <?php
-                $posttags = get_the_tags();
-                if ($posttags) { ?>
-                    <h3>Related Topics</h3>
-                    <ul class="row post-tags">
-                        <?php foreach($posttags as $tag) { ?>
-                            <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
-                        <?php } ?>
-                    </ul>
-                <?php }
-                ?>
-                <div class="ad-unit">
-                    <div class="js-ad" data-size='[[728,90],[940,250],[970,90],[970,250],[320,50]]' data-size-map='[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-                </div>
-                <div class="ad-unit">
-                    <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-                </div>
-                <div class="ctx-siderail-wrapper"></div>
-            </aside>
-            <div class="essb_right_flag"></div>
->>>>>>> cac9c16... updates to GPT and story ajax function
         </div>
         <div class="line-separator"></div>
         <?php
