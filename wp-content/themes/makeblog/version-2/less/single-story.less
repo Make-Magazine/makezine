@@ -66,7 +66,7 @@ body.single-story.modal-open {
         width: 105px;
         &:hover {
           h3 {
-            font-weight: bold;
+            color: #8f8e8e;
           }
         }
         h3 {
@@ -127,6 +127,7 @@ body.single-story.modal-open {
           z-index: 1;
           height: inherit;
           padding: 0 3px;
+          padding-bottom: 20px;
           overflow-x: hidden;
           padding-left: 7px;
         }
@@ -137,25 +138,30 @@ body.single-story.modal-open {
         background-color: #dbdbdb;
       }
       .see-all-stories {
-        height: 55px;
+        height: 80px;
         background: #F40B0B;
         width: 120px;
         float: left;
         margin: -5px 0 0 -7px;
-        -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-        -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+        &:hover {
+          .heading {
+            color: #000;
+          }
+          .arrow-right {
+            background: url("/wp-content/themes/makeblog/version-2/img/arrow-right-black.png") no-repeat;
+          }
+        }
         .heading {
           color: white;
           font-family: Roboto;
           font-size: 11px;
-          margin: 17px 0 0 23px;
-          width:58px;
+          margin: 30px 0 0 23px;
+          width: 58px;
           float: left;
         }
-        .arrow-right{
+        .arrow-right {
           background: url("/wp-content/themes/makeblog/version-2/img/arrow-right.png") no-repeat;
-          margin: 17px 0 0 80px;
+          margin: 30px 0 0 80px;
           height: 18px;
         }
       }
@@ -272,6 +278,16 @@ body.single-story.modal-open {
           margin-bottom: 141px;
         }
       }
+      .story-hero-image-l-xl {
+        width: 100%;
+        height: 670px;
+        background-size: cover !important;
+        display: none;
+        @media (min-width: 1201px) {
+          display: block;
+          height: 770px;
+        }
+      }
       .story-title {
         float: none;
         margin: 27px auto auto;
@@ -279,8 +295,8 @@ body.single-story.modal-open {
         @media (max-width: 767px) {
           padding: 0 25px;
         }
-        @media (min-width: 768px) and (max-width: 991px){
-          width:750px;
+        @media (min-width: 768px) and (max-width: 991px) {
+          width: 750px;
         }
         h1 {
           font-size: 40px;
@@ -292,7 +308,11 @@ body.single-story.modal-open {
         }
       }
       .story-hero-image {
+        display: none;
         width: 100%;
+        @media (max-width: 1200px) {
+          display: block;
+        }
       }
       .author-info, .hover-info {
         display: none;
@@ -319,18 +339,18 @@ body.single-story.modal-open {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       margin: -50px auto 47px auto;
       @media (min-width: 1201px) {
-        margin-top:-150px;
+        margin-top: -150px;
       }
       @media (min-width: 1350px) {
         width: 1173px;
       }
-      iframe{
+      iframe {
         max-width: 100%;
       }
       .wp-caption {
         max-width: 100%;
         img {
-          width:100%;
+          width: 100%;
         }
       }
       @media (max-width: 767px) {
@@ -343,7 +363,7 @@ body.single-story.modal-open {
           margin: 0 9px 0 5px;
         }
         @media (min-width: 1200px) and (max-width: 1349px) {
-          margin-right:-4px;
+          margin-right: -4px;
         }
         @media (min-width: 1350px) {
           width: 783px;
@@ -431,10 +451,10 @@ body.single-story.modal-open {
         }
         .author-info {
           margin: 0 0 18px 0;
-          .author-wrapper{
+          .author-wrapper {
             width: 100%;
             height: 61px;
-            &:nth-child(2){
+            &:nth-child(2) {
               margin-top: 15px;
             }
           }
@@ -1211,6 +1231,7 @@ body.single-story.modal-open {
       }
     }
   }
+
   .single.story-detail {
     .container.wrapper {
       .content {
