@@ -27,10 +27,10 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			<div class="hamburger">
 				<div class="hamburger-navigator">
 					<img class="initial" src="<?php echo get_template_directory_uri() . '/version-2/img/bitmap.png' ?>"
-						 scale="0">
+					     scale="0">
 					<img class="x" src="<?php echo get_template_directory_uri() . '/version-2/img/x.png' ?>" scale="0">
 					<img class="x-hover" src="<?php echo get_template_directory_uri() . '/version-2/img/x-hover.png' ?>"
-						 scale="0">
+					     scale="0">
 
 					<h2>Latest 10</h2>
 				</div>
@@ -56,7 +56,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 									$photon = jetpack_photon_url( $photon, $args );
 								} ?>
 								<div class="thumbnail-image"
-									 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+								     style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
 								<h3><?php the_title(); ?></h3></a>
 
 						</div>
@@ -66,8 +66,8 @@ if ( user_can( $current_user, 'administrator' ) ) {
 					<?php wp_reset_query(); ?>
 					<?php $i   = 1;
 					$the_query = new WP_Query( array( 'showposts'    => '9',
-						'post_status'  => 'publish',
-						'post__not_in' => array( $main_post_id )
+					                                  'post_status'  => 'publish',
+					                                  'post__not_in' => array( $main_post_id )
 					) ); ?>
 					<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<div class="latest-story" id="<?php echo $i; ?>">
@@ -88,7 +88,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 									$photon = jetpack_photon_url( $photon, $args );
 								} ?>
 								<div class="thumbnail-image"
-									 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+								     style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
 								<h3><?php the_title(); ?></h3></a>
 
 						</div>
@@ -122,10 +122,10 @@ if ( user_can( $current_user, 'administrator' ) ) {
 					$difference = $time_now - $post_time;
 					if ( $difference > 86400 ) { ?>
 						<time itemprop="startDate"
-							  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
+						      datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
 					<?php } else { ?>
 						<time itemprop="startDate"
-							  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
+						      datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
 					<?php }
 					?>
 				</div>
@@ -160,7 +160,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						<div class="comments">
 
 							<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
-									onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>', '<?php echo get_the_title(); ?>', 'en');">
+							        onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>', '<?php echo get_the_title(); ?>', 'en');">
 								Show comments
 							</button>
 
@@ -183,10 +183,10 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							$difference = $time_now - $post_time;
 							if ( $difference > 86400 ) { ?>
 								<time itemprop="startDate"
-									  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
+								      datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
 							<?php } else { ?>
 								<time itemprop="startDate"
-									  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
+								      datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
 							<?php }
 							?>
 						</div>
