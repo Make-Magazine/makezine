@@ -681,18 +681,27 @@ input[type=search]::-ms-reveal {
   border-bottom: 4px solid #ec1e21;
   background-color: #e6e6e6;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   display: none;
-  margin-top: -33px;
+  margin-top: 0;
   &.sticky-header {
     margin-top: 0;
   }
+}
+
+// Optional class when toggling the under nav blue bar
+.dynamic-header-posts-margin {
+  margin-top: -33px;
 }
 
 .dynamic-header-posts.sticky-header {
   position: fixed;
   border-bottom: 3px solid #ec1e21;
   overflow: hidden;
+}
+
+#menu-make-main {
+  background: #fff;
 }
 
 .container.header.tablet.width {
@@ -1524,7 +1533,7 @@ ul.sub-menu.moove-right {
   }
 
   .dynamic-header-posts {
-    display: none;
+    display: none !important;
   }
 
   .navbar-default .row {
@@ -1914,7 +1923,7 @@ ul.sub-menu.moove-right {
     line-height: 16px;
     margin-top: 18px;
     text-align: left;
-    margin-bottom: -3px;
+    margin-bottom: 10px;
   }
 
   .mz-social h6 {

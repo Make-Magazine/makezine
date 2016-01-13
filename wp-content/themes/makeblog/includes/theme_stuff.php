@@ -224,7 +224,7 @@ function make_register_sidebar() {
 				'id'=>'sidebar_bottom',
 				'name'=>__('Sidebar Bottom'),
 				'description'=>__('This widget area is at the bottom of the sidebar, below everything else.' ),
-				'before_widget'=>'<div class="widget">',
+				'before_widget'=>'<div class="sidebar_bottom">',
 				'after_widget'=>'</div>',
 				'before_title'=>'<h3 class="widget-title">',
 				'after_title'=>'</h3>'

@@ -478,6 +478,7 @@ get_header('version-2'); ?>
       </div>
 
       <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
+        <p id="ads-title">Advertisement</p>
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
 
@@ -498,28 +499,30 @@ get_header('version-2'); ?>
 
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-electronics-2ed?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Maker_Faire_2015_Trucker_Hat" target="_blank">
+          <a target="_blank" href="https://www.arrow.com/en/campaigns/the-dragonboard-is-here">
             <div class="product-shed-image">
-              <img src="https://cdn.shopify.com/s/files/1/0243/7593/products/Make_Electronics_2nd_Edition_large.jpg" alt="Make: Electronics, 2Ed" />
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/dragonboard-330x330.jpg" alt="Dragonboard Development Board" />
             </div>
-            <h4>Make: Electronics, 2Ed</h4>
+            <h4>The Qualcomm Snapdragon-powered development board from Arrow Electronics</h4>
           </a>
-          <p>$30-$39</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-electronics-2ed?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Electronics,_2Ed" target="_blank">BUY IT NOW</a>
+          <p>$75.00</p>
+          <a target="_blank" class="gg2015-buy-btn" href="https://www.arrow.com/en/campaigns/the-dragonboard-is-here">BUY IT NOW</a>
         </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
       </div>
 
       <div class="col-xs-6 col-md-4">
         <div class="product-shed-grid">
-          <a href="http://www.makershed.com/products/make-electronics-deluxe-toolkit&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Deluxe_Electronics_Toolkit" target="_blank">
+          <a target="_blank" href="https://www.pebble.com/pebble-time-round-smartwatch-features">
             <div class="product-shed-image">
-              <img src="http://cdn.shopify.com/s/files/1/0243/7593/products/MKEE1-2_large.jpg" alt="Make: Deluxe Electronics Toolkit" />
+              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/pebble-330x330.png" alt="Pebble Time Round Smartwatch" />
             </div>
-            <h4>Make: Deluxe Electronics Toolkit</h4>
+            <h4>Pebble Time Round Smartwatch for iOS/Android with activity tracking</h4>
           </a>
-          <p>$129.99</p>
-          <a class="gg2015-buy-btn" href="http://www.makershed.com/products/make-electronics-deluxe-toolkit?utm_source=makezine.com&utm_medium=gift_guide_2015&utm_campaign=ELECTRONICS&utm_term=Make:_Deluxe_Electronics_Toolkit" target="_blank">BUY IT NOW</a>
+          <p>$249.99</p>
+          <a target="_blank" class="gg2015-buy-btn" href="https://www.pebble.com/pebble-time-round-smartwatch-features">BUY IT NOW</a>
         </div>
+        <img class="gg2015-sponsor-violator" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/gift-guide-2015/sponsor_flag.png" alt="Gift Guide Sponsor Violator" />
       </div>
 
     </div>

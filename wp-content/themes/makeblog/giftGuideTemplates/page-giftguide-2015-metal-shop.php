@@ -290,6 +290,7 @@ get_header('version-2'); ?>
       </div>
 
       <div class="col-xs-12 col-sm-12 col-md-4 gg2015-ad">
+        <p id="ads-title">Advertisement</p>
         <?php global $make; print $make->ads->ad_300x250; ?>
       </div>
     </div>

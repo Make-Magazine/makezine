@@ -2,6 +2,7 @@
 namespace Reviews;
 
 
+use Reviews\Architecture\Post_Types\Reviews;
 use Reviews\Architecture\Relationships;
 
 class AJAX {
@@ -47,6 +48,10 @@ class AJAX {
 
 	private function process_sort( $args ) {
 		$sortby = ! empty( $_POST['sort'] ) && in_array( $_POST['sort'], [ 'score', 'price', 'title' ], true ) ? $_POST['sort'] : 'score';
+
+		if ( ! Reviews::is_scoring_enabled( $_POST['post_id'] ) && $sortby === 'score' ) {
+			$sortby = 'title';
+		}
 
 		switch ( $sortby ) {
 
@@ -118,6 +123,7 @@ class AJAX {
 				'ID'        => $post->ID,
 				'title'     => $post->post_title,
 				'price'     => '$' . absint( get_post_meta( $post->ID, 'price_as_tested', true ) ),
+				'type'      => $this->type( $post->ID ),
 				'score'     => absint( get_post_meta( $post->ID, 'total_score', true ) ),
 				'thumbnail' => get_the_post_thumbnail( $post->ID, 'medium' ),
 				'link'      => get_permalink( $post->ID ),
@@ -136,6 +142,12 @@ class AJAX {
 			'most-portable'           => 'Most Portable',
 			'outstanding-open-source' => 'Outstanding Open Source',
 			'best-large-format'       => 'Best Large Format',
+			'robotics'                => 'Robotics',
+			'wearables'               => 'Wearables',
+			'education'               => 'Education',
+			'light-and-sound'         => 'Light and Sound',
+			'home-automation'         => 'Home Automation',
+			'sub-10'                  => 'Dirt Cheap',
 		);
 		$value  = get_field( 'winners', $post_id );
 
@@ -148,6 +160,20 @@ class AJAX {
 		}, $value );
 
 		return implode( ' / ', $value );
+	}
+
+	private function type( $post_id ) {
+
+		$type = array(
+			'microcontroller'       => 'Microcontroller',
+			'single-board-computer' => 'Single Board Computer',
+			'fpga'                  => 'FPGA',
+		);
+
+		$value = get_field( 'type', $post_id );
+
+		return isset( $type[ $value ] ) ? $type[ $value ] : '';
+
 	}
 
 	private function err( $data = [ ] ) {

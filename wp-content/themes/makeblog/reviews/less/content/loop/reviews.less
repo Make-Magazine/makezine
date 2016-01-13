@@ -191,23 +191,45 @@
 
 }
 
+.ri-type {
+
+  padding-right : 0;
+
+  @media screen and (min-width : @mq-sm-min) {
+
+	span {
+	  border-right : 2px dashed @review-item-border;
+	}
+
+  }
+
+}
+
 // Badge cell
 .ri-badge {
 
-	display: none;
-	width: 20%;
-	padding-bottom: 16%;
-	text-align: center;
+  display        : none;
+  width          : 20%;
+  padding-bottom : 16%;
+  text-align     : center;
 
-	@media screen and (min-width:@mq-sm-min) {
-		display: block;
-	}
+  @media screen and (min-width : @mq-sm-min) {
+	display : block;
+  }
 
-	.winner & {
-		margin-bottom: 0;
-		background: transparent url("@{reviews-template-url}/img/badge-winner-3dprinters.png") center no-repeat;
-		background-size: 75%;
+  .winner & {
+	margin-bottom   : 0;
+
+	&.printers {
+	  background : transparent url("@{reviews-template-url}/img/badge-winner-3dprinters.png") center no-repeat;
+	  background-size : 75%;
 	}
+	&.boards {
+	  background : transparent url("@{reviews-template-url}/img/badge-winner-boards.png") center no-repeat;
+	  background-size : 75%;
+	}
+  }
+
 
 }
 

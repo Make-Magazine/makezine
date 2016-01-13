@@ -111,7 +111,9 @@
           a.sizeMap = $t.attr('data-size-map') ? JSON.parse($t.attr('data-size-map')) : null;
           a.pos = $t.attr('data-pos') ? JSON.parse($t.attr('data-pos')) : null;
         }
-        catch (e) {}
+        catch (e) {
+          console.log('error parsing ad data-attributes');
+        }
         // Generate ad from placeholder vars.
         var ad = make.gpt.getVars(a.size),
             adDiv = '<div id="' + ad.slot + '" class="make_ad ' + a.size.join().replace(/\[\]/g,'').replace(/,/g,'x') + '"></div>';
@@ -202,6 +204,7 @@
      *  creates an ad position specific to the size & title
      */
     getVars: function(adSize) {
+
       var sizeStr = adSize instanceof Array ? adSize.join("x").replace(/,/g,"x") : undefined ,
           a = sizeStr ? {} : sizeStr;
       if (sizeStr) {
@@ -212,6 +215,53 @@
         a.slot = 'ad_' + sizeStr + '_' + a.adPos;
       }
       return a;
+    },
+
+    /**
+     * Function make.gpt.refresh()
+     *
+     * @description
+     *  refreshes all ads with a given class name.
+     */
+    refresh: function(className) {
+
+      var $adElems = className ? $(className) : $('.ad-refresh');
+      // Loop through each ad element.
+      $adElems.each(function(){
+        // Trigger refresh.
+        var slotname = $(this).find('[id*="ad_"]').attr("id");
+        googletag.pubads().refresh([window[slotname]]);
+      });
+    },
+
+    /**
+     * Function make.gpt.injectAds()
+     *
+     * @description
+     *  Injects ads inbetween elements.
+     */
+    injectAds: function($items, options) {
+
+      var defaults = {
+            'markup': '<div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>',
+            'skipCount': 3,
+            'max': -1, // Unlimited
+            'renderIntial': true
+          },
+          ops = make.extend(defaults, options),
+          count = 0;
+
+      // Loop through each element.
+      $items.each(function(i){
+        // Find the desired skipCount and inject.
+        if (((i===0 && ops.renderIntial) || ((i+1) % ops.skipCount === 0)) && (count < ops.max || ops.max < 0)) {
+          $(this).before(ops.markup);
+          // Render injected markup.
+          var $ad = $(this).is('.js-ad') ? $(this) : $(this).find('.js-ad');
+          make.gpt.loadDyn($ad);
+          count++;
+        }
+      });
     }
 
   };

@@ -113,54 +113,57 @@ class Reviews {
 			return;
 		}
 
-		register_field_group( array(
-			'id'         => 'acf_scoring-criteria',
-			'title'      => 'Scoring Criteria',
-			'fields'     => array(
-				array(
-					'key'          => 'field_562f1b52b3630',
-					'label'        => '',
-					'name'         => 'scoring_criteria',
-					'type'         => 'repeater',
-					'sub_fields'   => array(
+		if ( ! empty( $_GET['post'] ) && self::is_scoring_enabled( absint( $_GET['post'] ) ) ) {
+
+			register_field_group( array(
+				'id'         => 'acf_scoring-criteria',
+				'title'      => 'Scoring Criteria',
+				'fields'     => array(
+					array(
+						'key'          => 'field_562f1b52b3630',
+						'label'        => '',
+						'name'         => 'scoring_criteria',
+						'type'         => 'repeater',
+						'sub_fields'   => array(
+							array(
+								'key'           => 'field_562f1b60b3631',
+								'label'         => 'Criteria',
+								'name'          => 'criteria',
+								'type'          => 'text',
+								'column_width'  => '',
+								'default_value' => '',
+								'placeholder'   => '',
+								'prepend'       => '',
+								'append'        => '',
+								'formatting'    => 'html',
+								'maxlength'     => '',
+							),
+						),
+						'row_min'      => 0,
+						'row_limit'    => '',
+						'layout'       => 'table',
+						'button_label' => 'Add Criteria',
+					),
+				),
+				'location'   => array(
+					array(
 						array(
-							'key'           => 'field_562f1b60b3631',
-							'label'         => 'Criteria',
-							'name'          => 'criteria',
-							'type'          => 'text',
-							'column_width'  => '',
-							'default_value' => '',
-							'placeholder'   => '',
-							'prepend'       => '',
-							'append'        => '',
-							'formatting'    => 'html',
-							'maxlength'     => '',
+							'param'    => 'post_type',
+							'operator' => '==',
+							'value'    => 'reviews',
+							'order_no' => 0,
+							'group_no' => 0,
 						),
 					),
-					'row_min'      => 0,
-					'row_limit'    => '',
-					'layout'       => 'table',
-					'button_label' => 'Add Criteria',
 				),
-			),
-			'location'   => array(
-				array(
-					array(
-						'param'    => 'post_type',
-						'operator' => '==',
-						'value'    => 'reviews',
-						'order_no' => 0,
-						'group_no' => 0,
-					),
+				'options'    => array(
+					'position'       => 'normal',
+					'layout'         => 'default',
+					'hide_on_screen' => array(),
 				),
-			),
-			'options'    => array(
-				'position'       => 'normal',
-				'layout'         => 'default',
-				'hide_on_screen' => array(),
-			),
-			'menu_order' => 0,
-		) );
+				'menu_order' => 0,
+			) );
+		}
 
 		register_field_group( array(
 			'id'         => 'acf_content',
@@ -230,6 +233,18 @@ class Reviews {
 					'type'  => 'tab',
 				),
 				array(
+					'key'           => 'field_563fdsffds42kn',
+					'label'         => 'How Scoring Works Title',
+					'name'          => 'how_scoring_works_title',
+					'type'          => 'text',
+					'default_value' => 'How Scoring Works',
+					'placeholder'   => '',
+					'prepend'       => '',
+					'append'        => '',
+					'formatting'    => 'html',
+					'maxlength'     => '',
+				),
+				array(
 					'key'           => 'field_56304ab8746ce',
 					'label'         => 'How Scoring Works',
 					'name'          => 'how_scoring_works',
@@ -273,21 +288,46 @@ class Reviews {
 					'message' => 'Upload your graph images and describe each of the scoring methodology descriptions.',
 				),
 				array(
-					'key'          => 'field_56304b5fe919a',
-					'label'        => 'Scores Image',
-					'name'         => 'scores_image',
-					'type'         => 'image',
-					'instructions' => 'For Desktop',
-					'save_format'  => 'object',
-					'preview_size' => 'thumbnail',
-					'library'      => 'all',
+					'key'               => 'field_5672f00587dfe',
+					'label'             => 'Disable Scoring',
+					'name'              => 'disable_scoring',
+					'type'              => 'true_false',
+					'instructions'      => '',
+					'required'          => 0,
+					'conditional_logic' => 0,
+					'wrapper'           => array(
+						'width' => '',
+						'class' => '',
+						'id'    => '',
+					),
+					'message'           => '',
+					'default_value'     => 0,
 				),
 				array(
-					'key'          => 'field_56304b9b0bf8f',
-					'label'        => 'Scoring Methodology',
-					'name'         => 'scoring_methodology',
-					'type'         => 'repeater',
-					'sub_fields'   => array(
+					'key'               => 'field_56304b5fe919a',
+					'label'             => 'Scores Image',
+					'name'              => 'scores_image',
+					'type'              => 'image',
+					'instructions'      => 'For Desktop',
+					'save_format'       => 'object',
+					'preview_size'      => 'thumbnail',
+					'library'           => 'all',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field'    => 'field_5672f00587dfe',
+								'operator' => '!=',
+								'value'    => '1',
+							),
+						),
+					),
+				),
+				array(
+					'key'               => 'field_56304b9b0bf8f',
+					'label'             => 'Scoring Methodology',
+					'name'              => 'scoring_methodology',
+					'type'              => 'repeater',
+					'sub_fields'        => array(
 						array(
 							'key'           => 'field_56304baf0bf90',
 							'label'         => 'Title',
@@ -314,10 +354,19 @@ class Reviews {
 							'formatting'    => 'none',
 						),
 					),
-					'row_min'      => 0,
-					'row_limit'    => '',
-					'layout'       => 'table',
-					'button_label' => 'Add Row',
+					'row_min'           => 0,
+					'row_limit'         => '',
+					'layout'            => 'table',
+					'button_label'      => 'Add Row',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field'    => 'field_5672f00587dfe',
+								'operator' => '!=',
+								'value'    => '1',
+							),
+						),
+					),
 				),
 			),
 			'location'   => array(
@@ -345,6 +394,11 @@ class Reviews {
 	 * Registers the metabox for the scoring table
 	 */
 	public function add_scoring_meta_box() {
+
+		if ( ! self::is_scoring_enabled( get_the_ID() ) ) {
+			return;
+		}
+
 		add_meta_box( 'scores', 'Scores', [ $this, 'do_scoring_meta_box' ], self::NAME );
 	}
 
@@ -439,5 +493,29 @@ class Reviews {
 		}
 
 		return trailingslashit( get_permalink( $review_id ) ) . 'scores/shootout/';
+	}
+
+	public static function is_scoring_enabled( $review_id ) {
+		return ! (bool) get_field( 'disable_scoring', $review_id );
+	}
+
+	public static function get_product_category_slug( $review_id ) {
+
+		$container = Reviews()->container();
+		$products  = $container['Relationships']->get_products_in_review( $review_id, [ 'orderby' => 'post_title', 'order' => 'ASC' ] );
+
+		if ( empty( $products ) ) {
+			return '';
+		}
+
+		$product = array_shift( $products );
+		$terms   = get_the_terms( $product->ID, \Reviews\Architecture\Taxonomies\ProductCategories::NAME );
+
+		if ( empty( $terms ) ) {
+			return '';
+		}
+		$term = array_shift( $terms );
+
+		return $term->slug;
 	}
 }

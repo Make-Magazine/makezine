@@ -14,9 +14,8 @@
 					<div class="span4 sidebar">
 
 						<div class="sidebar-ad">
-
+							<p id="ads-title">Advertisement</p>
 							<?php global $make; print $make->ads->ad_300x250_atf; ?>
-
 						</div>
 
 						<?php dynamic_sidebar( 'sidebar_top' ); ?>
@@ -31,17 +30,15 @@
 						</div>
 
 						<div class="new-dotw widget">
+							<p id="ads-title">Advertisement</p>
 							<?php global $make; print $make->ads->ad_300x250_shed; ?>
 						</div>
 
-						<div class="sidebar-ad">
-							<div id="pubexchange_rail"></div>
-						</div>
+						<div id="pubexchange_rail"></div>
 						
 						<div class="sidebar-ad">
-
+							<p id="ads-title">Advertisement</p>
 							<?php global $make; print $make->ads->ad_300x250_house; ?>
-
 						</div>
 
 						<?php dynamic_sidebar( 'sidebar_bottom' ); ?>
