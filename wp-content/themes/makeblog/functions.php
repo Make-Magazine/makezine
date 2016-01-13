@@ -373,7 +373,6 @@ function theme_styles()
     wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
     wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-    wp_enqueue_style('blogpage-css', get_stylesheet_directory_uri() . '/version-2/css/blog.css');
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles');
