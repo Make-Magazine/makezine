@@ -306,7 +306,7 @@ $(document).ready(function () {
                 bottomArray[index] = $bottom;
             });
             $window = $(window).width() + 17;
-            if($('.row').hasClass('infinity')){
+            if ($('.row').hasClass('infinity')) {
                 if ($window <= 767) {
                     infinity = $('.row.infinity').offset().top - $(window).height() - 1000;
                 } else {
@@ -318,10 +318,10 @@ $(document).ready(function () {
                 if ($first_time == 0) {
                     $first_time = 1;
                     $('.row.infinity').addClass('current');
-                    if(window.navigator.userAgent.indexOf("Chrome") > 0){
+                    if (window.navigator.userAgent.indexOf("Chrome") > 0) {
                         $window = $(window).width() + 17;
-                    }else {
-                        $window = $(window).width() ;
+                    } else {
+                        $window = $(window).width();
                     }
                     if ($window <= 767) {
                         getStoryThumbnail($offset);
@@ -330,7 +330,7 @@ $(document).ready(function () {
                         if ($offset < 9) {
                             getStory($offset, 0, 1);
                             $offset = $offset + 1;
-                        }else{
+                        } else {
                             $('#footer').show();
                             $('.infinity').remove();
                         }
@@ -343,39 +343,34 @@ $(document).ready(function () {
                     stop = 1;
                     goTo = -1;
                     $('.content:nth-child(1) .essb_displayed_sidebar_right').show();
-                    if ($lastStory == 1){
+                    if ($lastStory == 1) {
                         sendGA();
                     }
                 }
-                if ($scrollTop > 800) {
-                    showSocialSidebar(0);
-                } else {
-                    $('.essb_displayed_sidebar_right').hide();
-                }
+                showSocialSidebar(0);
             }
-            if ((($scrollTop > (bottomArray[0] - 500)) && ($scrollTop < (topArray[1] + 800))) || (($scrollTop > (bottomArray[1] - 500)) && ($scrollTop < (topArray[2] + 800)))
-                || (($scrollTop > (bottomArray[2] - 500)) && ($scrollTop < (topArray[3] + 800))) || (($scrollTop > (bottomArray[3] - 500)) && ($scrollTop < (topArray[4] + 800)))
-                || (($scrollTop > (bottomArray[4] - 500)) && ($scrollTop < (topArray[5] + 800))) || (($scrollTop > (bottomArray[5] - 500)) && ($scrollTop < (topArray[6] + 800)))
-                || (($scrollTop > (bottomArray[6] - 500)) && ($scrollTop < (topArray[7] + 800))) || (($scrollTop > (bottomArray[7] - 500)) && ($scrollTop < (topArray[8] + 800)))
-                || (($scrollTop > (bottomArray[8] - 500)) && ($scrollTop < (topArray[9] + 800)))) {
-                $('.essb_displayed_sidebar_right').hide();
-            } else if (($scrollTop > (topArray[1] + 800)) && ($scrollTop < bottomArray[1])) {
+            if ((($scrollTop > (bottomArray[0] )) && ($scrollTop < (topArray[1] ))) || (($scrollTop > (bottomArray[1] )) && ($scrollTop < (topArray[2] )))
+                || (($scrollTop > (bottomArray[2])) && ($scrollTop < (topArray[3] ))) || (($scrollTop > (bottomArray[3] )) && ($scrollTop < (topArray[4] )))
+                || (($scrollTop > (bottomArray[4] )) && ($scrollTop < (topArray[5] ))) || (($scrollTop > (bottomArray[5] )) && ($scrollTop < (topArray[6] )))
+                || (($scrollTop > (bottomArray[6] )) && ($scrollTop < (topArray[7] ))) || (($scrollTop > (bottomArray[7] )) && ($scrollTop < (topArray[8] )))
+                || (($scrollTop > (bottomArray[8] )) && ($scrollTop < (topArray[9] )))) {
+            } else if (($scrollTop > (topArray[1])) && ($scrollTop < bottomArray[1])) {
                 showSocialSidebar(1);
-            } else if (($scrollTop > (topArray[2] + 800)) && ($scrollTop < bottomArray[2])) {
+            } else if (($scrollTop > (topArray[2])) && ($scrollTop < bottomArray[2])) {
                 showSocialSidebar(2);
-            } else if (($scrollTop > (topArray[3] + 800)) && ($scrollTop < bottomArray[3])) {
+            } else if (($scrollTop > (topArray[3])) && ($scrollTop < bottomArray[3])) {
                 showSocialSidebar(3);
-            } else if (($scrollTop > (topArray[4] + 800)) && ($scrollTop < bottomArray[4])) {
+            } else if (($scrollTop > (topArray[4])) && ($scrollTop < bottomArray[4])) {
                 showSocialSidebar(4);
-            } else if (($scrollTop > (topArray[5] + 800)) && ($scrollTop < bottomArray[5])) {
+            } else if (($scrollTop > (topArray[5])) && ($scrollTop < bottomArray[5])) {
                 showSocialSidebar(5);
-            } else if (($scrollTop > (topArray[6] + 800)) && ($scrollTop < bottomArray[6])) {
+            } else if (($scrollTop > (topArray[6])) && ($scrollTop < bottomArray[6])) {
                 showSocialSidebar(6);
-            } else if (($scrollTop > (topArray[7] + 800)) && ($scrollTop < bottomArray[7])) {
+            } else if (($scrollTop > (topArray[7])) && ($scrollTop < bottomArray[7])) {
                 showSocialSidebar(7);
-            } else if (($scrollTop > (topArray[8] + 800)) && ($scrollTop < bottomArray[8])) {
+            } else if (($scrollTop > (topArray[8] )) && ($scrollTop < bottomArray[8])) {
                 showSocialSidebar(8);
-            } else if (($scrollTop > (topArray[9] + 800)) && ($scrollTop < bottomArray[9])) {
+            } else if (($scrollTop > (topArray[9] )) && ($scrollTop < bottomArray[9])) {
                 showSocialSidebar(9);
             }
             if (($scrollTop >= topArray[1]) && ($scrollTop < bottomArray[1])) {
@@ -436,7 +431,7 @@ $(document).ready(function () {
             }
             if ($scrollTop >= '100') {
                 $('.navigator').addClass('sticky');
-                if ($('.navigator').hasClass('open')){
+                if ($('.navigator').hasClass('open')) {
                     $('.navigator').addClass('transition');
                 }
             } else {
@@ -505,7 +500,8 @@ $(document).ready(function () {
             return false;
         });
         var newHighlightedStory;
-        function thePostChanges(PostId){
+
+        function thePostChanges(PostId) {
             $('.latest-story a').removeClass('highlighted');
             newHighlightedStory = $('.latest-story').eq(PostId - 1);
             $(newHighlightedStory).find('a').addClass('highlighted');
@@ -513,11 +509,12 @@ $(document).ready(function () {
             document.title = $('.story-header').eq(PostId - 1).find('.story-title').text();
             $flag = PostId - 1;
         }
-        $(document).on("mouseover",".sidebar .author-name .bio-wrapper,.sidebar .avatar", function(){
+
+        $(document).on("mouseover", ".sidebar .author-name .bio-wrapper,.sidebar .avatar", function () {
             $(this).find('.hover-info').show();
             $(this).addClass('hover');
         });
-        $(document).on("mouseleave",".sidebar .author-name .bio-wrapper,.sidebar .avatar", function(){
+        $(document).on("mouseleave", ".sidebar .author-name .bio-wrapper,.sidebar .avatar", function () {
             $(this).find('.hover-info').hide();
             $(this).removeClass('hover');
         });
@@ -553,9 +550,10 @@ $(document).ready(function () {
         });
         function sendGA() {
             ga('send', 'pageview',
-                { 'page': location.pathname + location.search + location.hash }
+                {'page': location.pathname + location.search + location.hash}
             );
         }
+
         function getStoryThumbnail($offset) {
             var firstPostId = $('.first-story').attr('id');
             $.ajax({
@@ -726,26 +724,26 @@ $(document).ready(function () {
             $(this).html(newTitle);
         });
         var windowHeight;
-        $(document).on("click",".comments button", function(){
+        $(document).on("click", ".comments button", function () {
             $window = $(window).width();
-            if($window <= 767){
+            if ($window <= 767) {
                 windowHeight = $(window).height() - 40;
                 $('#disqus_thread').height(windowHeight);
-            }else {
+            } else {
                 windowHeight = $(window).height() - 77;
-                $('#disqus_thread').css('max-height',windowHeight);
+                $('#disqus_thread').css('max-height', windowHeight);
             }
         });
         $('.ctx-social-container').remove();
         $('aside').after('<div class="ctx-social-container ctx-clearfix ctx_default_placement"></div>');
         var ctx = $('#ctx-module').remove();
         $('.essb_right_flag').before(ctx);
-        var currentUrl,changeUrl,changeCurrent,storyIndex,goTo = -1,storyInNavigator,storyId,previousUrl = document.referrer;
-        $(window).on('popstate', function(e) {
+        var currentUrl, changeUrl, changeCurrent, storyIndex, goTo = -1, storyInNavigator, storyId, previousUrl = document.referrer;
+        $(window).on('popstate', function (e) {
             currentUrl = window.location.pathname;
             storyInNavigator = document.getElementById(currentUrl);
-            storyId= $(storyInNavigator).attr('href');
-            if (goTo != -1){
+            storyId = $(storyInNavigator).attr('href');
+            if (goTo != -1) {
                 goTo = goTo - 1;
                 storyInNavigator = document.getElementById(goTo);
                 storyIndex = $(storyInNavigator).attr('id');
@@ -756,40 +754,40 @@ $(document).ready(function () {
                 $('html, body').animate({
                     scrollTop: $(storyId).offset().top - 80
                 }, 500);
-                if(goTo == 0){
+                if (goTo == 0) {
                     $('html, body').animate({
                         scrollTop: 0
                     }, 500);
                     goTo = -1;
                     stop = 1;
-                    window.setTimeout(function(){
+                    window.setTimeout(function () {
                         window.history.pushState('obj', 'newtitle', changeUrl);
                         document.title = $('.story-header').eq(storyIndex).find('.story-title').text();
-                    },1000);
-                }else{
+                    }, 1000);
+                } else {
                     $('html, body').animate({
                         scrollTop: $(storyId).offset().top - 80
                     }, 500);
-                    window.setTimeout(function(){
+                    window.setTimeout(function () {
                         $('.latest-story a').removeClass('highlighted');
                         changeCurrent = $('.latest-story').eq(storyIndex).find('a').addClass('highlighted');
                         window.history.pushState('obj', 'newtitle', changeUrl);
                         document.title = $('.story-header').eq(storyIndex).find('.story-title').text();
-                    },500);
+                    }, 500);
                 }
 
-            }else{
-                if(stop == 0){
+            } else {
+                if (stop == 0) {
                     $('html, body').animate({
                         scrollTop: $(storyId).offset().top - 80
                     }, 500);
                     goTo = $(storyInNavigator).parent().attr('id');
-                }else{
+                } else {
                     window.location.hash = storyId;
                     window.location = previousUrl;
                     window.history.pushState('obj', 'newtitle', previousUrl);
                 }
-                if ($(storyInNavigator).parent().attr('id') == 0){
+                if ($(storyInNavigator).parent().attr('id') == 0) {
                     stop = 1;
                 }
             }
