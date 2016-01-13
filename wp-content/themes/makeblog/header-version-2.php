@@ -77,6 +77,9 @@ if( $detect->isTablet() ){
   <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
   <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
 
+
+
+
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
 
   <title><?php echo make_generate_title_tag(); ?></title>
@@ -95,7 +98,7 @@ if( $detect->isTablet() ){
   <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
+
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -128,7 +131,7 @@ if( $detect->isTablet() ){
     dataLayer = [];
   </script>
 </head>
-<body <?php body_class(); ?>>
+<body>
 <!-- Google Universal Analytics -->
 
 <!-- Time-tracking for Custom Dimensions -->
@@ -200,7 +203,6 @@ $primary_cat_dimension = $primarycat[0];
   </header>
 
   <div class="container panel header <?php echo $device ?>">
-
     <!--nav class="navbar navbar-default"-->
     <nav class="navbar navbar-default">
       <div class="row">
@@ -223,22 +225,12 @@ $primary_cat_dimension = $primarycat[0];
             <span class="icon-bar"></span>
           </button>
         </div>
-
-        <!-- Desktop and Mobile Menu -->
         <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
-
-          <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
-          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') { ?>
-            <h3 id="promo-text-above-nav" class="hidden-xs">
-              <a href="<?php echo get_theme_mod( 'make_header_promo_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_promo_text', '' ); ?></a>
-            </h3>
-          <?php } // end if ?>
-
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
-
             <!-- Mobile search -->
             <div class="hidden-md mz-search search-bar-mobile">
+
               <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
                 <label>
                   <input type="search" class="search-field" placeholder="" value="" name="s" title="">
@@ -246,38 +238,39 @@ $primary_cat_dimension = $primarycat[0];
                 <input type="submit" class="search-submit" value="Search" />
               </form>
             </div>
-
             <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
 
             <div class="mz-social mobile-social">
               <h5>Follow Us</h5>
               <a href="http://facebook.com/makemagazine">
-                <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
               </a>
 
               <a href="http://twitter.com/make">
-                <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
               </a>
 
               <a href="http://pinterest.com/makemagazine/">
-                 <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-                </span>
+             <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+            </span>
               </a>
 
               <a href="https://instagram.com/makemagazine/">
-                <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                </span>
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
               </a>
+
+
 
               <div class="mz-footer-subscribe">
                 <?php
@@ -303,7 +296,7 @@ $primary_cat_dimension = $primarycat[0];
                     <input value="GO" class="btn-cyan" type="submit">
                   </div>
                 </form>
-              </div><!-- End subscribe div -->
+              </div>
               <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
                 All rights reserved</h6>
             </div>
@@ -313,9 +306,9 @@ $primary_cat_dimension = $primarycat[0];
         </div>
 
         <div class="get-dark"></div>
-
         <!-- SEARCH -->
         <div class="col-md-1 hidden-xs mz-search search-bar">
+
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
             <input type="submit" class="sendsubmit" value="" />
             <label>
@@ -324,51 +317,46 @@ $primary_cat_dimension = $primarycat[0];
             </label>
           </form>
         </div>
-
-        <!-- Sticky Navbar -->
         <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
-          <h6>
-            <a id="trigger-overlay" href="#">
-              <h5>Subscribe</h5>
-              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>">
-            </a>
-          </h6>
+          <h6><a href="https://readerservices.makezine.com/mk/default.aspx?"><h5>Subscribe</h5>
+              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
         </div>
 
         <!-- SOCIAL MEDIA ICONS -->
         <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social">
           <div class="mz-social">
             <a href="http://facebook.com/makemagazine">
-              <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span>
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
             </a>
 
             <a href="http://twitter.com/make">
-              <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
             </a>
 
             <a href="http://pinterest.com/makemagazine/">
-               <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-              </span>
+             <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+            </span>
             </a>
 
             <a href="https://instagram.com/makemagazine/">
-              <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-              </span>
+            <span class="fa-stack fa-mz">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
             </a>
           </div>
-        </div><!-- End .desktop-social -->
-      </div><!-- row -->
+        </div>
+      </div> <!-- row -->
     </nav>
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
@@ -430,7 +418,7 @@ $primary_cat_dimension = $primarycat[0];
               if(strlen($url) == 0){
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
-              } ?>
+              }?>
               <img src="<?php echo $photon; ?>" alt="thumbnail">
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
