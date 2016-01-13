@@ -92,7 +92,7 @@ if( $detect->isTablet() ){
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
