@@ -779,11 +779,11 @@ $(document).ready(function () {
         var currentUrl, changeUrl, changeCurrent, storyIndex, goTo = -1, storyInNavigator, storyId, previousUrl = document.referrer;
         $(window).on('popstate', function (e) {
             currentUrl = window.location.pathname;
-            storyInNavigator = document.getElementById(currentUrl);
+            storyInNavigator = $(currentUrl);
             storyId = $(storyInNavigator).attr('href');
             if (goTo != -1) {
                 goTo = goTo - 1;
-                storyInNavigator = document.getElementById(goTo);
+                storyInNavigator = $(goTo);
                 storyIndex = $(storyInNavigator).attr('id');
                 storyId = $(storyInNavigator).find('a').attr('href');
                 changeUrl = $(storyInNavigator).find('a').attr('id');
