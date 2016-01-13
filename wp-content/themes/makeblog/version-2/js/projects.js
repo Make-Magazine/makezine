@@ -180,6 +180,7 @@ jQuery(document).ready(function ($) {
         window.print();
     });
 
+
     var currentDataDiff = '';
     var checkerSelectDiff = 0;
     var checkerSelectDur = 0;
@@ -445,11 +446,11 @@ jQuery(document).ready(function ($) {
             getProjects();
         }
     });
-    var paged = 1;
+    var paged;
 
     function getProjects(type, callback) {
         var DataDiff, DataDur, DataCat, DataSort;
-
+        var $window = $(window).width() + 17;
         if (typeof type === 'undefined') type = 'initial_load';
         if (typeof callback === 'undefined') callback = function () {
         };
@@ -468,26 +469,26 @@ jQuery(document).ready(function ($) {
 
 
         $.ajax({
-            type: 'post',
+            type: 'POST',
             url: '/wp-admin/admin-ajax.php',
             data: {
                 action: 'sorting_posts',
-                diff: datadiff,
-                dur: datadur,
-                sort: datasort,
-                cat: datacat,
+                diff: DataDiff,
+                dur: DataDur,
+                sort: DataSort,
+                cat: DataCat,
                 type: type,
                 paged: paged
             },
             success: function (data) {
-                var projectswrapper = $(".selected-posts-list");
+                var projectsWrapper = $(".selected-posts-list");
                 $('.spinner').hide();
                 if (type === 'load_more') {
-                    projectswrapper.append(data);
+                    projectsWrapper.append(data);
                     callback();
 
                 } else {
-                    projectswrapper.remove();
+                    projectsWrapper.remove();
                     $(".posts-list").html(data);
                 }
 
@@ -514,26 +515,10 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    var paged = 1;
-
-    var ua = window.navigator.userAgent;
-
-    var msie = ua.indexOf('MSIE ');
-
-    var trident = ua.indexOf('Trident/');
-
-    var edge = ua.indexOf('Edge/');
-
-
-
-    if ((msie > 0) || (trident > 0) || (edge > 0)) {
-        $('#pbd-alp-load-posts').addClass('ie');
-    }
-    
     //load more posts button
     $(document).on('touchstart click', '#pbd-alp-load-posts a', function () {
 
-            if (!$(this).hasClass('first-click')) {
+        if (!$(this).hasClass('first-click')) {
             $(this).addClass('first-click');
             paged++;
             // Show that we're working.
@@ -677,7 +662,9 @@ jQuery(document).ready(function ($) {
     }).hover(function () {
         $('.fade').removeClass('fade');
     });
-//blog//
+
+
+    //blog//
 
     //load more posts
 

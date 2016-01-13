@@ -117,19 +117,18 @@ body.single-story.modal-open {
         position: absolute;
       }
       .thumbnails {
-        padding-top: 13px;
-        margin: 25px 0 -50px 0;
+        margin: 38px 0 -50px 0;
         overflow: hidden;
-        position: absolute;
+        position: relative;
         background-image: linear-gradient(to right, #fefefe 0%, #ddd 100%);
         .posts-navigator {
           position: absolute;
-          width: 135px;
+          width: 138px;
           z-index: 1;
-          right: -14px;
           height: inherit;
           padding: 0 3px;
-          background-image: linear-gradient(to right, #fefefe 0%, #ddd 100%);
+          overflow-x: hidden;
+          padding-left: 7px;
         }
       }
 
@@ -137,7 +136,29 @@ body.single-story.modal-open {
         width: 125px;
         background-color: #dbdbdb;
       }
-
+      .see-all-stories {
+        height: 55px;
+        background: #F40B0B;
+        width: 120px;
+        float: left;
+        margin: -5px 0 0 -7px;
+        -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+        -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+        .heading {
+          color: white;
+          font-family: Roboto;
+          font-size: 11px;
+          margin: 17px 0 0 23px;
+          width:58px;
+          float: left;
+        }
+        .arrow-right{
+          background: url("/wp-content/themes/makeblog/version-2/img/arrow-right.png") no-repeat;
+          margin: 17px 0 0 80px;
+          height: 18px;
+        }
+      }
       .hamburger-navigator.hover {
         width: 114px;
         h2 {
@@ -226,6 +247,7 @@ body.single-story.modal-open {
       top: 52px;
       overflow: hidden;
       display: block;
+      background-image: linear-gradient(to right, #fefefe 0%, #ddd 100%);
     }
     .row.navigator.open.sticky {
       left: 0;
@@ -250,15 +272,6 @@ body.single-story.modal-open {
           margin-bottom: 141px;
         }
       }
-      .story-hero-image-l-xl {
-        width: 100%;
-        height: 670px;
-        background-size: cover !important;
-        display: none;
-        @media (min-width: 1201px) {
-          display: block;
-        }
-      }
       .story-title {
         float: none;
         margin: 27px auto auto;
@@ -279,11 +292,7 @@ body.single-story.modal-open {
         }
       }
       .story-hero-image {
-        display:none;
         width: 100%;
-        @media (max-width: 1200px) {
-          display: block;
-        }
       }
       .author-info, .hover-info {
         display: none;
@@ -565,6 +574,10 @@ body.single-story.modal-open {
               font-style: italic;
               width: initial;
               margin: 0;
+              text-transform: lowercase;
+            }
+            .twitter-nickname.users {
+              text-transform: inherit;
             }
             .twitter {
               color: #262626;
@@ -654,6 +667,11 @@ body.single-story.modal-open {
             }
           }
         }
+      }
+      .ctx-social-widget {
+        margin: 0 10px !important;
+        border-width: 2px 0 0 0 !important;
+        border-color: #979797;
       }
       #ctx-module {
         padding: 0 10px;

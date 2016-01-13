@@ -276,7 +276,7 @@ $(document).ready(function () {
         var $scrollingToPost = 0;
         var stop = 0;
         $window = $(window).width() + 17;
-        $thumbnailsHeight = $(window).height() - 76 - $('#wpadminbar').height();
+        $thumbnailsHeight = $(window).height() - 89 - $('#wpadminbar').height();
         $('.span8 iframe').css('max-width', '100%');
         $navigatorHeight = $(window).height() - 50;
         $('.navigator .thumbnails').addClass('open').css('height', $thumbnailsHeight);
@@ -284,7 +284,7 @@ $(document).ready(function () {
         $('.row.navigator').addClass('open').css('height', $navigatorHeight);
         $('.posts-navigator').show();
         $(window).resize(function () {
-            $thumbnailsHeight = $(window).height() - 76 - $('#wpadminbar').height();
+            $thumbnailsHeight = $(window).height() - 89 - $('#wpadminbar').height();
             $navigatorHeight = $(window).height() - 50;
             $('.navigator .thumbnails').addClass('open').css('height', $thumbnailsHeight);
             $('.row.navigator').addClass('open').css('height', $navigatorHeight);
@@ -736,11 +736,10 @@ $(document).ready(function () {
                 $('#disqus_thread').css('max-height',windowHeight);
             }
         });
-
-
+        $('.ctx-social-container').remove();
+        $('aside').after('<div class="ctx-social-container ctx-clearfix ctx_default_placement"></div>');
         var ctx = $('#ctx-module').remove();
         $('.essb_right_flag').before(ctx);
-
         var currentUrl,changeUrl,changeCurrent,storyIndex,goTo = -1,storyInNavigator,storyId,previousUrl = document.referrer;
         $(window).on('popstate', function(e) {
             currentUrl = window.location.pathname;

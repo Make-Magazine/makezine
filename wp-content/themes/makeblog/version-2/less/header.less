@@ -16,45 +16,6 @@ h6 {
   font-size: 12px;
 }
 
-/* TOP BRAND BAR */
-.top-header-bar-brand {
-  position: relative;
-  z-index: 5;
-  background: #F0F0F0;
-  overflow: hidden;
-  .container {
-    background: url('/wp-content/themes/makeblog/version-2/img/2-layers@2x.png') top right no-repeat;
-    background-size: 43px 50px;
-    background-position: right 11px bottom -18px;
-  }
-  p {
-    margin-bottom: 0;
-    line-height: 1.3em;
-    a {
-      font-size: 12px;
-      padding: 7px 5px 7px;
-      display: inline-block;
-    }
-  }
-  a {
-    color: #242424;
-  }
-  .header-sub-link a {
-    padding: 8px 5px 6px;
-    padding-right: 41px;
-    font-size: 11px;
-  }
-  .header-make-img img {
-    height: 12px;
-    padding-left: 2px;
-    vertical-align: baseline;
-  }
-  .header-sub-link img {
-    height: 12px;
-    padding-left: 2px;
-  }
-}
-
 .navbar-default {
   background-color: @white;
   margin: 0;
@@ -62,18 +23,24 @@ h6 {
   padding: 0;
 }
 
-.navbar-toggle { 
+.navbar-toggle {
   margin-top: 10px;
   margin-bottom: 0;
 }
 
-// .row {
-//   margin-top: 10px;
-// }
+.page-banner {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+}
 
-.mz-logo {
-  padding-top: 5px;
-  padding-left: 10px;
+.stand-out {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.red {
+  color: @red;
 }
 
 .align-nav-icons {
@@ -101,7 +68,6 @@ h6 {
 }
 
 .navbar-default {
-  background-color: @white;
   margin: 0;
   padding: 0;
   border: 0;
@@ -125,6 +91,12 @@ h6 {
 .mz-logo {
   padding-top: 0px;
   padding-left: 15px;
+}
+
+.page-banner {
+  margin: 0;
+  padding: 0;
+  height: 40px;
 }
 
 .stand-out {
@@ -220,12 +192,6 @@ h6 {
 
 .page-banner {
   height: 38px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 5;
-  background: #F0F0F0;
-  overflow: hidden;
 }
 
 .top-nav {
@@ -251,7 +217,6 @@ h6 {
 
 .header-wrapper {
   background-color: #F0F0F0;
-  min-height: 115px;
 }
 
 .navbar-default {
@@ -271,7 +236,7 @@ h6 {
 }
 
 .header .navbar .nav {
-  margin: 0 10px 0 0;
+  margin: 23px 10px 0px 10px;
 }
 
 .container.header {
@@ -280,10 +245,6 @@ h6 {
   border-radius: 0px;
   border: none;
   width: 100%;
-}
-
-.container.header.width {
-  z-index: 4;
 }
 
 .dynamic-header-container {
@@ -683,25 +644,12 @@ input[type=search]::-ms-reveal {
   position: absolute;
   z-index: 3;
   display: none;
-  margin-top: 0;
-  &.sticky-header {
-    margin-top: 0;
-  }
-}
-
-// Optional class when toggling the under nav blue bar
-.dynamic-header-posts-margin {
-  margin-top: -33px;
 }
 
 .dynamic-header-posts.sticky-header {
   position: fixed;
   border-bottom: 3px solid #ec1e21;
   overflow: hidden;
-}
-
-#menu-make-main {
-  background: #fff;
 }
 
 .container.header.tablet.width {
@@ -791,12 +739,12 @@ ul.sub-menu.moove-right {
   margin-left: 100%;
 }
 
+
 .mz-search {
   width: 34px ;
   padding: 0;
   margin-top: 43px;
 }
-
 @media only screen and (min-width: 768px) {
   #menu-make-main ul.sub-menu {
     display:none !important;
@@ -849,6 +797,10 @@ ul.sub-menu.moove-right {
     color:black;
   }
 
+  #menu-make-main {
+    padding-left: 5px;
+  }
+
   .mobile-social {
     display: none;
   }
@@ -898,7 +850,7 @@ ul.sub-menu.moove-right {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1201px) {
   .latest-events .events-post h1,
   .latest-events .events-post h2 {
     min-width: 152px;
@@ -980,6 +932,7 @@ ul.sub-menu.moove-right {
 
   .container.header.width {
     position: fixed;
+    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -989,7 +942,7 @@ ul.sub-menu.moove-right {
 
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
   .sticky-header .search-bar input.search-field[type="search"].search-click {
     margin-top: 3px;
   }
@@ -1027,6 +980,7 @@ ul.sub-menu.moove-right {
 
   .container.header.width {
     position: fixed;
+    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1243,6 +1197,7 @@ ul.sub-menu.moove-right {
 
   .container.header.width {
     position: fixed;
+    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1403,12 +1358,12 @@ ul.sub-menu.moove-right {
 
   .navbar-default .navbar-collapse {
     height: 48px;
-    margin-top: 48px;
+    margin-top: 13px;
   }
 
   #menu-make-main {
-    padding-left: 0px;
-    margin-top: 0px;
+    padding-left: 5px;
+    margin-top: 10px;
   }
 
   #top-header {
@@ -1423,7 +1378,7 @@ ul.sub-menu.moove-right {
     width: inherit;
   }
   .sticky-header #menu-make-main {
-    margin-top: 15px;
+    margin-top: 0;
   }
   .search-form, .search-form label {
     float: right;
@@ -1678,7 +1633,6 @@ ul.sub-menu.moove-right {
     background-color: #ecf0f1;
     position: absolute;
     padding: 0;
-    margin-top: 0;
     height: inherit !important;
     z-index: 2;
     display: none;
@@ -1932,10 +1886,6 @@ ul.sub-menu.moove-right {
     font-size: 11px;
     font-weight: 400;
     line-height: 18px;
-  }
-
-  .header-wrapper {
-    min-height: 0;
   }
 
 }
