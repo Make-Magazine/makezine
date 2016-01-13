@@ -52,29 +52,47 @@
 
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
 				<h4 class="stay-connected">Follow Us</h4>
-				<div class="mz-footer-social">
-					<div class="col-xs-3">
-						<a href="http://facebook.com/makemagazine">
-							<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
-						</a>
+        <div class="social-network-container">
+          <ul class="social-network social-circle">
+            <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+            <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
+            <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
+          </ul>    
+        </div>
+        <div class="clearfix"></div>
+        
+        <div class="fancybox-feedback" style="display:none;">
+        	<div class="fancybox-feedback-inner">
+        		<div class="fancybox-feedback-inner1">
+		        	<h3>Makers, we want to hear from you!</h3>
+		        	<p>Send us feedback on our site design, bugs, story ideas, maker community events and any other share-worthy thoughts.</p>
+		        	<form id="form13" name="form13" accept-charset="UTF-8" enctype="multipart/form-data" method="post" novalidate action="//makemagazine.wufoo.com/forms/zzv65kl0b09v1f/#public">
+							  <div class="form-group">
+							    <label for="exampleInputName1">Name</label>
+							    <input type="text" class="form-control" id="Field1" name="Field1" placeholder="Name">
+							    <p class="help-block">*Not Required</p>
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleInputEmail1">Email Address For Follow Up</label>
+							    <input type="email" class="form-control" id="Field2" name="Field2" placeholder="Email">
+							    <p class="help-block">*Not Required</p>
+							  </div>
+							  <div class="form-group">
+							  	<label>Write Your Feedback Here</label>
+							  	<textarea class="form-control" id="Field3" name="Field3" spellcheck="true" rows="3" required></textarea>
+							  </div>
+							  <input id="saveForm" name="saveForm" class="footer-feedback-submit btn-cyan" type="submit" value="Submit" />
+							  <input type="hidden" id="idstamp" name="idstamp" value="WH028EiOADf/hZl3yIPszD+rnU6UVQ2++DXf7i7lt38=" />
+							</form>
+						</div>
+						<div class="fancybox-feedback-inner2" style="display:none;">
+							<h3>Thank you for the feedback!</h3>
+							<p>We can't guarantee a response to each submission, but we promise to think about every one.</p>
+						</div>
 					</div>
-					<div class="col-xs-3">
-						<a href="http://twitter.com/make">
-							<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
-						</a>
-					</div>
-					<div class="col-xs-3">
-						<a href="http://pinterest.com/makemagazine/">
-							<img src="/wp-content/themes/makeblog/version-2/img/pinterest.png" alt="pinterest" class="img-responsive"></img>
-						</a>
-					</div>
-					<div class="col-xs-3">
-						<a href="https://instagram.com/makemagazine/">
-							<img src="/wp-content/themes/makeblog/version-2/img/instagram.png" alt="instagram" class="img-responsive"></img>
-						</a>
-					</div>
-				</div>
-				<div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
 
 				<div class="mz-footer-subscribe">
 					<?php
@@ -215,6 +233,7 @@
 				</div>
 			</div>
 		</div><!-- End social-foot-mobile -->
+		<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 	</div><!-- END container -->
 	<?php echo make_copyright_footer(); ?>
 </section><!-- END new-footer -->
@@ -244,6 +263,47 @@
 </script>
 
 <?php wp_footer(); ?>
+
+<!-- Checks the URL for which thank you modal to how -->
+<?php echo display_thank_you_modal_if_signed_up(); ?>
+
+<!-- Subscribe return path overlay -->
+<?php echo subscribe_return_path_overlay(); ?>
+
+<script>
+	/**
+   * Feedback form submit event handler
+   */
+  $(document).on('submit', '#form13', function (e) {
+    event.preventDefault();
+
+    $.ajax({
+	    url:'//makemagazine.wufoo.com/forms/zzv65kl0b09v1f/#public',
+	    type:'POST',
+	    data:$(this).serialize()
+    });
+		$('.fancybox-feedback-inner1').hide();
+		$('.fancybox-feedback-inner2').show();
+  });
+</script>
+<script>
+	/**
+   * Feedback form modal
+   */
+  $(".footer-feedback-btn").click(function() {
+    $(".fancybox-feedback").fancybox({
+      autoSize : false,
+      width  : 560,
+      autoHeight : true,
+      padding : 0,
+      openEffect : 'elastic',
+      afterLoad   : function() {
+        this.content = this.content.html();
+      }
+    });
+    $(".fancybox-feedback").trigger('click');
+  });
+</script>
 
 <!-- AddRoll Retargeting Pixel -->
 <script type="text/javascript">

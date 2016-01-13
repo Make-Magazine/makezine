@@ -17,12 +17,11 @@
         li {
             padding:3px 0;
             a {
-                color: #000;
+                color: #999;
                 font-size: 18px;
-                opacity: .6;
                 font-family: 'Roboto';
                 &:hover {
-                    color: #333;
+                    color: #555;
                 }
             }
         }
@@ -37,29 +36,109 @@
         font-size: 22px;
         padding-top: 17px;
         margin-bottom: 8px;
+        display: inline-block;
     }
-    .stay-connected {
-        margin-bottom: 14px;
-    }
-    .mz-footer-social {
-        .col-xs-3 {
-            padding-left: 0;
-            width: auto;
+
+    .social-foot-mobile{
+        .accordion-heading .accordion-toggle {
+            padding: 12px 15px 8px;
+            padding-left: 26px;
         }
-        a {
-            width: 100%;
-            height: auto;
-            .img-responsive {
-                width: 100%;
-                height: auto;
-                max-width: 35px;
-            }
+        .nav {
+            margin-bottom: 0px;
         }
-        a:hover img {
-            opacity: 0.3;
-            background: none;
+        h3 {
+            font-size: 22px;
+        }
+        #accordionF {
+            margin-bottom: 10px;
+            margin-top: 15px;
         }
     }
+    // SOCIAL MEDIA
+    .social-network-container {
+        margin-top: 0;
+    }
+    ul.social-network {
+        float: left;
+        list-style: none;
+        display: inline;
+        margin-left:0 !important;
+        margin-bottom: 0;
+        padding: 0;
+        li {
+            display: inline;
+            margin: 0 5px;
+        }
+        li:first-child {
+            margin-left: 0;
+        }
+        a.icoRss:hover {
+            background-color: #F56505;
+        }
+        a.icoFacebook:hover {
+            background-color:#3B5998;
+        }
+        a.icoTwitter:hover {
+            background-color:#33ccff;
+        }
+        a.icoInstagram:hover {
+            background-color:#3f729b;
+        }
+        a.icoGoogle-plus:hover {
+          background-color:#DC4E41;
+        }
+        a.icoPinterest:hover {
+            background-color:#cc2127;
+        }
+        a.icoLinkedin:hover {
+            background-color:#007bb7;
+        }
+        a.icoInstagram:hover i, 
+        a.icoFacebook:hover i, 
+        a.icoTwitter:hover i,
+        a.icoPinterest:hover i, 
+        a.icoVimeo:hover i, 
+        a.icoLinkedin:hover i {
+            color:#fff;
+        }
+        a.socialIcon:hover, .socialHoverClass {
+            color:#44BCDD;
+        }
+        &.social-circle i {
+            color: #fff;
+            margin:0;
+            line-height: 25px;
+            text-align: center;
+            font-size: 18px;
+        }
+        &.social-circle li a {
+            display:inline-block;
+            position:relative;
+            margin:0 auto 0 auto;
+            -moz-border-radius:50%;
+            -webkit-border-radius:50%;
+            border-radius:50%;
+            text-align:center;
+            width: 25px;
+            height: 25px;
+            font-size:20px;
+            background-color: #D3D3D3;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+        &.social-circle li a:hover {
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+    }
+
     .mz-footer-subscribe {
         margin-top: 15px;
         h4 {
@@ -67,7 +146,7 @@
             margin-bottom: 0;
         }
         p {
-
+            margin-bottom: 5px;
         }
         .mz-form-horizontal {
             display: -webkit-box;
@@ -115,6 +194,44 @@
         #accordionF {
             margin-bottom: 10px;
             margin-top: 15px;
+        }
+    }
+    .stay-connected {
+        margin-bottom: 5px;
+    }
+    .mz-footer-subscribe {
+        margin-top: 0;
+    }
+    //New Footer feedback button
+    .footer-feedback-btn {
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+// Footer feedback modal
+.fancybox-inner {
+    text-align: left!important;
+    .fancybox-feedback-inner {
+        padding: 15px;
+        h3 {
+            color: #444;
+            text-align: center;
+        }
+        input {
+            font-weight: inherit;
+            height: 30px;
+            margin-bottom: 0;
+        }
+        .help-block {
+            color: #999;
+            margin-top: 2px;
+        }
+        .btn-cyan {
+            color: #fff;
+            line-height: .8em;
         }
     }
 }
