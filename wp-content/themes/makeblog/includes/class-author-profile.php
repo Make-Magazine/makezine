@@ -54,6 +54,41 @@ class Make_Authors {
 			return false;
 		}
 	}
+	public function get_post_author_data($newAuthor) {
+		// Get the true author data
+		$author = $newAuthor;
+
+		if ( ! empty( $author ) ) {
+
+			// If the user account is a guest-author, then it will always be used over Gravatar data
+			if ( $author->type === 'guest-author' ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
+				return $author;
+			} else { // If no type is passed, then we'll check for Gravatar information
+				$email = $author->data->user_email;
+
+				// We need to hash out the email so we can properlly and securely request the right Gravatar account
+				$hash = md5( strtolower( trim( sanitize_email( $email ) ) ) );
+
+				// Request the data from gravatar
+				$gdata = wpcom_vip_file_get_contents( esc_url( 'http://www.gravatar.com/' . $hash . '.json' ) );
+
+				// Make sure data was actually returned
+				if ( $gdata ) {
+					$profile = json_decode( $gdata );
+
+					return $profile->entry[0];
+				} else {
+					// well, it seems Gravatar returned empty... let's pull from WordPress then.
+					$author = get_userdata( absint( $author->ID ) );
+
+					return $author;
+				}
+			}
+		} else {
+			return false;
+		}
+	}
+
 
 
 	/**
@@ -63,10 +98,13 @@ class Make_Authors {
 	 * @version 1.0
 	 * @since   1.1
 	 */
-	public function author_twitter() {
-		$author = $this->get_author_data();
+	public function author_twitter($newAuthor, $authorID) {
+		$author = $this->get_post_author_data($newAuthor);
+		$user_id = $authorID;
+		$key = 'twitter';
+		$single = true;
+		$user_twitter = get_user_meta( $user_id, $key, $single );
 		// Load this if we have either a list of links from Gravatar or a single website from Guest Authors
-
 		// Update our URLs into a one variable so we have less code. First is Gravatar, second is Guest Authors which only allows one option.
 		$output = '';
 		if ( isset( $author->accounts ) ) {
@@ -78,9 +116,16 @@ class Make_Authors {
 					$result       = substr( $str, strpos( $str, 'com/' ) + 4, strlen( $str ) );
 					$string_array = explode( "?", $result );
 					$output .= '<a class="' . esc_attr( $account->shortname ) . '" href="' . esc_url( $account->url . '?rel=author' ) . '"><i class="fa fa-twitter"></i></a>';
-					$output .= '<a class="twitter" href="' . esc_url( $account->url . '?rel=author' ) . '"><h3 class="twitter-nickname">@';
-					$output .= $string_array[0];
-					$output .= '</h3></a>';
+					if(strlen($user_twitter) == 0){
+						$output .= '<a class="twitter" href="' . esc_url( $account->url . '?rel=author' ) . '"><h3 class="twitter-nickname">@';
+						$output .= $string_array[0];
+						$output .= '</h3></a>';
+					} else {
+						$output .= '<a class="twitter" href="' . esc_url( $account->url . '?rel=author' ) . '"><h3 class="twitter-nickname users">@';
+						$output .= $user_twitter;
+						$output .= '</h3></a>';
+					}
+
 				}
 
 			}
@@ -100,9 +145,16 @@ class Make_Authors {
 							$output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><i class="fa fa-twitter"></i></a>';
 							$str    = esc_url( $url->value );
 							$result = substr( $str, strpos( $str, 'com/' ) + 4, strlen( $str ) );
-							$output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><h3 class="twitter-nickname">@';
-							$output .= $result;
-							$output .= '</h3></a>';
+							if(strlen($user_twitter) == 0){
+								$output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><h3 class="twitter-nickname">@';
+								$output .= $result;
+								$output .= '</h3></a>';
+							} else {
+								$output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><h3 class="twitter-nickname users">@';
+								$output .= $user_twitter;
+								$output .= '</h3></a>';
+							}
+
 						}
 					}
 				}
@@ -170,7 +222,8 @@ class Make_Authors {
 		return $output;
 	}
 
-	public function author_block_story( $author ) {
+	public function author_block_story( $author,$authorID ) {
+		$newAuthor = $author;
 		// Let's get this going...
 		$output = '';
 		$output .= '<div class="author-wrapper"><div class="col-md-3 avatar">';
@@ -207,7 +260,7 @@ class Make_Authors {
 		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="twitter-wrapper">';
-		$output .= $this->author_twitter();
+		$output .=  $this->author_twitter($newAuthor ,$authorID);
 		$output .= '</div></div></div>';
 
 		return $output;
@@ -234,9 +287,16 @@ class Make_Authors {
 			// Use the featued image if its set, other wise fall to get_avatar which will check for another solution with a fall back to default retro image
 			if ( has_post_thumbnail( absint( $author->ID ) ) ) {
 				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $author->ID ) );
-
-				$output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" width="absint( $size )" height="absint( $size )" class="avatar avatar-absint( $size )">';
+				$args = array(
+					'resize' => '61,61',
+				);
+				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" width="absint( $size )" height="absint( $size )" class="avatar avatar-absint( $size )">';
+				$re = "/^(.*? src=\")(.*?)(\".*)$/m";
+				preg_match_all($re, $url, $matches);
+				$str = $matches[2][0];
+				$photon = jetpack_photon_url($str, $args);
 				// $output = get_the_post_thumbnail( absint( $author->ID ), array( absint( $size ), absint( $size ) ), array( 'alt' => esc_attr( $this->author_name( $author ) ), 'class' => 'avatar avatar-absint( $size )' ) );
+				$output = '<img src="' . $photon . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" width="absint( $size )" height="absint( $size )" class="avatar avatar-absint( $size )">';
 			} else {
 				$output = get_avatar( sanitize_email( $author->user_email ), absint( $size ), 'retro', esc_attr( $this->author_name( $author ) ) );
 			}
@@ -460,9 +520,10 @@ function make_author_profile() {
 function get_author_profile() {
 	global $make_author_class;
 	$authors = get_coauthors();
+
 	// For each author, build a block.
 	foreach ( $authors as $author ) {
-		echo $make_author_class->author_block_story( $author );
+		echo $make_author_class->author_block_story( $author,$author->ID );
 	}
 }
 

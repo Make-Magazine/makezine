@@ -99,6 +99,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						<?php echo '<h1>No content found</h1>' ?>
 					<?php endif; ?>
 					<?php wp_reset_query(); ?>
+					<a href="<?php echo site_url( '/blog', 'http' ); ?>" class="see-all-stories"><h3 class="heading">See all stories</h3><div class="arrow-right"></div></a>
 				</div>
 			</div>
 		</div>
@@ -207,15 +208,16 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						?>
 						<div class="ad-unit">
 							<?php global $make;
-							print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250; ?>
+							print $make->ads->ad_300x250; ?>
 						</div>
-						<div class="ctx-siderail-container"></div>
 						<div class="ad-unit">
 							<?php global $make;
-							print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
+							print $make->ads->ad_300x600; ?>
 						</div>
+						<div class="ctx-siderail-container"></div>
 						<div id="pubexchange_rail"></div>
 					</aside>
+					<div class="ctx-social-container"></div>
 					<div class="essb_right_flag"></div>
 				</div>
 			</div>

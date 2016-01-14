@@ -446,7 +446,7 @@ jQuery(document).ready(function ($) {
             getProjects();
         }
     });
-    var paged = 1;
+    var paged;
 
     function getProjects(type, callback) {
         var DataDiff, DataDur, DataCat, DataSort;

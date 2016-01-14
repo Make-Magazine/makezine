@@ -1886,22 +1886,6 @@ function get_story_with_ajax() {
 add_action('wp_ajax_get_story_with_ajax', 'get_story_with_ajax');
 add_action('wp_ajax_nopriv_get_story_with_ajax', 'get_story_with_ajax');
 
-function the_titlesmall($before = '', $after = '', $echo = true, $length = false) {
-    $title = get_the_title();
-
-    if ( $length && is_numeric($length) ) {
-        $title = substr( $title, 0, $length );
-    }
-
-    if ( strlen($title)> 0 ) {
-        $title = apply_filters('the_titlesmall', $before . $title . $after, $before, $after);
-        if ( $echo )
-            echo $title;
-        else
-            return $title;
-    }
-}
-
 function sort_down($a, $b)
 {
     if ($a['views'] == $b['views']) {
@@ -2241,4 +2225,20 @@ function catch_first_image_story_nav() {
         $first_img = get_template_directory_uri().'/version-2/img/thumbnav.jpg';
     }
     return $first_img;
+}
+
+function the_titlesmall($before = '', $after = '', $echo = true, $length = false) {
+    $title = get_the_title();
+
+    if ( $length && is_numeric($length) ) {
+        $title = substr( $title, 0, $length );
+    }
+
+    if ( strlen($title)> 0 ) {
+        $title = apply_filters('the_titlesmall', $before . $title . $after, $before, $after);
+        if ( $echo )
+            echo $title;
+        else
+            return $title;
+    }
 }
