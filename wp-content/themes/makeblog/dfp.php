@@ -197,7 +197,7 @@ class MakeAdVars {
         $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
         $id = get_the_ID();
         $posttags = is_single() || is_admin() ? get_the_tags() : NULL;
-        $postcat = is_single() || is_admin() ? get_the_category() : (is_category() ? explode(",", get_category_parents($wp_query->get_queried_object()->term_id, FALSE, ",")) : NULL);
+        $postcat = is_single() || is_admin() ? get_the_category() : (is_category() ? explode(",", get_category_parents(get_the_category()[0]->term_id, FALSE, ",")) : NULL);
         $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
         $root_url = $protocol . $_SERVER['HTTP_HOST'];
         // Grabs URI for unique tag.
