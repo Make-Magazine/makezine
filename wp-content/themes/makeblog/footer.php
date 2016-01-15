@@ -52,44 +52,48 @@
 
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
 				<h4 class="stay-connected">Follow Us</h4>
-				<div class="mz-footer-social">
-					<div class="col-xs-3">
-						<a href="http://facebook.com/makemagazine">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-								</span>
-						</a>
-					</div>
+				<div class="social-network-container">
+					          <ul class="social-network social-circle">
+						            <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+						            <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+						            <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
+						            <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
+						          </ul>
+					        </div>
+				        <div class="clearfix"></div>
 
-					<div class="col-xs-3">
-						<a href="http://twitter.com/make">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-								</span>
-						</a>
-					</div>
-
-					<div class="col-xs-3">
-						<a href="http://pinterest.com/makemagazine/">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-								</span>
-						</a>
-					</div>
-
-					<div class="col-xs-3">
-						<a href="https://instagram.com/makemagazine/">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-								</span>
-						</a>
+				        <div class="fancybox-feedback" style="display:none;">
+					        	<div class="fancybox-feedback-inner">
+						        		<div class="fancybox-feedback-inner1">
+									        	<h3>Makers, we want to hear from you!</h3>
+									        	<p>Send us feedback on our site design, bugs, story ideas, maker community events and any other share-worthy thoughts.</p>
+									        	<form id="form13" name="form13" accept-charset="UTF-8" enctype="multipart/form-data" method="post" novalidate action="//makemagazine.wufoo.com/forms/zzv65kl0b09v1f/#public">
+															  <div class="form-group">
+																    <label for="exampleInputName1">Name</label>
+																    <input type="text" class="form-control" id="Field1" name="Field1" placeholder="Name">
+																    <p class="help-block">*Not Required</p>
+																  </div>
+															  <div class="form-group">
+																    <label for="exampleInputEmail1">Email Address For Follow Up</label>
+																    <input type="email" class="form-control" id="Field2" name="Field2" placeholder="Email">
+																    <p class="help-block">*Not Required</p>
+																  </div>
+															  <div class="form-group">
+																  	<label>Write Your Feedback Here</label>
+																  	<textarea class="form-control" id="Field3" name="Field3" spellcheck="true" rows="3" required></textarea>
+																  </div>
+															  <input id="saveForm" name="saveForm" class="footer-feedback-submit btn-cyan" type="submit" value="Submit" />
+															  <input type="hidden" id="idstamp" name="idstamp" value="WH028EiOADf/hZl3yIPszD+rnU6UVQ2++DXf7i7lt38=" />
+															</form>
+													</div>
+												<div class="fancybox-feedback-inner2" style="display:none;">
+														<h3>Thank you for the feedback!</h3>
+														<p>We can't guarantee a response to each submission, but we promise to think about every one.</p>
+													</div>
 					</div>
 				</div>
 				<div class="clearfix"></div>
+
 				<div class="mz-footer-subscribe">
 					<?php
 					$isSecure = "http://";
@@ -106,7 +110,7 @@
 						<input type="hidden" name="custom_incentive" value="none" />
 						<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 						<input type="hidden" id="format_mime" name="format" value="mime" />
-						<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
+						<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true" />
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 						<div class="mz-form-horizontal">
@@ -123,42 +127,26 @@
 				<h4 class="stay-connected">Follow Us</h4>
 				<div class="mz-footer-social">
 					<div class="col-xs-3">
-						<a href="http://facebook.com/makemagazine">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-								</span>
-						</a>
+						<img src="/wp-content/themes/makeblog/version-2/img/facebook.png" alt="facebook" class="img-responsive"></img>
 					</div>
-
 					<div class="col-xs-3">
 						<a href="http://twitter.com/make">
-								<span class="fa-stack fa-mz">
+							<span class="fa-stack fa-mz">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-								</span>
+							</span>
 						</a>
 					</div>
-
 					<div class="col-xs-3">
 						<a href="http://pinterest.com/makemagazine/">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-								</span>
-						</a>
+							<img src="/wp-content/themes/makeblog/version-2/img/twitter.png" alt="twitter" class="img-responsive"></img>
 					</div>
-
 					<div class="col-xs-3">
-						<a href="https://instagram.com/makemagazine/">
-								<span class="fa-stack fa-mz">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-								</span>
+						<a href="http://plus.google.com/+MAKE/posts">
+							<img src="/wp-content/themes/makeblog/version-2/img/google.png" alt="google" class="img-responsive"></img>
 						</a>
 					</div>
 				</div>
-
 				<div class="clearfix"></div>
 
 				<div class="mz-footer-subscribe">
@@ -169,7 +157,7 @@
 					}
 					?>
 					<h4>Sign Up</h4>
-					<p>Stay inspired with the Make: newsletter</p>
+					<p>Stay inspired and get fresh updates</p>
 					<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
 						<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 						<input type="hidden" name="cmd" value="subscribe" />
@@ -187,8 +175,6 @@
 					</form>
 				</div><!-- end .mz-footer-subscribe -->
 			</div>
-
-
 			<div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="heading1">
@@ -196,13 +182,13 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Make:</a>
 						</h4>
 					</div>
-					<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="/projects/">Make: Projects</a></li>
-								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
-								<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
-								<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
+								<li><a href="/category/workshop/3d-printing-workshop/?post_type=projects">3D Printing Projects</a></li>
+								<li><a href="/category/technology/arduino/?post_type=projects">Arduino Projects</a></li>
+								<li><a href="/category/technology/raspberry-pi/?post_type=projects">Raspberry Pi Projects</a></li>
 								<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
 							</ul>
 						</div>
@@ -214,14 +200,15 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Explore Making</a>
 						</h4>
 					</div>
-					<div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2">
+					<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
-								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
-								<li><a href="//makercon.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercon" target="_blank">MakerCon</a></li>
-								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
-								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
+								<li><a href="//makerfaire.com" target="_blank">Maker Faire</a></li>
+								<li><a href="/blog">Make: News</a></li>
+								<li><a href="//www.makershed.com" target="_blank">Maker Shed</a></li>
+								<li><a href="//makercon.com" target="_blank">MakerCon</a></li>
+								<li><a href="//makercamp.com" target="_blank">Maker Camp</a></li>
+								<li><a href="//readerservices.makezine.com/mk/default.aspx?" target="_blank">Subscribe to Make:</a></li>
 							</ul>
 						</div>
 					</div>
@@ -232,7 +219,7 @@
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Our Company</a>
 						</h4>
 					</div>
-					<div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
+					<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
@@ -246,6 +233,7 @@
 				</div>
 			</div>
 		</div><!-- End social-foot-mobile -->
+		<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 	</div><!-- END container -->
 	<?php echo make_copyright_footer(); ?>
 </section><!-- END new-footer -->
@@ -275,12 +263,47 @@
 </script>
 
 <?php wp_footer(); ?>
-
 <!-- Checks the URL for which thank you modal to how -->
 <?php echo display_thank_you_modal_if_signed_up(); ?>
+Add a comment to this line
 
 <!-- Subscribe return path overlay -->
 <?php echo subscribe_return_path_overlay(); ?>
+
+<script>
+		/**
+	    * Feedback form submit event handler
+	    */
+		  $(document).on('submit', '#form13', function (e) {
+			    event.preventDefault();
+
+				    $.ajax({
+						    url:'//makemagazine.wufoo.com/forms/zzv65kl0b09v1f/#public',
+					    type:'POST',
+					    data:$(this).serialize()
+			    });
+			$('.fancybox-feedback-inner1').hide();
+			$('.fancybox-feedback-inner2').show();
+	  });
+	</script>
+<script>
+		/**
+	    * Feedback form modal
+	    */
+		  $(".footer-feedback-btn").click(function() {
+			    $(".fancybox-feedback").fancybox({
+				      autoSize : false,
+				      width  : 560,
+				      autoHeight : true,
+				      padding : 0,
+				      openEffect : 'elastic',
+				      afterLoad   : function() {
+				        this.content = this.content.html();
+				      }
+			    });
+	    $(".fancybox-feedback").trigger('click');
+	  });
+	</script>
 
 <!-- AddRoll Retargeting Pixel -->
 <script type="text/javascript">
@@ -417,37 +440,6 @@
 	f.parentNode.insertBefore(j, f);
 </script>
 
-<script>(function(d, s, id) {
-		var js, pjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id; js.async = true;
-		js.src = "//cdn.pubexchange.com/modules/partner/make";
-		pjs.parentNode.insertBefore(js, pjs);
-	}(document, "script", "pubexchange-jssdk"));</script>
-
-<!--YOUTUBE FOR FANCYBOX MODALS-->
-<script>
-	$(document).ready(function() {
-		$(".fancytube").fancybox({
-			maxWidth  : 800,
-			maxHeight : 600,
-			fitToView : false,
-			width   : '70%',
-			height    : '70%',
-			autoSize  : false,
-			closeClick  : false,
-			openEffect  : 'none',
-			closeEffect : 'none',
-			padding : 0
-		});
-	});
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".fancytube").fancybox();
-	});
-</script>
 
 </body>
 </html>
