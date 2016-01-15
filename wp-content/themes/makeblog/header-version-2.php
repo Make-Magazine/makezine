@@ -7,11 +7,10 @@
  *
  */
 
-?>
-<?php 
 global $make;
 global $wp_query;
 global $post;
+
 require_once 'version-2/includes/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 $post_per_page = 15;
@@ -89,7 +88,6 @@ if( $detect->isTablet() ){
 
   <!-- javascript -->
   <script src="//code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -123,7 +121,7 @@ if( $detect->isTablet() ){
   <!-- End Chartbeat Code -->
 
   <?php wp_head(); ?>
-  
+
   <?php 
   // Set Ads.
   $make->ad_vars = new MakeAdVars;
@@ -142,6 +140,7 @@ if( $detect->isTablet() ){
  
   <!-- 1x1 ad unit -->
   <?php print $make->ads->ad_1x1; ?>
+
 
 
   <script type="text/javascript">
