@@ -210,8 +210,7 @@ $primary_cat_dimension = $primarycat[0];
   <div class="hidden-xs top-header-bar-brand">
     <div class="container">
       <div class="row" id="top-header">
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"></div>
-        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs text-center top-nav">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-sm-push-3 hidden-xs text-center top-nav">
           <h6><a href="http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=brand+bar&amp;utm_campaign=shop+best+sellers&amp;utm_term=shop+best+sellers" onclick="javascript:window.open('http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=brand+bar&amp;utm_campaign=shop+best+sellers&amp;utm_term=shop+best+sellers'); return false;">Shop Best Sellers at Maker Shed → Kits, Books, More!</a></h6>
         </div>
         <div id="trigger-overlay" class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
