@@ -327,7 +327,7 @@ $primary_cat_dimension = $primarycat[0];
                   </div>
                 </form>
               </div><!-- End subscribe div -->
-              <h6>Copyright © 2004-2015 Maker Media, Inc.</br>
+              <h6>Copyright © 2004-2016 Maker Media, Inc.</br>
                 All rights reserved</h6>
             </div><!-- End mobile-social div -->
           </div><!-- End #makezine-navbar-collapse-1 -->
