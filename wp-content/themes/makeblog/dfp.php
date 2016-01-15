@@ -191,13 +191,13 @@ class MakeAdVars {
      * Note: must run within a WP loop.
      */
     public function getVars() {
-
+        print_r(get_category_parents(get_query_var('cat'), FALSE, ","));
         // Get current page info.
         $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
         $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
         $id = get_the_ID();
         $posttags = is_single() || is_admin() ? get_the_tags() : NULL;
-        $postcat = is_single() || is_admin() ? get_the_category() : (is_category() ? explode(",", get_category_parents(get_the_category()[0]->term_id, FALSE, ",")) : NULL);
+        $postcat = is_single() || is_admin() ? get_the_category() : (is_category() ? explode(",", get_category_parents(get_query_var('cat'), FALSE, ",")) : NULL);
         $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
         $root_url = $protocol . $_SERVER['HTTP_HOST'];
         // Grabs URI for unique tag.
