@@ -26,7 +26,17 @@ $modal_text     = get_field( 'magazine_label', $id );
 		<nav class="review-nav navbar">
 			<ol class="nav navbar-nav">
 				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
-					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">How We Test</a>
+					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
+						<?php
+						$slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+						$label = 'How We Test';
+						if ( $slug === 'boards' ) {
+							$label = 'Choosing a Board';
+						}
+
+						echo $label;
+						?>
+					</a>
 				</li>
 				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active"  <?php } ?> >
 					<a href="<?php echo get_permalink( $id ); ?>">Compare</a>
