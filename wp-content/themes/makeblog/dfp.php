@@ -191,7 +191,6 @@ class MakeAdVars {
      * Note: must run within a WP loop.
      */
     public function getVars() {
-        print_r(get_category_parents(get_query_var('cat'), FALSE, ","));
         // Get current page info.
         $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
         $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
