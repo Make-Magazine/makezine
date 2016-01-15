@@ -209,18 +209,16 @@ $primary_cat_dimension = $primarycat[0];
   <!-- TOP BRAND BAR -->
   <div class="hidden-xs top-header-bar-brand">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-          <p class="header-make-img">
-            <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
-          </p>
+      <div class="row" id="top-header">
+        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs text-center top-nav">
+          <h6><a href="http://www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a></h6>
         </div>
-        <div class="col-sm-3">
-          <p class="header-sub-link pull-right">
-            <a id="trigger-overlay" href="#">SUBSCRIBE </a>
-          </p>
+        <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
+          <h6><a href="https://readerservices.makezine.com/mk/default.aspx?">Subscribe
+              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"></a></h6>
         </div>
-      </div>
+      </div> <!-- row -->
     </div>
   </div>
 
