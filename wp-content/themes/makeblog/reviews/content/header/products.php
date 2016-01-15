@@ -96,8 +96,9 @@ if ( ! empty( $image ) ) {
 							 * Setup the 3D View
 							 */
 							//Added get_site_url() to account for any environment.
-							$asset_path = get_site_url() . get_field( '3d_view_config' );
-							if ( $asset_path && shortcode_exists( 'wr360embed' ) ):
+							$view_config_path = get_field( '3d_view_config' );
+							$asset_path = get_site_url() . $view_config_path;
+							if ( $view_config_path && shortcode_exists( 'wr360embed' ) ):
 								global $post;
 								//Determine the path to the product:
 								$rootpath = str_replace(".xml", "", $asset_path);
@@ -115,9 +116,11 @@ if ( ! empty( $image ) ) {
 							
 							<div class="virtual-tour">
 								<?php
-								$config_xml = simplexml_load_file($asset_path);
-								//Load first image from XML
-								$image1 = $config_xml->images->image[0]->attributes();
+								if ($view_config_path) {
+									$config_xml = simplexml_load_file($asset_path);
+									//Load first image from XML
+									$image1 = $config_xml->images->image[0]->attributes();									
+								}
 								$firstFile = $rootpath . '/' . $image1;
 								?>
 								<?php echo do_shortcode( $wr_shortcode ); ?>
