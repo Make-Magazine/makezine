@@ -186,8 +186,8 @@ include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/home-menu-curator.php';
 
-// Define global make obj.
-$make = new stdClass();
+// DFP functions.
+include_once dirname(__FILE__) . '/dfp.php';
 
 function dfp_add_meta_boxes($postType)
 {
@@ -1725,7 +1725,7 @@ function get_story_thumbnail_with_ajax() {
     $story .='<div class="row more-thumbnails">';
     $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
     $the_query = new WP_Query(array('offset' => $offset ,'post_status' => 'publish','showposts' => '9', 'post__not_in' => array($exclude)));
-    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post();
+    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post();  global $make; print_r($make);  
         $story .='<div class="latest-story">';
         $story .= '<a href="';
         $story .= get_the_permalink();
@@ -1784,9 +1784,15 @@ function get_story_with_ajax() {
     $offset = $_POST['offset'];
     $number = $_POST['number'];
     $the_query = new WP_Query(array('offset' => $offset ,'post_status' => 'publish', 'showposts' => $number, 'post__not_in' => array($exclude)));
-    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post(); ?>
+    if ( $the_query->have_posts()) : while ( $the_query->have_posts()) :  $the_query->the_post();
+    // Set Ads.
+    global $make;
+    $make->ad_vars = new MakeAdVars;
+    $make->ad_vars->getVars();
+    ?>
+
         <div class="ad-unit">
-            <div class="js-ad" data-size='[728,90]' data-size-map='[728,90]' data-pos=\'"btf"\'></div>
+            <div class="js-ad" data-size='[728,90]' data-size-map='[728,90]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
         </div>
         <div class="row story-header" id="<?php echo get_the_ID(); ?>">
             <div class="story-title">
@@ -1859,12 +1865,12 @@ function get_story_with_ajax() {
                     ?>
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
-                        <div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div>
+                        <div class="js-ad" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
                     <div class="ctx-siderail-wrapper"></div>
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
-                        <div class="js-ad" data-size='[300,600]' data-size-map='[300,600]' data-pos=\'"btf"\'></div>
+                        <div class="js-ad" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
                 </aside>
                 <div class="essb_right_flag"></div>

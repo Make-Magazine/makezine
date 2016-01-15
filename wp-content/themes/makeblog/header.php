@@ -1,3 +1,11 @@
+<?php
+/**
+ * Makezine header template.
+ */
+global $make;
+global $wp_query;
+global $post;
+?>
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
 	<head>
@@ -51,7 +59,24 @@
 
 		<?php wp_head(); ?>
 
-		<?php get_template_part('dfp'); ?>
+		<?php
+		// Set Ads.
+		$make->ad_vars = new MakeAdVars;
+		$make->ad_vars->getVars();
+		$make->ads = new MakeAds;
+		$make->ads->setAds();
+		?>
+
+		<!-- Page Ad Vars -->
+		<script type='text/javascript'>
+		var ad_vars = <?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>;
+		</script>
+
+		<!-- Make GPT -->
+		<script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
+
+		<!-- 1x1 ad unit -->
+		<?php print $make->ads->ad_1x1; ?>
 
 		<script type="text/javascript">
 			dataLayer = [];

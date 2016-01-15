@@ -110,6 +110,7 @@
           a.size =  $t.attr('data-size') ? JSON.parse($t.attr('data-size')) : null;
           a.sizeMap = $t.attr('data-size-map') ? JSON.parse($t.attr('data-size-map')) : null;
           a.pos = $t.attr('data-pos') ? JSON.parse($t.attr('data-pos')) : null;
+          a.adVars = $t.attr('data-ad-vars') ? JSON.parse($t.attr('data-ad-vars')) : null;
         }
         catch (e) {
           console.log('error parsing ad data-attributes');
@@ -118,7 +119,14 @@
         var ad = make.gpt.getVars(a.size),
             adDiv = '<div id="' + ad.slot + '" class="make_ad ' + a.size.join().replace(/\[\]/g,'').replace(/,/g,'x') + '"></div>';
         $t.append(adDiv);
-        make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile});
+        // Do with custom ad vars.
+        if (a.adVars) {
+          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'page' : a.adVars.page, 'cat' : a.adVars.cat, 'tags' : a.adVars.tags, 'zone' : a.adVars.zone});
+        }
+        // Do with page defined ad vars.
+        else {
+          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile});
+        }
       });
     },
 

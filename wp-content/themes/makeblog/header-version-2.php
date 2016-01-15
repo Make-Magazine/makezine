@@ -7,8 +7,11 @@
  *
  */
 
-?>
-<?php require_once 'version-2/includes/Mobile_Detect.php';
+global $make;
+global $wp_query;
+global $post;
+
+require_once 'version-2/includes/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 $post_per_page = 15;
 $device = 'pc';
@@ -92,7 +95,7 @@ if( $detect->isTablet() ){
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
@@ -125,7 +128,26 @@ if( $detect->isTablet() ){
 
   <?php wp_head(); ?>
 
-  <?php get_template_part('dfp'); ?>
+  <?php 
+  // Set Ads.
+  $make->ad_vars = new MakeAdVars;
+  $make->ad_vars->getVars();
+  $make->ads = new MakeAds;
+  $make->ads->setAds();
+  ?>
+  
+  <!-- Page Ad Vars -->
+  <script type='text/javascript'>
+  var ad_vars = <?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>;
+  </script>
+
+  <!-- Make GPT -->
+  <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
+ 
+  <!-- 1x1 ad unit -->
+  <?php print $make->ads->ad_1x1; ?>
+
+
 
   <script type="text/javascript">
     dataLayer = [];

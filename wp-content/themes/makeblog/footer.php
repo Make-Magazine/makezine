@@ -56,33 +56,33 @@
 					<div class="col-xs-3">
 						<a href="http://facebook.com/makemagazine">
 							<span class="fa-stack fa-mz">
--								<i class="fa fa-circle fa-stack-2x"></i>
--								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
--							</span>
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+							</span>
 						</a>
 					</div>
 					<div class="col-xs-3">
 						<a href="http://twitter.com/make">
 								<span class="fa-stack fa-mz">
--									<i class="fa fa-circle fa-stack-2x"></i>
--									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
--								</span>
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</span>
 						</a>
 					</div>
 					<div class="col-xs-3">
 						<a href="http://pinterest.com/makemagazine/">
 							<span class="fa-stack fa-mz">
--								<i class="fa fa-circle fa-stack-2x"></i>
--								<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
--							</span>
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+							</span>
 						</a>
 					</div>
 					<div class="col-xs-3">
 						<a href="https://instagram.com/makemagazine/">
 							<span class="fa-stack fa-mz">
--									<i class="fa fa-circle fa-stack-2x"></i>
--									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
--							</span>
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+							</span>
 						</a>
 					</div>
 				</div>
@@ -407,35 +407,35 @@ Add a comment to this line
 	f.parentNode.insertBefore(j, f);
 </script>
 <script>(function(d, s, id) {
-				var js, pjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s); js.id = id; js.async = true;
-				js.src = "//cdn.pubexchange.com/modules/partner/make";
-				pjs.parentNode.insertBefore(js, pjs);
-			}(document, "script", "pubexchange-jssdk"));</script>
+		var js, pjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id; js.async = true;
+		js.src = "//cdn.pubexchange.com/modules/partner/make";
+		pjs.parentNode.insertBefore(js, pjs);
+	}(document, "script", "pubexchange-jssdk"));</script>
 
 <!--YOUTUBE FOR FANCYBOX MODALS-->
 <script>
-		$(document).ready(function() {
-				$(".fancytube").fancybox({
-						maxWidth  : 800,
-						maxHeight : 600,
-						fitToView : false,
-						width   : '70%',
-						height    : '70%',
-						autoSize  : false,
-						closeClick  : false,
-						openEffect  : 'none',
-						closeEffect : 'none',
-						padding : 0
-				});
+	$(document).ready(function() {
+		$(".fancytube").fancybox({
+			maxWidth  : 800,
+			maxHeight : 600,
+			fitToView : false,
+			width   : '70%',
+			height    : '70%',
+			autoSize  : false,
+			closeClick  : false,
+			openEffect  : 'none',
+			closeEffect : 'none',
+			padding : 0
 		});
-	</script>
+	});
+</script>
 
 <script type="text/javascript">
-		$(document).ready(function() {
-				$(".fancytube").fancybox();
-			});
+	$(document).ready(function() {
+		$(".fancytube").fancybox();
+	});
 </script>
 
 </body>
