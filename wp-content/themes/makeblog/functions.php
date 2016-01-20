@@ -2242,3 +2242,24 @@ function the_titlesmall($before = '', $after = '', $echo = true, $length = false
             return $title;
     }
 }
+
+// Add Quantcast to footer
+function add_quantcast_tag() {
+    echo '<!-- Quantcast Tag -->' . "\r\n"
+    . '<script type="text/javascript">' . "\r\n"
+    . 'var _qevents = _qevents || [];' . "\r\n"
+    . '(function()' . "\r\n"
+    . '{ var elem = document.createElement(\'script\'); elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js"; elem.async = true; elem.type = "text/javascript"; var scpt = document.getElementsByTagName(\'script\')[0]; scpt.parentNode.insertBefore(elem, scpt); }' . "\r\n"
+    . ')();' . "\r\n"
+    . '_qevents.push(' . "\r\n"
+    . '{ qacct:"p-qQ-4aTQav-HBn" }' . "\r\n"
+    . ');' . "\r\n"
+    . '</script>' . "\r\n"
+    . '<noscript>' . "\r\n"
+    . '<div style="display:none;">' . "\r\n"
+    . '<img src="//pixel.quantserve.com/pixel/p-qQ-4aTQav-HBn.gif" border="0" height="1" width="1" alt="Quantcast"/>' . "\r\n"
+    . '</div>' . "\r\n"
+    . '</noscript>' . "\r\n"
+    . '<!-- End Quantcast tag -->' . "\r\n";
+}
+add_action('wp_footer', 'add_quantcast_tag', 100);
