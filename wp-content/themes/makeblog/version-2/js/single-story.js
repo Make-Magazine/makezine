@@ -322,7 +322,6 @@ $(document).ready(function () {
             if (detectIE() != false) {
                 $thumbnailsHeight -= 20;
             }
-            console.log(detectIE());
             $navigatorHeight = $(window).height() - 50;
             $('.navigator .thumbnails').addClass('open').css('height', $thumbnailsHeight);
             $('.row.navigator').addClass('open').css('height', $navigatorHeight);
