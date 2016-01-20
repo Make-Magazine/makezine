@@ -2029,7 +2029,7 @@ function subscribe_return_path_overlay() { ?>
 /**
  * Checks the URL for which thank you modal to how.
  * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
- * URL with ?thankyou=true&subscribed-to=3d-printer-make-newsletter will show the
+ * URL with ?thankyou=true&subscribed-to=free-pdf will show the any free PDF modal
  */
 function display_thank_you_modal_if_signed_up() { ?>
     <script>
@@ -2046,8 +2046,8 @@ function display_thank_you_modal_if_signed_up() { ?>
                 });
                 $(".fancybox-thx").trigger('click');
             }
-            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=3d-printer") > -1) {
-                $(".fancybox-thx-3d-printer").fancybox({
+            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=free-pdf") > -1) {
+                $(".fancybox-thx-free-pdf").fancybox({
                     autoSize : false,
                     width  : 580,
                     autoHeight : true,
@@ -2056,7 +2056,7 @@ function display_thank_you_modal_if_signed_up() { ?>
                         this.content = this.content.html();
                     }
                 });
-                $(".fancybox-thx-3d-printer").trigger('click');
+                $(".fancybox-thx-free-pdf").trigger('click');
             }
         });
     </script>
@@ -2081,7 +2081,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="clearfix"></div>
         </div>
     </div>
-    <div class="fancybox-thx-3d-printer" style="display:none;">
+    <div class="fancybox-thx-free-pdf" style="display:none;">
         <div class="nl-modal-cont">
             <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
           <span class="fa-stack fa-4x">
