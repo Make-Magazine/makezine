@@ -1311,7 +1311,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($detect->isTablet()) {
         $post_per_page_initial = 12;
         $device = 'tablet';
-        $post_per_page = $post_per_page_initial;
+        $post_per_page = $post_per_page_initial - 1;
     }
     else {
         $post_per_page = $post_per_page_initial - 1;
@@ -1639,9 +1639,9 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '</ul> </li>';
                 $counter = 0;
             }
-            if ( ( $ads_counter == 1 ) and ( $post_per_page == $post_per_page_initial - 1 ) ) {
-                if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
-                    $output .= '<li class="row post_rows"> <ul>';
+            if ( ( $ads_counter == 1 && $device != 'tablet') || ($ads_counter == 0 && $device == 'tablet') and ( $post_per_page == $post_per_page_initial - 1 ) ) {
+                if (($counter == 0) and ($device == 'mobile')) {
+                    $output .= '<li class="row post_rows mobile-only-clas"> <ul>';
                 }
                 $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
                 if ( $count_posts <= 2 ) {
