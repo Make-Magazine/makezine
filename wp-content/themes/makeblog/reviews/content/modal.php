@@ -63,7 +63,7 @@
 		}
 	});
 	$(document).ready(function () {
-		$( "#modal-capture-btn.class-makers-guide-to-boards" ).click(function() {
+		$( "#modal-capture-btn.class-makers-guide-to-boards, #modal-capture-btn.class-the-makers-guide-to-boards" ).click(function() {
 			$(".fancyboxBoards").trigger('click');
 		});
 	});
