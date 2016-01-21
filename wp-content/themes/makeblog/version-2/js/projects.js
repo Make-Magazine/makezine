@@ -509,6 +509,9 @@ jQuery(document).ready(function ($) {
                     }
                 });
 
+                // Load placeholder ads.
+                make.gpt.loadDyn();
+
             },
             error: function (errorThrown) {
             }

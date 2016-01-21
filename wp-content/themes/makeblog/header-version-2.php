@@ -396,17 +396,6 @@ $primary_cat_dimension = $primarycat[0];
 
   </div><!-- container panel header -->
 
-  <!-- Optional Under Nav Promo Blue Bar and Message. Settings In Theme Customizer -->
-  <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>
-    <div class="second-nav promo-text-under-nav">
-      <div class="container hidden-xs">
-        <h3>
-          <a href="<?php echo get_theme_mod( 'make_header_bluebar_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_bluebar_text', '' ); ?></a>
-        </h3>
-      </div>
-    </div>
-  <?php } // end if ?>
-
 </header><!-- header-wrapper -->
 
 <div class="dynamic-header-posts <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>dynamic-header-posts-margin<?php } ?>">
@@ -528,3 +517,14 @@ $primary_cat_dimension = $primarycat[0];
   </div>
 </div>
 <div class="close-dynamic-content"></div>
+
+<!-- Optional Under Nav Promo Blue Bar and Message. Settings In Theme Customizer -->
+<?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>
+  <div class="second-nav promo-text-under-nav">
+    <div class="container hidden-xs">
+      <h3>
+        <a href="<?php echo get_theme_mod( 'make_header_bluebar_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_bluebar_text', '' ); ?></a>
+      </h3>
+    </div>
+  </div>
+<?php } // end if ?>

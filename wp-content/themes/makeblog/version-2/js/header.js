@@ -1,13 +1,14 @@
 $(document).ready(function () {
 	var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
 	var $searchFocus = -1;
+	var $counter;
 	if(window.navigator.userAgent.indexOf("Chrome") > 0){
 		$window = $(window).width() + 17;
 	}else {
 		$window = $(window).width() ;
 	}
 	if ($window >= '768') {
-		var $counter = 0;
+		$counter = 0;
 	} else {
 		$counter = 1;
 	}
@@ -40,7 +41,7 @@ $(document).ready(function () {
 					$('.dynamic-header-content').children().removeClass('moove-left moove-right');
 					$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition');
 					$('.menu-sub-menu > .sub-menu').removeClass('moove-left moove-right');
-				}, 250);
+				}, 0);
 				$('.menu-item-has-children').addClass('first-hover');
 
 				$('.container.header').addClass('width');
@@ -145,9 +146,8 @@ $(document).ready(function () {
 				$('.header-wrapper').removeClass('mobile-sticky');
 			}
 		}
-
-
 	});
+
 	if(window.navigator.userAgent.indexOf("Chrome") > 0){
 		$window = $(window).width() + 17;
 	}else {
@@ -190,6 +190,8 @@ $(document).ready(function () {
 			$('.navbar-default .navbar-toggle .icon-bar').removeClass('hide-background');
 		}
 	});
+
+	// Title Attribute
 	$('#menu-make-main > li').each(function (index) {
 		if ($(this).hasClass('menu-item-has-children')) {
 			var $title = $(this).children('a').attr('title');
@@ -223,6 +225,8 @@ $(document).ready(function () {
 			$(this).toggleClass("active-button");
 		}
 	});
+
+	// Mobile
 	$('.navbar-toggle').on('click', function () {
 		$('.get-dark').css('height', $bodyHeight);
 		$('.navbar-default .navbar-toggle').toggleClass('close-background');
@@ -250,6 +254,8 @@ $(document).ready(function () {
 			$('.tablet .minify.sticky').show('250').css('overflow', 'inherit');
 		}
 	});
+
+	// Search
 	var $searchText = 0;
 	$(".search-field").keyup(function () {
 		$searchText = $(this).val();
@@ -263,6 +269,8 @@ $(document).ready(function () {
 		$('.search-bar input.search-field[type="search"]').toggleClass('search-click');
 		$('.close-search').toggleClass('change-background');
 	});
+
+	// Mobile
 	$('.get-dark').on('click', function () {
 		$('body').css('overflow-y', '');
 		$('body').css('height', '');
@@ -296,7 +304,7 @@ $(document).ready(function () {
 
 	$('.search-field').attr('title', '');
 	$('.menu-item-has-children').addClass('first-hover');
-	$(document).on('touchstart click', '.menu-item-has-children', function (e) {
+	$(document).on('touchstart click mouseenter', '.menu-item-has-children', function (e) {
 		if(window.navigator.userAgent.indexOf("Chrome") > 0){
 			$window = $(window).width() + 17;
 		}else {
@@ -334,7 +342,6 @@ $(document).ready(function () {
 					}
 				}
 			});
-
 			$('.menu-sub-menu > .sub-menu').each(function (index) {
 				if (index < $index) {
 					$(this).removeClass('moove-right').addClass('moove-left').css('visibility', 'hidden');
@@ -353,7 +360,6 @@ $(document).ready(function () {
 				$('.latest-stories').show();
 				$('.latest-events').show();
 				$('.latest-shop').show();
-
 				$('.menu-sub-menu > .sub-menu').show();
 			} else {
 				$('.latest-projects').addClass('nav-transition');
@@ -376,7 +382,7 @@ $(document).ready(function () {
 					$('.latest-shop').hide().removeClass('nav-transition');
 					$('.dynamic-header-content').children().removeClass('moove-left moove-right');
 					$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition moove-left moove-right');
-				}, 250);
+				}, 0);
 				$('.menu-item-has-children').addClass('first-hover');
 				if (!$('.menu-item-has-children > a').hasClass('active-button')) {
 					$('.minify.sticky').css('margin-top', '0px');
@@ -384,28 +390,28 @@ $(document).ready(function () {
 			}
 		}
 	});
-	$(document).mouseup(function (e) {
-		$window = $(window).width() + 17;
-		if ($window >= '768') {
-			var dynamicContainer = $(".dynamic-header-posts");
-			var headerContainer = $(".navbar-nav");
-			if ((dynamicContainer.has(e.target).length === 0) && (headerContainer.has(e.target).length === 0)) {
+
+	// Closees nav on mouseleave
+	$('#menu-make-main, .dynamic-header-posts').on('mouseleave', function (e) {
+		window.setTimeout(function () {
+			$window = $(window).width() + 17;
+			if (($window >= '768') && (!$('.dynamic-header-posts').is(':hover')) && (!$('#menu-make-main').is(':hover'))) {
 				$('.minify.sticky').css('margin-top', '0px');
 				$('.menu-item-has-children').children("a").removeClass("active-button");
 				$('.dynamic-header-posts').slideUp('fast');
 				$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
-				window.setTimeout(function () {
-					$('.latest-projects').hide().removeClass('nav-transition');
-					$('.latest-stories').hide().removeClass('nav-transition');
-					$('.latest-events').hide().removeClass('nav-transition');
-					$('.latest-shop').hide().removeClass('nav-transition');
-					$('.dynamic-header-content').children().removeClass('moove-left moove-right');
-					$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition moove-left moove-right');
-				}, 250);
+				$('.latest-projects').hide().removeClass('nav-transition');
+				$('.latest-stories').hide().removeClass('nav-transition');
+				$('.latest-events').hide().removeClass('nav-transition');
+				$('.latest-shop').hide().removeClass('nav-transition');
+				$('.dynamic-header-content').children().removeClass('moove-left moove-right');
+				$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition moove-left moove-right');
 				$('.menu-item-has-children').addClass('first-hover');
 			}
-		}
+		}, 100);
 	});
+
+	// Tablet
 	if ($('.header').hasClass('tablet')) {
 		$('body').bind("touchstart", function (e) {
 			$window = $(window).width() + 17;
@@ -424,7 +430,7 @@ $(document).ready(function () {
 						$('.latest-shop').hide().removeClass('nav-transition');
 						$('.dynamic-header-content').children().removeClass('moove-left moove-right');
 						$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition moove-left moove-right');
-					}, 250);
+					}, 0);
 					$('.menu-item-has-children').addClass('first-hover');
 				}
 			}

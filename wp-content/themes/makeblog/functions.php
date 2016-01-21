@@ -2029,7 +2029,7 @@ function subscribe_return_path_overlay() { ?>
 /**
  * Checks the URL for which thank you modal to how.
  * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
- * URL with ?thankyou=true&subscribed-to=3d-printer-make-newsletter will show the
+ * URL with ?thankyou=true&subscribed-to=free-pdf will show the any free PDF modal
  */
 function display_thank_you_modal_if_signed_up() { ?>
     <script>
@@ -2046,8 +2046,8 @@ function display_thank_you_modal_if_signed_up() { ?>
                 });
                 $(".fancybox-thx").trigger('click');
             }
-            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=3d-printer") > -1) {
-                $(".fancybox-thx-3d-printer").fancybox({
+            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=free-pdf") > -1) {
+                $(".fancybox-thx-free-pdf").fancybox({
                     autoSize : false,
                     width  : 580,
                     autoHeight : true,
@@ -2056,7 +2056,7 @@ function display_thank_you_modal_if_signed_up() { ?>
                         this.content = this.content.html();
                     }
                 });
-                $(".fancybox-thx-3d-printer").trigger('click');
+                $(".fancybox-thx-free-pdf").trigger('click');
             }
         });
     </script>
@@ -2081,7 +2081,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="clearfix"></div>
         </div>
     </div>
-    <div class="fancybox-thx-3d-printer" style="display:none;">
+    <div class="fancybox-thx-free-pdf" style="display:none;">
         <div class="nl-modal-cont">
             <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
           <span class="fa-stack fa-4x">
@@ -2242,3 +2242,24 @@ function the_titlesmall($before = '', $after = '', $echo = true, $length = false
             return $title;
     }
 }
+
+// Add Quantcast to footer
+function add_quantcast_tag() {
+    echo '<!-- Quantcast Tag -->' . "\r\n"
+    . '<script type="text/javascript">' . "\r\n"
+    . 'var _qevents = _qevents || [];' . "\r\n"
+    . '(function()' . "\r\n"
+    . '{ var elem = document.createElement(\'script\'); elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js"; elem.async = true; elem.type = "text/javascript"; var scpt = document.getElementsByTagName(\'script\')[0]; scpt.parentNode.insertBefore(elem, scpt); }' . "\r\n"
+    . ')();' . "\r\n"
+    . '_qevents.push(' . "\r\n"
+    . '{ qacct:"p-qQ-4aTQav-HBn" }' . "\r\n"
+    . ');' . "\r\n"
+    . '</script>' . "\r\n"
+    . '<noscript>' . "\r\n"
+    . '<div style="display:none;">' . "\r\n"
+    . '<img src="//pixel.quantserve.com/pixel/p-qQ-4aTQav-HBn.gif" border="0" height="1" width="1" alt="Quantcast"/>' . "\r\n"
+    . '</div>' . "\r\n"
+    . '</noscript>' . "\r\n"
+    . '<!-- End Quantcast tag -->' . "\r\n";
+}
+add_action('wp_footer', 'add_quantcast_tag', 100);

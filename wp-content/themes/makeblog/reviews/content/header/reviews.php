@@ -61,8 +61,8 @@ $modal_text     = get_field( 'magazine_label', $id );
 				</li>
 				<?php if ( $modal_image ): ?>
 				<li class="mag navbar-right">
-					<button id="modal-capture-btn" class="modal-capture-btn">
-						<img alt="" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
+					<button id="modal-capture-btn" class="modal-capture-btn class-<?php echo $post->post_name; ?>">
+						<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
 						<?php echo esc_attr( $modal_text ); ?>
 					</button>
 				</li>

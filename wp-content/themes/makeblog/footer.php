@@ -33,7 +33,6 @@
 				<ul class="list-unstyled">
 					<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
 					<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
-					<li><a href="//makercon.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercon" target="_blank">MakerCon</a></li>
 					<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 					<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
 				</ul>
@@ -219,7 +218,6 @@
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
 								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
-								<li><a href="//makercon.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercon" target="_blank">MakerCon</a></li>
 								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
 							</ul>
