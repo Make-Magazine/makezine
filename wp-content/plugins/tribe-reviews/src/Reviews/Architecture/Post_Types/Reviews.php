@@ -69,7 +69,7 @@ class Reviews {
 				'ep_mask' => self::EP
 			],
 			'menu_icon'    => 'dashicons-thumbs-up',
-			'supports'     => [ 'title', 'author' ],
+			'supports'     => [ 'title', 'author' , 'thumbnail' ],
 		] );
 
 		register_taxonomy_for_object_type( 'post_tag', self::NAME );
