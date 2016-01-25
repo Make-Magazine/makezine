@@ -209,13 +209,16 @@ $primary_cat_dimension = $primarycat[0];
   <!-- TOP BRAND BAR -->
   <div class="hidden-xs top-header-bar-brand">
     <div class="container">
-      <div class="row" id="top-header">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-sm-push-3 hidden-xs text-center top-nav">
-          <h6><a href="http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=brand+bar&amp;utm_campaign=shop+best+sellers&amp;utm_term=shop+best+sellers" onclick="javascript:window.open('http://www.makershed.com/?utm_source=makezine.com&amp;utm_medium=brand+bar&amp;utm_campaign=shop+best+sellers&amp;utm_term=shop+best+sellers'); return false;">Shop Best Sellers at Maker Shed → Kits, Books, More!</a></h6>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <p class="header-make-img">
+            <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
+          </p>
         </div>
-        <div id="trigger-overlay" class="col-lg-1 col-md-3 col-sm-3 hidden-xs text-center subscribe">
-          <h6><a href="https://readerservices.makezine.com/mk/default.aspx?" onclick="javascript:window.open('https://readerservices.makezine.com/mk/default.aspx?'); return false;">Subscribe
-              <img src="http://alphamz.wpengine.com/wp-content/themes/makeblog/version-2/img/2-layers@2x.png"></a></h6>
+        <div class="col-sm-3">
+          <p class="header-sub-link pull-right">
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE </a>
+          </p>
         </div>
       </div>
     </div>
@@ -274,33 +277,14 @@ $primary_cat_dimension = $primarycat[0];
 
             <div class="mz-social mobile-social">
               <h5>Follow Us</h5>
-              <a href="http://facebook.com/makemagazine">
-                <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-
-              <a href="http://twitter.com/make">
-                <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-
-              <a href="http://pinterest.com/makemagazine/">
-                 <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-
-              <a href="https://instagram.com/makemagazine/">
-                <span class="fa-stack fa-mz">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
+              <div class="social-network-container">
+                <ul class="social-network social-circle">
+                  <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                  <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
+                  <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
+                </ul>
+              </div>
 
               <div class="mz-footer-subscribe">
                 <?php
@@ -341,7 +325,7 @@ $primary_cat_dimension = $primarycat[0];
             <input type="submit" class="sendsubmit" value="" />
             <label>
               <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-              <div class="close-search"></div>
+              <div class="close-search"><i class="fa fa-search fa-2x"></i></div>
             </label>
           </form>
         </div>
@@ -358,34 +342,13 @@ $primary_cat_dimension = $primarycat[0];
 
         <!-- SOCIAL MEDIA ICONS -->
         <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social">
-          <div class="mz-social">
-            <a href="http://facebook.com/makemagazine">
-              <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-
-            <a href="http://twitter.com/make">
-              <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-
-            <a href="http://pinterest.com/makemagazine/">
-               <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-
-            <a href="https://instagram.com/makemagazine/">
-              <span class="fa-stack fa-mz">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+          <div class="social-network-container">
+            <ul class="social-network social-circle">
+              <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+              <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
+              <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
+            </ul>
           </div>
         </div><!-- End .desktop-social -->
       </div><!-- row -->

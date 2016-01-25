@@ -24,7 +24,7 @@ module.exports = function( grunt ) {
 		},
 		watch: {
 			css: {
-				files: ['less/**/*.less'],
+				files: ['less/**/*.less', 'version-2/less/**/*.less'],
 				tasks: ['less']
 			},
 			reload: {
