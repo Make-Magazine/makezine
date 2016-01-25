@@ -15,7 +15,7 @@
 		}
 	});
 	$(document).ready(function () {
-		$( "#modal-capture-btn.class-3dprinters" ).click(function() {
+		$( "#modal-capture-btn.class-printers" ).click(function() {
 			$(".fancybox3D").trigger('click');
 		});
 	});
@@ -63,7 +63,7 @@
 		}
 	});
 	$(document).ready(function () {
-		$( "#modal-capture-btn.class-makers-guide-to-boards, #modal-capture-btn.class-boards" ).click(function() {
+		$( "#modal-capture-btn.class-boards" ).click(function() {
 			$(".fancyboxBoards").trigger('click');
 		});
 	});

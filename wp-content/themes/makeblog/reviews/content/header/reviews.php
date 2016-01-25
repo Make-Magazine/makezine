@@ -61,7 +61,10 @@ $modal_text     = get_field( 'magazine_label', $id );
 				</li>
 				<?php if ( $modal_image ): ?>
 				<li class="mag navbar-right">
-					<button id="modal-capture-btn" class="modal-capture-btn class-<?php echo $post->post_name; ?>">
+					<button id="modal-capture-btn" class="modal-capture-btn class-<?php 
+					$catslug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+					echo $catslug;
+					?>">
 						<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
 						<?php echo esc_attr( $modal_text ); ?>
 					</button>

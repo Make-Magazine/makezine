@@ -207,10 +207,12 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						<?php }
 						?>
 						<div class="ad-unit">
+							<p id="ads-title">Advertisement</p>
 							<?php global $make;
 							print $make->ads->ad_300x250; ?>
 						</div>
 						<div class="ad-unit">
+							<p id="ads-title">Advertisement</p>
 							<?php global $make;
 							print $make->ads->ad_300x600; ?>
 						</div>
