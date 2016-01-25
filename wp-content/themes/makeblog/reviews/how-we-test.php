@@ -106,6 +106,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			</div><!-- .meta-block.pro-tips -->
 			
 			<div class="meta-block ad-1">
+				<p id="ads-title">ADVERTISEMENT</p>
 				<?php global $make; print $make->ads->ad_300x250_atf; ?>
 			</div><!-- .meta-block.ad-1 -->
 
@@ -118,6 +119,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			
 			
 			<div class="meta-block ad-2 desktop no-border">
+				<p id="ads-title">ADVERTISEMENT</p>
 				<?php global $make; print $make->ads->ad_300x600; ?>
 			</div><!-- .meta-block.ad-2 -->
 			
