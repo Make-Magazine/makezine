@@ -74,6 +74,15 @@
             googletag.pubads().setTargeting('t', ['y']);
           }
 
+          // Ad tracking
+          googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+            // Use GA if available.
+            if (window.ga && !make.gpt.adsTracked) {
+              ga('set', 'dimension1', 'true');
+              make.gpt.adsTracked = 1;
+            }
+          });
+
         });
 
       }
@@ -81,12 +90,6 @@
       $(document).ready(function(){
         // Try loading any placeholder for ads.
         make.gpt.loadDyn();
-        $(window).load(function(){
-          // Ads are available (no adblock).
-          if (window.googletag && googletag.pubadsReady) {
-            ga('set', 'dimension1', 'true');
-          }
-        });
       });
 
     },
