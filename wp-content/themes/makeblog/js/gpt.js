@@ -57,16 +57,14 @@
           googletag.pubads().collapseEmptyDivs();
 
           // page level targeting
-          if (window.ad_vars) {
-            if (ad_vars.page) {
-              googletag.pubads().setTargeting("page", ad_vars.page);
-            }
-            if (ad_vars.cat) {
-              googletag.pubads().setTargeting("cat", ad_vars.cat);
-            }
-            if (ad_vars.tags) {
-              googletag.pubads().setTargeting("tags", ad_vars.tags);
-            }
+          if (window.ad_vars && ad_vars.page) {
+            googletag.pubads().setTargeting("page", ad_vars.page);
+          }
+          if (window.ad_vars && ad_vars.cat) {
+            googletag.pubads().setTargeting("cat", ad_vars.cat);
+          }
+          if (window.ad_vars && ad_vars.tags) {
+            googletag.pubads().setTargeting("tags", ad_vars.tags);
           }
 
           // Test
