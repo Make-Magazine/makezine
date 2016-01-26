@@ -719,12 +719,6 @@ $(document).ready(function () {
             }
 
         });
-        $('blockquote').each(function () {
-            $quoteMarginTop = -($(this).height() + 175);
-            $(this).after('<div class="quote" style="margin-top: ' + $quoteMarginTop + 'px"></div>');
-        });
-        var $quoteMargin = ($('blockquote').width() + 62 - 68) / 2;
-        $('.quote').css('margin-left', $quoteMargin);
         $(document).on('click touchstart', '.modal-backdrop', function () {
             window.setTimeout(function () {
                 $('.modal-backdrop').remove();
