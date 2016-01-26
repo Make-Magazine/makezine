@@ -32,16 +32,15 @@ $(document).ready(function () {
     if ($('div').hasClass('single')) {
 
         /* social share buttons reload counters */
-        var basic_network_list = "twitter,linkedin,facebook,pinterest,google,stumbleupon,vk,reddit,buffer,love,ok,mwp,xing,pocket,mail,print,comments,yummly";
-        var extended_network_list = "del,digg,weibo,flattr,tumblr,whatsapp,meneame,blogger,amazon,yahoomail,gmail,aol,newsvine,hackernews,evernote,myspace,mailru,viadeo,line,flipboard,sms,viber";
+        var basic_network_list = 'twitter,linkedin,facebook,pinterest,google,stumbleupon,vk,reddit,buffer,love,ok,mwp,xing,pocket,mail,print,comments,yummly';
+        var extended_network_list = 'del,digg,weibo,flattr,tumblr,whatsapp,meneame,blogger,amazon,yahoomail,gmail,aol,newsvine,hackernews,evernote,myspace,mailru,viadeo,line,flipboard,sms,viber';
 
-        var plugin_url = essb_settings.essb3_plugin_url;
         var fb_value = essb_settings.essb3_facebook_total;
         var counter_admin = essb_settings.essb3_admin_ajax;
         var interal_counters_all = essb_settings.essb3_internal_counter;
         var button_counter_hidden = essb_settings.essb3_counter_button_min;
-        var no_print_mail_counter = typeof(essb_settings.essb3_no_counter_mailprint) != "undefined" ? essb_settings.essb3_no_counter_mailprint : false;
-        var force_single_ajax = typeof(essb_settings.essb3_single_ajax) != "undefined" ? essb_settings.essb3_single_ajax : false;
+        var no_print_mail_counter = typeof(essb_settings.essb3_no_counter_mailprint) != 'undefined' ? essb_settings.essb3_no_counter_mailprint : false;
+        var force_single_ajax = typeof(essb_settings.essb3_single_ajax) != 'undefined' ? essb_settings.essb3_single_ajax : false;
 
         var essb_shorten_number = function (n) {
             if ('number' !== typeof n) n = Number(n);
@@ -65,52 +64,52 @@ $(document).ready(function () {
                 )
                     return sgn + Math.floor(n) + suffix;
                 return (sgn + n).replace(/(\.\d).*/, '$1') + suffix; // #.#k
-            } while (suffixes.length)
+            } while (suffixes.length);
             return sgn + 'many';
-        }
+        };
 
         var essb_get_counters = function () {
             return $('.essb_links.essb_counters').each(function () {
 
                 // missing plugin settings - code cannot run from here
-                if (typeof(essb_settings) == "undefined") {
+                if (typeof(essb_settings) == 'undefined') {
                     return;
                 }
 
-                var counter_pos = $(this).attr("data-essb-counter-pos") || "";
-                var post_self_count_id = $(this).attr("data-essb-postid") || "";
+                var counter_pos = $(this).attr('data-essb-counter-pos') || '';
+                var post_self_count_id = $(this).attr('data-essb-postid') || '';
 
-                var url = $(this).attr("data-essb-url") || "";
-                var twitter_url = $(this).attr("data-essb-twitter-url") || "";
+                var url = $(this).attr('data-essb-url') || '';
 
-                var instance_id = $(this).attr("data-essb-instance") || "";
+                var instance_id = $(this).attr('data-essb-instance') || '';
 
                 var ajax_url = essb_settings.ajax_url;
-                if (essb_settings.ajax_type == "light") {
+                if (essb_settings.ajax_type == 'light') {
                     ajax_url = essb_settings.blog_url;
                 }
 
                 // definy the counter API
-                var nonapi_counts_url = (counter_admin) ? ajax_url + "?action=essb_counts&nonce=" + essb_settings.essb3_nonce + "&" : essb_settings.essb3_plugin_url + "/public/get-noapi-counts.php?";
-                var nonapi_internal_url = ajax_url + "?action=essb_counts&nonce=" + essb_settings.essb3_nonce + "&";
+                var nonapi_counts_url = (counter_admin) ? ajax_url + '?action=essb_counts&nonce=' + essb_settings.essb3_nonce + '&' : essb_settings.essb3_plugin_url + '/public/get-noapi-counts.php?';
+                var nonapi_internal_url = ajax_url + '?action=essb_counts&nonce=' + essb_settings.essb3_nonce + '&';
                 //console.log(nonapi_internal_url);
-                var basic_networks = basic_network_list.split(",");
-                var extended_networks = extended_network_list.split(",");
+                var basic_networks = basic_network_list.split(',');
+                var extended_networks = extended_network_list.split(',');
 
                 var direct_access_networks = [];
                 var nonapi_count_networks = [];
                 var nonapi_internal_count_networks = [];
-                for (var i = 0; i < basic_networks.length; i++) {
+                var i;
+                for (i = 0; i < basic_networks.length; i++) {
                     if ($(this).find('.essb_link_' + basic_networks[i]).length) {
                         switch (basic_networks[i]) {
-                            case "google":
-                            case "stumbleupon":
-                            case "vk":
-                            case "reddit":
-                            case "ok":
-                            case "mwp":
-                            case "xing":
-                            case "pocket":
+                            case 'google':
+                            case 'stumbleupon':
+                            case 'vk':
+                            case 'reddit':
+                            case 'ok':
+                            case 'mwp':
+                            case 'xing':
+                            case 'pocket':
                                 if (counter_admin) {
                                     nonapi_internal_count_networks.push(basic_networks[i]);
                                 }
@@ -118,12 +117,12 @@ $(document).ready(function () {
                                     nonapi_count_networks.push(basic_networks[i]);
                                 }
                                 break;
-                            case "love":
-                            case "comments":
+                            case 'love':
+                            case 'comments':
                                 nonapi_internal_count_networks.push(basic_networks[i]);
                                 break;
-                            case "mail":
-                            case "print":
+                            case 'mail':
+                            case 'print':
                                 if (!no_print_mail_counter) {
                                     nonapi_internal_count_networks.push(basic_networks[i]);
                                 }
@@ -136,7 +135,7 @@ $(document).ready(function () {
                 }
 
                 if (interal_counters_all) {
-                    for (var i = 0; i < extended_networks.length; i++) {
+                    for (i = 0; i < extended_networks.length; i++) {
                         if ($(this).find('.essb_link_' + extended_networks[i]).length) {
                             nonapi_internal_count_networks.push(extended_networks[i]);
                         }
@@ -145,15 +144,17 @@ $(document).ready(function () {
 
                 // start populating counters - direct access API counters
                 var operating_elements = {};
-                for (var i = 0; i < direct_access_networks.length; i++) {
-                    var network = direct_access_networks[i];
+                var network;
+                var network_address;
+                for (i = 0; i < direct_access_networks.length; i++) {
+                    network = direct_access_networks[i];
 
-                    operating_elements[network + "" + instance_id] = $(this).find('.essb_link_' + network);
+                    operating_elements[network + '' + instance_id] = $(this).find('.essb_link_' + network);
                     operating_elements[network + '_inside' + instance_id] = operating_elements[network + instance_id].find('.essb_network_name');
 
                     switch (network) {
-                        case "facebook":
-                            var facebook_url = "https://graph.facebook.com/fql?q=SELECT%20like_count,%20total_count,%20share_count,%20click_count,%20comment_count%20FROM%20link_stat%20WHERE%20url%20=%20%22" + url + "%22";
+                        case 'facebook':
+                            var facebook_url = 'https://graph.facebook.com/fql?q=SELECT%20like_count,%20total_count,%20share_count,%20click_count,%20comment_count%20FROM%20link_stat%20WHERE%20url%20=%20%22' + url + '%22';
                             $.getJSON(facebook_url)
                                 .done(function (data) {
                                     if (fb_value) {
@@ -165,30 +166,30 @@ $(document).ready(function () {
                                 });
                             break;
 
-                        case "linkedin":
-                            var linkedin_url = "https://www.linkedin.com/countserv/count/share?format=jsonp&url=" + url + "&callback=?";
+                        case 'linkedin':
+                            var linkedin_url = 'https://www.linkedin.com/countserv/count/share?format=jsonp&url=' + url + '&callback=?';
                             $.getJSON(linkedin_url)
                                 .done(function (data) {
                                     counter_display(counter_pos, operating_elements['linkedin' + instance_id], operating_elements['linkedin_inside' + instance_id], data.count);
                                 });
                             break;
 
-                        case "pinterest":
-                            var pinterest_url = "https://api.pinterest.com/v1/urls/count.json?callback=?&url=" + url;
+                        case 'pinterest':
+                            var pinterest_url = 'https://api.pinterest.com/v1/urls/count.json?callback=?&url=' + url;
                             $.getJSON(pinterest_url)
                                 .done(function (data) {
                                     counter_display(counter_pos, operating_elements['pinterest' + instance_id], operating_elements['pinterest_inside' + instance_id], data.count);
                                 });
                             break;
-                        case "buffer":
-                            var buffer_url = "https://api.bufferapp.com/1/links/shares.json?url=" + url + "&callback=?";
+                        case 'buffer':
+                            var buffer_url = 'https://api.bufferapp.com/1/links/shares.json?url=' + url + '&callback=?';
                             $.getJSON(buffer_url)
                                 .done(function (data) {
                                     counter_display(counter_pos, operating_elements['buffer' + instance_id], operating_elements['buffer_inside' + instance_id], data.shares);
                                 });
                             break;
-                        case "yummly":
-                            var yummly_url = "https://www.yummly.com/services/yum-count?callback=?&url=" + url;
+                        case 'yummly':
+                            var yummly_url = 'https://www.yummly.com/services/yum-count?callback=?&url=' + url;
                             $.getJSON(yummly_url)
                                 .done(function (data) {
                                     counter_display(counter_pos, operating_elements['yummly' + instance_id], operating_elements['yummly_inside' + instance_id], data.count);
@@ -199,16 +200,15 @@ $(document).ready(function () {
 
                 }
 
-                for (var i = 0; i < nonapi_count_networks.length; i++) {
-                    var network = nonapi_count_networks[i];
+                for (i = 0; i < nonapi_count_networks.length; i++) {
+                    network = nonapi_count_networks[i];
 
                     operating_elements[network + instance_id] = $(this).find('.essb_link_' + network);
                     operating_elements[network + '_inside' + instance_id] = operating_elements[network + instance_id].find('.essb_network_name');
 
-                    var network_address = nonapi_counts_url + "nw=" + network + "&url=" + url + "&instance=" + instance_id;
+                    network_address = nonapi_counts_url + 'nw=' + network + '&url=' + url + '&instance=' + instance_id;
                     $.getJSON(network_address)
                         .done(function (data) {
-                            var cache_key = data.network + "|" + data.url;
                             counter_display(counter_pos, operating_elements[data.network + data.instance], operating_elements[data.network + '_inside' + data.instance], data.count);
                         });
 
@@ -216,35 +216,35 @@ $(document).ready(function () {
 
                 var post_network_list = [];
 
-                for (var i = 0; i < nonapi_internal_count_networks.length; i++) {
-                    var network = nonapi_internal_count_networks[i];
+                for (i = 0; i < nonapi_internal_count_networks.length; i++) {
+                    network = nonapi_internal_count_networks[i];
 
                     post_network_list.push(network);
                     operating_elements[network + instance_id] = $(this).find('.essb_link_' + network);
                     operating_elements[network + '_inside' + instance_id] = operating_elements[network + instance_id].find('.essb_network_name');
                     //console.log('internal networks =' + network);
                     if (!force_single_ajax) {
-                        var network_address = nonapi_internal_url + "nw=" + network + "&url=" + url + "&instance=" + instance_id + "&post=" + post_self_count_id;
+                        network_address = nonapi_internal_url + 'nw=' + network + '&url=' + url + '&instance=' + instance_id + '&post=' + post_self_count_id;
 
                         $.getJSON(network_address)
                             .done(function (data) {
-                                var counter = data[data.network] || "0";
+                                var counter = data[data.network] || '0';
                                 counter_display(counter_pos, operating_elements[data.network + data.instance], operating_elements[data.network + '_inside' + data.instance], counter);
                             });
                     }
                 }
 
                 if (post_network_list.length > 0 && force_single_ajax) {
-                    var network_address = nonapi_internal_url + "nw=" + post_network_list.join(",") + "&url=" + url + "&instance=" + instance_id + "&post=" + post_self_count_id;
+                    network_address = nonapi_internal_url + 'nw=' + post_network_list.join(',') + '&url=' + url + '&instance=' + instance_id + '&post=' + post_self_count_id;
                     //console.log(network_address);
                     $.getJSON(network_address)
                         .done(function (data) {
 
                             for (var i = 0; i < post_network_list.length; i++) {
                                 var network_key = post_network_list[i];
-                                var counter = data[network_key] || "0";
+                                var counter = data[network_key] || '0';
 
-                                //console.log(network_key + " = " + counter);
+                                //console.log(network_key + ' = ' + counter);
                                 counter_display(counter_pos, operating_elements[network_key + data.instance], operating_elements[network_key + '_inside' + data.instance], counter);
                             }
                         });
@@ -252,43 +252,43 @@ $(document).ready(function () {
                 }
 
                 var counter_display = function (counter_pos, $element, $element_inside, $cnt) {
-                    $css_hidden_negative = "";
+                    $css_hidden_negative = '';
                     if (button_counter_hidden != '') {
                         if (parseInt(button_counter_hidden) > parseInt($cnt)) {
                             $css_hidden_negative = ' style="display: none;"';
                         }
                     }
 
-                    if (counter_pos == "right") {
+                    if (counter_pos == 'right') {
                         $element.append('<span class="essb_counter_right" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
                     }
-                    else if (counter_pos == "inside") {
+                    else if (counter_pos == 'inside') {
                         $element_inside.html('<span class="essb_counter_inside" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
                     }
-                    else if (counter_pos == "insidename") {
+                    else if (counter_pos == 'insidename') {
                         $element_inside.append('<span class="essb_counter_insidename" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
                     }
-                    else if (counter_pos == "insidehover") {
-                        $element_inside.closest("a").append('<span class="essb_counter_insidehover" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
+                    else if (counter_pos == 'insidehover') {
+                        $element_inside.closest('a').append('<span class="essb_counter_insidehover" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
 
                         // fix width of new element
-                        var current_width = $element_inside.closest("a").find('.essb_network_name').innerWidth();
-                        $element_inside.closest("a").find('.essb_counter_insidehover').width(current_width);
+                        var current_width = $element_inside.closest('a').find('.essb_network_name').innerWidth();
+                        $element_inside.closest('a').find('.essb_counter_insidehover').width(current_width);
                     }
-                    else if (counter_pos == "insidebeforename") {
+                    else if (counter_pos == 'insidebeforename') {
                         $element_inside.prepend('<span class="essb_counter_insidebeforename" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
                     }
-                    else if (counter_pos == "bottom") {
+                    else if (counter_pos == 'bottom') {
                         $element_inside.html('<span class="essb_counter_bottom" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
                     }
-                    else if (counter_pos == "hidden") {
+                    else if (counter_pos == 'hidden') {
                         $element.append('<span class="essb_counter_hidden" cnt="' + $cnt + '"' + $css_hidden_negative + '></span>');
                     }
                     else {
                         $element.prepend('<span class="essb_counter" cnt="' + $cnt + '"' + $css_hidden_negative + '>' + essb_shorten_number($cnt) + '</span>');
                     }
 
-                }
+                };
             });
         };
         /* end social shares buttons reload counters*/
@@ -355,7 +355,7 @@ $(document).ready(function () {
                 if ($first_time == 0) {
                     $first_time = 1;
                     $('.row.infinity').addClass('current');
-                    if (window.navigator.userAgent.indexOf("Chrome") > 0) {
+                    if (window.navigator.userAgent.indexOf('Chrome') > 0) {
                         $window = $(window).width() + 17;
                     } else {
                         $window = $(window).width();
@@ -504,7 +504,7 @@ $(document).ready(function () {
             }
             var $current = $(this);
             $newId = $(this).attr('href');
-            if ($(".story-header").is($newId) === false) {
+            if ($('.story-header').is($newId) === false) {
                 $('.row.infinity').addClass('current');
                 getStory($offset, $id, $number);
                 $offset = $offset + $number;
@@ -547,11 +547,11 @@ $(document).ready(function () {
             $flag = PostId - 1;
         }
 
-        $(document).on("mouseover", ".sidebar .author-name .bio-wrapper,.sidebar .avatar", function () {
+        $(document).on('mouseover', '.sidebar .author-name .bio-wrapper,.sidebar .avatar', function () {
             $(this).find('.hover-info').show();
             $(this).addClass('hover');
         });
-        $(document).on("mouseleave", ".sidebar .author-name .bio-wrapper,.sidebar .avatar", function () {
+        $(document).on('mouseleave', '.sidebar .author-name .bio-wrapper,.sidebar .avatar', function () {
             $(this).find('.hover-info').hide();
             $(this).removeClass('hover');
         });
@@ -602,11 +602,11 @@ $(document).ready(function () {
                     'action': 'get_story_thumbnail_with_ajax'
                 },
                 success: function (data) {
-                    $(".row.infinity").after(data);
-                    $(".row.infinity.current").remove();
+                    $('.row.infinity').after(data);
+                    $('.row.infinity.current').remove();
                     $first_time = 0;
                 },
-                error: function (errorThrown) {
+                error: function () {
                 }
             });
         }
@@ -623,8 +623,8 @@ $(document).ready(function () {
                     'action': 'get_story_with_ajax'
                 },
                 success: function (data) {
-                    $(".row.infinity").before(data);
-                    $(".row.infinity.current").removeClass('current');
+                    $('.row.infinity').before(data);
+                    $('.row.infinity.current').removeClass('current');
                     $first_time = 0;
                     if ($id !== 0) {
                         scrollToStory($id);
@@ -644,14 +644,14 @@ $(document).ready(function () {
                         $(this).html(newTitle);
                     });
                 },
-                error: function (errorThrown) {
+                error: function () {
                 }
             });
         }
 
         function copyContextlyWidget() {
             var $ctxSiderail = $('.content.first-story .ctx-siderail-container').clone();
-            $('.ctx-siderail-wrapper').each(function (index) {
+            $('.ctx-siderail-wrapper').each(function () {
                 if ($(this).height() == 0) {
                     $($ctxSiderail).appendTo(this);
                 }
@@ -695,7 +695,7 @@ $(document).ready(function () {
             } else if ($(this).hasClass('essb_link_reddit')) {
                 socialNetwork = 'Reddit';
             } else if ($(this).hasClass('essb_link_pinterest')) {
-                socialNetwork = 'Pinterest'
+                socialNetwork = 'Pinterest';
             } else {
                 socialNetwork = 'Social network';
             }
@@ -755,7 +755,7 @@ $(document).ready(function () {
             $(this).html(newTitle);
         });
         var windowHeight;
-        $(document).on("click", ".comments button", function () {
+        $(document).on('click', '.comments button', function () {
             $window = $(window).width();
             if ($window <= 767) {
                 windowHeight = $(window).height() - 40;
@@ -770,7 +770,7 @@ $(document).ready(function () {
         var ctx = $('#ctx-module').remove();
         $('.essb_right_flag').before(ctx);
         var currentUrl, changeUrl, changeCurrent, storyIndex, goTo = -1, storyInNavigator, storyId, previousUrl = document.referrer;
-        $(window).on('popstate', function (e) {
+        $(window).on('popstate', function () {
             currentUrl = window.location.pathname;
             storyInNavigator = $(currentUrl);
             storyId = $(storyInNavigator).attr('href');
