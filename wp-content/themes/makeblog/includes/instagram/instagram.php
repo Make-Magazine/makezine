@@ -91,27 +91,7 @@ class Make_Instagram {
     ?>
     <?php
     // Twitter post
-    $output ="<div class=\"item-holder\"><div class=\"container\"><div class=\"row\"><div class=\"col-xs-12 col-sm-4\"><div class=\"social-holder twitter\"><div class=\"title\"><h1><a href=\"https://twitter.com/hashtag/sproutbyhp\" target=\"_blank\" alt=\"Twitter\">#sproutbyhp</a>, <a href=\"https://twitter.com/hashtag/gomakethings\" target=\"_blank\" alt=\"Twitter\">#gomakethings</a></h1></div><a class='twitter-timeline' href='https://twitter.com/hashtag/sproutbyhp' data-widget-id='632328929018167296'>#sproutbyhp Tweets</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script></div></div>";
-    
-    // Instagram photos
-    $output .="<div class=\"col-xs-12 col-sm-8\">
-              <div class=\"social-holder instagram\">
-                <div class=\"title\">
-                  <h1>Instagram, <a href=\"https://instagram.com/explore/tags/sproutbyhp/\" target=\"_blank\" alt=\"Instagram\">#sproutbyhp</a>, <a href=\"https://instagram.com/explore/tags/gomakethings/\" target=\"_blank\" alt=\"Instagram\">#gomakethings</a></h1>
-                </div>";
-          foreach( $pages as $page ) {      
-              $output .= "<ul class=\"img-list\">";
-              foreach( $page as $img ) {
-            $output .= "<li class='col-xs-6 col-sm-4'><a href=\"" . esc_url( $img->link ) . "\" target=\"_blank\" class=\"instagram-link\"><img src=\"" . esc_url( $img->images->standard_resolution->url ) . "\" class=\"img-responsive\" alt=\"image description\"></a></li>";
-              }
-            $output .= "</ul>";
-          }
-            $output .= "
-              </div>
-            </div>";
-    $output .="</div></div></div>";
-
+    $output ="<div class=\"twitter-holder\"><div class=\"container\"><div class=\"row\"><div class=\"col-xs-12\"><div class=\"social-holder twitter\"><div class=\"title\"><h1><a href=\"https://twitter.com/hashtag/sproutbyhp\" target=\"_blank\" alt=\"Twitter\">#sproutbyhp</a>, <a href=\"https://twitter.com/hashtag/gomakethings\" target=\"_blank\" alt=\"Twitter\">#gomakethings</a></h1></div></div><div id=\"recent-twitter\"></div></div></div></div></div>";
     return $output;
   }
 
