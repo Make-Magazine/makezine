@@ -1,36 +1,39 @@
-body.no-padding {
-  .modal-backdrop {
-    opacity: 0 !important;
-  }
-  #myModal.display {
-    display: block !important;
-  }
-}
-
 body.single-story {
   overflow-y: hidden;
+  &.modal-open {
+    padding-right: inherit !important;
+    .modal-backdrop {
+      opacity: 0 !important;
+    }
+    #myModal.display {
+      display: block !important;
+    }
+  }
   .grav-clone-a, #grav-throbber {
     display: none;
   }
-}
-
-body.single-story.modal-open {
-  padding-right: inherit !important;
-}
-
-.single.story-detail.admin_is_login {
-  .container.wrapper {
-    .row.navigator.open {
-      top: 84px;
-      overflow: hidden;
-    }
-    .row.navigator.open.sticky {
-      top: 84px;
+  @media only screen and (min-width: 768px) {
+    #footer {
+      display: none;
+      z-index: 1;
+      position: relative;
     }
   }
 }
 
-.single.story-detail {
+
+.mz-story-infinite-view {
+  &.admin_is_login {
+    .container.wrapper {
+      .row.navigator.open {
+        top: 84px;
+        overflow: hidden;
+      }
+      .row.navigator.open.sticky {
+        top: 84px;
+      }
+    }
+  }
   blockquote {
     padding: 60px 31px;
     border: none;
@@ -822,42 +825,31 @@ body.single-story.modal-open {
       border: 1px solid #979797;
     }
   }
-}
 
-@media only screen and (min-width: 768px) {
-  .single-story {
-    .single.story-detail {
-      .container.wrapper {
-        .posts-navigator {
-          overflow-y: auto !important;
-        }
-        .story-header {
-          margin-bottom: -50px;
-          margin-top: 14px;
-        }
-        .line-separator {
-          border: 1px solid #9c9c9c;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
-          position: absolute;
-          width: 100%;
-          left: 0;
-          margin-top: -47px;
-        }
-        .more-thumbnails, .row.more {
-          display: none;
-        }
+  @media only screen and (min-width: 768px) {
+    .container.wrapper {
+      .posts-navigator {
+        overflow-y: auto !important;
+      }
+      .story-header {
+        margin-bottom: -50px;
+        margin-top: 14px;
+      }
+      .line-separator {
+        border: 1px solid #9c9c9c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        margin-top: -47px;
+      }
+      .more-thumbnails, .row.more {
+        display: none;
       }
     }
-    #footer {
-      display: none;
-      z-index: 1;
-      position: relative;
-    }
   }
-}
 
-@media only screen and (max-width: 767px) {
-  .single.story-detail {
+  @media only screen and (max-width: 767px) {
     margin: 0 -20px;
     .container.wrapper {
       .thumbnails {
@@ -1012,20 +1004,16 @@ body.single-story.modal-open {
       }
     }
   }
-}
 
-@media only screen and (max-width: 480px) {
-  .single.story-detail {
+  @media only screen and (max-width: 480px) {
     .more-thumbnails {
       .thumbnail-image {
         height: 153px;
       }
     }
   }
-}
 
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-  .single.story-detail {
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
     .container.wrapper {
       .more-thumbnails {
         .thumbnail-image {
@@ -1034,10 +1022,8 @@ body.single-story.modal-open {
       }
     }
   }
-}
 
-@media only screen and (max-width: 991px) {
-  .single.story-detail {
+  @media only screen and (max-width: 991px) {
     .content {
       .sidebar {
         margin-right: 0;
@@ -1056,15 +1042,15 @@ body.single-story.modal-open {
       }
     }
   }
-}
 
-@media only screen and (min-width: 1200px) {
-  .single.story-detail {
+  @media only screen and (min-width: 1200px) {
     .content {
       width: 1029px;
     }
   }
 }
+
+
 
 /*BEGIN Easy social share buttons styles*/
 
@@ -1233,7 +1219,7 @@ body.single-story.modal-open {
     }
   }
 
-  .single.story-detail {
+  .mz-story-infinite-view {
     .container.wrapper {
       .content {
         .sidebar {
@@ -1245,7 +1231,7 @@ body.single-story.modal-open {
 }
 
 @media screen and (min-width: 992px) {
-  .single.story-detail {
+  .mz-story-infinite-view {
     .content {
       article {
         margin: 0 19px 0 5px;
