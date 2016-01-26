@@ -1828,7 +1828,7 @@ function get_story_with_ajax() {
                         <?php the_content(); ?>
                     </article>
                     <div class="comments">
-                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>', '<?php echo get_the_title(); ?>', 'en');">Show comments</button>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#disqus-modal" onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>', '<?php echo get_the_title(); ?>', 'en');">Show comments</button>
                     </div>
                 </div>
                 <aside class="col-md-4 sidebar">
