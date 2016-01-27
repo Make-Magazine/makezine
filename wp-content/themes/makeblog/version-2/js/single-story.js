@@ -711,6 +711,7 @@ $(document).ready(function () {
         // Disqus modal remove modal-backdrop
         $(document).on('click touchstart', '.modal-backdrop, .comments .close', function () {
             $('.modal-backdrop').remove();
+            $('html').removeClass('modal-open');
         });
         // Disqus disable body scroll while comments modal is open
         $(document).on('click touchstart', '.comments button.btn', function () {
