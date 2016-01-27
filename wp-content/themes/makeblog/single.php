@@ -162,8 +162,11 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 						<div class="comments">
 
-							<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#disqus-modal"
-									onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>', '<?php echo get_the_title(); ?>', 'en');">
+							<button type="button" class="btn btn-info btn-lg"
+									data-toggle="modal" data-target="#disqus-modal"
+									onclick="reset('<?php echo get_the_ID(); ?>',
+										'<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>',
+										'<?php echo get_the_title(); ?>', 'en');">
 								Show comments
 							</button>
 

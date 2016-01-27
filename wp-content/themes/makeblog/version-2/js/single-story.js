@@ -307,7 +307,7 @@ $(document).ready(function () {
         var $scrollingToPost = 0;
         var stop = 0;
 
-        $window = $(window).width() + 17;
+        var viewPortWidth = $(window).width() + 17;
         var thumbnailsHeight = $(window).height() - 89 - $('#wpadminbar').height();
         if (detectIE() != false) {
             thumbnailsHeight -= 20;
@@ -326,8 +326,8 @@ $(document).ready(function () {
             navigatorHeight = $(window).height() - 50;
             $('.navigator .thumbnails').addClass('open').css('height', thumbnailsHeight);
             $('.row.navigator').addClass('open').css('height', navigatorHeight);
-            $window = $(window).width() + 17;
-            if ($window <= 767) {
+            viewPortWidth = $(window).width() + 17;
+            if (viewPortWidth <= 767) {
                 if ($first_resize == 0) {
                     $first_resize = 1;
                     $('.more-thumbnails .posts-navigator').css('display', '');
@@ -343,9 +343,9 @@ $(document).ready(function () {
                 $bottom = $(this).find('.essb_right_flag').offset().top - 100;
                 bottomArray[index] = $bottom;
             });
-            $window = $(window).width() + 17;
+            viewPortWidth = $(window).width() + 17;
             if ($('.row').hasClass('infinity')) {
-                if ($window <= 767) {
+                if (viewPortWidth <= 767) {
                     infinity = $('.row.infinity').offset().top - $(window).height() - 1000;
                 } else {
                     infinity = $('.row.infinity').offset().top - 3100;
@@ -357,11 +357,11 @@ $(document).ready(function () {
                     $first_time = 1;
                     $('.row.infinity').addClass('current');
                     if (window.navigator.userAgent.indexOf('Chrome') > 0) {
-                        $window = $(window).width() + 17;
+                        viewPortWidth = $(window).width() + 17;
                     } else {
-                        $window = $(window).width();
+                        viewPortWidth = $(window).width();
                     }
-                    if ($window <= 767) {
+                    if (viewPortWidth <= 767) {
                         getStoryThumbnail($offset);
                         $offset = $offset + 9;
                     } else {
@@ -707,42 +707,12 @@ $(document).ready(function () {
                 eventLabel: window.location.href
             });
         });
-        $(document).on('click touchstart', '.comments-button', function () {
-            if (!$(this).hasClass('open')) {
-                $(this).parent().parent().find('.comments').slideDown(500);
-                $(this).addClass('open');
-                var $commentsHeight = $(this).parent().parent().find('#disqus_thread').height();
-                $(this).parent().css('margin-top', $commentsHeight);
-            } else {
-                $(this).removeClass('open');
-                $(this).parent().css('margin-top', '0');
-                $(this).parent().parent().find('.comments').slideUp(500);
-            }
 
+        // Disqus modal remove modal-backdrop
+        $(document).on('click touchstart', '.modal-backdrop, .comments .close', function () {
+            $('.modal-backdrop').remove();
         });
-        $(document).on('click touchstart', '.modal-backdrop', function () {
-            window.setTimeout(function () {
-                $('.modal-backdrop').remove();
-                $('#disqus-modal').removeClass('display').addClass('closed');
-            }, 800);
-        });
-        $(document).on('click touchstart', '.comments button.close', function () {
-            window.setTimeout(function () {
-                $('.modal-backdrop').remove();
-                $('#disqus-modal').removeClass('display');
-            }, 800);
-        });
-        $(document).on('click touchstart', '.comments button.btn', function () {
-            $window = $(window).width() + 17;
-            if ($window >= 768) {
-                if ($('#disqus-modal').hasClass('closed')) {
-                    $('#disqus-modal').addClass('display');
-                    window.setTimeout(function () {
-                        $('#disqus-modal').addClass('in');
-                    }, 200);
-                }
-            }
-        });
+
         $('.single .latest-story h3').each(function () {
             newTitle = $(this).html().replace('&nbsp;', ' ');
             $(this).html(newTitle);
@@ -754,8 +724,8 @@ $(document).ready(function () {
         });
         var windowHeight;
         $(document).on('click', '.comments button', function () {
-            $window = $(window).width();
-            if ($window <= 767) {
+            viewPortWidth = $(window).width();
+            if (viewPortWidth <= 767) {
                 windowHeight = $(window).height() - 40;
                 $('#disqus_thread').height(windowHeight);
             } else {
