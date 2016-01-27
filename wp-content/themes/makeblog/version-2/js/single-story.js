@@ -712,6 +712,12 @@ $(document).ready(function () {
         $(document).on('click touchstart', '.modal-backdrop, .comments .close', function () {
             $('.modal-backdrop').remove();
         });
+        // Disqus disable body scroll while comments modal is open
+        $(document).on('click touchstart', '.comments button.btn', function () {
+            console.log('thing');
+            $('html').addClass('modal-open');
+        });
+
 
         $('.single .latest-story h3').each(function () {
             newTitle = $(this).html().replace('&nbsp;', ' ');
