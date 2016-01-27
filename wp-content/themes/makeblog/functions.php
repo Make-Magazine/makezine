@@ -2036,6 +2036,7 @@ function subscribe_return_path_overlay() { ?>
  * Checks the URL for which thank you modal to how.
  * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
  * URL with ?thankyou=true&subscribed-to=free-pdf will show the any free PDF modal
+ * URL with ?success=true&subscribe-preferences will show the WhatCounts Subscription preferences success modal
  */
 function display_thank_you_modal_if_signed_up() { ?>
     <script>
@@ -2064,19 +2065,31 @@ function display_thank_you_modal_if_signed_up() { ?>
                 });
                 $(".fancybox-thx-free-pdf").trigger('click');
             }
+            else if(window.location.href.indexOf("?success=true&subscribe-preferences") > -1) {
+                $(".fancybox-sub-pref").fancybox({
+                    autoSize : false,
+                    width  : 480,
+                    autoHeight : true,
+                    padding : 0,
+                    afterLoad   : function() {
+                        this.content = this.content.html();
+                    }
+                });
+                $(".fancybox-sub-pref").trigger('click');
+            }
         });
     </script>
     <div class="fancybox-thx" style="display:none;">
         <div class="nl-modal-cont">
             <div class="col-sm-4 hidden-xs nl-modal">
-      <span class="fa-stack fa-4x">
-        <i class="fa fa-circle-thin fa-stack-2x"></i>
-        <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
-      </span>
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+                </span>
             </div>
             <div class="col-sm-8 col-xs-12 nl-modal">
                 <h3>Awesome!</h3>
-                <p>Thanks for signing up.</p>
+                <p class="text-center">Thanks for signing up.</p>
                 <div class="social-network-container text-center">
                     <ul class="social-network social-circle">
                         <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -2090,14 +2103,36 @@ function display_thank_you_modal_if_signed_up() { ?>
     <div class="fancybox-thx-free-pdf" style="display:none;">
         <div class="nl-modal-cont">
             <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle-thin fa-stack-2x"></i>
-            <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
-          </span>
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+                </span>
             </div>
             <div class="col-sm-9 col-xs-12 nl-modal">
                 <h3>Awesome!</h3>
-                <p>Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
+                <p class="text-center">Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
+                <div class="social-network-container text-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="fancybox-sub-pref" style="display:none;">
+        <div class="nl-modal-cont">
+            <div class="col-sm-4 hidden-xs nl-modal">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="col-sm-8 col-xs-12 nl-modal">
+                <h3>We've got it.</h3>
+                <p class="text-center">Your changes have been saved. Keep Making!</p>
                 <div class="social-network-container text-center">
                     <ul class="social-network social-circle">
                         <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
