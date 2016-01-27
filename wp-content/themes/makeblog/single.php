@@ -15,7 +15,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	$login_admin = 'admin_is_login';
 }
 ?>
-<div class="single <?php echo $login_admin ?> story-detail">
+<div class="mz-story-infinite-view <?php echo $login_admin ?>">
 
 	<div class="container wrapper">
 		<div class="ad-unit first-ad">
@@ -162,13 +162,16 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 						<div class="comments">
 
-							<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
-									onclick="reset('<?php echo get_the_ID(); ?>', '<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>', '<?php echo get_the_title(); ?>', 'en');">
+							<button type="button" class="btn btn-info btn-lg"
+									data-toggle="modal" data-target="#disqus-modal"
+									onclick="reset('<?php echo get_the_ID(); ?>',
+										'<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>',
+										'<?php echo get_the_title(); ?>', 'en');">
 								Show comments
 							</button>
 
 							<!-- Modal -->
-							<div id="myModal" class="modal fade" role="dialog">
+							<div id="disqus-modal" class="modal fade" role="dialog">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 							</div>
 						</div>
@@ -264,7 +267,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	/* * * Disqus Reset Function * * */
 	var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
 		$('#disqus_thread').remove();
-		$('#myModal').append('<div id="disqus_thread"></div>');
+		$('#disqus-modal').append('<div id="disqus_thread"></div>');
 		DISQUS.reset({
 			reload: true,
 			config: function () {
