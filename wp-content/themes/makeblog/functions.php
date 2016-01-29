@@ -2146,28 +2146,28 @@ function display_thank_you_modal_if_signed_up() { ?>
                           <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_1" value="6B5869DC547D3D46E66DEF1987C64E7A" />
                           <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
                         </label>
-                        <h4>Maker Faire</h4><p>Cool Stuff from Maker Faires</p>
+                        <h4>Maker Faire</h4><p>Keep up with the Greatest Show(and tell) on Earth.</p>
                         <hr />
 
                         <label class="list-radio pull-right">
                           <input type="checkbox" id="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" name="slid_2" value="6B5869DC547D3D46510F6AB3E701BA0A" />
                           <span for="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" class="newcheckbox"></span>
                         </label>
-                        <h4>Maker Shed</h4><p>The Best New Products in the Maker Shed</p>
+                        <h4>Maker Shed</h4><p>Be the first to learn about new products, plus exclusive discounts.</p>
                         <hr />
 
                         <label class="list-radio pull-right">
                           <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
                           <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
                         </label>
-                        <h4>Maker Pro</h4><p>Pro Tips from the Biggest Makers on the Planet</p>
+                        <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators.</p>
                         <hr />
 
                         <label class="list-radio pull-right">
                           <input type="checkbox" id="list_6B5869DC547D3D46E7DA8972680CE7C2_yes" name="slid_4" value="6B5869DC547D3D46E7DA8972680CE7C2" />
                           <span for="list_6B5869DC547D3D46E7DA8972680CE7C2_yes" class="newcheckbox"></span>
                         </label>    
-                        <h4>Other Media</h4><p>Cool Promotions and Other Stuff</p>
+                        <h4>Make Updates</h4><p>Other news and events from Maker Media.</p>
                         <hr />
 
                       <input class="ghost-button-black pull-right" type="submit" value="Subscribe" />
