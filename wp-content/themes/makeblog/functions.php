@@ -2041,6 +2041,32 @@ function subscribe_return_path_overlay() { ?>
 function display_thank_you_modal_if_signed_up() { ?>
     <script>
         $(document).ready(function(){
+            $(".fancybox-thx").fancybox({
+                autoSize : false,
+                width  : 400,
+                autoHeight : true,
+                padding : 0,
+                afterLoad   : function() {
+                    this.content = this.content.html();
+                }
+            });
+            $(document).on('submit', '.whatcounts-signup1', function (e) {
+                e.preventDefault();
+                var bla = $('#wc-email').val();
+                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
+                $('.fancybox-thx').trigger('click');
+                $('.whatcounts-signup2 #email').val(bla);
+            });
+            $(document).on('submit', '.whatcounts-signup2', function (e) {
+                e.preventDefault();
+                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup2').serialize());
+                $('.nl-thx-p1').hide();
+                $('.nl-thx-p2').show();
+            });
+            $('input[type="checkbox"]').click(function(e){
+                e.stopPropagation();
+            });
+
             if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
                 $(".fancybox-thx").fancybox({
                     autoSize : false,
@@ -2080,7 +2106,78 @@ function display_thank_you_modal_if_signed_up() { ?>
         });
     </script>
     <div class="fancybox-thx" style="display:none;">
-        <div class="nl-modal-cont">
+        <div class="nl-modal-extra-cont nl-thx-p1">
+            <div class="nl-modal-div1">
+                <div class="col-sm-4 hidden-xs">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+                    </span>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <h4>Welcome to the Make Community,</h4>
+                    <p>Let's Stay in Touch!</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="nl-modal-div2">
+                <div class="col-xs-12">
+                    <?php
+                    $isSecure = "http://";
+                    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                        $isSecure = "https://";
+                    }
+                    ?>
+                    <h4>You might also like these Newsletters:</h4>
+                    <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
+                        <input type=hidden name="cmd" value="subscribe" />
+                        <input type=hidden name="multiadd" value="1" />
+                        <input type=hidden id="email" name="email" value="" />
+                        <input type="hidden" id="format_mime" name="format" value="mime" />
+                        <input type=hidden name="goto" value="" />
+                        <input type="hidden" name="custom_source" value="footer" />
+                        <input type="hidden" name="custom_incentive" value="none" />
+                        <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+                        <input type="hidden" id="format_mime" name="format" value="mime" />
+                        <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
+                        <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+
+                        <label class="list-radio pull-right">
+                          <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_1" value="6B5869DC547D3D46E66DEF1987C64E7A" />
+                          <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
+                        </label>
+                        <h4>Maker Faire</h4><p>Cool Stuff from Maker Faires</p>
+                        <hr />
+
+                        <label class="list-radio pull-right">
+                          <input type="checkbox" id="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" name="slid_2" value="6B5869DC547D3D46510F6AB3E701BA0A" />
+                          <span for="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" class="newcheckbox"></span>
+                        </label>
+                        <h4>Maker Shed</h4><p>The Best New Products in the Maker Shed</p>
+                        <hr />
+
+                        <label class="list-radio pull-right">
+                          <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
+                          <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
+                        </label>
+                        <h4>Maker Pro</h4><p>Pro Tips from the Biggest Makers on the Planet</p>
+                        <hr />
+
+                        <label class="list-radio pull-right">
+                          <input type="checkbox" id="list_6B5869DC547D3D46E7DA8972680CE7C2_yes" name="slid_4" value="6B5869DC547D3D46E7DA8972680CE7C2" />
+                          <span for="list_6B5869DC547D3D46E7DA8972680CE7C2_yes" class="newcheckbox"></span>
+                        </label>    
+                        <h4>Other Media</h4><p>Cool Promotions and Other Stuff</p>
+                        <hr />
+
+                      <input class="ghost-button-black pull-right" type="submit" value="Subscribe" />
+                      <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="nl-modal-cont nl-thx-p2" style="display:none;">
             <div class="col-sm-4 hidden-xs nl-modal">
                 <span class="fa-stack fa-4x">
                     <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -2089,13 +2186,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="col-sm-8 col-xs-12 nl-modal">
                 <h3>Awesome!</h3>
-                <p class="text-center">Thanks for signing up.</p>
-                <div class="social-network-container text-center">
-                    <ul class="social-network social-circle">
-                        <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-                    </ul>
-                </div>
+                <p>Thanks for signing up.</p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -2111,12 +2202,6 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="col-sm-9 col-xs-12 nl-modal">
                 <h3>Awesome!</h3>
                 <p class="text-center">Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
-                <div class="social-network-container text-center">
-                    <ul class="social-network social-circle">
-                        <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-                    </ul>
-                </div>
             </div>
             <div class="clearfix"></div>
         </div>

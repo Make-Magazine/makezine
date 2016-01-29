@@ -102,7 +102,7 @@
 					?>
 					<h4>Sign Up</h4>
 					<p>Stay inspired with the Make: newsletter</p>
-					<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+					<form class="sub-form whatcounts-signup1" action="http://whatcounts.com/bin/listctrl" method="POST">
 						<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="footer" />
@@ -113,7 +113,7 @@
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 						<div class="mz-form-horizontal">
-							<input name="email" placeholder="Enter your Email" required type="text">
+							<input id="wc-email" name="email" placeholder="Enter your Email" required type="text">
 							<input value="GO" class="btn-cyan" type="submit">
 						</div>
 					</form>
@@ -143,7 +143,7 @@
 					?>
 					<h4>Sign Up</h4>
 					<p>Stay inspired with the Make: newsletter</p>
-					<form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+					<form class="sub-form whatcounts-signup1" action="http://whatcounts.com/bin/listctrl" method="POST">
 						<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="footer" />
@@ -154,7 +154,7 @@
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 						<div class="mz-form-horizontal">
-							<input name="email" placeholder="Enter your Email" required type="text">
+							<input id="wc-email" name="email" placeholder="Enter your Email" required type="text">
 							<input value="GO" class="btn-cyan" type="submit">
 						</div>
 					</form>
