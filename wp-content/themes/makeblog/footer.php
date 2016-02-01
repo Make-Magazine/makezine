@@ -115,7 +115,7 @@
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 						<div class="mz-form-horizontal">
-							<input id="wc-email" name="email" placeholder="Enter your Email" required type="text">
+							<input class="wc-email" name="email" placeholder="Enter your Email" required type="text">
 							<input value="GO" class="btn-cyan" type="submit">
 						</div>
 					</form>
@@ -158,7 +158,7 @@
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
 						<div class="mz-form-horizontal">
-							<input id="wc-email" name="email" placeholder="Enter your Email" required type="text">
+							<input class="wc-email" name="email" placeholder="Enter your Email" required type="text">
 							<input value="GO" class="btn-cyan" type="submit">
 						</div>
 					</form>

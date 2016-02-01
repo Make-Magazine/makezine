@@ -2039,73 +2039,6 @@ function subscribe_return_path_overlay() { ?>
  * URL with ?success=true&subscribe-preferences will show the WhatCounts Subscription preferences success modal
  */
 function display_thank_you_modal_if_signed_up() { ?>
-    <script>
-        $(document).ready(function(){
-            $(".fancybox-thx").fancybox({
-                autoSize : false,
-                width  : 400,
-                autoHeight : true,
-                padding : 0,
-                afterLoad   : function() {
-                    this.content = this.content.html();
-                }
-            });
-            $(document).on('submit', '.whatcounts-signup1', function (e) {
-                e.preventDefault();
-                var bla = $('#wc-email').val();
-                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
-                $('.fancybox-thx').trigger('click');
-                $('.nl-modal-email-address').text(bla);
-                $('.whatcounts-signup2 #email').val(bla);
-            });
-            $(document).on('submit', '.whatcounts-signup2', function (e) {
-                e.preventDefault();
-                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup2').serialize());
-                $('.nl-thx-p1').hide();
-                $('.nl-thx-p2').show();
-            });
-            $('input[type="checkbox"]').click(function(e){
-                e.stopPropagation();
-            });
-
-            if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
-                $(".fancybox-thx").fancybox({
-                    autoSize : false,
-                    width  : 400,
-                    autoHeight : true,
-                    padding : 0,
-                    afterLoad   : function() {
-                        this.content = this.content.html();
-                    }
-                });
-                $(".fancybox-thx").trigger('click');
-            }
-            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=free-pdf") > -1) {
-                $(".fancybox-thx-free-pdf").fancybox({
-                    autoSize : false,
-                    width  : 580,
-                    autoHeight : true,
-                    padding : 0,
-                    afterLoad   : function() {
-                        this.content = this.content.html();
-                    }
-                });
-                $(".fancybox-thx-free-pdf").trigger('click');
-            }
-            else if(window.location.href.indexOf("?success=true&subscribe-preferences") > -1) {
-                $(".fancybox-sub-pref").fancybox({
-                    autoSize : false,
-                    width  : 480,
-                    autoHeight : true,
-                    padding : 0,
-                    afterLoad   : function() {
-                        this.content = this.content.html();
-                    }
-                });
-                $(".fancybox-sub-pref").trigger('click');
-            }
-        });
-    </script>
     <div class="fancybox-thx" style="display:none;">
         <div class="nl-modal-extra-cont nl-thx-p1">
             <div class="nl-modal-div1">
@@ -2222,6 +2155,73 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="clearfix"></div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $(".fancybox-thx").fancybox({
+                autoSize : false,
+                width  : 400,
+                autoHeight : true,
+                padding : 0,
+                afterLoad   : function() {
+                    this.content = this.content.html();
+                }
+            });
+            $(document).on('submit', '.whatcounts-signup1', function (e) {
+                e.preventDefault();
+                var bla = $('#wc-email').val();
+                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
+                $('.fancybox-thx').trigger('click');
+                $('.nl-modal-email-address').text(bla);
+                $('.whatcounts-signup2 #email').val(bla);
+            });
+            $(document).on('submit', '.whatcounts-signup2', function (e) {
+                e.preventDefault();
+                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup2').serialize());
+                $('.nl-thx-p1').hide();
+                $('.nl-thx-p2').show();
+            });
+            $('input[type="checkbox"]').click(function(e){
+                e.stopPropagation();
+            });
+
+            if(window.location.href.indexOf("?thankyou=true&subscribed-to=make-newsletter") > -1) {
+                $(".fancybox-thx").fancybox({
+                    autoSize : false,
+                    width  : 400,
+                    autoHeight : true,
+                    padding : 0,
+                    afterLoad   : function() {
+                        this.content = this.content.html();
+                    }
+                });
+                $(".fancybox-thx").trigger('click');
+            }
+            else if(window.location.href.indexOf("?thankyou=true&subscribed-to=free-pdf") > -1) {
+                $(".fancybox-thx-free-pdf").fancybox({
+                    autoSize : false,
+                    width  : 580,
+                    autoHeight : true,
+                    padding : 0,
+                    afterLoad   : function() {
+                        this.content = this.content.html();
+                    }
+                });
+                $(".fancybox-thx-free-pdf").trigger('click');
+            }
+            else if(window.location.href.indexOf("?success=true&subscribe-preferences") > -1) {
+                $(".fancybox-sub-pref").fancybox({
+                    autoSize : false,
+                    width  : 480,
+                    autoHeight : true,
+                    padding : 0,
+                    afterLoad   : function() {
+                        this.content = this.content.html();
+                    }
+                });
+                $(".fancybox-sub-pref").trigger('click');
+            }
+        });
+    </script>
 <?php }
 
 
