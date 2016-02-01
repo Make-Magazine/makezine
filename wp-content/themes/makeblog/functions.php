@@ -2166,9 +2166,19 @@ function display_thank_you_modal_if_signed_up() { ?>
                     this.content = this.content.html();
                 }
             });
+            // Desktop
             $(document).on('submit', '.whatcounts-signup1', function (e) {
                 e.preventDefault();
                 var bla = $('#wc-email').val();
+                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
+                $('.fancybox-thx').trigger('click');
+                $('.nl-modal-email-address').text(bla);
+                $('.whatcounts-signup2 #email').val(bla);
+            });
+            // Mobile
+            $(document).on('submit', '.whatcounts-signup1m', function (e) {
+                e.preventDefault();
+                var bla = $('#wc-email-m').val();
                 $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
                 $('.fancybox-thx').trigger('click');
                 $('.nl-modal-email-address').text(bla);
