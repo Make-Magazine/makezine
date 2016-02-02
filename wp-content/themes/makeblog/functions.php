@@ -2046,11 +2046,8 @@ function display_thank_you_modal_if_signed_up() { ?>
                     <h4>Welcome to the Make Community!</h4>
                     <p><span class="nl-modal-email-address"></span> you are now signed up to the Make: newsletter.</p>
                 </div>
-                <div class="col-sm-4 hidden-xs">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle-thin fa-stack-2x"></i>
-                        <i class="fa fa-check-square-o fa-stack-1x"></i>
-                    </span>
+                <div class="col-sm-4 hidden-xs text-center">
+                    <i class="fa fa-check-square-o fa-5x"></i>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -2064,16 +2061,16 @@ function display_thank_you_modal_if_signed_up() { ?>
                     ?>
                     <h4>You might also like these Newsletters:</h4>
                     <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
-                        <input type=hidden name="cmd" value="subscribe" />
-                        <input type=hidden name="multiadd" value="1" />
-                        <input type=hidden id="email" name="email" value="" />
+                        <input type="hidden" name="cmd" value="subscribe" />
+                        <input type="hidden" name="multiadd" value="1" />
+                        <input type="hidden" id="email" name="email" value="" />
                         <input type="hidden" id="format_mime" name="format" value="mime" />
-                        <input type=hidden name="goto" value="" />
+                        <input type="hidden" name="goto" value="" />
                         <input type="hidden" name="custom_source" value="footer" />
                         <input type="hidden" name="custom_incentive" value="none" />
                         <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
                         <input type="hidden" id="format_mime" name="format" value="mime" />
-                        <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
+                        <input type="hidden" name="goto" value="" />
                         <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 
                         <label class="list-radio pull-right">
@@ -2118,6 +2115,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="clearfix"></div>
         </div>
     </div>
+
     <div class="fancybox-thx-free-pdf" style="display:none;">
         <div class="nl-modal-cont">
             <div class="col-sm-3 hidden-xs nl-modal" style="padding-top:20px;">
@@ -2179,7 +2177,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             $(document).on('submit', '.whatcounts-signup1m', function (e) {
                 e.preventDefault();
                 var bla = $('#wc-email-m').val();
-                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
+                $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1m').serialize());
                 $('.fancybox-thx').trigger('click');
                 $('.nl-modal-email-address').text(bla);
                 $('.whatcounts-signup2 #email').val(bla);
