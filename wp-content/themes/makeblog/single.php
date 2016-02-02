@@ -241,12 +241,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	</div>
 
 </div>
-<div class="ad-unit">
-	<?php
-	global $make;
-	print $make->ads->ad_leaderboard_alt;
-	?>
-</div>
+<!-- X -->
 
 <script type="text/javascript">
 	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
