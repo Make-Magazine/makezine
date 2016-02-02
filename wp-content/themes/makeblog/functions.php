@@ -1825,8 +1825,10 @@ function subscribe_return_path_overlay() { ?>
                             $isSecure = "https://";
                         }
                         ?>
-                        <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-                            <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/>
+                        <form class="sub-form whatcounts-signup1o" action="http://whatcounts.com/bin/listctrl" method="POST">
+                            <input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101"/><!-- Make: Newsletter -->
+                            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
+                            <input type="hidden" name="multiadd" value="1" />
                             <input type="hidden" name="cmd" value="subscribe"/>
                             <input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
                             <input type="hidden" name="custom_incentive" value="none"/>
@@ -1835,7 +1837,7 @@ function subscribe_return_path_overlay() { ?>
                             <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
                             <input type="hidden" name="custom_host" value="makezine.com" />
                             <input type="hidden" name="errors_to" value=""/>
-                            <input name="email" class="overlay-input" placeholder="Enter your email" required type="email"><br>
+                            <input name="email" id="wc-email-o" class="overlay-input" placeholder="Enter your email" required type="email"><br>
                             <input value="GO" class="black-overlay-btn" type="submit">
                         </form>
                     </div>
@@ -2007,6 +2009,15 @@ function display_thank_you_modal_if_signed_up() { ?>
                 $('.fancybox-thx').trigger('click');
                 $('.nl-modal-email-address').text(bla);
                 $('.whatcounts-signup2 #email').val(bla);
+            });
+            // Header Overlay
+            $(document).on('submit', '.whatcounts-signup1o', function (e) {
+              e.preventDefault();
+              var bla = $('#wc-email-o').val();
+              $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1o').serialize());
+              $('.fancybox-thx').trigger('click');
+              $('.nl-modal-email-address').text(bla);
+              $('.whatcounts-signup2 #email').val(bla);
             });
             $(document).on('submit', '.whatcounts-signup2', function (e) {
                 e.preventDefault();
