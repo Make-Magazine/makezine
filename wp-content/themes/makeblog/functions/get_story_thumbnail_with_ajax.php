@@ -1,4 +1,5 @@
 <?php
+// Infinite scroll story thumbnail API
 function get_story_thumbnail_with_ajax() {
     $exclude = $_POST && $_POST['excludeId'];
     $offset = $_POST && $_POST['offset'];

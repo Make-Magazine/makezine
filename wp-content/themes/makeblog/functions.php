@@ -189,6 +189,7 @@ include_once dirname(__FILE__) . '/version-2/includes/home-menu-curator.php';
 // DFP functions.
 include_once dirname(__FILE__) . '/dfp.php';
 
+// Include all function files in the makeblog/functions directory:
 foreach ( glob(dirname(__FILE__) . '/functions/*.php' ) as $file) {
   include_once $file;
 }

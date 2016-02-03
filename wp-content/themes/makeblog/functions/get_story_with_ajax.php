@@ -1,4 +1,5 @@
 <?php
+// Story API
 function get_story_with_ajax() {
     add_shortcode('contextly_auto_sidebar', function($attrs) {
         if ( isset( $attrs[ 'id' ] ) ) {
