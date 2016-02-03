@@ -2229,6 +2229,6 @@ function add_quantcast_tag() {
 }
 add_action('wp_footer', 'add_quantcast_tag', 100);
 
-foreach ( glob('functions/*.php') as $file ) {
+foreach ( glob(dirname(__FILE__) . '/functions/*.php' ) as $file) {
   include $file;
 }
