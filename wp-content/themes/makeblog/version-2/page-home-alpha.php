@@ -183,8 +183,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="/comparison/3dprinters/">          
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-3d-guide16.jpg' ?>" class="img-responsive center-block event" alt="3D Printer Guide Promo" />
+        <a href="https://www.humblebundle.com/books/morebooks?utm_source=Social&utm_medium=Link&utm_campaign=Humble_Book_Bundle_3D_Printing_And_Drones_Presented_By_Make">          
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-humble-02-16.jpg' ?>" class="img-responsive center-block event" alt="3D Printer Guide Promo" />
         </a>
       </div> 
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
