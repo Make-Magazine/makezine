@@ -23,6 +23,7 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
 // custom-fields for curated section
 $main_link = '';
 $main_url = '';
+$main_sponsor = '';
 $main_title = '';
 $main_subtitle = '';
 $main_image = '';
@@ -30,6 +31,7 @@ $main_id = '';
 
 $top_link = '';
 $top_url = '';
+$top_sponsor = '';
 $top_title = '';
 $top_subtitle = '';
 $top_image = '';
@@ -37,6 +39,7 @@ $top_id = '';
 
 $bottom_link = '';
 $bottom_url = '';
+$bottom_sponsor = '';
 $bottom_title = '';
 $bottom_subtitle = '';
 $bottom_image = '';
@@ -49,7 +52,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 // Get ad object.
 
     if ( $menu_exists ) {
-	$menu = wp_get_nav_menu_object(  $menu_name );
+        $menu = wp_get_nav_menu_object(  $menu_name );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
         
         if ($menu_items[0])
@@ -58,6 +61,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_id= $main_post->object_id;
             $main_link = $main_post->url;
             $main_url = $main_post->url;
+            $main_sponsor =  get_field('sponsored_content_label', $main_id);
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
             if ($main_post->attr_title)
@@ -71,6 +75,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $top_id= $top_post->object_id;
             $top_link = $top_post->url;
             $top_url = $top_post->url;
+            $top_sponsor =  get_field('sponsored_content_label', $top_id);
             $top_title = $top_post->title;
             $top_subtitle = $top_post->description;
             if ($top_post->attr_title)
@@ -85,6 +90,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $bottom_id= $bottom_post->object_id;
             $bottom_link = $bottom_post->url;
             $bottom_url = $bottom_post->url;
+            $bottom_sponsor =  get_field('sponsored_content_label', $bottom_id);
             $bottom_title = $bottom_post->title;
             $bottom_subtitle = $bottom_post->description;
             if ($bottom_post->attr_title)
@@ -115,6 +121,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
           style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 1200, 694 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
+            <?php if (!empty($main_sponsor)) {
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $main_sponsor . '</span>'; 
+            } ?>
             <h2><?php echo $main_title; ?></h2>
             <p><?php echo esc_html( $main_subtitle ); ?></p>
           </div>
@@ -134,6 +143,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
+          <?php if (!empty($top_sponsor)) {
+            echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>'; 
+          } ?>
           <h2><?php echo $top_title; ?></h2>
         </div>
       </a>
@@ -152,6 +164,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
       <div class="featured-image-shadow"></div>
       <div class="mz-text-overlay mz-text-overlay-side">
+        <?php if (!empty($bottom_sponsor)) {
+          echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>'; 
+        } ?>
         <h2><?php echo $bottom_title; ?></h2>
       </div>
       </a>

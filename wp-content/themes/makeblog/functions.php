@@ -762,15 +762,15 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
-            $output .= '</div><h2>';
-            $output .= '<a href="';
+            $output .= '</div>';
+            $output .= '<h2><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
             $post_title = get_the_title();
             $output .= truncate_with_ellipses($post_title, 90);
-            $output .= '</a>';
-            $output .= '</h2></li>';
+            $output .= '</a></h2>';
+            $output .= '</li>';
 
             if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
                 $output .= '</ul> </li>';
@@ -1200,15 +1200,29 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
-            $output .= '</div><h2>';
-            $output .= '<a href="';
-            $link = get_the_permalink();
-            $output .= $link;
-            $output .= '">';
-            $post_title = get_the_title();
-            $output .= truncate_with_ellipses($post_title, 90);
-            $output .= '</a>';
-            $output .= '</h2></li>';
+            $output .= '</div>';
+
+            if(get_field("sponsored_content_label")) {
+              $output .= '<div class="home-post-card">';
+              $output .= '<span class="home-post-card-sponsor">SPONSORED BY ' . get_field("sponsored_content_label") . '</span>';
+              $output .= '<h2><a href="';
+              $link = get_the_permalink();
+              $output .= $link;
+              $output .= '">';
+              $post_title = get_the_title();
+              $output .= truncate_with_ellipses($post_title, 90);
+              $output .= '</a></h2></div>';
+            } else {
+              $output .= '<h2><a href="';
+              $link = get_the_permalink();
+              $output .= $link;
+              $output .= '">';
+              $post_title = get_the_title();
+              $output .= truncate_with_ellipses($post_title, 90);
+              $output .= '</a></h2>';
+            }
+
+            $output .= '</li>';
 
             if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
                 $output .= '</ul> </li>';
@@ -1622,15 +1636,15 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= truncate_with_ellipses(preg_replace( '`\[[^\]]+\]`s', '', $excerpt ), 240);
             $output .= '</a>';
             $output .= '</p>';
-            $output .= '</div><h2>';
-            $output .= '<a href="';
+            $output .= '</div>';
+            $output .= '<h2><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
             $post_title = get_the_title();
             $output .= truncate_with_ellipses($post_title, 90);
-            $output .= '</a>';
-            $output .= '</h2></li>';
+            $output .= '</a></h2>';
+            $output .= '</li>';
 
             if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
                 $output .= '</ul> </li>';

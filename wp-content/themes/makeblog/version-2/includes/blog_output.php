@@ -161,6 +161,9 @@ function story_pulling($offset) {
 		$outputs .= '<div class="img-wrapper"><img src = "' . $photon . '" alt = "thumbnail" ></div>';
 
 		$outputs .= '<div class="about-post">';
+		if(get_field("sponsored_content_label")) {
+			$outputs .= '<span class="sponsored-title-tag">SPONSORED BY ' . get_field("sponsored_content_label") . '</span>';
+		}
 		$outputs .= '<h2 class="title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
 		$outputs .= '<p class="publish-date"><a href="' . get_the_permalink() . '">' . get_the_time( "F d, Y" ) . '</a></p>';
 		$outputs .= '</div>';

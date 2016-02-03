@@ -832,11 +832,6 @@ div.caption.post-content {
     font-size: 18px;
     color: #f9f9f9;
   }
-  .mz-text-overlay-side h2 {
-    font-weight: 300;
-    font-size: 20px;
-    color: #f9f9f9;
-  }
   .featured-image-shadow {
     position: absolute;
     left: 0;
@@ -862,6 +857,33 @@ div.caption.post-content {
     position: absolute;
     padding: 15px;
     color: #fff;
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .mz-text-overlay-side {
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 20px;
+      color: #f9f9f9;
+    }
   }
 }
 
@@ -913,6 +935,9 @@ div.caption.post-content {
 @media screen and (max-width: 767px) {
 
   .mz-featured-imageblock {
+    .mz-text-overlay .sponsored-title-home {
+      font-size: 14px;
+    }
     h2 {
       font-size: 18px;
       font-weight: 300;
