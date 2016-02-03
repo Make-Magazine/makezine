@@ -189,6 +189,10 @@ include_once dirname(__FILE__) . '/version-2/includes/home-menu-curator.php';
 // DFP functions.
 include_once dirname(__FILE__) . '/dfp.php';
 
+foreach ( glob(dirname(__FILE__) . '/functions/*.php' ) as $file) {
+  include_once $file;
+}
+
 function dfp_add_meta_boxes($postType)
 {
     $types = array('page', 'projects');
@@ -2228,7 +2232,3 @@ function add_quantcast_tag() {
     . '<!-- End Quantcast tag -->' . "\r\n";
 }
 add_action('wp_footer', 'add_quantcast_tag', 100);
-
-foreach ( glob(dirname(__FILE__) . '/functions/*.php' ) as $file) {
-  include $file;
-}
