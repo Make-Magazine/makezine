@@ -140,8 +140,16 @@ if( $detect->isTablet() ){
  
   <!-- 1x1 ad unit -->
   <?php print $make->ads->ad_1x1; ?>
-
-
+  
+  <?php if (is_home() || is_front_page() || is_page('content')): ?>
+  <!-- nativo script --> 
+  <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+    <?php if (is_page('content')): ?>
+      <meta http-equiv="X-UA-Compatible" content="IE=10" />
+      <meta name="robots" content="noindex, nofollow" />
+    <?php endif; ?>
+  <!-- end nativo script -->
+  <?php endif; ?>
 
   <script type="text/javascript">
     dataLayer = [];
