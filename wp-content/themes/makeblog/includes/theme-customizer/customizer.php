@@ -181,6 +181,17 @@ function make_header_options( $wp_customize ) {
     'priority' => 1
   ) );
 
+  // Register the 1x1 checkbox
+  $wp_customize->add_setting( 'make_header_1x1_enable', array(
+    'default' => '',
+  ) );
+	$wp_customize->add_control( 'make_header_1x1_enable', array(
+      'type' => 'checkbox',
+      'label' => 'Enable 1x1 Ad Unit',
+      'section' => 'make_header',
+    	'priority' => 13,
+  ) );
+
   // Register the enable checkbox
   $wp_customize->add_setting( 'make_header_promo_enable', array(
     'default' => '',
