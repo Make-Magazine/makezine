@@ -248,68 +248,6 @@ get_header('version-2'); ?>
 											</div>
 
 											<div class="span4">
-
-												<div class="related-projects">
-
-													<h3>Related Projects</h3>
-
-													<?php
-														$cat = get_the_category($post->ID);
-														$objid = $cat[0]->term_id;
-														$args = array(
-															'post_type'				=> 'projects',
-															'cat'			 		=> $objid,
-															'posts_per_page' 		=> 8,
-															'order' 				=> 'asc',
-															);
-														$the_query = new WP_Query( $args );
-
-														while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-													<div <?php post_class( 'related' ); ?>>
-
-														<div class="image">
-
-															<?php
-																if (has_post_thumbnail()) {
-																	echo '<div class="post-image">';
-																		the_post_thumbnail('review-large');
-																	echo '</div>';
-																} elseif ( $image = get_post_custom_values('Image') ) {
-																	$imageurl = $image[0] . '.medium';
-																	echo '<img src="' . esc_url( $imageurl ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" style="margin-bottom:20px;" />';
-																} else {
-																	$args = array(
-																		'image_scan' => true,
-																		'size' => 'related-thumb',
-																		'image_class' => 'hide-thumbnail',
-																		);
-																	get_the_image( $args );
-																}
-															?>
-
-														</div>
-
-														<div class="blurb">
-															<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-															<p>By: <?php
-																	if( function_exists( 'coauthors_posts_links' ) ) {
-																		coauthors();
-																	} else {
-																		the_author_posts_link();
-																	}
-																?>
-															</p>
-														</div>
-
-													</div>
-
-													<div class="clearfix"></div>
-
-													<?php endwhile; wp_reset_postdata(); ?>
-
-												</div>
-
 											</div>
 
 										</div>
@@ -355,78 +293,7 @@ get_header('version-2'); ?>
 								<?php if ( empty( $stepscount ) ) { ?>
 
 									<div class="span4" style="margin-top:20px;">
-
-										<div class="projects-ad">
-											<p id="ads-title">Advertisement</p>
-											<?php global $make; print $make->ads->ad_300x250_house; ?>
-										</div>
-
-										<div class="related-projects">
-
-											<h3>Related Projects</h3>
-
-											<?php
-												$cat = get_the_category($post->ID);
-												$objid = $cat[0]->term_id;
-												$args = array(
-													'post_type'				=> 'projects',
-													'cat'			 		=> $objid,
-													'posts_per_page' 		=> 8,
-													'order' 				=> 'asc',
-													);
-												$the_query = new WP_Query( $args );
-
-												while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-											<div <?php post_class( 'related' ); ?>>
-
-												<div class="image">
-
-													<?php
-														if (has_post_thumbnail()) {
-															echo '<div class="post-image">';
-																the_post_thumbnail('review-large');
-															echo '</div>';
-														} elseif ( $image = get_post_custom_values('Image') ) {
-															$imageurl = $image[0] . '.medium';
-															echo '<img src="' . esc_url( $imageurl ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" style="margin-bottom:20px;" />';
-														} else {
-															$args = array(
-																'image_scan' => true,
-																'size' => 'related-thumb',
-																'image_class' => 'hide-thumbnail',
-																);
-															get_the_image( $args );
-														}
-													?>
-
-												</div>
-
-												<div class="blurb">
-
-													<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-													<p>By: <?php
-															if( function_exists( 'coauthors_posts_links' ) ) {
-																coauthors();
-															} else {
-																the_author_posts_link();
-															}
-														?>
-													</p>
-
-												</div>
-
-											</div>
-
-											<div class="clearfix"></div>
-
-											<?php endwhile; wp_reset_postdata(); ?>
-
-										<div class="clearfix"></div>
-
 									</div>
-
-								</div>
 
 								<?php } else {
 									get_sidebar('projects');
