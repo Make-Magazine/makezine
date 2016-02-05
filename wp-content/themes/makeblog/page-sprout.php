@@ -42,6 +42,15 @@ get_header( 'version-2' );
     <div class="row post_row home-sprout-row"> 
       <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <div class="sprout-video">
+            <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/nHyaYb7RkqA?autoplay=1">
+              <img class="img-responsive" src="http://img.youtube.com/vi/nHyaYb7RkqA/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
+            </a>
+            <p class="sprout-video-caption">Build an Air Powered Rocket using Sprout by HP</p>
+        </div>
+      </div> 
+      <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="sprout-video">
             <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/W3zJCG_JtfI?autoplay=1">
               <img class="img-responsive" src="http://img.youtube.com/vi/W3zJCG_JtfI/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
               <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
@@ -57,7 +66,9 @@ get_header( 'version-2' );
             </a>
             <p class="sprout-video-caption">Our edit team checks in with the Sprout team to see how the platform is inspiring makers to learn and create.</p>
         </div>
-      </div>
+      </div>      
+    </div><!-- end sprout-video-row -->
+    <div class="row post_row home-sprout-row">
       <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <div class="sprout-video">
             <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/wYP_UIBQExk?autoplay=1">
@@ -66,9 +77,7 @@ get_header( 'version-2' );
             </a>
             <p class="sprout-video-caption">Designers and developers describe their first experiences with the Sprout and its potential to transform the way digital media is created.</p>
         </div>
-      </div>       
-    </div><!-- end sprout-video-row -->
-    <div class="row post_row home-sprout-row"> 
+      </div>      
       <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <div class="sprout-video">
             <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/re7xpfUuCXE?autoplay=1">
@@ -87,6 +96,8 @@ get_header( 'version-2' );
             <p class="sprout-video-caption">HP's Sprout division and Dremel move toward a full-cycle approach to 3D printing and scanning.</p>
         </div>
       </div>
+    </div><!-- end sprout-video-row -->
+    <div class="row post_row home-sprout-row">
       <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <div class="sprout-video">
             <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/icKZ_ND9p0Q?autoplay=1">
@@ -95,9 +106,7 @@ get_header( 'version-2' );
             </a>
             <p class="sprout-video-caption">Sprout is an all-new computer interface that embraces creativity and accessibility. The creator, Brad Short, gives a feature tour.</p>
         </div>
-      </div> 
-    </div><!-- end sprout-video-row -->
-    <div class="row post_row home-sprout-row"> 
+      </div>  
       <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <div class="sprout-video">
             <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/LETmOKDkH-A?autoplay=1">
