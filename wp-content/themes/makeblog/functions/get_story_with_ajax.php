@@ -35,18 +35,25 @@ function get_story_with_ajax() {
                 <h1><?php the_titlesmall('', '', true, '90'); ?></h1>
             </div>
             <?php
-            $args = array(
-                'resize' => '1200,670',
-            );
+            //Hero Image
+            $hero_id = get_field('hero_image');
+            // Featured Image
+            $args = array('resize' => '1200,670',);
             $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
             preg_match_all($re, $url, $matches);
             $str = $matches[2][0];
             $photon = jetpack_photon_url($str, $args);
-            if(strlen($url) == 0){?>
+
+            if(get_field('hero_image')) { ?>
+                <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image">
+                <div class="story-hero-image-l-xl"
+                     style="background: url(<?php echo $hero_id['url']; ?>) no-repeat center center;"></div>
+            <?php }
+            elseif(strlen($url) == 0){ ?>
                 <div class="hero-wrapper-clear"></div>
             <?php } else { ?>
-                <img class="story-hero-image" src="<?php echo $photon ?>">
+                <img class="story-hero-image" src="<?php echo $photon ?>" alt="Article Featured Image">
                 <div class="story-hero-image-l-xl"
                      style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
             <?php } ?>
