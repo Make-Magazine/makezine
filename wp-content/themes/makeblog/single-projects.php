@@ -264,7 +264,7 @@ get_header('version-2'); ?>
 
 					<?php endwhile; ?>
 
-							<div class="row">
+							<div class="row padtop">
 
 								<div class="span8">
 
