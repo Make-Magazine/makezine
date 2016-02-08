@@ -281,22 +281,22 @@ class Make_Authors {
 
 			$url = $author->thumbnailUrl . '?s=' . absint( $size ) . '&d=retro';
 
-			$output = '<img src="' . esc_url( $url ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-absint( $size )" width="absint( $size )" height="absint( $size )">';
+			$output = '<img src="' . esc_url( $url ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
 
 		} else {
 			// Use the featued image if its set, other wise fall to get_avatar which will check for another solution with a fall back to default retro image
 			if ( has_post_thumbnail( absint( $author->ID ) ) ) {
 				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $author->ID ) );
 				$args = array(
-					'resize' => '61,61',
+					'resize' => '150,150',
 				);
-				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" width="absint( $size )" height="absint( $size )" class="avatar avatar-absint( $size )">';
+				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
 				$re = "/^(.*? src=\")(.*?)(\".*)$/m";
 				preg_match_all($re, $url, $matches);
 				$str = $matches[2][0];
 				$photon = jetpack_photon_url($str, $args);
 				// $output = get_the_post_thumbnail( absint( $author->ID ), array( absint( $size ), absint( $size ) ), array( 'alt' => esc_attr( $this->author_name( $author ) ), 'class' => 'avatar avatar-absint( $size )' ) );
-				$output = '<img src="' . $photon . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" width="absint( $size )" height="absint( $size )" class="avatar avatar-absint( $size )">';
+				$output = '<img src="' . $photon . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
 			} else {
 				$output = get_avatar( sanitize_email( $author->user_email ), absint( $size ), 'retro', esc_attr( $this->author_name( $author ) ) );
 			}
