@@ -389,7 +389,6 @@ $(document).ready(function () {
 				}
 			}
 		}
-		$('.dynamic-header-content img.lazyload').show().lazyload();
 	});
 
 	// Closees nav on mouseleave
