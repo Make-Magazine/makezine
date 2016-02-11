@@ -385,7 +385,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
               } ?>
-              <img class="lazyload" src="<?php echo get_template_directory_uri().'/images/bg.gif' ?>" data-original="<?php echo $photon; ?>" alt="Featured Project Thumbnail" width="370" height="240" />
+              <img class="lazyload" src="<?php echo get_template_directory_uri().'/images/bg.gif' ?>" data-original="<?php echo $photon; ?>" alt="Featured Project Thumbnail" style="width:100%;height:auto;" />
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -416,7 +416,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
               } ?>
-              <img class="lazyload" src="<?php echo get_template_directory_uri().'/images/bg.gif' ?>" data-original="<?php echo $photon; ?>" alt="Featured Story Post Thumbnail" />
+              <img class="lazyload" src="<?php echo get_template_directory_uri().'/images/bg.gif' ?>" data-original="<?php echo $photon; ?>" alt="Featured Story Post Thumbnail" style="width:100%;height:auto;" />
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -451,7 +451,7 @@ $primary_cat_dimension = $primarycat[0];
               <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
                 <?php
                 $args = array(
-                    'resize' => '102,102',
+                  'resize' => '102,102',
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -462,7 +462,7 @@ $primary_cat_dimension = $primarycat[0];
                   $photon = catch_first_image_nav();
                   $photon = jetpack_photon_url( $photon, $args );
                 } ?>
-                <img class="lazyload" src="<?php echo get_template_directory_uri().'/images/bg.gif' ?>" data-original="<?php echo $str; ?>" alt="Featured Event Thumbnail" />
+                <img class="lazyload" src="<?php echo get_template_directory_uri().'/images/bg.gif' ?>" data-original="<?php echo $str; ?>" alt="Featured Event Thumbnail" style="width:100%;height:auto;" />
               </a>
             </div>
             <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
