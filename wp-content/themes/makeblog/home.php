@@ -9,7 +9,7 @@
  */
 $pagename = get_query_var('pagename');
 /** Adding enqueue here to prevent projects.js from loading on every page. */
-wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
+wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery', 'lazyload' ), false, true );
 get_header('version-2'); ?>
 <div class="ad-unit adds">
 	<?php

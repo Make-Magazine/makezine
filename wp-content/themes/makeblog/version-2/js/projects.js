@@ -1,4 +1,5 @@
 jQuery(document).ready(function ($) {
+    $('img.lazyload').lazyload();
 
     // Handle the click actions on the list items in the steps box
     $('body').on('click', '#tabs li.steps', function () {
@@ -6,7 +7,12 @@ jQuery(document).ready(function ($) {
 
         // Progress the slider
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
-        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp();
+        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
+            complete: function(){
+                $('.jstep#js-' + id + ' img.lazyload').lazyload();
+            }
+        });
+
 
         // Update the side navigation list
         $(this).addClass('current');
@@ -23,7 +29,11 @@ jQuery(document).ready(function ($) {
 
         // Progress the slider
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
-        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp();
+        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
+            complete: function(){
+                $('.jstep#js-' + id + ' img.lazyload').lazyload();
+            }
+        });
 
         // Update side navigation list
         $('#tabs').find(' li#' + id).addClass('current');
@@ -34,7 +44,7 @@ jQuery(document).ready(function ($) {
         ga('send', 'pageview');
     });
 
-    // Display all projects when we click "View All"
+    // Display all projects steps when we click "View All"
     $('body').on('click', '.aller', function () {
         // Display all the slides
         $('#steppers').find('.jstep').each(function () {

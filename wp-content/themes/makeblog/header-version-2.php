@@ -78,8 +78,6 @@ if( $detect->isTablet() ){
   <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
   <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
-
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
@@ -92,6 +90,7 @@ if( $detect->isTablet() ){
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="<?php echo get_template_directory_uri().'/version-2/js/jquery.lazyload.min.js' ?>"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
   <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
@@ -386,7 +385,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
               } ?>
-              <img src="<?php echo $photon; ?>" alt="thumbnail">
+              <img class="lazyload" src="' . get_template_directory_uri() . '/images/bg.gif" data-original="<?php echo $photon; ?>" alt="Featured Project Thumbnail" width="370" height="240" />
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -417,7 +416,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
               } ?>
-              <img src="<?php echo $photon; ?>" alt="thumbnail">
+              <img class="lazyload" src="' . get_template_directory_uri() . '/images/bg.gif" data-original="<?php echo $photon; ?>" alt="Featured Story Post Thumbnail" />
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -463,7 +462,7 @@ $primary_cat_dimension = $primarycat[0];
                   $photon = catch_first_image_nav();
                   $photon = jetpack_photon_url( $photon, $args );
                 } ?>
-                <img src="<?php echo $str; ?>" alt="thumbnail">
+                <img class="lazyload" src="' . get_template_directory_uri() . '/images/bg.gif" data-original="<?php echo $str; ?>" alt="Featured Event Thumbnail" />
               </a>
             </div>
             <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
