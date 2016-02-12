@@ -989,15 +989,13 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     if (isset($paged) && $paged > 1 && $post_per_page > 12) {
         $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
     }
+    $output .= '<li class="row post_rows"> <ul>';
     if ($query->have_posts()) {
         while ($query->have_posts())  : $query->the_post();
             $child_cat = array();
             $parent_cat = array();
             $parent_id = array();
             $red_cat_name = '';
-            if ($counter == 0) {
-                $output .= '<li class="row post_rows"> <ul>';
-            }
             $counter++;
 
             $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
@@ -1224,22 +1222,22 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
 
             $output .= '</li>';
 
-            if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if (($counter == 2) and ($device == 'tablet')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if (($counter == 1) and ($device == 'mobile')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
+            // if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
+            //     $output .= '</ul> </li>';
+            //     $counter = 0;
+            // }
+            // if (($counter == 2) and ($device == 'tablet')) {
+            //     $output .= '</ul> </li>';
+            //     $counter = 0;
+            // }
+            // if (($counter == 1) and ($device == 'mobile')) {
+            //     $output .= '</ul> </li>';
+            //     $counter = 0;
+            // }
             if ( ( $ads_counter == 1 && $device != 'tablet') || ($ads_counter == 0 && $device == 'tablet') and ( $post_per_page == $post_per_page_initial - 1 ) ) {
-                if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
-                    $output .= '<li class="row post_rows"> <ul>';
-                }
+                // if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
+                //     $output .= '<li class="row post_rows"> <ul>';
+                // }
                 $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
                 if ( $count_posts <= 2 ) {
                     $output .= ' before-ads';
@@ -1253,27 +1251,28 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '</div>';
                 $output .= '</li>';
                 $counter++;
-                if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
-                    $output .= '</ul> </li>';
-                    $counter = 0;
-                }
-                if (($counter == 1) and ($device == 'tablet')) {
-                    $output .= '</ul> </li>';
-                    $counter = 0;
-                }
-                if (($counter == 1) and ($device == 'mobile')) {
-                    $output .= '</ul> </li>';
-                    $counter = 0;
-                }
+                // if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
+                //     $output .= '</ul> </li>';
+                //     $counter = 0;
+                // }
+                // if (($counter == 1) and ($device == 'tablet')) {
+                //     $output .= '</ul> </li>';
+                //     $counter = 0;
+                // }
+                // if (($counter == 1) and ($device == 'mobile')) {
+                //     $output .= '</ul> </li>';
+                //     $counter = 0;
+                // }
             }
             $ads_counter++;
         endwhile;
-        if (($counter == 1) and ($device != 'mobile')) {
-            $output .= '</ul> </li>';
-        }
-        if (($ads_counter == $post_per_page) and ($ads_counter == ($post_per_page_initial - 1))) {
-            $output .= '</ul> </li>';
-        }
+        // if (($counter == 1) and ($device != 'mobile')) {
+        //     $output .= '</ul> </li>';
+        // }
+        // if (($ads_counter == $post_per_page) and ($ads_counter == ($post_per_page_initial - 1))) {
+        //     $output .= '</ul> </li>';
+        // }
+        $output .= '</ul> </li>';
         do_action('custom_page_hook', $query);
         wp_reset_query();
     } else {

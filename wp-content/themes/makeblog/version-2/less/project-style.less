@@ -2062,3 +2062,16 @@ ul.duration-item li.current, ul.diff-item li.current {
   border: 2px solid #3394de !important;
   color: #FF0!important;
 }
+
+/* Updated homepage layout */
+.all-projects {
+  .post_rows {
+    .post {
+      &:nth-child(3n) {
+        @media (min-width: 769px) {
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+}
