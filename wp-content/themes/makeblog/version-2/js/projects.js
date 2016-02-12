@@ -1,5 +1,4 @@
 jQuery(document).ready(function ($) {
-    $('img.lazyload').lazyload();
 
     // Handle the click actions on the list items in the steps box
     $('body').on('click', '#tabs li.steps', function () {
