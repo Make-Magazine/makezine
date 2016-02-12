@@ -227,7 +227,6 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							print $make->ads->ad_300x600; ?>
 						</div>
 						<div class="ctx-siderail-container"></div>
-						<div id="pubexchange_rail"></div>
 					</aside>
 					<div class="ctx-social-container"></div>
 					<div class="essb_right_flag"></div>

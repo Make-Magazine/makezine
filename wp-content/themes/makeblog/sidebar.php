@@ -33,8 +33,6 @@
 							<p id="ads-title">Advertisement</p>
 							<?php global $make; print $make->ads->ad_300x250_shed; ?>
 						</div>
-
-						<div id="pubexchange_rail"></div>
 						
 						<div class="sidebar-ad">
 							<p id="ads-title">Advertisement</p>
