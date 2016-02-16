@@ -452,9 +452,7 @@
 <!-- Initialize the Lazyload function -->
 <script>
 jQuery(document).ready(function ($) {
-  $('img.lazyload').lazyload({
-    threshold : 100
-  });
+  $('img.lazyload').lazyload();
 });
 </script>
 
