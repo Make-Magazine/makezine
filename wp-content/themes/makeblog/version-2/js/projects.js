@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
         $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
             complete: function(){
-                $('.jstep#js-' + id + ' img.lazyload').lazy_load_init();
+                $('.jstep#js-' + id + ' img.lazyload').lazyload();
             }
         });
 
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
         $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
             complete: function(){
-                $('.jstep#js-' + id + ' img.lazyload').lazy_load_init();
+                $('.jstep#js-' + id + ' img.lazyload').lazyload();
             }
         });
 
@@ -96,7 +96,7 @@ jQuery(document).ready(function ($) {
 
     jQuery('.thumbs').click(function () {
         var img_src = jQuery(this).attr('src');
-        jQuery('.jstep img.main').attr('src', img_src);
+        jQuery(this).closest('.jstep').find('img.main').attr('src', img_src);
     });
 
     jQuery('.modal').on('show', function () {

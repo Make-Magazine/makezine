@@ -549,18 +549,18 @@ function make_projects_steps( $steps, $print = false ) {
 
 				// Output our previous button
 				if ( $idx != 0 && ! $print ) {
-					echo '<span class="span1"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number - 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number - 1 ) . '">Prev</a></span>';
+					echo '<span class="span1 prev-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number - 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number - 1 ) . '">Prev</a></span>';
 				} elseif ( $idx == 0 && ! $print ) {
-					echo '<span class="span1"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number - 1 ) . '" disabled="disabled">Prev</a></span>';
+					echo '<span class="span1 prev-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number - 1 ) . '" disabled="disabled">Prev</a></span>';
 				} elseif ( $print ) {
 					echo '';
 				}
 
 				// Output the next button
 				if ( $idx < $count - 1 && ! $print ) {
-					echo '<span class="span1"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number + 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number + 1 ) . '">Next</a></span>';
+					echo '<span class="span1 next-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number + 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number + 1 ) . '">Next</a></span>';
 				} elseif ( $idx == $count - 1 && ! $print ) {
-					echo '<span class="span1"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number + 1 ) . '" disabled="disabled">Next</a></span>';
+					echo '<span class="span1 next-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number + 1 ) . '" disabled="disabled">Next</a></span>';
 				} elseif ( $print ) {
 					echo '';
 				}
@@ -570,9 +570,9 @@ function make_projects_steps( $steps, $print = false ) {
 			$images = ( isset( $step->images ) ) ? $step->images : '';
 			if ( isset( $images[0]->text ) ) {
 				if ( function_exists( 'wpcom_vip_get_resized_remote_image_url' ) ) {
-					echo '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . esc_url( make_projects_to_s3( $images[0]->text ) ) . '" data-lazy-src="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $images[0]->text ), 620, 465 ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload main ' . esc_attr( $images[0]->imageid ) . ' ' . esc_attr( $images[0]->orderby ) .'" style="width:100%;height:auto;" />';
+					echo '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . esc_url( make_projects_to_s3( $images[0]->text ) ) . '" data-lazyload="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $images[0]->text ), 620, 465 ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload main ' . esc_attr( $images[0]->imageid ) . ' ' . esc_attr( $images[0]->orderby ) .'" style="width:100%;height:auto;" />';
 				} else {
-					echo '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $images[0]->text ), 620, 465 ) . '" data-lazy-src="' . esc_url( make_projects_to_s3( $images[0]->text ) ) . '" data-loc="js-step-' . esc_attr( $step->number ) . ' alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload main ' . esc_attr( $images[0]->imageid ) . ' ' . esc_attr( $images[0]->orderby ) .'" style="width:100%;height:auto;" />';
+					echo '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $images[0]->text ), 620, 465 ) . '" data-lazyload="' . esc_url( make_projects_to_s3( $images[0]->text ) ) . '" data-loc="js-step-' . esc_attr( $step->number ) . ' alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload main ' . esc_attr( $images[0]->imageid ) . ' ' . esc_attr( $images[0]->orderby ) .'" style="width:100%;height:auto;" />';
 				}
 			}
 
@@ -581,7 +581,7 @@ function make_projects_steps( $steps, $print = false ) {
 				echo '<span class="row smalls" style="display:block">';
 				foreach ($images as $image) {
 					echo '<span class="span2 project-span2-fix text-center">';
-					echo ( !empty($image->text ) ) ? '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image->text ), 140, 110 ) . '" data-lazy-src="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image->text ), 140, 110 ) . '" data-loc="js-step-' . esc_attr( $step->number ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload thumbs ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:100%;height:auto;" />' : null ;
+					echo ( !empty($image->text ) ) ? '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image->text ), 140, 110 ) . '" data-lazyload="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image->text ), 140, 110 ) . '" data-loc="js-step-' . esc_attr( $step->number ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload thumbs ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:100%;height:auto;" />' : null ;
 					echo '</span>';
 				}
 				echo '</span><!--.row-->';

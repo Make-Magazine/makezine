@@ -449,5 +449,14 @@
 	});
 </script>
 
+<!-- Initialize the Lazyload function -->
+<script>
+jQuery(document).ready(function ($) {
+  $('img.lazyload').lazyload({
+    effect : "fadeIn"
+  });
+});
+</script>
+
 </body>
 </html>
