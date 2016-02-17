@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
         $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
             complete: function(){
-                $('.jstep#js-' + id + ' img.lazyload').lazyload();
+                $('.jstep#js-' + id + ' img.lazyload').lazy_load_init();
             }
         });
 
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
         $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
             complete: function(){
-                $('.jstep#js-' + id + ' img.lazyload').lazyload();
+                $('.jstep#js-' + id + ' img.lazyload').lazy_load_init();
             }
         });
 
@@ -59,7 +59,7 @@ jQuery(document).ready(function ($) {
         ga('send', 'pageview');
     });
 
-    jQuery('.carousel').on('slid', function () {
+    jQuery('.carousel').on('slide', function () {
         jQuery('.slide').find('iframe').each(function () {
             jQuery(this).attr('src', '');
             var url = jQuery(this).attr('data-src');
@@ -95,8 +95,8 @@ jQuery(document).ready(function ($) {
     }
 
     jQuery('.thumbs').click(function () {
-        var mydata = jQuery(this).data();
-        jQuery('#' + mydata.loc + ' .main').attr('src', mydata.src);
+        var img_src = jQuery(this).attr('src');
+        jQuery('.jstep img.main').attr('src', img_src);
     });
 
     jQuery('.modal').on('show', function () {
@@ -143,13 +143,13 @@ jQuery(document).ready(function ($) {
             switch (event.which) {
                 case 37:
                     jQuery('.carousel').carousel('prev');
-                    jQuery('.carousel').on('slid', function () {
+                    jQuery('.carousel').on('slide', function () {
                         jQuery(this).carousel('pause');
                     });
                     break;
                 case 39:
                     jQuery('.carousel').carousel('next');
-                    jQuery('.carousel').on('slid', function () {
+                    jQuery('.carousel').on('slide', function () {
                         jQuery(this).carousel('pause');
                     });
                     break;

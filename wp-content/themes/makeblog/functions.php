@@ -847,18 +847,6 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     echo $output;
 }
 
-
-// Add Lazyload to the WP media image uploader
-function filter_image_send_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
-    $sizes_w = get_option( $size.'_size_w' );
-    $sizes_h = get_option( $size.'_size_h' );
-    $html = '<a href="' . esc_attr($url) . '"><img class="lazyload" src="' . get_template_directory_uri() . '/images/bg.gif" data-lazy-src="' . esc_attr($url) . '" alt="' . esc_attr($title) . ' ' . esc_attr($alt) . '" width="' . $sizes_w . '" height="' . $sizes_h . '" /></a>';
-
-    return $html;
-}
-add_filter('image_send_to_editor', 'filter_image_send_to_editor', 10, 8);
-
-
 function get_sproutgrid_with_ajax()
 {
     $current_cat_id = $_POST['cat'];

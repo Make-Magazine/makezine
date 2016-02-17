@@ -8,7 +8,7 @@
  *
  */
 $steps = get_post_custom_values('Steps');
-wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery', 'lazyload' ), false, true );
+wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
 get_header('version-2'); ?>
 	
 	<div class="home-ads">

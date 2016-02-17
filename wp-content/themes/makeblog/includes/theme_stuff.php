@@ -297,9 +297,8 @@ function make_load_resources() {
 	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery', 'lazyload' ), false );
+	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
 
 	// What page are we on? And what is the pages limit?
