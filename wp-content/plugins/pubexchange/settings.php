@@ -4,16 +4,13 @@
         padding-left:0;
         font-size:18px;
     }
-    table {
-        width:380px;
-    }
     table td img {
         position:relative;
         top:3px;
         margin-left:5px;
     }
     table tr td:first-child {
-        width:110px;
+        width:190px;
     }
     table input {
         width:100%;
@@ -46,6 +43,10 @@
     }
     table .tooltip:hover div { /* display tooltip on hover */
         opacity:1;
+    }
+    .support-text {
+        line-height:26px;
+        font-size:13px;
     }
     .label-success {
         font-size:17px;
@@ -80,7 +81,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan='2' style='line-height:26px; font-size:13px;'>
+                <td colspan='2' class="support-text">
                     Don't have a Publication ID?
                     <a style='float:inherit; margin-left:5px;' class='request_link' href=' https://www.pubexchange.com/#sign-up' target='_blank'>Sign-up for an account</a>
                 </td>
@@ -101,12 +102,56 @@
                 </td>
             </tr>
             <tr>
-                <td colspan='2' style='line-height:26px; font-size:13px;'>
+                <td colspan='2' class="support-text">
                     Leave blank if only using a sidebar widget
                 </td>
             </tr>
 
         </table>
+
+        <hr style='margin-bottom:25px; margin-top:5px;'>
+
+        <table>
+            <tr>
+                <td>Widget Number</td>
+                <td>
+                    <input type="text" value="<?php echo $settings["pubexchange_widget_number"] ?>" name="pubexchange_widget_number" placeholder="Widget Number" />
+                </td>
+                <td class='tooltip'>
+                    <img src='<?php echo $this->plugin_url.'img/qmark.png' ?>'/>
+                    <div>Please contact your PubExchange representative to receive the Widget Number</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2' class="support-text">
+                    Leave blank if only using a sidebar widget
+                </td>
+            </tr>
+
+        </table>
+
+        <hr style='margin-bottom:25px; margin-top:5px;'>
+
+        <table>
+            <tr>
+                <td>Enable Lazy Load?</td>
+                <td>
+                    <input type="hidden" name="pubexchange_lazy_load" value="0" id="pubexchange_lazy_load_false">
+                    <input type="checkbox" name="pubexchange_lazy_load" value="1" <?php if ($settings["pubexchange_lazy_load"] !== "0") { echo 'checked="checked"'; } ?>> <span class="support-text">Load widget only when reader scrolls near where the widget will appear?</span>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>Enable Link Discovery?</td>
+                <td>
+                    <input type="hidden" name="pubexchange_link_discovery" value="0" id="pubexchange_link_discovery_false">
+                    <input type="checkbox" name="pubexchange_link_discovery" value="1" <?php if ($settings["pubexchange_link_discovery"]) { echo 'checked="checked"'; } ?>> <span class="support-text">Let PubExchange track the click of partner links in your articles?</span>
+                </td>
+            </tr>
+        </table>
+
         <input class='button-secondary apply_button' type="submit" value="Apply Changes"/>
     </form>
     <div style='clear:both'></div>

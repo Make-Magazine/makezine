@@ -227,6 +227,8 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							print $make->ads->ad_300x600; ?>
 						</div>
 						<div class="ctx-siderail-container"></div>
+						<div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
+
 					</aside>
 					<div class="ctx-social-container"></div>
 					<div class="essb_right_flag"></div>

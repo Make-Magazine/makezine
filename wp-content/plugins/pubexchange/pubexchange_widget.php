@@ -3,7 +3,7 @@
  * Plugin Name: PubExchange
  * Plugin URI: https://www.pubexchange.com
  * Description: PubExchange
- * Version: 1.0.1
+ * Version: 2.0.1
  * Author: PubExchange
  */
 
@@ -24,8 +24,12 @@ if (!class_exists('PubExchangeWP')) {
             $this->plugin_url = trailingslashit(WP_PLUGIN_URL . '/' . dirname(plugin_basename(__FILE__)));
 
             $this->settings = new stdClass();
-			$this->settings->pubexchange_publication_id = get_option("pubexchange_publication_id");
-			$this->settings->pubexchange_widget_id = get_option("pubexchange_widget_id");
+            $this->settings->pubexchange_publication_id = get_option("pubexchange_publication_id");
+            $this->settings->pubexchange_widget_id = get_option("pubexchange_widget_id");
+            $this->settings->pubexchange_widget_number = get_option("pubexchange_widget_number");
+            $this->settings->pubexchange_link_discovery = get_option("pubexchange_link_discovery");
+            $this->settings->pubexchange_lazy_load = get_option("pubexchange_lazy_load");
+            $this->settings->pubexchange_slideout = get_option("pubexchange_lazy_load");
 
             // Enable sidebar widgets
             if($this->settings->pubexchange_publication_id){
@@ -76,44 +80,44 @@ if (!class_exists('PubExchangeWP')) {
 
         // return the head loader script
         function pubexchange_header_meta_tags() {
-			if (is_single()) {
-				global $post;
+            if (is_single()) {
+                global $post;
 
-				$url = "";
-				if (($thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' )) OR ($thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ))) {
-					$url = $thumb[0];
+                $url = "";
+                if (($thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' )) OR ($thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ))) {
+                    $url = $thumb[0];
 
-					// if Jetpack enabled site, load thumbnail using WP Photon (https://developer.wordpress.com/docs/photon/)
-					if (class_exists("Jetpack", false)) {
-						$site_parsed = parse_url(site_url());
-						$thumb_parsed = parse_url($url);
+                    // if Jetpack enabled site, load thumbnail using WP Photon (https://developer.wordpress.com/docs/photon/)
+                    if (class_exists("Jetpack", false)) {
+                        $site_parsed = parse_url(site_url());
+                        $thumb_parsed = parse_url($url);
 
-						if ($site_parsed && $thumb_parsed && ($site_parsed['host'] == $thumb_parsed["host"])) {
-							$url = "https://i0.wp.com/".$thumb_parsed["host"].$thumb_parsed["path"]."?w=300";
-						}
-					}
-				}
+                        if ($site_parsed && $thumb_parsed && ($site_parsed['host'] == $thumb_parsed["host"])) {
+                            $url = "https://i0.wp.com/".$thumb_parsed["host"].$thumb_parsed["path"]."?w=300";
+                        }
+                    }
+                }
 
-				if (!empty($url)) {
-					echo "<meta name='pubexchange:image' content='".$url."'>\n";
-				}
-				if ($headline = get_the_title( $post->ID )) {
-					echo "<meta name='pubexchange:title' content='".substr(addslashes($headline),0,255)."'>\n";
-				}
-			}
+                if (!empty($url)) {
+                    echo "<meta name='pubexchange:image' content='".$url."'>\n";
+                }
+                if ($headline = get_the_title( $post->ID )) {
+                    echo "<meta name='pubexchange:title' content='".substr(addslashes($headline),0,255)."'>\n";
+                }
+            }
         }
 
         function pubexchange_footer_load_js() {
-        	if ($this->is_widget_on_page()){
-                $script_content = str_replace('{{PUBLICATION_ID}}', $this->settings->pubexchange_publication_id, file_get_contents($this->plugin_directory.'js/pubexchange_script.js'));
+            if ($this->is_widget_on_page()){
+                $script_content = str_replace(array('{{PUBLICATION_ID}}','{{LAZY_LOAD}}','{{LINK_DISCOVERY}}'), array($this->settings->pubexchange_publication_id, ($this->settings->pubexchange_lazy_load ? 'true' : 'false'), ($this->settings->pubexchange_link_discovery ? 'true' : 'false')), file_get_contents($this->plugin_directory.'js/pubexchange_script.js'));
                 echo '<script type="text/javascript">'.$script_content.'</script>';
             }
         }
 
         function load_pubexchange_content($content)
         {
-            if (($this->should_show_content_widget()) && ($this->settings->pubexchange_widget_id)) {
-                $pubexchange_div_tag = '<div id="pubexchange_'. $this->settings->pubexchange_widget_id . '"></div>';
+            if (($this->should_show_content_widget()) && ($this->settings->pubexchange_widget_id) && ($this->settings->pubexchange_widget_number)) {
+                $pubexchange_div_tag = '<div class="pubexchange_module" id="pubexchange_'. $this->settings->pubexchange_widget_id . '" data-pubexchange-module-id="'.$this->settings->pubexchange_widget_number.'"></div>';
                 $content = $content.$pubexchange_div_tag;
             }
             return $content;
@@ -121,7 +125,7 @@ if (!class_exists('PubExchangeWP')) {
 
         function admin_generate_menu(){
             global $current_user;
-			add_options_page('PubExchange', 'PubExchange', 'manage_options', 'pubexchange_widget', array(&$this, 'admin_pubexchange_settings'));
+            add_options_page('PubExchange', 'PubExchange', 'manage_options', 'pubexchange_widget', array(&$this, 'admin_pubexchange_settings'));
         }
 
         function admin_pubexchange_settings(){
@@ -130,19 +134,34 @@ if (!class_exists('PubExchangeWP')) {
 
                 if(trim($_POST['pubexchange_publication_id']) == ''){
                     $pubexchange_errors[] = "Please add a 'Publication ID' in order to apply changes to your widgets";
-                }
-                if(count($pubexchange_errors) == 0){
-                	// update database
-					update_option("pubexchange_publication_id", trim($_POST['pubexchange_publication_id']));
-					update_option("pubexchange_widget_id", trim($_POST['pubexchange_widget_id']));
+
+                } elseif((trim($_POST['pubexchange_widget_id']) == '')&&(trim($_POST['pubexchange_widget_number']) != '')){
+                    $pubexchange_errors[] = "Please add a 'Widget ID' in order to display a widget below your content";
+
+                } elseif((trim($_POST['pubexchange_widget_id']) != '')&&(trim($_POST['pubexchange_widget_number']) == '')){
+                    $pubexchange_errors[] = "Please add a 'Widget Number' in order to display a widget below your content";
+
+                } elseif ((trim($_POST['pubexchange_widget_number']) != '') && (filter_var(trim($_POST['pubexchange_widget_number']), FILTER_VALIDATE_INT, array('options' => array('min_range' => 0))) === FALSE)) {
+                    $pubexchange_errors[] = "'Widget Number' must be an integer";
+
+                } else  {
+                    // update database
+                    update_option("pubexchange_publication_id", trim($_POST['pubexchange_publication_id']));
+                    update_option("pubexchange_widget_id", trim($_POST['pubexchange_widget_id']));
+                    update_option("pubexchange_widget_number", trim($_POST['pubexchange_widget_number']));
+                    update_option("pubexchange_lazy_load", $_POST['pubexchange_lazy_load']);
+                    update_option("pubexchange_link_discovery", $_POST['pubexchange_link_discovery']);
                 }
             }
 
-			// update local settings
+            // update local settings
             $settings = array(
-            	"pubexchange_publication_id" => get_option("pubexchange_publication_id"),
-				"pubexchange_widget_id" => get_option("pubexchange_widget_id")
-			);
+                "pubexchange_publication_id" => get_option("pubexchange_publication_id"),
+                "pubexchange_widget_id" => get_option("pubexchange_widget_id"),
+                "pubexchange_widget_number" => get_option("pubexchange_widget_number"),
+                "pubexchange_lazy_load" => get_option("pubexchange_lazy_load"),
+                "pubexchange_link_discovery" => get_option("pubexchange_link_discovery")
+            );
 
             include_once('settings.php');
         }
