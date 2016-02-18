@@ -136,8 +136,10 @@ if( $detect->isTablet() ){
   <!-- Make GPT -->
   <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
  
-  <!-- 1x1 ad unit -->
-  <?php print $make->ads->ad_1x1; ?>
+  <?php if (!empty(get_theme_mod('make_header_1x1_enable'))): ?>
+    <!-- 1x1 ad unit -->
+    <?php print $make->ads->ad_1x1; ?>
+  <?php endif; ?>
 
 
 
