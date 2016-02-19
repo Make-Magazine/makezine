@@ -77,9 +77,7 @@ if( $detect->isTablet() ){
   <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >
   <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
   <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
-
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
-
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
@@ -138,9 +136,6 @@ if( $detect->isTablet() ){
   <!-- Make GPT -->
   <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
  
-  <!-- 1x1 ad unit -->
-  <?php print $make->ads->ad_1x1; ?>
-  
   <?php if (is_home() || is_front_page() || is_page('content')): ?>
   <!-- nativo script --> 
   <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
@@ -149,6 +144,11 @@ if( $detect->isTablet() ){
       <meta name="robots" content="noindex, nofollow" />
     <?php endif; ?>
   <!-- end nativo script -->
+  <?php endif; ?>
+
+  <?php if (!empty(get_theme_mod('make_header_1x1_enable'))): ?>
+    <!-- 1x1 ad unit -->
+    <?php print $make->ads->ad_1x1; ?>
   <?php endif; ?>
 
   <script type="text/javascript">
@@ -394,7 +394,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
               } ?>
-              <img src="<?php echo $photon; ?>" alt="thumbnail">
+              <img src="<?php echo $photon; ?>" alt="Featured Project Thumbnail" />
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -425,7 +425,7 @@ $primary_cat_dimension = $primarycat[0];
                 $photon = catch_first_image_nav();
                 $photon = jetpack_photon_url( $photon, $args );
               } ?>
-              <img src="<?php echo $photon; ?>" alt="thumbnail">
+              <img src="<?php echo $photon; ?>" alt="Featured Story Post Thumbnail" />
             </a>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -460,7 +460,7 @@ $primary_cat_dimension = $primarycat[0];
               <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
                 <?php
                 $args = array(
-                    'resize' => '102,102',
+                  'resize' => '102,102',
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -471,7 +471,7 @@ $primary_cat_dimension = $primarycat[0];
                   $photon = catch_first_image_nav();
                   $photon = jetpack_photon_url( $photon, $args );
                 } ?>
-                <img src="<?php echo $str; ?>" alt="thumbnail">
+                <img src="<?php echo $str; ?>" alt="Featured Event Thumbnail" />
               </a>
             </div>
             <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>

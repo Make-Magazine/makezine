@@ -135,12 +135,6 @@ a {
 	font-size:16px;
 	.smalls {
 		margin-top:10px;
-		img {
-			margin-right:5px;
-		}
-		img:last-child{
-			text-align: right;
-		}
 	}
 	ol {
 		margin-top:10px;
@@ -371,11 +365,21 @@ ul#tabs {
 
 .jstep {
 	margin-bottom:40px;
+	//Prev button
 	.span6 {
 		margin-left: 15px;
 	}
 	ul {
 		margin:20px 0px 20px 20px;
+	}
+	span.span2.project-span2-fix {
+    width: 33.333% !important;
+    margin-left: 0;
+    padding: 0 15px;
+    display: inline-block;
+    img:hover {
+    	cursor: pointer;
+    }
 	}
 }
 
@@ -383,4 +387,33 @@ ul#tabs {
 // Maker Shed ad on projects pages
 .maker-camp-promo {
 	margin-top:20px;
+}
+
+@media screen and (max-width: 767px) {
+	.single-projects {
+		.span12 h2.new-heading {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		.bottom-steps {
+	    margin-left: 15px;
+	    margin-right: 15px;
+		}
+		.jstep {
+			//Prev button
+			.span1.prev-project-btn {
+		    display: block;
+		    width: auto;
+		    float: left!important;
+		    margin-left: 15px;
+		    margin-bottom: 10px;
+			}
+			//next button
+			.span1.next-project-btn {
+				width: auto;
+		    margin-right: 15px;
+		    margin-bottom: 10px;
+			}
+		}
+	}
 }

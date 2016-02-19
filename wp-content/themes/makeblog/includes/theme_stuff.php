@@ -283,11 +283,11 @@ function make_load_resources() {
 
 
 	// Load our common scripts first. These should not require jQuery
-		wp_enqueue_script( 'make-typekit', 'https://use.typekit.com/ijk5zjj.js', array() );
+	wp_enqueue_script( 'make-typekit', 'https://use.typekit.com/ijk5zjj.js', array() );
 	wp_enqueue_script( 'make-common', get_stylesheet_directory_uri() . '/js/common.js', array( 'make-typekit' ) );
 
 	// Load optimizely A/B testing script
-	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
+	//wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
 
 	//load data finder
 	wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );
@@ -297,6 +297,7 @@ function make_load_resources() {
 	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );
 
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );

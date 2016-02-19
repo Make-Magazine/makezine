@@ -6,7 +6,12 @@ jQuery(document).ready(function ($) {
 
         // Progress the slider
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
-        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp();
+        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
+            complete: function(){
+                $('.jstep#js-' + id + ' img.lazyload').lazyload();
+            }
+        });
+
 
         // Update the side navigation list
         $(this).addClass('current');
@@ -23,7 +28,11 @@ jQuery(document).ready(function ($) {
 
         // Progress the slider
         $('#steppers').find('.jstep#js-' + id).slideDown().removeClass('hide');
-        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp();
+        $('#steppers').find('.jstep:not( #js-' + id + ')').slideUp({ 
+            complete: function(){
+                $('.jstep#js-' + id + ' img.lazyload').lazyload();
+            }
+        });
 
         // Update side navigation list
         $('#tabs').find(' li#' + id).addClass('current');
@@ -34,7 +43,7 @@ jQuery(document).ready(function ($) {
         ga('send', 'pageview');
     });
 
-    // Display all projects when we click "View All"
+    // Display all projects steps when we click "View All"
     $('body').on('click', '.aller', function () {
         // Display all the slides
         $('#steppers').find('.jstep').each(function () {
@@ -50,7 +59,7 @@ jQuery(document).ready(function ($) {
         ga('send', 'pageview');
     });
 
-    jQuery('.carousel').on('slid', function () {
+    jQuery('.carousel').on('slide', function () {
         jQuery('.slide').find('iframe').each(function () {
             jQuery(this).attr('src', '');
             var url = jQuery(this).attr('data-src');
@@ -86,8 +95,8 @@ jQuery(document).ready(function ($) {
     }
 
     jQuery('.thumbs').click(function () {
-        var mydata = jQuery(this).data();
-        jQuery('#' + mydata.loc + ' .main').attr('src', mydata.src);
+        var img_src = jQuery(this).attr('src');
+        jQuery(this).closest('.jstep').find('img.main').attr('src', img_src);
     });
 
     jQuery('.modal').on('show', function () {
@@ -134,13 +143,13 @@ jQuery(document).ready(function ($) {
             switch (event.which) {
                 case 37:
                     jQuery('.carousel').carousel('prev');
-                    jQuery('.carousel').on('slid', function () {
+                    jQuery('.carousel').on('slide', function () {
                         jQuery(this).carousel('pause');
                     });
                     break;
                 case 39:
                     jQuery('.carousel').carousel('next');
-                    jQuery('.carousel').on('slid', function () {
+                    jQuery('.carousel').on('slide', function () {
                         jQuery(this).carousel('pause');
                     });
                     break;

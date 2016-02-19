@@ -26,11 +26,9 @@ if ( user_can( $current_user, 'administrator' ) ) {
 		<div class="row navigator">
 			<div class="hamburger">
 				<div class="hamburger-navigator">
-					<img class="initial" src="<?php echo get_template_directory_uri() . '/version-2/img/bitmap.png' ?>"
-						 scale="0">
+					<img class="initial" src="<?php echo get_template_directory_uri() . '/version-2/img/bitmap.png' ?>" scale="0">
 					<img class="x" src="<?php echo get_template_directory_uri() . '/version-2/img/x.png' ?>" scale="0">
-					<img class="x-hover" src="<?php echo get_template_directory_uri() . '/version-2/img/x-hover.png' ?>"
-						 scale="0">
+					<img class="x-hover" src="<?php echo get_template_directory_uri() . '/version-2/img/x-hover.png' ?>" scale="0">
 
 					<h2>Latest 10</h2>
 				</div>
@@ -40,8 +38,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<div class="latest-story first" id="0">
 
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted"
-							   id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
+							<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
 								<?php
 								$args = array(
 									'resize' => '370,240',
@@ -55,8 +52,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 									$photon = catch_first_image_story_nav();
 									$photon = jetpack_photon_url( $photon, $args );
 								} ?>
-								<div class="thumbnail-image"
-									 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+								<div class="thumbnail-image" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
 								<h3><?php the_title(); ?></h3></a>
 
 						</div>
@@ -227,6 +223,8 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							print $make->ads->ad_300x600; ?>
 						</div>
 						<div class="ctx-siderail-container"></div>
+						<div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
+
 					</aside>
 					<div class="ctx-social-container"></div>
 					<div class="essb_right_flag"></div>
