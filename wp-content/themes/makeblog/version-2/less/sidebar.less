@@ -261,36 +261,12 @@
           }
         }
       }
-    }
-    #pubexchange_rail {
-      .pe-wrapper {
-        border-top: 1px solid #979797;
-        padding-top: 9px;
-      }
-      .pe-title {
-        margin-bottom: 23px;
-        color: #333;
-        font: 500 18px / 21px Roboto, sans-serif;
-      }
-      .pe-headline {
-        font: 700 14px / 16px Roboto, sans-serif;
-      }
-      .pe-article {
-        margin-bottom: 27px;
-        .pe-thumb-wrapper {
-          margin-bottom: 10px;
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .sidebar {
+          margin-right: 10px
         }
       }
-      .pe-powered-by {
-        a {
-          color: #0e73c0;
-        }
-      }
-    }
-  }
-  @media only screen and (max-width: 767px) {
-    .container.wrapper {
-      .content {
+      @media only screen and (max-width: 767px) {
         .sidebar {
           width: inherit;
           float: none;
@@ -329,25 +305,38 @@
           }
         }
       }
-    }
-  }
-  @media only screen and (max-width: 991px) {
-    .content {
-      .sidebar {
-        margin-right: 0;
-        padding: 0 20px 0 0;
+      @media only screen and (max-width: 991px) {
+        .sidebar {
+          margin-right: 0;
+          padding: 0 20px 0 0;
+        }
       }
     }
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .mz-story-infinite-view {
-    .container.wrapper {
-      .content {
-        .sidebar {
-          margin-right: 10px
+    #pubexchange_rail {
+      .pe-wrapper {
+        border-top: 1px solid #979797;
+        padding-top: 9px;
+      }
+      .pe-title {
+        margin-bottom: 23px;
+        color: #333;
+        font: 500 18px / 21px Roboto, sans-serif;
+      }
+      .pe-headline {
+        font: 700 14px / 16px Roboto, sans-serif;
+      }
+      .pe-article {
+        margin-bottom: 27px;
+        .pe-thumb-wrapper {
+          margin-bottom: 10px;
+        }
+      }
+      .pe-powered-by {
+        a {
+          color: #0e73c0;
         }
       }
     }
   }
 }
+
