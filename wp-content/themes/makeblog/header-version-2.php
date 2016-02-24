@@ -155,7 +155,7 @@ if( $detect->isTablet() ){
     dataLayer = [];
   </script>
 </head>
-<body <?php body_class(); ?>>
+<body id="makeblog" <?php body_class(); ?>>
 <!-- Google Universal Analytics -->
 
 <!-- Time-tracking for Custom Dimensions -->
