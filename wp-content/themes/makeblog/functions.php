@@ -2227,6 +2227,27 @@ function the_titlesmall($before = '', $after = '', $echo = true, $length = false
     }
 }
 
+// Flag function to determine if the nativo script should be included.
+function is_nativo_script() {
+    switch (TRUE) {
+        // Homepage.
+        case (is_home() || is_front_page()):
+            return TRUE;
+            break;
+        // Content template.
+        case is_page('content'):
+            return TRUE;
+            break;
+        // wobble-bot-upcycled-cans page
+        case is_page(504432):
+            return TRUE;
+            break;
+        default:
+            return FALSE;
+            break;
+    }
+}
+
 // Add Quantcast to footer
 function add_quantcast_tag() {
     echo '<!-- Quantcast Tag -->' . "\r\n"

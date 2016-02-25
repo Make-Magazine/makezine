@@ -135,8 +135,8 @@ if( $detect->isTablet() ){
 
   <!-- Make GPT -->
   <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
- 
-  <?php if (is_home() || is_front_page() || is_page('content')): ?>
+
+  <?php if (is_nativo_script()): ?>
   <!-- nativo script --> 
   <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
     <?php if (is_page('content')): ?>
