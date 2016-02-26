@@ -49,13 +49,14 @@ p:empty {
 .page-template-page-home-php .embed-youtube {
 	float:none;
 }
-.embed-youtube, .embed-vimeo, .googlemaps {
+.embed-youtube, .embed-vimeo, .googlemaps, .videoBox_center {
 	clear: both;
 	overflow: hidden;
 	padding-bottom: 56.25%;
 	margin-bottom: 15px;
 	position: relative;
-	height: 0;
+  height: 0 !important;
+  width: 100% !important;
 	iframe, object {
 		left: 0;
 		top: 0;
