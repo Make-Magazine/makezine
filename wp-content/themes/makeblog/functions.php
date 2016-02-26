@@ -2239,7 +2239,7 @@ function is_nativo_script() {
             return TRUE;
             break;
         // wobble-bot-upcycled-cans page
-        case is_page(504432):
+        case is_single(504432):
             return TRUE;
             break;
         default:
