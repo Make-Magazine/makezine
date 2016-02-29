@@ -284,7 +284,6 @@ function make_load_resources() {
 
 	// Load our common scripts first. These should not require jQuery
 	wp_enqueue_script( 'make-typekit', 'https://use.typekit.com/ijk5zjj.js', array() );
-	wp_enqueue_script( 'make-common', get_stylesheet_directory_uri() . '/js/common.js', array( 'make-typekit' ) );
 
 	// Load optimizely A/B testing script
 	//wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
@@ -301,6 +300,7 @@ function make_load_resources() {
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
+	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/misc.js', array( 'jquery' ), false, true );
 
 	// What page are we on? And what is the pages limit?
 	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -311,8 +311,8 @@ function make_load_resources() {
 	// display our map sort plugin for Maker Camp
 	if ( is_page( 315793 ) )
 		wp_enqueue_script( 'make-sort-table', get_stylesheet_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), false, true );
-		
-}
+	}
+
 add_action( 'wp_enqueue_scripts', 'make_load_resources' );
 
 
@@ -326,7 +326,6 @@ function make_enqueue_resources_admin() {
 	// Run this code when we are in the magazine dashboard
 	if ( $screen->id == 'volume_page_manager' ) {
 		wp_enqueue_style( 'make-dashboard-css', get_stylesheet_directory_uri() . '/includes/magazine-dashboard/css/dashboard.css' );
-
 		wp_enqueue_script( 'make-sort-table', get_stylesheet_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ) );
 		wp_enqueue_script( 'make-dashboard', get_stylesheet_directory_uri() . '/includes/magazine-dashboard/js/dashboard-scripts.js', array( 'make-sort-table' ) );
 	}
@@ -1651,78 +1650,6 @@ function make_get_banner_to_category_page() {
 
 add_action( 'category_top', 'make_get_banner_to_category_page' );
 
-/**
- * Open all external links in new window
- */
-// function external_links_in_new_windows_client()
-// {
-//   echo "\n\n<!-- ".__("Plugin: Open external links a new window.","open-external-links-in-a-new-window"). " ". __("Plugin by","open-external-links-in-a-new-window"). " Kristian Risager Larsen, http://kristianrisagerlarsen.dk . ".__("Download it at","open-external-links-in-a-new-window")." http://wordpress.org/extend/plugins/open-external-links-in-a-new-window/ -->\n";
-
-//   $blogdomain = parse_url(get_option('home'));
-//   echo "<script type=\"text/javascript\">//<![CDATA[";
-//   echo "
-// 	function external_links_in_new_windows_loop() {
-// 		if (!document.links) {
-// 			document.links = document.getElementsByTagName('a');
-// 		}
-// 		var change_link = false;
-// 		var force = '".get_option("external_links_in_new_windows_force")."';
-// 		var ignore = '".get_option("external_links_in_new_windows_ignore")."';
-
-// 		for (var t=0; t<document.links.length; t++) {
-// 			var all_links = document.links[t];
-// 			change_link = false;
-			
-// 			if(document.links[t].hasAttribute('onClick') == false) {
-// 				// forced if the address starts with http (or also https), but does not link to the current domain
-// 				if(all_links.href.search(/^http/) != -1 && all_links.href.search('".$blogdomain['host']."') == -1) {
-// 					// alert('Changeda '+all_links.href);
-// 					change_link = true;
-// 				}
-					
-// 				if(force != '' && all_links.href.search(force) != -1) {
-// 					// forced
-// 					// alert('force '+all_links.href);
-// 					change_link = true;
-// 				}
-				
-// 				if(ignore != '' && all_links.href.search(ignore) != -1) {
-// 					// alert('ignore '+all_links.href);
-// 					// ignored
-// 					change_link = false;
-// 				}
-
-// 				if(change_link == true) {
-// 					// alert('Changed '+all_links.href);
-// 					document.links[t].setAttribute('onClick', 'javascript:window.open(\\''+all_links.href+'\\'); return false;');
-// 					document.links[t].removeAttribute('target');
-// 				}
-// 			}
-// 		}
-// 	}
-	
-// 	// Load
-// 	function external_links_in_new_windows_load(func)
-// 	{	
-// 		var oldonload = window.onload;
-// 		if (typeof window.onload != 'function'){
-// 			window.onload = func;
-// 		} else {
-// 			window.onload = function(){
-// 				oldonload();
-// 				func();
-// 			}
-// 		}
-// 	}
-
-// 	external_links_in_new_windows_load(external_links_in_new_windows_loop);
-// 	";
-
-//   echo "//]]></script>\n\n";
-// }
-
-// add_action('wp_head', 'external_links_in_new_windows_client');
-
 
 /**
  * Set caption width to auto for responsive theme
@@ -1750,35 +1677,6 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
 // 	);
 // 	return $new_caption;
 // }
-
-
-/**
- * Include hide/show script for SumoMe sharing widget attached to left side of browser
- */
-function sumome_scroll_show_script() { ?>
-		<script type="text/javascript">
-			jQuery(document).scroll(function () {
-					if(window.location.href.indexOf('/giftguide') != -1 ) return;
-			    var y = jQuery(this).scrollTop();
-			    if (y > 800) {
-			    	jQuery('.sumome-share-client-wrapper-left-page').css({ opacity: 1 });
-			      jQuery('.sumome-share-client-wrapper-left-page').fadeIn();
-			    } else {
-			        jQuery('.sumome-share-client-wrapper-left-page').fadeOut();
-			    }
-			});
-			jQuery( "a.sumome-share-client-share" ).ready(function() {
-				jQuery("a[title='Twitter']").addClass("SumoMeTwitter")
-				jQuery("a[title='Facebook']").addClass("SumoMeFacebook")
-				jQuery("a[title='Google+']").addClass("SumoMeGplus")
-				jQuery("a[title='Reddit']").addClass("SumoMeReddit")
-				jQuery("a[title='LinkedIn']").addClass("SumoMeLinkedin")
-				jQuery("a[title='Pinterest']").addClass("SumoMePinterest")
-			});
-		</script>
-	<?php
-}
-add_action( 'wp_footer', 'sumome_scroll_show_script' );
 
 /**
  * Populate Tag Blocks
