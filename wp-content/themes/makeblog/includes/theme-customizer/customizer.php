@@ -186,10 +186,10 @@ function make_header_options( $wp_customize ) {
     'default' => '',
   ) );
 	$wp_customize->add_control( 'make_header_1x1_enable', array(
-      'type' => 'checkbox',
-      'label' => 'Enable 1x1 Ad Unit',
-      'section' => 'make_header',
-    	'priority' => 13,
+    'type' => 'checkbox',
+    'label' => 'Enable 1x1 Ad Unit',
+    'section' => 'make_header',
+  	'priority' => 13,
   ) );
 
   // Register the enable checkbox
@@ -197,10 +197,10 @@ function make_header_options( $wp_customize ) {
     'default' => '',
   ) );
 	$wp_customize->add_control( 'make_header_promo_enable', array(
-      'type' => 'checkbox',
-      'label' => 'Enable Above Nav Promo',
-      'section' => 'make_header',
-    	'priority' => 14,
+    'type' => 'checkbox',
+    'label' => 'Enable Above Nav Promo. This is Geo Targeted to CA visitors only. Will be empty for non CA visitors.',
+    'section' => 'make_header',
+  	'priority' => 14,
   ) );
 
   // Register the html for the page.
@@ -232,10 +232,10 @@ function make_header_options( $wp_customize ) {
     'default' => '',
   ) );
 	$wp_customize->add_control( 'make_header_bluebar_enable', array(
-      'type' => 'checkbox',
-      'label' => 'Enable Under Nav Blue Bar',
-      'section' => 'make_header',
-    	'priority' => 17,
+    'type' => 'checkbox',
+    'label' => 'Enable Under Nav Blue Bar',
+    'section' => 'make_header',
+  	'priority' => 17,
   ) );
 
   // Register the html for the page.

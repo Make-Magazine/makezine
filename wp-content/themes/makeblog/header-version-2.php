@@ -196,8 +196,7 @@ $primary_cat_dimension = $primarycat[0];
   ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
 </script>
 <!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -262,11 +261,15 @@ $primary_cat_dimension = $primarycat[0];
         <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
-          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') { ?>
-            <h3 id="promo-text-above-nav" class="hidden-xs">
-              <a href="<?php echo get_theme_mod( 'make_header_promo_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_promo_text', '' ); ?></a>
-            </h3>
-          <?php } // end if ?>
+          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
+            $geoPlugin_array = unserialize( file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $_SERVER['REMOTE_ADDR']) );
+             
+            if ( $geoPlugin_array['geoplugin_region'] == 'CA' ) {
+              echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
+              echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
+              echo '</h3>';
+            }
+          } // end if ?>
 
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
