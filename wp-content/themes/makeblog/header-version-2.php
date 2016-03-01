@@ -211,8 +211,6 @@ $primary_cat_dimension = $primarycat[0];
 <?php endif; ?>
 
 <header class="header-wrapper">
-  <!--<img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>"> -->
-
   <!-- TOP BRAND BAR -->
   <div class="hidden-xs top-header-bar-brand">
     <div class="container">
@@ -342,7 +340,7 @@ $primary_cat_dimension = $primarycat[0];
           <h6>
             <a id="trigger-overlay" href="#">
               <h5>Subscribe</h5>
-              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>">
+              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>" alt="Make Magazine small mag cover" />
             </a>
           </h6>
         </div>
@@ -360,10 +358,6 @@ $primary_cat_dimension = $primarycat[0];
         </div><!-- End .desktop-social -->
       </div><!-- row -->
     </nav>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="<?php echo get_template_directory_uri().'/version-2/js/ie10-viewport-bug-workaround.js' ?>"></script>
-
   </div><!-- container panel header -->
 
 </header><!-- header-wrapper -->
@@ -413,7 +407,7 @@ $primary_cat_dimension = $primarycat[0];
             <a href="<?php the_permalink(); ?>" class="pull-left">
               <?php
               $args = array(
-                  'resize' => '370,240',
+                'resize' => '370,240',
               );
               $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
               $re = "/^(.*? src=\")(.*?)(\".*)$/m";
