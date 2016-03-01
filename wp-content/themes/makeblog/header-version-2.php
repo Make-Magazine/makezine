@@ -261,14 +261,10 @@ $primary_cat_dimension = $primarycat[0];
         <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
-          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
-            $geoPlugin_array = unserialize( file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $_SERVER['REMOTE_ADDR']) );
-             
-            if ( $geoPlugin_array['geoplugin_region'] == 'CA' ) {
-              echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
-              echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
-              echo '</h3>';
-            }
+          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') { ?>
+              <h3 id="promo-text-above-nav" class="hidden-xs">
+                <a href="<?php echo get_theme_mod( 'make_header_promo_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_promo_text', '' ); ?></a>
+              </h3> <?php
           } // end if ?>
 
           <!-- Collapsible Menu -->
@@ -493,12 +489,16 @@ $primary_cat_dimension = $primarycat[0];
 <div class="close-dynamic-content"></div>
 
 <!-- Optional Under Nav Promo Blue Bar and Message. Settings In Theme Customizer -->
-<?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>
-  <div class="second-nav promo-text-under-nav">
-    <div class="container hidden-xs">
-      <h3>
-        <a href="<?php echo get_theme_mod( 'make_header_bluebar_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_bluebar_text', '' ); ?></a>
-      </h3>
-    </div>
-  </div>
-<?php } // end if ?>
+<?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { 
+  $geoPlugin_array = unserialize( file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $_SERVER['REMOTE_ADDR']) );
+           
+  if ( $geoPlugin_array['geoplugin_region'] == 'CA' ) {
+    echo '<div class="second-nav promo-text-under-nav">';
+    echo '<div class="container hidden-xs">';
+    echo '<h3>';
+    echo '<a href="' . get_theme_mod( 'make_header_bluebar_link', '' ) . '">' . get_theme_mod( 'make_header_bluebar_text', '' ) . '</a>';
+    echo '</h3>';
+    echo '</div>';
+    echo '</div>';
+  }
+} // end if ?>
