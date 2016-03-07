@@ -198,7 +198,7 @@ function make_header_options( $wp_customize ) {
   ) );
 	$wp_customize->add_control( 'make_header_promo_enable', array(
     'type' => 'checkbox',
-    'label' => 'Enable Above Nav Promo',
+    'label' => 'Enable Above Nav Promo. This is Geo Targeted to CA visitors only. Will not show for non CA visitors.',
     'section' => 'make_header',
   	'priority' => 14,
   ) );
@@ -233,7 +233,7 @@ function make_header_options( $wp_customize ) {
   ) );
 	$wp_customize->add_control( 'make_header_bluebar_enable', array(
     'type' => 'checkbox',
-    'label' => 'Enable Under Nav Blue Bar. This is Geo Targeted to CA visitors only. Will be empty for non CA visitors.',
+    'label' => 'Enable Under Nav Blue Bar.',
     'section' => 'make_header',
   	'priority' => 17,
   ) );

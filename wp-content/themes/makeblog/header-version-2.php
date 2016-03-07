@@ -261,7 +261,7 @@ $primary_cat_dimension = $primarycat[0];
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
           <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
             $geoPlugin_array = unserialize( file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $_SERVER['REMOTE_ADDR']) );
-             
+
             if ( $geoPlugin_array['geoplugin_region'] == 'CA' ) {
               echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
               echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
