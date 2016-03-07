@@ -200,6 +200,9 @@ $(document).ready(function () {
 			if ($title == "Projects") {
 				$($menu_content).addClass('projects');
 			}
+			if ($title == "Stories") {
+				$($menu_content).addClass('stories');
+			}
 			$(this).children('a').attr('title', '');
 			$($menu_content).clone().appendTo('.menu-sub-menu');
 		} else {
