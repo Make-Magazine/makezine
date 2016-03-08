@@ -136,7 +136,6 @@ if( $detect->isTablet() ){
   <!-- Make GPT -->
   <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 
-  <?php if (is_nativo_script()): ?>
   <!-- nativo script --> 
   <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
     <?php if (is_page('content')): ?>
@@ -144,7 +143,6 @@ if( $detect->isTablet() ){
       <meta name="robots" content="noindex, nofollow" />
     <?php endif; ?>
   <!-- end nativo script -->
-  <?php endif; ?>
 
   <?php if (!empty(get_theme_mod('make_header_1x1_enable'))): ?>
     <!-- 1x1 ad unit -->
