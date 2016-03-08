@@ -260,7 +260,7 @@ $primary_cat_dimension = $primarycat[0];
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
           <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
-            $user_ip = $_SERVER['REMOTE_ADDR'];
+            $user_ip = getenv('REMOTE_ADDR');
             $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
             $state = $geo["geoplugin_regionCode"];
 
