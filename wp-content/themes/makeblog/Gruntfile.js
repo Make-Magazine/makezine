@@ -17,6 +17,7 @@ module.exports = function(grunt) {
           'css/print.css': 'less/make/print.less',
           'css/takeover.css': 'less/make/takeover.less',
           'version-2/css/style.css': 'version-2/less/style.less',
+          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
           'reviews/css/master.css': 'reviews/less/master.less'
         }
       },
@@ -30,36 +31,19 @@ module.exports = function(grunt) {
           'css/print.css': 'less/make/print.less',
           'css/takeover.css': 'less/make/takeover.less',
           'version-2/css/style.css': 'version-2/less/style.less',
+          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
           'reviews/css/master.css': 'reviews/less/master.less'
         }
       }
     },
-    sass: {
-      prod: {
-        options: {
-          style: 'compressed', noCache: true
-        },
-        files: {
-          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.scss'
-        }
-      },
-      dev: {
-        options: {
-          style: 'expanded', lineNumbers: true, noCache: true
-        },
-        files: {
-          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.scss'
-        }
-      },
-    },
     watch: {
       prod: {
-        files: ['less/**/*.less', 'version-2/less/**/*.less', 'version-2/less/**/*.sass'],
-        tasks: ['less:prod', 'sass:prod']
+        files: ['less/**/*.less', 'version-2/less/**/*.less'],
+        tasks: ['less:prod']
       },
       dev: {
-        files: ['less/**/*.less', 'version-2/less/**/*.less', 'version-2/less/**/*.sass'],
-        tasks: ['less:dev', 'sass:dev']
+        files: ['less/**/*.less', 'version-2/less/**/*.less'],
+        tasks: ['less:dev']
       },
       reload: {
         files: ['less/**/*.less'],
@@ -76,9 +60,9 @@ module.exports = function(grunt) {
 
   // Register the tasks with Grunt
   // To only watch for less changes and process without browser reload type in "grunt"
-  grunt.registerTask('default', ['less:prod', 'sass:prod', 'watch:prod']);
+  grunt.registerTask('default', ['less:prod', 'watch:prod']);
   // Dev mode build task
-  grunt.registerTask('dev', ['less:dev', 'sass:dev', 'watch:dev']);
+  grunt.registerTask('dev', ['less:dev', 'watch:dev']);
   // To watch for less changes and process them with livereload type in "grunt reload"
   grunt.registerTask('reload', ['less', 'watch:reload']);
 
