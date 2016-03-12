@@ -307,7 +307,7 @@ $(document).ready(function () {
 
 	$('.search-field').attr('title', '');
 	$('.menu-item-has-children').addClass('first-hover');
-	$(document).on('touchstart click mouseenter', '.menu-item-has-children', function (e) {
+	$(document).on('mouseenter', '.menu-item-has-children', function (e) {
 		if(window.navigator.userAgent.indexOf("Chrome") > 0){
 			$window = $(window).width() + 17;
 		}else {
