@@ -526,62 +526,54 @@ function make_new_gallery_shortcode($attr) {
 		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 	}
 
-	if ( empty($attachments) )
+	if ( empty($attachments) ) {
 		return '';
+	}
 
-	$output = '<div id="myCarousel-' . $rand . '" class="carousel slide" data-interval=""><div class="carousel-inner">';
+	$output = '<div id="carousel-' . $rand . '" class="carousel slide" data-ride="carousel">';
 
-	$i = 0;
-	foreach( $attachments as $id => $attachment ) {
-		$i++;
-		if ($i == 1) {
-			$output .= '<div class="item active">';	
-		} else {
-			$output .= '<div class="item">';
+		$output .= '<ol class="carousel-indicators">';
+		for($i = 0; $i < count($attachments); ++$i){
+			$output .= '<li data-target="#carousel-' . $rand . '" data-slide-to="' . $i . '"';
+			if ($i == 0) { $output .= ' class="active"'; }
+			$output .= '></li>';
 		}
-		$output .= wp_get_attachment_link( $attachment->ID, sanitize_title_for_query( $size ) );
-		if ( isset( $attachment->post_excerpt ) && ! empty( $attachment->post_excerpt ) ) {
-			$attachment_caption = $attachment->post_excerpt;
-		} elseif ( isset( $attachment->post_title ) && ! empty( $attachment->post_title ) ) {
-			$attachment_caption = $attachment->post_title;
-		} else {
-			$attachment_caption = '';
-		}
-		if ( isset( $attachment_caption ) && ! empty( $attachment_caption ) ) {
-			$output .= '<div class="carousel-caption">';
-			$output .= '<h4>' . Markdown( wp_kses_post( $attachment_caption ) ) . '</h4>';
-			$output .= '</div>';
-			
-		}
+		$output .= '</ol>';
+
+		$output .= '<div class="carousel-inner" role="listbox">';
+			$i = 0;
+			foreach($attachments as $id => $attachment) {
+				$i++;
+				if ($i == 1) {
+					$output .= '<div class="item active">'; 
+				} else {
+					$output .= '<div class="item">';
+				}
+				$output .= '<img src="'. wp_get_attachment_image_src($id, sanitize_title_for_query($size))[0] .'">';
+				if (isset($attachment->post_excerpt) && !empty($attachment->post_excerpt)) {
+					$attachment_caption = $attachment->post_excerpt;
+				} elseif (isset($attachment->post_title) && !empty($attachment->post_title)) {
+					$attachment_caption = $attachment->post_title;
+				} else {
+					$attachment_caption = '';
+				}
+				if (isset($attachment_caption) && !empty($attachment_caption)) {
+					$output .= '<div class="carousel-caption"><h4>' . Markdown(wp_kses_post($attachment_caption)) . '</h4></div>';
+				}
+				$output .= '</div>';
+			}
 		$output .= '</div>';
-		
-	} //foreach
-	$output .= '</div>
-		<a class="left carousel-control" href="#myCarousel-' . $rand . '" data-slide="prev">‹</a>
-		<a class="right carousel-control" href="#myCarousel-' . $rand . '" data-slide="next">›</a>
-	</div>';
-	$output .= '<p class="pull-right"><span class="label viewall" style="cursor:pointer">View All</span></p>';
-	$output .= '
-		<script>
-			jQuery(document).ready(function(){
-				jQuery(".viewall").click(function() {
-					jQuery(".carousel-inner").removeClass("carousel-inner");
-					jQuery(".carousel-control").hide();
-					googletag.pubads().refresh();
-					ga(\'send\', \'pageview\');
-					urlref = location.href;
-					PARSELY.beacon.trackPageView({
-						url: urlref,
-						urlref: urlref,
-						js: 1,
-						action_name: "Next Slide"
-					});
-					jQuery(this).addClass(\'hide\');
-					return true;
-				})
-			});
-		</script>
-	';
+
+		$output .= '<a class="left carousel-control" href="#carousel-' . $rand . '" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-' . $rand . '" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>';
+
+	$output .= '</div>';
 	$output .= '<div class="clearfix"></div>';
 	return $output;
 }
