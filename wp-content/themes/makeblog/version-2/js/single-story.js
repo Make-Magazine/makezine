@@ -615,13 +615,12 @@ $(document).ready(function () {
         function getStory($offset, $id, $number) {
             var firstPostId = $('.first-story').attr('id');
             $.ajax({
-                type: 'POST',
-                url: '/wp-admin/admin-ajax.php',
+                type: 'GET',
+                url: '/ajax_get_story.php',
                 data: {
                     'offset': $offset,
                     'number': $number,
-                    'excludeId': firstPostId,
-                    'action': 'get_story_with_ajax'
+                    'excludeId': firstPostId
                 },
                 success: function (data) {
                     $('.row.infinity').before(data);
