@@ -281,10 +281,6 @@ function make_load_resources() {
 		wp_enqueue_script( 'youtube-playlist', get_stylesheet_directory_uri() . '/ js/ytv.js' );
 	}
 
-
-	// Load our common scripts first. These should not require jQuery
-	wp_enqueue_script( 'make-typekit', 'https://use.typekit.com/ijk5zjj.js', array() );
-
 	// Load optimizely A/B testing script
 	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
 

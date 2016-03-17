@@ -65,24 +65,7 @@ class Make_Makers {
 		register_post_type( 'makers', $args );
 	}
 
-	public function load_resources() {
-		if ( is_page_template( 'page-day-of-making.php' ) && ! is_admin() ) {
-			// JavaScript
-			$localize = array(
-				'admin_post' 	=> admin_url( 'admin-ajax.php' ),
-				'logged_in' 	=> is_user_logged_in(),
-				'jake'			=> 'awesome',
-			);
-			wp_enqueue_script( 'parseley-js', get_stylesheet_directory_uri() . '/js/parsley.min.js', array( 'jquery' ), '2.0', true );
-			wp_enqueue_style( 'day-of-making', get_stylesheet_directory_uri() . '/css/day-of-making.css' );
-			wp_enqueue_script( 'day-of-making', get_stylesheet_directory_uri() . '/js/makers.js', array( 'jquery' ) );
-			wp_enqueue_script( 'md5', get_stylesheet_directory_uri() . '/js/md5.js', array( 'jquery' ) );
-			wp_localize_script( 'day-of-making', 'contribute', $localize );
-			wp_deregister_style( 'make-css' );
-			wp_deregister_style( 'make-print-css' );
-			wp_deregister_style( 'frontend-uploader-css' );
-		}
-	}
+	public function load_resources() {}
 
 	/**
 	 * Take the form data, and add a post/project.

@@ -13,15 +13,6 @@
   */
  function pbd_alp_init($wp_query) {
 
-    // Queue JS and CSS
-    wp_enqueue_style(
-        'pbd-alp-style',
-        get_stylesheet_directory_uri() . '/css/load-posts.css',
-        false,
-        '1.0',
-        'all'
-    );
-
     // What page are we on? And what is the pages limit?
     $max = $wp_query->max_num_pages;
     $paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1;

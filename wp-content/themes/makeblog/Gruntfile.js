@@ -14,10 +14,10 @@ module.exports = function(grunt) {
         },
         files: {
           'css/style.css': 'less/style.less',
-          'css/print.css': 'less/make/print.less',
-          'css/takeover.css': 'less/make/takeover.less',
-          'css/day-of-making.css': 'less/day-of-making.less',
+          'css/print.css': 'less/print.less',
+          'css/takeover.css': 'less/takeover.less',
           'version-2/css/style.css': 'version-2/less/style.less',
+          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
           'reviews/css/master.css': 'reviews/less/master.less'
         }
       },
@@ -28,10 +28,10 @@ module.exports = function(grunt) {
         },
         files: {
           'css/style.css': 'less/style.less',
-          'css/print.css': 'less/make/print.less',
-          'css/takeover.css': 'less/make/takeover.less',
-          'css/day-of-making.css': 'less/day-of-making.less',
+          'css/print.css': 'less/print.less',
+          'css/takeover.css': 'less/takeover.less',
           'version-2/css/style.css': 'version-2/less/style.less',
+          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
           'reviews/css/master.css': 'reviews/less/master.less'
         }
       }
