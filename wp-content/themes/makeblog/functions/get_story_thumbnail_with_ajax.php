@@ -48,7 +48,7 @@ add_action('wp_ajax_nopriv_get_story_thumbnail_with_ajax', 'get_story_thumbnail_
 
 function get_story_thumbnail_with_ajax2() {
     $exclude = $_GET ? $_GET['excludeId'] : NULL;
-    $offset = $_GET ? $_GET['offset'] NULL;
+    $offset = $_GET ? $_GET['offset'] : NULL;
     $story = '';
     $story .='<div class="row more-thumbnails">';
     $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
