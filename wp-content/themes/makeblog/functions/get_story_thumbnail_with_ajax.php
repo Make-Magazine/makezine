@@ -1,8 +1,8 @@
 <?php
 // Infinite scroll story thumbnail API
 function get_story_thumbnail_with_ajax() {
-    $exclude = $_POST ? $_POST['excludeId'] : NULL;
-    $offset = $_POST ? $_POST['offset'] : NULL;
+    $exclude = $_POST && $_POST['excludeId'];
+    $offset = $_POST && $_POST['offset'];
     $story = '';
     $story .='<div class="row more-thumbnails">';
     $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
@@ -47,8 +47,8 @@ add_action('wp_ajax_get_story_thumbnail_with_ajax', 'get_story_thumbnail_with_aj
 add_action('wp_ajax_nopriv_get_story_thumbnail_with_ajax', 'get_story_thumbnail_with_ajax');
 
 function get_story_thumbnail_with_ajax2() {
-    $exclude = $_GET && $_GET['excludeId'];
-    $offset = $_GET && $_GET['offset'];
+    $exclude = $_GET ? $_GET['excludeId'] : NULL;
+    $offset = $_GET ? $_GET['offset'] NULL;
     $story = '';
     $story .='<div class="row more-thumbnails">';
     $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
