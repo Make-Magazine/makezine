@@ -595,12 +595,11 @@ $(document).ready(function () {
         function getStoryThumbnail($offset) {
             var firstPostId = $('.first-story').attr('id');
             $.ajax({
-                type: 'POST',
-                url: '/wp-admin/admin-ajax.php',
+                type: 'GET',
+                url: '/ajax_get_story_thumbnail.php',
                 data: {
                     'offset': $offset,
-                    'excludeId': firstPostId,
-                    'action': 'get_story_thumbnail_with_ajax'
+                    'excludeId': firstPostId
                 },
                 success: function (data) {
                     $('.row.infinity').after(data);
