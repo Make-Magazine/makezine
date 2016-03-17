@@ -1,8 +1,8 @@
 <?php
 // Infinite scroll story thumbnail API
 function get_story_thumbnail_with_ajax() {
-    $exclude = $_POST && $_POST['excludeId'];
-    $offset = $_POST && $_POST['offset'];
+    $exclude = $_POST ? $_POST['excludeId'] : NULL;
+    $offset = $_POST ? $_POST['offset'] : NULL;
     $story = '';
     $story .='<div class="row more-thumbnails">';
     $story .='<div class="posts-navigator col-lg-2 col-sm-2 col-xs-2">';
