@@ -304,7 +304,7 @@ jQuery( document ).ready( function( $ ) {
 	});
 	jQuery(".ads").addClass('first-use');
 	$.ajax({
-		url: vars.ajaxurl,
+		url: '/ajax_get_shopify_featured_products.php',
 		data: {
 			'action':'make_shopify_featured_products'
 		},

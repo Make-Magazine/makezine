@@ -457,7 +457,7 @@ jQuery(document).ready(function ($) {
                 }
 
                 $.ajax({
-                    url: '/wp-admin/admin-ajax.php',
+                    url: '/ajax_get_shopify_featured_products.php',
                     data: {
                         'action': 'make_shopify_featured_products'
                     },
