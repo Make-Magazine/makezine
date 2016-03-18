@@ -291,7 +291,7 @@ $(document).ready(function () {
 	if (isiPhone > -1) {
 		$(window).scroll(function () {
 			function screenHeight() {
-				return jQuery.browser.opera ? window.innerHeight : $(window).height();
+				return window && window.innerHeight || $(window).height();
 			}
 
 			$screenHeight = screenHeight();
