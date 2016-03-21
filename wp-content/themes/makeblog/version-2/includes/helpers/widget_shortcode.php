@@ -2,7 +2,8 @@
 //outpoot Lastest Project, Lastest Reviews and Skill Builders
 function related_posts( $atts ) {
     $atts = shortcode_atts(array(
-        'type' => 'project'
+        'type' => 'project',
+        'tag'  => ''
     ), $atts, 'posts_test');
     
     blog_feeds_output($atts['type']);
