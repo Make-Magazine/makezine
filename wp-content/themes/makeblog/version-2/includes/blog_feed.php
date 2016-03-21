@@ -1,5 +1,5 @@
 <?php
-function blog_feeds_output( $type = '' ) {
+function blog_feeds_output( $type = '', $tag = '' ) {
   switch ( $type ) {
     case 'Project':
       $args  = array(
@@ -61,8 +61,8 @@ function blog_feeds_output( $type = '' ) {
         'post_status'    => 'publish',
         'meta_query'     => $meta_query,
       );
-      $title      = 'Latest $tag Posts';
-      $allReviews = 'See All $tag Posts';
+      $title      = 'Latest Posts';
+      $allReviews = 'See All Posts';
       break;
     default:
       $args  = array(
