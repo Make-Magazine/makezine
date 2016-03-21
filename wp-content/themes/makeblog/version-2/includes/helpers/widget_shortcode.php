@@ -3,10 +3,10 @@
 function related_posts( $atts ) {
     $atts = shortcode_atts(array(
         'type' => 'project',
-        'tag'  => 'default'
+        'tag_slug'  => 'default'
     ), $atts, 'posts_test');
     
-    blog_feeds_output($atts['type'],$atts['tag']);
+    blog_feeds_output($atts['type'],$atts['tag_slug']);
 }
 add_shortcode( 'feeds_posts', 'related_posts' );
 

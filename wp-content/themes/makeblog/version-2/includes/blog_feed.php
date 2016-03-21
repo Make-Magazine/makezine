@@ -1,5 +1,5 @@
 <?php
-function blog_feeds_output( $type = '', $tag = '' ) {
+function blog_feeds_output( $type = '', $tag_slug = '' ) {
   switch ( $type ) {
     case 'Project':
       $args  = array(
@@ -47,22 +47,14 @@ function blog_feeds_output( $type = '', $tag = '' ) {
       $allBuilders = 'See All Skill Builders';
       break;
     case 'Post':
-      $meta_query = array(
-        'relation' => 'AND',
-        array(
-          'key'     => 'story_type',
-          'value'   => $tag,
-          'compare' => '=',
-        ),
-      );
       $args       = array(
-        'post_type'      => 'post',
+        'post_type'      => array( 'post', 'projects' ),
         'posts_per_page' => 5,
         'post_status'    => 'publish',
-        'meta_query'     => $meta_query,
+        'tag'						 => $tag_slug,
       );
       $title      = 'Latest Posts';
-      $allReviews = 'See All Posts';
+      $allPosts = 'See All Posts';
       break;
     default:
       $args  = array(
@@ -72,13 +64,15 @@ function blog_feeds_output( $type = '', $tag = '' ) {
       );
       $title = 'Latest Posts';
   }
-
+  $tagName = get_term_by('slug', $tag_slug, 'post_tag');
   $query = new WP_Query( $args ); ?>
   <div class="posts-feeds-wrapper">
     <h3 class="feed-title">
       <?php if ( $type == 'Project' ) { ?>
         <a href="<?php echo get_home_url() . '/projects' ?>" class="full-feed-title-link"><i
             class="fa fa-newspaper-o feed-icon"></i><?php echo $title ?></a>
+      <?php } else if ( $type == 'Post' ) { ?>
+        <i class="fa fa-newspaper-o feed-icon"></i>Latest <?php echo $tagName->name; ?> Posts</a>
       <?php } else { ?>
         <i class="fa fa-newspaper-o feed-icon"></i> <?php echo $title;
       } ?>
@@ -111,6 +105,9 @@ function blog_feeds_output( $type = '', $tag = '' ) {
       <?php } ?>
       <?php if (!empty($allBuilders)){ ?>
         <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/skill-builder', 'http' ); ?>">See All Skill Builders</a></h3>
+      <?php } ?>
+      <?php if (!empty($allPosts)){ ?>
+        <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/' . $tag_slug .'', 'http' ); ?>">See All <?php echo $tagName->name; ?> Posts</a></h3>
       <?php } ?>
     </ul>
   </div>
