@@ -530,7 +530,7 @@ function make_new_gallery_shortcode($attr) {
 		return '';
 	}
 
-	$output = '<div id="carousel-' . $rand . '" class="carousel slide" data-ride="carousel">';
+	$output = '<div id="carousel-' . $rand . '" class="carousel slide">';
 
 		$output .= '<ol class="carousel-indicators">';
 		for($i = 0; $i < count($attachments); ++$i){
