@@ -120,9 +120,6 @@ if ( ! empty( $why_buy_content ) ): ?>
 endif;
 ?>
 
-
-
-
 <?php if ( ! empty( $pro_tips_content ) ): ?>
 	<div class="meta-block pro-tips desktop">
 		<?php
@@ -134,6 +131,28 @@ endif;
 		<?php echo $pro_tips_content; ?>
 	</div><!-- .meta-block.pro-tips -->
 <?php endif; ?>
+
+<?php
+	$container = Reviews()->container();
+	$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
+	$slug = $parent[0]->post_name;
+if ( $slug === 'boards' ) {
+	if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
+		<div class="clearfix"></div>
+		<div class="sidebar-wrapper">
+			<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
+		</div>
+		<div class="clearfix"><br /><br /></div>
+	<?php } 
+} else if ( $slug === 'printers' ) {
+	if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
+		<div class="clearfix"></div>
+		<div class="sidebar-wrapper">
+			<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+		</div>
+		<div class="clearfix"><br /><br /></div>
+	<?php } 
+} ?>
 
 <div class="meta-block ad-2 desktop">
 	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>

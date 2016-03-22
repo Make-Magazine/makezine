@@ -18,28 +18,14 @@ if ( ! empty( $image ) ){
 				<?php the_content(); ?>
 			<?php endwhile; ?>
 			<?php endif; ?>
-			
-			
-			
+
 			<?php get_template_part( 'reviews/content/single/products/specs' ); ?>
 			
-			
-			
-			
-			
-			
 		</div><!-- .col -->
-		
-		
 		
 		<div id="product-sidebar" class="col-sm-4">
 			<?php get_template_part( 'reviews/content/sidebar/products' ); ?>
 		</div><!-- .col -->
-		
-		
-		
-		
-		
 		
 		<div class="col-sm-12 pull-left">
 			

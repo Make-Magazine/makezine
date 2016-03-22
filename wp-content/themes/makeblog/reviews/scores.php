@@ -11,8 +11,6 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 	
 <main id="scores" class="container">
 
-
-
 	<div class="row">
 
 		<div class="tc-container">
@@ -39,7 +37,6 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<?php endforeach; ?>
 				</ul>
 
-
 				<?php
 				$methodology = get_field( 'scoring_methodology' );
 				$methodology = \Reviews\Theme::partition_array( $methodology, count( $methodology ) < 3 ? count( $methodology ) : 3 );
@@ -62,9 +59,6 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			
 			</section><!-- .tc-content -->
 		</div><!-- .tc-container -->
-
-		
-		
 		
 		<aside class="reviews-sidebar tc-sidebar scores-sidebar">
 			
@@ -81,6 +75,26 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<p><?php echo $how_scoring_works; ?></p>
 				</div>
 			<?php endif; ?>
+
+			<?php
+			$slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+			if ( $slug === 'boards' ) {
+				if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
+					<div class="clearfix"></div>
+					<div class="sidebar-wrapper">
+						<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
+					</div>
+					<div class="clearfix"><br /><br /></div>
+				<?php } 
+			} else if ( $slug === 'printers' ) {
+				if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
+					<div class="clearfix"></div>
+					<div class="sidebar-wrapper">
+						<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+					</div>
+					<div class="clearfix"><br /><br /></div>
+				<?php } 
+			} ?>
 			
 			<div class="meta-block ad-2 desktop no-border">
 				<p id="ads-title">ADVERTISEMENT</p>
@@ -88,9 +102,6 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			</div><!-- .meta-block.ad-2 -->
 		
 		</aside><!-- .reviews-sidebar -->
-		
-		
-		
 
 	</div><!-- .div -->
 

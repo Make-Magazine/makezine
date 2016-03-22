@@ -23,6 +23,27 @@ $how_scoring_works_title = ! empty( $how_scoring_works_title ) ? $how_scoring_wo
 	</div>
 	<?php endif; ?>
 
+
+	<?php
+	$slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+	if ( $slug === 'boards' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
+			</div>
+			<div class="clearfix"><br /><br /></div>
+		<?php } 
+	} else if ( $slug === 'printers' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+			</div>
+			<div class="clearfix"><br /><br /></div>
+		<?php } 
+	} ?>
+
 	<div class="meta-block ad-2 desktop">
 		<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
 	</div><!-- .meta-block.ad-2 -->

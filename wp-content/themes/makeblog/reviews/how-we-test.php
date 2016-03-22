@@ -16,8 +16,6 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 <?php endif; ?>
 
 
-
-
 <div id="content-wrap" class="container <?php if ( empty( $hero ) ) {
 	echo 'no-hero';
 } ?>">
@@ -85,18 +83,14 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<!-- .author -->
 					<?php
 				}
-
 				?>
-
 
 			</div>
 			<!-- .row -->
 
 		</div>
 		<!-- .col -->
-		
-		
-		
+
 		<div id="product-sidebar" class="col-sm-4">
 			
 			<div class="meta-block pro-tips mobile border-top">
@@ -116,7 +110,25 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 				<p><?php echo get_field( 'pro_tips' ); ?></p>
 			</div>
 			<!-- .meta-block.pro-tips -->
-			
+
+			<?php
+			if ( $slug === 'boards' ) {
+				if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
+					<div class="clearfix"></div>
+					<div class="sidebar-wrapper">
+						<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
+					</div>
+					<div class="clearfix"><br /><br /></div>
+				<?php } 
+			} else if ( $slug === 'printers' ) {
+				if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
+					<div class="clearfix"></div>
+					<div class="sidebar-wrapper">
+						<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+					</div>
+					<div class="clearfix"><br /><br /></div>
+				<?php } 
+			} ?>
 			
 			<div class="meta-block ad-2 desktop no-border">
 				<p id="ads-title">ADVERTISEMENT</p>
@@ -125,39 +137,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			
 		</div><!-- .col -->
 		
-		
-		
-		
-		
-		
-		
-		
 	</div><!-- .cw-content -->
 </div><!-- .container -->
-	
-	
-
 
 <?php get_footer(); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

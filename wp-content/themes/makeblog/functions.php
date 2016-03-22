@@ -2037,6 +2037,28 @@ function register_widget_zone() {
             'after_title'=>'</h3>'
         )
     );
+    register_sidebar(
+        array(
+            'id'=>'sidebar_comparison_boards',
+            'name'=>__('Boards Comparison Sidebar'),
+            'description'=>__('This widget area on all Boards Comparison pages.' ),
+            'before_widget'=>'<div class="widget-zone">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="widget-title">',
+            'after_title'=>'</h3>'
+        )
+    );
+    register_sidebar(
+        array(
+            'id'=>'sidebar_comparison_3dprinter',
+            'name'=>__('3D Printer Comparison Sidebar'),
+            'description'=>__('This widget area on all 3D Printer Comparison pages.' ),
+            'before_widget'=>'<div class="widget-zone">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="widget-title">',
+            'after_title'=>'</h3>'
+        )
+    );
 }
 add_action('widgets_init', 'register_widget_zone');
 function kc_widget_form_extend( $instance, $widget ) {

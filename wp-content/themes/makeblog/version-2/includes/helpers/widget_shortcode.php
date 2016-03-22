@@ -1,5 +1,6 @@
 <?php 
-//outpoot Lastest Project, Lastest Reviews and Skill Builders
+//outpoot Lastest Project, Lastest Reviews, Skill Builders, or posts by tag
+// Example [feeds_posts type='Post' tag_slug='science' ]
 function related_posts( $atts ) {
     $atts = shortcode_atts(array(
         'type' => 'project',
