@@ -501,7 +501,6 @@ function make_new_gallery_shortcode($attr) {
 		'icontag'    => 'dt',
 		'captiontag' => 'dd',
 		'columns'    => 3,
-		'size'       => 'medium',
 		'include'    => '',
 		'exclude'    => ''
 	), $attr));
@@ -549,7 +548,24 @@ function make_new_gallery_shortcode($attr) {
 				} else {
 					$output .= '<div class="item">';
 				}
-				$output .= '<img src="'. wp_get_attachment_image_src($id, sanitize_title_for_query($size))[0] .'">';
+        // echo $id;
+        echo var_dump(wp_get_attachment_image_src($id, 'medium')[1]) < 620 . '  _____  ';
+				if (wp_get_attachment_image_src($id, 'medium')[1] < 620 &&
+					wp_get_attachment_image_src($id, 'full')[1] >= 620) {
+					$img_url = wp_get_attachment_image_src($id, 'full')[0];
+					$image = wp_get_image_editor($img_url);
+					if (!is_wp_error($image)) {
+				    $image->resize(620, 415, false);
+				    $file_path = parse_url($img_url)['path'];
+            $name = pathinfo($file_path, PATHINFO_FILENAME);
+            $ext = pathinfo($file_path, PATHINFO_EXTENSION);
+            $file_dir = rtrim($file_path, $name . '.' . $ext);
+				    echo rtrim(ABSPATH, "/") . $file_dir . $name . '-620x415.' . $ext;
+            echo '  ';
+            $image->save(rtrim(ABSPATH, "/") . $file_dir . $name . '-620x415.' . $ext);
+					}
+				}
+				$output .= '<img src="'. wp_get_attachment_image_src($id, 'medium')[0] .'">';
 				if (isset($attachment->post_excerpt) && !empty($attachment->post_excerpt)) {
 					$attachment_caption = $attachment->post_excerpt;
 				} elseif (isset($attachment->post_title) && !empty($attachment->post_title)) {
