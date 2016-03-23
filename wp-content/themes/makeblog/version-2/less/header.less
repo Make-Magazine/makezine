@@ -427,8 +427,43 @@ h6 {
 .latest-shop .shop-post a.fourth-post {
   background-image: url(/wp-content/themes/makeblog/version-2/img/shop4.png);
 }
+/*End Nav dynamic content for shop */
 
-/*End  Nav dynamic content for shop */
+/*Begin Nav content for guides */
+.nav-guides {
+  padding: 22px 18px 0px 0px;
+  display: none;
+  width: inherit;
+  position: absolute;
+  .guides-item {
+    display: inline-block;
+    vertical-align: top;
+    .nav-img-border {
+      border: 1px solid #979797;
+      margin: 1px;
+      display: flex;
+      &:hover {
+        border: 2px solid #979797;
+        margin: 0;
+      }
+    }
+    a {
+      width: 100%;
+      height: 142px;
+      overflow: hidden;
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &.first-post {
+        background-image: url(/wp-content/themes/makeblog/img/3d-printer-guides-nav-image.jpg);
+      }
+      &.second-post {
+        background-image: url(/wp-content/themes/makeblog/img/board-guides-nav-image.jpg);
+      }
+    }
+  }
+}
+/*End Nav content for guides */
 
 /*Begin Nav dynamic content for events */
 .latest-events {
@@ -500,7 +535,6 @@ ul.sub-menu {
   background: #E6E6E6;
   padding: 0;
 }
-
 
 .mz-search {
   margin-top: 45px;
@@ -1010,7 +1044,6 @@ ul.sub-menu.moove-right {
     top: 0;
     box-shadow: 0 0 0 0;
   }
-
 }
 
 @media only screen and (min-width: 1024px) {
@@ -1417,6 +1450,9 @@ ul.sub-menu.moove-right {
   }
   .mz-search .close-search {
     margin-left: 10px;
+  }
+  .navbar .nav>li>a {
+    margin-right: 20px;
   }
 }
 
@@ -1900,7 +1936,6 @@ ul.sub-menu.moove-right {
     font-weight: 400;
     line-height: 18px;
   }
-
 }
 
 @media screen and ( min-width: 769px ) {
@@ -1908,6 +1943,24 @@ ul.sub-menu.moove-right {
     height: 0px !important;
   }
 }
-.projects-cat .content .minify.sticky, .all-projects .content .minify.sticky {
+.projects-cat .content .minify.sticky, 
+.all-projects .content .minify.sticky {
   transition: all 0.25s ease;
+}
+
+
+// Have to add the correct BS media querries because Quora did them all messed up #QuoraSux
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .nav-guides .guides-item a {  
+    height: 116px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .nav-guides .guides-item a {  
+    height: 102px;
+  }
+}
+@media screen and (max-width: 767px) {
 }

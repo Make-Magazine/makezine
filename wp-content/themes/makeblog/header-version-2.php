@@ -434,6 +434,20 @@ $primary_cat_dimension = $primarycat[0];
         <?php endif; ?>
         <?php wp_reset_query(); ?>
       </div>
+
+      <div class="nav-guides row">
+        <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+          <div class="nav-img-border">
+            <a href="/comparison/3dprinters/" class="pull-left first-post"></a>
+          </div>
+        </div>
+        <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+          <div class="nav-img-border">
+            <a href="/comparison/boards/" class="pull-left second-post"></a>
+          </div>
+        </div>
+      </div>
+
       <div class="latest-shop row">
         <div class="shop-post col-lg-3 col-md-3 col-sm-3">
           <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
