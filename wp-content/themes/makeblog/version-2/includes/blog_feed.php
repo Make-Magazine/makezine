@@ -72,7 +72,7 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
         <a href="<?php echo get_home_url() . '/projects' ?>" class="full-feed-title-link"><i
             class="fa fa-newspaper-o feed-icon"></i><?php echo $title ?></a>
       <?php } else if ( $type == 'Post' ) { ?>
-        <i class="fa fa-newspaper-o feed-icon"></i>Latest <?php echo $tagName->name; ?> Posts</a>
+        <i class="fa fa-newspaper-o feed-icon"></i>Latest <?php echo $tagName->name; ?> Stories</a>
       <?php } else { ?>
         <i class="fa fa-newspaper-o feed-icon"></i> <?php echo $title;
       } ?>
@@ -93,7 +93,7 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
           $str    = $matches[2][0];
           $photon = jetpack_photon_url( $str, $arg );
           ?>
-          <!--          <div class="post-thumbnail"><img src="--><?php //echo $photon ?><!--" alt="thumbnail"></div>-->
+          <!-- <div class="post-thumbnail"><img src="--><?php //echo $photon ?><!--" alt="thumbnail"></div>-->
           <div class="title"><img src="<?php echo $photon ?>" alt="thumbnail"><p class="p-title"><?php the_title(); ?></p></div>
         </li>
       <?php endwhile; ?>
@@ -107,7 +107,7 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
         <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/skill-builder', 'http' ); ?>">See All Skill Builders</a></h3>
       <?php } ?>
       <?php if (!empty($allPosts)){ ?>
-        <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/' . $tag_slug .'', 'http' ); ?>">See All <?php echo $tagName->name; ?> Posts</a></h3>
+        <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/' . $tag_slug .'', 'http' ); ?>">See All <?php echo $tagName->name; ?> Stories</a></h3>
       <?php } ?>
     </ul>
   </div>

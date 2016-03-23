@@ -145,7 +145,7 @@ if ( $parent_title === 'boards' ) {
 		</div>
 		<div class="clearfix"><br /><br /></div>
 	<?php } 
-} else if ( $parent_title === '3D-Printer' ) {
+} else if ( $parent_title === '3dprinters' ) {
 	if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
 		<div class="clearfix"></div>
 		<div class="sidebar-wrapper">
