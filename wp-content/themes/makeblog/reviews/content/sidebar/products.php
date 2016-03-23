@@ -136,6 +136,7 @@ endif;
 	$container = Reviews()->container();
 	$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
 	$parent_title = $parent[0]->post_name;
+	echo $parent_title;
 if ( $parent_title === 'boards' ) {
 	if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
 		<div class="clearfix"></div>
@@ -144,7 +145,7 @@ if ( $parent_title === 'boards' ) {
 		</div>
 		<div class="clearfix"><br /><br /></div>
 	<?php } 
-} else if ( $parent_title === '3D Printer' ) {
+} else if ( $parent_title === '3D-Printer' ) {
 	if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
 		<div class="clearfix"></div>
 		<div class="sidebar-wrapper">
