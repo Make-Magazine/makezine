@@ -1,3 +1,94 @@
+.col-lg-4 .mz-featured-imageblock {
+  margin-left: 2px;
+}
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+.mz-featured-imageblock {
+  position: relative;
+  display: block;
+  border: none;
+  margin-bottom: 2px;
+  height: 224px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media all and (min-width: 768px) {
+    &.mz-imageblock-hero {
+      height: 450px;
+    }
+  }
+  /* large screen / retina display */
+  @media only screen and (min-width : 1700px) {
+    height: 349px;
+    &.mz-imageblock-hero {
+      height: 700px;
+    }
+  } 
+  h2 {
+    font-weight: 200;
+    font-size: 40px;
+  }
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #f9f9f9;
+  }
+  .featured-image-shadow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.32) 45%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(45%,rgba(0,0,0,0.32)), color-stop(100%,rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
+    transition: all 0.5s ease;
+  }
+  &:hover .featured-image-shadow {
+    height: 90%;
+    transition: all 0.5s ease;
+  }
+  .mz-text-overlay {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 15px;
+    color: #fff;
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .mz-text-overlay-side {
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 20px;
+      color: #f9f9f9;
+    }
+  }
+}
+
 .themes {
 	li {
 		list-style-type: none;
@@ -57,182 +148,6 @@
 	margin-bottom:20px
 }
 
-.waist-takeover {
-	background-image: url( '../images/makercamp_background.jpg' );
-	background-position: center;
-	height:	548px;
-	.container {
-		padding: 20px 0;
-		.span8 {
-			.thumb {
-				div {
-					padding: 5px 0;
-				}
-			}
-		}
-		.thumb {
-			background-color: #fff;
-			margin-bottom: 5px;
-			.thumbnail {
-				border: 0px;
-				padding: 0px;
-			}
-			div {
-				padding:9px;
-				p {
-					margin-bottom: 0px;
-				}
-			}
-		}
-	}
-}
-
-.maker-week-takeover {
-	border-top: 1px solid #005B85;
-	background-color: #075c78 !important;
-	.flags {
-		background-image: url('../images/maker-week-flags.png') !important;
-		background-position: center top;
-		background-repeat: repeat-x;
-		margin-top: -3px;
-	}
-	.mw-promotion {
-		margin-top: 30px;
-	}
-	.mw-makerfaire {
-  		float: left;
-  		margin: 20px 0;
-  		width: 408px;
-	}
-	.mw-10th {
-  		float: left;
-  		margin: 0 0 0 -100px;
-  		width: 263px;
-	}
-	.mw-makey {
-  		float: left;
-  		margin: 0 0 0 80px;
-  		width: 288px;
-	}
-	.mw-news {
-		margin-top: -10px;
-		width: 602px;
-	}
-	.mw-adslot {
-		margin: 20px 0 20px 0;
-	}
-	.mw-content {
-		float: right;
-		width: 275px;
-		margin: 20px 0 0 0;
-	}
-	.mw-content h4 {
-		font-size: 18pt;
-		font-weight: 300;
-		line-height: 22pt;
-	}
-	#mw-flags-btm {
-		background: url("../images/maker-week-flags-btm.png");
-		background-repeat: repeat-x;
-		height: 20px;
-	}
-	.caption {
-		font-size: 18pt;
-		font-weight: 300;
-		line-height: 22pt;
-		background-color: rgba(51, 51, 51, 0.5);
-		padding-left: 50px;
-	}
-	.tix {
-		color: #fff;
-		margin-top: 40px;
-		text-align: right;
-		h3 {
-			text-align: right;
-			font-size: 18px;
-			line-height: 120%;
-			margin-bottom: 10px;
-			font-weight:normal;
-		}
-	}
-	.slider {
-		background-color: #2b3b40;
-		.border-radius( 3px );
-		.makey {
-			.pull-left;
-			margin-top: -60px;
-		}
-		h3 {
-			.pull-left;
-			color: #96dffa;
-			font-size: 22px;
-			font-weight: 300;
-			margin-top: 6px;
-			margin-left: 13px;
-			span { font-size:28px; }
-		}
-		h4 {
-			font-weight: 300;
-			margin: 10px 5px;
-			a {
-				color: white;
-			}
-		}
-		.caption {
-			color: white;
-		}
-		.carousel-control {
-			top:42px; // Set a hardcoded number as the height causes the nav buttons to jump.
-			background:#00476b;
-			border:1px solid #00324b;
-			font-size:72px;
-			width:30px;
-			height:39px;
-			transition:opacity .3s;
-			border-radius:0;
-			border-top-left-radius:5px;
-			border-bottom-left-radius:5px;
-			span {
-				line-height:1.4em;
-				width:auto;
-				height:auto;
-				background-image:none;
-			}
-			&.left {
-				left:0px;
-				border-radius:0px;
-				border-top-right-radius:5px;
-				border-bottom-right-radius:5px;
-			}
-			&.right {
-				right:0px;
-			}
-		}
-		&.thumb {
-			margin-bottom: 32px;
-			margin-left: -20px;
-			color: #5ebcf7;
-			font-size: 16px;
-			line-height: 120%;
-			img {
-				margin-right: 10px;
-				width: 328px;
-				height: 128px;
-			}
-			> div {
-				p {
-					margin-bottom:0;
-					font-size:16px;
-					color:#5ebcf7;
-				}
-			}
-			h4 {
-				margin: 0px;
-			}
-		}
-	}
-}
-
 .leaderboard {
 	margin:10px 0 0 0;
 }
@@ -241,31 +156,14 @@
 	display:block;
 }
 
-.weekend-projects-home {
-	.weekend-project-image {
-		display: none;
-		margin-bottom: 0px;
-		position: absolute;
-		margin-top: 1px;
-		z-index: 1;
-		margin-left: 8px;
-	}
-	.attachment-small-home-feature-boxes {
-		margin-top: 0px;
-	}
-}
-
 .home-banner {
 	margin-top: 10px;
 }
 
 // Shed deal of the week
-
 .home .new-dotw {
 	margin-top:25px;
 }
-
-.home-waist-banner {margin-bottom:15px;}
 
 .faire {
 	background-color: #C8EFFF;
@@ -285,254 +183,6 @@
 	height: 20px;
 }
 
-.faire-social {
-	width: 300px;
-	margin-top: 65px;
-	float: right;
-	.faire-social-links {
-		li {
-			display: inline-block;
-			width: 32px;
-			height: 32px;
-			background-color: orange;
-			margin-right: 12px;
-			a {
-				display: block;
-				height: 32px;
-				width: 32px;
-			}
-			&.twitter {
-				background-image: url( '../img/faire-social-images.jpg' );
-				background-position: -3px;
-			}
-			&.pinterest {
-				background-image: url( '../img/faire-social-images.jpg' );
-				background-position: 132px;
-			}
-			&.facebook {
-				background-image: url( '../img/faire-social-images.jpg' );
-				background-position: 85px;
-			}
-			&.plus {
-				background-image: url( '../img/faire-social-images.jpg' );
-				background-position: 37px;
-			}
-		}
-	}
-}
-
-// Home page background image
-.page-id-116357 .new-sand,
-.page-id-116357 .waist .checkers {
-	background-image:none !important;
-}
-
-.waist .checkers {
-	.paddme {
-		padding: 0px 0 10px 10px;
-		position: relative;
-		.caption {
-			margin-top: 0;
-			height: auto;
-			margin-right: 0;
-			margin-left: 1px;
-			background-color: rgba(255, 255, 255, 0.8);
-			position: absolute;
-			bottom: 10px;
-			width: 100%;
-			margin-bottom: 1px;
-		}
-	}
-	.paddme.small:last-child {
-		padding: 0px 10px 10px 0;
-	}
-	.span4 .span4:last-child .paddme.small {
-		padding: 12px 10px 10px 0;
-	}
-}
-
 .home-ads {
 	max-height: 250px;
 }
-
-// Widen home page-break-inside:
-
-// .home {
-//     .container {
-//         width: 970px;
-//     }
-//     .span6 {
-//         width: 475px;
-//     }
-//     .span8 {
-//         width: 650px;
-//     }
-//     .span4 {
-//         width: 300px;
-//         img {
-//             width: 290px;
-//         }
-//     }
-//     .small {
-//         padding: 10px 15px;
-//     }
-//     .caption {
-//         width: auto;
-//         padding-left: 10px;
-//     }
-//     .featured {
-//         margin-top: 15px;
-//         margin-bottom: 15px;
-//         margin-left: 20px;
-//         .blurb {
-//             width: 515px;
-//             padding-right: 10px;
-//         }
-//     }
-//     img.home-biggest {
-//         width: 320px;
-//     }
-//     .paddme {
-//         padding: 10px;
-//     }
-//     .paddme.small {
-//         padding: 10px 0 10px 15px;
-//         height: 188px;
-//         overflow: hidden;
-//     }
-//     .home-ads {
-//         margin-top: 10px;
-//     }
-//     .checkers {
-//         margin-top: 10px;
-//         .span4 {
-//             width: 320px;
-//             margin-left: 20px;
-//         }
-//         .span4.middle-featured {
-//             margin-left: 0;
-//             .span4 {
-//                 width: 320px;
-//                 margin-left: 25px;
-//             }
-//         }
-//     }
-//     .waist {
-//         .checkers {
-//             .paddme {
-//                 padding: 0;
-//                 .caption {
-//                     width: 280px;
-//                     margin-left: 1px;
-//                     margin-bottom: 0;
-//                     margin-top: 0;
-//                     bottom: 0;
-//                     border-bottom: 1px solid #c3c5c5;
-//                 }
-//             }
-//             .span4.middle-featured {
-//                 .paddme {
-//                     .caption {
-//                         width: 300px;
-//                         margin-left: 1px;
-//                         border-bottom: 1px solid #c3c5c5;
-//                     }
-//                 }
-//             }
-//             .paddme.small:last-child {
-//                 padding: 0;
-//             }
-//             .span4 {
-//                 .span4:last-child {
-//                     .paddme.small {
-//                         padding: 0;
-//                         margin-top: 10px;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     .entry-content {
-//         padding-left: 0 !important;
-//         width: 268px;
-//         padding: 10px 0 3px 8px !important;
-//     }
-//     .entry-content:first-child {
-//         padding-left: 0 !important;
-//         width: 268px;
-//         padding: 10px 12px 3px 8px !important;
-//     }
-//     .span12 {
-//         width: 970px;
-//     }
-//     .look_like_h3_blue {
-//         margin-left: 0;
-//         width: auto;
-//     }
-//     .main-header {
-// 	padding-bottom:0;
-//         .additional-content {
-//             right: auto;
-//             top:auto;
-//             position:relative;
-//         }
-//         .span4 img {width:85px;}
-//         .span4.hdr-sub-ad-01 {
-// 	        padding-left:30px;
-// 	}
-//     }
-//     .new-grid {
-//         width: 605px;
-//         margin-left: 5px;
-//     }
-//     .small-youtube {
-//         padding: 15px 0;
-//     }
-//     .new-sand {
-//         .span8 {
-//             width: 650px;
-//             margin-left: 20px;
-//         }
-//         .span4.posts {
-//             width: 300px;
-//             margin-left: 20px;
-//         }
-//         .span4 {
-//             width: 305px;
-//             margin-left: 25px;
-//         }
-//     }
-//     .sand {
-//         h3.red {
-//             margin-left: 10px;
-//         }
-//     }
-//     .span4.middle-featured {
-//         img {
-//             width: 310px;
-//         }
-//     }
-//     .row-fluid {
-//         .span12 {
-//             width: 100%;
-//         }
-//     }
-//     .seeall {
-//         margin-right: 15px;
-//     }
-//     img.weekend-project-image {
-//         width: 138px;
-//         height: 49px;
-//     }
-//     .footer-ad {
-//         .ad-slot {
-//             width: 0;
-//             margin: 0 auto;
-//         }
-//     }
-// }
-// .home-waist-banner {
-//     width: 970px;
-//     margin-left: 20px;
-//     text-align: center;
-// }

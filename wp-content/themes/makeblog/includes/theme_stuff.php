@@ -263,24 +263,6 @@ function make_load_resources() {
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 
-	// Load our takeover default styles when it is enabled
-	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_canvas' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_banner' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_video_banner' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_faire_banner' ) === 'on' ) {
-		wp_enqueue_style( 'youtube-playlist', get_stylesheet_directory_uri() . '/css/ytv.css' );
-		wp_enqueue_script( 'youtube-playlist', get_stylesheet_directory_uri() . '/ js/ytv.js' );
-	}
-
 	// Load optimizely A/B testing script
 	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
 
