@@ -236,11 +236,6 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 
 		<?php endif; ?>
-		<div class="line-separator"></div>
-		<div class="row more">
-			<h3><?php _e( 'Explore More From Make:', 'makezine' ); ?></h3>
-			<i class="fa fa-spinner fa-pulse more-button-spinner"></i>
-		</div>
 		<div class="row infinity"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
 	</div>
 
