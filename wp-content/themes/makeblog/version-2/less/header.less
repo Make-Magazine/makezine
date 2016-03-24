@@ -377,55 +377,41 @@ h6 {
   display: none;
   width: inherit;
   position: absolute;
-}
-
-.latest-shop .shop-post {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.latest-shop .shop-post:last-child {
-  margin-right: 0;
-}
-
-.latest-shop .shop-post a {
-  width: 100%;
-  overflow: hidden;
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.latest-shop .shop-post:hover a.first-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop1hover.png);
-}
-
-.latest-shop .shop-post:hover a.second-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop2hover.png);
-}
-
-.latest-shop .shop-post:hover a.third-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop3hover.png);
-}
-
-.latest-shop .shop-post:hover a.fourth-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop4hover.png);
-}
-
-.latest-shop .shop-post a.first-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop1.png);
-}
-
-.latest-shop .shop-post a.second-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop2.png);
-}
-
-.latest-shop .shop-post a.third-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop3.png);
-}
-
-.latest-shop .shop-post a.fourth-post {
-  background-image: url(/wp-content/themes/makeblog/version-2/img/shop4.png);
+  .shop-post {
+    display: inline-block;
+    vertical-align: top;
+    &:last-child {
+      margin-right: 0;
+    }
+    .nav-img-border {
+      border: 1px solid #979797;
+      margin: 1px;
+      display: flex;
+      &:hover {
+        border: 2px solid #979797;
+        margin: 0;
+      }
+    }
+    a {
+      width: 100%;
+      overflow: hidden;
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &.first-post {
+        background-image: url(/wp-content/themes/makeblog/version-2/img/shop1.png);
+      }
+      &.second-post {
+        background-image: url(/wp-content/themes/makeblog/version-2/img/shop2.png);
+      }
+      &.third-post {
+        background-image: url(/wp-content/themes/makeblog/version-2/img/shop3.png);
+      }
+      &.fourth-post {
+        background-image: url(/wp-content/themes/makeblog/version-2/img/shop4.png);
+      }
+    }
+  }
 }
 /*End Nav dynamic content for shop */
 

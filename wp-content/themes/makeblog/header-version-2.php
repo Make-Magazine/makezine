@@ -450,16 +450,24 @@ $primary_cat_dimension = $primarycat[0];
 
       <div class="latest-shop row">
         <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-          <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
+          <div class="nav-img-border">
+            <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
+          </div>
         </div>
         <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-          <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
+          <div class="nav-img-border">
+            <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
+          </div>
         </div>
         <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-          <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
+          <div class="nav-img-border">
+            <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
+          </div>
         </div>
         <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-          <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
+          <div class="nav-img-border">
+            <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
+          </div>
         </div>
       </div>
       <div class="latest-events row">
