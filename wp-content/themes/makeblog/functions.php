@@ -434,9 +434,6 @@ function truncate_with_ellipses($str, $len) {
     return strlen($str) > $len ? substr($str,0,$len)."..." : $str;
 }
 
-add_action('wp_ajax_sorting_posts_home', 'get_homegrid_with_ajax');
-add_action('wp_ajax_nopriv_sorting_posts_home', 'get_homegrid_with_ajax');
-
 function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 {
     require_once 'version-2/includes/Mobile_Detect.php';

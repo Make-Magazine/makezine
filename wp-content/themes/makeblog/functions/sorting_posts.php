@@ -841,3 +841,6 @@ function get_homegrid_with_ajax()
 
     die();
 }
+
+add_action('wp_ajax_sorting_posts_home', 'get_homegrid_with_ajax');
+add_action('wp_ajax_nopriv_sorting_posts_home', 'get_homegrid_with_ajax');
