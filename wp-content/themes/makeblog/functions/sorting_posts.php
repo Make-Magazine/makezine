@@ -124,7 +124,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     $count_posts = $query->post_count;
     $output = '';
     if ($type !== 'load_more') {
-        $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
+        $output .= '<ul class="selected-posts-list" id="2893102983470128397" data-max_num_pages="' . $max_num_pages . '">';
     }
     // Add leadboard for additional pages.
     if (isset($paged) && $paged > 1 && $post_per_page > 12) {
@@ -830,10 +830,14 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
         $output .= '<span>But keep browsing!</span>';
         $output .= '</div>';
     }
+    // Output MAKER SHED PANEL
+    $output .= '<li class="ads shed-row-li" id="kajsdblaksjdbflkajsdbflkasdjb"><div class="shed-row">';
+    $output .= make_shopify_featured_products_slider_home( 'row-fluid' );
+    $output .= '</div></li>';
+    // End Projects list
     if ($type !== 'load_more') {
         $output .= '</ul>';
     }
-
     if ($max_num_pages > 1 && $type !== 'load_more') {
         $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
     }
@@ -1256,7 +1260,6 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     if ($type !== 'load_more') {
         $output .= '</ul>';
     }
-
     if ($max_num_pages > 1 && $type !== 'load_more') {
         $output .= '<p id="pbd-alp-load-posts" class="row"><a href="javascript:void(0);">More</a><i class="fa fa-spinner fa-pulse more-button-spinner"></i></p>';
     }

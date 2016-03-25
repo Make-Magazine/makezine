@@ -210,11 +210,6 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     </div>
   </div>
 
-  <!-- MAKER SHED PANEL -->
-  <div class="container shed-row">
-    <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
-  </div> <!-- MakerShed -->
-
   <div class="all-projects <?php echo $device ?>">
     <div class="content container">
       <div class="posts-list container">
