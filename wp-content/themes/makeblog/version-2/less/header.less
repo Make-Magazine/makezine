@@ -201,10 +201,6 @@ h6 {
   line-height: 14px;
 }
 
-.header-wrapper {
-  background-color: #F0F0F0;
-}
-
 .navbar-default {
   height: 86px;
 }
@@ -1874,5 +1870,17 @@ ul.sub-menu.moove-right {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-guides .guides-item a {  
     height: 102px;
+  }
+}
+@media screen and (max-width: 767px) { 
+  .header-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  // Bootstrap-responsive override. Delete when BS 2 is gone.
+  body {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }

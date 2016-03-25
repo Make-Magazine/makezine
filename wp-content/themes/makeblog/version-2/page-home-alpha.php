@@ -216,8 +216,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   </div> <!-- MakerShed -->
 
   <div class="all-projects <?php echo $device ?>">
-    <div class="content container">
-      <div class="posts-list container">
+    <div class="container">
+      <div class="posts-list">
         <?php sorting_posts_home(); //TODO Rename Function ?>  
       </div>
     </div>
