@@ -1,7 +1,7 @@
 (function ($) { $(function() {
   'use strict';
 	var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
-	var searchFocus = -1;
+	var searchFocus = false;
 	var lessThan768;
 	var viewWidth;
 	var bodyHeight;
@@ -47,7 +47,6 @@
 					$('.menu-sub-menu > .sub-menu').removeClass('moove-left moove-right');
 				}, 0);
 				$('.menu-item-has-children').addClass('first-hover');
-
 				$('.container.header').addClass('width');
 				$('.navbar-default').addClass('sticky-header');
 				$('.dynamic-header-posts').addClass('sticky-header');
@@ -55,15 +54,14 @@
 					$('input.search-field').bind('focusin focus', function () {
 						window.scrollTo(0, 0);
 						document.body.scrollTop = 0;
-						searchFocus = 1;
-
+						searchFocus = true;
 					});
 					$('input.search-field').focusout(function () {
 						$(".container.header.width").css("position", "");
 						$(".container.header.width").css("margin-top", "");
-						searchFocus = 0;
+						searchFocus = false;
 					});
-					if (searchFocus == 1) {
+					if (searchFocus === true) {
 						$(".container.header.width").css("margin-top", scrollTop);
 						$(".container.header.width").css("position", 'absolute');
 					}
