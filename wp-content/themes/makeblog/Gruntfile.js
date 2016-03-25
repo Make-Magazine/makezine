@@ -1,5 +1,13 @@
 module.exports = function(grunt) {
-
+  var watchFiles = ['less/**/*.less', 'version-2/less/**/*.less'];
+  var lessSrcFiles = {
+    'css/style.css': 'less/style.less',
+    'css/print.css': 'less/print.less',
+    'css/takeover.css': 'less/takeover.less',
+    'version-2/css/style.css': 'version-2/less/style.less',
+    'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
+    'reviews/css/master.css': 'reviews/less/master.less'
+  };
   // All configurations go here
   grunt.initConfig({
 
@@ -12,41 +20,27 @@ module.exports = function(grunt) {
         options: {
           compress: true
         },
-        files: {
-          'css/style.css': 'less/style.less',
-          'css/print.css': 'less/print.less',
-          'css/takeover.css': 'less/takeover.less',
-          'version-2/css/style.css': 'version-2/less/style.less',
-          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
-          'reviews/css/master.css': 'reviews/less/master.less'
-        }
+        files: lessSrcFiles
       },
       dev: {
         options: {
           compress: false,
           dumpLineNumbers: 'comments'
         },
-        files: {
-          'css/style.css': 'less/style.less',
-          'css/print.css': 'less/print.less',
-          'css/takeover.css': 'less/takeover.less',
-          'version-2/css/style.css': 'version-2/less/style.less',
-          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
-          'reviews/css/master.css': 'reviews/less/master.less'
-        }
+        files: lessSrcFiles
       }
     },
     watch: {
       prod: {
-        files: ['less/**/*.less', 'version-2/less/**/*.less'],
+        files: watchFiles,
         tasks: ['less:prod']
       },
       dev: {
-        files: ['less/**/*.less', 'version-2/less/**/*.less'],
+        files: watchFiles,
         tasks: ['less:dev']
       },
       reload: {
-        files: ['less/**/*.less'],
+        files: watchFiles,
         tasks: ['less'],
         options: {
           livereload: true
