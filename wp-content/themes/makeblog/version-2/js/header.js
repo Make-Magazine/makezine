@@ -2,7 +2,7 @@
   'use strict';
 	var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
 	var searchFocus = -1;
-	var counter;
+	var lessThan768;
 	var viewWidth;
 	var bodyHeight;
 	var deviceHeight;
@@ -12,9 +12,9 @@
 		viewWidth = $(window).width() ;
 	}
 	if (viewWidth >= '768') {
-		counter = 0;
+		lessThan768 = false;
 	} else {
-		counter = 1;
+		lessThan768 = true;
 	}
 	bodyHeight = $(window).height();
 	$(window).scroll(function () {
@@ -27,7 +27,8 @@
 			$(window).resize(function () {
 				viewWidth = $(window).width() + 17;
 			});
-
+			// menu-item-has-children = navbar items with dropdowns
+			// dynamic-header-posts = dropdown boxes in the navbar
 			if (scrollTop >= '54') {
 				$('.menu-item-has-children').children("a").removeClass("active-button");
 				if ($('.dynamic-header-posts').hasClass('sticky-header')) {
@@ -163,20 +164,20 @@
 		$('body').css('height', '');
 		if (viewWidth <= '767') {
 			$('.menu-item-has-children').addClass('first-hover');
-			if (counter == '0') {
+			if (lessThan768 === false) {
 				$('div.navbar-collapse').hide();
-				counter = 1;
+				lessThan768 = true;
 			}
 			deviceHeight = $(window).height();
 			$('.menu-container').css('height', deviceHeight);
 			$('.dynamic-header-posts').hide();
 		} else {
-			if (counter == '1') {
+			if (lessThan768 === true) {
 				$('div.navbar-collapse').show();
 				$('.dynamic-header-posts').hide();
 				$('li a').removeClass('active-button');
 				$(".menu-item-has-children .sub-menu").hide();
-				counter = 0;
+				lessThan768 = false;
 			}
 			$('.menu-container').css('height', 'inherit');
 			$('.menu-container').css('margin-left', '');
