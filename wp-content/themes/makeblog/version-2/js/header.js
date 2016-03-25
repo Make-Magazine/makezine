@@ -30,7 +30,6 @@
 
 			if (scrollTop >= '54') {
 				$('.menu-item-has-children').children("a").removeClass("active-button");
-				$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
 				if ($('.dynamic-header-posts').hasClass('sticky-header')) {
 					$('.dynamic-header-posts').slideUp('fast');
 				} else {
@@ -308,7 +307,6 @@
 			viewWidth = $(window).width() ;
 		}
 		if (viewWidth >= '768') {
-			$('.navbar-default .navbar-nav > li:first-child').addClass('first-child');
 			e.preventDefault();
 			$('.menu-item-has-children').not($(this)).children("a").removeClass('active-button');
 			var thisIndex = $(this).index();
@@ -372,7 +370,6 @@
 				$(this).children("a").addClass("active-button");
 			} else {
 				$(this).children("a").removeClass("active-button");
-				$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
 				$('.dynamic-header-posts').slideUp('fast');
 				window.setTimeout(function () {
 					$('.latest-projects').hide().removeClass('nav-transition');
@@ -397,7 +394,6 @@
 			if ((viewWidth >= '768') && (!$('.dynamic-header-posts').is(':hover')) && (!$('#menu-make-main').is(':hover'))) {
 				$('.menu-item-has-children').children("a").removeClass("active-button");
 				$('.dynamic-header-posts').slideUp('fast');
-				$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
 				$('.latest-projects').hide().removeClass('nav-transition');
 				$('.latest-stories').hide().removeClass('nav-transition');
 				$('.latest-events').hide().removeClass('nav-transition');
@@ -420,7 +416,6 @@
 				if ((dynamicContainer.has(e.target).length === 0) && (headerContainer.has(e.target).length === 0)) {
 					$('.menu-item-has-children').children("a").removeClass("active-button");
 					$('.dynamic-header-posts').slideUp('fast');
-					$('.navbar-default .navbar-nav > li:first-child').removeClass('first-child');
 					window.setTimeout(function () {
 						$('.latest-projects').hide().removeClass('nav-transition');
 						$('.latest-stories').hide().removeClass('nav-transition');
