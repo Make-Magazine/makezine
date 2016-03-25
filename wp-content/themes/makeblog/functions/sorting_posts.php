@@ -860,7 +860,7 @@ add_action('wp_ajax_nopriv_sorting_posts_home', 'get_homegrid_with_ajax');
 
 function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 {
-    require_once 'version-2/includes/Mobile_Detect.php';
+    require_once(TEMPLATEPATH . '/version-2/includes/Mobile_Detect.php');
     $device = '';
     $detect = new Mobile_Detect;
     $post_per_page_initial = 18;
