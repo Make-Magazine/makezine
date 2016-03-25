@@ -124,7 +124,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     $count_posts = $query->post_count;
     $output = '';
     if ($type !== 'load_more') {
-        $output .= '<ul class="selected-posts-list" id="2893102983470128397" data-max_num_pages="' . $max_num_pages . '">';
+        $output .= '<ul class="selected-posts-list" data-max_num_pages="' . $max_num_pages . '">';
     }
     // Add leadboard for additional pages.
     if (isset($paged) && $paged > 1 && $post_per_page > 12) {
@@ -817,7 +817,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $ads_counter++;
         endwhile;
         // Output MAKER SHED PANEL
-        $output .= '<li class="ads shed-row-li" id="kajsdblaksjdbflkajsdbflkasdjb"><div class="shed-row">';
+        $output .= '<li class="ads shed-row-li"><div class="shed-row">';
         $output .= make_shopify_featured_products_slider_home( 'row-fluid' );
         $output .= '</div></li>';
         // End Projects list
