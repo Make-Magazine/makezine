@@ -208,25 +208,23 @@ $primary_cat_dimension = $primarycat[0];
   </script>
 <?php endif; ?>
 
-<header class="header-wrapper">
-  <!-- TOP BRAND BAR -->
-  <div class="hidden-xs top-header-bar-brand">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-          <p class="header-make-img">
-            <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
-          </p>
-        </div>
-        <div class="col-sm-3">
-          <p class="header-sub-link pull-right">
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE </a>
-          </p>
-        </div>
+<!-- TOP BRAND BAR -->
+<div class="header-wrapper hidden-xs top-header-bar-brand">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <p class="header-make-img">
+          <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <p class="header-sub-link pull-right">
+          <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE </a>
+        </p>
       </div>
     </div>
   </div>
-</header><!-- header-wrapper -->
+</div>
 <header class="header-wrapper">
   <div class="container panel header <?php echo $device ?>">
 
