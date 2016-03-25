@@ -54,9 +54,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     if ( $menu_exists ) {
         $menu = wp_get_nav_menu_object(  $menu_name );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
-        
+
         if ($menu_items[0])
-        {   
+        {
             $main_post = $menu_items[0];
             $main_id= $main_post->object_id;
             $main_link = $main_post->url;
@@ -70,7 +70,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
         }
         if ($menu_items[1])
-        {   
+        {
             $top_post = $menu_items[1];
             $top_id= $top_post->object_id;
             $top_link = $top_post->url;
@@ -82,10 +82,10 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $top_image = $top_post->attr_title;
             else
             $top_image = wp_get_attachment_url(get_post_thumbnail_id($top_id));
-            
+
         }
         if ($menu_items[2])
-        {   
+        {
             $bottom_post = $menu_items[2];
             $bottom_id= $bottom_post->object_id;
             $bottom_link = $bottom_post->url;
@@ -97,7 +97,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $bottom_image = $bottom_post->attr_title;
             else
             $bottom_image = wp_get_attachment_url(get_post_thumbnail_id($bottom_id));
-           
+
         }
         /*
 	foreach ( (array) $menu_items as $key => $menu_item ) {
@@ -105,7 +105,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 	    $url = $menu_item->url;
             print_r($menu_item);
             $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-            
+
 	}*/
     } else {
 	$menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
@@ -114,7 +114,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 ?>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">    
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="row">
         <a href="<?php echo esc_html( $main_link ); ?>"
           class="mz-featured-imageblock mz-imageblock-hero"
@@ -122,7 +122,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
             <?php if (!empty($main_sponsor)) {
-              echo '<span class="sponsored-title-home">SPONSORED BY ' . $main_sponsor . '</span>'; 
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $main_sponsor . '</span>';
             } ?>
             <h2><?php echo $main_title; ?></h2>
             <p><?php echo esc_html( $main_subtitle ); ?></p>
@@ -144,7 +144,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
           <?php if (!empty($top_sponsor)) {
-            echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>'; 
+            echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>';
           } ?>
           <h2><?php echo $top_title; ?></h2>
         </div>
@@ -156,7 +156,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       </div>
     </div>
   </div>
-            
+
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="row">
       <a href="<?php echo esc_html( $bottom_link ); ?>"
@@ -165,7 +165,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       <div class="featured-image-shadow"></div>
       <div class="mz-text-overlay mz-text-overlay-side">
         <?php if (!empty($bottom_sponsor)) {
-          echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>'; 
+          echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>';
         } ?>
         <h2><?php echo $bottom_title; ?></h2>
       </div>
@@ -177,23 +177,23 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       </div>
       </div>
     </div>
-  </div> <!-- row -->    
-  
+  </div> <!-- row -->
+
   <!-- AD UNIT -->
-  <div class="ad-unit">  
+  <div class="ad-unit">
     <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
 
       <?php global $make; print $make->ads->ad_leaderboard; ?>
 
-    </div> 
-  </div>  
+    </div>
+  </div>
 
   <!-- EVENTS PANEL -->
   <div class="container event-unit">
-    <div class="row"> 
+    <div class="row">
 <!--  Home "waist" Promos -->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="/comparison/boards/how-we-test/shootout/">          
+        <a href="/comparison/boards/how-we-test/shootout/">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-boards-01.jpg' ?>" class="img-responsive center-block event" alt="Make Boards Guide" />
         </a>
       </div>
@@ -201,24 +201,19 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         <a href="/sprout-by-hp/">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/hp18.jpg' ?>" class="img-responsive center-block event" alt="HP Sprout Promo" />
         </a>
-      </div> 
+      </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="//makerfaire.com/bay-area" target="_blank">          
+        <a href="//makerfaire.com/bay-area" target="_blank">
           <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-mfba-01.jpg' ?>" class="img-responsive center-block event" alt="Maker Faire Bay Area Ticket Promo" />
         </a>
-      </div> 
-    </div>  
+      </div>
+    </div>
   </div>
-
-  <!-- MAKER SHED PANEL -->
-  <div class="container shed-row">
-    <?php echo make_shopify_featured_products_slider_home( 'row-fluid' ); ?>
-  </div> <!-- MakerShed -->
 
   <div class="all-projects <?php echo $device ?>">
     <div class="content container">
       <div class="posts-list container">
-        <?php sorting_posts_home(); //TODO Rename Function ?>  
+        <?php sorting_posts_home(); //TODO Rename Function ?>
       </div>
     </div>
     <div id="temp_post_list" style="display: none"></div>
