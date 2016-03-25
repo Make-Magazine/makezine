@@ -459,18 +459,6 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-                $.ajax({
-                    url: '/ajax_get_shopify_featured_products.php',
-                    data: {
-                        'action': 'make_shopify_featured_products'
-                    },
-                    success: function (data) {
-                        jQuery(".before-ads").after(data);
-                    },
-                    error: function (errorThrown) {
-                    }
-                });
-
             },
             error: function (errorThrown) {
             }
