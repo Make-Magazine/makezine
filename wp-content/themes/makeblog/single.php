@@ -23,7 +23,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			print $make->ads->ad_leaderboard;
 			?>
 		</div>
-		<div class="row navigator">
+		<div class="row navigator sticky-sidebar-posts-nav">
 			<div class="hamburger">
 				<div class="hamburger-navigator">
 					<img class="initial" src="<?php echo get_template_directory_uri() . '/version-2/img/bitmap.png' ?>" scale="0">
@@ -34,7 +34,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 				</div>
 			</div>
 			<div class="thumbnails">
-				<div class=" posts-navigator">
+				<div class="posts-navigator">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<div class="latest-story first" id="0">
 

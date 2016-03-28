@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
-  var watchFiles = ['less/**/*.less', 'version-2/less/**/*.less'];
+  var watchFiles = [
+    'less/**/*.less',
+    'version-2/less/**/*.less',
+    'version-2/js/single-story/*.js',
+  ];
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
     'css/print.css': 'less/print.less',
@@ -30,14 +34,41 @@ module.exports = function(grunt) {
         files: lessSrcFiles
       }
     },
+    // Concat js files
+    concat: {
+      options: {
+        banner: '// Compiled file - any changes will be overwritten by grunt task\n',
+        separator: ';',
+        process: function(src, filepath) {
+          return '//!!\n//!! ' + filepath + '\n' + src;
+        }
+      },
+      dist: {
+        files: {
+          'version-2/js/single-story.js': ['version-2/js/single-story/*.js'],
+        }
+      },
+    },
+    // uglify js
+    uglify: {
+      js: {
+        options: {
+          mangle: false,
+          banner: '// Compiled file - any changes will be overwritten by grunt task\n',
+        },
+        files: {
+          'version-2/js/single-story.js': 'version-2/js/single-story.js',
+        }
+      }
+    },
     watch: {
       prod: {
         files: watchFiles,
-        tasks: ['less:prod']
+        tasks: ['less:prod', 'concat', 'uglify']
       },
       dev: {
         files: watchFiles,
-        tasks: ['less:dev']
+        tasks: ['less:dev', 'concat']
       },
       reload: {
         files: watchFiles,
@@ -54,9 +85,9 @@ module.exports = function(grunt) {
 
   // Register the tasks with Grunt
   // To only watch for less changes and process without browser reload type in "grunt"
-  grunt.registerTask('default', ['less:prod', 'watch:prod']);
+  grunt.registerTask('default', ['less:prod', 'concat', 'uglify', 'watch:prod']);
   // Dev mode build task
-  grunt.registerTask('dev', ['less:dev', 'watch:dev']);
+  grunt.registerTask('dev', ['less:dev', 'concat', 'watch:dev']);
   // To watch for less changes and process them with livereload type in "grunt reload"
   grunt.registerTask('reload', ['less', 'watch:reload']);
 
