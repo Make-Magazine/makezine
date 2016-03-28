@@ -272,7 +272,7 @@
         var $offset = 0;
         var $first_time = 0;
         var $first_resize = 0;
-        var $id = 0;
+        var id = 0;
         var $parentId;
         var $scrollingToPost = 0;
         var stop = 0;
@@ -410,6 +410,64 @@
                 }
             }
         });
+
+        // sticky sidebar navigator: click on thumbnail, get/scroll to story
+        $('.thumbnails .latest-story a').click(function() {
+          var id = $(this).attr('href');
+          var parentId = $(this).parent().attr('id');
+          var scrollTime;
+          var number = parentId - $offset;
+          if (number > 3) {
+            if (number < 7) {
+              scrollTime = 5000;
+            } else {
+              scrollTime = 8000;
+            }
+            window.setTimeout(function() {
+              if ($('.navigator').hasClass('sticky')) {
+                $('html, body').animate({
+                  scrollTop: $(id).offset().top - 80
+                }, 500);
+              } else {
+                $('html, body').animate({
+                  scrollTop: $(id).offset().top - 160
+                }, 500);
+              }
+            }, scrollTime);
+          }
+          var $current = $(this);
+          var $newId = $(this).attr('href');
+          if ($('.story-header').is($newId) === false) {
+            $('.row.infinity').addClass('current');
+            getStory($offset, id, number);
+            $offset = $offset + number;
+          } else {
+            if ($(this).parent().hasClass('first')) {
+              $('html, body').animate({
+                scrollTop: 0
+              }, 500);
+            } else {
+              if ($('.navigator').hasClass('sticky')) {
+                $('html, body').animate({
+                  scrollTop: $($.attr(this, 'href')).offset().top - 80
+                }, 500);
+              } else {
+                $('html, body').animate({
+                  scrollTop: $($.attr(this, 'href')).offset().top - 160
+                }, 500);
+              }
+            }
+          }
+          var newFlag = $(this).parent().index();
+          var href = $(this).attr('id');
+          window.setTimeout(function() {
+            $('.latest-story a').removeClass('highlighted');
+            $($current).addClass('highlighted');
+            window.history.pushState('obj', 'newtitle', href);
+            document.title = $('.story-header').eq(newFlag).find('.story-title').text();
+          }, 501);
+          return false;
+        });
         
         var newHighlightedStory;
 
@@ -456,7 +514,7 @@
             });
         }
 
-        function getStory($offset, $id, $number) {
+        function getStory($offset, id, $number) {
             var firstPostId = $('.first-story').attr('id');
             $.ajax({
                 type: 'GET',
@@ -470,9 +528,9 @@
                     $('.row.infinity').before(data);
                     $('.row.infinity.current').removeClass('current');
                     $first_time = 0;
-                    if ($id !== 0) {
-                        scrollToStory($id);
-                        $id = 0;
+                    if (id !== 0) {
+                        scrollToStory(id);
+                        id = 0;
                     }
                     if ($number > 1) {
                         for (var i = 1; i <= $number; i++) {
@@ -502,15 +560,15 @@
             });
         }
 
-        function scrollToStory($id) {
+        function scrollToStory(id) {
             window.setTimeout(function () {
                 if ($('.navigator').hasClass('sticky')) {
                     $('html, body').animate({
-                        scrollTop: $($id).offset().top - 80
+                        scrollTop: $(id).offset().top - 80
                     }, 500);
                 } else {
                     $('html, body').animate({
-                        scrollTop: $($id).offset().top - 160
+                        scrollTop: $(id).offset().top - 160
                     }, 500);
                 }
             }, 2000);

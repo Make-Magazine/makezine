@@ -28,9 +28,10 @@
 
   if ($('div').hasClass('mz-story-infinite-view')) {
     (function() {
+      var first_resize;
       var viewPortWidth = $(window).width() + 17;
       var thumbnailsHeight = $(window).height() - 89 - $('#wpadminbar').height();
-      if (detectIE() != false) {
+      if (detectIE() !== false) {
         thumbnailsHeight -= 20;
       }
       $('.span8 iframe').css('max-width', '100%');
@@ -41,7 +42,7 @@
       $('.posts-navigator').show();
       $(window).resize(function() {
         thumbnailsHeight = $(window).height() - 89 - $('#wpadminbar').height();
-        if (detectIE() != false) {
+        if (detectIE() !== false) {
           thumbnailsHeight -= 20;
         }
         navigatorHeight = $(window).height() - 50;
@@ -49,8 +50,8 @@
         $('.row.navigator').addClass('open').css('height', navigatorHeight);
         viewPortWidth = $(window).width() + 17;
         if (viewPortWidth <= 767) {
-          if ($first_resize == 0) {
-            $first_resize = 1;
+          if (!first_resize) {
+            first_resize = true;
             $('.more-thumbnails .posts-navigator').css('display', '');
           }
         }
@@ -68,64 +69,6 @@
           $('.hamburger-navigator').addClass('open');
           $('.navigator').removeClass('sticky transition').addClass('open').css('height', navigatorHeight);
         }
-      });
-      $('.thumbnails .latest-story a').click(function() {
-        $id = $(this).attr('href');
-        $parentId = $(this).parent().attr('id');
-        $scrollingToPost = 1;
-        var scrollTime;
-        var $number = $parentId - $offset;
-        if ($number > 3) {
-          if ($number < 7) {
-            scrollTime = 5000;
-          } else {
-            scrollTime = 8000;
-          }
-          window.setTimeout(function() {
-            if ($('.navigator').hasClass('sticky')) {
-              $('html, body').animate({
-                scrollTop: $($id).offset().top - 80
-              }, 500);
-            } else {
-              $('html, body').animate({
-                scrollTop: $($id).offset().top - 160
-              }, 500);
-            }
-          }, scrollTime);
-        }
-        var $current = $(this);
-        $newId = $(this).attr('href');
-        if ($('.story-header').is($newId) === false) {
-          $('.row.infinity').addClass('current');
-          getStory($offset, $id, $number);
-          $offset = $offset + $number;
-        } else {
-          if ($(this).parent().hasClass('first')) {
-            $('html, body').animate({
-              scrollTop: 0
-            }, 500);
-          } else {
-            if ($('.navigator').hasClass('sticky')) {
-              $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top - 80
-              }, 500);
-            } else {
-              $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top - 160
-              }, 500);
-            }
-          }
-        }
-        $newFlag = $(this).parent().index();
-        $href = $(this).attr('id');
-        window.setTimeout(function() {
-          $('.latest-story a').removeClass('highlighted');
-          $($current).addClass('highlighted');
-          $flag = $newFlag;
-          window.history.pushState('obj', 'newtitle', $href);
-          document.title = $('.story-header').eq($newFlag).find('.story-title').text();
-        }, 501);
-        return false;
       });
 
       $('.hamburger-navigator').mouseover(function() {
