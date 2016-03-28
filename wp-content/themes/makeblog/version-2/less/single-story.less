@@ -24,11 +24,11 @@ body.single.single-post {
 .mz-story-infinite-view {
   &.admin_is_login {
     .container.wrapper {
-      .row.navigator.open {
+      .row.sticky-sidebar-posts-nav.open {
         top: 84px;
         overflow: hidden;
       }
-      .row.navigator.open.sticky {
+      .row.sticky-sidebar-posts-nav.open.sticky {
         top: 84px;
       }
     }
@@ -103,7 +103,7 @@ body.single.single-post {
         }
       }
     }
-    .row.navigator {
+    .row.sticky-sidebar-posts-nav {
       width: 120px;
       position: fixed;
       z-index: 1;
@@ -248,7 +248,7 @@ body.single.single-post {
         }
       }
     }
-    .row.navigator.open {
+    .row.sticky-sidebar-posts-nav.open {
       left: -120px;
       margin: 0;
       top: 52px;
@@ -256,16 +256,16 @@ body.single.single-post {
       display: block;
       background-image: linear-gradient(to right, #fefefe 0%, #ddd 100%);
     }
-    .row.navigator.open.sticky {
+    .row.sticky-sidebar-posts-nav.open.sticky {
       left: 0;
       margin: 0;
       top: 52px;
       bottom: 0;
     }
-    .row.navigator.sticky {
+    .row.sticky-sidebar-posts-nav.sticky {
       display: block;
     }
-    .row.navigator.transition {
+    .row.sticky-sidebar-posts-nav.transition {
       transition: 0.5s ease all;
     }
     .story-header {

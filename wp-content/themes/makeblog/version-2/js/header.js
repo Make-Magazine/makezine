@@ -75,7 +75,6 @@
 				$('.navbar-default').removeClass('sticky-header');
 				$('.menu-item-has-children a').removeClass('sticky-a');
 				$('.dynamic-header-posts').removeClass('sticky-header').css('top', 'inherit');
-				$('.navigator').css('top', '');
 				$('.navbar-default').css('top', '0px');
 				$('.menu-item-has-children > a').removeClass("active-sticky");
 				$('.project-navigation').css('margin-top', '0px');
