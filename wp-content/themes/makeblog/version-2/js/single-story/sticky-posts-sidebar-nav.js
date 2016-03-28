@@ -38,7 +38,7 @@
           });
           return;
         }
-        var dynamicHeight = footerPos - $(window).scrollTop() - 30;
+        var dynamicHeight = footerPos - sidebarElem.offset().top;
         dynamicHeight = (dynamicHeight > 0) ? dynamicHeight : 0;
         sidebarElem.css({
           'max-height': dynamicHeight,
