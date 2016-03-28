@@ -15,6 +15,12 @@ h6 {
 }
 
 /* TOP BRAND BAR */
+.header-wrapper.mobile-sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: 44px;
+}
 .top-header-bar-brand {
   position: relative;
   z-index: 5;
@@ -735,10 +741,6 @@ ul.sub-menu.moove-right {
   #menu-make-main ul.sub-menu {
     display:none !important;
   }
-  .first-child {
-    margin-left: -150px;
-    padding-left: 150px;
-  }
 
   .header-ad {
     width: 728px;
@@ -915,7 +917,6 @@ ul.sub-menu.moove-right {
   }
 
   .container.header.width {
-    position: fixed;
     z-index: 1;
     height: 52px;
     width: 100%;
@@ -963,7 +964,6 @@ ul.sub-menu.moove-right {
   }
 
   .container.header.width {
-    position: fixed;
     z-index: 1;
     height: 52px;
     width: 100%;
@@ -1178,7 +1178,6 @@ ul.sub-menu.moove-right {
   }
 
   .container.header.width {
-    position: fixed;
     z-index: 1;
     height: 52px;
     width: 100%;
@@ -1479,33 +1478,36 @@ ul.sub-menu.moove-right {
   }
 
   .menu-container {
-    margin-left: -100%;
-    transition: all 0.25s ease;
-    position: absolute;
+    transition: all 0.3s;
+    position: fixed;
     top: 0;
+    right: 70px;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
     padding-right: 0;
     padding-left: 0;
+    transform: translate3d(-100%, 0, 0);
+    &.menu-show {
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .get-dark {
     display: none;
     position: absolute;
-    width: 110%;
+    position: fixed;
     z-index: 1;
     top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 1);
     opacity: 0;
   }
 
   .get-dark.show {
     display: block;
-  }
-
-  .header-wrapper.mobile-sticky {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    height: 44px;
   }
 
   body {
@@ -1613,13 +1615,11 @@ ul.sub-menu.moove-right {
     background-color: #ecf0f1;
     position: absolute;
     padding: 0;
-    height: inherit !important;
+    min-height: 100%;
     z-index: 2;
     display: none;
     border-top: 0;
-    padding-left: 70px;
     width: 100%;
-    right: 70px;
     overflow-y: scroll ;
   }
 
