@@ -2,8 +2,6 @@
   'use strict';
   if ($('div').hasClass('mz-story-infinite-view')) {
     (function() {
-      var first_resize;
-      var viewPortWidth = $(window).width() + 17;
       $('.navigator .thumbnails').addClass('open');
       $('.hamburger-navigator').addClass('open');
       $('.row.navigator').addClass('open');
@@ -25,7 +23,28 @@
           $('.hamburger-navigator');
           $('.navigator').removeClass('sticky transition').addClass('open');
         }
+        stickySideBarDetectsFooter();
       });
+
+      // Detect footer and shrink sticky sidebar to not overlap footer:
+      var stickySideBarDetectsFooter = function() {
+        var footerPos = $('#footer').offset().top;
+        var currentScroll = $(window).scrollTop();
+        var sidebarElem = $('.row.navigator');
+        if (!$('#footer').is(':visible') || footerPos > $(window).height() + currentScroll) {
+          sidebarElem.css({
+            'max-height': '',
+            'overflow': ''
+          });
+          return;
+        }
+        var dynamicHeight = footerPos - $(window).scrollTop() - 30;
+        dynamicHeight = (dynamicHeight > 0) ? dynamicHeight : 0;
+        sidebarElem.css({
+          'max-height': dynamicHeight,
+          'overflow': 'hidden'
+        });
+      };
 
       $('.hamburger-navigator').mouseover(function() {
         if (!$(this).hasClass('open')) {
