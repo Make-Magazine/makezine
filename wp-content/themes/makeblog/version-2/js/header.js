@@ -4,8 +4,6 @@
 	var searchFocus = false;
 	var lessThan768;
 	var viewWidth;
-	var bodyHeight;
-	var deviceHeight;
 	if(window.navigator.userAgent.indexOf("Chrome") > 0){
 		viewWidth = $(window).width() + 17;
 	}else {
@@ -16,13 +14,11 @@
 	} else {
 		lessThan768 = true;
 	}
-	bodyHeight = $(window).height();
 	$(window).scroll(function () {
 		$(window).resize(function () {
 			viewWidth = $(window).width() + 17;
 		});
 		var scrollTop = $(window).scrollTop();
-		bodyHeight = scrollTop + $(window).height();
 		if (viewWidth >= '481') {
 			$(window).resize(function () {
 				viewWidth = $(window).width() + 17;
@@ -111,27 +107,19 @@
 	}else {
 		viewWidth = $(window).width() ;
 	}
-	if (viewWidth <= '767') {
-		deviceHeight = $(window).height();
-		$('.menu-container').css('height', deviceHeight);
-	}
 	$(window).resize(function () {
 		if(window.navigator.userAgent.indexOf("Chrome") > 0){
 			viewWidth = $(window).width() + 17;
 		}else {
 			viewWidth = $(window).width() ;
 		}
-		$('.menu-container').css('overflow-y', 'inherit');
-		$('body').css('overflow-y', '');
-		$('body').css('height', '');
+		$('body').css('overflow-y', '').css('height', '');
 		if (viewWidth <= '767') {
 			$('.menu-item-has-children').addClass('first-hover');
 			if (lessThan768 === false) {
 				$('div.navbar-collapse').hide();
 				lessThan768 = true;
 			}
-			deviceHeight = $(window).height();
-			$('.menu-container').css('height', deviceHeight);
 			$('.dynamic-header-posts').hide();
 		} else {
 			if (lessThan768 === true) {
@@ -141,8 +129,6 @@
 				$(".menu-item-has-children .sub-menu").hide();
 				lessThan768 = false;
 			}
-			$('.menu-container').css('height', 'inherit');
-			$('.menu-container').css('margin-left', '');
 			$('.get-dark').removeClass('show');
 			$('.navbar-default .navbar-toggle').removeClass('close-background');
 			$('.navbar-default .navbar-toggle .icon-bar').removeClass('hide-background');
@@ -169,10 +155,6 @@
 		}
 	});
 
-	if (viewWidth <= '767') {
-		deviceHeight = $(window).height();
-		$('.menu-container').css('height', deviceHeight);
-	}
 	$('.menu-item-has-children').children("a").click(function (e) {
 		if(window.navigator.userAgent.indexOf("Chrome") > 0){
 			viewWidth = $(window).width() + 17;
@@ -190,27 +172,24 @@
 
 	// Mobile
 	$('.navbar-toggle').on('click', function () {
-		$('.get-dark').css('height', bodyHeight);
 		$('.navbar-default .navbar-toggle').toggleClass('close-background');
 		$('.navbar-default .navbar-toggle .icon-bar').toggleClass('hide-background');
 		if (!$('.get-dark').hasClass('show')) {
 			window.setTimeout(function () {
 				$('.menu-container').addClass('scroll');
 			}, 600);
-			$('body').css('overflow-y', 'hidden');
-			$('body').css('height', bodyHeight);
+			$('body').css('overflow-y', 'hidden').css('height', '100vh');
 			$('.navbar-default .navbar-collapse').show();
 			$('.get-dark').addClass('show');
 			$('.get-dark').animate({
 				opacity: 0.5
 			}, 250, function () {
 			});
-			$('.menu-container').css('margin-left', '0');
+			$('.menu-container').addClass('menu-show');
 			$('.sumome-share-client-wrapper.sumome-share-client-wrapper-mobile-bottom-bar').css('display', 'none');
 		} else {
-			$('body').css('overflow-y', '');
-			$('body').css('height', '');
-			$('.menu-container').css('margin-left', '-100%').removeClass('scroll');
+			$('body').css('overflow-y', '').css('height', '');
+			$('.menu-container').removeClass('menu-show');
 			$('.get-dark').removeClass('show');
 		}
 	});
@@ -232,34 +211,17 @@
 
 	// Mobile
 	$('.get-dark').on('click', function () {
-		$('body').css('overflow-y', '');
-		$('body').css('height', '');
+		$('body').css('overflow-y', '').css('height', '');
 		$('.get-dark').animate({
 			opacity: 0
 		}, 250, function () {
 			$(this).removeClass('show');
 		});
-		$('.menu-container').removeClass('scroll').css('margin-left', '-100%');
+		$('.menu-container').removeClass('scroll menu-show');
 		$('.navbar-default .navbar-toggle').removeClass('close-background');
 		$('.navbar-default .navbar-toggle .icon-bar').removeClass('hide-background');
 		$('.sumome-share-client-wrapper.sumome-share-client-wrapper-mobile-bottom-bar').css('display', '');
 	});
-	if (isiPhone > -1) {
-		$(window).scroll(function () {
-			function calcScreenHeight() {
-				return window && window.innerHeight || $(window).height();
-			}
-
-			var screenHeight = calcScreenHeight();
-			var scrollTop = $(window).scrollTop();
-			if (scrollTop > 50) {
-				screenHeight = screenHeight + 70;
-				$('.menu-container').css('height', screenHeight);
-			} else {
-				$('.menu-container').css('height', screenHeight);
-			}
-		});
-	}
 
 	$('.search-field').attr('title', '');
 	$('.menu-item-has-children').addClass('first-hover');

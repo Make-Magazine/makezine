@@ -253,7 +253,7 @@ $primary_cat_dimension = $primarycat[0];
         </div>
 
         <!-- Desktop and Mobile Menu -->
-        <div class="col-md-7 col-sm-8 col-xs-12 menu-container">
+        <div class="menu-container">
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
           <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
