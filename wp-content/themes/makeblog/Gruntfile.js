@@ -64,11 +64,11 @@ module.exports = function(grunt) {
     watch: {
       prod: {
         files: watchFiles,
-        tasks: ['less:prod']
+        tasks: ['less:prod', 'concat', 'uglify']
       },
       dev: {
         files: watchFiles,
-        tasks: ['less:dev']
+        tasks: ['less:dev', 'concat']
       },
       reload: {
         files: watchFiles,
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
   // To only watch for less changes and process without browser reload type in "grunt"
   grunt.registerTask('default', ['less:prod', 'concat', 'uglify', 'watch:prod']);
   // Dev mode build task
-  grunt.registerTask('dev', ['less:dev', 'watch:dev']);
+  grunt.registerTask('dev', ['less:dev', 'concat', 'watch:dev']);
   // To watch for less changes and process them with livereload type in "grunt reload"
   grunt.registerTask('reload', ['less', 'watch:reload']);
 
