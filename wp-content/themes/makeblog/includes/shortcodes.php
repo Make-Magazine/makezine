@@ -1203,3 +1203,60 @@ function prototype_wizehive_shortcode() {
 }
 
 add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );
+
+
+// Newsletter form subscription landing page. Used on makezine.com/join
+function make_newsletter_form_landing_page() {
+   return '<div class="nl-modal-extra-cont nl-thx-p1">
+					  <div class="nl-modal-div1">
+					    <div class="col-sm-8 col-xs-12">
+					      <h4>Welcome to the Make Community!</h4>
+					      <p><span class="nl-modal-email-address"></span> you are now signed up to the Make: newsletter.</p>
+					    </div>
+					    <div class="col-sm-4 hidden-xs text-center">
+					      <i class="fa fa-check-square-o fa-5x"></i>
+					    </div>
+					    <div class="clearfix"></div>
+					  </div>
+					  <div class="nl-modal-div2">
+					    <div class="col-xs-12">
+					      <h4>You might also like these Newsletters:</h4>
+					      <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
+					        <input type="hidden" name="cmd" value="subscribe" />
+					        <input type="hidden" name="multiadd" value="1" />
+					        <input type="hidden" id="email" name="email" value="" />
+					        <input type="hidden" id="format_mime" name="format" value="mime" />
+					        <input type="hidden" name="goto" value="" />
+					        <input type="hidden" name="custom_source" value="Landing Page" />
+					        <input type="hidden" name="custom_incentive" value="none" />
+					        <input type="hidden" name="custom_url" value="http://makezine.com/join/" />
+					        <input type="hidden" id="format_mime" name="format" value="mime" />
+					        <input type="hidden" name="goto" value="" />
+					        <input type="hidden" name="custom_host" value="http://makezine.com" />
+					        <label class="list-radio pull-right">
+					          <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
+					          <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
+					        </label>
+					        <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators.</p>
+					        <hr />
+					        <label class="list-radio pull-right">
+					          <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_1" value="6B5869DC547D3D46E66DEF1987C64E7A" />
+					          <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
+					        </label>
+					        <h4>Maker Faire</h4><p>Keep up with the Greatest Show(and tell) on Earth.</p>
+					        <hr />
+					        <label class="list-radio pull-right">
+					          <input type="checkbox" id="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" name="slid_2" value="6B5869DC547D3D46510F6AB3E701BA0A" />
+					          <span for="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" class="newcheckbox"></span>
+					        </label>
+					        <h4>Maker Shed</h4><p>Be the first to learn about new products, plus exclusive discounts.</p>
+					        <hr />
+					        <input class="ghost-button-black pull-right" type="submit" value="Submit" />
+					        <div class="clearfix"></div>
+					      </form>
+					    </div>
+					  </div>
+					</div>';
+}
+
+add_shortcode( 'newsletter_form_landing_page', 'make_newsletter_form_landing_page' );
