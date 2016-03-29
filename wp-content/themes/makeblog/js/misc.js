@@ -194,6 +194,18 @@ jQuery(document).ready(function(){
     });
     $(".fancybox-sub-pref").trigger('click');
   }
+  else if(window.location.href.indexOf("?thank-you-project-submission") > -1) {
+    $(".fancybox-contribute-submission").fancybox({
+      autoSize : false,
+      width  : 480,
+      autoHeight : true,
+      padding : 0,
+      afterLoad   : function() {
+        this.content = this.content.html();
+      }
+    });
+    $(".fancybox-contribute-submission").trigger('click');
+  }
 });
 
 

@@ -569,6 +569,7 @@ function subscribe_return_path_overlay() { ?>
  * URL with ?thankyou=true&subscribed-to=make-newsletter will show the normal thank you modal
  * URL with ?thankyou=true&subscribed-to=free-pdf will show the any free PDF modal
  * URL with ?success=true&subscribe-preferences will show the WhatCounts Subscription preferences success modal
+ * URL with ?thank-you-project-submission will show the basic thank you modal after contribute submission
  */
 function display_thank_you_modal_if_signed_up() { ?>
     <div class="fancybox-thx" style="display:none;">
@@ -674,8 +675,30 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="col-sm-8 col-xs-12 nl-modal">
                 <h3>We've got it.</h3>
-                <p class="text-center">Your changes have been saved. Keep Making!</p>
-                <div class="social-network-container text-center">
+                <p>Your changes have been saved. Keep Making!</p>
+                <div class="social-network-container">
+                    <ul class="social-network social-circle">
+                        <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="fancybox-contribute-submission" style="display:none;">
+        <div class="nl-modal-cont">
+            <div class="col-sm-4 hidden-xs nl-modal">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="col-sm-8 col-xs-12 nl-modal">
+                <h3>Thank you for submitting your project idea to Make:</h3>
+                <p>Our editors will review your project materials and follow up with you via email as soon as possible. Keep making!</p>
+                <div class="social-network-container">
                     <ul class="social-network social-circle">
                         <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
