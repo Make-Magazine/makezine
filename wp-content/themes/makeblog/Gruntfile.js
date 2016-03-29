@@ -1,5 +1,17 @@
 module.exports = function(grunt) {
-
+  var watchFiles = [
+    'less/**/*.less',
+    'version-2/less/**/*.less',
+    'version-2/js/single-story/*.js',
+  ];
+  var lessSrcFiles = {
+    'css/style.css': 'less/style.less',
+    'css/print.css': 'less/print.less',
+    'css/takeover.css': 'less/takeover.less',
+    'version-2/css/style.css': 'version-2/less/style.less',
+    'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
+    'reviews/css/master.css': 'reviews/less/master.less'
+  };
   // All configurations go here
   grunt.initConfig({
 
@@ -12,41 +24,54 @@ module.exports = function(grunt) {
         options: {
           compress: true
         },
-        files: {
-          'css/style.css': 'less/style.less',
-          'css/print.css': 'less/print.less',
-          'css/takeover.css': 'less/takeover.less',
-          'version-2/css/style.css': 'version-2/less/style.less',
-          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
-          'reviews/css/master.css': 'reviews/less/master.less'
-        }
+        files: lessSrcFiles
       },
       dev: {
         options: {
           compress: false,
           dumpLineNumbers: 'comments'
         },
+        files: lessSrcFiles
+      }
+    },
+    // Concat js files
+    concat: {
+      options: {
+        banner: '// Compiled file - any changes will be overwritten by grunt task\n',
+        separator: ';',
+        process: function(src, filepath) {
+          return '//!!\n//!! ' + filepath + '\n' + src;
+        }
+      },
+      dist: {
         files: {
-          'css/style.css': 'less/style.less',
-          'css/print.css': 'less/print.less',
-          'css/takeover.css': 'less/takeover.less',
-          'version-2/css/style.css': 'version-2/less/style.less',
-          'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
-          'reviews/css/master.css': 'reviews/less/master.less'
+          'version-2/js/single-story.js': ['version-2/js/single-story/*.js'],
+        }
+      },
+    },
+    // uglify js
+    uglify: {
+      js: {
+        options: {
+          mangle: false,
+          banner: '// Compiled file - any changes will be overwritten by grunt task\n',
+        },
+        files: {
+          'version-2/js/single-story.js': 'version-2/js/single-story.js',
         }
       }
     },
     watch: {
       prod: {
-        files: ['less/**/*.less', 'version-2/less/**/*.less'],
-        tasks: ['less:prod']
+        files: watchFiles,
+        tasks: ['less:prod', 'concat', 'uglify']
       },
       dev: {
-        files: ['less/**/*.less', 'version-2/less/**/*.less'],
-        tasks: ['less:dev']
+        files: watchFiles,
+        tasks: ['less:dev', 'concat']
       },
       reload: {
-        files: ['less/**/*.less'],
+        files: watchFiles,
         tasks: ['less'],
         options: {
           livereload: true
@@ -60,9 +85,9 @@ module.exports = function(grunt) {
 
   // Register the tasks with Grunt
   // To only watch for less changes and process without browser reload type in "grunt"
-  grunt.registerTask('default', ['less:prod', 'watch:prod']);
+  grunt.registerTask('default', ['less:prod', 'concat', 'uglify', 'watch:prod']);
   // Dev mode build task
-  grunt.registerTask('dev', ['less:dev', 'watch:dev']);
+  grunt.registerTask('dev', ['less:dev', 'concat', 'watch:dev']);
   // To watch for less changes and process them with livereload type in "grunt reload"
   grunt.registerTask('reload', ['less', 'watch:reload']);
 
