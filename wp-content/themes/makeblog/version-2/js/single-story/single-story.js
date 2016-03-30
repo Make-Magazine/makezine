@@ -532,13 +532,6 @@
                         scrollToStory(id);
                         id = 0;
                     }
-                    if ($number > 1) {
-                        for (var i = 1; i <= $number; i++) {
-                            copyContextlyWidget();
-                        }
-                    } else {
-                        copyContextlyWidget();
-                    }
                     essb_get_counters();
                     make.gpt.loadDyn();
                     $('.single .story-header .story-title h1').each(function () {
@@ -550,16 +543,6 @@
                 }
             });
         }
-
-        function copyContextlyWidget() {
-            var $ctxSiderail = $('.content.first-story .ctx-siderail-container').clone();
-            $('.ctx-siderail-wrapper').each(function () {
-                if ($(this).height() == 0) {
-                    $($ctxSiderail).appendTo(this);
-                }
-            });
-        }
-
         function scrollToStory(id) {
             window.setTimeout(function () {
                 if ($('.navigator').hasClass('sticky')) {
