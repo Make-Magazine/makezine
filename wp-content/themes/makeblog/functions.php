@@ -576,7 +576,7 @@ function display_thank_you_modal_if_signed_up() { ?>
         <div class="nl-modal-extra-cont nl-thx-p1">
             <div class="nl-modal-div1">
                 <div class="col-sm-8 col-xs-12">
-                    <h4>Welcome to the Make Community!</h4>
+                    <h4>Welcome to the Make: Community!</h4>
                     <p><span class="nl-modal-email-address"></span> you are now signed up to the Make: newsletter.</p>
                 </div>
                 <div class="col-sm-4 hidden-xs text-center">
@@ -592,7 +592,7 @@ function display_thank_you_modal_if_signed_up() { ?>
                         $isSecure = "https://";
                     }
                     ?>
-                    <h4>You might also like these Newsletters:</h4>
+                    <h4>You might also like these newsletters:</h4>
                     <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" name="multiadd" value="1" />
