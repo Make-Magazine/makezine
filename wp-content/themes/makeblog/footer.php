@@ -232,14 +232,13 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?php echo get_template_directory_uri() . '/magical/js/jquery.magical.js' ?>"></script>
 <script>
-    jQuery(window).load(function() {
-        jQuery(".magical").unicornblast();
-        jQuery('.magical').unicornblast({
-            start : 'konamiCode'
-        });
+  jQuery(".magical").click(function(event){
+    event.preventDefault();
+    jQuery.getScript("<?php echo get_template_directory_uri() . '/magical/js/jquery.magical.js' ?>", function() {
+      jQuery(".magical").unicornblast();
     });
+  });
 </script>
 
 <!-- Checks the URL for which thank you modal to how -->

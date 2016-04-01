@@ -74,8 +74,8 @@ debug.log
 *.mid
 *.midi
 *.kar
-# *.mp3
-# *.ogg
+#.mp3
+#.ogg
 *.m4a
 *.ra
 *.3gpp
