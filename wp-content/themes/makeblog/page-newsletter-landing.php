@@ -67,7 +67,7 @@ get_header('version-2'); ?>
                 <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_5" value="6B5869DC547D3D46E66DEF1987C64E7A" />
                 <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
               </label>
-              <h4>Maker Faire</h4><p>Keep up with the Greatest Show (&amp; tell) on Earth</p>
+              <h4>Maker Faire</h4><p>Keep up with the Greatest Show (&amp; Tell) on Earth</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
