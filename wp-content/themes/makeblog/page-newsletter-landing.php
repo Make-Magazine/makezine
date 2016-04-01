@@ -53,28 +53,28 @@ get_header('version-2'); ?>
                 <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
                 <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
               </label>
-              <h4>Make:</h4><p>The best stuff each week from Make: magazine.</p>
+              <h4>Make:</h4><p>The best stuff each week from Make: magazine</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
                 <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_4" value="6B5869DC547D3D467B33E192ADD9BE4B" />
                 <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
               </label>
-              <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators.</p>
+              <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
                 <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_5" value="6B5869DC547D3D46E66DEF1987C64E7A" />
                 <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
               </label>
-              <h4>Maker Faire</h4><p>Keep up with the Greatest Show(and tell) on Earth.</p>
+              <h4>Maker Faire</h4><p>Keep up with the Greatest Show (&amp; tell) on Earth</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
                 <input type="checkbox" id="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" name="slid_6" value="6B5869DC547D3D46510F6AB3E701BA0A" />
                 <span for="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" class="newcheckbox"></span>
               </label>
-              <h4>Maker Shed</h4><p>Be the first to learn about new products, plus exclusive discounts.</p>
+              <h4>Maker Shed</h4><p>Be the first to learn about new products, plus exclusive discounts</p>
               <hr />
 
               <input class="btn-cyan" type="submit" value="Submit" />
