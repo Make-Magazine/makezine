@@ -35,6 +35,7 @@
 					<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
 					<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 					<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
+          <li><a class="magical" href="#">Make: is Magical?</a></li>
 				</ul>
 			</div>
 			<div class="clearfix visible-sm-block"></div>
@@ -198,6 +199,7 @@
 								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
 								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
+                <li><a class="magical" href="#">Make: is Magical?</a></li>
 							</ul>
 						</div>
 					</div>
@@ -229,6 +231,16 @@
 </div> <!-- /container -->
 
 <?php wp_footer(); ?>
+
+<script src="<?php echo get_template_directory_uri() . '/magical/js/jquery.magical.js' ?>"></script>
+<script>
+    jQuery(window).load(function() {
+        jQuery(".magical").unicornblast();
+        jQuery('.magical').unicornblast({
+            start : 'konamiCode'
+        });
+    });
+</script>
 
 <!-- Checks the URL for which thank you modal to how -->
 <?php echo display_thank_you_modal_if_signed_up(); ?>
