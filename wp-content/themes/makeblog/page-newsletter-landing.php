@@ -101,7 +101,7 @@ get_header('version-2'); ?>
                   $('#nlp-form #email').val(nlpEmail);
                   $.post('http://whatcounts.com/bin/listctrl', $('#nlp-form').serialize());
                   var nlpDomain = document.domain;
-                  window.location.href = nlpDomain+'/?subscribed-to-make-newsletter';
+                  location.href = '/?subscribed-to-make-newsletter';
                 }
               });
             </script>
