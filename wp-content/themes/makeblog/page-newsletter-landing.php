@@ -20,7 +20,7 @@ get_header('version-2'); ?>
 
             <h2>Welcome to the Make Community!</h2>
             <p>Enter your email address, pick your interests, and start getting the best of Make: in your inbox.</p>
-            <input type="email" id="nlp-input" class="form-control" placeholder="Enter your email address" required />
+            <input type="email" id="nlp-input" class="form-control" placeholder="Enter your email address" data-toggle="tooltip" data-placement="right" title="Please enter your email" />
 
           </div>
 
@@ -91,17 +91,24 @@ get_header('version-2'); ?>
                   }
                 });
                 if (anyBoxesChecked == false) {
-                  $('[data-toggle="tooltip"]').tooltip()
-                  $('[data-toggle="tooltip"]').tooltip('show')
+                  $('.list-radio[data-toggle="tooltip"]').tooltip()
+                  $('.list-radio[data-toggle="tooltip"]').tooltip('show')
                   return false;
                 }
                 // Now get the email into the form and send
                 else {
                   var nlpEmail = $('#nlp-input').val();
                   $('#nlp-form #email').val(nlpEmail);
-                  $.post('http://whatcounts.com/bin/listctrl', $('#nlp-form').serialize());
-                  var nlpDomain = document.domain;
-                  location.href = '/?subscribed-to-make-newsletter';
+                  if ($('#nlp-form #email').val() == '') {
+                    $('#nlp-input').tooltip()
+                    $('#nlp-input').tooltip('show')
+                    return false;
+                  }
+                  else {
+                    $.post('http://whatcounts.com/bin/listctrl', $('#nlp-form').serialize());
+                    var nlpDomain = document.domain;
+                    location.href = '/?subscribed-to-make-newsletter';
+                  }
                 }
               });
             </script>
