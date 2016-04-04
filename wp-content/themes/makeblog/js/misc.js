@@ -170,6 +170,20 @@ jQuery(document).ready(function(){
     });
     $(".fancybox-thx").trigger('click');
   }
+  else if(window.location.href.indexOf("?subscribed-to-make-newsletter") > -1) {
+    $(".fancybox-thx").fancybox({
+      autoSize : false,
+      width  : 400,
+      autoHeight : true,
+      padding : 0,
+      afterLoad   : function() {
+        this.content = this.content.html();
+      }
+    });
+    $(".fancybox-thx").trigger('click');
+    $('.nl-thx-p1').hide();
+    $('.nl-thx-p2').show();
+  }
   else if(window.location.href.indexOf("?thankyou=true&subscribed-to=free-pdf") > -1) {
     $(".fancybox-thx-free-pdf").fancybox({
       autoSize : false,
