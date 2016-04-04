@@ -359,6 +359,7 @@ jQuery(document).ready(function ($) {
     if (scrollTop >= '530') {
         $('.minify').addClass('sticky');
         $(indikator).show();
+        var $window = $(window).width();
         if (($window > '768') || ( $('.all-projects ').hasClass('tablet') ) || ( $('.projects-cat ').hasClass('tablet') )) {
             if (cat_wrapp_indicator == 0) {
                 $('.minify .cat-list-wrapp').hide();
@@ -375,7 +376,7 @@ jQuery(document).ready(function ($) {
     }
     $(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
-
+        var $window = $(window).width();
         if (scrollTop >= '300') {
             $('.minify').addClass('sticky').slideDown();
             $(indikator).show();
