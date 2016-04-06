@@ -49,13 +49,10 @@
       if (!window.googletag) {
 
         window.googletag = {cmd:[]};
-
         (function() { var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' == document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node); })();
 
         googletag.cmd.push(function() {
-
           googletag.pubads().collapseEmptyDivs();
-
           // page level targeting
           if (window.ad_vars && ad_vars.page) {
             googletag.pubads().setTargeting("page", ad_vars.page);
@@ -66,12 +63,10 @@
           if (window.ad_vars && ad_vars.tags) {
             googletag.pubads().setTargeting("tags", ad_vars.tags);
           }
-
           // Test
           if (window.location.hostname !== "makezine.com") {
             googletag.pubads().setTargeting('t', ['y']);
           }
-
           // Ad tracking
           googletag.pubads().addEventListener('slotRenderEnded', function(event) {
             // Use GA if available.
@@ -80,7 +75,6 @@
               make.gpt.adsTracked = 1;
             }
           });
-
         });
 
       }
@@ -93,16 +87,94 @@
     },
 
     /**
+     * Array make.gpt.scrollAds
+     *
+     * @description
+     *  array to store ads that load on scroll.
+     */
+    scrollAds: [],
+
+    /**
+     * Function make.gpt.scrollLoad()
+     *
+     * @description
+     *  Setup scroll function.
+     */
+    scrollLoad: function() {
+      if (this.scrollAds && this.scrollAds.length) {
+        // Set scroll loading.
+        window.gptScrollTimer = "";
+        $(document).on("scroll", make.gpt.scrollLoadAd);
+      }
+    },
+
+    /**
+     * Function make.gpt.scrollLoadAd()
+     *
+     * @description
+     *  Scroll function to load ads.
+     */
+    scrollLoadAd: function() {
+      window.clearTimeout(gptScrollTimer);
+      gptScrollTimer = window.setTimeout(function(){
+        var scrollAds = make.gpt.scrollAds.slice(0);
+        // Loop through scroll load ads.
+        for (var i = 0; i < scrollAds.length; i++) {
+          // Is ad in viewport.
+          if ($(scrollAds[i]).visible(true)) {
+            var index = make.gpt.scrollAds.indexOf(scrollAds[i]);
+            // Remove from original array.
+            make.gpt.scrollAds.splice(index, 1);
+            // Load ad.
+            make.gpt.load($(scrollAds[i]));
+          }
+        }
+        // Stop scroll event if all ads are loaded.
+        if (!make.gpt.scrollAds.length) {
+          $(document).off("scroll", make.gpt.scrollLoadAd);
+        }
+      },100);
+    },
+
+    /**
      * Function make.gpt.loadDyn()
+     *
+     * @description
+     *  loads placeholder ads if visible.
+     */
+    loadDyn: function($elem) {
+      console.log('loadDyn');
+      $elem = !$elem || !$elem.size() ? $('.js-ad') : $elem;
+      $elem.filter(':empty').each(function(){
+        var $t = $(this);
+        // Add to scrollAds.
+        if ($t.is('.scroll-load')) {
+          if (make.gpt.scrollAds.indexOf($t) === -1) {
+            make.gpt.scrollAds.push($t[0]);
+          }
+        }
+        // Load ad.
+        else {
+          make.gpt.load($t);
+        }
+      });
+      if (make.gpt.scrollAds.length) {
+        // Set scroll load funciton.
+        make.gpt.scrollLoad();
+      }
+      
+    },
+
+    /**
+     * Function make.gpt.load()
      *
      * @description
      *  renders ads from placeholders in the DOM. 
      *  example placeholder: <div class='js-ad' data-size='[[300,250]]' data-pos='"btf"'></div>
      */
-    loadDyn: function($elem) {
-      $elem = !$elem || !$elem.size() ? $('.js-ad') : $elem;
+    load: function($elem) {
       // Loop through js ads.
-      $elem.filter(':empty').each(function(){
+      $elem.each(function(){
         var $t = $(this),
             a = {};
         // Attempt to parse data attributes.
