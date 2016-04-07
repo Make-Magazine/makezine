@@ -9,6 +9,7 @@ class WPEx
     public $stats_tbl;
     private $table_slug;
     private $now;
+    public $cache_key = '2015-12-28-00';
     
     public function __construct($slug = "wpex")
     {
@@ -52,7 +53,7 @@ class WPEx
         }
 
         add_action('wp_dashboard_setup', array($this, 'add_nag_widget'));
-        // add_action('admin_notices', array($this, 'add_sale_nag'));
+        add_action('admin_notices', array($this, 'add_sale_nag'));
     }
     public function start_session()
     {
@@ -91,7 +92,7 @@ class WPEx
     {
         echo "<div style='text-align:center;font-size: 1.3em;'>Are you enjoying your title experiments but wished you had more detail?<br/><br/>Now you can with Title Experiments Pro!<br/>";
         echo "<br/><b>Detailed Statistics, Priority Support, And More!</b><br/><br/>";
-        echo "<img src='https://wpexperiments.com/wp-content/uploads/2014/07/titlexpro.gif' style='max-width:90%;margin:5px auto;'/>";
+        echo "<img src='https://wpexperiments.com/wp-content/uploads/2015/06/titlexpro.gif' style='max-width:90%;margin:5px auto;'/>";
         echo "<a class='button button-primary' href='https://wpexperiments.com/title-experiments-pro/' target='_blank'>Upgrade Today!</a></div>";
     }
 
@@ -123,10 +124,9 @@ class WPEx
     public function add_sale_nag()
     {
         $now = time();
-        if ($this->get_option("_wpex_show_sale_nag_1420070400", true) && $now < 1420070400) {
-            //2015-01-01
+        if ($this->get_option("_wpex_show_sale_nag_1454112000", true) && $now < 1454112000) {
             ?>
-            <div class="update-nag" style="border-left: 4px solid lightgreen"><b>Awesome!</b> Between now and the end of the year, upgrade to <em>Title Experiments Pro</em> for only $14.99/yr! <b>That's 50% off!</b><br/><a target="_blank" href="https://wpexperiments.com/title-experiments-pro/">Click here</a> to upgrade now. <small><a style='float: right;' href="#" data-nag-id="1420070400">[hide]</a></small></div>
+            <div class="update-nag" style="border-left: 4px solid lightgreen"><b>Awesome!</b> Title Experiments Pro now supports multiple featured images. Upgrade to <em>Title Experiments Pro</em> for only $29.99/yr!<br/><a target="_blank" href="https://wpexperiments.com/title-experiments-pro/">Click here</a> to upgrade now. <small><a style='float: right;' href="#" data-nag-id="1454112000">[hide]</a></small></div>
             <?php
 
         }
@@ -149,6 +149,7 @@ class WPEx
         global $titleEx;
         if (isset($_REQUEST['save'])) {
             $this->update_option("wpex_use_js", $_REQUEST['use_js']);
+            $this->update_option("wpex_hide_body", $_REQUEST['hide_body']);
             $this->update_option("wpex_best_feed", $_REQUEST['best_feed']);
             $this->update_option("wpex_search_engines", $_REQUEST['search_engines']);
             $this->update_option("wpex_adjust_every", $_REQUEST['adjust_every']);
@@ -160,6 +161,7 @@ class WPEx
         }
         
         $use_js = $this->get_option("wpex_use_js", false);
+        $hide_body = $this->get_option("wpex_hide_body", false);
         $best_feed = $this->get_option("wpex_best_feed", false);
         $search_engines = $this->get_option("wpex_search_engines", "first");
         $adjust_every = $this->get_option("wpex_adjust_every", 300);
@@ -201,8 +203,8 @@ class WPEx
     public function get($what, $post_id)
     {
         $d = isset($_SESSION['wpex_data']) ? $_SESSION['wpex_data'] : array();
-        if (isset($d[$what.$post_id])) {
-            return $d[$what.$post_id];
+        if (isset($d[$what.($this->cache_key).$post_id])) {
+            return $d[$what.($this->cache_key).$post_id];
         } else {
             return null;
         }
@@ -211,7 +213,7 @@ class WPEx
     public function set($what, $post_id, $id)
     {
         $d = isset($_SESSION['wpex_data']) ? $_SESSION['wpex_data'] : array();
-        $d[$what.$post_id] = $id;
+        $d[$what.($this->cache_key).$post_id] = $id;
         $_SESSION['wpex_data'] = $d;
     }
 
@@ -261,12 +263,22 @@ class WPEx
     public function ajax_titles()
     {
         $titles = array();
+        $images = array();
         if (isset($_POST['id'])) {
             $cur_page = isset($_POST['cur_id']) ? $_POST['cur_id'] : null;
             foreach ($_POST['id'] as $id) {
+                $images[$id] = array(
+                    "old" => get_post_thumbnail_id($id)
+                );
                 $titles[$id] = $this->titles("", $id, true, $id == $cur_page);
+                // the titles() call will update a global variable which will
+                // effect the return result of get_post_thumbnail_id
+                $images[$id]["new"] = wp_get_attachment_url(get_post_thumbnail_id($id));
             }
-            echo json_encode($titles);
+            echo json_encode(array(
+                'images' => $images,
+                'titles' => $titles
+            ));
             die();
         }
     }
@@ -295,7 +307,7 @@ class WPEx
             + array_slice($columns, 1, count($columns)-1, true);
     }
 
-    public function titles($title, $id=null, $ajax = false, $viewed = false)
+    public function titles($title, $id = null, $ajax = false, $viewed = false)
     {
         global $wpdb, $titleEx;
         if ($id == null) {
@@ -322,17 +334,17 @@ class WPEx
         }
 
         // ensure consistant ordering
-        $sql = "SELECT id,title,impressions,clicks,probability,last_updated FROM " . $this->titles_tbl . " WHERE enabled=1 AND post_id=".$id." ORDER BY id";
+        $sql = "SELECT id,title,thumbnail_id,impressions,clicks,probability,last_updated FROM " . $this->titles_tbl . " WHERE enabled=1 AND post_id=".$id." ORDER BY id";
         $titles_result = $wpdb->get_results($sql, ARRAY_A);
         if (count($titles_result) === 0) {
             //No titles are here
             return $title;
         }
 
-        $transient_key = md5(__FUNCTION__ . $id);
+        $transient_key = md5(__FUNCTION__ . $this->cache_key . $id);
         if (false == ($titles_result = get_transient($transient_key))) {
             // ensure consistant ordering
-            $sql = "SELECT id,title,impressions,clicks,probability,last_updated FROM " . $this->titles_tbl . " WHERE enabled=1 AND post_id=" . $id . " ORDER BY id";
+            $sql = "SELECT id,title,thumbnail_id,impressions,clicks,probability,last_updated FROM " . $this->titles_tbl . " WHERE enabled=1 AND post_id=" . $id . " ORDER BY id";
             $titles_result = $wpdb->get_results($sql, ARRAY_A);
             set_transient($transient_key, $titles_result);
             if (count($titles_result) === 0) {
@@ -465,6 +477,10 @@ class WPEx
         }
 
         if ($result) {
+            if (!isset($GLOBALS['__wpex-title'])) {
+                $GLOBALS['__wpex-title'] = array();
+            }
+            $GLOBALS['__wpex-title'][$id] = $result;
             $title_id = $result['id'];
             $title = $result['title'] == "__WPEX_MAIN__" ? $title : $result['title'];
 
@@ -500,11 +516,17 @@ class WPEx
 
     public function enqueue()
     {
+        // Enqueue jQuery Cookie
+        wp_enqueue_script("jquery-cookie", plugins_url('/js/jquery.cookie.js', __FILE__), array("jquery"), '1.4.1');
+
         // Register the script first.
-        wp_register_script('wpextitles', plugins_url('/js/titles.js', __FILE__), array("jquery"), "7.2");
+        wp_register_script('wpextitles', plugins_url('/js/titles.js', __FILE__), array("jquery"), "8.1");
 
         // Now we can localize the script with our data.
-        $data = array('ajaxurl' => admin_url('admin-ajax.php'));
+        $data = array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'hide_body' => $this->get_option("wpex_hide_body", false)
+        );
         wp_localize_script('wpextitles', 'wpex', $data);
         // The script can be enqueued now or later.
         wp_enqueue_script('wpextitles');
@@ -512,8 +534,8 @@ class WPEx
 
     public function admin_enqueue()
     {
-        wp_enqueue_style('wpexcss', plugins_url('css/wpex.css', __FILE__), array(), "7.2");
-        wp_enqueue_script('wpexjs', plugins_url('js/wpex.js', __FILE__), array('jquery'), "7.2");
+        wp_enqueue_style('wpexcss', plugins_url('css/wpex.css', __FILE__), array(), "8.1");
+        wp_enqueue_script('wpexjs', plugins_url('js/wpex.js', __FILE__), array('jquery'), "8.1");
         wp_enqueue_script('jquery.sparkline.min.js', plugins_url('js/jquery.sparkline.min.js', __FILE__), array('jquery'), "0.0.1");
         wp_enqueue_script('jquery.qtip.min.js', plugins_url('js/jquery.qtip.min.js', __FILE__), array('jquery'), "0.0.1");
         wp_enqueue_style('jquery.qtip.min.css', plugins_url('css/jquery.qtip.min.css', __FILE__));
@@ -547,7 +569,8 @@ class WPEx
             $this->titles($post->post_title, $post->ID, true);
             return $this->meta_box($post, $box, true);
         }
-        foreach ($results as $idx=>&$test) {
+
+        foreach ($results as $idx => &$test) {
             $sql = "SELECT * FROM ".$this->stats_tbl." WHERE title_id=".$test['id'];
             $stat_results = $wpdb->get_results($sql, ARRAY_A);
             $stats = array();
@@ -560,6 +583,9 @@ class WPEx
             $data = $this->get_sl_data($stats);
             $test['stats_str'] = join(",", $data);
             $test['title'] = stripslashes($test['title']);
+            if ($test['thumbnail_id']) {
+                $test['thumbnail'] = wp_get_attachment_url(intval($test['thumbnail_id']));
+            }
         }
 
         $rows = $results;
@@ -567,7 +593,7 @@ class WPEx
         $sql = "SELECT * FROM ".$this->titles_tbl." WHERE NOT enabled=1 AND post_id=".$post->ID;
         $results = $wpdb->get_results($sql, ARRAY_A);
         $so_title = str_replace("'", "\\'", $post->post_title);
-        foreach ($results as $idx=>&$test) {
+        foreach ($results as $idx => &$test) {
             $test['probability'] = 0;
             $test['stats_str'] = join(",", $data);
             $test['title'] = stripslashes($test['title']);
@@ -614,8 +640,8 @@ class WPEx
     public function save_blocks($post_id)
     {
         global $wpdb;
-
-        if ($post_id != $_POST['ID']) {
+        if ((isset($_POST['ID']) && $post_id != $_POST['ID']) ||
+            (isset($_POST['id']) && $post_id != $_POST['id'])) {
             // this is the result of the 'Preview' button being clicked and will cause problems with our titles!
             return;
         }
@@ -644,7 +670,7 @@ class WPEx
 
             $new_titles = array();
             $existing_titles = array();
-            foreach ($_POST['wpex-titles'] as $key=>$val) {
+            foreach ($_POST['wpex-titles'] as $key => $val) {
                 $enabled = isset($_POST['wpex-enabled']) && isset($_POST['wpex-enabled'][$key]) ? true : false;
                 if ($key[0] == "_") {
                     //Update
@@ -653,7 +679,7 @@ class WPEx
                 } else {
                     //Insert
                     $wpdb->insert($this->titles_tbl, array("title"=>$val, "post_id"=>$post_id, "enabled"=>$enabled));
-                    $new_titles[] = $wpdb->insert_id;
+                    $new_titles["_" . $key] = $wpdb->insert_id;
                 }
             }
         }
@@ -670,7 +696,10 @@ class WPEx
                 $wpdb->update($this->titles_tbl, array("probability"=> round($base_probability*100)), array("id"=>$new_title_id));
             }
         }
-
+        
+        // Store this for *anyone* who may like to use it
+        $GLOBALS['__wpex-new-titles'] = $new_titles;
+        
         if (isset($_POST['wpex-removed'])) {
             if (empty($_POST['wpex-titles'])) {
                 // they deleted all the titles, just delete them all

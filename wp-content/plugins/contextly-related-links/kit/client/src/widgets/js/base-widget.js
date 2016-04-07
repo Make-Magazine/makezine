@@ -22,6 +22,13 @@
     FLOAT: 'float'
   };
 
+  // SideRail styles.
+  Contextly.widget.sideRailStyles = {
+    DEFAULT: 'default',
+    H_SQUARE: 'h-square',
+    H_LETTER: 'h-letter'
+  };
+
   // Widget link types.
   Contextly.widget.linkTypes = {
     PREVIOUS: 'previous',

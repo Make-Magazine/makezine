@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2009-2015 John Blackbourn
+Copyright 2009-2016 John Blackbourn
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,10 +14,12 @@ GNU General Public License for more details.
 
 */
 
-if ( !defined( 'SAVEQUERIES' ) )
+if ( !defined( 'SAVEQUERIES' ) ) {
 	define( 'SAVEQUERIES', true );
-if ( !defined( 'QM_DB_EXPENSIVE' ) )
+}
+if ( !defined( 'QM_DB_EXPENSIVE' ) ) {
 	define( 'QM_DB_EXPENSIVE', 0.05 );
+}
 
 class QM_Collector_DB_Queries extends QM_Collector {
 
@@ -99,6 +101,7 @@ class QM_Collector_DB_Queries extends QM_Collector {
 		$total_time = 0;
 		$has_result = false;
 		$has_trace  = false;
+		$i          = 0;
 
 		foreach ( (array) $db->queries as $query ) {
 
@@ -144,12 +147,20 @@ class QM_Collector_DB_Queries extends QM_Collector {
 
 			}
 
-			$sql  = trim( $sql );
-			$type = preg_split( '/\b/', $sql, 2, PREG_SPLIT_NO_EMPTY );
+			$sql = $type = trim( $sql );
+
+			if ( 0 === strpos( $sql, '/*' ) ) {
+				// Strip out leading comments such as `/*NO_SELECT_FOUND_ROWS*/` before calculating the query type
+				$type = preg_replace( '|^/\*[^\*/]+\*/|', '', $sql );
+			}
+
+			$type = preg_split( '/\b/', trim( $type ), 2, PREG_SPLIT_NO_EMPTY );
 			$type = strtoupper( $type[0] );
 
 			$this->log_type( $type );
 			$this->log_caller( $caller_name, $ltime, $type );
+
+			$this->maybe_log_dupe( $sql, $i );
 
 			if ( $component ) {
 				$this->log_component( $component, $ltime, $type );
@@ -177,7 +188,8 @@ class QM_Collector_DB_Queries extends QM_Collector {
 				$this->data['expensive'][] = $row;
 			}
 
-			$rows[] = $row;
+			$rows[ $i ] = $row;
+			$i++;
 
 		}
 

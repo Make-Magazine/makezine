@@ -3,8 +3,8 @@ Contributors: jasonlfunk
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZMDLAG7TMAN3E
 Tags: conversions, ab testing, optimization, headlines, split testing, titles, t
 Requires at least: 3.9
-Tested up to: 4.2
-Stable tag: 7.5
+Tested up to: 4.4
+Stable tag: 8.2 
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,6 +37,22 @@ Check out https://wpexperiments.com/title-experiments/
 
 
 == Changelog ==
+
+= 8.2 =
+* Remove PHP notice in logs 
+
+= 8.1 =
+* Bump the script enqueue version to sure the newest files are included
+
+= 8.0 =
+* Add setting to hide the webpage until titles are loaded
+
+= 7.6 =
+* Include jQuery.cookie as dependency
+* Bug fixes
+
+= 7.6 =
+* Bug fix
 
 = 7.3 =
 * Add icon

@@ -44,7 +44,7 @@ Contextly.widget.Factory = Contextly.createClass({
       return new containerClass(widget);
     },
 
-    getWidgetClass: function(type, displayType) {
+    getWidgetClass: function(type, theme) {
       switch (type) {
         case Contextly.widget.types.SIDEBAR:
           return Contextly.widget.Sidebar;
@@ -56,14 +56,23 @@ Contextly.widget.Factory = Contextly.createClass({
           return Contextly.widget.StoryLineSubscribe;
 
         case Contextly.widget.types.SIDERAIL:
-          return Contextly.widget.Siderail;
+          switch (theme) {
+            case Contextly.widget.sideRailStyles.H_SQUARE:
+              return Contextly.widget.SiderailHSquare;
+
+            case Contextly.widget.sideRailStyles.H_LETTER:
+              return Contextly.widget.SiderailHLetter;
+
+            default:
+              return Contextly.widget.Siderail;
+          }
 
         case Contextly.widget.types.SOCIAL:
           return Contextly.widget.Social;
 
         default:
           // Snippet.
-          switch (displayType) {
+          switch (theme) {
             case Contextly.widget.styles.TEXT:
               return Contextly.widget.TextSnippet;
 
@@ -90,7 +99,8 @@ Contextly.widget.Factory = Contextly.createClass({
         return null;
       }
 
-      var widgetClass = this.getWidgetClass(widget.type, widget.settings.display_type);
+      var widgetTheme = widget.settings.display_type || widget.settings.theme;
+      var widgetClass = this.getWidgetClass(widget.type, widgetTheme);
       if (!widgetClass) {
         return null;
       }

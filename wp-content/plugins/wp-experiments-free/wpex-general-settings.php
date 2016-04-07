@@ -13,6 +13,13 @@
 					</td>
 				</tr>
 				<tr valign="top">
+					<th scope="row"><label for="hide_body">Hide Body until tests are loaded</label></th>
+					<td>
+						<input name="hide_body" type="checkbox" value="1" <?php if($hide_body): ?>checked<?php endif; ?>> Hide body until tests are loaded
+						<p class="description">When using JavaScript to set the titles, you may see your blanks spaces until your titles load.<br/>This hides the whole body to prevent seeing the title holes.</p>
+					</td>
+				</tr>
+				<tr valign="top">
 					<th scope="row"><label for="search_engines">Search Engines should see the</label></th>
 					<td>
 						<select name="search_engines">

@@ -158,7 +158,8 @@
       var guid = Contextly.Visitor.getGuid();
       if (guid != null) {
         this.logEvent(Contextly.widget.eventNames.MODULE_VIEW, {
-          event_guid: guid
+          event_guid: guid,
+          event_success: true
         });
       }
 

@@ -5,6 +5,8 @@ function titleex_run_experiment() {
 
             if("titlexproShouldRunExp" in window) {
                 if(!window.titlexproShouldRunExp()) {
+					jQuery("img.wpexpro-image").removeClass("wpexpro-image");
+					wpex_show_body();
                 	console.log("Not running exp due to pro saying no");
                     return;
                 }
@@ -32,19 +34,45 @@ function titleex_run_experiment() {
 					id: Object.keys(fetch),
 					cur_id: cur_id
 				}, function(res) {
-					for(var id in res) {
+					for(var id in res.titles) {
 						var $elm = jQuery("[data-wpex-title-id="+id+"]");
-                        if(!res[id]) {
+                        if(!res.titles[id] && $elm.data("original")) {
                             $elm.parent().html(Base64.decode($elm.data("original")))
 						} else {
-							$elm.html(res[id]);
+							$elm.html(res.titles[id]);
 						}
 					}
+					for(var id in res.images) {
+						if(res.images[id].old) {
+							var $img = jQuery("img[data-wpex-post-id='" + res.images[id].old + "']");
+							$img.removeAttr("srcset");
+							$img.attr("src", res.images[id].new);
+							$img.removeClass("wpexpro-image");
+						}
+					}
+					jQuery("img.wpexpro-image").removeClass("wpexpro-image");
+					wpex_show_body();
 				}, 'json');
+			} else {
+				jQuery("img.wpexpro-image").removeClass("wpexpro-image");
+				wpex_show_body();
 			}
 		} catch(err) {
-			jQuery("body").show();
+			wpex_show_body();
 		}
+}
+
+var $wpex_body = jQuery("html,body");
+function wpex_hide_body() {
+	$wpex_body.css('visibility', 'hidden');
+}
+
+function wpex_show_body() {
+	$wpex_body.css('visibility', 'visible');
+}
+
+if(wpex.hide_body) {
+	wpex_hide_body();
 }
 
 jQuery(document).ready(titleex_run_experiment);

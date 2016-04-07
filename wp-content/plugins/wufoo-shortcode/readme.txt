@@ -7,9 +7,9 @@ Tags: wufoo, form, shortcode
 Author URI: http://wufoo.com
 Author: Chris Coyier
 Requires at least: 2.6
-Tested up to: 3.3.1
+Tested up to: 4.2
 Stable tag: 1.42
-Version: 1.42
+Version: 1.43
 
 Allows the use of a special short code [wufoo] for embedding Wufoo forms.
 

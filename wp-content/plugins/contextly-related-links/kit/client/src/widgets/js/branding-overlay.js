@@ -23,7 +23,12 @@
 
       renderDialog: function() {
         if (!this.dialog) {
-          var content = '<div id="ctx-branding-content" class="ctx-overlay-dialog">';
+          var classes = ['ctx-overlay-dialog'];
+          if (!Contextly.Browser.hasSvg()) {
+            classes.push('ctx-no-svg');
+          }
+
+          var content = '<div id="ctx-branding-content" class="' + Contextly.Utils.escape(classes.join(' ')) + '">';
           content += '<div id="ctx-brd-modal">';
           content += '<div id="ctx-brd-logo"></div>';
           content += '<div id="ctx-brd-text-head"></div>';

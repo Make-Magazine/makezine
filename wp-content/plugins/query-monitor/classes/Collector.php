@@ -1,6 +1,6 @@
 <?php
 /*
-Copyright 2009-2015 John Blackbourn
+Copyright 2009-2016 John Blackbourn
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,6 +37,17 @@ abstract class QM_Collector {
 		} else {
 			$this->data['types'][$type] = 1;
 		}
+
+	}
+
+	protected function maybe_log_dupe( $sql, $i ) {
+
+		$sql = str_replace( array( "\r\n", "\r", "\n" ), ' ', $sql );
+		$sql = str_replace( array( "\t" ), '', $sql );
+		$sql = preg_replace( '/[ ]+/', ' ', $sql );
+		$sql = trim( $sql );
+
+		$this->data['dupes'][ $sql ][] = $i;
 
 	}
 

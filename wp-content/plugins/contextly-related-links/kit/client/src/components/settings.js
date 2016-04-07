@@ -64,6 +64,15 @@ Contextly.BaseSettings = Contextly.createClass({
     },
 
     /**
+     * Returns Experience server URL.
+     *
+     * @function
+     */
+    getExperienceServerUrl: function () {
+      return this.getServerUrl('experience');
+    },
+
+    /**
      * Returns parsed post data object.
      *
      * @function
@@ -197,12 +206,8 @@ Contextly.BaseSettings = Contextly.createClass({
       return Contextly.data.versions.kit;
     },
 
-    getCdnVersion: function() {
-      return Contextly.data.versions.cdn;
-    },
-
     getAssetUrl: function(path, ext) {
-      return this.getServerUrl('cdn') + this.getCdnVersion() + '/' + path + '.' + ext;
+      return this.getServerUrl('cdn') + this.getKitVersion() + '/' + path + '.' + ext;
     },
 
     getMode: function () {

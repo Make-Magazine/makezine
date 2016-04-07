@@ -58,10 +58,13 @@
 }
 .ctx-subscribe-link .ctx-subscribe-logo.ctx-image-logo:before {
   content: "\00a0" !important; /* non-breaking-space */
-  background-image: url('../../img/storyline/contextly-logo.png') !important;
+  background-image: url('../../img/storyline/contextly-logo.svg') !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   width: 12px !important;
+}
+.ctx-subscribe-link.ctx-no-svg .ctx-subscribe-logo.ctx-image-logo:before {
+  background-image: url('../../img/storyline/contextly-logo.png') !important;
 }
 
 .ctx-subscribe-link.ctx-theme-transparent.ctx-no-transitions,

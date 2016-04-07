@@ -30,7 +30,7 @@ namespace Twitter\WordPress\Shortcodes;
  *
  * @since 1.0.0
  */
-class Share
+class Share implements ShortcodeInterface
 {
 
 	/**
@@ -49,7 +49,7 @@ class Share
 	 *
 	 * @type array
 	 */
-	public static $SHORTCODE_DEFAULTS = array( 'in_reply_to' => '', 'text' => '', 'url' => '', 'hashtags' => array(), 'via' => '', 'related' => array(), 'size' => '', 'align' => '', 'count' => '', 'counturl' => '' );
+	public static $SHORTCODE_DEFAULTS = array( 'in_reply_to' => '', 'text' => '', 'url' => '', 'hashtags' => array(), 'via' => '', 'related' => array(), 'size' => '' );
 
 	/**
 	 * Attach handlers for Tweet button
@@ -62,15 +62,13 @@ class Share
 	{
 		add_shortcode( static::SHORTCODE_TAG, array( __CLASS__, 'shortcodeHandler' ) );
 
-		// Shortcake UI
-		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
-			add_action(
-				'admin_init',
-				array( __CLASS__, 'shortcodeUI' ),
-				5,
-				0
-			);
-		}
+		// Shortcode UI, if supported
+		add_action(
+			'register_shortcode_ui',
+			array( __CLASS__, 'shortcodeUI' ),
+			5,
+			0
+		);
 	}
 
 	/**
@@ -92,12 +90,12 @@ class Share
 		shortcode_ui_register_for_shortcode(
 			static::SHORTCODE_TAG,
 			array(
-				'label'         => __( 'Tweet Button', 'twitter' ),
+				'label'         => esc_html( __( 'Tweet Button', 'twitter' ) ),
 				'listItemImage' => 'dashicons-twitter',
 				'attrs'         => array(
 					array(
 						'attr'  => 'text',
-						'label' => _x( 'Text', 'Share / Tweet text', 'twitter' ),
+						'label' => esc_html( _x( 'Text', 'Share / Tweet text', 'twitter' ) ),
 						'type'  => 'text',
 					),
 					array(
@@ -107,12 +105,12 @@ class Share
 					),
 					array(
 						'attr'    => 'size',
-						'label'   => __( 'Button size:', 'twitter' ),
+						'label'   => esc_html( __( 'Button size:', 'twitter' ) ),
 						'type'    => 'radio',
-						'value'   => 'medium',
+						'value'   => '',
 						'options' => array(
-							''      => _x( 'medium', 'medium size button', 'twitter' ),
-							'large' => _x( 'large',  'large size button',  'twitter' ),
+							''      => esc_html( _x( 'medium', 'medium size button', 'twitter' ) ),
+							'large' => esc_html( _x( 'large',  'large size button',  'twitter' ) ),
 						),
 					),
 				),
@@ -230,15 +228,10 @@ class Share
 			$options['text'] = $attributes['text'];
 		}
 
-		foreach ( array( 'url', 'counturl' ) as $url_param ) {
-			if ( ! ( isset( $attributes[ $url_param ] ) && $attributes[ $url_param ] ) ) {
-				continue;
-			}
-
-			// filter the URL
-			$url = esc_url_raw( trim( $attributes[ $url_param ] ), array( 'http', 'https' ) );
+		if ( isset( $attributes['url'] ) && $attributes['url'] ) {
+			$url = esc_url_raw( trim( $attributes['url'] ), array( 'http', 'https' ) );
 			if ( $url ) {
-				$options[ $url_param ] = $url;
+				$options['url'] = $url;
 			}
 			unset( $url );
 		}
@@ -273,22 +266,6 @@ class Share
 				unset( $hashtags );
 			}
 			unset( $intent );
-		}
-
-		if ( isset( $attributes['align'] ) && is_string( $attributes['align'] ) && $attributes['align'] ) {
-			$align = strtolower( trim( $attributes['align'] ) );
-			if ( array_key_exists( $align, \Twitter\Widgets\TweetButton::$ALLOWED_ALIGN_VALUES ) ) {
-				$options['align'] = $align;
-			}
-			unset( $align );
-		}
-
-		if ( isset( $attributes['count'] ) && is_string( $attributes['count'] ) ) {
-			$count = strtolower( trim( $attributes['count'] ) );
-			if ( array_key_exists( $count, \Twitter\Widgets\TweetButton::$ALLOWED_COUNT_VALUES ) ) {
-				$options['count'] = $count;
-			}
-			unset( $count );
 		}
 
 		// large is the only option

@@ -26,9 +26,6 @@ This plugin enables you to add PubExchange's partner widgets to your site. The w
 * Search for PubExchange. Once found click on 'Install Now'
 * Select 'Activate Plugin' from the download page or go to 'Plugins' -> 'Installed Plugins' -> 'Activate Plugin'
 
-= Upgrading to >= 2.0 =
-* In PubExchange >= 2.0, you now need to provide a Widget Number in addition to a Widget ID. You can get this number from the PubExchange dashboard, or by contacting a PubExchange representative.
-
 = Below Article widgets =
 * Click on the 'Settings' link in left rail and go to the 'PubExchange' menu item.
 * Enter the 'Publication ID', 'Widget ID', and 'Widget Number' received from your PubExchange representative
@@ -68,6 +65,13 @@ If you qualify, you are able to use PubExchange at no cost. All traffic trades i
 [Apply at PubExchange.com](https://www.pubexchange.com/#sign-up "Sign-up today!") and we will let you know! We consider a site's size, the quality of content, the number of social followers, and a handful of other factors, but even if you don't qualify now, if you apply online, we will automatically follow-up once you do qualify.
 
 == Changelog ==
+= Upgrading to >= 2.0 =
+In PubExchange >= 2.0, you now need to provide a Widget Number in addition to a Widget ID. You can get this number from the PubExchange dashboard, or by contacting a PubExchange representative.
+
+== Changelog ==
+= 2.0.2 =
+* Added tracking to Facebook Instant Article RSS feed, if publisher uses Wordpress' official Instant Article plugin
+
 = 2.0.1 =
 * Added Lazy Load functionality, which defers the loading of the widget until the reader scrolls down to where the widget will display
 * Added Link Discovery functionality, which automtically tracks the clicks of partner links in your article content

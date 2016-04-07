@@ -30,7 +30,7 @@ namespace Twitter\WordPress\Shortcodes;
  *
  * @since 1.0.0
  */
-class Tracking
+class Tracking implements ShortcodeInterface
 {
 
 	/**
@@ -71,15 +71,13 @@ class Tracking
 	{
 		add_shortcode( static::SHORTCODE_TAG, array( __CLASS__, 'shortcodeHandler' ) );
 
-		// Shortcake UI
-		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
-			add_action(
-				'admin_init',
-				array( __CLASS__, 'shortcodeUI' ),
-				5,
-				0
-			);
-		}
+		// Shortcode UI, if supported
+		add_action(
+			'register_shortcode_ui',
+			array( __CLASS__, 'shortcodeUI' ),
+			5,
+			0
+		);
 	}
 
 	/**
@@ -101,13 +99,13 @@ class Tracking
 		shortcode_ui_register_for_shortcode(
 			static::SHORTCODE_TAG,
 			array(
-				'label'         => __( 'Twitter Advertising Tracker', 'twitter' ),
+				'label'         => esc_html( __( 'Twitter Advertising Tracker', 'twitter' ) ),
 				'listItemImage' => 'dashicons-twitter',
 				'attrs'         => array(
 					array(
 						'attr'  => 'id',
 						'label' => 'ID',
-						'description' => __( 'Twitter conversion or remarketing audience tracking identifier', 'twitter' ),
+						'description' => esc_html( __( 'Twitter conversion or remarketing audience tracking identifier', 'twitter' ) ),
 						'type'  => 'text',
 						'meta'  => array(
 							'required' => true,

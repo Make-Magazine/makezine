@@ -30,7 +30,6 @@ Contextly.RESTClient = Contextly.createClass({
         site_path: s.getAppId(),
         admin: s.isAdmin(),
         page_id: s.getPageId(),
-        cookie_id: Contextly.Visitor.getId(),
         type: s.getPostType(),
         c_date: s.getPostCreatedDate(),
         m_date: s.getPostModifiedDate(),

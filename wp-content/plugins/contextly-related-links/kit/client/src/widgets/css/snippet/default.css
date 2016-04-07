@@ -43,6 +43,10 @@
   font-size: inherit !important;
   color: #6d6d6d;
 }
+.ctx-content-text .ctx-link a.ctx-clearfix:before,
+.ctx-content-text .ctx-link a.ctx-clearfix:after {
+  display: none !important;
+}
 .ctx-content-text .ctx-icon {
   position: relative !important;
   margin: 0 0 0 -1.5em !important;

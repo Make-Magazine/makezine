@@ -30,7 +30,7 @@ namespace Twitter\WordPress\Shortcodes;
  *
  * @since 1.0.0
  */
-class Follow
+class Follow implements ShortcodeInterface
 {
 
 	/**
@@ -41,6 +41,15 @@ class Follow
 	 * @type string
 	 */
 	const SHORTCODE_TAG = 'twitter_follow';
+
+	/**
+	 * Regex used to match a Twitter profile URL in text
+	 *
+	 * @since 1.3.0
+	 *
+	 * @type string
+	 */
+	const URL_REGEX = '#^https://twitter\.com/([a-z0-9_]{1,20})$#i';
 
 	/**
 	 * Accepted shortcode attributes and their default values
@@ -60,17 +69,25 @@ class Follow
 	 */
 	public static function init()
 	{
-		add_shortcode( static::SHORTCODE_TAG, array( __CLASS__, 'shortcodeHandler' ) );
+		$classname = get_called_class();
 
-		// Shortcake UI
-		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
-			add_action(
-				'admin_init',
-				array( __CLASS__, 'shortcodeUI' ),
-				5,
-				0
-			);
-		}
+		add_shortcode( static::SHORTCODE_TAG, array( $classname, 'shortcodeHandler' ) );
+
+		// convert a URL into the shortcode equivalent
+		wp_embed_register_handler(
+			static::SHORTCODE_TAG,
+			static::URL_REGEX,
+			array( $classname, 'linkHandler' ),
+			1
+		);
+
+		// Shortcode UI, if supported
+		add_action(
+			'register_shortcode_ui',
+			array( $classname, 'shortcodeUI' ),
+			5,
+			0
+		);
 	}
 
 	/**
@@ -92,12 +109,12 @@ class Follow
 		shortcode_ui_register_for_shortcode(
 			static::SHORTCODE_TAG,
 			array(
-				'label'         => __( 'Follow Button', 'twitter' ),
+				'label'         => esc_html( __( 'Follow Button', 'twitter' ) ),
 				'listItemImage' => 'dashicons-twitter',
 				'attrs'         => array(
 					array(
 						'attr'  => 'screen_name',
-						'label' => __( 'Twitter @username', 'twitter' ),
+						'label' => esc_html( __( 'Twitter @username', 'twitter' ) ),
 						'type'  => 'text',
 						'meta'  => array(
 							'placeholder' => 'WordPress',
@@ -106,17 +123,38 @@ class Follow
 					),
 					array(
 						'attr'    => 'size',
-						'label'   => __( 'Button size:', 'twitter' ),
+						'label'   => esc_html( __( 'Button size:', 'twitter' ) ),
 						'type'    => 'radio',
-						'value'   => 'medium',
+						'value'   => '',
 						'options' => array(
-							''      => _x( 'medium', 'medium size button', 'twitter' ),
-							'large' => _x( 'large',  'large size button',  'twitter' ),
+							''      => esc_html( _x( 'medium', 'medium size button', 'twitter' ) ),
+							'large' => esc_html( _x( 'large',  'large size button',  'twitter' ) ),
 						),
 					),
 				),
 			)
 		);
+	}
+
+	/**
+	 * Handle a URL matched by a embed handler
+	 *
+	 * @since 1.3.1
+	 *
+	 * @param array  $matches The regex matches from the provided regex when calling {@link wp_embed_register_handler()}.
+	 * @param array  $attr    Embed attributes. Not used.
+	 * @param string $url     The original URL that was matched by the regex. Not used.
+	 * @param array  $rawattr The original unmodified attributes. Not used.
+	 *
+	 * @return string HTML markup for the follow button or an empty string if requirements not met
+	 */
+	public static function linkHandler( $matches, $attr, $url, $rawattr )
+	{
+		if ( ! ( is_array( $matches ) && isset( $matches[1] ) && $matches[1] ) ) {
+			return '';
+		}
+
+		return static::shortcodeHandler( array( 'screen_name' => $matches[1] ) );
 	}
 
 	/**

@@ -26,12 +26,24 @@
       return 'ctx-content-text';
     },
 
+    getWidgetClasses: function() {
+      var classes = [
+        'ctx-module',
+        'ctx-nodefs',
+        this.getWidgetStyleClass()
+      ];
+      if (!Contextly.Browser.hasSvg()) {
+        classes.push('ctx-no-svg');
+      }
+      return classes;
+    },
+
     getWidgetHTML: function() {
       var div = "";
 
       var sections = this.widget.settings.display_sections;
 
-      div += "<div class='ctx-module " + this.getWidgetStyleClass() + " ctx-nodefs'>";
+      div += "<div class='" + this.escape(this.getWidgetClasses().join(' ')) + "'>";
       div += "<div class='ctx-sections-container ctx-clearfix'>";
 
       for (var i = 0; i < sections.length; i++ ) {
@@ -82,11 +94,12 @@
       var widget = this.widget;
 
       if (widget.links && widget.links[ type ]) {
+        var placeCounter = 0;
         for (var link_idx in widget.links[ type ]) {
           var link = widget.links[ type ][ link_idx ];
 
           if (link.id && link.title) {
-            html += this.getLinkHTML(link);
+            html += this.getLinkHTML(link, ++placeCounter);
           }
         }
       }
@@ -137,7 +150,22 @@
     findViewWatcherElement: function(widgetElement) {
       // Return the first link.
       return widgetElement.find('.ctx-section .ctx-link:first');
-    }
+    },
+
+    // We will override this method for log module display event
+    broadcastWidgetDisplayed: function() {
+      Contextly.widget.BaseLinksList.fn.broadcastWidgetDisplayed.apply(this, arguments);
+
+      var guid = Contextly.Visitor.getGuid();
+      if (guid != null) {
+        this.logEvent(Contextly.widget.eventNames.MODULE_VIEW, {
+          event_guid: guid,
+          event_success: false
+        });
+      }
+
+    },
+
 
   });
 

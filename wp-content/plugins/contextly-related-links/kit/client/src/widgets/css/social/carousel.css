@@ -18,7 +18,11 @@
 }
 
 .ctx-social-carousel .ctx-content {
-  margin: 20px 0 !important;
+  margin: 20px auto !important;
+}
+
+.ctx-social-carousel .ctx-slick-track {
+  margin: 0 auto !important;
 }
 
 .ctx-social-carousel .ctx-tweet {
@@ -100,6 +104,19 @@
   content: "" !important;
 }
 
+/* Responsive layout */
+.ctx-social-carousel .ctx-content {
+  max-width: 1980px !important;
+}
+.ctx-social-carousel.ctx-social-3-tweets .ctx-content {
+  max-width: 1510px !important;
+}
+.ctx-social-carousel.ctx-social-2-tweets .ctx-content {
+  max-width: 1040px !important;
+}
+.ctx-social-carousel.ctx-social-1-tweet .ctx-content {
+  max-width: 570px !important;
+}
 .ctx-social-carousel.ctx-social-mobile .ctx-slick-arrow {
   width: 36px !important;
 }

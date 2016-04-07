@@ -8,7 +8,6 @@
 
       construct: function() {
         this.widgetsLoading = false;
-        this.lastWidgetsResponse = null;
       },
 
       getWidgetLoadingFlags: function() {
@@ -46,8 +45,6 @@
       },
 
       onWidgetsLoadingComplete: function(response) {
-        this.lastWidgetsResponse = response;
-
         if (response && response.success && response.entry) {
           this.onWidgetsLoadingSuccess(response);
         }

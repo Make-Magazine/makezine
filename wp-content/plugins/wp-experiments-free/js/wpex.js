@@ -99,6 +99,7 @@
 				if($(".wpex-title-exp").length == 1) {
 					wpexMainTitleRemove();
 				}
+				wpexproRemoved(id);
 			});
 			$e.append($edel);
 		}
@@ -168,6 +169,10 @@
 			},
 			style: { classes: 'qtip-shadow qtip-light'}
 		});
+
+		if("wpexproSetupInput" in window) {
+			window.wpexproSetupInput(trow, $elm);
+		}
 	};
 
 	wpexStatusQtipContent = function(elm) {
@@ -203,7 +208,6 @@
 		});
 		return false;
 	};
-
 
 	wpexTitleAdd = function(ev){
 		// We are adding one for the first time for this post so setup the orginal title

@@ -29,6 +29,10 @@
       return false;
     },
 
+    getLinksLimit: function() {
+      return 0;
+    },
+
     isDisplaySection: function(section) {
       var display_section = $.inArray(section, this.widget.settings.display_sections) != -1;
       var have_to_display = this.widget.links && this.widget.links[ section ] && this.widget.links[ section ].length > 0;
@@ -203,13 +207,13 @@
       return this.escape("Contextly.PageEvents.trackLink('" + widget_type + "','" + link_type + "','" + link_url + "','" + link_title + "');");
     },
 
-    getLinkHTML: function(link) {
+    getLinkHTML: function(link, index) {
       if (link.video) {
-        return this.getLinkHTMLVideo(link);
+        return this.getLinkHTMLVideo(link, index);
       } else if (link.tweet) {
-        return this.getLinkHTMLTweet(link);
+        return this.getLinkHTMLTweet(link, index);
       } else {
-        return this.getLinkHTMLNormal(link);
+        return this.getLinkHTMLNormal(link, index);
       }
     },
 
@@ -217,16 +221,16 @@
       return link.title;
     },
 
-    getLinkHTMLVideo: function(link) {
-      return "<div class='ctx-link'>" + this.getVideoLinkATag(link, this.getInnerLinkHTML(link)) + "</div>";
+    getLinkHTMLVideo: function(link, index) {
+      return "<div class='ctx-link ctx-" + index + "'>" + this.getVideoLinkATag(link, this.getInnerLinkHTML(link)) + "</div>";
     },
 
-    getLinkHTMLTweet: function(link) {
-      return "<div class='ctx-link'>" + this.getTweetLinkATag(link, this.getInnerLinkHTML(link)) + "</div>";
+    getLinkHTMLTweet: function(link, index) {
+      return "<div class='ctx-link ctx-" + index + "'>" + this.getTweetLinkATag(link, this.getInnerLinkHTML(link)) + "</div>";
     },
 
-    getLinkHTMLNormal: function(link) {
-      return "<div class='ctx-link'><div class='ctx-link-title'>" + this.getLinkATag(link, this.getInnerLinkHTML(link)) + "</div></div>";
+    getLinkHTMLNormal: function(link, index) {
+      return "<div class='ctx-link ctx-" + index + "'><div class='ctx-link-title'>" + this.getLinkATag(link, this.getInnerLinkHTML(link)) + "</div></div>";
     },
 
     isDisplayContextlyLogo: function() {

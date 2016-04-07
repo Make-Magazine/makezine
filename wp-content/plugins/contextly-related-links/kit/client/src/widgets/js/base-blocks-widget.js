@@ -14,17 +14,17 @@
       Contextly.widget.TweetsRenderer
     ],
 
-    getNumberOfLinksPerSection: function() {
+    getLinksLimit: function() {
       return 6;
     },
 
     getLinksHTMLOfType: function(type) {
       var html = "";
-      var placeCounter = 0;
       var widget = this.widget;
-      var links_limit = this.getNumberOfLinksPerSection();
 
       if (widget.links && widget.links[ type ]) {
+        var placeCounter = 0;
+        var links_limit = this.getLinksLimit();
         for (var link_idx in widget.links[ type ]) {
           var link = widget.links[ type ][ link_idx ];
 
@@ -45,7 +45,7 @@
     getWidgetHTML: function() {
       var div = "";
 
-      div += "<div class='ctx-module " + this.getWidgetStyleClass() + " ctx-nodefs'>";
+      div += "<div class='" + this.escape(this.getWidgetClasses().join(' ')) + "'>";
 
       var sections = this.widget.settings.display_sections;
 
@@ -76,16 +76,6 @@
       div += "</div>";
 
       return div;
-    },
-
-    getLinkHTML: function(link, linkCounter) {
-      if (link.video) {
-        return this.getLinkHTMLVideo(link, linkCounter);
-      } else if (link.tweet) {
-        return this.getLinkHTMLTweet(link, linkCounter);
-      } else {
-        return this.getLinkHTMLNormal(link, linkCounter);
-      }
     },
 
     getLinkHTMLVideo: function(link, linkCounter) {

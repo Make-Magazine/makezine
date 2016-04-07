@@ -13,9 +13,6 @@
       Contextly.widget.Base,
       Contextly.widget.TweetsRenderer,
       Contextly.widget.ViewHandler,
-
-      // We don't use full mixin, because the actual responsiveness is handled
-      // by the Slick library. We only use it for useful functions and
       Contextly.widget.ResponsiveLayout
     ],
 
@@ -52,6 +49,7 @@
       // Slick,
       var widget_html = this.getWidgetHTML();
       this.displayHTML(widget_html);
+      this.setUpResponsiveLayout();
       this.bindTwitterEvents();
       this.setUpSlick();
 
@@ -115,6 +113,16 @@
       return html;
     },
 
+    getLayoutModes: function() {
+      return {
+        "mobile": [0, 350],
+        "1-tweet": [350, 1040],
+        "2-tweets": [1040, 1510],
+        "3-tweets": [1510, 1980],
+        "wide": [1980]
+      };
+    },
+
     setUpSlick: function() {
       this.eachElement(this.getWidgetElements(), function(widgetElement) {
         var slickElement = widgetElement.find('.ctx-tweets');
@@ -133,10 +141,6 @@
         var callback = this.proxy(this.onSlickAfterRefresh, false, true);
         slickElement.bind(this.nsEvent('refresh'), data, callback);
 
-        // On breakpoint change we manually update the layout mode.
-        callback = this.proxy(this.onSlickBreakpoint, false, true);
-        slickElement.bind(this.nsEvent('breakpoint'), data, callback);
-
         var slick = new Contextly.Slick(slickElement, {
           infinite: true,
           slidesToShow: 4,
@@ -149,25 +153,25 @@
           respondTo: 'slider',
           responsive: [
             {
-              breakpoint: 1100,
+              breakpoint: 1511,
               settings: {
                 slidesToShow: 3
               }
             },
             {
-              breakpoint: 850,
+              breakpoint: 1041,
               settings: {
                 slidesToShow: 2
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 571,
               settings: {
                 slidesToShow: 1
               }
             },
             {
-              breakpoint: 350,
+              breakpoint: 351,
               settings: {
                 slidesToShow: 1,
                 centerPadding: '8px'
@@ -199,19 +203,6 @@
 
     buildLayoutClass: function(mode) {
       return 'ctx-social-' + mode;
-    },
-
-    onSlickBreakpoint: function(e, slick, breakpoint) {
-      if (!e.data || !e.data.widgetElement) {
-        return;
-      }
-
-      if (breakpoint === 350) {
-        this.setLayoutMode(e.data.widgetElement, 'mobile');
-      }
-      else {
-        this.setLayoutMode(e.data.widgetElement, 'default');
-      }
     },
 
     getAssetsPackageName: function() {

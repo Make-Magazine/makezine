@@ -44,6 +44,9 @@
       if (s.css.text_shadow) {
         linkClasses.push('ctx-text-shadow');
       }
+      if (!Contextly.Browser.hasSvg()) {
+        linkClasses.push('ctx-no-svg');
+      }
 
       return '<a href="javascript:" class="' + this.escape(linkClasses.join(' ')) + '">'
         + '<span class="ctx-subscribe-row">'

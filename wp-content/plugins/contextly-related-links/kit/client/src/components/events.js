@@ -32,7 +32,7 @@
           event_name: name
         }, params);
 
-        Contextly.RESTClient.call('events', 'put', params);
+        Contextly.ExperienceRESTClient.call('events', 'put', params);
       }
 
     }

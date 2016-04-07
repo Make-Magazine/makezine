@@ -82,16 +82,14 @@ var exports = {
   'load': goog.bind(webFontLoader.load, webFontLoader)
 };
 
+window[WEBFONT] = exports;
+
 if (typeof define === "function" && define.amd) {
   define(function () {
     return exports;
   });
 } else if (typeof module !== "undefined" && module.exports) {
   module.exports = exports;
-} else {
-  window[WEBFONT] = exports;
-
-  if (window[WEBFONT_CONFIG]) {
-    webFontLoader.load(window[WEBFONT_CONFIG]);
-  }
+} else if (window[WEBFONT_CONFIG]) {
+  webFontLoader.load(window[WEBFONT_CONFIG]);
 }

@@ -4,7 +4,7 @@ Plugin Name: oEmbed Gist
 Plugin URI: https://github.com/miya0001/oembed-gist
 Description: Embed source from gist.github.
 Author: Takayuki Miyauchi
-Version: 1.9.0
+Version: 2.0.3
 Author URI: http://firegoby.jp/
 */
 
@@ -141,11 +141,15 @@ class gist {
 			$url = $url . '?file=' . $file;
 		}
 
-		return sprintf(
-			'<div class="oembed-gist"><script src="%s"></script><noscript>%s</noscript></div>',
-			$url,
-			$noscript
-		);
+		if( is_feed() ){
+			return $noscript;
+		}else{
+			return sprintf(
+				'<div class="oembed-gist"><script src="%s"></script><noscript>%s</noscript></div>',
+				$url,
+				$noscript
+			);
+		}
 	}
 
 	public function get_gist_regex()

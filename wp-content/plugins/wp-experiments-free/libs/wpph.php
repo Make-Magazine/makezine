@@ -1077,10 +1077,13 @@ EOT;
 	// Don't tell wordpress.org about me
 	public function __filter_parse_arr($arr, $url) {
 		if (preg_match("|api\.wordpress\.org.*update-check|", $url)) {
-			$plugins = maybe_unserialize($arr['body']['plugins']);
-			if(is_object($plugins)) {
-				unset($plugins->plugins[$this->slug]);
-				$arr['body']['plugins'] = serialize($plugins);
+			$plugins = null;
+			if(isset($arr['body']['plugins'])) {
+ 				$plugins = maybe_unserialize($arr['body']['plugins']);
+				if(is_object($plugins)) {
+					unset($plugins->plugins[$this->slug]);
+					$arr['body']['plugins'] = serialize($plugins);
+				}
 			}
 		}
 		return $arr;

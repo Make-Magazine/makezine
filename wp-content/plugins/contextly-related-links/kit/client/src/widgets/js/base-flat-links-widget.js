@@ -13,11 +13,16 @@
     getLinksHTML: function() {
       var html = "";
       if (this.hasWidgetData()) {
+        var limit = this.getLinksLimit();
         var links = this.widget.links;
         for (var i = 0; i < links.length; i++) {
+          if (limit && i >= limit) {
+            break;
+          }
+
           var link = links[i];
           if (link && link.id && link.title) {
-            html += this.getLinkHTML(link);
+            html += this.getLinkHTML(link, i + 1);
           }
         }
       }

@@ -1,7 +1,7 @@
 {
   "cdn": {
-    "http": "http://contextlysitescripts.contextly.com/kit/assets/",
-    "https": "https://c714015.ssl.cf2.rackcdn.com/kit/assets/"
+    "http": "https://rest.contextly.com/kit/assets/",
+    "https": "https://rest.contextly.com/kit/assets/"
   },
   "main": {
     "dev": "//dev.contextly.com/",
@@ -14,5 +14,9 @@
   "api": {
     "dev": "//devrest.contextly.com/",
     "live": "//rest.contextly.com/"
+  },
+  "experience": {
+    "dev": "//devexperience.contextly.com/",
+    "live": "//experience.contextly.com/"
   }
 }

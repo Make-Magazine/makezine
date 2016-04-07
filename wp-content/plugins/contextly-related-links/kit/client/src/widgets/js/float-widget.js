@@ -12,7 +12,7 @@
       return 'ctx-content-float';
     },
 
-    getNumberOfLinksPerSection: function() {
+    getLinksLimit: function() {
       return this.getSettings().links_limit;
     },
 

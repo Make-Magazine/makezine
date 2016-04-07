@@ -551,8 +551,7 @@
         if (_.slideCount <= _.options.slidesToShow) {
             _.slideOffset = 0;
         }
-
-        if (_.options.centerMode === true) {
+        else if (_.options.centerMode === true) {
             _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) - _.slideWidth;
         }
 

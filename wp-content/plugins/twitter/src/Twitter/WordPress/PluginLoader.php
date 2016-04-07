@@ -41,7 +41,7 @@ class PluginLoader
 	 *
 	 * @type string
 	 */
-	const VERSION = '1.1.0';
+	const VERSION = '1.4.0';
 
 	/**
 	 * Unique domain of the plugin's translated text
@@ -61,25 +61,27 @@ class PluginLoader
 	 */
 	public static function init()
 	{
+		$classname = get_called_class();
+
 		// load translated text
-		add_action( 'init', array( __CLASS__, 'loadTranslatedText' ) );
+		add_action( 'init', array( $classname, 'loadTranslatedText' ) );
 
 		// compatibility wrappers to coexist with other popular plugins
-		add_action( 'plugins_loaded', array( __CLASS__, 'compatibility' ) );
+		add_action( 'plugins_loaded', array( $classname, 'compatibility' ) );
 
 		// make widgets available on front and back end
-		add_action( 'widgets_init', array( __CLASS__, 'widgetsInit' ) );
+		add_action( 'widgets_init', array( $classname, 'widgetsInit' ) );
 
 		// register Twitter JavaScript to eligible for later enqueueing
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'registerScripts' ), 1, 0 );
+		add_action( 'wp_enqueue_scripts', array( $classname, 'registerScripts' ), 1, 0 );
 
 		if ( is_admin() ) {
 			// admin-specific functionality
-			add_action( 'init', array( __CLASS__, 'adminInit' ) );
+			add_action( 'init', array( $classname, 'adminInit' ) );
 		} else {
 			// hooks to be executed on general execution of WordPress such as public pageviews
-			add_action( 'init', array( __CLASS__, 'publicInit' ) );
-			add_action( 'wp_head', array( __CLASS__, 'wpHead' ), 1, 0 );
+			add_action( 'init', array( $classname, 'publicInit' ) );
+			add_action( 'wp_head', array( $classname, 'wpHead' ), 1, 0 );
 		}
 
 		// shortcodes
@@ -119,11 +121,7 @@ class PluginLoader
 	 */
 	public static function loadTranslatedText()
 	{
-		load_plugin_textdomain(
-			static::TEXT_DOMAIN,
-			false, // deprecated parameter as of WP 2.7
-			dirname( plugin_basename( static::getPluginMainFile() ) ) . '/languages' // directory location of MO files
-		);
+		load_plugin_textdomain( static::TEXT_DOMAIN );
 	}
 
 	/**
@@ -135,7 +133,15 @@ class PluginLoader
 	 */
 	public static function widgetsInit()
 	{
-		register_widget( '\Twitter\WordPress\Widgets\Follow' );
+		$features = \Twitter\WordPress\Features::getEnabledFeatures();
+
+		if ( isset( $features[ \Twitter\WordPress\Features::FOLLOW_BUTTON ] ) ) {
+			register_widget( '\Twitter\WordPress\Widgets\Follow' );
+		}
+
+		if ( isset( $features[ \Twitter\WordPress\Features::PERISCOPE_ON_AIR ] ) ) {
+			register_widget( '\Twitter\WordPress\Widgets\PeriscopeOnAir' );
+		}
 	}
 
 	/**
@@ -147,14 +153,22 @@ class PluginLoader
 	 */
 	public static function adminInit()
 	{
+		// User profile fields
+		add_action( 'admin_init', array( '\Twitter\WordPress\Admin\Profile\User', 'init' ) );
+		add_action( 'admin_init', array( '\Twitter\WordPress\Admin\Profile\PeriscopeUser', 'init' ) );
+
+		$features = \Twitter\WordPress\Features::getEnabledFeatures();
+
 		// Twitter settings menu
 		\Twitter\WordPress\Admin\Settings\Loader::init();
 
-		// Edit post meta box
-		add_action( 'admin_init', array( '\Twitter\WordPress\Admin\Post\MetaBox', 'init' ) );
-
-		// User profile fields
-		add_action( 'admin_init', array( '\Twitter\WordPress\Admin\Profile\User', 'init' ) );
+		if (
+			isset( $features[ \Twitter\WordPress\Features::CARDS ] ) ||
+			isset( $features[ \Twitter\WordPress\Features::TWEET_BUTTON ] )
+		) {
+			// Edit post meta box
+			add_action( 'admin_init', array( '\Twitter\WordPress\Admin\Post\MetaBox', 'init' ) );
+		}
 	}
 
 	/**
@@ -171,14 +185,24 @@ class PluginLoader
 			return;
 		}
 
+		$features = \Twitter\WordPress\Features::getEnabledFeatures();
+
 		// load widgets JS if a Twitter widget is active
-		if ( is_active_widget( false, false, \Twitter\WordPress\Widgets\Follow::BASE_ID, true ) ) {
+		if (
+			( isset( $features[ \Twitter\WordPress\Features::FOLLOW_BUTTON ] ) && is_active_widget( false, false, \Twitter\WordPress\Widgets\Follow::BASE_ID, true ) ) ||
+			( isset( $features[ \Twitter\WordPress\Features::PERISCOPE_ON_AIR ] ) && is_active_widget( false, false, \Twitter\WordPress\Widgets\PeriscopeOnAir::BASE_ID, true ) )
+		) {
 			// enqueue after the script is registered in wp_enqueue_scripts action priority 1
 			add_action( 'wp_enqueue_scripts', array( '\Twitter\WordPress\JavaScriptLoaders\Widgets', 'enqueue' ) );
+			add_action( 'wp_head', array( '\Twitter\WordPress\JavaScriptLoaders\Widgets', 'dnsPrefetch' ) );
 		}
 
 		// do not add content filters to HTTP 404 response
 		if ( is_404() ) {
+			return;
+		}
+
+		if ( ! isset( $features[ \Twitter\WordPress\Features::TWEET_BUTTON ] ) ) {
 			return;
 		}
 
@@ -210,47 +234,53 @@ class PluginLoader
 	 */
 	public static function registerShortcodeHandlers()
 	{
+		$features = \Twitter\WordPress\Features::getEnabledFeatures();
+		$shortcode_namespace = '\\Twitter\\WordPress\\Shortcodes\\';
+
 		// features requiring HTTPS remote requests
 		if ( wp_http_supports( array( 'ssl' => true ) ) ) {
-			// Embedded Tweet
+			foreach (
+				array(
+					\Twitter\WordPress\Features::EMBED_TWEET       => 'EmbeddedTweet',
+					\Twitter\WordPress\Features::EMBED_TWEET_VIDEO => 'EmbeddedTweetVideo',
+					\Twitter\WordPress\Features::EMBED_VINE        => 'Vine',
+					\Twitter\WordPress\Features::EMBED_TWEETS_GRID => 'TweetGrid',
+					\Twitter\WordPress\Features::EMBED_MOMENT      => 'Moment',
+				) as $feature => $shortcode_class
+			) {
+				if ( ! isset( $features[ $feature ] ) ) {
+					continue;
+				}
+
+				add_action(
+					'plugins_loaded',
+					array( $shortcode_namespace . $shortcode_class, 'init' ),
+					5,
+					0
+				);
+			}
+		}
+
+		// initialize buttons and ad pixel if not disabled
+		foreach (
+			array(
+				\Twitter\WordPress\Features::FOLLOW_BUTTON    => 'Follow',
+				\Twitter\WordPress\Features::TWEET_BUTTON     => 'Share',
+				\Twitter\WordPress\Features::PERISCOPE_ON_AIR => 'PeriscopeOnAir',
+				\Twitter\WordPress\Features::TRACKING_PIXEL   => 'Tracking',
+			) as $feature => $shortcode_class
+		) {
+			if ( ! isset( $features[ $feature ] ) ) {
+				continue;
+			}
+
 			add_action(
 				'plugins_loaded',
-				array( '\Twitter\WordPress\Shortcodes\EmbeddedTweet', 'init' ),
-				5,
-				0
-			);
-			// Twitter embedded videos
-			add_action(
-				'plugins_loaded',
-				array( '\Twitter\WordPress\Shortcodes\EmbeddedTweetVideo', 'init' ),
+				array( $shortcode_namespace . $shortcode_class, 'init' ),
 				5,
 				0
 			);
 		}
-
-		// Follow button
-		add_action(
-			'plugins_loaded',
-			array( '\Twitter\WordPress\Shortcodes\Follow', 'init' ),
-			5,
-			0
-		);
-
-		// Tweet button
-		add_action(
-			'plugins_loaded',
-			array( '\Twitter\WordPress\Shortcodes\Share', 'init' ),
-			5,
-			0
-		);
-
-		// Ad conversion and audience tracking
-		add_action(
-			'plugins_loaded',
-			array( '\Twitter\WordPress\Shortcodes\Tracking', 'init' ),
-			5,
-			0
-		);
 	}
 
 	/**
@@ -262,13 +292,17 @@ class PluginLoader
 	 */
 	public static function wpHead()
 	{
+		$features = \Twitter\WordPress\Features::getEnabledFeatures();
+
 		// Twitter Cards markup
-		add_action(
-			'wp_head',
-			array( '\Twitter\WordPress\Head\CardsMetaElements', 'outputMetaElements' ),
-			99, // late priority to override if multiple values provided
-			0 // expects no arguments
-		);
+		if ( isset( $features[ \Twitter\WordPress\Features::CARDS ] ) ) {
+			add_action(
+				'wp_head',
+				array( '\Twitter\WordPress\Head\CardsMetaElements', 'outputMetaElements' ),
+				99, // late priority to override if multiple values provided
+				0 // expects no arguments
+			);
+		}
 
 		// page-level customizations referenced by Twitter JavaScript
 		add_action(
@@ -298,10 +332,13 @@ class PluginLoader
 	 */
 	public static function registerScripts()
 	{
-		// widgets.js
+		// Twitter widgets
 		\Twitter\WordPress\JavaScriptLoaders\Widgets::register();
 
-		// ad tracker
+		// Vine embed
+		\Twitter\WordPress\JavaScriptLoaders\VineEmbed::register();
+
+		// Twitter audience tracker and conversion
 		\Twitter\WordPress\JavaScriptLoaders\Tracking::register();
 	}
 
@@ -314,6 +351,9 @@ class PluginLoader
 	 */
 	public static function compatibility()
 	{
-		\Twitter\WordPress\Cards\Compatibility::init();
+		$features = \Twitter\WordPress\Features::getEnabledFeatures();
+		if ( isset( $features[ \Twitter\WordPress\Features::CARDS ] ) ) {
+			\Twitter\WordPress\Cards\Compatibility::init();
+		}
 	}
 }

@@ -51,7 +51,12 @@
             }
           }
 
-          var content = '<div id="ctx-storyline-popup" class="ctx-overlay-dialog">'
+          var classes = [ 'ctx-overlay-dialog' ];
+          if (!Contextly.Browser.hasSvg()) {
+            classes.push('ctx-no-svg');
+          }
+
+          var content = '<div id="ctx-storyline-popup" class="' + classes.join(' ') + '">'
             + '<div class="ctx-header">'
             + '<span class="ctx-header-title">'
             + 'Follow this Storyline'
@@ -61,7 +66,10 @@
             + '<div class="ctx-message-row"></div>'
             + inputs
             + '<div class="ctx-follow-row ctx-input-row">'
-            + '<button class="ctx-follow"><span class="ctx-follow-label">Follow</span></button>'
+            + '<button class="ctx-follow">'
+            + '<div class="ctx-follow-label">Follow</div>'
+            + '<div class="ctx-icon ctx-icon-hourglass"></div>'
+            + '</button>'
             + '</div>'
             + '<div class="ctx-terms-row">'
             + "Don't worry. We <b>don't</b> spam, and <b>never</b> sell or rent addresses."
@@ -154,7 +162,7 @@
       },
 
       registerButtonClick: function() {
-        Contextly.RESTClient.call('storylines', 'button-click');
+        Contextly.ExperienceRESTClient.call('storylines', 'button-click');
       },
 
       subscribeToStoryLine: function(params) {
@@ -164,10 +172,10 @@
         params = params || {};
         var callback = this.proxy(this.onSubscribeComplete, false, true);
         if (this.isEmailConfirmed()) {
-          Contextly.RESTClient.call('storylines', 'button-click', params, callback);
+          Contextly.ExperienceRESTClient.call('storylines', 'button-click', params, callback);
         }
         else {
-          Contextly.RESTClient.call('storylines', 'subscribe', params, callback);
+          Contextly.ExperienceRESTClient.call('storylines', 'subscribe', params, callback);
         }
       },
 

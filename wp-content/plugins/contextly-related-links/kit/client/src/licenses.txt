@@ -51,3 +51,15 @@ Dual licensed under MIT and GPL.
 == Slick
 Copyright (c) 2014 Ken Wheeler | http://kenwheeler.github.io
 Licensed under the MIT license.
+
+== Modernizr
+Copyright (c)
+ Faruk Ates
+ Paul Irish
+ Alex Sexton
+ Ryan Seddon
+ Patrick Kettner
+ Stu Cox
+ Richard Herrera
+
+MIT License

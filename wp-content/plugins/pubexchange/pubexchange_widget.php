@@ -3,7 +3,7 @@
  * Plugin Name: PubExchange
  * Plugin URI: https://www.pubexchange.com
  * Description: PubExchange
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: PubExchange
  */
 
@@ -45,6 +45,9 @@ if (!class_exists('PubExchangeWP')) {
                 add_action('wp_head', array(&$this, 'pubexchange_header_meta_tags'));
                 add_action('wp_footer', array(&$this, 'pubexchange_footer_load_js'));
                 add_filter('the_content', array(&$this, 'load_pubexchange_content'));
+                if ( defined( 'INSTANT_ARTICLES_SLUG' ) ) {
+                    add_filter( 'instant_articles_content', array(&$this, 'add_pubexchange_instant_article_filter' ), 99);
+                }
             }
         }
 
@@ -164,6 +167,11 @@ if (!class_exists('PubExchangeWP')) {
             );
 
             include_once('settings.php');
+        }
+
+        function add_pubexchange_instant_article_filter( $content ) {
+            $content .= '<figure class="op-tracker"><iframe><script>(function(l,d){if (l.search.length){var m, u = {}, s = /([^&=]+)=?([^&]*)/g, q = l.search.substring(1);while (m = s.exec(q)) u[m[1]] = m[2];if (("pefbs" in u) && ("pefba" in u) && ("pefbt" in u)){var pe = d.createElement("script"); pe.type = "text/javascript"; pe.async = true;pe.src = "http://traffic.pubexchange.com/click/" + u.pefbt + "/" + u.pefbs + "/" + u.pefba;var t = d.getElementsByTagName("script")[0]; t.parentNode.insertBefore(pe, t);}}}(window.location, document));</script></iframe></figure>';
+            return $content;
         }
     }
 }

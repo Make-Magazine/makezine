@@ -3,6 +3,7 @@
 
   "base": "widgets/css/siderail",
   "css": [
+    "common",
     "default"
   ]
 }
