@@ -174,6 +174,7 @@
       if (make.gpt.scrollAds.length) {
         // Set scroll load funciton.
         make.gpt.scrollLoad();
+        $(document).scroll();
       }
       
     },
