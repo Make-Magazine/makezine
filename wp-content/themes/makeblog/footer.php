@@ -19,13 +19,7 @@
 		<div class="row social-foot-desktop hidden-xs">
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
 				<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
-				<ul class="list-unstyled">
-					<li><a href="/projects/">Make: Projects</a></li>
-					<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
-					<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
-					<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
-					<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
-				</ul>
+					<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 			</div>
 
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
@@ -35,6 +29,7 @@
 					<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
 					<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 					<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
+					<li><a href="/join/" target="_blank">Join the Community</a></li>
 				</ul>
 			</div>
 			<div class="clearfix visible-sm-block"></div>
@@ -45,7 +40,7 @@
 					<li><a href="//makermedia.com/work-with-us/advertising" target="_blank">Advertise with Us</a></li>
 					<li><a href="//makermedia.com/work-with-us/job-openings" target="_blank">Careers</a></li>
 					<li><a href="//help.makermedia.com/hc/en-us" target="_blank">Help</a></li>
-					<li><a href="//makermedia.com/privacy" target="_blank">Privacy</a></li>
+					<li><a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Make: Subscription Services</a></li>
 				</ul>
 			</div>
 
@@ -171,6 +166,7 @@
 					<div class="panel-heading" role="tab" id="heading1">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
 							<h4 class="panel-title">Make:</h4>
+							<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 						</a>
 					</div>
 					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
@@ -198,6 +194,7 @@
 								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
 								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Subscribe to Make:</a></li>
+								<li><a href="/join/" target="_blank">Join the Community</a></li>
 							</ul>
 						</div>
 					</div>
@@ -215,14 +212,13 @@
 								<li><a href="//makermedia.com/work-with-us/advertising" target="_blank">Advertise with Us</a></li>
 								<li><a href="//makermedia.com/work-with-us/job-openings" target="_blank">Careers</a></li>
 								<li><a href="//help.makermedia.com/hc/en-us" target="_blank">Help</a></li>
-								<li><a href="//makermedia.com/privacy" target="_blank">Privacy</a></li>
+								<li><a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Make: Subscription Services</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div><!-- End social-foot-mobile -->
-		<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 	</div><!-- END container -->
 	<?php echo make_copyright_footer(); ?>
 </section><!-- END new-footer -->

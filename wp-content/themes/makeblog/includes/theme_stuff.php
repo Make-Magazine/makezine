@@ -1513,7 +1513,7 @@ function make_is_parent_page() {
 function make_copyright_footer() { ?>
 	<div class="footer_copyright">
 		<div class="col-xs-12 text-center">
-			<p class="muted"><small>Make: and Maker Faire are registered trademarks of Maker Media, Inc. | <a href="<?php echo esc_url( home_url( '/sitemap/' ) ); ?>">Make: Site Map</a></small></p>
+			<p class="muted"><small>Make: and Maker Faire are registered trademarks of Maker Media, Inc. | <a href="//makermedia.com/privacy/">Privacy</a></small></p>
 			<p class="muted"><small>Copyright &copy; 2004-<?php echo date("Y") ?> Maker Media, Inc.  All rights reserved</small></p>
 		</div>
 	</div>
