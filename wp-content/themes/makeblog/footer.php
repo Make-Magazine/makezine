@@ -166,18 +166,11 @@
 					<div class="panel-heading" role="tab" id="heading1">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
 							<h4 class="panel-title">Make:</h4>
-							<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 						</a>
 					</div>
 					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
 						<div class="panel-body">
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="/projects/">Make: Projects</a></li>
-								<li><a href="/category/workshop/3d-printing-workshop/">3D Printing Projects</a></li>
-								<li><a href="/category/technology/arduino/">Arduino Projects</a></li>
-								<li><a href="/category/technology/raspberry-pi/">Raspberry Pi Projects</a></li>
-								<li><a href="https://help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Subscription Services</a></li>
-							</ul>
+							<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 						</div>
 					</div>
 				</div>
