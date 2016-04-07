@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 					
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			
@@ -31,7 +31,7 @@ get_header('version-2'); ?>
 									
 			<div class="row">
 			
-				<div class="span8">
+				<div class="col-sm-7 col-md-8">
 				
 					<article <?php post_class(); ?>>
 
@@ -47,7 +47,6 @@ get_header('version-2'); ?>
 					
 					<?php endif; ?>
 				</div>
-				
 				
 				<?php get_sidebar(); ?>
 					

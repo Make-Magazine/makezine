@@ -241,9 +241,17 @@
       .author-info, .date-time {
         display: none;
       }
+      .pe-wrapper {
+        padding-top: 15px;
+        padding-left: 15px;
+      }
       #pubexchange_rail {
         li.pe-article {
-          text-align: center;
+          text-align: left;
+          width: 50%;
+          float: left;
+          margin-bottom: 15px;
+          padding-right: 15px;
           .pe-thumb {
             float: none;
             img {
@@ -252,8 +260,12 @@
           }
         }
         .pe-title {
-          text-align: center;
+          text-align: left;
         }
+      }
+      .ad-unit .make_ad iframe {
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
@@ -275,7 +287,8 @@
       font: 500 18px / 21px Roboto, sans-serif;
     }
     .pe-headline {
-      font: 700 14px / 16px Roboto, sans-serif;
+      font: 400 14px / 16px Roboto, sans-serif;
+      color: #6d6d6d !important;
     }
     .pe-article {
       margin-bottom: 27px;

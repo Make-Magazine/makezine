@@ -168,17 +168,17 @@ class Make_Authors {
 	public function author_profile() {
 		$author = $this->get_author_data();
 		if ( $author ) : ?>
-			<div class="span4">
+			<div class="col-xs-12 col-sm-4">
 				<?php echo $this->author_avatar( $author ); ?>
 			</div>
-			<div class="span8 author-profile-bio">
+			<div class="col-xs-12 col-sm-8 author-profile-bio">
 				<h1 class="jumbo"><?php echo esc_html( $this->author_name( $author ) ); ?></h1>
 				<?php echo $this->author_bio( $author ); ?>
 				<?php echo $this->author_contact_info( $author ); ?>
 				<?php echo $this->author_urls( $author ); ?>
 			</div>
 		<?php else : ?>
-			<div class="span12 author-profile-bio">
+			<div class="col-xs-12 author-profile-bio">
 				<h1 class="jumbo">Author profile could not be found!</h1>
 			</div>
 		<?php endif; ?>
@@ -193,12 +193,12 @@ class Make_Authors {
 	 */
 	public function author_block( $author ) {
 		// Let's get this going...
-		$output = '<div class="row-fluid">';
-		$output .= '<div class="span3">';
+		$output = '<div class="row">';
+		$output .= '<div class="col-xs-12 col-sm-3">';
 		// Grab the image.
 		$output .= $this->author_avatar( $author, 198 );
 		$output .= '</div>';
-		$output .= '<div class="span9 -author-profile-bio">';
+		$output .= '<div class="col-xs-12 col-sm-9 -author-profile-bio">';
 		// Author name
 		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 

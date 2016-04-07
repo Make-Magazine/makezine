@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span8">
+				<div class="col-sm-8">
 
 					<div id="content">
 
@@ -77,8 +77,6 @@ get_header('version-2'); ?>
 					?>
 
 				</div>
-
-
 
 				<?php get_sidebar(); ?>
 
