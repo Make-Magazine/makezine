@@ -156,7 +156,6 @@
      *  loads placeholder ads if visible.
      */
     loadDyn: function($elem) {
-      console.log('loadDyn');
       $elem = !$elem || !$elem.size() ? $('.js-ad') : $elem;
       $elem.filter(':empty').each(function(){
         var $t = $(this);
