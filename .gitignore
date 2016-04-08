@@ -5,6 +5,10 @@
 *.bak
 *.swp
 Thumbs.db
+.htaccess
+node_modules
+debug.log
+config.codekit
 
 # wordpress specific
 wp-config.php
