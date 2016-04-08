@@ -1,5 +1,5 @@
 *~
-.DS_Store
+*.DS_Store
 .svn
 .cvs
 *.bak
@@ -101,3 +101,7 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
+robots.txt
+__wpe_admin_ajax.log-bak
+wp-content/srdbmaster
+wp-content/themes/makeblog/wr360_assets
