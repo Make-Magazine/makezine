@@ -1,0 +1,77 @@
+// Buttons
+.button, a.button {
+	display: inline;
+	display: inline-block;
+	text-align: center;
+	padding:10px;
+	color:#fff !important;
+	margin-top:5px;
+	margin-bottom:10px;
+	text-decoration: none;
+	background-color: #e01b23;
+	.border-radius( 5px );
+	.box-shadow( 0 5px 0 0 #8d1216 );
+	border-bottom:none;
+	&:hover {
+		background-color: #b3151b !important;
+		color:#fff !important;
+		text-decoration: none;
+	}
+	&.disabled {
+		background-color: #253740;
+		color:#84C7E5 !important;
+		.box-shadow( 0 5px 0 0 #84C7E5 );
+		&:hover {
+			color:#033978 !important;
+			background-color:#73c1e6 !important;
+		}
+	}
+	&.blue {
+		background-color: #8ed5f6;
+		border:none;
+		padding:10px;
+		color:#033978 !important;
+		font-size:24px ;
+		line-height:32px;
+		font-weight:600;
+		padding-left:20px;
+		padding-right:20px;
+		.box-shadow( 0 5px 0 0 #4d97c5 );
+		&:hover {
+			color:#033978 !important;
+			background-color:#73c1e6 !important;
+		}
+	}
+	&.green {
+		background-color: #51B926;
+		border-bottom:3px solid #316B17;
+		padding:10px;
+		color: @white;
+	}
+	&.block {
+		display: block;
+	}
+	&.big {
+		font-size:1.7em;
+		padding:12px;
+	}
+	&.small-button {
+		line-height:inherit !important;
+	}
+}
+.btn-cyan {
+    padding: 10px 8px;
+    font-size: 15px;
+    line-height: 1em;
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #3FAFED;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+.btn-cyan:hover {
+	background-color: #1490d4;
+	transition: background-color 0.2s ease;
+}

@@ -1,0 +1,1109 @@
+@import "variables";
+@import "header";
+@import "project-style";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+@import "blog";
+@import "single-story";
+@import "social-share-buttons";
+@import "sidebar";
+@import "image-carousel";
+@import "sticky-sidebar-posts-nav";
+@import "story-contextly-widget";
+
+.search-form {
+  margin-bottom: 0;
+}
+
+
+/* Bootstrap BREAKPOINT SMALL */
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+ 
+
+  .mz-featured-imageblock {
+    h2 {
+      font-size: 30px;
+      font-weight: 200;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 200;
+    }
+  }
+
+
+  /* Main Headline */
+  #headline-l.make-image div.title {
+    font-size: 30px;
+    font-weight: 200;
+    line-height: white;
+    max-width: 813px;
+    max-height: 100px;
+    margin: 0 50px 0 0;   
+    padding-bottom: 20px; // between title & subtitle
+    overflow: hidden;
+  }
+
+  // Main story subtitle
+  #headline-l.make-image div.subtitle {
+  color: white; 
+  font-size: 14px;
+  font-weight: 200;
+  max-width: 813px;
+  margin: 0 50px 0 0;   
+  padding-bottom: 0;
+  } 
+
+  #headline-rt.make-image div.subtitle,
+  #headline-rb.make-image div.subtitle {
+    color: @font-story-title-small-color;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: @font-story-title-small-line-height;
+    max-width: 384px;
+    margin: 0 50px 0 0;    
+    padding-bottom: 0;
+  }
+
+  div.col-lg-8.headline {
+    padding-right: 3px;
+  }
+  .events-panel {
+      // margin: 0 10px 0 20px;
+    }
+
+  .one-event h4 { 
+    color: #4A4A4A;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .one-event h5 {
+    color: #4A4A4A;  
+    font-size: 12px;
+    font-weight: 300;   
+    margin-top: 12px;
+    margin-bottom: 0;
+    vertical-align: baseline;
+  }
+
+  .one-event #camp-event,
+  .one-event #faire-event {
+    border-right: 1px solid @background;
+    padding-top: 15px;
+  }
+
+  // Shed Styles
+
+  li.shed-row {
+    height: auto !important;
+  }
+
+  div#shed-heading {
+    padding-left: 2px;
+    padding-right: 0;
+  }
+
+
+  #shed-heading h5 {
+    color: @font-bold-header-color;
+    font-size: @font-bold-header-size-S;
+    margin-left: 5px;
+    padding-right: 0;
+    vertical-align: middle;
+   }    
+
+  div#shed-tag {
+    padding-left: 2px;
+    padding-right: 0; 
+  }
+
+  #shed-link {
+    maring-left: 5px;
+    padding-left: 3px;
+  }
+
+  #buy-link {
+    display: none;
+  }
+
+  .link-arrow {
+    margin-left: 1px;
+    vertical-align: top;
+  }
+
+
+ // Shed Title 9-4
+  .shed-header h5 {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+    vertical-align: middle;
+  }
+
+ // Shed Tagline 9-4
+  #shed-tag h6 {
+    color: white;
+    font-size: 11px;
+    font-weight: 200;
+    text-align: left;
+    margin:12px 0 0 50px;
+    padding-left: 20px;
+    vertical-align: middle;
+  } 
+
+  // Shed buylink 9-4
+  .shed-header h6 {
+    color: white;  
+    font-size: 11px;
+    font-weight: 300;
+    padding-right: 0;
+    margin-right: 0;
+    margin-top: 12px;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  // Shed buy icon 9-4
+  .fa-external-link:before {
+    padding-left: 8px;
+  }
+
+}
+
+
+/* Bootstrap BREAKPOINT MED */
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+
+.mz-featured-imageblock {
+  h2 {
+    font-size: 35px;
+    font-weight: 200;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 200;
+  }
+}  
+
+
+  /* Main Headline */
+  #headline-l.make-image div.title {
+    color: white;
+    font-size: 35px;
+    font-weight: 200;
+    // line-height: @font-top-story-main-title-line-height;
+    max-width: 813px;
+    max-height: 100px;
+    margin: 0 50px 0 0;   
+    padding-bottom: 20px; // between title & subtitle
+    overflow: hidden;
+  }
+
+  // Main story subtitle
+  #headline-l.make-image div.subtitle {
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    max-width: 813px;
+    margin: 0 50px 0 0;   
+    padding-bottom: 0;
+  } 
+
+  #headline-rt.make-image div.subtitle,
+  #headline-rb.make-image div.subtitle {
+    color: @font-story-title-small-color;
+    font-size: @font-story-title-small-size;
+    font-weight: 300;
+    line-height: @font-story-title-small-line-height;
+    max-width: 384px;
+    margin: 0 50px 0 0;    
+    padding-bottom: 0;
+  }
+
+  div.col-lg-8.headline {
+    padding-right: 3px;
+  }
+
+  .one-event h4 {
+    color: #4A4A4A;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 0 15px 0 0;
+  }
+
+  .one-event h5 {
+    color: #4A4A4A;    
+    font-size: 12px;
+    font-weight: 300;    
+    margin-top: 12px;
+    margin-bottom: 0;  
+    vertical-align: baseline;
+  }
+
+  #shed-heading h5 {
+    color: @white;
+    font-size: 14px;
+    padding-right: 0;
+    vertical-align: middle;
+   } 
+
+  #shed-link h6 {
+    font-size: 12px;
+  } 
+
+  #shed-heading {
+      font-size: 20px;
+      padding-left: 20px;
+      padding-right: 0;
+  }
+
+   // Shed Title 9-4
+    .shed-header h5 {
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 10px 0 0 0;
+      vertical-align: middle;
+    }
+
+   // Shed Tagline 9-4
+    #shed-tag h6 {
+      color: white;
+      font-size: 12px;
+      font-weight: 200;
+      text-align: left;
+      margin:12px 0 0 50px;
+      padding-left:35px;
+      vertical-align: middle;
+    } 
+
+    // Shed buylink 9-4
+    .shed-header h6 {
+    color: white;  
+    font-size: 11px;
+    font-weight: 300;
+    padding-right: 0;
+    margin-right: 0;
+    margin-top: 12px;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  // Shed buy icon 9-4
+  .fa-external-link:before {
+    padding-left: 8px;
+ 
+  }
+
+  #buy-link {
+    display: none;
+  } 
+}
+
+
+
+/* Bootstrap BREAKPOINT LARGE */
+
+@media screen and (min-width: 1200px) {
+
+/* Main Headline */
+#headline-l.make-image div.title {
+  color: white;
+  font-size: 40px;
+  font-weight: 200;
+  // line-height: @font-top-story-main-title-line-height;
+  // max-width: 813px;
+  max-height: 100px;
+  margin: 0 50px 0 0;   
+  padding-bottom: 20px; // between title & subtitle
+  overflow: hidden;
+}
+
+  // Main story subtitle
+  #headline-l.make-image div.subtitle {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 813px;
+  margin: 0 50px 0 0;   
+  padding-bottom: 0;
+  } 
+
+  #headline-rt.make-image div.subtitle,
+  #headline-rb.make-image div.subtitle {
+    color: @font-story-title-small-color;
+    font-size: @font-story-title-small-size;
+    font-weight: 300;
+    line-height: @font-story-title-small-line-height;
+    max-width: 384px;
+    margin: 0 50px 0 0;    
+    padding-bottom: 0;
+  }
+
+  div.col-lg-8.headline {
+    padding-right: 3px;
+  }
+
+  .events-panel {
+    margin-top: 15px;
+  }
+
+  .one-event h4 {
+    color: #4A4A4A;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 0 15px 0 0;
+  }
+
+  .one-event {
+    color: #4A4A4A;    
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .one-event #camp-event,
+  .one-event #faire-event {
+    border-right: 1px solid @background;
+  }
+
+
+  #shed-heading {
+      font-size: 20px;
+      padding-left: 20px;
+      padding-right: 0;
+  }
+
+ // Shed Title 9-4
+  .shed-header h5 {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+    vertical-align: middle;
+  }
+
+ // Shed Tagline 9-4
+  #shed-tag h6 {
+    color: white;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: left;
+    margin:13px 0 0 50px;
+    padding-left: 20px;
+    vertical-align: middle;
+  } 
+
+  // Shed buylink 9-4
+  .shed-header h6 {
+  color: white;  
+  font-size: 11px;
+  font-weight: 300;
+  padding-right: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+  // Shed buy icon 9-4
+  .fa-external-link:before {
+    padding-left: 8px;
+ 
+  }
+
+  div#buy-link {
+    display: none;
+  }
+
+  .link-arrow {
+    margin-left: 10px;
+    vertical-align: top;
+  }
+}  // end of media quieries
+
+
+
+
+body {
+  background-color: @lt-gray; 
+  overflow-x: hidden; 
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+#headline-l.make-image  {
+  margin-bottom: -17px;
+  }
+
+.make-image {
+  position: relative;
+  width: 100%; 
+}
+
+.make-image h2 {
+  position: absolute;
+  bottom: 25px; 
+  left: 15px;   
+  width: 95%;
+  color: white;
+}
+
+.make-image div {
+  clear: left;
+  color: white;
+  float: left;
+}
+
+#headline-l.make-image div.title a:hover {
+  background-color: @font-top-story-main-title-color-rollover;
+}
+
+#headline-l.make-image div.subtitle a:hover {
+  background-color: @font-story-subtitle-color-rollover;
+}
+
+/*
+#headline-rt.make-image div.subtitle,
+#headline-rb.make-image div.subtitle {
+  color: @font-story-title-small-color;
+  font-size: @font-story-title-small-size;
+  font-weight: 300;
+  line-height: @font-story-title-small-line-height;
+  max-width: 384px;
+  margin: 0 50px 0 0;    
+  padding-bottom: 0;
+}
+*/
+
+#headline-rt.make-image div.subtitle a:hover,
+#headline-rb.make-image div.subtitle a:hover {
+  background-color: @font-story-title-small-color-rollover;
+}  
+
+#headline-l.make-image img.img-responsive {
+  padding-left: 0;
+}
+
+#headline-rt.make-image img.img-responsive {
+  padding-bottom: 3px;
+}
+
+
+div.col-lg-4.headline {
+  padding-left: 0;  
+}
+
+#headline-rt.make-image h3 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h3 {  
+  margin-bottom: 0;
+}
+
+
+div.violator {
+  background-color: red;
+  font-weight: 300;
+  font-size: 11px;
+  left: 15px;
+  position: absolute;
+  padding: 8px;
+  top: 15px;
+}
+
+/*
+div.camera {
+  background-color: white;
+  font-size: 11px;
+  left: 85px;
+  position: absolute;
+  padding: 8px;
+  top: 15px;
+}
+*/
+
+.fa-video-camera {
+  margin-left: 5px;
+}
+
+.fa-wrench {
+  padding-right: 5px;
+}
+
+.headline p {
+  margin-bottom: 0;
+}
+
+
+div.ad-unit {
+    margin-top: 15px;
+}
+
+.ad-lb-unit {
+  margin-top: 15px;
+}
+
+
+
+// EVENTS 
+
+.event-unit {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+#event-camp,
+#event-faire, 
+#event-sponsored {
+  padding: 1px;
+}
+
+
+/*
+.event-panel-container {
+  margin-top: 15px;
+}
+.events-panel {
+  background-color: @white;
+  margin-bottom: 20px;
+  padding: 1px;
+}
+
+.one-event {
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  &:first-child {
+    border-top: none;
+  }
+  .img-responsive {
+    margin: 0 auto;
+  }
+}
+
+#camp-event,
+#faire-event,
+#sponsored-event
+ {
+  margin: 10px;  
+  padding: 5px 5px 5px 0;
+  vertical-align: middle;
+}
+
+.one-event h4 {
+  font-size: 14px;
+  padding-top: 0;
+}
+
+.faire-text {
+}
+
+.sponsored-text {
+}
+
+.camp-text {
+  vertical-align: middle;
+}
+
+#camp-event {
+  vertical-align: middle;
+}
+
+.one-event h5 {
+  font-size: 12px;
+}  
+/*
+
+
+
+
+
+/* SHED  */
+
+.product-height {
+    height: 130px !important;
+    width: 130px !important;
+    margin-top: 20px !important;
+  }
+
+.product-wrapper {
+  background-color: @white;
+  border-bottom: 1px solid #4A4A4A;
+}
+.maker-shed {
+  margin: 0 auto;
+  margin-bottom: 20px; 
+  padding-left: 0;
+  padding-right: 0;
+}
+
+div.shed-header {
+  background-color: #4A4A4A;
+  height: 36px;
+  margin: 0;
+
+}
+
+.shed-header h5 {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 0 0 !important;
+    vertical-align: middle;
+  }
+
+/*
+.shed-header h5 {
+  color: @font-bold-header-color;
+  font-size: @font-bold-header-size-L;
+  font-style: @font-bold;
+  line-height: @font-bold-header-line-height;
+  // margin: 5px 30px 0 8px;
+  padding-right: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+*/
+
+/*
+.shed-header h6 {
+  color: @font-shed-tagline-color;
+  font-size: @font-shed-tagline-size-L;
+  font-style: 500;
+  opacity: @font-shed-tagline-opacity; 
+  text-align: right;
+  vertical-align: middle;
+}
+*/
+
+.shed-header h5 :hover {
+  background-color: @font-bold-header-color-rollover;
+}
+
+div#shed-tag {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+#shed-tag h6 {
+  margin-left: 5px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+h6.product-desc {
+  color: @font-shed-product-title-color;  
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 11px;
+  margin: 10px 0 0 0; 
+  padding: 0; 
+  text-decoration: none;
+} 
+  
+h6.product-desc a:hover {
+  background-color: @font-shed-product-title-color-rollover;
+}
+
+p.product-price {
+  color: @font-shed-product-price-color; 
+  font-size: 14px;
+  font-weight: bold;
+  line-height: @font-shed-product-price-line-height;
+  margin: 0; 
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.text-box { 
+      position: absolute; 
+      padding: 10px 5px 0 5px;
+      left: 0px; 
+      top: 150px; 
+      width: 100%;
+      height: 70px; 
+      display: table; 
+  }
+
+.text-box h6 { 
+  display: table-cell; 
+  vertical-align: top; 
+  text-align: center; 
+}
+.text-box p { 
+  display: table-cell; 
+  vertical-align: bottom; 
+  text-align: center; 
+  padding-bottom: 10px;
+}
+
+
+
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  //background-color: @font-shed-product-price-color-rollover;
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.white-panel {
+  background-color: @white;
+  margin: 0; 
+  padding-bottom: 10px;
+}
+
+.story-caption {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+div.grid-infinite div.col-lg-4  {
+}
+
+div.grid-infinite div.col-lg-4 img {
+}
+
+div.caption.post-content {
+  padding-right: 0;
+}
+
+.centered {
+  vertical-align: middle;
+}
+
+
+// STYLES ADDED BY DAVE
+.col-lg-4 .mz-featured-imageblock {
+  margin-left: 2px;
+}
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+.mz-featured-imageblock {
+  position: relative;
+  display: block;
+  border: none;
+  margin-bottom: 2px;
+  height: 224px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media all and (min-width: 768px) {
+    &.mz-imageblock-hero {
+      height: 450px;
+    }
+  }
+  /* large screen / retina display */
+  @media only screen and (min-width : 1700px) {
+    height: 349px;
+    &.mz-imageblock-hero {
+      height: 700px;
+    }
+  } 
+  h2 {
+    font-weight: 200;
+    font-size: 40px;
+  }
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #f9f9f9;
+  }
+  .featured-image-shadow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.32) 45%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(45%,rgba(0,0,0,0.32)), color-stop(100%,rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
+    transition: all 0.5s ease;
+  }
+  &:hover .featured-image-shadow {
+    height: 90%;
+    transition: all 0.5s ease;
+  }
+  .mz-text-overlay {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 15px;
+    color: #fff;
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .mz-text-overlay-side {
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 20px;
+      color: #f9f9f9;
+    }
+  }
+}
+
+
+// DUPLICATE QUOR CSS TO MERGE INTO THEIRS
+.filter-display-wrapper {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+}
+.red-box-category {
+  background-color: #f40b0b;
+  overflow: hidden;
+  float: left;
+  margin-right: 15px;
+  height: 30px;
+
+  p {
+    color: #f9f9f9;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    float: left;
+    margin: 6px 0 0 0;
+    padding: 2px 10px 2px 10px;
+    a {
+      color: #f9f9f9;
+      font-size: 12px;
+      font-weight: 400;
+      &:hover {
+        color: #CECECE;
+      }
+    }
+  }
+  .videoblock {
+    float: right;
+    background-color: #FFF;
+    padding: 6px 10px;
+    .fa {
+      color: #4a4a4a;
+      font-size: 14px;
+    }
+  }
+}
+
+/* Bootstrap BREAKPOINT XSMALL */
+
+@media screen and (max-width: 767px) {
+
+  .mz-featured-imageblock {
+    .mz-text-overlay .sponsored-title-home {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }  
+
+  .col-lg-4 .mz-featured-imageblock {
+    margin-left: 0;
+  }
+  .mz-featured-imageblock {
+    margin-bottom: 1px;
+  }
+  
+  // Main story title
+  #headline-l.make-image div.title {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    max-width: 813px;
+    margin: 0 50px 0 0;   
+    padding-bottom: 15px;
+  }
+
+  // Main story subtitle
+  #headline-l.make-image div.subtitle {
+    color: white; 
+    font-size: 12px;
+    font-weight: 200;
+    max-width: 813px;
+    margin: 0 50px 0 0;   
+    padding-bottom: 0;
+  } 
+
+  #headline-rt.make-image div.subtitle,
+  #headline-rb.make-image div.subtitle  {
+    font-size: 18px;
+    font-weight: 300;
+    // max-width: 384px;
+    // margin-left: 30px;  
+    padding-bottom: 0;
+    line-height: 21px;
+  }
+
+  #headline-rt.make-image h3 div.violator, 
+  #headline-rb.make-image h3 div.violator {
+    left: 30px;
+    margin-bottom: 0;  
+  }
+
+  #headline-rt h2 div.subtitle,
+  #headline-rb h2 div.subtitle {
+    padding-left: 20px;  
+  }
+
+  div.col-lg-8.headline {
+    padding-right: 0;
+  }
+
+  #headline-rt.make-image img.img-responsive {
+    padding-bottom: 1px;
+  }
+
+  .events-panel{
+    padding-bottom: 10px;
+  }
+
+  .one-event h4 {
+    color: #4A4A4A;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    // margin: 0 15px 0 0;
+  }
+
+  .one-event h5 {
+    color: #4A4A4A;    
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-top: 12px;
+    margin-bottom: 0;
+    vertical-align: baseline;
+  }
+
+  #camp-event,
+  #faire-event {
+    border-bottom: 1px solid @background;
+  }
+
+  /* SHED  */
+  li.shed-row {
+    height: auto;
+  }
+
+  .product-wrapper {
+    border-bottom: 1px solid #DCDCDC;
+    height: 275px;
+  }
+
+  #buy-link {
+    border-bottom: 1px solid #4A4A4A;
+  }
+
+  div#shed-heading {
+    padding-bottom: 5px;
+  }
+
+  div#shed-heading h5{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+.shed-header h5 {
+  color: @font-bold-header-color;
+  font-size: @font-bold-header-size-L;
+  font-style: @font-bold;
+  line-height: @font-bold-header-line-height;
+  padding-right: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+  .product-h-divider {
+    height: 1px;
+    border-bottom: 1px solid #DCDCDC;
+  }
+  #shed-product-1,
+  #shed-product-2 {
+    padding-bottom: 40px;
+  }
+
+  #buy-link {
+    background-color: white;
+  } 
+
+  #buy-link.row.shed-header h6{
+    font-size: 13px;
+    font-weight: 300;
+    color: #2D9CEC;
+    text-align: center;
+  }
+
+  .fa-external-link:before {
+    padding-left: 8px;
+  }
+
+  .link-arrow {
+    margin-left: 10px;
+    vertical-align: top;
+  }
+
+
+  .faire-ad {
+    display: none;
+  }
+
+ .camp-ad {
+    display: none;
+  }
+
+}

@@ -1,0 +1,190 @@
+/* Make Ad Styles */
+
+.home-ads {
+  margin-top:15px;
+  &.bottom {
+    margin-bottom:15px;
+  }
+  &:last-child {
+    margin-top: 22px;
+  }
+  & + .projects-cat {
+    margin-top: 10px;
+  }
+}
+
+.make_ad {
+	text-align: center;
+  // Align leaderboard ads on small phones.
+  div[class$="320x50"]& {
+    @media (max-width: 320px) {
+      margin-left: -20px;
+    }
+  }
+  .container-fluid div[class$="320x50"]& {
+    @media (max-width: 320px) {
+      margin-left: -35px;
+    }
+  }
+}
+// @TODO: can we remove 'overflow: hidden' reference?
+body .home-ads {
+  @media (max-width: 320px) {
+    overflow: visible;
+  }
+}
+
+.row.post_rows > .js-ad {
+	margin-top: 15px;
+}
+
+.row.ad-row {
+  margin-bottom: 15px;
+}
+
+p#ads-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  line-height: 1em;
+  padding: 3px 0 3px 0;
+  margin-top: -7px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+// Top Banner Ad
+#div-gpt-ad-664089004995786621-1 {
+  margin-top:25px;
+  margin-bottom:15px;
+  text-align:center;
+}
+#div-gpt-ad-664089004995786621-6 {
+  text-align:center;
+}
+#div-gpt-ad-664089004995786621-4 {
+  text-align:center;
+}
+
+// Landing page ads
+.row.post_rows .own_ads {
+  background-color: transparent;
+  box-shadow: none !important;
+  .own {
+    box-shadow: 0 6px 6px -7px rgba(0, 0, 0, 1), 0 -6px 6px -7px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 306px;
+  }
+}
+
+// Leaderboard ads
+.own_ads {
+  background: #FFF;
+  .own {
+    .home-ads {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Sidebar ads
+.sidebar-ad,
+.projects-ad,
+.projects-understeps-ad,
+.meta-block.ad-1,
+.meta-block.ad-2 {
+  p#ads-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Blog page ads
+.ad-refresh {
+  margin-top: 30px;
+}
+
+.sidebar {
+  .sidebar-ad,
+  .projects-ad {
+    margin-bottom: 20px;
+  }
+}
+.projects-understeps-ad {
+  margin-bottom: 20px;
+}
+//3D PRINTER BUYERS GUIDE
+// Sidebar: Square ad
+.meta-block.ad-1 {
+  border-bottom: none !important;
+  padding-bottom: 0;
+}
+
+// Gift Guide ads
+#gg2015 .gg2015-ad {
+  box-shadow: 0 6px 6px -7px rgba(0, 0, 0, 1), 0 -6px 6px -7px rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 462px;
+}
+
+// #div-gpt-ad-664089004995786621-6 {
+//  margin:auto;
+//}
+
+// Size minimum for dfp ads
+// .div-gpt-ad-664089004995786621-1  {min-height:90px;}
+// .div-gpt-ad-664089004995786621-2  {min-height:250px;}
+// .div-gpt-ad-664089004995786621-3  {min-height:250px;}
+// .div-gpt-ad-664089004995786621-4  {min-height:90px;}
+// .div-gpt-ad-664089004995786621-5  {min-height:96px;}
+// .div-gpt-ad-664089004995786621-6  {min-height:37px;}
+// .div-gpt-ad-664089004995786621-7  {min-height:125px;}
+// .div-gpt-ad-664089004995786621-9  {min-height:250px;}
+
+.canvas-ad {
+  // height: 547px;
+  // margin-bottom: -547px;
+  // top: 0px;
+  // left: 50%;
+  // margin-left: -1080px;
+  // position: relative;
+  // z-index: 1;
+  display: none;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  p#ads-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #gg2015 .gg2015-ad {
+    height: 395px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 991px) {
+  p#ads-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #gg2015 .gg2015-ad,
+  .meta-block.ad-1 {
+    height: 265px;
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  p#ads-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #gg2015 .gg2015-ad,
+  .meta-block.ad-1,
+  .row.post_rows .own_ads .own {
+    box-shadow: none;
+  }
+}

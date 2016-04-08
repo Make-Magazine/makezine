@@ -1,0 +1,183 @@
+.category-top {
+	border-bottom: 3px solid #DBDBDB;
+	padding-top:15px;
+	// Position and z-index were added for the Rasp Banner Ad. We could likely remove at some point. -JS
+	// position: relative;
+	// z-index: 1;
+	// margin: 0 auto;
+	// width: 940px;
+	h1 {
+		font-size: 38px;
+	}
+	h3 {
+		font-size: 16px;
+		text-transform: uppercase;
+		color:@red;
+	}
+	p {
+		font-size:18px;
+		line-height: 140%;
+		a {
+			color:@link-color;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a.btn {
+			color:white;
+			border-bottom:0px;
+		}
+	}
+	.pull-right {
+		a {
+			border: 0px;
+		}
+	}
+	.subs {
+		margin:0px 0px 20px;
+		ul  {
+			list-style-type: none !important		}
+		li {
+			list-style-type: none !important;
+			font-size:18px;
+			display: inline;
+			margin-right:20px;
+			a {
+				color:@link-color;
+				font-weight:normal;
+			}
+		}
+	}
+	.no_h2_styles {
+		font-size:16px;
+		display: inline;
+		line-height: 23px;
+	}
+}
+
+.grey {
+	padding:20px 0;
+	background-color: @bg-color;
+}
+
+.category {
+	.item {
+		img {
+			border:1px solid @border-color;
+			max-height: 147px;
+			width: 302px;
+			object-fit: cover;
+		}
+		h4 {
+			a {
+				color:@link-color;
+			}
+			margin:5px 0;
+		}
+		p {
+			line-height: 15px;
+			overflow:hidden;
+		}
+		.span4 {
+			height:auto;
+		}
+		.span3 {
+			height:auto;
+		}
+	}
+}
+
+@media (max-width: 979px) {
+	.category .item img {
+		max-height: 114px;
+		width: 230px;
+		object-fit: cover;
+	}
+}
+
+.icons {
+	display: block;
+	height:30px;
+	width:67px;
+	margin:0 6px -29px;
+	position: relative;
+}
+
+.video-icon {
+	.icons;
+	height:64px;
+	width:64px;
+	background: url('../img/play.png') no-repeat;
+	margin:0 auto -64px;
+	top:30px;
+}
+
+.projects-icon {
+	.icons;
+	background: url('../img/project.png') no-repeat;
+}
+
+.review-icon {
+	.icons;
+	background: url('../img/review.png') no-repeat;
+}
+
+.cat-carousel-control {
+	position: absolute;
+	top: 72px; // Changed to pixels because percentages resulted in jumping buttons :(
+	left: -20px;
+	width: 24px;
+	height: 47px;
+	margin-top: -20px;
+}
+.cat-carousel-control.right {
+	left: auto;
+	right: -24px;
+}
+
+.all {
+	color:@grey;
+}
+
+.heading {
+	color: @headings-color;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size:24px;
+}
+
+.child {
+	.grey;
+	border-top: 3px solid #DBDBDB;
+	h2 {
+		color:@headings-color;
+	}
+}
+
+.video-box {
+	padding:8px;
+	border:1px solid @border-color;
+	background-color: #fff;
+	margin-bottom:10px;
+	overflow:hidden;
+	p {
+		margin-bottom:0px;
+	}
+	a {
+		color:@link-color;
+	}
+	ul {
+		position: relative;
+		bottom:0px;
+	}
+	ul strong {
+		color:@red;
+	}
+	ul li {
+		font-weight: bold;
+	}
+}
+
+#taxonomy-image {
+	margin-top:20px;
+}

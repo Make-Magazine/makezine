@@ -1,0 +1,3 @@
+#blog-dashboard .table-sortable { cursor:pointer; }
+#blog-dashboard .table-sortable:hover { color:#0074a2; }
+#blog-dashboard .even { background:#f9f9f9; }

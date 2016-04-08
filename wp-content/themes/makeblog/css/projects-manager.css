@@ -1,0 +1,99 @@
+.step .add-step, .parts .add-part, .tools .add-tool { position:absolute; top:-33px; right:27px; z-index:1; }
+.step-wrapper, .parts-wrapper, .tools-wrapper { border:1px solid rgb(223, 223, 223); margin:.2em 0 1em; border-radius:3px; position:relative; }
+.step-wrapper h3 { cursor:inherit !important; }
+.step-contents { padding:.5em; }
+.step .steps-template, .parts .parts-template, .tools .tools-template { display:none; }
+.step-title { position:relative; cursor:move; }
+.step-title .remove-step, .part-title .remove-part, .tool-title .remove-tool { position:absolute; right:8px; top:8px; opacity:.3; cursor:pointer; }
+.step-title .remove-step:hover, .part-title .remove-part:hover, .tool-title .remove-tool:hover { opacity:1; }
+
+/***** [ Step Images ] *****/
+#image-list { width:45%; }
+#image-list .image-upload:first-child .steps-image { margin-left:0; }
+.steps-image { border:2px solid #fff; margin:0 4px; cursor:pointer; }
+.steps-image:hover, .steps-delete-hover { border:2px solid #eee; box-shadow:0 2px 3px rgba(0,0,0,.3); }
+.image-upload { position:relative; display:inline-block; }
+.image-upload .remove-image, .image-upload .view-image { position:absolute; bottom:-4px; right:3px; cursor:pointer; z-index:10; border-radius:15px; background:#ccc; padding:3px; opacity:.5; display:none; }
+.image-upload .remove-image:hover, .image-upload .view-image:hover { opacity:1; }
+.image-upload .view-image { left:-2px; border-radius:0; background:transparent; padding:0; }
+
+/***** [ Step Sub-list ] *****/
+#list { width:52%; }
+#list #project-header { font-weight:bold; }
+#list input, .parts input { margin-bottom:.5em; }
+#list textarea, .parts textarea { width:74%; min-width:74%; }
+.project-button { border:1px solid #ccc; border-radius:3px; padding:5px; vertical-align:top; cursor:pointer; }
+.project-button:hover { border:1px solid #bbb; background:#ccc; }
+.project-button.sort { cursor:move; }
+#sub-lists li.list-template { display:none; }
+.ui-state-highlight { background:#eee; border:2px dashed #ddd; height:50px; width:100%; }
+
+/****** [ Parts & Tools Manager ] *****/
+.parts label, .tools label { display:block; font-weight:bold; font-size:1.1em; }
+.parts .step-contents input, .parts .step-contents textarea, .tools .step-contents input, .tools .step-contents textarea { width:90%; font-size:1.1em; padding:5px }
+.parts .step-contents textarea { min-height:82px; }
+.tools .step-contents textarea { min-height:153px; }
+
+/****** [ Misc ] *****/
+.group:after { content:""; display:table; clear:both; }
+.two-column { width:50%; float:left; }
+.reset-list { list-style:none; padding:0; margin:0; }
+.hide { display:none; }
+
+
+/****** [ Add Some Icons! ] *****/
+@font-face {
+	font-family: 'Projects-Manager';
+	src:url('fonts/Projects-Manager.eot');
+	src:url('fonts/Projects-Manager.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Projects-Manager.woff') format('woff'),
+		url('fonts/Projects-Manager.ttf') format('truetype'),
+		url('fonts/Projects-Manager.svg#Projects-Manager') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'Projects-Manager';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.parts-ico, .tools-ico, .steps-ico {
+	font-family: 'Projects-Manager';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	margin-right:5px;
+}
+.parts-ico:before {
+	content: "\70";
+}
+.tools-ico:before {
+	content: "\74";
+}
+.steps-ico:before {
+	content: "\73";
+}
+
+/****** [ Responsive ] *****/
+@media screen and (max-width:1117px) {
+	#image-list, #list { display:block; width:100%; }
+	#image-list { margin-bottom:20px; }
+}

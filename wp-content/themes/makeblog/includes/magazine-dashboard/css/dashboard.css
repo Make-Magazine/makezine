@@ -1,0 +1,3 @@
+#magazine-dashboard .table-sortable { cursor:pointer; }
+#magazine-dashboard .table-sortable:hover { color:#0074a2; }
+#magazine-dashboard .even { background:#f9f9f9; }

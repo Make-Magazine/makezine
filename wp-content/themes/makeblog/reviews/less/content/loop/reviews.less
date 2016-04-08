@@ -1,0 +1,270 @@
+/**
+ * Single Product Review Loop Item
+ */
+
+.reviews-item {
+
+	position: relative;
+	background: white;
+	margin: @spacer 0;
+	box-sizing: border-box;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+  &.reviews-model {
+		display: none;
+  }
+
+}
+
+// Review link
+.ri-link {
+
+	display: block;
+	border: 1px solid transparent;
+	transition: all 200ms;
+	color: @black-alt;
+	position: relative;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: 0;
+		color: @grey-mid;
+		border-color: @aqua;
+	}
+
+}
+
+// Individual item cells/sections
+.ri-cell {
+
+	padding: 10px;
+	vertical-align: top;
+	float: left;
+
+	@media screen and (min-width:@mq-lg-min) {
+		padding: @spacer;
+	}
+
+	// Case: Winner Items make room for winner meta at the bottom
+	.winner & {
+		@media screen and (min-width:@mq-md-min) {
+			margin-bottom: 30px;
+		}
+	}
+
+	span {
+
+		font-size: 25px;
+
+		@media screen and (min-width:@mq-sm-min) {
+			display: block;
+			margin: 20px 0 0;
+			padding: 6px 0 16px 12px;
+			border-left: 2px dashed @review-item-border;
+		}
+
+		@media screen and (min-width: @mq-lg-min) {
+			font-size: 30px;
+		}
+
+	}
+
+	small {
+
+		display: block;
+		font-size: 10px;
+
+		@media screen and (min-width:@mq-sm-min) {
+			display: none;
+		}
+
+	}
+
+}
+
+// The feature image section
+.ri-feature-image {
+
+	width: 40%;
+	min-height: 110px;
+	text-align: center;
+	vertical-align: middle;
+
+	@media screen and (min-width: @mq-sm-min) {
+		width: 18%;
+	}
+
+	// Case: Winner Items make room for winner meta at the bottom
+	.winner & {
+		@media screen and (min-width:@mq-sm-min) {
+			margin-bottom: 0;
+		}
+	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 40%;
+		border-right: 1px solid @review-item-border;
+		z-index: 0;
+		@media screen and (min-width: @mq-sm-min) {
+			left: 18%;
+			border-right-width: 2px;
+		}
+	}
+
+	// The feature image
+	img {
+		width: auto;
+		max-height: 140px;
+	}
+	
+}
+
+// title and recommendation
+.ri-details {
+
+	width: 60%;
+	margin-bottom: 10px;
+
+	@media screen and (min-width: @mq-sm-min) {
+		position: relative;
+		width: 34%;
+		margin-bottom: 0;
+		padding-right: 0;
+	}
+
+}
+
+// Review item title
+.ri-item-title {
+
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: @font-light;
+
+	@media screen and (min-width: @mq-sm-min) {
+		font-size: 25px;
+		line-height: 1.1;
+		margin-top: 20px;
+	}
+
+	@media screen and (min-width: @mq-lg-min) {
+		font-size: 30px;
+	}
+
+}
+
+// Price cell
+.ri-price {
+
+	width: 36%;
+	border-right: 2px dashed @review-item-border;
+
+	@media screen and (min-width: @mq-sm-min) {
+		width: 17%;
+		border: 0;
+		padding-right: 0;
+	}
+
+}
+
+// Score cell
+.ri-score {
+
+	width: 24%;
+	padding-right: 0;
+
+	@media screen and (min-width: @mq-sm-min) {
+
+		width: 11%;
+		padding-right: 0;
+
+		span {
+			border-right: 2px dashed @review-item-border;
+		}
+
+	}
+
+}
+
+.ri-type {
+
+  padding-right : 0;
+
+  @media screen and (min-width : @mq-sm-min) {
+
+	span {
+	  border-right : 2px dashed @review-item-border;
+	}
+
+  }
+
+}
+
+// Badge cell
+.ri-badge {
+
+  display        : none;
+  width          : 20%;
+  padding-bottom : 16%;
+  text-align     : center;
+
+  @media screen and (min-width : @mq-sm-min) {
+	display : block;
+  }
+
+  .winner & {
+	margin-bottom   : 0;
+
+	&.printers {
+	  background : transparent url("@{reviews-template-url}/img/badge-winner-3dprinters.png") center no-repeat;
+	  background-size : 75%;
+	}
+	&.boards {
+	  background : transparent url("@{reviews-template-url}/img/badge-winner-boards.png") center no-repeat;
+	  background-size : 75%;
+	}
+  }
+
+
+}
+
+// Review item recommendation
+.ri-item-meta {
+
+	display: none;
+	position: relative;
+	font-size: 12px;
+	font-weight: @font-bold;
+	clear:both;
+	margin: -1px;
+
+	@media screen and (max-width: @mq-xs-max) {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 2px 8px;
+		text-align: right;
+		color: white;
+		background: @aqua;
+	}
+
+	@media screen and (min-width: @mq-sm-min) {
+		position: absolute;
+		bottom: 10px;
+		margin: 0;
+		left: 20%;
+		font-size: 10px;
+		color: @aqua;
+	}
+
+	// Case: Show the winner meta for winners only
+	.winner & {
+		display: block;
+	}
+
+}
