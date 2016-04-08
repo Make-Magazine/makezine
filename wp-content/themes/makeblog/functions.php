@@ -1,7 +1,6 @@
 <?php
 // Easy Custom Fields Plugin
 require_once(WP_PLUGIN_DIR . '/easy-custom-fields/easy-custom-fields.php');
-
 /*
 
 Table of Contents
