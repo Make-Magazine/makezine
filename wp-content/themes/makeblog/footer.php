@@ -160,7 +160,6 @@
 				</div><!-- end .mz-footer-subscribe -->
 			</div>
 
-
 			<div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="heading1">
