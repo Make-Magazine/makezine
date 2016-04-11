@@ -693,8 +693,8 @@ function display_thank_you_modal_if_signed_up() { ?>
                 </span>
             </div>
             <div class="col-sm-8 col-xs-12 nl-modal">
-                <h3>Thank you</h3>
-                <p>For submitting your project idea to Make: Our editors will review your project materials and follow up with you via email as soon as possible. Keep making!</p>
+                <h3>Thank you!</h3>
+                <p>Thanks for your submission. Our editors will review your materials and follow up with you via email as soon as possible. In the meantime, keep making stuff!</p>
                 <div class="social-network-container">
                     <ul class="social-network social-circle">
                         <li><a href="//www.facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
