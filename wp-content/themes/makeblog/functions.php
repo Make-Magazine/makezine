@@ -2,10 +2,8 @@
 // Easy Custom Fields Plugin
 require_once(WP_PLUGIN_DIR . '/easy-custom-fields/easy-custom-fields.php');
 /*
-
 Table of Contents
 -----------------
-
 1.  Error Reporting
 2.  WordPress.com VIP Stuff
 3.  Page Numbering
