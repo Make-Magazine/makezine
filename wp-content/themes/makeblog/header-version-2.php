@@ -11,6 +11,15 @@ global $make;
 global $wp_query;
 global $post;
 
+// remove any enqueue we don't want 
+if (!is_single())
+{
+  //Remove WebRotator Plugin Styles
+  remove_action("wp_enqueue_scripts", "add_action_webrotate_styles");
+}
+
+
+
 require_once 'version-2/includes/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 $post_per_page = 15;

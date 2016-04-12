@@ -1,65 +1,74 @@
 *~
+*.DS_Store
 .svn
-.git
-.listing
-_wpeprivate
-.cache
-.DS_Store
-.gitattributes
-.gitexcludes
+.cvs
+*.bak
+*.swp
+Thumbs.db
 .htaccess
-robots.txt
-npm-debug.log
 node_modules
+debug.log
+config.codekit
 
-# wordpress core files
-apple-touch-icon-precomposed.png
-apple-touch-icon.png
-db-config.php
-favicon.ico
-index.php
-license.txt
-readme.html
-robots.txt
-wp-activate.php
-wp-blog-header.php
-wp-comments-post.php
+# wordpress specific
 wp-config.php
-wp-cron.php
-wp-links-opml.php
-wp-load.php
-wp-login.php
-wp-mail.php
-wp-settings.php
-wp-signup.php
-wp-trackback.php
-wpcom-meta.php
-wp-config-sample.php
-xmlrpc.php
+wp-content/uploads/
+wp-content/plugins/
+wp-content/blogs.dir/
+wp-content/upgrade/*
+wp-content/backup-db/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/cache/supercache/*
 
-/wp-admin
-
-/wp-content/advanced-cache.php
-/wp-content/object-cache.php
-/wp-content/index.php
-/wp-content/mu-plugins
-/wp-content/plugins
-/wp-content/themes/twenty*
-/wp-content/themes/*/wr360_assets
-/wp-content/uploads
-/wp-content/upgrade
-
-
-# these should be removed later
-wp-content/backup.zip
+# wpengine specific
+.smushit-status
+.gitattributes
+_wpeprivate
+wp-content/object-cache.php
+wp-content/mu-plugins/mu-plugin.php
+wp-content/mu-plugins/slt-force-strong-passwords.php
+wp-content/mu-plugins/limit-login-attempts
+wp-content/mu-plugins/wpengine-common
 wp-content/mysql.sql
 
+# wp core (as of 3.4.1)
+/db-config.php
+/index.php
+/license.txt
+/readme.html
+/wp-activate.php
+/wp-app.php
+/wp-atom.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-commentsrss2.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-feed.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-rdf.php
+/wp-rss.php
+/wp-rss2.php
+/wp-pass.php
+/wp-register.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+/wp-admin
+/wp-includes
+/wp-content/index.php
+/wp-content/themes/twentyten
+/wp-content/themes/index.php
+/wp-content/plugins/index.php
 
-# WordPress debugging files
-log.txt
-debug.log
-
-# known large file types
+# large/disallowed file types
+# a CDN should be used for these
 *.hqx
 *.bin
 *.exe
@@ -92,15 +101,7 @@ debug.log
 *.asf
 *.wmv
 *.avi
-*.zip
-*.tar
-*.tgz
-*.gz
-db.php
-object-cache.php.bk
-example.html
-10th-annual-high-res.png
+robots.txt
+__wpe_admin_ajax.log-bak
 wp-content/srdbmaster
-config.codekit
-wp-content/plugins/posts-to-posts/
-wp-content/plugins/posts-to-posts/*
+wp-content/themes/makeblog/wr360_assets

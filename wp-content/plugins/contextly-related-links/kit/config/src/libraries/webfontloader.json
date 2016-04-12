@@ -1,7 +1,0 @@
-{
-  "aggregate": true,
-  "base": "libraries/webfontloader",
-  "js": [
-    "webfontloader"
-  ]
-}
