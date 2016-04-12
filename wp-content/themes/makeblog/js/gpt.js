@@ -160,7 +160,7 @@
       $elem.filter(':empty').each(function(){
         var $t = $(this);
         // Add to scrollAds.
-        if ($t.is('.scroll-load')) {
+        if ($t.is('.scroll-load') && window.make_ads_scroll_load) {
           if (make.gpt.scrollAds.indexOf($t) === -1) {
             make.gpt.scrollAds.push($t[0]);
           }
