@@ -262,13 +262,13 @@ add_action( 'customize_register', 'make_header_options' );
  */
 function make_ad_options( $wp_customize ) {
 
-  // Register our section
+  // Register our section.
   $wp_customize->add_section( 'make_ads', array(
     'title' => 'Ad Options',
     'priority' => 10
   ) );
 
-  // Register the 1x1 checkbox
+  // Register the 1x1 checkbox.
   $wp_customize->add_setting( 'make_ads_1x1_enable', array(
     'default' => '',
   ) );
@@ -279,7 +279,7 @@ function make_ad_options( $wp_customize ) {
     	'priority' => 11,
   ) );
 
-  // Register the scroll load ads checkbox
+  // Register the scroll load ads checkbox.
   $wp_customize->add_setting( 'make_ads_scroll_enable', array(
     'default' => '',
   ) );
