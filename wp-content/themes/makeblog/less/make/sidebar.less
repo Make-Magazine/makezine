@@ -35,9 +35,6 @@
 			max-width: 100px;
 		}
 	}
-	#pubexchange_rail {
-		margin-bottom: 15px;
-	}
 	.badge.badge-info {
 		display: inline;
 	}
@@ -45,9 +42,20 @@
 
 .sidebar-wrapper,
 .sidebar {
-
+  .ad-unit,
+  .sidebar-ad,
+  .widget-zone,
+  #pubexchange_rail {
+    margin-bottom: 50px;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  #ad_300x600_1 {
+  	margin-top: 0;
+  }
   .mz-sidebar-subscribe {
-  	margin-bottom: 20px;
+  	margin-bottom: 50px;
     h4 {
 		  margin-bottom: 8px;
 		  margin-top: 0;
