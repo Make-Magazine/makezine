@@ -181,9 +181,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 					</div>
 					<aside class="col-sm-7 col-md-4 sidebar">
 						<div class="author-info">
-							<?php
-							get_author_profile();
-							?>
+							<?php get_author_profile(); ?>
 						</div>
 						<div class="date-time">
 							<?php
@@ -217,6 +215,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							<?php global $make;
 							print $make->ads->ad_300x250; ?>
 						</div>
+						<?php echo do_shortcode( '[newsletter_signup_sidebar]' ); ?>
 						<div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
 						<div class="ad-unit">
 							<p id="ads-title">Advertisement</p>
