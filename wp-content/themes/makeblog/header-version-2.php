@@ -442,6 +442,7 @@ $primary_cat_dimension = $primarycat[0];
         </div>
 
         <div class="nav-guides row">
+          
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/3dprinters/" class="pull-left first-post"></a>
@@ -450,6 +451,11 @@ $primary_cat_dimension = $primarycat[0];
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/boards/" class="pull-left second-post"></a>
+            </div>
+          </div>
+          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+            <div class="nav-img-border">
+              <a href="/comparison/drones/" class="pull-left third-post"></a>
             </div>
           </div>
         </div>

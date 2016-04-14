@@ -94,7 +94,15 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					</div>
 					<div class="clearfix"><br /><br /></div>
 				<?php } 
-			} ?>
+			} else if ( $slug === 'drones' ) {
+				if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
+					<div class="clearfix"></div>
+					<div class="sidebar-wrapper">
+						<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
+					</div>
+					<div class="clearfix"><br /><br /></div>
+				<?php } 
+			}?>
 			
 			<div class="meta-block ad-2 desktop no-border">
 				<p id="ads-title">ADVERTISEMENT</p>
