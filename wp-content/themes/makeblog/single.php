@@ -214,14 +214,12 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						?>
 						<div class="ad-unit">
 							<p id="ads-title">Advertisement</p>
-							<?php global $make;
-							print $make->ads->ad_300x250; ?>
+							<div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"'></div>
 						</div>
 						<div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
 						<div class="ad-unit">
 							<p id="ads-title">Advertisement</p>
-							<?php global $make;
-							print $make->ads->ad_300x600; ?>
+							<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
 						</div>
 
 					</aside>
@@ -240,10 +238,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 </div>
 <div class="ad-unit">
-	<?php
-	global $make;
-	print $make->ads->ad_leaderboard_alt;
-	?>
+	<div class='js-ad scroll-load' data-size='[[728,90],[970,90],[320,50]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
 </div>
 
 <script type="text/javascript">
