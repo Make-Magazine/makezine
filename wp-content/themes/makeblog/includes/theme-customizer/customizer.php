@@ -181,17 +181,6 @@ function make_header_options( $wp_customize ) {
     'priority' => 1
   ) );
 
-  // Register the 1x1 checkbox
-  $wp_customize->add_setting( 'make_header_1x1_enable', array(
-    'default' => '',
-  ) );
-	$wp_customize->add_control( 'make_header_1x1_enable', array(
-    'type' => 'checkbox',
-    'label' => 'Enable 1x1 Ad Unit',
-    'section' => 'make_header',
-  	'priority' => 13,
-  ) );
-
   // Register the enable checkbox
   $wp_customize->add_setting( 'make_header_promo_enable', array(
     'default' => '',
@@ -263,3 +252,43 @@ function make_header_options( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'make_header_options' );
+
+/**
+ *
+ * Sets up the interface in the theme customizer for the takeover options
+ * @param  object $wp_customize An instance of the WP_Customize_Manager class
+ * @return void
+ *
+ */
+function make_ad_options( $wp_customize ) {
+
+  // Register our section.
+  $wp_customize->add_section( 'make_ads', array(
+    'title' => 'Ad Options',
+    'priority' => 10
+  ) );
+
+  // Register the 1x1 checkbox.
+  $wp_customize->add_setting( 'make_ads_1x1_enable', array(
+    'default' => '',
+  ) );
+  $wp_customize->add_control( 'make_ads_1x1_enable', array(
+      'type' => 'checkbox',
+      'label' => 'Enable 1x1 Ad Unit',
+      'section' => 'make_ads',
+    	'priority' => 11,
+  ) );
+
+  // Register the scroll load ads checkbox.
+  $wp_customize->add_setting( 'make_ads_scroll_enable', array(
+    'default' => '',
+  ) );
+  $wp_customize->add_control( 'make_ads_scroll_enable', array(
+      'type' => 'checkbox',
+      'label' => 'Enable Scroll Loading Ads',
+      'section' => 'make_ads',
+    	'priority' => 12,
+  ) );
+
+}
+add_action( 'customize_register', 'make_ad_options' );
