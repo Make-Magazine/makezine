@@ -153,9 +153,14 @@ if( $detect->isTablet() ){
     <?php endif; ?>
   <!-- end nativo script -->
 
-  <?php if (!empty(get_theme_mod('make_header_1x1_enable'))): ?>
+  <?php if (!empty(get_theme_mod('make_ads_1x1_enable'))): ?>
     <!-- 1x1 ad unit -->
     <?php print $make->ads->ad_1x1; ?>
+  <?php endif; ?>
+
+  <?php if (!empty(get_theme_mod('make_ads_scroll_enable'))): ?>
+    <!-- scroll loading flag -->
+    <script type="text/javascript">var make_ads_scroll_load = true;</script>
   <?php endif; ?>
 
   <script type="text/javascript">
