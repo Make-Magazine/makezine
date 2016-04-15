@@ -1208,14 +1208,14 @@ add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );
 function newsletter_signup_sidebar_shortcode() {
 	$output = '<div class="mz-sidebar-subscribe">
 							<h4>Let\'s Stay in Touch!</h4>
-							<form class="sub-form whatcounts-signup1" action="//whatcounts.com/bin/listctrl" method="POST">
+							<form class="sub-form whatcounts-signup1s" action="//whatcounts.com/bin/listctrl" method="POST">
 								<input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101"><!-- Make: Newsletter -->
 		            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543"><!-- Maker Media Newsletter -->
 		            <input type="hidden" name="multiadd" value="1">
 								<input type="hidden" name="cmd" value="subscribe">
 								<input type="hidden" name="custom_source" value="right-rail">
 								<input type="hidden" name="custom_incentive" value="none">
-								<input type="hidden" name="custom_url" value="makezine.com/">
+								<input type="hidden" name="custom_url" id="wc_custom_url" value="makezine.com/">
 								<input type="hidden" id="format_mime" name="format" value="mime">
 								<input type="hidden" name="goto" value="">
 								<input type="hidden" name="custom_host" value="makezine.com">
@@ -1226,7 +1226,12 @@ function newsletter_signup_sidebar_shortcode() {
 								</div>
 							</form>
 							<p><a href="/join">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-						</div>';
+						</div>
+						<script>
+                $(function() {
+                  $( "#wc_custom_url" ).val( window.location.href );
+                });
+            </script>';
 	return $output;
 }
 
