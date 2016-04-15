@@ -1213,7 +1213,7 @@ function newsletter_signup_sidebar_shortcode() {
 		            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543"><!-- Maker Media Newsletter -->
 		            <input type="hidden" name="multiadd" value="1">
 								<input type="hidden" name="cmd" value="subscribe">
-								<input type="hidden" name="custom_source" value="footer">
+								<input type="hidden" name="custom_source" value="right-rail">
 								<input type="hidden" name="custom_incentive" value="none">
 								<input type="hidden" name="custom_url" value="makezine.com/">
 								<input type="hidden" id="format_mime" name="format" value="mime">
