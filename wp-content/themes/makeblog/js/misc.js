@@ -159,7 +159,7 @@ jQuery(document).ready(function(){
   });
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
-    $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup2').serialize());
+    $.post('http://whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
     $('.nl-thx-p1').hide();
     $('.nl-thx-p2').show();
   });
