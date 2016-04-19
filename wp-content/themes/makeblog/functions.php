@@ -583,25 +583,14 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="nl-modal-div2">
                 <div class="col-xs-12">
-                    <?php
-                    $isSecure = "http://";
-                    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                        $isSecure = "https://";
-                    }
-                    ?>
                     <h4>You might also like these newsletters:</h4>
                     <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" name="multiadd" value="1" />
                         <input type="hidden" id="email" name="email" value="" />
+                        <input type="hidden" name="goto" value="" />
                         <input type="hidden" id="format_mime" name="format" value="mime" />
                         <input type="hidden" name="goto" value="" />
-                        <input type="hidden" name="custom_source" value="footer" />
-                        <input type="hidden" name="custom_incentive" value="none" />
-                        <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-                        <input type="hidden" id="format_mime" name="format" value="mime" />
-                        <input type="hidden" name="goto" value="" />
-                        <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 
                         <label class="list-radio pull-right">
                           <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
