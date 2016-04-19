@@ -1061,7 +1061,7 @@ function make_mf_video_highlights( $atts, $content = null ) {
 					<h3>Maker Faire NY: Live Robot Bugs! Biomimicry in Research and Development</h3>
 				</div>
 				<div class="modal-body">';
-					$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=tO1YO0TOgdE', array( 'width' => 530 ) );
+				$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=tO1YO0TOgdE', array( 'width' => 530 ) );
 				$output .= '</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -1085,7 +1085,7 @@ function make_mf_video_highlights( $atts, $content = null ) {
 					<h3>Maker Faire NY: NASA Chief Technologist Mason Peck</h3>
 				</div>
 				<div class="modal-body">';
-					$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=dC84Dm45Hr4', array( 'width' => 530 ) );
+				$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=dC84Dm45Hr4', array( 'width' => 530 ) );
 				$output .= '</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -1154,7 +1154,7 @@ function make_get_dfp_ad_unit( $atts ) {
 	$output = '<!-- Beginning Sync AdSlot ' . intval( $atts['unit'] ) . ' for Ad unit header ### size: [[300,250]]  -->';
 
 	$output .= '<div id=\'div-gpt-ad-664089004995786621-' . intval( $atts['unit'] ) . '\'>';
-		$output .= '<script type=\'text/javascript\'>googletag.cmd.push(function(){googletag.display(\'div-gpt-ad-664089004995786621-' . esc_js( intval( $atts['unit'] ) ) . '\')});</script>';
+	$output .= '<script type=\'text/javascript\'>googletag.cmd.push(function(){googletag.display(\'div-gpt-ad-664089004995786621-' . esc_js( intval( $atts['unit'] ) ) . '\')});</script>';
 	$output .= '</div>';
 	$output .= '<!-- End AdSlot ' . intval( $atts['unit'] ) . ' -->';
 	return $output;
