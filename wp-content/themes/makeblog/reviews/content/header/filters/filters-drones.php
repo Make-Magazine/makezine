@@ -38,36 +38,7 @@
 							</label>
 						</div>
 					</div>
-					<!-- .fl-recommended -->
-          <!-- '0'               => "0-600'",
-						'1'               => "601'-1200'",
-						'2'               => "1201'-3000'",
-						'3'               => "3001+", -->
-					<div class="fl-filter fl-bedstyle dropdown">
-						<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
-						        aria-expanded="false">
-							Range<i class="fa fa-chevron-down"></i>
-						</button>
-						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
-							<label for="range-0">
-								<input id="range-0" type="checkbox" name="range" value="0">
-								<span>0-600'</span>
-							</label>
-							<label for="range-1">
-								<input id="range-1" type="checkbox" name="range" value="1">
-								<span>601'-1200'</span>
-							</label>
-							<label for="range-2">
-								<input id="range-2" type="checkbox" name="range" value="2">
-								<span>1201'-3000'</span>
-							</label>
-              <label for="range-3">
-								<input id="range-3" type="checkbox" name="range" value="3">
-								<span>3001+</span>
-							</label>
-						</div>
-					</div>
-					<!-- .fl-bedstyle -->
+					
 
 				</div>
           <!-- Camera Type 'builtin' => 'Built-In',
@@ -75,18 +46,19 @@
 				<div id="more-filters" class="more-filters" aria-labelledby="fl-more-options-btn">
 					<div class="fl-group">
 
-						<div class="fl-filter fl-materials dropdown">
-							<button id="fl-materials-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
+						<div class="fl-filter fl-cameratype dropdown">
+							<button id="fl-cameratype-btn" class="dropdown-toggle btn btn-link"
+                      data-toggle="dropdown" type="button" aria-haspopup="true"
 							        aria-expanded="false">
 								Camera Type<i class="fa fa-chevron-down"></i>
 							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-materials-btn">
+							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-cameratype-btn">
 								<label for="builtin">
-									<input id="builtin" type="checkbox" name="cameratype" value="builtin">
+									<input id="builtin" type="checkbox" name="builtin" value="1">
 									<span>Built-In</span>
 								</label>
 								<label for="gopro">
-									<input id="gopro" type="checkbox" name="cameratype" value="gopro">
+									<input id="gopro" type="checkbox" name="gopro" value="1">
                   <span>GoPro</span>
 								</label>
 							</div>
@@ -157,6 +129,36 @@
 							</div>
 						</div>
 						<!-- .fl-bedstyle -->
+            <!-- .fl-recommended -->
+          <!-- '0'               => "0-600'",
+						'1'               => "601'-1200'",
+						'2'               => "1201'-3000'",
+						'3'               => "3001+", -->
+					<div class="fl-filter fl-bedstyle dropdown">
+						<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
+						        aria-expanded="false">
+							Range<i class="fa fa-chevron-down"></i>
+						</button>
+						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
+							<label for="range-0">
+								<input id="range-0" type="checkbox" name="range" value="0">
+								<span>0-600'</span>
+							</label>
+							<label for="range-1">
+								<input id="range-1" type="checkbox" name="range" value="1">
+								<span>601'-1200'</span>
+							</label>
+							<label for="range-2">
+								<input id="range-2" type="checkbox" name="range" value="2">
+								<span>1201'-3000'</span>
+							</label>
+              <label for="range-3">
+								<input id="range-3" type="checkbox" name="range" value="3">
+								<span>3001+</span>
+							</label>
+						</div>
+					</div>
+					<!-- .fl-bedstyle -->
 
 					</div>
 					<!-- .fl-group -->

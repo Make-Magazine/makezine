@@ -8,10 +8,11 @@
         $.each(label, function (_i, v) {
             var row_label = $(v);
             var scores = row_label.parent().parent().find('input');
-            var total = 0;
+            var total = 0.0;
 
             $.each(scores, function (__i, total_field) {
-                total += parseInt($(total_field).val());
+               
+                total += parseFloat($(total_field).val());
             });
 
             row_label.html(total);

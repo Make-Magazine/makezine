@@ -755,17 +755,35 @@ class Products {
 					'layout'            => 'horizontal',
 				),
           //Select Any: Built-In, GoPro
-				array(
-					'key'               => 'field_drones004',
-					'label'             => 'Camera Type',
-					'name'              => 'cameratype',
-					'type'              => 'checkbox',
+          array(
+					'key'               => 'field_drones007',
+					'label'             => 'Go Pro Camera',
+					'name'              => 'gopro',
+					'type'              => 'radio',
 					'choices'           => array(
-						'builtin'         => 'Built-In',
-						'gopro'           => 'GoPro',
+						'1' => 'Yes',
+						'0' => 'No',
 					),
+					'other_choice'      => 0,
+					'save_other_choice' => 0,
 					'default_value'     => '',
+					'layout'            => 'horizontal',
 				),
+          array(
+					'key'               => 'field_drones008',
+					'label'             => 'Built-In Camera',
+					'name'              => 'builtin',
+					'type'              => 'radio',
+					'choices'           => array(
+						'1' => 'Yes',
+						'0' => 'No',
+					),
+					'other_choice'      => 0,
+					'save_other_choice' => 0,
+					'default_value'     => '',
+					'layout'            => 'horizontal',
+				),
+				
           //Select One: 4K, Variable, 2.7K, 1080p
 				array(
 					'key'           => 'field_drones005',

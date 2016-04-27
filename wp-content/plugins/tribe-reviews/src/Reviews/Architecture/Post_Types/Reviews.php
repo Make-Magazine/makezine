@@ -450,15 +450,15 @@ class Reviews {
 		global $wpdb;
 
 		$prodcut_scores = (array) $_POST['scores'];
-
+    print_r($prodcut_scores);
 		foreach ( $prodcut_scores as $product_id => $scores ) {
 
 			$p2p_id = $wpdb->get_var( $wpdb->prepare( "Select p2p_id from $wpdb->p2p where p2p_from = %d and p2p_to = %d", $product_id, get_the_ID() ) );
 
-			$total = 0;
+			$total = 0.0;
 			foreach ( $scores as $key => $value ) {
-				p2p_update_meta( $p2p_id, $key, $value );
-				$total+=absint($value);
+       	p2p_update_meta( $p2p_id, $key, $value );
+				$total+=abs($value);
 			}
 
 			update_post_meta( $product_id, 'total_score', $total );

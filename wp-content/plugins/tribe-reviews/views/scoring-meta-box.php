@@ -25,9 +25,9 @@ foreach ( $products as $product ) {
 	foreach ( $criterias as $criteria ) {
 		$criteria = sanitize_title( array_shift( $criteria ) );
 		$value    = p2p_get_meta( $p2p_id, $criteria, true );
-		$total += absint( $value );
+		$total += abs( $value );
 		echo sprintf( '<td align="center" valign="middle"><input class="single_score_field" type="text" value="%s" name="scores[%d][%s]" size="2"/></td>',
-			absint( $value ), esc_attr( $product->ID ), esc_attr( $criteria ) );
+			abs( $value ), esc_attr( $product->ID ), esc_attr( $criteria ) );
 	}
 	echo '<td><span class="total_score_label">' . $total . '</span></td>';
 

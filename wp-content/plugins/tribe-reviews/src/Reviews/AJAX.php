@@ -124,7 +124,7 @@ class AJAX {
 				'title'     => $post->post_title,
 				'price'     => '$' . absint( get_post_meta( $post->ID, 'price_as_tested', true ) ),
 				'type'      => $this->type( $post->ID ),
-				'score'     => absint( get_post_meta( $post->ID, 'total_score', true ) ),
+				'score'     => abs( get_post_meta( $post->ID, 'total_score', true ) ),
 				'thumbnail' => get_the_post_thumbnail( $post->ID, 'medium' ),
 				'link'      => get_permalink( $post->ID ),
 				'winner'    => $this->winner( $post->ID )
