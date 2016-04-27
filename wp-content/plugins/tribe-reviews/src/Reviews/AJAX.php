@@ -148,6 +148,9 @@ class AJAX {
 			'light-and-sound'         => 'Light and Sound',
 			'home-automation'         => 'Home Automation',
 			'sub-10'                  => 'Dirt Cheap',
+      'overall'                 => 'Best Overall',
+			'beginners'               => 'Best for Beginners',
+			'hackable'                => 'Most Hackable',
 		);
 		$value  = get_field( 'winners', $post_id );
 

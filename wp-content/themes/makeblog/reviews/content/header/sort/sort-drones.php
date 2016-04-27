@@ -5,6 +5,7 @@
 ?>
 <header class="rl-header">
 	<form id="rl-sort-form" action="" class="fl-sort-list clearfix" aria-labelledby="show-sort-btn">
+
 		<div class="rl-sort">
 			<h3 class="rl-sort-header visible-xs-block">Sort By:</h3>
 			<div class="rl-sort-options">
@@ -17,7 +18,13 @@
 					<input id="price" type="radio" name="sort" value="price">
 					<span>Price <em>(Low to High)</em></span>
 				</label>
-        <span class="winner spacer"></span>
+
+				<label for="score" class="score">
+					<input id="score" type="radio" name="sort" value="score" checked>
+					<span>Score <em>(High to Low)</em></span>
+				</label>
+
+				<span class="winner spacer"></span>
 			</div>
 		</div><!-- .fl-sort -->
 
