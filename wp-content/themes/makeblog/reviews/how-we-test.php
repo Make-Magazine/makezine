@@ -29,7 +29,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			<p><?php echo get_field( 'how_we_test' ); ?></p>
 			<?php
 			$slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get_the_ID() );
-			$title = ( $slug === 'boards' ) ? 'The Make: Boards Team' : ( $slug === 'drones' ) ? 'The Make: Drones Team' : 'The Make: Digital Fabrication Team';
+			$title = 'The Make: Testing Team';
 			?>
 			<h4 class="authors-title"><?php echo $title; ?></h4>
 
