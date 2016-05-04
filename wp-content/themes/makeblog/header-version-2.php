@@ -392,6 +392,7 @@ $primary_cat_dimension = $primarycat[0];
                 <?php
                 $args = array(
                     'resize' => '370,240',
+                    'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -423,6 +424,7 @@ $primary_cat_dimension = $primarycat[0];
                 <?php
                 $args = array(
                   'resize' => '370,240',
+                  'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -497,6 +499,7 @@ $primary_cat_dimension = $primarycat[0];
                   <?php
                   $args = array(
                     'resize' => '102,102',
+                    'quality' => get_photon_img_quality(),
                   );
                   $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
                   $re = "/^(.*? src=\")(.*?)(\".*)$/m";

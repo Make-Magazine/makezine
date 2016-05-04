@@ -42,6 +42,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								<?php
 								$args = array(
 									'resize' => '370,240',
+									'quality' => get_photon_img_quality(),
 								);
 								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
 								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -73,6 +74,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								<?php
 								$args = array(
 									'resize' => '370,240',
+									'quality' => get_photon_img_quality(),
 								);
 								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
 								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -129,7 +131,10 @@ if ( user_can( $current_user, 'administrator' ) ) {
         //Hero Image
         $hero_id = get_field('hero_image');
         // Featured Image
-        $args = array('resize' => '1200,670',);
+        $args = array(
+        	'resize' => '1200,670',
+        	'quality' => get_photon_img_quality(),
+        );
         $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
         $re = "/^(.*? src=\")(.*?)(\".*)$/m";
         preg_match_all($re, $url, $matches);

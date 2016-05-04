@@ -316,7 +316,10 @@ function wpcom_vip_get_resized_remote_image_url( $url, $width, $height, $escape 
 	if ( function_exists( 'new_file_urls' ) )
 		$url = new_file_urls( $url );
 
-	$thumburl = jetpack_photon_url( $url, array( 'resize' => array( $width, $height ) ) );
+	$thumburl = jetpack_photon_url( $url, array(
+		'resize' => array( $width, $height ),
+		'quality' => get_photon_img_quality(),
+	) );
 
 	return ( $escape ) ? esc_url( $thumburl ) : $thumburl;
 }

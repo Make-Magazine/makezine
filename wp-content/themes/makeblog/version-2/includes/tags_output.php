@@ -61,12 +61,14 @@ function tags_pulling($offset=0, $tag) {
 			$bootstrap_class = 'col-md-6 col-sm-12 col-xs-12 large-card';
 			$args            = array(
 				'resize' => '397,374',
+				'quality' => get_photon_img_quality(),
 			);
 		} else {
 			$post_weight     = 1;
 			$bootstrap_class = 'col-md-3 col-sm-6 col-xs-12 small-card';
 			$args            = array(
 				'resize' => '397,374',
+				'quality' => get_photon_img_quality(),
 			);
 		}
 		$row_weight = $row_weight + $post_weight;

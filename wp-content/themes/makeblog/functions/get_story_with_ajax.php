@@ -38,7 +38,10 @@ function get_story_with_ajax() {
             //Hero Image
             $hero_id = get_field('hero_image');
             // Featured Image
-            $args = array('resize' => '1200,670',);
+            $args = array(
+                'resize' => '1200,670',
+                'quality' => get_photon_img_quality(),
+            );
             $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
             preg_match_all($re, $url, $matches);
@@ -173,7 +176,10 @@ function get_story_with_ajax2() {
             //Hero Image
             $hero_id = get_field('hero_image');
             // Featured Image
-            $args = array('resize' => '1200,670',);
+            $args = array(
+                'resize' => '1200,670',
+                'quality' => get_photon_img_quality(),
+            );
             $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
             preg_match_all($re, $url, $matches);
