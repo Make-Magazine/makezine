@@ -873,7 +873,7 @@ function the_titlesmall($before = '', $after = '', $echo = true, $length = false
 
 // Global photon image quality.
 function get_photon_img_quality() {
-    $quality = '65';
+    $quality = '55';
     return $quality;
 }
 
