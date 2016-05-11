@@ -198,8 +198,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-        <a href="/sprout-by-hp/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/hp18.jpg' ?>" class="img-responsive center-block event" alt="HP Sprout Promo" />
+        <a href="/comparison/drones/">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-drones.jpg' ?>" class="img-responsive center-block event" alt="Make Drone's Guide" />
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
