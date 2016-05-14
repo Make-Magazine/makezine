@@ -523,6 +523,18 @@ $primary_cat_dimension = $primarycat[0];
           <?php endif; ?>
           <?php wp_reset_query(); ?>
         </div>
+        <div class="nav-share row">
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/makeshowtell/" class="pull-left first-post"></a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/contribute" class="pull-left second-post"></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
