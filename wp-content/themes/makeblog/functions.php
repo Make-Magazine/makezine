@@ -897,8 +897,3 @@ function add_quantcast_tag() {
     . '<!-- End Quantcast tag -->' . "\r\n";
 }
 add_action('wp_footer', 'add_quantcast_tag', 100);
-
-
-//Remove <p> tags automatic
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
