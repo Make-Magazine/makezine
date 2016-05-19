@@ -2,13 +2,13 @@
 
 .ge-light-for-life-wrp {
   * {
-    font-family: Roboto;
-    font-size: 100%;
-    font-weight: 100;
   box-sizing: border-box;
 }
 
-
+body {
+  margin: 0;
+  font-family: Roboto;
+}
 
 h1,
 h2,
@@ -27,6 +27,7 @@ p {
   padding: 0;
 }
 
+
 img {
   max-width: 100%;
 }
@@ -42,9 +43,13 @@ Hero
 
 */
 
+.presents {
+padding-top:4em;
+}
+
 .hero,
 .submit {
-  background-image: url('/wp-content/uploads/2016/05/hero-background-v2.png');
+  background-image: url('/wp-content/uploads/2016/05/hero-background.png');
   background-size: cover;
   color: white;
   text-align: center;
@@ -109,7 +114,6 @@ Call to action
 .call {
   position: relative;
   overflow: hidden;
-   background-color: white;
 }
 
 .call h2 {
@@ -133,6 +137,7 @@ Call to action
 .call-second-wrapper {
   float: left;
   width: 50%;
+  background-color: #fff;
 }
 .call-first-wrapper {
   padding-bottom: 18%;
@@ -155,14 +160,23 @@ Call to action
 
 .call-last {
   position: absolute;
+  padding-bottom:40%;
   bottom: -7%;
   left: 0;
   width: 100%;
-  background-image: url("/wp-content/uploads/2016/05/call-group-3-v2.png");
-  background-size: 125%;
+  background-image: url("/wp-content/uploads/2016/05/call-group-3.png");
+  background-size: 100%;
   background-position: center center;
   height: 40%;
   background-repeat: no-repeat;
+}
+
+.call-last iframe, .video-container object, .video-container embed {
+  position:absolute;
+	top:25%;
+	left:25%;
+	width:50%;
+	height:50%;
 }
 
 @media (max-width: 768px) {
@@ -214,6 +228,15 @@ Getting started
   margin: 0 auto;
 }
 
+.start h3 {
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 /*
 
 First Requirement section
@@ -222,7 +245,6 @@ First Requirement section
 
 .requirements {
   text-align: center;
-   background-color: white;
 }
 
 .requirements h2 {
@@ -231,11 +253,33 @@ First Requirement section
   margin-bottom: 20px;
 }
 
+.requirements h3 {
+  font-size: 24px;
+  color: #818081;
+  line-height: 2;
+}
+
+.requirements h4 {
+  font-size: 18px;
+  color: #818081;
+  line-height: 2;
+}
+
 .requirements p {
   font-size: 14px;
   color: #818081;
   line-height: 2;
 }
+
+.subject {
+  font-size: 18px;
+  color: #818081;
+  line-height: 2;}
+
+.requirements-wrap {
+  background-color: #FFF;
+}
+
 
 .requirements-wrap ul {
   list-style-type: none;
@@ -260,28 +304,35 @@ First Requirement section
   position: absolute;
   color: #cce8ff;
   font-size: 61px;
-  top: 40%;
+  top: 23%;
   left: 30%;
   font-weight: bold;
   font-family: Roboto Slab;
 }
-.waypoint-text {
+
+.waypoint-intro {
   position: absolute;
-  top: 44%;
+  top:74%;
   left: 50%;
   text-align: left;
   width: 180px;
   max-width: 150%;
-  line-height: 2;
-  font-size: 14px;
-  
-  background-color: transparent;
-}
-.waypoint-intro {
+  line-height: 1.5;
   font-size: 18px;
   font-weight: 200;
 }
-    
+
+.waypoint-text {
+  position: absolute;
+  top: 94%;
+  left: 50%;
+  text-align: left;
+  width: 180px;
+  max-width: 150%;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
 @media (max-width: 768px) {
   .requirements-wrap li {
     margin-bottom: 2em;
@@ -309,10 +360,38 @@ Second Requirement section
   margin-bottom: 20px;
 }
 
+.timeline h4 {
+  font-size: 20px;
+  color: #efefef;
+  line-height: 2.2;
+  text-align: center;
+}
+
 .timeline p {
   font-size: 14px;
   color: #818081;
   line-height: 2;
+}
+
+.timeline a:link {
+    color: #008cff;
+    opacity: .85;
+    text-decoration: none !important;
+}
+
+.timeline a:visited {
+    color: #007ee6;
+}
+
+.timeline a:hover {
+    color: #008cff;
+    opacity: 100;
+}
+
+.timeline a:active {
+    color: #008cff;
+    opacity: .85;
+    text-decoration: none !important;
 }
 
 .stages {
@@ -349,5 +428,6 @@ Submit project
 .submit-wrapper p {
   width: auto;
 }
+
 
 }
