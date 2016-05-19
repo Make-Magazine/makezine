@@ -899,7 +899,7 @@ function add_quantcast_tag() {
 add_action('wp_footer', 'add_quantcast_tag', 100);
 
 //Removing for ge light
-if (is_page_template('ge-light-life.php'))
+if (is_page_template('page-ge-light-life.php'))
 {
   remove_filter('the_content', 'wpautop');
   remove_filter('the_excerpt', 'wpautop' );
