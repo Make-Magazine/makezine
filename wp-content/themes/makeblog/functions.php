@@ -897,3 +897,10 @@ function add_quantcast_tag() {
     . '<!-- End Quantcast tag -->' . "\r\n";
 }
 add_action('wp_footer', 'add_quantcast_tag', 100);
+
+//Removing for ge light
+if (is_page_template('ge-light-life.php'))
+{
+  remove_filter('the_content', 'wpautop');
+  remove_filter('the_excerpt', 'wpautop' );
+}
