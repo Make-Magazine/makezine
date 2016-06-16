@@ -53,8 +53,8 @@ get_header('version-2'); ?>
                         <h1><?php echo $title; ?></h1>
                         <?php if (!empty($paragraph_text)) { echo '<div class="som-slider-txt">' . $paragraph_text . '</div>'; } ?>
                         <div class="som-slider-btns">
-                          <?php if (!empty($bottom_left_cta_button_text)) { echo '<a class="som-slider-link-left">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
-                          <?php if (!empty($bottom_right_button_text)) { echo '<a class="som-slider-link-right">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
+                          <?php if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-slider-link-left">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
+                          <?php if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-slider-link-right">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
                         </div>
                       </div>
                     <?php } ?>
@@ -67,8 +67,8 @@ get_header('version-2'); ?>
                       <h1><?php echo $title; ?></h1>
                       <?php if (!empty($paragraph_text)) { echo '<div class="som-slider-txt">' . $paragraph_text . '</div>'; } ?>
                       <div class="som-slider-btns">
-                        <?php if (!empty($bottom_left_cta_button_text)) { echo '<a class="som-slider-link-left">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
-                        <?php if (!empty($bottom_right_button_text)) { echo '<a class="som-slider-link-right">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
+                        <?php if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-slider-link-left">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
+                        <?php if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-slider-link-right">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
                       </div>
                     </div>
                   <?php } ?>
@@ -117,7 +117,7 @@ get_header('version-2'); ?>
           $column_1 = get_sub_field('column_1');
           $below_cta_button_text = get_sub_field('below_cta_button_text');
           $below_cta_button_url = get_sub_field('below_cta_button_url');
-          echo '<section class="content-panel">
+          echo '<section class="som-content-panel-1">
                   <div class="container">';
 
           if(get_sub_field('above_cta_button_text')){
@@ -154,41 +154,114 @@ get_header('version-2'); ?>
 
 
       // 2 COLUMN LAYOUT
-      elseif( get_row_layout() == '2_column_photo_and_text_panel' ): 
+      elseif( get_row_layout() == '2_column' ): 
 
         $activeinactive = get_sub_field('activeinactive');
         if( $activeinactive == 'Active' ):
 
+          $image = get_sub_field('image');
+          $top_left_blue_text = get_sub_field('top_left_blue_text');
+          $top_left_blue_url = get_sub_field('top_left_blue_url');
+          $top_right_blue_text = get_sub_field('top_right_blue_text');
+          $top_right_blue_url = get_sub_field('top_right_blue_url');
+          $title = get_sub_field('title');
           $column_1 = get_sub_field('column_1');
-          $column_2 = get_sub_field('column_2');
-          $cta_button = get_sub_field('cta_button');
-          $cta_button_url = get_sub_field('cta_button_url');
-          echo '<section class="content-panel">
+          $bottom_left_cta_button_text = get_sub_field('bottom_left_cta_button_text');
+          $bottom_left_cta_button_url = get_sub_field('bottom_left_cta_button_url');
+          $bottom_right_button_text = get_sub_field('bottom_right_button_text');
+          $bottom_right_cta_button_url = get_sub_field('bottom_right_cta_button_url');
+
+          echo '<section class="som-content-panel-2">
                   <div class="container">';
 
-          if(get_sub_field('title')){
-            echo '  <div class="row">
-                      <div class="col-xs-12 text-center padbottom">
-                        <h2>' . get_sub_field('title') . '</h2>
-                      </div>
-                    </div>';
-          }
+          $image_placement = get_sub_field('image_placement');
+          if( $image_placement == 'Left' ):
 
-          echo '    <div class="row">
-                      <div class="col-sm-6">' . $column_1 . '</div>
-                      <div class="col-sm-6">' . $column_2 . '</div>
-                    </div>';
+            echo '    <div class="row">
+                        <div class="col-sm-6 som-2col-img" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>
 
-          if(get_sub_field('cta_button')){
-            echo '  <div class="row text-center padtop">
-                      <a class="btn btn-b-ghost" href="' . $cta_button_url . '">' . $cta_button . '</a>
-                    </div>';
-          }
+                        <div class="col-sm-6 som-2col-txt">';
 
-          echo '  </div>
+                          if (!empty($top_left_blue_text)) { echo '<a href="' . $top_left_blue_url . '" class="som-2col-top-l">' . $top_left_blue_text . '</a>'; }
+                          if (!empty($top_right_blue_text)) { echo '<a href="' . $top_right_blue_url . '" class="som-2col-top-r">' . $top_right_blue_text . '</a>'; }
+                          echo '<div class="clearfix"></div>';
+                          if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
+                          if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
+                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . '</a>'; }
+                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . '</a>'; }
+
+            echo '          </div>';
+
+          elseif( $image_placement == 'Right' ):
+
+            echo '    <div class="row">
+                        <div class="col-sm-6 som-2col-txt">';
+
+                          if (!empty($top_left_blue_text)) { echo '<a href="' . $top_left_blue_url . '" class="som-2col-top-l">' . $top_left_blue_text . '</a>'; }
+                          if (!empty($top_right_blue_text)) { echo '<a href="' . $top_right_blue_url . '" class="som-2col-top-r">' . $top_right_blue_text . '</a>'; }
+                          echo '<div class="clearfix"></div>';
+                          if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
+                          if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
+                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . '</a>'; }
+                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . '</a>'; }
+
+            echo '      </div>
+                        <div class="col-sm-6 som-2col-img" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>';
+
+          endif;
+
+          echo '    <div class="clearfix"></div> 
+                    </div>
+                  </div>
                 </section>';
 
         endif;
+
+
+
+
+
+      // SUMMER READS
+      elseif( get_row_layout() == 'summer_reads' ): 
+
+        $activeinactive = get_sub_field('activeinactive');
+        if( $activeinactive == 'Active' ):
+
+          $background_image = get_sub_field('background_image');
+          $top_cta_text = get_sub_field('top_cta_text');
+          $top_cta_url = get_sub_field('top_cta_url');
+          $title = get_sub_field('title');
+          $sub_title_text = get_sub_field('sub_title_text');
+          $wysiwyg_editor = get_sub_field('wysiwyg_editor');
+
+          echo '<section class="som-summer-reads" style="background: url(' . $image["url"] . ') no-repeat center center;">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3 text-center">';
+
+          if (!empty($top_cta_text)){
+            echo '      <a href="' . $top_cta_url . '" class="btn-bu-ghost">' . $top_cta_text . '</a>'; 
+          }
+
+          if (!empty($title)){
+            echo '      <h2>' . $title . '</h2>';
+          }
+
+          if (!empty($sub_title_text)){
+            echo '      <p>' . $sub_title_text . '</p>';
+          }
+
+          if (!empty($wysiwyg_editor)){
+            echo '      <div class="som-sr-wysiwyg">' . $wysiwyg_editor . '</h2>';
+          }
+
+          echo '      </div>
+                    </div>
+                  </div>
+                </section>';
+
+        endif;
+
 
 
 
@@ -257,6 +330,38 @@ get_header('version-2'); ?>
 
 
 
+      // 1 COLUMN TINT FEED
+      elseif( get_row_layout() == 'tint_feed' ): 
+
+        $activeinactive = get_sub_field('activeinactive');
+        if( $activeinactive == 'Active' ):
+
+          $column_1 = get_sub_field('column_1');
+
+          echo '<section class="com-tint">
+                  <div class="container">';
+
+          if(get_sub_field('title')){
+            echo '  <div class="row">
+                      <div class="col-xs-12 text-center padbottom">
+                        <h3>' . get_sub_field('title') . '</h3>
+                      </div>
+                    </div>';
+          }
+
+          echo '    <div class="row">
+                      <div class="col-xs-12">' . $column_1 . '</div>
+                    </div>';
+
+          echo '  </div>
+                  <div class="flag-banner"></div>
+                </section>';
+
+        endif;
+
+
+
+
     // NEWSLETTER PANEL
     elseif( get_row_layout() == 'newsletter_panel' ):
 
@@ -267,7 +372,8 @@ get_header('version-2'); ?>
           <div class="container">
             <div class="row">
               <div class="col-xs-12 col-sm-6">
-                <p><strong>Stay in Touch:</strong> Get Local and Global Maker Faire Community updates.</p>
+                <h4>Stay in the Loop</h4>
+                <p>Interesting projects and events to your inbox weekly.</p>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <form class="form-inline sub-form whatcounts-signup1" action="http://whatcounts.com/bin/listctrl" method="POST">
@@ -280,8 +386,8 @@ get_header('version-2'); ?>
                   <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
                   <input type="hidden" id="format_mime" name="format" value="mime" />
                   <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-                  <input id="wc-email" class="form-control nl-panel-input" name="email" placeholder="Enter your Email" required type="email">
-                  <input class="form-control btn-w-ghost" value="GO" type="submit">
+                  <input id="wc-email" class="form-control nl-panel-input" name="email" placeholder="Email Address" required type="email">
+                  <input class="btn-cyan" value="Yes Please" type="submit">
                 </form>
               </div>
             </div>
