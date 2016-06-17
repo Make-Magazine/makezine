@@ -171,42 +171,44 @@ get_header('version-2'); ?>
           $bottom_right_button_text = get_sub_field('bottom_right_button_text');
           $bottom_right_cta_button_url = get_sub_field('bottom_right_cta_button_url');
 
-          echo '<section class="som-content-panel-2">
-                  <div class="container">';
+          echo '<section class="som-content-panel-2">';
 
           $image_placement = get_sub_field('image_placement');
           if( $image_placement == 'Left' ):
 
-            echo '    <div class="row">
-                        <div class="col-sm-6 som-2col-img" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>
+            echo '<div class="som-2col-img-l" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>    
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-6"></div>
 
                         <div class="col-sm-6 som-2col-txt">';
 
-                          if (!empty($top_left_blue_text)) { echo '<a href="' . $top_left_blue_url . '" class="som-2col-top-l">' . $top_left_blue_text . '</a>'; }
-                          if (!empty($top_right_blue_text)) { echo '<a href="' . $top_right_blue_url . '" class="som-2col-top-r">' . $top_right_blue_text . '</a>'; }
+                          if (!empty($top_left_blue_text)) { echo '<span class="som-2col-top-l">' . $top_left_blue_text . '</span>'; }
+                          if (!empty($top_right_blue_text)) { echo '<span class="som-2col-top-r">' . $top_right_blue_text . '</span>'; }
                           echo '<div class="clearfix"></div>';
                           if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
                           if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
-                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . '</a>'; }
-                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . '</a>'; }
+                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
 
-            echo '          </div>';
+            echo '      </div>';
 
           elseif( $image_placement == 'Right' ):
 
-            echo '    <div class="row">
+            echo '<div class="som-2col-img-r" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>    
+                    <div class="container">
+                      <div class="row">
                         <div class="col-sm-6 som-2col-txt">';
 
-                          if (!empty($top_left_blue_text)) { echo '<a href="' . $top_left_blue_url . '" class="som-2col-top-l">' . $top_left_blue_text . '</a>'; }
-                          if (!empty($top_right_blue_text)) { echo '<a href="' . $top_right_blue_url . '" class="som-2col-top-r">' . $top_right_blue_text . '</a>'; }
+                          if (!empty($top_left_blue_text)) { echo '<span class="som-2col-top-l">' . $top_left_blue_text . '</span>'; }
+                          if (!empty($top_right_blue_text)) { echo '<span class="som-2col-top-r">' . $top_right_blue_text . '</span>'; }
                           echo '<div class="clearfix"></div>';
                           if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
                           if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
-                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . '</a>'; }
-                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . '</a>'; }
+                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
 
-            echo '      </div>
-                        <div class="col-sm-6 som-2col-img" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>';
+            echo '      </div>';
 
           endif;
 
@@ -318,9 +320,9 @@ get_header('version-2'); ?>
                   </div>';
           }
 
-          echo '<div class="col-xs-12 padtop padbottom text-center">
-                  <a class="btn-cyan" href="/blog">More News</a>
-                </div>';
+          // echo '<div class="col-xs-12 padtop padbottom text-center">
+          //         <a class="btn-cyan" href="/blog">More News</a>
+          //       </div>';
 
           echo '</div></div></section>';
 
@@ -377,11 +379,11 @@ get_header('version-2'); ?>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <form class="form-inline sub-form whatcounts-signup1" action="http://whatcounts.com/bin/listctrl" method="POST">
-                  <input type="hidden" name="slid_1" value="6B5869DC547D3D46E66DEF1987C64E7A" /><!-- Maker Faire Newsletter -->
+                  <input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Make: Newsletter -->
                   <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
                   <input type="hidden" name="multiadd" value="1" />
                   <input type="hidden" name="cmd" value="subscribe" />
-                  <input type="hidden" name="custom_source" value="footer" />
+                  <input type="hidden" name="custom_source" value="Summer of Making" />
                   <input type="hidden" name="custom_incentive" value="none" />
                   <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
                   <input type="hidden" id="format_mime" name="format" value="mime" />
@@ -407,29 +409,6 @@ get_header('version-2'); ?>
           </div>
           <div class="clearfix"></div>
         </div>
-
-        <script>
-          jQuery(document).ready(function(){
-            jQuery(".fancybox-thx").fancybox({
-              autoSize : false,
-              width  : 400,
-              autoHeight : true,
-              padding : 0,
-              afterLoad   : function() {
-                this.content = this.content.html();
-              }
-            });
-            jQuery(document).on('submit', '.whatcounts-signup1', function (e) {
-              e.preventDefault();
-              var bla = jQuery('#wc-email').val();
-              globalNewsletterSignup(bla);
-              jQuery.post('http://whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup1').serialize());
-              jQuery('.fancybox-thx').trigger('click');
-              //jQuery('.nl-modal-email-address').text(bla);
-              //jQuery('.whatcounts-signup2 #email').val(bla);
-            });
-          });
-        </script>
       <?php endif;
 
 

@@ -233,10 +233,11 @@
     p {
       color: #231f20;
       font-size: 16px;
+      font-weight: 300;
       margin-bottom: 0;
     }
     form {
-      margin-top: 30px;
+      margin-top: 20px;
       margin-bottom: 0;
       @media (max-width:1199px) {
         margin-top: 18px;
@@ -251,6 +252,11 @@
           margin-right: 0;
           max-width: none;
           margin-bottom: 15px;
+        }
+      }
+      .btn-cyan {
+        @media (max-width:767px) {
+          width: 100%;
         }
       }
     }
@@ -286,6 +292,30 @@
 
   // 2 Column Panel
   .som-content-panel-2 {
+    position: relative;
+    .som-2col-img-l {
+      background-size: cover !important;
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      @media (max-width:767px) {
+        height: 50vw;
+        width: 100%;
+        position: static;
+      }
+    }
+    .som-2col-img-r {
+      background-size: cover !important;
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      right: 0;
+      @media (max-width:767px) {
+        height: 50vw;
+        width: 100%;
+        position: static;
+      }
+    }
     .row {
       height: 400px;
       overflow: hidden;
@@ -296,13 +326,8 @@
         height: 300px;
       }
       @media (max-width:767px) {
-        height: 200px;
+        height: auto;
       }
-    }
-    .som-2col-img {
-      background-size: cover !important;
-      padding: 0;
-      height: 100%;
     }
     .som-2col-txt {
       text-align: center;
@@ -324,12 +349,18 @@
         font-size: 42px;
         color: #231f20;
         margin-bottom: 15px;
+        @media (max-width:1199px) {
+          font-size: 30px;
+        }
       }
       .som-2col-wyswyg {
         font-size: 16px;
         font-weight: 300;
         color: #231f20;
         margin-bottom: 20px;
+        @media (max-width:1199px) {
+          font-size: 14px;
+        }
       }
       .som-2col-bot-l,
       .som-2col-bot-r {

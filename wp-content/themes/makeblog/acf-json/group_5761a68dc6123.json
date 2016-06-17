@@ -450,22 +450,6 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5761bdaca8ee7",
-                            "label": "Top Left Blue URL",
-                            "name": "top_left_blue_url",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 50,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
-                        },
-                        {
                             "key": "field_5761bdd4a8ee8",
                             "label": "Top Right Blue Text",
                             "name": "top_right_blue_text",
@@ -485,22 +469,6 @@
                             "maxlength": "",
                             "readonly": 0,
                             "disabled": 0
-                        },
-                        {
-                            "key": "field_5761bdeca8ee9",
-                            "label": "Top Right Blue URL",
-                            "name": "top_right_blue_url",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 50,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
                         },
                         {
                             "key": "field_5761bca2a8ee0",
@@ -955,5 +923,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466110000
+    "modified": 1466122101
 }
