@@ -239,7 +239,7 @@ get_header('version-2'); ?>
           $sub_title_text = get_sub_field('sub_title_text');
           $wysiwyg_editor = get_sub_field('wysiwyg_editor');
 
-          echo '<section class="som-summer-reads" style="background: url(' . $image["url"] . ') no-repeat center center;">
+          echo '<section class="som-summer-reads" style="background: url(' . $background_image["url"] . ') no-repeat center center;">
                   <div class="container">
                     <div class="row">
                       <div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3 text-center">';
@@ -278,18 +278,12 @@ get_header('version-2'); ?>
         $activeinactive = get_sub_field('activeinactive');
         if( $activeinactive == 'Active' ):
 
-          $args = array( 'numberposts' => 4, 'post_status' => 'publish' );
+          $args = array(
+            'tag' => 'summer of making',
+            'numberposts' => 4, 
+            'post_status' => 'publish' 
+          );
           $recent_posts = wp_get_recent_posts( $args );
-
-          // Get the blog template page ID
-          $news_pages = get_pages(array(
-            'meta_key' => '_wp_page_template',
-            'meta_value' => 'blog.php'
-          ));
-          foreach($news_pages as $news_page){
-            $news_ID = $news_page->ID;
-          }
-          $news_slug = get_post( $news_ID )->post_name;
 
           echo '<section class="recent-post-panel"><div class="container">';
 
@@ -363,6 +357,51 @@ get_header('version-2'); ?>
                 </section>';
 
         endif;
+
+
+
+
+      // 3 Column Images
+      elseif( get_row_layout() == '3_column_images' ):
+
+        $panel_title = get_sub_field('panel_title');
+        $left_image = get_sub_field('left_image');
+        $left_image_url = get_sub_field('left_image_url');
+        $middle_image = get_sub_field('middle_image');
+        $middle_image_url = get_sub_field('middle_image_url');
+        ?>
+
+          <aside class="fom-panel">
+            <div class="container">
+
+              <?php if(!empty($panel_title)){
+                echo '  <div class="row">
+                          <div class="col-xs-12 text-center padbottom">
+                            <h2>' . $panel_title . '</h2>
+                          </div>
+                        </div>';
+              } ?>
+
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 text-center">
+                  <?php if (!empty($left_image_url)) { echo '<a href="' . $left_image_url . '">'; } ?>
+                    <img src="<?php echo $left_image['url']; ?>" alt="<?php echo $left_image['alt']; ?>" class="img-responsive" />
+                  <?php if (!empty($left_image_url)) { echo '</a>'; } ?>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 text-center">
+                  <?php if (!empty($middle_image_url)) { echo '<a href="' . $middle_image_url . '">'; } ?>
+                    <img src="<?php echo $middle_image['url']; ?>" alt="<?php echo $middle_image['alt']; ?>" class="img-responsive" />
+                  <?php if (!empty($middle_image_url)) { echo '</a>'; } ?>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 text-center house-ad">
+
+                  <!-- ad goes here -->
+
+                </div>
+              </div>
+            </div>
+          </aside> <?php
+
 
 
 
