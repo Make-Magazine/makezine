@@ -170,6 +170,7 @@ get_header('version-2'); ?>
           $bottom_left_cta_button_url = get_sub_field('bottom_left_cta_button_url');
           $bottom_right_button_text = get_sub_field('bottom_right_button_text');
           $bottom_right_cta_button_url = get_sub_field('bottom_right_cta_button_url');
+          $bottom_sponsors = get_sub_field('bottom_sponsors');
 
           echo '<section class="som-content-panel-2">';
 
@@ -177,7 +178,7 @@ get_header('version-2'); ?>
           if( $image_placement == 'Left' ):
 
             echo '<div class="som-2col-img-l" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>    
-                    <div class="container">
+                    <div class="">
                       <div class="row">
                         <div class="col-sm-6"></div>
 
@@ -190,13 +191,14 @@ get_header('version-2'); ?>
                           if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
                           if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
                           if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                          if (!empty($bottom_sponsors)) { echo '<div class="som-2col-bottom_sponsors">' . $bottom_sponsors . '</div>'; }
 
             echo '      </div>';
 
           elseif( $image_placement == 'Right' ):
 
             echo '<div class="som-2col-img-r" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>    
-                    <div class="container">
+                    <div class="">
                       <div class="row">
                         <div class="col-sm-6 som-2col-txt">';
 
@@ -207,6 +209,7 @@ get_header('version-2'); ?>
                           if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
                           if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
                           if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                          if (!empty($bottom_sponsors)) { echo '<div class="som-2col-bottom_sponsors">' . $bottom_sponsors . '</div>'; }
 
             echo '      </div>';
 
@@ -341,7 +344,7 @@ get_header('version-2'); ?>
           $column_1 = get_sub_field('column_1');
 
           echo '<section class="com-tint">
-                  <div class="container">';
+                  <div class="">';
 
           if(get_sub_field('title')){
             echo '  <div class="row">

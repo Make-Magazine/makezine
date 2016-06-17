@@ -582,6 +582,24 @@
                             },
                             "default_value": "",
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_57634a0748716",
+                            "label": "Bottom Sponsors",
+                            "name": "bottom_sponsors",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
                         }
                     ],
                     "min": "",
@@ -923,5 +941,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466122101
+    "modified": 1466125408
 }
