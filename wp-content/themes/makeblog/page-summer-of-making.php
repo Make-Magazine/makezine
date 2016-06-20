@@ -279,7 +279,7 @@ get_header('version-2'); ?>
         if( $activeinactive == 'Active' ):
 
           $args = array(
-            'tag' => 'summer of making',
+            'tag' => 'summer-of-making',
             'numberposts' => 4, 
             'post_status' => 'publish' 
           );
