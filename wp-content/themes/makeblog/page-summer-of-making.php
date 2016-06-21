@@ -113,7 +113,6 @@ get_header('version-2'); ?>
         if( $activeinactive == 'Active' ):
 
           $above_cta_button_text = get_sub_field('above_cta_button_text');
-          $above_cta_button_url = get_sub_field('above_cta_button_url');
           $column_1 = get_sub_field('column_1');
           $below_cta_button_text = get_sub_field('below_cta_button_text');
           $below_cta_button_url = get_sub_field('below_cta_button_url');
@@ -122,7 +121,7 @@ get_header('version-2'); ?>
 
           if(get_sub_field('above_cta_button_text')){
             echo '  <div class="row text-center som-column1-top-btn">
-                      <a class="btn-bu-ghost" href="' . $above_cta_button_url . '">' . $above_cta_button_text . '</a>
+                      <h3>' . $above_cta_button_text . '</h3>
                     </div>';
           }
 
@@ -234,7 +233,6 @@ get_header('version-2'); ?>
 
           $background_image = get_sub_field('background_image');
           $top_cta_text = get_sub_field('top_cta_text');
-          $top_cta_url = get_sub_field('top_cta_url');
           $title = get_sub_field('title');
           $sub_title_text = get_sub_field('sub_title_text');
           $wysiwyg_editor = get_sub_field('wysiwyg_editor');
@@ -245,7 +243,7 @@ get_header('version-2'); ?>
                       <div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3 text-center">';
 
           if (!empty($top_cta_text)){
-            echo '      <a href="' . $top_cta_url . '" class="btn-bu-ghost">' . $top_cta_text . '</a>'; 
+            echo '      <h3>' . $top_cta_text . '</h3>';
           }
 
           if (!empty($title)){

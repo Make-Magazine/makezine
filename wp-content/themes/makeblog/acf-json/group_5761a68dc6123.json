@@ -238,6 +238,27 @@
                             "layout": "horizontal"
                         },
                         {
+                            "key": "field_5761ba4c2fe57",
+                            "label": "Top title with border",
+                            "name": "above_cta_button_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
                             "key": "field_5761b99f2fe52",
                             "label": "Title",
                             "name": "title",
@@ -275,43 +296,6 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1
-                        },
-                        {
-                            "key": "field_5761ba4c2fe57",
-                            "label": "Above CTA Button Text",
-                            "name": "above_cta_button_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_5761ba5d2fe58",
-                            "label": "Above CTA Button URL",
-                            "name": "above_cta_button_url",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
                         },
                         {
                             "key": "field_5761b9f62fe54",
@@ -659,7 +643,7 @@
                         },
                         {
                             "key": "field_5763069d1a5d5",
-                            "label": "Top CTA text",
+                            "label": "Top title with border",
                             "name": "top_cta_text",
                             "type": "text",
                             "instructions": "",
@@ -677,22 +661,6 @@
                             "maxlength": "",
                             "readonly": 0,
                             "disabled": 0
-                        },
-                        {
-                            "key": "field_5763069d1a5d6",
-                            "label": "Top CTA URL",
-                            "name": "top_cta_url",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 50,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
                         },
                         {
                             "key": "field_5763069d1a5d3",
@@ -1052,5 +1020,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466190580
+    "modified": 1466535358
 }
