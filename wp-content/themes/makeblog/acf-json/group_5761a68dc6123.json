@@ -1,6 +1,6 @@
 {
     "key": "group_5761a68dc6123",
-    "title": "Summer of Making Panels",
+    "title": "Landing Page Panels",
     "fields": [
         {
             "key": "field_5761b8012fe50",
@@ -212,7 +212,7 @@
                 {
                     "key": "5761b8c6c08be",
                     "name": "1_column",
-                    "label": "1 Column",
+                    "label": "1 Column (blue bg)",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -333,6 +333,143 @@
                             },
                             "default_value": "",
                             "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5763069d1a5d1",
+                    "name": "summer_reads",
+                    "label": "1 Column (image bg)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5763069d1a5d2",
+                            "label": "Active\/Inactive",
+                            "name": "activeinactive",
+                            "type": "radio",
+                            "instructions": "Activate or Inactivate this panel",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Active": "Active",
+                                "Inactive": "Inactive"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "Active",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_5763084d823d6",
+                            "label": "Background Image",
+                            "name": "background_image",
+                            "type": "image",
+                            "instructions": "This image will be used as the background of this panel.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5763069d1a5d5",
+                            "label": "Top title with border",
+                            "name": "top_cta_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5763069d1a5d3",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5763070c1a5d9",
+                            "label": "Sub title text",
+                            "name": "sub_title_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5763069d1a5d4",
+                            "label": "WYSIWYG Editor",
+                            "name": "wysiwyg_editor",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
                         }
                     ],
                     "min": "",
@@ -590,143 +727,6 @@
                     "max": ""
                 },
                 {
-                    "key": "5763069d1a5d1",
-                    "name": "summer_reads",
-                    "label": "Summer Reads",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5763069d1a5d2",
-                            "label": "Active\/Inactive",
-                            "name": "activeinactive",
-                            "type": "radio",
-                            "instructions": "Activate or Inactivate this panel",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "Active": "Active",
-                                "Inactive": "Inactive"
-                            },
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "Active",
-                            "layout": "horizontal"
-                        },
-                        {
-                            "key": "field_5763084d823d6",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
-                            "instructions": "This image will be used as the background of this panel.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_5763069d1a5d5",
-                            "label": "Top title with border",
-                            "name": "top_cta_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 50,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_5763069d1a5d3",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_5763070c1a5d9",
-                            "label": "Sub title text",
-                            "name": "sub_title_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_5763069d1a5d4",
-                            "label": "WYSIWYG Editor",
-                            "name": "wysiwyg_editor",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
                     "key": "5761bc10a8ed6",
                     "name": "tint_feed",
                     "label": "Tint Feed",
@@ -832,6 +832,27 @@
                             "type": "text",
                             "instructions": "",
                             "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_57717ccd634aa",
+                            "label": "Tag slug",
+                            "name": "tag",
+                            "type": "text",
+                            "instructions": "Enter the tag slug here to pull the posts from. The tag slug would be something like summer-of-making, this is different from tag name which would be something like \"summer of making\". You can find the list of slugs here http:\/\/makezine.com\/wp-admin\/edit-tags.php?taxonomy=post_tag",
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -1001,7 +1022,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-summer-of-making.php"
+                "value": "page-landing-page-builder.php"
             }
         ]
     ],
@@ -1020,5 +1041,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466535358
+    "modified": 1467055685
 }

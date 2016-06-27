@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Summer of Making
+ * Template Name: Landing page(build your own)
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
@@ -225,7 +225,7 @@ get_header('version-2'); ?>
 
 
 
-      // SUMMER READS
+      // 1 column with bg image
       elseif( get_row_layout() == 'summer_reads' ): 
 
         $activeinactive = get_sub_field('activeinactive');
@@ -276,8 +276,10 @@ get_header('version-2'); ?>
         $activeinactive = get_sub_field('activeinactive');
         if( $activeinactive == 'Active' ):
 
+          $tag = get_sub_field('tag');
+
           $args = array(
-            'tag' => 'summer-of-making',
+            'tag' => $tag,
             'numberposts' => 4, 
             'post_status' => 'publish' 
           );
@@ -423,7 +425,7 @@ get_header('version-2'); ?>
                   <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
                   <input type="hidden" name="multiadd" value="1" />
                   <input type="hidden" name="cmd" value="subscribe" />
-                  <input type="hidden" name="custom_source" value="Summer of Making" />
+                  <input type="hidden" name="custom_source" value="MZ Custom Landing page" />
                   <input type="hidden" name="custom_incentive" value="none" />
                   <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
                   <input type="hidden" id="format_mime" name="format" value="mime" />
