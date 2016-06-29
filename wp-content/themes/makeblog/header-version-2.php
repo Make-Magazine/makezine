@@ -228,7 +228,7 @@ $primary_cat_dimension = $primarycat[0];
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
         <p class="header-make-img">
-          <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
+          <a href="/summer-of-making/" target="_blank">Jump into the Summer of Making &rarr; Projects, Challenges, Maker Camp, and more!</a>
         </p>
       </div>
       <div class="col-sm-3">
