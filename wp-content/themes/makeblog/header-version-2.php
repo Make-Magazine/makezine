@@ -228,7 +228,7 @@ $primary_cat_dimension = $primarycat[0];
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
         <p class="header-make-img">
-          <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16">Jump into the Summer of Making &rarr; Projects, Challenges, Maker Camp, and more!</a>
+          <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16">Jump into the Summer of Making! <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
         </p>
       </div>
       <div class="col-sm-3">
