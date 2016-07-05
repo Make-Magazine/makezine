@@ -276,7 +276,10 @@ function get_resized_remote_image_url($url, $width, $height, $escape = true)
         if (function_exists('new_file_urls'))
             $url = new_file_urls($url);
 
-        $thumburl = jetpack_photon_url($url, array('resize' => array($width, $height)));
+        $thumburl = jetpack_photon_url($url, array(
+            'resize' => array($width, $height),
+            'quality' => get_photon_img_quality(),
+        ));
 
         return ($escape) ? esc_url($thumburl) : $thumburl;
     endif;
@@ -583,25 +586,14 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="nl-modal-div2">
                 <div class="col-xs-12">
-                    <?php
-                    $isSecure = "http://";
-                    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                        $isSecure = "https://";
-                    }
-                    ?>
                     <h4>You might also like these newsletters:</h4>
                     <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" name="multiadd" value="1" />
                         <input type="hidden" id="email" name="email" value="" />
+                        <input type="hidden" name="goto" value="" />
                         <input type="hidden" id="format_mime" name="format" value="mime" />
                         <input type="hidden" name="goto" value="" />
-                        <input type="hidden" name="custom_source" value="footer" />
-                        <input type="hidden" name="custom_incentive" value="none" />
-                        <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-                        <input type="hidden" id="format_mime" name="format" value="mime" />
-                        <input type="hidden" name="goto" value="" />
-                        <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 
                         <label class="list-radio pull-right">
                           <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
@@ -764,6 +756,17 @@ function register_widget_zone() {
             'after_title'=>'</h3>'
         )
     );
+    register_sidebar(
+        array(
+            'id'=>'sidebar_comparison_drones',
+            'name'=>__('Drones Comparison Sidebar'),
+            'description'=>__('This widget area on all Drones Comparison pages.' ),
+            'before_widget'=>'<div class="widget-zone">',
+            'after_widget'=>'</div>',
+            'before_title'=>'<h3 class="widget-title">',
+            'after_title'=>'</h3>'
+        )
+    );
 }
 add_action('widgets_init', 'register_widget_zone');
 function kc_widget_form_extend( $instance, $widget ) {
@@ -868,6 +871,12 @@ function the_titlesmall($before = '', $after = '', $echo = true, $length = false
     }
 }
 
+// Global photon image quality.
+function get_photon_img_quality() {
+    $quality = '55';
+    return $quality;
+}
+
 // Add Quantcast to footer
 function add_quantcast_tag() {
     echo '<!-- Quantcast Tag -->' . "\r\n"
@@ -888,3 +897,10 @@ function add_quantcast_tag() {
     . '<!-- End Quantcast tag -->' . "\r\n";
 }
 add_action('wp_footer', 'add_quantcast_tag', 100);
+
+//Removing for ge light
+if (is_page_template('page-ge-light-life.php'))
+{
+  remove_filter('the_content', 'wpautop');
+  remove_filter('the_excerpt', 'wpautop' );
+}

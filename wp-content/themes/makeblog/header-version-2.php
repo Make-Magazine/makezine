@@ -86,7 +86,7 @@ if( $detect->isTablet() ){
   <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >
   <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
   <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" type="text/css">
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
@@ -228,7 +228,7 @@ $primary_cat_dimension = $primarycat[0];
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
         <p class="header-make-img">
-          <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
+          <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16">Jump into the Summer of Making! <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
         </p>
       </div>
       <div class="col-sm-3">
@@ -392,6 +392,7 @@ $primary_cat_dimension = $primarycat[0];
                 <?php
                 $args = array(
                     'resize' => '370,240',
+                    'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -423,6 +424,7 @@ $primary_cat_dimension = $primarycat[0];
                 <?php
                 $args = array(
                   'resize' => '370,240',
+                  'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -447,6 +449,7 @@ $primary_cat_dimension = $primarycat[0];
         </div>
 
         <div class="nav-guides row">
+          
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/3dprinters/" class="pull-left first-post"></a>
@@ -455,6 +458,11 @@ $primary_cat_dimension = $primarycat[0];
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/boards/" class="pull-left second-post"></a>
+            </div>
+          </div>
+          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+            <div class="nav-img-border">
+              <a href="/comparison/drones/" class="pull-left third-post"></a>
             </div>
           </div>
         </div>
@@ -491,6 +499,7 @@ $primary_cat_dimension = $primarycat[0];
                   <?php
                   $args = array(
                     'resize' => '102,102',
+                    'quality' => get_photon_img_quality(),
                   );
                   $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
                   $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -513,6 +522,18 @@ $primary_cat_dimension = $primarycat[0];
             <?php echo '<h1>No content found</h1>' ?>
           <?php endif; ?>
           <?php wp_reset_query(); ?>
+        </div>
+        <div class="nav-share row">
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/makeshowtell/" class="pull-left first-post"></a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/contribute" class="pull-left second-post"></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

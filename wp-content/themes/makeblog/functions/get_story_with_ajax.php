@@ -38,7 +38,10 @@ function get_story_with_ajax() {
             //Hero Image
             $hero_id = get_field('hero_image');
             // Featured Image
-            $args = array('resize' => '1200,670',);
+            $args = array(
+                'resize' => '1200,670',
+                'quality' => get_photon_img_quality(),
+            );
             $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
             preg_match_all($re, $url, $matches);
@@ -173,7 +176,10 @@ function get_story_with_ajax2() {
             //Hero Image
             $hero_id = get_field('hero_image');
             // Featured Image
-            $args = array('resize' => '1200,670',);
+            $args = array(
+                'resize' => '1200,670',
+                'quality' => get_photon_img_quality(),
+            );
             $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
             preg_match_all($re, $url, $matches);
@@ -251,7 +257,7 @@ function get_story_with_ajax2() {
                         <p id="ads-title">ADVERTISEMENT</p>
                         <div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
-                    <div class="ctx-siderail-wrapper"></div>
+                    <div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
                         <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>

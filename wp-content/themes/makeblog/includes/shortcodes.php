@@ -1061,7 +1061,7 @@ function make_mf_video_highlights( $atts, $content = null ) {
 					<h3>Maker Faire NY: Live Robot Bugs! Biomimicry in Research and Development</h3>
 				</div>
 				<div class="modal-body">';
-					$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=tO1YO0TOgdE', array( 'width' => 530 ) );
+				$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=tO1YO0TOgdE', array( 'width' => 530 ) );
 				$output .= '</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -1085,7 +1085,7 @@ function make_mf_video_highlights( $atts, $content = null ) {
 					<h3>Maker Faire NY: NASA Chief Technologist Mason Peck</h3>
 				</div>
 				<div class="modal-body">';
-					$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=dC84Dm45Hr4', array( 'width' => 530 ) );
+				$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=dC84Dm45Hr4', array( 'width' => 530 ) );
 				$output .= '</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -1154,7 +1154,7 @@ function make_get_dfp_ad_unit( $atts ) {
 	$output = '<!-- Beginning Sync AdSlot ' . intval( $atts['unit'] ) . ' for Ad unit header ### size: [[300,250]]  -->';
 
 	$output .= '<div id=\'div-gpt-ad-664089004995786621-' . intval( $atts['unit'] ) . '\'>';
-		$output .= '<script type=\'text/javascript\'>googletag.cmd.push(function(){googletag.display(\'div-gpt-ad-664089004995786621-' . esc_js( intval( $atts['unit'] ) ) . '\')});</script>';
+	$output .= '<script type=\'text/javascript\'>googletag.cmd.push(function(){googletag.display(\'div-gpt-ad-664089004995786621-' . esc_js( intval( $atts['unit'] ) ) . '\')});</script>';
 	$output .= '</div>';
 	$output .= '<!-- End AdSlot ' . intval( $atts['unit'] ) . ' -->';
 	return $output;
@@ -1183,7 +1183,6 @@ function make_nikon_shortcode_iframe( $atts ) {
 	return $output;
 }
 
-
 add_shortcode( 'nikon', 'make_nikon_shortcode_iframe' );
 
 function rtmf_wizehive_shortcode() {
@@ -1204,3 +1203,36 @@ function prototype_wizehive_shortcode() {
 
 add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );
 
+
+// This shortcode adds a simple newsletter signup form in a small sidebar size.
+function newsletter_signup_sidebar_shortcode() {
+	$output = '<div class="mz-sidebar-subscribe">
+							<h4>Let\'s Stay in Touch!</h4>
+							<form class="sub-form whatcounts-signup1s" action="//whatcounts.com/bin/listctrl" method="POST">
+								<input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101"><!-- Make: Newsletter -->
+		            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543"><!-- Maker Media Newsletter -->
+		            <input type="hidden" name="multiadd" value="1">
+								<input type="hidden" name="cmd" value="subscribe">
+								<input type="hidden" name="custom_source" value="right-rail">
+								<input type="hidden" name="custom_incentive" value="none">
+								<input type="hidden" name="custom_url" id="wc_custom_url" value="makezine.com/">
+								<input type="hidden" id="format_mime" name="format" value="mime">
+								<input type="hidden" name="goto" value="">
+								<input type="hidden" name="custom_host" value="makezine.com">
+								<input type="hidden" name="errors_to" value="">
+								<div class="mz-form-horizontal">
+									<input id="wc-email" name="email" placeholder="Enter your Email" required="" type="text">
+									<input value="Sign Up" class="btn-cyan" type="submit">
+								</div>
+							</form>
+							<p><a href="/join">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+						</div>
+						<script>
+                $(function() {
+                  $( "#wc_custom_url" ).val( window.location.href );
+                });
+            </script>';
+	return $output;
+}
+
+add_shortcode( 'newsletter_signup_sidebar', 'newsletter_signup_sidebar_shortcode' );

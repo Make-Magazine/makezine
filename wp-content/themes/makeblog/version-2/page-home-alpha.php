@@ -198,13 +198,13 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-        <a href="/sprout-by-hp/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/hp18.jpg' ?>" class="img-responsive center-block event" alt="HP Sprout Promo" />
+        <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16" target="_blank">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-SOMx2.png' ?>" class="img-responsive center-block event" alt="Summer of Making" />
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="//makerfaire.com/bay-area" target="_blank">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-mfba-01.jpg' ?>" class="img-responsive center-block event" alt="Maker Faire Bay Area Ticket Promo" />
+        <a href="/challenge/lights-for-life/" target="_blank">
+          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-ge.jpg' ?>" class="img-responsive center-block event" alt="Lights for Life Challenge!" />
         </a>
       </div>
     </div>

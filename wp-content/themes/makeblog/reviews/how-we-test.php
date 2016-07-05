@@ -29,7 +29,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			<p><?php echo get_field( 'how_we_test' ); ?></p>
 			<?php
 			$slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get_the_ID() );
-			$title = ( $slug === 'boards' ) ? 'The Make: Boards Team' : 'The Make: Digital Fabrication Team';
+			$title = 'The Make: Testing Team';
 			?>
 			<h4 class="authors-title"><?php echo $title; ?></h4>
 
@@ -125,6 +125,14 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<div class="clearfix"></div>
 					<div class="sidebar-wrapper">
 						<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+					</div>
+					<div class="clearfix"><br /><br /></div>
+				<?php } 
+			} else if ( $slug === 'drones' ) {
+				if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
+					<div class="clearfix"></div>
+					<div class="sidebar-wrapper">
+						<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
 					</div>
 					<div class="clearfix"><br /><br /></div>
 				<?php } 

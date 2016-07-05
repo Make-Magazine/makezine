@@ -33,6 +33,9 @@ $modal_text     = get_field( 'magazine_label', $id );
 						if ( $slug === 'boards' ) {
 							$label = 'Choosing a Board';
 						}
+            elseif ( $slug === 'drones' ) {
+							$label = 'Choosing a Drone';
+						}
 
 						echo $label;
 						?>

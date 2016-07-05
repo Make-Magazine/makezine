@@ -116,7 +116,6 @@
     scrollLoad: function() {
       if (this.scrollAds && this.scrollAds.length) {
         // Set scroll loading.
-        window.gptScrollTimer = "";
         $(document).on("scroll", make.gpt.scrollLoadAd);
       }
     },
@@ -128,8 +127,9 @@
      *  Scroll function to load ads.
      */
     scrollLoadAd: function() {
-      window.clearTimeout(gptScrollTimer);
-      gptScrollTimer = window.setTimeout(function(){
+      // Prevent build up of multiple scroll functions.
+      clearTimeout(gptScrollTimer);
+      var gptScrollTimer = setTimeout(function(){
         var scrollAds = make.gpt.scrollAds.slice(0);
         // Loop through scroll load ads.
         for (var i = 0; i < scrollAds.length; i++) {
@@ -139,7 +139,7 @@
             // Remove from original array.
             make.gpt.scrollAds.splice(index, 1);
             // Load ad.
-            make.gpt.load($(scrollAds[i]));
+            make.gpt.load($(scrollAds[i]).filter(':empty'));
           }
         }
         // Stop scroll event if all ads are loaded.

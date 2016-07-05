@@ -42,7 +42,15 @@ $how_scoring_works_title = ! empty( $how_scoring_works_title ) ? $how_scoring_wo
 			</div>
 			<div class="clearfix"><br /><br /></div>
 		<?php } 
-	} ?>
+	} else if ( $slug === 'drones' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
+			</div>
+			<div class="clearfix"><br /><br /></div>
+		<?php } 
+	}?>
 
 	<div class="meta-block ad-2 desktop">
 		<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>

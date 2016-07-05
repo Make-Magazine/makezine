@@ -1,0 +1,17 @@
+{
+  "name": "moderntribe/makezine",
+  "type": "project",
+  "description": "Core functionality for this site.",
+  "license": "Private",
+  "config": {
+    "vendor-dir": "vendor",
+    "preferred-install": "dist"
+  },
+  "require": {
+    "phpunit/php-timer": "~1.0",
+    "pimple/pimple": "~3.0@dev"
+  },
+  "autoload": {
+    "psr-0": {"Reviews": "src/"}
+  }
+}

@@ -394,6 +394,9 @@ h6 {
       &.second-post {
         background-image: url(/wp-content/themes/makeblog/img/board-guides-nav-image.jpg);
       }
+      &.third-post {
+        background-image: url(/wp-content/themes/makeblog/img/drone-guides-nav-image.jpg);
+      }
     }
   }
 }
@@ -456,6 +459,42 @@ h6 {
   }
 }
 /*End  Nav dynamic content for events */
+
+/*Begin Nav content for share */
+.nav-share {
+  padding: 22px 18px 0px 0px;
+  display: none;
+  width: inherit;
+  position: absolute;
+  .share-post {
+    display: inline-block;
+    vertical-align: top;
+    .nav-img-border {
+      border: 1px solid #979797;
+      margin: 1px;
+      display: flex;
+      &:hover {
+        border: 2px solid #979797;
+        margin: 0;
+      }
+    }
+    a {
+      width: 100%;
+      height: 142px;
+      overflow: hidden;
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &.first-post {
+        background-image: url(/wp-content/themes/makeblog/img/get_social-nav-image.jpg);
+      }
+      &.second-post {
+        background-image: url(/wp-content/themes/makeblog/img/get_published2-nav-image.jpg);
+      }
+    }
+  }
+}
+/*End Nav content for share */
 
 
 ul.sub-menu {
@@ -980,6 +1019,10 @@ ul.sub-menu.moove-right {
     height: 149px;
   }
 
+ .nav-share .share-post a {
+    height: 149px;
+  }
+
   .latest-stories .stories-post a,
   .latest-projects .project-post a {
     height: 115px;
@@ -1136,6 +1179,10 @@ ul.sub-menu.moove-right {
   }
 
   .latest-shop .shop-post a {
+    height: 149px;
+  }
+
+ .nav-share .share-post a {
     height: 149px;
   }
 
@@ -1304,6 +1351,10 @@ ul.sub-menu.moove-right {
   }
 
   .latest-shop .shop-post a {
+    height: 110px
+  }
+
+   .nav-share .share-post a {
     height: 110px
   }
 

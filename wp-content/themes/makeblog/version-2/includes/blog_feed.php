@@ -86,6 +86,7 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
           $post_id = get_the_ID();
           $arg     = array(
             'resize' => '79, 50',
+            'quality' => get_photon_img_quality(),
           );
           $url     = wp_get_attachment_image( get_post_thumbnail_id( $post_id ), 'project-thumb' );
           $re      = "/^(.*? src=\")(.*?)(\".*)$/m";

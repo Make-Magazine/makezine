@@ -121,7 +121,7 @@ jQuery(document).ready(function(){
       this.content = this.content.html();
     }
   });
-  // Desktop
+  // Footer Desktop
   $(document).on('submit', '.whatcounts-signup1', function (e) {
     e.preventDefault();
     var bla = $('#wc-email').val();
@@ -130,11 +130,20 @@ jQuery(document).ready(function(){
     $('.nl-modal-email-address').text(bla);
     $('.whatcounts-signup2 #email').val(bla);
   });
-  // Mobile
+  // Footer Mobile
   $(document).on('submit', '.whatcounts-signup1m', function (e) {
     e.preventDefault();
     var bla = $('#wc-email-m').val();
     $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1m').serialize());
+    $('.fancybox-thx').trigger('click');
+    $('.nl-modal-email-address').text(bla);
+    $('.whatcounts-signup2 #email').val(bla);
+  });
+  // Sidebar
+  $(document).on('submit', '.whatcounts-signup1s', function (e) {
+    e.preventDefault();
+    var bla = $('#wc-email').val();
+    $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup1s').serialize());
     $('.fancybox-thx').trigger('click');
     $('.nl-modal-email-address').text(bla);
     $('.whatcounts-signup2 #email').val(bla);
@@ -150,7 +159,7 @@ jQuery(document).ready(function(){
   });
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
-    $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup2').serialize());
+    $.post('http://whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
     $('.nl-thx-p1').hide();
     $('.nl-thx-p2').show();
   });

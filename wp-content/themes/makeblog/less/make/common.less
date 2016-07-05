@@ -156,3 +156,12 @@ p:empty {
 .padright { 
 	padding-right:15px!important;
 }
+
+
+// Temporary fix for the mobile styles Matt did to the BS mobile grid
+.bs-margin-fix {
+	@media (max-width: 767px) {
+		margin-left: -20px;
+	  margin-right: -20px;
+	}
+}
