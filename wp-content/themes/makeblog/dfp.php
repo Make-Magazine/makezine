@@ -153,31 +153,37 @@ class MakeAds {
         'size' => '[300,250]',
         'sizeMap' => NULL,
         'viewport' => NULL,
-        'pos' => 'btf', 
+        'pos' => 'btf',
+        'scrollLoad' => FALSE, 
       );
 
-      // Add JS vars & gpt methods.
-      $js_string = "<script>";
-      $js_string .= "var ad = make.gpt.getVars(" . $ad['size'] . ");\r\n";
-      $js_string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad ' + {$ad['size']}.join().replace(/\[\]/g,'').replace(/,/g,'x') + '\"></div>');\r\n";
-      $js_string .= "make.gpt.setAd({";
-      $js_string .= "'size' : {$ad['size']}";
-      $js_string .= ", 'pos' : '{$ad['pos']}'";
-      $js_string .= ", 'adPos' : ad.adPos";
-      $js_string .= ", 'slot' : ad.slot";
-      $js_string .= ", 'tile' : ad.tile";
-      $js_string .= ", 'companion' : (window.ad_vars ? ad_vars.companion : false)";
-
-      if ($ad['sizeMap']) {
-        $js_string .= ", 'sizeMap' : {$ad['sizeMap']}";
+      if ($ad['scrollLoad']) {
+        // Scroll load ads.
       }
-      if ($ad['viewport']) {
-        $js_string .= ", 'viewport' : '{$ad['viewport']}'";
+      else {
+        // Add JS vars & gpt methods.
+        $string = "<script>";
+        $string .= "var ad = make.gpt.getVars(" . $ad['size'] . ");\r\n";
+        $string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad ' + {$ad['size']}.join().replace(/\[\]/g,'').replace(/,/g,'x') + '\"></div>');\r\n";
+        $string .= "make.gpt.setAd({";
+        $string .= "'size' : {$ad['size']}";
+        $string .= ", 'pos' : '{$ad['pos']}'";
+        $string .= ", 'adPos' : ad.adPos";
+        $string .= ", 'slot' : ad.slot";
+        $string .= ", 'tile' : ad.tile";
+        $string .= ", 'companion' : (window.ad_vars ? ad_vars.companion : false)";
+
+        if ($ad['sizeMap']) {
+        $string .= ", 'sizeMap' : {$ad['sizeMap']}";
+        }
+        if ($ad['viewport']) {
+        $string .= ", 'viewport' : '{$ad['viewport']}'";
+        }
+
+        $string .= "});\r\n </script>";
       }
 
-      $js_string .= "});\r\n </script>";
-
-      return $js_string;
+      return $string;
 
     }
 
