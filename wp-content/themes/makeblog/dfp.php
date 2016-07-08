@@ -154,11 +154,12 @@ class MakeAds {
         'sizeMap' => NULL,
         'viewport' => NULL,
         'pos' => 'btf',
-        'scrollLoad' => FALSE, 
+        'scrollLoad' => TRUE, 
       );
 
       if ($ad['scrollLoad']) {
         // Scroll load ads.
+        $string = "<div class='js-ad scroll-load' data-size='" . $ad['size'] . "' data-size-map='" . $ad['sizeMap'] . "' data-pos='\"" . $ad['pos'] . "\"' ></div>";
       }
       else {
         // Add JS vars & gpt methods.
