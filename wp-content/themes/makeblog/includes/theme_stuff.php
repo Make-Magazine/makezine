@@ -308,6 +308,17 @@ function make_load_resources() {
 add_action( 'wp_enqueue_scripts', 'make_load_resources' );
 
 
+function theme_styles() {
+  wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
+  wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
+  wp_enqueue_style('roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
+  wp_enqueue_style('roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
+  wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
+}
+
+add_action('wp_enqueue_scripts', 'theme_styles');
+
+
 /**
  * Adds scripts and styles to particular pages in the admin areas.
  * @return void

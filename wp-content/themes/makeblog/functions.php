@@ -373,15 +373,6 @@ add_action('wp_ajax_nopriv_make_shopify_featured_products', 'make_shopify_featur
 
 
 
-function theme_styles()
-{
-    wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
-    wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
-    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-}
-
-add_action('wp_enqueue_scripts', 'theme_styles');
-
 function winwar_first_sentence($string)
 {
     $sentence = preg_split('/(\.|!|\?)\s/', $string, 2, PREG_SPLIT_DELIM_CAPTURE);
