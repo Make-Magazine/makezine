@@ -8,7 +8,6 @@ module.exports = function(grunt) {
     'css/style.css': 'less/style.less',
     'css/print.css': 'less/print.less',
     'css/takeover.css': 'less/takeover.less',
-    'css/ge-light-for-life.css': 'less/ge-light-for-life.less',
     'version-2/css/style.css': 'version-2/less/style.less',
     'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
     'reviews/css/master.css': 'reviews/less/master.less'
