@@ -166,7 +166,7 @@ if( $detect->isTablet() ){
     dataLayer = [];
   </script>
 </head>
-<body id="makeblog" <?php body_class(); ?>>
+<body id="makeblog" <?php body_class('opt-ab-test'); ?>>
 <!-- Google Universal Analytics -->
 
 <!-- Time-tracking for Custom Dimensions -->
@@ -340,7 +340,7 @@ $primary_cat_dimension = $primarycat[0];
 
         <div class="get-dark"></div>
 
-        <!-- SEARCH -->
+        <!-- OLD SEARCH -->
         <div class="col-md-1 hidden-xs mz-search search-bar">
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
             <input type="submit" class="sendsubmit" value="" />
@@ -348,6 +348,15 @@ $primary_cat_dimension = $primarycat[0];
               <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
               <div class="close-search"><i class="fa fa-search fa-2x"></i></div>
             </label>
+          </form>
+        </div>
+
+        <!-- NEW SEARCH -->
+        <div id="sb-search" class="sb-search">
+          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+            <input class="sb-search-input" placeholder="Search <strong>Make:</strong> Magazine" type="text" value="" name="s" id="search">
+            <input class="sb-search-submit" type="submit" value="">
+            <i class="fa fa-search" aria-hidden="true"></i>
           </form>
         </div>
 
