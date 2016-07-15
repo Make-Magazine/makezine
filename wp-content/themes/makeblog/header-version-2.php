@@ -166,7 +166,9 @@ if( $detect->isTablet() ){
     dataLayer = [];
   </script>
 </head>
-<body id="makeblog" <?php body_class('opt-ab-test'); ?>>
+<body id="makeblog" <?php body_class(); ?>>
+
+<script src="https://cdn.optimizely.com/js/2101321427.js"></script>
 <!-- Google Universal Analytics -->
 
 <!-- Time-tracking for Custom Dimensions -->
@@ -371,18 +373,18 @@ $primary_cat_dimension = $primarycat[0];
 
         <div id="mz-header-subscribe">
           <div>
-            <a href="#">
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">
               <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
             </a>
-            <a class="subscribe-red-btn" href="#">SUBSCRIBE</a>
+            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE</a>
           </div>
         </div>
 
         <!-- Sticky Navbar -->
         <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
           <h6>
-            <a id="trigger-overlay" href="#">
-              <h5>Subscribe</h5>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">
+              <h5>Subscribe<span class="hidden"> & save</span></h5>
               <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>" alt="Make Magazine small mag cover" />
             </a>
           </h6>
