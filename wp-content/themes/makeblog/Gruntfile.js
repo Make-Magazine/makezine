@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     'less/**/*.less',
     'version-2/less/**/*.less',
     'version-2/js/single-story/*.js',
+    'js/footer-scripts/*.js',
   ];
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
@@ -46,6 +47,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'version-2/js/single-story.js': ['version-2/js/single-story/*.js'],
+          'js/footer-scripts/min/misc.js': ['js/footer-scripts/*.js'],
         }
       },
     },
@@ -58,6 +60,7 @@ module.exports = function(grunt) {
         },
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
+          'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
         }
       }
     },

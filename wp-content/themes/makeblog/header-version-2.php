@@ -346,7 +346,10 @@ $primary_cat_dimension = $primarycat[0];
             <input type="submit" class="sendsubmit" value="" />
             <label>
               <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-              <div class="close-search"><i class="fa fa-search fa-2x"></i></div>
+              <div class="close-search">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                <i class="fa fa-search fa-2x"></i>
+              </div>
             </label>
           </form>
         </div>
@@ -354,10 +357,25 @@ $primary_cat_dimension = $primarycat[0];
         <!-- NEW SEARCH -->
         <div id="sb-search" class="sb-search">
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-            <input class="sb-search-input" placeholder="Search <strong>Make:</strong> Magazine" type="text" value="" name="s" id="search">
-            <input class="sb-search-submit" type="submit" value="">
+            <label class="sb-search-label">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input class="sb-search-input search-field" placeholder="Search Make: Magazine" type="text" value="" name="s" id="search">
+            </label>
+            <label class="sb-search-open-trigger">
+              <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+              <input class="sb-search-submit" type="submit" value="">
+            </label>
             <i class="fa fa-search" aria-hidden="true"></i>
           </form>
+        </div>
+
+        <div id="mz-header-subscribe">
+          <div>
+            <a href="#">
+              <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
+            </a>
+            <a class="subscribe-red-btn" href="#">SUBSCRIBE</a>
+          </div>
         </div>
 
         <!-- Sticky Navbar -->

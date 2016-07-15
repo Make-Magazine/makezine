@@ -9,7 +9,7 @@
  * http://www.codrops.com
  */
 ;( function( window ) {
-
+	
 	'use strict';
 	
 	// EventListener | @jon_neal | //github.com/jonathantneal/EventListener
@@ -80,7 +80,7 @@
 
 	function UISearch( el, options ) {	
 		this.el = el;
-		this.inputEl = el.querySelector( 'form > input.sb-search-input' );
+		this.inputEl = el.querySelector( 'form input.sb-search-input' );
 		this._initEvents();
 	}
 
