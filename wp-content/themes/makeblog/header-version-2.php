@@ -234,7 +234,7 @@ $primary_cat_dimension = $primarycat[0];
       </div>
       <div class="col-sm-3">
         <p class="header-sub-link pull-right">
-          <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE </a>
+          <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMHN" target="_blank">SUBSCRIBE </a>
         </p>
       </div>
     </div>
@@ -250,7 +250,7 @@ $primary_cat_dimension = $primarycat[0];
         <!-- LOGO & TAG LINE -->
           <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
             <a href="<?php echo home_url(); ?>" class="logo-a">
-                <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+              <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
             </a>
             <h5 class="mz-tag">We are all Makers</h5>
             <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
@@ -371,12 +371,13 @@ $primary_cat_dimension = $primarycat[0];
           </form>
         </div>
 
+        <!-- New Header Subscribe stuff -->
         <div id="mz-header-subscribe">
           <div>
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
               <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
             </a>
-            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE</a>
+            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
           </div>
         </div>
 
