@@ -349,7 +349,6 @@ $primary_cat_dimension = $primarycat[0];
             <label>
               <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
               <div class="close-search">
-                <i class="fa fa-times" aria-hidden="true"></i>
                 <i class="fa fa-search fa-2x"></i>
               </div>
             </label>
