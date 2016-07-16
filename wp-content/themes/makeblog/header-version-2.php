@@ -554,12 +554,17 @@ $primary_cat_dimension = $primarycat[0];
         <div class="nav-share row">
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/makeshowtell/" class="pull-left first-post"></a>
+              <a href="//makezine.com/summer-of-making/" class="pull-left first-post"></a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute" class="pull-left second-post"></a>
+              <a href="//makezine.com/makeshowtell/" class="pull-left second-post"></a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/contribute" class="pull-left third-post"></a>
             </div>
           </div>
         </div>
