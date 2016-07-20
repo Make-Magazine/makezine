@@ -398,7 +398,7 @@ function make_projects_grid( $label, $posts, $taxonomy, $terms ) {
 		</div>
 
 
-		<div class="row-fluid">';
+		<div class="row">';
 
 				$args = array(
 					'tax_query' => array(

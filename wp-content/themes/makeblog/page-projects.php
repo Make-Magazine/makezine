@@ -14,7 +14,7 @@ get_header('version-2'); ?>
               <div class="page-header">
                 <h1 style="border:0px;">Make: Projects</h1>
               </div>
-              <div class="row-fluid">
+              <div class="row">
                 <div class="col-xs-12 col-sm-4">
                   <?php
                   $args = array(
@@ -54,7 +54,7 @@ get_header('version-2'); ?>
                 <div class="page-header">
                   <h3>From MAKE magazine</h3>
                 </div>
-                <div class="row-fluid">
+                <div class="row">
                     <?php
                     $args = array(
                       'tax_query' => array(

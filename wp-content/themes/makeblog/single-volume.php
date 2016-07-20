@@ -45,7 +45,7 @@
               </div>
             <?php } else { ?>
               <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <div class="row-fluid">
+              <div class="row">
                 <div class="span8">
                   <?php the_content(); ?>
                 </div>

@@ -60,7 +60,7 @@ get_header('version-2'); ?>
             </div>
         </div>
         <div class="posts-list">
-            <ul class="selected-posts-list">
+            <ul class="selected-posts-list list-unstyled">
                 <?php
                 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 $args = array(

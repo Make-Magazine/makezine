@@ -22,7 +22,7 @@
 
 	<div class="container pull-up">
 
-		<div class="row-fluid">
+		<div class="row">
 
 			<div class="span12">
 

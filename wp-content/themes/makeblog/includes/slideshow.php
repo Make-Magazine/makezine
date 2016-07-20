@@ -266,7 +266,7 @@ function make_carousel( $args, $title_link = true ) {
 		return;
 	}
 
-	$output = '<div class="row-fluid">
+	$output = '<div class="row">
 		<div class="span10">
 			<h2 class="look_like_h3">';			
 					if ( isset( $args['difficulty'] ) ) {

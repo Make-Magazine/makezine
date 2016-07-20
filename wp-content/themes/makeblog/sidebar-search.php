@@ -7,7 +7,7 @@
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  */
 ?>
-					<div class="span4">
+					<div class="hidden-xs col-sm-12 col-md-4">
 
 						<?php dynamic_sidebar( 'search' ); ?>
 

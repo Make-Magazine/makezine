@@ -66,7 +66,7 @@ get_header('version-2'); ?>
 					<div id="contextly"></div>
 
 					<?php if ( function_exists('make_shopify_featured_products_slider') ) {
-     					echo make_shopify_featured_products_slider( 'row-fluid' );
+     					echo make_shopify_featured_products_slider( 'row' );
     				} ?>
 					
 					<?php else: ?>

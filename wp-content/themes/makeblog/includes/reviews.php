@@ -446,7 +446,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 
 </div>		
 
-<div class="row-fluid">
+<div class="row">
 
 <div class="span6">
 
@@ -491,7 +491,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 	$i = 0;
 	foreach ($steps as $step) {
 		//var_dump($step);
-		echo '<div class="row-fluid project" id="' . esc_attr( $step->number ) . '">';
+		echo '<div class="row project" id="' . esc_attr( $step->number ) . '">';
 		echo '<div class="span6 big_images">';
 			$images = $step->images;
 			foreach ($images as $image) {
@@ -503,7 +503,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 		echo '</div><!--.big_images-->';
 		echo '<div class="span6 right_column">';
 		$images = $step->images;
-		echo '<div class="row-fluid">';
+		echo '<div class="row">';
 		$number = count($images);
 		if ($number > 1) {
 			$images = $step->images;
@@ -643,7 +643,7 @@ function make_printer_makershed_thing() {
 							
 		<h3>In The <a href="http://makershed.com">Maker Shed</a></h3>
 		
-		<div class="row-fluid">
+		<div class="row">
 		
 			<div class="span3">
 				

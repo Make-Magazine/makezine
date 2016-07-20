@@ -112,7 +112,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     }
 
 ?>
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="row">

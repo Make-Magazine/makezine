@@ -1,7 +1,14 @@
 
-// Bring in Bootstrap
-@import "bootstrap/bootstrap.less";
+// Bootstrap 2
+//@import "bootstrap/bootstrap.less";
 //@import "bootstrap/responsive.less";
+
+// Normalize
+@import "make/reset.less";
+
+
+// Bootstrao 3
+@import "../version-2/less/bootstrap/bootstrap.less";
 
 @the-border: 		2px;
 @link-color: 		#005d8f;
@@ -12,6 +19,7 @@
 @headings-color:	#022c44;
 @light-grey:		#cdcdcd;
 @blue:              #005d8f;
+@white: #fff;
 @border-radius-base:			4px;
 @border-radius-large:			6px;
 @border-radius-small:			3px;
@@ -31,6 +39,8 @@
 @state-danger-bg:				#f2dede;
 @state-danger-border:			darken(spin(@state-danger-bg, -10), 5%);
 
+@linkColor: #005d8f;
+
 // Bring in MAKE Styles.
 @import "make/mixins.less";
 @import "make/ads.less";
@@ -46,7 +56,6 @@
 @import "make/footer.less";
 @import "make/weekend-projects.less";
 @import "make/camp.less";
-@import "make/makercamp.less";
 @import "make/giftguide.less";
 @import "make/archive.less";
 @import "make/form.less";
@@ -79,6 +88,7 @@
 #mz-header-subscribe {
   display: none;
 }
+
 
 body.opt-ab-test {
   @media (min-width: 768px) {

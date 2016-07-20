@@ -157,7 +157,7 @@
 	}
 	.slider {
 		background-color: #2b3b40;
-		.border-radius( 3px );
+		border-radius: 3px;
 		.makey {
 			.pull-left;
 			margin-top: -60px;
@@ -321,11 +321,6 @@
 	}
 }
 
-// Home page background image
-.page-id-116357 .new-sand,
-.page-id-116357 .waist .checkers {
-	background-image:none !important;
-}
 
 .waist .checkers {
 	.paddme {
@@ -353,4 +348,97 @@
 
 .home-ads {
 	max-height: 250px;
+}
+
+
+.col-lg-4 .mz-featured-imageblock {
+  margin-left: 2px;
+}
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+.mz-featured-imageblock {
+  position: relative;
+  display: block;
+  border: none;
+  margin-bottom: 2px;
+  height: 224px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media all and (min-width: 768px) {
+    &.mz-imageblock-hero {
+      height: 450px;
+    }
+  }
+  /* large screen / retina display */
+  @media only screen and (min-width : 1700px) {
+    height: 349px;
+    &.mz-imageblock-hero {
+      height: 700px;
+    }
+  } 
+  h2 {
+    font-weight: 200;
+    font-size: 40px;
+    color: #fff;
+  }
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #f9f9f9;
+  }
+  .featured-image-shadow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.32) 45%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(45%,rgba(0,0,0,0.32)), color-stop(100%,rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
+    transition: all 0.5s ease;
+  }
+  &:hover .featured-image-shadow {
+    height: 90%;
+    transition: all 0.5s ease;
+  }
+  .mz-text-overlay {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 15px;
+    color: #fff;
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .mz-text-overlay-side {
+    .sponsored-title-home {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1em;
+      font-weight: 400;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 20px;
+      color: #f9f9f9;
+    }
+  }
 }

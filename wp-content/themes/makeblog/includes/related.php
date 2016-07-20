@@ -18,7 +18,7 @@ function make_get_related_content( $atts, $content = null ) {
 
 	$output = '<aside class="pull-quote ' . esc_attr( $class ) . ' pull-quote-' . esc_attr( $count ) . '">';
 	$output .= ( isset( $atts['title'] ) ) ? '<h3><span>' . wp_kses_post( $atts['title'] ) . '</span></h3>' : '<h3><span>Related</span></h3>';
-	$output .= '<div class="row-fluid">';
+	$output .= '<div class="row">';
 		if ( $count == 2 ) {
 			foreach ( $ids as $id ) {
 				$output .= '<div class="span6">';

@@ -259,9 +259,11 @@ function make_load_resources() {
 	global $wp_query;
 
 	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
+  //wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
+  wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
+	//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
@@ -290,7 +292,9 @@ function make_load_resources() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js');
 	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
+	
+	//BS2
+	//wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
 	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery' ), false, true );
@@ -311,8 +315,6 @@ add_action( 'wp_enqueue_scripts', 'make_load_resources' );
 
 
 function theme_styles() {
-  wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
-  wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
   wp_enqueue_style('roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
   wp_enqueue_style('roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
   wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
@@ -1302,61 +1304,6 @@ function make_add_post_types_to_feed( $query_var ) {
 }
 add_filter( 'request', 'make_add_post_types_to_feed' );
 
-
-
-/**
- * Outputs the code for our Popdown menu found on all Make sites
- * @return html
- *
- * @version  1.0
- */
-function make_popdown_menu() { ?>
-	<div class="make-popdown">
-		<div class="wrapper-container">
-			<div class="container">
-				<div class="row">
-					<div class="span3 offset2 border-right">
-						<div class="row-fluid">
-							<a href="https://readerservices.makezine.com/mk/subscribe.aspx?PC=MK&amp;PK=M37BN05" class="span4" onClick="_gaq.push(['_trackEvent', 'popdown-subscribe', 'Click', 'Subscribe Image']);"><img src="<?php echo get_template_directory_uri(); ?>/img/footer-make-cover.jpg" alt=""></a>
-							<div class="span7 side-text">
-								<a href="https://readerservices.makezine.com/mk/subscribe.aspx?PC=MK&amp;PK=M37BN05" onClick="_gaq.push(['_trackEvent', 'popdown-subscribe', 'Click', 'Subscribe Link']);">Subscribe to MAKE!</a> Receive both print &amp; digital editions.
-							</div>
-						</div>
-					</div>
-					<div class="span2 border-right">
-						<?php wp_nav_menu( array(
-							'theme_location'  => 'popdown-menu-top',
-							'container'       => false,
-							'menu_class'      => 'first nav ga-nav',
-							'depth'           => 1
-						) ); ?>
-					</div>
-					<div class="span4">
-						<?php wp_nav_menu( array(
-							'theme_location'  => 'popdown-menu-middle',
-							'container'       => false,
-							'menu_class'      => 'second nav ga-nav',
-							'depth'           => 1
-						) ); ?>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span9 offset2 menu-bottom">
-						<?php wp_nav_menu( array(
-							'theme_location'  => 'popdown-menu-last',
-							'container'       => false,
-							'menu_class'      => 'last nav ga-nav',
-							'depth'           => 1
-						) ); ?>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="menu-button">
-			<span class="popdown-btn"></span>
-		</div>
-	</div>
-<?php }
 
 
 /**

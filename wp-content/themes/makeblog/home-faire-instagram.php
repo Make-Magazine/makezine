@@ -3,7 +3,7 @@
  * Instagram photos from the Maker Faire feed
  */
 ?>
-<div class="row-fluid">
+<div class="row">
 	<div class="span6">
 		<a href="http://www.ustream.tv/channel/maker-faire-bay-area-2014" title="">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/crowd.jpg " alt="Crowd at Maker Faire">
@@ -16,7 +16,7 @@
 	</div>
 </div>
 <div class="spacer"></div>
-<div class="row-fluid">
+<div class="row">
 	<h2 class="red"><a href="http://instagram.com/makerfaire" title="Maker Faire on Instagram">@makerfaire</a> on Instagram</h2>
 	<?php echo make_show_images(); ?>
 </div>

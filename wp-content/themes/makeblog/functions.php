@@ -363,7 +363,7 @@ get_template_part('version-2/includes/Mobile_Detect.php');
 
 function make_shopify_featured_products($row = 'row') {
     echo '<li class="ads shed-row-li"><div class="shed-row">';
-    echo make_shopify_featured_products_slider_home('row-fluid' );
+    echo make_shopify_featured_products_slider_home('row' );
     echo '</div></li>';
     die();
 }

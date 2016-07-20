@@ -3,41 +3,6 @@
 	background-color:#005d8f;
 }
 
-// Generic Page Styles
-
-body {
-	font-size: 16px;
-	margin-top:0;
-	overflow-wrap: break-word;
-}
-
-body.single-slideshow {
-	margin-top:0px;
-	margin-bottom:0px;
-}
-
-body.single-slideshow #wpadminbar {
-	display: none;
-}
-
-body.search .well {
-	margin-bottom:0 !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0px 0;
-}
-
-h3 {
-	line-height: 24px;
-}
-
-body ul li,
-body ol li {
-	font-size: 16px;
-  line-height: 150%;
-}
-
 .row.volume {
 	margin-bottom:30px;
 }
@@ -252,28 +217,6 @@ input.parsley-error, select.parsley-error, textarea.parsley-error, div.parsley-e
 	position: relative;
 }
 
-.new-sand {
-	background-image:url('../img/sand.png');
-}
-
-.sand {
-	background-image:url('../img/sand.png');
-	text-shadow: 0px 1px 0px white;
-}
-
-.sand h3 {
-	font-style: normal;
-	font-weight: 900;
-	color: #00598e;
-	margin-bottom: 0px;
-	font-size:22px;
-	margin-top:10px;
-}
-
-.sand .text {
-	text-shadow: 0px 0px 0px;
-}
-
 div.superpage {
 	margin-bottom:-20px;
 }
@@ -344,8 +287,6 @@ article h4 a:hover {
 .posts {
 	background-image: url('../img/shadow1.png');
 	background-repeat:no-repeat;
-	// background-position-x:286px;
-	// background-position-y:50px;
 }
 
 .posts article {
@@ -626,8 +567,7 @@ article h4 a:hover {
 .more_faires ul li a {
 	font-weight:bold;
 	color:#065270;
-	}
-
+}
 
 
 footer .pills {
@@ -679,13 +619,6 @@ footer .pills a {
 //*********************/
 
 .blue-box {
-	// background: -moz-linear-gradient(top,  rgba(22,157,202,0.65) 0%, rgba(0,0,0,0) 100%); FF3.6+
-	// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(22,157,202,0.65)), color-stop(100%,rgba(0,0,0,0))); Chrome,Safari4+
-	// background: -webkit-linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); Chrome10+,Safari5.1+
-	// background: -o-linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); Opera 11.10+
-	// background: -ms-linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); IE10+
-	// background: linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); W3C
-	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6169dca', endColorstr='#00000000',GradientType=0 ); /* IE6-9
 	background-image:url('../img/blue-grad.png');
 	background-repeat:repeat-x;
 	margin-top:10px;
@@ -728,7 +661,8 @@ footer .pills a {
 
 .content {
 	background-color: white;
-	padding: 10px 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-image: url('../img/header_bg.jpg');
 	border:1px solid #C0C3C3;
 }
@@ -2003,7 +1937,7 @@ color:green;
     width: auto;
     padding-right: 10px;
 }
-.row-fluid {
+.row {
     .lower-sub-col-02 {
         margin-left: 0;
     }

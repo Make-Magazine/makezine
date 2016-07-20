@@ -88,7 +88,7 @@ function make_shed_url( $code ) {
  *
  * Usage:
  *   if ( function_exists('make_shopify_featured_products_slider') ) {
- *     echo make_shopify_featured_products_slider( 'row-fluid' ); // If this is a category page, use 'row' as the parameter. (Or, just leave empty...)
+ *     echo make_shopify_featured_products_slider( 'row' ); // If this is a category page, use 'row' as the parameter. (Or, just leave empty...)
  *   }
  */
 function make_shopify_featured_products_slider( $row = 'row' ) {
