@@ -4,7 +4,9 @@
  */ ?>
 <div class="container all-stories">
 	<div class="row">
-		<h1 class="all-story">All Stories</h1>
+		<div class="col-xs-12">
+			<h1 class="all-story">All Stories</h1>
+		</div>
 		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 all-post-wrapper">
 			<ul class="post-list">
 				<li class="row post">

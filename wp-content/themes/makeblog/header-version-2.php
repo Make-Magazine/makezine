@@ -316,8 +316,7 @@ $primary_cat_dimension = $primarycat[0];
                   $isSecure = "https://";
                 }
                 ?>
-                <h4>Subscribe</h4>
-                <p>Stay inspired and get fresh updates</p>
+                <h4>Sign Up For Our Newsletter</h4>
                 <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
                   <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
                   <input type="hidden" name="cmd" value="subscribe" />

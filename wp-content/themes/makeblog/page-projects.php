@@ -9,13 +9,13 @@ get_header('version-2'); ?>
     <div class="sand">
       <div class="container">
         <div class="row">
-          <div class="span12">
+          <div class="col-xs-12">
             <div class="content">
               <div class="page-header">
                 <h1 style="border:0px;">Make: Projects</h1>
               </div>
               <div class="row-fluid">
-                <div class="span4">
+                <div class="col-xs-12 col-sm-4">
                   <?php
                   $args = array(
                     'tax_query' => array(
@@ -43,7 +43,7 @@ get_header('version-2'); ?>
                   ?>
 
                 </div>
-                <div class="span8">
+                <div class="col-xs-12 col-sm-8">
                   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <?php the_content(); ?>
                   <?php endwhile; else: endif; ?>

@@ -15,7 +15,7 @@ get_header('version-2'); ?>
    		<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
 	</div>
 
-	<div class="category-top">
+	<div class="category-top bs-margin-fix">
 
 		<div class="container">
 
@@ -30,7 +30,7 @@ get_header('version-2'); ?>
 
 				<?php endif; */?>
 
-				<div class="span12">
+				<div class="col-xs-12">
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -79,7 +79,7 @@ get_header('version-2'); ?>
 
 							<div class="row">
 
-								<div class="span8">
+								<div class="col-xs-12 col-sm-8">
 
 									<?php
 							 			$image = get_post_custom_values('Image');
@@ -92,7 +92,7 @@ get_header('version-2'); ?>
 
 								</div>
 
-								<div class="span4 sidebar">
+								<div class="col-xs-12 col-sm-4 sidebar">
 
 									<div class="projects-ad">
 										<p id="ads-title">Advertisement</p>
@@ -189,11 +189,11 @@ get_header('version-2'); ?>
 
 							<div class="row">
 
-								<div class="span12">
+								<div class="col-xs-12">
 
 									<div class="row">
 
-										<div class="span12">
+										<div class="col-xs-12">
 
 											<h2 class="new-heading">Steps</h2>
 
@@ -205,7 +205,7 @@ get_header('version-2'); ?>
 
 										<div class="row">
 
-											<div class="span4">
+											<div class="col-xs-12 col-sm-4">
 
 												<?php make_projects_steps_list( $steps ); ?>
 
@@ -216,7 +216,7 @@ get_header('version-2'); ?>
 
 											</div>
 
-											<div class="span8">
+											<div class="col-xs-12 col-sm-8">
 
 												<div class="tab-content" id="steppers">
 
@@ -236,7 +236,7 @@ get_header('version-2'); ?>
 
 										<div class="row">
 
-											<div class="span8">
+											<div class="col-xs-12 col-sm-8">
 
 												<?php
 													echo '<div class="conclusion">';
@@ -247,7 +247,7 @@ get_header('version-2'); ?>
 
 											</div>
 
-											<div class="span4">
+											<div class="col-xs-12 col-sm-4">
 											</div>
 
 										</div>
@@ -266,7 +266,7 @@ get_header('version-2'); ?>
 
 							<div class="row padtop">
 
-								<div class="span8">
+								<div class="col-xs-12 col-sm-8">
 
 									<?php echo make_author(); ?>
 
@@ -292,7 +292,7 @@ get_header('version-2'); ?>
 
 								<?php if ( empty( $stepscount ) ) { ?>
 
-									<div class="span4" style="margin-top:20px;">
+									<div class="col-xs-12 col-sm-4" style="margin-top:20px;">
 									</div>
 
 								<?php } else {

@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 
 					<div class="results well">
 
@@ -37,7 +37,7 @@ get_header('version-2'); ?>
 
 				<?php  get_sidebar( 'search' ); ?>
 
-				<div class="span8">
+				<div class="col-xs-12 col-sm-8">
 
 					<div class="search-results">
 

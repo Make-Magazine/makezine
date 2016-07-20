@@ -3,8 +3,6 @@
 }
 
 .all-stories {
-  width: 100%;
-  max-width: 1200px;
   margin-bottom: 30px;
   #blog-load-posts, #tag-load-posts {
     height: 0px;
@@ -18,16 +16,6 @@
     font-weight: 500;
     line-height: 35px;
     text-transform: uppercase;
-    margin: 20px auto 10px auto;
-    @media (min-width: 768px) {
-      padding-left: 15px;
-    }
-    @media (min-width: 992px) and (max-width: 1200px) {
-      width: 960px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-      width: 750px;
-    }
   }
   .wrapper {
     margin: auto;
@@ -79,18 +67,16 @@
         margin-bottom: 15px;
         display: flex;
         display: -webkit-flex;
-        padding-right: 0px;
-        @media (max-width: 767px) {
-          padding: 0 5px;
+        @media (min-width: 768px) {
+          padding-right: 0;
         }
         .filter-display-wrapper {
           right: 15px;
         }
       }
       .large-card {
-        padding-right: 5px;
-        @media (min-width: 768px) and (max-width: 991px) {
-          padding-right: 0;
+        @media (min-width: 768px) {
+          padding-right: 5px;
         }
         @media (max-width: 767px) and (max-device-width: 767px) {
           &:hover {
@@ -641,11 +627,6 @@
 
 @media (max-width: 767px) {
   .all-stories {
-    .all-story,
-    .tag-title {
-      padding-left: 0;
-      margin-left: -10px;
-    }
     .trending-topics,
     .posts-feeds-wrapper {
       display: none;

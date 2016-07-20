@@ -26,7 +26,7 @@ get_header(); ?>
 
 				<?php endif; */?>
 
-				<div class="span12">
+				<div class="col-xs-12">
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -78,7 +78,7 @@ get_header(); ?>
 
 							<div class="row">
 
-								<div class="span8">
+								<div class="col-xs-12 col-sm-8">
 
 									<?php
 							 			$image = get_post_custom_values('Image');
@@ -91,7 +91,7 @@ get_header(); ?>
 
 								</div>
 
-								<div class="span4 sidebar">
+								<div class="col-xs-12 col-sm-4 sidebar">
 
 									<div class="projects-ad">
 										<p id="ads-title">Advertisement</p>
@@ -188,11 +188,11 @@ get_header(); ?>
 
 							<div class="row">
 
-								<div class="span12">
+								<div class="col-xs-12">
 
 									<div class="row">
 
-										<div class="span12">
+										<div class="col-xs-12">
 
 											<h2 class="new-heading">Steps</h2>
 
@@ -204,7 +204,7 @@ get_header(); ?>
 
 										<div class="row">
 
-											<div class="span4">
+											<div class="col-xs-12 col-sm-4">
 
 												<?php make_projects_steps_list( $steps ); ?>
 
@@ -215,7 +215,7 @@ get_header(); ?>
 
 											</div>
 
-											<div class="span8">
+											<div class="col-xs-12 col-sm-8">
 
 												<div class="tab-content" id="steppers">
 
@@ -235,7 +235,7 @@ get_header(); ?>
 
 										<div class="row">
 
-											<div class="span8">
+											<div class="col-xs-12 col-sm-8">
 
 												<?php
 													echo '<div class="conclusion">';
@@ -246,7 +246,7 @@ get_header(); ?>
 
 											</div>
 
-											<div class="span4">
+											<div class="col-xs-12 col-sm-4">
 											</div>
 
 										</div>
@@ -265,7 +265,7 @@ get_header(); ?>
 
 							<div class="row">
 
-								<div class="span8">
+								<div class="col-xs-12 col-sm-8">
 
 									<?php echo make_author(); ?>
 
@@ -291,7 +291,7 @@ get_header(); ?>
 
 								<?php if ( empty( $stepscount ) ) { ?>
 
-									<div class="span4" style="margin-top:20px;">
+									<div class="col-xs-12 col-sm-4" style="margin-top:20px;">
 									</div>
 
 								</div>

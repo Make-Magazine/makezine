@@ -452,14 +452,14 @@
 
 @media (max-width: 767px) {
   body {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
   .navbar-fixed-top,
   .navbar-fixed-bottom,
   .navbar-static-top {
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -15px;
+    margin-left: -15px;
   }
   .container-fluid {
     padding: 0;

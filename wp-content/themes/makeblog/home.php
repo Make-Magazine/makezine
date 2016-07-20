@@ -25,8 +25,9 @@ if (user_can($current_user, 'administrator')) {
 
 <div class="container all-stories <?php echo $login_admin ?>">
 	<div class="row">
-		<h1 class="all-story">All Stories</h1>
-
+		<div class="col-xs-12">
+			<h1 class="all-story">All Stories</h1>
+		</div>
 		<div class="wrapper">
 			<div class="col-md-9 col-sm-7 col-xs-12 all-post-wrapper">
 				<ul class="post-list">

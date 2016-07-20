@@ -190,29 +190,27 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 
   <!-- EVENTS PANEL -->
   <div class="container event-unit">
-    <div class="row">
-<!--  Home "waist" Promos -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="/comparison/boards/how-we-test/shootout/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-boards-01.jpg' ?>" class="img-responsive center-block event" alt="Make Boards Guide" />
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-        <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16" target="_blank">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/SOM-Inner-Site-Promo-B@x2.png' ?>" class="img-responsive center-block event" alt="Summer of Making" />
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="/challenge/lights-for-life/" target="_blank">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-ge.jpg' ?>" class="img-responsive center-block event" alt="Lights for Life Challenge!" />
-        </a>
-      </div>
+    <!--  Home "waist" Promos -->
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
+      <a href="/comparison/boards/how-we-test/shootout/">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-boards-01.jpg' ?>" class="img-responsive center-block event" alt="Make Boards Guide" />
+      </a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
+      <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16" target="_blank">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/SOM-Inner-Site-Promo-B@x2.png' ?>" class="img-responsive center-block event" alt="Summer of Making" />
+      </a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
+      <a href="/challenge/lights-for-life/" target="_blank">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-ge.jpg' ?>" class="img-responsive center-block event" alt="Lights for Life Challenge!" />
+      </a>
     </div>
   </div>
 
   <div class="all-projects <?php echo $device ?>">
     <div class="content container">
-      <div class="posts-list container">
+      <div class="posts-list">
         <?php sorting_posts_home(); //TODO Rename Function ?>
       </div>
     </div>

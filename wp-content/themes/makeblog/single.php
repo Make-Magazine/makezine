@@ -155,7 +155,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
         <?php } ?>
 
 			</div>
-			<div class="content-wrapper">
+			<div class="container">
 				<div class="row content first-story">
 					<div class="col-sm-7 col-md-8">
 						<article <?php post_class(); ?>>
@@ -184,7 +184,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							</div>
 						</div>
 					</div>
-					<aside class="col-sm-7 col-md-4 sidebar">
+					<aside class="col-sm-5 col-md-4 sidebar">
 						<div class="author-info">
 							<?php get_author_profile(); ?>
 						</div>

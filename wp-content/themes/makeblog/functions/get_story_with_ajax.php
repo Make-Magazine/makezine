@@ -61,7 +61,7 @@ function get_story_with_ajax() {
                      style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
             <?php } ?>
         </div>
-        <div class="content-wrapper">
+        <div class="container">
             <div class="row content <?php echo get_the_ID(); ?>">
                 <div class="col-sm-7 col-md-8">
                     <article <?php post_class(); ?>>
@@ -199,7 +199,7 @@ function get_story_with_ajax2() {
                      style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
             <?php } ?>
         </div>
-        <div class="content-wrapper">
+        <div class="container">
             <div class="row content <?php echo get_the_ID(); ?>">
                 <div class="col-sm-7 col-md-8">
                     <article <?php post_class(); ?>>

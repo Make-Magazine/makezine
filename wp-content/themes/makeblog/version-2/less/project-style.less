@@ -23,8 +23,7 @@ body.page-template-project {
   border: none;
   max-width: 1200px;
   margin: 0 auto;
-  background: #f7f7f7;
-  padding: 0;
+  background: transparent;
 }
 .projects-cat .content .project-navigation, .all-projects .content .project-navigation {
   background-color: #f7f7f7;
@@ -272,7 +271,7 @@ body.page-template-project {
 }
 .projects-cat .posts-list, .all-projects .posts-list {
   background-color: #f0f0f0;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .projects-cat .posts-list .selected-posts-list, .all-projects .posts-list .selected-posts-list {
   margin: 0;
@@ -284,16 +283,11 @@ body.page-template-project {
 .projects-cat .posts-list ul.selected-posts-list > li.row ul li, .all-projects .posts-list ul.selected-posts-list > li.row ul li {
   position: relative;
   max-width: 370px;
-  width: 31.3%;
-  margin: 15px 1.2%;
+  width: 30%;
+  margin: 15px;
   padding: 0;
   vertical-align: top;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-@media (max-width: 1024px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li, .all-projects .posts-list ul.selected-posts-list > li.row ul li {
-    margin: 15px 1%;
-  }
 }
 @media screen and (max-width: 768px) {
   .projects-cat .posts-list ul.selected-posts-list > li.row ul li, .all-projects .posts-list ul.selected-posts-list > li.row ul li {
@@ -498,7 +492,7 @@ body.page-template-project {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
 }
 .projects-cat .posts-list ul.selected-posts-list li.row ul, .all-projects .posts-list ul.selected-posts-list li.row ul {
-  margin: 0 -15px 0 -18px;
+  margin: 0 -15px 0 -15px;
 }
 .projects-cat .posts-list ul.selected-posts-list li.row ul li:nth-child(3), .all-projects .posts-list ul.selected-posts-list li.row ul li:nth-child(3) {
   margin-right: 0;
@@ -1345,7 +1339,7 @@ ul.duration-item li.current, ul.diff-item li.current {
     width: 55%;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .projects-cat .container,
   .all-projects .container {
     width: 100%;
