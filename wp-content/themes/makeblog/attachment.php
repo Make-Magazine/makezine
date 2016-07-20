@@ -17,7 +17,7 @@ get_header('version-2'); ?>
 
 				<div class="row">
 
-					<div class="span8">
+					<div class="col-md-8">
 
 						<ul class="breadcrumb">
 		

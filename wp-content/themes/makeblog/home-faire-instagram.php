@@ -4,12 +4,12 @@
  */
 ?>
 <div class="row">
-	<div class="span6">
+	<div class="col-md-6">
 		<a href="http://www.ustream.tv/channel/maker-faire-bay-area-2014" title="">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/crowd.jpg " alt="Crowd at Maker Faire">
 		</a>
 	</div>
-	<div class="span6">
+	<div class="col-md-6">
 		<a href="http://www.youtube.com/playlist?list=PLwhkA66li5vDRmuDd6m05-3VFu3qt2cP3">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/make-live.jpg " alt="Make: Live video stream">
 		</a>

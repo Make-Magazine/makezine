@@ -16,7 +16,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 
 					<img src="<?php /*echo get_stylesheet_directory_uri(); */?>/img/projects-banner.png" alt="Weekend Projects" style="margin-top:-20px;margin-bottom:-20px;">
 
@@ -34,7 +34,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span8">
+				<div class="col-md-8">
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<?php the_content(); ?>

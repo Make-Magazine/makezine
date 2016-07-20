@@ -195,8 +195,8 @@ function make_search() {
 		$make_search_query = new WP_Query( $args );
 		while ( $make_search_query->have_posts() ) : $make_search_query->the_post();
 			echo '<div class="row result">';
-				echo '<div class="span9 well">';
-					echo '<div class="span2" style="margin-left:0px;">';
+				echo '<div class="col-md-9 well">';
+					echo '<div class="col-md-2" style="margin-left:0px;">';
 						$url = get_post_custom_values('LinkURL');
 						if (isset($url[0])) {
 							echo '<a href="'.esc_url($url[0]).'">';
@@ -206,7 +206,7 @@ function make_search() {
 							echo '</a>';
 						}
 					echo '</div>';
-					echo '<div class="span7">';
+					echo '<div class="col-md-7">';
 						echo '<h3>';
 						$label = get_post_custom_values('Label');
 						if (isset($label[0])) {
@@ -247,7 +247,7 @@ function make_search() {
 			$image = $item->xpath(".//DataObject[@type='cse_image']/Attribute");
 				if ( !empty($image)) {
 				echo '<div class="row result"><div class="result">';
-				echo '<div class="span2">';
+				echo '<div class="col-md-2">';
 				if ( function_exists( 'wpcom_vip_get_resized_remote_image_url' ) ) {
 					echo '<img class="thumbnail" src="' . wpcom_vip_get_resized_remote_image_url( $image[0]->attributes()->$att, '100', '100' ) . '" alt="'.make_linkify($item).'" />';
 				} else {
@@ -256,14 +256,14 @@ function make_search() {
 					echo '?w=100" width="100" />';
 				}
 				echo '</div>';
-				echo '<div class="span8"><h3><a href="'.make_linkify($item).'">';
+				echo '<div class="col-md-8"><h3><a href="'.make_linkify($item).'">';
 				make_namify($item);
 				echo '</a></h3>';
 				echo '<a href="' . make_linkify( $item ) . '">' . $item->UE . '</a>';
 				echo '<p>'.strip_tags($item->S).'</p></div></div><div class="clear:both"></div></div><div class="clear:both"></div>';
 			} else {
 				echo '<div class="row result"><div class="result">';
-				echo '<div class="span10"><h3><a href="'.make_linkify($item).'">';
+				echo '<div class="col-md-10"><h3><a href="'.make_linkify($item).'">';
 				//namify($item);
 				make_namify($item);
 				echo '</a></h3>';

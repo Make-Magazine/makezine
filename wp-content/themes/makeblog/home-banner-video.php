@@ -24,7 +24,7 @@
 
 		<div class="row">
 
-			<div class="span12">
+			<div class="col-xs-12">
 
 				<div class="pi pull-left">
 					<a href="<?php echo esc_url( get_theme_mod( 'make_banner_video_contest_image_link', 'http://www.makershed.com/SearchResults.asp?Cat=227&Click=174124' ) ); ?>">

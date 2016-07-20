@@ -448,7 +448,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 
 <div class="row">
 
-<div class="span6">
+<div class="col-md-6">
 
 	<?php 
 		$steps = $json_output->guide->steps;
@@ -466,7 +466,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 	
 </div>
 
-<div class="span6">
+<div class="col-md-6">
 
 	<?php 
 		$documents = $json_output->guide->documents;
@@ -492,7 +492,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 	foreach ($steps as $step) {
 		//var_dump($step);
 		echo '<div class="row project" id="' . esc_attr( $step->number ) . '">';
-		echo '<div class="span6 big_images">';
+		echo '<div class="col-md-6 big_images">';
 			$images = $step->images;
 			foreach ($images as $image) {
 				//var_dump($image);
@@ -501,14 +501,14 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 				echo '.standard" class="thumbnail item' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:280px; margin-bottom:10px;" />';
 			}
 		echo '</div><!--.big_images-->';
-		echo '<div class="span6 right_column">';
+		echo '<div class="col-md-6 right_column">';
 		$images = $step->images;
 		echo '<div class="row">';
 		$number = count($images);
 		if ($number > 1) {
 			$images = $step->images;
 			foreach ($images as $image) {
-				echo '<div class="span3" style="margin-right:20px;">';
+				echo '<div class="col-md-3" style="margin-right:20px;">';
 				echo '<img src="';
 				echo esc_url( $image->text );
 				echo '.thumbnail" class="thumbnail ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) . '" />';
@@ -645,7 +645,7 @@ function make_printer_makershed_thing() {
 		
 		<div class="row">
 		
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/Printrbot_LC_Plus_3D_Printer_Kit_p/dspb3.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/printrbot.jpg" />
@@ -659,7 +659,7 @@ function make_printer_makershed_thing() {
 				
 			</div>
 			
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/Afinia_H_Series_3D_Printer_p/dsaf1.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/affinia.jpg" />
@@ -673,7 +673,7 @@ function make_printer_makershed_thing() {
 				
 			</div>
 			
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/MakerBot_Replicator_Dual_Extruder_3D_Printer_p/dsmb02-de.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/replicator.jpg" />
@@ -687,7 +687,7 @@ function make_printer_makershed_thing() {
 				
 			</div>
 			
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/Make_Ultimate_Guide_to_3D_Printing_p/1449357377.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/makesip.jpg" />

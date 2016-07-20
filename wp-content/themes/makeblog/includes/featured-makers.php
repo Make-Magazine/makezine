@@ -31,7 +31,7 @@ function make_featured_maker($content) {
 			$content .= '<div class="maker">
 						<h3>Maker Faire Project Profile</h3>
 							<div class="row">
-								<div class="span2">';
+								<div class="col-md-2">';
 
 					if ( function_exists( 'wpcom_vip_get_resized_remote_image_url' ) ) {
 						$content .= '<img src="'.wpcom_vip_get_resized_remote_image_url( esc_url_raw( $make->exhibits[0]->photo ), 130, 130 ) . '" class="thumbnail profile" alt="'. esc_attr( $make->exhibits[0]->Name ).'" />';
@@ -41,7 +41,7 @@ function make_featured_maker($content) {
 
 					$content .= '</div>';	
 					
-					$content .= '<div class="span5" style="width:438px;">';
+					$content .= '<div class="col-md-5" style="width:438px;">';
 
 						$content .= '<h4><a class="noborder" href="' . esc_url( 'http://makerfaire.com/pub/e/'.$make->exhibits[0]->cs_rid ) .'">'.esc_html( $make->exhibits[0]->Name ).'</a></h4>';
 
@@ -67,13 +67,17 @@ function make_featured_maker($content) {
 
 									$content .= '<li class=""><a href="#video" role="button" class="btn btn-mini" data-toggle="modal">Video</a>';
 									//$content .= '<li class=""><a data-controls-modal="my-modal" class="noborder" href="#modal">Video</a></li>';
-									$content .= '<div class="modal hide" id="video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-												<h3>'.esc_html( $make->exhibits[0]->Name ).'</h3>
-											</div>
-											<div class="modal-body">
-												<div>';
+									$content .= '<div class="modal" id="video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+																	<div class="modal-dialog">
+      															<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+																				<h3>'.esc_html( $make->exhibits[0]->Name ).'</h3>
+																			</div>
+																			<div class="modal-body">
+																			<div>
+																		</div>
+																	</div>';
 			
 											if ((!empty($request_url)) && ($pos !== false)) {
 

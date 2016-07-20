@@ -17,7 +17,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<img src="<?php /*echo get_stylesheet_directory_uri(); */?>/img/WP_webheader_940x110-1.png" alt="Weekend Projects">
 					
@@ -35,7 +35,7 @@ get_header('version-2'); ?>
 			
 			<div class="row">
 			
-				<div class="span12">
+				<div class="col-xs-12">
 					
 					<h3 class="heading">Featured Project</h3>
 					
@@ -45,7 +45,7 @@ get_header('version-2'); ?>
 			
 			<div class="row">
 			
-				<div class="span8">
+				<div class="col-md-8">
 					
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<?php the_content(); ?>
@@ -53,7 +53,7 @@ get_header('version-2'); ?>
 					
 				</div>
 				
-				<div class="span4">
+				<div class="col-md-4">
 
 					<div class="widget">
 						<form role="search" method="get" class="form-search" id="searchform" action="<?php echo home_url( '/' ); ?>">
@@ -77,7 +77,7 @@ get_header('version-2'); ?>
 								
 			<div class="row">
 			
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<?php 
 
@@ -114,7 +114,7 @@ get_header('version-2'); ?>
 			
 			<div class="row">
 			
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<?php 
 
@@ -147,7 +147,7 @@ get_header('version-2'); ?>
 			
 			<div class="row">
 			
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<?php if ( function_exists( 'sharing_display') ) echo sharing_display(); ?> 
 					
@@ -169,7 +169,7 @@ get_header('version-2'); ?>
 		<div class="container">
 			<div class="row">
 				
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<h2>Weekend Projects by Difficulty</h2>
 				
@@ -184,7 +184,7 @@ get_header('version-2'); ?>
 			$difficulties = array('easy', 'moderate', 'difficult' );
 
 			foreach ($difficulties as $difficulty) {
-				echo '<div class="grey"><div class="container"><div class="row"><div class="span12">';							
+				echo '<div class="grey"><div class="container"><div class="row"><div class="col-xs-12">';							
 				$args = array(
 					'post_type'			=> 'projects',
 					'difficulty'		=> $difficulty,

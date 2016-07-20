@@ -16,7 +16,7 @@ get_header('version-2'); ?>
 
 <div class="row">
 	
-	<div class="span6">
+	<div class="col-md-6">
 
 		<h1>Make: Day of Making</h1>
 
@@ -24,7 +24,7 @@ get_header('version-2'); ?>
 	
 	</div>
 
-	<div class="span4 offset2">
+	<div class="col-md-4 col-md-offset-2">
 
 		<img src="<?php echo get_template_directory_uri(); ?>/images/day-of-making/day-of-making.png" alt="">
 
@@ -74,11 +74,11 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 <div class="row"> <!-- Main Container Row -->
 
-	<div class="span8">
+	<div class="col-md-8">
 			
 			<div class="row first-row">
 			
-				<div class="span8 dom-main-story">
+				<div class="col-md-8 dom-main-story">
 
 						<?php 
 							$featuredposts = $dom_posts[0];
@@ -105,7 +105,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 			
 			<div class="row second-row">
 			
-				<div class="span4 dom-story">
+				<div class="col-md-4 dom-story">
 
 					<?php 
 						$featuredposts1 = $dom_posts[1];
@@ -128,7 +128,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 				</div>
 
-				<div class="span4 dom-story">
+				<div class="col-md-4 dom-story">
 
 					<?php 
 						$featuredposts2 = $dom_posts[2];
@@ -155,7 +155,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 			
 			<div class="row third-row">
 			
-				<div class="span4 dom-story">
+				<div class="col-md-4 dom-story">
 
 					<?php 
 						$featuredposts3 = $dom_posts[3];
@@ -178,7 +178,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 				</div>
 
-				<div class="span4 dom-story">
+				<div class="col-md-4 dom-story">
 
 					<?php 
 						$featuredposts4 = $dom_posts[4];
@@ -205,7 +205,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 			<div class="row fourth-row">
 			
-				<div class="span4 dom-story">
+				<div class="col-md-4 dom-story">
 
 					<?php 
 						$featuredposts5 = $dom_posts[5];
@@ -228,7 +228,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 				</div>
 
-				<div class="span4 dom-story">
+				<div class="col-md-4 dom-story">
 
 					<?php 
 						$featuredposts6 = $dom_posts[6];
@@ -253,9 +253,9 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 			</div>
 
-	</div> <!-- End span8 -->		
+	</div> <!-- End col-md-8 -->		
 
-	<div class="span4 dom-middle-section">
+	<div class="col-md-4 dom-middle-section">
 		
 		<div class="row first-row">
 			
@@ -275,7 +275,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 		
 		<div class="row third-row second-column">
 		
-			<div class="span4 dom-story dom-final-story">
+			<div class="col-md-4 dom-story dom-final-story">
 
 						<?php 
 							$featuredposts7 = $dom_posts[7];
@@ -302,7 +302,7 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 
 		<div class="row"><div class="read-more-stories"><a href="http://makezine.com/tag/day-of-making/">Read More Stories</a></div></div>
 	
-	</div> <!-- End span8 -->
+	</div> <!-- End col-md-8 -->
 
 </div> <!-- End main container row -->
 

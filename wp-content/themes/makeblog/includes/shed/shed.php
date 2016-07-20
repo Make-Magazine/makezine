@@ -51,7 +51,7 @@ function make_featured_products_slider() {
 
   // Start the product loop.
   foreach ( $counter as $i => $product ) {
-    $output .= '<div class="span3 shed">';
+    $output .= '<div class="col-md-3 shed">';
     // Add the same click tracker.
     $output .= '<a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js( $products[$product]->ProductName ) . '\');" href="' . esc_url( make_shed_url( $products[$product]->ProductCode ) ) . '">';
     $output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->PhotoURL, 218, 146 ) . '" alt="' . esc_attr( $products[$product]->Product_Name ) . '" />';
@@ -131,7 +131,7 @@ function make_shopify_featured_products_slider( $row = 'row' ) {
 
   // Start the product loop.
   foreach ( $counter as $i => $product ) {
-    $output .= '<div class="span3 shed">';
+    $output .= '<div class="col-md-3 shed">';
     // Add the same click tracker.
     $output .= '<a target="_blank" onClick="ga(\'send\', \'event\', \'Links\', \'Click\', \'Maker Shed - ' . esc_js( $products[$product]->item_name ) . '\']);" href="' . esc_url( $products[$product]->item_page_url ) . '?utm_source=makezine.com&utm_medium=product_ads&utm_term='.str_replace(" ", "_", esc_js( $products[$product]->item_name )).'">';
     $output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $products[$product]->item_image_url, 218, 146 ) . '" alt="' . esc_attr( $products[$product]->item_name ) . '" />';

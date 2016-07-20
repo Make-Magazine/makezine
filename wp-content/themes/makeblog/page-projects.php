@@ -72,7 +72,7 @@ get_header('version-2'); ?>
                     $proj_query = new WP_Query($args);
 
                     while ( $proj_query->have_posts() ) : $proj_query->the_post();
-                      echo '<div class="span4">';
+                      echo '<div class="col-md-4">';
                       $url = get_post_custom_values('Image');
                       echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $url[0], 293, 200 ) . '" alt="Image" />';
                       echo '<div class="overlay"><h4><a class="red" href="' . get_permalink() . '">' . get_the_title() . '</a></h4>';

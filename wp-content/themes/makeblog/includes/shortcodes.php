@@ -578,7 +578,9 @@ function make_modal_builder( $atts, $content = null ) {
 			)
 	);
 	$output = '<a class="btn  ' . esc_attr( $btn_class ) . '" data-toggle="modal" href="#modal-' . $number . '">' . esc_html( $launch ) . '</a>';
-	$output .= '<div id="modal-' . $number . '" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+	$output .= '<div id="modal-' . $number . '" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+	$output .= '	<div class="modal-dialog">';
+	$output .= '	<div class="modal-content">';
 	$output .= '	<div class="modal-header">';
 	$output .= '		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
 	$output .= '		<h3>' . esc_html( $title ) . '</h3>';
@@ -590,6 +592,8 @@ function make_modal_builder( $atts, $content = null ) {
 	$output .= '	<div class="modal-footer">';
 	$output .= '		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>';
 	$output .= '	</div>';
+	$output .= '</div>';
+	$output .= '</div>';
 	$output .= '</div>';
 
 	return $output;
@@ -1055,16 +1059,20 @@ function make_mf_video_highlights( $atts, $content = null ) {
 		<div class="stage-1">
 			<h3 class="stage-name">MAKE: Live Stage</h3>
 			<p class="presentation-name"><a data-toggle="modal" href="#modal-' . absint( $stage1 ) . '">Live Robot Bugs! Biomimicry in Research and Development</a></p>
-			<div id="modal-' . absint( $stage1 ) . '" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h3>Maker Faire NY: Live Robot Bugs! Biomimicry in Research and Development</h3>
-				</div>
-				<div class="modal-body">';
-				$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=tO1YO0TOgdE', array( 'width' => 530 ) );
-				$output .= '</div>
-				<div class="modal-footer">
-					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<div id="modal-' . absint( $stage1 ) . '" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h3>Maker Faire NY: Live Robot Bugs! Biomimicry in Research and Development</h3>
+						</div>
+						<div class="modal-body">';
+						$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=tO1YO0TOgdE', array( 'width' => 530 ) );
+						$output .= '</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<p class="see-all"><a href="http://makerfaire.com/new-york-2013/live-stage/" target="_blank">See All Videos</a></p>
@@ -1079,19 +1087,23 @@ function make_mf_video_highlights( $atts, $content = null ) {
 		<div class="stage-3">
 			<h3 class="stage-name">Maker Interviews</h3>
 			<p class="presentation-name"><a data-toggle="modal" href="#modal-' . absint( $stage3 ) . '">NASA Chief Technologist Mason Peck</a></p>
-			<div id="modal-' . absint( $stage3 ) . '" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h3>Maker Faire NY: NASA Chief Technologist Mason Peck</h3>
-				</div>
-				<div class="modal-body">';
-				$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=dC84Dm45Hr4', array( 'width' => 530 ) );
-				$output .= '</div>
-				<div class="modal-footer">
-					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<div id="modal-' . absint( $stage3 ) . '" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h3>Maker Faire NY: NASA Chief Technologist Mason Peck</h3>
+						</div>
+						<div class="modal-body">';
+						$output .= wpcom_vip_wp_oembed_get( 'http://www.youtube.com/watch?v=dC84Dm45Hr4', array( 'width' => 530 ) );
+						$output .= '</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+						</div>
+					</div>
+					<p class="see-all"><a href="http://makerfaire.com/new-york-2013/roaming-camera/" target="_blank">See All Videos</a></p>
 				</div>
 			</div>
-			<p class="see-all"><a href="http://makerfaire.com/new-york-2013/roaming-camera/" target="_blank">See All Videos</a></p>
 		</div>
 	</div>';
 

@@ -202,7 +202,7 @@ class Make_Contribute {
 		foreach ( $rows as $images ) {
 			$output .= '<div class="row">';
 			foreach ($images as $image) {
-				$output .= '<div class="span2">';
+				$output .= '<div class="col-md-2">';
 				$output .= '<img src="' . esc_url( wpcom_vip_get_resized_remote_image_url( $image->guid, '130', '170' ) ) . '" alt="' . esc_attr( $image->post_title ) . '">';
 				$output .= '</div>';
 			}

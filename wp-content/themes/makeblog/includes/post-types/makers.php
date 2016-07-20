@@ -153,7 +153,7 @@ class Make_Makers {
 
 		$meta = get_metadata( 'post', $post->ID );
 
-		$output = '<div class="span6">';
+		$output = '<div class="col-md-6">';
 
 		$output .= '<div class="maker media">';
 		$output .= ( isset( $meta['_url'][0] ) ) ? '<a class="pull-left" href="' . esc_url( $meta['_url'][0] ) . '">' : '';
