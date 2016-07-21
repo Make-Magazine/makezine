@@ -232,11 +232,6 @@ $primary_cat_dimension = $primarycat[0];
           <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16">Jump into the Summer of Making! <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
         </p>
       </div>
-      <div class="col-sm-3">
-        <p class="header-sub-link pull-right">
-          <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMHN" target="_blank">SUBSCRIBE </a>
-        </p>
-      </div>
     </div>
   </div>
 </div>
@@ -248,13 +243,11 @@ $primary_cat_dimension = $primarycat[0];
       <div class="row">
 
         <!-- LOGO & TAG LINE -->
-          <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-            <a href="<?php echo home_url(); ?>" class="logo-a">
-              <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
-            </a>
-            <h5 class="mz-tag">We are all Makers</h5>
-            <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
-          </div>
+        <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
+          <a href="<?php echo home_url(); ?>" class="logo-a">
+            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+          </a>
+        </div>
        
 
         <!-- MENUS -->
@@ -272,22 +265,16 @@ $primary_cat_dimension = $primarycat[0];
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
           <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
-            $user_ip = getenv('REMOTE_ADDR');
-            $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-            $state = $geo["geoplugin_regionCode"];
-
-            if( $state == 'CA' ) {
-              echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
-              echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
-              echo '</h3>';
-            }
+            echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
+            echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
+            echo '</h3>';
           } // end if ?>
 
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
             <!-- Mobile search -->
-            <div class="hidden-md mz-search search-bar-mobile">
+            <div class="search-bar-mobile hidden-sm hidden-md hidden-lg">
               <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
                 <label>
                   <input type="search" class="search-field" placeholder="" value="" name="s" title="">
@@ -342,21 +329,8 @@ $primary_cat_dimension = $primarycat[0];
 
         <div class="get-dark"></div>
 
-        <!-- OLD SEARCH -->
-        <div class="col-md-1 hidden-xs mz-search search-bar">
-          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-            <input type="submit" class="sendsubmit" value="" />
-            <label>
-              <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-              <div class="close-search">
-                <i class="fa fa-search fa-2x"></i>
-              </div>
-            </label>
-          </form>
-        </div>
-
         <!-- NEW SEARCH -->
-        <div id="sb-search" class="sb-search">
+        <div id="sb-search" class="sb-search hidden-xs">
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
             <label class="sb-search-label">
               <i class="fa fa-search" aria-hidden="true"></i>
@@ -371,7 +345,7 @@ $primary_cat_dimension = $primarycat[0];
         </div>
 
         <!-- New Header Subscribe stuff -->
-        <div id="mz-header-subscribe">
+        <div id="mz-header-subscribe" class="hidden-xs">
           <div>
             <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
               <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
@@ -380,27 +354,13 @@ $primary_cat_dimension = $primarycat[0];
           </div>
         </div>
 
-        <!-- Sticky Navbar -->
-        <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
+        <!-- Subscribe link in Sticky Navbar -->
+        <div class="hidden-xs sticky-subscribe">
           <h6>
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">
-              <h5>Subscribe<span class="hidden"> & save</span></h5>
-              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>" alt="Make Magazine small mag cover" />
-            </a>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">Subscribe<span> & save</span></a>
           </h6>
         </div>
 
-        <!-- SOCIAL MEDIA ICONS -->
-        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social">
-          <div class="social-network-container">
-            <ul class="social-network social-circle">
-              <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-              <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
-              <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
-            </ul>
-          </div>
-        </div><!-- End .desktop-social -->
       </div><!-- row -->
     </nav>
   </div><!-- container panel header -->
