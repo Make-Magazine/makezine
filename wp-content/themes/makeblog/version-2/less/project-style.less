@@ -19,12 +19,6 @@ body.page-template-project {
   padding-left: 19px;
   padding-right: 1px;
 }
-.projects-cat .content, .all-projects .content {
-  border: none;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: transparent;
-}
 .projects-cat .content .project-navigation, .all-projects .content .project-navigation {
   background-color: #f7f7f7;
   border-top: 5px solid #F0F0F0;
@@ -535,6 +529,9 @@ body.page-template-project {
 }
 .projects-cat .posts-list ul.selected-posts-list li.row ul, .all-projects .posts-list ul.selected-posts-list li.row ul {
   margin: 0 -15px 0 -15px;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
 }
 .projects-cat .posts-list ul.selected-posts-list li.row ul li:nth-child(3), .all-projects .posts-list ul.selected-posts-list li.row ul li:nth-child(3) {
   margin-right: 0;

@@ -636,7 +636,7 @@ function make_projects_parts( $parts ) {
 
 		$output .= '</a> ';
 
-		$output .= ' <span class="muted">';
+		$output .= ' <span class="text-muted">';
 		$output .= wp_kses_post( $notes );
 		$output .= '</span>';
 
@@ -671,7 +671,7 @@ function make_projects_tools( $tools ) {
 			$notes = null;
 
 			if( ! empty( $tool->notes ) ) {
-				$output .= '  <span class="muted">' . wp_kses_post( $tool->notes ) . '</span>';
+				$output .= '  <span class="text-muted">' . wp_kses_post( $tool->notes ) . '</span>';
 			}
 		}
 	}

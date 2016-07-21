@@ -62,7 +62,7 @@ function make_page2_content_filter( $content ) {
 		$link = get_post_meta( $post->ID, 'link', true );
 		
 		if ( $link ) {
-			$source =  '<p><a href="'. esc_url( $link ).'" style="border-bottom:0px;"><span class="label" style="color:white">Source</a><span></p>';
+			$source =  '<p><a href="'. esc_url( $link ).'" style="border-bottom:0px;"><span class="label label-default" style="color:white">Source</a><span></p>';
 			return $content.$source;
 
 		}

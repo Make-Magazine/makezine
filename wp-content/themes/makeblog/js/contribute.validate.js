@@ -32,7 +32,7 @@ jQuery.extend(jQuery.validator.prototype, {
       label = jQuery('<' + this.settings.errorElement + '/>')
         .attr({'for':  this.idOrName(element), generated: true})
         .addClass(this.settings.errorClass)
-        .addClass('help-inline')
+        .addClass('help-block')
         .html(message || '');
       if ( this.settings.wrapper ) {
         // make sure the element is visible, even in IE

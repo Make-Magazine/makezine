@@ -56,7 +56,7 @@ get_header('version-2'); ?>
 				<div class="col-md-4">
 
 					<div class="widget">
-						<form role="search" method="get" class="form-search" id="searchform" action="<?php echo home_url( '/' ); ?>">
+						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 							<input type="text" class="input-medium search-query" value="" name="s" id="s" placeholder="Search Weekend Projects" />
 							<input type="hidden" class="btn" name="tag" id="searchsubmit" value="greatcreate" />
 							<input type="submit" class="btn" id="searchsubmit" value="Search" />

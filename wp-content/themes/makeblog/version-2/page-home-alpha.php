@@ -112,7 +112,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     }
 
 ?>
-<div class="container">
+<div class="padleft padright">
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="row">
@@ -131,50 +131,50 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       </div>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-        <?php home_tags( "$main_id" ) ?>
+          <?php home_tags( "$main_id" ) ?>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <div class="row">
-      <a href="<?php echo esc_html( $top_link ); ?>"
-        class="mz-featured-imageblock"
-        style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="row">
+        <a href="<?php echo esc_html( $top_link ); ?>"
+          class="mz-featured-imageblock"
+          style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
+          <div class="featured-image-shadow"></div>
+          <div class="mz-text-overlay mz-text-overlay-side">
+            <?php if (!empty($top_sponsor)) {
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>';
+            } ?>
+            <h2><?php echo $top_title; ?></h2>
+          </div>
+        </a>
+        <div class="filter-display-wrapper">
+          <div class="red-box-category">
+            <?php home_tags( "$top_id" ) ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="row">
+        <a href="<?php echo esc_html( $bottom_link ); ?>"
+          class="mz-featured-imageblock"
+          style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
-          <?php if (!empty($top_sponsor)) {
-            echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>';
+          <?php if (!empty($bottom_sponsor)) {
+            echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>';
           } ?>
-          <h2><?php echo $top_title; ?></h2>
+          <h2><?php echo $bottom_title; ?></h2>
         </div>
-      </a>
-      <div class="filter-display-wrapper">
-        <div class="red-box-category">
-          <?php home_tags( "$top_id" ) ?>
+        </a>
+        <div class="filter-display-wrapper">
+          <div class="red-box-category">
+            <?php home_tags( "$bottom_id" ) ?>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <div class="row">
-      <a href="<?php echo esc_html( $bottom_link ); ?>"
-        class="mz-featured-imageblock"
-        style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
-      <div class="featured-image-shadow"></div>
-      <div class="mz-text-overlay mz-text-overlay-side">
-        <?php if (!empty($bottom_sponsor)) {
-          echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>';
-        } ?>
-        <h2><?php echo $bottom_title; ?></h2>
-      </div>
-      </a>
-      <div class="filter-display-wrapper">
-        <div class="red-box-category">
-          <?php home_tags( "$bottom_id" ) ?>
-        </div>
-      </div>
       </div>
     </div>
   </div> <!-- row -->

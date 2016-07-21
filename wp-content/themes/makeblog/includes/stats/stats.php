@@ -102,7 +102,7 @@ function make_social_stats() {
 
 		<style>
 
-			.control-group {
+			.form-group {
 				clear: both;
 				margin-bottom: 15px;
 			}
@@ -156,25 +156,25 @@ function make_social_stats() {
 				<div class="table table_content">
 					<p class="sub">Add a Post ID to combined stats for the page.</p>
 					<form action="" method="post" class="">
-						<div class="control-group">
+						<div class="form-group">
 							<label class="control-label" for="post_id">Post ID</label>
 							<div class="controls">
 								<input type="text" class="col-md-3" placeholder="Post ID" name="post_id">
 							</div>
 						</div>
-						<div class="control-group">
+						<div class="form-group">
 							<label class="control-label" for="days">Number of Days</label>
 							<div class="controls">
 								<input type="text" class="col-md-3" placeholder="Number of Days" name="days">
 							</div>
 						</div>
-						<div class="control-group">
+						<div class="form-group">
 							<label class="control-label" for="end">End Date</label>
 							<div class="controls">
 								<input type="date" class="col-md-3" placeholder="End Date" name="end">
 							</div>
 						</div>
-						<div class="control-group">
+						<div class="form-group">
 							<label class="control-label" for="table">Table</label>
 							<div class="controls">
 								<select name="table">

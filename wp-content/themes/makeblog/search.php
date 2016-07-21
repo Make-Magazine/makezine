@@ -29,7 +29,7 @@ query_posts(
 					<div class="well">
 
 						<h1>Search Results for</h1>
-							<form role="search" method="get" class="form-search form-inline" id="searchform" action="<?php echo home_url( '/' ); ?>">
+							<form role="search" method="get" class="form-inline" id="searchform" action="<?php echo home_url( '/' ); ?>">
 		            <div id="custom-search-input">
 	                <div class="input-group col-xs-12">
                     <input type="text" class="form-control input-lg" value="" name="s" id="s" placeholder="<?php echo get_search_query(); ?>" />

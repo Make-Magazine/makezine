@@ -58,7 +58,7 @@
                         foreach ( $posts as $post ) {
                           //print_r($post); ?>
                             <a href="<?php echo get_permalink($post->ID); ?>">
-                              <?php echo get_the_post_thumbnail( $post->ID, 'side-thumb', array('class' => 'thumbnail' ) ); ?>
+                              <?php echo get_the_post_thumbnail( $post->ID, 'side-thumb', array('class' => 'img-thumbnail' ) ); ?>
                               <?php echo get_the_title( $post->ID ); ?>
                             </a>
                         <?php }

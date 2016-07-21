@@ -272,7 +272,7 @@ function js_ratings_box() {
 	if (isset($price[0])) {
 		echo '<a href="';
 		echo esc_url( $price[0] );
-		echo '" class="btn btn-primary btn-mini">Company Website</a>';
+		echo '" class="btn btn-primary btn-xs">Company Website</a>';
 	}
 ?>
 
@@ -281,7 +281,7 @@ function js_ratings_box() {
 	if (isset($price[0])) {
 		echo '<a href="';
 		echo esc_url( $price[0] );
-		echo '" class="btn btn-danger btn-mini">Buy now!</a>';
+		echo '" class="btn btn-danger btn-xs">Buy now!</a>';
 	}
 ?>
 
@@ -427,10 +427,10 @@ $json_output = json_decode($json);
 if ( !is_object( $json_output ) )
 	return;
 ob_start();
-echo '<div class="clear"></div><p class="alert alert-info">';
+echo '<div class="clear"></div><p class="alert alert-warning alert-info">';
 echo '<a href="' . esc_url( $json_output->url ) . '"><img src="';
 echo bloginfo('stylesheet_directory');
-echo '/images/proj.jpg" class="pull-right thumbnail" style="padding:10px; background-color:#fff;" alt="Make: Projects" /></a>';
+echo '/images/proj.jpg" class="pull-right img-thumbnail" style="padding:10px; background-color:#fff;" alt="Make: Projects" /></a>';
 echo 'Check out this full <a href="' . esc_url( $json_output->url ) . '">' . esc_html( $json_output->guide->title ) . '</a> build from <a href="http://makeprojects.com">Make: Projects</a>, where you can find hundreds of project how-tos, techniques, and an active community of makers.</p>';
 echo '<p class="summary">' . esc_html( $json_output->guide->summary ) . '</p>';
 echo '<p><strong>Author</strong>: ' . esc_html( $json_output->guide->author->text );
@@ -439,7 +439,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 
 <div class="">
 
-<img src="<?php echo esc_url( $json_output->guide->image->text ); ?>.standard" class="thumbnail pull-right" alt="<?php echo esc_attr( $json_output->guide->title ); ?>" align="right" />
+<img src="<?php echo esc_url( $json_output->guide->image->text ); ?>.standard" class="img-thumbnail pull-right" alt="<?php echo esc_attr( $json_output->guide->title ); ?>" align="right" />
 <?php echo '<div class="summary">' . wp_kses_post( $json_output->guide->introduction_rendered ) .'</div>' ?>
 
 <div class="clear"></div>
@@ -498,7 +498,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 				//var_dump($image);
 				echo '<img src="';
 				echo esc_url( $image->text );
-				echo '.standard" class="thumbnail item' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:280px; margin-bottom:10px;" />';
+				echo '.standard" class="img-thumbnail item' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:280px; margin-bottom:10px;" />';
 			}
 		echo '</div><!--.big_images-->';
 		echo '<div class="col-md-6 right_column">';
@@ -511,7 +511,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 				echo '<div class="col-md-3" style="margin-right:20px;">';
 				echo '<img src="';
 				echo esc_url( $image->text );
-				echo '.thumbnail" class="thumbnail ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) . '" />';
+				echo '.thumbnail" class="img-thumbnail ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) . '" />';
 				echo '</div>';
 			}
 		}

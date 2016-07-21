@@ -17,7 +17,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 ?>
 <div class="mz-story-infinite-view <?php echo $login_admin ?>">
 
-	<div class="container wrapper">
+	<div class="wrapper">
 		<div class="ad-unit first-ad">
 			<?php global $make;
 			print $make->ads->ad_leaderboard;
@@ -104,29 +104,32 @@ if ( user_can( $current_user, 'administrator' ) ) {
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="row story-header first-story" id="<?php echo get_the_ID(); ?>">
 
-				<div class="story-title">
-					<h1><?php the_titlesmall( '', '', true, '90' ); ?></h1>
+				<div class="container">
+					<div class="story-title">
+						<h1><?php the_titlesmall( '', '', true, '90' ); ?></h1>
+					</div>
+					<div class="author-info">
+						<?php
+						if ( function_exists( 'coauthors_posts_links' ) ) {
+							get_author_profile();
+						} else {
+							the_author_posts_link();
+						} ?>
+						<?php
+						$post_time  = get_post_time( 'U', true, $post, true );
+						$time_now   = date( 'U' );
+						$difference = $time_now - $post_time;
+						if ( $difference > 86400 ) { ?>
+							<time itemprop="startDate"
+								  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
+						<?php } else { ?>
+							<time itemprop="startDate"
+								  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
+						<?php }
+						?>
+					</div>
 				</div>
-				<div class="author-info">
-					<?php
-					if ( function_exists( 'coauthors_posts_links' ) ) {
-						get_author_profile();
-					} else {
-						the_author_posts_link();
-					} ?>
-					<?php
-					$post_time  = get_post_time( 'U', true, $post, true );
-					$time_now   = date( 'U' );
-					$difference = $time_now - $post_time;
-					if ( $difference > 86400 ) { ?>
-						<time itemprop="startDate"
-							  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
-					<?php } else { ?>
-						<time itemprop="startDate"
-							  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
-					<?php }
-					?>
-				</div>
+
         <?php
         //Hero Image
         $hero_id = get_field('hero_image');
@@ -155,6 +158,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
         <?php } ?>
 
 			</div>
+
 			<div class="container">
 				<div class="row content first-story">
 					<div class="col-sm-7 col-md-8">

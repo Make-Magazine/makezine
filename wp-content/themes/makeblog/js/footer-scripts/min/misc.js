@@ -441,7 +441,7 @@ jQuery(document).ready(function(){
     //Style the pagination links
     jQuery('a span.badge').addClass('badge-info');
   });
-  jQuery('.hide-thumbnail').removeClass('thumbnail');
+  jQuery('.hide-thumbnail').removeClass('img-thumbnail');
 });
 
 

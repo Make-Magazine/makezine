@@ -14,7 +14,7 @@ function make_pop_terms() {
 	echo '<ul class="terms"><li>Popular Searches:</li>';
 	foreach ($items as $item) {	
 		$title = str_replace('%0A', '', urlencode($item->title));
-		echo '<li><a href="/search/?q='.$title.'"><span class="label label-info">'.$item->title.'</span></a></li>';
+		echo '<li><a href="/search/?q='.$title.'"><span class="label label-default label-info">'.$item->title.'</span></a></li>';
 	}
 	echo '</ul>';
 
@@ -201,7 +201,7 @@ function make_search() {
 						if (isset($url[0])) {
 							echo '<a href="'.esc_url($url[0]).'">';
 						}
-						the_post_thumbnail('search-thumb', array('class' => 'thumbnail'));
+						the_post_thumbnail('search-thumb', array('class' => 'img-thumbnail'));
 						if (isset($url[0])) {
 							echo '</a>';
 						}
@@ -249,9 +249,9 @@ function make_search() {
 				echo '<div class="row result"><div class="result">';
 				echo '<div class="col-md-2">';
 				if ( function_exists( 'wpcom_vip_get_resized_remote_image_url' ) ) {
-					echo '<img class="thumbnail" src="' . wpcom_vip_get_resized_remote_image_url( $image[0]->attributes()->$att, '100', '100' ) . '" alt="'.make_linkify($item).'" />';
+					echo '<img class="img-thumbnail" src="' . wpcom_vip_get_resized_remote_image_url( $image[0]->attributes()->$att, '100', '100' ) . '" alt="'.make_linkify($item).'" />';
 				} else {
-					echo '<img class="thumbnail" src="';
+					echo '<img class="img-thumbnail" src="';
 					echo $image[0]->attributes()->$att;
 					echo '?w=100" width="100" />';
 				}

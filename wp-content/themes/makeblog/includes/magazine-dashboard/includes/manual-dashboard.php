@@ -590,7 +590,7 @@ function make_magazine_dashboard_page() {
 								echo '<td class="section column-section"' . make_check_screen_options( 'section', false, true ) . '>' . wp_kses( $sections, array( 'a' => array( 'href' => array(), 'title' => array() ) ) ) . '</td>';
 								echo '<td class="post_title column-post_title"' . make_check_screen_options( 'post_title', false, true ) . '><strong><a href="' . get_edit_post_link( absint( $post->ID ) ) . '">' . esc_html( get_the_title() ) . '</a></strong>
 										<div class="row-actions">
-											<span class="inline hide-if-no-js"><a href="' . get_edit_post_link( absint( $post->ID ) ) . '">Edit</a> | </span>
+											<span class="list-inline hide-if-no-js"><a href="' . get_edit_post_link( absint( $post->ID ) ) . '">Edit</a> | </span>
 											<span class="trash"><a class="submitdelete" href="' . get_delete_post_link( absint( $post->ID ) ) . '">Trash</a></span>
 										</div>
 									  </td>';

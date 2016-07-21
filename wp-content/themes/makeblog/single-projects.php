@@ -174,7 +174,7 @@ get_header('version-2'); ?>
 
 									<?php } ?>
 
-									<a class="project-print-btn btn btn-mini btn-danger pull-left print-page"><i class="icon-print icon icon-white"></i> Print Project</a>
+									<a class="project-print-btn btn btn-xs btn-danger pull-left print-page"><i class="icon-print icon icon-white"></i> Print Project</a>
 
 								</div>
 

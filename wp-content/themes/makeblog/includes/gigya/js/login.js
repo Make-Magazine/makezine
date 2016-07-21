@@ -184,7 +184,7 @@ function make_is_logged_in( maker ) {
 				make_contribute_add_gigya_id( maker.UID );
 			}
 
-			jQuery( '.author-profile-bio' ).append( '<a href="' + make_gigya.root_path + 'contribute/" class="btn btn-large btn-primary">Contribute to MAKE!</a>' );
+			jQuery( '.author-profile-bio' ).append( '<a href="' + make_gigya.root_path + 'contribute/" class="btn btn-lg btn-primary">Contribute to MAKE!</a>' );
 		}
 	} else {
 		if ( gigya_debug )

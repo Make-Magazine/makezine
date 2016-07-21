@@ -215,7 +215,7 @@ function make_post_loop( $args ) {
 					<?php if ($args['post_type'] == 'projects' ) {
 						$time = get_post_custom_values( 'TimeRequired' );
 						$terms = get_the_terms( $post->ID, 'difficulty' );
-						echo '<ul class="unstyled">';
+						echo '<ul class="list-unstyled">';
 						if ($terms) {
 							foreach ($terms as $term) {
 								echo '<li><strong>Difficulty:</strong> ' . esc_html( $term->name ) . '</li>';
@@ -520,7 +520,7 @@ function make_update_to_content( $content ) {
 	$updates = get_post_meta( get_the_ID(), 'Updates', true );
 	$output = '';
 	if ( !empty( $updates ) ) {
-		$output .= '<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+		$output .= '<div class="alert alert-warning"><button type="button" class="close" data-dismiss="alert">&times;</button>';
 		$output .= wp_kses_post( Markdown( $updates ) );
 		$output .= '</div>';
 	}

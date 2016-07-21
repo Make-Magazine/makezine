@@ -14,8 +14,10 @@
     color: #4a4a4a;
     font-size: 25px;
     font-weight: 500;
-    line-height: 35px;
+    line-height: 1em;
     text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   .wrapper {
     margin: auto;
@@ -26,28 +28,10 @@
       width: 750px;
     }
   }
-  .all-post-wrapper {
-    @media (max-width: 767px) {
-      padding: 0;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-      padding-right: 26px;
-    }
-    @media (min-width: 992px) and (max-width: 1200px) {
-      max-width: 685px;
-    }
-  }
+
   .post-list {
-    margin: 0 70px 30px 0;
-    @media (max-width: 1200px) {
-      margin-right: 55px;
-    }
-    @media (max-width: 991px) {
-      margin: 0 10px 10px 0;
-    }
-    @media (max-width: 767px) {
-      margin: 0 0 10px 0;
-    }
+    margin-bottom: 10px;
+    margin-left: 0;
     li {
       list-style-type: none;
     }
@@ -56,6 +40,9 @@
       display: -webkit-flex;
       flex-wrap: wrap;
       -webkit-flex-wrap: wrap;
+      @media (min-width: 768px) {
+        padding-right: 15px;
+      }
       .wrapp {
         overflow: hidden;
       }
@@ -75,9 +62,6 @@
         }
       }
       .large-card {
-        @media (min-width: 768px) {
-          padding-right: 5px;
-        }
         @media (max-width: 767px) and (max-device-width: 767px) {
           &:hover {
             div.gradient-wrapper {
@@ -307,10 +291,10 @@
             line-height: 18px;
             word-wrap: break-word;
             overflow: hidden;
-            @media (min-width: 1201px) {
+            @media (min-width: 1200px) {
               height: 123px;
             }
-            @media (min-width: 992px) and (max-width: 1200px) {
+            @media (min-width: 992px) and (max-width: 1199px) {
               height: 144px;
             }
             @media (min-width: 768px) and (max-width: 991px) {
@@ -469,10 +453,10 @@
   }
 }
 .all-stories.tags .post-list .post .small-card .about-post .title {
-  @media (min-width: 1201px) {
+  @media (min-width: 1200px) {
     height: 123px;
   }
-  @media (min-width: 992px) and (max-width: 1200px) {
+  @media (min-width: 992px) and (max-width: 1199px) {
     height: 144px;
   }
   @media (min-width: 768px) and (max-width: 991px) {
@@ -488,12 +472,7 @@
 /*******************************/
 /*******************************/
 .aside {
-  width: 300px;
-  padding: 0;
-  margin-left: -25px;
-  @media (max-width: 991px) {
-    margin: 0;
-  }
+
 }
 
 #makeblog {

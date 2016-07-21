@@ -121,7 +121,8 @@
 				lessThan768 = true;
 			}
 			$('.dynamic-header-posts').hide();
-		} else {
+		} 
+		else {
 			if (lessThan768 === true) {
 				$('div.navbar-collapse').show();
 				$('.dynamic-header-posts').hide();
@@ -206,6 +207,9 @@
 		$('.navbar-default .navbar-toggle').removeClass('close-background');
 		$('.navbar-default .navbar-toggle .icon-bar').removeClass('hide-background');
 		$('.sumome-share-client-wrapper.sumome-share-client-wrapper-mobile-bottom-bar').css('display', '');
+		if ($('.get-dark').hasClass('show')) {
+			$('#makezine-navbar-collapse-1').removeClass('in');
+		}
 	});
 
 	$('.search-field').attr('title', '');

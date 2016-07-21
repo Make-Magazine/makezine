@@ -86,21 +86,21 @@ function make_marketron_newsletter( $atts, $content = null ) {
 			<input type="hidden" name="errors_to" value="" />
 			<fieldset>
                 <legend><p>From the editors of <i>Make</i>:, the Maker Pro Newsletter covers hardware startups, new products, incubators, and innovators, plus technology and market trends. Sign up below for weekly Maker Pro updates in your inbox.</p></legend>
-				<div class="control-group">
+				<div class="form-group">
 				  <!-- Name -->
 				  <label class="control-label" for="first">Name</label>
 				  <div class="controls">
 				  	<input class="formfield input-xlarge" name="first" type="text">
 				  </div>
 				</div>
-				<div class="control-group">
+				<div class="form-group">
 				  <!-- Email -->
 				  <label class="control-label" for="email">Email</label>
 				  <div class="controls">
 				  	<input class="formfield input-xlarge" name="email" required="required" type="email">
 				  </div>
 				</div>
-				<div class="control-group">
+				<div class="form-group">
 				  <!-- Button -->
 				  <div class="controls">
 				    <button class="btn-cyan" type="submit">Subscribe</button>
@@ -131,7 +131,7 @@ function meetup_newsletter( $atts, $content = null ) {
 				</div>
 				<!-- /clearfix -->
 				<div class="clearfix">
-					<div class="control-group">
+					<div class="form-group">
 						<div class="controls">
 							<label class="checkbox" for="MAKENewsletter">MAKE Newsletter<input type="checkbox" name="cm-ol-jjuylk" id="MAKENewsletter" /></label>
 							<label class="checkbox" for="MakerShed-MasterList">Maker Shed<input type="checkbox" name="cm-ol-tyvyh" id="MakerShed-MasterList" /></label>
@@ -180,7 +180,7 @@ function galileo_list( $atts, $content = null ) {
 					</div>
 				</fieldset>
 				<div class="actions">
-					<button type="submit" class="btn btn-primary btn-large">Submit</button>
+					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 				</div>
 			</form>
 		</div>';
@@ -210,7 +210,7 @@ function download_galileo( $atts, $content = null ) {
 				</div>
 				<!-- /clearfix -->
 				<div class="clearfix">
-					<div class="control-group">
+					<div class="form-group">
 						<div class="controls">
 							<label class="checkbox" for="MAKENewsletter">MAKE Newsletter<input type="checkbox" name="cm-ol-jjuylk" id="MAKENewsletter" /></label>
 							<label class="checkbox" for="MAKENewsletter">Maker Faire Newsletter<input type="checkbox" name="cm-ol-jjuruj" id="MAKENewsletter" /></label>
@@ -239,11 +239,11 @@ function printrbot_sweepstakes_newsletter( $atts, $content = null ) {
 		<form action="http://newsletter.makezine.com/t/r/s/tyilklk/" method="post">
 			<p>
 				<label for="fieldName">Name</label>
-				<input id="fieldName" class="input-large" name="cm-name" type="text" />
+				<input id="fieldName" class="input-lg" name="cm-name" type="text" />
 			</p>
 			<p>
 				<label for="fieldEmail">Email</label>
-				<input id="fieldEmail" class="input-large" name="cm-tyilklk-tyilklk" type="email" required />
+				<input id="fieldEmail" class="input-lg" name="cm-tyilklk-tyilklk" type="email" required />
 			</p>
 			<p>
 				<label>Opt into another list</label>
@@ -252,7 +252,7 @@ function printrbot_sweepstakes_newsletter( $atts, $content = null ) {
 				<input id="listttihir" name="cm-ol-ttihir" type="checkbox" /> <label style="display:inline;" for="listttihir">Maker Shed Newsletter</label><br>
 			</p>
 			<p>
-				<button class="btn blue btn-large" type="submit">Submit</button>
+				<button class="btn blue btn-lg" type="submit">Submit</button>
 			</p>
 		</form>';
 }
@@ -313,9 +313,9 @@ function make_printing_guide_blurb() {
 		$output .= '<p>To read the full review, buy the Make: Ultimate Guide to 3D Printing.</p>';
 	}
 
-	$output .= '<div class="alert alert-info">
+	$output .= '<div class="alert alert-warning alert-info">
 
-			<img src="' . esc_url( get_stylesheet_directory_uri() ) . '/img/SIP4_Cover_RGB1.jpg" class="thumbnail pull-right" style="width:125px; height: auto;" />
+			<img src="' . esc_url( get_stylesheet_directory_uri() ) . '/img/SIP4_Cover_RGB1.jpg" class="img-thumbnail pull-right" style="width:125px; height: auto;" />
 
 			<h4>2013 MAKE Ultimate Guide To 3D Printing</h4>
 
@@ -346,9 +346,9 @@ add_shortcode( 'printing', 'make_printing_guide_blurb' );
 
 function make_volume_blurb() {
 
-	$output = '<div class="alert alert-info">
+	$output = '<div class="alert alert-warning alert-info">
 
-			<img src="' . get_stylesheet_directory_uri() . '/img/MAKE_V33_high.jpg" class="thumbnail pull-right" style="width:125px; margin-left:10px; height: auto;" />
+			<img src="' . get_stylesheet_directory_uri() . '/img/MAKE_V33_high.jpg" class="img-thumbnail pull-right" style="width:125px; margin-left:10px; height: auto;" />
 
 			<p><strong>MAKE Volume 33</strong> features our special Software for Makers section covering apps for circuit board design, 3D design and printing, microcontrollers, and programming for kids. Also, meet our new Arduino-powered Rovera robot and get started with Raspberry Pi. As usual, you’ll also find fascinating makers inside, like the maniacs on our cover, the hackers behind the popular Power Racing Series events at Maker Faire.</p>
 
@@ -419,9 +419,9 @@ function make_featured_products_shortcode() {
 			<a href="<?php echo esc_url( 'http://www.makershed.com/ProductDetails.asp?&Click=107309&ProductCode=' . rawurlencode( $products[ $arr[ $i ] ]->ProductCode ) ); ?>">
 				<?php
 					if ( function_exists( 'wpcom_vip_get_resized_remote_image_url' ) ) {
-						echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $products[ $arr[ $i ] ]->PhotoURL, 175, 175 ) . '" alt="' . esc_attr( $products[ $arr[ $i ] ]->ProductName ) . '" class="thumbnail small-thumb" />';
+						echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $products[ $arr[ $i ] ]->PhotoURL, 175, 175 ) . '" alt="' . esc_attr( $products[ $arr[ $i ] ]->ProductName ) . '" class="img-thumbnail small-thumb" />';
 					} else {
-						echo '<img src="' . esc_url( $products[ $arr[ $i ] ]->PhotoURL ) . '" alt="' . esc_attr( $products[ $arr[ $i ] ]->ProductName ) . '" class="thumbnail small-thumb"/>';
+						echo '<img src="' . esc_url( $products[ $arr[ $i ] ]->PhotoURL ) . '" alt="' . esc_attr( $products[ $arr[ $i ] ]->ProductName ) . '" class="img-thumbnail small-thumb"/>';
 					}
 				?>
 			</a>
@@ -460,9 +460,9 @@ add_shortcode( 'email', 'make_email_encode_function' );
 
 function make_platt() {
 
-	$output = '<div class="alert alert-info">
+	$output = '<div class="alert alert-warning alert-info">
 
-			<img src="' . get_stylesheet_directory_uri() . '/img/platt.jpg" class="thumbnail pull-right" style="width:125px; margin-left:10px; height: auto;" />
+			<img src="' . get_stylesheet_directory_uri() . '/img/platt.jpg" class="img-thumbnail pull-right" style="width:125px; margin-left:10px; height: auto;" />
 
 			<p>For more on microswitches, rockers, sliders, toggles, DIPs, SIPs, paddle switches, and more, check out the Encyclopedia of Electronic Components Volume 1 by Charles Platt. It’s the informative, concise, and well-organized resource that\'s perfect for teachers, hobbyists, engineers, and students wanting a go-to electronics quick reference.<p>
 			<p><a class="btn btn-primary" href="http://www.makershed.com/Encyclopedia_of_Electronic_Components_Vol_1_p/mkbk17.htm">Buy now!</a></p>
@@ -477,7 +477,7 @@ function make_rpi() {
 
 	$output = '<div class="clearfix"></div>';
 
-	$output .='<div class="alert alert-info">
+	$output .='<div class="alert alert-warning alert-info">
 		<p>
 			<a href="http://pubads.g.doubleclick.net/gampad/clk?id=29978938&iu=/11548178/Makezine">
 				<img class="" style="width: 100%; height: auto;" alt="Raspberry Pi Design Contest" src="'. get_stylesheet_directory_uri() .'/img/RASPBERRYPI_AD.jpg" />
@@ -498,7 +498,7 @@ function make_rpi() {
 add_shortcode( 'make_rpi', 'make_rpi' );
 
 function make_rtm() {
-	$output = '<div class="alert alert-info">
+	$output = '<div class="alert alert-warning alert-info">
 		<a href="http://pubads.g.doubleclick.net/gampad/clk?id=40563538&iu=/11548178/Makezine">
 			<img src="http://makezineblog.files.wordpress.com/2013/07/rtmfc_esurance_boilerplate.png?w=620" alt="RTMFC_620x120" width="620" height="120" style="margin-bottom:10px;" class="alignnone size-full wp-image-292301" />
 		</a>
@@ -522,9 +522,9 @@ add_shortcode( 'join_forum', 'join_make_forum' );
 
 function promo_vol_34() {
 
-	$output = '<div class="alert alert-info">
+	$output = '<div class="alert alert-warning alert-info">
 
-			<img src="http://makezineblog.files.wordpress.com/2013/04/m34-cover1.jpg?w=148" class="thumbnail pull-right" style="width:125px; margin-left:10px; height: auto;" />
+			<img src="http://makezineblog.files.wordpress.com/2013/04/m34-cover1.jpg?w=148" class="img-thumbnail pull-right" style="width:125px; margin-left:10px; height: auto;" />
 
 			<p><strong>MAKE Volume 34:</strong> Join the robot uprising! As MAKE&#39;s Volume 34 makes clear, there’s never been a better time to delve into robotics, whether you’re a tinkerer or a more serious explorer. With the powerful tools and expertise now available, the next great leap in robot evolution is just as likely to come from your garage as a research lab. The current issue of MAKE will get you started. Explore robot prototyping systems, ride along with the inventors of the OpenROV submersible, and learn how you can 3D-print your own cutting-edge humanoid robot for half the price. Plus, build a coffee-can Arduino robot, a lip balm linear actuator, a smartphone servo controller, and much more</p>
 
@@ -758,19 +758,19 @@ function multi_newsletter_subscribe( $atts, $content = null ) {
 		<div class="newsletter-signup">
 			<form action="http://makermedia.createsend.com/t/r/s/jrourr/" method="post" id="subForm" class="form form-horizontal">
 				<fieldset>
-					<div class="control-group">
+					<div class="form-group">
 						<label class="control-label" for="name">Name:</label>
 						<div class="controls">
 							<input type="text" name="cm-name" id="name" />
 						</div>
 					</div>
-					<div class="control-group">
+					<div class="form-group">
 						<label class="control-label" for="jrourr-jrourr">Email:</label>
 						<div class="controls">
 							<input type="text" name="cm-jrourr-jrourr" id="jrourr-jrourr" />
 						</div>
 					</div>
-					<div class="control-group">
+					<div class="form-group">
 						<label class="control-label" for="optionsCheckbox">Plus, sign me up for these FREE newsletters</label>
 						<div class="controls">
 							<label for="MAKENewsletter">
@@ -791,7 +791,7 @@ function multi_newsletter_subscribe( $atts, $content = null ) {
 						</div>
 					</div>
 					<div class="form-actions">
-						<button type="submit" class="btn btn-large btn-primary">Subscribe!</button>
+						<button type="submit" class="btn btn-lg btn-primary">Subscribe!</button>
 					</div>
 				</fieldset>
 			</form>
@@ -922,7 +922,7 @@ function maker_short_post_loop( $args ) {
 		$output .= get_the_image( array( 'image_scan' => true, 'size' => 'faire-thumb', 'echo' => false, 'image_class' => 'media-object hide-thumbnail' ) );
 		$output .= '</div><div class="media-body">';
 		$output .= '<h4 class="media-heading"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h4><p>' . get_the_excerpt() . '</p>';
-		$output .= '<ul class="unstyled"><li>Posted by ';
+		$output .= '<ul class="list-unstyled"><li>Posted by ';
 		if( function_exists( 'coauthors_posts_links' ) ) {
 			$output .= coauthors_posts_links( null, null, null, null, false);
 		} else {
@@ -1113,21 +1113,21 @@ add_shortcode( 'mf_video_highlights', 'make_mf_video_highlights' );
 
 function make_printrbot_newsletter() {
 	$output = '<form class="form-horizontal" action="http://newsletter.makezine.com/t/r/s/tillyud/" method="post">
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="fieldName">Full Name</label>
 			<div class="controls">
 				<input type="text" name="cm-name" class="input-xlarge" id="fieldName">
 			</div>
 		</div>
 
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="cm-tillyud-tillyud">Email</label>
 			<div class="controls">
 				<input type="text" name="cm-tillyud-tillyud" class="input-xlarge" id="fieldName">
 			</div>
 		</div>
 
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="optionsCheckbox">Want more maker news?</label>
 			<div class="controls">
 				<label for="listjjuylk" class="checkbox">

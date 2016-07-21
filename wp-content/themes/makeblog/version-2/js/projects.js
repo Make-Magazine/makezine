@@ -670,11 +670,11 @@ jQuery(document).ready(function ($) {
     }
 
 
-    $(".filter-item ul li ul li span").tooltip({
-        'delay': {show: 1, hide: 0}
-    }).hover(function () {
-        $('.fade').removeClass('fade');
-    });
+    // $(".filter-item ul li ul li span").tooltip({
+    //     'delay': {show: 1, hide: 0}
+    // }).hover(function () {
+    //     $('.fade').removeClass('fade');
+    // });
 
 
     //blog//
