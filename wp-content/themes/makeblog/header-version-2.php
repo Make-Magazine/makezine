@@ -355,9 +355,9 @@ $primary_cat_dimension = $primarycat[0];
         </div>
 
         <!-- Subscribe link in Sticky Navbar -->
-        <div class="hidden-xs sticky-subscribe">
+        <div class="sticky-subscribe">
           <h6>
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">Subscribe<span> & save</span></a>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe<span> & save</span></a>
           </h6>
         </div>
 
