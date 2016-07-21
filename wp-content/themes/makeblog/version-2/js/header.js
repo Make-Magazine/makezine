@@ -194,21 +194,6 @@
 		}
 	});
 
-	// Search
-	var searchText = 0;
-	$(".search-field").keyup(function () {
-		searchText = $(this).val();
-	});
-	$(".search-form").submit(function (event) {
-		if (searchText == 0) {
-			event.preventDefault();
-		}
-	});
-	$('.close-search').on('click', function () {
-		$('.search-bar input.search-field[type="search"]').toggleClass('search-click');
-		$('.close-search').toggleClass('change-background');
-	});
-
 	// Mobile
 	$('.get-dark').on('click', function () {
 		$('body').css('overflow-y', '').css('height', '');
