@@ -31,8 +31,10 @@ function get_story_with_ajax() {
             <div class="js-ad" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
         </div>
         <div class="row story-header" id="<?php echo get_the_ID(); ?>">
-            <div class="story-title">
-                <h1><?php the_titlesmall('', '', true, '90'); ?></h1>
+            <div class="container">
+                <div class="story-title">
+                    <h1><?php the_titlesmall('', '', true, '90'); ?></h1>
+                </div>
             </div>
             <?php
             //Hero Image
