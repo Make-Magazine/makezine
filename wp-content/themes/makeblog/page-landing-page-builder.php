@@ -9,7 +9,7 @@
  */
 get_header('version-2'); ?>
 
-<div id="som" class="bs-margin-fix"> <?php
+<div id="som"> <?php
 
   // check if the flexible content field has rows of data
   if( have_rows('content_panels')):

@@ -15,7 +15,7 @@ get_header('version-2'); ?>
    		<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
 	</div>
 
-	<div class="category-top bs-margin-fix">
+	<div class="category-top">
 
 		<div class="container">
 
