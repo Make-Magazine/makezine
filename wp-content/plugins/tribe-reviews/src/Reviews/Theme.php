@@ -27,18 +27,8 @@ class Theme {
 			'post_id'     => get_the_ID()
 		) );
 
-		/**
-		 * Enqueue a clean version Font Awesome
-		 *
-		 * This is a duplicate of code that already exists in the theme,
-		 * but isn't called correctly so it's non-functional
-		 */
-		wp_enqueue_style( 'make-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
-
 		// Enqueue our Product Review styles.
 		wp_enqueue_style( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/css/master.css', array(
-			'make-font-awesome',
-			'bootstrap-css',
 			'style'
 		) );
 	}
