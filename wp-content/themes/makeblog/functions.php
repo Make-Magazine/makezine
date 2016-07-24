@@ -363,7 +363,7 @@ get_template_part('version-2/includes/Mobile_Detect.php');
 
 function make_shopify_featured_products($row = 'row') {
     echo '<li class="ads shed-row-li"><div class="shed-row">';
-    echo make_shopify_featured_products_slider_home('row-fluid' );
+    echo make_shopify_featured_products_slider_home('row' );
     echo '</div></li>';
     die();
 }
@@ -372,16 +372,6 @@ add_action('wp_ajax_make_shopify_featured_products', 'make_shopify_featured_prod
 add_action('wp_ajax_nopriv_make_shopify_featured_products', 'make_shopify_featured_products');
 
 
-
-function theme_styles()
-{
-    wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
-    //wp_enqueue_style('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700');
-    wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
-    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-}
-
-add_action('wp_enqueue_scripts', 'theme_styles');
 
 function winwar_first_sentence($string)
 {
@@ -518,7 +508,7 @@ function subscribe_return_path_overlay() { ?>
                     <div class="col-sm-4 overlay-2">
                         <h2>Get the Magazine</h2>
                         <p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
-                        <a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ">SUBSCRIBE</a>
+                        <a class="black-overlay-btn" target="_blank" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMND">SUBSCRIBE</a>
                     </div>
                     <div class="col-sm-4 overlay-3">
                         <h2>Sign up for the Make: Newsletter</h2>

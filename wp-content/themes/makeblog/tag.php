@@ -18,8 +18,9 @@ if (user_can($current_user, 'administrator')) {
 ?>
 	<div class="container all-stories tags <?php echo $login_admin ?>" data-slug="<?php echo $tag_slug; ?>">
 		<div class="row">
-			<h1 class="tag-title"><?php echo $tag_name; ?></h1>
-
+			<div class="col-xs-12">
+				<h1 class="tag-title"><?php echo $tag_name; ?></h1>
+			</div>
 			<div class="wrapper">
 				<div class="col-md-9 col-sm-7 col-xs-12 all-post-wrapper">
 					<ul class="post-list">

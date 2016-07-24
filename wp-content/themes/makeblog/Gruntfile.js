@@ -2,13 +2,14 @@ module.exports = function(grunt) {
   var watchFiles = [
     'less/**/*.less',
     'version-2/less/**/*.less',
+    'reviews/less/**/**/*less',
     'version-2/js/single-story/*.js',
+    'js/footer-scripts/*.js',
   ];
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
     'css/print.css': 'less/print.less',
     'css/takeover.css': 'less/takeover.less',
-    'css/ge-light-for-life.css': 'less/ge-light-for-life.less',
     'version-2/css/style.css': 'version-2/less/style.less',
     'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
     'reviews/css/master.css': 'reviews/less/master.less'
@@ -47,6 +48,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'version-2/js/single-story.js': ['version-2/js/single-story/*.js'],
+          'js/footer-scripts/min/misc.js': ['js/footer-scripts/*.js'],
         }
       },
     },
@@ -59,6 +61,7 @@ module.exports = function(grunt) {
         },
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
+          'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
         }
       }
     },

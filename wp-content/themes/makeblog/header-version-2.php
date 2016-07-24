@@ -86,7 +86,6 @@ if( $detect->isTablet() ){
   <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >
   <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
   <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" type="text/css">
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
@@ -95,7 +94,7 @@ if( $detect->isTablet() ){
 
   <!-- javascript -->
   <script src="//code.jquery.com/jquery-latest.min.js"></script>
-  <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
+  <!--script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script-->
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -168,6 +167,8 @@ if( $detect->isTablet() ){
   </script>
 </head>
 <body id="makeblog" <?php body_class(); ?>>
+
+<script src="https://cdn.optimizely.com/js/2101321427.js"></script>
 <!-- Google Universal Analytics -->
 
 <!-- Time-tracking for Custom Dimensions -->
@@ -231,11 +232,6 @@ $primary_cat_dimension = $primarycat[0];
           <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16">Jump into the Summer of Making! <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
         </p>
       </div>
-      <div class="col-sm-3">
-        <p class="header-sub-link pull-right">
-          <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE </a>
-        </p>
-      </div>
     </div>
   </div>
 </div>
@@ -247,13 +243,11 @@ $primary_cat_dimension = $primarycat[0];
       <div class="row">
 
         <!-- LOGO & TAG LINE -->
-          <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-            <a href="<?php echo home_url(); ?>" class="logo-a">
-                <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
-            </a>
-            <h5 class="mz-tag">We are all Makers</h5>
-            <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
-          </div>
+        <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
+          <a href="<?php echo home_url(); ?>" class="logo-a">
+            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+          </a>
+        </div>
        
 
         <!-- MENUS -->
@@ -271,22 +265,16 @@ $primary_cat_dimension = $primarycat[0];
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
           <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
-            $user_ip = getenv('REMOTE_ADDR');
-            $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-            $state = $geo["geoplugin_regionCode"];
-
-            if( $state == 'CA' ) {
-              echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
-              echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
-              echo '</h3>';
-            }
+            echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
+            echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
+            echo '</h3>';
           } // end if ?>
 
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
             <!-- Mobile search -->
-            <div class="hidden-md mz-search search-bar-mobile">
+            <div class="search-bar-mobile hidden-sm hidden-md hidden-lg">
               <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
                 <label>
                   <input type="search" class="search-field" placeholder="" value="" name="s" title="">
@@ -315,8 +303,7 @@ $primary_cat_dimension = $primarycat[0];
                   $isSecure = "https://";
                 }
                 ?>
-                <h4>Subscribe</h4>
-                <p>Stay inspired and get fresh updates</p>
+                <h4>Sign Up For Our Newsletter</h4>
                 <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
                   <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
                   <input type="hidden" name="cmd" value="subscribe" />
@@ -341,38 +328,38 @@ $primary_cat_dimension = $primarycat[0];
 
         <div class="get-dark"></div>
 
-        <!-- SEARCH -->
-        <div class="col-md-1 hidden-xs mz-search search-bar">
+        <!-- NEW SEARCH -->
+        <div id="sb-search" class="sb-search hidden-xs">
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-            <input type="submit" class="sendsubmit" value="" />
-            <label>
-              <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-              <div class="close-search"><i class="fa fa-search fa-2x"></i></div>
+            <label class="sb-search-label">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input class="sb-search-input search-field" placeholder="Search Make: Magazine" type="text" value="" name="s" id="search">
             </label>
+            <label class="sb-search-open-trigger">
+              <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+              <input class="sb-search-submit" type="submit" value="">
+            </label>
+            <i class="fa fa-search" aria-hidden="true"></i>
           </form>
         </div>
 
-        <!-- Sticky Navbar -->
-        <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
-          <h6>
-            <a id="trigger-overlay" href="#">
-              <h5>Subscribe</h5>
-              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>" alt="Make Magazine small mag cover" />
+        <!-- New Header Subscribe stuff -->
+        <div id="mz-header-subscribe" class="hidden-xs">
+          <div>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
+              <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
             </a>
+            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
+          </div>
+        </div>
+
+        <!-- Subscribe link in Sticky Navbar -->
+        <div class="sticky-subscribe">
+          <h6>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe<span> & save</span></a>
           </h6>
         </div>
 
-        <!-- SOCIAL MEDIA ICONS -->
-        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social">
-          <div class="social-network-container">
-            <ul class="social-network social-circle">
-              <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-              <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
-              <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
-            </ul>
-          </div>
-        </div><!-- End .desktop-social -->
       </div><!-- row -->
     </nav>
   </div><!-- container panel header -->
@@ -526,12 +513,17 @@ $primary_cat_dimension = $primarycat[0];
         <div class="nav-share row">
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/makeshowtell/" class="pull-left first-post"></a>
+              <a href="//makezine.com/summer-of-making/" class="pull-left first-post"></a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute" class="pull-left second-post"></a>
+              <a href="//makezine.com/makeshowtell/" class="pull-left second-post"></a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/contribute" class="pull-left third-post"></a>
             </div>
           </div>
         </div>

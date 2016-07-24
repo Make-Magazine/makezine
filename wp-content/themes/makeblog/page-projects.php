@@ -9,13 +9,13 @@ get_header('version-2'); ?>
     <div class="sand">
       <div class="container">
         <div class="row">
-          <div class="span12">
+          <div class="col-xs-12">
             <div class="content">
               <div class="page-header">
                 <h1 style="border:0px;">Make: Projects</h1>
               </div>
-              <div class="row-fluid">
-                <div class="span4">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
                   <?php
                   $args = array(
                     'tax_query' => array(
@@ -43,7 +43,7 @@ get_header('version-2'); ?>
                   ?>
 
                 </div>
-                <div class="span8">
+                <div class="col-xs-12 col-sm-8">
                   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <?php the_content(); ?>
                   <?php endwhile; else: endif; ?>
@@ -54,7 +54,7 @@ get_header('version-2'); ?>
                 <div class="page-header">
                   <h3>From MAKE magazine</h3>
                 </div>
-                <div class="row-fluid">
+                <div class="row">
                     <?php
                     $args = array(
                       'tax_query' => array(
@@ -72,7 +72,7 @@ get_header('version-2'); ?>
                     $proj_query = new WP_Query($args);
 
                     while ( $proj_query->have_posts() ) : $proj_query->the_post();
-                      echo '<div class="span4">';
+                      echo '<div class="col-md-4">';
                       $url = get_post_custom_values('Image');
                       echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $url[0], 293, 200 ) . '" alt="Image" />';
                       echo '<div class="overlay"><h4><a class="red" href="' . get_permalink() . '">' . get_the_title() . '</a></h4>';

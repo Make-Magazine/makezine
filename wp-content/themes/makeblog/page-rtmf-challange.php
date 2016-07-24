@@ -14,7 +14,7 @@ get_header('version-2'); ?>
 			
 			
 			<div class="row">
-				<div class="span12">
+				<div class="col-xs-12">
 					
 										
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -31,12 +31,12 @@ get_header('version-2'); ?>
 
 			<div class="row secondary-hdr">
 				
-				<div class="span8">
+				<div class="col-md-8">
 					
 					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/psocpioneer-hdr-01.png" alt="PSoC Pioneer Challenge" />
 				</div>
 				
-				<div class="span4 sidebar-ad">
+				<div class="col-md-4 sidebar-ad">
 					
 					<?php global $make; print $make->ads->ad_300x250_atf; ?>
 
@@ -46,7 +46,7 @@ get_header('version-2'); ?>
 			
 			<div class="row">
 				
-				<div class="span12">
+				<div class="col-xs-12">
 					
 				<article <?php post_class(); ?>>
 

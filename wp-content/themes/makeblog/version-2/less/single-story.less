@@ -52,9 +52,7 @@ body.single.single-post {
     width: 68px;
     position: absolute;
   }
-  .container.wrapper {
-    width: 100%;
-    padding: 0;
+  .wrapper {
     .latest-story {
       a {
         padding: 8px 5px 10px;
@@ -106,7 +104,7 @@ body.single.single-post {
       .hero-wrapper-clear {
         margin-bottom: 41px;
         height: 10px;
-        @media (min-width: 1201px) {
+        @media (min-width: 1200px) {
           margin-bottom: 141px;
         }
       }
@@ -115,7 +113,7 @@ body.single.single-post {
         height: 670px;
         background-size: cover !important;
         display: none;
-        @media (min-width: 1201px) {
+        @media (min-width: 1200px) {
           display: block;
           height: 770px;
         }
@@ -127,12 +125,6 @@ body.single.single-post {
         float: none;
         margin: 27px auto auto;
         padding: 0 15px;
-        @media (max-width: 767px) {
-          padding: 0 25px;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-          width: 750px;
-        }
         h1 {
           font-size: 40px;
           line-height: 46px;
@@ -153,31 +145,15 @@ body.single.single-post {
         display: none;
       }
     }
-    .content-wrapper {
-      position: relative;
-      margin: auto;
-      @media (min-width: 768px) {
-        width: 750px;
-      }
-      @media (min-width: 992px) {
-        width: 960px;
-      }
-      @media (min-width: 1350px) {
-        width: 1100px;
-      }
-    }
     .content {
       background-image: none;
+      background-color: #fff;
       border: none;
       padding: 20px 0 0;
       position: relative;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      margin: -50px auto 47px auto;
       @media (min-width: 1201px) {
         margin-top: -150px;
-      }
-      @media (min-width: 1350px) {
-        width: 1173px;
       }
       iframe {
         max-width: 100%;
@@ -194,15 +170,6 @@ body.single.single-post {
         }
       }
       article {
-        @media (min-width: 768px) and (max-width: 991px) {
-          margin: 0 9px 0 5px;
-        }
-        @media (min-width: 1200px) and (max-width: 1349px) {
-          margin-right: -4px;
-        }
-        @media (min-width: 1350px) {
-          width: 783px;
-        }
         p,
         span,
         ul li,
@@ -212,7 +179,7 @@ body.single.single-post {
           line-height: 1.6em;
           margin: 0 0 20px;
         }
-        .row-fluid {
+        .row {
           display: none;
         }
         .wp-caption-text {
@@ -287,7 +254,7 @@ body.single.single-post {
   }
 
   @media only screen and (min-width: 768px) {
-    .container.wrapper {
+    .wrapper {
       .posts-navigator {
         overflow-y: auto !important;
       }
@@ -301,7 +268,6 @@ body.single.single-post {
         position: absolute;
         width: 100%;
         left: 0;
-        margin-top: -47px;
       }
       .more-thumbnails, .row.more {
         display: none;
@@ -310,8 +276,7 @@ body.single.single-post {
   }
 
   @media only screen and (max-width: 767px) {
-    margin: 0 -20px;
-    .container.wrapper {
+    .wrapper {
       .thumbnails {
         margin: 10px -15px 0px -15px;
         overflow: hidden;
@@ -414,7 +379,6 @@ body.single.single-post {
       }
       .content {
         display: none;
-        padding: 20px 5px 0 5px;
         article {
           margin: 0;
           .essb_displayed_sidebar_right {
@@ -434,7 +398,7 @@ body.single.single-post {
   }
 
   @media only screen and (min-width: 481px) and (max-width: 767px) {
-    .container.wrapper {
+    .wrapper {
       .more-thumbnails {
         .thumbnail-image {
           height: 153px;
@@ -450,16 +414,10 @@ body.single.single-post {
     .wp-caption-text {
       margin-right: 0;
     }
-    div.span8 {
+    div.col-md-8 {
       img {
         max-width: 100%;
       }
-    }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .content {
-      width: 1029px;
     }
   }
 }
@@ -469,23 +427,6 @@ body.single.single-post {
     .essb_links_list {
       li {
         width: 15.50%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .mz-story-infinite-view {
-    .content {
-      article {
-        margin: 0 19px 0 5px;
-      }
-    }
-    .container.wrapper {
-      .story-header {
-        div.story-title {
-          max-width: 920px;
-        }
       }
     }
   }

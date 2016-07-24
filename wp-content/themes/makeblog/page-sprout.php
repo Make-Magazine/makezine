@@ -34,7 +34,7 @@ get_header( 'version-2' );
 
 <div class="container shed-row shed-row-sprout"> 
   <!-- HP Items Feed -->
-  <?php echo make_shopify_featured_products_slider_sprout( 'row-fluid' ); ?>
+  <?php echo make_shopify_featured_products_slider_sprout( 'row' ); ?>
 </div>
 
 <div class="container sprout-container">

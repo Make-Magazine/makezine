@@ -1,6 +1,6 @@
 #makeblog .mz-story-infinite-view {
   &.admin_is_login {
-    .container.wrapper {
+    .wrapper {
       .row.sticky-sidebar-posts-nav {
         &.open {
           top: 84px;
@@ -12,14 +12,14 @@
       }
     }
   }
-  .container.wrapper .row.sticky-sidebar-posts-nav {
+  .wrapper .row.sticky-sidebar-posts-nav {
     width: 120px;
     position: fixed;
     z-index: 1;
     bottom: 79px;
     left: 25px;
     display: none;
-    @media (max-width: 1199px) {
+    @media (max-width: 1400px) {
       display: none !important;
     }
     &.open {

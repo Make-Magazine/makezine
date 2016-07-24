@@ -157,7 +157,7 @@ global $post;
 			<div class="main-header">
 				<div class="container">
 					<div class="row">
-						<div class="span6 hdr-col-area logo">
+						<div class="col-md-6 hdr-col-area logo">
     						<?php if ( is_front_page() || is_home() ) : ?>
 								<h1 title="Make Magazine - <?php echo bloginfo( 'description' ); ?>"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-hdr-logo.png"  width="200" alt="Tech-savvy DIY Enthusiasts Innovative Projects and Ideas" /></a></h1>
 							<?php else : ?>
@@ -165,7 +165,7 @@ global $post;
 							<?php endif; ?>
 						</div>
 
-						<div class="span3 hdr-sub-ad-01 hdr-col-area offset3" >
+						<div class="col-md-3 hdr-sub-ad-01 hdr-col-area col-md-offset-3" >
 								<a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/subscription.png" alt="Subscribe to Make Magazine Today!" class="subscription-image" /></a>
 						</div>
 						
@@ -175,8 +175,8 @@ global $post;
 			<div class="secondary-header hidden-print">
 				<div class="container">
 					<div class="row">
-						<div class="span10"><?php ubermenu( 'main' , array( 'theme_location' => 'make-primary' ) ); ?></div>
-						<div class="span2 search-make-box"><div class="additional-content hidden-print">
+						<div class="col-md-10"><?php ubermenu( 'main' , array( 'theme_location' => 'make-primary' ) ); ?></div>
+						<div class="col-md-2 search-make-box"><div class="additional-content hidden-print">
 								<form action="<?php echo home_url(); ?>" class="search-make open">
 									<input type="text" class="search-field" name="s" placeholder="Search" />
 									<div class="clearfix"></div>
@@ -191,12 +191,12 @@ global $post;
 			<div class="makershed-banner">
 				<div class="container">
 					<div class="row">
-						<div class="span10">
+						<div class="col-md-10">
 							<a href="//makershed.com?utm_source=makezine.com&utm_medium=ads&utm_term=Shop+Now&utm_campaign=makershed+banner" title="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!">
 								<p>Find your DIY supplies in the Maker Shed &rarr; Kits, Books, Components, 3D Printers, Arduino, Raspberry Pi, More!</p>
 							</a>
 						</div>
-						<div class="span2 pull-right">
+						<div class="col-md-2 pull-right">
 							<a href="//makershed.com?utm_source=makezine.com&utm_medium=ads&utm_term=Shop+Now&utm_campaign=makershed+banner" title="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/maker-shed-banner-02.png" alt="Find all your DIY electronics in the MakerShed. 3D Printing, Kits, Arduino, Raspberry Pi, Books &amp; more!" /></a>
 						</div>
 					</div>
@@ -205,7 +205,7 @@ global $post;
 			<?php if ( is_front_page() || is_home() ) : ?>
 			<div class="container hidden-print">
 				<div class="row">
-					<div class="span12">
+					<div class="col-xs-12">
 						<?php global $make; print $make->ads->ad_leaderboard; ?>
 					</div>
 				</div>

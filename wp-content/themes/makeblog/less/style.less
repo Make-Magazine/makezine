@@ -1,7 +1,14 @@
 
-// Bring in Bootstrap
-@import "bootstrap/bootstrap.less";
+// Bootstrap 2
+//@import "bootstrap/bootstrap.less";
 //@import "bootstrap/responsive.less";
+
+// Normalize
+@import "make/reset.less";
+
+
+// Bootstrao 3
+@import "../version-2/less/bootstrap/bootstrap.less";
 
 @the-border: 		2px;
 @link-color: 		#005d8f;
@@ -9,9 +16,10 @@
 @bg-color:   		#f3f3f3;
 @border-color: 		#cecece;
 @grey: 				#868484;
-@headings-color:	#022c44;
+@headings-color:	inherit;
 @light-grey:		#cdcdcd;
 @blue:              #005d8f;
+@white: #fff;
 @border-radius-base:			4px;
 @border-radius-large:			6px;
 @border-radius-small:			3px;
@@ -31,6 +39,8 @@
 @state-danger-bg:				#f2dede;
 @state-danger-border:			darken(spin(@state-danger-bg, -10), 5%);
 
+@linkColor: #005d8f;
+
 // Bring in MAKE Styles.
 @import "make/mixins.less";
 @import "make/ads.less";
@@ -46,7 +56,6 @@
 @import "make/footer.less";
 @import "make/weekend-projects.less";
 @import "make/camp.less";
-@import "make/makercamp.less";
 @import "make/giftguide.less";
 @import "make/archive.less";
 @import "make/form.less";
@@ -70,5 +79,6 @@
 @import "make/overlay.less";
 @import "make/fancybox.less";
 @import "make/sprout.less";
-@import "make/summer-of-making.less";
+@import "make/landing-page-builder.less";
+@import "make/ge-light-for-life.less";
 @import "make/404.less";

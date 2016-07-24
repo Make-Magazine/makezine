@@ -215,7 +215,7 @@ function make_post_loop( $args ) {
 					<?php if ($args['post_type'] == 'projects' ) {
 						$time = get_post_custom_values( 'TimeRequired' );
 						$terms = get_the_terms( $post->ID, 'difficulty' );
-						echo '<ul class="unstyled">';
+						echo '<ul class="list-unstyled">';
 						if ($terms) {
 							foreach ($terms as $term) {
 								echo '<li><strong>Difficulty:</strong> ' . esc_html( $term->name ) . '</li>';
@@ -281,7 +281,7 @@ function make_magazine_toc( $args ) {
 
 		$output .= '<article  class="' . $classes .  '">';
 
-			$output .= '<div class="span2">';
+			$output .= '<div class="col-md-2">';
 					$image = get_post_custom_values('Image', $post->ID);
 					if ( !empty( $image[0] ) )  {
 						$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image[0] ), 140, 140 ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" />';
@@ -290,7 +290,7 @@ function make_magazine_toc( $args ) {
 					}
 			$output .= '</div>';
 
-			$output .= '<div class="span6">';
+			$output .= '<div class="col-md-6">';
 
 				$output .= '<h3>';
 
@@ -520,7 +520,7 @@ function make_update_to_content( $content ) {
 	$updates = get_post_meta( get_the_ID(), 'Updates', true );
 	$output = '';
 	if ( !empty( $updates ) ) {
-		$output .= '<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+		$output .= '<div class="alert alert-warning"><button type="button" class="close" data-dismiss="alert">&times;</button>';
 		$output .= wp_kses_post( Markdown( $updates ) );
 		$output .= '</div>';
 	}

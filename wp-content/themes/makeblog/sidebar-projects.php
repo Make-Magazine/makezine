@@ -8,7 +8,7 @@
  * @author     Jake Spurlock <jspurlock@makermedia.com>
  */
 ?>
-					<div class="span4 sidebar">
+					<div class="col-md-4 sidebar">
 
 						<?php
 							global $post;

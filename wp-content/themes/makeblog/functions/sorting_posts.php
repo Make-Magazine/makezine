@@ -820,7 +820,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
         endwhile;
         // Output MAKER SHED PANEL
         $output .= '<li class="ads shed-row-li"><div class="shed-row">';
-        $output .= make_shopify_featured_products_slider_home( 'row-fluid' );
+        $output .= make_shopify_featured_products_slider_home( 'row' );
         $output .= '</div></li>';
         // End Projects list
         $output .= '</ul> </li>';

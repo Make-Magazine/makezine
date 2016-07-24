@@ -1,5 +1,3 @@
-@light-grey:		#cdcdcd;
-
 .projects-masthead {
 	padding-top:20px;
 	h3 {
@@ -15,9 +13,13 @@
 		font-size: 36px;
 	}
 	h1 {
-		font-size:60px !important;
+		font-size:60px;
 		line-height: 60px;
 		letter-spacing: -2px;
+		@media (max-width: 767px) {
+			font-size: 10vw;
+			line-height: 10vw;
+		}
 		a {
 			color:@link-color;
 		}
@@ -101,10 +103,9 @@ a {
 			border-bottom:1px solid #CCEFFB;
 			list-style-type: none;
 			line-height:22px;
-			.muted {
+			.text-muted {
 				display: inline;
 				font-weight: light;
-				.muted;
 				color: lighten(#0776b7, 20%);
 			}
 		}
@@ -133,7 +134,7 @@ a {
 		width: 140px;
 
 	}
-	.span3 {
+	.col-md-3 {
 	}
 }
 
@@ -347,7 +348,7 @@ ul#tabs {
 	}
 	.current > a,
 	.current > a:hover {
-		color: @white;
+		color: #fff;
 		text-shadow: 0 -1px 0 rgba(0,0,0,.2);
 		background-color: @linkColor;
 		}
@@ -375,13 +376,14 @@ ul#tabs {
 .jstep {
 	margin-bottom:40px;
 	//Prev button
-	.span6 {
+	.col-md-6 {
 		margin-left: 15px;
 	}
 	ul {
 		margin:20px 0px 20px 20px;
+		background-color: #f0f0f0;
 	}
-	span.span2.project-span2-fix {
+	span.col-md-2.project-span2-fix {
     width: 33.333% !important;
     margin-left: 0;
     padding: 0 15px;
@@ -400,7 +402,7 @@ ul#tabs {
 
 @media screen and (max-width: 767px) {
 	.single-projects {
-		.span12 h2.new-heading {
+		.col-xs-12 h2.new-heading {
 			margin-left: 15px;
 			margin-right: 15px;
 		}
@@ -410,7 +412,7 @@ ul#tabs {
 		}
 		.jstep {
 			//Prev button
-			.span1.prev-project-btn {
+			.col-md-1.prev-project-btn {
 		    display: block;
 		    width: auto;
 		    float: left!important;
@@ -418,7 +420,7 @@ ul#tabs {
 		    margin-bottom: 10px;
 			}
 			//next button
-			.span1.next-project-btn {
+			.col-md-1.next-project-btn {
 				width: auto;
 		    margin-right: 15px;
 		    margin-bottom: 10px;

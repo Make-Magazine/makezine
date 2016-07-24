@@ -63,7 +63,7 @@ jQuery( document ).ready( function( $ ) {
 				$('section').hide();
 				$('.thanks' ).slideDown();
 				$('.activities' ).slideDown();
-				$( '.inline li' ).removeClass('active');
+				$( '.list-inline li' ).removeClass('active');
 				$( '.nav-map' ).addClass('active');
 				$('.maker-added .image').append( post_obj.image ).addClass('pull-left');
 				$('.maker-added .media-heading').prepend( post_obj.post_title );
@@ -73,10 +73,10 @@ jQuery( document ).ready( function( $ ) {
 					$('.maker-added .media').append( '<a class="" target="_blank" href="' + post_obj.url + '">Website</a>' );
 				}
 				if ( post_obj.interest ) {
-					$('.maker-added .media-heading').after( ' <span class="label">' + post_obj.interest + '</span> ' );
+					$('.maker-added .media-heading').after( ' <span class="label label-default">' + post_obj.interest + '</span> ' );
 				}
 				if ( post_obj.experience ) {
-					$('.maker-added .media-heading').after( ' <span class="label">' + post_obj.experience + '</span> ' );
+					$('.maker-added .media-heading').after( ' <span class="label label-default">' + post_obj.experience + '</span> ' );
 				}
 
 				$('#tweet').modal('show');
@@ -110,7 +110,7 @@ jQuery( document ).ready( function( $ ) {
 		$('section').hide();
 		section_class = $( this ).data('show');
 		$('.' + section_class ).slideDown();
-		$( '.inline li' ).removeClass('active');
+		$( '.list-inline li' ).removeClass('active');
 		$( this ).addClass('active');
 		refresh_map();
 	});
@@ -168,7 +168,7 @@ jQuery( document ).ready( function( $ ) {
 		// Create a new image with the src pointing to the user's gravatar
 		var gravatar = $('<img>').attr({
 			'src'	: 'http://www.gravatar.com/avatar/' + md5( email ),
-			'class'	: 'thumbnail'
+			'class'	: 'img-thumbnail'
 		});
 
 		// Add this image to the placeholder

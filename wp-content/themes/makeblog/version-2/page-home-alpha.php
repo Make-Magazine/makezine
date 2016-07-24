@@ -112,7 +112,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     }
 
 ?>
-<div class="container-fluid">
+<div class="padleft padright">
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="row">
@@ -131,50 +131,50 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       </div>
       <div class="filter-display-wrapper">
         <div class="red-box-category">
-        <?php home_tags( "$main_id" ) ?>
+          <?php home_tags( "$main_id" ) ?>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <div class="row">
-      <a href="<?php echo esc_html( $top_link ); ?>"
-        class="mz-featured-imageblock"
-        style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="row">
+        <a href="<?php echo esc_html( $top_link ); ?>"
+          class="mz-featured-imageblock"
+          style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
+          <div class="featured-image-shadow"></div>
+          <div class="mz-text-overlay mz-text-overlay-side">
+            <?php if (!empty($top_sponsor)) {
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>';
+            } ?>
+            <h2><?php echo $top_title; ?></h2>
+          </div>
+        </a>
+        <div class="filter-display-wrapper">
+          <div class="red-box-category">
+            <?php home_tags( "$top_id" ) ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <div class="row">
+        <a href="<?php echo esc_html( $bottom_link ); ?>"
+          class="mz-featured-imageblock"
+          style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
         <div class="featured-image-shadow"></div>
         <div class="mz-text-overlay mz-text-overlay-side">
-          <?php if (!empty($top_sponsor)) {
-            echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>';
+          <?php if (!empty($bottom_sponsor)) {
+            echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>';
           } ?>
-          <h2><?php echo $top_title; ?></h2>
+          <h2><?php echo $bottom_title; ?></h2>
         </div>
-      </a>
-      <div class="filter-display-wrapper">
-        <div class="red-box-category">
-          <?php home_tags( "$top_id" ) ?>
+        </a>
+        <div class="filter-display-wrapper">
+          <div class="red-box-category">
+            <?php home_tags( "$bottom_id" ) ?>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <div class="row">
-      <a href="<?php echo esc_html( $bottom_link ); ?>"
-        class="mz-featured-imageblock"
-        style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
-      <div class="featured-image-shadow"></div>
-      <div class="mz-text-overlay mz-text-overlay-side">
-        <?php if (!empty($bottom_sponsor)) {
-          echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>';
-        } ?>
-        <h2><?php echo $bottom_title; ?></h2>
-      </div>
-      </a>
-      <div class="filter-display-wrapper">
-        <div class="red-box-category">
-          <?php home_tags( "$bottom_id" ) ?>
-        </div>
-      </div>
       </div>
     </div>
   </div> <!-- row -->
@@ -190,29 +190,27 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 
   <!-- EVENTS PANEL -->
   <div class="container event-unit">
-    <div class="row">
-<!--  Home "waist" Promos -->
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
-        <a href="/comparison/boards/how-we-test/shootout/">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-boards-01.jpg' ?>" class="img-responsive center-block event" alt="Make Boards Guide" />
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
-        <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16" target="_blank">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-SOMx2.png' ?>" class="img-responsive center-block event" alt="Summer of Making" />
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-        <a href="/challenge/lights-for-life/" target="_blank">
-          <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-ge.jpg' ?>" class="img-responsive center-block event" alt="Lights for Life Challenge!" />
-        </a>
-      </div>
+    <!--  Home "waist" Promos -->
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-faire">
+      <a href="/comparison/boards/how-we-test/shootout/">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-boards-01.jpg' ?>" class="img-responsive center-block event" alt="Make Boards Guide" />
+      </a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-sponsored">
+      <a href="/summer-of-making/?utm_source=cspromobar&utm_medium=site&utm_campaign=summermaking16" target="_blank">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/SOM-Inner-Site-Promo-B@x2.png' ?>" class="img-responsive center-block event" alt="Summer of Making" />
+      </a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
+      <a href="/challenge/lights-for-life/" target="_blank">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-ge.jpg' ?>" class="img-responsive center-block event" alt="Lights for Life Challenge!" />
+      </a>
     </div>
   </div>
 
   <div class="all-projects <?php echo $device ?>">
     <div class="content container">
-      <div class="posts-list container">
+      <div class="posts-list">
         <?php sorting_posts_home(); //TODO Rename Function ?>
       </div>
     </div>

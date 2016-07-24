@@ -272,7 +272,7 @@ function js_ratings_box() {
 	if (isset($price[0])) {
 		echo '<a href="';
 		echo esc_url( $price[0] );
-		echo '" class="btn btn-primary btn-mini">Company Website</a>';
+		echo '" class="btn btn-primary btn-xs">Company Website</a>';
 	}
 ?>
 
@@ -281,7 +281,7 @@ function js_ratings_box() {
 	if (isset($price[0])) {
 		echo '<a href="';
 		echo esc_url( $price[0] );
-		echo '" class="btn btn-danger btn-mini">Buy now!</a>';
+		echo '" class="btn btn-danger btn-xs">Buy now!</a>';
 	}
 ?>
 
@@ -427,10 +427,10 @@ $json_output = json_decode($json);
 if ( !is_object( $json_output ) )
 	return;
 ob_start();
-echo '<div class="clear"></div><p class="alert alert-info">';
+echo '<div class="clear"></div><p class="alert alert-warning alert-info">';
 echo '<a href="' . esc_url( $json_output->url ) . '"><img src="';
 echo bloginfo('stylesheet_directory');
-echo '/images/proj.jpg" class="pull-right thumbnail" style="padding:10px; background-color:#fff;" alt="Make: Projects" /></a>';
+echo '/images/proj.jpg" class="pull-right img-thumbnail" style="padding:10px; background-color:#fff;" alt="Make: Projects" /></a>';
 echo 'Check out this full <a href="' . esc_url( $json_output->url ) . '">' . esc_html( $json_output->guide->title ) . '</a> build from <a href="http://makeprojects.com">Make: Projects</a>, where you can find hundreds of project how-tos, techniques, and an active community of makers.</p>';
 echo '<p class="summary">' . esc_html( $json_output->guide->summary ) . '</p>';
 echo '<p><strong>Author</strong>: ' . esc_html( $json_output->guide->author->text );
@@ -439,16 +439,16 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 
 <div class="">
 
-<img src="<?php echo esc_url( $json_output->guide->image->text ); ?>.standard" class="thumbnail pull-right" alt="<?php echo esc_attr( $json_output->guide->title ); ?>" align="right" />
+<img src="<?php echo esc_url( $json_output->guide->image->text ); ?>.standard" class="img-thumbnail pull-right" alt="<?php echo esc_attr( $json_output->guide->title ); ?>" align="right" />
 <?php echo '<div class="summary">' . wp_kses_post( $json_output->guide->introduction_rendered ) .'</div>' ?>
 
 <div class="clear"></div>
 
 </div>		
 
-<div class="row-fluid">
+<div class="row">
 
-<div class="span6">
+<div class="col-md-6">
 
 	<?php 
 		$steps = $json_output->guide->steps;
@@ -466,7 +466,7 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 	
 </div>
 
-<div class="span6">
+<div class="col-md-6">
 
 	<?php 
 		$documents = $json_output->guide->documents;
@@ -491,27 +491,27 @@ echo ' <strong>Difficulty</strong>: ' . esc_html( $json_output->guide->difficult
 	$i = 0;
 	foreach ($steps as $step) {
 		//var_dump($step);
-		echo '<div class="row-fluid project" id="' . esc_attr( $step->number ) . '">';
-		echo '<div class="span6 big_images">';
+		echo '<div class="row project" id="' . esc_attr( $step->number ) . '">';
+		echo '<div class="col-md-6 big_images">';
 			$images = $step->images;
 			foreach ($images as $image) {
 				//var_dump($image);
 				echo '<img src="';
 				echo esc_url( $image->text );
-				echo '.standard" class="thumbnail item' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:280px; margin-bottom:10px;" />';
+				echo '.standard" class="img-thumbnail item' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:280px; margin-bottom:10px;" />';
 			}
 		echo '</div><!--.big_images-->';
-		echo '<div class="span6 right_column">';
+		echo '<div class="col-md-6 right_column">';
 		$images = $step->images;
-		echo '<div class="row-fluid">';
+		echo '<div class="row">';
 		$number = count($images);
 		if ($number > 1) {
 			$images = $step->images;
 			foreach ($images as $image) {
-				echo '<div class="span3" style="margin-right:20px;">';
+				echo '<div class="col-md-3" style="margin-right:20px;">';
 				echo '<img src="';
 				echo esc_url( $image->text );
-				echo '.thumbnail" class="thumbnail ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) . '" />';
+				echo '.thumbnail" class="img-thumbnail ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) . '" />';
 				echo '</div>';
 			}
 		}
@@ -643,9 +643,9 @@ function make_printer_makershed_thing() {
 							
 		<h3>In The <a href="http://makershed.com">Maker Shed</a></h3>
 		
-		<div class="row-fluid">
+		<div class="row">
 		
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/Printrbot_LC_Plus_3D_Printer_Kit_p/dspb3.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/printrbot.jpg" />
@@ -659,7 +659,7 @@ function make_printer_makershed_thing() {
 				
 			</div>
 			
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/Afinia_H_Series_3D_Printer_p/dsaf1.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/affinia.jpg" />
@@ -673,7 +673,7 @@ function make_printer_makershed_thing() {
 				
 			</div>
 			
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/MakerBot_Replicator_Dual_Extruder_3D_Printer_p/dsmb02-de.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/replicator.jpg" />
@@ -687,7 +687,7 @@ function make_printer_makershed_thing() {
 				
 			</div>
 			
-			<div class="span3">
+			<div class="col-md-3">
 				
 				<a href="http://www.makershed.com/Make_Ultimate_Guide_to_3D_Printing_p/1449357377.htm">
 					<img width="125" src="' . get_stylesheet_directory_uri() . '/img/makesip.jpg" />

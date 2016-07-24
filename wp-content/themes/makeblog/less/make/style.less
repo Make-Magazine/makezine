@@ -3,41 +3,6 @@
 	background-color:#005d8f;
 }
 
-// Generic Page Styles
-
-body {
-	font-size: 16px;
-	margin-top:0;
-	overflow-wrap: break-word;
-}
-
-body.single-slideshow {
-	margin-top:0px;
-	margin-bottom:0px;
-}
-
-body.single-slideshow #wpadminbar {
-	display: none;
-}
-
-body.search .well {
-	margin-bottom:0 !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0px 0;
-}
-
-h3 {
-	line-height: 24px;
-}
-
-body ul li,
-body ol li {
-	font-size: 16px;
-  line-height: 150%;
-}
-
 .row.volume {
 	margin-bottom:30px;
 }
@@ -74,7 +39,7 @@ body ol li {
 }
 
 // Urban Sponsor Hack styles
-ul.inline.urban-sensor-nav {
+ul.list-inline.urban-sensor-nav {
 	li {
 		padding:0;
 		a {
@@ -252,28 +217,6 @@ input.parsley-error, select.parsley-error, textarea.parsley-error, div.parsley-e
 	position: relative;
 }
 
-.new-sand {
-	background-image:url('../img/sand.png');
-}
-
-.sand {
-	background-image:url('../img/sand.png');
-	text-shadow: 0px 1px 0px white;
-}
-
-.sand h3 {
-	font-style: normal;
-	font-weight: 900;
-	color: #00598e;
-	margin-bottom: 0px;
-	font-size:22px;
-	margin-top:10px;
-}
-
-.sand .text {
-	text-shadow: 0px 0px 0px;
-}
-
 div.superpage {
 	margin-bottom:-20px;
 }
@@ -344,8 +287,6 @@ article h4 a:hover {
 .posts {
 	background-image: url('../img/shadow1.png');
 	background-repeat:no-repeat;
-	// background-position-x:286px;
-	// background-position-y:50px;
 }
 
 .posts article {
@@ -430,27 +371,27 @@ article h4 a:hover {
 	border-bottom:1px solid #C0C2C2;
 }
 
-.new-grid .row .span4 {
+.new-grid .row .col-md-4 {
 	margin-left:20px;
 	width:290px;
 }
 
-.new-grid .span5 {
+.new-grid .col-md-5 {
 	margin-left:20px;
 	width:370px;
 }
 
-.new-grid .span3 {
+.new-grid .col-md-3 {
 	margin-left:10px;
 	width:220px;
 }
 
-.new-grid.span4 img {
+.new-grid.col-md-4 img {
 	max-width:290px;
 	height:auto;
 }
 
-.new-grid .span4 h3 {
+.new-grid .col-md-4 h3 {
 	font-style: normal;
 	font-weight: bold;
 	color: #cc2229;
@@ -461,7 +402,7 @@ article h4 a:hover {
 	letter-spacing:-1.5px;
 }
 
-.new-grid .span4 h3 a {
+.new-grid .col-md-4 h3 a {
 	color:#cc2229;
 }
 
@@ -517,18 +458,18 @@ article h4 a:hover {
 
 }
 
-.grid-box.camp .span3 p {
+.grid-box.camp .col-md-3 p {
 	margin:5px 0px 5px 0px;
 	line-height:24px;
 }
 
-.grid-box .span3 p {
+.grid-box .col-md-3 p {
 	margin:5px 0px 5px 20px;
 	font-size:18px;
 	line-height:24px;
 }
 
-.grid-box .span3 h2 {
+.grid-box .col-md-3 h2 {
 	font-size:33px;
 	font-weight:bold;
 	line-height:30px;
@@ -626,8 +567,7 @@ article h4 a:hover {
 .more_faires ul li a {
 	font-weight:bold;
 	color:#065270;
-	}
-
+}
 
 
 footer .pills {
@@ -667,7 +607,7 @@ footer .pills a {
 	margin-left: 60px;
 }
 
-.authors .span3 img {
+.authors .col-md-3 img {
 	padding:5px;
 }
 
@@ -679,13 +619,6 @@ footer .pills a {
 //*********************/
 
 .blue-box {
-	// background: -moz-linear-gradient(top,  rgba(22,157,202,0.65) 0%, rgba(0,0,0,0) 100%); FF3.6+
-	// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(22,157,202,0.65)), color-stop(100%,rgba(0,0,0,0))); Chrome,Safari4+
-	// background: -webkit-linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); Chrome10+,Safari5.1+
-	// background: -o-linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); Opera 11.10+
-	// background: -ms-linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); IE10+
-	// background: linear-gradient(top,  rgba(22,157,202,0.65) 0%,rgba(0,0,0,0) 100%); W3C
-	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6169dca', endColorstr='#00000000',GradientType=0 ); /* IE6-9
 	background-image:url('../img/blue-grad.png');
 	background-repeat:repeat-x;
 	margin-top:10px;
@@ -727,10 +660,8 @@ footer .pills a {
 // Want to drop the content styles. Need to update the archive pages first...
 
 .content {
-	background-color: white;
-	padding: 10px;
-	background-image: url('../img/header_bg.jpg');
-	border:1px solid #C0C3C3;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .content h1 {
@@ -1113,7 +1044,7 @@ hr {
 	padding:10px 10px 0;
 }
 
-.get-started.med .span4{
+.get-started.med .col-md-4{
 	width:285px;
 }
 
@@ -1122,23 +1053,23 @@ hr {
 }
 
 
-.get-started.med .span4 p {
+.get-started.med .col-md-4 p {
 	margin: 5px 0px 5px 0px;
 	font-size: 12px;
 	line-height: 14px;
 }
 
-.get-started.med .span4 img {
+.get-started.med .col-md-4 img {
 	max-width:275px;
 }
 
-.get-started.med .span4 h4 {
+.get-started.med .col-md-4 h4 {
 	margin:5px 0;
 	font-size:18px;
 	margin-bottom:12px;
 }
 
-.grid-box.med .span4 h4 {
+.grid-box.med .col-md-4 h4 {
 	margin:5px 0;
 }
 
@@ -1167,7 +1098,7 @@ hr {
 	padding:10px 10px 10px 0px;
 }
 
-.padme .thumbnail {
+.padme .img-thumbnail {
 	max-width:120px;
 }
 
@@ -1204,7 +1135,7 @@ hr {
 	margin-bottom:10px;
 }
 
-.blurb-blurb.span6 {
+.blurb-blurb.col-md-6 {
 	width:440px;
 }
 
@@ -1224,7 +1155,7 @@ hr {
 	border:1px solid #C3C5C5;
 }
 
-.new-grid .span2 {
+.new-grid .col-md-2 {
 	margin-left:20px;
 	width:135px;
 }
@@ -1317,11 +1248,6 @@ hr {
 	display: block;
 	border:0px;
 	background-color: transparent;
-}
-
-h4, h5, h6 {
-	line-height: 18px;
-	margin-bottom: 5px;
 }
 
 .youtube {
@@ -1510,11 +1436,11 @@ span.icon-rocket {
 	width:300px;
 }
 
-.inline {
+.list-inline {
 	margin-left:0px;
 }
 
-.inline li {
+.list-inline li {
 	display: inline;
 	margin-right:5px;
 }
@@ -1981,290 +1907,10 @@ color:green;
 
 #make-money .container .row:first-child {padding-bottom:10px;}
 
-#make-money .container .row .span5 {padding-top:10px;}
+#make-money .container .row .col-md-5 {padding-top:10px;}
 
 .footer-ad {
 	padding:15px 0 30px 0;
-}
-
-// MAGAZINE SUBSCRIPTION PAGE
-#make_subcription_form legend + .control-group {
-  margin-top: 8px;
-  margin-top: 10px;
-  -webkit-margin-top-collapse: separate;
-}
-#make_subcription_form .controls #shipState_ddState, #billState_ddState, #billCountry_ddCountry,#shipCountry_ddCountry {
-    width: 200px;
-}
-#make_subcription_form .radio.inline,#make_subcription_form .checkbox.inline {
-    margin-left: 0;
-    margin-left: 20px\9;
-    float: left;
-    width: auto;
-    padding-right: 10px;
-}
-.row-fluid {
-    .lower-sub-col-02 {
-        margin-left: 0;
-    }
-}
-#make_subcription_form .card-number-area input,#make_subcription_form .card-name-area input {
-    width: 160px;
-}
-#payment-info .card-type-area select,.card-month-area select,.card-year-area select {
-    width: auto !important;
-}
-#isBillShipAddrNotSame {
-    width:auto !important;
-    width: auto !important;
-}
-#make_subcription_form .btn-02-area, #make_subcription_form .btn-01-area {
-    text-align:left;
-    font-size:24px;
-    padding:10px 20px;
-    width:auto;
-    height:50px;
-}
-#make_subcription_form input.narrow,textarea.narrow,#make_subcription_form .uneditable-input.radio-narrow {
-    width: 20px;
-    padding: 0;
-}
-#make_subcription_form .controls #shipState_ddState,#billState_ddState,#billCountry_ddCountry,#shipCountry_ddCountry {
-    width: 200px;
-}
-#make_subcription_form input.narrow,textarea.narrow, #make_subcription_form .uneditable-input.radio-narrow {
-    width:20px;
-    padding:0;
-}
-#make_subcription_form {
-    font-size:12px;
-    color:#333;
-    line-height:16px;
-    margin-bottom:15px;
-    .card-month-area {
-        width: 65px;
-        display: inline;
-        float: right;
-        padding-top: 10px;
-        label {
-            width: 65px;
-        }
-    }
-    legend+.control-group {
-        margin-top: 8px;
-        margin-top:10px;
-        -webkit-margin-top-collapse:separate;
-    }
-    .form-horizontal {
-        .controls:first-child {
-            *padding-left:90px;
-            *padding-left: 90px;
-        }
-        .control-label {
-            float:left;
-            width:80px;
-            padding-top:5px;
-            text-align:left;
-            float: left;
-            width: 80px;
-            padding-top: 5px;
-            text-align: left;
-        }
-        .controls {
-            *display:inline-block;
-            *padding-left:20px;
-            margin-left:90px;
-            *margin-left:0;
-        }
-    }
-    h3 {
-        color: #005d8f;
-        font-size:18px;
-        font-weight: normal;
-    }
-    .subscribe-button-area {
-        height: auto;
-        padding: 10px;
-        margin: 10px 0;
-    }
-    fieldset#sub-info.form-horizontal {
-        .control-group {
-            .controls {
-                margin-left: 0;
-                padding-top: 42px;
-                padding-bottom: 42px;
-                border-top: 1px solid #ccc;
-                border-bottom: 1px solid #ccc;
-            }
-        }
-    }
-    .control-group {
-        margin-bottom:15px;
-        margin-bottom: 15px;
-    }
-    .card-name-area {
-        width: 200px;
-        float: left;
-        label {
-            padding-top: 10px;
-        }
-    }
-    legend {
-        display: block;
-        width: 100%;
-        padding: 0;
-        margin-bottom: 10px;
-        line-height: 20px;
-        border: 0 none;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: left;
-        color: #37BAF5;
-        margin-bottom: 15px;
-        margin-top: 8px;
-    }
-    fieldset#delivery-info.form-horizontal {
-        div.control-group {
-            label.checkbox {
-                div.controls {
-                    margin-left:0;
-                    margin-left: 0;
-                }
-            }
-        }
-    }
-    #offer-code {
-        font-size:14px;
-        padding-top:45px;
-        font-weight:bold;
-        font-size: 14px;
-        padding-top: 45px;
-        font-weight: bold;
-    }
-    .main-sub-hdr {
-        h3 {
-            color: #cc2229;
-            font-style: normal;
-            font-weight: 900;
-            margin-bottom: 0px;
-			font-size: 22px;
-			margin-top: 10px;
-        }
-    }
-    .card-number-area {
-        width: 180px;
-        float: left;
-        label {
-            padding-top: 10px;
-            width: 180px;
-        }
-    }
-    .card-year-area {
-        width: 70px;
-        display: inline;
-        float: right;
-        padding-top: 10px;
-    }
-    #payment-info {
-        legend {
-            float: left;
-            width: auto;
-            padding-right: 5px;
-            padding-top: 15px;
-            margin-bottom: 10px;
-        }
-        img {
-            padding-top: 13px;
-        }
-        span {
-            float: left;
-            font-size: 10px;
-            padding-top: 15px;
-        }
-    }
-    textarea {
-        height:autoheight: auto;
-    }
-    .submit-btn-area {
-        border-top: 1px solid #ccc;
-        padding-top: 15px;
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 15px;
-    }
-    .upper-sub-area {
-        p {
-            font-size: 18px;
-            margin-bottom: 15px;
-            margin-top: 5px;
-            span {
-                font-size: 14px;
-            }
-        }
-        h2 {
-            font-size: 42px;
-            color: #1F5875;
-            font-weight: 400;
-        }
-    }
-    .card-type-area {
-        width: 115px;
-        display: inline;
-        float: right;
-        padding-top: 10px;
-        label {
-            width: 115px;
-        }
-    }
-    select {
-        .wide {
-            width:200px;
-            background-color:#fff;
-            border:1px solid #ccc;width: 200px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-        }
-    }
-    #sub-info {
-        control {
-            group {
-                border-top: 1px solid #CCC;
-                border-bottom: 1px solid #CCC;
-                margin-top: 15px;
-                line-height: 110px;
-            }
-        }
-        label {
-            color: #37BAF5;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: left;
-            width: 120px;
-            margin-top: 42px;
-        }
-    }
-    .textboxes {
-        width:184px;
-    }
-    .container {
-        .row {
-            .span12 {
-                .red {
-                    color:#CC2229;
-                    font-size: 22px;
-                    font-style: normal;
-                    font-weight: 900;
-                    margin-bottom: 0;
-                    margin-top: 10px;
-                    text-transform: uppercase;
-                }
-            }
-            .span12.subscribe-button-area {
-                height: 40px;
-                padding-top:10px;
-                margin-bottom:10px;
-            }
-        }
-    }
 }
 
 
@@ -2404,10 +2050,6 @@ li.share-email {
 }
 
 /* BREATHING ROOM FOR H4 TITLE TAGS*/
-h4 {
-	margin-top: 5px;
-}
-
 .attachment-small-home-feature-boxes h4 {
 	margin-top: 0 !important;
 }
@@ -2823,17 +2465,17 @@ Maker Camp Banner Waist
 }
 
 @media (max-width: 479px) {
-	.span4 {
+	.col-md-4 {
 	max-width: 100%;
 	padding: 0;
 }
 	.paddme {
 	padding: 10px 0 0 0 !important;
 }
-	div.span8 img {
+	div.col-md-8 img {
 	width: 100%;
 }
-	div.span4 img {
+	div.col-md-4 img {
 	width: 100%;
 }
 	.page-id-116357 .waist {
@@ -2950,7 +2592,7 @@ Sprout Styles **/
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
-	.span4 {
+	.col-md-4 {
 		max-width: 100%;
 		padding: 0;
 }
@@ -2960,10 +2602,10 @@ Sprout Styles **/
 	.checkers {
 		margin: 0 !important;
 }
-	div.span8 img {
+	div.col-md-8 img {
 		width: 100%;
 }
-	div.span4 img {
+	div.col-md-4 img {
 		width: 100%;
 }
 	div.home-waist-banner {
@@ -3007,7 +2649,7 @@ Sprout Styles **/
 	div.paddme-maker-camp-right {
 		float: none;
 }
-	div.span4 div.paddme {
+	div.col-md-4 div.paddme {
 		padding: 0;
 }
 	div.secondary-header {

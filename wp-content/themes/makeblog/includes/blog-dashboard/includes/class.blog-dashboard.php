@@ -697,7 +697,7 @@
 										echo '<tr id="post-' . absint( $post->ID ) . '" valign="top">';
 										echo '<td class="post_title column-post_title"' . $this->check_screen_options( 'post_title', false, true ) . '><strong><a href="' . get_edit_post_link( absint( $post->ID ) ) . '">' . esc_html( get_the_title() ) . '</a></strong>
 												<div class="row-actions">
-													<span class="inline hide-if-no-js"><a href="' . get_edit_post_link( absint( $post->ID ) ) . '">Edit</a> | </span>
+													<span class="list-inline hide-if-no-js"><a href="' . get_edit_post_link( absint( $post->ID ) ) . '">Edit</a> | </span>
 													<span class="view"><a href="' . get_permalink() . '">View</a> | </span>
 													<span class="trash"><a class="submitdelete" href="' . get_delete_post_link( absint( $post->ID ) ) . '">Trash</a></span>
 												</div>

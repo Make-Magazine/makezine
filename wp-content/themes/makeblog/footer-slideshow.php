@@ -3,7 +3,7 @@
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 
 					<?php global $make; print $make->ads->ad_leaderboard; ?>
 

@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span8">
+				<div class="col-md-8">
 					
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				
@@ -66,7 +66,7 @@ get_header('version-2'); ?>
 					<div id="contextly"></div>
 
 					<?php if ( function_exists('make_shopify_featured_products_slider') ) {
-     					echo make_shopify_featured_products_slider( 'row-fluid' );
+     					echo make_shopify_featured_products_slider( 'row' );
     				} ?>
 					
 					<?php else: ?>
