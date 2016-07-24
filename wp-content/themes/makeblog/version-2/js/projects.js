@@ -716,7 +716,7 @@ jQuery(document).ready(function ($) {
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
                         make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                             'skipCount': 2,
                             'max' : 3
                         });
@@ -770,7 +770,7 @@ jQuery(document).ready(function ($) {
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
                         make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                             'skipCount': 2,
                             'max' : 3
                         });
@@ -795,7 +795,7 @@ jQuery(document).ready(function ($) {
         // Load mobile ads.
         if ($(window).width() < 768) {
             make.gpt.injectAds($('.post-list .row'), {
-                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                 'skipCount': 2,
                 'max' : 3,
                 'renderIntial' : false

@@ -28,7 +28,7 @@ function get_story_with_ajax() {
     ?>
 
         <div class="ad-unit">
-            <div class="js-ad" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+            <div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
         </div>
         <div class="row story-header" id="<?php echo get_the_ID(); ?>">
             <div class="container">
@@ -119,12 +119,12 @@ function get_story_with_ajax() {
                     ?>
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
-                        <div class="js-ad" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+                        <div class="js-ad scroll-load" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
                     <div class="ctx-siderail-wrapper"></div>
                     <div class="ad-unit">
                         <p id="ads-title">ADVERTISEMENT</p>
-                        <div class="js-ad" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+                        <div class="js-ad scroll-load" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                     </div>
                 </aside>
                 <div class="essb_right_flag"></div>

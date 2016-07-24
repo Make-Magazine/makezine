@@ -339,7 +339,7 @@
     injectAds: function($items, options) {
 
       var defaults = {
-            'markup': '<div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>',
+            'markup': '<div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>',
             'skipCount': 3,
             'max': -1, // Unlimited
             'renderIntial': true

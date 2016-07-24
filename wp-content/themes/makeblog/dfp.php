@@ -20,7 +20,7 @@ class MakeAds {
      *
      * Example dynamic usage:
      * <!-- add div placholder to DOM -->
-     * <div class="js-ad" data-size='[[300,250]]' data-pos='"btf"'></div>
+     * <div class="js-ad scroll-load" data-size='[[300,250]]' data-pos='"btf"'></div>
      * <script>
      * // Call dynamic JS loading function.
      * make.gpt.loadDyn();

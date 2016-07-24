@@ -128,7 +128,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     }
     // Add leadboard for additional pages.
     if (isset($paged) && $paged > 1 && $post_per_page > 12) {
-        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+        $output .= '<li class="row post_rows"><div class="js-ad scroll-load" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
     }
     if ($query->have_posts()) {
         while ($query->have_posts())  : $query->the_post();
@@ -376,7 +376,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 $output .= '<div class="own">';
                 $output .= '<p id="ads-title">Advertisement</p>';
                 $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+                $output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</li>';
@@ -567,7 +567,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     }
     // Add leadboard for additional pages.
     if (isset($paged) && $paged > 1) {
-        $output .= '<li class="row post_rows"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[728,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+        $output .= '<li class="row post_rows"><div class="js-ad scroll-load" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[728,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
     }
     $output .= '<li class="row post_rows"> <ul>';
     if ($query->have_posts()) {
@@ -810,7 +810,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '<div class="own">';
                 $output .= '<p id="ads-title">Advertisement</p>';
                 $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+                $output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</li>';
@@ -994,7 +994,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $red_cat_name = '';
             // Add leadboard for additional pages.
             if (isset($paged) && $paged > 1  && $ads_counter == 0) {
-                $output .= '<li class="row post_rows ad"><div class="js-ad" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
+                $output .= '<li class="row post_rows ad"><div class="js-ad scroll-load" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
             }
             if ($counter == 0) {
                 $output .= '<li class="row post_rows"> <ul>';
@@ -1220,7 +1220,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '<div class="own">';
                 $output .= '<p id="ads-title">Advertisement</p>';
                 $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+                $output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</li>';
