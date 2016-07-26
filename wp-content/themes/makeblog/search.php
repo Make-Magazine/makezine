@@ -32,7 +32,7 @@ query_posts(
 							<form role="search" method="get" class="form-inline" id="searchform" action="<?php echo home_url( '/' ); ?>">
 		            <div id="custom-search-input">
 	                <div class="input-group col-xs-12">
-                    <input type="text" class="form-control input-lg" value="" name="s" id="s" placeholder="<?php echo get_search_query(); ?>" />
+                    <input type="text" class="form-control input-lg" <?php if(is_search()) { ?>value="<?php the_search_query(); ?>" <?php } else { ?>value="" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"<?php } ?> name="s" id="s" placeholder="<?php echo get_search_query(); ?>" />
                     <span class="input-group-btn text-center">
                       <button class="btn btn-info btn-lg" type="submit">
                         <i class="fa fa-search" aria-hidden="true"></i></i> SEARCH
@@ -40,6 +40,20 @@ query_posts(
                     </span>
 	                </div>
 		            </div>
+                <p class="padtop">Search by type:</p>
+                <?php $query_types = get_query_var('post_type'); ?>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types)) { echo 'checked="checked"'; } ?> />
+                  Posts
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="post_type[]" value="projects" <?php if (in_array('projects', $query_types)) { echo 'checked="checked"'; } ?> />
+                  Projects
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="post_type[]" value="products" <?php if (in_array('products', $query_types)) { echo 'checked="checked"'; } ?> />
+                  Product Reviews
+                </label>
 							</form>
 
 					</div>
@@ -118,13 +132,14 @@ query_posts(
 
 						</div>
 
-					</div>
-
 					<?php else: ?>
 					
 						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 					
 					<?php endif; ?>
+
+          </div>
+
 				</div>
 
 				<?php  get_sidebar( 'search' ); ?>
