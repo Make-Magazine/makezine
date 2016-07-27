@@ -5,7 +5,6 @@
     border-radius: 6px;
     background-color: #fff;
 	}
-
 	#custom-search-input input{
     border: 0;
     box-shadow: none;
@@ -13,7 +12,16 @@
 	.input-group-btn {
 	  width: 150px !important;
 	  border-left: solid 1px #ccc;
+    @media (max-width: 767px) {
+      width: initial !important;
+    }
 	}
+  .checkbox-inline {
+    @media (max-width: 767px) {
+      display: block;
+      margin-left: 10px;
+    }
+  }
 
 	#custom-search-input button{
     margin: 2px 0 0 0;
@@ -44,6 +52,11 @@
 		}
 		article {
 			padding: 0px 10px;
+      a.pull-left {
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+      }
 			h2 {
 				font-size: 22px;
 				line-height: 120%;
