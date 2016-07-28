@@ -211,7 +211,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <div class="all-projects <?php echo $device ?>">
     <div class="content container">
       <div class="posts-list">
-        <?php sorting_posts_home(); //TODO Rename Function ?>
+        <?php sorting_posts_home(); ?>
       </div>
     </div>
     <div class="home-ads bottom">

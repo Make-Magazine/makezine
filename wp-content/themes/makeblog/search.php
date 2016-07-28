@@ -44,7 +44,7 @@ query_posts(
                 <?php $query_types = get_query_var('post_type'); ?>
                 <label class="checkbox-inline">
                   <input type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types)) { echo 'checked="checked"'; } ?> />
-                  Posts
+                  Stories
                 </label>
                 <label class="checkbox-inline">
                   <input type="checkbox" name="post_type[]" value="projects" <?php if (in_array('projects', $query_types)) { echo 'checked="checked"'; } ?> />
