@@ -172,6 +172,11 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							<?php the_content(); ?>
 						</article>
 
+						<div class="ad-unit">
+							<p id="ads-title">Advertisement</p>
+							<div class='js-ad scroll-load' data-size='[[728,90],[320,50]]' data-size-map='[[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
+						</div>
+
 						<div class="comments">
 
 							<button type="button" class="btn btn-info btn-lg"
@@ -205,6 +210,10 @@ if ( user_can( $current_user, 'administrator' ) ) {
 									  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
 							<?php }
 							?>
+						</div>
+						<div class="ad-unit">
+							<p id="ads-title">Advertisement</p>
+							<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600],[300,250]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
 						</div>
 						<?php
 						$posttags = get_the_tags();

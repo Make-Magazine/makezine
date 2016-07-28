@@ -28,7 +28,6 @@ get_header('version-2'); ?>
 
       </div>
 
-
       <div class="row nlp-bottom">
 
         <div class="container">

@@ -89,6 +89,7 @@ get_header(); ?>
 
 									<?php the_content(); ?>
 
+
 								</div>
 
 								<div class="col-xs-12 col-sm-4 sidebar">
@@ -174,6 +175,11 @@ get_header(); ?>
 									<?php } ?>
 
 									<a class="project-print-btn btn btn-xs btn-danger pull-left print-page"><i class="icon-print icon icon-white"></i> Print Project</a>
+
+									<div class="projects-ad">
+										<p id="ads-title">Advertisement</p>
+										<?php global $make; print $make->ads->ad_300x600; ?>
+									</div>
 
 								</div>
 
@@ -268,6 +274,11 @@ get_header(); ?>
 								<div class="col-xs-12 col-sm-8">
 
 									<?php echo make_author(); ?>
+
+									<div class="ad-unit">
+										<p id="ads-title">Advertisement</p>
+										<?php global $make; print $make->ads->ad_728x90; ?>
+									</div>
 
 									<div id="contextly">
 

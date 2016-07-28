@@ -716,7 +716,7 @@ jQuery(document).ready(function ($) {
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
                         make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                             'skipCount': 2,
                             'max' : 3
                         });
@@ -770,7 +770,7 @@ jQuery(document).ready(function ($) {
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
                         make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                             'skipCount': 2,
                             'max' : 3
                         });
@@ -795,7 +795,7 @@ jQuery(document).ready(function ($) {
         // Load mobile ads.
         if ($(window).width() < 768) {
             make.gpt.injectAds($('.post-list .row'), {
-                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                 'skipCount': 2,
                 'max' : 3,
                 'renderIntial' : false
@@ -812,7 +812,7 @@ jQuery(document).ready(function ($) {
         if ((!$('.all-stories').hasClass('tags')) && ($('p').is('#blog-load-posts') === false)) {
             $('#footer').removeClass('non-visible');
         }
-        var $sticky_adds_block = $('.all-stories #ad_300x600_1');
+        var $sticky_adds_block = $('.all-stories .ad-refresh .js-ad').eq(0);
         var ads_position = $sticky_adds_block.offset().top - 57;
         var contentHeight;
         var notSticky = 0;

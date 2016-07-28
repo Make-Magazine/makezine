@@ -214,6 +214,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
         <?php sorting_posts_home(); //TODO Rename Function ?>
       </div>
     </div>
+    <div class="home-ads bottom">
+      <?php global $make; print $make->ads->ad_728x90; ?>
+    </div>
     <div id="temp_post_list" style="display: none"></div>
   </div>
 

@@ -210,11 +210,11 @@
         $t.append(adDiv);
         // Do with custom ad vars.
         if (a.adVars) {
-          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'viewport' : a.viewport, 'page' : a.adVars.page, 'cat' : a.adVars.cat, 'tags' : a.adVars.tags, 'zone' : a.adVars.zone});
+          make.gpt.setAd({'size' : a.size, 'sizeMap' : a.sizeMap, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'viewport' : a.viewport, 'page' : a.adVars.page, 'cat' : a.adVars.cat, 'tags' : a.adVars.tags, 'zone' : a.adVars.zone});
         }
         // Do with page defined ad vars.
         else {
-          make.gpt.setAd({'size' : a.size, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'viewport' : a.viewport});
+          make.gpt.setAd({'size' : a.size, 'sizeMap' : a.sizeMap, 'pos' : a.pos, 'adPos' : ad.adPos, 'slot' : ad.slot, 'tile' : ad.tile, 'viewport' : a.viewport});
         }
       });
     },
@@ -339,7 +339,7 @@
     injectAds: function($items, options) {
 
       var defaults = {
-            'markup': '<div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>',
+            'markup': '<div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>',
             'skipCount': 3,
             'max': -1, // Unlimited
             'renderIntial': true

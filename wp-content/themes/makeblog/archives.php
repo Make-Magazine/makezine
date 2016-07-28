@@ -40,6 +40,11 @@ get_header('version-2'); ?>
             ?>
         </div>
     </div>
+
+    <div class="home-ads bottom">
+      <?php global $make; print $make->ads->ad_728x90; ?>
+    </div>
+    
     <div id="temp_post_list" style="display: none">
 
     </div>
