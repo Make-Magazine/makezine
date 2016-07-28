@@ -93,7 +93,7 @@
 			<p class=""><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
 		</div>
 		<div class="col-sm-4 hidden-xs nl-modal">
-			<img class="img-responsive" src="//makezine.staging.wpengine.com/wp-content/uploads/2015/12/Make_Boards-Quick-Guide-small.jpg" alt="2016 Single-Board Computing Quick Reference Guide" />
+			<img class="img-responsive" src="//makezine.com/wp-content/uploads/2016/01/Make_Boards-Quick-Guide-small.jpg" alt="2016 Single-Board Computing Quick Reference Guide" />
 		</div>
 	</div>
 </div>
