@@ -18,8 +18,10 @@
 	<div class="container">
 		<div class="row social-foot-desktop hidden-xs">
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
-				<a href="/"><img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/make-logo.png" alt="MAKE Logo"></a>
-					<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
+				<a href="/">
+          <img class="footer_logo" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Make_logo.svg" alt="Make: Logo">
+        </a>
+				<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
 			</div>
 
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >

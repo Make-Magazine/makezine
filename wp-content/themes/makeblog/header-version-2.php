@@ -245,7 +245,7 @@ $primary_cat_dimension = $primarycat[0];
         <!-- LOGO & TAG LINE -->
         <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
           <a href="<?php echo home_url(); ?>" class="logo-a">
-            <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" class="mz-logo" alt="Make: logo" />
           </a>
         </div>
        
