@@ -263,7 +263,9 @@ function make_load_resources() {
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
-	//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
+  wp_enqueue_style('roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
+  wp_enqueue_style('roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
+  wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
 
 	// Load our takeover default styles when it is enabled
 	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
@@ -293,9 +295,6 @@ function make_load_resources() {
 	wp_enqueue_script( 'modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js');
 	wp_enqueue_script( 'bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js', array( 'jquery' ));
 	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ));
-	
-	//BS2
-	//wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
 	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery' ), false, true );
@@ -313,15 +312,6 @@ function make_load_resources() {
 	}
 
 add_action( 'wp_enqueue_scripts', 'make_load_resources' );
-
-
-function theme_styles() {
-  wp_enqueue_style('roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
-  wp_enqueue_style('roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
-  wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
-}
-
-add_action('wp_enqueue_scripts', 'theme_styles');
 
 
 /**

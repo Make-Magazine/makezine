@@ -39,62 +39,21 @@ if( $detect->isTablet() ){
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-  <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
-  <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
-  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon.png?v=2"/>
-
-
-  <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('siteurl'); ?>/apple-icon-57x57.png?v=2">
-  <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('siteurl'); ?>/apple-icon-60x60.png?v=2">
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('siteurl'); ?>/apple-icon-76x76.png?v=2">
-
-  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>apple-touch-icon.png?v=2"/>
-  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>apple-icon-72x72.png?v=2"/>
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>apple-icon-144x144.png?v=2"/>
-
-  <!-- IE 10 Metro tile icon. Replace #FFFFFF with desired tile color -->
-  <link rel="manifest" href="<?php bloginfo('siteurl'); ?>/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="<?php bloginfo('siteurl'); ?>/ms-icon-144x144.png?v=2">
-  <meta name="theme-color" content="#ffffff">
-
-  <link rel="icon" sizes="192x192" href="<?php bloginfo('siteurl'); ?>/apple-icon-192x192.png?v=2">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('siteurl'); ?>/apple-icon-180x180.png?v=2">
-
-  <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('siteurl'); ?>/apple-icon-152x152.png?v=2">
-
-  <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-  <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('siteurl'); ?>/apple-icon-144x144.png?v=2">
-
-  <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-  <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('siteurl'); ?>/apple-icon-120x120.png?v=2">
-
-  <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png?v=2">
-
-  <!-- For first- and second-generation iPad: -->
-  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>/apple-icon-72x72.png?v=2">
-
-  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon-precomposed.png?v=2">
-
-  <!-- For any additional png sizes that aren't covered above -->
-  <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >
-  <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
-  <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
   <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
   <meta property="fb:admins" content="1612614584" />
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
   <!-- javascript -->
   <script src="//code.jquery.com/jquery-latest.min.js"></script>
-  <!--script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script-->
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -168,25 +127,25 @@ if( $detect->isTablet() ){
 </head>
 <body id="makeblog" <?php body_class(); ?>>
 
-<script src="https://cdn.optimizely.com/js/2101321427.js"></script>
-<!-- Google Universal Analytics -->
+<!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
 
+<!-- Google Universal Analytics -->
 <!-- Time-tracking for Custom Dimensions -->
 <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
 
 <!-- Primary Categories Dimension Query -->
 <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
 <?php
-$cats = get_the_category();
-foreach ( $cats as $cat ) {
-  if ( $cat->category_parent < 1 )
-    $primarycat[] = $cat->category_nicename;
-  elseif ( $cat->category_parent > 0 )
-    $parent_cat_id = $cat->category_parent;
-  $cat2 = get_cat_name($parent_cat_id);
-  $primarycat[] = $cat2;
-}
-$primary_cat_dimension = $primarycat[0];
+  $cats = get_the_category();
+  foreach ( $cats as $cat ) {
+    if ( $cat->category_parent < 1 )
+      $primarycat[] = $cat->category_nicename;
+    elseif ( $cat->category_parent > 0 )
+      $parent_cat_id = $cat->category_parent;
+    $cat2 = get_cat_name($parent_cat_id);
+    $primarycat[] = $cat2;
+  }
+  $primary_cat_dimension = $primarycat[0];
 ?>
 <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
 <script type="text/javascript">
