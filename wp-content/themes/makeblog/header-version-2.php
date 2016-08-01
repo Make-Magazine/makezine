@@ -42,7 +42,10 @@ if( $detect->isTablet() ){
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
+  <?php // TODO: check if the below line is linked to any Maker Media account. Was added by team Quora and seems to do nothing. ?>
   <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
+  <?php // Below site verfication is linked to Maker Media Webmaster tools account ?>
+  <meta name="google-site-verification" content="eAyS6vj89QDOsofiDC4sB-2YR3YNg_VGCYiQnWm2mqc" />
   <meta property="fb:admins" content="1612614584" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
