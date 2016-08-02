@@ -286,7 +286,7 @@ function make_load_resources() {
 	}
 
 	// Load optimizely A/B testing script
-	// wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
+	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
 
 	//load data finder for cookies
 	// wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );
