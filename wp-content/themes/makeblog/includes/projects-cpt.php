@@ -618,10 +618,10 @@ function make_projects_parts( $parts ) {
 		if( ! empty( $part['notes'] ) ) {
 			$notes = $part['notes'];
 		}
-		if ( ( ( strpos( $part['url'], 'dozuki' ) ) || ( strpos( $part['url'], 'makeprojects' ) ) ) != true )  {
-			$output .='<li><a href="' . esc_url( $part['url'] ) . '" data-toggle="tooltip" title="' . esc_attr( $notes ) .'">' . $part['text'];
+		if ($part['url']) {
+			$output .='<li><a href="' . esc_url( $part['url'] ) . '">' . $part['text'];
 		} else {
-			$output .='<li><a href="#" data-toggle="tooltip" title="' . esc_attr( $notes ) .'">' . esc_html( $part['text'] );
+			$output .='<li>' . esc_html( $part['text'] );
 		}
 
 		if( ! empty( $part['type'] ) ) {

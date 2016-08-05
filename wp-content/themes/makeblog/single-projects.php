@@ -12,7 +12,7 @@ wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2
 get_header('version-2'); ?>
 	
 	<div class="home-ads">
-   		<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
+   	<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
 	</div>
 
 	<div class="category-top">
@@ -109,7 +109,7 @@ get_header('version-2'); ?>
 											if( is_single( array( '414218', '403102' ))) {
 												echo '<a href="http://www.makershed.com/products/rocket-glider-kit?utm_source=makezine.com&utm_medium=ads&utm_campaign=maker-camp&utm_keyword=Rocket_Glider" target="_blank"><img src="https://makezineblog.files.wordpress.com/2014/07/7july_rocketglider.jpg" alt="Rocket Glider Kit from Maker shed" /></a>';
 											}
-											 if( is_single( array( '414377', '267502' ))) {
+											if( is_single( array( '414377', '267502' ))) {
 												echo '<a href="http://www.makershed.com/products/brushbots?utm_source=makezine.com&utm_medium=ads&utm_campaign=maker-camp&utm_keyword=brushbots" target="_blank"><img src="https://makezineblog.files.wordpress.com/2014/07/brushbots_300x305.jpg" alt="BrushBots from Maker Shed" /></a>';
 											}
 											if( is_single( array( '267724', '53649' ))) {
@@ -130,62 +130,62 @@ get_header('version-2'); ?>
 										if ( ! empty( $old_parts ) || ! empty( $parts ) || ! empty( $old_tools ) || ! empty( $tools ) ) {
 									?>
 
-									<div class="parts-tools">
+										<div class="parts-tools">
 
-										<ul class="top">
-											<?php
-												if ( $parts || $old_parts ) {
-													echo '<li class="active"><a href="#1" data-toggle="tab">Parts</a></li>';
-												}
-												if ( ( $parts || $old_parts ) && ( $tools || $old_tools ) ) {
-													echo '<li class="divider"> / </li>';
-												}
-												if ( $tools || $old_tools && ( ! empty( $old_parts ) || ! empty( $parts ) ) ) {
-													echo '<li><a href="#2" data-toggle="tab">Tools</a></li>';
-												} else {
-													echo '<li class="active"><a href="#2" data-toggle="tab">Tools</a></li>';
-												}
-											?>
+											<ul class="top">
+												<?php
+													if ( $parts || $old_parts ) {
+														echo '<li class="active"><a href="#1" data-toggle="tab">Parts</a></li>';
+													}
+													if ( ( $parts || $old_parts ) && ( $tools || $old_tools ) ) {
+														echo '<li class="divider"> / </li>';
+													}
+													if ( $tools || $old_tools && ( ! empty( $old_parts ) || ! empty( $parts ) ) ) {
+														echo '<li><a href="#2" data-toggle="tab">Tools</a></li>';
+													} 
+													elseif ( $tools || $old_tools && ( empty( $old_parts ) || empty( $parts ) ) ) {
+														echo '<li class="active"><a href="#2" data-toggle="tab">Tools</a></li>';
+													}
+												?>
+											</ul>
 
-										</ul>
-										<div class="tab-content">
-											<?php
-												if ( $parts ) {
-													echo '<div class="tab-pane active" id="1">';
-													echo make_projects_parts( $parts );
-													echo '</div>';
-												}
+											<div class="tab-content">
+												<?php
+													if ( $parts ) {
+														echo '<div class="tab-pane active" id="1">';
+														echo make_projects_parts( $parts );
+														echo '</div>';
+													}
 
-												// If our parts are empty, we want to default to tools
-												if ( empty( $parts ) ) {
-													echo '<div class="tab-pane active" id="2">';
-												} else {
-													echo '<div class="tab-pane" id="2">';
-												}
-												if ( $tools ) {
-													echo make_projects_tools( $tools );
-												}
+													// If our parts are empty, we want to default to tools
+													if ( empty( $parts ) && !empty( $tools ) ) {
+														echo '<div class="tab-pane active" id="2">';
+														echo make_projects_tools( $tools );
+														echo '</div>';
+													} elseif ( !empty( $parts ) && !empty( $tools ) ) {
+														echo '<div class="tab-pane" id="2">';
+														echo make_projects_tools( $tools );
+														echo '</div>';
+													}
 												?>
 											</div>
 
 										</div>
 
-									</div>
-
 									<?php } ?>
 
-									<a class="project-print-btn btn btn-xs btn-danger pull-left print-page"><i class="icon-print icon icon-white"></i> Print Project</a>
+									<a class="project-print-btn btn btn-xs btn-danger print-page">
+										<i class="icon-print icon icon-white"></i> Print Project
+									</a>
 
 									<div class="projects-ad">
 										<p id="ads-title">Advertisement</p>
 										<?php global $make; print $make->ads->ad_300x600; ?>
 									</div>
 
-								</div>
+								</div><?php //END SIDEBAR ?>
 
-							</div>
-
-						</div>
+							</div><?php //END ROW ?>
 
 							<?php
 								$stepscount = unserialize( $steps[0] );
