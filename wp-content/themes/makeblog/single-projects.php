@@ -140,10 +140,10 @@ get_header('version-2'); ?>
 													if ( ( $parts || $old_parts ) && ( $tools || $old_tools ) ) {
 														echo '<li class="divider"> / </li>';
 													}
-													if ( $tools || $old_tools && ( ! empty( $old_parts ) || ! empty( $parts ) ) ) {
+													if ( ( $tools || $old_tools ) && ( $parts || $old_parts ) ) {
 														echo '<li><a href="#2" data-toggle="tab">Tools</a></li>';
 													} 
-													elseif ( $tools || $old_tools && ( empty( $old_parts ) || empty( $parts ) ) ) {
+													elseif ( ( $tools || $old_tools ) && !( $parts || $old_parts ) ) {
 														echo '<li class="active"><a href="#2" data-toggle="tab">Tools</a></li>';
 													}
 												?>

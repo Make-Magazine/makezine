@@ -634,7 +634,9 @@ function make_projects_parts( $parts ) {
 			$output .= ')';
 		}
 
-		$output .= '</a> ';
+		if ($part['url']) {
+			$output .= '</a> ';
+		}
 
 		$output .= ' <span class="text-muted">';
 		$output .= wp_kses_post( $notes );
