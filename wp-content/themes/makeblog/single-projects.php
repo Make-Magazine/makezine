@@ -130,7 +130,7 @@ get_header('version-2'); ?>
 									if ( $parts || $old_parts ) {
 										echo '<li class="active"><a href="#1" data-toggle="tab">Parts</a></li>';
 									}
-									if ( ( $parts || $old_parts ) && ( $tools || $old_tools ) ) {
+									if ( ( $parts || $old_parts ) && ( $tools[0] || $old_tools ) ) {
 										echo '<li class="divider"> / </li>';
 									}
 									if ( ( $tools[0] || $old_tools ) && ( $parts || $old_parts ) ) {
