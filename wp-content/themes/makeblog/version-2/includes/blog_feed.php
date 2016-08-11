@@ -72,7 +72,7 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
         <a href="<?php echo get_home_url() . '/projects' ?>" class="full-feed-title-link"><i
             class="fa fa-newspaper-o feed-icon"></i><?php echo $title ?></a>
       <?php } else if ( $type == 'Post' ) { ?>
-        <i class="fa fa-newspaper-o feed-icon"></i>Latest <?php echo $tagName->name; ?> Stories</a>
+        <i class="fa fa-newspaper-o feed-icon"></i>The Latest on <?php echo $tagName->name; ?></a>
       <?php } else { ?>
         <i class="fa fa-newspaper-o feed-icon"></i> <?php echo $title;
       } ?>
