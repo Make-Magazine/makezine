@@ -99,16 +99,16 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
         </li>
       <?php endwhile; ?>
       <?php if (!empty($allProjects)){ ?>
-        <h3 class="all-projects-title"><a href="<?php echo site_url( '/projects', 'http' ); ?>">See All Projects</a></h3>
+        <a class="all-projects-title" href="<?php echo site_url( '/projects', 'http' ); ?>">See all Projects</a>
       <?php } ?>
       <?php if (!empty($allReviews)){ ?>
-        <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/reviews', 'http' ); ?>">See All Reviews</a></h3>
+        <a class="all-projects-title" href="<?php echo site_url( '/tag/reviews', 'http' ); ?>">See all Reviews</a>
       <?php } ?>
       <?php if (!empty($allBuilders)){ ?>
-        <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/skill-builder', 'http' ); ?>">See All Skill Builders</a></h3>
+        <a class="all-projects-title" href="<?php echo site_url( '/tag/skill-builder', 'http' ); ?>">See all Skill Builders</a>
       <?php } ?>
       <?php if (!empty($allPosts)){ ?>
-        <h3 class="all-projects-title"><a href="<?php echo site_url( '/tag/' . $tag_slug .'', 'http' ); ?>">See All <?php echo $tagName->name; ?> Stories</a></h3>
+        <a class="all-projects-title" href="<?php echo site_url( '/tag/' . $tag_slug .'', 'http' ); ?>">See all on <?php echo $tagName->name; ?></a>
       <?php } ?>
     </ul>
   </div>
