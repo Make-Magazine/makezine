@@ -202,8 +202,8 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
       </a>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
-      <a href="/challenge/lights-for-life/" target="_blank">
-        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/promo-ge.jpg' ?>" class="img-responsive center-block event" alt="Lights for Life Challenge!" />
+      <a href="https://www.eventbrite.com/e/world-maker-faire-new-york-2016-tickets-25957796468" target="_blank">
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/Promo_WMF_2016_v15.png' ?>" class="img-responsive center-block event" alt="World Maker Faire New York" />
       </a>
     </div>
   </div>
