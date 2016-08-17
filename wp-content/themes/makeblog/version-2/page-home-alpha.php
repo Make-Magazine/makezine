@@ -203,7 +203,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="event-camp">
       <a href="https://www.eventbrite.com/e/world-maker-faire-new-york-2016-tickets-25957796468" target="_blank">
-        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/Promo_WMF_2016_v15.png' ?>" class="img-responsive center-block event" alt="World Maker Faire New York" />
+        <img src="<?php echo get_template_directory_uri().'/version-2/img/promos/Promo_WMF_2016_v16.png' ?>" class="img-responsive center-block event" alt="World Maker Faire New York" />
       </a>
     </div>
   </div>
