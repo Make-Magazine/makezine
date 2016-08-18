@@ -137,11 +137,11 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $parent_id = array();
             $red_cat_name = '';
             if ($counter == 0) {
-                $output .= '<li class="row post_rows"> <ul>';
+                $output .= '<li class="row post_rows"><ul class="mz-grid-post">';
             }
             $counter++;
 
-            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
+            $output .= '<li class="post';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
             }
@@ -343,7 +343,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $output .= '</a>';
             $output .= '</p>';
             $output .= '</div>';
-            $output .= '<h2><a href="';
+            $output .= '<h2 itemprop="headline"><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
@@ -366,9 +366,9 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             }
             if ( ( $ads_counter == 1 ) and ( $post_per_page == $post_per_page_initial - 1 ) and ( $paged == 1 ) ) {
                 if (($counter == 0) and ( ($device == 'mobile') or ($device == 'tablet') )) {
-                    $output .= '<li class="row post_rows"> <ul>';
+                    $output .= '<li class="row post_rows"><ul class="mz-grid-post">';
                 }
-                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
+                $output .= '<li class="post own_ads';
                 if ( $count_posts <= 2 ) {
                     $output .= ' before-ads';
                 }
@@ -454,7 +454,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
         $device = 'mobile';
         $post_per_page = $post_per_page_initial;
     }
-
     if ($detect->isTablet()) {
         $post_per_page_initial = 12;
         $device = 'tablet';
@@ -463,6 +462,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     else {
         $post_per_page = $post_per_page_initial - 1;
     }
+
     $current_cat_name = single_cat_title("", 0);
     $sub_meta_query = array(
         'relation' => 'AND',
@@ -547,7 +547,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
         'meta_query' => $meta_query,
         'posts_per_page' => $post_per_page,
         'page' => $paged,
-        'offset'     =>  $offset,
+        'offset' => $offset,
         'orderby' => $ordered,
         'post__in' => $top_ids,
         'post_status' => 'publish',
@@ -569,7 +569,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     if (isset($paged) && $paged > 1) {
         $output .= '<li class="row post_rows"><div class="js-ad scroll-load" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[728,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
     }
-    $output .= '<li class="row post_rows"> <ul>';
+    $output .= '<li class="row post_rows"><ul class="mz-grid-post">';
     if ($query->have_posts()) {
         while ($query->have_posts())  : $query->the_post();
             $child_cat = array();
@@ -578,26 +578,31 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $red_cat_name = '';
             $counter++;
 
-            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
+            $output .= '<li class="post';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
             }
             $post_id = get_the_ID();
             $output .= '">';
-            $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
+            $output .= '<article itemscope itemtype="http://schema.org/Article">
+                            <div class="gradient-wrapper">
+                                <div class="gradient_animation">
+                                    <a href="';
             $link = get_the_permalink();
             $output .= $link;
-            $output .= '">';
-            $output .= '</a></div>';
-            $output .= '<div class="final_gradient"><a href="';
+            $output .=              '"></a>
+                                </div>
+                                <div class="final_gradient">
+                                    <a href="';
             $link = get_the_permalink();
             $output .= $link;
-            $output .= '">';
-            $output .= '</a></div>';
-            $output .= '<a href="';
+            $output .=               '">
+                                    </a>
+                                </div>
+                                <a href="';
             $link = get_the_permalink();
             $output .= $link;
-            $output .= '">';
+            $output .=           '">';
             $args = array(
                 'resize' => '370,240',
                 'quality' => get_photon_img_quality(),
@@ -607,13 +612,12 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             preg_match_all($re, $url, $matches);
             $str = $matches[2][0];
             $photon = jetpack_photon_url($str, $args);
-            $output .= '<img src="' . $photon . '" alt="thumbnail">';
-            $output .= '</a>';
+            $output .=              '<img src="' . $photon . '" alt="Recent article featured image">';
+            $output .=          '</a>';
             $post_duration = get_post_meta($post_id, 'project_duration');
             $post_difficulty = get_post_meta($post_id, 'project_difficulty');
             $post_video = get_post_meta($post_id, 'ga_youtube_embed');
             $post_flag = get_post_meta($post_id, 'flag_taxonomy');
-
             $red_cat_name = '';
             $cat_link = '';
             if ('post' == get_post_type()) {
@@ -698,7 +702,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
                 $output .= '<div class="red-box-category">';
-                $output .= '<p><a href="';
+                $output .= '<p><a itemprop="keywords" href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
                     $output .= '">#';
@@ -792,7 +796,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
               $output .= truncate_with_ellipses($post_title, 90);
               $output .= '</a></h2></div>';
             } else {
-              $output .= '<h2><a href="';
+              $output .= '<h2 itemprop="headline"><a href="';
               $link = get_the_permalink();
               $output .= $link;
               $output .= '">';
@@ -800,9 +804,9 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
               $output .= truncate_with_ellipses($post_title, 90);
               $output .= '</a></h2>';
             }
-            $output .= '</li>';
+            $output .= '</article></li>';
             if ( ( $ads_counter == 1 && $device != 'tablet') || ($ads_counter == 0 && $device == 'tablet') and ( $post_per_page == $post_per_page_initial - 1 ) ) {
-                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
+                $output .= '<li class="post own_ads';
                 if ( $count_posts <= 2 ) {
                     $output .= ' before-ads';
                 }
@@ -818,12 +822,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $ads_counter++;
         endwhile;
-        // Output MAKER SHED PANEL
-        $output .= '<li class="ads shed-row-li"><div class="shed-row">';
-        $output .= make_shopify_featured_products_slider_home( 'row' );
-        $output .= '</div></li>';
-        // End Projects list
-        $output .= '</ul> </li>';
         do_action('custom_page_hook', $query);
         wp_reset_query();
     } else {
@@ -997,11 +995,11 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '<li class="row post_rows ad"><div class="js-ad scroll-load" data-size=\'[[728,90],[940,250],[970,90],[970,250],[320,50]]\' data-size-map=\'[[[1000,0],[[728,90],[940,250],[970,90],[970,250]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]\' data-pos=\'"btf"\'></div></li>';
             }
             if ($counter == 0) {
-                $output .= '<li class="row post_rows"> <ul>';
+                $output .= '<li class="row post_rows"><ul class="mz-grid-post">';
             }
             $counter++;
 
-            $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12';
+            $output .= '<li class="post';
             if (( ( $ads_counter + 1 ) == $count_posts) and ( $count_posts > 2 )) {
                 $output .= ' before-ads';
             }
@@ -1109,7 +1107,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
                 $output .= '<div class="red-box-category">';
-                $output .= '<p><a href="';
+                $output .= '<p><a itemprop="keywords" href="';
                 $output .= $cat_link;
                 $output .= '"><span class="fa fa-wrench"></span>';
                 $output .= $red_cat_name;
@@ -1187,7 +1185,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= '</a>';
             $output .= '</p>';
             $output .= '</div>';
-            $output .= '<h2><a href="';
+            $output .= '<h2 itemprop="headline"><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
@@ -1212,7 +1210,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 if (($counter == 0) and ($device == 'mobile')) {
                     $output .= '<li class="row post_rows mobile-only-class"> <ul>';
                 }
-                $output .= '<li class="post col-lg-4 col-md-4 col-sm-6 col-xs-12 own_ads';
+                $output .= '<li class="post own_ads';
                 if ( $count_posts <= 2 ) {
                     $output .= ' before-ads';
                 }
