@@ -1650,10 +1650,10 @@ function home_tags($postid) {
 			$tag = get_the_tags( $postid );
 			if ( ! empty( $dc ) ) {
 				$term = get_term( $dc, 'post_tag' );
-				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
+				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">'.$term->name.'</a>';
 			}
 			elseif( ! empty( $tag ) ) {
-				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">'.$tag[0]->name;
 			}
 			else {
 				echo '';

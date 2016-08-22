@@ -114,8 +114,6 @@ get_header('version-2'); ?>
                                         $output .= '<span class="video fa fa-video-camera"></span>';
                                         $output .= '</a></div>';
                                         echo $output;
-
-                                        
                                     } ?>
                                 </div>
 

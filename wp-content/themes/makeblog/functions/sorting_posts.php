@@ -14,22 +14,22 @@ function sort_down($a, $b)
 
 function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 {
-    require_once(TEMPLATEPATH . '/version-2/includes/Mobile_Detect.php');
-    $device = '';
-    $detect = new Mobile_Detect;
-    $post_per_page_initial = 6;
-    if ($detect->isMobile()) {
-        $post_per_page_initial = 6;
-        $device = 'mobile';
-    }
+    // require_once(TEMPLATEPATH . '/version-2/includes/Mobile_Detect.php');
+    // $device = '';
+    // $detect = new Mobile_Detect;
+    // $post_per_page_initial = 6;
+    // if ($detect->isMobile()) {
+    //     $post_per_page_initial = 6;
+    //     $device = 'mobile';
+    // }
 
-    if ($detect->isTablet()) {
-        $post_per_page_initial = 6;
-        $device = 'tablet';
-    }
-    else {
-        $post_per_page = $post_per_page_initial - 1;
-    }
+    // if ($detect->isTablet()) {
+    //     $post_per_page_initial = 6;
+    //     $device = 'tablet';
+    // }
+    // else {
+    //     $post_per_page = $post_per_page_initial - 1;
+    // }
     $current_cat_name = single_cat_title("", 0);
     $sub_meta_query = array(
         'relation' => 'AND',
@@ -147,6 +147,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             }
             $post_id = get_the_ID();
             $output .= '">';
+            $output .= '<article itemscope itemtype="http://schema.org/Article">';
             $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -264,7 +265,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 $output .= '<p><a href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
-                    $output .= '">#';
+                    $output .= '">';
                 } else {
                     $output .= '"><span class="fa fa-wrench"></span>';
                 }
@@ -350,7 +351,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $post_title = get_the_title();
             $output .= truncate_with_ellipses($post_title, 90);
             $output .= '</a></h2>';
-            $output .= '</li>';
+            $output .= '</article></li>';
 
             if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
                 $output .= '</ul> </li>';
@@ -426,6 +427,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
     echo $output;
 }
 
+
 function get_sproutgrid_with_ajax()
 {
     $current_cat_id = $_POST['cat'];
@@ -442,6 +444,7 @@ function get_sproutgrid_with_ajax()
 
 add_action('wp_ajax_sorting_posts_sprout', 'get_sproutgrid_with_ajax');
 add_action('wp_ajax_nopriv_sorting_posts_sprout', 'get_sproutgrid_with_ajax');
+
 
 function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 { 
@@ -705,7 +708,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '<p><a itemprop="keywords" href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
-                    $output .= '">#';
+                    $output .= '">';
                 } else {
                     $output .= '"><span class="fa fa-wrench"></span>';
                 }
@@ -855,12 +858,12 @@ function get_homegrid_with_ajax()
     $paged = !empty($_POST['paged']) ? $_POST['paged'] : 1;
 
     sorting_posts_home($current_cat_id, $difficulty, $how_to_sort, $duration, $paged, $type);
-
     die();
 }
 
 add_action('wp_ajax_sorting_posts_home', 'get_homegrid_with_ajax');
 add_action('wp_ajax_nopriv_sorting_posts_home', 'get_homegrid_with_ajax');
+
 
 function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'recent', $duration = '', $paged = '1', $type = 'initial_load')
 {
@@ -1005,6 +1008,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             }
             $post_id = get_the_ID();
             $output .= '">';
+            $output .= '<article itemscope itemtype="http://schema.org/Article">';
             $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -1042,7 +1046,6 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $post_categories = get_the_category();
                 foreach ($post_categories as $post_category) {
                     if (!empty($current_cat_id)) {
-
                         if ($post_category->parent == $current_cat_id) {
                             $child_cat[] = $post_category->name;
                             $child_id[] = $post_category->term_id;
@@ -1192,24 +1195,9 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $post_title = get_the_title();
             $output .= truncate_with_ellipses($post_title, 90);
             $output .= '</a></h2>';
-            $output .= '</li>';
+            $output .= '</article></li>';
 
-            if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if (($counter == 2) and ($device == 'tablet')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if (($counter == 1) and ($device == 'mobile')) {
-                $output .= '</ul> </li>';
-                $counter = 0;
-            }
-            if ( ( $ads_counter == 1 && $device != 'tablet') || ($ads_counter == 0 && $device == 'tablet') and ( $post_per_page == $post_per_page_initial - 1 ) ) {
-                if (($counter == 0) and ($device == 'mobile')) {
-                    $output .= '<li class="row post_rows mobile-only-class"> <ul>';
-                }
+            if ( ($counter == 2) and ($post_per_page == $post_per_page_initial - 1) ) {
                 $output .= '<li class="post own_ads';
                 if ( $count_posts <= 2 ) {
                     $output .= ' before-ads';
@@ -1223,23 +1211,11 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '</div>';
                 $output .= '</li>';
                 $counter++;
-                if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
-                    $output .= '</ul> </li>';
-                    $counter = 0;
-                }
-                if (($counter == 2) and ($device == 'tablet')) {
-                    $output .= '</ul> </li>';
-                    $counter = 0;
-                }
-                if (($counter == 1) and ($device == 'mobile')) {
-                    $output .= '</ul> </li>';
-                    $counter = 0;
-                }
             }
 
             $ads_counter++;
         endwhile;
-        if (($counter == 1) and ($device != 'mobile')) {
+        if ($counter == 1) {
             $output .= '</ul> </li>';
         }
         if (($ads_counter == $post_per_page) and ($ads_counter == ($post_per_page_initial - 1))) {
@@ -1278,7 +1254,6 @@ function get_projects_with_ajax()
     $paged = !empty($_POST['paged']) ? $_POST['paged'] : 1;
 
     sorting_posts($current_cat_id, $difficulty, $how_to_sort, $duration, $paged, $type);
-
     die();
 }
 add_action('wp_ajax_sorting_posts', 'get_projects_with_ajax');
