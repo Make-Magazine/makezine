@@ -8,9 +8,6 @@ body.page-template-project {
   background-color: #f0f0f0;
   li {
     list-style-type: none;
-    &.post_rows.ad {
-      margin-bottom: 40px;
-    }
   }
 }
 .projects-cat .content .project-navigation, 
@@ -311,11 +308,6 @@ body.page-template-project {
 }
 
 @media screen and (min-width: 320px) {
-  .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.gradient-wrapper, 
-  .all-projects .posts-list ul.selected-posts-list > li.row ul li div.gradient-wrapper {
-    overflow: hidden;
-    position: relative;
-  }
   .projects-cat .posts-list ul.selected-posts-list > li.row ul li div.gradient_animation, 
   .all-projects .posts-list ul.selected-posts-list > li.row ul li div.gradient_animation {
     position: absolute;
@@ -364,11 +356,6 @@ body.page-template-project {
     color: #FFF;
     display:block;
   }
-}
-.projects-cat .posts-list ul.selected-posts-list > li.row ul li a img, 
-.all-projects .posts-list ul.selected-posts-list > li.row ul li a img {
-  width: 100%;
-  height: auto;
 }
 
 .filter-display-wrapper {
@@ -485,12 +472,10 @@ body.page-template-project {
 }
 .projects-cat .posts-list ul.selected-posts-list > li.row ul li h2, 
 .all-projects .posts-list ul.selected-posts-list > li.row ul li h2 {
-  background-color: #FFF;
   min-height: 66px;
   margin: 0;
 }
-.projects-cat .posts-list ul.selected-posts-list > li.row ul li h2 a, 
-.all-projects .posts-list ul.selected-posts-list > li.row ul li h2 a {
+.selected-posts-list h2 a {
   color: #4a4a4a;
   display: block;
   padding: 15px;
@@ -600,46 +585,6 @@ li.post:hover p.trans {
     padding-left: 19px;
     padding-right: 5px;
   }
-}
-
-.tablet .content .project-navigation:nth-child(3) {
-  display: none;
-}
-.tablet .tooltip.fade.top.in .tooltip-inner,
-.tablet .tooltip-arrow {
-  display: none;
-}
-.tablet .content .project-navigation.sticky .filter-list .filter-item > ul {
-  margin: 12px 0;
-  padding-left: 25px;
-  float: left;
-}
-.tablet .content .project-navigation.sticky .filter-list .fa.fa-chevron-up,
-.tablet .content .project-navigation.sticky .filter-list .fa.fa-chevron-down {
-  position: absolute;
-  top: 30%;
-  left: 11px;
-  margin-top: 18px;
-}
-.tablet .filter-item {
-  width: 95%;
-  margin: 0 auto;
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .tablet .own {
-    padding: 55px 0;
-  }
-}
-@media (max-width: 768px) {
-  .tablet .own {
-    padding: 20px 0;
-  }
-}
-.tablet .fa-chevron-down, .tablet .fa-chevron-up {
-  margin-top: 0;
-}
-.tablet .filter-item {
-  overflow: hidden;
 }
 
 .home-ads {
@@ -800,21 +745,33 @@ li.post:hover p.trans {
 #pbd-alp-load-posts {
   max-width: 540px;
   text-align: center;
+  color: #4a4a4a;
   margin: 0 auto;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   background-color: #FFF;
-}
-#pbd-alp-load-posts a {
-  text-transform: uppercase;
-  display: block;
-  color: #4a4a4a;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 35px;
-}
-#pbd-alp-load-posts.loading a{
-  padding-right: 25px;
+  border-radius: 5px;
+  transition: all .15s;
+  &.loading a{
+    padding-right: 25px;
+  }
+  &:hover {
+    background-color: #4A4A4A;
+    color: #FFF;
+    transition: all .15s;
+    .more-button-spinner {
+      color:white;
+    }
+  }
+   a {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 35px;
+  }
 }
 .fa.more-button-spinner {
   position: absolute;
@@ -830,18 +787,6 @@ li.post:hover p.trans {
 }
 .loading .fa.more-button-spinner {
   display:inline-block;
-}
-#pbd-alp-load-posts:hover .more-button-spinner {
-  color:white;
-}
-#pbd-alp-load-posts a:hover {
-  text-decoration: none;
-}
-#pbd-alp-load-posts:hover {
-  background-color: #4A4A4A;
-}
-#pbd-alp-load-posts:hover a {
-  color: #FFF;
 }
 
 .error_message {
@@ -1405,11 +1350,6 @@ ul.diff-item li.current {
   font-size: 27px;
 }
 
-.projects-cat .posts-list ul.selected-posts-list > li.row ul li.before-ads,
-.all-projects .posts-list ul.selected-posts-list > li.row ul li.before-ads {
-  margin-bottom: 30px;
-}
-
 .projects-cat .posts-list ul.selected-posts-list > li.row ul li h2.look_like_h3 a,
 .all-projects .posts-list ul.selected-posts-list > li.row ul li h2.look_like_h3 a {
   font-size: 16px;
@@ -1936,10 +1876,10 @@ ul.diff-item li.current {
     > li {
       width: 33.3333%;
       padding: 0 15px 30px;
-      @media (min-width: 650px) and (max-width: 991px) {
+      @media (min-width: 550px) and (max-width: 991px) {
         width: 50%;
       }
-      @media (max-width: 649px) {
+      @media (max-width: 549px) {
         width: 100%;
       }
       article {
@@ -1950,18 +1890,59 @@ ul.diff-item li.current {
           box-shadow: 0 3px 9px 0 #CCC;
           transition: all .1s ease;
         }
-        @media (max-width: 649px) {
+        .gradient-wrapper {
+          overflow: hidden;
+          position: relative;
           img {
-            width: 30vw;
-            height: auto;
+            width: 100%;
+          }
+        }
+        @media (max-width: 549px) {
+          position: relative;
+          height: 30vw;
+          .gradient-wrapper {
+            width: 40%;
+            height: 100%;
+            position: static;
+            > a {
+              height: 100%;
+              display: inline-block;
+              position: relative;
+              right: -50%;
+              img {
+                position: relative;
+                left: -50%;
+                width: auto;
+                max-width: none;
+                height: 100%;
+              }
+            }
+          }
+          .gradient_animation,
+          .final_gradient,
+          .excerpt {
+            display: none;
           }
           .filter-display-wrapper {
-            //left: 150px;
+            height: 22px;
+            left: 40%;
+            margin-left: 10px;
+            top: 10px;
+            .difficulty-lvl, 
+            .duration-lvl {
+              display: none;
+            }
           }
           h2 {
             position: absolute;
-            left: 150px;
-            top: 50px;
+            left: 40%;
+            top: 32px;
+            max-height: 50px;
+            overflow: hidden;
+            a {
+              padding: 10px;
+              line-height: 1.3em;
+            }
           }
           .home-post-card {
             display: inline-block;
@@ -1984,4 +1965,3 @@ ul.diff-item li.current {
     }
   }
 }
-

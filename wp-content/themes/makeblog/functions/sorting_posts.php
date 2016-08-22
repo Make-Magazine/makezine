@@ -714,6 +714,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 }
                 $output .= $red_cat_name;
                 $output .= '</a></p>';
+                $output .= '</div>';
             }
             if (!empty($post_video[0])) {
                 $output .= '<div class="videoblock"><a href="';
@@ -724,7 +725,6 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '<span class="video fa fa-video-camera"></span>';
                 $output .= '</a></div>';
             }
-            $output .= '</div>';
             $difficulty_counter = 0;
             $duration_counter = 0;
             if (!empty($post_difficulty[0])) {
@@ -825,6 +825,12 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $ads_counter++;
         endwhile;
+        if ($counter == 1) {        
+            $output .= '</ul> </li>';       
+        }       
+        if (($ads_counter == $post_per_page) and ($ads_counter == ($post_per_page_initial - 1))) {      
+            $output .= '</ul> </li>';       
+        }
         do_action('custom_page_hook', $query);
         wp_reset_query();
     } else {

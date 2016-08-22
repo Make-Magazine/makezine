@@ -392,7 +392,7 @@ function filter_list_output()
     $output .= '</div>';
     $output .= '<span class="fa fa-chevron-up"></span>';
     $output .= '<span class="fa fa-chevron-down"></span>';
-    $output .= '<ul class="col-lg-5 col-md-6 col-sm-7 col-xs-7">';
+    $output .= '<ul class="col-xs-12">';
     $output .= '<li class="difficulty">';
     $output .= '<p>difficulty</p>';
     $output .= '<ul class="diff-item">';
