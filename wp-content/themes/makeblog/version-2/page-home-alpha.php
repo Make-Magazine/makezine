@@ -112,7 +112,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     }
 
 ?>
-<div class="padleft padright">
+<div class="home-featured-stories">
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="row">
@@ -139,7 +139,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
       <div class="row">
         <a href="<?php echo esc_html( $top_link ); ?>"
-          class="mz-featured-imageblock"
+          class="mz-featured-imageblock mz-featured-imageblock-top"
           style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay mz-text-overlay-side">
