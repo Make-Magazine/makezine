@@ -236,10 +236,7 @@
         .red-box-category {
           max-width: 100%;
           @media (min-width: 768px) {
-            max-width: 175px;
-          }
-          @media (min-width: 992px) {
-            max-width: 110px
+            max-width: 170px;
           }
           @media (min-width: 1200px) {
             max-width: 160px;
@@ -351,40 +348,17 @@
           }
         }
       }
-      .red-box-category {
-        position: relative;
-        p {
-          width: 100%;
-          margin-top: 3px;
-          > a {
-            display: block;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
-        }
-        .dies {
-          padding-right: 10px;
-          font-size: 18px;
-        }
-        span.cat_name {
-          margin-bottom: 3px;
-        }
-        .videoblock {
-          padding: 4px 7px;
-          .fa-video-camera {
-            margin-left: 2px;
-          }
-        }
-        &.is-videoblock {
-          padding-right: 30px;
-          > a {
-            position: absolute;
-          }
+    }
+    .red-box-category {
+      p {
+        > a {
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }
-
   }
   .fa.more-button-spinner {
     position: absolute;
@@ -486,6 +460,7 @@
         line-height: 19px;
         padding: 14px 0 14px 55px;
         margin-top: 30px;
+        margin-bottom: 0;
         background: #f40b0b url("../img/tag_label.png") no-repeat 14px center;
       }
       .menu-blogpage-sidebar-menu-container {
@@ -754,26 +729,6 @@
       .publish-date {
         a {
           padding-left: 15px;
-        }
-      }
-      .filter-display-wrapper {
-        top: 15px;
-        left: 15px;
-        .red-box-category {
-          overflow: inherit;
-          margin-right: 0;
-          p {
-            a {
-              width: 100%;
-              display: block;
-              font-size: 11px;
-              color: #FFF;
-            }
-          }
-          .videoblock {
-            position: absolute;
-            left: 100%;
-          }
         }
       }
     }

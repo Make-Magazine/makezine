@@ -262,7 +262,7 @@ h6 {
   display: none;
   height: 100%;
   float: right;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: block;
     position: absolute;
     top: 0;
@@ -278,20 +278,22 @@ h6 {
       text-transform: uppercase;
       font-weight: 500;
       font-size: 12px;
+      line-height: 1em;
       color: #f40b0b;
       padding-right: 15px;
-      display: inline-block;
-      padding-top: 20px;
       z-index: 102;
       position: relative;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
     }
     span {
       font-style: italic;
       font-weight: 300;
       text-transform: capitalize;
       padding-left: 2px;
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         display: none;
       }
     }
@@ -300,7 +302,7 @@ h6 {
 .navbar-default.sticky-header .sticky-subscribe {
   display: block;
   a {
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       padding-top: 16px;
     }
   }
@@ -421,7 +423,7 @@ h6 {
     margin-top: 20px;
     margin-bottom: 0;
   }
-  @media (min-width: 767px) and (max-width: 991px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     width: 180px;
     margin-top: 30px;
   }

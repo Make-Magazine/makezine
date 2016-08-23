@@ -102,7 +102,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			</div>
 		</div>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<div class="row story-header first-story" id="<?php echo get_the_ID(); ?>">
+			<div class="story-header first-story" id="<?php echo get_the_ID(); ?>">
 
 				<div class="container">
 					<div class="story-title">
@@ -222,7 +222,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							<ul class="post-tags">
 								<?php foreach ( $posttags as $tag ) { ?>
 									<li>
-										<a href="<?php echo get_tag_link( $tag ); ?>"><?php echo '# ' . $tag->name . ' ' ?></a>
+										<a href="<?php echo get_tag_link( $tag ); ?>"><?php echo $tag->name . ' ' ?></a>
 									</li>
 								<?php } ?>
 							</ul>
@@ -250,7 +250,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 
 		<?php endif; ?>
-		<div class="row infinity"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
+		<div class="infinity"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
 	</div>
 
 </div>
