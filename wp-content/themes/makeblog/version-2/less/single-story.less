@@ -86,7 +86,7 @@ body.single.single-post {
             border: none;
           }
           h3 {
-            color: black;
+            color: #222;
             font-family: "Roboto Slab";
             font-size: 16px;
             font-weight: 400;
@@ -123,14 +123,13 @@ body.single.single-post {
       .story-title {
         float: none;
         margin: 27px auto auto;
-        padding: 0 15px;
         h1 {
           font-size: 40px;
-          line-height: 46px;
+          line-height: 1.1em;
           font-family: "Roboto Slab";
           font-weight: bold;
-          color: black;
-          margin: 0 0 32px 0;
+          color: #222;
+          margin: 0 0 10px 0;
         }
       }
       .story-hero-image {
@@ -194,7 +193,7 @@ body.single.single-post {
           background-color: white;
           border: 1px solid #979797;
           border-radius: 3px;
-          color: black;
+          color: #222;
           font-size: 14px;
           font-weight: 500;
           line-height: 16px;
@@ -224,7 +223,7 @@ body.single.single-post {
           button {
             width: 42px;
             font-size: 30px;
-            color: black;
+            color: #222;
             opacity: 1;
           }
           button:hover {
@@ -324,11 +323,11 @@ body.single.single-post {
       .story-header {
         display: none;
         .story-title {
-          margin-top: 5px;
+          margin-top: 0;
           h1 {
             font-size: 25px;
-            margin-bottom: 20px;
-            line-height: 36px;
+            margin-top: 15px;
+            margin-bottom: 15px;
           }
           .projects-masthead {
             padding-top: 0;
@@ -336,17 +335,15 @@ body.single.single-post {
         }
         .author-info {
           display: block;
-          margin: 0 10px 10px 10px;
-          padding: 0 15px;
+          margin-bottom: 10px;
           .author-wrapper {
             .avatar {
               display: none;
             }
             .author-name {
-              border-right: 2px solid black;
-              float: left;
-              padding-right: 6px;
-              margin: 0 13px 15px 0;
+              .bio-wrapper {
+                display: inline-block;
+              }
               a {
                 color: #666;
                 margin-right: 5px;
@@ -356,16 +353,10 @@ body.single.single-post {
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 19px;
-                float: left;
                 text-transform: capitalize;
-                max-width: 150px;
               }
               .twitter-wrapper {
-                padding-right: 3px;
-                .twitter {
-                  float: right;
-                  margin: -20px -6px 0 0;
-                }
+                display: inline-block;
                 .twitter:nth-child(2) {
                   display: none;
                 }
