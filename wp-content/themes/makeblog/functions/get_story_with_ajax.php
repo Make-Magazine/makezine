@@ -112,7 +112,7 @@ function get_story_with_ajax() {
                         <h3>Related Topics</h3>
                         <ul class="row post-tags">
                             <?php foreach($posttags as $tag) { ?>
-                                <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
+                                <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '' . $tag->name . ' ' ?></a></li>
                             <?php } ?>
                         </ul>
                     <?php }
@@ -256,7 +256,7 @@ function get_story_with_ajax2() {
                         <h3>Related Topics</h3>
                         <ul class="row post-tags">
                             <?php foreach($posttags as $tag) { ?>
-                                <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '# ' . $tag->name . ' ' ?></a></li>
+                                <li><a href="<?php echo get_tag_link($tag); ?>"><?php echo '' . $tag->name . ' ' ?></a></li>
                             <?php } ?>
                         </ul>
                     <?php }
