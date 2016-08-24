@@ -70,7 +70,7 @@
               </div>
           <?php } ?>
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-sm-7 col-md-8">
               <article <?php post_class(); ?>>
                 <?php
                   $categories = get_post_custom_values( 'Categories' );

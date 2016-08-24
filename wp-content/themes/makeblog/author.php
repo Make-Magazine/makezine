@@ -79,8 +79,6 @@ get_header('version-2'); ?>
 
 					<?php endwhile; else: ?>
 
-
-
 						<p><?php echo 'No posts found.' ?></p>
 
 					<?php endif; ?>

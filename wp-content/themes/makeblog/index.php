@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="col-sm-8">
+				<div class="col-sm-7 col-sm-8">
 
 					<div id="content">
 

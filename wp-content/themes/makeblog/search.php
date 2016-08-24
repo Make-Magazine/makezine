@@ -64,7 +64,7 @@ query_posts(
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-12 col-md-8">
+				<div class="col-xs-12 col-sm-7 col-md-8">
 
 					<div class="search-results">
 

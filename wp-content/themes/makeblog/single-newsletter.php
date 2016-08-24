@@ -45,7 +45,7 @@ get_header('version-2'); ?>
 									
 			<div class="row">
 			
-				<div class="col-md-8">
+				<div class="col-sm-7 col-md-8">
 				
 					<article <?php post_class(); ?>>
 

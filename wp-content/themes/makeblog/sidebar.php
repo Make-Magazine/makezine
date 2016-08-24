@@ -11,7 +11,7 @@
  */
 ?>
 
-<div class="sidebar">
+<div class="sidebar col-sm-5 col-md-4">
 
 	<div class="sidebar-ad">
 		<p id="ads-title">Advertisement</p>
