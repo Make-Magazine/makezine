@@ -278,7 +278,7 @@
         var stop = 0;
         $(window).scroll(function () {
           var $scrollTop = $(window).scrollTop();
-            $('.single .container .row.story-header').each(function (index) {
+            $('.single .container .story-header').each(function (index) {
                 $top = $(this).offset().top - 100;
                 topArray[index] = $top;
             });
