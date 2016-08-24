@@ -130,7 +130,6 @@ function get_story_with_ajax() {
                 <div class="essb_right_flag"></div>
             </div>
         </div>
-        <div class="line-separator"></div>
         <?php
     endwhile;
     else:
@@ -274,7 +273,6 @@ function get_story_with_ajax2() {
                 <div class="essb_right_flag"></div>
             </div>
         </div>
-        <div class="line-separator"></div>
         <?php
     endwhile;
     else:
