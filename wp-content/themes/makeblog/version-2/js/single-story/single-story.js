@@ -289,15 +289,15 @@
             viewPortWidth = $(window).width() + 17;
             if ($('.row').hasClass('infinity')) {
                 if (viewPortWidth <= 767) {
-                    infinity = $('.row.infinity').offset().top - $(window).height() - 1000;
+                    infinity = $('.infinity').offset().top - $(window).height() - 1000;
                 } else {
-                    infinity = $('.row.infinity').offset().top - 3100;
+                    infinity = $('.infinity').offset().top - 3100;
                 }
             }
             if ($scrollTop >= infinity) {
                 if ($first_time == 0) {
                     $first_time = 1;
-                    $('.row.infinity').addClass('current');
+                    $('.infinity').addClass('current');
                     if (window.navigator.userAgent.indexOf('Chrome') > 0) {
                         viewPortWidth = $(window).width() + 17;
                     } else {
@@ -438,7 +438,7 @@
           var $current = $(this);
           var $newId = $(this).attr('href');
           if ($('.story-header').is($newId) === false) {
-            $('.row.infinity').addClass('current');
+            $('.infinity').addClass('current');
             getStory($offset, id, number);
             $offset = $offset + number;
           } else {
@@ -505,8 +505,8 @@
                     'excludeId': firstPostId
                 },
                 success: function (data) {
-                    $('.row.infinity').after(data);
-                    $('.row.infinity.current').remove();
+                    $('.infinity').after(data);
+                    $('.infinity.current').remove();
                     $first_time = 0;
                 },
                 error: function () {
@@ -525,8 +525,8 @@
                     'excludeId': firstPostId
                 },
                 success: function (data) {
-                    $('.row.infinity').before(data);
-                    $('.row.infinity.current').removeClass('current');
+                    $('.infinity').before(data);
+                    $('.infinity.current').removeClass('current');
                     $first_time = 0;
                     if (id !== 0) {
                         scrollToStory(id);
