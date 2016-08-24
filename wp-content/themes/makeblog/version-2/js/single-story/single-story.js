@@ -287,7 +287,7 @@
                 bottomArray[index] = $bottom;
             });
             viewPortWidth = $(window).width() + 17;
-            if ($('.row').hasClass('infinity')) {
+            if ($('div').hasClass('infinity')) {
                 if (viewPortWidth <= 767) {
                     infinity = $('.infinity').offset().top - $(window).height() - 1000;
                 } else {
