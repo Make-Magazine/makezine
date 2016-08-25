@@ -225,3 +225,111 @@
     }
   }
 }
+
+
+.home-event-info-3x {
+  display: flex;
+  align-content: stretch;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+  .home-event-1x {
+    width: 33.333%;
+    margin-right: 2px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      margin-bottom: 30px;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: auto;
+      }
+    }
+    a {
+      display: block;
+      height: 110px;
+      border-top: 2px;
+      color: #777;
+      background-color: #fff;
+      border-top: 2px solid #4a4a4a;
+      padding: 10px 15px;
+      position: relative;
+      box-shadow: 0 3px 9px -2px #CCC;
+      transition: all .1s ease;
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      &:hover {
+        box-shadow: 0 3px 9px 0 #CCC;
+        transition: all .1s ease;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        height: 130px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        height: 130px;
+      }
+      @media screen and (max-width: 767px) {
+        height: 110px;
+      }
+      @media screen and (max-width: 370px) {
+        height: 130px;
+      }
+    }
+    h5 {
+      font-size: 13px;
+      color: #999;
+      margin-top: 0;
+      margin-bottom: 3px;
+      position: absolute;
+      text-shadow: 1px 1px 1px #fff;
+    } 
+    .home-event-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-self: center;
+      max-width: 65%;
+      height: 100%;
+      padding-top: 17px;
+      .home-event-p1 {
+        font-size: 13px;
+      }
+      h4 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.2em;
+        margin-top: 0;
+        margin-bottom: 2px;
+        text-shadow: 1px 1px 1px #fff;
+      }
+      .home-event-p2 {
+        font-size: 13px;
+        margin-bottom: 2px;
+      }
+      p {
+        margin-bottom: 0;
+        line-height: 1.2em;
+        text-shadow: 1px 1px 1px #fff;
+      }
+      span {
+        display: inline-block;
+        background-color: #f40b0b;
+        color: #f9f9f9;
+        font-size: 11px;
+        padding: 3px 15px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

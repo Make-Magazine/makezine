@@ -168,13 +168,26 @@ body.single.single-post {
       }
       article {
         p,
-        span,
-        ul li,
-        ol li {
+        span {
           font-size: 18px;
           font-weight: 400;
           line-height: 1.6em;
           margin: 0 0 20px;
+        }
+        ul, ol {
+          margin-bottom: 20px;
+          li {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4em;
+            margin: 0 0 10px;
+            p, span {
+              font-size: inherit;
+              font-weight: inherit;
+              line-height: inherit;
+              margin: inherit;
+            }
+          }
         }
         .row {
           display: none;
