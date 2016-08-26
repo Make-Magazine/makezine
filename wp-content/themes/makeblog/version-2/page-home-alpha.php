@@ -233,7 +233,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             <?php } ?>
             <?php if(!empty($make_home3x_1btn)) { ?>
               <div>
-                <span><?php echo $make_home3x_1btn; ?></span>
+                <span class="home-event-span"><?php echo $make_home3x_1btn; ?></span>
               </div>
             <?php } ?>
           </div>
@@ -257,7 +257,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             <?php } ?>
             <?php if(!empty($make_home3x_2btn)) { ?>
               <div>
-                <span><?php echo $make_home3x_2btn; ?></span>
+                <span class="home-event-span"><?php echo $make_home3x_2btn; ?></span>
               </div>
             <?php } ?>
           </div>
@@ -281,7 +281,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             <?php } ?>
             <?php if(!empty($make_home3x_3btn)) { ?>
               <div>
-                <span><?php echo $make_home3x_3btn; ?></span>
+                <span class="home-event-span"><?php echo $make_home3x_3btn; ?></span>
               </div>
             <?php } ?>
           </div>
