@@ -11,19 +11,10 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
       $allProjects = 'See All Projects';
       break;
     case 'Reviews':
-      $meta_query = array(
-        'relation' => 'AND',
-        array(
-          'key'     => 'story_type',
-          'value'   => 'Reviews',
-          'compare' => '=',
-        ),
-      );
-      $args       = array(
-        'post_type'      => 'post',
+      $args  = array(
+        'post_type'      => 'products',
         'posts_per_page' => 5,
         'post_status'    => 'publish',
-        'meta_query'     => $meta_query,
       );
       $title      = 'Latest Reviews';
       $allReviews = 'See All Reviews';
