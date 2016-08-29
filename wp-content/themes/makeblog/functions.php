@@ -787,7 +787,7 @@ function kc_dynamic_sidebar_params( $params ) {
 }
 add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 
-require_once('version-2/includes/helpers/widget_shortcode.php');
+require_once('includes/widget_shortcode.php');
 require_once('version-2/includes/blog_feed.php');
 require_once('version-2/includes/tags_output.php');
 require_once('version-2/includes/blog_output.php');
