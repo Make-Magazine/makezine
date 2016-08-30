@@ -267,24 +267,6 @@ function make_load_resources() {
   wp_enqueue_style( 'roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
   wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
 
-	// Load our takeover default styles when it is enabled
-	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_canvas' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_banner' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_video_banner' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_faire_banner' ) === 'on' ) {
-		wp_enqueue_style( 'youtube-playlist', get_stylesheet_directory_uri() . '/css/ytv.css' );
-		wp_enqueue_script( 'youtube-playlist', get_stylesheet_directory_uri() . '/ js/ytv.js' );
-	}
-
 	// Load optimizely A/B testing script
 	//wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
 
@@ -1413,7 +1395,7 @@ function make_generate_title_tag() {
 	} elseif ( is_singular( 'craft' ) ) {
 		$output .= wp_title( '', false ) . ' | MAKE: Craft';
 	} elseif ( is_author() ) {
-		$output .= make_author_name() . ' author profile | ' . get_bloginfo('name');
+		$output .= make_author_name() . ' Author Profile | ' . get_bloginfo('name');
 	} else {
 		$output .= wp_title( '', false );
 	}

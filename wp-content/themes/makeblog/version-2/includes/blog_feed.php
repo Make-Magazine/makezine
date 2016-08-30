@@ -93,7 +93,7 @@ function blog_feeds_output( $type = '', $tag_slug = '' ) {
         <a class="all-projects-title" href="<?php echo site_url( '/projects', 'http' ); ?>">See all Projects</a>
       <?php } ?>
       <?php if (!empty($allReviews)){ ?>
-        <a class="all-projects-title" href="<?php echo site_url( '/tag/reviews', 'http' ); ?>">See all Reviews</a>
+        <a class="all-projects-title" href="<?php echo site_url( '/tag/guides', 'http' ); ?>">See all Reviews</a>
       <?php } ?>
       <?php if (!empty($allBuilders)){ ?>
         <a class="all-projects-title" href="<?php echo site_url( '/tag/skill-builder', 'http' ); ?>">See all Skill Builders</a>
