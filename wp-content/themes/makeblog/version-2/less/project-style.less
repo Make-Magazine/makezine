@@ -1445,20 +1445,7 @@ ul.diff-item li.current {
   .all-projects .posts-list ul.selected-posts-list > li.row ul li > h2 a {
     padding: 15px 10px 0;
   }
-
-  // .projects-cat.mobile .posts-list ul.selected-posts-list > li.row ul li > h2 a,
-  // .all-projects.mobile .posts-list ul.selected-posts-list > li.row ul li > h2 a {
-  //   padding: 5px 9px 0 0;
-  // }
 }
-// .tablet #pbd-alp-load-posts:hover,
-// .mobile #pbd-alp-load-posts:hover {
-//   background-color: #FFF;
-// }
-// .tablet #pbd-alp-load-posts:hover a,
-// .mobile #pbd-alp-load-posts:hover a {
-//   color: #4a4a4a;
-// }
 
 @media (max-width: 767px) {
   .projects-cat .filter-list, 
@@ -1500,19 +1487,6 @@ ul.diff-item li.current {
   width: 100%;
   max-width: 1170px;
   background-color: #f7f7f7;
-}
-
-// .mobile {
-//   margin: 0 -6px 0 0;
-// }
-// .mobile #pbd-alp-load-posts {
-//   margin-left: -6px
-// }
-@media (max-width: 360px) {
-  // .mobile .posts-list ul.selected-posts-list > li.row ul li > h2 a,
-  // .mobile .posts-list ul.selected-posts-list > li.row ul li > h2 a {
-  //   font-size: 12px;
-  // }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1751,13 +1725,6 @@ ul.diff-item li.current {
   }
 }
 
-
-.mobile_cat form,.mobile_diff form,
-.mobile_dur form {
-  margin-bottom: 10px;
-  background: #F0F0F0;
-}
-
 .filter_mini {
   display: none;
 }
@@ -1767,10 +1734,12 @@ ul.diff-item li.current {
   }
 }
 
-// .mobile .posts-list ul.selected-posts-list > li.row ul li article:hover div.final_gradient {
-//   background: none;
-// }
-// 
+.mobile_cat form,
+.mobile_diff form,
+.mobile_dur form {
+  margin-bottom: 10px;
+  background: #F0F0F0;
+}
 .filter .mobile_cat,
 .filter .mobile_diff,
 .filter .mobile_dur {
@@ -1778,7 +1747,6 @@ ul.diff-item li.current {
   margin-left: 0;
   cursor: pointer;
 }
-
 .filter .mobile_diff li,
 .filter .mobile_dur li {
   padding-left: 13px;
@@ -1949,6 +1917,16 @@ ul.diff-item li.current {
     }
     .ads.shed-row-li {
       width: 100%
+    }
+  }
+  //Hide the extra post added by Nativo injection
+  .mz-grid-post > li:nth-child(19) {
+    display: none;
+  }
+  &.mobile,
+  &.tablet {
+    .mz-grid-post > li:nth-child(13) {
+      display: none;
     }
   }
 }

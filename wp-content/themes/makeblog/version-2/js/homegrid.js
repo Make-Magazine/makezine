@@ -512,14 +512,14 @@ jQuery(document).ready(function ($) {
     // MOBILE NAVIGATION
 
     $('.filter_mini').click(function () {
-        $('.filter_mini').hide('slow');
-        $('.filter_max').show('slow');
+        $('.filter_mini').hide();
+        $('.filter_max').show();
     });
     $(document).mouseup(function (e) {
         var container = $(".filter_max");
         if (container.has(e.target).length === 0) {
-            container.hide('slow');
-            $('.filter_mini').show('slow');
+            container.hide();
+            $('.filter_mini').show();
         }
     });
 
@@ -539,31 +539,25 @@ jQuery(document).ready(function ($) {
             $(this).removeClass('current').show().addClass('chosen');
         } else {
             onClickDurationCheck();
-            $(this).show('fast').addClass('current').removeClass('clicks');
+            $(this).show().addClass('current').removeClass('clicks');
         }
     });
 
     function onClickDurationList() {
-        $('.mobile-dur ul.duration-item li').show('slow').removeClass('filter_selected');
+        $('.mobile-dur ul.duration-item li').show().removeClass('filter_selected');
         $('.mobile-dur ul.duration-item').addClass('open-list');
     }
 
     function onClickDurationCheck() {
         $('.mobile-dur ul.duration-item li').removeClass('current');
-        $('.mobile-dur ul.duration-item li').hide('slow');
-        $(this).show('fast');
+        $('.mobile-dur ul.duration-item li').hide();
+        $(this).show();
         $('.mobile-dur ul.duration-item').removeClass('open-list chosen');
     }
 
     $('.close-button').click(function () {
-            $('.filter_mini').show('slow');
-            $('.filter_max').hide('slow');
+            $('.filter_mini').show();
+            $('.filter_max').hide();
         }
     );
-
-    // $(".filter-item ul li ul li span").tooltip({
-    //     'delay': {show: 1, hide: 0}
-    // }).hover(function () {
-    //     $('.fade').removeClass('fade');
-    // });
 });

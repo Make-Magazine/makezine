@@ -453,7 +453,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $detect = new Mobile_Detect;
     $post_per_page_initial = 18;
     if ($detect->isMobile()) {
-        $post_per_page_initial = 21;
+        $post_per_page_initial = 12;
         $device = 'mobile';
         $post_per_page = $post_per_page_initial;
     }
@@ -878,7 +878,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
     $detect = new Mobile_Detect;
     $post_per_page_initial = 18;
     if ($detect->isMobile()) {
-        $post_per_page_initial = 18;
+        $post_per_page_initial = 12;
         $device = 'mobile';
         $post_per_page = $post_per_page_initial;
     }
