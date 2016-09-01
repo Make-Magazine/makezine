@@ -31,3 +31,35 @@ aside {
 		}
 	}
 }
+
+
+// New default sidebar for Makezine sidebars with 302px wide ads
+// Just add the class mz-body to the other div next to sidebar
+.mz-body {
+	float: left;
+  width: ~"calc(100% - 332px)";
+  padding: 0 15px;
+	@media (min-width: 768px) and (max-width: 991px) {
+		float: none;
+		width: 100%;
+	}
+	@media (max-width: 767px) {
+		float: none;
+		width: 100%;
+	}
+}
+.mz-sidebar {
+	width: 332px;
+  float: right;
+  padding: 0 15px;
+	@media (min-width: 768px) and (max-width: 991px) {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	@media (max-width: 767px) {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+}
