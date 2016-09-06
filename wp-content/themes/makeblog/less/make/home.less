@@ -233,7 +233,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   @media screen and (min-width: 768px) and (max-width: 991px) {
-    width: 100%;
+    flex-wrap: wrap;
   }
   @media screen and (max-width: 767px) {
     display: block;
@@ -252,6 +252,15 @@
       margin-right: auto;
       &:last-child {
         margin-bottom: 0;
+        margin-right: auto;
+      }
+    }
+    @media (min-width: 767px) and (max-width: 991px) {
+      flex-basis: ~"calc(50% - 4px)";
+      margin-left: auto;
+      margin-right: auto;
+      &:last-child {
+        margin-top: 2px;
         margin-right: auto;
       }
     }
@@ -274,16 +283,16 @@
         transition: all .1s ease;
       }
       @media screen and (min-width: 992px) and (max-width: 1199px) {
-        height: 130px;
+        height: 120px;
       }
       @media screen and (min-width: 768px) and (max-width: 991px) {
-        height: 130px;
+        height: 120px;
       }
       @media screen and (max-width: 767px) {
         height: 110px;
       }
       @media screen and (max-width: 370px) {
-        height: 130px;
+        height: 120px;
       }
     }
     h5 {
@@ -293,6 +302,10 @@
       margin-bottom: 3px;
       position: absolute;
       text-shadow: 1px 1px 1px #fff;
+      @media (max-width: 1199px) {
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
     } 
     .home-event-body {
       display: flex;
@@ -308,18 +321,18 @@
       h4 {
         font-size: 18px;
         font-weight: 400;
-        line-height: 1em;
+        line-height: .9em;
         margin-top: 0;
         margin-bottom: 2px;
         text-shadow: 1px 1px 1px #fff;
       }
       .home-event-p2 {
         font-size: 13px;
-        margin-bottom: 2px;
+        margin-bottom: 1px;
       }
       p {
         margin-bottom: 0;
-        line-height: 1.2em;
+        line-height: 1.1em;
         text-shadow: 1px 1px 1px #fff;
       }
       .home-event-span {
@@ -329,6 +342,9 @@
         font-size: 11px;
         padding: 3px 15px;
         text-transform: uppercase;
+      }
+      @media (max-width: 1199px) {
+        width: 50%;
       }
     }
   }

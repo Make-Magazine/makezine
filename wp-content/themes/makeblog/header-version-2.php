@@ -475,17 +475,22 @@ if( $detect->isTablet() ){
         <div class="nav-share row">
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/summer-of-making/" class="pull-left first-post"></a>
+              <a href="//makezine.com/share/" class="pull-left first-post"></a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/makeshowtell/" class="pull-left second-post"></a>
+              <a href="//makezine.com/share/" class="pull-left second-post"></a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute" class="pull-left third-post"></a>
+              <a href="//makezine.com/fall-making/" class="pull-left third-post"></a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/makeshowtell/" class="pull-left fourth-post"></a>
             </div>
           </div>
         </div>
