@@ -25,111 +25,47 @@
 	margin-bottom: @spacer;
 	min-height: 0;
 
-	.nav {
-		margin: 0;
-		width: 100%;
-
-		@media screen and (min-width: @mq-sm-min) {
-			display: block;
-			border-bottom: 0;
-			height: auto;
-			padding-right: 0;
-		}
-
-		.review-nav-mag {
-			width: 302px;
-			border-bottom: 1px solid #e3e3e3;
-			position: relative;
-			display: block;
-			float: right;
-			margin-right: 0;
-
-			// Issue modal pop up button
-			.modal-capture-btn {
-				position: relative;
-				margin-top: -60px;
-				padding:42px 5px 11px 100px;
-				font-size: 12px;
-				font-weight: 700;
-				white-space: normal;
-				text-align: left;
-				overflow: hidden;
-
-				&:before {
-					content: none;
-				}
-
-				img {
-					position: absolute;
-					left: 0;
-					top: 0;
-					width: 80px;
-					margin: 5px;
-					height: auto;
-					box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
-				}
-			}
-		}
-
-		> a, button {
-			display: block;
-			height: auto;
-			padding: 0 0 5px 0;
-			font-size: 16px;
-			line-height: 1.2;
-			white-space: nowrap;
-			background: transparent;
-			box-shadow: none;
-			transition: all 150ms ease;
-			text-shadow: none;
-			border: 0;
-			text-transform: none;
-			color: #4A4A4A;
-
-			@media screen and (max-width: 767px) {
-
-			}
-
-			&:hover,
-			&:active,
-			&:focus {
-				border-bottom: 0;
-				color: #9B9B9B;
-				&:before {
-					height: 6px;
-					@media screen and (min-width: @mq-sm-min) {
-						display: none;
-					}
-				}
-			}
-
-			&.dropdown-toggle {
-
-				&:before {
-					@media screen and (max-width: @mq-xs-max) {
-						height: 0;
-					}
-				}
-
-				&:after {
-					//@media screen and (max-width: @mq-xs-max) {
-						position: relative;
-						top: -1px;
-						padding-left: 5px;
-						font-size: .8em;
-						font-family: 'FontAwesome';
-						content: "\f078";
-						@media screen and (min-width: @mq-sm-min) {
-							font-size: .7em;
-						}
-					//}
-				}
-			}
-		}
-
+	.review-nav-choosing {
+		display: inline-block;
 		a {
+			color: #4A4A4A;
+			transition: all 150ms ease;
 			span {
 				color: #25ABE2;
+			}
+		}
+	}
+
+	.review-nav-mag {
+		width: 302px;
+		border-bottom: 1px solid #e3e3e3;
+		float: right;
+		margin-top: -5px;
+
+		// Issue modal pop up button
+		.modal-capture-btn {
+			position: relative;
+			margin-top: -60px;
+			padding:42px 5px 11px 100px;
+			font-size: 12px;
+			font-weight: 700;
+			white-space: normal;
+			text-align: left;
+			overflow: hidden;
+			text-transform: none;
+			color: #4A4A4A;
+			transition: all 150ms ease;
+			border: none;
+  		background: none;
+
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 80px;
+				margin: 5px;
+				height: auto;
+				box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
 			}
 		}
 	}

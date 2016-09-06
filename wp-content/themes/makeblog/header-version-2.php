@@ -186,7 +186,7 @@ if( $detect->isTablet() ){
 <?php endif; ?>
 
 <!-- TOP BRAND BAR -->
-<div class="header-wrapper hidden-xs top-header-bar-brand">
+<div class="top-header-bar-brand header-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">

@@ -10,7 +10,6 @@
 }
 
 .fl-sort-list {
-
 	margin-bottom: 0;
 
 	@media screen and (max-width: @mq-xs-max) {
@@ -57,7 +56,6 @@
 
 // List of sorts
 .rl-sort-list {
-
 	margin-bottom: 0;
 	padding: 0;
 
@@ -66,195 +64,77 @@
 		float: right;
 		display: table;
 	}
-
 }
 
 // Each Sort Option
 .rl-sort {
-
 	padding: 20px 30px;
-
 	@media screen and (min-width:@mq-sm-min) {
 		padding: 0;
 	}
 
 	// Checkboxes
 	input[type="radio"] {
-		height: auto;
-		width: auto;
-		line-height: normal;
-		display: inline;
-		position: absolute;
-		left: 0;
-		top: 0;
-		font-size: 12px;
-		padding: 0;
-
-		&:focus {
-			outline: none;
-		}
-
-	}
-
-	span.spacer {
-
 		display: none;
-
-		@media screen and (min-width: @mq-sm-min) {
-			padding: 2px 2px 2px 1.5em;
-			font-size: 12px;
-			float: left;
-			display: block;
-		}
-
-		&.image {
-			@media screen and (min-width: @mq-sm-min) {
-				width: 18%;
-			}
-		}
-
-		&.winner {
-			@media screen and (min-width: @mq-sm-min) {
-				width: 18%;
-			}
-		}
-
 	}
 
 	// Labels
 	label {
-		cursor: pointer;
+		cursor: default;
 		text-transform: none;
-		margin: 12px 0;
-		display: block;
-		white-space: nowrap;
-		position: relative;
 		padding-left: 1.5em;
 		font-size: 16px;
-		font-weight: @font-normal;
 		transition: all 150ms;
-		color: @black-alt;
 
 		@media screen and (min-width: @mq-sm-min) {
-			margin: 0;
-			padding: 7px 2px 7px 2em;
 			font-size: 12px;
-			float: left;
 			color: white;
-			vertical-align: middle;
 			line-height: 1;
 		}
-
-
-		&.details {
-			@media screen and (min-width: @mq-sm-min) {
-				width: 36%;
-			}
-		}
-
-		&.price {
-			@media screen and (min-width: @mq-sm-min) {
-				width: 17%;
-			}
-		}
-
-		&.score {
-			@media screen and (min-width: @mq-sm-min) {
-				width: 11%;
-			}
-		}
-
-		span {
-
-			display: block;
-
-			@media screen and (min-width: @mq-sm-min) {
-				em {
-					display: none;
-				}
-			}
-			
-			&:before,
-			&:after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				transition: all 150ms;
-			}
-
-			&:before {
-				background-color: white;
-				width: 20px;
-				height: 18px;
-				left: -2px;
-				@media screen and (min-width: @mq-sm-min) {
-					background-color: @coral;
-				}
-			}
-
-			&:after {
-				font-family: 'FontAwesome';
-				content: "\f058";
-				font-size: 1.25em;
-				@media screen and (min-width: @mq-sm-min) {
-					content: " ";
-					top: 4px;
-				}
-			}
-
-		}
-
-		// Case: Hover Filters
-		input:hover,
-		input:focus {
-			+ span:after {
-				color: @black;
-			}
-		}
-
-		// CASE: Checked filters
-		input:checked + span {
-			font-weight: @font-bold;
-			&:after {
-				font-weight: @font-normal;
-				color: @aqua;
-				@media screen and (min-width: @mq-sm-min) {
-					content: "\f078";
-					color: @black;
-				}
-			}
-		}
-
 	}
-
 }
 
-// Sort drop-down Title
-.rl-sort-header {
-	display: block;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	font-size: 11px;
-	line-height: 1.2;
-	font-weight: @font-bold;
-	text-align: left;
-	text-transform: uppercase;
-	white-space: nowrap;
-	color: @black-alt;
-	transition: all 200ms;
-}
 
 // The Filter set options
 .rl-sort-options {
-	display: table;
 	width: 100%;
+	padding-left: 8%;
+
+	// Sort By Title
+	.rl-sort-header {
+		font-size: 11px;
+		line-height: 1.2;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	.rl-sort-cell {
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		width: 17%;
+		float: left;
+		padding: 7px 0;
+		margin: 0;
+		&.price,
+		&.score {
+			float: right;
+		}
+		span {
+			cursor: pointer;
+			transition: all 150ms;
+			font-weight: 300;
+			&:hover {
+				transition: all 150ms;
+				font-weight: 400;
+			}
+		}
+	}
 }
 
 // Mobile apply cancel buttons
 .rl-actions {
-
 	position: absolute;
 	bottom: 0;
 	left: 0;

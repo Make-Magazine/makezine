@@ -25,33 +25,35 @@ $modal_text     = get_field( 'magazine_label', $id );
 
 		<nav class="review-nav">
 
-			<div class="review-nav-shoosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
+			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
 				<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
 					<?php
 					$slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
-					$label = 'How We Test';
-					if ( $slug === 'boards' ) {
-						$label = '<span>Choosing a Board:</span> How to Choose the Right One <i class="fa fa-angle-right" aria-hidden="true"></i>';
-					}
-          elseif ( $slug === 'drones' ) {
-						$label = 'Choosing a Drone';
-					}
+					$label = '<span>How We Tested <i class="fa fa-angle-right" aria-hidden="true"></i></span>';
+					// if ( $slug === 'boards' ) {
+					// 	$label = '<span>Choosing a Board:</span> How to Choose the Right One <i class="fa fa-angle-right" aria-hidden="true"></i>';
+					// }
+     //      elseif ( $slug === 'drones' ) {
+					// 	$label = 'Choosing a Drone';
+					// }
 
 					echo $label;
 					?>
 				</a>
+
+				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $id ) ) { ?>
+					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>"><span>Understanding Scores</span></a>
+				<?php } ?>
+
 			</div>
+
 
 <!-- 				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active"  <?php } ?> >
 				<a href="<?php echo get_permalink( $id ); ?>">Compare</a>
-			</li>
+			</li> -->
 
-			<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $id ) ) { ?>
-				<li <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> >
-					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>">Scores</a>
-				</li>
-			<?php } ?>
 
+			<!--
 			<?php $products = $container['Relationships']->get_products_in_review( $id, [ 'orderby' => 'post_title', 'order' => 'ASC' ] ); ?>
 			<li class="has-submenu dropdown">
 				<button id="reviews-nav-btn" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reviews</button>
@@ -65,15 +67,15 @@ $modal_text     = get_field( 'magazine_label', $id );
 			</li> -->
 
 			<?php if ( $modal_image ): ?>
-			<div class="review-nav-mag navbar-right">
-				<button id="modal-capture-btn" class="modal-capture-btn class-<?php 
-				$catslug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
-				echo $catslug;
-				?>">
-					<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
-					<?php echo esc_attr( $modal_text ); ?>
-				</button>
-			</div>
+				<div class="review-nav-mag">
+					<button id="modal-capture-btn" class="modal-capture-btn class-<?php 
+					$catslug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+					echo $catslug;
+					?>">
+						<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
+						<?php echo esc_attr( $modal_text ); ?>
+					</button>
+				</div>
 			<?php endif; ?>
 
 			<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>

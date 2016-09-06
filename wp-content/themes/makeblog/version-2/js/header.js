@@ -25,7 +25,7 @@
 			});
 			// menu-item-has-children = navbar items with dropdowns
 			// dynamic-header-posts = dropdown boxes in the navbar
-			if (scrollTop >= '54') {
+			if (scrollTop >= '119') {
 				$('.menu-item-has-children').children("a").removeClass("active-button");
 				if ($('.dynamic-header-posts').hasClass('sticky-header')) {
 					$('.dynamic-header-posts').slideUp('fast');
@@ -83,7 +83,7 @@
 					$(".container.header").css("top", "");
 				}
 			}
-			if (scrollTop >= '55') {
+			if (scrollTop >= '119') {
 				$('.header-wrapper').addClass('mobile-sticky');
 			} else {
 				$('.header-wrapper').removeClass('mobile-sticky');

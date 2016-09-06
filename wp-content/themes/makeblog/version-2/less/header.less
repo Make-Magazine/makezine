@@ -19,7 +19,7 @@ h6 {
   position: fixed;
   width: 100%;
   z-index: 10;
-  height: 44px;
+  top: 0;
 }
 .top-header-bar-brand {
   position: relative;
@@ -34,6 +34,18 @@ h6 {
       padding: 7px 5px 7px;
       display: inline-block;
       color: #242424;
+    }
+  }
+  &.mobile-sticky {
+    position: static;
+    display: block;
+    margin-bottom: 86px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+    &.mobile-sticky {
+      display: block;
+      margin-bottom: 33px;
     }
   }
 }
@@ -301,11 +313,6 @@ h6 {
 }
 .navbar-default.sticky-header .sticky-subscribe {
   display: block;
-  a {
-    @media (max-width: 767px) {
-      padding-top: 16px;
-    }
-  }
 }
 
 
@@ -435,10 +442,14 @@ h6 {
 
 .container.header {
   height: 86px;
+  z-index: 10;
   margin-bottom: 0px;
   border-radius: 0px;
   border: none;
   width: 100%;
+  @media (max-width: 767px) {
+    height: auto;
+  }
 }
 
 .dynamic-header-container {
@@ -711,14 +722,6 @@ ul.sub-menu {
   padding: 0;
 }
 
-.mozilla .dynamic-header-posts .menu-container {
-  border-bottom: 4px solid #ec1e21;
-}
-
-.mozilla .dynamic-header-posts.sticky-header .menu-container {
-  border-bottom: none;
-}
-
 .search-bar-mobile {
   margin-bottom: 3px;
   height: 54px;
@@ -782,7 +785,7 @@ ul.sub-menu {
 }
 
 .container.header.tablet.width {
-  height: 53px;
+  height: 52px;
 }
 
 .close-dynamic-content.sticky-header {
@@ -800,6 +803,7 @@ ul.sub-menu {
   display: none;
   &.sticky-header {
     position: fixed;
+    margin-top: 50px;
     border-bottom: 3px solid #ec1e21;
     overflow: hidden;
   }
@@ -810,6 +814,14 @@ ul.sub-menu {
     float: left;
     max-height: 202px;
   }
+}
+
+.mozilla .dynamic-header-posts .menu-container {
+  border-bottom: 4px solid #ec1e21;
+}
+
+.mozilla .dynamic-header-posts.sticky-header .menu-container {
+  border-bottom: none;
 }
 
 .menu-sub-menu {
@@ -1018,7 +1030,6 @@ ul.sub-menu.moove-right {
   }
 
   .container.header.width {
-    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1052,7 +1063,6 @@ ul.sub-menu.moove-right {
   }
 
   .container.header.width {
-    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1124,6 +1134,7 @@ ul.sub-menu.moove-right {
 
   .navbar-default.sticky-header .mz-logo {
     height: 25px;
+    width: auto;
     margin-top: -3px;
   }
 
@@ -1203,7 +1214,6 @@ ul.sub-menu.moove-right {
   }
 
   .container.header.width {
-    z-index: 1;
     height: 52px;
     width: 100%;
     border-bottom: 1px solid #D4D4D4;
@@ -1467,11 +1477,6 @@ ul.sub-menu.moove-right {
 
   .logo-text .logo-a {
     float: left;
-  }
-
-  .container.header {
-    height: 55px;
-    width: inherit;
   }
 
   .navbar-default {

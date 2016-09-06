@@ -12,18 +12,16 @@
 				<span class="image spacer"></span>
 				<label for="az" class="details">
 					<input id="az" type="radio" name="sort" value="title">
-					<span>A-Z <em>(Alphabetical)</em></span>
+					<span>A-Z <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+				</label>
+				<label for="score" class="score">
+					<input id="score" type="radio" name="sort" value="score" checked>
+					<span>Score <i class="fa fa-angle-down" aria-hidden="true"></i></span>
 				</label>
 				<label for="price" class="price">
 					<input id="price" type="radio" name="sort" value="price">
-					<span>Price <em>(Low to High)</em></span>
+					<span>Price <i class="fa fa-angle-down" aria-hidden="true"></i></span>
 				</label>
-
-				<label for="score" class="score">
-					<input id="score" type="radio" name="sort" value="score" checked>
-					<span>Score <em>(High to Low)</em></span>
-				</label>
-
 				<span class="winner spacer"></span>
 			</div>
 		</div><!-- .fl-sort -->

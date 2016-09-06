@@ -38,14 +38,14 @@ var ReviewsFilters = {
 				var row = $(filters.model).clone();
 				row.removeClass('reviews-model');
 				row.find('.ri-item-title').html(v.title);
-				row.find('.ri-price').find('.price').html(v.price);
+				row.find('.ri-score-price').find('.ri-price span').html(v.price);
 				row.find('.ri-type').html(v.type);
-				row.find('.ri-score').find('.score').html(v.score);
-				row.find('.ri-feature-image').html(v.thumbnail);
+				row.find('.ri-score-price').find('.ri-score span').html(v.score);
+				row.find('.ri-feature-image a').append(v.thumbnail);
 				row.find('.ri-link').attr('href', v.link);
 
 				if (v.winner) {
-					row.find('.ri-item-meta').html(v.winner);
+					row.find('.ri-item-meta').append(v.winner);
 					row.addClass('winner');
 				}
 
