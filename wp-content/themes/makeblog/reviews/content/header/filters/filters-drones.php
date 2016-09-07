@@ -7,17 +7,17 @@
 
 	<nav class="fl-filters-nav clearfix">
 
-		<div class="fl-filters-header hidden-xs">
+		<div class="fl-filters-header hidden-xs col-xs-12 col-lg-3">
 			<h2 class="fl-header-title">Find the Right Drone</h2>
 
 			<div class="fl-header-description">Use the filters to determine the best fit</div>
 		</div>
 
-		<form id="rf-filters-form" action="" class="fl-filters-list col-xs-12 col-md-9 col-lg-8 col-lg-offset-1">
+		<form id="rf-filters-form" action="" class="fl-filters-list col-xs-12 col-lg-9">
 
 			<div class="fl-group">
 
-				<div class="fl-filter  dropdown">
+				<div class="fl-filter dropdown">
 					<button id="fl-recommended-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
 					        aria-expanded="false">
 						<span>Make:</span> Recommendations <i class="fa fa-chevron-down"></i>

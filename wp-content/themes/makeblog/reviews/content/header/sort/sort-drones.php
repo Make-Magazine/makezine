@@ -7,22 +7,25 @@
 	<form id="rl-sort-form" action="" class="fl-sort-list clearfix" aria-labelledby="show-sort-btn">
 
 		<div class="rl-sort">
-			<h3 class="rl-sort-header visible-xs-block">Sort By:</h3>
 			<div class="rl-sort-options">
-				<span class="image spacer"></span>
-				<label for="az" class="details">
+
+				<h3 class="rl-sort-header rl-sort-cell">SORT BY</h3>
+
+				<label for="az" class="details rl-sort-cell">
 					<input id="az" type="radio" name="sort" value="title">
-					<span>A-Z <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+					<span>A-Z <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
-				<label for="score" class="score">
-					<input id="score" type="radio" name="sort" value="score" checked>
-					<span>Score <i class="fa fa-angle-down" aria-hidden="true"></i></span>
-				</label>
-				<label for="price" class="price">
+
+				<label for="price" class="price rl-sort-cell">
 					<input id="price" type="radio" name="sort" value="price">
-					<span>Price <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+					<span>Price <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
-				<span class="winner spacer"></span>
+
+				<label for="score" class="score rl-sort-cell">
+					<input id="score" type="radio" name="sort" value="score" checked>
+					<span>Score <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+				</label>
+
 			</div>
 		</div><!-- .fl-sort -->
 

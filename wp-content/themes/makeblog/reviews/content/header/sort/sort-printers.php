@@ -7,24 +7,25 @@
 	<form id="rl-sort-form" action="" class="fl-sort-list clearfix" aria-labelledby="show-sort-btn">
 
 		<div class="rl-sort">
-			<h3 class="rl-sort-header visible-xs-block">Sort By:</h3>
 			<div class="rl-sort-options">
-				<span class="image spacer"></span>
-				<label for="az" class="details">
+
+				<h3 class="rl-sort-header rl-sort-cell">SORT BY</h3>
+
+				<label for="az" class="details rl-sort-cell">
 					<input id="az" type="radio" name="sort" value="title">
-					<span>A-Z <em>(Alphabetical)</em></span>
+					<span>A-Z <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
-				<label for="price" class="price">
+
+				<label for="price" class="price rl-sort-cell">
 					<input id="price" type="radio" name="sort" value="price">
-					<span>Price <em>(Low to High)</em></span>
+					<span>Price <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
 
-				<label for="score" class="score">
+				<label for="score" class="score rl-sort-cell">
 					<input id="score" type="radio" name="sort" value="score" checked>
-					<span>Score <em>(High to Low)</em></span>
+					<span>Score <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
 
-				<span class="winner spacer"></span>
 			</div>
 		</div><!-- .fl-sort -->
 

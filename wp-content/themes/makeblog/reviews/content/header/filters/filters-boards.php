@@ -18,8 +18,7 @@
 			<div class="fl-group">
 
 				<div class="fl-filter dropdown">
-					<button id="fl-recommended-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
-					        aria-expanded="false">
+					<button id="fl-recommended-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 						<span>Make:</span> Recommendations <i class="fa fa-chevron-down"></i>
 					</button>
 					<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-recommended-btn">
@@ -220,8 +219,7 @@
 					<!-- .fl-hotend -->
 
 					<div class="fl-filter fl-more-options dropdown">
-						<button id="fl-more-options-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
-						        aria-expanded="false">
+						<button id="fl-more-options-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 							More Options<i class="fa fa-chevron-down"></i>
 						</button>
 						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-more-options-btn">
@@ -245,13 +243,10 @@
 					</div>
 					<!-- .fl-more-options -->
 
-				</div>
-				<!-- .fl-group -->
-			</div>
-			<!-- .more-filters -->
+				</div><!-- .fl-group -->
+			</div><!-- .more-filters -->
 
-			<button id="more-filters-btn" class="more-filters-btn btn btn-default visible-xs-block" type="button" aria-haspopup="true"
-			        aria-expanded="false">More Filters
+			<button id="more-filters-btn" class="more-filters-btn btn btn-default visible-xs-block" type="button" aria-haspopup="true" aria-expanded="false">More Filters
 			</button>
 
 			<div class="fl-actions visible-xs-block">
@@ -259,24 +254,19 @@
 					<button id="filters-cancel-btn" type="button" class="filters-cancel-btn btn btn-default">Cancel</button>
 					<button id="filters-apply-btn" type="submit" class="filters-apply-btn btn btn-primary">Apply</button>
 				</div>
-			</div>
-			<!-- .fl-actions -->
+			</div><!-- .fl-actions -->
 
-		</form>
-		<!-- .filters-list -->
+		</form><!-- .filters-list -->
 
-	</nav>
-	<!-- .filters-nav -->
+	</nav><!-- .filters-nav -->
 
 	<div class="fl-filters-selected hidden-xs clearfix">
 		<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
 
 		<div class="fs-selected">
 
-		</div>
-		<!-- .fs-seletcted -->
+		</div><!-- .fs-seletcted -->
 		<button id="rf-reset-btn" type="reset" class="rf-reset-btn btn btn-link">Reset Filters</button>
 	</div>
 
-</section>
-<!-- .review-filters -->
+</section><!-- .review-filters -->
