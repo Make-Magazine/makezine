@@ -9,7 +9,9 @@
 	color: #333;
 	margin-bottom: 0;
 	width: ~"calc(100% - 332px)";
-
+	@media (min-width: 768px) and (max-width: 991px) {
+		width: 66.6%;
+	}
 	@media (max-width: 767px) {
 	  font-size: 8vw;
 	  width: 100%;
@@ -30,6 +32,9 @@
 		a {
 			color: #4A4A4A;
 			transition: all 150ms ease;
+			&:first-child {
+				margin-right: 30px;
+			}
 			span {
 				color: #25ABE2;
 			}
@@ -41,6 +46,16 @@
 		border-bottom: 1px solid #e3e3e3;
 		float: right;
 		margin-top: -5px;
+		@media (min-width: 768px) and (max-width: 991px) {
+			width: 33.3%;
+		}
+		@media (max-width: 767px) {
+			width: 100%;
+		  border-bottom: none;
+		  float: none;
+		  margin-top: 0;
+		  margin-bottom: 15px;
+		}
 
 		// Issue modal pop up button
 		.modal-capture-btn {
@@ -57,6 +72,20 @@
 			transition: all 150ms ease;
 			border: none;
   		background: none;
+  		@media (max-width: 767px) {
+  			background-color: #fff;
+  			border-radius: 5px;
+  			padding: 12px 0;
+  			text-align: center;
+  			font-size: 16px;
+  			font-weight: 300;
+  			width: 100%;
+  			margin-top: 0;
+  			span {
+  				color: #52cf5a;
+  				font-size: 18px;
+  			}
+  		}
 
 			img {
 				position: absolute;
@@ -66,6 +95,9 @@
 				margin: 5px;
 				height: auto;
 				box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+				@media (max-width: 767px) {
+					display: none;
+				}
 			}
 		}
 	}

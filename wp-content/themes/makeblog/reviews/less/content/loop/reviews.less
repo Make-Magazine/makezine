@@ -9,6 +9,7 @@
 	margin: @spacer 0;
 	box-sizing: border-box;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	position: relative;
 
   &.reviews-model {
 		display: none;
@@ -39,6 +40,13 @@
 	vertical-align: middle;
 	border-right: 1px solid @review-item-border;
 	position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	@media (max-width: 767px) {
+		width: 30%;
+		flex-basis: 30%;
+	}
 
 	// Case: Winner Items make room for winner meta at the bottom
 	.winner & {
@@ -60,6 +68,7 @@
 	  left: 0;
 	  width: 60px;
 	  height: 60px;
+	  z-index: 5;
 	  .winner & {
 			&.printers {
 			  background: transparent url("@{reviews-template-url}/img/badge-winner-3dprinters.png") center no-repeat;
@@ -77,10 +86,19 @@
 	}
 }
 
+.ri-info-parent {
+	width: 80%;
+	flex-basis: 80%;
+	@media (max-width: 767px) {
+		width: 70%;
+		flex-basis: 70%;
+	}
+}
+
 // title and recommendation
 .ri-details {
-	width: 50%;
-	flex-basis: 50%;
+	width: 63%;
+	flex-basis: 63%;
 	float: left;
 	padding: 20px 0 20px 20px;
 
@@ -92,6 +110,9 @@
 		font-weight: @font-light;
 		margin-top: 0;
 		margin-bottom: 3px;
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
 	}
 
 	.ri-type {
@@ -107,8 +128,16 @@
 		color: #1490D4;
 		font-weight: 400;
 		display: none;
+		line-height: 1em;
 		span {
 			color: #777;
+		}
+		@media (max-width: 767px) {
+			position: absolute;
+		  bottom: 0;
+		  left: 0;
+		  padding: 5px 10px 5px 65px;
+		  background-color: rgba(255,255,255,.65);
 		}
 
 		// Case: Show the winner meta for winners only
@@ -116,13 +145,19 @@
 			display: block;
 		}
 	}
+	@media (max-width: 767px) {
+		width: 100%;
+		flex-basis: 100%;
+		float: none;
+		padding: 10px;
+	}
 }
 
 
 // Score and Price cell
 .ri-score-price {
-	width: 30%;
-	flex-basis: 30%;
+	width: 37%;
+	flex-basis: 37%;
 	float: left;
 	padding: 10px 10px 10px 0;
 	.ri-score-price-flex {
@@ -143,18 +178,52 @@
 		}
 		.ri-more-info {
 			a {
-				font-size: 12px;
+				//font-size: 12px;
 				color: #1490D4;
 				font-weight: 400;
 			}
 		}
 		.ri-buy-now {
 			a {
-				font-size: 12px;
+				//font-size: 12px;
 				color: #fff;
 				font-weight: 400;
 				background: #1490d4;
-  			padding: 5px;		
+  			padding: 5px;
+  			@media (max-width: 767px) {
+  				font-size: 11px;
+  				white-space: initial;
+  			}
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		width: 100%;
+		flex-basis: 100%;
+		float: none;
+		padding: 0 0 10px;
+		.ri-score-price-flex {
+			flex-wrap: nowrap;
+			> div {
+				padding: 0 0 0 10px;
+				flex-basis: 25%;
+				text-align: left;
+				max-height: 40px;
+			  overflow: hidden;
+			  margin-bottom: 26px;
+			  &:last-child {
+			  	padding-right: 10px;
+			  }
+			}
+			.ri-score,
+			.ri-price {
+				border-right: 1px solid #DCD8D8;
+				span {
+					border-left: none;
+				}
+				small {
+					color: #999;
+				}
 			}
 		}
 	}
