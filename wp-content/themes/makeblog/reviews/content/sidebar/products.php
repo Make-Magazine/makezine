@@ -8,8 +8,30 @@ $pro_tips_content   = get_field( 'pro_tips' );
 $scored_image       = get_field( 'scores_image' );
 $scored_image_title = get_field( 'scores_image_title' );
 $scored_image_title = ! empty( $scored_image_title ) ? $scored_image_title : 'How this scored';
+$awards 						= get_field('winners');
+$container = Reviews()->container();
+$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
+$parent_title = $parent[0]->post_name;
 
-?>
+if( $awards && ( ! in_array('', $awards) ) ): ?>
+	<div class="sidebar-awards meta-block">
+		<div class="sidebar-awards-left <?php
+			if ( $parent_title === 'boards' ) {
+				echo 'sd-boards-badge';
+			} else if ( $parent_title === '3dprinters' ) {
+				echo 'sd-3dprinters-badge';
+			} else if ( $parent_title === 'drones' ) {
+				echo 'sd-drones-badge';
+			}  ?>">
+		</div>
+		<div class="sidebar-awards-right">
+			<h6>AWARDS</h6>
+			<?php foreach( $awards as $award ): ?>
+				<span><?php echo $award; ?></span>
+			<?php endforeach; ?>
+		</div>
+	</div>
+<?php endif; ?>
 
 <?php if ( class_exists( 'CoAuthorsIterator' ) ): ?>
 	<div class="meta-block authored-by desktop">
@@ -78,8 +100,12 @@ if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_sc
 if ( ! empty( $why_buy_content ) ): ?>
 	<div class="meta-block why-buy mobile">
 		<h4><?php echo $why_buy_title;?></h4>
+		<?php echo $why_buy_content;
+		if ( ! empty( $link ) ): ?>
 	
-		<?php echo $why_buy_content; ?>
+			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
+	
+		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->
 <?php
 endif;
@@ -112,7 +138,7 @@ if ( ! empty( $why_buy_content ) ): ?>
 	
 		if ( ! empty( $link ) ): ?>
 	
-			<a class="btn-buy" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
+			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
 	
 		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->
@@ -133,34 +159,31 @@ endif;
 <?php endif; ?>
 
 <?php
-	$container = Reviews()->container();
-	$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
-	$parent_title = $parent[0]->post_name;
-if ( $parent_title === 'boards' ) {
-	if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
-		<div class="clearfix"></div>
-		<div class="sidebar-wrapper">
-			<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
-		</div>
-		<div class="clearfix"><br /><br /></div>
-	<?php } 
-} else if ( $parent_title === '3dprinters' ) {
-	if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
-		<div class="clearfix"></div>
-		<div class="sidebar-wrapper">
-			<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
-		</div>
-		<div class="clearfix"><br /><br /></div>
-	<?php } 
-} else if ( $parent_title === 'drones' ) {
-	if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
-		<div class="clearfix"></div>
-		<div class="sidebar-wrapper">
-			<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
-		</div>
-		<div class="clearfix"><br /><br /></div>
-	<?php } 
-}  ?>
+	if ( $parent_title === 'boards' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
+			</div>
+			<div class="clearfix"><br /><br /></div>
+		<?php } 
+	} else if ( $parent_title === '3dprinters' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+			</div>
+			<div class="clearfix"><br /><br /></div>
+		<?php } 
+	} else if ( $parent_title === 'drones' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
+			</div>
+			<div class="clearfix"><br /><br /></div>
+		<?php } 
+	}  ?>
 
 <div class="meta-block ad-2 desktop">
 	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>

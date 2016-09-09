@@ -3,9 +3,9 @@
  * The Reviews section filters header
  */
 ?>
-<section class="review-filters" aria-labelledby="show-filters-btn">
+<section class="review-filters">
 
-	<nav class="fl-filters-nav clearfix">
+	<nav class="fl-filters-nav clearfix" aria-labelledby="show-filters-btn">
 
 		<div class="fl-filters-header hidden-xs col-xs-12 col-lg-3">
 			<h2 class="fl-header-title">Find the Right Board</h2>
@@ -48,11 +48,9 @@
 						</label>
 					</div>
 				</div>
-				<!-- .fl-recommended -->
 
 				<div class="fl-filter fl-bedstyle dropdown">
-					<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true"
-					        aria-expanded="false">
+					<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 						Type<i class="fa fa-chevron-down"></i>
 					</button>
 					<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
@@ -69,8 +67,7 @@
 							<span>FPGA</span>
 						</label>
 					</div>
-				</div>
-				<!-- .fl-bedstyle -->
+				</div><!-- .fl-bedstyle -->
 
 			</div>
 
@@ -240,14 +237,10 @@
 								<span>Ethernet</span>
 							</label>
 						</div>
-					</div>
-					<!-- .fl-more-options -->
+					</div><!-- .fl-more-options -->
 
 				</div><!-- .fl-group -->
 			</div><!-- .more-filters -->
-
-			<button id="more-filters-btn" class="more-filters-btn btn btn-default visible-xs-block" type="button" aria-haspopup="true" aria-expanded="false">More Filters
-			</button>
 
 			<div class="fl-actions visible-xs-block">
 				<div class="fl-actions-wrap">
@@ -260,7 +253,7 @@
 
 	</nav><!-- .filters-nav -->
 
-	<div class="fl-filters-selected hidden-xs clearfix">
+	<div class="fl-filters-selected clearfix">
 		<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
 
 		<div class="fs-selected">

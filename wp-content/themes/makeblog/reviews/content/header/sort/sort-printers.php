@@ -4,7 +4,7 @@
  */
 ?>
 <header class="rl-header">
-	<form id="rl-sort-form" action="" class="fl-sort-list clearfix" aria-labelledby="show-sort-btn">
+	<form id="rl-sort-form" action="" class="fl-sort-list clearfix">
 
 		<div class="rl-sort">
 			<div class="rl-sort-options">
@@ -21,20 +21,15 @@
 					<span>Price <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
 
+				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
 				<label for="score" class="score rl-sort-cell">
 					<input id="score" type="radio" name="sort" value="score" checked>
 					<span>Score <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
+				<?php endif; ?>
 
 			</div>
 		</div><!-- .fl-sort -->
-
-		<div class="rl-actions visible-xs-block">
-			<div class="rl-actions-wrap">
-				<button id="sort-cancel-btn" type="button" class="sort-cancel-btn btn btn-default">Cancel</button>
-				<button id="sort-apply-btn" type="submit" class="sort-apply-btn btn btn-primary">Apply</button>
-			</div>
-		</div><!-- .fl-actions -->
 
 	</form>
 </header>

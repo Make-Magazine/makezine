@@ -49,43 +49,46 @@
 					</div>
 				</div>
 
-				<div id="more-filters" class="more-filters" aria-labelledby="fl-more-options-btn">
-					<div class="fl-group">
+			</div>
 
-						<div class="fl-filter fl-bedstyle dropdown">
-							<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-								Bed Style<i class="fa fa-chevron-down"></i>
-							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
-								<label for="heated">
-									<input id="heated" type="checkbox" name="bed_style" value="heated">
-									<span>Heated</span>
-								</label>
-								<label for="unheated">
-									<input id="unheated" type="checkbox" name="bed_style" value="unheated">
-									<span>Not Heated</span>
-								</label>
-							</div>
-						</div><!-- .fl-bedstyle -->
+			<div id="more-filters" class="more-filters" aria-labelledby="fl-more-options-btn">
 
-						<div class="fl-filter fl-materials dropdown">
-							<button id="fl-materials-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-								Materials<i class="fa fa-chevron-down"></i>
-							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-materials-btn">
-								<label for="proprietary">
-									<input id="proprietary" type="checkbox" name="materials" value="proprietary">
-									<span>Proprietary</span>
-								</label>
-								<label for="open">
-									<input id="open" type="checkbox" name="materials" value="open">
-									<span>Open</span>
-								</label>
-							</div>
-						</div><!-- .fl-materials -->
+				<div class="fl-group">
 
-					</div><!-- .fl-group -->
-					<div class="fl-group">
+					<div class="fl-filter fl-bedstyle dropdown">
+						<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+							Bed Style<i class="fa fa-chevron-down"></i>
+						</button>
+						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
+							<label for="heated">
+								<input id="heated" type="checkbox" name="bed_style" value="heated">
+								<span>Heated</span>
+							</label>
+							<label for="unheated">
+								<input id="unheated" type="checkbox" name="bed_style" value="unheated">
+								<span>Not Heated</span>
+							</label>
+						</div>
+					</div><!-- .fl-bedstyle -->
+
+					<div class="fl-filter fl-materials dropdown">
+						<button id="fl-materials-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+							Materials<i class="fa fa-chevron-down"></i>
+						</button>
+						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-materials-btn">
+							<label for="proprietary">
+								<input id="proprietary" type="checkbox" name="materials" value="proprietary">
+								<span>Proprietary</span>
+							</label>
+							<label for="open">
+								<input id="open" type="checkbox" name="materials" value="open">
+								<span>Open</span>
+							</label>
+						</div>
+					</div><!-- .fl-materials -->
+
+				</div>
+				<div class="fl-group">
 
 						<div class="fl-filter fl-filament-size dropdown">
 							<button id="fl-filament-size-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
@@ -119,7 +122,7 @@
 							</div>
 						</div><!-- .fl-hotend -->
 
-					</div><!-- .fl-group -->
+					</div>
 					<div class="fl-group">
 
 						<div class="fl-filter fl-build-volume dropdown">
@@ -185,11 +188,8 @@
 						</div><!-- .fl-more-options -->
 
 					</div><!-- .fl-group -->
+
 				</div><!-- .more-filters -->
-
-			</div>
-
-			<button id="more-filters-btn" class="more-filters-btn btn btn-default visible-xs-block" type="button" aria-haspopup="true" aria-expanded="false">More Filters</button>
 
 			<div class="fl-actions visible-xs-block">
 				<div class="fl-actions-wrap">
@@ -202,7 +202,7 @@
 
 	</nav><!-- .filters-nav -->
 
-	<div class="fl-filters-selected hidden-xs clearfix">
+	<div class="fl-filters-selected clearfix">
 		<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
 		
 		<div class="fs-selected">

@@ -58,7 +58,7 @@ $modal_text     = get_field( 'magazine_label', $id );
 				<?php } ?>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>
-					<button id="show-filters-btn" type="button" class="show-filters-btn visible-xs-inline-block" aria-haspopup="true" aria-expanded="false">Filter & Sort</button>
+					<button id="show-filters-btn" type="button" class="show-filters-btn visible-xs-inline-block" aria-haspopup="true" aria-expanded="false">Filter</button>
 				<?php endif; ?>
 			</div>
 

@@ -1,18 +1,12 @@
 <?php // Reviews Section Header
-get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
-
-<div class="container">
-	<?php get_template_part( 'reviews/content/header/reviews' ); ?>
-</div>
-
-<?php 
+get_template_part( 'reviews/content/header/ads-leaderboard' );
 
 $image = get_field('hero_image');
 
 if ( ! empty( $image ) ) {
 ?>
 <div id="hero-products" style="background-image: url(<?php echo esc_attr( $image['url'] );?>);">
-	<img class="hero-single-products" src="<?php echo esc_attr( $image['url'] );?>" alt=""/>
+	<img class="hero-single-products" src="<?php echo esc_attr( $image['url'] );?>" alt="Product review hero image"/>
 <?php
 } else {
 ?>
@@ -50,8 +44,7 @@ if ( ! empty( $image ) ) {
 															<a href="<?php echo get_author_posts_url( $i->current_author->ID ); ?>"><?php echo esc_html( $i->current_author->display_name ); ?></a>
 															<?php
 															$twitter = get_user_meta( $i->current_author->ID, 'twitter', true );
-															if ( ! empty( $twitter ) ):
-																?>
+															if ( ! empty( $twitter ) ): ?>
 																/ <a target="_blank" href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>"><i class="fa fa-twitter"></i> @<?php echo esc_html( $twitter ); ?></a>
 															<?php endif; ?>
 													<?php
@@ -87,8 +80,6 @@ if ( ! empty( $image ) ) {
 									<?php endif; ?>
 								
 								</div><!-- .authors-mobile" -->
-								<?php $link = get_field( 'buy_link' ); ?>
-								<a class="btn-buy" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
 							</div><!-- .product-meta -->
 
 							<?php

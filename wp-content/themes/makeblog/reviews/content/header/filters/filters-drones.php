@@ -165,10 +165,6 @@
 			</div>
 			<!-- .more-filters -->
 
-			<button id="more-filters-btn" class="more-filters-btn btn btn-default visible-xs-block" type="button" aria-haspopup="true"
-			        aria-expanded="false">More Filters
-			</button>
-
 			<div class="fl-actions visible-xs-block">
 				<div class="fl-actions-wrap">
 					<button id="filters-cancel-btn" type="button" class="filters-cancel-btn btn btn-default">Cancel</button>
@@ -183,7 +179,7 @@
 	</nav>
 	<!-- .filters-nav -->
 
-	<div class="fl-filters-selected hidden-xs clearfix">
+	<div class="fl-filters-selected clearfix">
 		<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
 
 		<div class="fs-selected">

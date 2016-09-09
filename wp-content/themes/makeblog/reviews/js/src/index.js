@@ -41,6 +41,10 @@ var ReviewsFilters = {
 				row.find('.ri-score-price').find('.ri-price span').html(v.price);
 				row.find('.ri-type').html(v.type);
 				row.find('.ri-score-price').find('.ri-score span').html(v.score);
+				if (v.buy_url) {
+					row.find('.ri-score-price').find('.ri-buy-now a').attr("href", v.buy_url);
+					row.find('.ri-score-price').find('.ri-buy-now').show();
+				}				
 				row.find('.ri-feature-image a').append(v.thumbnail);
 				row.find('.ri-link').attr('href', v.link);
 
@@ -195,7 +199,7 @@ var ReviewsFilters = {
 			e.preventDefault();
 			e.stopPropagation();
 			filters.update();
-			$('#show-sort-btn').click();
+			//$('#show-sort-btn').click();
 		});
 
 		filters.load_stored_data();
@@ -215,8 +219,6 @@ jQuery( document ).ready(function($) {
 		if( 'true' === $(this).attr('aria-expanded') ) {
 			$('html').removeClass('filters-open');
 			$(this).attr('aria-expanded', 'false' );
-			$('#more-filters').hide();
-			$('#more-filters-btn').html('More Filters').attr('aria-expanded', 'false' );
 		} else {
 			$('html').addClass('filters-open');
 			$(this).attr('aria-expanded', 'true' );
@@ -227,43 +229,11 @@ jQuery( document ).ready(function($) {
 	$('#filters-cancel-btn').click(function(){
 		$('html').removeClass('filters-open');
 		$('#show-filters-btn').attr('aria-expanded', 'false' );
-		$('#more-filters').hide();
-		$('#more-filters-btn').html('More Filters').attr('aria-expanded', 'false' );
-	});
-
-	// Init More Filters on Mobile
-	$('#more-filters-btn').click(function(){
-		if( 'true' === $(this).attr('aria-expanded') ) {
-			$('#more-filters').slideUp('fast');
-			$(this).html('More Filters');
-			$(this).attr('aria-expanded', 'false' );
-		} else {
-			$('#more-filters').slideDown();
-			$(this).html('Less Filters');
-			$(this).attr('aria-expanded', 'true' );
-		}
 	});
 
 	// Reset the filters on Desktop
 	$('#rf-reset-btn').click(function(){
 		$('#rf-filters-form')[0].reset();
-	});
-
-	// Sort Show/Hide on Mobile
-	$('#show-sort-btn').click(function(){
-		if( 'true' === $(this).attr('aria-expanded') ) {
-			$('html').removeClass('sort-open');
-			$(this).attr('aria-expanded', 'false' );
-		} else {
-			$('html').addClass('sort-open');
-			$(this).attr('aria-expanded', 'true' );
-		}
-	});
-
-	// Sort cancel (hide) button on mobile
-	$('#sort-cancel-btn').click(function(){
-		$('html').removeClass('sort-open');
-		$('#show-sort-btn').attr('aria-expanded', 'false' );
 	});
 
 	// Nav Show/Hide on Mobile
@@ -272,7 +242,6 @@ jQuery( document ).ready(function($) {
 		$('html').toggleClass('review-nav-open');
 	});
 
-	// Sort cancel (hide) button on mobile
 	$('#virtual-placeholder').click(function(){
 		$(this).fadeOut();
 		$('.virtual-tour .webrotate360').addClass('show');

@@ -3,38 +3,16 @@
  */
 
 .rl-header {
-	@media screen and (min-width:@mq-sm-min) {
-		background: @coral;
-		color: white;
+	background: @coral;
+	color: white;
+	@media (max-width: 767px) {
+		margin-top: 15px;
 	}
 }
 
 .fl-sort-list {
 	margin-bottom: 0;
-
-	@media screen and (max-width: @mq-xs-max) {
-		visibility: hidden;
-		position: fixed;
-		top: 103px;
-		left: 0;
-		right: 0;
-		padding-bottom: 60px;
-		background: white;
-		z-index: 5;
-		overflow: scroll;
-		opacity: 0;
-		transition: visibility 0s, opacity 200ms;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-
-		.admin-bar & {
-			top: 157px;
-		}
-
-	}
-
-	@media screen and (min-width:@mq-sm-min) {
-		padding: 0;
-	}
+	padding: 0;
 
 	html.sort-open & {
 		visibility: visible;
@@ -57,22 +35,13 @@
 // List of sorts
 .rl-sort-list {
 	margin-bottom: 0;
-	padding: 0;
-
-	@media screen and (min-width:@mq-sm-min) {
-		padding: 0 15px;
-		float: right;
-		display: table;
-	}
+	padding: 0 15px;
+	float: right;
+	display: table;
 }
 
 // Each Sort Option
 .rl-sort {
-	padding: 20px 30px;
-	@media screen and (min-width:@mq-sm-min) {
-		padding: 0;
-	}
-
 	// Checkboxes
 	input[type="radio"] {
 		display: none;
@@ -83,14 +52,10 @@
 		cursor: default;
 		text-transform: none;
 		padding-left: 1.5em;
-		font-size: 16px;
 		transition: all 150ms;
-
-		@media screen and (min-width: @mq-sm-min) {
-			font-size: 12px;
-			color: white;
-			line-height: 1;
-		}
+		font-size: 12px;
+		color: white;
+		line-height: 1;
 	}
 }
 
@@ -98,10 +63,10 @@
 // The Filter set options
 .rl-sort-options {
 	width: 100%;
-	padding-left: 8%;
 
 	// Sort By Title
 	.rl-sort-header {
+		width: 20%;
 		font-size: 11px;
 		line-height: 1.2;
 		font-weight: 300;
@@ -113,13 +78,19 @@
 		display: inline-block;
 		text-align: center;
 		vertical-align: middle;
-		width: 17%;
 		float: left;
 		padding: 7px 0;
 		margin: 0;
+		&.details {
+			width: 50%;
+			padding-left: 50px;
+			@media (max-width: 767px) {
+				width: 40%;
+			}
+		}
 		&.price,
 		&.score {
-			float: right;
+			width: 15%;
 		}
 		span {
 			cursor: pointer;
@@ -131,24 +102,4 @@
 			}
 		}
 	}
-}
-
-// Mobile apply cancel buttons
-.rl-actions {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 3;
-	padding: @spacer;
-	background: #F0F0F0;
-	text-align: center;
-
-	.btn {
-		width: 48%;
-		&:first-of-type {
-			margin-right: 5px;
-		}
-	}
-
 }

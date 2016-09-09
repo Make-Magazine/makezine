@@ -36,7 +36,7 @@
 					<div class="ri-more-info">
 						<a class="ri-link" href="<?php the_permalink(); ?>">More Info <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 					</div>
-					<div class="ri-buy-now">
+					<div class="ri-buy-now" style="display:none;">
 						<a class="btn btn-default" href="#" target="_blank">Buy Now</a>
 					</div>
 				</div>
