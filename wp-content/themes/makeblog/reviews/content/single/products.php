@@ -11,6 +11,8 @@ if ( ! empty( $image ) ){
 <div id="content-wrap" class="container <?php echo $has_hero;?>">
 	<div class="row cw-content">
 		<div id="product-content" class="col-sm-8">
+
+
 			
 			<h2 class="product-title"><?php the_title(); ?></h2>
 			

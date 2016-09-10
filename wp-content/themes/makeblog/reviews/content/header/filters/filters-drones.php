@@ -3,9 +3,9 @@
  * The Reviews section filters header
  */
 ?>
-<section class="review-filters" aria-labelledby="show-filters-btn">
+<section class="review-filters">
 
-	<nav class="fl-filters-nav clearfix">
+	<nav class="fl-filters-nav clearfix" aria-labelledby="show-filters-btn">
 
 		<div class="fl-filters-header hidden-xs col-xs-12 col-lg-3">
 			<h2 class="fl-header-title">Find the Right Drone</h2>

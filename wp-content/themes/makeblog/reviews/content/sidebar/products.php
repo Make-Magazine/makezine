@@ -103,7 +103,7 @@ if ( ! empty( $why_buy_content ) ): ?>
 		<?php echo $why_buy_content;
 		if ( ! empty( $link ) ): ?>
 	
-			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
+			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
 	
 		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->
@@ -138,7 +138,7 @@ if ( ! empty( $why_buy_content ) ): ?>
 	
 		if ( ! empty( $link ) ): ?>
 	
-			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
+			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
 	
 		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->

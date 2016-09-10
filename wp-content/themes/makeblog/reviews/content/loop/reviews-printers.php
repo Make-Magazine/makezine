@@ -2,7 +2,6 @@
 /**
  * The Product Review Loop Item
  */
-$buy_link = get_field( 'buy_link', $id );
 ?>
 <div class="reviews-item clearfix reviews-model">
 

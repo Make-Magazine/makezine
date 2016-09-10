@@ -3,9 +3,9 @@
  * The Reviews section filters header
  */
 ?>
-<section class="review-filters" aria-labelledby="show-filters-btn">
+<section class="review-filters">
 
-	<nav class="fl-filters-nav clearfix">
+	<nav class="fl-filters-nav clearfix" aria-labelledby="show-filters-btn">
 
 		<div class="fl-filters-header hidden-xs col-xs-12 col-lg-3">
 			<h2 class="fl-header-title">Find the Perfect 3D Printer</h2>
@@ -48,6 +48,26 @@
 						</label>
 					</div>
 				</div>
+
+				<div class="fl-filter fl-build-volume dropdown">
+					<button id="fl-build-volume-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+						Build Volume<i class="fa fa-chevron-down"></i>
+					</button>
+					<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-build-volume-btn">
+						<label for="large">
+							<input id="large" type="checkbox" name="build_volume_filter" value="large">
+							<span>Large</span>
+						</label>
+						<label for="medium">
+							<input id="medium" type="checkbox" name="build_volume_filter" value="medium">
+							<span>Medium</span>
+						</label>
+						<label for="small">
+							<input id="small" type="checkbox" name="build_volume_filter" value="small">
+							<span>Small</span>
+						</label>
+					</div>
+				</div><!-- .fl-build-volume -->
 
 			</div>
 
@@ -124,26 +144,6 @@
 
 					</div>
 					<div class="fl-group">
-
-						<div class="fl-filter fl-build-volume dropdown">
-							<button id="fl-build-volume-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-								Build Volume<i class="fa fa-chevron-down"></i>
-							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-build-volume-btn">
-								<label for="large">
-									<input id="large" type="checkbox" name="build_volume_filter" value="large">
-									<span>Large</span>
-								</label>
-								<label for="medium">
-									<input id="medium" type="checkbox" name="build_volume_filter" value="medium">
-									<span>Medium</span>
-								</label>
-								<label for="small">
-									<input id="small" type="checkbox" name="build_volume_filter" value="small">
-									<span>Small</span>
-								</label>
-							</div>
-						</div><!-- .fl-build-volume -->
 
 						<div class="fl-filter fl-more-options dropdown">
 							<button id="fl-more-options-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">

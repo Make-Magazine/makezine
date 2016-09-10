@@ -48,6 +48,9 @@ $modal_text     = get_field( 'magazine_label', $id );
           elseif ( $slug === 'drones' ) {
 						$choosing_a_cat = '<span class="hidden-xs">Choosing a Drone: </span>';
 					}
+          elseif ( $slug === 'printers' ) {
+						$choosing_a_cat = '<span class="hidden-xs">Choosing a 3D Printer: </span>';
+					}
 					echo $choosing_a_cat . $how_we_test;
 					?>
 					<span class="visible-xs-inline">How We Test</span>
