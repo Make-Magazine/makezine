@@ -41,6 +41,10 @@
 	background-color: @white;
 	position: relative;
 	z-index: 0;
+	@media screen and (max-width: 767px) {
+		margin-right: auto;
+		margin-left: auto;
+	}
 	@media screen and (min-width: 768px) {
 		float: right;
 		margin-top: 0;
@@ -154,7 +158,6 @@
 #tour-overlay {
 	background-color: @white;
 	@media screen and (min-width: 768px) {
-		background-color: transparent;
 		position: absolute;
 		top: 0;
 		left: 0;
