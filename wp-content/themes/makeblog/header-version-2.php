@@ -46,6 +46,7 @@ if( $detect->isTablet() ){
   <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
   <?php // Below site verfication is linked to Maker Media Webmaster tools account ?>
   <meta name="google-site-verification" content="eAyS6vj89QDOsofiDC4sB-2YR3YNg_VGCYiQnWm2mqc" />
+  <meta name="norton-safeweb-site-verification" content="4g4w71jm7qt9e7ghe2dxdhiq0mnnkwom6ue80rdet53q3figx8ooxrffbgkkl9kzo3qi85l2j-txt-fh8w-p2z5769ht01z8s6sxq3-8r7cojmimgp00homsjjjv96ww" />
   <meta property="fb:admins" content="1612614584" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
