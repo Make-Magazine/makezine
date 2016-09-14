@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   var watchFiles = [
     'less/**/*.less',
     'version-2/less/**/*.less',
-    'reviews/less/**/**/*less',
+    'reviews/less/**/**/*.less',
     'version-2/js/single-story/*.js',
     'js/footer-scripts/*.js',
   ];
