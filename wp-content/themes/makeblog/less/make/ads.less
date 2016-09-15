@@ -39,6 +39,14 @@ body .home-ads {
 	margin-bottom: 30px;
 }
 
+//This fixes the issue with leaderboard ads left aligning in the browser, instead of centering
+.js-ad {
+  text-align: center;
+  > div {
+    display: inline-block;
+  }
+}
+
 .row.ad-row {
   margin-bottom: 15px;
 }
