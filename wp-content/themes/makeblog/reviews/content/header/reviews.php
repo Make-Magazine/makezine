@@ -44,7 +44,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 					Compare <?php echo $slug; ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
 				</a>
 
-				<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
+				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
 					<?php
 					if ( $slug === 'boards' ) {
 						$choosing_a_cat = 'How to Choose <i class="fa fa-angle-right" aria-hidden="true"></i>';
@@ -66,21 +66,13 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
           elseif ( $slug === 'printers' ) {
 						$scoring = '3D Printer Scoring';
 					} ?>
-					<a href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>"><?php echo $scoring; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>"><?php echo $scoring; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 				<?php } ?>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>
 					<button id="show-filters-btn" type="button" class="show-filters-btn visible-xs-inline-block" aria-haspopup="true" aria-expanded="false">Filter</button>
 				<?php endif; ?>
 			</div>
-			
-
-			<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>
-<!-- 				<div class="review-nav-btns visible-xs-block">
-					<button id="show-filters-btn" type="button" class="show-filters-btn btn btn-default" aria-haspopup="true" aria-expanded="false">Filter & Sort</button>
-					<button id="show-sort-btn" type="button" class="show-sort-btn btn btn-default" aria-haspopup="true" aria-expanded="false">Sort</button>
-				</div> -->
-			<?php endif; ?>
 
 		</nav>
 	</header>

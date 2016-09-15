@@ -40,6 +40,14 @@
 			&:last-child {
 				margin-right: 0;
 			}
+      &.active {
+        color: #4A4A4A;
+        pointer-events: none;
+        cursor: default;
+        i {
+          display: none;
+        }
+      }
 		}
 		@media (max-width: 767px) {
 			display: flex;
