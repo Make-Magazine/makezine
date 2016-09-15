@@ -402,17 +402,23 @@ if( $detect->isTablet() ){
           
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
-              <a href="/comparison/3dprinters/" class="pull-left first-post"></a>
+              <a href="/comparison/3dprinters/" class="pull-left first-post">
+                <img src="/wp-content/themes/makeblog/img/Make_3D-Printers-Guide.jpg" alt="3D Printer product reviews and comparison guide" />
+              </a>
             </div>
           </div>
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
-              <a href="/comparison/boards/" class="pull-left second-post"></a>
+              <a href="/comparison/boards/" class="pull-left second-post">
+                <img src="/wp-content/themes/makeblog/img/Make_Boards-Guide.jpg" alt="Boards product reviews and comparison guide" />
+              </a>
             </div>
           </div>
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
-              <a href="/comparison/drones/" class="pull-left third-post"></a>
+              <a href="/comparison/drones/" class="pull-left third-post">
+                <img src="/wp-content/themes/makeblog/img/Make_Drones-Guide.jpg" alt="Drones product reviews and comparison guide" />
+              </a>
             </div>
           </div>
         </div>
@@ -420,22 +426,30 @@ if( $detect->isTablet() ){
         <div class="latest-shop row">
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
+              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop1.png" alt="Shop for 3D Printing" />
+              </a>
             </div>
           </div>
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
+              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop2.png" alt="Shop for Drones" />
+              </a>
             </div>
           </div>
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
+              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop3.png" alt="Shop for Electronics build kits" />
+              </a>
             </div>
           </div>
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
+              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop4.png" alt="Shop for Make: Magazine" />
+              </a>
             </div>
           </div>
         </div>
@@ -476,22 +490,23 @@ if( $detect->isTablet() ){
         <div class="nav-share row">
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/share/" class="pull-left first-post"></a>
+              <a href="//makezine.com/share/" class="pull-left first-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Share-Your_Stuff.jpg" alt="Share your ideas and projects on Make:" />
+              </a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/share/" class="pull-left second-post"></a>
+              <a href="//makezine.com/fall-making/" class="pull-left second-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Fall-Making.jpg" alt="Fall of Making" />
+              </a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/fall-making/" class="pull-left third-post"></a>
-            </div>
-          </div>
-          <div class="share-post col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="//makezine.com/makeshowtell/" class="pull-left fourth-post"></a>
+              <a href="//makezine.com/makeshowtell/" class="pull-left third-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_MakeShowTell.jpg" alt="Show and Tell, social" />
+              </a>
             </div>
           </div>
         </div>
