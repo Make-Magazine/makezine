@@ -23,16 +23,16 @@
 
 			<div class="ri-score-price">
 				<div class="ri-score-price-flex">
+					<div class="ri-price">
+						<span></span>
+						<small class="visible-xs-block">Price</small>
+					</div>
 					<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
 					<div class="ri-score">
 						<span></span>
 						<small class="visible-xs-block">Score</small>
 					</div>
 					<?php endif; ?>
-					<div class="ri-price">
-						<span></span>
-						<small class="visible-xs-block">Price</small>
-					</div>
 					<div class="ri-more-info">
 						<a class="ri-link" href="<?php the_permalink(); ?>">More Info <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 					</div>
