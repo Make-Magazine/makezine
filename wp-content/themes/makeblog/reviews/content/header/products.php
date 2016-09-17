@@ -103,6 +103,7 @@ if ( ! empty( $image ) ) {
 											<span><?php echo $award; ?></span>
 										<?php endforeach; ?>
 									</div>
+									<div class="clearfix"></div>
 								</div>
 							<?php endif; ?>
 
