@@ -87,7 +87,7 @@ if ( ! empty( $image ) ) {
 							</div><!-- .product-meta -->
 
 							<?php if( $awards && ( ! in_array('', $awards) ) ): ?>
-								<div class="sidebar-awards meta-block display-xs-block">
+								<div class="sidebar-awards meta-block visible-xs-block">
 									<div class="sidebar-awards-left <?php
 										if ( $parent_title === 'boards' ) {
 											echo 'sd-boards-badge';
