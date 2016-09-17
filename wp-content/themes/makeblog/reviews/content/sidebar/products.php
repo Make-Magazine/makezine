@@ -128,6 +128,29 @@ endif;
 	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
 </div><!-- .meta-block.ad-1 -->
 
+<?php
+	if ( $parent_title === 'boards' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
+			</div>
+		<?php } 
+	} else if ( $parent_title === '3dprinters' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
+			</div>
+		<?php } 
+	} else if ( $parent_title === 'drones' ) {
+		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
+			<div class="clearfix"></div>
+			<div class="sidebar-wrapper">
+				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
+			</div>
+		<?php } 
+	}  ?>
 
 <?php
 if ( ! empty( $why_buy_content ) ): ?>
@@ -157,33 +180,6 @@ endif;
 		<?php echo $pro_tips_content; ?>
 	</div><!-- .meta-block.pro-tips -->
 <?php endif; ?>
-
-<?php
-	if ( $parent_title === 'boards' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
-			</div>
-			<div class="clearfix"><br /><br /></div>
-		<?php } 
-	} else if ( $parent_title === '3dprinters' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
-			</div>
-			<div class="clearfix"><br /><br /></div>
-		<?php } 
-	} else if ( $parent_title === 'drones' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
-			</div>
-			<div class="clearfix"><br /><br /></div>
-		<?php } 
-	}  ?>
 
 <div class="meta-block ad-2 desktop">
 	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
