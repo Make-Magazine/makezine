@@ -27,13 +27,17 @@ get_header('version-2'); ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<div <?php post_class('col-xs-12'); ?>>
+		<div <?php post_class('col-xs-12'); ?> itemscope itemtype="http://schema.org/ScholarlyArticle">
 
 			<div class="projects-masthead">
 
-				<h3><a href="//makezine.com/projects/">Make: Projects</a></h3>
+				<h3>
+					<a href="//makezine.com/projects/" itemprop="publisher">Make: Projects</a>
+				</h3>
 
-				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<h1 itemprop="name">
+					<?php the_title(); ?>
+				</h1>
 
 				<?php
 					$desc = get_post_custom_values('Description');
@@ -46,12 +50,12 @@ get_header('version-2'); ?>
 
 			<ul class="projects-meta">
 				<li>
-					By <?php
+					By <span itemprop="author"><?php
 					if( function_exists( 'coauthors_posts_links' ) ) {
 						coauthors_posts_links();
 					} else {
 						the_author_posts_link();
-					} ?>
+					} ?></span>
 				</li>
 
 				<?php
@@ -67,6 +71,8 @@ get_header('version-2'); ?>
 					}
 				?>
 
+				<meta itemprop="datePublished" content="<?php the_date(); ?>" />
+
 				<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
 			</ul>
 
@@ -77,11 +83,13 @@ get_header('version-2'); ?>
 					<?php
 			 			$image = get_post_custom_values('Image');
 						if ( !empty( $image[0] ) ) {
-							echo '<img src="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image[0] ), 620, 465 ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" />';
+							echo '<img itemprop="image" src="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image[0] ), 620, 465 ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" />';
 						}
 					?>
 
-					<?php the_content(); ?>
+					<div itemprop="description">
+						<?php the_content(); ?>
+					</div>
 
 				</div>
 
