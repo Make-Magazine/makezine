@@ -7,7 +7,7 @@
 	font-weight: 300;
 	line-height: 1em;
 	color: #333;
-	margin-bottom: 0;
+	margin-bottom: 10px;
 	width: ~"calc(100% - 332px)";
 	@media (min-width: 768px) and (max-width: 991px) {
 		width: 66.6%;
@@ -37,8 +37,13 @@
 			transition: all 150ms ease;
       margin-right: 30px;
       text-transform: capitalize;
+      font-size: 18px;
+      font-weight: 500;
 			&:last-child {
 				margin-right: 0;
+			}
+			&:hover {
+				color: @link-color-hover;
 			}
       &.active {
         color: #4A4A4A;

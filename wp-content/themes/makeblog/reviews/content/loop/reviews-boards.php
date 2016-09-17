@@ -14,10 +14,12 @@
 		<div class="ri-info-parent">
 
 			<div class="ri-details">
-				<a class="ri-link" href="<?php the_permalink(); ?>">
-					<h2 class="ri-item-title"></h2>
-				</a>
-				<div class="ri-type"></div>
+				<div class="ri-details-title-type">
+					<a class="ri-link" href="<?php the_permalink(); ?>">
+						<h2 class="ri-item-title"></h2>
+					</a>
+					<div class="ri-type"></div>
+				</div>
 				<div class="ri-item-meta"><span>AWARDS: </span></div>
 			</div>
 

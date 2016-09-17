@@ -44,6 +44,8 @@
 	@media screen and (max-width: 767px) {
 		margin-right: auto;
 		margin-left: auto;
+		margin-top: 0;
+		width: 100%;
 	}
 	@media screen and (min-width: 768px) {
 		float: right;
@@ -148,8 +150,10 @@
 
 // Meta Wrapper: 
 .meta-wrapper {
+	padding-left: 0;
+	padding-right: 0;
 	@media screen and (min-width: 768px) {
-		float: right !important; // @Suker Waiting to see if we can get this CSS moved after bootstrap to remove the important here.
+		float: right !important;
 	}
 }
 
@@ -174,7 +178,8 @@
 	}
 	@media screen and (max-width: 768px) {
 		background-color: transparent;
-		margin-top: -99px;
+		position: absolute;
+		bottom: 0;
 	}
 	.container {
 		width: 100%;
@@ -185,6 +190,8 @@
 
 // Product Meta: This is only showing on Mobile
 .product-meta {
+	padding-left: 15px;
+	padding-right: 15px;
 	@media screen and (min-width: 768px) {
 		display: none;
 		visibility: hidden;
@@ -310,6 +317,9 @@
 
 // Sidebar awards
 .sidebar-awards {
+	@media screen and (max-width: 767px) {
+		display: none;
+	}
 	.sidebar-awards-left {
 		height: 72px;
 		float: left;

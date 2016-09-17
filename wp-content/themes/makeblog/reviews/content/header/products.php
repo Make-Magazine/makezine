@@ -2,6 +2,10 @@
 get_template_part( 'reviews/content/header/ads-leaderboard' );
 
 $image = get_field('hero_image');
+$awards 						= get_field('winners');
+$container = Reviews()->container();
+$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
+$parent_title = $parent[0]->post_name;
 
 if ( ! empty( $image ) ) {
 ?>
@@ -81,6 +85,26 @@ if ( ! empty( $image ) ) {
 								
 								</div><!-- .authors-mobile" -->
 							</div><!-- .product-meta -->
+
+							<?php if( $awards && ( ! in_array('', $awards) ) ): ?>
+								<div class="sidebar-awards meta-block display-xs-block">
+									<div class="sidebar-awards-left <?php
+										if ( $parent_title === 'boards' ) {
+											echo 'sd-boards-badge';
+										} else if ( $parent_title === '3dprinters' ) {
+											echo 'sd-3dprinters-badge';
+										} else if ( $parent_title === 'drones' ) {
+											echo 'sd-drones-badge';
+										}  ?>">
+									</div>
+									<div class="sidebar-awards-right">
+										<h6>AWARDS</h6>
+										<?php foreach( $awards as $award ): ?>
+											<span><?php echo $award; ?></span>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							<?php endif; ?>
 
 							<?php
 							/**
