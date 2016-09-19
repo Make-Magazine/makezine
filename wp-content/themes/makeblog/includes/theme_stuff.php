@@ -259,7 +259,7 @@ function make_load_resources() {
 	global $wp_query;
 
 	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
-  //wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
+  //wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );

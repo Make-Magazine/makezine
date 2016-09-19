@@ -9,9 +9,7 @@ module.exports = function(grunt) {
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
     'css/print.css': 'less/print.less',
-    'css/takeover.css': 'less/takeover.less',
     'version-2/css/style.css': 'version-2/less/style.less',
-    'version-2/css/bootstrap.min.css': 'version-2/less/bootstrap/bootstrap.less',
     'reviews/css/master.css': 'reviews/less/master.less'
   };
   // All configurations go here
