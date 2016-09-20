@@ -59,9 +59,9 @@ function get_story_with_ajax() {
         elseif(strlen($url) == 0){ ?>
             <div class="hero-wrapper-clear"></div>
         <?php } else { ?>
-            <img class="story-hero-image" src="<?php echo $photon ?>" alt="Article Featured Image">
+            <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image">
             <div class="story-hero-image-l-xl"
-                 style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
+                 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
         <?php } ?>
     </div>
     <div class="container">
@@ -206,9 +206,9 @@ function get_story_with_ajax2() {
           elseif(strlen($url) == 0){ ?>
               <div class="hero-wrapper-clear"></div>
           <?php } else { ?>
-              <img class="story-hero-image" src="<?php echo $photon ?>" alt="Article Featured Image">
+              <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image">
               <div class="story-hero-image-l-xl"
-                   style="background: url(<?php echo $photon ?>) no-repeat center center;"></div>
+                   style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
           <?php } ?>
       </div>
       <div class="container">
