@@ -96,17 +96,6 @@ function make_home_3_events( $wp_customize ) {
     'priority' => 2
   ) );
 
-  // Turn it on or off
-  $wp_customize->add_setting( 'make_home3x_on_off', array(
-    'default' => '',
-  ) );
-  $wp_customize->add_control( 'make_home3x_on_off', array(
-    'type' => 'checkbox',
-    'label' => 'Turn on the dynamic 3 events? (this hides the old 3 image events)',
-    'section' => 'make_home3x',
-    'priority' => 11,
-  ) );
-
   // Event 1 URL
   $wp_customize->add_setting( 'make_home3x_1url', array(
     'default' => '',

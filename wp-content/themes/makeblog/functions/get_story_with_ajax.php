@@ -52,14 +52,14 @@ function get_story_with_ajax() {
         $photon = jetpack_photon_url($str, $args);
 
         if(get_field('hero_image')) { ?>
-            <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image">
+            <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image" />
             <div class="story-hero-image-l-xl"
                  style="background: url(<?php echo $hero_id['url']; ?>) no-repeat center center;"></div>
         <?php }
         elseif(strlen($url) == 0){ ?>
             <div class="hero-wrapper-clear"></div>
         <?php } else { ?>
-            <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image">
+            <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image" />
             <div class="story-hero-image-l-xl"
                  style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
         <?php } ?>
@@ -199,14 +199,14 @@ function get_story_with_ajax2() {
           $photon = jetpack_photon_url($str, $args);
 
           if(get_field('hero_image')) { ?>
-              <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image">
+              <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image" />
               <div class="story-hero-image-l-xl"
                    style="background: url(<?php echo $hero_id['url']; ?>) no-repeat center center;"></div>
           <?php }
           elseif(strlen($url) == 0){ ?>
               <div class="hero-wrapper-clear"></div>
           <?php } else { ?>
-              <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image">
+              <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image" />
               <div class="story-hero-image-l-xl"
                    style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
           <?php } ?>
