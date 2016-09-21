@@ -87,7 +87,7 @@ get_header('version-2'); ?>
 						}
 					?>
 
-					<div itemprop="articleBody">
+					<div class="article-body" itemprop="articleBody">
 						<?php the_content(); ?>
 					</div>
 

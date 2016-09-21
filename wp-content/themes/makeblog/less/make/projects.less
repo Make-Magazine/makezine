@@ -47,12 +47,14 @@
 		}
 	}
 
-	p,
-	span,
-  ul li,
-  ol li {
-		font-size: 18px;
-		line-height: 1.6em;
+	.article-body {
+		p,
+		span,
+	  ul li,
+	  ol li {
+			font-size: 18px;
+			line-height: 1.6em;
+		}
 	}
 
 	.parts-tools {
@@ -380,6 +382,9 @@
 	    	cursor: pointer;
 	    }
 		}
+		.prev-project-btn {
+			margin-right: 15px;
+		}
 	}
 
 
@@ -391,7 +396,14 @@
 	.project-avatar {
 		height: auto;
 	}
-
+	@media screen and (max-width: 991px) {
+		.jstep {
+			.prev-project-btn,
+			.next-project-btn {
+				margin-bottom: 10px;
+			}
+		}
+	}
 	@media screen and (max-width: 767px) {
 		.single-projects {
 			.col-xs-12 h2.new-heading {
@@ -404,18 +416,10 @@
 			}
 			.jstep {
 				//Prev button
-				.col-md-1.prev-project-btn {
-			    display: block;
-			    width: auto;
-			    float: left!important;
-			    margin-left: 15px;
-			    margin-bottom: 10px;
+				.prev-project-btn {
 				}
 				//next button
-				.col-md-1.next-project-btn {
-					width: auto;
-			    margin-right: 15px;
-			    margin-bottom: 10px;
+				.next-project-btn {
 				}
 			}
 		}
