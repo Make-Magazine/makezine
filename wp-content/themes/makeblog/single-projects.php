@@ -27,7 +27,7 @@ get_header('version-2'); ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<div <?php post_class('col-xs-12'); ?> itemscope itemtype="http://schema.org/ScholarlyArticle">
+		<div <?php post_class('col-xs-12'); ?> itemscope itemtype="http://schema.org/TechArticle">
 
 			<div class="projects-masthead">
 
@@ -41,8 +41,8 @@ get_header('version-2'); ?>
 
 				<?php
 					$desc = get_post_custom_values('Description');
-					if (isset($desc[0])) {
-						echo Markdown( wp_kses_post( $desc[0] ) );
+					if (!empty($desc[0])) {
+						echo '<p itemprop="description">' . wp_kses_post( $desc[0] ) . '</p>';
 					}
 				?>
 
@@ -66,7 +66,7 @@ get_header('version-2'); ?>
 					$terms = get_the_terms( $post->ID, 'difficulty' );
 					if ($terms) {
 						foreach ($terms as $term) {
-							echo '<li>Difficulty: <span>' . esc_html( $term->name ) . '</span></li>';
+							echo '<li>Difficulty: <span itemprop="proficiencyLevel">' . esc_html( $term->name ) . '</span></li>';
 						}
 					}
 				?>
@@ -78,7 +78,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-8">
+				<div class="col-xs-12 col-sm-8" >
 
 					<?php
 			 			$image = get_post_custom_values('Image');
@@ -87,7 +87,7 @@ get_header('version-2'); ?>
 						}
 					?>
 
-					<div itemprop="description">
+					<div itemprop="articleBody">
 						<?php the_content(); ?>
 					</div>
 
@@ -176,7 +176,7 @@ get_header('version-2'); ?>
 					<?php } ?>
 
 					<a class="project-print-btn btn btn-xs btn-danger print-page">
-						<i class="icon-print icon icon-white"></i> Print Project
+						<i class="fa fa-print" aria-hidden="true"></i> Print this Project
 					</a>
 
 					<div class="projects-ad">

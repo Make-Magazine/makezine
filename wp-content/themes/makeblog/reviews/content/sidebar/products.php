@@ -27,7 +27,7 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 		<div class="sidebar-awards-right">
 			<h6>AWARDS</h6>
 			<?php foreach( $awards as $award ): ?>
-				<span><?php echo $award; ?></span>
+				<span itemprop="award"><?php echo $award; ?></span>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -50,7 +50,7 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 					<div class="author-info">
 						<p>
 							<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>">
-								By <?php echo esc_html( $author->display_name ); ?>
+								By <span itemprop="author"><?php echo esc_html( $author->display_name ); ?></span>
 							</a>
 
 						</p>
@@ -73,7 +73,7 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 
 <div class="meta-block post-date desktop">
 	<?php global $previousday; $previousday=null; ?>
-	<?php echo the_date('F j, Y', '<p>Published: ', '</p>', FALSE); ?>
+	<?php echo the_date('F j, Y', '<p itemprop="datePublished">Published: ', '</p>', FALSE); ?>
 </div><!-- .meta-block.post-date -->
 
 <?php
@@ -161,7 +161,7 @@ if ( ! empty( $why_buy_content ) ): ?>
 	
 		if ( ! empty( $link ) ): ?>
 	
-			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
+			<a itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
 	
 		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->

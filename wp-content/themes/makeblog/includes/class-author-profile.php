@@ -172,10 +172,10 @@ class Make_Authors {
 				<?php echo $this->author_avatar( $author ); ?>
 			</div>
 			<div class="col-xs-12 col-sm-8 author-profile-bio">
-				<h1 class="jumbo"><?php echo esc_html( $this->author_name( $author ) ); ?></h1>
-				<?php echo $this->author_bio( $author ); ?>
+				<h1 itemprop="name" class="jumbo"><?php echo esc_html( $this->author_name( $author ) ); ?></h1>
+				<?php echo '<div itemprop="description">' . $this->author_bio( $author ) . '</div>'; ?>
 				<?php echo $this->author_contact_info( $author ); ?>
-				<?php echo $this->author_urls( $author ); ?>
+				<?php echo '<div itemprop="url">' . $this->author_urls( $author ) . '</div>'; ?>
 			</div>
 		<?php else : ?>
 			<div class="col-xs-12 author-profile-bio">
@@ -200,7 +200,7 @@ class Make_Authors {
 		$output .= '</div>';
 		$output .= '<div class="col-xs-12 col-sm-9 -author-profile-bio">';
 		// Author name
-		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '" itemprop="author">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 
 		if ( $author->type != 'guest-author' ) {
 			// Grab the meta information for WordPress.com users

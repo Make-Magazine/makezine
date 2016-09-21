@@ -1,5 +1,6 @@
 <?php
 /**
+ * Old Template, not used
  * Single page template for projects custom post type.
  *
  * @package    makeblog

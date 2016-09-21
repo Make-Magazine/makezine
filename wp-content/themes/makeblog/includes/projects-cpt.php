@@ -619,9 +619,9 @@ function make_projects_parts( $parts ) {
 			$notes = $part['notes'];
 		}
 		if ($part['url']) {
-			$output .='<li><a href="' . esc_url( $part['url'] ) . '">' . $part['text'];
+			$output .='<li><a itemprop="dependencies" href="' . esc_url( $part['url'] ) . '">' . $part['text'];
 		} else {
-			$output .='<li>' . esc_html( $part['text'] );
+			$output .='<li itemprop="dependencies">' . esc_html( $part['text'] );
 		}
 
 		if( ! empty( $part['type'] ) ) {
@@ -664,17 +664,18 @@ function make_projects_tools( $tools ) {
 	if ( ! empty( $tools[0] ) && is_array( $tools[0] ) ) {
 		foreach ( $tools[0] as $tool ) {
 
-			$output .='<li>';
 			if ( ! empty( $tool->url ) ) {
-				$output .= '<a href="' . esc_url( $tool->url ) . '" data-toggle="tooltip" title="' . esc_attr( $tool->text ) .'">' . esc_html( $tool->text ) . '</a>';
+				$output .= '<li><a itemprop="dependencies" href="' . esc_url( $tool->url ) . '" data-toggle="tooltip" title="' . esc_attr( $tool->text ) .'">' . esc_html( $tool->text ) . '</a>';
 			} else {
-				$output .= esc_html( $tool->text );
+				$output .= '<li itemprop="dependencies">' . esc_html( $tool->text );
 			}
 			$notes = null;
 
 			if( ! empty( $tool->notes ) ) {
 				$output .= '  <span class="text-muted">' . wp_kses_post( $tool->notes ) . '</span>';
 			}
+
+			$output .= '</li>';
 		}
 	}
 

@@ -344,7 +344,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $output .= '</a>';
             $output .= '</p>';
             $output .= '</div>';
-            $output .= '<h2 itemprop="headline"><a href="';
+            $output .= '<h2 itemprop="name"><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';
@@ -799,7 +799,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
               $output .= truncate_with_ellipses($post_title, 90);
               $output .= '</a></h2></div>';
             } else {
-              $output .= '<h2 itemprop="headline"><a href="';
+              $output .= '<h2 itemprop="name"><a href="';
               $link = get_the_permalink();
               $output .= $link;
               $output .= '">';
@@ -1194,7 +1194,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= '</a>';
             $output .= '</p>';
             $output .= '</div>';
-            $output .= '<h2 itemprop="headline"><a href="';
+            $output .= '<h2 itemprop="name"><a href="';
             $link = get_the_permalink();
             $output .= $link;
             $output .= '">';

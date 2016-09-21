@@ -158,7 +158,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	        <?php } ?>
 
 				</div>
-
+				<meta itemprop="name" content="Make: Magazine">
 				<div class="container">
 					<div class="row content first-story">
 						<div class="col-sm-7 col-md-8">

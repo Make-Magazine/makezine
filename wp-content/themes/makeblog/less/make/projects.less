@@ -63,51 +63,46 @@
 		padding:10px;
 		margin-top:20px;
 		overflow: scroll;
-		.gradient(top, #EAEAEA, #ffffff);
+		background-color: #f9f9f9;
 		.top {
-			font-size:18px;
-			margin-left:0px;
-			padding-top:0px;
+			font-size: 20px;
+			margin-left: 0px;
+			padding-top: 0px;
 			text-transform: uppercase;
 			li {
 				display: inline;
-				font-weight:bold;
-				padding-bottom:7px;
-				// .transition(background-image, 0.5s, ease-in);
-				a {
-					color: @grey;
-				}
+				font-weight: bold;
+				font-size: 20px;
 			}
 			li.active {
-				background-image: url('../img/active-arrow.png');
-				background-repeat: no-repeat;
-				background-position: center bottom;
+				border-bottom: 2px solid @red;
 				a {
 					color: @red;
 				}
 			}
 			li.divider {
-				color:#7cd5fc;
+				color: #BCBCBC;
 			}
 		}
 		.lists {
 			margin-left:0px;
-			font-size:14px;
-			font-weight: bold;
 			li {
-				color:#0776b7;
-				border-bottom:1px solid #CCEFFB;
-				list-style-type: none;
-				line-height:22px;
-				margin-bottom: 0;
-	  		padding: 5px 0;
+			  color: #6a6a6a;
+			  border-bottom: 1px solid #BCBCBC;
+			  list-style-type: none;
+			  line-height: 1.2em;
+			  margin-bottom: 0;
+			  padding: 7px 0;
+			  font-size: 16px;
+			  font-weight: 500;
 	  		a {
 	  			text-decoration: underline;
 	  		}
 				.text-muted {
 					display: inline;
-					font-weight: light;
-					color: lighten(#0776b7, 20%);
+					font-weight: 300;
+					line-height: 1em;
+					font-size: 16px;
 				}
 			}
 		}
