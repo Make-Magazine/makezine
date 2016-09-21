@@ -538,33 +538,37 @@ function make_projects_steps( $steps, $print = false ) {
 				echo '<div class="jstep hide" id="js-step-' . esc_attr( $step->number ) . '">';
 			}
 
-			echo '<span class="row">';
+			echo '<div class="row">';
 
 				// Output the Step title
 				if ( ! $print ) {
-					echo '<span class="col-md-6"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></span>';
+					echo '<span class="col-sm-8"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></span>';
 				} else {
-					echo '<span class="col-md-6"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></span>';
+					echo '<span class="col-sm-8"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></span>';
 				}
 
-				// Output our previous button
-				if ( $idx != 0 && ! $print ) {
-					echo '<span class="col-md-1 prev-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number - 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number - 1 ) . '">Prev</a></span>';
-				} elseif ( $idx == 0 && ! $print ) {
-					echo '<span class="col-md-1 prev-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number - 1 ) . '" disabled="disabled">Prev</a></span>';
-				} elseif ( $print ) {
-					echo '';
-				}
+				echo '<div class="col-sm-4">';
 
-				// Output the next button
-				if ( $idx < $count - 1 && ! $print ) {
-					echo '<span class="col-md-1 next-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number + 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number + 1 ) . '">Next</a></span>';
-				} elseif ( $idx == $count - 1 && ! $print ) {
-					echo '<span class="col-md-1 next-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number + 1 ) . '" disabled="disabled">Next</a></span>';
-				} elseif ( $print ) {
-					echo '';
-				}
-			echo '</span>';
+					// Output our previous button
+					if ( $idx != 0 && ! $print ) {
+						echo '<span class="prev-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number - 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number - 1 ) . '">Prev</a></span>';
+					} elseif ( $idx == 0 && ! $print ) {
+						echo '<span class="prev-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number - 1 ) . '" disabled="disabled">Prev</a></span>';
+					} elseif ( $print ) {
+						echo '';
+					}
+
+					// Output the next button
+					if ( $idx < $count - 1 && ! $print ) {
+						echo '<span class="next-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number + 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number + 1 ) . '">Next</a></span>';
+					} elseif ( $idx == $count - 1 && ! $print ) {
+						echo '<span class="next-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number + 1 ) . '" disabled="disabled">Next</a></span>';
+					} elseif ( $print ) {
+						echo '';
+					}
+
+				echo '</div>';
+			echo '</div>';
 
 			// Step main image
 			$images = ( isset( $step->images ) ) ? $step->images : '';
