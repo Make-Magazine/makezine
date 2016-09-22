@@ -33,7 +33,7 @@
 		z-index: 3;
 		overflow: scroll;
 		opacity: 0;
-		transition: visibility 0s, opacity 200ms;
+		transition: visibility 200ms, opacity 200ms;
 	  .fl-filters-selected {
 	  	display: block;
 			margin: 0;
@@ -45,7 +45,7 @@
 	html.filters-open & {
 		visibility: visible;
 		opacity: 1;
-		transition: visibility 200ms, opacity 150ms;
+		transition: visibility 200ms, opacity 200ms;
 		z-index: 999999999;
 		top: 0;
 	}
@@ -182,8 +182,9 @@
 			}
 			&:before {
 				background-color: white;
-				width: 18px;
+				width: 22px;
 				height: 27px;
+				left: -4px;
 			}
 			&:after {
 				font-family: 'FontAwesome';
