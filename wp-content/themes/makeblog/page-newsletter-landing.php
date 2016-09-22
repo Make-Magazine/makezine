@@ -69,10 +69,10 @@ get_header('version-2'); ?>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
-                <input type="checkbox" id="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" name="slid_5" value="6B5869DC547D3D46510F6AB3E701BA0A" />
-                <span for="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" class="newcheckbox"></span>
+                <input type="checkbox" id="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" name="slid_5" value="6B5869DC547D3D4637EA6E33C6C8170D" />
+                <span for="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" class="newcheckbox"></span>
               </label>
-              <h4>Maker Shed</h4><p>Be the first to learn about new products, plus exclusive discounts</p>
+              <h4>Make: Education</h4><p>How making is transforming learning</p>
               <hr />
 
               <input class="btn-cyan" type="submit" value="Submit" />
