@@ -87,66 +87,73 @@
 			}
 		}
 	}
+}
 
-	.review-nav-mag {
-		width: 302px;
-		border-bottom: 1px solid #e3e3e3;
-		float: right;
-		margin-top: -5px;
-		@media (min-width: 768px) and (max-width: 991px) {
-			width: 33.3%;
-		}
-		@media (max-width: 767px) {
+.review-nav-mag {
+	width: 302px;
+	border-bottom: 1px solid #e3e3e3;
+	float: right;
+	margin-top: -5px;
+	#product-sidebar & {
+		margin-top: 30px;
+		width: 100%;
+	}
+	@media (min-width: 768px) and (max-width: 991px) {
+		width: 33.3%;
+	}
+	@media (max-width: 767px) {
+		.review-nav & {
 			width: 100%;
 		  border-bottom: none;
 		  float: none;
 		  margin-top: 0;
 		}
+	}
 
-		// Issue modal pop up button
-		.modal-capture-btn {
-			position: relative;
-			margin-top: -60px;
-			padding:42px 5px 11px 100px;
-			font-size: 12px;
-			font-weight: 700;
-			white-space: normal;
-			text-align: left;
-			overflow: hidden;
-			text-transform: none;
-			color: #4A4A4A;
-			transition: all .1s ease;
-			border: none;
-  		background: none;
-  		@media (max-width: 767px) {
-  			box-shadow: 0 3px 9px -2px #CCC;
-  			background-color: #fff;
-  			border-radius: 5px;
-  			padding: 12px 0;
-  			text-align: center;
-  			font-size: 16px;
-  			font-weight: 300;
-  			width: 100%;
-  			margin-top: 0;
+	// Issue modal pop up button
+	.modal-capture-btn {
+		position: relative;
+		margin-top: -60px;
+		padding:42px 5px 11px 100px;
+		font-size: 12px;
+		font-weight: 700;
+		white-space: normal;
+		text-align: left;
+		overflow: hidden;
+		text-transform: none;
+		color: #4A4A4A;
+		transition: all .1s ease;
+		border: none;
+		background: none;
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 80px;
+			margin: 5px;
+			height: auto;
+			box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+		}
+		.review-nav & {
+			@media (max-width: 767px) {
+				box-shadow: 0 3px 9px -2px #CCC;
+				background-color: #fff;
+				border-radius: 5px;
+				padding: 12px 0;
+				text-align: center;
+				font-size: 16px;
+				font-weight: 300;
+				width: 100%;
+				margin-top: 0;
 	  		&:hover {
 	  			box-shadow: 0 3px 9px 0 #CCC;
 	  			transition: all .1s ease;
 	  		}
-  			span {
-  				color: #f2cf5a;
-  				font-size: 18px;
-  			}
-  		}
-
-			img {
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 80px;
-				margin: 5px;
-				height: auto;
-				box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
-				@media (max-width: 767px) {
+				span {
+					color: #f2cf5a;
+					font-size: 18px;
+				}
+				img {
 					display: none;
 				}
 			}

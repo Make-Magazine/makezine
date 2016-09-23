@@ -9,9 +9,12 @@ $scored_image       = get_field( 'scores_image' );
 $scored_image_title = get_field( 'scores_image_title' );
 $scored_image_title = ! empty( $scored_image_title ) ? $scored_image_title : 'How this scored';
 $awards 						= get_field('winners');
-$container = Reviews()->container();
-$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
-$parent_title = $parent[0]->post_name;
+$container 			= Reviews()->container();
+$parent    			= $container['Relationships']->get_review_for_product( get_the_ID() );
+$parent_title 	= $parent[0]->post_name;
+$parent_id = $parent[0]->ID;
+$modal_image    = get_field( 'magazine_thumbnail', $parent_id );
+$modal_text     = get_field( 'magazine_label', $parent_id );
 
 if( $awards && ( ! in_array('', $awards) ) ): ?>
 	<div class="sidebar-awards meta-block">
@@ -76,35 +79,17 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 	<?php echo the_date('F j, Y', '<p itemprop="datePublished">Published: ', '</p>', FALSE); ?>
 </div><!-- .meta-block.post-date -->
 
-<?php
-
-$parent_link = '';
-
-
-$container = Reviews()->container();
-$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
-
-if ( ! empty( $parent ) ) {
-	$parent      = array_shift( $parent );
-	$parent_link = get_permalink( $parent->ID );
-}
-
-if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
-	<div class="meta-block how-scored mobile">
-		<h4><?php echo $scored_image_title; ?></h4>
-		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Scores"/>
-	</div><!-- .meta-block.how-scored -->
-<?php endif; ?>
+<div class="meta-block ad-1">
+	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
+</div><!-- .meta-block.ad-1 -->
 
 <?php
 if ( ! empty( $why_buy_content ) ): ?>
-	<div class="meta-block why-buy mobile">
+	<div class="meta-block why-buy">
 		<h4><?php echo $why_buy_title;?></h4>
 		<?php echo $why_buy_content;
 		if ( ! empty( $link ) ): ?>
-	
-			<a class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
-	
+			<a itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
 		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->
 <?php
@@ -112,21 +97,26 @@ endif;
 ?>
 
 <?php if ( ! empty( $pro_tips_content ) ): ?>
-	<div class="meta-block pro-tips mobile">
+	<div class="meta-block pro-tips">
 		<?php
 		if ( ! empty( $pro_tips_title ) ) {
 			echo '<h4>'.$pro_tips_title.'</h4>';
 		}
-		?>
-	
-		<?php echo $pro_tips_content; ?>
+		echo $pro_tips_content; ?>
 	</div><!-- .meta-block.pro-tips -->
 <?php endif; ?>
 
-
-<div class="meta-block ad-1">
-	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
-</div><!-- .meta-block.ad-1 -->
+<?php if ( $modal_image ): ?>
+	<div class="review-nav-mag">
+		<button id="modal-capture-btn" class="modal-capture-btn class-<?php 
+		$catslug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+		echo $catslug;
+		?>">
+			<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
+			<?php echo $modal_text; ?>
+		</button>
+	</div>
+<?php endif; ?>
 
 <?php
 	if ( $parent_title === 'boards' ) {
@@ -150,50 +140,18 @@ endif;
 				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
 			</div>
 		<?php } 
-	}  ?>
-
-<?php
-if ( ! empty( $why_buy_content ) ): ?>
-	<div class="meta-block why-buy desktop">
-		<h4><?php echo $why_buy_title;?></h4>
-	
-		<?php echo $why_buy_content;
-	
-		if ( ! empty( $link ) ): ?>
-	
-			<a itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
-	
-		<?php endif; ?>
-	</div><!-- .meta-block.why-buy -->
-<?php
-endif;
+	}  
 ?>
-
-<?php if ( ! empty( $pro_tips_content ) ): ?>
-	<div class="meta-block pro-tips desktop">
-		<?php
-		if ( ! empty( $pro_tips_title ) ) {
-			echo '<h4>'.$pro_tips_title.'</h4>';
-		}
-		?>
-	
-		<?php echo $pro_tips_content; ?>
-	</div><!-- .meta-block.pro-tips -->
-<?php endif; ?>
 
 <div class="meta-block ad-2 desktop">
 	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
 </div><!-- .meta-block.ad-2 -->
 
 <?php
-
 $parent_link = '';
-
 if ( function_exists( 'Reviews' ) ) {
-
 	$container = Reviews()->container();
 	$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
-
 	if ( ! empty( $parent ) ) {
 		$parent      = array_shift( $parent );
 		$parent_link = \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $parent->ID );
@@ -201,9 +159,9 @@ if ( function_exists( 'Reviews' ) ) {
 }
 
 if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
-	<div class="meta-block how-scored desktop">
+	<div class="meta-block how-scored">
 		<h4><?php echo $scored_image_title; ?></h4>
-		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Scores"/>
+		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Product Review Scores"/>
 		<p><a href="<?php echo esc_url( $parent_link ); ?>">See all the Scores</a></p>
 	</div><!-- .meta-block.how-scored -->
 <?php endif;
