@@ -2,9 +2,9 @@
 get_template_part( 'reviews/content/header/ads-leaderboard' );
 
 $image = get_field('hero_image');
-$awards 						= get_field('winners');
+$awards = get_field('winners');
 $container = Reviews()->container();
-$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
+$parent = $container['Relationships']->get_review_for_product( get_the_ID() );
 $parent_title = $parent[0]->post_name;
 
 if ( ! empty( $image ) ) {
