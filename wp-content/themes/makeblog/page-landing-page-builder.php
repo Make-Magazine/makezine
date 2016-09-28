@@ -101,7 +101,7 @@ get_header('version-2'); ?>
             <?php endif; ?>
           </div>
           <div class="som-carousel-arrow">
-            <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
           </div>
         </section> <?php
 
