@@ -41,7 +41,9 @@ query_posts(
 	                </div>
 		            </div>
                 <p class="padtop">Search by type:</p>
-                <?php $query_types = get_query_var('post_type'); ?>
+                <?php 
+                $query_types = get_query_var('post_type');
+                $query_tags = get_query_var('tag'); ?>
                 <label class="checkbox-inline">
                   <input type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types)) { echo 'checked="checked"'; } ?> />
                   Stories
@@ -49,6 +51,10 @@ query_posts(
                 <label class="checkbox-inline">
                   <input type="checkbox" name="post_type[]" value="projects" <?php if (in_array('projects', $query_types)) { echo 'checked="checked"'; } ?> />
                   Projects
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="tag" value="skill-builder" <?php if ($query_tags == 'skill-builder') { echo 'checked="checked"'; } ?> />
+                  Skill Builders
                 </label>
                 <label class="checkbox-inline">
                   <input type="checkbox" name="post_type[]" value="products" <?php if (in_array('products', $query_types)) { echo 'checked="checked"'; } ?> />
@@ -64,7 +70,7 @@ query_posts(
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-7 col-md-8">
+				<div class="col-xs-12 col-sm-12 col-md-8">
 
 					<div class="search-results">
 
@@ -98,7 +104,7 @@ query_posts(
 
 									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									
-									<div class="meta"><?php the_time('m/d/Y \@ g:i a'); ?> | <?php echo ucfirst( make_post_type_better_name( get_post_type() ) ); ?></div>
+									<div class="meta"><?php the_time('m/d/Y'); ?></div>
 
 									<div class="media-body">
 										<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?> <a href="<?php the_permalink(); ?>"></a></p>
