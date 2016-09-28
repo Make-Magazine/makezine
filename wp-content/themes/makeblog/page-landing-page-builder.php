@@ -50,11 +50,13 @@ get_header('version-2'); ?>
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     <?php if (!empty($title)) { ?>
                       <div class="carousel-caption">
-                        <h1><?php echo $title; ?></h1>
-                        <?php if (!empty($paragraph_text)) { echo '<div class="som-slider-txt">' . $paragraph_text . '</div>'; } ?>
-                        <div class="som-slider-btns">
-                          <?php if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-slider-link-left">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
-                          <?php if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-slider-link-right">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
+                        <div class="carousel-caption-inner">
+                          <h1><?php echo $title; ?></h1>
+                          <?php if (!empty($paragraph_text)) { echo '<div class="som-slider-txt">' . $paragraph_text . '</div>'; } ?>
+                          <div class="som-slider-btns">
+                            <?php if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-slider-link-left">' . $bottom_left_cta_button_text . '</a>'; } ?>
+                            <?php if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-slider-link-right">' . $bottom_right_button_text . '</a>'; } ?>
+                          </div>
                         </div>
                       </div>
                     <?php } ?>
@@ -64,11 +66,13 @@ get_header('version-2'); ?>
                   <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                   <?php if (!empty($title)) { ?>
                     <div class="carousel-caption">
-                      <h1><?php echo $title; ?></h1>
-                      <?php if (!empty($paragraph_text)) { echo '<div class="som-slider-txt">' . $paragraph_text . '</div>'; } ?>
-                      <div class="som-slider-btns">
-                        <?php if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-slider-link-left">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
-                        <?php if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-slider-link-right">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; } ?>
+                      <div class="carousel-caption-inner">
+                        <h1><?php echo $title; ?></h1>
+                        <?php if (!empty($paragraph_text)) { echo '<div class="som-slider-txt">' . $paragraph_text . '</div>'; } ?>
+                        <div class="som-slider-btns">
+                          <?php if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-slider-link-left">' . $bottom_left_cta_button_text . '</a>'; } ?>
+                          <?php if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-slider-link-right">' . $bottom_right_button_text . '</a>'; } ?>
+                        </div>
                       </div>
                     </div>
                   <?php } ?>
@@ -95,6 +99,9 @@ get_header('version-2'); ?>
                 <span class="sr-only">Next</span>
               </a>
             <?php endif; ?>
+          </div>
+          <div class="som-carousel-arrow">
+            <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
           </div>
         </section> <?php
 
@@ -177,46 +184,40 @@ get_header('version-2'); ?>
           if( $image_placement == 'Left' ):
 
             echo '<div class="som-2col-img-l" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>    
-                    <div class="">
-                      <div class="row">
-                        <div class="col-sm-6"></div>
+                    <div class="col-sm-6"></div>
 
-                        <div class="col-sm-6 som-2col-txt">';
+                    <div class="col-sm-6 som-2col-txt">';
 
-                          if (!empty($top_left_blue_text)) { echo '<span class="som-2col-top-l">' . $top_left_blue_text . '</span>'; }
-                          if (!empty($top_right_blue_text)) { echo '<span class="som-2col-top-r">' . $top_right_blue_text . '</span>'; }
-                          echo '<div class="clearfix"></div>';
-                          if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
-                          if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
-                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
-                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
-                          if (!empty($bottom_sponsors)) { echo '<div class="som-2col-bottom_sponsors">' . $bottom_sponsors . '</div>'; }
+                      if (!empty($top_left_blue_text)) { echo '<span class="som-2col-top-l">' . $top_left_blue_text . '</span>'; }
+                      if (!empty($top_right_blue_text)) { echo '<span class="som-2col-top-r">' . $top_right_blue_text . '</span>'; }
+                      echo '<div class="clearfix"></div>';
+                      if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
+                      if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
+                      if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                      if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                      if (!empty($bottom_sponsors)) { echo '<div class="som-2col-bottom_sponsors">' . $bottom_sponsors . '</div>'; }
 
-            echo '      </div>';
+            echo '  </div>';
 
           elseif( $image_placement == 'Right' ):
 
             echo '<div class="som-2col-img-r" style="background: url(' . $image["url"] . ') no-repeat center center;"></div>    
-                    <div class="">
-                      <div class="row">
-                        <div class="col-sm-6 som-2col-txt">';
+                    <div class="col-sm-6 som-2col-txt">';
 
-                          if (!empty($top_left_blue_text)) { echo '<span class="som-2col-top-l">' . $top_left_blue_text . '</span>'; }
-                          if (!empty($top_right_blue_text)) { echo '<span class="som-2col-top-r">' . $top_right_blue_text . '</span>'; }
-                          echo '<div class="clearfix"></div>';
-                          if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
-                          if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
-                          if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
-                          if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
-                          if (!empty($bottom_sponsors)) { echo '<div class="som-2col-bottom_sponsors">' . $bottom_sponsors . '</div>'; }
+                      if (!empty($top_left_blue_text)) { echo '<span class="som-2col-top-l">' . $top_left_blue_text . '</span>'; }
+                      if (!empty($top_right_blue_text)) { echo '<span class="som-2col-top-r">' . $top_right_blue_text . '</span>'; }
+                      echo '<div class="clearfix"></div>';
+                      if (!empty($title)) { echo '<h3>' . $title . '</h3>'; }
+                      if (!empty($column_1)) { echo '<div class="som-2col-wyswyg">' . $column_1 . '</div>'; }
+                      if (!empty($bottom_left_cta_button_text)) { echo '<a href="' . $bottom_left_cta_button_url . '" class="som-2col-bot-l">' . $bottom_left_cta_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                      if (!empty($bottom_right_button_text)) { echo '<a href="' . $bottom_right_cta_button_url . '" class="som-2col-bot-r">' . $bottom_right_button_text . ' <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>'; }
+                      if (!empty($bottom_sponsors)) { echo '<div class="som-2col-bottom_sponsors">' . $bottom_sponsors . '</div>'; }
 
-            echo '      </div>';
+            echo '  </div>';
 
           endif;
 
-          echo '    <div class="clearfix"></div> 
-                    </div>
-                  </div>
+          echo '  <div class="clearfix"></div> 
                 </section>';
 
         endif;

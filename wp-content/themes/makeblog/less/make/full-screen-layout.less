@@ -1,0 +1,115 @@
+#full-screen-page {
+  height: ~"calc(100vh - 156px)";
+  @media (max-width:767px) {
+    height: 560px;
+  } 
+  .carousel {
+    height: 100%;
+    max-width: 100% !important;
+    .carousel-inner {
+      height: 100%;
+      .item {
+        height: 100%;
+        @media (max-width:767px) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        .fsp-full-screen-img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background-size: cover !important;
+        }
+      }
+    }
+    .carousel-caption {
+      color: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: inherit;
+      padding-left: 15px;
+      padding-right: 15px;
+      @media (max-width: 767px) {
+        top: 0;
+        transform: translateY(0);
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding-top: 40px;
+        .som-slider-link-left {
+          margin-bottom: 10px;
+        }
+      }
+      .carousel-caption-inner {
+        @media (max-width: 767px) {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          left: 0;
+          margin-right: auto;
+          margin-left: auto;
+          transform: translateY(-50%);
+        }
+      }
+      h1 {
+        font-size: 6vw;
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-weight: 100;
+        @media (max-width:767px) {
+          font-size: 22px;
+          margin-bottom: 15px;
+        }
+      }
+      .som-slider-txt {
+        margin-bottom: 30px;
+        color: #fff;
+        font-size: 16px;
+      }
+      h2, h3 {
+        line-height: 1.3em;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.8em;
+      }
+      .som-slider-btns {
+        .som-slider-link-left,
+        .som-slider-link-right {
+          font-weight: 400;
+          padding: 0 15px;
+          color: #fff;
+          transition: color 0.2s;
+          &:hover {
+            color: #00aeef;
+            transition: color 0.2s;
+          }
+          @media (max-width:767px) {
+            display: block;
+          }
+        }
+      }
+    }
+    .carousel-control {
+      @media (max-width:767px) {
+        z-index: 100;
+        width: 10%;
+      }
+      .glyphicon-chevron-left, 
+      .glyphicon-chevron-right {
+        font-size: 70px;
+        @media (max-width:767px) {
+          font-size: 40px;
+          top: 40%;
+        }
+      }
+    }
+    .carousel-inner>.item>a>img, 
+    .carousel-inner>.item>img {
+      width: 100%;
+    }
+  }
+}

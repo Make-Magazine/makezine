@@ -1,8 +1,15 @@
 #som {
   background-color: #fff;
   .rectangle-image-carousel {
+    position: relative;
     .carousel {
       max-width: 100%;
+    }
+    .carousel-inner .item, {
+      max-height: 35.5vw;
+      @media (max-width:767px) {
+        max-height: 40vw;
+      }
     }
     @media (max-width:767px) {
       padding-left: 0;
@@ -13,50 +20,61 @@
     }
     .carousel-caption {
       color: #fff;
-      top: 25%;
+      top: 50%;
+      transform: translateY(-50%);
       bottom: inherit;
       padding-left: 15px;
       padding-right: 15px;
-      @media (max-width: 991px) {
-        top: 0;
-        margin-top: 15px;
-      }
       @media (max-width: 767px) {
         top: 0;
+        transform: translateY(0);
         bottom: 0;
         right: 0;
         left: 0;
-        margin-top: 0;
-        padding-top: 40px;
-        .som-slider-txt {
-          display: none;
-        }
         .som-slider-link-left {
-          margin-bottom: 10px;
+          margin-bottom: 3px;
+        }
+      }
+      .carousel-caption-inner {
+        @media (max-width: 767px) {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          left: 0;
+          margin-right: auto;
+          margin-left: auto;
+          transform: translateY(-50%);
         }
       }
       h1 {
         font-size: 6vw;
         margin-top: 0;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         font-weight: 100;
         @media (max-width:767px) {
           font-size: 22px;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
         }
       }
       .som-slider-txt {
         margin-bottom: 30px;
         color: #fff;
         font-size: 16px;
-        font-weight: 300;
+        @media (max-width:767px) {
+          margin-bottom: 0;
+        }
+      }
+      h2, h3 {
+        line-height: 1.3em;
+        @media (max-width:767px) {
+          font-size: 1em;
+          margin-top: 0;
+        }
       }
       p {
         font-size: 16px;
-        font-weight: 300;
-        @media (max-width:767px) {
-          display: none;
-        }
+        font-weight: 400;
+        line-height: 1.8em;
       }
       .som-slider-btns {
         .som-slider-link-left,
@@ -92,6 +110,19 @@
     .carousel-inner>.item>a>img, 
     .carousel-inner>.item>img {
       width: 100%;
+    }
+    .som-carousel-arrow {
+      color: #fff;
+      width: 33px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      @media (max-width:767px) {
+        display: none;
+      }
     }
   }
 
@@ -169,8 +200,8 @@
         }
         p {
           color: #4A4A4A;
-          font-size: 14px;
-          line-height: 22px;
+          font-size: 18px;
+          line-height: 1.8em;
           &:hover {
             text-decoration: none;
           }
@@ -250,8 +281,8 @@
     }
     p {
       color: #231f20;
-      font-size: 16px;
-      font-weight: 300;
+      line-height: 1.8em;
+      font-weight: 400;
       margin-bottom: 0;
     }
     form {
@@ -312,9 +343,9 @@
       }
     }
     p {
-      font-size: 16px;
+      font-size: 18px;
+      line-height: 1.8em;
       color: #fff;
-      font-weight: 300;
     }
   }
 
@@ -382,9 +413,8 @@
         }
       }
       .som-2col-wyswyg {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.6;
+        font-size: 18px;
+        line-height: 1.8em;
         color: #231f20;
         margin-bottom: 20px;
         @media (max-width:1199px) {
@@ -458,8 +488,8 @@
       }
     }
     p {
-      font-size: 16px;
-      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.8em;
       color: #fff;
       margin-bottom: 20px;
     }
