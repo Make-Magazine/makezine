@@ -51,7 +51,7 @@ get_header('version-2'); ?>
 							<?php if ( make_get_author( absint( $post->ID ) ) ) : ?>
 								<?php make_get_author( asbint( $post->ID ) ); ?>
 							<?php endif ?>
-							<li><?php the_time('m/d/Y \@ g:i a'); ?></li>
+							<li><?php the_time('m/d/Y'); ?></li>
 							<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
 						</ul>
 
