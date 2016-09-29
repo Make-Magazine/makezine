@@ -29,9 +29,10 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="col-xs-12">
+				<div class="col-sm-12 col-md-8">
 
 					<h2>Latest from <?php echo make_author_name(); ?></h2>
+					<hr/>
 
 				</div>
 
@@ -46,7 +47,7 @@ get_header('version-2'); ?>
 						<article <?php post_class('media'); ?>>
 
 							<a href="<?php the_permalink(); ?>" class="pull-left">
-								<?php echo the_post_thumbnail('thumbnail'); ?>
+								<?php echo the_post_thumbnail('archive-thumb'); ?>
 							</a>
 
 							<div class="media-body">
