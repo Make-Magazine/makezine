@@ -240,7 +240,7 @@ class Make_Authors {
 			// Return the Guest Author information.
 			$output .= $this->author_bio( $author );
 		}
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="author-name">';
 		$output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
@@ -257,7 +257,7 @@ class Make_Authors {
 			// Return the Guest Author information.
 			$output .= $this->author_bio( $author );
 		}
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="twitter-wrapper">';
 		$output .=  $this->author_twitter($newAuthor ,$authorID);

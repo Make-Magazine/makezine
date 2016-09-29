@@ -37,44 +37,30 @@ get_header('version-2'); ?>
 
 			</div>
 
-			<div class="row">
+			<div class="row top15">
 
-				<div class="col-sm-7 col-md-8" id="content">
+				<div class="col-sm-12 col-md-8" id="content">
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-						<div class="projects-masthead">
-							<h2><a href="<?php esc_url( the_permalink() ); ?>"><?php esc_html( the_title() ); ?></a></h2>
-						</div>
+						<article <?php post_class('media'); ?>>
 
-						<ul class="projects-meta author-meta">
-							<?php if ( make_get_author( absint( $post->ID ) ) ) : ?>
-								<?php make_get_author( asbint( $post->ID ) ); ?>
-							<?php endif ?>
-							<li><?php the_time('m/d/Y'); ?></li>
-							<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
-						</ul>
+							<a href="<?php the_permalink(); ?>" class="pull-left">
+								<?php echo the_post_thumbnail('thumbnail'); ?>
+							</a>
 
-						<article <?php post_class(); ?>>
+							<div class="media-body">
 
-							<div class="media">
-
-								<?php if ( has_post_thumbnail() ) : ?>
-									<a href="<?php esc_url( the_permalink() ); ?>" class="pull-left">
-										<?php the_post_thumbnail( 'archive-thumb', array( 'class' => 'media-object' ) ); ?>
-									</a>
-								<?php endif; ?>
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								
+								<div class="meta"><?php the_time('m/d/Y'); ?></div>
 
 								<div class="media-body">
-									<p><?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?> <a href="<?php esc_url( the_permalink() ); ?>">Read more &raquo;</a></p>
-								</div>
-
-								<div class="jetpack-sharing">
-									<?php if ( function_exists( 'sharing_display') ) echo sharing_display(); ?>
+									<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?> <a href="<?php the_permalink(); ?>"></a></p>
 								</div>
 
 							</div>
-
+						
 						</article>
 
 					<?php endwhile; else: ?>

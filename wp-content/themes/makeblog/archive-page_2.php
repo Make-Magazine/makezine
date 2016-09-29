@@ -33,7 +33,7 @@ get_header('version-2'); ?>
 						
 						<ul class="projects-meta">
 							<li>By <a href="<?php echo esc_url( $url[0] ); ?>"><?php echo esc_html( $name[0] ); ?></a></li>
-							<li><?php the_time('m/d/Y \@ g:i a'); ?></li>
+							<li><?php the_time('m/d/Y'); ?></li>
 						</ul>
 							
 						<div class="media">
