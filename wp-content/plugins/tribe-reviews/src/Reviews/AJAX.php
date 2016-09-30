@@ -132,7 +132,7 @@ class AJAX {
 				'buy_url'   => get_post_meta( $post->ID, 'buy_link', true ),
 				'type'      => $this->type( $post->ID ),
 				'score'     => abs( get_post_meta( $post->ID, 'total_score', true ) ),
-				'thumbnail' => get_the_post_thumbnail( $post->ID, 'medium' ),
+				'thumbnail' => wp_get_attachment_url(get_post_thumbnail_id( $post->ID )),
 				'link'      => get_permalink( $post->ID ),
 				'winner'    => $this->winner( $post->ID )
 			];

@@ -44,8 +44,8 @@ var ReviewsFilters = {
 				if (v.buy_url) {
 					row.find('.ri-score-price').find('.ri-buy-now a').attr("href", v.buy_url);
 					row.find('.ri-score-price').find('.ri-buy-now').show();
-				}				
-				row.find('.ri-feature-image a').append(v.thumbnail);
+				}
+				row.find('.ri-feature-image a').css('background-image', 'url(' + v.thumbnail + ')');
 				row.find('.ri-link').attr('href', v.link);
 
 				if (v.winner) {
