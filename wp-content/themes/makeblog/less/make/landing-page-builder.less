@@ -7,8 +7,14 @@
     }
     .carousel-inner .item, {
       max-height: 35.5vw;
+      @media screen and (min-width: 992px) and (max-width: 1199px) { 
+        max-height: 38vw;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) { 
+        max-height: 46vw;
+      }
       @media (max-width:767px) {
-        max-height: 40vw;
+        max-height: 50vw;
       }
     }
     @media (max-width:767px) {
@@ -115,7 +121,7 @@
       color: #fff;
       width: 33px;
       position: absolute;
-      bottom: 0;
+      bottom: -10px;
       left: 0;
       right: 0;
       margin-left: auto;
