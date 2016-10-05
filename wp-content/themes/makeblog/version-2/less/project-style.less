@@ -463,12 +463,18 @@ body.page-template-project {
   h2 {
     min-height: 39px !important;
     overflow: hidden;
+    @media (max-width: 549px) {
+      left: initial;
+    }
     a {
       min-height: 39px !important;
       max-height: 39px;
       padding: 0 15px 0px !important;
       overflow: hidden;
       margin-bottom: 5px;
+      @media (max-width: 549px) {
+        padding: 0;
+      }
     }
   }
 }
@@ -1903,8 +1909,11 @@ ul.diff-item li.current {
           .home-post-card {
             display: inline-block;
             position: absolute;
-            left: 150px;
+            left: 40%;
             top: 50px;
+            @media (max-width: 549px) {
+              top: 38px;
+            }
             .home-post-card-sponsor {
               padding-left: 0;
               font-size: 10px;
