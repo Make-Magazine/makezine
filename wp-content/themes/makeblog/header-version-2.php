@@ -489,29 +489,22 @@ if( $detect->isTablet() ){
         <div class="nav-share row">
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="https://community.makezine.com/share" class="pull-left first-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get Involved_Projects.jpg" alt="Share your ideas and projects on Make:" />
+              <a href="//makezine.com/share/" class="pull-left first-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Share-Your_Stuff.jpg" alt="Share your ideas and projects on Make:" />
               </a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute/" class="pull-left second-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get Involved_Story.jpg" alt="Submit a Story" />
+              <a href="//makezine.com/fall-making/" class="pull-left second-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Fall-Making.jpg" alt="Fall of Making" />
               </a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="https://community.makezine.com/share/contests" class="pull-left third-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get Involved_Contest.jpg" alt="Show and Tell, social" />
-              </a>
-            </div>
-          </div>
-          <div class="share-post col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="//makezine.com/joinus" class="pull-left fourth-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get Involved_Membership.jpg" alt="Show and Tell, social" />
+              <a href="//makezine.com/makeshowtell/" class="pull-left third-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_MakeShowTell.jpg" alt="Show and Tell, social" />
               </a>
             </div>
           </div>
