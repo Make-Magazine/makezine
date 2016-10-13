@@ -241,7 +241,7 @@ get_header('version-2'); ?>
           echo '<section class="som-summer-reads" style="background: url(' . $background_image["url"] . ') no-repeat center center;">
                   <div class="container">
                     <div class="row">
-                      <div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3 text-center">';
+                      <div class="col-xs-12 text-center">';
 
           if (!empty($top_cta_text)){
             echo '      <h3>' . $top_cta_text . '</h3>';
