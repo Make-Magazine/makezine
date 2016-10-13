@@ -240,7 +240,7 @@
 						case $(this).hasClass('Guides'):
 							dynamic_content = '.nav-guides';
 							break;
-						case $(this).hasClass('Share'):
+						case $(this).hasClass('Get'):
 							dynamic_content = '.nav-share';
 							break;
 					}
