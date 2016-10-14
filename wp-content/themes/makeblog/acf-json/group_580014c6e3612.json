@@ -1,0 +1,198 @@
+{
+    "key": "group_580014c6e3612",
+    "title": "Gift Guide 2016",
+    "fields": [
+        {
+            "key": "field_58001541ca9e4",
+            "label": "Products",
+            "name": "products",
+            "type": "repeater",
+            "instructions": "Click the \"Add New Product\" button and fill out all the fields. Then scroll to the top of this page and click the \"Update\" button to save the new product.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add New Product",
+            "sub_fields": [
+                {
+                    "key": "field_580015bcca9e5",
+                    "label": "Product Name",
+                    "name": "product_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_580015d8ca9e6",
+                    "label": "Product Description",
+                    "name": "product_description",
+                    "type": "textarea",
+                    "instructions": "html and links are allowed here. 300 character max.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": 300,
+                    "rows": 20,
+                    "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_58001632ca9e7",
+                    "label": "Author Name",
+                    "name": "author_name",
+                    "type": "text",
+                    "instructions": "Product recommendation \"By\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58001675ca9e8",
+                    "label": "Price",
+                    "name": "price",
+                    "type": "text",
+                    "instructions": "Leave the $ out. e.g. \"19.99\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_580016b3ca9e9",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_580016caca9ea",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Try and keep all images as square as possible. Resize to 800px by 800px and under 200kb file size. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 850,
+                    "max_height": 850,
+                    "max_size": ".3",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_58001c83ca9eb",
+                    "label": "Sponsored",
+                    "name": "sponsored",
+                    "type": "true_false",
+                    "instructions": "Check here if this is a sponsored product?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                },
+                {
+                    "key": "field_58001ce8ca9ec",
+                    "label": "Daily Pick",
+                    "name": "daily_pick",
+                    "type": "true_false",
+                    "instructions": "Check here if this is the Daily Pick?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-gift-guide-2016.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "author"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1476403090
+}
