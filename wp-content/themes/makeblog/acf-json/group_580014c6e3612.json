@@ -138,6 +138,36 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5805621186398",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "select",
+                    "instructions": "Add one category, multiple categories, or none.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-tec": "Technology",
+                        "category-dig": "Digital Fabrication",
+                        "category-cra": "Craft & Design",
+                        "category-dro": "Drones & Vehicles",
+                        "category-sci": "Science",
+                        "category-hom": "Home",
+                        "category-wor": "Workshop"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_58001c83ca9eb",
                     "label": "Sponsored",
                     "name": "sponsored",
@@ -194,5 +224,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1476403090
+    "modified": 1476748585
 }

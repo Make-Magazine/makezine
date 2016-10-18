@@ -2,34 +2,56 @@
   margin-bottom: 30px;
   .gg2016-header {
     margin-top: 15px;
+    h1 {
+      font-size: 45px;
+      line-height: 1.1em;
+      color: #4a4a4a;
+    }
+    h2 {
+      font-size: 22px;
+      line-height: 1.2em;
+      color: #4a4a4a;
+    }
+    h3 {
+      font-size: 16px;
+      line-height: 1.6em;
+      color: #4a4a4a;
+    }
   }
   
   .gg2016-nav {
     background-color: #fff;
     margin-top: 15px;
     .gg2016-nav-flex {
-      padding: 10px 0;
+      padding: 0;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
 
       li {
-        padding: 0 10px;
-        border-right: 1px solid #ccc;
+        padding: 0;
         line-height: 1em;
-        &:last-child {
-          border-right: none;
-        }
         button {
           border: none;
-          padding: 0;
+          padding:10px 0 7px;
           font-size: 16px;
           color: #4a4a4a;
-          &:hover {
+          &:hover, &:active, &:focus {
             text-decoration: none;
+            outline: 0;
             color: #222;
           }
+          &.active {
+            border-bottom: 3px solid #F40B0B;
+          }
+          span {
+            padding: 0 10px;
+            border-right: .5px solid #979797;
+          }
+        }
+        &:last-child button span {
+          border-right: none;
         }
       }
     }
@@ -49,12 +71,16 @@
   }
 
   .gg2016-body {
+    min-height: 500px;
     .gg2016-review { //article
-      margin-left: 15%;
-      margin-right: 15%;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      display: flex;
+      margin-left: 14%;
+      margin-right: 14%;
+      margin-bottom: 50px;
+      padding: 10px 15px 15px;
+      display: none;
+      .gg2016-review-flex-cont {
+        display: flex;
+      }
       &:nth-child(even) {
         .gg2016-review-img {
           order: 2;
@@ -65,9 +91,19 @@
           padding-left: 0;
         }
       }
+      &.gg2016-sponsored {
+        border: 4px solid #979797;
+        h5 {
+          margin-top: 0;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+      }
       .gg2016-review-img {
         flex: 0 0 40%;
+        img {
 
+        }
       }
       .gg2016-review-info {
         flex: 0 0 60%;
@@ -85,7 +121,7 @@
 
         }
       }
-    } 
+    }
   }
 
 }
