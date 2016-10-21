@@ -3,11 +3,99 @@
     "title": "Gift Guide 2016",
     "fields": [
         {
+            "key": "field_58065e59505e7",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58065def505e3",
+            "label": "Header Title",
+            "name": "header_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58065dfa505e4",
+            "label": "Header Subtitle",
+            "name": "header_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58065e03505e5",
+            "label": "Header Description",
+            "name": "header_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_58065e1f505e6",
+            "label": "Gift Guide Products",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
             "key": "field_58001541ca9e4",
-            "label": "Products",
+            "label": "Click the \"Add New Product\" button and fill out all the required fields. Then scroll to the top of this page and click the \"Update\" button to save the new product.",
             "name": "products",
             "type": "repeater",
-            "instructions": "Click the \"Add New Product\" button and fill out all the fields. Then scroll to the top of this page and click the \"Update\" button to save the new product.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -45,7 +133,7 @@
                     "label": "Product Description",
                     "name": "product_description",
                     "type": "textarea",
-                    "instructions": "html and links are allowed here. 300 character max.",
+                    "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -55,9 +143,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "maxlength": 300,
-                    "rows": 20,
-                    "new_lines": "wpautop"
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br"
                 },
                 {
                     "key": "field_58001632ca9e7",
@@ -80,10 +168,10 @@
                 },
                 {
                     "key": "field_58001675ca9e8",
-                    "label": "Price",
+                    "label": "Price (Shown)",
                     "name": "price",
                     "type": "text",
-                    "instructions": "Leave the $ out. e.g. \"19.99\"",
+                    "instructions": "This price is displayed as entered.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -96,6 +184,27 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_580660e9237fb",
+                    "label": "Price (Used for sorting, not shown)",
+                    "name": "price_used_for_sorting_not_shown",
+                    "type": "number",
+                    "instructions": "Enter a whole number to use for the price sorting feature. No commas, dollar signs, dashes, or decimals.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
                 },
                 {
                     "key": "field_580016b3ca9e9",
@@ -134,7 +243,7 @@
                     "min_size": "",
                     "max_width": 850,
                     "max_height": 850,
-                    "max_size": ".3",
+                    "max_size": ".2",
                     "mime_types": ""
                 },
                 {
@@ -172,7 +281,7 @@
                     "label": "Sponsored",
                     "name": "sponsored",
                     "type": "true_false",
-                    "instructions": "Check here if this is a sponsored product?",
+                    "instructions": "Check here if this is a sponsored product.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -188,7 +297,7 @@
                     "label": "Daily Pick",
                     "name": "daily_pick",
                     "type": "true_false",
-                    "instructions": "Check here if this is the Daily Pick?",
+                    "instructions": "Check here if this is the Daily Pick. Only 1 at a time.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -198,6 +307,112 @@
                     },
                     "message": "",
                     "default_value": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5808116ca03b7",
+            "label": "Takeovers",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_58081188a03b8",
+            "label": "Choose a takeover category",
+            "name": "choose_a_takeover_category",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_580812d8a03bb",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_5805621186398"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_580811baa03b9",
+                    "label": "Full width Background Image",
+                    "name": "full_width_background_image",
+                    "type": "image",
+                    "instructions": "768px by 1300px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 2600,
+                    "max_height": 1400,
+                    "max_size": ".2",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_58081298a03ba",
+                    "label": "Small Square Image",
+                    "name": "small_square_image",
+                    "type": "image",
+                    "instructions": "200px by 200px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 500,
+                    "max_height": 500,
+                    "max_size": ".1",
+                    "mime_types": ""
                 }
             ]
         }
@@ -224,5 +439,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1476748585
+    "modified": 1476924405
 }
