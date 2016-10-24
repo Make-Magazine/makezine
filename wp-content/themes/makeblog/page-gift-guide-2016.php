@@ -13,7 +13,7 @@ get_header('version-2'); ?>
 
   <header class="gg2016-header container">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6 gg2016-header-info">
+      <div class="col-xs-12 col-sm-7 col-md-6 gg2016-header-info">
         <?php 
         $header_title = get_field('header_title');
         $header_subtitle = get_field('header_subtitle');
@@ -23,7 +23,6 @@ get_header('version-2'); ?>
         <h2><?php if( $header_subtitle ): ?><?php echo $header_subtitle; ?><?php endif; ?></h2>
         <h3><?php echo $header_description; ?></p>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 gg2016-dp">
 
       <?php if( have_rows('products') ):
 
@@ -39,19 +38,20 @@ get_header('version-2'); ?>
         
           if(get_sub_field('daily_pick')) { ?>
 
-            <div class="gg2016-dp-right" style="background: url(<?php echo $image; ?>) center center no-repeat;">  
-            </div>
-            <div class="gg2016-dp-left">
+            <div class="col-xs-12 col-sm-5 col-md-6 gg2016-dp" style="background: url(<?php echo $image; ?>);">
               <span class="btn-red padleft padright">DAILY PICK</span>
-              <h4><?php echo $product_name; ?></h4>
-              <p><?php echo $product_description; ?></p>
-              <?php if( $author_name ): ?>
-                <p class="gg2016-dp-author">By <?php echo $author_name; ?></p>
-              <?php endif; ?>
-              <?php if( $price ): ?>
-                <p class="gg2016-dp-price"><?php echo $price; ?></p>
-              <?php endif; ?>
-              <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank">Buy</a>
+              <div class="gg2016-dp-text">
+                <h4><?php echo $product_name; ?></h4>
+                <p class="gg2016-dp-desc"><?php echo $product_description; ?></p>
+                <?php if( $author_name ): ?>
+                  <p class="gg2016-dp-author">By <?php echo $author_name; ?></p>
+                <?php endif; ?>
+                <?php if( $price ): ?>
+                  <p class="gg2016-dp-price"><?php echo $price; ?></p>
+                <?php endif; ?>
+                <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank">Buy</a>
+              </div>
+
             </div>
 
           <?php 
@@ -61,7 +61,6 @@ get_header('version-2'); ?>
 
       endif; ?>
 
-      </div>
     </div>
   </header>
 
@@ -69,28 +68,28 @@ get_header('version-2'); ?>
     <div class="container">
       <ul class="gg2016-nav-flex list-unstyled">
         <li>
-          <button class="btn btn-link filter" data-filter="all"><span>All</span></button>
+          <button onclick="removeHashFunction()" class="btn btn-link filter" data-filter="all"><span>All</span></button>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-tec"><span>Technology</span></button>
+          <a href="#technology" class="btn btn-link filter" data-filter=".category-tec"><span>Technology</span></a>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-dig"><span>Digital Fabrication</span></button>
+          <a href="#digital-fabrication" class="btn btn-link filter" data-filter=".category-dig"><span>Digital Fabrication</span></a>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-cra"><span>Craft &amp; Design</span></button>
+          <a href="#craft-design" class="btn btn-link filter" data-filter=".category-cra"><span>Craft &amp; Design</span></a>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-dro"><span>Drones &amp; Vehicles</span></button>
+          <a href="#drones-vehicles" class="btn btn-link filter" data-filter=".category-dro"><span>Drones &amp; Vehicles</span></a>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-sci"><span>Science</span></button>
+          <a href="#science" class="btn btn-link filter" data-filter=".category-sci"><span>Science</span></a>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-hom"><span>Home</span></button>
+          <a href="#home" class="btn btn-link filter" data-filter=".category-hom"><span>Home</span></a>
         </li>
         <li>
-          <button class="btn btn-link filter" data-filter=".category-wor"><span>Workshop</span></button>
+          <a href="#workshop" class="btn btn-link filter" data-filter=".category-wor"><span>Workshop</span></a>
         </li>
       </ul>
 
@@ -100,8 +99,12 @@ get_header('version-2'); ?>
           <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="gg2016-price-menu">
-          <li><a href="#" class="sort" data-sort="myorder:asc">Low to High</a></li>
-          <li><a href="#" class="sort" data-sort="myorder:desc">High to Low</a></li>
+          <li>
+            <button class="sort" data-sort="myorder:asc">Low to High</button>
+          </li>
+          <li>
+            <button class="sort" data-sort="myorder:desc">High to Low</button>
+          </li>
         </ul>
       </div>
 
@@ -215,6 +218,10 @@ get_header('version-2'); ?>
 
 <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 <script>
+function removeHashFunction() {
+  history.pushState("", document.title, window.location.pathname);
+}
+  
   jQuery( document ).ready(function() {
 
     jQuery('#gg2016-sponsors').mixItUp({
@@ -271,7 +278,7 @@ get_header('version-2'); ?>
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
           var modulus = (i + 1) % 4;
           if (modulus === 0) { 
-            jQuery(this).after('<div class="fake-leaderboard-ad">ad 2</div><span class="fake-leaderboard-span"></span>');
+            jQuery(this).after('<div class="fake-leaderboard-ad">ad</div><span class="fake-leaderboard-span"></span>');
           }
         });
       }, 2000);

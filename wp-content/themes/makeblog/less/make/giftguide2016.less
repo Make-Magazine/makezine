@@ -43,33 +43,14 @@
       }
     }
 
-    .gg2016-dp-left {
-      width: 60%;
-      display: inline-block;
-      float: left;
-      background-image: url("/wp-content/themes/makeblog/img/squared_metal.png");
+    .gg2016-dp {
       position: relative;
-      padding: 10px;
+      height: 400px;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
       @media screen and (max-width: 767px) {
-        width: 100%;
-      }
-      h4 {
-        font-size: 20px;
-        margin-top: 35px;
-        margin-bottom: 3px;
-        font-weight: 500;
-      }
-      p {
-        margin-bottom: 5px;
-      }
-      .gg2016-dp-author {
-        font-weight: 500;
-      }
-      .gg2016-dp-price {
-        margin-bottom: 0;
-      }
-      .btn-red {
-        margin-top: 15px;
+        height: 50vw;
       }
       span.btn-red {
         font-size: 12px;
@@ -78,16 +59,53 @@
         left: 0;
         margin-top: 0;
       }
-    }
-    .gg2016-dp-right {
-      width: 40%;
-      height: 422px;
-      display: inline-block;
-      float: right;
-      background-size: cover;
-      @media screen and (max-width: 767px) {
-        width: 100%;
-        height: 50vw;
+      .gg2016-dp-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,.85) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.85) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,.85) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+        h4 {
+          font-size: 18px;
+          margin-top: 35px;
+          margin-bottom: 3px;
+          font-weight: 500;
+          color: #979797;
+          text-transform: uppercase;
+        }
+        .gg2016-dp-desc {
+          margin-bottom: 5px;
+          font-size: 30px;
+          line-height: 1.3em;
+          color: #222;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          height: 2.6em;
+          position: relative;
+        }
+        .gg2016-dp-author {
+          font-weight: 500;
+          margin-bottom: 0;
+          display: inline-block;
+          margin-right: 15px;
+        }
+        .gg2016-dp-price {
+          margin-bottom: 0;
+          display: inline-block;
+          margin-right: 15px;
+        }
+        .btn-red {
+          
+        }
       }
     }
   }
@@ -105,7 +123,7 @@
       li {
         padding: 0;
         line-height: 1em;
-        button {
+        a, button {
           border: none;
           padding:10px 0 7px;
           font-size: 16px;
@@ -141,9 +159,21 @@
         }
         button {
           color: #4a4a4a;
-          &:hover {
+          border: none;
+          background: transparent;
+          width: 100%;
+          text-align: left;
+          padding-left: 15px;
+          &:hover, &:active, &:focus {
             text-decoration: none;
           }
+          &.active {
+            border-bottom: 2px solid red;
+            padding-bottom: 1px;
+          }
+        }
+        .dropdown-menu:after {
+          content: none;
         }
       }
     }
@@ -152,6 +182,10 @@
   .gg2016-body {
     min-height: 500px;
     margin-top: 25px;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    
     .gg2016-review { //article
       margin-left: 14%;
       margin-right: 14%;
@@ -217,6 +251,9 @@
           font-weight: 500;
         }
       }
+    }
+    .fake-leaderboard-ad {
+      margin-bottom: 50px;
     }
   }
 
