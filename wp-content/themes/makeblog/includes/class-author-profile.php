@@ -288,7 +288,7 @@ class Make_Authors {
 			if ( has_post_thumbnail( absint( $author->ID ) ) ) {
 				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $author->ID ) );
 				$args = array(
-					'resize' => '150,150',
+					'resize' => '300,300',
 					'quality' => get_photon_img_quality(),
 				);
 				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
