@@ -111,54 +111,64 @@ get_header('version-2'); ?>
     </div>
   </nav>
 
-  <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
+  
+  <div class="gg2016-body-bg">
 
-  <?php if( have_rows('products') ): ?>
+    <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
 
-    <?php while( have_rows('products') ): the_row(); 
+    <?php if( have_rows('products') ): ?>
 
-      $product_name = get_sub_field('product_name');
-      $product_description = get_sub_field('product_description');
-      $author_name = get_sub_field('author_name');
-      $price = get_sub_field('price');
-      $price2 = get_sub_field('price_used_for_sorting_not_shown');
-      $url = get_sub_field('url');
-      $image = get_sub_field('image');
-      $category = get_sub_field('category');
-      $priceNoComma = str_replace( ',', '', $price2 );
+      <?php while( have_rows('products') ): the_row(); 
 
-      if(!get_sub_field('sponsored')) { ?>
+        $product_name = get_sub_field('product_name');
+        $product_description = get_sub_field('product_description');
+        $author_name = get_sub_field('author_name');
+        $price = get_sub_field('price');
+        $price2 = get_sub_field('price_used_for_sorting_not_shown');
+        $url = get_sub_field('url');
+        $image = get_sub_field('image');
+        $category = get_sub_field('category');
+        $priceNoComma = str_replace( ',', '', $price2 );
 
-        <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-          <div class="gg2016-review-flex-cont">
-            <div class="gg2016-review-img">
-              <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
-                <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
-              </a>
+        if(!get_sub_field('sponsored')) { ?>
+
+          <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+            <div class="gg2016-review-flex-cont">
+              <div class="gg2016-review-img">
+                <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
+                  <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
+                </a>
+              </div>
+              <div class="gg2016-review-info">
+                <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
+                  <h4 itemprop="name"><?php echo $product_name; ?></h4>
+                </a>
+                <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
+                <?php if( $author_name ): ?>
+                  <p class="gg2016-review-person">By <?php echo $author_name; ?></p>
+                <?php endif; ?>
+                <?php if( $price ): ?>
+                  <p class="gg2016-review-price"><?php echo $price; ?></p>
+                <?php endif; ?>
+                <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url">Buy</a>
+              </div>
             </div>
-            <div class="gg2016-review-info">
-              <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
-                <h4 itemprop="name"><?php echo $product_name; ?></h4>
-              </a>
-              <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
-              <?php if( $author_name ): ?>
-                <p class="gg2016-review-person">By <?php echo $author_name; ?></p>
-              <?php endif; ?>
-              <?php if( $price ): ?>
-                <p class="gg2016-review-price"><?php echo $price; ?></p>
-              <?php endif; ?>
-              <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url">Buy</a>
-            </div>
-          </div>
-        </article>
+          </article>
 
-      <?php }
+        <?php }
 
-    endwhile; ?>
+      endwhile; ?>
 
-  <?php endif; ?>
+    <?php endif; ?>
 
-  </div><!-- #gg2016-js.gg2016-body -->
+    <aside id="gg2016-sponsor-sm">
+      <span>Brought to you by</span>
+      <div></div>
+    </aside>
+
+    </div><!-- #gg2016-js.gg2016-body -->
+
+  </div><!-- .gg2016-body-bg -->
 
 
 
@@ -212,17 +222,82 @@ get_header('version-2'); ?>
 
   </div><!-- #gg2016-sponsors -->
 
-
-
 </div><!-- #gg2016 -->
+
+  <?php if( have_rows('choose_a_takeover_category') ): ?>
+
+    <?php while( have_rows('choose_a_takeover_category') ): the_row(); 
+
+      $category = get_sub_field('category');
+
+      if( $category === 'category-tec' ) { ?>
+
+        <script type="text/javascript">
+          var tecBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var tecSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php } elseif ( $category == 'category-dig' ) { ?>
+
+        <script type="text/javascript">
+          var digBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var digSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php } elseif ( $category == 'category-cra' ) { ?>
+
+        <script type="text/javascript">
+          var craBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var craSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php } elseif ( $category == 'category-dro' ) { ?>
+
+        <script type="text/javascript">
+          var droBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var droSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php } elseif ( $category == 'category-sci' ) { ?>
+
+        <script type="text/javascript">
+          var sciBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var sciSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php } elseif ( $category == 'category-hom' ) { ?>
+
+        <script type="text/javascript">
+          var homBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var homSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php } elseif ( $category == 'category-wor' ) { ?>
+
+        <script type="text/javascript">
+          var worBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
+          var worSM = "<?php echo get_sub_field('small_square_image'); ?>";
+        </script>
+
+      <?php }
+
+    endwhile; ?>
+
+  <?php endif; ?>
 
 <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 <script>
-function removeHashFunction() {
-  history.pushState("", document.title, window.location.pathname);
-}
+  function removeHashFunction() {
+    history.pushState("", document.title, window.location.pathname);
+  }
+
+  function showHideTakeover() {
+
+  }
   
   jQuery( document ).ready(function() {
+
+    //showHideTakeover();
 
     jQuery('#gg2016-sponsors').mixItUp({
       load: {
@@ -272,6 +347,47 @@ function removeHashFunction() {
         }
       }
     });
+
+    if (window.location.href.indexOf('#technology') > -1) {
+      jQuery('#gg2016-js').mixItUp('filter', '.category-tec');
+      jQuery('.gg2016-body-bg').css('background', 'url(' + tecBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + tecSM + ')');
+    } else if (window.location.href.indexOf('#digital-fabrication') > -1) {
+      jQuery('.filter[href$="#digital-fabrication"]').click();
+      jQuery('.gg2016-body-bg').css('background', 'url(' + digBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + digSM + ')');
+    } else if (window.location.href.indexOf('#craft-design') > -1) {
+      jQuery('.filter[href$="#craft-design"]').click();
+      jQuery('.gg2016-body-bg').css('background', 'url(' + craBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + craSM + ')');
+    } else if (window.location.href.indexOf('#drones-vehicles') > -1) {
+      jQuery('.filter[href$="#drones-vehicles"]').click();
+      jQuery('.gg2016-body-bg').css('background', 'url(' + droBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + droSM + ')');
+    } else if (window.location.href.indexOf('#science') > -1) {
+      jQuery('.filter[href$="#science"]').click();
+      jQuery('.gg2016-body-bg').css('background', 'url(' + sciBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + sciSM + ')');
+    } else if (window.location.href.indexOf('#home') > -1) {
+      jQuery('.filter[href$="#home"]').click();
+      jQuery('.gg2016-body-bg').css('background', 'url(' + homBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + homSM + ')');
+    } else if (window.location.href.indexOf('#workshop') > -1) {
+      jQuery('.filter[href$="#workshop"]').click();
+      jQuery('.gg2016-body-bg').css('background', 'url(' + worBG + ')');
+      jQuery('#gg2016-sponsor-sm').show();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + worSM + ')');
+    } else {
+      jQuery('.gg2016-body-bg').css('background', 'url(none)');
+      jQuery('#gg2016-sponsor-sm').hide();
+      jQuery('#gg2016-sponsor-sm div').css('background', 'url(none)'); 
+    }
 
     jQuery('.sort, .filter').click(function() {
       setTimeout(function() {

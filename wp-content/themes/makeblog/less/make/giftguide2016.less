@@ -179,13 +179,16 @@
     }
   }
 
+  .gg2016-body-bg {
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    //background-size: cover !important;
+  }
+
   .gg2016-body {
     min-height: 500px;
     margin-top: 25px;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    
+    position: relative;
     .gg2016-review { //article
       margin-left: 14%;
       margin-right: 14%;
@@ -254,6 +257,23 @@
     }
     .fake-leaderboard-ad {
       margin-bottom: 50px;
+    }
+    
+    #gg2016-sponsor-sm {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      span {
+        font-size: 14px;
+        color: #4a4a4a;
+      }
+      div {
+        height: 100px;
+        width: 100px;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
     }
   }
 
