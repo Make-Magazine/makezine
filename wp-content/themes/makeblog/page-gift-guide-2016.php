@@ -9,7 +9,7 @@
 get_header('version-2'); ?>
 
 <div id="gg2016">
-  <div class="fake-leaderboard-ad">ad</div>
+  <?php global $make; print $make->ads->ad_leaderboard_alt; ?>
 
   <header class="gg2016-header container">
     <div class="row">
@@ -161,10 +161,10 @@ get_header('version-2'); ?>
 
     <?php endif; ?>
 
-    <aside id="gg2016-sponsor-sm">
-      <span>Brought to you by</span>
-      <div></div>
-    </aside>
+      <aside id="gg2016-sponsor-sm">
+        <span>Brought to you by</span>
+        <div></div>
+      </aside>
 
     </div><!-- #gg2016-js.gg2016-body -->
 
@@ -224,66 +224,6 @@ get_header('version-2'); ?>
 
 </div><!-- #gg2016 -->
 
-  <?php if( have_rows('choose_a_takeover_category') ): ?>
-
-    <?php while( have_rows('choose_a_takeover_category') ): the_row(); 
-
-      $category = get_sub_field('category');
-
-      if( $category === 'category-tec' ) { ?>
-
-        <script type="text/javascript">
-          var tecBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var tecSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php } elseif ( $category == 'category-dig' ) { ?>
-
-        <script type="text/javascript">
-          var digBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var digSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php } elseif ( $category == 'category-cra' ) { ?>
-
-        <script type="text/javascript">
-          var craBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var craSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php } elseif ( $category == 'category-dro' ) { ?>
-
-        <script type="text/javascript">
-          var droBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var droSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php } elseif ( $category == 'category-sci' ) { ?>
-
-        <script type="text/javascript">
-          var sciBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var sciSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php } elseif ( $category == 'category-hom' ) { ?>
-
-        <script type="text/javascript">
-          var homBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var homSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php } elseif ( $category == 'category-wor' ) { ?>
-
-        <script type="text/javascript">
-          var worBG = "<?php echo get_sub_field('full_width_background_image'); ?>";
-          var worSM = "<?php echo get_sub_field('small_square_image'); ?>";
-        </script>
-
-      <?php }
-
-    endwhile; ?>
-
-  <?php endif; ?>
 
 <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 <script>
@@ -297,7 +237,7 @@ get_header('version-2'); ?>
   
   jQuery( document ).ready(function() {
 
-    //showHideTakeover();
+    removeHashFunction();
 
     jQuery('#gg2016-sponsors').mixItUp({
       load: {
@@ -313,6 +253,11 @@ get_header('version-2'); ?>
         onMixStart: function(){
           jQuery('#gg2016-js .fake-leaderboard-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
+
+          //First reset the takeover sponsor images
+          jQuery('.gg2016-body-bg').css('background', 'url(none)');
+          jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
+          jQuery('#gg2016-sponsor-sm div').css('background', 'url(none)');
         },
 
         onMixEnd: function(state){
@@ -324,6 +269,78 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even2');
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
+
+          //If a category takeover is set and active, set images
+          <?php if( have_rows('choose_a_takeover_category') ):
+            while( have_rows('choose_a_takeover_category') ): the_row(); 
+              $category = get_sub_field('category');
+
+              if( $category == 'category-tec' ) {
+                $tecBG = get_sub_field('full_width_background_image');
+                $tecSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-tec') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $tecBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $tecSM . ")');
+                  }";
+              } elseif ( $category == 'category-dig' ) {
+                $digBG = get_sub_field('full_width_background_image');
+                $digSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-dig') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $digBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $digSM . ")');
+                  }";
+              } elseif ( $category == 'category-cra' ) {
+                $craBG = get_sub_field('full_width_background_image');
+                $craSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-cra') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $craBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $craSM . ")');
+                  }";
+              } elseif ( $category == 'category-dro' ) {
+                $droBG = get_sub_field('full_width_background_image');
+                $droSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-dro') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $droBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $droSM . ")');
+                  }";
+              } elseif ( $category == 'category-sci' ) {
+                $sciBG = get_sub_field('full_width_background_image');
+                $sciSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-sci') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $sciBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $sciSM . ")');
+                  }";
+              } elseif ( $category == 'category-hom' ) {
+                $homBG = get_sub_field('full_width_background_image');
+                $homSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-hom') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $homBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $homSM . ")');
+                  }";
+              } elseif ( $category == 'category-wor' ) {
+                $worBG = get_sub_field('full_width_background_image');
+                $worSM = get_sub_field('small_square_image');
+                echo "
+                  if (state.activeFilter == '.category-wor') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $worBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $worSM . ")');
+                  }";
+              }
+            endwhile;
+          endif; ?>
         },
 
         onMixLoad: function(){
@@ -341,60 +358,42 @@ get_header('version-2'); ?>
           jQuery('#gg2016-js .gg2016-review').each(function(i) {
             var modulus = (i + 1) % 4;
             if (modulus === 0) { 
-              jQuery(this).after('<div class="fake-leaderboard-ad">ad</div><span class="fake-leaderboard-span"></span>');
+              jQuery(this).after("<?php global $make; print $make->ads->ad_leaderboard; ?><span class='fake-leaderboard-span'></span>");
             }
           });
         }
       }
     });
 
-    if (window.location.href.indexOf('#technology') > -1) {
-      jQuery('#gg2016-js').mixItUp('filter', '.category-tec');
-      jQuery('.gg2016-body-bg').css('background', 'url(' + tecBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + tecSM + ')');
-    } else if (window.location.href.indexOf('#digital-fabrication') > -1) {
-      jQuery('.filter[href$="#digital-fabrication"]').click();
-      jQuery('.gg2016-body-bg').css('background', 'url(' + digBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + digSM + ')');
-    } else if (window.location.href.indexOf('#craft-design') > -1) {
-      jQuery('.filter[href$="#craft-design"]').click();
-      jQuery('.gg2016-body-bg').css('background', 'url(' + craBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + craSM + ')');
-    } else if (window.location.href.indexOf('#drones-vehicles') > -1) {
-      jQuery('.filter[href$="#drones-vehicles"]').click();
-      jQuery('.gg2016-body-bg').css('background', 'url(' + droBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + droSM + ')');
-    } else if (window.location.href.indexOf('#science') > -1) {
-      jQuery('.filter[href$="#science"]').click();
-      jQuery('.gg2016-body-bg').css('background', 'url(' + sciBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + sciSM + ')');
-    } else if (window.location.href.indexOf('#home') > -1) {
-      jQuery('.filter[href$="#home"]').click();
-      jQuery('.gg2016-body-bg').css('background', 'url(' + homBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + homSM + ')');
-    } else if (window.location.href.indexOf('#workshop') > -1) {
-      jQuery('.filter[href$="#workshop"]').click();
-      jQuery('.gg2016-body-bg').css('background', 'url(' + worBG + ')');
-      jQuery('#gg2016-sponsor-sm').show();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(' + worSM + ')');
-    } else {
-      jQuery('.gg2016-body-bg').css('background', 'url(none)');
-      jQuery('#gg2016-sponsor-sm').hide();
-      jQuery('#gg2016-sponsor-sm div').css('background', 'url(none)'); 
-    }
+    // if (window.location.href.indexOf('#technology') > -1) {
+    //   jQuery('#gg2016-js').mixItUp('filter', '.category-tec');
+
+    // } else if (window.location.href.indexOf('#digital-fabrication') > -1) {
+    //   jQuery('.filter[href$="#digital-fabrication"]').click();
+
+    // } else if (window.location.href.indexOf('#craft-design') > -1) {
+    //   jQuery('.filter[href$="#craft-design"]').click();
+
+    // } else if (window.location.href.indexOf('#drones-vehicles') > -1) {
+    //   jQuery('.filter[href$="#drones-vehicles"]').click();
+
+    // } else if (window.location.href.indexOf('#science') > -1) {
+    //   jQuery('.filter[href$="#science"]').click();
+
+    // } else if (window.location.href.indexOf('#home') > -1) {
+    //   jQuery('.filter[href$="#home"]').click();
+
+    // } else if (window.location.href.indexOf('#workshop') > -1) {
+    //   jQuery('.filter[href$="#workshop"]').click();
+
+    // }
 
     jQuery('.sort, .filter').click(function() {
       setTimeout(function() {
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
           var modulus = (i + 1) % 4;
           if (modulus === 0) { 
-            jQuery(this).after('<div class="fake-leaderboard-ad">ad</div><span class="fake-leaderboard-span"></span>');
+            jQuery(this).after("<?php global $make; print $make->ads->ad_leaderboard; ?><span class='fake-leaderboard-span'></span>");
           }
         });
       }, 2000);
