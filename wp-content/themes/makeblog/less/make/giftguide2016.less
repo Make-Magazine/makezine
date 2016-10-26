@@ -45,8 +45,13 @@
       background-position: center center !important;
       background-repeat: no-repeat !important;
       background-size: cover !important;
+      margin-left: -15px;
+      margin-right: -15px;
       @media screen and (max-width: 767px) {
         height: 50vw;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
       }
       span.btn-red {
         font-size: 12px;
@@ -112,20 +117,43 @@
     .gg2016-nav-flex {
       padding: 0;
       margin: 0;
-      display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
+      @media screen and (min-width: 768px) {
+        display: flex;
+        position: static;
+        top: 0;
+        left: 0;
+        float: none;
+        min-width: none;
+        background-color: transparent;
+        border: none; 
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      @media screen and (max-width: 767px) {
+        padding: 5px 0;
+        margin: 2px 0 0;
+        justify-content: inherit;
+        left: 15px;
+      }
       li {
         padding: 0;
         line-height: 1em;
         a, button {
           border: none;
-          padding:10px 0 7px;
+          padding:10px 0 10px;
           font-size: 16px;
           color: #4a4a4a;
           @media screen and (min-width: 768px) and (max-width: 991px) {
             font-size: 13px;
+          }
+          @media screen and (max-width: 767px) {
+            font-size: inherit;
+            text-align: left;
+            padding: 6px 3px 6px 15px;
+            width: 100%;
           }
           &:hover, &:active, &:focus {
             text-decoration: none;
@@ -134,10 +162,16 @@
           }
           &.active {
             border-bottom: 3px solid #F40B0B;
+            padding:10px 0 7px;
+            background-color: transparent;
           }
           span {
             padding: 0 10px;
             border-right: .5px solid #979797;
+            @media screen and (max-width: 767px) {
+              border-right: none;
+              padding: 0;
+            }
           }
         }
         &:last-child button span {
@@ -147,11 +181,34 @@
     }
     .container {
       position: relative;
-      .dropdown {
+      .gg2016-dd1 {
+        @media screen and (max-width: 767px) {
+          position: static;
+        }
+        .dropdown-toggle {
+          display: none;
+          @media screen and (max-width: 767px) {
+            color: #4a4a4a;
+            display: inline-block;
+            &:hover, &:active, &:focus {
+              text-decoration: none;
+            }
+          }
+        }
+        .dropdown-menu:after {
+          content: none;
+        }
+      }
+      .gg2016-dd2 {
         position: absolute;
-        margin-top: 15px;
+        margin-top: 22px;
         z-index: 100;
         @media screen and (min-width: 768px) and (max-width: 991px) {
+          margin-top: 5px;
+        }
+        @media screen and (max-width: 767px) {
+          right: 15px;
+          top: 0;
           margin-top: 0;
         }
         button {
@@ -161,8 +218,10 @@
           width: 100%;
           text-align: left;
           padding-left: 15px;
-          @media screen and (max-width: 991px) {
-            padding-left: 0;
+          @media screen and (min-width: 768px) and (max-width: 991px) {
+            &.dropdown-toggle {
+              padding-left: 0;
+            }
           }
           &:hover, &:active, &:focus {
             text-decoration: none;
@@ -172,8 +231,14 @@
             padding-bottom: 1px;
           }
         }
-        .dropdown-menu:after {
-          content: none;
+        .dropdown-menu {
+          @media screen and (max-width: 767px) {
+            right: 0;
+            left: initial;
+          }
+          &:after {
+            content: none;
+          }
         }
       }
     }
@@ -214,6 +279,9 @@
     min-height: 500px;
     padding-top: 25px;
     position: relative;
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      padding-top: 45px;
+    }
     .gg2016-review { //article
       margin-left: 14%;
       margin-right: 14%;
@@ -288,6 +356,11 @@
     .js-ad {
       margin-top: 0;
       margin-bottom: 50px;
+      max-width: 728px;
+      height: 90px;
+      background-color: #fff;
+      margin-left: auto;
+      margin-right: auto;
     }
     
   }
