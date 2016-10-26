@@ -159,7 +159,7 @@ class MakeAds {
 
       if ($ad['scrollLoad']) {
         // Scroll load ads.
-        $string = "<div class='js-ad scroll-load' data-size='" . $ad['size'] . "' data-size-map='" . $ad['sizeMap'] . "' data-pos='\"" . $ad['pos'] . "\"' ></div>";
+        $string = "<div class='js-ad scroll-load' data-size='" . $ad['size'] . "' data-size-map='" . $ad['sizeMap'] . "' data-pos='" . $ad['pos'] . "' ></div>";
       }
       else {
         // Add JS vars & gpt methods.
