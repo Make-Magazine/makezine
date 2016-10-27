@@ -79,31 +79,31 @@ get_header('version-2'); ?>
               <div class="clearfix"></div>
             </form>
             <script>
-              $(document).on('submit', '#nlp-form', function (e) {
+              jQuery(document).on('submit', '#nlp-form', function (e) {
                 e.preventDefault();
                 // First check if any checkboxes are checked
                 var anyBoxesChecked = false;
-                $('#nlp-form input[type="checkbox"]').each(function() {
-                  if ($(this).is(":checked")) {
+                jQuery('#nlp-form input[type="checkbox"]').each(function() {
+                  if (jQuery(this).is(":checked")) {
                     anyBoxesChecked = true;
                   }
                 });
                 if (anyBoxesChecked == false) {
-                  $('.list-radio[data-toggle="tooltip"]').tooltip()
-                  $('.list-radio[data-toggle="tooltip"]').tooltip('show')
+                  jQuery('.list-radio[data-toggle="tooltip"]').tooltip()
+                  jQuery('.list-radio[data-toggle="tooltip"]').tooltip('show')
                   return false;
                 }
                 // Now get the email into the form and send
                 else {
-                  var nlpEmail = $('#nlp-input').val();
-                  $('#nlp-form #email').val(nlpEmail);
-                  if ($('#nlp-form #email').val() == '') {
-                    $('#nlp-input').tooltip()
-                    $('#nlp-input').tooltip('show')
+                  var nlpEmail = jQuery('#nlp-input').val();
+                  jQuery('#nlp-form #email').val(nlpEmail);
+                  if (jQuery('#nlp-form #email').val() == '') {
+                    jQuery('#nlp-input').tooltip()
+                    jQuery('#nlp-input').tooltip('show')
                     return false;
                   }
                   else {
-                    $.post('http://whatcounts.com/bin/listctrl', $('#nlp-form').serialize());
+                    jQuery.post('http://whatcounts.com/bin/listctrl', jQuery('#nlp-form').serialize());
                     var nlpDomain = document.domain;
                     location.href = '/?subscribed-to-make-newsletter';
                   }

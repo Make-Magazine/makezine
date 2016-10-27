@@ -1,6 +1,18 @@
 // This file contains common JavaScript that is loaded into every page.
 //
 
+
+// Track GA links clicked
+jQuery( '.ga-nav a' ).click( function(e) {
+  var link_name = jQuery(this).text();
+  var menu_name = jQuery(this).parents('ul.nav').attr('id');
+
+  // Track this click with Google, yo.
+  ga('send', 'event', menu_name, 'Click', link_name);
+});
+
+
+
 // Include hide/show script for SumoMe sharing widget attached to left side of browser
 jQuery(document).scroll(function () {
   if(window.location.href.indexOf('/giftguide') != -1 ) return;
@@ -85,8 +97,6 @@ _sf_async_config.authors = 'Change this to your Author name';    //CHANGE THIS
 // End Chartbeat Tracker
 
 
-// Load Typekit
-try{Typekit.load();}catch(e){}
 jQuery( document ).ready( function( $ ) {
     // Sadly the Facebook Comment Box does not allow us to change the positioning
     $( '.comment-list' ).appendTo( '#comments' );
@@ -111,7 +121,7 @@ jQuery( document ).ready( function( $ ) {
 
 
 // Fancybox subscribe modal stuff
-jQuery(document).ready(function(){
+jQuery(document).ready(function($){
   $(".fancybox-thx").fancybox({
     autoSize : false,
     width  : 400,
@@ -233,8 +243,8 @@ jQuery(document).ready(function(){
 
 
 // Initialize the Lazyload function
-jQuery(document).ready(function ($) {
-  $('img.lazyload').lazyload({
+jQuery(document).ready(function() {
+  jQuery('img.lazyload').lazyload({
     effect : "fadeIn"
   });
 });
@@ -320,7 +330,7 @@ f.parentNode.insertBefore(j, f);
 
 // YOUTUBE FOR FANCYBOX MODALS
 jQuery(document).ready(function() {
-  $(".fancytube").fancybox({
+  jQuery(".fancytube").fancybox({
     maxWidth  : 800,
     maxHeight : 600,
     fitToView : false,
@@ -332,9 +342,7 @@ jQuery(document).ready(function() {
     closeEffect : 'none',
     padding : 0
   });
-});
-jQuery(document).ready(function() {
-  $(".fancytube").fancybox();
+  jQuery(".fancytube").fancybox();
 });
 
 
@@ -361,8 +369,8 @@ jQuery(document).ready(function(){
 
 
 // Sitewide footer feedback form modal
-$(".footer-feedback-btn").click(function() {
-  $(".fancybox-feedback").fancybox({
+jQuery(".footer-feedback-btn").click(function() {
+  jQuery(".fancybox-feedback").fancybox({
     autoSize : false,
     width  : 560,
     autoHeight : true,
@@ -372,18 +380,20 @@ $(".footer-feedback-btn").click(function() {
       this.content = this.content.html();
     }
   });
-  $(".fancybox-feedback").trigger('click');
+  jQuery(".fancybox-feedback").trigger('click');
 });
+
+
 // Feedback form submit event handler
-$(document).on('submit', '#form13', function (e) {
+jQuery(document).on('submit', '#form13', function (e) {
   event.preventDefault();
-  $.ajax({
+  jQuery.ajax({
     url:'//makemagazine.wufoo.com/forms/zzv65kl0b09v1f/#public',
     type:'POST',
-    data:$(this).serialize()
+    data:jQuery(this).serialize()
   });
-  $('.fancybox-feedback-inner1').hide();
-  $('.fancybox-feedback-inner2').show();
+  jQuery('.fancybox-feedback-inner1').hide();
+  jQuery('.fancybox-feedback-inner2').show();
 });
 
 

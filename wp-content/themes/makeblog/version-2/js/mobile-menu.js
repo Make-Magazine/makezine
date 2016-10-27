@@ -1,5 +1,5 @@
- $( document ).ready(function() {
- $('.menu-item-has-children').children("a").click(function (e) {
+jQuery( document ).ready(function($) {
+  $('.menu-item-has-children').children("a").click(function (e) {
 	e.preventDefault();
 	
 	$(".menu-item-has-children").not($($(this).parent().get(0))).find('.sub-menu').slideUp();

@@ -5,18 +5,18 @@
 ?>
 <!-- 3D GUIDE NEWSLETTER MODAL -->
 <script>
-	$(".fancybox3D").fancybox({
-		autoSize : false,
-		width  : 630,
-		autoHeight : true,
-		padding : 0,
-		afterLoad   : function() {
-			this.content = this.content.html();
-		}
-	});
-	$(document).ready(function () {
-		$( "#modal-capture-btn.class-printers" ).click(function() {
-			$(".fancybox3D").trigger('click');
+	jQuery(document).ready(function () {
+		jQuery(".fancybox3D").fancybox({
+			autoSize : false,
+			width  : 630,
+			autoHeight : true,
+			padding : 0,
+			afterLoad   : function() {
+				this.content = this.content.html();
+			}
+		});
+		jQuery( "#modal-capture-btn.class-printers" ).click(function() {
+			jQuery(".fancybox3D").trigger('click');
 		});
 	});
 </script>
@@ -53,18 +53,18 @@
 
 <!-- BOARDS GUIDE NEWSLETTER MODAL -->
 <script>
-	$(".fancyboxBoards").fancybox({
-		autoSize : false,
-		width  : 630,
-		autoHeight : true,
-		padding : 0,
-		afterLoad   : function() {
-			this.content = this.content.html();
-		}
-	});
-	$(document).ready(function () {
-		$( "#modal-capture-btn.class-boards" ).click(function() {
-			$(".fancyboxBoards").trigger('click');
+	jQuery(document).ready(function () {
+		jQuery(".fancyboxBoards").fancybox({
+			autoSize : false,
+			width  : 630,
+			autoHeight : true,
+			padding : 0,
+			afterLoad   : function() {
+				this.content = this.content.html();
+			}
+		});
+		jQuery( "#modal-capture-btn.class-boards" ).click(function() {
+			jQuery(".fancyboxBoards").trigger('click');
 		});
 	});
 </script>
@@ -101,18 +101,18 @@
 
 <!-- DRONES GUIDE NEWSLETTER MODAL -->
 <script>
-	$(".fancyboxDrones").fancybox({
-		autoSize : false,
-		width  : 630,
-		autoHeight : true,
-		padding : 0,
-		afterLoad   : function() {
-			this.content = this.content.html();
-		}
-	});
-	$(document).ready(function () {
-		$( "#modal-capture-btn.class-drones" ).click(function() {
-			$(".fancyboxDrones").trigger('click');
+	jQuery(document).ready(function () {
+		jQuery(".fancyboxDrones").fancybox({
+			autoSize : false,
+			width  : 630,
+			autoHeight : true,
+			padding : 0,
+			afterLoad   : function() {
+				this.content = this.content.html();
+			}
+		});
+		jQuery( "#modal-capture-btn.class-drones" ).click(function() {
+			jQuery(".fancyboxDrones").trigger('click');
 		});
 	});
 </script>

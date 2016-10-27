@@ -1240,8 +1240,8 @@ function newsletter_signup_sidebar_shortcode() {
 							<p><a href="/join">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
 						</div>
 						<script>
-                $(function() {
-                  $( "#wc_custom_url" ).val( window.location.href );
+                jQuery(function() {
+                  jQuery( "#wc_custom_url" ).val( window.location.href );
                 });
             </script>';
 	return $output;

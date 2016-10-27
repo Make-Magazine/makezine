@@ -279,8 +279,8 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	})();
 	/* * * Disqus Reset Function * * */
 	var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
-		$('#disqus_thread').remove();
-		$('#disqus-modal').append('<div id="disqus_thread"></div>');
+		jQuery('#disqus_thread').remove();
+		jQuery('#disqus-modal').append('<div id="disqus_thread"></div>');
 		DISQUS.reset({
 			reload: true,
 			config: function () {

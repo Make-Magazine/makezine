@@ -94,12 +94,12 @@ get_header('version-2'); ?>
   }
 </style>
 <script>
-  $( "#gg2015-mobile-naver-a" ).on( "click", function() {
+  jQuery( "#gg2015-mobile-naver-a" ).on( "click", function() {
     event.preventDefault();
-    if ( $( ".gg2015-mobile-nav" ).is( ":hidden" ) ) {
-      $( ".gg2015-mobile-nav" ).slideDown( "medium" );
+    if ( jQuery( ".gg2015-mobile-nav" ).is( ":hidden" ) ) {
+      jQuery( ".gg2015-mobile-nav" ).slideDown( "medium" );
     } else {
-      $( ".gg2015-mobile-nav" ).hide();
+      jQuery( ".gg2015-mobile-nav" ).hide();
     }
   });
 </script>
