@@ -359,9 +359,9 @@ get_header('version-2'); ?>
           var $spon4 = jQuery('#gg2016-sponsors .gg2016-sponsored:eq(4)');
           jQuery('#gg2016-js').mixItUp('insert', 1, $spon0);
           jQuery('#gg2016-js').mixItUp('insert', 5, $spon1);
-          jQuery('#gg2016-js').mixItUp('insert', 8, $spon2);
-          jQuery('#gg2016-js').mixItUp('insert', 11, $spon3);
-          jQuery('#gg2016-js').mixItUp('insert', 14, $spon4);
+          jQuery('#gg2016-js').mixItUp('insert', 9, $spon2);
+          jQuery('#gg2016-js').mixItUp('insert', 13, $spon3);
+          jQuery('#gg2016-js').mixItUp('insert', 17, $spon4);
 
           jQuery('#gg2016-js .gg2016-review').each(function(i) {
             var modulus = (i + 1) % 4;

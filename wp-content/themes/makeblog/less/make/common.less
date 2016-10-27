@@ -127,6 +127,16 @@ p:empty {
 		font-size: 18px;
 		line-height: 1.6em;
 	}
+	a {
+		border-bottom: 1px solid @link-color;
+		padding-bottom: 2px;
+		&:hover {
+			border-bottom-color: @link-color-hover;
+		}
+	}
+	.ctx-sidebar-container a {
+		border-bottom: none;
+	}
 }
 
 a {

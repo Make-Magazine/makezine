@@ -87,7 +87,11 @@
 			  font-size: 16px;
 			  font-weight: 500;
 	  		a {
-	  			text-decoration: underline;
+					border-bottom: 1px solid @link-color;
+					padding-bottom: 0;
+					&:hover {
+						border-bottom-color: @link-color-hover;
+					}
 	  		}
 				.text-muted {
 					display: inline;
