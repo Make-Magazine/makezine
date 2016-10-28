@@ -256,16 +256,19 @@ get_header('version-2'); ?>
 
     jQuery('#gg2016-sponsors').mixItUp({
       load: {
+        filter: '',
         sort: 'random'
       }
     });
 
     jQuery('#gg2016-js').mixItUp({
       load: {
+        filter: 'all',
         sort: 'random'
       },
       callbacks: {
-        onMixStart: function(){
+        onMixStart: function(state){
+          console.log(state.activeFilter);
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
 
@@ -273,9 +276,11 @@ get_header('version-2'); ?>
           jQuery('.gg2016-body-bg').css('background', 'url(none)');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
           jQuery('#gg2016-sponsor-sm div').css('background', 'url(none)');
+          console.log(state.activeFilter);
         },
 
         onMixEnd: function(state){
+          console.log(state.activeFilter);
           if (state.activeFilter != '.mix') {
             jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even1');
             jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even2');
@@ -356,20 +361,19 @@ get_header('version-2'); ?>
               }
             endwhile;
           endif; ?>
+          console.log(state.activeFilter);
         },
 
         onMixLoad: function(){
-          var $spon0 = jQuery('#gg2016-sponsors .gg2016-sponsored:eq(0)');
-          var $spon1 = jQuery('#gg2016-sponsors .gg2016-sponsored:eq(1)');
-          var $spon2 = jQuery('#gg2016-sponsors .gg2016-sponsored:eq(2)');
-          var $spon3 = jQuery('#gg2016-sponsors .gg2016-sponsored:eq(3)');
-          var $spon4 = jQuery('#gg2016-sponsors .gg2016-sponsored:eq(4)');
-          jQuery('#gg2016-js').mixItUp('insert', 1, $spon0);
-          jQuery('#gg2016-js').mixItUp('insert', 5, $spon1);
-          jQuery('#gg2016-js').mixItUp('insert', 9, $spon2);
-          jQuery('#gg2016-js').mixItUp('insert', 13, $spon3);
-          jQuery('#gg2016-js').mixItUp('insert', 17, $spon4);
+          //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
+          var count = 1;
+          jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() { 
+            jQuery('#gg2016-js').mixItUp('insert', count, jQuery(this));
+            jQuery(this).show();
+            count += 4;
+          });
 
+          //Injecting ads after every 4 products, only on 1st page load
           jQuery('#gg2016-js .gg2016-review').each(function(i) {
             var modulus = (i + 1) % 4;
             if (modulus === 0) { 
@@ -405,6 +409,7 @@ get_header('version-2'); ?>
 
     // }
 
+    //Injecting ads after every 4 products, on state change
     jQuery('.sort, .filter').click(function() {
       setTimeout(function() {
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
@@ -414,7 +419,7 @@ get_header('version-2'); ?>
           }
           make.gpt.loadDyn();
         });
-      }, 2000);
+      }, 1500);
     });
 
   });
