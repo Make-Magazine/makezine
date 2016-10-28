@@ -76,28 +76,35 @@ get_header('version-2'); ?>
         </button>
         <ul class="gg2016-nav-flex dropdown-menu list-unstyled" aria-labelledby="gg2016-cat-menu">
           <li>
-            <button onclick="removeHashFunction()" class="btn btn-link filter" data-filter="all"><span>All</span></button>
+            <button onclick="removeHashFunction()" class="btn btn-link filter" data-filter="all">All</button>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#technology" class="btn btn-link filter" data-filter=".category-tec"><span>Technology</span></a>
+            <a href="#technology" class="btn btn-link filter" data-filter=".category-tec">Technology</a>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#digital-fabrication" class="btn btn-link filter" data-filter=".category-dig"><span>Digital Fabrication</span></a>
+            <a href="#digital-fabrication" class="btn btn-link filter" data-filter=".category-dig">Digital Fabrication</a>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#craft-design" class="btn btn-link filter" data-filter=".category-cra"><span>Craft &amp; Design</span></a>
+            <a href="#craft-design" class="btn btn-link filter" data-filter=".category-cra">Craft &amp; Design</a>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#drones-vehicles" class="btn btn-link filter" data-filter=".category-dro"><span>Drones &amp; Vehicles</span></a>
+            <a href="#drones-vehicles" class="btn btn-link filter" data-filter=".category-dro">Drones &amp; Vehicles</a>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#science" class="btn btn-link filter" data-filter=".category-sci"><span>Science</span></a>
+            <a href="#science" class="btn btn-link filter" data-filter=".category-sci">Science</a>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#home" class="btn btn-link filter" data-filter=".category-hom"><span>Home</span></a>
+            <a href="#home" class="btn btn-link filter" data-filter=".category-hom">Home</a>
           </li>
+          <li class="gg2016-li-border"></li>
           <li>
-            <a href="#workshop" class="btn btn-link filter" data-filter=".category-wor"><span>Workshop</span></a>
+            <a href="#workshop" class="btn btn-link filter" data-filter=".category-wor">Workshop</a>
           </li>
         </ul>
       </div>
@@ -366,9 +373,11 @@ get_header('version-2'); ?>
           jQuery('#gg2016-js .gg2016-review').each(function(i) {
             var modulus = (i + 1) % 4;
             if (modulus === 0) { 
-              jQuery(this).after("<?php global $make; print $make->ads->ad_leaderboard; ?><span class='fake-leaderboard-span'></span>");
+              jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
             }
+            make.gpt.loadDyn();
           });
+
         }
       }
     });
@@ -401,8 +410,9 @@ get_header('version-2'); ?>
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
           var modulus = (i + 1) % 4;
           if (modulus === 0) { 
-            jQuery(this).after("<?php global $make; print $make->ads->ad_leaderboard; ?><span class='fake-leaderboard-span'></span>");
+            jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
           }
+          make.gpt.loadDyn();
         });
       }, 2000);
     });

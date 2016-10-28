@@ -143,7 +143,7 @@
         line-height: 1em;
         a, button {
           border: none;
-          padding:10px 0 10px;
+          padding:10px;
           font-size: 16px;
           color: #4a4a4a;
           @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -162,23 +162,24 @@
           }
           &.active {
             border-bottom: 3px solid #F40B0B;
-            padding:10px 0 7px;
+            padding:10px 10px 7px;
             background-color: transparent;
             @media screen and (max-width: 767px) {
               padding: 6px 3px 6px 15px;
             }
           }
-          span {
-            padding: 0 10px;
-            border-right: .5px solid #979797;
-            @media screen and (max-width: 767px) {
-              border-right: none;
-              padding: 0;
-            }
-          }
         }
-        &:last-child button span {
-          border-right: none;
+        &.gg2016-li-border {
+          height: 1.3em;
+          width: 1px;
+          background-color: #979797;
+          margin-top: 11px;
+          @media screen and (min-width: 768px) and (max-width: 991px) {
+            height: 1em;
+          }
+          @media screen and (max-width: 767px) {
+            display: none;
+          }
         }
       }
     }
@@ -359,9 +360,9 @@
     .js-ad {
       margin-top: 0;
       margin-bottom: 50px;
-      max-width: 728px;
-      height: 90px;
-      background-color: #fff;
+      // max-width: 728px;
+      // height: 90px;
+      // background-color: #fff;
       margin-left: auto;
       margin-right: auto;
     }
