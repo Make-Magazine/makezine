@@ -144,10 +144,11 @@ get_header('version-2'); ?>
         $image = get_sub_field('image');
         $category = get_sub_field('category');
         $priceNoComma = str_replace( ',', '', $price2 );
+        $ctf = get_sub_field('category_takeover_featured');
 
         if(!get_sub_field('sponsored')) { ?>
 
-          <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+          <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> <?php if($ctf){ echo 'cto-tec';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
             <div class="gg2016-review-flex-cont">
               <div class="gg2016-review-img">
                 <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
@@ -197,10 +198,11 @@ get_header('version-2'); ?>
       $image = get_sub_field('image');
       $category = get_sub_field('category');
       $priceNoComma = str_replace( ',', '', $price2 );
+      $ctf = get_sub_field('category_takeover_featured');
 
       if(get_sub_field('sponsored')) { ?>
 
-        <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> gg2016-sponsored" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
+        <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> gg2016-sponsored <?php if($ctf){ echo 'cto-tec';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
           <h5>SPONSORED</h5>
           <div class="gg2016-review-flex-cont">
             <div class="gg2016-review-img">
@@ -240,10 +242,6 @@ get_header('version-2'); ?>
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
   }
-
-  function showHideTakeover() {
-
-  }
   
   jQuery( document ).ready(function() {
 
@@ -263,28 +261,21 @@ get_header('version-2'); ?>
       },
       callbacks: {
         onMixStart: function(state){
-          console.log(state.activeFilter);
+          console.log(state.activeSort);
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
 
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'url(none)');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
-          console.log(state.activeFilter);
+          console.log(state.activeSort);
         },
 
         onMixEnd: function(state){
-          console.log(state.activeFilter);
-          if (state.activeFilter != '.mix') {
-            jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even1');
-            jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even2');
-            jQuery('#gg2016-js .gg2016-review:visible').filter(':odd').addClass('gg2016-review-even2');
-          } else {
-            jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even2');
-            jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
-          }
+          console.log(state.activeSort);
 
           //If a category takeover is set and active, set images
+          //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
             while( have_rows('choose_a_takeover_category') ): the_row(); 
               $category = get_sub_field('category');
@@ -295,6 +286,9 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-tec') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $tecBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-tec').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               } elseif ( $category == 'category-dig' ) {
                 $digBG = get_sub_field('full_width_background_image');
@@ -302,6 +296,9 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-dig') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $digBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-dig').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               } elseif ( $category == 'category-cra' ) {
                 $craBG = get_sub_field('full_width_background_image');
@@ -309,6 +306,9 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-cra') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $craBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-cra').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               } elseif ( $category == 'category-dro' ) {
                 $droBG = get_sub_field('full_width_background_image');
@@ -316,6 +316,9 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-dro') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $droBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-dro').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               } elseif ( $category == 'category-sci' ) {
                 $sciBG = get_sub_field('full_width_background_image');
@@ -323,6 +326,9 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-sci') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $sciBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-sci').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               } elseif ( $category == 'category-hom' ) {
                 $homBG = get_sub_field('full_width_background_image');
@@ -330,6 +336,9 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-hom') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $homBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-hom').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               } elseif ( $category == 'category-wor' ) {
                 $worBG = get_sub_field('full_width_background_image');
@@ -337,11 +346,25 @@ get_header('version-2'); ?>
                   if (state.activeFilter == '.category-wor') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $worBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.cto-wor').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
                   }";
               }
             endwhile;
           endif; ?>
-          console.log(state.activeFilter);
+
+          //Alternate left and right aligned product images
+          if (state.activeFilter != '.mix') {
+            jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even1');
+            jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even2');
+            jQuery('#gg2016-js .gg2016-review:visible').filter(':odd').addClass('gg2016-review-even2');
+          } else {
+            jQuery('#gg2016-js .gg2016-review').removeClass('gg2016-review-even2');
+            jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
+          }
+
+          console.log(state.activeSort);
         },
 
         onMixLoad: function(){
