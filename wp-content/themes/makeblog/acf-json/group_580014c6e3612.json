@@ -307,6 +307,36 @@
                     },
                     "message": "",
                     "default_value": 0
+                },
+                {
+                    "key": "field_58177ba316d18",
+                    "label": "Category Takeover Featured",
+                    "name": "category_takeover_featured",
+                    "type": "select",
+                    "instructions": "Brings the product to the top of the list for this category takeover.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-tec": "Technology",
+                        "category-dig": "Digital Fabrication",
+                        "category-cra": "Craft & Design",
+                        "category-dro": "Drones & Vehicles",
+                        "category-sci": "Science",
+                        "category-hom": "Home",
+                        "category-wor": "Workshop"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
                 }
             ]
         },
@@ -448,5 +478,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1477348713
+    "modified": 1477934323
 }

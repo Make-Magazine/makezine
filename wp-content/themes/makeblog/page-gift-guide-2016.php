@@ -176,11 +176,6 @@ get_header('version-2'); ?>
 
     <?php endif; ?>
 
-      <aside id="gg2016-sponsor-sm">
-        <span>Brought to you by</span>
-        <div></div>
-      </aside>
-
     </div><!-- #gg2016-js.gg2016-body -->
 
   </div><!-- .gg2016-body-bg -->
@@ -275,7 +270,6 @@ get_header('version-2'); ?>
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'url(none)');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
-          jQuery('#gg2016-sponsor-sm div').css('background', 'url(none)');
           console.log(state.activeFilter);
         },
 
@@ -297,66 +291,52 @@ get_header('version-2'); ?>
 
               if( $category == 'category-tec' ) {
                 $tecBG = get_sub_field('full_width_background_image');
-                $tecSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-tec') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $tecBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $tecSM . ")');
                   }";
               } elseif ( $category == 'category-dig' ) {
                 $digBG = get_sub_field('full_width_background_image');
-                $digSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-dig') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $digBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $digSM . ")');
                   }";
               } elseif ( $category == 'category-cra' ) {
                 $craBG = get_sub_field('full_width_background_image');
-                $craSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-cra') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $craBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $craSM . ")');
                   }";
               } elseif ( $category == 'category-dro' ) {
                 $droBG = get_sub_field('full_width_background_image');
-                $droSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-dro') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $droBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $droSM . ")');
                   }";
               } elseif ( $category == 'category-sci' ) {
                 $sciBG = get_sub_field('full_width_background_image');
-                $sciSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-sci') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $sciBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $sciSM . ")');
                   }";
               } elseif ( $category == 'category-hom' ) {
                 $homBG = get_sub_field('full_width_background_image');
-                $homSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-hom') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $homBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $homSM . ")');
                   }";
               } elseif ( $category == 'category-wor' ) {
                 $worBG = get_sub_field('full_width_background_image');
-                $worSM = get_sub_field('small_square_image');
                 echo "
                   if (state.activeFilter == '.category-wor') {
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $worBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                    jQuery('#gg2016-sponsor-sm div').css('background', 'url(" . $worSM . ")');
                   }";
               }
             endwhile;
@@ -365,6 +345,9 @@ get_header('version-2'); ?>
         },
 
         onMixLoad: function(){
+          //Check if Daily Pick is also the 1st random product on the list, if so place it lower
+          
+          
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() { 
