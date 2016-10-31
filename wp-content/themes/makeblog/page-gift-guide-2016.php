@@ -145,10 +145,11 @@ get_header('version-2'); ?>
         $category = get_sub_field('category');
         $priceNoComma = str_replace( ',', '', $price2 );
         $ctf = get_sub_field('category_takeover_featured');
+        $dp = get_sub_field('daily_pick');
 
         if(!get_sub_field('sponsored')) { ?>
 
-          <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> <?php if($ctf){ echo 'cto-tec';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+          <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> <?php if($ctf){ echo 'cto-tec';} ?> <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
             <div class="gg2016-review-flex-cont">
               <div class="gg2016-review-img">
                 <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
@@ -199,10 +200,11 @@ get_header('version-2'); ?>
       $category = get_sub_field('category');
       $priceNoComma = str_replace( ',', '', $price2 );
       $ctf = get_sub_field('category_takeover_featured');
+      $dp = get_sub_field('daily_pick');
 
       if(get_sub_field('sponsored')) { ?>
 
-        <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> gg2016-sponsored <?php if($ctf){ echo 'cto-tec';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
+        <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> gg2016-sponsored <?php if($ctf){ echo 'cto-tec';} ?> <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
           <h5>SPONSORED</h5>
           <div class="gg2016-review-flex-cont">
             <div class="gg2016-review-img">
@@ -369,7 +371,9 @@ get_header('version-2'); ?>
 
         onMixLoad: function(){
           //Check if Daily Pick is also the 1st random product on the list, if so place it lower
-          
+          if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
+            jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
+          }
           
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
