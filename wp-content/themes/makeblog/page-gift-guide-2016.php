@@ -72,7 +72,7 @@ get_header('version-2'); ?>
 
       <div class="dropdown gg2016-dd1">
         <button class="btn btn-link dropdown-toggle" type="button" id="gg2016-cat-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          TYPE <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+          <span>FILTER BY </span>TYPE <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
         </button>
         <ul class="gg2016-nav-flex dropdown-menu list-unstyled" aria-labelledby="gg2016-cat-menu">
           <li>
@@ -111,7 +111,7 @@ get_header('version-2'); ?>
 
       <div class="dropdown gg2016-dd2">
         <button class="btn btn-link dropdown-toggle" type="button" id="gg2016-price-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          PRICE <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+          <span>SORT BY </span>PRICE <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="gg2016-price-menu">
           <li>
