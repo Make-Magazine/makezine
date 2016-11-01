@@ -21,7 +21,7 @@ get_header('version-2'); ?>
         ?>
         <h1><?php echo $header_title; ?></h1>
         <h2><?php if( $header_subtitle ): ?><?php echo $header_subtitle; ?><?php endif; ?></h2>
-        <h3><?php echo $header_description; ?></p>
+        <h3><?php echo $header_description; ?></h3>
       </div>
 
       <?php if( have_rows('products') ):
