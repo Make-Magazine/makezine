@@ -4,6 +4,7 @@
  *
  * Initializes all of the ads for Maker Faire.
  *
+ * Author: Ben Voran bvoran@gmail.com
  */
 
 // Define global make obj.
