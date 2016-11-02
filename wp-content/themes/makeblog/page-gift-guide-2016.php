@@ -80,31 +80,31 @@ get_header('version-2'); ?>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#technology" class="btn btn-link filter" data-filter=".category-tec">Technology</a>
+            <button class="btn btn-link filter link-category-tec" data-filter=".category-tec">Technology</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#digital-fabrication" class="btn btn-link filter" data-filter=".category-dig">Digital Fabrication</a>
+            <button class="btn btn-link filter link-category-dig" data-filter=".category-dig">Digital Fabrication</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#craft-design" class="btn btn-link filter" data-filter=".category-cra">Craft &amp; Design</a>
+            <button class="btn btn-link filter link-category-cra" data-filter=".category-cra">Craft &amp; Design</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#drones-vehicles" class="btn btn-link filter" data-filter=".category-dro">Drones &amp; Vehicles</a>
+            <button class="btn btn-link filter link-category-dro" data-filter=".category-dro">Drones &amp; Vehicles</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#science" class="btn btn-link filter" data-filter=".category-sci">Science</a>
+            <button class="btn btn-link filter link-category-sci" data-filter=".category-sci">Science</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#home" class="btn btn-link filter" data-filter=".category-hom">Home</a>
+            <button class="btn btn-link filter link-category-hom" data-filter=".category-hom">Home</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <a href="#workshop" class="btn btn-link filter" data-filter=".category-wor">Workshop</a>
+            <button class="btn btn-link filter link-category-wor" data-filter=".category-wor">Workshop</button>
           </li>
         </ul>
       </div>
@@ -243,7 +243,7 @@ get_header('version-2'); ?>
 </div><!-- #gg2016 -->
 
 
-<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 <script>
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
@@ -267,19 +267,15 @@ get_header('version-2'); ?>
       },
       callbacks: {
         onMixStart: function(state){
-          console.log(state.activeSort);
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
 
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'url(none)');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
-          console.log(state.activeSort);
         },
 
         onMixEnd: function(state){
-          console.log(state.activeSort);
-
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
@@ -370,7 +366,7 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
 
-          console.log(state.activeSort);
+          // console.log(state.activeSort);
         },
 
         onMixLoad: function(){
@@ -434,6 +430,38 @@ get_header('version-2'); ?>
           make.gpt.loadDyn();
         });
       }, 1500);
+    });
+
+    function ChangeUrl(page, url) {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Page: page, Url: url };
+            history.pushState(obj, obj.Page, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
+    jQuery(function () {
+      jQuery(".link-category-tec").click(function () {
+        ChangeUrl('Technology', 'technology');
+      });
+      jQuery(".link-category-dig").click(function () {
+        ChangeUrl('Digital Fabrication', 'digital-fabrication');
+      });
+      jQuery(".link-category-cra").click(function () {
+        ChangeUrl('Craft &amp; Design', 'craft-design');
+      });
+      jQuery(".link-category-dro").click(function () {
+        ChangeUrl('Drones &amp; Vehicles', 'drones-vehicles');
+      });
+      jQuery(".link-category-sci").click(function () {
+        ChangeUrl('Science', 'science');
+      });
+      jQuery(".link-category-hom").click(function () {
+        ChangeUrl('Home', 'home');
+      });
+      jQuery(".link-category-wor").click(function () {
+        ChangeUrl('Workshop', 'workshop');
+      });
     });
 
   });
