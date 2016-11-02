@@ -236,6 +236,10 @@ get_header('version-2'); ?>
 
   </div><!-- #gg2016-sponsors -->
 
+  <div class="container">
+    <p class="text-muted">The Make: Gift Guide uses affiliate links for some of our recommendations. This helps support our site and keep the gears turning.</p>
+  </div>
+
 </div><!-- #gg2016 -->
 
 
