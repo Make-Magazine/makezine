@@ -271,7 +271,7 @@ get_header('version-2'); ?>
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
 
           //First reset the takeover sponsor images
-          jQuery('.gg2016-body-bg').css('background', 'url(none)');
+          jQuery('.gg2016-body-bg').css('background', 'none');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
         },
 
@@ -419,8 +419,8 @@ get_header('version-2'); ?>
 
     // }
 
-    //Injecting ads after every 4 products, on state change
     jQuery('.sort, .filter').click(function() {
+      //Injecting ads after every 4 products, on state change
       setTimeout(function() {
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
           var modulus = (i + 1) % 4;
@@ -430,6 +430,9 @@ get_header('version-2'); ?>
           make.gpt.loadDyn();
         });
       }, 1500);
+
+      //Send GA a new page view
+      ga('send', 'pageview');
     });
 
   });
