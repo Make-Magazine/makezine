@@ -76,11 +76,7 @@ query_posts(
 
 						<div class="count">
 
-							<div class="pull-left">
-
-								<?php  echo makezine_search_count( $wp_query ); ?>
-
-							</div>
+							<?php  echo makezine_search_count( $wp_query ); ?>
 
 							<div class="pull-right">
 
@@ -104,7 +100,7 @@ query_posts(
 
 									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									
-									<div class="meta"><?php the_time('m/d/Y'); ?></div>
+									<small class="text-muted"><?php the_time('m/d/Y'); ?></small>
 
 									<div class="media-body">
 										<p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?> <a href="<?php the_permalink(); ?>"></a></p>
@@ -118,19 +114,15 @@ query_posts(
 
 						<div class="count bottom">
 
-							<div class="pull-left">
-
-								<?php  echo makezine_search_count( $wp_query ); ?>
-
-							</div>
+							<?php  echo makezine_search_count( $wp_query ); ?>
 
 							<div class="pull-right">
 
 								<nav>
 
-								<?php  echo makezine_search_pagination( $wp_query ); ?>
+								  <?php  echo makezine_search_pagination( $wp_query ); ?>
 
-							</nav>
+							  </nav>
 
 							</div>
 

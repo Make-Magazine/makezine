@@ -266,7 +266,7 @@ get_header('version-2'); ?>
         sort: 'random'
       },
       callbacks: {
-        onMixStart: function(state){
+        onMixStart: function(){
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
 
@@ -366,7 +366,50 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
 
-          // console.log(state.activeSort);
+          console.log(state.activeFilter + ' Before array change');
+
+          //Set the ad vars cat to the correct navigation category
+          if (state.activeFilter == '.category-tec') {
+            var ad_vars_cat = {
+              cat: ['technology']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-dig') {
+            var ad_vars_cat = {
+              cat: ['digital-fabrication']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-cra') {
+            var ad_vars_cat = {
+              cat: ['craft-&-design']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-dro') {
+            var ad_vars_cat = {
+              cat: ['drones-&-vehicles']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-sci') {
+            var ad_vars_cat = {
+              cat: ['science']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-hom') {
+            var ad_vars_cat = {
+              cat: ['home']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-wor') {
+            var ad_vars_cat = {
+              cat: ['workshop']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else {
+            var ad_vars_cat = {
+              cat: ['technology','digital-fabrication','craft-&-design','drones-&-vehicles','science','home','workshop']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          }
         },
 
         onMixLoad: function(){
@@ -389,8 +432,8 @@ get_header('version-2'); ?>
             if (modulus === 0) { 
               jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
             }
-            make.gpt.loadDyn();
           });
+          make.gpt.loadDyn();
 
         }
       }
@@ -420,6 +463,7 @@ get_header('version-2'); ?>
     // }
 
     jQuery('.sort, .filter').click(function() {
+
       //Injecting ads after every 4 products, on state change
       setTimeout(function() {
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
@@ -427,9 +471,9 @@ get_header('version-2'); ?>
           if (modulus === 0) { 
             jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
           }
-          make.gpt.loadDyn();
         });
       }, 1500);
+      make.gpt.loadDyn();
 
       //Send GA a new page view
       ga('send', 'pageview');
