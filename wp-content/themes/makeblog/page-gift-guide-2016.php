@@ -76,35 +76,35 @@ get_header('version-2'); ?>
         </button>
         <ul class="gg2016-nav-flex dropdown-menu list-unstyled" aria-labelledby="gg2016-cat-menu">
           <li>
-            <button onclick="removeHashFunction()" class="btn btn-link filter" data-filter="all">All</button>
+            <button class="btn btn-link filter" data-filter="all">All</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-tec" data-filter=".category-tec">Technology</button>
+            <button class="btn btn-link filter" data-filter=".category-tec">Technology</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-dig" data-filter=".category-dig">Digital Fabrication</button>
+            <button class="btn btn-link filter" data-filter=".category-dig">Digital Fabrication</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-cra" data-filter=".category-cra">Craft &amp; Design</button>
+            <button class="btn btn-link filter" data-filter=".category-cra">Craft &amp; Design</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-dro" data-filter=".category-dro">Drones &amp; Vehicles</button>
+            <button class="btn btn-link filter" data-filter=".category-dro">Drones &amp; Vehicles</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-sci" data-filter=".category-sci">Science</button>
+            <button class="btn btn-link filter" data-filter=".category-sci">Science</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-hom" data-filter=".category-hom">Home</button>
+            <button class="btn btn-link filter" data-filter=".category-hom">Home</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter link-category-wor" data-filter=".category-wor">Workshop</button>
+            <button class="btn btn-link filter" data-filter=".category-wor">Workshop</button>
           </li>
         </ul>
       </div>
@@ -245,13 +245,13 @@ get_header('version-2'); ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 <script>
-  function removeHashFunction() {
-    history.pushState("", document.title, window.location.pathname);
-  }
+  // function removeHashFunction() {
+  //   history.pushState("", document.title, window.location.pathname);
+  // }
   
   jQuery( document ).ready(function() {
 
-    removeHashFunction();
+    // removeHashFunction();
 
     jQuery('#gg2016-sponsors').mixItUp({
       load: {
@@ -430,38 +430,6 @@ get_header('version-2'); ?>
           make.gpt.loadDyn();
         });
       }, 1500);
-    });
-
-    function ChangeUrl(page, url) {
-        if (typeof (history.pushState) != "undefined") {
-            var obj = { Page: page, Url: url };
-            history.pushState(obj, obj.Page, obj.Url);
-        } else {
-            alert("Browser does not support HTML5.");
-        }
-    }
-    jQuery(function () {
-      jQuery(".link-category-tec").click(function () {
-        ChangeUrl('Technology', 'technology');
-      });
-      jQuery(".link-category-dig").click(function () {
-        ChangeUrl('Digital Fabrication', 'digital-fabrication');
-      });
-      jQuery(".link-category-cra").click(function () {
-        ChangeUrl('Craft &amp; Design', 'craft-design');
-      });
-      jQuery(".link-category-dro").click(function () {
-        ChangeUrl('Drones &amp; Vehicles', 'drones-vehicles');
-      });
-      jQuery(".link-category-sci").click(function () {
-        ChangeUrl('Science', 'science');
-      });
-      jQuery(".link-category-hom").click(function () {
-        ChangeUrl('Home', 'home');
-      });
-      jQuery(".link-category-wor").click(function () {
-        ChangeUrl('Workshop', 'workshop');
-      });
     });
 
   });
