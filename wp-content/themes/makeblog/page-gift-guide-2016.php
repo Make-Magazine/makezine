@@ -406,7 +406,7 @@ get_header('version-2'); ?>
             jQuery.extend( ad_vars, ad_vars_cat );
           } else {
             var ad_vars_cat = {
-              cat: ['technology','digital-fabrication','craft-&-design','drones-&-vehicles','science','home','workshop']
+              cat: ['']
             };
             jQuery.extend( ad_vars, ad_vars_cat );
           }
