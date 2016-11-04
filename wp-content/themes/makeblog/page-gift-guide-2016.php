@@ -270,7 +270,7 @@ get_header('version-2'); ?>
       },
       callbacks: {
         onMixStart: function(state){
-          console.log('start begin');
+          //console.log('start begin');
           jQuery('#gg2016-header-ad .js-ad').remove();
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
@@ -278,11 +278,11 @@ get_header('version-2'); ?>
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'none');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
-          console.log('start ended');
+          //console.log('start ended');
         },
 
         onMixEnd: function(state){
-          console.log('end begin');
+          //console.log('end begin');
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
@@ -418,7 +418,7 @@ get_header('version-2'); ?>
             jQuery.extend( ad_vars, ad_vars_cat );
           }
 
-          console.log(loadCount);
+          //console.log(loadCount);
 
           //Only do this stuff on state changes that are not the first page load
           if (loadCount >= 3) { 
@@ -431,19 +431,19 @@ get_header('version-2'); ?>
               }
             });
             make.gpt.loadDyn();
-            console.log('-------2nd ads injected');
+            //console.log('-------2nd ads injected');
 
             //Send GA a new page view
             ga('send', 'pageview');
           }
 
           loadCount++;
-          console.log(loadCount);
-          console.log('end end');
+          //console.log(loadCount);
+          //console.log('end end');
         },
 
         onMixLoad: function(state){
-          console.log('load start');
+          //console.log('load start');
           //Check if Daily Pick is also the 1st random product on the list, if so place it lower
           if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
             jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
@@ -466,7 +466,7 @@ get_header('version-2'); ?>
             }
           });
           make.gpt.loadDyn();
-          console.log('load end');
+          //console.log('load end');
 
         }
       }
