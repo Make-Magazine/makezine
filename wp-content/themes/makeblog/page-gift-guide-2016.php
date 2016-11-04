@@ -472,8 +472,8 @@ get_header('version-2'); ?>
             jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
           }
         });
+        make.gpt.loadDyn();
       }, 1500);
-      make.gpt.loadDyn();
 
       //Send GA a new page view
       ga('send', 'pageview');
