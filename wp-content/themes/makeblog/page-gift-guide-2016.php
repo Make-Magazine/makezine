@@ -9,7 +9,8 @@
 get_header('version-2'); ?>
 
 <div id="gg2016">
-  <?php global $make; print $make->ads->ad_leaderboard_alt; ?>
+  <aside id="gg2016-header-ad">
+  </aside>
 
   <header class="gg2016-header container">
     <div class="row">
@@ -267,8 +268,10 @@ get_header('version-2'); ?>
       },
       callbacks: {
         onMixStart: function(){
+          jQuery('#gg2016-header-ad .js-ad').remove();
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
+          console.log('Ads removed');
 
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'none');
@@ -366,8 +369,9 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
 
-          console.log(state.activeFilter + ' Before array change');
+          // console.log(state.activeFilter + ' Before array change');
 
+          console.log('Starting the ad vars chnages');
           //Set the ad vars cat to the correct navigation category
           if (state.activeFilter == '.category-tec') {
             var ad_vars_cat = {
@@ -410,6 +414,7 @@ get_header('version-2'); ?>
             };
             jQuery.extend( ad_vars, ad_vars_cat );
           }
+          console.log('End ad vars changes');
         },
 
         onMixLoad: function(){
@@ -427,6 +432,8 @@ get_header('version-2'); ?>
           });
 
           //Injecting ads after every 4 products, only on 1st page load
+          console.log('Start injectng the ads');
+          jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
           jQuery('#gg2016-js .gg2016-review').each(function(i) {
             var modulus = (i + 1) % 4;
             if (modulus === 0) { 
@@ -434,6 +441,7 @@ get_header('version-2'); ?>
             }
           });
           make.gpt.loadDyn();
+          console.log('Finished injecting the ads');
 
         }
       }
@@ -466,6 +474,7 @@ get_header('version-2'); ?>
 
       //Injecting ads after every 4 products, on state change
       setTimeout(function() {
+        jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
         jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
           var modulus = (i + 1) % 4;
           if (modulus === 0) { 
@@ -473,6 +482,7 @@ get_header('version-2'); ?>
           }
         });
         make.gpt.loadDyn();
+        console.log('Ads injected to page');
       }, 1500);
 
       //Send GA a new page view
