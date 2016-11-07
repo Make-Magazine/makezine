@@ -444,9 +444,12 @@ get_header('version-2'); ?>
             //console.log('-------2nd ads injected');
 
             //Send GA a new page view
-            var gaURL = window.location.pathname + window.location.hash
-            ga('set', 'page', gaURL);
-            ga('send', 'pageview');
+            // var gaURL = location.pathname + location.hash
+            // ga('set', 'page', gaURL);
+            // ga('send', 'pageview');
+            ga('send', 'pageview', {
+             'page': location.pathname + location.hash
+            });
           }
 
           loadCount++;
