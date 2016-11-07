@@ -150,7 +150,10 @@ get_header('version-2'); ?>
 
         if(!get_sub_field('sponsored')) { ?>
 
-          <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> <?php if($ctf){ echo 'cto-tec';} ?> <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+          <article class="gg2016-review gg2016-review-even1 mix 
+          <?php if( $category ): echo implode(' ', $category); ?> 
+          <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?> 
+          <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
             <div class="gg2016-review-flex-cont">
               <div class="gg2016-review-img">
                 <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
@@ -205,7 +208,10 @@ get_header('version-2'); ?>
 
       if(get_sub_field('sponsored')) { ?>
 
-        <article class="gg2016-review gg2016-review-even1 mix <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> gg2016-sponsored <?php if($ctf){ echo 'cto-tec';} ?> <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
+        <article class="gg2016-review gg2016-review-even1 mix gg2016-sponsored 
+        <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> 
+        <?php if($ctf){ echo 'ctf-move';} ?> 
+        <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
           <h5>SPONSORED</h5>
           <div class="gg2016-review-flex-cont">
             <div class="gg2016-review-img">
@@ -296,7 +302,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $tecBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-tec').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               } elseif ( $category == 'category-dig' ) {
@@ -306,7 +312,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $digBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-dig').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               } elseif ( $category == 'category-cra' ) {
@@ -316,7 +322,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $craBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-cra').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               } elseif ( $category == 'category-dro' ) {
@@ -326,7 +332,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $droBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-dro').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               } elseif ( $category == 'category-sci' ) {
@@ -336,7 +342,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $sciBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-sci').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               } elseif ( $category == 'category-hom' ) {
@@ -346,7 +352,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $homBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-hom').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               } elseif ( $category == 'category-wor' ) {
@@ -356,7 +362,7 @@ get_header('version-2'); ?>
                     jQuery('.gg2016-body-bg').css('background', 'url(" . $worBG . ")');
                     jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
                     if (state.activeSort == 'random') {
-                      jQuery('.cto-wor').insertBefore('#gg2016-js .gg2016-review:first-child');
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
                     }
                   }";
               }
@@ -373,7 +379,7 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
 
-          // console.log(state.activeFilter + ' Before array change');
+          //console.log(state.activeSort);
 
           //Set the ad vars cat to the correct navigation category
           if (state.activeFilter == '.category-tec') {
