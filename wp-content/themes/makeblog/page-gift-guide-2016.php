@@ -247,6 +247,10 @@ get_header('version-2'); ?>
     <p class="text-muted">The Make: Gift Guide uses affiliate links for some of our recommendations. This helps support our site and keep the gears turning.</p>
   </div>
 
+  <div class="gg2016-back-to-top" id="gg2016-back-to-top" title="Back to top">
+    <i class="fa fa-chevron-up"></i>
+  </div>
+
 </div><!-- #gg2016 -->
 
 
@@ -479,6 +483,18 @@ get_header('version-2'); ?>
         }
       }
     });
+
+
+    // Back to top button
+    (function() {
+      return jQuery(window).scroll(function() {
+        return jQuery(window).scrollTop() > 200 ? jQuery("#gg2016-back-to-top").addClass("show") : jQuery("#gg2016-back-to-top").removeClass("show")
+      }), jQuery("#gg2016-back-to-top").click(function() {
+        return jQuery("html,body").animate({
+          scrollTop: "0"
+        })
+      })
+    }).call(this);
 
 
     // if (window.location.href.indexOf('#technology') > -1) {

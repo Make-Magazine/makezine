@@ -50,7 +50,7 @@
       background-repeat: no-repeat !important;
       background-size: cover !important;
       @media screen and (max-width: 767px) {
-        height: 50vw;
+        height: 70vw;
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 10px;
@@ -96,6 +96,9 @@
           overflow: hidden;
           height: 2.6em;
           position: relative;
+          @media screen and (max-width: 550px) {
+            font-size: 24px;
+          }
         }
         .gg2016-dp-author {
           font-weight: 500;
@@ -363,6 +366,7 @@
         }
         .gg2016-review-person {
           font-weight: 500;
+          font-size: 14px;
         }
       }
     }
@@ -381,6 +385,42 @@
 
   #gg2016-sponsors {
     display: none;
+  }
+
+  //Back to top button
+  .gg2016-back-to-top {
+    visibility: hidden;
+    background-color: #444;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 48px;
+    position: fixed;
+    bottom: 65px;
+    right: 35px;
+    z-index: 90;
+    cursor: pointer;
+    border-radius: 1px;
+    opacity: 0;
+    -webkit-transform: translateZ(0);
+    transition: all .6s
+  }
+
+  .gg2016-back-to-top .fa {
+    font-size: 18px;
+    color: #fff;
+    vertical-align: middle;
+  }
+
+  .gg2016-back-to-top:hover {
+    background-color: #fc4f3f;
+    opacity: 1
+  }
+
+  .gg2016-back-to-top.show {
+    visibility: visible;
+    bottom: 35px;
+    opacity: 1;
   }
 
 }
