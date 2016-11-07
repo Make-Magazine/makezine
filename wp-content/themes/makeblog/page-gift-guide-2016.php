@@ -77,35 +77,35 @@ get_header('version-2'); ?>
         </button>
         <ul class="gg2016-nav-flex dropdown-menu list-unstyled" aria-labelledby="gg2016-cat-menu">
           <li>
-            <button class="btn btn-link filter" data-filter="all">All</button>
+            <button onclick="removeHashFunction();" class="btn btn-link filter" data-filter="all">All</button>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-tec">Technology</button>
+            <a href="#technology" class="btn btn-link filter" data-filter=".category-tec">Technology</a>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-dig">Digital Fabrication</button>
+            <a href="#digital-fabrication" class="btn btn-link filter" data-filter=".category-dig">Digital Fabrication</a>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-cra">Craft &amp; Design</button>
+            <a href="#craft&design" class="btn btn-link filter" data-filter=".category-cra">Craft &amp; Design</a>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-dro">Drones &amp; Vehicles</button>
+            <a href="#drones&vehicles" class="btn btn-link filter" data-filter=".category-dro">Drones &amp; Vehicles</a>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-sci">Science</button>
+            <a href="#science" class="btn btn-link filter" data-filter=".category-sci">Science</a>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-hom">Home</button>
+            <a href="#home" class="btn btn-link filter" data-filter=".category-hom">Home</a>
           </li>
           <li class="gg2016-li-border"></li>
           <li>
-            <button class="btn btn-link filter" data-filter=".category-wor">Workshop</button>
+            <a href="#workshop" class="btn btn-link filter" data-filter=".category-wor">Workshop</a>
           </li>
         </ul>
       </div>
@@ -252,13 +252,13 @@ get_header('version-2'); ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 <script>
-  // function removeHashFunction() {
-  //   history.pushState("", document.title, window.location.pathname);
-  // }
+  function removeHashFunction() {
+    history.pushState("", document.title, window.location.pathname);
+  }
   
   jQuery( document ).ready(function() {
 
-    // removeHashFunction();
+    removeHashFunction();
 
     var loadCount = 1;
 
@@ -440,6 +440,8 @@ get_header('version-2'); ?>
             //console.log('-------2nd ads injected');
 
             //Send GA a new page view
+            var gaURL = window.location.pathname + window.location.hash
+            ga('set', 'page', gaURL);
             ga('send', 'pageview');
           }
 
