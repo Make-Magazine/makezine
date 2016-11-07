@@ -14,12 +14,18 @@ get_header('version-2'); ?>
     <?php global $make; print $make->ads->ad_leaderboard; ?>
   </div> -->
 
+  <div class="container">
+    <div class="row">
+      <div class="alert alert-warning" role="alert">Looking for the 2016 Make: Gift Guide? <a href="/giftguide">Click Here</a></div>
+    </div>
+  </div>
+
   <div class="container gg2015-header hidden-xs">
     <div class="row">
       <div class="col-sm-5 col-md-6 gg2015-border-right">
 
         <h3>THE ULTIMATE MAKERS</h3>
-        <a href="/giftguide"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>METAL SHOP</span></h3>
+        <a href="/giftguide-2015"><h3 class="gg2015-big-font">GIFT GUIDE</a> / <span>METAL SHOP</span></h3>
         <p>These are our top gifting picks of the 2015 holiday season in nine different categories - something for everyone in your family of makers - from the best solder sucker to a speedy FPV microdrone.</p>
 
       </div>
@@ -27,21 +33,21 @@ get_header('version-2'); ?>
       <div class="col-sm-7 col-md-6 gg2015-nav">
 
         <div class="col-sm-4">
-          <a href="/giftguide/craft"><h2>CRAFT</h2></a>
-          <a href="/giftguide/science"><h2>SCIENCE</h2></a>
-          <a href="/giftguide/drones"><h2>DRONES</h2></a>
+          <a href="/giftguide-2015/craft"><h2>CRAFT</h2></a>
+          <a href="/giftguide-2015/science"><h2>SCIENCE</h2></a>
+          <a href="/giftguide-2015/drones"><h2>DRONES</h2></a>
         </div>
 
         <div class="col-sm-4">
-          <a href="/giftguide/electronics"><h2>ELECTRONICS</h2></a>
-          <a href="/giftguide/wood-working"><h2>WOODWORKING</h2></a>
-          <a href="/giftguide/make-believe"><h2>MAKE: BELIEVE</h2></a>
+          <a href="/giftguide-2015/electronics"><h2>ELECTRONICS</h2></a>
+          <a href="/giftguide-2015/woodworking"><h2>WOODWORKING</h2></a>
+          <a href="/giftguide-2015/make-believe"><h2>MAKE: BELIEVE</h2></a>
         </div>
 
         <div class="col-sm-4">
-          <a href="/giftguide/metal-shop"><h2>METAL SHOP</h2></a>
-          <a href="/giftguide/automotive"><h2>AUTOMOTIVE</h2></a>
-          <a href="/giftguide/kitchen"><h2>KITCHEN</h2></a>
+          <a href="/giftguide-2015/metal-shop"><h2>METAL SHOP</h2></a>
+          <a href="/giftguide-2015/automotive"><h2>AUTOMOTIVE</h2></a>
+          <a href="/giftguide-2015/kitchen"><h2>KITCHEN</h2></a>
         </div>
 
       </div>
