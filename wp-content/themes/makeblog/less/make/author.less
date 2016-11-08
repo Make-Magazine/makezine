@@ -1,3 +1,31 @@
+.author-page {
+	.projects-meta.author-meta {
+		list-style-type: none;
+  	margin-left: 0;
+	}
+	article {
+    a.pull-left {
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+		h2 {
+			font-size: 22px;
+			line-height: 120%;
+			margin-top: 0;
+		}
+		.search-thumb {
+			max-width:110px;
+		}
+		.meta,
+		.media-body {
+			font-size: 17px;
+			line-height: 140%;
+		}
+	}
+}
+
+
 .avatar-298 {
 	margin-bottom: 20px;
 	border: 1px solid @border-color;
@@ -124,35 +152,33 @@
 	}
 }
 
+// Over rides for JetPack infinite view styles
 .author.infinite-scroll {
 	.projects-masthead h2 {
 		line-height: 1.2em;
 		font-size: 28px;
 	}
 	#infinite-handle {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    margin: 50px auto 20px;
     text-align: center;
     span {
-      border: 1px solid #ccc;
-    	display: inline-block !important;
-    	background: transparent;
-    	padding: 0;
+    	background: none;
+		  border-radius: initial;
+		  color: transparent;
+		  cursor: pointer;
+		  font-size: 13px;
+		  padding: 0;
     	button {
-    		line-height: 1em;
-		    text-transform: uppercase;
-		    display: block;
-		    color: #4a4a4a;
-		    background: #fff;
-		    margin-left: auto;
-		    margin-right: auto;
-		    padding: 10px 40px;
+    		.btn;
+    		.btn-default;
+    		padding: 8px 30px;
+    		text-transform: capitalize;
 		    &:hover {
-		    	background-color: #4A4A4A;
-		    	color: #fff;
 		    }
     	}
     }
+	}
+	.infinite-wrap {
+		margin-top: 15px;
 	}
 }

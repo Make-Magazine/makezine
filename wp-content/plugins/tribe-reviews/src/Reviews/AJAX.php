@@ -47,7 +47,7 @@ class AJAX {
 	}
 
 	private function process_sort( $args ) {
-		$sortby = ! empty( $_POST['sort'] ) && in_array( $_POST['sort'], [ 'score', 'price', 'title' ], true ) ? $_POST['sort'] : 'score';
+		$sortby = ! empty( $_POST['sort'] ) && in_array( $_POST['sort'], [ 'score', 'price', 'title', 'most_recent' ], true ) ? $_POST['sort'] : 'score';
 
 		if ( ! Reviews::is_scoring_enabled( $_POST['post_id'] ) && $sortby === 'score' ) {
 			$sortby = 'title';
@@ -70,6 +70,11 @@ class AJAX {
 			case 'title':
 				$args['orderby'] = 'title';
 				$args['order']   = 'ASC';
+				break;
+
+			case 'most_recent':
+				$args['orderby'] = 'most_recent';
+				$args['order']   = 'DESC';
 				break;
 
 		}
@@ -122,10 +127,12 @@ class AJAX {
 			$data[] = [
 				'ID'        => $post->ID,
 				'title'     => $post->post_title,
+				'most_recent' => $post->post_date,
 				'price'     => '$' . absint( get_post_meta( $post->ID, 'price_as_tested', true ) ),
+				'buy_url'   => get_post_meta( $post->ID, 'buy_link', true ),
 				'type'      => $this->type( $post->ID ),
 				'score'     => abs( get_post_meta( $post->ID, 'total_score', true ) ),
-				'thumbnail' => get_the_post_thumbnail( $post->ID, 'medium' ),
+				'thumbnail' => wp_get_attachment_url(get_post_thumbnail_id( $post->ID )),
 				'link'      => get_permalink( $post->ID ),
 				'winner'    => $this->winner( $post->ID )
 			];

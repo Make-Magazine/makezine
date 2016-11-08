@@ -28,7 +28,6 @@ get_header('version-2'); ?>
 
       </div>
 
-
       <div class="row nlp-bottom">
 
         <div class="container">
@@ -36,8 +35,7 @@ get_header('version-2'); ?>
           <div class="col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
 
             <form id="nlp-form" class="nlp-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-              <input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101"/><!-- Make: Newsletter -->
-              <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
+              <input type="hidden" name="slid_1" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
               <input type="hidden" name="cmd" value="subscribe" />
               <input type="hidden" name="multiadd" value="1" />
               <input type="hidden" id="email" name="email" value="" />
@@ -50,62 +48,62 @@ get_header('version-2'); ?>
               <input type="hidden" name="custom_host" value="makezine.com" />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
-                <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
-                <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
+                <input type="checkbox" id="list_6B5869DC547D3D46B52F3516A785F101_yes" name="slid_2" value="6B5869DC547D3D46B52F3516A785F101" />
+                <span for="list_6B5869DC547D3D46B52F3516A785F101_yes" class="newcheckbox"></span>
               </label>
               <h4>Make:</h4><p>The best stuff each week from Make: magazine</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
-                <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_4" value="6B5869DC547D3D467B33E192ADD9BE4B" />
+                <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
                 <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
               </label>
               <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
-                <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_5" value="6B5869DC547D3D46E66DEF1987C64E7A" />
+                <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_4" value="6B5869DC547D3D46E66DEF1987C64E7A" />
                 <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
               </label>
               <h4>Maker Faire</h4><p>Keep up with the Greatest Show (&amp; Tell) on Earth</p>
               <hr />
 
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
-                <input type="checkbox" id="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" name="slid_6" value="6B5869DC547D3D46510F6AB3E701BA0A" />
-                <span for="list_6B5869DC547D3D46510F6AB3E701BA0A_yes" class="newcheckbox"></span>
+                <input type="checkbox" id="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" name="slid_5" value="6B5869DC547D3D4637EA6E33C6C8170D" />
+                <span for="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" class="newcheckbox"></span>
               </label>
-              <h4>Maker Shed</h4><p>Be the first to learn about new products, plus exclusive discounts</p>
+              <h4>Make: Education</h4><p>How making is transforming learning</p>
               <hr />
 
               <input class="btn-cyan" type="submit" value="Submit" />
               <div class="clearfix"></div>
             </form>
             <script>
-              $(document).on('submit', '#nlp-form', function (e) {
+              jQuery(document).on('submit', '#nlp-form', function (e) {
                 e.preventDefault();
                 // First check if any checkboxes are checked
                 var anyBoxesChecked = false;
-                $('#nlp-form input[type="checkbox"]').each(function() {
-                  if ($(this).is(":checked")) {
+                jQuery('#nlp-form input[type="checkbox"]').each(function() {
+                  if (jQuery(this).is(":checked")) {
                     anyBoxesChecked = true;
                   }
                 });
                 if (anyBoxesChecked == false) {
-                  $('.list-radio[data-toggle="tooltip"]').tooltip()
-                  $('.list-radio[data-toggle="tooltip"]').tooltip('show')
+                  jQuery('.list-radio[data-toggle="tooltip"]').tooltip()
+                  jQuery('.list-radio[data-toggle="tooltip"]').tooltip('show')
                   return false;
                 }
                 // Now get the email into the form and send
                 else {
-                  var nlpEmail = $('#nlp-input').val();
-                  $('#nlp-form #email').val(nlpEmail);
-                  if ($('#nlp-form #email').val() == '') {
-                    $('#nlp-input').tooltip()
-                    $('#nlp-input').tooltip('show')
+                  var nlpEmail = jQuery('#nlp-input').val();
+                  jQuery('#nlp-form #email').val(nlpEmail);
+                  if (jQuery('#nlp-form #email').val() == '') {
+                    jQuery('#nlp-input').tooltip()
+                    jQuery('#nlp-input').tooltip('show')
                     return false;
                   }
                   else {
-                    $.post('http://whatcounts.com/bin/listctrl', $('#nlp-form').serialize());
+                    jQuery.post('http://whatcounts.com/bin/listctrl', jQuery('#nlp-form').serialize());
                     var nlpDomain = document.domain;
                     location.href = '/?subscribed-to-make-newsletter';
                   }

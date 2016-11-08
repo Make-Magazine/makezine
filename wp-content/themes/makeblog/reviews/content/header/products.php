@@ -1,18 +1,16 @@
 <?php // Reviews Section Header
-get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
-
-<div class="container">
-	<?php get_template_part( 'reviews/content/header/reviews' ); ?>
-</div>
-
-<?php 
+get_template_part( 'reviews/content/header/ads-leaderboard' );
 
 $image = get_field('hero_image');
+$awards = get_field('winners');
+$container = Reviews()->container();
+$parent = $container['Relationships']->get_review_for_product( get_the_ID() );
+$parent_title = $parent[0]->post_name;
 
 if ( ! empty( $image ) ) {
 ?>
 <div id="hero-products" style="background-image: url(<?php echo esc_attr( $image['url'] );?>);">
-	<img class="hero-single-products" src="<?php echo esc_attr( $image['url'] );?>" alt=""/>
+	<img class="hero-single-products" src="<?php echo esc_attr( $image['url'] );?>" alt="Product review hero image"/>
 <?php
 } else {
 ?>
@@ -50,8 +48,7 @@ if ( ! empty( $image ) ) {
 															<a href="<?php echo get_author_posts_url( $i->current_author->ID ); ?>"><?php echo esc_html( $i->current_author->display_name ); ?></a>
 															<?php
 															$twitter = get_user_meta( $i->current_author->ID, 'twitter', true );
-															if ( ! empty( $twitter ) ):
-																?>
+															if ( ! empty( $twitter ) ): ?>
 																/ <a target="_blank" href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>"><i class="fa fa-twitter"></i> @<?php echo esc_html( $twitter ); ?></a>
 															<?php endif; ?>
 													<?php
@@ -87,9 +84,28 @@ if ( ! empty( $image ) ) {
 									<?php endif; ?>
 								
 								</div><!-- .authors-mobile" -->
-								<?php $link = get_field( 'buy_link' ); ?>
-								<a class="btn-buy" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy It Now</a>
 							</div><!-- .product-meta -->
+
+							<?php if( $awards && ( ! in_array('', $awards) ) ): ?>
+								<div class="sidebar-awards meta-block visible-xs-block">
+									<div class="sidebar-awards-left <?php
+										if ( $parent_title === 'boards' ) {
+											echo 'sd-boards-badge';
+										} else if ( $parent_title === '3dprinters' ) {
+											echo 'sd-3dprinters-badge';
+										} else if ( $parent_title === 'drones' ) {
+											echo 'sd-drones-badge';
+										}  ?>">
+									</div>
+									<div class="sidebar-awards-right">
+										<h6>AWARDS</h6>
+										<?php foreach( $awards as $award ): ?>
+											<span><?php echo $award; ?></span>
+										<?php endforeach; ?>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							<?php endif; ?>
 
 							<?php
 							/**
@@ -98,7 +114,7 @@ if ( ! empty( $image ) ) {
 							//Added get_site_url() to account for any environment.
 							$view_config_path = get_field( '3d_view_config' );
 							$asset_path = get_site_url() . $view_config_path;
-							if ( $view_config_path && shortcode_exists( 'wr360embed' ) ):
+							if ( (! empty($view_config_path)) && shortcode_exists( 'wr360embed' ) ):
 								global $post;
 								//Determine the path to the product:
 								$rootpath = str_replace(".xml", "", $asset_path);
@@ -106,35 +122,34 @@ if ( ! empty( $image ) ) {
 								$rootpath = ltrim($rootpath, '/');
 
 								$wr_shortcode = sprintf(
-								'[%1$s name="%2$s" width="300" height="400" config="%3$s"]',
-								'wr360embed',
-								$post->post_name,
-								esc_url($asset_path),
-								$rootpath
-								);
-							?>
+									'[%1$s name="%2$s" width="300" height="400" config="%3$s"]',
+									'wr360embed',
+									$post->post_name,
+									esc_url($asset_path),
+									$rootpath
+								); ?>
 							
-							<div class="virtual-tour">
-								<?php
-								if ($view_config_path) {
-									$config_xml = simplexml_load_file($asset_path);
-									//Load first image from XML
-									$image1 = $config_xml->images->image[0]->attributes();									
-								}
-								$firstFile = $rootpath . '/' . $image1;
-								?>
-								<?php echo do_shortcode( $wr_shortcode ); ?>
-								
-								<div id="virtual-placeholder">
-									<div class="inner">
-										<img src="<?php echo $firstFile;?>" alt="<?php the_title();?>"/>
-										<i class="fa fa-search-plus"></i>
-										<div class="rotate-instructions">
-											<i class="fa fa-refresh"></i> see it in 360
-										</div><!-- .rotate-instructions -->
-									</div><!-- .inner -->
-								</div><!-- #virtual-placeholder -->
-							</div><!-- .virtual-tour -->
+								<div class="virtual-tour">
+									<?php
+									if (! empty($view_config_path) ) {
+										$config_xml = simplexml_load_file($asset_path);
+										//Load first image from XML
+										$image1 = $config_xml->images->image[0]->attributes();									
+									}
+									$firstFile = $rootpath . '/' . $image1;
+									
+									echo do_shortcode( $wr_shortcode ); ?>
+									
+									<div id="virtual-placeholder">
+										<div class="inner">
+											<img src="<?php echo $firstFile;?>" alt="<?php the_title();?>"/>
+											<i class="fa fa-search-plus"></i>
+											<div class="rotate-instructions">
+												<i class="fa fa-refresh"></i> see it in 360
+											</div><!-- .rotate-instructions -->
+										</div><!-- .inner -->
+									</div><!-- #virtual-placeholder -->
+								</div><!-- .virtual-tour -->
 							
 							<?php endif; ?>
 

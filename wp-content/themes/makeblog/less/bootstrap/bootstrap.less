@@ -1,66 +1,56 @@
 /*!
- * Bootstrap v2.3.1
- *
- * Copyright 2012 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 // Core variables and mixins
-@import "variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "mixins.less";
+@import "variables";
+@import "../../node_modules/bootstrap-less/bootstrap/mixins";
 
-// CSS Reset
-@import "reset.less";
+// Reset and dependencies
+@import "../../node_modules/bootstrap-less/bootstrap/normalize";
+@import "../../node_modules/bootstrap-less/bootstrap/print";
+@import "../../node_modules/bootstrap-less/bootstrap/glyphicons";
 
-// Grid system and page structure
-@import "scaffolding.less";
-@import "grid.less";
-@import "layouts.less";
+// Core CSS
+@import "../../node_modules/bootstrap-less/bootstrap/scaffolding";
+@import "../../node_modules/bootstrap-less/bootstrap/type";
+@import "../../node_modules/bootstrap-less/bootstrap/code";
+@import "../../node_modules/bootstrap-less/bootstrap/grid";
+@import "../../node_modules/bootstrap-less/bootstrap/tables";
+@import "../../node_modules/bootstrap-less/bootstrap/forms";
+@import "../../node_modules/bootstrap-less/bootstrap/buttons";
 
-// Base CSS
-@import "type.less";
-@import "code.less";
-@import "forms.less";
-@import "tables.less";
+// Components
+@import "../../node_modules/bootstrap-less/bootstrap/component-animations";
+@import "../../node_modules/bootstrap-less/bootstrap/dropdowns";
+@import "../../node_modules/bootstrap-less/bootstrap/button-groups";
+@import "../../node_modules/bootstrap-less/bootstrap/input-groups";
+@import "../../node_modules/bootstrap-less/bootstrap/navs";
+@import "../../node_modules/bootstrap-less/bootstrap/navbar";
+@import "../../node_modules/bootstrap-less/bootstrap/breadcrumbs";
+@import "../../node_modules/bootstrap-less/bootstrap/pagination";
+@import "../../node_modules/bootstrap-less/bootstrap/pager";
+@import "../../node_modules/bootstrap-less/bootstrap/labels";
+@import "../../node_modules/bootstrap-less/bootstrap/badges";
+@import "../../node_modules/bootstrap-less/bootstrap/jumbotron";
+@import "../../node_modules/bootstrap-less/bootstrap/thumbnails";
+@import "../../node_modules/bootstrap-less/bootstrap/alerts";
+@import "../../node_modules/bootstrap-less/bootstrap/progress-bars";
+@import "../../node_modules/bootstrap-less/bootstrap/media";
+@import "../../node_modules/bootstrap-less/bootstrap/list-group";
+@import "../../node_modules/bootstrap-less/bootstrap/panels";
+@import "../../node_modules/bootstrap-less/bootstrap/responsive-embed";
+@import "../../node_modules/bootstrap-less/bootstrap/wells";
+@import "../../node_modules/bootstrap-less/bootstrap/close";
 
-// Components: common
-@import "sprites.less";
-@import "dropdowns.less";
-@import "wells.less";
-@import "component-animations.less";
-@import "close.less";
-
-// Components: Buttons & Alerts
-@import "buttons.less";
-@import "button-groups.less";
-@import "alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
-
-// Components: Nav
-@import "navs.less";
-@import "navbar.less";
-@import "breadcrumbs.less";
-@import "pagination.less";
-@import "pager.less";
-
-// Components: Popovers
-@import "modals.less";
-@import "tooltip.less";
-@import "popovers.less";
-
-// Components: Panels
-@import "panels.less";
-
-// Components: Misc
-@import "thumbnails.less";
-@import "media.less";
-@import "labels-badges.less";
-@import "progress-bars.less";
-@import "accordion.less";
-// @import "carousel.less";
-@import "hero-unit.less";
+// Components w/ JavaScript
+@import "../../node_modules/bootstrap-less/bootstrap/modals";
+@import "../../node_modules/bootstrap-less/bootstrap/tooltip";
+@import "../../node_modules/bootstrap-less/bootstrap/popovers";
+@import "../../node_modules/bootstrap-less/bootstrap/carousel";
 
 // Utility classes
-@import "utilities.less"; // Has to be last to override when necessary
+@import "../../node_modules/bootstrap-less/bootstrap/utilities";
+@import "../../node_modules/bootstrap-less/bootstrap/responsive-utilities";

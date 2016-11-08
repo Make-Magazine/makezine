@@ -398,7 +398,7 @@ function make_projects_grid( $label, $posts, $taxonomy, $terms ) {
 		</div>
 
 
-		<div class="row-fluid">';
+		<div class="row">';
 
 				$args = array(
 					'tax_query' => array(
@@ -418,11 +418,11 @@ function make_projects_grid( $label, $posts, $taxonomy, $terms ) {
 
 				while ( $proj_query->have_posts() ) : $proj_query->the_post();
 					if ( $posts == 4 ) {
-						$output .= '<div class="span3">';
+						$output .= '<div class="col-md-3">';
 					} elseif ( $posts == 3 ) {
-						$output .= '<div class="span4">';
+						$output .= '<div class="col-md-4">';
 					} elseif ( $posts == 6 ) {
-						$output .= '<div class="span2">';
+						$output .= '<div class="col-md-2">';
 					}
 
 					$url = get_post_custom_values('Image');
@@ -451,7 +451,7 @@ function make_projects_steps_nav( $steps ) {
 		foreach( $arrays as $stepped ) {
 			echo '<div class="row" id="tabs">';
 			foreach ($stepped as $idx =>$step) {
-				echo '<div class="span2 tabs" data-toggle="tab" id="step-'  . esc_attr( $step->number ) . '" data-target="#js-step-'  . esc_attr( $step->number ) . '">';
+				echo '<div class="col-md-2 tabs" data-toggle="tab" id="step-'  . esc_attr( $step->number ) . '" data-target="#js-step-'  . esc_attr( $step->number ) . '">';
 				$image = $step->images;
 				if (!empty( $image ) ) {
 					if ( function_exists( 'wpcom_vip_get_resized_remote_image_url' ) ) {
@@ -538,33 +538,37 @@ function make_projects_steps( $steps, $print = false ) {
 				echo '<div class="jstep hide" id="js-step-' . esc_attr( $step->number ) . '">';
 			}
 
-			echo '<span class="row">';
+			echo '<div class="row">';
 
 				// Output the Step title
 				if ( ! $print ) {
-					echo '<span class="span6"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></span>';
+					echo '<div class="col-md-9"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></div>';
 				} else {
-					echo '<span class="span6"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></span>';
+					echo '<div class="col-md-9"><h4><span class="black">Step #' . esc_html( $step->number ) . ':</span> ' . esc_html( stripslashes( $step->title ) ) . '</h4></div>';
 				}
 
-				// Output our previous button
-				if ( $idx != 0 && ! $print ) {
-					echo '<span class="span1 prev-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number - 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number - 1 ) . '">Prev</a></span>';
-				} elseif ( $idx == 0 && ! $print ) {
-					echo '<span class="span1 prev-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number - 1 ) . '" disabled="disabled">Prev</a></span>';
-				} elseif ( $print ) {
-					echo '';
-				}
+				echo '<div class="col-md-3">';
 
-				// Output the next button
-				if ( $idx < $count - 1 && ! $print ) {
-					echo '<span class="span1 next-project-btn"><a class="btn pull-right btn-danger nexter" id="step-'  . esc_attr( $step->number + 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number + 1 ) . '">Next</a></span>';
-				} elseif ( $idx == $count - 1 && ! $print ) {
-					echo '<span class="span1 next-project-btn"><a class="btn pull-right disabled" id="step-'  . esc_attr( $step->number + 1 ) . '" disabled="disabled">Next</a></span>';
-				} elseif ( $print ) {
-					echo '';
-				}
-			echo '</span>';
+					// Output the next button
+					if ( $idx < $count - 1 && ! $print ) {
+						echo '<span class="next-project-btn pull-right"><a class="btn btn-danger nexter" id="step-'  . esc_attr( $step->number + 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number + 1 ) . '">Next</a></span>';
+					} elseif ( $idx == $count - 1 && ! $print ) {
+						echo '<span class="next-project-btn pull-right"><a class="btn disabled" id="step-'  . esc_attr( $step->number + 1 ) . '" disabled="disabled">Next</a></span>';
+					} elseif ( $print ) {
+						echo '';
+					}
+
+					// Output our previous button
+					if ( $idx != 0 && ! $print ) {
+						echo '<span class="prev-project-btn pull-left"><a class="btn btn-danger nexter" id="step-'  . esc_attr( $step->number - 1 ) . '" data-target="#js-step-'  . esc_attr( $step->number - 1 ) . '">Prev</a></span>';
+					} elseif ( $idx == 0 && ! $print ) {
+						echo '<span class="prev-project-btn pull-left"><a class="btn disabled" id="step-'  . esc_attr( $step->number - 1 ) . '" disabled="disabled">Prev</a></span>';
+					} elseif ( $print ) {
+						echo '';
+					}
+
+				echo '</div>';
+			echo '</div>';
 
 			// Step main image
 			$images = ( isset( $step->images ) ) ? $step->images : '';
@@ -580,7 +584,7 @@ function make_projects_steps( $steps, $print = false ) {
 			if ( !empty( $images[1]->text ) ) {
 				echo '<span class="row smalls" style="display:block">';
 				foreach ($images as $image) {
-					echo '<span class="span2 project-span2-fix text-center">';
+					echo '<span class="col-md-2 project-span2-fix text-center">';
 					echo ( !empty($image->text ) ) ? '<img src="' . get_template_directory_uri() . '/images/bg.gif" data-original="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image->text ), 140, 110 ) . '" data-lazyload="' . wpcom_vip_get_resized_remote_image_url( make_projects_to_s3( $image->text ), 140, 110 ) . '" data-loc="js-step-' . esc_attr( $step->number ) . '" alt="' . esc_attr( the_title('', '', false ) ) . '" class="lazyload thumbs ' . esc_attr( $image->imageid ) . ' ' . esc_attr( $image->orderby ) .'" style="width:100%;height:auto;" />' : null ;
 					echo '</span>';
 				}
@@ -618,10 +622,10 @@ function make_projects_parts( $parts ) {
 		if( ! empty( $part['notes'] ) ) {
 			$notes = $part['notes'];
 		}
-		if ( ( ( strpos( $part['url'], 'dozuki' ) ) || ( strpos( $part['url'], 'makeprojects' ) ) ) != true )  {
-			$output .='<li><a href="' . esc_url( $part['url'] ) . '" data-toggle="tooltip" title="' . esc_attr( $notes ) .'">' . $part['text'];
+		if ($part['url']) {
+			$output .='<li><a itemprop="dependencies" href="' . esc_url( $part['url'] ) . '">' . $part['text'];
 		} else {
-			$output .='<li><a href="#" data-toggle="tooltip" title="' . esc_attr( $notes ) .'">' . esc_html( $part['text'] );
+			$output .='<li itemprop="dependencies">' . esc_html( $part['text'] );
 		}
 
 		if( ! empty( $part['type'] ) ) {
@@ -634,9 +638,11 @@ function make_projects_parts( $parts ) {
 			$output .= ')';
 		}
 
-		$output .= '</a> ';
+		if ($part['url']) {
+			$output .= '</a> ';
+		}
 
-		$output .= ' <span class="muted">';
+		$output .= ' <span class="text-muted">';
 		$output .= wp_kses_post( $notes );
 		$output .= '</span>';
 
@@ -662,17 +668,18 @@ function make_projects_tools( $tools ) {
 	if ( ! empty( $tools[0] ) && is_array( $tools[0] ) ) {
 		foreach ( $tools[0] as $tool ) {
 
-			$output .='<li>';
 			if ( ! empty( $tool->url ) ) {
-				$output .= '<a href="' . esc_url( $tool->url ) . '" data-toggle="tooltip" title="' . esc_attr( $tool->text ) .'">' . esc_html( $tool->text ) . '</a>';
+				$output .= '<li><a itemprop="dependencies" href="' . esc_url( $tool->url ) . '" data-toggle="tooltip" title="' . esc_attr( $tool->text ) .'">' . esc_html( $tool->text ) . '</a>';
 			} else {
-				$output .= esc_html( $tool->text );
+				$output .= '<li itemprop="dependencies">' . esc_html( $tool->text );
 			}
 			$notes = null;
 
 			if( ! empty( $tool->notes ) ) {
-				$output .= '  <span class="muted">' . wp_kses_post( $tool->notes ) . '</span>';
+				$output .= '  <span class="text-muted">' . wp_kses_post( $tool->notes ) . '</span>';
 			}
+
+			$output .= '</li>';
 		}
 	}
 

@@ -8,7 +8,7 @@ function validateForm(theForm){
 
 		jQuery(theForm).children().each(function(index, value){
 
-			if( jQuery(this).hasClass('control-group') && jQuery(this).hasClass('required') ){
+			if( jQuery(this).hasClass('form-group') && jQuery(this).hasClass('required') ){
 
 				if( !jQuery(this).find(':input').val() || !jQuery(this).find(':input').is(':checked') ){
 
@@ -42,7 +42,7 @@ function validateForm(theForm){
 
 		jQuery(theForm).children().each(function(index, value){
 
-			if( jQuery(this).hasClass('control-group') ){
+			if( jQuery(this).hasClass('form-group') ){
 
 				if( !jQuery(this).find(':input').val() || !jQuery(this).find(':input').is(':checked') ){
 
@@ -365,7 +365,7 @@ jQuery(document).ready(function() {
 
 	function makeFailAlert(formId){
 
-		var failAlert = '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><strong>Whoa!</strong> Something went wrong with this submission, please try again.</div>';
+		var failAlert = '<div class="alert alert-error alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><strong>Whoa!</strong> Something went wrong with this submission, please try again.</div>';
 
 		jQuery(formId).append(failAlert);
 

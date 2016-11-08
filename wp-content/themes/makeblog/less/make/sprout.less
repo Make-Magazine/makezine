@@ -1,263 +1,342 @@
-.all-projects-sprout {
-  margin-bottom: -35px;
-}
-.home-sprout-row {
-  margin-top: 20px !important;
-}
-h2.sponsored {
-  color: #4A4A4A;
-  float: left;
-  margin: 7px 0 0 20px;
-}
-p.sponsored {
-  color: #9B9B9B;
-  float: right;
-  margin: 10px 20px 0 0;
-}
-.img-list {
-  list-style: none;
-}
-.img-list li {
-  margin-top: 15px;
-}
-.selected-posts-list-sprout {
-  padding-bottom: 0 !important;
-}
-.social-holder {
-  overflow: hidden;
-  margin: 30px 0 60px;
-}
-.social-holder .title {
-  padding: 18px 0 44px 60px;
-  position: relative;
-}
-.social-holder .title h1 {
-  font: 25px/30px "latolight", Helvetica, Arial, sans-serif;
-  margin: 0;
-}
-.social-holder.twitter {
-  font-size: 18px;
-  line-height: 20px;
-}
-.social-holder.twitter .title {
-  padding: 18px 0 44px 60px;
-}
-.social-holder.twitter a {
-  color: #333;
-}
-.social-holder.twitter a:hover {
-  text-decoration: none;
-  color: #67bde1;
-}
-.social-holder.twitter p {
-  margin: 0 0 34px;
-}
-.social-holder.twitter .title:after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 0;
-  background: url("../images/twitter-icon.png") no-repeat;
-  width: 49px;
-  height: 50px;
-}
-.social-holder h2 {
-  font: 12px/18px "latolight", Helvetica, Arial, sans-serif;
-  margin: 0 0 12px;
-}
-.social-holder h2 strong {
-  font-family: "latobold";
-  display: block;
-  font-size: 14px;
-}
-.social-holder.instagram {
-  border-left: 1px dashed #ccc;
-  padding: 0 0 0 35px;
-}
-.social-holder.instagram a {
-  color: #333;
-}
-.social-holder.instagram a:hover {
-  text-decoration: none;
-  color: #67bde1;
-}
-.social-holder.instagram .title:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0;
-  background: url("../images/instagram-icon.png") no-repeat;
-  width: 45px;
-  height: 46px;
-}
-.social-holder .img-list {
-  overflow: hidden;
-  margin: -15px 0 27px;
-}
-.social-holder .img-list li {
-  float: left;
-  padding: 3px 10px 0 0;
-}
-.social-holder .img-list li img {
-  vertical-align: top;
-}
-.social-holder .follow {
-  display: inline-block;
-  font: 12px/16px "latobold", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-.social-holder .follow:hover {
-  text-decoration: none;
-  color: #67bde1;
-}
-.sprout-container {
-  width: 100% !important;
-  max-width: 1170px;
-}
-.sprout-instagram-container {
-  margin-top: -20px;
-}
-.sprout-margins {
-  margin: 0 -15px 0 -18px;
-}
-.sprout-margins-instagram {
-  margin-bottom: -58px;
-}
-.sprout-shed-container {
-  margin-top: 30px;
-}
-.sprout-sponsored-row {
-  background-color: #f7f7f7;
-  margin-top: 6px;
-  margin-bottom: 6px;
-}
-.sprout-video-caption {
-  color: #4A4A4A;
-  margin-top: 10px;
-}
-#twitter-widget-0 {
-  width: 100% !important;
-}
-.twitter-instagram h1 {
-  font-size: 50px;
-  margin: 0;
-  text-align: center;
-}
-.twitter-instagram h2 {
-  font-size: 25px;
-  font-weight: 400;
-  margin-top: 42px;
-  text-align: center;
-}
-.twitter-instagram .container {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-.twitter-instagram .read-more {
-  display: inline-block;
-  padding: 10px 0 10px 62px;
-  background: url("../images/arrow_right.png") left center no-repeat;
-  background-size: 37px;
-  color: #00bff3;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-}
-.yt-play-btn {
-  width: 75px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-// Twiter feed layout
-.twitter-holder {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  #recent-twitter > div {
-    display: flex;
-    div {
-      width: 25%;
-      padding-right: 10px;
-      padding-left: 10px;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      border-left: 1px dashed #ccc;
-    }
-    div:first-child {
-      border-left: none;
-    }
+#sprout-page {
+  margin-bottom: 30px;
+  .sprout-story {
+    background-color: #fafafa;
+    border: 1px solid #ededed;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    height: 350px;
+  }
+  .sprout-feature-story {
+    height: 380px;
+  }
+  .sprout-story a {
+    color: black !important;
+    font-weight: 300;
+    margin-top: -4px;
+  }
+  .sprout-story h4 {
+    margin-left: 20px;
+    height: 50px;
+  }
+  .sprout-feature-story h4 {
+    height: auto;
+  }
+  .sprout-story p {
+    margin-left: 20px;
+    font-size: .8em;
+    height: 45px;
+  }
+  .sprout-story .dom-rm-featured {
+    border-top: 1px solid #dbdbdb;
+  }
+  .sprout-read-more {
+    border-top: 1px solid #dbdbdb;
+    padding-top: 8px;
+  }
+  .sprout-read-article {
+    float: left;
+    margin-left: 3%;
+    font-size: .7em;
+  }
+  .sprout-arrow {
+    float: right;
+    margin-right: 3%;
+    width: 22px !important;
+  }
+  .sprout-arrow-featured {
+    float: right;
+    width: 22px !important;
+    margin-right: 3%;
+  }
+  .ad-market-wired {
+    margin-top: 19px;
+  }
+  .ad-sprout {
+    margin-top: 20px;
+  }
+  .all-projects-sprout {
+    margin-bottom: -35px;
+  }
+  .home-sprout-row {
+    margin-top: 20px !important;
+  }
+  h2.sponsored {
+    color: #4A4A4A;
+    float: left;
+    margin: 7px 0 0 20px;
+  }
+  p.sponsored {
+    color: #9B9B9B;
+    float: right;
+    margin: 10px 20px 0 0;
+  }
+  .img-list {
+    list-style: none;
+  }
+  .img-list li {
+    margin-top: 15px;
+  }
+  .selected-posts-list-sprout {
+    padding-bottom: 0 !important;
   }
   .social-holder {
-    margin-top: 0;
-    margin-bottom: 0;
+    overflow: hidden;
+    margin: 30px 0 60px;
   }
-  h2.user {
-    img {
-      display: none;
-    }
-    span span {
-      color: #111;
-      font-size: 14px;
-    }
-    span {
-      color: #888;
-      font-size: 14px;
-    }
+  .social-holder .title {
+    padding: 18px 0 44px 60px;
+    position: relative;
   }
-  h2.timePosted {
+  .social-holder .title h1 {
+    font: 25px/30px "latolight", Helvetica, Arial, sans-serif;
+    margin: 0;
+  }
+  .social-holder.twitter {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .social-holder.twitter .title {
+    padding: 18px 0 44px 60px;
+  }
+  .social-holder.twitter a {
+    color: #333;
+  }
+  .social-holder.twitter a:hover {
+    text-decoration: none;
+    color: #67bde1;
+  }
+  .social-holder.twitter p {
+    margin: 0 0 34px;
+  }
+  .social-holder.twitter .title:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: url("../images/twitter-icon.png") no-repeat;
+    width: 49px;
+    height: 50px;
+  }
+  .social-holder h2 {
+    font: 12px/18px "latolight", Helvetica, Arial, sans-serif;
+    margin: 0 0 12px;
+  }
+  .social-holder h2 strong {
+    font-family: "latobold";
+    display: block;
     font-size: 14px;
-    color: #333;
-    font-weight: 300;
-    margin-bottom: 10px;
   }
-  p.tweet {
+  .social-holder.instagram {
+    border-left: 1px dashed #ccc;
+    padding: 0 0 0 35px;
+  }
+  .social-holder.instagram a {
     color: #333;
-    a {
+  }
+  .social-holder.instagram a:hover {
+    text-decoration: none;
+    color: #67bde1;
+  }
+  .social-holder.instagram .title:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: url("../images/instagram-icon.png") no-repeat;
+    width: 45px;
+    height: 46px;
+  }
+  .social-holder .img-list {
+    overflow: hidden;
+    margin: -15px 0 27px;
+  }
+  .social-holder .img-list li {
+    float: left;
+    padding: 3px 10px 0 0;
+  }
+  .social-holder .img-list li img {
+    vertical-align: top;
+  }
+  .social-holder .follow {
+    display: inline-block;
+    font: 12px/16px "latobold", Helvetica, Arial, sans-serif;
+    color: #333;
+  }
+  .social-holder .follow:hover {
+    text-decoration: none;
+    color: #67bde1;
+  }
+  .sprout-container {
+    width: 100% !important;
+    max-width: 1170px;
+  }
+  .sprout-instagram-container {
+    margin-top: -20px;
+  }
+  .sprout-margins {
+    margin: 0 -15px 0 -18px;
+  }
+  .sprout-margins-instagram {
+    margin-bottom: -58px;
+  }
+  .sprout-shed-container {
+    margin-top: 30px;
+  }
+  .sprout-sponsored-row {
+    background-color: #f7f7f7;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .sprout-video-caption {
+    color: #4A4A4A;
+    margin-top: 10px;
+  }
+  #twitter-widget-0 {
+    width: 100% !important;
+  }
+  .twitter-instagram h1 {
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+  }
+  .twitter-instagram h2 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 42px;
+    text-align: center;
+  }
+  .twitter-instagram .container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .twitter-instagram .read-more {
+    display: inline-block;
+    padding: 10px 0 10px 62px;
+    background: url("../images/arrow_right.png") left center no-repeat;
+    background-size: 37px;
+    color: #00bff3;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .yt-play-btn {
+    width: 75px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  // Twiter feed layout
+  .twitter-holder {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    #recent-twitter > div {
+      display: flex;
+      div {
+        width: 25%;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-left: 1px dashed #ccc;
+      }
+      div:first-child {
+        border-left: none;
+      }
+    }
+    .social-holder {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h2.user {
+      img {
+        display: none;
+      }
+      span span {
+        color: #111;
+        font-size: 14px;
+      }
+      span {
+        color: #888;
+        font-size: 14px;
+      }
+    }
+    h2.timePosted {
+      font-size: 14px;
       color: #333;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+    p.tweet {
+      color: #333;
+      a {
+        color: #333;
+      }
     }
   }
 }
 
 @media(max-width:767px) {
-  h1.sponsored {
-    float: left;
-    margin: 10px 0 0 0;
-  }
-  p.sponsored {
-    float: right;
-    margin: 13px 0 0 0;
-  }
-  .sprount-banner-container {
-    padding: 0;
-  }
-  .sprout-video {
-    margin-bottom: 15px;
-  }
-  .twitter-holder #recent-twitter>div {
-    flex-direction: column;
-  }
-  .twitter-holder #recent-twitter>div div {
-    width: 100%;
-    border-left: none;
+  #sprout-page {
+    h1.sponsored {
+      float: left;
+      margin: 10px 0 0 0;
+    }
+    p.sponsored {
+      float: right;
+      margin: 13px 0 0 0;
+    }
+    .sprount-banner-container {
+      padding: 0;
+    }
+    .sprout-video {
+      margin-bottom: 15px;
+    }
+    .twitter-holder #recent-twitter>div {
+      flex-direction: column;
+    }
+    .twitter-holder #recent-twitter>div div {
+      width: 100%;
+      border-left: none;
+    }
   }
 }
 @media(min-width:992px) and (max-width:1199px) {
-  #twitter-widget-0 {
-    height: 370px !important;
-  }
-  .sprout-container {
-    max-width: 970px;
+  #sprout-page {
+    #twitter-widget-0 {
+      height: 370px !important;
+    }
+    .sprout-container {
+      max-width: 970px;
+    }
   }
 }
 @media(min-width:768px) and (max-width:991px) {
-  #twitter-widget-0 {
-    height: 270px !important;
+  #sprout-page {
+    #twitter-widget-0 {
+      height: 270px !important;
+    }
+    .sprout-container {
+      max-width: 970px;
+    }
   }
-  .sprout-container {
-    max-width: 970px;
+}
+@media(max-width:479px) {
+  .sprout-story {
+    height: 375px;
+  }
+  .sprout-read-more {
+    margin-top: -19px;
+  }
+  .sprout-feature-story {
+    height: 295px;
+  }
+  .sprout-feature-story {
+      height: 290px !important;
   }
 }

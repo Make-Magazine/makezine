@@ -1,4 +1,4 @@
-				<div class="span4">
+				<div class="col-md-4">
 
 					<div class="slide-side affix">
 

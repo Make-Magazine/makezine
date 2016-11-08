@@ -1,5 +1,4 @@
 body.single.single-post {
-  overflow-y: hidden;
   &.modal-open {
     padding-right: inherit !important;
     .modal-backdrop {
@@ -52,9 +51,7 @@ body.single.single-post {
     width: 68px;
     position: absolute;
   }
-  .container.wrapper {
-    width: 100%;
-    padding: 0;
+  .wrapper {
     .latest-story {
       a {
         padding: 8px 5px 10px;
@@ -89,7 +86,7 @@ body.single.single-post {
             border: none;
           }
           h3 {
-            color: black;
+            color: #222;
             font-family: "Roboto Slab";
             font-size: 16px;
             font-weight: 400;
@@ -106,7 +103,7 @@ body.single.single-post {
       .hero-wrapper-clear {
         margin-bottom: 41px;
         height: 10px;
-        @media (min-width: 1201px) {
+        @media (min-width: 1200px) {
           margin-bottom: 141px;
         }
       }
@@ -115,7 +112,7 @@ body.single.single-post {
         height: 670px;
         background-size: cover !important;
         display: none;
-        @media (min-width: 1201px) {
+        @media (min-width: 1200px) {
           display: block;
           height: 770px;
         }
@@ -125,21 +122,13 @@ body.single.single-post {
       }
       .story-title {
         float: none;
-        margin: 27px auto auto;
-        padding: 0 15px;
-        @media (max-width: 767px) {
-          padding: 0 25px;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-          width: 750px;
-        }
         h1 {
           font-size: 40px;
-          line-height: 46px;
+          line-height: 1.1em;
           font-family: "Roboto Slab";
           font-weight: bold;
-          color: black;
-          margin: 0 0 32px 0;
+          color: #222;
+          margin: 0 0 15px 0;
         }
       }
       .story-hero-image {
@@ -153,31 +142,15 @@ body.single.single-post {
         display: none;
       }
     }
-    .content-wrapper {
-      position: relative;
-      margin: auto;
-      @media (min-width: 768px) {
-        width: 750px;
-      }
-      @media (min-width: 992px) {
-        width: 960px;
-      }
-      @media (min-width: 1350px) {
-        width: 1100px;
-      }
-    }
     .content {
       background-image: none;
+      background-color: #fff;
       border: none;
       padding: 20px 0 0;
       position: relative;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      margin: -50px auto 47px auto;
       @media (min-width: 1201px) {
         margin-top: -150px;
-      }
-      @media (min-width: 1350px) {
-        width: 1173px;
       }
       iframe {
         max-width: 100%;
@@ -194,25 +167,29 @@ body.single.single-post {
         }
       }
       article {
-        @media (min-width: 768px) and (max-width: 991px) {
-          margin: 0 9px 0 5px;
-        }
-        @media (min-width: 1200px) and (max-width: 1349px) {
-          margin-right: -4px;
-        }
-        @media (min-width: 1350px) {
-          width: 783px;
-        }
         p,
-        span,
-        ul li,
-        ol li {
+        span {
           font-size: 18px;
           font-weight: 400;
           line-height: 1.6em;
           margin: 0 0 20px;
         }
-        .row-fluid {
+        ul, ol {
+          margin-bottom: 20px;
+          li {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4em;
+            margin: 0 0 10px;
+            p, span {
+              font-size: inherit;
+              font-weight: inherit;
+              line-height: inherit;
+              margin: inherit;
+            }
+          }
+        }
+        .row {
           display: none;
         }
         .wp-caption-text {
@@ -228,7 +205,7 @@ body.single.single-post {
           background-color: white;
           border: 1px solid #979797;
           border-radius: 3px;
-          color: black;
+          color: #222;
           font-size: 14px;
           font-weight: 500;
           line-height: 16px;
@@ -244,6 +221,8 @@ body.single.single-post {
           outline: 0;
         }
         .modal {
+          top: 10%;
+          background: #fff;
           margin: auto;
           bottom: inherit;
           padding: 0 17px;
@@ -256,7 +235,7 @@ body.single.single-post {
           button {
             width: 42px;
             font-size: 30px;
-            color: black;
+            color: #222;
             opacity: 1;
           }
           button:hover {
@@ -287,21 +266,13 @@ body.single.single-post {
   }
 
   @media only screen and (min-width: 768px) {
-    .container.wrapper {
+    .wrapper {
       .posts-navigator {
         overflow-y: auto !important;
       }
       .story-header {
         margin-bottom: -50px;
         margin-top: 14px;
-      }
-      .line-separator {
-        border: 1px solid #9c9c9c;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
-        position: absolute;
-        width: 100%;
-        left: 0;
-        margin-top: -47px;
       }
       .more-thumbnails, .row.more {
         display: none;
@@ -310,8 +281,7 @@ body.single.single-post {
   }
 
   @media only screen and (max-width: 767px) {
-    margin: 0 -20px;
-    .container.wrapper {
+    .wrapper {
       .thumbnails {
         margin: 10px -15px 0px -15px;
         overflow: hidden;
@@ -352,17 +322,17 @@ body.single.single-post {
           width: 15%;
         }
       }
-      .content.first-story, .story-header.first-story, .row.more, .row.new-story, .row.thumbnails, .row.infinity, .row.more-thumbnails {
+      .content.first-story, .story-header.first-story, .row.more, .row.new-story, .row.thumbnails, .infinity, .row.more-thumbnails {
         display: block;
       }
       .story-header {
         display: none;
         .story-title {
-          margin-top: 5px;
+          margin-top: 0;
           h1 {
             font-size: 25px;
-            margin-bottom: 20px;
-            line-height: 36px;
+            margin-top: 15px;
+            margin-bottom: 15px;
           }
           .projects-masthead {
             padding-top: 0;
@@ -370,17 +340,15 @@ body.single.single-post {
         }
         .author-info {
           display: block;
-          margin: 0 10px 10px 10px;
-          padding: 0 15px;
+          margin-bottom: 10px;
           .author-wrapper {
             .avatar {
               display: none;
             }
             .author-name {
-              border-right: 2px solid black;
-              float: left;
-              padding-right: 6px;
-              margin: 0 13px 15px 0;
+              .bio-wrapper {
+                display: inline-block;
+              }
               a {
                 color: #666;
                 margin-right: 5px;
@@ -390,16 +358,10 @@ body.single.single-post {
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 19px;
-                float: left;
                 text-transform: capitalize;
-                max-width: 150px;
               }
               .twitter-wrapper {
-                padding-right: 3px;
-                .twitter {
-                  float: right;
-                  margin: -20px -6px 0 0;
-                }
+                display: inline-block;
                 .twitter:nth-child(2) {
                   display: none;
                 }
@@ -414,7 +376,6 @@ body.single.single-post {
       }
       .content {
         display: none;
-        padding: 20px 5px 0 5px;
         article {
           margin: 0;
           .essb_displayed_sidebar_right {
@@ -434,7 +395,7 @@ body.single.single-post {
   }
 
   @media only screen and (min-width: 481px) and (max-width: 767px) {
-    .container.wrapper {
+    .wrapper {
       .more-thumbnails {
         .thumbnail-image {
           height: 153px;
@@ -450,16 +411,10 @@ body.single.single-post {
     .wp-caption-text {
       margin-right: 0;
     }
-    div.span8 {
+    div.col-md-8 {
       img {
         max-width: 100%;
       }
-    }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .content {
-      width: 1029px;
     }
   }
 }
@@ -469,23 +424,6 @@ body.single.single-post {
     .essb_links_list {
       li {
         width: 15.50%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .mz-story-infinite-view {
-    .content {
-      article {
-        margin: 0 19px 0 5px;
-      }
-    }
-    .container.wrapper {
-      .story-header {
-        div.story-title {
-          max-width: 920px;
-        }
       }
     }
   }

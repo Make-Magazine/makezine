@@ -5,18 +5,18 @@
 ?>
 <!-- 3D GUIDE NEWSLETTER MODAL -->
 <script>
-	$(".fancybox3D").fancybox({
-		autoSize : false,
-		width  : 630,
-		autoHeight : true,
-		padding : 0,
-		afterLoad   : function() {
-			this.content = this.content.html();
-		}
-	});
-	$(document).ready(function () {
-		$( "#modal-capture-btn.class-printers" ).click(function() {
-			$(".fancybox3D").trigger('click');
+	jQuery(document).ready(function () {
+		jQuery(".fancybox3D").fancybox({
+			autoSize : false,
+			width  : 630,
+			autoHeight : true,
+			padding : 0,
+			afterLoad   : function() {
+				this.content = this.content.html();
+			}
+		});
+		jQuery( "#modal-capture-btn.class-printers" ).click(function() {
+			jQuery(".fancybox3D").trigger('click');
 		});
 	});
 </script>
@@ -42,7 +42,7 @@
 					<input value="GO" class="btn-cyan" type="submit">
 				</div>
 			</form>
-			<p class=""><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
+			<p><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
 		</div>
 		<div class="col-sm-4 hidden-xs nl-modal">
 			<img class="img-responsive" src="//makezine.com/wp-content/uploads/2015/11/3D-Fabricator-Quick-Guide-Cover.jpg" alt="3D Fabricator Quick Guide Cover" />
@@ -53,18 +53,18 @@
 
 <!-- BOARDS GUIDE NEWSLETTER MODAL -->
 <script>
-	$(".fancyboxBoards").fancybox({
-		autoSize : false,
-		width  : 630,
-		autoHeight : true,
-		padding : 0,
-		afterLoad   : function() {
-			this.content = this.content.html();
-		}
-	});
-	$(document).ready(function () {
-		$( "#modal-capture-btn.class-boards" ).click(function() {
-			$(".fancyboxBoards").trigger('click');
+	jQuery(document).ready(function () {
+		jQuery(".fancyboxBoards").fancybox({
+			autoSize : false,
+			width  : 630,
+			autoHeight : true,
+			padding : 0,
+			afterLoad   : function() {
+				this.content = this.content.html();
+			}
+		});
+		jQuery( "#modal-capture-btn.class-boards" ).click(function() {
+			jQuery(".fancyboxBoards").trigger('click');
 		});
 	});
 </script>
@@ -90,10 +90,10 @@
 					<input value="GO" class="btn-cyan" type="submit">
 				</div>
 			</form>
-			<p class=""><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
+			<p><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
 		</div>
 		<div class="col-sm-4 hidden-xs nl-modal">
-			<img class="img-responsive" src="//makezine.staging.wpengine.com/wp-content/uploads/2015/12/Make_Boards-Quick-Guide-small.jpg" alt="2016 Single-Board Computing Quick Reference Guide" />
+			<img class="img-responsive" src="//makezine.com/wp-content/uploads/2016/01/Make_Boards-Quick-Guide-small.jpg" alt="2016 Single-Board Computing Quick Reference Guide" />
 		</div>
 	</div>
 </div>
@@ -101,18 +101,18 @@
 
 <!-- DRONES GUIDE NEWSLETTER MODAL -->
 <script>
-	$(".fancyboxDrones").fancybox({
-		autoSize : false,
-		width  : 630,
-		autoHeight : true,
-		padding : 0,
-		afterLoad   : function() {
-			this.content = this.content.html();
-		}
-	});
-	$(document).ready(function () {
-		$( "#modal-capture-btn.class-drones" ).click(function() {
-			$(".fancyboxDrones").trigger('click');
+	jQuery(document).ready(function () {
+		jQuery(".fancyboxDrones").fancybox({
+			autoSize : false,
+			width  : 630,
+			autoHeight : true,
+			padding : 0,
+			afterLoad   : function() {
+				this.content = this.content.html();
+			}
+		});
+		jQuery( "#modal-capture-btn.class-drones" ).click(function() {
+			jQuery(".fancyboxDrones").trigger('click');
 		});
 	});
 </script>
@@ -138,7 +138,7 @@
 					<input value="GO" class="btn-cyan" type="submit">
 				</div>
 			</form>
-			<p class=""><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
+			<p><small>This is offered with a subscription to the Make: weekly newsletter; you can unsubscribe at any time.</small></p>
 		</div>
 		<div class="col-sm-4 hidden-xs nl-modal">
 			<img class="img-responsive" src="//makezine.com/wp-content/uploads/2016/04/Make_Drone-Flyers-Guide-Cover-2.jpg" alt="Make: Drones Flyer's Guide" />

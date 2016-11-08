@@ -1,357 +1,171 @@
 /**
  * Single Review Header
  */
-
-
-
-.reviews-header {
-
-	margin: 0 -20px;
-
-	@media screen and (min-width: @mq-sm-min) {
-		margin: 0;
-	}
-
-}
-
 .review-title {
-	text-align: center;
-	font-size: 18px;
-	font-weight: 500;
-	color: @black-alt;
-
-	@media screen and (min-width: @mq-sm-min) {
-		margin-bottom: 0;
-		padding: 40px 25px 30px;
-		background: #F7F7F7;
-		text-align: left;
-		font-size: 25px;
-		font-weight: 300;
+	text-shadow: 2px 0 4px rgba(0,0,0, .15);
+	font-size: 72px;
+	font-weight: 300;
+	line-height: 1em;
+	color: #333;
+	margin-bottom: 10px;
+	width: ~"calc(100% - 332px)";
+	@media (min-width: 768px) and (max-width: 991px) {
+		width: 66.6%;
+	}
+	@media (max-width: 767px) {
+	  font-size: 7vw;
+	  width: 100%;
+	  margin-bottom: 10px;
 	}
 
 }
 
 
 .review-nav {
-
-	margin-bottom: 0;
-
-	@media screen and (min-width: @mq-sm-min) {
-		background: #E7E7E7;
-		border: 0;
-		border-radius: 0;
-		margin-bottom: @spacer;
-		min-height: 0;
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 25px;
+	min-height: 0;
+	@media (max-width: 767px) {
+		margin-bottom: 0;
 	}
 
-	.nav {
+	.review-nav-choosing {
+		display: inline-block;
+		a {
+			color: #1490d4;
+			transition: all 150ms ease;
+      margin-right: 30px;
+      text-transform: capitalize;
+      font-size: 18px;
+      font-weight: 500;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				color: @link-color-hover;
+			}
+      &.active {
+        color: #4A4A4A;
+        pointer-events: none;
+        cursor: default;
+        i {
+          display: none;
+        }
+      }
+		}
+		@media (max-width: 767px) {
+			display: flex;
+			margin-left: -5px;
+			margin-right: -5px;
+			margin-top: 15px;
+			a,
+			button {
+				flex: 1;
+				background-color: #fff;
+  			border-radius: 5px;
+  			padding: 12px 0;
+  			margin-left: 5px;
+  			margin-right: 5px;
+  			text-align: center;
+  			font-size: 16px;
+  			font-weight: 300;
+  			color: #1490d4;
+				box-shadow: 0 3px 9px -2px #CCC;
+				transition: all .1s ease;
+				border: none;
+	  		&:hover {
+	  			box-shadow: 0 3px 9px 0 #CCC;
+	  			transition: all .1s ease;
+	  		}
+  			&:first-child {
+  				margin-right: 5px;
+  			}
+  			i {
+  				display: none;
+  			}
+			}
+		}
+	}
+}
 
-		margin: 0;
-		padding: 0 @spacer;
-		display: table;
+.review-nav-mag {
+	width: 302px;
+	border-bottom: 1px solid #e3e3e3;
+	float: right;
+	margin-top: -5px;
+	#product-sidebar & {
+		margin-top: 30px;
 		width: 100%;
-		border-bottom: 1px solid @grey-light;
-
-		@media screen and (min-width: @mq-sm-min) {
-			display: block;
-			border-bottom: 0;
-			height: auto;
-			padding-right: 0;
+	}
+	@media (min-width: 768px) and (max-width: 991px) {
+		width: 33.3%;
+	}
+	@media (max-width: 767px) {
+		.review-nav & {
+			width: 100%;
+		  border-bottom: none;
+		  float: none;
+		  margin-top: 0;
 		}
-
-		> li {
-			display: table-cell;
-			float: none;
-			width: auto;
-			min-height: 0;
-			background: transparent;
-			border: none;
-			text-align: center;
-			height: auto;
-			vertical-align: top;
-
-			@media screen and (min-width: @mq-sm-min) {
-				display: block;
-				float:left;
-				position: static;
-			}
-
-			> a, button {
-				display: block;
-				height: auto;
-				padding: 10px 5px;
-				font-size: 11.5px;
-				line-height: 1.2;
-				white-space: nowrap;
-				background: transparent;
-				box-shadow: none;
-				transition: all 150ms ease;
-				text-shadow: none;
-				border: 0;
-				text-transform: uppercase;
-				font-weight: 500;
-
-				@media screen and (min-width: @mq-sm-min) {
-					font-size: 16px;
-					font-weight: 400;
-					text-transform: none;
-					padding: 18px 12px;
-				}
-
-				@media screen and (min-width: @mq-md-min) {
-					padding: 18px 28px;
-				}
-
-				&:before {
-					content: ' ';
-					position: absolute;
-					bottom: 0;
-					left: 2px;
-					right: 2px;
-					height: 0;
-					background: @coral;
-					transition: all 150ms ease;
-				}
-
-				&:hover,
-				&:active,
-				&:focus {
-					border-bottom: 0;
-					color: @coral;
-					&:before {
-						height: 6px;
-						@media screen and (min-width: @mq-sm-min) {
-							display: none;
-						}
-					}
-				}
-
-				&.dropdown-toggle {
-
-					&:before {
-						@media screen and (max-width: @mq-xs-max) {
-							height: 0;
-						}
-					}
-
-					&:after {
-						//@media screen and (max-width: @mq-xs-max) {
-							position: relative;
-							top: -1px;
-							padding-left: 5px;
-							font-size: .8em;
-							font-family: 'FontAwesome';
-							content: "\f078";
-							@media screen and (min-width: @mq-sm-min) {
-								font-size: .7em;
-							}
-						//}
-					}
-
-					// CASE: Nav dropdown Active
-					.review-nav-open & {
-						&:after {
-							//@media screen and (max-width: @mq-xs-max) {
-								content: "\f077";
-							//}
-						}
-					}
-
-				}
-
-			}
-
-			&.active {
-
-				> a {
-
-					font-weight: 700;
-					background: transparent;
-					box-shadow: none;
-
-					@media screen and (min-width: @mq-sm-min) {
-						color: @coral;
-						font-weight: 400;
-					}
-
-					&:before {
-						height: 6px;
-						@media screen and (min-width: @mq-sm-min) {
-							display: none;
-						}
-					}
-
-					&:hover,
-					&:active,
-					&:focus {
-						background: transparent;
-						box-shadow: none;
-					}
-
-				}
-
-			}
-
-			&.mag {
-
-				display: none;
-
-				@media screen and (min-width: @mq-sm-min) {
-					position: relative;
-					display: block;
-					float: right;
-					margin-right: 0;
-				}
-
-				// Issue modal pop up button
-				.modal-capture-btn {
-
-					position: relative;
-					margin-top: -26px;
-					padding:42px 5px 11px 100px;
-					font-size: 12px;
-					font-weight: 700;
-					width: 240px;
-					white-space: normal;
-					text-align: left;
-					overflow: hidden;
-
-					&:before {
-						content: none;
-					}
-
-					img {
-						position: absolute;
-						left: 0;
-						top: 0;
-						width: 80px;
-						margin: 5px;
-						height: auto;
-						box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
-					}
-				}
-
-			}
-
-		}
-
-		.submenu {
-
-			position: fixed;
-			left: 0;
-			right: 0;
-			top: 140px;
-			bottom: 0;
-			z-index: 3;
-			transition: all 100ms ease-in-out;
-			overflow: hidden;
-			-ms-overflow-style: none;
-			max-height: 0;
-			background
-			&::-webkit-scrollbar { 
-				width: 0 !important;
-			}
-
-			@media screen and (min-width: @mq-sm-min) {
-				position: absolute;
-				top: 55px;
-				bottom: auto;
-				border-top: 2px solid #F0F0F0;
-			}
-
-			.admin-bar & {
-				top: 186px;
-				@media screen and (min-width: @mq-sm-min) {
-					top: 55px;
-				}
-			}
-
-			// CASE: Nav Dropdown Active
-			.review-nav-open & {
-				transition: all 200ms ease-in-out;
-				max-height: 100%;
-				@media screen and (min-width: @mq-sm-min) {
-					max-height: 900px;
-					border-bottom: 4px solid @coral;
-				}
-			}
-
-		}
-
-		.submenu ol {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			overflow-y: scroll;
-			overflow: hidden;
-			padding: @spacer;
-			border: 0;
-			border-radius: 0;
-			text-align: left;
-			background: white;
-			list-style: none;
-			margin: 0;
-
-			@media screen and (min-width: @mq-sm-min) {
-				position: relative;
-				top: auto;
-				bottom: auto;
-				left: auto;
-				right: auto;
-				background: #e7e7e7;
-				-webkit-column-count: 3; /* Chrome, Safari, Opera */
-			    -moz-column-count: 3; /* Firefox */
-			    column-count: 3;
-				padding: 20px;
-			}
-
-			@media screen and (min-width: @mq-md-min) {
-				-webkit-column-count: 4; /* Chrome, Safari, Opera */
-			    -moz-column-count: 4; /* Firefox */
-			    column-count: 4;
-			}
-
-			&:after {
-				display: none;
-			}
-
-			a {
-
-				display: inline-block;
-				padding: 3px 5px;
-				color: @black-alt;
-				transition: all 150ms;
-				line-height: 2;
-
-				@media screen and (min-width: @mq-sm-min) {
-					font-size: 12px;
-					line-height: 1.4;
-				}
-
-				&:hover,
-				&:active,
-				&:focus {
-					color: @coral;
-					background: transparent;
-				}
-
-			}
-
-		}
-
 	}
 
+	// Issue modal pop up button
+	.modal-capture-btn {
+		position: relative;
+		margin-top: -60px;
+		padding:42px 5px 11px 100px;
+		font-size: 12px;
+		font-weight: 700;
+		white-space: normal;
+		text-align: left;
+		overflow: hidden;
+		text-transform: none;
+		color: #4A4A4A;
+		transition: all .1s ease;
+		border: none;
+		background: none;
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 80px;
+			margin: 5px;
+			height: auto;
+			box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+		}
+		.review-nav & {
+			@media (max-width: 767px) {
+				box-shadow: 0 3px 9px -2px #CCC;
+				background-color: #fff;
+				border-radius: 5px;
+				padding: 12px 0;
+				text-align: center;
+				font-size: 16px;
+				font-weight: 300;
+				width: 100%;
+				margin-top: 0;
+	  		&:hover {
+	  			box-shadow: 0 3px 9px 0 #CCC;
+	  			transition: all .1s ease;
+	  		}
+				span {
+					color: #f2cf5a;
+					font-size: 18px;
+				}
+				img {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 .review-nav-btns {
-
 	margin:0 @spacer;
 	padding: 0 5px;
 
 	.btn {
-
 		background: transparent;
 		border: 1px solid @aqua-mid;
 		text-transform: uppercase;

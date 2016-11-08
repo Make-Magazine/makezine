@@ -35,7 +35,7 @@ function make_search_facets( $args ) {
 	if ( $current_filters ) {
 		echo '<h4>' . __( 'Current Filters', 'wpcom-elasticsearch' ) . '</h4>';
 
-		echo '<ul class="unstyled">';
+		echo '<ul class="list-unstyled">';
 
 		foreach ( $current_filters as $filter ) {
 			echo '<li><a href="' . esc_url( $filter['url'] ) . '">' . sprintf( __( '<i class="icon icon-remove"></i> %1$s: %2$s', 'wpcom-elasticsearch' ), esc_html( $filter['type'] ), esc_html( $filter['name'] ) ) . '</a></li>';
@@ -53,7 +53,7 @@ function make_search_facets( $args ) {
 
 		echo '<h4>' . $label . '</h4>';
 
-		echo '<ul class="unstyled">';
+		echo '<ul class="list-unstyled">';
 		foreach ( $facet['items'] as $item ) {
 			echo '<li><a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['name'] ) . '</a> (' . number_format_i18n( absint( $item['count'] ) ). ')</li>';
 		}

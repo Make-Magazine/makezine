@@ -11,12 +11,12 @@
             if ($video[0]) { ?>
               <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
               <div class="row">
-                <div class="span8">
+                <div class="col-md-8">
                   <div class="row">
                     <?php
                       $video = get_post_custom_values('VideoURL');
                       if ($video[0]) {
-                        echo '<div class="span12">';
+                        echo '<div class="col-xs-12">';
                           echo make_youtube_iframe($video[0], 620, 345);
                         echo '</div>';
                       }
@@ -29,7 +29,7 @@
                       $posts = array_map( 'get_post', explode( ',', $featuredposts[0] ) );
                       foreach ( $posts as $post ) {
                         //print_r($post); ?>
-                        <div class="span2">
+                        <div class="col-md-2">
                           <a href="<?php echo get_permalink($post->ID); ?>">
                             <?php echo get_the_post_thumbnail( $post->ID, 'new-thumb', array('class' => 'hide-thumbnail' ) ); ?>
                             <?php echo get_the_title( $post->ID ); ?>
@@ -39,17 +39,17 @@
                       wp_reset_query(); ?>
                   </div>
                 </div>
-                <div class="span4">
+                <div class="col-md-4">
                   <?php the_content(); ?>
                 </div>
               </div>
             <?php } else { ?>
               <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <div class="row-fluid">
-                <div class="span8">
+              <div class="row">
+                <div class="col-md-8">
                   <?php the_content(); ?>
                 </div>
-                <div class="span4">
+                <div class="col-md-4">
                   <div class="banner">
                     <?php
                       $featuredposts = get_post_custom_values('FeaturedPosts');
@@ -58,7 +58,7 @@
                         foreach ( $posts as $post ) {
                           //print_r($post); ?>
                             <a href="<?php echo get_permalink($post->ID); ?>">
-                              <?php echo get_the_post_thumbnail( $post->ID, 'side-thumb', array('class' => 'thumbnail' ) ); ?>
+                              <?php echo get_the_post_thumbnail( $post->ID, 'side-thumb', array('class' => 'img-thumbnail' ) ); ?>
                               <?php echo get_the_title( $post->ID ); ?>
                             </a>
                         <?php }
@@ -70,7 +70,7 @@
               </div>
           <?php } ?>
         <div class="row">
-          <div class="span8">
+          <div class="col-sm-7 col-md-8">
               <article <?php post_class(); ?>>
                 <?php
                   $categories = get_post_custom_values( 'Categories' );

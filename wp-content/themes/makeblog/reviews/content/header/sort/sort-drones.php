@@ -4,36 +4,37 @@
  */
 ?>
 <header class="rl-header">
-	<form id="rl-sort-form" action="" class="fl-sort-list clearfix" aria-labelledby="show-sort-btn">
+	<form id="rl-sort-form" action="" class="fl-sort-list clearfix">
 
 		<div class="rl-sort">
-			<h3 class="rl-sort-header visible-xs-block">Sort By:</h3>
 			<div class="rl-sort-options">
-				<span class="image spacer"></span>
-				<label for="az" class="details">
+
+				<h3 class="rl-sort-header rl-sort-cell">SORT BY</h3>
+
+				<label for="az" class="details rl-sort-cell">
 					<input id="az" type="radio" name="sort" value="title">
-					<span>A-Z <em>(Alphabetical)</em></span>
-				</label>
-				<label for="price" class="price">
-					<input id="price" type="radio" name="sort" value="price">
-					<span>Price <em>(Low to High)</em></span>
+					<span>A-Z <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
 
-				<label for="score" class="score">
+				<label for="recent" class="recent rl-sort-cell">
+					<input id="recent" type="radio" name="sort" value="most_recent">
+					<span>Most Recent <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+				</label>
+
+				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
+				<label for="score" class="score rl-sort-cell">
 					<input id="score" type="radio" name="sort" value="score" checked>
-					<span>Score <em>(High to Low)</em></span>
+					<span>Score <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+				</label>
+				<?php endif; ?>
+
+				<label for="price" class="price rl-sort-cell">
+					<input id="price" type="radio" name="sort" value="price">
+					<span>Price <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
 				</label>
 
-				<span class="winner spacer"></span>
 			</div>
 		</div><!-- .fl-sort -->
-
-		<div class="rl-actions visible-xs-block">
-			<div class="rl-actions-wrap">
-				<button id="sort-cancel-btn" type="button" class="sort-cancel-btn btn btn-default">Cancel</button>
-				<button id="sort-apply-btn" type="submit" class="sort-apply-btn btn btn-primary">Apply</button>
-			</div>
-		</div><!-- .fl-actions -->
 
 	</form>
 </header>

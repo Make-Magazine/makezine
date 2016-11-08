@@ -10,7 +10,7 @@
 
 		<div class="row">
 
-			<div class="span5 offset7">
+			<div class="col-md-5 col-md-offset-7">
 
 				<div class="top-image">
 

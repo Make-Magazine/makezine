@@ -10,6 +10,12 @@ get_header('version-2'); ?>
   
 <div id="gg2015">
 
+  <div class="container">
+    <div class="row">
+      <div class="alert alert-warning" role="alert">Looking for the 2016 Make: Gift Guide? <a href="/giftguide">Click Here</a></div>
+    </div>
+  </div>
+
   <div class="container gg2015-header gg2015-header-home hidden-xs">
 
     <div class="row">
@@ -25,21 +31,21 @@ get_header('version-2'); ?>
       <div class="col-sm-7 col-md-6 gg2015-nav">
 
         <div class="col-sm-4">
-          <a href="/giftguide/craft"><h2>CRAFT</h2></a>
-          <a href="/giftguide/science"><h2>SCIENCE</h2></a>
-          <a href="/giftguide/drones"><h2>DRONES</h2></a>
+          <a href="/giftguide-2015/craft"><h2>CRAFT</h2></a>
+          <a href="/giftguide-2015/science"><h2>SCIENCE</h2></a>
+          <a href="/giftguide-2015/drones"><h2>DRONES</h2></a>
         </div>
 
         <div class="col-sm-4">
-          <a href="/giftguide/electronics"><h2>ELECTRONICS</h2></a>
-          <a href="/giftguide/wood-working"><h2>WOODWORKING</h2></a>
-          <a href="/giftguide/make-believe"><h2>MAKE: BELIEVE</h2></a>
+          <a href="/giftguide-2015/electronics"><h2>ELECTRONICS</h2></a>
+          <a href="/giftguide-2015/woodworking"><h2>WOODWORKING</h2></a>
+          <a href="/giftguide-2015/make-believe"><h2>MAKE: BELIEVE</h2></a>
         </div>
 
         <div class="col-sm-4">
-          <a href="/giftguide/metal-shop"><h2>METAL SHOP</h2></a>
-          <a href="/giftguide/automotive"><h2>AUTOMOTIVE</h2></a>
-          <a href="/giftguide/kitchen"><h2>KITCHEN</h2></a>
+          <a href="/giftguide-2015/metal-shop"><h2>METAL SHOP</h2></a>
+          <a href="/giftguide-2015/automotive"><h2>AUTOMOTIVE</h2></a>
+          <a href="/giftguide-2015/kitchen"><h2>KITCHEN</h2></a>
         </div>
 
       </div>
@@ -94,12 +100,12 @@ get_header('version-2'); ?>
   }
 </style>
 <script>
-  $( "#gg2015-mobile-naver-a" ).on( "click", function() {
+  jQuery( "#gg2015-mobile-naver-a" ).on( "click", function() {
     event.preventDefault();
-    if ( $( ".gg2015-mobile-nav" ).is( ":hidden" ) ) {
-      $( ".gg2015-mobile-nav" ).slideDown( "medium" );
+    if ( jQuery( ".gg2015-mobile-nav" ).is( ":hidden" ) ) {
+      jQuery( ".gg2015-mobile-nav" ).slideDown( "medium" );
     } else {
-      $( ".gg2015-mobile-nav" ).hide();
+      jQuery( ".gg2015-mobile-nav" ).hide();
     }
   });
 </script>

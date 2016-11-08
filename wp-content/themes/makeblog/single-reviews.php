@@ -16,7 +16,6 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 	$slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get_the_ID() );
 
 	get_template_part( 'reviews/content/header/reviews' );
-	get_template_part( 'reviews/content/header/filters/filters', $slug );
 
 	?>
 

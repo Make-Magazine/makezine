@@ -16,9 +16,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 <?php endif; ?>
 
 
-<div id="content-wrap" class="container <?php if ( empty( $hero ) ) {
-	echo 'no-hero';
-} ?>">
+<div id="content-wrap" class="container <?php if ( empty( $hero ) ) { echo 'no-hero'; } ?>">
 	<div class="row cw-content">
 		<div id="product-content" class="col-sm-8">
 			

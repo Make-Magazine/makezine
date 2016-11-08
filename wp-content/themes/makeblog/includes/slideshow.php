@@ -106,16 +106,20 @@ function make_slidehow_embed( $atts ) {
 		return $content. '<p><a href="'.esc_url( 'http://makezine.com/slideshow/' . $slug . '/' ) . '" taget="_blank" class="btn btn-primary">View Slideshow</a></p>';
 	} else {
 		return '<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">'.esc_html($link). '</a>
-			<div class="modal hide slideshow" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3 id="myModalLabel">'.esc_html($title).'</h3>
-				</div>
-				<div class="modal-body">
-					<iframe width="940" height="600" frameborder=0 src="' . esc_url( 'http://makezine.com/slideshow/' . $slug . '/' ) . '"></iframe>
-				</div>
-				<div class="modal-footer">
-					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<div class="modal slideshow" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">'.esc_html($title).'</h3>
+						</div>
+						<div class="modal-body">
+							<iframe width="940" height="600" frameborder=0 src="' . esc_url( 'http://makezine.com/slideshow/' . $slug . '/' ) . '"></iframe>
+						</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+						</div>
+					</div>
 				</div>
 			</div>';
 	}
@@ -266,8 +270,8 @@ function make_carousel( $args, $title_link = true ) {
 		return;
 	}
 
-	$output = '<div class="row-fluid">
-		<div class="span10">
+	$output = '<div class="row">
+		<div class="col-md-10">
 			<h2 class="look_like_h3">';			
 					if ( isset( $args['difficulty'] ) ) {
 						if ( $title_link )
@@ -312,7 +316,7 @@ function make_carousel( $args, $title_link = true ) {
 					} else {
 						$output .= $args['title'];
 					}
-		$output .= '</h2></div><div class="span2">';
+		$output .= '</h2></div><div class="col-md-2">';
 				if ($args['all'] != null ) {
 					if ( isset( $args['difficulty'] ) ) {
 						$output .= '<p class="pull-right"><a href="' . make_get_category_url($args['difficulty'], 'difficulty') . '?cat=' . intval($args['category__in']) . '" class="all">View All</p>';
@@ -348,7 +352,7 @@ function make_carousel( $args, $title_link = true ) {
 							setup_postdata( $post );
 							$type = get_post_type( $post );
 							if ($args['limit'] == 4 ) {
-								$output .= '<div class="span3 ' . $type . '">';
+								$output .= '<div class="col-md-3 ' . $type . '">';
 								if ($type == 'video') {
 									$output .= '<a class="" data-toggle="modal" onclick="ga(\'send\', \'pageview\', \'' . get_permalink( $post->ID ) . '\');" href="#myModal-' . $post->ID . '">';
 									$output .= '<span class="' . $type .'-icon"></span>';
@@ -378,7 +382,7 @@ function make_carousel( $args, $title_link = true ) {
 									$output .= '</a>';
 								}
 							} elseif ($args['limit'] == 2) {
-								$output .= '<div class="span4 ' . $type . '">';
+								$output .= '<div class="col-md-4 ' . $type . '">';
 								if ($type == 'video') {
 									$output .= '<a class="" data-toggle="modal" onclick="ga(\'send\', \'pageview\', \'' . get_permalink( $post->ID ) . '\');" href="#myModal-' . $post->ID . '">';	
 									$output .= '<span class="' . $type .'-icon"></span>';
@@ -423,17 +427,21 @@ function make_carousel( $args, $title_link = true ) {
 							$output .= '</div>'. "\n";
 							if ($type == 'video') {
 								$link = get_post_meta( $post->ID, 'Link', true );
-								$output .= '<div class="modal hide" id="myModal-' . $post->ID . '" data-video="' . esc_url( $link ) . '">
-									<div class="modal-header">
-										<a class="close" data-dismiss="modal">&times;</a>
-										<h3>' . get_the_title( $post->ID ) . '</h3>
-									</div>
-									<div class="modal-body">
-										<div class="link"></div>';
-										$output .= Markdown( strip_shortcodes( $post->post_content ) );
-									$output .= '</div>
-									<div class="modal-footer">
-										<a href="#" class="btn" data-dismiss="modal">Close</a>
+								$output .= '<div class="modal" id="myModal-' . $post->ID . '" data-video="' . esc_url( $link ) . '">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<a class="close" data-dismiss="modal">&times;</a>
+												<h3>' . get_the_title( $post->ID ) . '</h3>
+											</div>
+											<div class="modal-body">
+												<div class="link"></div>';
+												$output .= Markdown( strip_shortcodes( $post->post_content ) );
+											$output .= '</div>
+											<div class="modal-footer">
+												<a href="#" class="btn" data-dismiss="modal">Close</a>
+											</div>
+										</div>
 									</div>
 								</div>';
 							}

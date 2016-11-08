@@ -4,6 +4,7 @@
  *
  * Initializes all of the ads for Maker Faire.
  *
+ * Author: Ben Voran bvoran@gmail.com
  */
 
 // Define global make obj.
@@ -20,14 +21,14 @@ class MakeAds {
      *
      * Example dynamic usage:
      * <!-- add div placholder to DOM -->
-     * <div class="js-ad" data-size='[[300,250]]' data-pos='"btf"'></div>
+     * <div class="js-ad scroll-load" data-size='[[300,250]]' data-pos='"btf"'></div>
      * <script>
      * // Call dynamic JS loading function.
      * make.gpt.loadDyn();
      * </script>
      *
      */
-    
+
     public function setAds() {
 
         // General Leaderboard.
@@ -144,7 +145,7 @@ class MakeAds {
             'pos' => 'atf',
         ));
     }
-    
+
     // A function used to render the <script> tags for ads.
     protected function makeAdsRender(array $ad = array()) {
 
@@ -153,31 +154,38 @@ class MakeAds {
         'size' => '[300,250]',
         'sizeMap' => NULL,
         'viewport' => NULL,
-        'pos' => 'btf', 
+        'pos' => 'btf',
+        'scrollLoad' => TRUE,
       );
 
-      // Add JS vars & gpt methods.
-      $js_string = "<script>";
-      $js_string .= "var ad = make.gpt.getVars(" . $ad['size'] . ");\r\n";
-      $js_string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad ' + {$ad['size']}.join().replace(/\[\]/g,'').replace(/,/g,'x') + '\"></div>');\r\n";
-      $js_string .= "make.gpt.setAd({";
-      $js_string .= "'size' : {$ad['size']}";
-      $js_string .= ", 'pos' : '{$ad['pos']}'";
-      $js_string .= ", 'adPos' : ad.adPos";
-      $js_string .= ", 'slot' : ad.slot";
-      $js_string .= ", 'tile' : ad.tile";
-      $js_string .= ", 'companion' : (window.ad_vars ? ad_vars.companion : false)";
-
-      if ($ad['sizeMap']) {
-        $js_string .= ", 'sizeMap' : {$ad['sizeMap']}";
+      if ($ad['scrollLoad']) {
+        // Scroll load ads.
+        $string = "<div class='js-ad scroll-load' data-size='" . $ad['size'] . "' data-size-map='" . $ad['sizeMap'] . "' data-pos='" . $ad['pos'] . "' ></div>";
       }
-      if ($ad['viewport']) {
-        $js_string .= ", 'viewport' : '{$ad['viewport']}'";
+      else {
+        // Add JS vars & gpt methods.
+        $string = "<script>";
+        $string .= "var ad = make.gpt.getVars(" . $ad['size'] . ");\r\n";
+        $string .= "document.write('<div id=\"' + ad.slot + '\" class=\"make_ad ' + {$ad['size']}.join().replace(/\[\]/g,'').replace(/,/g,'x') + '\"></div>');\r\n";
+        $string .= "make.gpt.setAd({";
+        $string .= "'size' : {$ad['size']}";
+        $string .= ", 'pos' : '{$ad['pos']}'";
+        $string .= ", 'adPos' : ad.adPos";
+        $string .= ", 'slot' : ad.slot";
+        $string .= ", 'tile' : ad.tile";
+        $string .= ", 'companion' : (window.ad_vars ? ad_vars.companion : false)";
+
+        if ($ad['sizeMap']) {
+        $string .= ", 'sizeMap' : {$ad['sizeMap']}";
+        }
+        if ($ad['viewport']) {
+        $string .= ", 'viewport' : '{$ad['viewport']}'";
+        }
+
+        $string .= "});\r\n </script>";
       }
 
-      $js_string .= "});\r\n </script>";
-
-      return $js_string;
+      return $string;
 
     }
 
@@ -196,8 +204,8 @@ class MakeAdVars {
         $current_page = (is_object($wp_query) && is_array($wp_query) && ($wp_query['pagename'] != '') && ($wp_query['pagename'] != 'wp-cron.php' )) ? $wp_query : NULL;
         $parent = (!empty($_REQUEST['parent']) ? $_REQUEST['parent'] : NULL);
         $id = get_the_ID();
-        $posttags = is_single() || is_admin() ? get_the_tags() : NULL;
-        $postcat = is_single() || is_admin() ? get_the_category() : (is_category() ? explode(",", get_category_parents(get_query_var('cat'), FALSE, ",")) : NULL);
+        $posttags = is_single() || is_admin() || is_page() ? get_the_tags() : NULL;
+        $postcat = is_single() || is_admin() || is_page() ? get_the_category() : (is_category() ? explode(",", get_category_parents(get_query_var('cat'), FALSE, ",")) : NULL);
         $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
         $root_url = $protocol . $_SERVER['HTTP_HOST'];
         // Grabs URI for unique tag.
@@ -209,7 +217,7 @@ class MakeAdVars {
             $q_post_id = $q_posts[0]->ID;
             $post_adslot_targeting_name = get_post_meta($q_post_id, '_adslot_targeting_name', TRUE);
             $post_adslot_targeting_ids = get_post_meta($q_post_id, '_adslot_targeting_ids', TRUE);
-        } 
+        }
 
         // Custom Targeting Key/Value pairings.
         $this->custom_target_name = !empty($post_adslot_targeting_name) ? $post_adslot_targeting_name : NULL;
@@ -219,7 +227,7 @@ class MakeAdVars {
         if ($posttags) {
             $this->tags = array();
             foreach($posttags as $tag) {
-                $this->tags[] = str_replace(" ", "-", strtolower($tag->name)); 
+                $this->tags[] = str_replace(" ", "-", strtolower($tag->name));
             }
         }
 
@@ -345,9 +353,9 @@ class MakeAdVars {
             $this->sponsor = 'halloween';
         }
         else {
-            $this->sponsor = NULL;   
+            $this->sponsor = NULL;
         }
 
     }
 
-} 
+}

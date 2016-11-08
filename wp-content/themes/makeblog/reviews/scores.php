@@ -13,7 +13,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 
 	<div class="row">
 
-		<div class="tc-container">
+		<div class="tc-container mz-body">
 			<section class="tc-content">
 			
 				<img class="scores-large" src="<?php echo $image['url']; ?>" alt=""/>
@@ -60,7 +60,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			</section><!-- .tc-content -->
 		</div><!-- .tc-container -->
 		
-		<aside class="reviews-sidebar tc-sidebar scores-sidebar">
+		<aside class="reviews-sidebar tc-sidebar scores-sidebar mz-sidebar">
 			
 			<div class="meta-block ad-1">
 				<p id="ads-title">ADVERTISEMENT</p>

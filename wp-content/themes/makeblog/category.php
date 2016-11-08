@@ -35,12 +35,17 @@ get_header('version-2'); ?>
             get_template_part('version-2/includes/project_mobile_navigation');
         }
         ?>
-        <div class="posts-list container">
+        <div class="posts-list">
             <?php
             sorting_posts($current_cat_id);  //TODO Rename Function
             ?>
         </div>
     </div>
+
+    <div class="home-ads bottom">
+      <?php global $make; print $make->ads->ad_728x90; ?>
+    </div>
+    
     <div id="temp_post_list" style="display: none">
 
     </div>

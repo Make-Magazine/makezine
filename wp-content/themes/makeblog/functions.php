@@ -119,9 +119,6 @@ include_once dirname(__FILE__) . '/includes/json-endpoint.php';
 // 31. Projects Step Manager
 include_once dirname(__FILE__) . '/includes/projects-manager.php';
 
-// 31. Maker Camp
-//include_once dirname(__FILE__) . '/includes/maker-camp.php';
-
 // 33. CLI CSV
 if (defined('WP_CLI') && WP_CLI)
     include_once dirname(__FILE__) . '/includes/wp-cli.php';
@@ -363,7 +360,7 @@ get_template_part('version-2/includes/Mobile_Detect.php');
 
 function make_shopify_featured_products($row = 'row') {
     echo '<li class="ads shed-row-li"><div class="shed-row">';
-    echo make_shopify_featured_products_slider_home('row-fluid' );
+    echo make_shopify_featured_products_slider_home('row' );
     echo '</div></li>';
     die();
 }
@@ -372,16 +369,6 @@ add_action('wp_ajax_make_shopify_featured_products', 'make_shopify_featured_prod
 add_action('wp_ajax_nopriv_make_shopify_featured_products', 'make_shopify_featured_products');
 
 
-
-function theme_styles()
-{
-    wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/version-2/css/bootstrap.min.css');
-    //wp_enqueue_style('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700');
-    wp_enqueue_style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
-    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-}
-
-add_action('wp_enqueue_scripts', 'theme_styles');
 
 function winwar_first_sentence($string)
 {
@@ -402,7 +389,7 @@ function filter_list_output()
     $output .= '</div>';
     $output .= '<span class="fa fa-chevron-up"></span>';
     $output .= '<span class="fa fa-chevron-down"></span>';
-    $output .= '<ul class="col-lg-5 col-md-6 col-sm-7 col-xs-7">';
+    $output .= '<ul class="col-xs-12">';
     $output .= '<li class="difficulty">';
     $output .= '<p>difficulty</p>';
     $output .= '<ul class="diff-item">';
@@ -518,7 +505,7 @@ function subscribe_return_path_overlay() { ?>
                     <div class="col-sm-4 overlay-2">
                         <h2>Get the Magazine</h2>
                         <p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
-                        <a class="black-overlay-btn" target="_blank" href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ">SUBSCRIBE</a>
+                        <a class="black-overlay-btn" target="_blank" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMND">SUBSCRIBE</a>
                     </div>
                     <div class="col-sm-4 overlay-3">
                         <h2>Sign up for the Make: Newsletter</h2>
@@ -797,7 +784,7 @@ function kc_dynamic_sidebar_params( $params ) {
 }
 add_filter( 'dynamic_sidebar_params', 'kc_dynamic_sidebar_params' );
 
-require_once('version-2/includes/helpers/widget_shortcode.php');
+require_once('includes/widget_shortcode.php');
 require_once('version-2/includes/blog_feed.php');
 require_once('version-2/includes/tags_output.php');
 require_once('version-2/includes/blog_output.php');
@@ -904,3 +891,10 @@ if (is_page_template('page-ge-light-life.php'))
   remove_filter('the_content', 'wpautop');
   remove_filter('the_excerpt', 'wpautop' );
 }
+
+// Add taxonomy to pages.
+function add_taxonomies_to_pages() {
+  register_taxonomy_for_object_type( 'post_tag', 'page' );
+  register_taxonomy_for_object_type( 'category', 'page' );
+}
+add_action( 'init', 'add_taxonomies_to_pages' );

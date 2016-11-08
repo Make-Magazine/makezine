@@ -2,6 +2,7 @@
 
 .home-ads {
   margin-top:15px;
+  max-height: 250px;
   &.bottom {
     margin-bottom:15px;
   }
@@ -21,7 +22,7 @@
       margin-left: -20px;
     }
   }
-  .container-fluid div[class$="320x50"]& {
+  .container div[class$="320x50"]& {
     @media (max-width: 320px) {
       margin-left: -35px;
     }
@@ -35,7 +36,15 @@ body .home-ads {
 }
 
 .row.post_rows > .js-ad {
-	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+//This fixes the issue with leaderboard ads left aligning in the browser, instead of centering
+.js-ad {
+  text-align: center;
+  > div {
+    display: inline-block;
+  }
 }
 
 .row.ad-row {
@@ -48,7 +57,6 @@ p#ads-title {
   color: #4a4a4a;
   line-height: 1em;
   padding: 3px 0 3px 0;
-  margin-top: -7px;
   margin-bottom: 0;
   text-align: center;
 }
@@ -71,7 +79,8 @@ p#ads-title {
   background-color: transparent;
   box-shadow: none !important;
   .own {
-    box-shadow: 0 6px 6px -7px rgba(0, 0, 0, 1), 0 -6px 6px -7px rgba(0, 0, 0, 1);
+    //box-shadow: 0 6px 6px -5px #ccc,0 -6px 6px -5px #ccc;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +119,7 @@ p#ads-title {
 .sidebar {
   .sidebar-ad,
   .projects-ad {
+    clear: both;
     margin-bottom: 50px;
   }
 }
@@ -187,4 +197,14 @@ p#ads-title {
   .row.post_rows .own_ads .own {
     box-shadow: none;
   }
+}
+
+div.ad-unit {
+  margin-top: 15px;
+  /* for mobile overflow */
+  max-width: 100%;
+  overflow: hidden;
+}
+.ad-lb-unit {
+  margin-top: 15px;
 }

@@ -4,32 +4,45 @@
  */
 ?>
 <div class="reviews-item clearfix reviews-model">
-	<a class="ri-link clearfix" href="<?php the_permalink(); ?>">
 
-		<div class="ri-feature-image ri-cell">
-
+		<div class="ri-feature-image">
+			<a class="ri-link" href="<?php the_permalink(); ?>">
+				<div class="ri-badge boards"></div>
+			</a>
 		</div>
 
-		<div class="ri-details ri-cell">
-			<h2 class="ri-item-title"></h2>
-			<div class="ri-type"></div>
-		</div>
+		<div class="ri-info-parent">
 
-		<div class="ri-price ri-cell">
-			<span class="price"></span>
-			<small>Price</small>
-		</div>
-    
-		<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
-			<div class="ri-score ri-cell">
-				<span class="score"></span>
-				<small>Score</small>
+			<div class="ri-details">
+				<a class="ri-link" href="<?php the_permalink(); ?>">
+					<h2 class="ri-item-title"></h2>
+				</a>
+				<div class="ri-type"></div>
+				<div class="ri-item-meta"><span>AWARDS: </span></div>
 			</div>
-		<?php endif; ?>
 
-		<div class="ri-badge drones ri-cell hidden-xs"></div>
+			<div class="ri-score-price">
+				<div class="ri-score-price-flex">
+					<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
+					<div class="ri-score">
+						<span></span>
+						<small class="visible-xs-block">Score</small>
+					</div>
+					<?php endif; ?>
+					<div class="ri-price">
+						<span></span>
+						<small class="visible-xs-block">Price</small>
+					</div>
+					<div class="ri-more-info">
+						<a class="ri-link" href="<?php the_permalink(); ?>">More Info <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+					<div class="ri-buy-now" style="display:none;">
+						<a class="btn btn-default" href="#" target="_blank">Buy Now</a>
+					</div>
+				</div>
+			</div>
 
-		<div class="ri-item-meta"></div>
+		</div>
 
 	</a>
 </div><!-- .item -->

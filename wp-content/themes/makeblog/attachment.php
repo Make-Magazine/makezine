@@ -17,7 +17,7 @@ get_header('version-2'); ?>
 
 				<div class="row">
 
-					<div class="span8">
+					<div class="col-sm-7 col-md-8">
 
 						<ul class="breadcrumb">
 		
@@ -104,7 +104,7 @@ get_header('version-2'); ?>
 											</p>
 										</div>
 
-										<ul class="unstyled">
+										<ul class="list-unstyled">
 											<?php $imgmeta = wp_get_attachment_metadata( $id );
 
 											// Convert the shutter speed retrieve from database to fraction
@@ -162,7 +162,7 @@ get_header('version-2'); ?>
 
 										<div class="postmeta">
 		
-											<div class="span-thumb thumbnail">
+											<div class="span-thumb img-thumbnail">
 											
 												<?php echo get_avatar( get_the_author_meta('user_email'), 72); ?>
 											

@@ -147,7 +147,7 @@ function make_columns_head($defaults) {
 
 function make_columns_content($column_name, $post_ID) {
 	if ($column_name == 'featured_image') {
-		the_post_thumbnail('search-thumb', array('class' => 'thumbnail', 'style' => 'padding: 3px;border: 1px solid #CCC;background-color: #EEE;} '));
+		the_post_thumbnail('search-thumb', array('class' => 'img-thumbnail', 'style' => 'padding: 3px;border: 1px solid #CCC;background-color: #EEE;} '));
 	}
 	if ($column_name == 'camp_title') {
 		$linktitle = get_post_custom_values('LinkTitle');

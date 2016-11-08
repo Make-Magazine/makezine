@@ -3,19 +3,21 @@
  * The Reviews section filters header
  */
 ?>
-<div class="row">
-	<section class="review-filters col-xs-12" aria-labelledby="show-filters-btn">
+<section class="review-filters">
 
-		<nav class="fl-filters-nav clearfix">
+	<nav class="fl-filters-nav clearfix" aria-labelledby="show-filters-btn">
 
-			<div class="fl-filters-header col-sm-12 col-md-3 hidden-xs">
-				<h2 class="fl-header-title">Find the Perfect 3D Printer</h2>
-				<div class="fl-header-description">Use the filters to find the perfect printer for your needs</div>
-			</div>
+		<div class="fl-filters-header hidden-xs col-xs-12 col-lg-3">
+			<h2 class="fl-header-title">Find the Perfect 3D Printer</h2>
 
-			<form id="rf-filters-form" action="" class="fl-filters-list col-xs-12 col-md-9 col-lg-8 col-lg-offset-1">
+			<div class="fl-header-description">Use the filters to find the perfect printer for your needs</div>
+		</div>
 
-				<div class="fl-filter fl-recommended dropdown">
+		<form id="rf-filters-form" action="" class="fl-filters-list col-xs-12 col-lg-9">
+
+			<div class="fl-group">
+
+				<div class="fl-filter dropdown">
 					<button id="fl-recommended-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 						<span>Make:</span> Recommendations <i class="fa fa-chevron-down"></i>
 					</button>
@@ -45,45 +47,68 @@
 							<span>Best Large Format</span>
 						</label>
 					</div>
-				</div><!-- .fl-recommended -->
+				</div>
 
-				<div id="more-filters" class="more-filters" aria-labelledby="fl-more-options-btn">
-					<div class="fl-group">
+				<div class="fl-filter fl-build-volume dropdown">
+					<button id="fl-build-volume-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+						Build Volume<i class="fa fa-chevron-down"></i>
+					</button>
+					<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-build-volume-btn">
+						<label for="large">
+							<input id="large" type="checkbox" name="build_volume_filter" value="large">
+							<span>Large</span>
+						</label>
+						<label for="medium">
+							<input id="medium" type="checkbox" name="build_volume_filter" value="medium">
+							<span>Medium</span>
+						</label>
+						<label for="small">
+							<input id="small" type="checkbox" name="build_volume_filter" value="small">
+							<span>Small</span>
+						</label>
+					</div>
+				</div><!-- .fl-build-volume -->
 
-						<div class="fl-filter fl-bedstyle dropdown">
-							<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-								Bed Style<i class="fa fa-chevron-down"></i>
-							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
-								<label for="heated">
-									<input id="heated" type="checkbox" name="bed_style" value="heated">
-									<span>Heated</span>
-								</label>
-								<label for="unheated">
-									<input id="unheated" type="checkbox" name="bed_style" value="unheated">
-									<span>Not Heated</span>
-								</label>
-							</div>
-						</div><!-- .fl-bedstyle -->
+			</div>
 
-						<div class="fl-filter fl-materials dropdown">
-							<button id="fl-materials-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-								Materials<i class="fa fa-chevron-down"></i>
-							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-materials-btn">
-								<label for="proprietary">
-									<input id="proprietary" type="checkbox" name="materials" value="proprietary">
-									<span>Proprietary</span>
-								</label>
-								<label for="open">
-									<input id="open" type="checkbox" name="materials" value="open">
-									<span>Open</span>
-								</label>
-							</div>
-						</div><!-- .fl-materials -->
+			<div id="more-filters" class="more-filters" aria-labelledby="fl-more-options-btn">
 
-					</div><!-- .fl-group -->
-					<div class="fl-group">
+				<div class="fl-group">
+
+					<div class="fl-filter fl-bedstyle dropdown">
+						<button id="fl-bedstyle-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+							Bed Style<i class="fa fa-chevron-down"></i>
+						</button>
+						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-bedstyle-btn">
+							<label for="heated">
+								<input id="heated" type="checkbox" name="bed_style" value="heated">
+								<span>Heated</span>
+							</label>
+							<label for="unheated">
+								<input id="unheated" type="checkbox" name="bed_style" value="unheated">
+								<span>Not Heated</span>
+							</label>
+						</div>
+					</div><!-- .fl-bedstyle -->
+
+					<div class="fl-filter fl-materials dropdown">
+						<button id="fl-materials-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+							Materials<i class="fa fa-chevron-down"></i>
+						</button>
+						<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-materials-btn">
+							<label for="proprietary">
+								<input id="proprietary" type="checkbox" name="materials" value="proprietary">
+								<span>Proprietary</span>
+							</label>
+							<label for="open">
+								<input id="open" type="checkbox" name="materials" value="open">
+								<span>Open</span>
+							</label>
+						</div>
+					</div><!-- .fl-materials -->
+
+				</div>
+				<div class="fl-group">
 
 						<div class="fl-filter fl-filament-size dropdown">
 							<button id="fl-filament-size-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
@@ -117,28 +142,8 @@
 							</div>
 						</div><!-- .fl-hotend -->
 
-					</div><!-- .fl-group -->
+					</div>
 					<div class="fl-group">
-
-						<div class="fl-filter fl-build-volume dropdown">
-							<button id="fl-build-volume-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
-								Build Volume<i class="fa fa-chevron-down"></i>
-							</button>
-							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-build-volume-btn">
-								<label for="large">
-									<input id="large" type="checkbox" name="build_volume_filter" value="large">
-									<span>Large</span>
-								</label>
-								<label for="medium">
-									<input id="medium" type="checkbox" name="build_volume_filter" value="medium">
-									<span>Medium</span>
-								</label>
-								<label for="small">
-									<input id="small" type="checkbox" name="build_volume_filter" value="small">
-									<span>Small</span>
-								</label>
-							</div>
-						</div><!-- .fl-build-volume -->
 
 						<div class="fl-filter fl-more-options dropdown">
 							<button id="fl-more-options-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
@@ -183,28 +188,27 @@
 						</div><!-- .fl-more-options -->
 
 					</div><!-- .fl-group -->
+
 				</div><!-- .more-filters -->
 
-				<button id="more-filters-btn" class="more-filters-btn btn btn-default visible-xs-block" type="button" aria-haspopup="true" aria-expanded="false">More Filters</button>
+			<div class="fl-actions visible-xs-block">
+				<div class="fl-actions-wrap">
+					<button id="filters-cancel-btn" type="button" class="filters-cancel-btn btn btn-default">Cancel</button>
+					<button id="filters-apply-btn" type="submit" class="filters-apply-btn btn btn-primary">Apply</button>
+				</div>
+			</div><!-- .fl-actions -->
 
-				<div class="fl-actions visible-xs-block">
-					<div class="fl-actions-wrap">
-						<button id="filters-cancel-btn" type="button" class="filters-cancel-btn btn btn-default">Cancel</button>
-						<button id="filters-apply-btn" type="submit" class="filters-apply-btn btn btn-primary">Apply</button>
-					</div>
-				</div><!-- .fl-actions -->
+		</form><!-- .filters-list -->
 
-			</form><!-- .filters-list -->
+	</nav><!-- .filters-nav -->
 
-		</nav><!-- .filters-nav -->
+	<div class="fl-filters-selected clearfix">
+		<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
+		
+		<div class="fs-selected">
 
-		<div class="fl-filters-selected hidden-xs clearfix">
-			<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
-			<div class="fs-selected">
+		</div><!-- .fs-seletcted -->
+		<button id="rf-reset-btn" type="reset" class="rf-reset-btn btn btn-link">Reset Filters</button>
+	</div>
 
-			</div><!-- .fs-seletcted -->
-			<button id="rf-reset-btn" type="reset" class="rf-reset-btn btn btn-link">Reset Filters</button>
-		</div>
-
-	</section><!-- .review-filters -->
-</div>
+</section><!-- .review-filters -->

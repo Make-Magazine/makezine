@@ -18,10 +18,10 @@ function make_get_related_content( $atts, $content = null ) {
 
 	$output = '<aside class="pull-quote ' . esc_attr( $class ) . ' pull-quote-' . esc_attr( $count ) . '">';
 	$output .= ( isset( $atts['title'] ) ) ? '<h3><span>' . wp_kses_post( $atts['title'] ) . '</span></h3>' : '<h3><span>Related</span></h3>';
-	$output .= '<div class="row-fluid">';
+	$output .= '<div class="row">';
 		if ( $count == 2 ) {
 			foreach ( $ids as $id ) {
-				$output .= '<div class="span6">';
+				$output .= '<div class="col-md-6">';
 				$blurb = get_post( $id );
 				$output .= '<a href="' . esc_url( get_permalink( $id ) ) . '" class="' . esc_attr( $class ) . '">';
 				$output .= get_the_post_thumbnail( $blurb->ID, 'comment-thumb', array( 'class' => 'pull-left' ) );
@@ -34,7 +34,7 @@ function make_get_related_content( $atts, $content = null ) {
 				$output .= '</div>';
 			}
 		} elseif ( $count == 1 ) {
-			$output .= '<div class="span12">';
+			$output .= '<div class="col-xs-12">';
 				$blurb = get_post( $ids[0] );
 				$output .= '<a href="' . esc_url( get_permalink( $ids[0] ) ) . '" class="' . esc_attr( $class ) . '">';
 				$output .= get_the_post_thumbnail( $blurb->ID, 'comment-thumb', array( 'class' => 'pull-left' ) );

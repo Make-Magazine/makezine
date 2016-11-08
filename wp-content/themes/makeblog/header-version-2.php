@@ -38,71 +38,25 @@ if( $detect->isTablet() ){
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-  <link rel="icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
-  <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico?v=2" />
-  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon.png?v=2"/>
-
-
-  <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('siteurl'); ?>/apple-icon-57x57.png?v=2">
-  <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('siteurl'); ?>/apple-icon-60x60.png?v=2">
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('siteurl'); ?>/apple-icon-76x76.png?v=2">
-
-  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>apple-touch-icon.png?v=2"/>
-  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>apple-icon-72x72.png?v=2"/>
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>apple-icon-144x144.png?v=2"/>
-
-  <!-- IE 10 Metro tile icon. Replace #FFFFFF with desired tile color -->
-  <link rel="manifest" href="<?php bloginfo('siteurl'); ?>/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="<?php bloginfo('siteurl'); ?>/ms-icon-144x144.png?v=2">
-  <meta name="theme-color" content="#ffffff">
-
-  <link rel="icon" sizes="192x192" href="<?php bloginfo('siteurl'); ?>/apple-icon-192x192.png?v=2">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('siteurl'); ?>/apple-icon-180x180.png?v=2">
-
-  <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('siteurl'); ?>/apple-icon-152x152.png?v=2">
-
-  <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-  <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('siteurl'); ?>/apple-icon-144x144.png?v=2">
-
-  <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-  <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('siteurl'); ?>/apple-icon-120x120.png?v=2">
-
-  <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('siteurl'); ?>/apple-icon-114x114.png?v=2">
-
-  <!-- For first- and second-generation iPad: -->
-  <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('siteurl'); ?>/apple-icon-72x72.png?v=2">
-
-  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <link rel="apple-touch-icon" href="<?php bloginfo('siteurl'); ?>/apple-icon-precomposed.png?v=2">
-
-  <!-- For any additional png sizes that aren't covered above -->
-  <link rel="icon" sizes="16x16" href="<?php bloginfo('siteurl'); ?>/favicon-16x16.png?v=2" >
-  <link rel="icon" sizes="32x32" href="<?php bloginfo('siteurl'); ?>/favicon-32x32.png?v=2" >
-  <link rel="icon" sizes="96x96" href="<?php bloginfo('siteurl'); ?>/favicon-96x96.png?v=2" >
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
+  <?php // TODO: check if the below line is linked to any Maker Media account. Was added by team Quora and seems to do nothing. ?>
   <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
+  <?php // Below site verfication is linked to Maker Media Webmaster tools account ?>
+  <meta name="google-site-verification" content="eAyS6vj89QDOsofiDC4sB-2YR3YNg_VGCYiQnWm2mqc" />
+  <meta name="norton-safeweb-site-verification" content="4g4w71jm7qt9e7ghe2dxdhiq0mnnkwom6ue80rdet53q3figx8ooxrffbgkkl9kzo3qi85l2j-txt-fh8w-p2z5769ht01z8s6sxq3-8r7cojmimgp00homsjjjv96ww" />
   <meta property="fb:admins" content="1612614584" />
 
-  <!-- javascript -->
-  <script src="//code.jquery.com/jquery-latest.min.js"></script>
-  <script src="<?php echo get_template_directory_uri().'/version-2/js/bootstrap.min.js' ?>"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
 
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="<?php echo get_template_directory_uri().'/version-2/js/ie-emulation-modes-warning.js' ?>"></script>
-  <script src="<?php echo get_template_directory_uri().'/version-2/js/header.js' ?>"></script>
-  <script src="<?php echo get_template_directory_uri().'/version-2/js/single-story.js' ?>"></script>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/fancybox.js' ?>"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -168,24 +122,26 @@ if( $detect->isTablet() ){
   </script>
 </head>
 <body id="makeblog" <?php body_class(); ?>>
-<!-- Google Universal Analytics -->
 
+<!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
+
+<!-- Google Universal Analytics -->
 <!-- Time-tracking for Custom Dimensions -->
 <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
 
 <!-- Primary Categories Dimension Query -->
 <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
 <?php
-$cats = get_the_category();
-foreach ( $cats as $cat ) {
-  if ( $cat->category_parent < 1 )
-    $primarycat[] = $cat->category_nicename;
-  elseif ( $cat->category_parent > 0 )
-    $parent_cat_id = $cat->category_parent;
-  $cat2 = get_cat_name($parent_cat_id);
-  $primarycat[] = $cat2;
-}
-$primary_cat_dimension = $primarycat[0];
+  $cats = get_the_category();
+  foreach ( $cats as $cat ) {
+    if ( $cat->category_parent < 1 )
+      $primarycat[] = $cat->category_nicename;
+    elseif ( $cat->category_parent > 0 )
+      $parent_cat_id = $cat->category_parent;
+    $cat2 = get_cat_name($parent_cat_id);
+    $primarycat[] = $cat2;
+  }
+  $primary_cat_dimension = $primarycat[0];
 ?>
 <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
 <script type="text/javascript">
@@ -223,17 +179,12 @@ $primary_cat_dimension = $primarycat[0];
 <?php endif; ?>
 
 <!-- TOP BRAND BAR -->
-<div class="header-wrapper hidden-xs top-header-bar-brand">
+<div class="top-header-bar-brand header-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
         <p class="header-make-img">
-          <a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=brand+bar&utm_campaign=shop+best+sellers&utm_term=shop+best+sellers" target="_blank">Shop Best Sellers at Maker Shed &rarr; Kits, Books, More!</a>
-        </p>
-      </div>
-      <div class="col-sm-3">
-        <p class="header-sub-link pull-right">
-          <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx" target="_blank">SUBSCRIBE </a>
+          <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
         </p>
       </div>
     </div>
@@ -247,13 +198,11 @@ $primary_cat_dimension = $primarycat[0];
       <div class="row">
 
         <!-- LOGO & TAG LINE -->
-          <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-            <a href="<?php echo home_url(); ?>" class="logo-a">
-                <img src="<?php echo get_template_directory_uri().'/version-2/img/make_logo.png' ?>" class="mz-logo" />
-            </a>
-            <h5 class="mz-tag">We are all Makers</h5>
-            <h6><a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ"><?php _e( 'Subscribe', 'makeblog' ) ?></a></h6>
-          </div>
+        <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
+          <a href="<?php echo home_url(); ?>" class="logo-a">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" class="mz-logo" alt="Make: logo" />
+          </a>
+        </div>
        
 
         <!-- MENUS -->
@@ -271,22 +220,16 @@ $primary_cat_dimension = $primarycat[0];
 
           <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
           <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
-            $user_ip = getenv('REMOTE_ADDR');
-            $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-            $state = $geo["geoplugin_regionCode"];
-
-            if( $state == 'CA' ) {
-              echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
-              echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
-              echo '</h3>';
-            }
+            echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
+            echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
+            echo '</h3>';
           } // end if ?>
 
           <!-- Collapsible Menu -->
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
             <!-- Mobile search -->
-            <div class="hidden-md mz-search search-bar-mobile">
+            <div class="search-bar-mobile hidden-sm hidden-md hidden-lg">
               <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
                 <label>
                   <input type="search" class="search-field" placeholder="" value="" name="s" title="">
@@ -315,8 +258,7 @@ $primary_cat_dimension = $primarycat[0];
                   $isSecure = "https://";
                 }
                 ?>
-                <h4>Subscribe</h4>
-                <p>Stay inspired and get fresh updates</p>
+                <h4>Sign Up For Our Newsletter</h4>
                 <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
                   <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
                   <input type="hidden" name="cmd" value="subscribe" />
@@ -341,38 +283,38 @@ $primary_cat_dimension = $primarycat[0];
 
         <div class="get-dark"></div>
 
-        <!-- SEARCH -->
-        <div class="col-md-1 hidden-xs mz-search search-bar">
+        <!-- NEW SEARCH -->
+        <div id="sb-search" class="sb-search hidden-xs">
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-            <input type="submit" class="sendsubmit" value="" />
-            <label>
-              <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search">
-              <div class="close-search"><i class="fa fa-search fa-2x"></i></div>
+            <label class="sb-search-label">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input class="sb-search-input search-field" placeholder="Search Make: Magazine" type="text" value="" name="s" id="search">
             </label>
+            <label class="sb-search-open-trigger">
+              <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+              <input class="sb-search-submit" type="submit" value="">
+            </label>
+            <i class="fa fa-search" aria-hidden="true"></i>
           </form>
         </div>
 
-        <!-- Sticky Navbar -->
-        <div class="col-lg-1 col-md-3 col-sm-3 hidden-xs subscribe sticky-subscribe">
-          <h6>
-            <a id="trigger-overlay" href="#">
-              <h5>Subscribe</h5>
-              <img src="<?php echo get_template_directory_uri().'/version-2/img/2-layers@2x.png' ?>" alt="Make Magazine small mag cover" />
+        <!-- New Header Subscribe stuff -->
+        <div id="mz-header-subscribe" class="hidden-xs">
+          <div>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
+              <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
             </a>
+            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
+          </div>
+        </div>
+
+        <!-- Subscribe link in Sticky Navbar -->
+        <div class="sticky-subscribe">
+          <h6>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe<span> & save</span></a>
           </h6>
         </div>
 
-        <!-- SOCIAL MEDIA ICONS -->
-        <div class="col-md-2  hidden-sm hidden-xs text-center desktop-social">
-          <div class="social-network-container">
-            <ul class="social-network social-circle">
-              <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-              <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
-              <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
-            </ul>
-          </div>
-        </div><!-- End .desktop-social -->
       </div><!-- row -->
     </nav>
   </div><!-- container panel header -->
@@ -452,17 +394,23 @@ $primary_cat_dimension = $primarycat[0];
           
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
-              <a href="/comparison/3dprinters/" class="pull-left first-post"></a>
+              <a href="/comparison/3dprinters/" class="pull-left first-post">
+                <img src="/wp-content/themes/makeblog/img/Make_3D-Printers-Guide.jpg" alt="3D Printer product reviews and comparison guide" />
+              </a>
             </div>
           </div>
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
-              <a href="/comparison/boards/" class="pull-left second-post"></a>
+              <a href="/comparison/boards/" class="pull-left second-post">
+                <img src="/wp-content/themes/makeblog/img/Make_Boards-Guide.jpg" alt="Boards product reviews and comparison guide" />
+              </a>
             </div>
           </div>
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
-              <a href="/comparison/drones/" class="pull-left third-post"></a>
+              <a href="/comparison/drones/" class="pull-left third-post">
+                <img src="/wp-content/themes/makeblog/img/Make_Drones-Guide.jpg" alt="Drones product reviews and comparison guide" />
+              </a>
             </div>
           </div>
         </div>
@@ -470,22 +418,30 @@ $primary_cat_dimension = $primarycat[0];
         <div class="latest-shop row">
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post"></a>
+              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop1.png" alt="Shop for 3D Printing" />
+              </a>
             </div>
           </div>
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post"></a>
+              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop2.png" alt="Shop for Drones" />
+              </a>
             </div>
           </div>
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post"></a>
+              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop3.png" alt="Shop for Electronics build kits" />
+              </a>
             </div>
           </div>
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post"></a>
+              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop4.png" alt="Shop for Make: Magazine" />
+              </a>
             </div>
           </div>
         </div>
@@ -526,12 +482,30 @@ $primary_cat_dimension = $primarycat[0];
         <div class="nav-share row">
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/makeshowtell/" class="pull-left first-post"></a>
+              <a href="https://community.makezine.com/share" class="pull-left first-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Projects.jpg" alt="Share your ideas and projects on Make:" />
+              </a>
             </div>
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute" class="pull-left second-post"></a>
+              <a href="//makezine.com/contribute/" class="pull-left second-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
+              </a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="https://community.makezine.com/share/contests" class="pull-left third-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Contest.jpg" alt="Show and Tell, social" />
+              </a>
+            </div>
+          </div>
+          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+            <div class="nav-img-border">
+              <a href="//makezine.com/joinus" class="pull-left fourth-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Membership.jpg" alt="Show and Tell, social" />
+              </a>
             </div>
           </div>
         </div>

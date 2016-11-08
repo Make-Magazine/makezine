@@ -559,17 +559,17 @@ jQuery(document).ready(function ($) {
     $(document).mouseup(function (e) {
         var container = $(".filter_max");
         if ((container.has(e.target).length === 0) && (container.hasClass('sort'))) {
-            $('.filter_max .sortby').hide('slow');
+            $('.filter_max .sortby').hide();
             $('.filter_max').removeClass('show-now sort');
-            $('.filter_mini').show('slow');
+            $('.filter_mini').show();
         }
     });
     $(document).on('touchstart', 'body', function (e) {
         var container = $(".filter_max");
         if ((container.has(e.target).length === 0) && (container.hasClass('sort'))) {
-            $('.filter_max .sortby').hide('slow');
+            $('.filter_max .sortby').hide();
             $('.filter_max').removeClass('show-now sort');
-            $('.filter_mini').show('slow');
+            $('.filter_mini').show();
         }
     });
     var $adminBar = $('#wpadminbar').height();
@@ -578,24 +578,24 @@ jQuery(document).ready(function ($) {
     $(document).on('touchstart click', '.filter_mini .filter-button', function (event) {
         event.stopPropagation();
         event.preventDefault();
-        $('.filter_mini').hide('slow');
-        $('.filter_max .filter').slideDown('slow');
+        $('.filter_mini').hide();
+        $('.filter_max .filter').slideDown();
         $('.filter_max').addClass('show-now');
     });
 
     $(document).on('touchstart click', '.filter_mini .sort-button', function (event) {
         event.stopPropagation();
         event.preventDefault();
-        $('.filter_mini').hide('slow');
-        $('.filter_max .sortby').show('slow');
+        $('.filter_mini').hide();
+        $('.filter_max .sortby').show();
         $('.filter_max').addClass('show-now sort');
     });
 
     $(document).on('touchstart click', '.close-button', function (event) {
         event.stopPropagation();
         event.preventDefault();
-        $('.filter_max .filter').slideUp('slow');
-        $('.filter_mini').show('slow');
+        $('.filter_max .filter').slideUp();
+        $('.filter_mini').show();
         window.setTimeout(function () {
             $('.filter_max').removeClass('show-now');
         }, 570);
@@ -604,8 +604,8 @@ jQuery(document).ready(function ($) {
         event.stopPropagation();
         event.preventDefault();
         $('.spinner').show();
-        $('.filter_max .filter').slideUp('slow');
-        $('.filter_mini').show('slow');
+        $('.filter_max .filter').slideUp();
+        $('.filter_mini').show();
         window.setTimeout(function () {
             $('.filter_max').removeClass('show-now');
         }, 570);
@@ -632,13 +632,13 @@ jQuery(document).ready(function ($) {
     });
 
     function onClickDurationList() {
-        $('.mobile-dur ul.duration-item li').show('slow').removeClass('filter_selected');
+        $('.mobile-dur ul.duration-item li').show().removeClass('filter_selected');
         $('.mobile-dur ul.duration-item').addClass('open-list');
     }
 
     function onClickDurationCheck() {
         $('.mobile-dur ul.duration-item li').removeClass('current');
-        $('.mobile-dur ul.duration-item li').hide('slow');
+        $('.mobile-dur ul.duration-item li').hide();
         $(this).show('fast');
         $('.mobile-dur ul.duration-item').removeClass('open-list chosen');
     }
@@ -658,23 +658,16 @@ jQuery(document).ready(function ($) {
     });
 
     function onClickDiffList() {
-        $('.mobile_diff ul.diff-item li').show('slow').removeClass('filter_selected');
+        $('.mobile_diff ul.diff-item li').show().removeClass('filter_selected');
         $('.mobile_diff ul.diff-item').addClass('open-list');
     }
 
     function onClickDiffCheck() {
         $('.mobile_diff ul.diff-item li').removeClass('current');
-        $('.mobile_diff ul.diff-item li').hide('slow');
+        $('.mobile_diff ul.diff-item li').hide();
         $(this).show('fast');
         $('.mobile_diff ul.diff-item').removeClass('open-list chosen');
     }
-
-
-    $(".filter-item ul li ul li span").tooltip({
-        'delay': {show: 1, hide: 0}
-    }).hover(function () {
-        $('.fade').removeClass('fade');
-    });
 
 
     //blog//
@@ -716,7 +709,7 @@ jQuery(document).ready(function ($) {
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
                         make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                             'skipCount': 2,
                             'max' : 3
                         });
@@ -770,7 +763,7 @@ jQuery(document).ready(function ($) {
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
                         make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                             'skipCount': 2,
                             'max' : 3
                         });
@@ -795,7 +788,7 @@ jQuery(document).ready(function ($) {
         // Load mobile ads.
         if ($(window).width() < 768) {
             make.gpt.injectAds($('.post-list .row'), {
-                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
                 'skipCount': 2,
                 'max' : 3,
                 'renderIntial' : false
@@ -812,7 +805,7 @@ jQuery(document).ready(function ($) {
         if ((!$('.all-stories').hasClass('tags')) && ($('p').is('#blog-load-posts') === false)) {
             $('#footer').removeClass('non-visible');
         }
-        var $sticky_adds_block = $('.all-stories #ad_300x600_1');
+        var $sticky_adds_block = $('.all-stories .ad-refresh .js-ad').eq(0);
         var ads_position = $sticky_adds_block.offset().top - 57;
         var contentHeight;
         var notSticky = 0;

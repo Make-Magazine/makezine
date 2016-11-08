@@ -4,36 +4,8 @@
 
 .review-filters {
 
-	@media screen and (max-width: @mq-xs-max) {
-		visibility: hidden;
-		position: fixed;
-		top: 103px;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: white;
-		z-index: 3;
-		overflow: scroll;
-		opacity: 0;
-		transition: visibility 0s, opacity 200ms;
-
-		.admin-bar & {
-			top: 157px;
-		}
-
-	}
-
 	@media screen and (min-width:@mq-sm-min) {
-		margin-bottom: 20px;
-		padding: 0;
-	}
-
-	html.filters-open & {
-		visibility: visible;
-		opacity: 1;
-		transition: visibility 200ms, opacity 150ms;
-		z-index: 999999999;
-		top: 0;
+		margin-bottom: 25px;
 	}
 
 	.btn-primary {
@@ -50,6 +22,33 @@
 
 // Filters Nav
 .fl-filters-nav {
+	@media screen and (max-width: 767px) {
+		visibility: hidden;
+		position: fixed;
+		top: 103px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: white;
+		z-index: 3;
+		overflow: scroll;
+		opacity: 0;
+		transition: visibility 200ms, opacity 200ms;
+	  .fl-filters-selected {
+	  	display: block;
+			margin: 0;
+		}
+		.admin-bar & {
+			top: 157px;
+		}
+	}
+	html.filters-open & {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 200ms, opacity 200ms;
+		z-index: 999999999;
+		top: 0;
+	}
 	@media screen and (min-width:@mq-sm-min) {
 		background: white;
 		border-radius: 9px;
@@ -62,6 +61,7 @@
 	font-family: @roboto-slab;
 	font-weight: @font-bold;
 	margin: 4px 0 12px;
+	font-size: 28px;
 }
 
 // Filter Header Description
@@ -69,24 +69,11 @@
 	font-size: 12px;
 	line-height: 14px;
 	color: @grey-mid;
-
-	@media screen and (min-width:@mq-lg-min) {
-		max-width: 200px;
-	}
 }
 
 // List of filters
 .fl-filters-list {
-
-	margin-bottom: 0;
-	padding: 0;
-
-	@media screen and (min-width:@mq-sm-min) {
-		padding: 0 15px;
-		float: right;
-		display: table;
-	}
-
+	padding: 15px;
 }
 
 // Each filter
@@ -121,6 +108,12 @@
 		@media screen and(min-width: @mq-sm-min) {
 			text-align: right;
 		}
+		@media screen and(max-width: 767px) {
+			font-size: 14px;
+			&span {
+				font-size: 14px;
+			}
+		}
 
 		&:hover,
 		&:focus,
@@ -129,15 +122,10 @@
 			color: @aqua;
 		}
 
-		span {
-			text-transform: none;
-			font-size: 13px;
-		}
-
 		.fa {
 			display: none;
 			@media screen and (min-width: @mq-sm-min) {
-				margin-left: 10px;
+				margin-left: 3px;
 				font-size: 14px;
 				display: inline-block;
 			}
@@ -183,31 +171,27 @@
 		}
 
 		span {
-
 			display: block;
-			
 			&:before,
 			&:after {
 				content: '';
 				position: absolute;
-				top: 0;
+				top: -3px;
 				left: 0;
 				transition: all 150ms;
 			}
-
 			&:before {
 				background-color: white;
-				width: 18px;
-				height: 18px;
+				width: 22px;
+				height: 27px;
+				left: -4px;
 			}
-
 			&:after {
 				font-family: 'FontAwesome';
-				content: "\f058";
+				content: "\f10c";
 				font-size: 1.25em;
 				color: @grey-mid;
 			}
-
 		}
 
 		// Case: Hover Filters
@@ -223,22 +207,20 @@
 			font-weight: @font-bold;
 			&:after {
 				font-weight: @font-normal;
+				content: "\f192";
 				color: @aqua;
 			}
 		}
-
 	}
 
 	hr {
 		border-color: @review-item-border;
 		margin: 6px 0;
 	}
-
 }
 
 // The Filter set options
 .fl-filter-options {
-
 	display: block;
 	border-radius: 0;
 	border: 0;
@@ -261,6 +243,11 @@
 		box-shadow: 0 1px 2px rgba(0,0,0,0.5);
 	}
 
+	@media screen and (max-width: 767px) {
+	  margin: 0;
+	  padding: 0;
+	}
+
 	&:after {
 		display: none;
 	}
@@ -277,7 +264,6 @@
 	.fl-more-options & {
 		float:none;
 	}
-
 }
 
 // Recommended Filter & Filter Groups
@@ -285,30 +271,20 @@
 .fl-group {
 	@media screen and (min-width: @mq-sm-min) {
 		display: table-cell;
-		padding: 20px 30px;
+		padding: 15px 10px;
 		vertical-align: top;
 	}
-	@media screen and (min-width: @mq-md-min) {
-		padding: 20px 25px;
-	}
 	@media screen and (min-width: @mq-lg-min) {
-		padding: 20px 30px;
-	}
-}
-
-// Full-Width filter sets
-.fl-recommended,
-.fl-more-options {
-	@media screen and (max-width: @mq-xs-max) {
-		float: none;
-		width: 100%;
-		clear: both;
+		padding: 15px 15px;
 	}
 }
 
 .fl-recommended {
 	@media screen and (max-width: @mq-xs-max) {
 		margin-bottom: 15px;
+		float: none;
+		width: 100%;
+		clear: both;
 		&:after {
 			content: ' ';
 			position: absolute;
@@ -321,40 +297,34 @@
 }
 
 
-
 // Filter Groups
 .fl-group {
 	@media screen and (min-width: @mq-sm-min) {
 		border-left: 1px solid @lt-gray;
+		width: 32%;
+		display: inline-block;
 		&:last-of-type {
 			padding-right: 0;
 		}
 	}
 }
 
-.more-filters-btn {
-	margin: 20px auto 90px;
-	width: 48%;
-}
-
 .more-filters {
-
-	display:none;
-
+	width: 66.6%;
+	display: inline-block;
+	overflow: visible!important;
+	padding-left: 0;
+	@media (max-width: 767px) {
+		width: 100%;
+		padding-bottom: 50px;
+	}
 	&.open {
 		display: block;
 	}
-
-	@media screen and (min-width: @mq-sm-min) {
-		display: block!important;
-		overflow: visible!important;
-	}
-
 }
 
 // Mobile apply cancel buttons
 .fl-actions {
-
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -363,14 +333,12 @@
 	padding: @spacer;
 	background: #F0F0F0;
 	text-align: center;
-
 	.btn {
 		width: 48%;
 		&:first-of-type {
 			margin-right: 5px;
 		}
 	}
-
 }
 
 // The selected filters bar
@@ -379,6 +347,9 @@
 	border-radius: 9px;
 	margin: 2px 0 0;
   display: none;
+  @media (max-width: 767px) {
+ 	  margin-top: 15px;
+  }
 }
 
 // Selected filters items
@@ -389,7 +360,6 @@
 
 // The selected fitlers.
 .fs-selected-btn {
-
 	color: @black-alt;
 	font-size: 13px;
 	line-height: 1.15;
@@ -411,18 +381,14 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		color: @grey-mid;
 		text-decoration: none;
 		outline: 0;
-
 		.fa {
 			color: white;
 			background: @grey-mid;
 		}
-
 	}
-
 }
 
 // the reset filters button

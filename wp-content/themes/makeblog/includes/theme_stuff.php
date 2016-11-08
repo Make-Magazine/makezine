@@ -259,44 +259,30 @@ function make_load_resources() {
 	global $wp_query;
 
 	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
+  //wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
+  wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
 	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap-responsive.css' );
-
-	// Load our takeover default styles when it is enabled
-	if ( get_theme_mod( 'make_enable_takeover' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_canvas' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_banner' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_enable_video_banner' ) === 'on' )
-		wp_enqueue_style( 'make-takeover', get_stylesheet_directory_uri() . '/css/takeover.css' );
-
-	if ( get_theme_mod( 'make_faire_banner' ) === 'on' ) {
-		wp_enqueue_style( 'youtube-playlist', get_stylesheet_directory_uri() . '/css/ytv.css' );
-		wp_enqueue_script( 'youtube-playlist', get_stylesheet_directory_uri() . '/ js/ytv.js' );
-	}
+  wp_enqueue_style( 'roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
+  wp_enqueue_style( 'roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
+  wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
 
 	// Load optimizely A/B testing script
-	wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
+	//wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
 
-	//load data finder
-	wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );
-
-	//fitvid
-	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'fitvids-custom', get_stylesheet_directory_uri() . '/js/jquery.fitvids.custom.js', array( 'jquery' ), false, true );
+	//load data finder for cookies
+	// wp_enqueue_script( 'user-data-script', '//cdn.makezine.com/js/make-v3.js', array( 'make-optimizely' ) );
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'make-header', get_stylesheet_directory_uri() . '/js/header.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ) );
-	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/misc.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), false, false );
+	wp_enqueue_script( 'header-version-2', get_stylesheet_directory_uri() . '/version-2/js/header.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'single-story', get_stylesheet_directory_uri() . '/version-2/js/single-story.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ));
+	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/js/fancybox.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery', 'fancybox' ), false, true );
+
 
 	// What page are we on? And what is the pages limit?
 	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -1296,61 +1282,6 @@ add_filter( 'request', 'make_add_post_types_to_feed' );
 
 
 /**
- * Outputs the code for our Popdown menu found on all Make sites
- * @return html
- *
- * @version  1.0
- */
-function make_popdown_menu() { ?>
-	<div class="make-popdown">
-		<div class="wrapper-container">
-			<div class="container">
-				<div class="row">
-					<div class="span3 offset2 border-right">
-						<div class="row-fluid">
-							<a href="https://readerservices.makezine.com/mk/subscribe.aspx?PC=MK&amp;PK=M37BN05" class="span4" onClick="_gaq.push(['_trackEvent', 'popdown-subscribe', 'Click', 'Subscribe Image']);"><img src="<?php echo get_template_directory_uri(); ?>/img/footer-make-cover.jpg" alt=""></a>
-							<div class="span7 side-text">
-								<a href="https://readerservices.makezine.com/mk/subscribe.aspx?PC=MK&amp;PK=M37BN05" onClick="_gaq.push(['_trackEvent', 'popdown-subscribe', 'Click', 'Subscribe Link']);">Subscribe to MAKE!</a> Receive both print &amp; digital editions.
-							</div>
-						</div>
-					</div>
-					<div class="span2 border-right">
-						<?php wp_nav_menu( array(
-							'theme_location'  => 'popdown-menu-top',
-							'container'       => false,
-							'menu_class'      => 'first nav ga-nav',
-							'depth'           => 1
-						) ); ?>
-					</div>
-					<div class="span4">
-						<?php wp_nav_menu( array(
-							'theme_location'  => 'popdown-menu-middle',
-							'container'       => false,
-							'menu_class'      => 'second nav ga-nav',
-							'depth'           => 1
-						) ); ?>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span9 offset2 menu-bottom">
-						<?php wp_nav_menu( array(
-							'theme_location'  => 'popdown-menu-last',
-							'container'       => false,
-							'menu_class'      => 'last nav ga-nav',
-							'depth'           => 1
-						) ); ?>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="menu-button">
-			<span class="popdown-btn"></span>
-		</div>
-	</div>
-<?php }
-
-
-/**
  * Remove unncessary meta boxes from Authors
  * @return void
  */
@@ -1465,6 +1396,8 @@ function make_generate_title_tag() {
 		$output .= 'Craft | Crocheting, knitting, sewing, jewelry making, and papercraft';
 	} elseif ( is_singular( 'craft' ) ) {
 		$output .= wp_title( '', false ) . ' | MAKE: Craft';
+	} elseif ( is_author() ) {
+		$output .= make_author_name() . ' Author Profile | ' . get_bloginfo('name');
 	} else {
 		$output .= wp_title( '', false );
 	}
@@ -1513,8 +1446,8 @@ function make_is_parent_page() {
 function make_copyright_footer() { ?>
 	<div class="footer_copyright">
 		<div class="col-xs-12 text-center">
-			<p class="muted"><small>Make: and Maker Faire are registered trademarks of Maker Media, Inc. | <a href="//makermedia.com/privacy/">Privacy</a></small></p>
-			<p class="muted"><small>Copyright &copy; 2004-<?php echo date("Y") ?> Maker Media, Inc.  All rights reserved</small></p>
+			<p class="text-muted"><small>Make: and Maker Faire are registered trademarks of Maker Media, Inc. | <a href="//makermedia.com/privacy/">Privacy</a> | <a href="//makermedia.com/terms/">Terms</a></small></p>
+			<p class="text-muted"><small>Copyright &copy; 2004-<?php echo date("Y") ?> Maker Media, Inc.  All rights reserved</small></p>
 		</div>
 	</div>
 <?php }
@@ -1631,7 +1564,7 @@ function make_get_banner_to_category_page() {
 
 		if ( get_theme_mod( 'make_home_banner' ) === 'on' ) : ?>
 
-			<div class="span12 home-banner">
+			<div class="col-xs-12 home-banner">
 				<a href="<?php echo esc_url( get_theme_mod( 'make_category_banner_link', 'http://makezine.com/maker-faire-rome-arduino-project-challenge/' ) ); ?>">
 					<img src="<?php echo esc_url( get_theme_mod( 'make_home_takeover_image', get_stylesheet_directory_uri() . '/img/cnc.jpg' ) ); ?>">
 				</a>
@@ -1703,10 +1636,10 @@ function home_tags($postid) {
 			$tag = get_the_tags( $postid );
 			if ( ! empty( $dc ) ) {
 				$term = get_term( $dc, 'post_tag' );
-				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">#'.$term->name.'</a>';
+				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">'.$term->name.'</a>';
 			}
 			elseif( ! empty( $tag ) ) {
-				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">#'.$tag[0]->name;
+				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">'.$tag[0]->name;
 			}
 			else {
 				echo '';

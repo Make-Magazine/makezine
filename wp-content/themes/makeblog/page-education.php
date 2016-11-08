@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 					
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			
@@ -31,7 +31,7 @@ get_header('version-2'); ?>
 									
 			<div class="row">
 			
-				<div class="span8">
+				<div class="col-md-8">
 				
 					<article <?php post_class( 'row' ); ?>>
 
@@ -49,7 +49,7 @@ get_header('version-2'); ?>
 				</div>
 				
 				
-				<div class="span4 sidebar">
+				<div class="col-md-4 sidebar">
 
 					<?php
 						$side_query = new WP_Query( array(
@@ -65,7 +65,7 @@ get_header('version-2'); ?>
 									<a href="<?php the_permalink(); ?>"><h4 class="side-title"><?php the_title(); ?></h4></a>	
 								</div>
 								<div class="media-body">
-									<a class="media thumbnail pull-left" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'archive-thumb', array( 'class' => 'media-object' ) ); ?></a>
+									<a class="media img-thumbnail pull-left" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'archive-thumb', array( 'class' => 'media-object' ) ); ?></a>
 									<p><?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?></p>
 								</div>
 							</article>

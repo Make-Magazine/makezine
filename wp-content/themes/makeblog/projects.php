@@ -60,7 +60,7 @@ get_header('version-2'); ?>
             </div>
         </div>
         <div class="posts-list">
-            <ul class="selected-posts-list">
+            <ul class="selected-posts-list list-unstyled">
                 <?php
                 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 $args = array(
@@ -114,8 +114,6 @@ get_header('version-2'); ?>
                                         $output .= '<span class="video fa fa-video-camera"></span>';
                                         $output .= '</a></div>';
                                         echo $output;
-
-                                        
                                     } ?>
                                 </div>
 
@@ -190,6 +188,11 @@ get_header('version-2'); ?>
             </ul>
         </div>
     </div>
+    
+    <div class="home-ads bottom">
+      <?php global $make; print $make->ads->ad_728x90; ?>
+    </div>
+
     <div id="temp_post_list" style="display: none">
 
     </div>

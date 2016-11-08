@@ -4,7 +4,7 @@
 
 			<div class="row">
 
-				<div class="span8">
+				<div class="col-md-8">
 
 					<div class="content">
 

@@ -184,7 +184,7 @@ function make_is_logged_in( maker ) {
 				make_contribute_add_gigya_id( maker.UID );
 			}
 
-			jQuery( '.author-profile-bio' ).append( '<a href="' + make_gigya.root_path + 'contribute/" class="btn btn-large btn-primary">Contribute to MAKE!</a>' );
+			jQuery( '.author-profile-bio' ).append( '<a href="' + make_gigya.root_path + 'contribute/" class="btn btn-lg btn-primary">Contribute to MAKE!</a>' );
 		}
 	} else {
 		if ( gigya_debug )
@@ -193,6 +193,6 @@ function make_is_logged_in( maker ) {
 		// Add our login/register links
 		jQuery( '.main-header' ).find( '.row' ).append( '<div class="login-wrapper"><a href="#signin" class="user-creds signin">Sign In</a> / <a href="#join" class="user-creds join">Join</a></div>' );
 
-		jQuery( '.container.authentication' ).html( '<div class="row"><div class="span12 login-required"><h2>You must be logged in to access this area. Please <a href="#signin" class="user-creds signin">Sign In</a> or <a href="#join" class="user-creds join">Join</a>.</h2></div></div>' ).show();
+		jQuery( '.container.authentication' ).html( '<div class="row"><div class="col-xs-12 login-required"><h2>You must be logged in to access this area. Please <a href="#signin" class="user-creds signin">Sign In</a> or <a href="#join" class="user-creds join">Join</a>.</h2></div></div>' ).show();
 	}
 }

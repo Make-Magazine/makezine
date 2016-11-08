@@ -16,13 +16,13 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<div class="content-type-top">
 					
 						<div class="row">
 							
-							<div class="span9">
+							<div class="col-md-9">
 								
 								<h1>Make: Reviews</h1>
 								
@@ -38,7 +38,7 @@ get_header('version-2'); ?>
 								
 							</div>
 							
-							<div class="span3"></div>
+							<div class="col-md-3"></div>
 							
 						</div>
 					
@@ -58,7 +58,7 @@ get_header('version-2'); ?>
 		
 			<div class="row">
 			
-				<div class="span8">
+				<div class="col-md-8">
 					
 					<?php
 						$args = array(
@@ -73,7 +73,7 @@ get_header('version-2'); ?>
 					
 				</div>
 				
-				<div class="span4">
+				<div class="col-md-4">
 					
 					<div class="sidebar-ad">
 
@@ -87,7 +87,7 @@ get_header('version-2'); ?>
 								
 			<div class="row">
 			
-				<div class="span12">
+				<div class="col-xs-12">
 				
 					<?php 
 
@@ -112,10 +112,10 @@ get_header('version-2'); ?>
 	<?php
 
 		if ($catslugs) {
-			echo '<div class="grey topper"><div class="container"><div class="row"><div class="span12"><h2>Reviews by Category</h2></div></div></div></div>';
+			echo '<div class="grey topper"><div class="container"><div class="row"><div class="col-xs-12"><h2>Reviews by Category</h2></div></div></div></div>';
 			foreach ($catslugs as $category) {
 				$category = wpcom_vip_get_term_by('name', $category, 'category');
-				echo '<div class="grey"><div class="container"><div class="row"><div class="span12">';							
+				echo '<div class="grey"><div class="container"><div class="row"><div class="col-xs-12">';							
 				$args = array(
 					'post_type'			=> 'review',
 					'category__in'		=> $category->term_id,

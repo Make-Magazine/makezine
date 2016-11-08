@@ -10,12 +10,16 @@ if ( ! empty( $image ) ){
 
 <div id="content-wrap" class="container <?php echo $has_hero;?>">
 	<div class="row cw-content">
-		<div id="product-content" class="col-sm-8">
+		<div id="product-content" class="col-sm-8" itemscope itemtype="http://schema.org/Article">
+
+			<meta itemprop="name" content="Make: Magazine">
 			
-			<h2 class="product-title"><?php the_title(); ?></h2>
+			<h2 class="product-title" itemprop="headline"><?php the_title(); ?></h2>
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<?php the_content(); ?>
+				<div itemprop="description">
+					<?php the_content(); ?>
+				</div>
 			<?php endwhile; ?>
 			<?php endif; ?>
 

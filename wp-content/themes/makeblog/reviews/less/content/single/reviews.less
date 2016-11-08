@@ -11,7 +11,6 @@ html.review-nav-open {
 }
 
 body.single-reviews {
-
 	.footer-ad {
 		display: none;
 	}
@@ -35,14 +34,11 @@ body.single-reviews {
 					top: 157px;
 				}
 			}
-
 		}
 	}
-
 }
 
 .btn {
-
 	font-weight: 500;
 	font-size: 12px;
 	border: 0;
@@ -54,7 +50,6 @@ body.single-reviews {
 	&:active {
 		outline: 0;
 	}
-
 }
 
 .btn-default {
@@ -69,14 +64,11 @@ body.single-reviews {
 }
 
 .reviews-listings {
-
 	position: relative;
-	padding: 0;
 	min-height: 200px;
 
 	//CASE: The AJAX Filters are loading
 	body.filters-loading & {
-
 		&:before {
 			content: ' ';
 			position: absolute;
@@ -104,11 +96,8 @@ body.single-reviews {
 			@media screen and (min-width: @mq-sm-min) {
 				top: 93px;
 			}
-
 		}
-
 	}
-
 }
 
 // the group of review items
@@ -119,23 +108,17 @@ body.single-reviews {
 
 // The message if there are no printers found.
 .no-results {
-
 	display: none;
 	padding: @spacer 0;
-
 	@media screen and (min-width:@mq-sm-min) {
 		padding: @spacer @spacer * 2;
 	}
 
 	h2 {
-
 		color: @aqua;
 		font-weight: 300;
-
 		@media screen and (min-width:@mq-sm-min) {
 			margin-bottom: .5em;
 		}
-
 	}
-
 }

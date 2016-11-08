@@ -22,7 +22,7 @@ $i = 0;
 		if( ! empty( $machine_name ) || ! empty( $manufacturer_url ) ) {
 		?>
 			<tr>
-				<th class="product">
+				<th itemprop="name" class="product">
 					<?php echo get_field( 'name_of_the_machine' );?>
 				</th>
 				<th>

@@ -172,10 +172,10 @@ class Make_Authors {
 				<?php echo $this->author_avatar( $author ); ?>
 			</div>
 			<div class="col-xs-12 col-sm-8 author-profile-bio">
-				<h1 class="jumbo"><?php echo esc_html( $this->author_name( $author ) ); ?></h1>
-				<?php echo $this->author_bio( $author ); ?>
+				<h1 itemprop="name" class="jumbo"><?php echo esc_html( $this->author_name( $author ) ); ?></h1>
+				<?php echo '<div itemprop="description">' . $this->author_bio( $author ) . '</div>'; ?>
 				<?php echo $this->author_contact_info( $author ); ?>
-				<?php echo $this->author_urls( $author ); ?>
+				<?php echo '<div itemprop="url">' . $this->author_urls( $author ) . '</div>'; ?>
 			</div>
 		<?php else : ?>
 			<div class="col-xs-12 author-profile-bio">
@@ -200,7 +200,7 @@ class Make_Authors {
 		$output .= '</div>';
 		$output .= '<div class="col-xs-12 col-sm-9 -author-profile-bio">';
 		// Author name
-		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '" itemprop="author">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 
 		if ( $author->type != 'guest-author' ) {
 			// Grab the meta information for WordPress.com users
@@ -240,7 +240,7 @@ class Make_Authors {
 			// Return the Guest Author information.
 			$output .= $this->author_bio( $author );
 		}
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="author-name">';
 		$output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
@@ -257,7 +257,7 @@ class Make_Authors {
 			// Return the Guest Author information.
 			$output .= $this->author_bio( $author );
 		}
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><h3 class="post-count">' . get_the_author_posts() . ' Articles</h3></a>';
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="twitter-wrapper">';
 		$output .=  $this->author_twitter($newAuthor ,$authorID);
@@ -288,7 +288,7 @@ class Make_Authors {
 			if ( has_post_thumbnail( absint( $author->ID ) ) ) {
 				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $author->ID ) );
 				$args = array(
-					'resize' => '150,150',
+					'resize' => '300,300',
 					'quality' => get_photon_img_quality(),
 				);
 				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';

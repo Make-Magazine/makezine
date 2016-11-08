@@ -1,11 +1,9 @@
 @import "variables";
 @import "header";
 @import "project-style";
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
 @import "blog";
 @import "single-story";
 @import "social-share-buttons";
-@import "sidebar";
 @import "image-carousel";
 @import "sticky-sidebar-posts-nav";
 @import "story-contextly-widget";
@@ -16,10 +14,7 @@
 
 
 /* Bootstrap BREAKPOINT SMALL */
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
- 
-
   .mz-featured-imageblock {
     h2 {
       font-size: 30px;
@@ -133,7 +128,7 @@
   }
 
 
- // Shed Title 9-4
+  // Shed Title 9-4
   .shed-header h5 {
     color: white;
     font-size: 16px;
@@ -142,7 +137,7 @@
     vertical-align: middle;
   }
 
- // Shed Tagline 9-4
+  // Shed Tagline 9-4
   #shed-tag h6 {
     color: white;
     font-size: 11px;
@@ -174,21 +169,17 @@
 
 
 /* Bootstrap BREAKPOINT MED */
-
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-
-
-.mz-featured-imageblock {
-  h2 {
-    font-size: 35px;
-    font-weight: 200;
-  }
-  p {
-    font-size: 18px;
-    font-weight: 200;
-  }
-}  
-
+  .mz-featured-imageblock {
+    h2 {
+      font-size: 35px;
+      font-weight: 200;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 200;
+    }
+  }  
 
   /* Main Headline */
   #headline-l.make-image div.title {
@@ -261,28 +252,28 @@
       padding-right: 0;
   }
 
-   // Shed Title 9-4
-    .shed-header h5 {
-      color: white;
-      font-size: 16px;
-      font-weight: 400;
-      margin: 10px 0 0 0;
-      vertical-align: middle;
-    }
+  // Shed Title 9-4
+  .shed-header h5 {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+    vertical-align: middle;
+  }
 
-   // Shed Tagline 9-4
-    #shed-tag h6 {
-      color: white;
-      font-size: 12px;
-      font-weight: 200;
-      text-align: left;
-      margin:12px 0 0 50px;
-      padding-left:35px;
-      vertical-align: middle;
-    } 
+ // Shed Tagline 9-4
+  #shed-tag h6 {
+    color: white;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: left;
+    margin:12px 0 0 50px;
+    padding-left:35px;
+    vertical-align: middle;
+  } 
 
-    // Shed buylink 9-4
-    .shed-header h6 {
+  // Shed buylink 9-4
+  .shed-header h6 {
     color: white;  
     font-size: 11px;
     font-weight: 300;
@@ -305,23 +296,18 @@
 }
 
 
-
 /* Bootstrap BREAKPOINT LARGE */
-
 @media screen and (min-width: 1200px) {
-
-/* Main Headline */
-#headline-l.make-image div.title {
-  color: white;
-  font-size: 40px;
-  font-weight: 200;
-  // line-height: @font-top-story-main-title-line-height;
-  // max-width: 813px;
-  max-height: 100px;
-  margin: 0 50px 0 0;   
-  padding-bottom: 20px; // between title & subtitle
-  overflow: hidden;
-}
+  /* Main Headline */
+  #headline-l.make-image div.title {
+    color: white;
+    font-size: 40px;
+    font-weight: 200;
+    max-height: 100px;
+    margin: 0 50px 0 0;   
+    padding-bottom: 20px; // between title & subtitle
+    overflow: hidden;
+  }
 
   // Main story subtitle
   #headline-l.make-image div.subtitle {
@@ -372,9 +358,9 @@
 
 
   #shed-heading {
-      font-size: 20px;
-      padding-left: 20px;
-      padding-right: 0;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 0;
   }
 
  // Shed Title 9-4
@@ -399,20 +385,19 @@
 
   // Shed buylink 9-4
   .shed-header h6 {
-  color: white;  
-  font-size: 11px;
-  font-weight: 300;
-  padding-right: 0;
-  margin-right: 0;
-  margin-top: 12px;
-  text-align: right;
-  vertical-align: middle;
-}
+    color: white;  
+    font-size: 11px;
+    font-weight: 300;
+    padding-right: 0;
+    margin-right: 0;
+    margin-top: 12px;
+    text-align: right;
+    vertical-align: middle;
+  }
 
   // Shed buy icon 9-4
   .fa-external-link:before {
     padding-left: 8px;
- 
   }
 
   div#buy-link {
@@ -427,20 +412,9 @@
 
 
 
-
-body {
-  background-color: @lt-gray; 
-  overflow-x: hidden; 
-}
-
-h2 {
-  margin: 0;
-  padding: 0;
-}
-
 #headline-l.make-image  {
   margin-bottom: -17px;
-  }
+}
 
 .make-image {
   position: relative;
@@ -469,19 +443,6 @@ h2 {
   background-color: @font-story-subtitle-color-rollover;
 }
 
-/*
-#headline-rt.make-image div.subtitle,
-#headline-rb.make-image div.subtitle {
-  color: @font-story-title-small-color;
-  font-size: @font-story-title-small-size;
-  font-weight: 300;
-  line-height: @font-story-title-small-line-height;
-  max-width: 384px;
-  margin: 0 50px 0 0;    
-  padding-bottom: 0;
-}
-*/
-
 #headline-rt.make-image div.subtitle a:hover,
 #headline-rb.make-image div.subtitle a:hover {
   background-color: @font-story-title-small-color-rollover;
@@ -505,11 +466,6 @@ div.col-lg-4.headline {
   padding-top: 0;
 }
 
-h3 {  
-  margin-bottom: 0;
-}
-
-
 div.violator {
   background-color: red;
   font-weight: 300;
@@ -520,119 +476,19 @@ div.violator {
   top: 15px;
 }
 
-/*
-div.camera {
-  background-color: white;
-  font-size: 11px;
-  left: 85px;
-  position: absolute;
-  padding: 8px;
-  top: 15px;
-}
-*/
-
-.fa-video-camera {
-  margin-left: 5px;
-}
-
-.fa-wrench {
-  padding-right: 5px;
-}
-
 .headline p {
   margin-bottom: 0;
 }
-
-
-div.ad-unit {
-    margin-top: 15px;
-}
-
-.ad-lb-unit {
-  margin-top: 15px;
-}
-
-
-
-// EVENTS 
-
-.event-unit {
-  margin-top: 15px;
-  margin-bottom: 30px;
-}
-
-#event-camp,
-#event-faire, 
-#event-sponsored {
-  padding: 1px;
-}
-
-
-/*
-.event-panel-container {
-  margin-top: 15px;
-}
-.events-panel {
-  background-color: @white;
-  margin-bottom: 20px;
-  padding: 1px;
-}
-
-.one-event {
-  padding: 15px 0;
-  border-top: 1px solid #eee;
-  &:first-child {
-    border-top: none;
-  }
-  .img-responsive {
-    margin: 0 auto;
-  }
-}
-
-#camp-event,
-#faire-event,
-#sponsored-event
- {
-  margin: 10px;  
-  padding: 5px 5px 5px 0;
-  vertical-align: middle;
-}
-
-.one-event h4 {
-  font-size: 14px;
-  padding-top: 0;
-}
-
-.faire-text {
-}
-
-.sponsored-text {
-}
-
-.camp-text {
-  vertical-align: middle;
-}
-
-#camp-event {
-  vertical-align: middle;
-}
-
-.one-event h5 {
-  font-size: 12px;
-}  
-/*
-
-
 
 
 
 /* SHED  */
 
 .product-height {
-    height: 130px !important;
-    width: 130px !important;
-    margin-top: 20px !important;
-  }
+  height: 130px !important;
+  width: 130px !important;
+  margin-top: 20px !important;
+}
 
 .product-wrapper {
   background-color: @white;
@@ -649,40 +505,15 @@ div.shed-header {
   background-color: #4A4A4A;
   height: 36px;
   margin: 0;
-
 }
 
 .shed-header h5 {
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 10px 0 0 0 !important;
-    vertical-align: middle;
-  }
-
-/*
-.shed-header h5 {
-  color: @font-bold-header-color;
-  font-size: @font-bold-header-size-L;
-  font-style: @font-bold;
-  line-height: @font-bold-header-line-height;
-  // margin: 5px 30px 0 8px;
-  padding-right: 0;
-  text-align: left;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0 0 0 !important;
   vertical-align: middle;
 }
-*/
-
-/*
-.shed-header h6 {
-  color: @font-shed-tagline-color;
-  font-size: @font-shed-tagline-size-L;
-  font-style: 500;
-  opacity: @font-shed-tagline-opacity; 
-  text-align: right;
-  vertical-align: middle;
-}
-*/
 
 .shed-header h5 :hover {
   background-color: @font-bold-header-color-rollover;
@@ -726,14 +557,14 @@ p.product-price {
 }
 
 .text-box { 
-      position: absolute; 
-      padding: 10px 5px 0 5px;
-      left: 0px; 
-      top: 150px; 
-      width: 100%;
-      height: 70px; 
-      display: table; 
-  }
+  position: absolute; 
+  padding: 10px 5px 0 5px;
+  left: 0px; 
+  top: 150px; 
+  width: 100%;
+  height: 70px; 
+  display: table; 
+}
 
 .text-box h6 { 
   display: table-cell; 
@@ -745,27 +576,6 @@ p.product-price {
   vertical-align: bottom; 
   text-align: center; 
   padding-bottom: 10px;
-}
-
-
-
-
-
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  //background-color: @font-shed-product-price-color-rollover;
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
 }
 
 .center {
@@ -783,12 +593,6 @@ a:active {
   margin-bottom: 10px;
 }
 
-div.grid-infinite div.col-lg-4  {
-}
-
-div.grid-infinite div.col-lg-4 img {
-}
-
 div.caption.post-content {
   padding-right: 0;
 }
@@ -798,165 +602,7 @@ div.caption.post-content {
 }
 
 
-// STYLES ADDED BY DAVE
-.col-lg-4 .mz-featured-imageblock {
-  margin-left: 2px;
-}
-*, *:before, *:after {
-  box-sizing: border-box !important;
-}
-.mz-featured-imageblock {
-  position: relative;
-  display: block;
-  border: none;
-  margin-bottom: 2px;
-  height: 224px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  @media all and (min-width: 768px) {
-    &.mz-imageblock-hero {
-      height: 450px;
-    }
-  }
-  /* large screen / retina display */
-  @media only screen and (min-width : 1700px) {
-    height: 349px;
-    &.mz-imageblock-hero {
-      height: 700px;
-    }
-  } 
-  h2 {
-    font-weight: 200;
-    font-size: 40px;
-  }
-  p {
-    font-weight: 300;
-    font-size: 18px;
-    color: #f9f9f9;
-  }
-  .featured-image-shadow {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.32) 45%, rgba(0,0,0,0.7) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(45%,rgba(0,0,0,0.32)), color-stop(100%,rgba(0,0,0,0.7)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
-    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
-    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.32) 45%,rgba(0,0,0,0.7) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
-    transition: all 0.5s ease;
-  }
-  &:hover .featured-image-shadow {
-    height: 90%;
-    transition: all 0.5s ease;
-  }
-  .mz-text-overlay {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    padding: 15px;
-    color: #fff;
-    .sponsored-title-home {
-      color: #fff;
-      font-size: 18px;
-      line-height: 1em;
-      font-weight: 400;
-      font-style: italic;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-  }
-  .mz-text-overlay-side {
-    .sponsored-title-home {
-      color: #fff;
-      font-size: 14px;
-      line-height: 1em;
-      font-weight: 400;
-      font-style: italic;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    h2 {
-      font-weight: 300;
-      font-size: 20px;
-      color: #f9f9f9;
-    }
-  }
-}
-
-
-// DUPLICATE QUOR CSS TO MERGE INTO THEIRS
-.filter-display-wrapper {
-  position: absolute;
-  top: 13px;
-  left: 14px;
-}
-.red-box-category {
-  background-color: #f40b0b;
-  overflow: hidden;
-  float: left;
-  margin-right: 15px;
-  height: 30px;
-
-  p {
-    color: #f9f9f9;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    float: left;
-    margin: 6px 0 0 0;
-    padding: 2px 10px 2px 10px;
-    a {
-      color: #f9f9f9;
-      font-size: 12px;
-      font-weight: 400;
-      &:hover {
-        color: #CECECE;
-      }
-    }
-  }
-  .videoblock {
-    float: right;
-    background-color: #FFF;
-    padding: 6px 10px;
-    .fa {
-      color: #4a4a4a;
-      font-size: 14px;
-    }
-  }
-}
-
-/* Bootstrap BREAKPOINT XSMALL */
-
-@media screen and (max-width: 767px) {
-
-  .mz-featured-imageblock {
-    .mz-text-overlay .sponsored-title-home {
-      font-size: 14px;
-    }
-    h2 {
-      font-size: 18px;
-      font-weight: 300;
-    }
-    p {
-      font-size: 12px;
-      font-weight: 300;
-    }
-  }  
-
-  .col-lg-4 .mz-featured-imageblock {
-    margin-left: 0;
-  }
-  .mz-featured-imageblock {
-    margin-bottom: 1px;
-  }
-  
+@media screen and (max-width: 767px) {  
   // Main story title
   #headline-l.make-image div.title {
     color: white;
@@ -1058,15 +704,15 @@ div.caption.post-content {
     font-weight: 400;
   }
 
-.shed-header h5 {
-  color: @font-bold-header-color;
-  font-size: @font-bold-header-size-L;
-  font-style: @font-bold;
-  line-height: @font-bold-header-line-height;
-  padding-right: 0;
-  text-align: left;
-  vertical-align: middle;
-}
+  .shed-header h5 {
+    color: @font-bold-header-color;
+    font-size: @font-bold-header-size-L;
+    font-style: @font-bold;
+    line-height: @font-bold-header-line-height;
+    padding-right: 0;
+    text-align: left;
+    vertical-align: middle;
+  }
 
   .product-h-divider {
     height: 1px;
@@ -1097,13 +743,11 @@ div.caption.post-content {
     vertical-align: top;
   }
 
-
   .faire-ad {
     display: none;
   }
 
- .camp-ad {
+  .camp-ad {
     display: none;
   }
-
 }
