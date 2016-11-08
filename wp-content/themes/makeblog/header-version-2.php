@@ -395,7 +395,7 @@ if( $detect->isTablet() ){
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/3dprinters/" class="pull-left first-post">
-                <img src="/wp-content/themes/makeblog/img/Make_3D-Printers-Guide.jpg" alt="3D Printer product reviews and comparison guide" />
+                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-3D-min.jpg" alt="3D Printer product reviews and comparison guide" />
               </a>
             </div>
           </div>
