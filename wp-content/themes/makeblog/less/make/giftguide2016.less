@@ -339,6 +339,10 @@
         }
       }
       .gg2016-review-img {
+        @media screen and (min-width: 768px) {
+          //Firefox 45 and older bugfix
+          max-width: 40%;
+        }
         flex: 0 0 40%;
         img {
           @media screen and (max-width: 767px) {
