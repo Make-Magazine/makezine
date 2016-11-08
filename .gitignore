@@ -105,3 +105,4 @@ robots.txt
 __wpe_admin_ajax.log-bak
 wp-content/srdbmaster
 wp-content/themes/makeblog/wr360_assets
+.netbeans.xml
