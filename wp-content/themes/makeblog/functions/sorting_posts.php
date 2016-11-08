@@ -972,7 +972,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
         'orderby' => $ordered,
         'post__in' => $top_ids,
         'post_status' => 'publish',
-        'category__not_in' => array(25624, 12, 8, 24794, 13, 1),
+        'category__not_in' => array(25624, 12, 8, 13, 1),
     );
     if (!empty($current_cat_id)) $args['cat'] = $current_cat_id;
     $query = new WP_Query($args);
