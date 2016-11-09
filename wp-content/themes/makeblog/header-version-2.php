@@ -402,19 +402,25 @@ if( $detect->isTablet() ){
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/boards/" class="pull-left second-post">
-                <img src="/wp-content/themes/makeblog/img/Make_Boards-Guide.jpg" alt="Boards product reviews and comparison guide" />
+                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Boards.jpg" alt="Boards product reviews and comparison guide" />
               </a>
             </div>
           </div>
           <div class="guides-item col-lg-3 col-md-3 col-sm-4">
             <div class="nav-img-border">
               <a href="/comparison/drones/" class="pull-left third-post">
-                <img src="/wp-content/themes/makeblog/img/Make_Drones-Guide.jpg" alt="Drones product reviews and comparison guide" />
+                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Drones.jpg" alt="Drones product reviews and comparison guide" />
+              </a>
+            </div>
+          </div>
+          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+            <div class="nav-img-border">
+              <a href="/giftguide/" class="pull-left fourth-post">
+                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Gift.jpg" alt="Make: Gift Guide" />
               </a>
             </div>
           </div>
         </div>
-
         <div class="latest-shop row">
           <div class="shop-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
