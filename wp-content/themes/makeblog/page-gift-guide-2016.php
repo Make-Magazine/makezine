@@ -4,7 +4,7 @@
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * 
+ *
  */
 get_header('version-2'); ?>
 
@@ -15,7 +15,7 @@ get_header('version-2'); ?>
   <header class="gg2016-header container">
     <div class="row">
       <div class="col-xs-12 col-sm-7 col-md-6 gg2016-header-info">
-        <?php 
+        <?php
         $header_title = get_field('header_title');
         $header_subtitle = get_field('header_subtitle');
         $header_description = get_field('header_description');
@@ -27,7 +27,7 @@ get_header('version-2'); ?>
 
       <?php if( have_rows('products') ):
 
-        while( have_rows('products') ): the_row(); 
+        while( have_rows('products') ): the_row();
 
           $product_name = get_sub_field('product_name');
           $product_description = get_sub_field('product_description');
@@ -36,7 +36,7 @@ get_header('version-2'); ?>
           $url = get_sub_field('url');
           $image = get_sub_field('image');
           $daily_pick = get_sub_field('daily_pick');
-        
+
           if(get_sub_field('daily_pick')) { ?>
 
             <div class="col-xs-12 col-sm-5 col-md-6">
@@ -58,7 +58,7 @@ get_header('version-2'); ?>
               </div>
             </div>
 
-          <?php 
+          <?php
           }
 
         endwhile;
@@ -127,14 +127,14 @@ get_header('version-2'); ?>
     </div>
   </nav>
 
-  
+
   <div class="gg2016-body-bg">
 
     <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
 
     <?php if( have_rows('products') ): ?>
 
-      <?php while( have_rows('products') ): the_row(); 
+      <?php while( have_rows('products') ): the_row();
 
         $product_name = get_sub_field('product_name');
         $product_description = get_sub_field('product_description');
@@ -150,9 +150,9 @@ get_header('version-2'); ?>
 
         if(!get_sub_field('sponsored')) { ?>
 
-          <article class="gg2016-review gg2016-review-even1 mix 
-          <?php if( $category ): echo implode(' ', $category); ?> 
-          <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?> 
+          <article class="gg2016-review gg2016-review-even1 mix
+          <?php if( $category ): echo implode(' ', $category); ?>
+          <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
           <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
             <div class="gg2016-review-flex-cont">
               <div class="gg2016-review-img">
@@ -192,7 +192,7 @@ get_header('version-2'); ?>
 
   <?php if( have_rows('products') ): ?>
 
-    <?php while( have_rows('products') ): the_row(); 
+    <?php while( have_rows('products') ): the_row();
 
       $product_name = get_sub_field('product_name');
       $product_description = get_sub_field('product_description');
@@ -208,9 +208,9 @@ get_header('version-2'); ?>
 
       if(get_sub_field('sponsored')) { ?>
 
-        <article class="gg2016-review gg2016-review-even1 mix gg2016-sponsored 
-        <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?> 
-        <?php if($ctf){ echo 'ctf-move';} ?> 
+        <article class="gg2016-review gg2016-review-even1 mix gg2016-sponsored
+        <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
+        <?php if($ctf){ echo 'ctf-move';} ?>
         <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
           <h5>SPONSORED</h5>
           <div class="gg2016-review-flex-cont">
@@ -259,10 +259,21 @@ get_header('version-2'); ?>
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
   }
-  
+
   jQuery( document ).ready(function() {
 
-    removeHashFunction();
+    //removeHashFunction();
+   var hash = window.location.hash;
+
+   origFilter = 'all'; //default to all
+   if(hash=='#technology')           origFilter = '.category-tec';
+   if(hash=='#digital-fabrication')  origFilter = '.category-dig';
+   if(hash=='#craft&design')         origFilter = '.category-cra';
+   if(hash=='#drones&vehicles')      origFilter = '.category-dro';
+   if(hash=='#science')              origFilter = '.category-sci';
+   if(hash=='#home')                 origFilter = '.category-hom';
+   if(hash=='#workshop')             origFilter = '.category-wor';
+
 
     var loadCount = 1;
 
@@ -275,7 +286,7 @@ get_header('version-2'); ?>
 
     jQuery('#gg2016-js').mixItUp({
       load: {
-        filter: 'all',
+        filter: origFilter,
         sort: 'random'
       },
       callbacks: {
@@ -296,7 +307,7 @@ get_header('version-2'); ?>
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
-            while( have_rows('choose_a_takeover_category') ): the_row(); 
+            while( have_rows('choose_a_takeover_category') ): the_row();
               $category = get_sub_field('category');
 
               if( $category == 'category-tec' ) {
@@ -431,12 +442,12 @@ get_header('version-2'); ?>
           //console.log(loadCount);
 
           //Only do this stuff on state changes that are not the first page load
-          if (loadCount >= 3) { 
+          if (loadCount >= 3) {
             //Injecting ads after every 4 products, on state change
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
               var modulus = (i + 1) % 4;
-              if (modulus === 0) { 
+              if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
             });
@@ -463,10 +474,10 @@ get_header('version-2'); ?>
           if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
             jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
           }
-          
+
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
-          jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() { 
+          jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
             jQuery('#gg2016-js').mixItUp('insert', count, jQuery(this));
             jQuery(this).show();
             count += 4;
@@ -476,7 +487,7 @@ get_header('version-2'); ?>
           jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
           jQuery('#gg2016-js .gg2016-review').each(function(i) {
             var modulus = (i + 1) % 4;
-            if (modulus === 0) { 
+            if (modulus === 0) {
               jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
             }
           });
