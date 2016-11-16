@@ -184,8 +184,8 @@ if( $detect->isTablet() ){
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
         <p class="header-make-img">
-          <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
-        </p>
+<!--           <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
+ -->        </p>
       </div>
     </div>
   </div>
