@@ -367,13 +367,13 @@
       .gg2016-review-img {
         @media screen and (min-width: 768px) {
           //Firefox 45 and older bugfix
-          width: 40%;
+          min-width: 40%;
         }
         flex: 0 0 40%;
         -webkit-box-flex: 0 0 40%;      /* OLD - iOS 6-, Safari 3.1-6 */
         -moz-box-flex: 0 0 40%;         /* OLD - Firefox 19- */
         -webkit-flex: 0 0 40%;          /* Chrome */
-        -ms-flex: 0 0 40%;              /* IE 10 */
+        -ms-flex: 40%;              /* IE 10 */
         img {
           @media screen and (max-width: 767px) {
             width: 100%;
@@ -384,13 +384,14 @@
       .gg2016-review-info {
          @media screen and (min-width: 768px) {
           //Firefox 45 and older bugfix
-           width: 60%;
+           min-width: 40%;
         }
+        flex: 0 0 60%;
         -webkit-box-flex: 0 0 60%;      /* OLD - iOS 6-, Safari 3.1-6 */
         -moz-box-flex: 0 0 60%;         /* OLD - Firefox 19- */
         -webkit-flex: 0 0 60%;          /* Chrome */
-        -ms-flex: 0 0 60%;              /* IE 10 */
-        flex: 0 0 60%;
+        -ms-flex: 40%;              /* IE 10 */
+        
         padding-left: 15px;
         
         @media screen and (max-width: 767px) {
