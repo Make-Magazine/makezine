@@ -135,6 +135,10 @@
       margin: 0;
       flex-wrap: wrap;
       @media screen and (min-width: 991px) {
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
         display: flex;
         position: static;
         top: 0;
@@ -320,6 +324,10 @@
         margin-right: -15px;
       }
       .gg2016-review-flex-cont {
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
         display: flex;
         @media screen and (max-width: 767px) {
           display: block;
