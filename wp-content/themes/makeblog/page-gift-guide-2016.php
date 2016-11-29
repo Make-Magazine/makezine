@@ -126,8 +126,8 @@ get_header('version-2'); ?>
 
     </div>
   </nav>
-
-
+  <div id="scrollPane" style="height:500px; overflow-y:scroll;">
+    <div class="inner">
   <div class="gg2016-body-bg">
 
     <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
@@ -185,7 +185,8 @@ get_header('version-2'); ?>
     </div><!-- #gg2016-js.gg2016-body -->
 
   </div><!-- .gg2016-body-bg -->
-
+  </div>
+  </div>
 
 
   <div id="gg2016-sponsors" class="container">
@@ -261,6 +262,34 @@ get_header('version-2'); ?>
   }
 
   jQuery( document ).ready(function() {
+    //page scroll counter
+    var box = jQuery("#scrollPane"),
+        inner = jQuery("> .inner", box),
+        innerOuterHeight = inner.outerHeight();
+        boxHeight = box.height();
+    boxOffsetTop = box.offset().top;
+
+    var count = 1;
+    var page  = 1;
+    jQuery("#scrollPane").scroll(function() {
+      if(Math.abs(inner.offset().top) > page * boxHeight) {
+        page++;     //increase current page count
+        count++;    //increase page view count
+        ga('send', 'pageview', {
+           'page': location.pathname + location.hash+'/'+page
+         });
+        //alert('Page='+page+'('+Math.abs(inner.offset().top)+')'+' view count='+count);
+      }else
+      if(Math.abs(inner.offset().top) <= (page * boxHeight) - boxHeight) {
+        page--;   //decrease current page
+        count++;  //increase page view count
+        ga('send', 'pageview', {
+           'page': location.pathname + location.hash+'/'+page
+        });
+        //alert('Page='+page+'('+Math.abs(inner.offset().top)+')'+' view count='+count);
+      }
+    });
+    //end page scroll counter
 
     //removeHashFunction();
    var hash = window.location.hash;
@@ -509,31 +538,6 @@ get_header('version-2'); ?>
         })
       })
     }).call(this);
-
-
-    // if (window.location.href.indexOf('#technology') > -1) {
-    //   jQuery('#gg2016-js').mixItUp('filter', '.category-tec');
-
-    // } else if (window.location.href.indexOf('#digital-fabrication') > -1) {
-    //   jQuery('.filter[href$="#digital-fabrication"]').click();
-
-    // } else if (window.location.href.indexOf('#craft-design') > -1) {
-    //   jQuery('.filter[href$="#craft-design"]').click();
-
-    // } else if (window.location.href.indexOf('#drones-vehicles') > -1) {
-    //   jQuery('.filter[href$="#drones-vehicles"]').click();
-
-    // } else if (window.location.href.indexOf('#science') > -1) {
-    //   jQuery('.filter[href$="#science"]').click();
-
-    // } else if (window.location.href.indexOf('#home') > -1) {
-    //   jQuery('.filter[href$="#home"]').click();
-
-    // } else if (window.location.href.indexOf('#workshop') > -1) {
-    //   jQuery('.filter[href$="#workshop"]').click();
-
-    // }
-
   });
 </script>
 
