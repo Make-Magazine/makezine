@@ -126,7 +126,7 @@ get_header('version-2'); ?>
 
     </div>
   </nav>
-  <div id="scrollPane" style="height:500px; overflow-y:scroll;">
+  <div id="scrollPane">
     <div id="innerDiv" class="inner">
   <div class="gg2016-body-bg">
 
@@ -268,9 +268,10 @@ get_header('version-2'); ?>
         innerOuterHeight = inner.outerHeight();
         boxHeight = box.height();
     boxOffsetTop = box.offset().top;
-
+    boxHeight = '600px'; //page view height
     var count = 1;
     var page  = 1;
+
     jQuery("#scrollPane").scroll(function() {
       if(Math.abs(inner.offset().top) > page * boxHeight) {
         page++;     //increase current page count
@@ -278,7 +279,6 @@ get_header('version-2'); ?>
         ga('send', 'pageview', {
            'page': location.pathname + location.hash+'/'+page
          });
-        //alert('Page='+page+'('+Math.abs(inner.offset().top)+')'+' view count='+count);
       }else
       if(Math.abs(inner.offset().top) <= (page * boxHeight) - boxHeight) {
         page--;   //decrease current page
@@ -286,7 +286,6 @@ get_header('version-2'); ?>
         ga('send', 'pageview', {
            'page': location.pathname + location.hash+'/'+page
         });
-        //alert('Page='+page+'('+Math.abs(inner.offset().top)+')'+' view count='+count);
       }
     });
     //end page scroll counter
@@ -542,7 +541,6 @@ get_header('version-2'); ?>
     //scroll to top when switching categories
     jQuery("a.btn-link").click(function() {
       jQuery("#scrollPane").animate({ scrollTop: 0 }, "slow");
-      return false;
     });
   });
 </script>
