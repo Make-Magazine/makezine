@@ -127,7 +127,7 @@ get_header('version-2'); ?>
     </div>
   </nav>
   <div id="scrollPane" style="height:500px; overflow-y:scroll;">
-    <div class="inner">
+    <div id="innerDiv" class="inner">
   <div class="gg2016-body-bg">
 
     <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
@@ -538,6 +538,12 @@ get_header('version-2'); ?>
         })
       })
     }).call(this);
+
+    //scroll to top when switching categories
+    jQuery("a.btn-link").click(function() {
+      jQuery("#scrollPane").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
   });
 </script>
 
