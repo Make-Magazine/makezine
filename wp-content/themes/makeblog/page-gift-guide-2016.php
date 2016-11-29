@@ -268,7 +268,7 @@ get_header('version-2'); ?>
         innerOuterHeight = inner.outerHeight();
         boxHeight = box.height();
     boxOffsetTop = box.offset().top;
-    boxHeight = '600px'; //page view height
+    boxHeight = '768px'; //page view height
     var count = 1;
     var page  = 1;
 
@@ -521,7 +521,6 @@ get_header('version-2'); ?>
           });
           make.gpt.loadDyn();
           //console.log('load end');
-
         }
       }
     });
