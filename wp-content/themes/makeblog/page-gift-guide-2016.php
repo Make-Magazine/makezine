@@ -291,7 +291,7 @@ get_header('version-2'); ?>
     //end page scroll counter
 
     var loadCount = 1;
-    console.log(loadCount);
+    //console.log(loadCount);
 
     //removeHashFunction();
     var hash = window.location.hash;
@@ -325,7 +325,7 @@ get_header('version-2'); ?>
       origFilter = '.category-wor';
       var loadCount = 3;
     }
-    console.log(loadCount);
+    //console.log(loadCount);
 
 
     jQuery('#gg2016-sponsors').mixItUp({
@@ -354,7 +354,7 @@ get_header('version-2'); ?>
         },
 
         onMixEnd: function(state){
-          console.log('mix end');
+          //console.log('mix end');
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
@@ -445,7 +445,7 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
 
-          console.log(state.activeFilter);
+          //console.log(state.activeFilter);
 
           //Set the ad vars cat to the correct navigation category
           if (state.activeFilter == '.category-tec') {
@@ -490,7 +490,7 @@ get_header('version-2'); ?>
             jQuery.extend( ad_vars, ad_vars_cat );
           }
 
-          console.log(loadCount);
+          //console.log(loadCount);
 
           //Only do this stuff on state changes that are not the first page load
           if (loadCount >= 3) {
@@ -520,7 +520,7 @@ get_header('version-2'); ?>
         },
 
         onMixLoad: function(state){
-          console.log('mix load');
+          //console.log('mix load');
           //Check if Daily Pick is also the 1st random product on the list, if so place it lower
           if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
             jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
