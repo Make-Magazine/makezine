@@ -526,15 +526,15 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
           }
 
-          if ( loadCount < 3 ) {
-            //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
-            var count = 1;
-            jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
-              jQuery('#gg2016-js').mixItUp('insert', count, jQuery(this));
-              jQuery(this).show();
-              count += 4;
-            });
+          //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
+          var count = 1;
+          jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
+            jQuery('#gg2016-js').mixItUp('insert', count, jQuery(this));
+            jQuery(this).show();
+            count += 4;
+          });
 
+          if ( loadCount < 3 ) {
             //Injecting ads after every 4 products, only on 1st page load
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review').each(function(i) {
