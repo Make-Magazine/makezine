@@ -5,7 +5,10 @@
   .filter-display-wrapper {
     display: none;
   }
+}
 
+.tags.all-stories,
+.blog .all-stories {
   .tags-header {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -16,6 +19,11 @@
       margin-top: 0;
       margin-bottom: 5px;
       text-transform: capitalize;
+      &.all-story {
+        @media screen and (max-width: 991px) {
+          margin-bottom: 30px;
+        } 
+      }
     }
     h2 {
       font-weight: 300;

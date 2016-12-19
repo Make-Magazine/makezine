@@ -24,10 +24,47 @@ if (user_can($current_user, 'administrator')) {
 ?>
 
 <div class="container all-stories <?php echo $login_admin ?>">
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="row tags-header">
+		<div class="col-xs-12 col-md-7">
 			<h1 class="all-story">All Stories</h1>
 		</div>
+		<div class="col-xs-12 col-md-5">
+			<div class="row">
+				<div class="col-xs-12">
+
+					<form class="sub-form whatcounts-signupTagArchive" action="http://whatcounts.com/bin/listctrl" method="POST">
+						<input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Make: Newsletter -->
+            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
+            <input type="hidden" name="multiadd" value="1" />
+						<input type="hidden" name="cmd" value="subscribe" />
+						<input type="hidden" name="custom_source" value="tag page" />
+						<input type="hidden" name="custom_incentive" value="none" />
+						<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+						<input type="hidden" id="format_mime" name="format" value="mime" />
+						<input type="hidden" name="goto" value="" />
+						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+						<input type="hidden" name="errors_to" value="" />
+
+						<div class="tag-nl-floats">
+							<input value="SIGN UP" class="btn-red" type="submit">
+							<div class="tag-nl-floats-r">
+								<h5>Maker: Newsletter</h5>
+								<p>The latest news from Make:</p>
+							</div>
+						</div>
+						<br />
+						<div class="float-label-control">
+							<input name="email" class="form-control" placeholder="your email here" required type="email">
+						</div>
+						<input src="<?php echo get_stylesheet_directory_uri() . '/img/Makey-tag-newlsetter.svg'; ?>" class="btn-makey-tag" type="image" alt="Makey tag page newsletter">
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="wrapper">
 			<div class="col-md-9 col-sm-7 col-xs-12 all-post-wrapper">
 				<ul class="post-list">

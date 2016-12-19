@@ -1,6 +1,7 @@
 <?php
 /**
- * This is a blog page template
+ * This is the old blog page template
+ * Currently not being used. Refer to home.php for the blog page template.
  */ ?>
 <div class="container all-stories">
 	<div class="row">
