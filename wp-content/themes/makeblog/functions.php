@@ -265,7 +265,7 @@ add_action('loop_start', 'jptweak_remove_share');
 
 function get_resized_remote_image_url($url, $width, $height, $escape = true)
 {
-    if (class_exists('Jetpack') && Jetpack::is_module_active('photon')) :
+    if (class_exists('Jetpack') && Jetpack::is_module_active('photon')) {
         $width = (int)$width;
         $height = (int)$height;
 
@@ -279,7 +279,9 @@ function get_resized_remote_image_url($url, $width, $height, $escape = true)
         ));
 
         return ($escape) ? esc_url($thumburl) : $thumburl;
-    endif;
+    } else{
+      return $url;
+    }
 }
 
 function get_excerpt_by_id($post_id)
