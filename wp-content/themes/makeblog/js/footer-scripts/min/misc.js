@@ -234,6 +234,14 @@ jQuery(document).ready(function($){
     $('.nl-modal-email-address').text(bla);
     $('.whatcounts-signup2 #email').val(bla);
   });
+  // Tag Archive page
+  $(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
+    e.preventDefault();
+    $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signupTagArchive').serialize());
+    $('.fancybox-thx').trigger('click');
+    $('.nl-thx-p1').hide();
+    $('.nl-thx-p2').show();
+  });
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
     $.post('http://whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
