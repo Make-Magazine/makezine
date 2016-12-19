@@ -566,14 +566,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="nl-modal-div1">
                 <div class="col-sm-8 col-xs-12">
                     <h4>Welcome to the Make: Community!</h4>
-                    <?php
-                    if ( $tag_slug == 'maker-pro' ) {
-                      echo '<p><span class="nl-modal-email-address"></span> you are now signed up to the Maker Pro newsletter.</p>';
-                    } elseif ( $tag_slug == 'education' ) {
-                      echo '<p><span class="nl-modal-email-address"></span> you are now signed up to the Make: Education newsletter.</p>';
-                    } else {
-                        echo '<p><span class="nl-modal-email-address"></span> you are now signed up to the Make: newsletter.</p>';
-                    } ?>
+                    <p><span class="nl-modal-email-address"></span> you are now signed up to the Make: newsletter.</p>
                 </div>
                 <div class="col-sm-4 hidden-xs text-center">
                     <i class="fa fa-check-square-o fa-5x"></i>
@@ -591,22 +584,12 @@ function display_thank_you_modal_if_signed_up() { ?>
                         <input type="hidden" id="format_mime" name="format" value="mime" />
                         <input type="hidden" name="goto" value="" />
 
-                        <?php
-                        if ( $tag_slug == 'maker-pro' ) {
-                            echo '<label class="list-radio pull-right">
-                                  <input type="checkbox" id="list_6B5869DC547D3D46B52F3516A785F101_yes" name="slid_3" value="6B5869DC547D3D46B52F3516A785F101" />
-                                  <span for="list_6B5869DC547D3D46B52F3516A785F101_yes" class="newcheckbox"></span>
-                                </label>
-                                <h4>Make: Newsletter</h4><p>The latest news from Make:</p>
-                                <hr />';
-                        } else {
-                            echo '<label class="list-radio pull-right">
-                                  <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
-                                  <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
-                                </label>
-                                <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators.</p>
-                                <hr />';
-                        } ?>
+                        <label class="list-radio pull-right">
+                          <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_3" value="6B5869DC547D3D467B33E192ADD9BE4B" />
+                          <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
+                        </label>
+                        <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators.</p>
+                        <hr />
 
                         <label class="list-radio pull-right">
                           <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_1" value="6B5869DC547D3D46E66DEF1987C64E7A" />
