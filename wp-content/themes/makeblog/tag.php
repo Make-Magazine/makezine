@@ -59,7 +59,7 @@ if (user_can($current_user, 'administrator')) {
 									  echo '<h5>Education Newsletter</h5>
 													<p>Regular news from the world of educators and lifelong learners</p>';
 									} else {
-									  echo '<h5>Maker: Newsletter</h5>
+									  echo '<h5>Make: Newsletter</h5>
 													<p>The latest news from Make:</p>';
 									} ?>
 								</div>
