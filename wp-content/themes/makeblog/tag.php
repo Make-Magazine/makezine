@@ -54,10 +54,10 @@ if (user_can($current_user, 'administrator')) {
 									<?php
 									if ( $tag_slug == 'maker-pro' ) {
 									  echo '<h5>Maker Pro Newsletter</h5>
-													<p>Weekly news on startups, incubators + innovators</p>';
+													<p>Weekly news about maker-focused startups, products, incubators, and innovators</p>';
 									} elseif ( $tag_slug == 'education' ) {
 									  echo '<h5>Education Newsletter</h5>
-													<p>Regular news from the world of educators and lifelong learners</p>';
+													<p>Monthly news about the transformative effects of making in education</p>';
 									} else {
 									  echo '<h5>Make: Newsletter</h5>
 													<p>The latest news from Make:</p>';
