@@ -48,9 +48,8 @@
           h5 {
             margin-top: 0;
             margin-bottom: 0;
-            font-weight: 300;
             font-size: 18px;
-              line-height: 18px;
+            line-height: 18px;
           }
           p {
             font-weight: 300;
@@ -91,6 +90,12 @@
         ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
           font-style: italic;
         }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus {
+          background-color: rgba(0, 174, 239, 0.3);
+          transition: background-color 5000s ease-in-out 0s;
+        }
         &:after { 
           content: '\f105';
           font-size: 18px;
@@ -110,13 +115,6 @@
         float: left;
         margin-top: -3px;
       }
-      .float-label-control input:-webkit-autofill { 
-        background-color: transparent !important; 
-        -webkit-box-shadow: 0 0 0 1000px transparent inset !important; 
-        -moz-box-shadow: 0 0 0 1000px transparent inset !important; 
-        box-shadow: 0 0 0 1000px transparent inset !important;
-      }
-
     }
   }
   .mz-sidebar-subscribe {

@@ -178,6 +178,14 @@ ul, ol {
 	margin: 0 0 10px 25px;
 }
 
+// Chrome and Safari browser input styling overides
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  background-color: rgba(0, 174, 239, 0.3);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .craft .embed-youtube, 
 .page-template-page-home-php .embed-youtube {
 	float:none;
