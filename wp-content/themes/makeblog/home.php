@@ -48,7 +48,7 @@ if (user_can($current_user, 'administrator')) {
 						<div class="tag-nl-floats">
 							<input value="SIGN UP" class="btn-red" type="submit">
 							<div class="tag-nl-floats-r">
-								<h5>Maker: Newsletter</h5>
+								<h5>Make: Newsletter</h5>
 								<p>The latest news from Make:</p>
 							</div>
 						</div>
