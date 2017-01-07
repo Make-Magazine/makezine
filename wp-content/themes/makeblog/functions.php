@@ -900,3 +900,11 @@ function add_taxonomies_to_pages() {
   register_taxonomy_for_object_type( 'category', 'page' );
 }
 add_action( 'init', 'add_taxonomies_to_pages' );
+
+
+//Custom text for the Jetpack infinite scroll "Older Posts" button
+function filter_jetpack_infinite_scroll_js_settings( $settings ) {
+    $settings['text'] = __( 'More Posts', 'l18n' );
+    return $settings;
+}
+add_filter( 'infinite_scroll_js_settings', 'filter_jetpack_infinite_scroll_js_settings' );
