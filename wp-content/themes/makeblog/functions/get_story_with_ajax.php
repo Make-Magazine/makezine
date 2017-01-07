@@ -73,7 +73,6 @@ function get_story_with_ajax() {
                     $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
                     $title = get_the_title();
                     echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
-                    echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=0 total_counter_pos="hidden" style="button" nospace="yes" template="dark-retina" sidebar="yes" sidebar_pos="right" url="'.$url.'" text="'.$title.'"]');
                     ?>
                     <div class="article-body" itemprop="articleBody">
                       <?php the_content(); ?>
@@ -221,7 +220,6 @@ function get_story_with_ajax2() {
                       $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
                       $title = get_the_title();
                       echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
-                      echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=0 total_counter_pos="hidden" style="button" nospace="yes" template="dark-retina" sidebar="yes" sidebar_pos="right" url="'.$url.'" text="'.$title.'"]');
                       ?>
                       <div class="article-body" itemprop="articleBody">
                         <?php the_content(); ?>
