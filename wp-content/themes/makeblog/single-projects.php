@@ -80,6 +80,8 @@ get_header('version-2'); ?>
 
 				<div class="col-xs-12 col-sm-8" >
 
+					<a id="sumome-project-sharing" data-sumome-share-id="002914e1-bbce-4a58-b59e-8846991ae71c"></a>
+
 					<?php
 			 			$image = get_post_custom_values('Image');
 						if ( !empty( $image[0] ) ) {
