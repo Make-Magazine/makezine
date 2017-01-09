@@ -908,3 +908,10 @@ function filter_jetpack_infinite_scroll_js_settings( $settings ) {
     return $settings;
 }
 add_filter( 'infinite_scroll_js_settings', 'filter_jetpack_infinite_scroll_js_settings' );
+
+//Removing the page post type from the search sesults
+function remove_post_type_page_from_search() {
+    global $wp_post_types;
+    $wp_post_types['page']->exclude_from_search = true;
+}
+add_action('init', 'remove_post_type_page_from_search');
