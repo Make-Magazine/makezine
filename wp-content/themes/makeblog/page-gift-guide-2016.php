@@ -43,7 +43,7 @@ get_header('version-2'); ?>
               <div class="gg2016-dp" style="background: url(<?php echo $image; ?>);">
                 <span class="btn-red padleft padright">DAILY PICK</span>
                 <div class="gg2016-dp-text">
-                  <a href="<?php echo $url; ?>" target="_blank">
+                  <a href="<?php echo $url; ?>" target="_blank" rel="nofollow">
                     <h4><?php echo $product_name; ?></h4>
                     <p class="gg2016-dp-desc"><?php echo $product_description; ?></p>
                   </a>
@@ -53,7 +53,7 @@ get_header('version-2'); ?>
                   <?php if( $price ): ?>
                     <p class="gg2016-dp-price"><?php echo $price; ?></p>
                   <?php endif; ?>
-                  <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank">Buy</a>
+                  <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" rel="nofollow">Buy</a>
                 </div>
               </div>
             </div>
@@ -156,12 +156,12 @@ get_header('version-2'); ?>
           <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
             <div class="gg2016-review-flex-cont">
               <div class="gg2016-review-img">
-                <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
+                <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
                   <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
                 </a>
               </div>
               <div class="gg2016-review-info">
-                <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
+                <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
                   <h4 itemprop="name"><?php echo $product_name; ?></h4>
                 </a>
                 <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
@@ -171,7 +171,7 @@ get_header('version-2'); ?>
                 <?php if( $price ): ?>
                   <p class="gg2016-review-price"><?php echo $price; ?></p>
                 <?php endif; ?>
-                <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url">Buy</a>
+                <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
               </div>
             </div>
           </article>
@@ -216,12 +216,12 @@ get_header('version-2'); ?>
           <h5>SPONSORED</h5>
           <div class="gg2016-review-flex-cont">
             <div class="gg2016-review-img">
-              <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
+              <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
                 <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
               </a>
             </div>
             <div class="gg2016-review-info">
-              <a href="<?php echo $url; ?>" target="_blank" itemprop="url">
+              <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
                 <h4 itemprop="name"><?php echo $product_name; ?></h4>
               </a>
               <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
@@ -231,7 +231,7 @@ get_header('version-2'); ?>
               <?php if( $price ): ?>
                 <p class="gg2016-review-price"><?php echo $price; ?></p>
               <?php endif; ?>
-              <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url">Buy</a>
+              <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
             </div>
           </div>
         </article>
