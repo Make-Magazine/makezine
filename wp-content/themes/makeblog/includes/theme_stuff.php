@@ -1639,7 +1639,7 @@ function home_tags($postid) {
 				echo '<a href="' . get_site_url() . '/tag/' . $term->slug . '/" alt="tag">'.$term->name.'</a>';
 			}
 			elseif( ! empty( $tag ) ) {
-				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">'.$tag[0]->name;
+				echo '<a href="' . get_site_url() . '/tag/' . $tag[0]->slug . '/" alt="tag">'.$tag[0]->name.'</a>';
 			}
 			else {
 				echo '';

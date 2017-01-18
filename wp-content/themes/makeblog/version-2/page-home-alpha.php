@@ -1,4 +1,3 @@
-
 <?php
 
 /*
@@ -18,11 +17,9 @@ if( $detect->isTablet() ){
 get_header( 'version-2' );
 
 wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2/js/homegrid.js', array( 'jquery' ), false, true );
-?>
-<?php
+
 // custom-fields for curated section
 $main_link = '';
-$main_url = '';
 $main_sponsor = '';
 $main_title = '';
 $main_subtitle = '';
@@ -30,7 +27,6 @@ $main_image = '';
 $main_id = '';
 
 $top_link = '';
-$top_url = '';
 $top_sponsor = '';
 $top_title = '';
 $top_subtitle = '';
@@ -38,7 +34,6 @@ $top_image = '';
 $top_id = '';
 
 $bottom_link = '';
-$bottom_url = '';
 $bottom_sponsor = '';
 $bottom_title = '';
 $bottom_subtitle = '';
@@ -60,7 +55,6 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_post = $menu_items[0];
             $main_id = $main_post->object_id;
             $main_link = $main_post->url;
-            $main_url = $main_post->url;
             $main_sponsor =  get_field('sponsored_content_label', $main_id);
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
@@ -74,7 +68,6 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $top_post = $menu_items[1];
             $top_id = $top_post->object_id;
             $top_link = $top_post->url;
-            $top_url = $top_post->url;
             $top_sponsor =  get_field('sponsored_content_label', $top_id);
             $top_title = $top_post->title;
             $top_subtitle = $top_post->description;
@@ -89,7 +82,6 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $bottom_post = $menu_items[2];
             $bottom_id = $bottom_post->object_id;
             $bottom_link = $bottom_post->url;
-            $bottom_url = $bottom_post->url;
             $bottom_sponsor =  get_field('sponsored_content_label', $bottom_id);
             $bottom_title = $bottom_post->title;
             $bottom_subtitle = $bottom_post->description;
