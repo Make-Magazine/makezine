@@ -262,6 +262,7 @@ get_header('version-2'); ?>
   }
 
   jQuery( document ).ready(function() {
+
     //page scroll counter
     var box = jQuery("#scrollPane"),
     inner = jQuery("> .inner", box),
@@ -284,15 +285,13 @@ get_header('version-2'); ?>
         page--;   //decrease current page
         count++;  //increase page view count
         ga('send', 'pageview', {
-           'page': location.pathname + location.hash+'/'+page
+          'page': location.pathname + location.hash+'/'+page
         });
       }
     });
     //end page scroll counter
 
     var loadCount = 1;
-    //console.log(loadCount);
-
     //removeHashFunction();
     var hash = window.location.hash;
 
@@ -350,7 +349,6 @@ get_header('version-2'); ?>
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'none');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
-          //console.log('start ended');
         },
 
         onMixEnd: function(state){
@@ -490,11 +488,11 @@ get_header('version-2'); ?>
             jQuery.extend( ad_vars, ad_vars_cat );
           }
 
-          //console.log(loadCount);
+          console.log('loadcount = ' + loadCount);
 
           //Only do this stuff on state changes that are not the first page load
           if (loadCount >= 3) {
-            //Injecting ads after every 4 products, on state change
+            //Injecting ads after every 12 products, on state change
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
               var modulus = (i + 1) % 12;
@@ -520,12 +518,7 @@ get_header('version-2'); ?>
         },
 
         onMixLoad: function(state){
-          //console.log('mix load');
-          //Check if Daily Pick is also the 1st random product on the list, if so place it lower
-          if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
-            jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
-          }
-
+          console.log('mix load');
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
@@ -534,8 +527,13 @@ get_header('version-2'); ?>
             count += 4;
           });
 
+          //Check if Daily Pick is also the 1st random product on the list, if so place it lower
+          if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
+            jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
+          }
+
           if ( loadCount < 3 ) {
-            //Injecting ads after every 4 products, only on 1st page load
+            //Injecting ads after every 12 products, only on 1st page load
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review').each(function(i) {
               var modulus = (i + 1) % 12;

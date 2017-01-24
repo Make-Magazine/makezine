@@ -174,11 +174,10 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
   <!-- AD UNIT -->
   <div class="ad-unit">
     <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
-
-      <?php global $make; print $make->ads->ad_leaderboard; ?>
-
-    </div>
+    <?php global $make; print $make->ads->ad_leaderboard; ?>
   </div>
+
+</div>
 
   <!-- DYNAMIC EVENTS PANEL -->
   <?php
