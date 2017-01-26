@@ -47,8 +47,11 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
 // Get ad object.
 
     if ( $menu_exists ) {
-        $menu = wp_get_nav_menu_object(  $menu_name );
+        $menu = wp_get_nav_menu_object( $menu_name );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
+        // echo '<pre>';
+        // var_dump($menu_items);
+        // echo '</pre>';
 
         if ($menu_items[0])
         {
@@ -58,6 +61,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $main_sponsor =  get_field('sponsored_content_label', $main_id);
             $main_title = $main_post->title;
             $main_subtitle = $main_post->description;
+            $main_classes = $main_post->classes;
             if ($main_post->attr_title)
             $main_image = $main_post->attr_title;
             else
@@ -71,6 +75,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $top_sponsor =  get_field('sponsored_content_label', $top_id);
             $top_title = $top_post->title;
             $top_subtitle = $top_post->description;
+            $top_classes = $top_post->classes;
             if ($top_post->attr_title)
             $top_image = $top_post->attr_title;
             else
@@ -85,6 +90,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             $bottom_sponsor =  get_field('sponsored_content_label', $bottom_id);
             $bottom_title = $bottom_post->title;
             $bottom_subtitle = $bottom_post->description;
+            $bottom_classes = $bottom_post->classes;
             if ($bottom_post->attr_title)
             $bottom_image = $bottom_post->attr_title;
             else
@@ -119,6 +125,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             <h2><?php echo $main_title; ?></h2>
             <p><?php echo esc_html( $main_subtitle ); ?></p>
           </div>
+          <?php if (in_array("live-now", $main_classes)) {
+            echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+          } ?>
         </a>
       </div>
       <div class="filter-display-wrapper">
@@ -140,6 +149,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             } ?>
             <h2><?php echo $top_title; ?></h2>
           </div>
+          <?php if (in_array("live-now", $main_classes)) {
+            echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+          } ?>
         </a>
         <div class="filter-display-wrapper">
           <div class="red-box-category">
@@ -161,6 +173,9 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             } ?>
             <h2><?php echo $bottom_title; ?></h2>
           </div>
+          <?php if (in_array("live-now", $main_classes)) {
+            echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+          } ?>
         </a>
         <div class="filter-display-wrapper">
           <div class="red-box-category">
