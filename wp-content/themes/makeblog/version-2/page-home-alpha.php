@@ -149,7 +149,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             } ?>
             <h2><?php echo $top_title; ?></h2>
           </div>
-          <?php if (in_array("live-now", $main_classes)) {
+          <?php if (in_array("live-now", $top_classes)) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
           } ?>
         </a>
@@ -173,7 +173,7 @@ $menu_exists = wp_get_nav_menu_object( $menu_name );
             } ?>
             <h2><?php echo $bottom_title; ?></h2>
           </div>
-          <?php if (in_array("live-now", $main_classes)) {
+          <?php if (in_array("live-now", $bottom_classes)) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
           } ?>
         </a>
