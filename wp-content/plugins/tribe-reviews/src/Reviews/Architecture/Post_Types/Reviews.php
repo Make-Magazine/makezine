@@ -413,7 +413,7 @@ class Reviews {
 							'column_width'  => '',
 							'default_value' => '',
 							'placeholder'   => '',
-							'maxlength'     => '109',
+							'maxlength'     => '',
 							'rows'          => '',
 							'formatting'    => 'none',
 						),
