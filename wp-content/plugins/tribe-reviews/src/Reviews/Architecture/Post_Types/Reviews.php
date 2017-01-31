@@ -426,7 +426,7 @@ class Reviews {
 				),
 				array(
 					'key'           => 'field_4dfgdfs45sgh876',
-					'label'         => 'Bottom link title. i.e. \"See all on dev boards\"',
+					'label'         => 'Bottom link title. i.e. See all on dev boards',
 					'name'          => 'link_text',
 					'type'          => 'text',
 					'default_value' => '',
