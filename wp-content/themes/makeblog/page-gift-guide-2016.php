@@ -190,6 +190,9 @@ get_header('version-2'); ?>
     <i class="fa fa-chevron-up"></i>
   </div>
 
+  <div id="gg2016-sponsor-cont" style="display: none;">
+  </div>
+
 </div><!-- #gg2016 -->
 
 
@@ -235,38 +238,30 @@ get_header('version-2'); ?>
     });
     //end page scroll counter
 
-    var loadCount = 1;
     //removeHashFunction();
     var hash = window.location.hash;
 
     origFilter = 'all'; //default to all
     if(hash=='#technology') {
       origFilter = '.category-tec';
-      var loadCount = 3;
     }
     if(hash=='#digital-fabrication') {
       origFilter = '.category-dig';
-      var loadCount = 3;
     }
     if(hash=='#craft&design') {
       origFilter = '.category-cra';
-      var loadCount = 3;
     }
     if(hash=='#drones&vehicles') {
       origFilter = '.category-dro';
-      var loadCount = 3;
     }
     if(hash=='#science') {
       origFilter = '.category-sci';
-      var loadCount = 3;
     }
     if(hash=='#home') {
       origFilter = '.category-hom';
-      var loadCount = 3;
     }
     if(hash=='#workshop') {
       origFilter = '.category-wor';
-      var loadCount = 3;
     }
     //console.log(loadCount);
 
@@ -288,14 +283,17 @@ get_header('version-2'); ?>
           jQuery('.gg2016-body-bg').css('background', 'none');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
 
-          //Put sponsors into array
-          //var sponsorsArray = jQuery('#innerDiv .gg2016-sponsored').detach();
-          //Shuffle the sponsors array
-          //Shuffle(sponsorsArray);
-        },
 
+            //jQuery('#gg2016-sponsor-cont').append(jQuery('#gg2016-js .gg2016-sponsored'));
+        },
         onMixEnd: function(state){
           console.log('mix end');
+
+          //Check if Daily Pick is also the 1st random product on the list, if so place it lower
+          if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
+            jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
+          }
+
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
@@ -386,9 +384,17 @@ get_header('version-2'); ?>
             jQuery('#gg2016-js .gg2016-review').addClass('gg2016-review-even1');
           }
 
-          //console.log(state.activeFilter);
+          //Put sponsors into array
+          //var sponsorsArray = jQuery('.gg2016-sponsored').detach();
+          //Shuffle the sponsors array
+          //Shuffle(sponsorsArray);
+
+
+
+
 
           //Set the ad vars cat to the correct navigation category
+          //console.log(state.activeFilter);
           if (state.activeFilter == '.category-tec') {
             var ad_vars_cat = {
               cat: ['technology']
@@ -431,62 +437,35 @@ get_header('version-2'); ?>
             jQuery.extend( ad_vars, ad_vars_cat );
           }
 
-          console.log('loadcount = ' + loadCount);
+          //Injecting ads after every 12 products, on state change
+          jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
+          jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
+            var modulus = (i + 1) % 12;
+            if (modulus === 0) {
+              jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
+            }
+          });
+          make.gpt.loadDyn();
 
-          //Only do this stuff on state changes that are not the first page load
-          if (loadCount >= 3) {
-            //Injecting ads after every 12 products, on state change
-            jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
-            jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
-              var modulus = (i + 1) % 12;
-              if (modulus === 0) {
-                jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
-              }
-            });
-            make.gpt.loadDyn();
-            //console.log('-------2nd ads injected');
-
-            //Send GA a new page view
-            // var gaURL = location.pathname + location.hash
-            // ga('set', 'page', gaURL);
-            // ga('send', 'pageview');
-            ga('send', 'pageview', {
-              'page': location.pathname + location.hash
-            });
-          }
-
-          loadCount++;
-          //console.log(loadCount);
-          //console.log('end end');
+          //Send GA a new page view
+          // var gaURL = location.pathname + location.hash
+          // ga('set', 'page', gaURL);
+          // ga('send', 'pageview');
+          ga('send', 'pageview', {
+            'page': location.pathname + location.hash
+          });
         },
 
-        onMixLoad: function(state){
+        onMixLoad: function(state){ //Loads only on first pageload
           console.log('mix load');
 
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
-          jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
+          jQuery('#gg2016-sponsor-cont .gg2016-sponsored').each(function() {
             jQuery('#gg2016-js').mixItUp('insert', count, jQuery(this));
             jQuery(this).show();
             count += 4;
           });
-
-          //Check if Daily Pick is also the 1st random product on the list, if so place it lower
-          if ( jQuery('.gg2016-pd-move').is(':first-child') ) {
-            jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
-          }
-
-          if ( loadCount < 3 ) {
-            //Injecting ads after every 12 products, only on 1st page load
-            jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
-            jQuery('#gg2016-js .gg2016-review').each(function(i) {
-              var modulus = (i + 1) % 12;
-              if (modulus === 0) {
-                jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
-              }
-            });
-            make.gpt.loadDyn();
-          }
         }
       }
     });
