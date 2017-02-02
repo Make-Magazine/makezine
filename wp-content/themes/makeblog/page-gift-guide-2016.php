@@ -298,31 +298,24 @@ get_header('version-2'); ?>
     origFilter = 'all'; //default to all
     if(hash=='#technology') {
       origFilter = '.category-tec';
-      var loadCount = 3;
     }
     if(hash=='#digital-fabrication') {
       origFilter = '.category-dig';
-      var loadCount = 3;
     }
     if(hash=='#craft&design') {
       origFilter = '.category-cra';
-      var loadCount = 3;
     }
     if(hash=='#drones&vehicles') {
       origFilter = '.category-dro';
-      var loadCount = 3;
     }
     if(hash=='#science') {
       origFilter = '.category-sci';
-      var loadCount = 3;
     }
     if(hash=='#home') {
       origFilter = '.category-hom';
-      var loadCount = 3;
     }
     if(hash=='#workshop') {
       origFilter = '.category-wor';
-      var loadCount = 3;
     }
     //console.log(loadCount);
 
@@ -352,7 +345,8 @@ get_header('version-2'); ?>
         },
 
         onMixEnd: function(state){
-          //console.log('mix end');
+          console.log('mix end');
+          
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
