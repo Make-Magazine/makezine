@@ -128,121 +128,59 @@ get_header('version-2'); ?>
   </nav>
   <div id="scrollPane">
     <div id="innerDiv" class="inner">
-  <div class="gg2016-body-bg">
+      <div class="gg2016-body-bg">
 
-    <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
+        <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
 
-    <?php if( have_rows('products') ): ?>
+        <?php if( have_rows('products') ): ?>
 
-      <?php while( have_rows('products') ): the_row();
+          <?php while( have_rows('products') ): the_row();
 
-        $product_name = get_sub_field('product_name');
-        $product_description = get_sub_field('product_description');
-        $author_name = get_sub_field('author_name');
-        $price = get_sub_field('price');
-        $price2 = get_sub_field('price_used_for_sorting_not_shown');
-        $url = get_sub_field('url');
-        $image = get_sub_field('image');
-        $category = get_sub_field('category');
-        $priceNoComma = str_replace( ',', '', $price2 );
-        $ctf = get_sub_field('category_takeover_featured');
-        $dp = get_sub_field('daily_pick');
+            $product_name = get_sub_field('product_name');
+            $product_description = get_sub_field('product_description');
+            $author_name = get_sub_field('author_name');
+            $price = get_sub_field('price');
+            $price2 = get_sub_field('price_used_for_sorting_not_shown');
+            $url = get_sub_field('url');
+            $image = get_sub_field('image');
+            $category = get_sub_field('category');
+            $priceNoComma = str_replace( ',', '', $price2 );
+            $ctf = get_sub_field('category_takeover_featured');
+            $dp = get_sub_field('daily_pick'); 
+            $sponsored = get_sub_field('sponsored'); ?>
 
-        if(!get_sub_field('sponsored')) { ?>
+              <article class="gg2016-review gg2016-review-even1 mix <?php if($category){echo implode(' ', $category);} if($ctf){echo ' ctf-move';} if($sponsored){echo ' gg2016-sponsored';} if($ctf){echo ' ctf-move';} if($dp){echo ' gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                <div class="gg2016-review-flex-cont">
+                  <div class="gg2016-review-img">
+                    <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
+                      <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
+                    </a>
+                  </div>
+                  <div class="gg2016-review-info">
+                    <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
+                      <h4 itemprop="name"><?php echo $product_name; ?></h4>
+                    </a>
+                    <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
+                    <?php if( $author_name ): ?>
+                      <p class="gg2016-review-person">Recommended by <?php echo $author_name; ?></p>
+                    <?php endif; ?>
+                    <?php if( $price ): ?>
+                      <p class="gg2016-review-price"><?php echo $price; ?></p>
+                    <?php endif; ?>
+                    <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
+                  </div>
+                </div>
+              </article>
 
-          <article class="gg2016-review gg2016-review-even1 mix
-          <?php if( $category ): echo implode(' ', $category); ?>
-          <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
-          <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-            <div class="gg2016-review-flex-cont">
-              <div class="gg2016-review-img">
-                <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                  <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
-                </a>
-              </div>
-              <div class="gg2016-review-info">
-                <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                  <h4 itemprop="name"><?php echo $product_name; ?></h4>
-                </a>
-                <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
-                <?php if( $author_name ): ?>
-                  <p class="gg2016-review-person">Recommended by <?php echo $author_name; ?></p>
-                <?php endif; ?>
-                <?php if( $price ): ?>
-                  <p class="gg2016-review-price"><?php echo $price; ?></p>
-                <?php endif; ?>
-                <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
-              </div>
-            </div>
-          </article>
+          <?php endwhile; ?>
 
-        <?php }
+        <?php endif; ?>
 
-      endwhile; ?>
+        </div><!-- #gg2016-js.gg2016-body -->
 
-    <?php endif; ?>
-
-    </div><!-- #gg2016-js.gg2016-body -->
-
-  </div><!-- .gg2016-body-bg -->
-  </div>
-  </div>
-
-
-  <div id="gg2016-sponsors" class="container">
-
-  <?php if( have_rows('products') ): ?>
-
-    <?php while( have_rows('products') ): the_row();
-
-      $product_name = get_sub_field('product_name');
-      $product_description = get_sub_field('product_description');
-      $author_name = get_sub_field('author_name');
-      $price = get_sub_field('price');
-      $price2 = get_sub_field('price_used_for_sorting_not_shown');
-      $url = get_sub_field('url');
-      $image = get_sub_field('image');
-      $category = get_sub_field('category');
-      $priceNoComma = str_replace( ',', '', $price2 );
-      $ctf = get_sub_field('category_takeover_featured');
-      $dp = get_sub_field('daily_pick');
-
-      if(get_sub_field('sponsored')) { ?>
-
-        <article class="gg2016-review gg2016-review-even1 mix gg2016-sponsored
-        <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
-        <?php if($ctf){ echo 'ctf-move';} ?>
-        <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
-          <h5>SPONSORED</h5>
-          <div class="gg2016-review-flex-cont">
-            <div class="gg2016-review-img">
-              <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
-              </a>
-            </div>
-            <div class="gg2016-review-info">
-              <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                <h4 itemprop="name"><?php echo $product_name; ?></h4>
-              </a>
-              <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
-              <?php if( $author_name ): ?>
-                <p class="gg2016-review-person">Recommended by <?php echo $author_name; ?></p>
-              <?php endif; ?>
-              <?php if( $price ): ?>
-                <p class="gg2016-review-price"><?php echo $price; ?></p>
-              <?php endif; ?>
-              <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
-            </div>
-          </div>
-        </article>
-
-      <?php }
-
-    endwhile; ?>
-
-  <?php endif; ?>
-
-  </div><!-- #gg2016-sponsors -->
+      </div><!-- .gg2016-body-bg -->
+    </div><!-- #innerDiv -->
+  </div><!-- #scrollPane -->
 
   <div class="container">
     <p class="text-muted">The Make: Gift Guide uses affiliate links for some of our recommendations. This helps support our site and keep the gears turning.</p>
@@ -260,6 +198,12 @@ get_header('version-2'); ?>
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
   }
+
+  //SHuffle function used to sort sponsored products then add into mixitup order
+  function Shuffle(o) {
+    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  };
 
   jQuery( document ).ready(function() {
 
@@ -326,14 +270,6 @@ get_header('version-2'); ?>
     }
     //console.log(loadCount);
 
-
-    jQuery('#gg2016-sponsors').mixItUp({
-      load: {
-        filter: '',
-        sort: 'random'
-      }
-    });
-
     jQuery('#gg2016-js').mixItUp({
       load: {
         filter: origFilter,
@@ -342,6 +278,8 @@ get_header('version-2'); ?>
       callbacks: {
         onMixStart: function(state){
           console.log('mix start');
+
+          //Remove all adds before relayout
           jQuery('#gg2016-header-ad .js-ad').remove();
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
@@ -349,10 +287,15 @@ get_header('version-2'); ?>
           //First reset the takeover sponsor images
           jQuery('.gg2016-body-bg').css('background', 'none');
           jQuery('.gg2016-body-bg').removeClass('gg2016-active-to');
+
+          //Put sponsors into array
+          //var sponsorsArray = jQuery('#innerDiv .gg2016-sponsored').detach();
+          //Shuffle the sponsors array
+          //Shuffle(sponsorsArray);
         },
 
         onMixEnd: function(state){
-          //console.log('mix end');
+          console.log('mix end');
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
           <?php if( have_rows('choose_a_takeover_category') ):
@@ -519,6 +462,7 @@ get_header('version-2'); ?>
 
         onMixLoad: function(state){
           console.log('mix load');
+
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
