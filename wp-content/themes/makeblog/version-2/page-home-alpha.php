@@ -123,22 +123,120 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
         </div>
       </div>
 
-      <div class="hf-4 hf-article">
-      </div>
+      
+      <?php if ($layout == 'hf-layout2') { ?>
+        <div class="hf-4 hf-article">
+          <a href="<?php echo esc_html( $hf4_link ); ?>" style="background-image:url('<?php echo $hf4_image; ?>');">
+            <div class="featured-image-shadow"></div>
+            <div class="mz-text-overlay">
+              <?php if (!empty($hf4_sponsor)) {
+                echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf4_sponsor . '</span>';
+              } ?>
+              <h2><?php echo $hf4_title; ?></h2>
+              <p><?php echo esc_html( $hf4_excerpt ); ?></p>
+            </div>
+            <?php if( $additional_options4 && in_array('livenow', $additional_options4) ) {
+              echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+            } ?>
+          </a>
+          <div class="filter-display-wrapper">
+            <div class="red-box-category">
+              <?php home_tags( "$hf4_id" ) ?>
+            </div>
+          </div>
+        </div>
 
-      <div class="hf-5 hf-article">
-      </div>
+        <div class="hf-5 hf-article">
+          <a href="<?php echo esc_html( $hf5_link ); ?>" style="background-image:url('<?php echo $hf5_image; ?>');">
+            <div class="featured-image-shadow"></div>
+            <div class="mz-text-overlay">
+              <?php if (!empty($hf5_sponsor)) {
+                echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf5_sponsor . '</span>';
+              } ?>
+              <h2><?php echo $hf5_title; ?></h2>
+              <p><?php echo esc_html( $hf5_excerpt ); ?></p>
+            </div>
+            <?php if( $additional_options5 && in_array('livenow', $additional_options5) ) {
+              echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+            } ?>
+          </a>
+          <div class="filter-display-wrapper">
+            <div class="red-box-category">
+              <?php home_tags( "$hf5_id" ) ?>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+
     </div>
-  <!--   <div class="hf-row2">
-      <div class="hf-6 hf-article">
-      </div>
-      <div class="hf-7 hf-article">
-      </div>
-      <div class="hf-8 hf-article">
-      </div>
-      <div class="hf-9 hf-article">
-      </div>
-    </div> -->
+
+    <?php if ($layout == 'hf-layout3') { ?>
+      <div class="hf-row2">
+        <div class="hf-6 hf-article">
+          <a href="<?php echo esc_html( $hf4_link ); ?>" style="background-image:url('<?php echo $hf4_image; ?>');">
+            <div class="featured-image-shadow"></div>
+            <div class="mz-text-overlay">
+              <?php if (!empty($hf4_sponsor)) {
+                echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf4_sponsor . '</span>';
+              } ?>
+              <h2><?php echo $hf4_title; ?></h2>
+              <p><?php echo esc_html( $hf4_excerpt ); ?></p>
+            </div>
+            <?php if( $additional_options4 && in_array('livenow', $additional_options4) ) {
+              echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+            } ?>
+          </a>
+          <div class="filter-display-wrapper">
+            <div class="red-box-category">
+              <?php home_tags( "$hf4_id" ) ?>
+            </div>
+          </div>
+        </div>
+
+        <div class="hf-7 hf-article">
+          <a href="<?php echo esc_html( $hf5_link ); ?>" style="background-image:url('<?php echo $hf5_image; ?>');">
+            <div class="featured-image-shadow"></div>
+            <div class="mz-text-overlay">
+              <?php if (!empty($hf5_sponsor)) {
+                echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf5_sponsor . '</span>';
+              } ?>
+              <h2><?php echo $hf5_title; ?></h2>
+              <p><?php echo esc_html( $hf5_excerpt ); ?></p>
+            </div>
+            <?php if( $additional_options5 && in_array('livenow', $additional_options5) ) {
+              echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+            } ?>
+          </a>
+          <div class="filter-display-wrapper">
+            <div class="red-box-category">
+              <?php home_tags( "$hf5_id" ) ?>
+            </div>
+          </div>
+        </div>
+
+        <div class="hf-8 hf-article">
+          <a href="<?php echo esc_html( $hf6_link ); ?>" style="background-image:url('<?php echo $hf6_image; ?>');">
+            <div class="featured-image-shadow"></div>
+            <div class="mz-text-overlay">
+              <?php if (!empty($hf6_sponsor)) {
+                echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf6_sponsor . '</span>';
+              } ?>
+              <h2><?php echo $hf6_title; ?></h2>
+              <p><?php echo esc_html( $hf6_excerpt ); ?></p>
+            </div>
+            <?php if( $additional_options6 && in_array('livenow', $additional_options6) ) {
+              echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+            } ?>
+          </a>
+          <div class="filter-display-wrapper">
+            <div class="red-box-category">
+              <?php home_tags( "$hf6_id" ) ?>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+
+    </div>
 
   </div>
 

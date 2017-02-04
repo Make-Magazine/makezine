@@ -7,7 +7,7 @@
             "choices": {
                 "hf-layout1": "3 Article Layout 1",
                 "hf-layout2": "5 Article Layout 2",
-                "hf-layout3": "7 Article Layout 3"
+                "hf-layout3": "6 Article Layout 3"
             },
             "default_value": "",
             "other_choice": 0,
@@ -189,5 +189,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1486167877
+    "modified": 1486174067
 }
