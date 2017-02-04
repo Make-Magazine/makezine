@@ -1,0 +1,193 @@
+{
+    "key": "group_5894d95d16342",
+    "title": "Home Page Featured Articles",
+    "fields": [
+        {
+            "layout": "vertical",
+            "choices": {
+                "hf-layout1": "3 Article Layout 1",
+                "hf-layout2": "5 Article Layout 2",
+                "hf-layout3": "7 Article Layout 3"
+            },
+            "default_value": "",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_5894d9b3c0be0",
+            "label": "Featured Article Layout",
+            "name": "featured_article_layout",
+            "type": "radio",
+            "instructions": "Before choosing a layout make sure there is enough articles set for all places(See below).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "sub_fields": [
+                {
+                    "post_type": [
+                        "post",
+                        "page",
+                        "products",
+                        "reviews",
+                        "projects"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
+                    "key": "field_5894dca8c41d4",
+                    "label": "Scheduled or Preferred Article",
+                    "name": "schedules_or_preferred_article",
+                    "type": "post_object",
+                    "instructions": "This is the first choice for article shown. This spot can be also used as a scheduled article. Backup article will be shown until this first choice scheduled article becomes published.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "return_format": "url",
+                    "preview_size": "featured-thumb",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "key": "field_58951e35252fd",
+                    "label": "Image override for scheduled\/preferred",
+                    "name": "image_overide1",
+                    "type": "image",
+                    "instructions": "Optional: Place image here to override the default post image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "post_type": [
+                        "post",
+                        "page",
+                        "products",
+                        "reviews",
+                        "projects"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
+                    "key": "field_5894de3ac41d5",
+                    "label": "Backup Article",
+                    "name": "backup_article",
+                    "type": "post_object",
+                    "instructions": "Set a backup article here if the first choice become unpublished or if you are using the first choice spot as a scheduled article. This spot will be shown until the scheduled article becomes published.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "key": "field_58951ec9252fe",
+                    "label": "Image override for backup",
+                    "name": "image_override2",
+                    "type": "image",
+                    "instructions": "Optional: Place image here to override the default post image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "layout": "vertical",
+                    "choices": {
+                        "livenow": "Add the \"Live Now\" indicator"
+                    },
+                    "default_value": [],
+                    "allow_custom": 0,
+                    "save_custom": 0,
+                    "toggle": 0,
+                    "return_format": "value",
+                    "key": "field_58950623b6a33",
+                    "label": "Additional Options",
+                    "name": "additional_options",
+                    "type": "checkbox",
+                    "instructions": "Check the checkbox to turn on a feature.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 3,
+            "max": 7,
+            "layout": "table",
+            "button_label": "Add Article",
+            "collapsed": "",
+            "key": "field_5894db8fc41d3",
+            "label": "Featured Articles",
+            "name": "featured_articles",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "home-page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1486167877
+}

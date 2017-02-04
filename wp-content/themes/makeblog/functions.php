@@ -915,3 +915,27 @@ function remove_post_type_page_from_search() {
     $wp_post_types['page']->exclude_from_search = true;
 }
 add_action('init', 'remove_post_type_page_from_search');
+
+
+//Advanced Custom Fields Custom Setting WordPress Menu
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Custom Settings',
+        'menu_title'    => 'Custom Settings',
+        'menu_slug'     => 'custom-settings',
+        'position'      => false,
+        'capability'    => 'edit_posts',
+        'redirect'      => true
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Home Page Custom Settings',
+        'menu_title'    => 'Home Page',
+        'menu_slug'     => 'home-page',
+        'parent_slug'   => 'custom-settings',
+        'position'      => false
+    ));
+    
+}
+

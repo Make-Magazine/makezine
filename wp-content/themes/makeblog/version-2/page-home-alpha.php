@@ -1,198 +1,152 @@
 <?php
-
 /*
 Template Name: Home Page Alpha
 */
-
-require_once 'includes/Mobile_Detect.php';
-$detect = new Mobile_Detect;
-$device = 'pc';
-if ( $detect->isMobile() ) {
-  $device = 'mobile';
-}
-if( $detect->isTablet() ){
-  $device = 'tablet';
-}
-
 get_header( 'version-2' );
 
 wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2/js/homegrid.js', array( 'jquery' ), false, true );
 
-// custom-fields for curated section
-$main_link = '';
-$main_sponsor = '';
-$main_title = '';
-$main_subtitle = '';
-$main_image = '';
-$main_id = '';
+  if( have_rows('featured_articles', 'option') ):
 
-$top_link = '';
-$top_sponsor = '';
-$top_title = '';
-$top_subtitle = '';
-$top_image = '';
-$top_id = '';
+    $layout = get_field('featured_article_layout', 'option');
+    $c = 1;
 
-$bottom_link = '';
-$bottom_sponsor = '';
-$bottom_title = '';
-$bottom_subtitle = '';
-$bottom_image = '';
-$bottom_id = '';
+    while( have_rows('featured_articles', 'option') ): the_row();
 
-// Check if the menu exists
-$menu_name = 'Home Page Curation';
-$menu_exists = wp_get_nav_menu_object( $menu_name );
+      ${'scheduled_article' . $c} = get_sub_field('schedules_or_preferred_article');
+      ${'image_overide1' . $c} = get_sub_field('image_overide1');
+      ${'backup_article' . $c} = get_sub_field('backup_article');
+      ${'image_overide2' . $c} = get_sub_field('image_overide2');
+      ${'additional_options' . $c} = get_sub_field('additional_options');
 
-// Get ad object.
-
-    if ( $menu_exists ) {
-        $menu = wp_get_nav_menu_object( $menu_name );
-        $menu_items = wp_get_nav_menu_items($menu->term_id);
-        // echo '<pre>';
-        // var_dump($menu_items);
-        // echo '</pre>';
-
-        if ($menu_items[0])
-        {
-            $main_post = $menu_items[0];
-            $main_id = $main_post->object_id;
-            $main_link = $main_post->url;
-            $main_sponsor =  get_field('sponsored_content_label', $main_id);
-            $main_title = $main_post->title;
-            $main_subtitle = $main_post->description;
-            $main_classes = $main_post->classes;
-            if ($main_post->attr_title)
-            $main_image = $main_post->attr_title;
-            else
-            $main_image = wp_get_attachment_url(get_post_thumbnail_id($main_id));
+      if ( ${'scheduled_article' . $c}->post_status == 'publish') { 
+        ${'hf' . $c} = ${'scheduled_article' . $c};
+        ${'hf' . $c . '_id'} = ${'hf' . $c}->ID;
+        if ( $image_overide11 ) {
+          ${'hf' . $c . '_image'} = $image_overide11;
+        } else {
+          ${'hf' . $c . '_image_array'} = wp_get_attachment_image_src( get_post_thumbnail_id( ${'hf' . $c . '_id'} ), array( 1200, 694 ) );
+          ${'hf' . $c . '_image'} = ${'hf' . $c . '_image_array'}[0];
         }
-        if ($menu_items[1])
-        {
-            $top_post = $menu_items[1];
-            $top_id = $top_post->object_id;
-            $top_link = $top_post->url;
-            $top_sponsor =  get_field('sponsored_content_label', $top_id);
-            $top_title = $top_post->title;
-            $top_subtitle = $top_post->description;
-            $top_classes = $top_post->classes;
-            if ($top_post->attr_title)
-            $top_image = $top_post->attr_title;
-            else
-            $top_image = wp_get_attachment_url(get_post_thumbnail_id($top_id));
-
+      } else { 
+        ${'hf' . $c} = $backup_article1;
+        ${'hf' . $c . '_id'} = ${'hf' . $c}->ID;
+        if ( $image_overide12 ) {
+          ${'hf' . $c . '_image'} = $image_overide12;
+        } else {
+          ${'hf' . $c . '_image_array'} = wp_get_attachment_image_src( get_post_thumbnail_id( ${'hf' . $c . '_id'} ), array( 1200, 694 ) );
+          ${'hf' . $c . '_image'} = ${'hf' . $c . '_image_array'}[0];
         }
-        if ($menu_items[2])
-        {
-            $bottom_post = $menu_items[2];
-            $bottom_id = $bottom_post->object_id;
-            $bottom_link = $bottom_post->url;
-            $bottom_sponsor =  get_field('sponsored_content_label', $bottom_id);
-            $bottom_title = $bottom_post->title;
-            $bottom_subtitle = $bottom_post->description;
-            $bottom_classes = $bottom_post->classes;
-            if ($bottom_post->attr_title)
-            $bottom_image = $bottom_post->attr_title;
-            else
-            $bottom_image = wp_get_attachment_url(get_post_thumbnail_id($bottom_id));
+      }
+      ${'hf' . $c . '_link'} = get_permalink(${'hf' . $c . '_id'});
+      ${'hf' . $c . '_sponsor'} = get_field('sponsored_content_label', ${'hf' . $c . '_id'});
+      ${'hf' . $c . '_title'} = ${'hf' . $c}->post_title;
+      ${'hf' . $c . '_excerpt'} = ${'hf' . $c}->post_excerpt;
 
-        }
-        /*
-	foreach ( (array) $menu_items as $key => $menu_item ) {
-	    $title = $menu_item->title;
-	    $url = $menu_item->url;
-            print_r($menu_item);
-            $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+      $c++;
 
-	}*/
-    } else {
-      $menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
-    }
+    endwhile;
 
-?>
-<div class="home-featured-stories">
-  <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <div class="row">
-        <a href="<?php echo esc_html( $main_link ); ?>"
-          class="mz-featured-imageblock mz-imageblock-hero"
-          style="background-image:url('<?php echo get_resized_remote_image_url( $main_image, 1200, 694 ); ?>');">
+  endif;
+
+          // echo '<pre>';
+          // var_dump($hf1_image);
+          // echo '</pre>';
+          // echo '<pre>';
+          // var_dump($hf1_image);
+          // echo '</pre>';
+  ?>
+
+  <div id="home-featured" class="<?php echo $layout; ?>">
+    <div class="hf-row1">
+
+      <div class="hf-1 hf-article">
+        <a href="<?php echo esc_html( $hf1_link ); ?>" style="background-image:url('<?php echo $hf1_image; ?>');">
           <div class="featured-image-shadow"></div>
           <div class="mz-text-overlay">
-            <?php if (!empty($main_sponsor)) {
-              echo '<span class="sponsored-title-home">SPONSORED BY ' . $main_sponsor . '</span>';
+            <?php if (!empty($hf1_sponsor)) {
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf1_sponsor . '</span>';
             } ?>
-            <h2><?php echo $main_title; ?></h2>
-            <p><?php echo esc_html( $main_subtitle ); ?></p>
+            <h2><?php echo $hf1_title; ?></h2>
+            <p><?php echo esc_html( $hf1_excerpt ); ?></p>
           </div>
-          <?php if (in_array("live-now", $main_classes)) {
-            echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
-          } ?>
-        </a>
-      </div>
-      <div class="filter-display-wrapper">
-        <div class="red-box-category">
-          <?php home_tags( "$main_id" ) ?>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-      <div class="row">
-        <a href="<?php echo esc_html( $top_link ); ?>"
-          class="mz-featured-imageblock mz-featured-imageblock-top"
-          style="background-image:url('<?php echo get_resized_remote_image_url( $top_image, 813, 470 ); ?>');">
-          <div class="featured-image-shadow"></div>
-          <div class="mz-text-overlay mz-text-overlay-side">
-            <?php if (!empty($top_sponsor)) {
-              echo '<span class="sponsored-title-home">SPONSORED BY ' . $top_sponsor . '</span>';
-            } ?>
-            <h2><?php echo $top_title; ?></h2>
-          </div>
-          <?php if (in_array("live-now", $top_classes)) {
+          <?php if( $additional_options1 && in_array('livenow', $additional_options1) ) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
           } ?>
         </a>
         <div class="filter-display-wrapper">
           <div class="red-box-category">
-            <?php home_tags( "$top_id" ) ?>
+            <?php home_tags( "$hf1_id" ) ?>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-      <div class="row">
-        <a href="<?php echo esc_html( $bottom_link ); ?>"
-          class="mz-featured-imageblock"
-          style="background-image:url('<?php echo get_resized_remote_image_url( $bottom_image, 813, 470 ); ?>');">
+      <div class="hf-2 hf-article">
+        <a href="<?php echo esc_html( $hf2_link ); ?>" style="background-image:url('<?php echo $hf2_image; ?>');">
           <div class="featured-image-shadow"></div>
-          <div class="mz-text-overlay mz-text-overlay-side">
-            <?php if (!empty($bottom_sponsor)) {
-              echo '<span class="sponsored-title-home">SPONSORED BY ' . $bottom_sponsor . '</span>';
+          <div class="mz-text-overlay">
+            <?php if (!empty($hf2_sponsor)) {
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf2_sponsor . '</span>';
             } ?>
-            <h2><?php echo $bottom_title; ?></h2>
+            <h2><?php echo $hf2_title; ?></h2>
+            <p><?php echo esc_html( $hf2_excerpt ); ?></p>
           </div>
-          <?php if (in_array("live-now", $bottom_classes)) {
+          <?php if( $additional_options2 && in_array('livenow', $additional_options2) ) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
           } ?>
         </a>
         <div class="filter-display-wrapper">
           <div class="red-box-category">
-            <?php home_tags( "$bottom_id" ) ?>
+            <?php home_tags( "$hf2_id" ) ?>
           </div>
         </div>
       </div>
+
+      <div class="hf-3 hf-article">
+        <a href="<?php echo esc_html( $hf3_link ); ?>" style="background-image:url('<?php echo $hf3_image; ?>');">
+          <div class="featured-image-shadow"></div>
+          <div class="mz-text-overlay">
+            <?php if (!empty($hf3_sponsor)) {
+              echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf3_sponsor . '</span>';
+            } ?>
+            <h2><?php echo $hf3_title; ?></h2>
+            <p><?php echo esc_html( $hf3_excerpt ); ?></p>
+          </div>
+          <?php if( $additional_options3 && in_array('livenow', $additional_options3) ) {
+            echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
+          } ?>
+        </a>
+        <div class="filter-display-wrapper">
+          <div class="red-box-category">
+            <?php home_tags( "$hf3_id" ) ?>
+          </div>
+        </div>
+      </div>
+
+      <div class="hf-4 hf-article">
+      </div>
+
+      <div class="hf-5 hf-article">
+      </div>
     </div>
-  </div> <!-- row -->
+  <!--   <div class="hf-row2">
+      <div class="hf-6 hf-article">
+      </div>
+      <div class="hf-7 hf-article">
+      </div>
+      <div class="hf-8 hf-article">
+      </div>
+      <div class="hf-9 hf-article">
+      </div>
+    </div> -->
+
+  </div>
 
   <!-- AD UNIT -->
   <div class="ad-unit">
     <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
     <?php global $make; print $make->ads->ad_leaderboard; ?>
   </div>
-
-</div>
 
   <!-- DYNAMIC EVENTS PANEL -->
   <?php
