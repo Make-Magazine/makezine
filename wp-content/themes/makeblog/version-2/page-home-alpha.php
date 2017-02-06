@@ -22,8 +22,8 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
       if ( ${'scheduled_article' . $c}->post_status == 'publish') { 
         ${'hf' . $c} = ${'scheduled_article' . $c};
         ${'hf' . $c . '_id'} = ${'hf' . $c}->ID;
-        if ( $image_overide11 ) {
-          ${'hf' . $c . '_image'} = $image_overide11;
+        if ( ${'image_overide1' . $c} ) {
+          ${'hf' . $c . '_image'} = ${'image_overide1' . $c};
         } else {
           ${'hf' . $c . '_image_array'} = wp_get_attachment_image_src( get_post_thumbnail_id( ${'hf' . $c . '_id'} ), array( 1200, 694 ) );
           ${'hf' . $c . '_image'} = ${'hf' . $c . '_image_array'}[0];
@@ -31,8 +31,8 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
       } else { 
         ${'hf' . $c} = $backup_article1;
         ${'hf' . $c . '_id'} = ${'hf' . $c}->ID;
-        if ( $image_overide12 ) {
-          ${'hf' . $c . '_image'} = $image_overide12;
+        if ( ${'image_overide2' . $c} ) {
+          ${'hf' . $c . '_image'} = ${'image_overide2' . $c};
         } else {
           ${'hf' . $c . '_image_array'} = wp_get_attachment_image_src( get_post_thumbnail_id( ${'hf' . $c . '_id'} ), array( 1200, 694 ) );
           ${'hf' . $c . '_image'} = ${'hf' . $c . '_image_array'}[0];
@@ -49,12 +49,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
 
   endif;
 
-          // echo '<pre>';
-          // var_dump($hf1_image);
-          // echo '</pre>';
-          // echo '<pre>';
-          // var_dump($hf1_image);
-          // echo '</pre>';
   ?>
 
   <div id="home-featured" class="<?php echo $layout; ?>">
