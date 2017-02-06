@@ -341,7 +341,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
     </div>
   </div>
 
-
   <div class="all-projects <?php echo $device ?>">
     <div class="content container">
       <div class="posts-list">
