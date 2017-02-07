@@ -59,7 +59,7 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
       }
       
       ${'hf' . $c . '_sponsor'} = get_field('sponsored_content_label', ${'hf' . $c . '_id'});
-      ${'hf' . $c . '_excerpt'} = ${'hf' . $c}->post_excerpt;
+      //${'hf' . $c . '_excerpt'} = ${'hf' . $c}->post_excerpt;
 
       $c++;
 
@@ -80,7 +80,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
               echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf1_sponsor . '</span>';
             } ?>
             <h2><?php echo $hf1_title; ?></h2>
-            <p><?php echo esc_html( $hf1_excerpt ); ?></p>
           </div>
           <?php if( $additional_options1 && in_array('livenow', $additional_options1) ) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -101,7 +100,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
               echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf2_sponsor . '</span>';
             } ?>
             <h2><?php echo $hf2_title; ?></h2>
-            <p><?php echo esc_html( $hf2_excerpt ); ?></p>
           </div>
           <?php if( $additional_options2 && in_array('livenow', $additional_options2) ) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -122,7 +120,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
               echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf3_sponsor . '</span>';
             } ?>
             <h2><?php echo $hf3_title; ?></h2>
-            <p><?php echo esc_html( $hf3_excerpt ); ?></p>
           </div>
           <?php if( $additional_options3 && in_array('livenow', $additional_options3) ) {
             echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -145,7 +142,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
                 echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf4_sponsor . '</span>';
               } ?>
               <h2><?php echo $hf4_title; ?></h2>
-              <p><?php echo esc_html( $hf4_excerpt ); ?></p>
             </div>
             <?php if( $additional_options4 && in_array('livenow', $additional_options4) ) {
               echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -166,7 +162,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
                 echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf5_sponsor . '</span>';
               } ?>
               <h2><?php echo $hf5_title; ?></h2>
-              <p><?php echo esc_html( $hf5_excerpt ); ?></p>
             </div>
             <?php if( $additional_options5 && in_array('livenow', $additional_options5) ) {
               echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -192,7 +187,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
                 echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf4_sponsor . '</span>';
               } ?>
               <h2><?php echo $hf4_title; ?></h2>
-              <p><?php echo esc_html( $hf4_excerpt ); ?></p>
             </div>
             <?php if( $additional_options4 && in_array('livenow', $additional_options4) ) {
               echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -213,7 +207,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
                 echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf5_sponsor . '</span>';
               } ?>
               <h2><?php echo $hf5_title; ?></h2>
-              <p><?php echo esc_html( $hf5_excerpt ); ?></p>
             </div>
             <?php if( $additional_options5 && in_array('livenow', $additional_options5) ) {
               echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
@@ -234,7 +227,6 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
                 echo '<span class="sponsored-title-home">SPONSORED BY ' . $hf6_sponsor . '</span>';
               } ?>
               <h2><?php echo $hf6_title; ?></h2>
-              <p><?php echo esc_html( $hf6_excerpt ); ?></p>
             </div>
             <?php if( $additional_options6 && in_array('livenow', $additional_options6) ) {
               echo '<span class="live-now-alert"><i class="fa fa-circle" aria-hidden="true"></i> Live Now</span>'; 
