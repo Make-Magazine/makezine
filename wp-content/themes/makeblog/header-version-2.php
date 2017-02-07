@@ -509,7 +509,7 @@ if( $detect->isTablet() ){
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="/join" class="pull-left fourth-post">
+              <a href="/join/?utm_source=navimage&utm_campaign=getinvolvednav" class="pull-left fourth-post">
                 <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join our Make: newsletter" />
               </a>
             </div>
