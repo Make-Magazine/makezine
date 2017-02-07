@@ -17,11 +17,16 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
       ${'image_overide1' . $c} = get_sub_field('image_overide1');
       ${'backup_article' . $c} = get_sub_field('backup_article');
       ${'image_overide2' . $c} = get_sub_field('image_overide2');
+      ${'url_article' . $c} = get_sub_field('backup_external_article');
+      ${'title_override' . $c} = get_sub_field('title_override');
       ${'additional_options' . $c} = get_sub_field('additional_options');
 
+      // If scheduled or backup
       if ( ${'scheduled_article' . $c}->post_status == 'publish') { 
         ${'hf' . $c} = ${'scheduled_article' . $c};
         ${'hf' . $c . '_id'} = ${'hf' . $c}->ID;
+        ${'hf' . $c . '_link'} = get_permalink(${'hf' . $c . '_id'});
+        ${'hf' . $c . '_title'} = ${'hf' . $c}->post_title;
         if ( ${'image_overide1' . $c} ) {
           ${'hf' . $c . '_image'} = ${'image_overide1' . $c};
         } else {
@@ -37,10 +42,21 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
           ${'hf' . $c . '_image_array'} = wp_get_attachment_image_src( get_post_thumbnail_id( ${'hf' . $c . '_id'} ), array( 1200, 694 ) );
           ${'hf' . $c . '_image'} = ${'hf' . $c . '_image_array'}[0];
         }
+        // If internal url or external url
+        if ( ${'url_article' . $c} ) {
+          ${'hf' . $c . '_link'} = ${'url_article' . $c};
+        } else {
+          ${'hf' . $c . '_link'} = get_permalink(${'hf' . $c . '_id'});
+        }
+        // If title override
+        if ( ${'title_override' . $c} ) {
+          ${'hf' . $c . '_title'} = ${'title_override' . $c};
+        } else {
+          ${'hf' . $c . '_title'} = ${'hf' . $c}->post_title;
+        }
       }
-      ${'hf' . $c . '_link'} = get_permalink(${'hf' . $c . '_id'});
+      
       ${'hf' . $c . '_sponsor'} = get_field('sponsored_content_label', ${'hf' . $c . '_id'});
-      ${'hf' . $c . '_title'} = ${'hf' . $c}->post_title;
       ${'hf' . $c . '_excerpt'} = ${'hf' . $c}->post_excerpt;
 
       $c++;

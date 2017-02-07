@@ -5,9 +5,9 @@
         {
             "layout": "vertical",
             "choices": {
-                "hf-layout1": "3 Article Layout 1",
-                "hf-layout2": "5 Article Layout 2",
-                "hf-layout3": "6 Article Layout 3"
+                "hf-layout1": "3 Article, Layout 1",
+                "hf-layout2": "5 Article, Layout 2",
+                "hf-layout3": "6 Article, Layout 3"
             },
             "default_value": "",
             "other_choice": 0,
@@ -93,12 +93,44 @@
                     "return_format": "object",
                     "ui": 1,
                     "key": "field_5894de3ac41d5",
-                    "label": "Backup Article",
+                    "label": "Backup Internal Article",
                     "name": "backup_article",
                     "type": "post_object",
-                    "instructions": "Set a backup article here if the first choice become unpublished or if you are using the first choice spot as a scheduled article. This spot will be shown until the scheduled article becomes published.",
+                    "instructions": "Set a backup article here if you are using the first choice spot as a scheduled article. This article will be used until the scheduled article becomes published.",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_58950623b6a33",
+                                "operator": "!=",
+                                "value": "externalurl"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "",
+                    "placeholder": "",
+                    "key": "field_58991622e446b",
+                    "label": "Backup External Article",
+                    "name": "backup_external_article",
+                    "type": "url",
+                    "instructions": "Enter URL here for external article. This article will be used if there is none entered in the Scheduled\/preferred field.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_58950623b6a33",
+                                "operator": "==",
+                                "value": "externalurl"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -117,7 +149,7 @@
                     "max_size": "",
                     "mime_types": "",
                     "key": "field_58951ec9252fe",
-                    "label": "Image override for backup",
+                    "label": "Image override for backup\/external",
                     "name": "image_override2",
                     "type": "image",
                     "instructions": "Optional: Place image here to override the default post image.",
@@ -130,8 +162,28 @@
                     }
                 },
                 {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_5899194a0dca1",
+                    "label": "Title override for backup\/external",
+                    "name": "title_override",
+                    "type": "text",
+                    "instructions": "Enter text here to override backup\/external article title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
                     "layout": "vertical",
                     "choices": {
+                        "externalurl": "External URL",
                         "livenow": "Add the \"Live Now\" indicator"
                     },
                     "default_value": [],
@@ -154,7 +206,7 @@
                 }
             ],
             "min": 3,
-            "max": 7,
+            "max": 0,
             "layout": "table",
             "button_label": "Add Article",
             "collapsed": "",
@@ -189,5 +241,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1486174067
+    "modified": 1486430430
 }
