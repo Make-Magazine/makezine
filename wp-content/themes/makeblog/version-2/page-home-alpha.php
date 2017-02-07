@@ -16,7 +16,7 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
       ${'scheduled_article' . $c} = get_sub_field('schedules_or_preferred_article');
       ${'image_overide1' . $c} = get_sub_field('image_overide1');
       ${'backup_article' . $c} = get_sub_field('backup_article');
-      ${'image_overide2' . $c} = get_sub_field('image_overide2');
+      ${'image_overide2' . $c} = get_sub_field('image_override2');
       ${'url_article' . $c} = get_sub_field('backup_external_article');
       ${'title_override' . $c} = get_sub_field('title_override');
       ${'additional_options' . $c} = get_sub_field('additional_options');
@@ -34,8 +34,10 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
           ${'hf' . $c . '_image'} = ${'hf' . $c . '_image_array'}[0];
         }
       } else { 
-        ${'hf' . $c} = $backup_article1;
+        ${'hf' . $c} = ${'backup_article' . $c};
         ${'hf' . $c . '_id'} = ${'hf' . $c}->ID;
+
+        
         if ( ${'image_overide2' . $c} ) {
           ${'hf' . $c . '_image'} = ${'image_overide2' . $c};
         } else {
