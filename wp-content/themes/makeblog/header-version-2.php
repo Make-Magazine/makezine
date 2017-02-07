@@ -495,7 +495,7 @@ if( $detect->isTablet() ){
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute/" class="pull-left second-post">
+              <a href="/contribute" class="pull-left second-post">
                 <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
               </a>
             </div>
@@ -509,8 +509,8 @@ if( $detect->isTablet() ){
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/joinus" class="pull-left fourth-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Membership.jpg" alt="Show and Tell, social" />
+              <a href="/join" class="pull-left fourth-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join our Make: newsletter" />
               </a>
             </div>
           </div>
