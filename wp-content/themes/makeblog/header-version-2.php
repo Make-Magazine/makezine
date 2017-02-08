@@ -392,28 +392,28 @@ if( $detect->isTablet() ){
 
         <div class="nav-guides row">
           
-          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/comparison/3dprinters/" class="pull-left first-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-3D-min.jpg" alt="3D Printer product reviews and comparison guide" />
               </a>
             </div>
           </div>
-          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/comparison/boards/" class="pull-left second-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Boards.jpg" alt="Boards product reviews and comparison guide" />
               </a>
             </div>
           </div>
-          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/comparison/drones/" class="pull-left third-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Drones.jpg" alt="Drones product reviews and comparison guide" />
               </a>
             </div>
           </div>
-          <div class="guides-item col-lg-3 col-md-3 col-sm-4">
+          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/giftguide/" class="pull-left fourth-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Gift.jpg" alt="Make: Gift Guide" />
@@ -495,7 +495,7 @@ if( $detect->isTablet() ){
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/contribute/" class="pull-left second-post">
+              <a href="/contribute" class="pull-left second-post">
                 <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
               </a>
             </div>
@@ -509,8 +509,8 @@ if( $detect->isTablet() ){
           </div>
           <div class="share-post col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
-              <a href="//makezine.com/joinus" class="pull-left fourth-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Membership.jpg" alt="Show and Tell, social" />
+              <a href="/join/?utm_source=navimage&utm_campaign=getinvolvednav" class="pull-left fourth-post">
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join our Make: newsletter" />
               </a>
             </div>
           </div>
