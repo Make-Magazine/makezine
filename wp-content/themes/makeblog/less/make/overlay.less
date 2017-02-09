@@ -7,6 +7,9 @@
   background: rgba(243, 243, 243, 0.0);
   z-index: 3;
   visibility: hidden;
+  @media screen and (min-width: 768px) {
+    top: 61px;
+  }
 
   .container-fluid-overlay {
     margin-right: auto;
@@ -123,4 +126,8 @@
   .overlay-div .overlay-input {
     width: 80%;
   }
+}
+
+.modal-open {
+  overflow: auto;
 }

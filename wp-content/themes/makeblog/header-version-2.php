@@ -179,31 +179,29 @@ if( $detect->isTablet() ){
 <?php endif; ?>
 
 <!-- TOP BRAND BAR -->
-<div class="top-header-bar-brand header-wrapper">
+<!--div class="top-header-bar-brand header-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
         <p class="header-make-img">
-<!--           <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
- -->        </p>
+          <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
+        </p>
       </div>
     </div>
   </div>
-</div>
-<header class="header-wrapper">
-  <div class="container panel header <?php echo $device ?>">
+</div-->
 
-    <!--nav class="navbar navbar-default"-->
-    <nav class="navbar navbar-default">
-      <div class="row">
+<header class="header-wrapper">
+  <div class="container header <?php echo $device ?>">
+    <div class="row">
+      <nav class="navbar navbar-default">
 
         <!-- LOGO & TAG LINE -->
         <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-          <a href="<?php echo home_url(); ?>" class="logo-a">
-            <img src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" class="mz-logo" alt="Make: logo" />
+          <a href="<?php echo home_url(); ?>">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" alt="Make: logo" />
           </a>
         </div>
-       
 
         <!-- MENUS -->
         <div class="navbar-header">
@@ -251,6 +249,7 @@ if( $detect->isTablet() ){
                 </ul>
               </div>
 
+              <!-- Mobile nav bottom info-->
               <div class="mz-footer-subscribe">
                 <?php
                 $isSecure = "http://";
@@ -315,9 +314,9 @@ if( $detect->isTablet() ){
           </h6>
         </div>
 
-      </div><!-- row -->
-    </nav>
-  </div><!-- container panel header -->
+      </nav>
+    </div><!-- row -->
+  </div><!-- container header -->
 
   <div class="dynamic-header-posts <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>dynamic-header-posts-margin<?php } ?>">
     <div class="dynamic-header-container container">
@@ -325,6 +324,7 @@ if( $detect->isTablet() ){
         <div class="menu-sub-menu"></div>
       </div>
       <div class="dynamic-header-content row">
+
         <div class="latest-projects row">
           <?php query_posts('post_type=projects&showposts=4'); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -333,8 +333,8 @@ if( $detect->isTablet() ){
               <a href="<?php the_permalink(); ?>" class="pull-left">
                 <?php
                 $args = array(
-                    'resize' => '370,240',
-                    'quality' => get_photon_img_quality(),
+                  'resize' => '370,240',
+                  'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -346,8 +346,8 @@ if( $detect->isTablet() ){
                   $photon = jetpack_photon_url( $photon, $args );
                 } ?>
                 <img src="<?php echo $photon; ?>" alt="Featured Project Thumbnail" />
+                <h2><?php the_title(); ?></h2>
               </a>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
             </div>
           <?php endwhile; ?>
@@ -357,6 +357,7 @@ if( $detect->isTablet() ){
           <?php endif; ?>
           <?php wp_reset_query(); ?>
         </div>
+
         <div class="latest-stories row">
           <?php query_posts('showposts=4'); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -378,8 +379,8 @@ if( $detect->isTablet() ){
                   $photon = jetpack_photon_url( $photon, $args );
                 } ?>
                 <img src="<?php echo $photon; ?>" alt="Featured Story Post Thumbnail" />
+                <h2><?php the_title(); ?></h2>
               </a>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
             </div>
           <?php endwhile; ?>
@@ -391,29 +392,28 @@ if( $detect->isTablet() ){
         </div>
 
         <div class="nav-guides row">
-          
-          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/comparison/3dprinters/" class="pull-left first-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-3D-min.jpg" alt="3D Printer product reviews and comparison guide" />
               </a>
             </div>
           </div>
-          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/comparison/boards/" class="pull-left second-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Boards.jpg" alt="Boards product reviews and comparison guide" />
               </a>
             </div>
           </div>
-          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/comparison/drones/" class="pull-left third-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Drones.jpg" alt="Drones product reviews and comparison guide" />
               </a>
             </div>
           </div>
-          <div class="guides-item col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/giftguide/" class="pull-left fourth-post">
                 <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Gift.jpg" alt="Make: Gift Guide" />
@@ -421,62 +421,31 @@ if( $detect->isTablet() ){
             </div>
           </div>
         </div>
-        <div class="latest-shop row">
-          <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="pull-left first-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop1.png" alt="Shop for 3D Printing" />
-              </a>
-            </div>
-          </div>
-          <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/drones-flight?utm_source=makezine.com&utm_medium=nav+bar&utm_term=drones+flight" class="pull-left second-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop2.png" alt="Shop for Drones" />
-              </a>
-            </div>
-          </div>
-          <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="pull-left third-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop3.png" alt="Shop for Electronics build kits" />
-              </a>
-            </div>
-          </div>
-          <div class="shop-post col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="pull-left fourth-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop4.png" alt="Shop for Make: Magazine" />
-              </a>
-            </div>
-          </div>
-        </div>
+
         <div class="latest-events row">
           <?php query_posts('post_type=events&showposts=5'); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             $id = get_the_ID();?>
             <div class="events-post col-lg-2 col-md-2 col-sm-2">
-              <div class="event-thumbnail">
-                <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
-                  <?php
-                  $args = array(
-                    'resize' => '102,102',
-                    'quality' => get_photon_img_quality(),
-                  );
-                  $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
-                  $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                  preg_match_all($re, $url, $matches);
-                  $str = $matches[2][0];
-                  $photon = jetpack_photon_url($str, $args);
-                  if(strlen($url) == 0){
-                    $photon = catch_first_image_nav();
-                    $photon = jetpack_photon_url( $photon, $args );
-                  } ?>
-                  <img src="<?php echo $str; ?>" alt="Featured Event Thumbnail" />
-                </a>
-              </div>
-              <h1><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'location',true); ?></a></h1>
-              <h2><a href="<?php echo get_post_meta($id,'url',true); ?>"><?php echo get_post_meta($id,'date',true); ?></a></h2>
+              <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
+                <?php
+                $args = array(
+                  'resize' => '102,102',
+                  'quality' => get_photon_img_quality(),
+                );
+                $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
+                $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+                preg_match_all($re, $url, $matches);
+                $str = $matches[2][0];
+                $photon = jetpack_photon_url($str, $args);
+                if(strlen($url) == 0){
+                  $photon = catch_first_image_nav();
+                  $photon = jetpack_photon_url( $photon, $args );
+                } ?>
+                <img src="<?php echo $str; ?>" alt="Featured Event Thumbnail" />
+                <h3><?php echo get_post_meta($id,'location',true); ?></h3>
+                <p><?php echo get_post_meta($id,'date',true); ?></p>
+              </a>
             </div>
           <?php endwhile; ?>
 
@@ -485,36 +454,38 @@ if( $detect->isTablet() ){
           <?php endif; ?>
           <?php wp_reset_query(); ?>
         </div>
+
         <div class="nav-share row">
-          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="https://community.makezine.com/share" class="pull-left first-post">
                 <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Projects.jpg" alt="Share your ideas and projects on Make:" />
               </a>
             </div>
           </div>
-          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/contribute" class="pull-left second-post">
                 <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
               </a>
             </div>
           </div>
-          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="https://community.makezine.com/share/contests" class="pull-left third-post">
                 <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Contest.jpg" alt="Show and Tell, social" />
               </a>
             </div>
           </div>
-          <div class="share-post col-lg-3 col-md-3 col-sm-3">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
             <div class="nav-img-border">
               <a href="/join/?utm_source=navimage&utm_campaign=getinvolvednav" class="pull-left fourth-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join our Make: newsletter" />
+                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join the Make: newsletter" />
               </a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
