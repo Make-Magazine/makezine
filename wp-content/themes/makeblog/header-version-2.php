@@ -199,7 +199,7 @@ if( $detect->isTablet() ){
         <!-- LOGO & TAG LINE -->
         <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
           <a href="<?php echo home_url(); ?>">
-            <img src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" alt="Make: logo" />
+            <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" alt="Make: logo" />
           </a>
         </div>
 
@@ -227,10 +227,10 @@ if( $detect->isTablet() ){
           <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
             <!-- Mobile search -->
-            <div class="search-bar-mobile hidden-sm hidden-md hidden-lg">
+            <div class="search-bar-mobile hidden-md hidden-lg">
               <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
                 <label>
-                  <input type="search" class="search-field" placeholder="" value="" name="s" title="">
+                  <input type="search" class="search-field" placeholder="Search Make: Magazine" value="" name="s" title="">
                 </label>
                 <input type="submit" class="search-submit" value="Search" />
               </form>
@@ -269,7 +269,7 @@ if( $detect->isTablet() ){
                   <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
                   <input type="hidden" name="errors_to" value="" />
                   <div class="mz-form-horizontal">
-                    <input name="email" placeholder="Enter your Email" required="required" type="text">
+                    <input name="email" placeholder="Enter your Email" required="required" type="email">
                     <input value="GO" class="btn-cyan" type="submit">
                   </div>
                 </form>
@@ -283,7 +283,7 @@ if( $detect->isTablet() ){
         <div class="get-dark"></div>
 
         <!-- NEW SEARCH -->
-        <div id="sb-search" class="sb-search hidden-xs">
+        <div id="sb-search" class="sb-search hidden-xs hidden-sm">
           <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
             <label class="sb-search-label">
               <i class="fa fa-search" aria-hidden="true"></i>
@@ -298,7 +298,7 @@ if( $detect->isTablet() ){
         </div>
 
         <!-- New Header Subscribe stuff -->
-        <div id="mz-header-subscribe" class="hidden-xs">
+        <div id="mz-header-subscribe" class="hidden-xs hidden-sm">
           <div>
             <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
               <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
@@ -333,7 +333,7 @@ if( $detect->isTablet() ){
               <a href="<?php the_permalink(); ?>" class="pull-left">
                 <?php
                 $args = array(
-                  'resize' => '370,240',
+                  'resize' => '370,220',
                   'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
@@ -366,7 +366,7 @@ if( $detect->isTablet() ){
               <a href="<?php the_permalink(); ?>" class="pull-left">
                 <?php
                 $args = array(
-                  'resize' => '370,240',
+                  'resize' => '370,220',
                   'quality' => get_photon_img_quality(),
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
@@ -393,32 +393,42 @@ if( $detect->isTablet() ){
 
         <div class="nav-guides row">
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="/comparison/3dprinters/" class="pull-left first-post">
-                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-3D-min.jpg" alt="3D Printer product reviews and comparison guide" />
-              </a>
-            </div>
+            <a href="/comparison/3dprinters/" class="first-post">
+              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-3D-min.jpg" alt="3D Printer product reviews and comparison guide" />
+            </a>
           </div>
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="/comparison/boards/" class="pull-left second-post">
-                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Boards.jpg" alt="Boards product reviews and comparison guide" />
-              </a>
-            </div>
+            <a href="/comparison/boards/" class="second-post">
+              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Boards.jpg" alt="Boards product reviews and comparison guide" />
+            </a>
           </div>
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="/comparison/drones/" class="pull-left third-post">
-                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Drones.jpg" alt="Drones product reviews and comparison guide" />
-              </a>
-            </div>
+            <a href="/comparison/drones/" class="third-post">
+              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Drones.jpg" alt="Drones product reviews and comparison guide" />
+            </a>
           </div>
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="/giftguide/" class="pull-left fourth-post">
-                <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Gift.jpg" alt="Make: Gift Guide" />
-              </a>
-            </div>
+            <a href="/giftguide/" class="fourth-post">
+              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Gift.jpg" alt="Make: Gift Guide" />
+            </a>
+          </div>
+        </div>
+
+        <div class="latest-shop row">
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
+            <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="first-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop1.png" alt="Shop for 3D Printing" />
+            </a>
+          </div>
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
+            <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="third-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop3.png" alt="Shop for Electronics build kits" />
+            </a>
+          </div>
+          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
+            <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="fourth-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop4.png" alt="Shop for Make: Magazine" />
+            </a>
           </div>
         </div>
 
@@ -427,7 +437,7 @@ if( $detect->isTablet() ){
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             $id = get_the_ID();?>
             <div class="events-post col-lg-2 col-md-2 col-sm-2">
-              <a href="<?php echo get_post_meta($id,'url',true); ?>" class="pull-left">
+              <a href="<?php echo get_post_meta($id,'url',true); ?>">
                 <?php
                 $args = array(
                   'resize' => '102,102',
@@ -457,32 +467,24 @@ if( $detect->isTablet() ){
 
         <div class="nav-share row">
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="https://community.makezine.com/share" class="pull-left first-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Projects.jpg" alt="Share your ideas and projects on Make:" />
-              </a>
-            </div>
+            <a href="https://community.makezine.com/share" class="first-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Projects.jpg" alt="Share your ideas and projects on Make:" />
+            </a>
           </div>
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="/contribute" class="pull-left second-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
-              </a>
-            </div>
+            <a href="/contribute" class="second-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
+            </a>
           </div>
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="https://community.makezine.com/share/contests" class="pull-left third-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Contest.jpg" alt="Show and Tell, social" />
-              </a>
-            </div>
+            <a href="https://community.makezine.com/share/contests" class="third-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Contest.jpg" alt="Show and Tell, social" />
+            </a>
           </div>
           <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <div class="nav-img-border">
-              <a href="/join/?utm_source=navimage&utm_campaign=getinvolvednav" class="pull-left fourth-post">
-                <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join the Make: newsletter" />
-              </a>
-            </div>
+            <a href="/join/?utm_source=navimage&utm_campaign=getinvolvednav" class="fourth-post">
+              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join the Make: newsletter" />
+            </a>
           </div>
         </div>
 
@@ -495,8 +497,8 @@ if( $detect->isTablet() ){
 
 <!-- Optional Under Nav Promo Blue Bar and Message. Settings In Theme Customizer -->
 <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>
-  <div class="second-nav promo-text-under-nav">
-    <div class="container hidden-xs">
+  <div class="second-nav promo-text-under-nav hidden-xs hidden-sm">
+    <div class="container">
       <h3>
         <a href="<?php echo get_theme_mod( 'make_header_bluebar_link', '' ); ?>"><?php echo get_theme_mod( 'make_header_bluebar_text', '' ); ?></a>
       </h3>
