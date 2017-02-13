@@ -38,9 +38,15 @@ module.exports = function(grunt) {
       options: {
         browsers: ['last 2 versions', 'ie 9']
       },
-      your_target: {
+      older_css: {
         src: 'css/*.css'
       },
+      newer_css: {
+        src: 'version-2/css/style.css'
+      },
+      reviews_plugin_css: {
+        src: 'reviews/css/master.css'
+      }
     },
     // Concat js files
     concat: {
