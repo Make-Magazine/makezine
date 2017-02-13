@@ -436,7 +436,7 @@ if( $detect->isTablet() ){
           <?php query_posts('post_type=events&showposts=5'); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             $id = get_the_ID();?>
-            <div class="events-post col-lg-2 col-md-2 col-sm-2">
+            <div class="events-post col-lg-2 col-md-2">
               <a href="<?php echo get_post_meta($id,'url',true); ?>">
                 <?php
                 $args = array(
