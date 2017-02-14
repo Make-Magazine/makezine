@@ -146,6 +146,11 @@ function story_pulling($offset) {
 			}
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);
+    $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
+    if ($cat_length > 13) {
+      $red_cat_name = substr($red_cat_name, 0, 13) . '...';
+    }
+
 		if (!empty($red_cat_name)) {
 			$outputs .= '<a href="';
 			$outputs .= $cat_link;
