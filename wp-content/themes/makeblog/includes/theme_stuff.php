@@ -1616,7 +1616,6 @@ function home_tags($postid) {
 		return;
 	}
 	else {
-		echo '<p>';
 		$post_video = get_post_meta( $postid, 'ga_youtube_embed' );
 		if ( $post_type == 'projects' ) {
 			$flag = get_post_meta( $postid, 'display_category', true );
@@ -1646,15 +1645,14 @@ function home_tags($postid) {
 			}
 		}
 		if ( $post_video[0] > 0 ) {
-			 $output .= '<div class="videoblock"><a href="';
-	                $link = get_the_permalink($postid);
-	                $output .= $link;
-	                $output .= '">';
-	                $output .= '';
-	                $output .= '<span class="video fa fa-video-camera"></span>';
-	                $output .= '</a></div>';
-	                echo $output;
+			$output .= '<div class="videoblock"><a href="';
+      $link = get_the_permalink($postid);
+      $output .= $link;
+      $output .= '">';
+      $output .= '';
+      $output .= '<span class="video fa fa-video-camera"></span>';
+      $output .= '</a></div>';
+      echo $output;
 		}
-		echo '</p>';
 	}
 }

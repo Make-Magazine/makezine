@@ -365,36 +365,23 @@ body.page-template-project {
 }
 
 .filter-display-wrapper {
-  height: 22px;
   position: absolute;
   top: 15px;
   left: 15px;
   .red-box-category {
-    background-color: #f40b0b;
     overflow: hidden;
     float: left;
-    margin-right: 0;
-    height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    p {
+    background-color: #f40b0b;
+    > a {
+      display: inline-block;
+      color: #f9f9f9;
+      padding: 3px 7px;
       font-size: 12px;
       line-height: 1em;
       font-weight: 300;
       text-transform: uppercase;
-      float: left;
-      margin: 0;
-      a {
-        color: #f9f9f9;
-        padding: 0 7px;
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
     .fa-wrench {
@@ -408,26 +395,32 @@ body.page-template-project {
     color: #FFF;
   }
   .videoblock {
-    float: left;
+    display: inline-block;
     background-color: #FFF;
     height: 100%;
     a {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      height: 100%;
-      padding: 0 6px 0 5px;
+      padding: 0 5px;
       .fa {
         color: #4a4a4a;
         font-size: 14px;
       }
     }
-    @media (max-width: 767px) {
+    @media (max-width: 549px) {
       border: 1px solid #d6d6d6;
+    }
+  }
+}
+.projects-cat,
+.all-projects {
+  .filter-display-wrapper {
+    @media (max-width: 549px) {
+      top: 10px;
+      left: 40%;
+      margin-left: 10px;
+      .difficulty-lvl, 
+      .duration-lvl {
+        display: none;
+      }
     }
   }
 }
@@ -435,7 +428,7 @@ body.page-template-project {
 .home {
   .difficulty-lvl,
   .duration-lvl {
-    opacity: 0;
+    display: none;
   }
 }
 .difficulty-lvl,
@@ -446,7 +439,7 @@ body.page-template-project {
   span {
     font-size: 17px;
     color: #FFF;
-    padding-top: 5px;
+    padding-top: 3px;
   }
 }
 .difficulty-lvl {
@@ -1908,16 +1901,6 @@ ul.diff-item li.current {
           .final_gradient,
           .excerpt {
             display: none;
-          }
-          .filter-display-wrapper {
-            height: 18px;
-            left: 40%;
-            margin-left: 10px;
-            top: 10px;
-            .difficulty-lvl, 
-            .duration-lvl {
-              display: none;
-            }
           }
           h2 {
             position: absolute;

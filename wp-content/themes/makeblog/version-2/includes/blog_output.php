@@ -147,11 +147,11 @@ function story_pulling($offset) {
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);
 		if (!empty($red_cat_name)) {
-			$outputs .= '<p><a href="';
+			$outputs .= '<a href="';
 			$outputs .= $cat_link;
 			$outputs .= '">';
 			$outputs .= $red_cat_name;
-			$outputs .= '</a></p>';
+			$outputs .= '</a>';
 		}
 		if (!empty($post_video[0])) {
 			$outputs .= '<div class="videoblock"><a href="' . get_the_permalink() . '">';
