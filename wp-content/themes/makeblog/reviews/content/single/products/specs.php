@@ -45,7 +45,7 @@ $i = 0;
 				}else{
 					$row_name = 'sdgsdg';
 				}
-				printf( '<tr class="'.$row_name.'"><td class="title">%s:</td><td>%s</td></tr>', esc_html( $spec['label'] ), esc_html( $spec['description'] ) );
+				printf( '<tr class="'.$row_name.'"><td class="title">%s:</td><td>%s</td></tr>', esc_html( $spec['label'] ), $spec['description'] );
 			endforeach;
 		?>
 	</tbody>

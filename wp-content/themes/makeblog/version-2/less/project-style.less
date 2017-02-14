@@ -91,7 +91,11 @@ body.page-template-project {
   margin-right: 40px;
   padding-left: 35px;
   border-left: 1px solid #979797;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   align-items: flex-end;
   display: -webkit-flex;
@@ -371,8 +375,13 @@ body.page-template-project {
     float: left;
     margin-right: 0;
     height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     p {
       font-size: 12px;
       line-height: 1em;
@@ -403,8 +412,13 @@ body.page-template-project {
     background-color: #FFF;
     height: 100%;
     a {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
       height: 100%;
       padding: 0 6px 0 5px;
       .fa {
@@ -1837,7 +1851,11 @@ ul.diff-item li.current {
 .all-projects,
 .projects-cat {
   .mz-grid-post {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     > li {
       width: 33.3333%;

@@ -3,7 +3,12 @@
  */
 
 .reviews-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
 	align-items: stretch;
 	background: white;
 	margin: @spacer 0;
@@ -43,7 +48,13 @@
 	text-align: center;
 	vertical-align: middle;
 	position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
 	display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
@@ -182,7 +193,11 @@
 
 	.ri-score-price-flex {
 		height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
 		display: flex;
+		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		align-content: space-between;
 		> div {
@@ -202,7 +217,12 @@
 		}
 		.ri-more-info {
 			line-height: 1em;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
 			display: flex;
+		  -webkit-box-pack: center;
+		  -ms-flex-pack: center;
 		  justify-content: center;
 		  align-items: center;
 			a {
@@ -219,7 +239,12 @@
 			}
 		}
 		.ri-buy-now {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
 			display: flex !important;
+		  -webkit-box-pack: center;
+		  -ms-flex-pack: center;
 		  justify-content: center;
 		  align-items: center;
 			a {
@@ -246,6 +271,7 @@
 		float: none;
 		padding: 0;
 		.ri-score-price-flex {
+			-ms-flex-wrap: nowrap;
 			flex-wrap: nowrap;
 			> div {
 				padding: 0 0 0 10px;
