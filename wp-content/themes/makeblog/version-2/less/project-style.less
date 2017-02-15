@@ -757,25 +757,19 @@ li.post:hover p.trans {
 #pbd-alp-load-posts {
   max-width: 540px;
   text-align: center;
-  color: #4a4a4a;
   margin: 0 auto;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  background-color: #FFF;
-  border-radius: 5px;
-  transition: all .15s;
   &.loading a{
     padding-right: 25px;
   }
   &:hover {
-    background-color: #4A4A4A;
-    color: #FFF;
-    transition: all .15s;
-    .more-button-spinner {
-      color:white;
-    }
+
   }
-   a {
+  a {
+    color: #4a4a4a;
+    border: 1px solid #ccc;
+    background-color: #FFF;
+    border-radius: 5px;
     text-transform: uppercase;
     text-decoration: none;
     display: block;
@@ -783,6 +777,13 @@ li.post:hover p.trans {
     font-size: 12px;
     font-weight: 400;
     line-height: 35px;
+    &:hover {
+      background-color: #4A4A4A;
+      color: #FFF;
+      .more-button-spinner {
+        color:white;
+      }
+    }
   }
 }
 .fa.more-button-spinner {
