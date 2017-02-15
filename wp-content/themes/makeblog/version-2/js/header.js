@@ -9,7 +9,7 @@
 	}else {
 		viewWidth = $(window).width() ;
 	}
-	if (viewWidth >= '768') {
+	if (viewWidth >= '992') {
 		lessThan768 = false;
 	} else {
 		lessThan768 = true;
@@ -83,20 +83,15 @@
 					$(".container.header").css("top", "");
 				}
 			}
-			if (scrollTop >= '119') {
-				$('.header-wrapper').addClass('mobile-sticky');
-			} else {
-				$('.header-wrapper').removeClass('mobile-sticky');
-			}
 		}
 
-		if (viewWidth <= '767') {
-			if (scrollTop >= '55') {
-				$('.header-wrapper').addClass('mobile-sticky');
-			} else {
-				$('.header-wrapper').removeClass('mobile-sticky');
-			}
-		}
+		// if (viewWidth <= '767') {
+		// 	if (scrollTop >= '55') {
+		// 		$('.header-wrapper').addClass('mobile-sticky');
+		// 	} else {
+		// 		$('.header-wrapper').removeClass('mobile-sticky');
+		// 	}
+		// }
 	});
 
 	if(window.navigator.userAgent.indexOf("Chrome") > 0){
@@ -111,7 +106,7 @@
 			viewWidth = $(window).width() ;
 		}
 		$('body').css('overflow-y', '').css('height', '');
-		if (viewWidth <= '767') {
+		if (viewWidth <= '992') {
 			$('.menu-item-has-children').addClass('first-hover');
 			if (lessThan768 === false) {
 				$('div.navbar-collapse').hide();
@@ -153,16 +148,16 @@
 		}
 	});
 
-	$('.menu-item-has-children').children("a").click(function (e) {
+	$('.menu-item-has-children').children('a').click(function (e) {
 		if(window.navigator.userAgent.indexOf("Chrome") > 0){
 			viewWidth = $(window).width() + 17;
 		}else {
 			viewWidth = $(window).width() ;
 		}
-		if (viewWidth <= '767') {
+		if (viewWidth <= '992') {
 			e.preventDefault();
-			$(".menu-item-has-children").not($($(this).parent().get(0))).find('.sub-menu').slideUp('slow');
-			$($(this).parent().get(0)).find('.sub-menu').slideToggle('slow');
+			$(".menu-item-has-children").not($($(this).parent().get(0))).find('.sub-menu').slideUp();
+			$($(this).parent().get(0)).find('.sub-menu').slideToggle();
 			$(".menu-item-has-children").not($($(this).parent().get(0))).children("a").removeClass("active-button");
 			$(this).toggleClass("active-button");
 		}
@@ -175,13 +170,11 @@
 		if (!$('.get-dark').hasClass('show')) {
 			window.setTimeout(function () {
 				$('.menu-container').addClass('scroll');
-			}, 600);
+			}, 100);
 			$('body').css('overflow-y', 'hidden').css('height', '100vh');
 			$('.navbar-default .navbar-collapse').show();
 			$('.get-dark').addClass('show');
-			$('.get-dark').animate({
-				opacity: 0.5
-			}, 250, function () {
+			$('.get-dark').animate({ opacity: 0.5 }, 100, function () {
 			});
 			$('.menu-container').addClass('menu-show');
 			$('.sumome-share-client-wrapper.sumome-share-client-wrapper-mobile-bottom-bar').css('display', 'none');
@@ -197,7 +190,7 @@
 		$('body').css('overflow-y', '').css('height', '');
 		$('.get-dark').animate({
 			opacity: 0
-		}, 250, function () {
+		}, 100, function () {
 			$(this).removeClass('show');
 		});
 		$('.menu-container').removeClass('scroll menu-show');
@@ -217,7 +210,7 @@
 		}else {
 			viewWidth = $(window).width() ;
 		}
-		if (viewWidth >= '768') {
+		if (viewWidth >= '992') {
 			e.preventDefault();
 			$('.menu-item-has-children').not($(this)).children("a").removeClass('active-button');
 			var thisIndex = $(this).index();
@@ -308,7 +301,7 @@
 	$('#menu-make-main, .dynamic-header-posts').on('mouseleave', function () {
 		window.setTimeout(function () {
 			viewWidth = $(window).width() + 17;
-			if ((viewWidth >= '768') && (!$('.dynamic-header-posts').is(':hover')) && (!$('#menu-make-main').is(':hover'))) {
+			if ((viewWidth >= '992') && (!$('.dynamic-header-posts').is(':hover')) && (!$('#menu-make-main').is(':hover'))) {
 				$('.menu-item-has-children').children("a").removeClass("active-button");
 				$('.dynamic-header-posts').slideUp('fast');
 				$('.latest-projects').hide().removeClass('nav-transition');
@@ -328,7 +321,7 @@
 	if ($('.header').hasClass('tablet')) {
 		$('body').bind("touchstart", function (e) {
 			viewWidth = $(window).width() + 17;
-			if (viewWidth >= '768') {
+			if (viewWidth >= '992') {
 				var dynamicContainer = $(".dynamic-header-posts");
 				var headerContainer = $(".navbar-nav");
 				if ((dynamicContainer.has(e.target).length === 0) && (headerContainer.has(e.target).length === 0)) {

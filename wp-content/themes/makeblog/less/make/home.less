@@ -101,7 +101,7 @@
     position: relative;
     display: inline-block;
     float: left;
-    a {
+    > a {
       position: relative;
       display: block;
       height: 100%;
@@ -172,7 +172,14 @@
         }
       }
     }
+    .filter-display-wrapper {
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
     .videoblock a {
+      display: -ms-flexbox;
+      display: -webkit-box;
       display: flex;
     }
     .live-now-alert {
@@ -384,11 +391,14 @@
 
 
 .home-event-info-3x {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   align-content: stretch;
   margin-top: 15px;
   margin-bottom: 30px;
   @media screen and (min-width: 768px) and (max-width: 991px) {
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   @media screen and (max-width: 767px) {
@@ -464,8 +474,15 @@
       }
     } 
     .home-event-body {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
       justify-content: flex-end;
       align-self: center;
       max-width: 62%;

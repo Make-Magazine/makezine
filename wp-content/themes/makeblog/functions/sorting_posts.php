@@ -262,7 +262,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
                 $output .= '<div class="red-box-category">';
-                $output .= '<p><a href="';
+                $output .= '<a href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
                     $output .= '">';
@@ -270,7 +270,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                     $output .= '"><span class="fa fa-wrench"></span>';
                 }
                 $output .= $red_cat_name;
-                $output .= '</a></p>';
+                $output .= '</a>';
             }
             if (!empty($post_video[0])) {
                 $output .= '<div class="videoblock"><a href="';
@@ -280,8 +280,10 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                 $output .= '';
                 $output .= '<span class="video fa fa-video-camera"></span>';
                 $output .= '</a></div>';
+                $output .= '</div>';
+            } elseif (!empty($red_cat_name)) {
+                $output .= '</div>';
             }
-            $output .= '</div>';
             $difficulty_counter = 0;
             $duration_counter = 0;
             if (!empty($post_difficulty[0])) {
@@ -705,7 +707,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
                 $output .= '<div class="red-box-category">';
-                $output .= '<p><a itemprop="keywords" href="';
+                $output .= '<a itemprop="keywords" href="';
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
                     $output .= '">';
@@ -713,8 +715,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $output .= '"><span class="fa fa-wrench"></span>';
                 }
                 $output .= $red_cat_name;
-                $output .= '</a></p>';
-                $output .= '</div>';
+                $output .= '</a>';
             }
             if (!empty($post_video[0])) {
                 $output .= '<div class="videoblock"><a href="';
@@ -724,6 +725,9 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= '';
                 $output .= '<span class="video fa fa-video-camera"></span>';
                 $output .= '</a></div>';
+                $output .= '</div>';
+            } elseif (!empty($red_cat_name)) {
+                $output .= '</div>';
             }
             $difficulty_counter = 0;
             $duration_counter = 0;
@@ -1116,12 +1120,11 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= '<div class="filter-display-wrapper">';
             if (!empty($red_cat_name)) {
                 $output .= '<div class="red-box-category">';
-                $output .= '<p><a itemprop="keywords" href="';
+                $output .= '<a itemprop="keywords" href="';
                 $output .= $cat_link;
                 $output .= '"><span class="fa fa-wrench"></span>';
                 $output .= $red_cat_name;
-                $output .= '</a></p>';
-                $output .= '</div>';
+                $output .= '</a>';
             }
             if (!empty($post_video[0])) {
                 $output .= '<div class="videoblock"><a href="';
@@ -1131,6 +1134,9 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                 $output .= '';
                 $output .= '<span class="video fa fa-video-camera"></span>';
                 $output .= '</a></div>';
+                $output .= '</div>';
+            } elseif (!empty($red_cat_name)) {
+                $output .= '</div>';
             }
             $difficulty_counter = 0;
             $duration_counter = 0;

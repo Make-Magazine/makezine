@@ -497,7 +497,7 @@ function youtube_shortcode_modal($atts){
  * Adds the subscribe header return path overlay
  */
 function subscribe_return_path_overlay() { ?>
-    <div class="overlay-div overlay-slidedown hidden-xs">
+    <div class="overlay-div overlay-slidedown hidden-xs hidden-sm">
         <div class="container-fluid-overlay">
             <div class="container">
                 <div class="row">

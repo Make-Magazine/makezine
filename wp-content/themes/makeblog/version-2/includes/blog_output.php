@@ -146,12 +146,17 @@ function story_pulling($offset) {
 			}
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);
+    $cat_length = iconv_strlen($red_cat_name, 'UTF-8');
+    if ($cat_length > 13) {
+      $red_cat_name = substr($red_cat_name, 0, 13) . '...';
+    }
+
 		if (!empty($red_cat_name)) {
-			$outputs .= '<p><a href="';
+			$outputs .= '<a href="';
 			$outputs .= $cat_link;
 			$outputs .= '">';
 			$outputs .= $red_cat_name;
-			$outputs .= '</a></p>';
+			$outputs .= '</a>';
 		}
 		if (!empty($post_video[0])) {
 			$outputs .= '<div class="videoblock"><a href="' . get_the_permalink() . '">';
