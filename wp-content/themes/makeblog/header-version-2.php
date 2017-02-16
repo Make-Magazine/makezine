@@ -179,7 +179,7 @@ if( $detect->isTablet() ){
 <?php endif; ?>
 
 <!-- TOP BRAND BAR -->
-<!--div class="top-header-bar-brand header-wrapper">
+<!--div class="top-header-bar-brand">
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 text-center">
@@ -192,131 +192,131 @@ if( $detect->isTablet() ){
 </div-->
 
 <header class="header-wrapper">
-  <div class="container header <?php echo $device ?>">
-    <div class="row">
-      <nav class="navbar navbar-default">
+  <div class="header-white-bg">
+    <div class="container header <?php echo $device ?>">
+      <div class="row">
+        <nav class="navbar navbar-default">
 
-        <!-- LOGO & TAG LINE -->
-        <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
-          <a href="<?php echo home_url(); ?>">
-            <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" alt="Make: logo" />
-          </a>
-        </div>
+          <!-- LOGO & TAG LINE -->
+          <div class="col-md-2 col-sm-4 col-xs-5 logo-text">
+            <a href="<?php echo home_url(); ?>">
+              <img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/img/Make_logo.svg" alt="Make: logo" />
+            </a>
+          </div>
 
-        <!-- MENUS -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+          <!-- MENUS -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#makezine-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
 
-        <!-- Desktop and Mobile Menu -->
-        <div class="col-md-7 col-sm-8 menu-container">
+          <!-- Desktop and Mobile Menu -->
+          <div class="col-md-7 col-sm-8 menu-container">
 
-          <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
-          <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
-            echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
-            echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
-            echo '</h3>';
-          } // end if ?>
+            <!-- Optional Above Nav Promo Message. Settings In Theme Customizer -->
+            <?php if( get_theme_mod( 'make_header_promo_enable' ) != '') {
+              echo '<h3 id="promo-text-above-nav" class="hidden-xs">';
+              echo '<a href="' . get_theme_mod( 'make_header_promo_link', '' ) . '">' . get_theme_mod( 'make_header_promo_text', '' ) . '</a>';
+              echo '</h3>';
+            } // end if ?>
 
-          <!-- Collapsible Menu -->
-          <div id="makezine-navbar-collapse-1" class="navbar-collapse">
+            <!-- Collapsible Menu -->
+            <div id="makezine-navbar-collapse-1" class="navbar-collapse">
 
-            <!-- Mobile search -->
-            <div class="search-bar-mobile hidden-md hidden-lg">
-              <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-                <label>
-                  <input type="search" class="search-field" placeholder="Search Make: Magazine" value="" name="s" title="">
-                </label>
-                <input type="submit" class="search-submit" value="Search" />
-              </form>
-            </div>
-
-            <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
-
-            <div class="mz-social mobile-social">
-              <h5>Follow Us</h5>
-              <div class="social-network-container">
-                <ul class="social-network social-circle">
-                  <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-                  <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
-                  <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
-                </ul>
+              <!-- Mobile search -->
+              <div class="search-bar-mobile hidden-md hidden-lg">
+                <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+                  <label>
+                    <input type="search" class="search-field" placeholder="Search Make: Magazine" value="" name="s" title="">
+                  </label>
+                  <input type="submit" class="search-submit" value="Search" />
+                </form>
               </div>
 
-              <!-- Mobile nav bottom info-->
-              <div class="mz-footer-subscribe">
-                <?php
-                $isSecure = "http://";
-                if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                  $isSecure = "https://";
-                }
-                ?>
-                <h4>Sign Up For Our Newsletter</h4>
-                <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
-                  <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
-                  <input type="hidden" name="cmd" value="subscribe" />
-                  <input type="hidden" name="custom_source" value="Mobile Header" />
-                  <input type="hidden" name="custom_incentive" value="none" />
-                  <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-                  <input type="hidden" id="format_mime" name="format" value="mime" />
-                  <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
-                  <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-                  <input type="hidden" name="errors_to" value="" />
-                  <div class="mz-form-horizontal">
-                    <input name="email" placeholder="Enter your Email" required="required" type="email">
-                    <input value="GO" class="btn-cyan" type="submit">
-                  </div>
-                </form>
-              </div><!-- End subscribe div -->
-              <h6>Copyright © 2004-2016 Maker Media, Inc.</br>
-                All rights reserved</h6>
-            </div><!-- End mobile-social div -->
-          </div><!-- End #makezine-navbar-collapse-1 -->
-        </div><!-- End .menu-container -->
+              <?php wp_nav_menu('menu=Make main&menu_class=nav navbar-nav'); ?>
 
-        <div class="get-dark"></div>
+              <div class="mz-social mobile-social">
+                <h5>Follow Us</h5>
+                <div class="social-network-container">
+                  <ul class="social-network social-circle">
+                    <li><a href="//facebook.com/makemagazine" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="//twitter.com/make" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                    <li><a href="//pinterest.com/makemagazine" class="icoPinterest" title="Pinterest" target="_blank"><i class="fa fa-pinterest-p" target="_blank"></i></a></li>
+                    <li><a href="//instagram.com/makemagazine" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram" target="_blank"></i></a></li>
+                  </ul>
+                </div>
 
-        <!-- NEW SEARCH -->
-        <div id="sb-search" class="sb-search hidden-xs hidden-sm">
-          <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
-            <label class="sb-search-label">
+                <!-- Mobile nav bottom info-->
+                <div class="mz-footer-subscribe">
+                  <?php
+                  $isSecure = "http://";
+                  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+                    $isSecure = "https://";
+                  }
+                  ?>
+                  <h4>Sign Up For Our Newsletter</h4>
+                  <form class="sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+                    <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
+                    <input type="hidden" name="cmd" value="subscribe" />
+                    <input type="hidden" name="custom_source" value="Mobile Header" />
+                    <input type="hidden" name="custom_incentive" value="none" />
+                    <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+                    <input type="hidden" id="format_mime" name="format" value="mime" />
+                    <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
+                    <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
+                    <input type="hidden" name="errors_to" value="" />
+                    <div class="mz-form-horizontal">
+                      <input name="email" placeholder="Enter your Email" required="required" type="email">
+                      <input value="GO" class="btn-cyan" type="submit">
+                    </div>
+                  </form>
+                </div><!-- End subscribe div -->
+                <h6>Copyright © 2004-2016 Maker Media, Inc.</br>
+                  All rights reserved</h6>
+              </div><!-- End mobile-social div -->
+            </div><!-- End #makezine-navbar-collapse-1 -->
+          </div><!-- End .menu-container -->
+
+          <div class="get-dark"></div>
+
+          <!-- NEW SEARCH -->
+          <div id="sb-search" class="sb-search hidden-xs hidden-sm">
+            <form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+              <label class="sb-search-label">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="sb-search-input search-field" placeholder="Search Make: Magazine" type="text" value="" name="s" id="search">
+              </label>
+              <label class="sb-search-open-trigger">
+                <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                <input class="sb-search-submit" type="submit" value="">
+              </label>
               <i class="fa fa-search" aria-hidden="true"></i>
-              <input class="sb-search-input search-field" placeholder="Search Make: Magazine" type="text" value="" name="s" id="search">
-            </label>
-            <label class="sb-search-open-trigger">
-              <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
-              <input class="sb-search-submit" type="submit" value="">
-            </label>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </form>
-        </div>
-
-        <!-- New Header Subscribe stuff -->
-        <div id="mz-header-subscribe" class="hidden-xs hidden-sm">
-          <div>
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
-              <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
-            </a>
-            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
+            </form>
           </div>
-        </div>
 
-        <!-- Subscribe link in Sticky Navbar -->
-        <div class="sticky-subscribe">
-          <h6>
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe<span> & save</span></a>
-          </h6>
-        </div>
+          <!-- New Header Subscribe stuff -->
+          <div id="mz-header-subscribe" class="hidden-xs hidden-sm">
+            <div>
+              <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
+                <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
+              </a>
+              <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
+            </div>
+          </div>
 
-      </nav>
-    </div><!-- row -->
-  </div><!-- container header -->
+          <!-- Subscribe link in Sticky Navbar -->
+          <div class="sticky-subscribe">
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe <span>&amp; save</span></a>
+          </div>
+
+        </nav>
+      </div><!-- row -->
+    </div><!-- container header -->
+  </div><!-- header-white-bg -->
 
   <div class="dynamic-header-posts <?php if( get_theme_mod( 'make_header_bluebar_enable' ) != '') { ?>dynamic-header-posts-margin<?php } ?>">
     <div class="dynamic-header-container container">

@@ -19,13 +19,13 @@
 			viewWidth = $(window).width() + 17;
 		});
 		var scrollTop = $(window).scrollTop();
-		if (viewWidth >= '481') {
+		if (viewWidth >= '992') {
 			$(window).resize(function () {
 				viewWidth = $(window).width() + 17;
 			});
 			// menu-item-has-children = navbar items with dropdowns
 			// dynamic-header-posts = dropdown boxes in the navbar
-			if (scrollTop >= '119') {
+			if (scrollTop >= '105') {
 				$('.menu-item-has-children').children("a").removeClass("active-button");
 				if ($('.dynamic-header-posts').hasClass('sticky-header')) {
 					$('.dynamic-header-posts').slideUp('fast');
@@ -75,7 +75,6 @@
 				$('.menu-item-has-children a').removeClass('sticky-a');
 				$('.dynamic-header-posts').removeClass('sticky-header').css('top', 'inherit');
 				$('.navbar-default').css('top', '0px');
-				$('.menu-item-has-children > a').removeClass("active-sticky");
 				$('.second-nav').removeClass("displayNav");
 				if ($('.header').hasClass('tablet')) {
 					$(".container.header").css("position", "");
@@ -83,6 +82,11 @@
 					$(".container.header").css("top", "");
 				}
 			}
+      if (scrollTop >= '105') {
+        $('body').addClass('mobile-sticky');
+      } else {
+        $('body').removeClass('mobile-sticky');
+      }
 		}
 
 		// if (viewWidth <= '767') {

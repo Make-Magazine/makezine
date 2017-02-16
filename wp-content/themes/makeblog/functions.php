@@ -539,7 +539,7 @@ function subscribe_return_path_overlay() { ?>
         </div>
     </div>
     <script type="text/javascript">
-        jQuery('#trigger-overlay, .overlay-div').hover(
+        jQuery('#trigger-overlay, .overlay-div').not('.mobile-sticky #trigger-overlay').hover(
             function () {
                 jQuery('.overlay-div').stop().addClass( 'open' );
                 jQuery( 'body' ).addClass( 'modal-open' );
