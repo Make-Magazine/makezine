@@ -424,11 +424,12 @@ body.mobile-sticky {
     height: 100%;
     position: relative;
     a {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      right: 15px;
       img {
-        display: block;
-        position: absolute;
-        bottom: 10px;
-        left: 15px;
       }
     }
     @media (max-width: 991px) {
@@ -444,9 +445,7 @@ body.mobile-sticky {
       left: 0;
       right: 0;
       a {
-        img {
-          position: static;
-        }
+        position: static;
       }
     }
   }
