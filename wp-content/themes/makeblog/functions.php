@@ -26,10 +26,7 @@ Version 2 Includes
 // 1. Error Reporting
 
 if (defined('WP_CLI') && WP_CLI)
-    include_once dirname(__FILE__) . '/includes/class-make-cli.php';
-
-// 2. WordPress.com VIP Hosting Stuff
-// include_once dirname( __FILE__ ) . '/includes/vip.php';
+include_once dirname(__FILE__) . '/includes/class-make-cli.php';
 
 // Load Gigya!
 // include_once dirname( __FILE__ ) . '/includes/gigya/gigya.php';
@@ -60,9 +57,6 @@ include_once dirname(__FILE__) . '/includes/contribute.php';
 
 // 11. Scheduled Posts
 include_once dirname(__FILE__) . '/includes/wordpress-scheduled-time.php';
-
-// 12. From the Maker Shed
-include_once dirname(__FILE__) . '/includes/ftms.php';
 
 // 13. Search Engine
 //include_once dirname(__FILE__) . '/includes/search-terms.php';
@@ -121,7 +115,7 @@ include_once dirname(__FILE__) . '/includes/projects-manager.php';
 
 // 33. CLI CSV
 if (defined('WP_CLI') && WP_CLI)
-    include_once dirname(__FILE__) . '/includes/wp-cli.php';
+include_once dirname(__FILE__) . '/includes/wp-cli.php';
 
 // 34. Author Bio
 include_once dirname(__FILE__) . '/includes/class-author-profile.php';
@@ -138,9 +132,6 @@ include_once dirname(__FILE__) . '/includes/google-maps.php';
 // 38. Content Manager
 include_once dirname(__FILE__) . '/includes/magazine-dashboard/magazine-dashboard.php';
 
-// 39. Newsletter Post Type
-include_once dirname(__FILE__) . '/includes/post-types/newsletter.php';
-
 // 40. Social Stats
 include_once dirname(__FILE__) . '/includes/stats/stats.php';
 
@@ -149,9 +140,6 @@ include_once dirname(__FILE__) . '/includes/blog-dashboard/blog-dashboard.php';
 
 // 42. Search Facets
 //include_once dirname(__FILE__) . '/includes/search/search.php';
-
-// 43. Maker Shed Functions
-include_once dirname(__FILE__) . '/includes/shed/shed.php';
 
 // 44. Custom Customizer Settings - Theme Customizer API
 include_once dirname(__FILE__) . '/includes/theme-customizer/customizer.php';

@@ -43,7 +43,6 @@
 			'Articles' 	  => 'magazine',
 			'Craft'       => 'craft',
 			'Reviews'  	  => 'review',
-			'Newsletters' => 'newsletter',
 			'Page 2'      => 'page_2',
 		);
 
