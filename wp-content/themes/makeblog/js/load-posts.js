@@ -46,18 +46,6 @@ jQuery(document).ready(function($) {
 						.before('<div class="good_aligment pbd-alp-placeholder-'+ pageNum +'"></div>');
 					$(".before-ads:first").removeClass('before-ads');
 
-					// $.ajax({
-					// 	url: '/ajax_get_shopify_featured_products.php',
-					// 	data: {
-					// 		'action':'make_shopify_featured_products'
-					// 	},
-					// 	success:function(data) {
-					// 		jQuery(".before-ads").after(data);
-					// 	},
-					// 	error: function(errorThrown){
-					// 	}
-					// });
-
 					// Update the button message.
 					if(pageNum <= max) {
 						$('#pbd-alp-load-posts a').text('More');

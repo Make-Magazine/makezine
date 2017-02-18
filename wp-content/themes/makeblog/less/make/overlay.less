@@ -8,9 +8,14 @@
   z-index: 3;
   visibility: hidden;
   top: 105px;
-
+  .admin-bar & {
+    top: 137px;
+  }
   .mobile-sticky & {
-    top: 50px;
+    top: 48px;
+  }
+  .mobile-sticky.admin-bar & {
+    top: 82px;
   }
 
   .container-fluid-overlay {
@@ -19,7 +24,6 @@
     padding-left: 15px;
     padding-right: 15px;
     border-bottom: 5px solid #f40b0b;
-    border-top: 1px solid #4a4a4a;
     background-color: #f3f3f3;
   }
 
@@ -88,9 +92,6 @@
     border-bottom: 2px solid #424242;
     padding-bottom: 1px;
   }
-}
-.admin-bar .overlay-div .container-fluid-overlay {
-  margin-top: 64px;
 }
 
 /* Effects */

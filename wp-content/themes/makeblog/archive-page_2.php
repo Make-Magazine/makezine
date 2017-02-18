@@ -65,17 +65,7 @@ get_header('version-2'); ?>
 					</div>
 					<div id="contextly"></div>
 
-					<?php if ( function_exists('make_shopify_featured_products_slider') ) {
-     					echo make_shopify_featured_products_slider( 'row' );
-    				} ?>
-					
-					<?php else: ?>
-					
-						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-					
-					<?php endif; ?>
-				</div>
-				
+				</div>				
 				
 				<?php get_sidebar(); ?>
 					

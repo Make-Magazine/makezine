@@ -360,16 +360,6 @@ add_action('admin_footer-post-new.php', 'parent_category_toggle');
 get_template_part('version-2/includes/pbd-ajax-load-posts');
 get_template_part('version-2/includes/Mobile_Detect.php');
 
-function make_shopify_featured_products($row = 'row') {
-    echo '<li class="ads shed-row-li"><div class="shed-row">';
-    echo make_shopify_featured_products_slider_home('row' );
-    echo '</div></li>';
-    die();
-}
-
-add_action('wp_ajax_make_shopify_featured_products', 'make_shopify_featured_products');
-add_action('wp_ajax_nopriv_make_shopify_featured_products', 'make_shopify_featured_products');
-
 
 
 function winwar_first_sentence($string)
@@ -423,46 +413,6 @@ add_action('after_setup_theme', 'projects_theme_setup_thumbnail');
 function projects_theme_setup_thumbnail()
 {
     add_image_size('project-thumb', 370, 240, true); // (cropped)
-}
-add_action('after_setup_theme', 'events_nav_setup_thumbnail');
-function events_nav_setup_thumbnail()
-{
-    add_image_size('events-nav-thumb', 102, 102, true); // (cropped)
-}
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-    register_post_type( 'Events',
-        array(
-            'labels' => array(
-                'name' => 'Events',
-                'singular_name' => 'Events',
-                'add_new' => 'Add new',
-                'add_new_item' => 'Add new item',
-                'edit_item' => 'Edit',
-                'new_item' => 'New item',
-                'view_item' => 'View',
-                'search_items' => 'Search',
-                'not_found' => 'Sorry, not found',
-                'not_found_in_trash' => 'Not found in trash',
-            ),
-            'description' => 'Events post type',
-            'public' => True,
-            'publicly_queryable' => null,
-            'exclude_from_search' => null,
-            'show_ui' => null,
-            'show_in_menu' => null,
-            'menu_position' => null,
-            'menu_icon' => null,
-            'hierarchical' => false,
-            'supports' => array('title', 'editor', 'thumbnail'),
-            'taxonomies' => array(),
-            'has_archive' => false,
-            'query_var' => true,
-            'capability_type' => 'page',
-            'show_in_nav_menus' => null,
-
-        )
-    );
 }
 
 /**
@@ -933,6 +883,14 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'    => 'Home Page Custom Settings',
         'menu_title'    => 'Home Page',
         'menu_slug'     => 'home-page',
+        'parent_slug'   => 'custom-settings',
+        'position'      => false
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Navigation Events',
+        'menu_title'    => 'Nav Events',
+        'menu_slug'     => 'nav-events',
         'parent_slug'   => 'custom-settings',
         'position'      => false
     ));

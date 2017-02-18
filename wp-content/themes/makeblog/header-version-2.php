@@ -433,36 +433,29 @@ if( $detect->isTablet() ){
         </div>
 
         <div class="latest-events row">
-          <?php query_posts('post_type=events&showposts=5'); ?>
-          <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-            $id = get_the_ID();?>
-            <div class="events-post col-lg-2 col-md-2">
-              <a href="<?php echo get_post_meta($id,'url',true); ?>">
-                <?php
-                $args = array(
-                  'resize' => '102,102',
-                  'quality' => get_photon_img_quality(),
-                );
-                $url = wp_get_attachment_image(get_post_thumbnail_id($id), 'events-nav-thumb');
-                $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-                preg_match_all($re, $url, $matches);
-                $str = $matches[2][0];
-                $photon = jetpack_photon_url($str, $args);
-                if(strlen($url) == 0){
-                  $photon = catch_first_image_nav();
-                  $photon = jetpack_photon_url( $photon, $args );
-                } ?>
-                <img src="<?php echo $str; ?>" alt="Featured Event Thumbnail" />
-                <h3><?php echo get_post_meta($id,'location',true); ?></h3>
-                <p><?php echo get_post_meta($id,'date',true); ?></p>
-              </a>
-            </div>
-          <?php endwhile; ?>
+          <?php if( have_rows('add_each_event_here', 'option') ): ?>
+            <?php while( have_rows('add_each_event_here', 'option') ): the_row();
 
-          <?php else: ?>
-            <?php echo '<h1>No content found</h1>' ?>
+              $image = get_sub_field('image');
+              $location = get_sub_field('location');
+              $date = get_sub_field('date');
+              $url = get_sub_field('url');
+              $args = array(
+                'resize' => '105,105',
+                'quality' => get_photon_img_quality(),
+              );
+              $photon = jetpack_photon_url($image, $args); ?>
+
+              <div class="events-post col-lg-2 col-md-2">
+                <a href="<?php echo $url; ?>">
+                  <img src="<?php echo $photon; ?>" alt="Featured Event Thumbnail" />
+                  <h3><?php echo $location; ?></h3>
+                  <p><?php echo $date; ?></p>
+                </a>
+              </div>
+
+            <?php endwhile; ?>
           <?php endif; ?>
-          <?php wp_reset_query(); ?>
         </div>
 
         <div class="nav-share row">
