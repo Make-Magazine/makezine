@@ -259,10 +259,6 @@ class MakeAdVars {
                 $this->zone = '/11548178/Makezine/Craft/Blog' . esc_js(make_get_category_name());
                 break;
 
-            case 'slideshow' == get_post_type():
-                $this->zone = '/11548178/Makezine/Blog/Slideshow';
-                break;
-
             case 'volume' == get_post_type():
                 $this->zone = '/11548178/Makezine/Blog/Magazine';
                 break;

@@ -80,9 +80,6 @@ include_once dirname(__FILE__) . '/includes/house-ads-cpt.php';
 // 20. Craft Feed Meta Box
 //include_once dirname(__FILE__) . '/includes/craft-cpt-stuff.php';
 
-// 21. Slideshow CPT
-include_once dirname(__FILE__) . '/includes/slideshow.php';
-
 // 22. Reviews CPT
 //include_once dirname(__FILE__) . '/includes/reviews.php';
 
@@ -862,7 +859,7 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'    => 'Custom Settings',
         'menu_title'    => 'Custom Settings',
         'menu_slug'     => 'custom-settings',
-        'position'      => false,
+        'position'      => 50,
         'capability'    => 'edit_posts',
         'redirect'      => true
     ));
