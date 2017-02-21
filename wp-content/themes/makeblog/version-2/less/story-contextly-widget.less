@@ -43,8 +43,17 @@
   color: #666 !important;
 }
 
-.ctx-autosidebar-container .ctx-content-sidebar .ctx-sb-text a {
-  color: #6d6d6d !important;
+.ctx-autosidebar-container {
+  border-left: 1px solid #6d6d6d;
+  border-right: 1px solid #6d6d6d;
+  .ctx-content-sidebar {
+    a {
+      border-bottom: none;
+    }
+    .ctx-sb-text a {
+      color: #6d6d6d !important;
+    }
+  }
 }
 
 .ctx-module-container .ctx-content-block2 .ctx-link-title p {
