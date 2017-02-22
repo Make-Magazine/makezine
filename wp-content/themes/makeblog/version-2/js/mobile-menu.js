@@ -10,7 +10,5 @@
 	
 // 	$(this).toggleClass("active-button");
 // 	});
-// 	$('.navbar-toggle').on('click', function(){    
-//     $('div.navbar-collapse').toggle("fast");
-// 	});
+
 // })

@@ -206,12 +206,13 @@
 		}
 	});
 
+
 	$('.search-field').attr('title', '');
 	$('.menu-item-has-children').addClass('first-hover');
 	$(document).on('mouseenter', '.menu-item-has-children', function (e) {
 		if(window.navigator.userAgent.indexOf("Chrome") > 0){
 			viewWidth = $(window).width() + 17;
-		}else {
+		} else {
 			viewWidth = $(window).width() ;
 		}
 		if (viewWidth >= '992') {
