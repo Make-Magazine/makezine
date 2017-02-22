@@ -156,7 +156,7 @@ if( $detect->isTablet() ){
   // window.optimizely.push("activateUniversalAnalytics");
   ga('require', 'displayfeatures');
   ga('send', 'pageview', {
-    'page': location.pathname + location.search  + location.hash
+    'page': location.pathname + location.search + location.hash
   });
   var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
   ga('set', 'dimension11', dimensionValue11);
