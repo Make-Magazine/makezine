@@ -117,79 +117,80 @@ if( $detect->isTablet() ){
     <script type="text/javascript">var make_ads_scroll_load = true;</script>
   <?php endif; ?>
 
+  <!-- Time-tracking for Custom Dimensions -->
+  <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>" style="display: none;"></time>
+
+  <!-- Google Universal Analytics -->
+  <!-- Primary Categories Dimension Query -->
+  <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
+  <?php
+    $cats = get_the_category();
+    foreach ( $cats as $cat ) {
+      if ( $cat->category_parent < 1 )
+        $primarycat[] = $cat->category_nicename;
+      elseif ( $cat->category_parent > 0 )
+        $parent_cat_id = $cat->category_parent;
+      $cat2 = get_cat_name($parent_cat_id);
+      $primarycat[] = $cat2;
+    }
+    $primary_cat_dimension = $primarycat[0];
+  ?>
+  <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51157-1', 'auto');
+    // Optimizely Universal Analytics Integration
+    // window.optimizely = window.optimizely || [];
+    // window.optimizely.push("activateUniversalAnalytics");
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview', {
+      'page': location.pathname + location.search + location.hash
+    });
+    var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
+    ga('set', 'dimension11', dimensionValue11);
+    ga('set', 'dimension13', "<?php echo $primary_cat ?>");
+    ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
+  </script>
+
   <script type="text/javascript">
     dataLayer = [];
   </script>
 </head>
 <body id="makeblog" <?php body_class(); ?>>
 
-<!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
+  <!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
 
-<!-- Google Universal Analytics -->
-<!-- Time-tracking for Custom Dimensions -->
-<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"></time>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PC5R77');</script>
+  <!-- End Google Tag Manager  -->
 
-<!-- Primary Categories Dimension Query -->
-<?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
-<?php
-  $cats = get_the_category();
-  foreach ( $cats as $cat ) {
-    if ( $cat->category_parent < 1 )
-      $primarycat[] = $cat->category_nicename;
-    elseif ( $cat->category_parent > 0 )
-      $parent_cat_id = $cat->category_parent;
-    $cat2 = get_cat_name($parent_cat_id);
-    $primarycat[] = $cat2;
-  }
-  $primary_cat_dimension = $primarycat[0];
-?>
-<?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <?php if ( is_404() ) : // Load this last. ?>
+    <script>
+      ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
+    </script>
+  <?php endif; ?>
 
-  ga('create', 'UA-51157-1', 'auto');
-  // Optimizely Universal Analytics Integration
-  // window.optimizely = window.optimizely || [];
-  // window.optimizely.push("activateUniversalAnalytics");
-  ga('require', 'displayfeatures');
-  ga('send', 'pageview', {
-    'page': location.pathname + location.search + location.hash
-  });
-  var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
-  ga('set', 'dimension11', dimensionValue11);
-  ga('set', 'dimension13', "<?php echo $primary_cat ?>");
-  ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
-</script>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PC5R77');</script>
-<!-- End Google Tag Manager  -->
-
-<?php if ( is_404() ) : // Load this last. ?>
-  <script>
-    ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
-  </script>
-<?php endif; ?>
-
-<!-- TOP BRAND BAR -->
-<!--div class="top-header-bar-brand">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 text-center">
-        <p class="header-make-img">
-          <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
-        </p>
+  <!-- TOP BRAND BAR -->
+  <!--div class="top-header-bar-brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <p class="header-make-img">
+            <a href="/fall-making/">Events, Projects and More - Discover Fall Making <span style="font-size:24px;vertical-align:text-bottom">&rsaquo;</span></a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</div-->
+  </div-->
 
 <header class="header-wrapper">
   <div class="header-white-bg">
