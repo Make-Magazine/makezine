@@ -1,0 +1,96 @@
+// Modern Tribe Events Calendar Plugin
+
+// Full page calendar view
+body.post-type-archive-tribe_events {
+  background-color: #fff;
+  .calendar-page {
+    padding-bottom: 30px;
+
+    article {
+      position: relative;
+    }
+
+    .recommend-event-btn {
+      position: absolute;
+      bottom: 0;
+      @media screen and (max-width: 767px) {
+        bottom: -15px;
+        width: 100%;
+        left: 0px;
+      }
+    }
+  }
+
+  #tribe-bar-form .tribe-bar-submit input[type=submit] {
+    font-weight: 400;
+    line-height: 1em;
+    border: none;
+    background-color: #f40b0b;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    &:hover, &:active, &:focus {
+      color: #fff;
+      background-color: #ea002a;
+      transition: background-color 0.2s;
+    }
+  }
+
+}
+
+#tribe-events .tribe-events-button, 
+#tribe-events .tribe-events-button:hover, 
+#tribe_events_filters_wrapper input[type=submit], 
+.tribe-events-button, 
+.tribe-events-button.tribe-active:hover, 
+.tribe-events-button.tribe-inactive, 
+.tribe-events-button:hover, 
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-],
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+  background-color: #397b97;
+}
+
+#tribe-events {
+  .tribe-events-button {
+    padding: 8px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1em;
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px !important;
+    background-color: #3FAFED;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    display: inline-block;
+    &:hover, &:active, &:focus {
+      color: #fff;
+      background-color: #1490d4;
+      transition: background-color 0.2s;
+    }
+  }
+  .tribe-bar-views-list {
+    z-index: 3;
+  }
+  .tribe-events-sub-nav li a {
+    border-radius: 4px !important;
+  }
+}
+
+.fancybox-recommend-event-inner {
+  padding: 15px;
+
+  h3 {
+    color: #444;
+    text-align: center;
+  }
+  input {
+    font-weight: inherit;
+    height: 30px;
+    margin-bottom: 0;
+  }
+  .btn-cyan {
+    color: #fff;
+    line-height: .8em;
+  }
+}

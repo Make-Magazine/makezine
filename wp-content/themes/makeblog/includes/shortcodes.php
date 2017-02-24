@@ -751,53 +751,6 @@ function maker_camp_registration( $atts, $content = null ) {
 }
 add_shortcode( 'maker_camp_sign_up', 'maker_camp_registration' );
 
-// Multi Newsletter Subscribe
-
-function multi_newsletter_subscribe( $atts, $content = null ) {
-	return '
-		<div class="newsletter-signup">
-			<form action="http://makermedia.createsend.com/t/r/s/jrourr/" method="post" id="subForm" class="form form-horizontal">
-				<fieldset>
-					<div class="form-group">
-						<label class="control-label" for="name">Name:</label>
-						<div class="controls">
-							<input type="text" name="cm-name" id="name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="jrourr-jrourr">Email:</label>
-						<div class="controls">
-							<input type="text" name="cm-jrourr-jrourr" id="jrourr-jrourr" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="optionsCheckbox">Plus, sign me up for these FREE newsletters</label>
-						<div class="controls">
-							<label for="MAKENewsletter">
-								<input type="checkbox" name="cm-ol-jjuylk" id="MAKENewsletter" />
-								MAKE Newsletter
-							</label>
-							<label for="MakerFaireNewsletter">
-								<input type="checkbox" name="cm-ol-jjuruj" id="MakerFaireNewsletter" />
-								Maker Faire Newsletter
-							</label>
-							<label for="MakerShed-MasterList">
-								<input type="checkbox" name="cm-ol-tyvyh" id="MakerShed-MasterList" />
-								Maker Shed
-							</label>
-						<label for="MarketWireNewsletter">
-													<input type="checkbox" name="cm-ol-jrsydu" id="MAKEMarketWirenewsletter" /> Maker Pro Newsletter
-													</label>
-						</div>
-					</div>
-					<div class="form-actions">
-						<button type="submit" class="btn btn-lg btn-primary">Subscribe!</button>
-					</div>
-				</fieldset>
-			</form>
-		</div>';
-}
-add_shortcode( 'newsletters', 'multi_newsletter_subscribe' );
 
 /**
  * * Adds a campaign monitor form to the post content
@@ -944,39 +897,6 @@ function maker_short_post_loop( $args ) {
 
 add_shortcode( 'make_post_loop', 'maker_short_post_loop' );
 
-/**
- * Add Maker Shed Deal of the Week
- */
-
-function makershed_weekly_deal() {
-
-	$output = '';
-
-	$args = array(
-		'post_type' 	=> 'from-the-maker-shed',
-		'posts_per_page'=> 1
-	);
-
-	$the_query = new WP_Query( $args );
-
-		while ( $the_query->have_posts() ) : $the_query->the_post();
-			$ftms_link = get_post_meta( get_the_ID(), 'ftms_link', true );
-			if( !isset( $ftms_link ) ){
-				$ftms_link = 'http://www.makershed.com/';
-			}
-			$output .= '<a href="'. esc_url( $ftms_link ).'">';
-			$output .= get_the_post_thumbnail( get_the_ID(), 'ftms-thumb');
-			$output .= '</a>';
-		endwhile;
-
-		// Reset Post Data
-		wp_reset_postdata();
-
-		return $output;
-
-}
-
-add_shortcode( 'shedpromo', 'makershed_weekly_deal' );
 
 function make_wizehive_shortcode() {
 	$output = '<iframe id="wizehiveportal" onload="parent.scrollTo(0,0);" height="2480px" width="940px" frameborder="0" scrolling="auto"></iframe>

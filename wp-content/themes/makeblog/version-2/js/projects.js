@@ -412,19 +412,6 @@ jQuery(document).ready(function ($) {
         cat_wrapp_indicator = 1;
     });
 
-    //add adds show row
-    $.ajax({
-        url: '/ajax_get_shopify_featured_products.php',
-        data: {
-            'action': 'make_shopify_featured_products'
-        },
-        success: function (data) {
-            $(".before-ads").after(data);
-        },
-        error: function (errorThrown) {
-        }
-    });
-
 
     //apply filter part
     $(document).on('touchstart click', '.filter-item ul li ul li span', function () {
@@ -506,18 +493,6 @@ jQuery(document).ready(function ($) {
                 if (error_message.length > 0) {
                     return;
                 }
-
-                $.ajax({
-                    url: '/ajax_get_shopify_featured_products.php',
-                    data: {
-                        'action': 'make_shopify_featured_products'
-                    },
-                    success: function (data) {
-                        $(".before-ads").after(data);
-                    },
-                    error: function (errorThrown) {
-                    }
-                });
 
                 // Load placeholder ads.
                 make.gpt.loadDyn();

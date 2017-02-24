@@ -26,10 +26,7 @@ Version 2 Includes
 // 1. Error Reporting
 
 if (defined('WP_CLI') && WP_CLI)
-    include_once dirname(__FILE__) . '/includes/class-make-cli.php';
-
-// 2. WordPress.com VIP Hosting Stuff
-// include_once dirname( __FILE__ ) . '/includes/vip.php';
+include_once dirname(__FILE__) . '/includes/class-make-cli.php';
 
 // Load Gigya!
 // include_once dirname( __FILE__ ) . '/includes/gigya/gigya.php';
@@ -61,9 +58,6 @@ include_once dirname(__FILE__) . '/includes/contribute.php';
 // 11. Scheduled Posts
 include_once dirname(__FILE__) . '/includes/wordpress-scheduled-time.php';
 
-// 12. From the Maker Shed
-include_once dirname(__FILE__) . '/includes/ftms.php';
-
 // 13. Search Engine
 //include_once dirname(__FILE__) . '/includes/search-terms.php';
 
@@ -85,9 +79,6 @@ include_once dirname(__FILE__) . '/includes/house-ads-cpt.php';
 
 // 20. Craft Feed Meta Box
 //include_once dirname(__FILE__) . '/includes/craft-cpt-stuff.php';
-
-// 21. Slideshow CPT
-include_once dirname(__FILE__) . '/includes/slideshow.php';
 
 // 22. Reviews CPT
 //include_once dirname(__FILE__) . '/includes/reviews.php';
@@ -121,7 +112,7 @@ include_once dirname(__FILE__) . '/includes/projects-manager.php';
 
 // 33. CLI CSV
 if (defined('WP_CLI') && WP_CLI)
-    include_once dirname(__FILE__) . '/includes/wp-cli.php';
+include_once dirname(__FILE__) . '/includes/wp-cli.php';
 
 // 34. Author Bio
 include_once dirname(__FILE__) . '/includes/class-author-profile.php';
@@ -138,9 +129,6 @@ include_once dirname(__FILE__) . '/includes/google-maps.php';
 // 38. Content Manager
 include_once dirname(__FILE__) . '/includes/magazine-dashboard/magazine-dashboard.php';
 
-// 39. Newsletter Post Type
-include_once dirname(__FILE__) . '/includes/post-types/newsletter.php';
-
 // 40. Social Stats
 include_once dirname(__FILE__) . '/includes/stats/stats.php';
 
@@ -149,9 +137,6 @@ include_once dirname(__FILE__) . '/includes/blog-dashboard/blog-dashboard.php';
 
 // 42. Search Facets
 //include_once dirname(__FILE__) . '/includes/search/search.php';
-
-// 43. Maker Shed Functions
-include_once dirname(__FILE__) . '/includes/shed/shed.php';
 
 // 44. Custom Customizer Settings - Theme Customizer API
 include_once dirname(__FILE__) . '/includes/theme-customizer/customizer.php';
@@ -169,10 +154,10 @@ include_once dirname(__FILE__) . '/includes/instagram/instagram.php';
 include_once dirname(__FILE__) . '/includes/post-types/makers.php';
 
 // 47. VIP Helper
-include_once dirname(__FILE__) . '/includes/vip-helper.php';
+//include_once dirname(__FILE__) . '/includes/vip-helper.php';
 
 // 48. VIP Helper COM
-include_once dirname(__FILE__) . '/includes/vip-helper-wpcom.php';
+//include_once dirname(__FILE__) . '/includes/vip-helper-wpcom.php';
 
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php';
@@ -360,16 +345,6 @@ add_action('admin_footer-post-new.php', 'parent_category_toggle');
 get_template_part('version-2/includes/pbd-ajax-load-posts');
 get_template_part('version-2/includes/Mobile_Detect.php');
 
-function make_shopify_featured_products($row = 'row') {
-    echo '<li class="ads shed-row-li"><div class="shed-row">';
-    echo make_shopify_featured_products_slider_home('row' );
-    echo '</div></li>';
-    die();
-}
-
-add_action('wp_ajax_make_shopify_featured_products', 'make_shopify_featured_products');
-add_action('wp_ajax_nopriv_make_shopify_featured_products', 'make_shopify_featured_products');
-
 
 
 function winwar_first_sentence($string)
@@ -423,46 +398,6 @@ add_action('after_setup_theme', 'projects_theme_setup_thumbnail');
 function projects_theme_setup_thumbnail()
 {
     add_image_size('project-thumb', 370, 240, true); // (cropped)
-}
-add_action('after_setup_theme', 'events_nav_setup_thumbnail');
-function events_nav_setup_thumbnail()
-{
-    add_image_size('events-nav-thumb', 102, 102, true); // (cropped)
-}
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-    register_post_type( 'Events',
-        array(
-            'labels' => array(
-                'name' => 'Events',
-                'singular_name' => 'Events',
-                'add_new' => 'Add new',
-                'add_new_item' => 'Add new item',
-                'edit_item' => 'Edit',
-                'new_item' => 'New item',
-                'view_item' => 'View',
-                'search_items' => 'Search',
-                'not_found' => 'Sorry, not found',
-                'not_found_in_trash' => 'Not found in trash',
-            ),
-            'description' => 'Events post type',
-            'public' => True,
-            'publicly_queryable' => null,
-            'exclude_from_search' => null,
-            'show_ui' => null,
-            'show_in_menu' => null,
-            'menu_position' => null,
-            'menu_icon' => null,
-            'hierarchical' => false,
-            'supports' => array('title', 'editor', 'thumbnail'),
-            'taxonomies' => array(),
-            'has_archive' => false,
-            'query_var' => true,
-            'capability_type' => 'page',
-            'show_in_nav_menus' => null,
-
-        )
-    );
 }
 
 /**
@@ -924,7 +859,7 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'    => 'Custom Settings',
         'menu_title'    => 'Custom Settings',
         'menu_slug'     => 'custom-settings',
-        'position'      => false,
+        'position'      => 50,
         'capability'    => 'edit_posts',
         'redirect'      => true
     ));
@@ -936,6 +871,13 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'   => 'custom-settings',
         'position'      => false
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Navigation Events',
+        'menu_title'    => 'Nav Events',
+        'menu_slug'     => 'nav-events',
+        'parent_slug'   => 'custom-settings',
+        'position'      => false
+    ));
     
 }
-

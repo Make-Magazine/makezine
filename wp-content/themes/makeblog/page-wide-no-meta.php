@@ -39,7 +39,7 @@ get_header('version-2'); ?>
 					
 					</article>
 					
-				<div>
+				</div>
 				
 			</div>
 			

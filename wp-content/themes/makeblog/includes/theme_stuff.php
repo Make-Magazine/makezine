@@ -880,18 +880,6 @@ function make_category_id_class($classes) {
 //add_filter('post_class', 'make_category_id_class');
 //add_filter('body_class', 'make_category_id_class');
 
-/**
- * Adds a View All link to the slideshow.
- */
-function make_vapp_the_link( $link_text = 'View All', $class = 'vapp' ) {
-	$url = vapp_get_url( get_the_ID() );
-
-	if ( $url ) {
-		$link = '<a ' . ( $class ? 'class="' . esc_attr( $class ) . '"' : '' ) . ' href="' . esc_url( $url ) . '">' . esc_html( $link_text ) . '</a>';
-
-		return $link;
-	}
-}
 
 add_action( 'admin_head', 'make_cpt_icons' );
 /**
@@ -1000,29 +988,15 @@ function make_cpt_icons() { ?>
 			content: '\f161';
 		}
 
-		.icon16.icon-slideshow:before,
-		#adminmenu #menu-posts-slideshow div.wp-menu-image:before {
-			content: '\f181';
-		}
-
 		.icon16.icon-golink:before,
 		#adminmenu #menu-posts-go div.wp-menu-image:before {
 			content: '\f103';
 		}
 
-		.icon16.icon-newsletter:before,
-		#adminmenu #menu-posts-newsletter div.wp-menu-image:before {
-			content: '\f116';
-		}
 		.icon16.icon-craft:before,
 		#adminmenu #menu-posts-craft div.wp-menu-image:before {
 			content: '\f309';
 		}
-
-		.icon16.icon-from-the-maker-shed:before,
-		#adminmenu #menu-posts-from-the-maker-shed div.wp-menu-image:before {
-			content: '\f312';
-		 }
 
 	</style>
 <?php }

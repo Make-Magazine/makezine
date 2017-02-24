@@ -303,18 +303,6 @@ jQuery( document ).ready( function( $ ) {
 		cat_wrapp_indicator = 1;
 	});
 	jQuery(".ads").addClass('first-use');
-	$.ajax({
-		url: '/ajax_get_shopify_featured_products.php',
-		data: {
-			'action':'make_shopify_featured_products'
-		},
-		success:function(data) {
-			jQuery(".before-ads").after(data);
-			jQuery(".ads").addClass('first-use');
-		},
-		error: function(errorThrown){
-		}
-	});
 
 		$('.clicks').live('click', function () {
 			var DataDiff = $('.filter-item ul li ul.diff-item li span.filter_selected').data('value');
