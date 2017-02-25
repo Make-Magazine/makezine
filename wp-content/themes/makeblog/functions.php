@@ -154,10 +154,10 @@ include_once dirname(__FILE__) . '/includes/instagram/instagram.php';
 include_once dirname(__FILE__) . '/includes/post-types/makers.php';
 
 // 47. VIP Helper
-//include_once dirname(__FILE__) . '/includes/vip-helper.php';
+include_once dirname(__FILE__) . '/includes/vip-helper.php';
 
 // 48. VIP Helper COM
-//include_once dirname(__FILE__) . '/includes/vip-helper-wpcom.php';
+include_once dirname(__FILE__) . '/includes/vip-helper-wpcom.php';
 
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php';
