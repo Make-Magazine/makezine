@@ -399,7 +399,7 @@ if( $detect->isTablet() ){
               $image = get_sub_field('image');
               $url = get_sub_field('url');
               $args = array(
-                'resize' => '220,155',
+                'resize' => '370,220',
                 'quality' => get_photon_img_quality(),
               );
               $photon = jetpack_photon_url($image, $args); ?>
@@ -421,7 +421,7 @@ if( $detect->isTablet() ){
               $image = get_sub_field('image');
               $url = get_sub_field('url');
               $args = array(
-                'resize' => '220,155',
+                'resize' => '370,220',
                 'quality' => get_photon_img_quality(),
               );
               $photon = jetpack_photon_url($image, $args); ?>

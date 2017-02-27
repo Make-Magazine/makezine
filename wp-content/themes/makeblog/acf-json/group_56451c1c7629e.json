@@ -23,7 +23,7 @@
             "label": "Add each guide here",
             "name": "guides_nav",
             "type": "repeater",
-            "instructions": "Up to 4 images can be shown in the Guides navigation dropdown. Click the \"Add Image\" to add more. Delete or drag to move\/delete.",
+            "instructions": "Up to 4 images can be shown in the Guides navigation dropdown. Click the \"Add Image\" to add more. Delete or drag to move\/delete.<br\/>\r\nUse image sizes around 370px wide by 220px tall.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -103,7 +103,7 @@
             "label": "Add each event here",
             "name": "add_each_event_here",
             "type": "repeater",
-            "instructions": "Up to 5 events can be shown in the navigation dropdown. Click the \"Add Event\" to add more. Delete or drag to move\/delete events.",
+            "instructions": "Up to 5 events can be shown in the navigation dropdown. Click the \"Add Event\" to add more. Delete or drag to move\/delete events.<br \/>\r\nUse image sizes around 210px by 210px.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -230,7 +230,7 @@
             "label": "Add each shop here",
             "name": "shop_nav",
             "type": "repeater",
-            "instructions": "Up to 4 images can be shown in the Shop navigation dropdown. Click the \"Add Image\" to add more. Delete or drag to move\/delete.",
+            "instructions": "Up to 4 images can be shown in the Shop navigation dropdown. Click the \"Add Image\" to add more. Delete or drag to move\/delete.<br \/>\r\nUse image sizes around 370px wide by 220px tall.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -310,7 +310,7 @@
             "label": "Add each Get Involved here",
             "name": "get_involved_nav",
             "type": "repeater",
-            "instructions": "Up to 4 images can be shown in the Get Involved navigation dropdown. Click the \"Add Image\" to add more. Delete or drag to move\/delete.",
+            "instructions": "Up to 4 images can be shown in the Get Involved navigation dropdown. Click the \"Add Image\" to add more. Delete or drag to move\/delete.<br \/>\r\nUse image sizes around 370px wide by 220px tall.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -387,5 +387,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488222961
+    "modified": 1488229827
 }
