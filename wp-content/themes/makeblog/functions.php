@@ -873,8 +873,8 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Navigation Events',
-        'menu_title'    => 'Nav Events',
+        'page_title'    => 'Navigation',
+        'menu_title'    => 'Navigation',
         'menu_slug'     => 'nav-events',
         'parent_slug'   => 'custom-settings',
         'position'      => false

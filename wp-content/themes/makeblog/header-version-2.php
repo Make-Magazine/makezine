@@ -276,7 +276,7 @@ if( $detect->isTablet() ){
                     </div>
                   </form>
                 </div><!-- End subscribe div -->
-                <h6>Copyright © 2004-2016 Maker Media, Inc.</br>
+                <h6>Copyright © 2004-2017 Maker Media, Inc.</br>
                   All rights reserved</h6>
               </div><!-- End mobile-social div -->
             </div><!-- End #makezine-navbar-collapse-1 -->
@@ -393,44 +393,47 @@ if( $detect->isTablet() ){
         </div>
 
         <div class="nav-guides row">
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="/comparison/3dprinters/" class="first-post">
-              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-3D-min.jpg" alt="3D Printer product reviews and comparison guide" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="/comparison/boards/" class="second-post">
-              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Boards.jpg" alt="Boards product reviews and comparison guide" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="/comparison/drones/" class="third-post">
-              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Drones.jpg" alt="Drones product reviews and comparison guide" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="/giftguide/" class="fourth-post">
-              <img src="/wp-content/themes/makeblog/img/Make_Dropdwn_Tiles_Guides-Gift.jpg" alt="Make: Gift Guide" />
-            </a>
-          </div>
+          <?php if( have_rows('guides_nav', 'option') ): ?>
+            <?php while( have_rows('guides_nav', 'option') ): the_row();
+
+              $image = get_sub_field('image');
+              $url = get_sub_field('url');
+              $args = array(
+                'resize' => '220,155',
+                'quality' => get_photon_img_quality(),
+              );
+              $photon = jetpack_photon_url($image, $args); ?>
+
+              <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
+                <a href="<?php echo $url; ?>">
+                  <img class="img-responsive" src="<?php echo $photon; ?>" alt="Our maker guides help you find the perfect tool for your project" />
+                </a>
+              </div>
+
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
 
         <div class="latest-shop row">
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="http://www.makershed.com/collections/3d-printing-fabrication?utm_source=makezine.com&utm_medium=nav+bar&utm_term=3D+printing" class="first-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop1.png" alt="Shop for 3D Printing" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="http://www.makershed.com/collections/toys??utm_source=makezine.com&utm_medium=nav+bar&utm_term=kits+for+beginners" class="third-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop3.png" alt="Shop for Electronics build kits" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="http://www.makershed.com/collections/books-magazines?utm_source=makezine.com&utm_medium=nav+bar&utm_term=books+magazines" class="fourth-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/version-2/img/shop4.png" alt="Shop for Make: Magazine" />
-            </a>
-          </div>
+          <?php if( have_rows('shop_nav', 'option') ): ?>
+            <?php while( have_rows('shop_nav', 'option') ): the_row();
+
+              $image = get_sub_field('image');
+              $url = get_sub_field('url');
+              $args = array(
+                'resize' => '220,155',
+                'quality' => get_photon_img_quality(),
+              );
+              $photon = jetpack_photon_url($image, $args); ?>
+
+              <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
+                <a href="<?php echo $url; ?>">
+                  <img class="img-responsive" src="<?php echo $photon; ?>" alt="Featured shopping by category" />
+                </a>
+              </div>
+
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
 
         <div class="latest-events row">
@@ -449,7 +452,7 @@ if( $detect->isTablet() ){
 
               <div class="events-post col-lg-2 col-md-2">
                 <a href="<?php echo $url; ?>">
-                  <img src="<?php echo $photon; ?>" alt="Featured Event Thumbnail" />
+                  <img src="<?php echo $photon; ?>" alt="Featured Maker Faire event" />
                   <h3><?php echo $location; ?></h3>
                   <p><?php echo $date; ?></p>
                 </a>
@@ -460,26 +463,25 @@ if( $detect->isTablet() ){
         </div>
 
         <div class="nav-share row">
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="https://community.makezine.com/share" class="first-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Projects.jpg" alt="Share your ideas and projects on Make:" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="/contribute" class="second-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Story.jpg" alt="Submit a Story" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="https://community.makezine.com/share/contests" class="third-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Make_Get_Involved_Contest.jpg" alt="Show and Tell, social" />
-            </a>
-          </div>
-          <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
-            <a href="/join/?utm_source=navimage&utm_campaign=getinvolvednav" class="fourth-post">
-              <img class="img-responsive" src="/wp-content/themes/makeblog/img/Nav-Button-Newsletter.png" alt="Join the Make: newsletter" />
-            </a>
-          </div>
+          <?php if( have_rows('get_involved_nav', 'option') ): ?>
+            <?php while( have_rows('get_involved_nav', 'option') ): the_row();
+
+              $image = get_sub_field('image');
+              $url = get_sub_field('url');
+              $args = array(
+                'resize' => '=370,220',
+                'quality' => get_photon_img_quality(),
+              );
+              $photon = jetpack_photon_url($image, $args); ?>
+
+              <div class="nav-img-item col-lg-3 col-md-3 col-sm-3">
+                <a href="<?php echo $url; ?>">
+                  <img class="img-responsive" src="<?php echo $photon; ?>" alt="Get involved in the maker community here" />
+                </a>
+              </div>
+
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
 
       </div>
