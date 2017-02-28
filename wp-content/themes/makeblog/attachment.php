@@ -17,9 +17,9 @@ get_header('version-2'); ?>
 
       <div class="col-sm-7 col-md-8">
 
-        <p class="breadcrumb">
+        <p>
           <a href="<?php echo get_permalink( $post->post_parent ); ?>">
-            <?php printf( __( '<span class="meta-nav">&larr;</span> %s', 'makezine' ), get_the_title( $post->post_parent ) ); ?>
+            <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i> <?php echo get_the_title( $post->post_parent ); ?>
           </a>
         </p>
 
@@ -130,6 +130,8 @@ get_header('version-2'); ?>
 	              </ul>
 
 	            </div>
+
+	            <hr>
 
 	            <?php echo make_author(); ?>
 
