@@ -23,7 +23,7 @@ get_header('version-2'); ?>
 
               <?php the_content(); ?>
 
-              <button class="recommend-event-btn btn-cyan">Have an event to recommend?</button>
+              <button class="recommend-event-btn btn-cyan hidden">Have an event to recommend?</button>
             
             </article>
             

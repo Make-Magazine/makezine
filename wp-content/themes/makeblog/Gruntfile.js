@@ -82,7 +82,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // Simplify the repetivite work of listing each plugin in grunt.loadNomTasks(), just get the list from package.json and load them...
+  // Simplify the repetivite work of listing each plugin in grunt.loadNpmTasks(), just get the list from package.json and load them...
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Register the tasks with Grunt
