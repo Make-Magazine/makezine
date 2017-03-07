@@ -50,8 +50,8 @@ get_header('version-2'); ?>
     <div class="fancybox-recommend-event" style="display:none;">
       <div class="fancybox-recommend-event-inner">
         <div class="fancybox-recommend-event-inner1">
-          <h3>Have an event to add to the Maker event calendar?</h3>
-          <p>Send us maker community events and any other share-worthy events.</p>
+          <h3>Tell us about your event!</h3>
+          <p>Be sure to include the location, date, time, a brief description of what the event is, and any website links where people can learn more</p>
           <form id="form15" name="form15" accept-charset="UTF-8" enctype="multipart/form-data" method="post" novalidate action="//makemagazine.wufoo.com/forms/zrlckye0ok7ijr/#public">
             <div class="form-group">
               <label for="exampleInputName1">Name</label>
@@ -62,7 +62,7 @@ get_header('version-2'); ?>
               <input type="email" class="form-control" id="Field2" name="Field2" placeholder="Email">
             </div>
             <div class="form-group">
-              <label>Tell us about an event</label>
+              <label>Tell us about your event</label>
               <textarea class="form-control" id="Field3" name="Field3" spellcheck="true" rows="3" required></textarea>
             </div>
             <input id="saveForm" name="saveForm" class="recommend-event-submit btn-cyan" type="submit" value="Submit" />
@@ -70,7 +70,7 @@ get_header('version-2'); ?>
           </form>
         </div>
         <div class="fancybox-recommend-event-inner2" style="display:none;">
-          <h3>Thank you for the recommendation</h3>
+          <h3>Thank you</h3>
           <p>We can't guarantee a response to each submission, but we promise to think about every one.</p>
         </div>
       </div>
