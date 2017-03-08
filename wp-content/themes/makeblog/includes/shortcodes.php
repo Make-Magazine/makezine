@@ -1168,3 +1168,7 @@ function newsletter_signup_sidebar_shortcode() {
 }
 
 add_shortcode( 'newsletter_signup_sidebar', 'newsletter_signup_sidebar_shortcode' );
+
+
+//Adding shortcode functionality to the category/tag description editor
+add_filter( 'term_description', 'do_shortcode' );
