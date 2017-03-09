@@ -107,7 +107,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 					<div class="container">
 						<div class="story-title">
-							<h1 itemprop="name"><?php the_titlesmall( '', '', true, '90' ); ?></h1>
+							<h1 itemprop="name"><?php get_the_title(); ?></h1>
 						</div>
 						<div class="author-info">
 							<?php

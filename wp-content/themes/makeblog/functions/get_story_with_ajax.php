@@ -35,7 +35,7 @@ function get_story_with_ajax() {
     <div class="story-header" id="<?php echo get_the_ID(); ?>">
         <div class="container">
             <div class="story-title">
-                <h1 itemprop="name"><?php the_titlesmall('', '', true, '90'); ?></h1>
+                <h1 itemprop="name"><?php get_the_title(); ?></h1>
             </div>
         </div>
         <?php
@@ -180,7 +180,7 @@ function get_story_with_ajax2() {
               <div class="row">
                   <div class="col-xs-12">
                       <div class="story-title">
-                          <h1 itemprop="name"><?php the_titlesmall('', '', true, '90'); ?></h1>
+                          <h1 itemprop="name"><?php get_the_title(); ?></h1>
                       </div>
                   </div>
               </div>

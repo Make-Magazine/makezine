@@ -351,7 +351,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $output .= $link;
             $output .= '">';
             $post_title = get_the_title();
-            $output .= truncate_with_ellipses($post_title, 90);
+            $output .= truncate_with_ellipses($post_title, 100);
             $output .= '</a></h2>';
             $output .= '</article></li>';
 
@@ -800,7 +800,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
               $output .= $link;
               $output .= '">';
               $post_title = get_the_title();
-              $output .= truncate_with_ellipses($post_title, 90);
+              $output .= truncate_with_ellipses($post_title, 100);
               $output .= '</a></h2></div>';
             } else {
               $output .= '<h2 itemprop="name"><a href="';
@@ -808,7 +808,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
               $output .= $link;
               $output .= '">';
               $post_title = get_the_title();
-              $output .= truncate_with_ellipses($post_title, 90);
+              $output .= truncate_with_ellipses($post_title, 100);
               $output .= '</a></h2>';
             }
             $output .= '</article></li>';
@@ -1205,7 +1205,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $output .= $link;
             $output .= '">';
             $post_title = get_the_title();
-            $output .= truncate_with_ellipses($post_title, 90);
+            $output .= truncate_with_ellipses($post_title, 100);
             $output .= '</a></h2>';
             $output .= '</article></li>';
 
