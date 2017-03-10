@@ -271,7 +271,6 @@ function get_story_with_ajax2() {
                       <p id="ads-title">ADVERTISEMENT</p>
                       <div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                   </div>
-                  <div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
                   <div class="ad-unit">
                       <p id="ads-title">ADVERTISEMENT</p>
                       <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
