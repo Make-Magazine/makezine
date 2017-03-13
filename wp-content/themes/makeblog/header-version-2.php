@@ -36,6 +36,14 @@ if( $detect->isTablet() ){
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC5R77');</script>
+<!-- End Google Tag Manager -->
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -162,15 +170,6 @@ if( $detect->isTablet() ){
 
   <!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
 
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PC5R77');</script>
-  <!-- End Google Tag Manager  -->
-
   <?php if ( is_404() ) : // Load this last. ?>
     <script>
       ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
@@ -178,6 +177,11 @@ if( $detect->isTablet() ){
   <?php endif; ?>
 </head>
 <body id="makeblog" <?php body_class(); ?>>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC5R77"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
  <!-- TOP BRAND BAR -->
   <!--div class="top-header-bar-brand">
     <div class="container">
