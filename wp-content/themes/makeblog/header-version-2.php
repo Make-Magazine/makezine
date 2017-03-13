@@ -163,10 +163,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ga('set', 'dimension13', "<?php echo $primary_cat ?>");
     ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
   </script>
-
+<!-- why is this here?
   <script type="text/javascript">
     dataLayer = [];
-  </script>
+  </script>-->
 
   <!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
 
