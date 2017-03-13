@@ -11,7 +11,7 @@ global $make;
 global $wp_query;
 global $post;
 
-// remove any enqueue we don't want 
+// remove any enqueue we don't want
 if (!is_single())
 {
   //Remove WebRotator Plugin Styles
@@ -83,14 +83,14 @@ if( $detect->isTablet() ){
 
   <?php wp_head(); ?>
 
-  <?php 
+  <?php
   // Set Ads.
   $make->ad_vars = new MakeAdVars;
   $make->ad_vars->getVars();
   $make->ads = new MakeAds;
   $make->ads->setAds();
   ?>
-  
+
   <!-- Page Ad Vars -->
   <script type='text/javascript'>
   var ad_vars = <?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>;
@@ -99,7 +99,7 @@ if( $detect->isTablet() ){
   <!-- Make GPT -->
   <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 
-  <!-- nativo script --> 
+  <!-- nativo script -->
   <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
     <?php if (is_page('content')): ?>
       <meta http-equiv="X-UA-Compatible" content="IE=10" />
@@ -159,8 +159,6 @@ if( $detect->isTablet() ){
   <script type="text/javascript">
     dataLayer = [];
   </script>
-</head>
-<body id="makeblog" <?php body_class(); ?>>
 
   <!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
 
@@ -178,8 +176,9 @@ if( $detect->isTablet() ){
       ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
     </script>
   <?php endif; ?>
-
-  <!-- TOP BRAND BAR -->
+</head>
+<body id="makeblog" <?php body_class(); ?>>
+ <!-- TOP BRAND BAR -->
   <!--div class="top-header-bar-brand">
     <div class="container">
       <div class="row">
