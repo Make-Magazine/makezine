@@ -44,6 +44,17 @@
 			span {
 				color:@link-color;
 			}
+			&.pull-right {
+				margin-right: 0;
+			}
+		}
+		@media (max-width: 767px) {
+			li {
+				display: block;
+				&.pull-right {
+					float: none !important;
+				}
+			}
 		}
 	}
 
@@ -127,10 +138,6 @@
 		}
 		.col-md-3 {
 		}
-	}
-
-	.project-print-btn {
-		margin: 20px 0;
 	}
 
 	.bottom-steps {

@@ -371,19 +371,17 @@ function filter_list_output()
     $output .= '<p>difficulty</p>';
     $output .= '<ul class="diff-item">';
     $output .= '<li><span class="all-lvl fa fa-wrench clicks" data-value="diff1" data-original-title="Easy for Everyone"></span></li>';
-    $output .= '<li><span class="moderate fa fa-wrench clicks"  data-value="diff2" data-toggle="tooltip" data-placement="top"
-       data-original-title="Intermediate"></span></li>';
-    $output .= '<li><span class="spec-skill fa fa-wrench clicks"  data-value="diff3" data-toggle="tooltip" data-placement="top"
-       data-original-title="Advanced (But we`ll help you learn the required skills.)"></span></li>';
+    $output .= '<li><span class="moderate fa fa-wrench clicks" data-value="diff2" data-toggle="tooltip" data-placement="top" data-original-title="Intermediate"></span></li>';
+    $output .= '<li><span class="spec-skill fa fa-wrench clicks" data-value="diff3" data-toggle="tooltip" data-placement="top" data-original-title="Advanced (But we`ll help you learn the required skills.)"></span></li>';
     $output .= '</ul>';
     $output .= '</li>';
     $output .= '<li class="duration">';
     $output .= '<p>duration</p>';
     $output .= '<ul class="duration-item">';
-    $output .= '<li><span class="1-3h fa fa-clock-o clicks"  data-value="dur1" data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time 1-3 hours"></span></li>';
-    $output .= '<li><span class="3-8h fa fa-clock-o clicks"  data-value="dur2" data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time 3-8 hours"></span></li>';
-    $output .= '<li><span class="8-16h fa fa-clock-o clicks" data-value="dur3"  data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time 8-16 hours (a weekend)"></span></li>';
-    $output .= '<li><span class="16h fa fa-clock-o clicks" data-value="dur4"  data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time >16 hours"></span></li>';
+    $output .= '<li><span class="1-3h fa fa-clock-o clicks" data-value="dur1" data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time 1-3 hours"></span></li>';
+    $output .= '<li><span class="3-8h fa fa-clock-o clicks" data-value="dur2" data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time 3-8 hours"></span></li>';
+    $output .= '<li><span class="8-16h fa fa-clock-o clicks" data-value="dur3" data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time 8-16 hours (a weekend)"></span></li>';
+    $output .= '<li><span class="16h fa fa-clock-o clicks" data-value="dur4" data-toggle="tooltip" data-placement="top" data-original-title="Avg. build time >16 hours"></span></li>';
     $output .= '</ul>';
     $output .= '</li>';
     $output .= '</ul>';

@@ -9,7 +9,12 @@
  */
 $steps = get_post_custom_values('Steps');
 wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery', 'lazyload' ), false, true );
-get_header('version-2'); ?>
+get_header('version-2');
+$time = get_post_custom_values('TimeRequired');
+$post_duration = get_post_meta($post->ID, 'project_duration');
+$post_difficulty = get_post_meta($post->ID, 'project_difficulty');
+$post_price_group = get_post_meta($post->ID, 'price_group');
+$post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 	
 <div class="home-ads">
  	<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
@@ -48,7 +53,7 @@ get_header('version-2'); ?>
 
 			</div>
 
-			<ul class="projects-meta">
+			<ul class="projects-meta list-unstyled">
 				<li>
 					By <span itemprop="author"><?php
 					if( function_exists( 'coauthors_posts_links' ) ) {
@@ -59,21 +64,30 @@ get_header('version-2'); ?>
 				</li>
 
 				<?php
-					$time = get_post_custom_values('TimeRequired');
 					if ($time[0]) {
 						echo '<li>Time Required: <span>' . esc_html( $time[0] ) . '</span></li>';
+					} else if ($post_duration[0]) {
+						echo '<li>Time Required: <span>' . $post_duration[0] . '</span></li>';
 					}
-					$terms = get_the_terms( $post->ID, 'difficulty' );
-					if ($terms) {
-						foreach ($terms as $term) {
-							echo '<li>Difficulty: <span itemprop="proficiencyLevel">' . esc_html( $term->name ) . '</span></li>';
-						}
+
+					if ($post_difficulty[0]) {
+						echo '<li>Difficulty: <span itemprop="proficiencyLevel">' . $post_difficulty[0] . '</span></li>';
+					}
+
+					if ($post_price_custom[0]) {
+						echo '<li>Price: <span>' . esc_html( $post_price_custom[0] ) . '</span></li>';
+					} else if ($post_price_group[0]) {
+						echo '<li>Price: <span>' . $post_price_group[0] . '</span></li>';
 					}
 				?>
 
 				<meta itemprop="datePublished" content="<?php the_date(); ?>" />
 
-				<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
+				<li class="pull-right">
+					<a class="project-print-btn btn btn-xs btn-default print-page">
+						<i class="fa fa-print" aria-hidden="true"></i> Print this Project
+					</a>
+				</li>
 			</ul>
 
 			<div class="row">
@@ -176,10 +190,6 @@ get_header('version-2'); ?>
 						</div>
 
 					<?php } ?>
-
-					<a class="project-print-btn btn btn-xs btn-danger print-page">
-						<i class="fa fa-print" aria-hidden="true"></i> Print this Project
-					</a>
 
 					<div class="projects-ad">
 						<p id="ads-title">Advertisement</p>
