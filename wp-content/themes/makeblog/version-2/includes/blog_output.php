@@ -49,6 +49,7 @@ function story_pulling($offset) {
 			$args            = array(
 				'resize' => '397,374',
 				'quality' => get_photon_img_quality(),
+				'strip' => 'all',
 			);
 		} else {
 			$post_weight     = 1;
@@ -56,6 +57,7 @@ function story_pulling($offset) {
 			$args            = array(
 				'resize' => '397,374',
 				'quality' => get_photon_img_quality(),
+				'strip' => 'all',
 			);
 		}
 		$row_weight = $row_weight + $post_weight;

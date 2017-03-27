@@ -337,6 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 $args = array(
                   'resize' => '370,220',
                   'quality' => get_photon_img_quality(),
+                  'strip' => 'all',
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -370,6 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 $args = array(
                   'resize' => '370,220',
                   'quality' => get_photon_img_quality(),
+                  'strip' => 'all',
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -402,6 +404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $args = array(
                 'resize' => '370,260',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 
@@ -424,6 +427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $args = array(
                 'resize' => '370,260',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 
@@ -448,6 +452,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $args = array(
                 'resize' => '105,105',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 
@@ -470,8 +475,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $image = get_sub_field('image');
               $url = get_sub_field('url');
               $args = array(
-                'resize' => '=370,260',
+                'resize' => '370,260',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 

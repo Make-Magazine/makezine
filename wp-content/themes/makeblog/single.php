@@ -43,6 +43,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								$args = array(
 									'resize' => '370,240',
 									'quality' => get_photon_img_quality(),
+									'strip' => 'all',
 								);
 								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
 								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -75,6 +76,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								$args = array(
 									'resize' => '370,240',
 									'quality' => get_photon_img_quality(),
+									'strip' => 'all',
 								);
 								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
 								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -137,6 +139,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	        // Featured Image
 	        $args = array(
 	        	'resize' => '1200,670',
+	        	'strip' => 'all',
 	        );
 	        $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
 	        $re = "/^(.*? src=\")(.*?)(\".*)$/m";

@@ -165,6 +165,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             $args = array(
                 'resize' => '370,240',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
             );
             $url = wp_get_attachment_image(get_post_thumbnail_id($post_id), 'project-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -611,6 +612,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             $args = array(
                 'resize' => '370,240',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
             );
             $url = wp_get_attachment_image(get_post_thumbnail_id($post_id), 'project-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -1036,6 +1038,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             $args = array(
                 'resize' => '370,240',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
             );
             $url = wp_get_attachment_image(get_post_thumbnail_id($post_id), 'project-thumb');
             $re = "/^(.*? src=\")(.*?)(\".*)$/m";

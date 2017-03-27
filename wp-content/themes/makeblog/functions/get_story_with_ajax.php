@@ -44,6 +44,7 @@ function get_story_with_ajax() {
         // Featured Image
         $args = array(
             'resize' => '1200,670',
+            'strip' => 'all',
         );
         $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
         $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -191,6 +192,7 @@ function get_story_with_ajax2() {
           // Featured Image
           $args = array(
               'resize' => '1200,670',
+              'strip' => 'all',
           );
           $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
           $re = "/^(.*? src=\")(.*?)(\".*)$/m";

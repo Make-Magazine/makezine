@@ -290,6 +290,7 @@ class Make_Authors {
 				$args = array(
 					'resize' => '300,300',
 					'quality' => get_photon_img_quality(),
+					'strip' => 'all',
 				);
 				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
 				$re = "/^(.*? src=\")(.*?)(\".*)$/m";
