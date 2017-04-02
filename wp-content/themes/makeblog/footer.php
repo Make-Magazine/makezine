@@ -235,53 +235,5 @@ sg_beacon('init','Mjg4MjQzLTJiMjdlNGU0NmM3ZDM3YWQ2YWJiOTEwNWRhNDM0ZGQ1NTFlZTdhN2
 <!-- Subscribe return path overlay -->
 <?php echo subscribe_return_path_overlay(); ?>
 
-<script>
-//April fools day easter egg
-jQuery(document).ready(function() {
-  jQuery('body').click(function(event){
-    var px = event.pageX;
-    var py = event.pageY;
-    var child = jQuery('#makey-egg-holder').children().size();
-    var child_temp = child + 1;
-    var count = jQuery('#count').val();
-    var img_no = jQuery('#img_count').val();
-    if(img_no > 10)
-    {
-      img_no = 1;  
-    } 
-    jQuery('#img' + count).css({"top" : py, "left" : px}).fadeIn(1500);
-    jQuery('#makey-egg-holder').append('<img class="makey-easter-egg" width="30" id="img' + child_temp + '" src="/wp-content/themes/makeblog/img/makey-pointer.png" />');
-    count++;
-    img_no++;
-    jQuery('#count').val(count);
-    jQuery('#img_count').val(img_no);
-  });   
-});
-</script>
-<style>
-.makey-easter-egg {
-  display: none;
-  /*visibility:hidden;*/
-  position:absolute;
-  z-index: 9999;
-  /*top: 0px;*/
-  /*left: 0px;*/ 
-}
-</style>
-<div id="makey-egg-holder">
-<img class="makey-easter-egg" width="30" id="img1" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img2" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img3" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img4" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img5" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img6" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img7" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img8" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img9" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-<img class="makey-easter-egg" width="30" id="img10" src="/wp-content/themes/makeblog/img/makey-pointer.png" />
-</div>
-<input type="hidden" id="count" name="count" value="1" />
-<input type="hidden" id="img_count" name="img_count" value="1" />
-
 </body>
 </html>
