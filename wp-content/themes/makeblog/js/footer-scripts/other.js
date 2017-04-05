@@ -358,22 +358,6 @@ jQuery(document).ready(function(){
 });
 
 
-// Sitewide footer feedback form modal
-jQuery(".footer-feedback-btn").click(function() {
-  jQuery(".fancybox-feedback").fancybox({
-    autoSize : false,
-    width  : 560,
-    autoHeight : true,
-    padding : 0,
-    openEffect : 'elastic',
-    afterLoad   : function() {
-      this.content = this.content.html();
-    }
-  });
-  jQuery(".fancybox-feedback").trigger('click');
-});
-
-
 // Feedback form submit event handler
 jQuery(document).on('submit', '#form13', function (e) {
   event.preventDefault();

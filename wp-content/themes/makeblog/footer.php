@@ -176,7 +176,12 @@
 					</div>
 					<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
 						<div class="panel-body">
-							<button class="footer-feedback-btn btn-cyan pull-center">Send Us Feedback</button>
+              <ul class="nav nav-pills nav-stacked">
+                <li><a href="/projects/?utm_source=makezine&utm_campaign=makezinefooter">Projects</a></li>
+                <li><a href="/tag/skill-builder/?utm_source=makezine&utm_campaign=makezinefooter">Skill Builders</a></li>
+                <li><a href="/contribute/?utm_source=makezine&utm_campaign=makezinefooter">Contribute</a></li>
+                <li><a href="mailto:editor@makezine.com">Contact Us</a></li>
+              </ul>
 						</div>
 					</div>
 				</div>
