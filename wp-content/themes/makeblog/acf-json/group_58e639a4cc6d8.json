@@ -95,6 +95,27 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_58e673ea3afa8",
+            "label": "Frequency of ads",
+            "name": "frequency_of_ads",
+            "type": "number",
+            "instructions": "An ad will appear after every set of this many products",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 12,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_58e63f3584c41",
             "label": "Gift Guide Products",
             "name": "",
@@ -503,5 +524,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1491491723
+    "modified": 1491498192
 }

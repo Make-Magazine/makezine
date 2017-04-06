@@ -8,6 +8,7 @@
  */
 get_header('version-2');
 $products = get_field('products');
+$ad_freq = get_field('frequency_of_ads');
 
 //Check if there are any daily picks  
   $dp_found = false;
@@ -379,7 +380,7 @@ $products = get_field('products');
             //Injecting ads after every 12 products, on state change
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
-              var modulus = (i + 1) % 12;
+              var modulus = (i + 1) % <?php echo $ad_freq; ?>;
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
@@ -420,7 +421,7 @@ $products = get_field('products');
             //Injecting ads after every 12 products, only on 1st page load
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review').each(function(i) {
-              var modulus = (i + 1) % 12;
+              var modulus = (i + 1) % <?php echo $ad_freq; ?>;
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
