@@ -1,0 +1,507 @@
+{
+    "key": "group_58e639a4cc6d8",
+    "title": "Gift Guide",
+    "fields": [
+        {
+            "key": "field_58e63eff84c40",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58e63fb584c44",
+            "label": "Header Title",
+            "name": "header_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58e63fe284c45",
+            "label": "Header Subtitle",
+            "name": "header_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58e63ffa84c46",
+            "label": "Header Description",
+            "name": "header_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_58e64e2d84c57",
+            "label": "Click here to hide the categories and filters bar",
+            "name": "cat_and_filter_bar",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_58e63f3584c41",
+            "label": "Gift Guide Products",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_58e6403384c47",
+            "label": "Click the \"Add New Product\" button and fill out all the required fields. Then scroll to the top of this page and click the \"Update\" button to save the new product.",
+            "name": "products",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add New Product",
+            "sub_fields": [
+                {
+                    "key": "field_58e6420484c4c",
+                    "label": "Product name",
+                    "name": "product_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58e6421b84c4d",
+                    "label": "Product description",
+                    "name": "product_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_58e6425184c4e",
+                    "label": "Author name",
+                    "name": "author_name",
+                    "type": "text",
+                    "instructions": "Product recommendation \"By\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58e6426384c4f",
+                    "label": "Price (shown)",
+                    "name": "price",
+                    "type": "text",
+                    "instructions": "This price is displayed as entered.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58e6428084c50",
+                    "label": "Price (Used for sorting, not shown)",
+                    "name": "price_used_for_sorting_not_shown",
+                    "type": "number",
+                    "instructions": "Enter a whole number to use for the price sorting feature. No commas, dollar signs, dashes, or decimals.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_58e642c284c51",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_58e642db84c52",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Try and keep all images as square as possible. Resize to 800px by 800px and under 200kb file size. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 850,
+                    "max_height": 850,
+                    "max_size": ".2",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_58e6433e84c53",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "select",
+                    "instructions": "Add one category, multiple categories, or none.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-tec": "Technology",
+                        "category-dig": "Digital Fabrication",
+                        "category-cra": "Craft & Design",
+                        "category-dro": "Drones & Vehicles",
+                        "category-sci": "Science",
+                        "category-hom": "Home",
+                        "category-wor": "Workshop"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "array",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_58e6439784c54",
+                    "label": "Sponsored",
+                    "name": "sponsored",
+                    "type": "true_false",
+                    "instructions": "Check here if this is a sponsored product.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_58e643ba84c55",
+                    "label": "Daily pick",
+                    "name": "daily_pick",
+                    "type": "true_false",
+                    "instructions": "Check here if this is the Daily Pick. Only 1 at a time.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_58e643e884c56",
+                    "label": "Category Takeover Featured",
+                    "name": "category_takeover_featured",
+                    "type": "select",
+                    "instructions": "Brings the product to the top of the list for this category takeover.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-tec": "Technology",
+                        "category-dig": "Digital Fabrication",
+                        "category-cra": "Craft & Design",
+                        "category-dro": "Drones & Vehicles",
+                        "category-sci": "Science",
+                        "category-hom": "Home",
+                        "category-wor": "Workshop"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_58e63f4c84c42",
+            "label": "Takeovers",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_58e6405a84c48",
+            "label": "Click the \"Add a Takeover\" button for each category takeover",
+            "name": "choose_a_takeover_category",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add a Takeover",
+            "sub_fields": [
+                {
+                    "key": "field_58e6408a84c49",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-tec": "Technology",
+                        "category-dig": "Digital Fabrication",
+                        "category-cra": "Craft & Design",
+                        "category-dro": "Drones & Vehicles",
+                        "category-sci": "Science",
+                        "category-hom": "Home",
+                        "category-wor": "Workshop"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_58e640d584c4a",
+                    "label": "Full width background image",
+                    "name": "full_width_background_image",
+                    "type": "image",
+                    "instructions": "768px by 1300px",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 2600,
+                    "max_height": 1400,
+                    "max_size": ".2",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_58e6411a84c4b",
+                    "label": "Small square image",
+                    "name": "small_square_image",
+                    "type": "image",
+                    "instructions": "200px by 200px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 500,
+                    "max_height": 500,
+                    "max_size": ".15",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-gift-guide.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1491491723
+}
