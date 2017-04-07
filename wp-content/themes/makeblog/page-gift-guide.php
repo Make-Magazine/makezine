@@ -81,7 +81,9 @@ $ad_freq = get_field('frequency_of_ads');
     </div>
   </header>
 
-<?php if( !get_field('cat_and_filter_bar') ): ?>
+<?php 
+$cats = get_field('categories_filters');
+if( $cats ) { ?>
   <nav class="gg2016-nav">
     <div class="container">
 
@@ -94,20 +96,14 @@ $ad_freq = get_field('frequency_of_ads');
             <button onclick="removeHashFunction();" class="btn btn-link filter" data-filter="all">All</button>
           </li>
 
-        <?php if( have_rows('products') ):
+          <?php foreach ($cats as $cat) { ?>
 
-          while( have_rows('products') ): the_row();
+              <li class="gg2016-li-border"></li>
+              <li>
+                <a href="#<?php echo $cat['value']; ?>" class="btn btn-link filter" data-filter=".<?php echo $cat['value']; ?>"><?php echo $cat['label']; ?></a>
+              </li>
 
-            $category = get_sub_field('category'); ?>
-
-            <li class="gg2016-li-border"></li>
-            <li>
-              <a href="#<?php echo $category['value']; ?>" class="btn btn-link filter" data-filter=".<?php echo $category['value']; ?>"><?php echo $category['label']; ?></a>
-            </li>
-
-          <?php endwhile;
-
-        endif; ?>
+          <?php } ?>
 
         </ul>
       </div>
@@ -128,7 +124,7 @@ $ad_freq = get_field('frequency_of_ads');
 
     </div>
   </nav>
-<?php endif; ?>
+<?php } ?>
 
   <div id="scrollPane">
     <div id="innerDiv" class="inner">

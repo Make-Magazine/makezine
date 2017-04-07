@@ -76,10 +76,10 @@
             "delay": 0
         },
         {
-            "key": "field_58e64e2d84c57",
-            "label": "Click here to hide the categories and filters bar",
-            "name": "cat_and_filter_bar",
-            "type": "true_false",
+            "key": "field_58e771afdfe65",
+            "label": "Categories and filters",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -88,11 +88,54 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58e683e4dfe64",
+            "label": "Categories filters",
+            "name": "categories_filters",
+            "type": "select",
+            "instructions": "Add all categories to be shown in navigation. Category and filter nav bar will be hidden is no categories added here. To add new categories to the list just ask dev.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "category-tec": "Technology",
+                "category-dig": "Digital Fabrication",
+                "category-cra": "Craft & Design",
+                "category-dro": "Drones & Vehicles",
+                "category-sci": "Science",
+                "category-hom": "Home",
+                "category-wor": "Workshop"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "array",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58e63f3584c41",
+            "label": "Gift Guide Products",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
         },
         {
             "key": "field_58e673ea3afa8",
@@ -114,22 +157,6 @@
             "min": 1,
             "max": "",
             "step": ""
-        },
-        {
-            "key": "field_58e63f3584c41",
-            "label": "Gift Guide Products",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 1
         },
         {
             "key": "field_58e6403384c47",
@@ -314,7 +341,7 @@
                     "multiple": 1,
                     "ui": 1,
                     "ajax": 0,
-                    "return_format": "array",
+                    "return_format": "value",
                     "placeholder": ""
                 },
                 {
@@ -524,5 +551,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1491498192
+    "modified": 1491566530
 }
