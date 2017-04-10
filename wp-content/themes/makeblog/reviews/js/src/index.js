@@ -43,7 +43,7 @@ var ReviewsFilters = {
 				row.find('.ri-score-price').find('.ri-score span').html(v.score);
 				if (v.buy_url) {
 					row.find('.ri-score-price').find('.ri-buy-now a').attr("href", v.buy_url);
-					row.find('.ri-score-price').find('.ri-buy-now').show();
+					row.find('.ri-score-price').find('.ri-buy-now').show().css('display', 'flex');
 				}
 				row.find('.ri-feature-image a').css('background-image', 'url(' + v.thumbnail + ')');
 				row.find('.ri-link').attr('href', v.link);
