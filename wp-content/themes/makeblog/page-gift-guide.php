@@ -45,7 +45,6 @@ $ad_freq = get_field('frequency_of_ads');
           if(get_sub_field('daily_pick')) {
 
             $product_name = get_sub_field('product_name');
-            $product_description = get_sub_field('product_description');
             $author_name = get_sub_field('author_name');
             $price = get_sub_field('price');
             $url = get_sub_field('url');
@@ -58,7 +57,6 @@ $ad_freq = get_field('frequency_of_ads');
                 <div class="gg2016-dp-text">
                   <a href="<?php echo $url; ?>" target="_blank" rel="nofollow">
                     <h4><?php echo $product_name; ?></h4>
-                    <p class="gg2016-dp-desc"><?php echo $product_description; ?></p>
                   </a>
                   <?php if( $author_name ): ?>
                     <p class="gg2016-dp-author">Recommended by <?php echo $author_name; ?></p>
