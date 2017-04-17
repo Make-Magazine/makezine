@@ -114,7 +114,6 @@ if ( ! empty( $image ) ) {
 							if ( $parent_title === '3dprinters' ) {
 								//Added get_site_url() to account for any environment.
 								$view_config_path = get_field( '3d_view_config' );
-								echo $view_config_path;
 								$asset_path = get_site_url() . $view_config_path;
 								if ( (! empty($view_config_path)) && shortcode_exists( 'wr360embed' ) ):
 									global $post;
