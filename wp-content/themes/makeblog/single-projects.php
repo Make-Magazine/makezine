@@ -9,7 +9,12 @@
  */
 $steps = get_post_custom_values('Steps');
 wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery', 'lazyload' ), false, true );
-get_header('version-2'); ?>
+get_header('version-2');
+$time = get_post_custom_values('TimeRequired');
+$post_duration = get_post_meta($post->ID, 'project_duration');
+$post_difficulty = get_post_meta($post->ID, 'project_difficulty');
+$post_price_group = get_post_meta($post->ID, 'price_group');
+$post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 	
 <div class="home-ads">
  	<?php global $make; print $make->ads->ad_leaderboard_alt; ?>
@@ -48,7 +53,7 @@ get_header('version-2'); ?>
 
 			</div>
 
-			<ul class="projects-meta">
+			<ul class="projects-meta list-unstyled">
 				<li>
 					By <span itemprop="author"><?php
 					if( function_exists( 'coauthors_posts_links' ) ) {
@@ -59,26 +64,35 @@ get_header('version-2'); ?>
 				</li>
 
 				<?php
-					$time = get_post_custom_values('TimeRequired');
 					if ($time[0]) {
 						echo '<li>Time Required: <span>' . esc_html( $time[0] ) . '</span></li>';
+					} else if ($post_duration[0]) {
+						echo '<li>Time Required: <span>' . $post_duration[0] . '</span></li>';
 					}
-					$terms = get_the_terms( $post->ID, 'difficulty' );
-					if ($terms) {
-						foreach ($terms as $term) {
-							echo '<li>Difficulty: <span itemprop="proficiencyLevel">' . esc_html( $term->name ) . '</span></li>';
-						}
+
+					if ($post_difficulty[0]) {
+						echo '<li>Difficulty: <span itemprop="proficiencyLevel">' . $post_difficulty[0] . '</span></li>';
+					}
+
+					if ($post_price_custom[0]) {
+						echo '<li>Price: <span>' . esc_html( $post_price_custom[0] ) . '</span></li>';
+					} else if ($post_price_group[0]) {
+						echo '<li>Price: <span>' . $post_price_group[0] . '</span></li>';
 					}
 				?>
 
 				<meta itemprop="datePublished" content="<?php the_date(); ?>" />
 
-				<?php edit_post_link( 'Edit', '<li>', '</li>' ); ?>
+				<li class="pull-right">
+					<a class="project-print-btn btn btn-xs btn-default print-page">
+						<i class="fa fa-print" aria-hidden="true"></i> Print this Project
+					</a>
+				</li>
 			</ul>
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-8" >
+				<div class="col-xs-12 col-sm-8 project-content" >
 
 					<a id="sumome-project-sharing" data-sumome-share-id="002914e1-bbce-4a58-b59e-8846991ae71c"></a>
 
@@ -96,33 +110,6 @@ get_header('version-2'); ?>
 				</div>
 
 				<div class="col-xs-12 col-sm-4 sidebar">
-
-					<div class="projects-ad">
-						<p id="ads-title">Advertisement</p>
-						<?php global $make; print $make->ads->ad_300x250_flex_atf; ?>
-					</div>
-
-					<div class="sidebar-ad">
-						<p id="ads-title">Advertisement</p>
-						<?php global $make; print $make->ads->ad_300x250_house; ?>
-					</div>
-
-					<div class="maker-camp-promo">
-						<?php
-							if( is_single( array( '414218', '403102' ))) {
-								echo '<a href="http://www.makershed.com/products/rocket-glider-kit?utm_source=makezine.com&utm_medium=ads&utm_campaign=maker-camp&utm_keyword=Rocket_Glider" target="_blank"><img src="https://makezineblog.files.wordpress.com/2014/07/7july_rocketglider.jpg" alt="Rocket Glider Kit from Maker shed" /></a>';
-							}
-							if( is_single( array( '414377', '267502' ))) {
-								echo '<a href="http://www.makershed.com/products/brushbots?utm_source=makezine.com&utm_medium=ads&utm_campaign=maker-camp&utm_keyword=brushbots" target="_blank"><img src="https://makezineblog.files.wordpress.com/2014/07/brushbots_300x305.jpg" alt="BrushBots from Maker Shed" /></a>';
-							}
-							if( is_single( array( '267724', '53649' ))) {
-								echo '<a href="http://www.makershed.com/products/littlebits-nasa-kit?utm_source=makezine.com&utm_medium=ads&utm_campaign=maker-camp&utm_keyword=LittleBitsFan" target="_blank"><img src="https://makezineblog.files.wordpress.com/2014/07/littlebitsfan_300x305.jpg" alt="littleBits NASA Kit from Maker Shed" /></a>';
-							}
-							if( is_single( array( '377366', '270116' ))) {
-								echo '<a href="http://www.makershed.com/products/el-wire-starter-packs-10ft?utm_source=makezine.com&utm_medium=ads&utm_campaign=maker-camp&utm_keyword=El_Wire_Starter_Packs_10ft" target="_blank"><img src="https://makezineblog.files.wordpress.com/2014/07/elwire.gif" alt="EL-Wire Starter Pack from Maker Shed" /></a>';
-							}
-						 ?>
-					</div>
 
 					<?php
 						$old_parts = get_the_terms( $post->ID, 'parts' );
@@ -177,9 +164,15 @@ get_header('version-2'); ?>
 
 					<?php } ?>
 
-					<a class="project-print-btn btn btn-xs btn-danger print-page">
-						<i class="fa fa-print" aria-hidden="true"></i> Print this Project
-					</a>
+					<div class="projects-ad">
+						<p id="ads-title">Advertisement</p>
+						<?php global $make; print $make->ads->ad_300x250_flex_atf; ?>
+					</div>
+
+					<div class="sidebar-ad">
+						<p id="ads-title">Advertisement</p>
+						<?php global $make; print $make->ads->ad_300x250_house; ?>
+					</div>
 
 					<div class="projects-ad">
 						<p id="ads-title">Advertisement</p>

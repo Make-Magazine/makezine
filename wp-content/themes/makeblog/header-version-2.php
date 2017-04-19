@@ -11,7 +11,7 @@ global $make;
 global $wp_query;
 global $post;
 
-// remove any enqueue we don't want 
+// remove any enqueue we don't want
 if (!is_single())
 {
   //Remove WebRotator Plugin Styles
@@ -36,14 +36,20 @@ if( $detect->isTablet() ){
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC5R77');</script>
+<!-- End Google Tag Manager -->
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
-  <?php // TODO: check if the below line is linked to any Maker Media account. Was added by team Quora and seems to do nothing. ?>
-  <meta name="google-site-verification" content="tjgq9UGR8WCMZI_40j_B5wda_oVYqKyFtQW547LzMgQ" />
   <?php // Below site verfication is linked to Maker Media Webmaster tools account ?>
   <meta name="google-site-verification" content="eAyS6vj89QDOsofiDC4sB-2YR3YNg_VGCYiQnWm2mqc" />
   <meta name="norton-safeweb-site-verification" content="4g4w71jm7qt9e7ghe2dxdhiq0mnnkwom6ue80rdet53q3figx8ooxrffbgkkl9kzo3qi85l2j-txt-fh8w-p2z5769ht01z8s6sxq3-8r7cojmimgp00homsjjjv96ww" />
@@ -83,14 +89,14 @@ if( $detect->isTablet() ){
 
   <?php wp_head(); ?>
 
-  <?php 
+  <?php
   // Set Ads.
   $make->ad_vars = new MakeAdVars;
   $make->ad_vars->getVars();
   $make->ads = new MakeAds;
   $make->ads->setAds();
   ?>
-  
+
   <!-- Page Ad Vars -->
   <script type='text/javascript'>
   var ad_vars = <?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>;
@@ -99,7 +105,7 @@ if( $detect->isTablet() ){
   <!-- Make GPT -->
   <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
 
-  <!-- nativo script --> 
+  <!-- nativo script -->
   <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
     <?php if (is_page('content')): ?>
       <meta http-equiv="X-UA-Compatible" content="IE=10" />
@@ -140,7 +146,7 @@ if( $detect->isTablet() ){
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-51157-1', 'auto');
     // Optimizely Universal Analytics Integration
@@ -155,31 +161,26 @@ if( $detect->isTablet() ){
     ga('set', 'dimension13', "<?php echo $primary_cat ?>");
     ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
   </script>
-
+<!-- why is this here?
   <script type="text/javascript">
     dataLayer = [];
-  </script>
-</head>
-<body id="makeblog" <?php body_class(); ?>>
+  </script>-->
 
   <!-- <script src="https://cdn.optimizely.com/js/2101321427.js"></script> -->
-
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PC5R77" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PC5R77');</script>
-  <!-- End Google Tag Manager  -->
 
   <?php if ( is_404() ) : // Load this last. ?>
     <script>
       ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
     </script>
   <?php endif; ?>
+</head>
+<body id="makeblog" <?php body_class(); ?>>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC5R77"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-  <!-- TOP BRAND BAR -->
+ <!-- TOP BRAND BAR -->
   <!--div class="top-header-bar-brand">
     <div class="container">
       <div class="row">
@@ -336,6 +337,7 @@ if( $detect->isTablet() ){
                 $args = array(
                   'resize' => '370,220',
                   'quality' => get_photon_img_quality(),
+                  'strip' => 'all',
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -369,6 +371,7 @@ if( $detect->isTablet() ){
                 $args = array(
                   'resize' => '370,220',
                   'quality' => get_photon_img_quality(),
+                  'strip' => 'all',
                 );
                 $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
                 $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -401,6 +404,7 @@ if( $detect->isTablet() ){
               $args = array(
                 'resize' => '370,260',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 
@@ -423,6 +427,7 @@ if( $detect->isTablet() ){
               $args = array(
                 'resize' => '370,260',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 
@@ -447,6 +452,7 @@ if( $detect->isTablet() ){
               $args = array(
                 'resize' => '105,105',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 
@@ -469,8 +475,9 @@ if( $detect->isTablet() ){
               $image = get_sub_field('image');
               $url = get_sub_field('url');
               $args = array(
-                'resize' => '=370,260',
+                'resize' => '370,260',
                 'quality' => get_photon_img_quality(),
+                'strip' => 'all',
               );
               $photon = jetpack_photon_url($image, $args); ?>
 

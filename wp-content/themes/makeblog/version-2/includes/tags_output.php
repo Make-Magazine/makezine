@@ -62,6 +62,7 @@ function tags_pulling($offset=0, $tag) {
 			$args            = array(
 				'resize' => '397,374',
 				'quality' => get_photon_img_quality(),
+				'strip' => 'all',
 			);
 		} else {
 			$post_weight     = 1;
@@ -69,6 +70,7 @@ function tags_pulling($offset=0, $tag) {
 			$args            = array(
 				'resize' => '397,374',
 				'quality' => get_photon_img_quality(),
+				'strip' => 'all',
 			);
 		}
 		$row_weight = $row_weight + $post_weight;

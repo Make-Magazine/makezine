@@ -1,7 +1,130 @@
 {
     "key": "group_56451c1c9c35b",
     "title": "Projects Custom Fields",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_55de497fba545",
+            "label": "Duration",
+            "name": "project_duration",
+            "type": "select",
+            "instructions": "Choose one duration level.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1\u20133 Hours\u2028": "1\u20133 Hours\u2028",
+                "3-8 Hours": "3-8 Hours",
+                "8\u201316 Hours (A Weekend)": "8\u201316 Hours (A Weekend)",
+                ">16 Hours": ">16 Hours"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_55de49aa1f529",
+            "label": "Difficulty",
+            "name": "project_difficulty",
+            "type": "select",
+            "instructions": "Choose one difficulty level.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Easy": "Easy",
+                "Moderate": "Moderate",
+                "Hard": "Hard"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58c7328e47d0b",
+            "label": "Price Group",
+            "name": "price_group",
+            "type": "select",
+            "instructions": "Choose one price group.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "$0-$50": "$0-$50",
+                "$51-$150": "$51-$150",
+                "$151-300": "$151-300",
+                "$300+": "$300+"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58c7344947d0c",
+            "label": "Custom Price Value",
+            "name": "custom_price_value",
+            "type": "text",
+            "instructions": "Use this price field only to override the price group on the project page. If custom price entered here this will be shown instead of the price group. *optional",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_55de49d4096f8",
+            "label": "Display Category",
+            "name": "display_category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 1,
+            "load_save_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "add_term": 1,
+            "load_terms": 0,
+            "save_terms": 0
+        }
+    ],
     "location": [
         [
             {
@@ -16,9 +139,8 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "old_ID": 492012,
-    "modified": 1466021866
+    "modified": 1489450292
 }

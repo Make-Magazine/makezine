@@ -84,11 +84,13 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 </div><!-- .meta-block.ad-1 -->
 
 <?php
-if ( ! empty( $why_buy_content ) ): ?>
+if ( $why_buy_content || $link ): ?>
 	<div class="meta-block why-buy">
-		<h4><?php echo $why_buy_title;?></h4>
-		<?php echo $why_buy_content;
-		if ( ! empty( $link ) ): ?>
+		<?php if ($why_buy_content) { ?>
+			<h4><?php echo $why_buy_title;?></h4>
+			<?php echo $why_buy_content;
+		}
+		if ( $link ): ?>
 			<a itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="btn-buy btn" target="_blank" href="<?php echo esc_url( $link ); ?>">Buy Now</a>
 		<?php endif; ?>
 	</div><!-- .meta-block.why-buy -->

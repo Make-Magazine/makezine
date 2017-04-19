@@ -35,7 +35,7 @@ function get_story_with_ajax() {
     <div class="story-header" id="<?php echo get_the_ID(); ?>">
         <div class="container">
             <div class="story-title">
-                <h1 itemprop="name"><?php the_titlesmall('', '', true, '90'); ?></h1>
+                <h1 itemprop="name"><?php echo get_the_title(); ?></h1>
             </div>
         </div>
         <?php
@@ -44,6 +44,7 @@ function get_story_with_ajax() {
         // Featured Image
         $args = array(
             'resize' => '1200,670',
+            'strip' => 'all',
         );
         $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
         $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -180,7 +181,7 @@ function get_story_with_ajax2() {
               <div class="row">
                   <div class="col-xs-12">
                       <div class="story-title">
-                          <h1 itemprop="name"><?php the_titlesmall('', '', true, '90'); ?></h1>
+                          <h1 itemprop="name"><?php echo get_the_title(); ?></h1>
                       </div>
                   </div>
               </div>
@@ -191,6 +192,7 @@ function get_story_with_ajax2() {
           // Featured Image
           $args = array(
               'resize' => '1200,670',
+              'strip' => 'all',
           );
           $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
           $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -271,7 +273,6 @@ function get_story_with_ajax2() {
                       <p id="ads-title">ADVERTISEMENT</p>
                       <div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                   </div>
-                  <div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
                   <div class="ad-unit">
                       <p id="ads-title">ADVERTISEMENT</p>
                       <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>

@@ -83,7 +83,6 @@ $field_data = array (
 			'Link'						=> array(),
 			'MakeProjectsGuideNumber'	=> array(),
 			'Type'						=> array(),
-			'Difficulty'				=> array(),
 			'Image'						=> array(),
 			'TimeRequired'				=> array(),
 			'PageNumber'				=> array(),
@@ -221,46 +220,6 @@ function make_register_taxonomy_flags() {
 	register_taxonomy( 'flags', array('projects'), $args );
 }
 
-
-add_action( 'init', 'make_register_taxonomy_difficulty' );
-
-/**
- * Add the difficulty taxonomy
- *
- */
-function make_register_taxonomy_difficulty() {
-
-	$labels = array(
-		'name' => _x( 'Difficulties', 'difficulty' ),
-		'singular_name' => _x( 'Difficulty', 'difficulty' ),
-		'search_items' => _x( 'Search Difficulties', 'difficulty' ),
-		'popular_items' => _x( 'Popular Difficulties', 'difficulty' ),
-		'all_items' => _x( 'All Difficulties', 'difficulty' ),
-		'parent_item' => _x( 'Parent Difficulty', 'difficulty' ),
-		'parent_item_colon' => _x( 'Parent Difficulty:', 'difficulty' ),
-		'edit_item' => _x( 'Edit Difficulty', 'difficulty' ),
-		'update_item' => _x( 'Update Difficulty', 'difficulty' ),
-		'add_new_item' => _x( 'Add New Difficulty', 'difficulty' ),
-		'new_item_name' => _x( 'New Difficulty', 'difficulty' ),
-		'separate_items_with_commas' => _x( 'Separate difficulties with commas', 'difficulty' ),
-		'add_or_remove_items' => _x( 'Add or remove difficulties', 'difficulty' ),
-		'choose_from_most_used' => _x( 'Choose from the most used difficulties', 'difficulty' ),
-		'menu_name' => _x( 'Difficulties', 'difficulty' ),
-	);
-
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'show_in_nav_menus' => true,
-		'show_ui' => true,
-		'show_tagcloud' => true,
-		'hierarchical' => true,
-		'rewrite' => true,
-		'query_var' => true
-	);
-
-	register_taxonomy( 'difficulty', array('projects', 'video'), $args );
-}
 
 add_action( 'init', 'register_taxonomy_tools' );
 

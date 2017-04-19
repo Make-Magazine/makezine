@@ -15,6 +15,7 @@ function get_story_thumbnail_with_ajax() {
         $args = array(
             'resize' => '370,240',
             'quality' => get_photon_img_quality(),
+            'strip' => 'all',
         );
         $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
         $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -62,6 +63,7 @@ function get_story_thumbnail_with_ajax2() {
         $args = array(
             'resize' => '370,240',
             'quality' => get_photon_img_quality(),
+            'strip' => 'all',
         );
         $url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
         $re = "/^(.*? src=\")(.*?)(\".*)$/m";

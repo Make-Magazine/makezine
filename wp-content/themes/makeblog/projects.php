@@ -38,10 +38,8 @@ get_header('version-2'); ?>
                             <p>difficulty</p>
                             <ul class="diff-item">
                                 <li><span class="all-lvl fa fa-wrench" title="For All Levels"></span></li>
-                                <li><span class="moderate fa fa-wrench"
-                                          title="Moderate Difficulty. But You Can Totally Make This"></span></li>
-                                <li><span class="spec-skill fa fa-wrench"
-                                          title="Calls For Some Specific Skills...Nothing You Can't Learn!"></span></li>
+                                <li><span class="moderate fa fa-wrench" title="Moderate Difficulty. But You Can Totally Make This"></span></li>
+                                <li><span class="spec-skill fa fa-wrench" title="Calls For Some Specific Skills...Nothing You Can't Learn!"></span></li>
                             </ul>
                         </li>
                         <li class="duration">

@@ -43,6 +43,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								$args = array(
 									'resize' => '370,240',
 									'quality' => get_photon_img_quality(),
+									'strip' => 'all',
 								);
 								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
 								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -75,6 +76,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								$args = array(
 									'resize' => '370,240',
 									'quality' => get_photon_img_quality(),
+									'strip' => 'all',
 								);
 								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
 								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -107,7 +109,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 					<div class="container">
 						<div class="story-title">
-							<h1 itemprop="name"><?php the_titlesmall( '', '', true, '90' ); ?></h1>
+							<h1 itemprop="name"><?php echo get_the_title(); ?></h1>
 						</div>
 						<div class="author-info">
 							<?php
@@ -137,6 +139,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 	        // Featured Image
 	        $args = array(
 	        	'resize' => '1200,670',
+	        	'strip' => 'all',
 	        );
 	        $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
 	        $re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -234,7 +237,6 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								<div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"'></div>
 							</div>
 							<?php echo do_shortcode( '[newsletter_signup_sidebar]' ); ?>
-							<div class="pubexchange_module" id="pubexchange_rail" data-pubexchange-module-id="1525"></div>
 							<div class="ad-unit">
 								<p id="ads-title">Advertisement</p>
 								<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
