@@ -20,7 +20,6 @@ class Make_Authors {
 	 */
 	public function get_author_data() {
 		global $authordata;
-
 		// Get the true author data
 		$author = $authordata;
 
@@ -64,7 +63,7 @@ class Make_Authors {
 	public function get_post_author_data($newAuthor) {
 		// Get the true author data
 		$author = $newAuthor;
-
+		
 		if ( ! empty( $author ) ) {
 
 			// If the user account is a guest-author, then it will always be used over Gravatar data
@@ -180,8 +179,9 @@ class Make_Authors {
 	}
 
 	public function author_profile() {
-		$author = $this->get_author_data();
-		
+		$author = get_queried_object();
+	
+		// Get the true author data
 		if ( $author ) : ?>
 			<div class="col-xs-12 col-sm-4">
 				<?php echo $this->author_avatar( $author ); ?>
@@ -207,9 +207,11 @@ class Make_Authors {
 	 * @since   1.1
 	 */
 	public function author_block( $newauthor ) {
-     $author = $this->get_post_author_data($newauthor);
-		
-		// Let's get this going...
+     global $authordata;
+	
+		// Get the true author data
+		$author = $authordata;
+			// Let's get this going...
 		$output = '<div class="row">';
 		$output .= '<div class="col-xs-12 col-sm-3">';
 		// Grab the image.
@@ -232,32 +234,31 @@ class Make_Authors {
 	}
 
 	public function author_block_story( $newauthor,$authorID ) {
-	 $author = $this->get_post_author_data($newauthor);
-		// Let's get this going...
+	 	// Let's get this going...
 		$output = '';
 		$output .= '<div class="author-wrapper"><div class="col-md-3 avatar">';
-		$output .= $this->author_avatar( $author, 198 );
+		$output .= $this->author_avatar( $newauthor, 198 );
 		$output .= '<div class="hover-info"><i class="fa fa-sort-asc sort-up fa-lg"></i><div class="author-wrapper">';
 		$output .= '<div class="author-name">';
-		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html(  $newauthor->display_name ) . '</a></h3>';
 		$output .= '</div></div>';
 		// Return the Guest Author information.
-			$output .= $this->author_bio( $author );
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
+		$output .= $this->author_bio( $newauthor );
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">View more articles by ' . esc_html( $newauthor->display_name ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="author-name">';
-		$output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $newauthor->display_name ) . '</a></h3>';
 
 		$output .= '<div class="hover-info"><i class="fa fa-sort-asc sort-up fa-lg"></i><div class="author-wrapper">';
 		$output .= '<div class="author-name">';
-		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html( $newauthor->display_name ) . '</a></h3>';
 		$output .= '</div></div>';
-			// Return the Guest Author information.
-			$output .= $this->author_bio( $author );
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
+		// Return the Guest Author information.
+		$output .= $this->author_bio( $newauthor );
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">View more articles by ' . esc_html( $newauthor->display_name ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="twitter-wrapper">';
-		$output .=  $this->author_twitter($newAuthor ,$authorID);
+		$output .=  $this->author_twitter($newauthor ,$authorID);
 		$output .= '</div></div></div>';
 
 		return $output;
@@ -270,9 +271,9 @@ class Make_Authors {
 	 * @version  1.1
 	 * @since    1.0
 	 */
-	public function author_avatar( $author, $size = 298 ) {
+	public function author_avatar( $newauthor, $size = 298 ) {
+		$author = $this->get_post_author_data($newauthor);
 		$output = '';
-
 		// If we have a Gravatar object, we'll process that, other wise, we need to hook into WordPress
 		if ( isset( $author->thumbnailUrl ) ) {
 
@@ -315,17 +316,11 @@ class Make_Authors {
 	 */
 	public function author_name( $author ) {
 		$output = '';
-
-		if ( empty( $author ) )
-			$author = $this->get_author_data();
+		$author = $this->get_post_author_data($author);
 
 		// Get the Display name from Gravatar or from Guest Authors...
-		if ( isset( $author->displayName ) ) {
-			$output = esc_html( $author->displayName );
-		} else {
-			$output = esc_html( $author->display_name );
-		}
-
+		$output = esc_html( $author->display_name );
+		
 		return $output;
 	}
 
@@ -341,9 +336,8 @@ class Make_Authors {
 	 */
 	public function author_bio( $author, $raw = false ) {
 		$output = '';
-
-		if ( empty( $author ) )
-			$author = $this->get_author_data();
+		if (!isset( $author->aboutMe ))
+					$author = $this->get_post_author_data($author);
 		
 		// Get the Gravatar bio or return the Guest Author bio
 		if ( isset( $author->aboutMe ) ) {
@@ -510,9 +504,9 @@ $make_author_class = new Make_Authors;
  * @version 1.0
  * @since   1.1
  */
-function make_author_profile() {
+function make_author_profile( $author = '' ) {
 	global $make_author_class;
-
+	
 	echo $make_author_class->author_profile();
 }
 
@@ -528,7 +522,7 @@ function get_author_profile() {
 
 function make_author_name( $author = '' ) {
 	global $make_author_class;
-
+		
 	return $make_author_class->author_name( $author );
 }
 

@@ -1363,6 +1363,7 @@ add_action( 'admin_menu', 'make_remove_admin_areas_for_authors' );
  * Function to generate the title tags for page heads.
  */
 function make_generate_title_tag() {
+
 	$output = '';
 	if ( is_home() || is_front_page() ) {
 		$output .= get_bloginfo('name') . ' | ' . get_bloginfo('description');
@@ -1371,7 +1372,7 @@ function make_generate_title_tag() {
 	} elseif ( is_singular( 'craft' ) ) {
 		$output .= wp_title( '', false ) . ' | MAKE: Craft';
 	} elseif ( is_author() ) {
-		$output .= make_author_name() . ' Author Profile | ' . get_bloginfo('name');
+		$output .= make_author_name(get_queried_object()) . ' Author Profile | ' . get_bloginfo('name');
 	} else {
 		$output .= wp_title( '', false );
 	}

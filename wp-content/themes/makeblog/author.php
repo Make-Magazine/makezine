@@ -15,7 +15,7 @@ get_header('version-2'); ?>
 
 			<div class="row">
 
-				<?php make_author_profile(); ?>
+				<?php make_author_profile(get_queried_object()); ?>
 
 			</div>
 
@@ -31,7 +31,7 @@ get_header('version-2'); ?>
 
 				<div class="col-sm-12 col-md-8">
 
-					<h2>Latest from <?php echo make_author_name(); ?></h2>
+					<h2>Latest from <?php echo make_author_name(get_queried_object()); ?></h2>
 					<hr/>
 
 				</div>
