@@ -27,29 +27,36 @@ class Make_Authors {
 		if ( ! empty( $author ) ) {
 
 			// If the user account is a guest-author, then it will always be used over Gravatar data
-			if ( $author->type === 'guest-author' ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
-				return $author;
-			} else { // If no type is passed, then we'll check for Gravatar information
-				$email = $author->data->user_email;
+			if ( isset($author->data->user_email) || isset($author->user_email) ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
+			{ // If no type is passed, then we'll check for Gravatar information
+				$email = (isset($author->data->user_email)) ? $author->data->user_email : $author->user_email;
 
 				// We need to hash out the email so we can properlly and securely request the right Gravatar account
-				$hash = md5( strtolower( trim( sanitize_email( $email ) ) ) );
-
+				$hash = md5( strtolower( trim( $email ) ) );
+				$url_gravatar = esc_url( 'http://www.gravatar.com/' . $hash . '.json');
 				// Request the data from gravatar
-				$gdata = wpcom_vip_file_get_contents( esc_url( 'http://www.gravatar.com/' . $hash . '.json' ) );
-
+				$output = wp_remote_get( esc_url( $url_gravatar )  );
+				$gdata = $output['body'];
+					
 				// Make sure data was actually returned
 				if ( $gdata ) {
-					$profile = json_decode( $gdata );
-
-					return $profile->entry[0];
+				 	$profile = json_decode( $gdata );
+					$authordata = $profile->entry[0];
+ 					return $profile->entry[0];
 				} else {
 					// well, it seems Gravatar returned empty... let's pull from WordPress then.
-					$author = get_userdata( absint( $author->ID ) );
+					//$author = get_userdata( absint( $author->ID ) );
 
 					return $author;
 				}
 			}
+			}
+			elseif ($author->type === 'guest-author' ) {
+				return $author;
+				}
+			else {
+				return false;
+				}
 		} else {
 			return false;
 		}
@@ -61,29 +68,36 @@ class Make_Authors {
 		if ( ! empty( $author ) ) {
 
 			// If the user account is a guest-author, then it will always be used over Gravatar data
-			if ( $author->type === 'guest-author' ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
-				return $author;
-			} else { // If no type is passed, then we'll check for Gravatar information
-				$email = $author->data->user_email;
+			if ( isset($author->data->user_email) || isset($author->user_email) ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
+			{ // If no type is passed, then we'll check for Gravatar information
+				$email = (isset($author->data->user_email)) ? $author->data->user_email : $author->user_email;
 
 				// We need to hash out the email so we can properlly and securely request the right Gravatar account
-				$hash = md5( strtolower( trim( sanitize_email( $email ) ) ) );
-
+				$hash = md5( strtolower( trim( $email ) ) );
+				$url_gravatar = esc_url( 'http://www.gravatar.com/' . $hash . '.json');
 				// Request the data from gravatar
-				$gdata = wpcom_vip_file_get_contents( esc_url( 'http://www.gravatar.com/' . $hash . '.json' ) );
-
+				$output = wp_remote_get( esc_url( $url_gravatar )  );
+				$gdata = $output['body'];
+					
 				// Make sure data was actually returned
 				if ( $gdata ) {
-					$profile = json_decode( $gdata );
-
-					return $profile->entry[0];
+				 	$profile = json_decode( $gdata );
+					$authordata = $profile->entry[0];
+ 					return $profile->entry[0];
 				} else {
 					// well, it seems Gravatar returned empty... let's pull from WordPress then.
-					$author = get_userdata( absint( $author->ID ) );
+					//$author = get_userdata( absint( $author->ID ) );
 
 					return $author;
 				}
 			}
+			}
+			elseif ($author->type === 'guest-author' ) {
+				return $author;
+				}
+			else {
+				return false;
+				}
 		} else {
 			return false;
 		}
@@ -167,6 +181,7 @@ class Make_Authors {
 
 	public function author_profile() {
 		$author = $this->get_author_data();
+		
 		if ( $author ) : ?>
 			<div class="col-xs-12 col-sm-4">
 				<?php echo $this->author_avatar( $author ); ?>
@@ -191,7 +206,9 @@ class Make_Authors {
 	 * @version 1.1
 	 * @since   1.1
 	 */
-	public function author_block( $author ) {
+	public function author_block( $newauthor ) {
+     $author = $this->get_post_author_data($newauthor);
+		
 		// Let's get this going...
 		$output = '<div class="row">';
 		$output .= '<div class="col-xs-12 col-sm-3">';
@@ -200,21 +217,13 @@ class Make_Authors {
 		$output .= '</div>';
 		$output .= '<div class="col-xs-12 col-sm-9 -author-profile-bio">';
 		// Author name
-		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '" itemprop="author">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '" itemprop="author">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 
-		if ( $author->type != 'guest-author' ) {
-			// Grab the meta information for WordPress.com users
-			$author_meta = wpcom_vip_get_user_profile( $author->ID );
-
-			$output .= $this->author_bio( $author_meta );
-			$output .= $this->author_contact_info( $author_meta );
-			$output .= $this->author_urls( $author_meta );
-		} elseif ( $author->type == 'guest-author' ) {
-			// Return the Guest Author information.
+		
 			$output .= $this->author_bio( $author );
 			$output .= $this->author_contact_info( $author );
 			$output .= $this->author_urls( $author );
-		}
+		
 
 		$output .= '</div>';
 		$output .= '</div>';
@@ -222,42 +231,30 @@ class Make_Authors {
 		return $output;
 	}
 
-	public function author_block_story( $author,$authorID ) {
-		$newAuthor = $author;
+	public function author_block_story( $newauthor,$authorID ) {
+	 $author = $this->get_post_author_data($newauthor);
 		// Let's get this going...
 		$output = '';
 		$output .= '<div class="author-wrapper"><div class="col-md-3 avatar">';
 		$output .= $this->author_avatar( $author, 198 );
 		$output .= '<div class="hover-info"><i class="fa fa-sort-asc sort-up fa-lg"></i><div class="author-wrapper">';
 		$output .= '<div class="author-name">';
-		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 		$output .= '</div></div>';
-		if ( $author->type != 'guest-author' ) {
-			// Grab the meta information for WordPress.com users
-			$author_meta = wpcom_vip_get_user_profile( $author->ID );
-			$output .= $this->author_bio( $author_meta );
-		} elseif ( $author->type == 'guest-author' ) {
-			// Return the Guest Author information.
+		// Return the Guest Author information.
 			$output .= $this->author_bio( $author );
-		}
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="author-name">';
-		$output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<div class="bio-wrapper"><h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '"><span class="black">By</span> ' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 
 		$output .= '<div class="hover-info"><i class="fa fa-sort-asc sort-up fa-lg"></i><div class="author-wrapper">';
 		$output .= '<div class="author-name">';
-		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
+		$output .= '<h3><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
 		$output .= '</div></div>';
-		if ( $author->type != 'guest-author' ) {
-			// Grab the meta information for WordPress.com users
-			$author_meta = wpcom_vip_get_user_profile( $author->ID );
-			$output .= $this->author_bio( $author_meta );
-		} elseif ( $author->type == 'guest-author' ) {
 			// Return the Guest Author information.
 			$output .= $this->author_bio( $author );
-		}
-		$output .= '<a href="' . esc_url( home_url( 'author/' . $author->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
+		$output .= '<a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">View more articles by ' . esc_html( $this->author_name( $author ) ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
 		$output .= '</div></div>';
 		$output .= '<div class="twitter-wrapper">';
 		$output .=  $this->author_twitter($newAuthor ,$authorID);
@@ -290,6 +287,7 @@ class Make_Authors {
 				$args = array(
 					'resize' => '300,300',
 					'quality' => get_photon_img_quality(),
+					'strip' => 'all',
 				);
 				$url = $output = '<img src="' . wpcom_vip_get_resized_remote_image_url( $image_url[0], absint( $size ), absint( $size ) ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
 				$re = "/^(.*? src=\")(.*?)(\".*)$/m";
@@ -346,7 +344,7 @@ class Make_Authors {
 
 		if ( empty( $author ) )
 			$author = $this->get_author_data();
-
+		
 		// Get the Gravatar bio or return the Guest Author bio
 		if ( isset( $author->aboutMe ) ) {
 			$output = $author->aboutMe;
