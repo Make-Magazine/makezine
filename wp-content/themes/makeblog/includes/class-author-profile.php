@@ -65,41 +65,41 @@ class Make_Authors {
 		$author = $newAuthor;
 		
 		if ( ! empty( $author ) ) {
-
 			// If the user account is a guest-author, then it will always be used over Gravatar data
-			if ( isset($author->data->user_email) || isset($author->user_email) ) { // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
-			{ // If no type is passed, then we'll check for Gravatar information
+			if ( isset($author->data->user_email) || isset($author->user_email) ) 
+			{ // Author account is linked, so we'll make sure we ignor Gravatar and pull from the guest author account
+			 // If no type is passed, then we'll check for Gravatar information
 				$email = (isset($author->data->user_email)) ? $author->data->user_email : $author->user_email;
-
+			
 				// We need to hash out the email so we can properlly and securely request the right Gravatar account
 				$hash = md5( strtolower( trim( $email ) ) );
 				$url_gravatar = esc_url( 'http://www.gravatar.com/' . $hash . '.json');
 				// Request the data from gravatar
 				$output = wp_remote_get( esc_url( $url_gravatar )  );
 				$gdata = $output['body'];
-					
+				
 				// Make sure data was actually returned
 				if ( $gdata ) {
 				 	$profile = json_decode( $gdata );
 					$authordata = $profile->entry[0];
- 					return $profile->entry[0];
+					$author = $authordata;
 				} else {
 					// well, it seems Gravatar returned empty... let's pull from WordPress then.
 					//$author = get_userdata( absint( $author->ID ) );
-
-					return $author;
+					$author = $author;
 				}
 			}
-			}
+			
 			elseif ($author->type === 'guest-author' ) {
-				return $author;
+				$author = $author;
 				}
 			else {
-				return false;
+				$author = false;
 				}
 		} else {
-			return false;
+			$author = false;
 		}
+		return $author;
 	}
 
 
@@ -178,9 +178,8 @@ class Make_Authors {
 		return $output;
 	}
 
-	public function author_profile() {
-		$author = get_queried_object();
-	
+	public function author_profile($author) {
+		
 		// Get the true author data
 		if ( $author ) : ?>
 			<div class="col-xs-12 col-sm-4">
@@ -316,10 +315,13 @@ class Make_Authors {
 	 */
 	public function author_name( $author ) {
 		$output = '';
+		if (
+		 !is_array( $author ) &&  empty ( $author->display_name ))
 		$author = $this->get_post_author_data($author);
 
 		// Get the Display name from Gravatar or from Guest Authors...
 		$output = esc_html( $author->display_name );
+		
 		
 		return $output;
 	}
@@ -336,9 +338,14 @@ class Make_Authors {
 	 */
 	public function author_bio( $author, $raw = false ) {
 		$output = '';
-		if (!isset( $author->aboutMe ))
+				if ( !is_array( $author ) 
+				&& (empty($author->description ) &&  empty($author->aboutMe )))
+				
+		{
+				
 					$author = $this->get_post_author_data($author);
-		
+					
+					}
 		// Get the Gravatar bio or return the Guest Author bio
 		if ( isset( $author->aboutMe ) ) {
 			$output = $author->aboutMe;
@@ -507,7 +514,7 @@ $make_author_class = new Make_Authors;
 function make_author_profile( $author = '' ) {
 	global $make_author_class;
 	
-	echo $make_author_class->author_profile();
+	echo $make_author_class->author_profile( $author );
 }
 
 function get_author_profile() {
