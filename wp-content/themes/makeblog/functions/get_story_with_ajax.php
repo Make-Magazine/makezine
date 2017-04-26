@@ -77,6 +77,7 @@ function get_story_with_ajax() {
                     ?>
                     <div class="article-body" itemprop="articleBody">
                       <?php the_content(); ?>
+                      <div id="nativobelow"></div>
                     </div>
                 </div>
                 <div class="comments">
@@ -225,6 +226,7 @@ function get_story_with_ajax2() {
                       ?>
                       <div class="article-body" itemprop="articleBody">
                         <?php the_content(); ?>
+                        <div id="nativobelow"></div>
                       </div>
                   </div>
                   <div class="comments">
