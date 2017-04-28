@@ -570,7 +570,7 @@ function display_thank_you_modal_if_signed_up() { ?>
                 </span>
             </div>
             <div class="col-sm-9 col-xs-12 nl-modal">
-                <h3>Awesome!</h3>
+                <h3 class="text-center">Awesome!</h3>
                 <p class="text-center">Your FREE PDF is on its way. Please check your email. You will also be receiving the weekly Make: Newsletter to keep you inspired with new projects and more product reviews.</p>
             </div>
             <div class="clearfix"></div>
