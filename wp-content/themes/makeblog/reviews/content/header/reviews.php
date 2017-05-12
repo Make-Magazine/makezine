@@ -17,8 +17,12 @@ if ( is_singular( \Reviews\Architecture\Post_Types\Products::NAME ) ) {
 $modal_image    = get_field( 'magazine_thumbnail', $id );
 $modal_text     = get_field( 'magazine_label', $id );
 $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
+if ($slug == 'printers') {
+	$slug = '3dprinters';
+}
 
 ?>
+
 <div class="row">
 	<header class="reviews-header col-xs-12">
 
@@ -28,10 +32,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 
 			<?php if ( $modal_image ): ?>
 				<div class="review-nav-mag">
-					<button id="modal-capture-btn" class="modal-capture-btn class-<?php 
-					$catslug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
-					echo $catslug;
-					?>">
+					<button id="modal-capture-btn" class="modal-capture-btn class-<?php echo $slug; ?>">
 						<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
 						<?php echo $modal_text; ?>
 					</button>

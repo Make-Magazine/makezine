@@ -110,10 +110,7 @@ endif;
 
 <?php if ( $modal_image ): ?>
 	<div class="review-nav-mag">
-		<button id="modal-capture-btn" class="modal-capture-btn class-<?php 
-		$catslug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
-		echo $catslug;
-		?>">
+		<button id="modal-capture-btn" class="modal-capture-btn class-<?php echo $parent_title; ?>">
 			<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
 			<?php echo $modal_text; ?>
 		</button>
