@@ -7,6 +7,7 @@
  * @author     Jake Spurlock <jspurlock@makermedia.com>
  *
  */
+// first story
 get_header( 'version-2' );
 global $post; ?>
 <?php $main_post_id = get_the_ID(); ?>
@@ -264,7 +265,6 @@ if ( user_can( $current_user, 'administrator' ) ) {
 </div>
 
 <script type="text/javascript">
-	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	var disqus_shortname = 'makezine';
 	var disqus_identifier;
 	var disqus_url;

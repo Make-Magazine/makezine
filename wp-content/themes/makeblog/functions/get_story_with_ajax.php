@@ -102,6 +102,7 @@ function get_story_with_ajax() {
                 <div class="date-time">
                     <?php
                     $post_time = get_post_time('U', true, $post, true);
+                    $post_time_contextley = get_post_time('Y/m/d g:i:s');
                     $time_now = date('U');
                     $difference = $time_now - $post_time;
                     if ( $difference > 86400 ) { ?>
@@ -135,6 +136,18 @@ function get_story_with_ajax() {
             <div class="essb_right_flag"></div>
         </div>
     </div>
+    <script>
+    Contextly.ready('widgets', [
+      {
+        context: '.post-<?php the_ID() ?>',
+        metadata: {
+          title: '<?php echo $title;?>',
+          pub_date: '<?php echo $post_time_contextley;?>',
+          url: '<?php echo $url;?>',
+        }
+      }
+    ]);
+    </script>
   </article>
   <?php
   endwhile;
@@ -250,7 +263,8 @@ function get_story_with_ajax2() {
                   </div>
                   <div class="date-time">
                       <?php
-                      $post_time = get_post_time('U', true, $post, true);
+                      $post_time = get_post_time('U', true);
+                      $post_time_contextley = get_post_time('Y/m/d g:i:s');
                       $time_now = date('U');
                       $difference = $time_now - $post_time;
                       if ( $difference > 86400 ) { ?>
@@ -283,6 +297,18 @@ function get_story_with_ajax2() {
               <div class="essb_right_flag"></div>
           </div>
       </div>
+      <script>
+      Contextly.ready('widgets', [
+        {
+          context: '.post-<?php the_ID() ?>',
+          metadata: {
+            title: '<?php echo $title;?>',
+            pub_date: '<?php echo $post_time_contextley;?>',
+            url: '<?php echo $url;?>',
+          }
+        }
+      ]);
+      </script>
     </article>
   <?php
   endwhile;
