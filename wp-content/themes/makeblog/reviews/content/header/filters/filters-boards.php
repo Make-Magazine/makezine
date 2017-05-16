@@ -38,8 +38,8 @@
 							<input id="light-and-sound" type="checkbox" name="winners" value="light-and-sound">
 							<span>Light and Sound</span>
 						</label>
-						<label for="home-automation">
-							<input id="home-automation" type="checkbox" name="winners" value="home-automation">
+						<label for="iot">
+							<input id="iot" type="checkbox" name="winners" value="iot">
 							<span>IoT</span>
 						</label>
 						<label for="sub-10">

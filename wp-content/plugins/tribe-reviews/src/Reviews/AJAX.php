@@ -153,7 +153,7 @@ class AJAX {
 			'wearables'               => 'Wearables',
 			'education'               => 'Education',
 			'light-and-sound'         => 'Light and Sound',
-			'home-automation'         => 'IoT',
+			'iot'         						=> 'IoT',
 			'sub-10'                  => 'Dirt Cheap',
       'overall'                 => 'Best Overall',
 			'beginners'               => 'Best for Beginners',
