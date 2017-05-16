@@ -40,7 +40,7 @@
 						</label>
 						<label for="home-automation">
 							<input id="home-automation" type="checkbox" name="winners" value="home-automation">
-							<span>Home Automation</span>
+							<span>IoT</span>
 						</label>
 						<label for="sub-10">
 							<input id="sub-10" type="checkbox" name="winners" value="sub-10">

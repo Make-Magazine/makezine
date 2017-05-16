@@ -334,7 +334,7 @@ class Products {
 						'wearables'       => 'Wearables',
 						'education'       => 'Education',
 						'light-and-sound' => 'Light and Sound',
-						'home-automation' => 'Home Automation',
+						'home-automation' => 'IoT',
 						'sub-10'          => 'Dirt Cheap',
 					),
 					'default_value' => '',
