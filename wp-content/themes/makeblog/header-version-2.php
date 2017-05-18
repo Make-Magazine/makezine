@@ -126,6 +126,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Time-tracking for Custom Dimensions -->
   <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>" style="display: none;"></time>
 
+  <!-- Google Optimize -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-TXW38JQ':true});</script>
+  <!-- End Google Optimize -->
+
   <!-- Google Universal Analytics -->
   <!-- Primary Categories Dimension Query -->
   <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
