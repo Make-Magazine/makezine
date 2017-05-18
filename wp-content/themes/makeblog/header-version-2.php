@@ -147,11 +147,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-51157-1', 'auto');
-    // Optimizely Universal Analytics Integration
-    // window.optimizely = window.optimizely || [];
-    // window.optimizely.push("activateUniversalAnalytics");
+    ga('require', 'GTM-TXW38JQ');
     ga('require', 'displayfeatures');
     ga('send', 'pageview', {
       'page': location.pathname + location.search + location.hash
@@ -165,8 +162,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script type="text/javascript">
     dataLayer = [];
   </script>
-
-  <script src="https://cdn.optimizely.com/js/2101321427.js"></script>
 
   <?php if ( is_404() ) : // Load this last. ?>
     <script>
