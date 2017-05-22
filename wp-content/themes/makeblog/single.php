@@ -39,7 +39,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<div class="latest-story first" id="0">
 
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
+							<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted mz-10siderail" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
 								<?php
 								$args = array(
 									'resize' => '370,240',
@@ -71,7 +71,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 					<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<div class="latest-story" id="<?php echo $i; ?>">
 
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left"
+							<a href="#<?php echo get_the_ID(); ?>" class="pull-left mz-10siderail"
 							   id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
 								<?php
 								$args = array(
