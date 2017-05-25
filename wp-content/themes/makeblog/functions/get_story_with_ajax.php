@@ -3,7 +3,7 @@
 function get_story_with_ajax() {
   add_shortcode('contextly_auto_sidebar', function($attrs) {
     if ( isset( $attrs[ 'id' ] ) ) {
-      return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . "' id='" . esc_attr( 'contextly-' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
+      return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
     } else {
       return '';
     }
@@ -11,7 +11,7 @@ function get_story_with_ajax() {
   add_shortcode('contextly_sidebar', function($attrs) {
   // We will display sidebar only if we have id for this sidebar
     if ( isset( $attrs[ 'id' ] ) ) {
-      return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . "' id='" . esc_attr( 'contextly-' . $attrs[ 'id' ] ) ."'></div>";
+      return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."'></div>";
     } else {
       return '';
     }
@@ -161,7 +161,7 @@ add_action('wp_ajax_nopriv_get_story_with_ajax', 'get_story_with_ajax');
 function get_story_with_ajax2() {
     add_shortcode('contextly_auto_sidebar', function($attrs) {
         if ( isset( $attrs[ 'id' ] ) ) {
-            return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . "' id='" . esc_attr( 'contextly-' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
+            return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
         } else {
             return '';
         }
@@ -169,7 +169,7 @@ function get_story_with_ajax2() {
     add_shortcode('contextly_sidebar', function($attrs) {
     // We will display sidebar only if we have id for this sidebar
         if ( isset( $attrs[ 'id' ] ) ) {
-            return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . "' id='" . esc_attr( 'contextly-' . $attrs[ 'id' ] ) ."'></div>";
+            return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."'></div>";
         } else {
             return '';
         }
