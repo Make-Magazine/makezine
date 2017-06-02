@@ -1,5 +1,5 @@
 <?php
-	
+
 	/**
 	 * Blog Dashboard.
 	 *
@@ -59,7 +59,7 @@
 			'auto-draft',
 		);
 
-		
+
 		/**
 		 * List all the of the columns to be outputted.
 		 * Used in the Screen Options and table header/footer
@@ -221,7 +221,7 @@
 
 			if ( ! empty( $query_vars['day'] ) && $query_vars['day'] != '0' )
 				$additionals .= '&day=' . $query_vars['day'];
-			
+
 			if ( ! empty( $query_vars['year'] ) && $query_vars['year'] != '0' )
 				$additionals .= '&year=' . $query_vars['year'];
 
@@ -242,7 +242,7 @@
 			$output = '';
 
 			foreach ( $this->post_types as $k => $type ) {
-				$args = array( 
+				$args = array(
 					'post_type'		 => ( $type == 'all' ) ? $new_post_types : $type,
 					'post_status'	 => ( isset( $query_vars['post_status'] ) ) ? $query_vars['post_status'] : '',
 					'post_parent'	 => ( isset( $query_vars['post_parent'] ) ) ? $query_vars['post_parent'] : '',
@@ -264,7 +264,7 @@
 				);
 
 				array_push( $results, $query_results );
-				
+
 			}
 
 			foreach ( $results as $result ) {
@@ -289,7 +289,7 @@
 					'format' 	=> '&paged=%#%',
 					'current' 	=> max( 1, sanitize_text_field( $paged ) ),
 					'total' 	=> absint( $total )
-				) 
+				)
 			);
 
 			return $links;
@@ -350,18 +350,18 @@
 
 			// Months array
 			$months = array(
-				01 => 'Jan',
-				02 => 'Feb',
-				03 => 'Mar',
-				04 => 'Apr',
-				05 => 'May',
-				06 => 'Jun',
-				07 => 'Jul',
-				08 => 'Aug',
-				09 => 'Sep',
-				10 => 'Oct',
-				11 => 'Nov',
-				12 => 'Dec',
+				'01' => 'Jan',
+				'02' => 'Feb',
+				'03' => 'Mar',
+				'04' => 'Apr',
+				'05' => 'May',
+				'06' => 'Jun',
+				'07' => 'Jul',
+				'08' => 'Aug',
+				'09' => 'Sep',
+				'10' => 'Oct',
+				'11' => 'Nov',
+				'12' => 'Dec',
 			);
 
 
@@ -521,7 +521,7 @@
 								<input type="checkbox" class="hide-column-tog" id="<?php echo $column; ?>-hide" name="<?php echo $column; ?>-hide" value="<?php echo $column; ?>"<?php echo $this->check_screen_options( $column, true, $details['default'] ); ?>> <?php echo $details['label']; ?>
 							</label>
 						<?php endforeach; ?>
-						
+
 					</div>
 					<div class="screen-options"></div>
 				</form>
@@ -564,7 +564,7 @@
 			}
 
 			return $answer;
-		} 
+		}
 
 
 		/**
@@ -605,12 +605,12 @@
 		 */
 		function display_blog_dashboard_page() {
 
-			//must check that the user has the required capability 
+			//must check that the user has the required capability
 			if ( ! current_user_can( 'delete_others_pages' ) )
 				wp_die( __( 'You do not have sufficient permissions to access this page.', 'make' ) );
 
 			// Get any query variables if set
-			$query_vars = $this->get_query_vars(); 
+			$query_vars = $this->get_query_vars();
 
 			// Check if we are filtering our results by post type.
 			if ( empty( $query_vars['post_type'] ) || $query_vars['post_type'] == 'all' ) {
@@ -641,7 +641,7 @@
 				<form method="get" class="posts-filter">
 					<input type="hidden" name="page" value="<?php echo esc_attr( $_REQUEST['page'] ); ?>" />
 					<?php wp_nonce_field( 'overview-form-save', $this->nonce_name, false ); ?>
-					
+
 					<p class="search-box">
 						<label for="post-search-input" class="screen-reader-text">Search All Content</label>
 						<input type="search" id="post-search-input" name="s" value="<?php echo ( isset( $query_vars['search'] ) ) ? esc_attr( $query_vars['search'] ) : ''; ?>">
@@ -660,9 +660,9 @@
 							<span class="displaying-num"><?php echo absint( $query->found_posts ); ?> Items</span>
 							<?php echo $this->get_pagination_link( $query->max_num_pages, $query_vars['paged'] ); ?>
 						</div>
-						
+
 					</div>
-					
+
 					<table id="blog-dashboard" class="wp-list-table widefat fixed pages">
 						<thead>
 							<tr>
@@ -715,7 +715,7 @@
 									echo '<tr class="no-items"><td class="colspanchange" colspan="3">No content found.</td></tr>';
 								} ?>
 						</tbody>
-						
+
 					</table>
 					<div class="tablenav bottom">
 
@@ -723,7 +723,7 @@
 							<span class="displaying-num"><?php echo absint( $query->found_posts ); ?> Items</span>
 							<?php echo $this->get_pagination_link( $query->max_num_pages, $query_vars['paged'] ); ?>
 						</div>
-						
+
 					</div>
 				</form>
 			</div>

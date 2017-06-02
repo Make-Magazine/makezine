@@ -1587,6 +1587,7 @@ add_action( 'category_top', 'make_get_banner_to_category_page' );
  */
 function home_tags($postid) {
 	$post_type = get_post_type( $postid );
+  $output = '';
 	if ( $post_type == 'page' ) {
 		return;
 	}

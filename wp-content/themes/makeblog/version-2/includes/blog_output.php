@@ -188,9 +188,9 @@ function story_pulling($offset) {
 	$outputs .= '<div class="row infinity-row"></div>';
 	$offset = $offset + $post_per_page;
 
-	$ie6 = (ereg("MSIE", $_SERVER["HTTP_USER_AGENT"])) ? true : false;
-	$ie7 = (ereg("Trident/", $_SERVER["HTTP_USER_AGENT"])) ? true : false;
-	$ie8 = (ereg("Edge/", $_SERVER["HTTP_USER_AGENT"])) ? true : false;
+	$ie6 = (preg_match("MSIE/", $_SERVER["HTTP_USER_AGENT"]) ? true : false);
+	$ie7 = (preg_match("Trident/", $_SERVER["HTTP_USER_AGENT"]) ? true : false);
+	$ie8 = (preg_match("Edge/", $_SERVER["HTTP_USER_AGENT"]) ? true : false);
 
 	if ($ie6 || $ie7 || $ie8) {
 		$ie = ' ie ';

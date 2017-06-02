@@ -138,9 +138,10 @@ if( $detect->isTablet() ){
 
   <!-- Google Universal Analytics -->
   <!-- Primary Categories Dimension Query -->
-  <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = $primary_cat_query[0]; ?>
+  <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = (isset($primary_cat_query[0])?$primary_cat_query[0]:''); ?>
   <?php
     $cats = get_the_category();
+    $primarycat = array();
     foreach ( $cats as $cat ) {
       if ( $cat->category_parent < 1 )
         $primarycat[] = $cat->category_nicename;
@@ -149,9 +150,9 @@ if( $detect->isTablet() ){
       $cat2 = get_cat_name($parent_cat_id);
       $primarycat[] = $cat2;
     }
-    $primary_cat_dimension = $primarycat[0];
+    $primary_cat_dimension = (isset($primarycat[0])?$primarycat[0]:'');
   ?>
-  <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = $youtube_embed_query[0]; ?>
+  <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = (isset($youtube_embed_query[0])?$youtube_embed_query[0]:''); ?>
   <script type="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
