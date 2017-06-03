@@ -19,7 +19,7 @@ class WPCOM_Widget_VIP_Powered extends WP_Widget {
 	/**
 	 * Constructor. Sets up widget options.
 	 */
-	function WPCOM_Widget_VIP_Powered() {
+  function __construct() {
 		$widget_ops = array('classname' => 'widget_vip_powered_wpcom', 'description' => __( "Powered by WordPress.com VIP") );
                 $control_ops = array( 'width' => 295 );
 
@@ -34,9 +34,9 @@ class WPCOM_Widget_VIP_Powered extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 		extract( $args );
-		
+
 		$display = $instance['display'];
-		
+
 		echo $before_widget;
 		echo vip_powered_wpcom($display);
 		echo $after_widget;
@@ -83,7 +83,7 @@ class WPCOM_Widget_VIP_Powered extends WP_Widget {
 
 		foreach ( $choices as $value => $text ) {
 			$selected = '';
-			if ( $display == $value) 
+			if ( $display == $value)
 				$selected = " selected='selected'";
 
 			echo "<option value='$value'$selected>$text</option>";
@@ -134,7 +134,7 @@ function vip_powered_wpcom_img_html( $image ) {
  *
  * @link http://vip.wordpress.com/documentation/code-and-theme-review-process/ Code Review
  * @link http://vip.wordpress.com/documentation/powered-by-wordpress-com-vip/ Powered By WordPress.com VIP
- * @param string $display Optional. Either: 1-6 or "text"*. If an integer, wrap an image in the VIP link. Otherwise, just return the link.  
+ * @param string $display Optional. Either: 1-6 or "text"*. If an integer, wrap an image in the VIP link. Otherwise, just return the link.
  * @param string $before_text Optional. Text to go in front of the VIP link. Defaults to 'Powered by '.
  * @return string HTML
  */

@@ -17,7 +17,8 @@ class Taxonomy_Drill_Down_Widget extends scbWidget {
 		add_action( 'admin_footer', array( __CLASS__, 'add_script' ), 11 );
 	}
 
-	function Taxonomy_Drill_Down_Widget() {
+  function __construct() {
+	//function Taxonomy_Drill_Down_Widget() {
 		$widget_ops = array( 'description' => 'Display a drill-down navigation based on custom taxonomies', );
 
 		$this->WP_Widget( 'taxonomy-drill-down', 'Taxonomy Drill-Down', $widget_ops );
