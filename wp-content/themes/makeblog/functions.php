@@ -853,7 +853,7 @@ add_action('init', 'remove_post_type_page_from_search');
 
 //Advanced Custom Fields Custom Setting WordPress Menu
 if( function_exists('acf_add_options_page') ) {
-    
+
     acf_add_options_page(array(
         'page_title'    => 'Custom Settings',
         'menu_title'    => 'Custom Settings',
@@ -862,7 +862,7 @@ if( function_exists('acf_add_options_page') ) {
         'capability'    => 'edit_posts',
         'redirect'      => true
     ));
-    
+
     acf_add_options_sub_page(array(
         'page_title'    => 'Home Page Custom Settings',
         'menu_title'    => 'Home Page',
@@ -878,5 +878,75 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'   => 'custom-settings',
         'position'      => false
     ));
-    
+
+}
+
+//remove the tag meta box for non administrator roles
+add_action('admin_init','customize_meta_boxes');
+/**
+ * Remove capabilities from editors.
+ *
+ * Call the function when your plugin/theme is activated.
+ */
+
+function customize_meta_boxes() {
+  global $current_user;
+  get_currentuserinfo();
+  $user = wp_get_current_user();
+
+  if ( !in_array( 'administrator', (array) $user->roles ) ) {
+    remove_meta_box('tagsdiv-post_tag','post','normal');
+    remove_meta_box('tagsdiv-post_tag','page','normal');
+  }
+
+}
+
+
+//override the gettags ajax function
+add_action( 'wp_ajax_get-tagcloud', 'ajax_tag_cloud_wpse_99497', 1 );
+
+function ajax_tag_cloud_wpse_99497() {
+if ( ! isset( $_POST['tax'] ) ) {
+    wp_die( 0 );
+ }
+
+ $taxonomy = sanitize_key( $_POST['tax'] );
+ $tax = get_taxonomy( $taxonomy );
+ if ( ! $tax ) {
+    wp_die( 0 );
+ }
+
+ if ( ! current_user_can( $tax->cap->assign_terms ) ) {
+    wp_die( -1 );
+ }
+
+ $term_params = array( 'number' => 45, 'orderby' => 'count', 'order' => 'DESC' );
+ switch ($taxonomy) {
+  case 'product_tag':
+    $term_params['hide_empty'] = false;
+   break;
+ }
+ $tags = get_terms( $taxonomy, $term_params );
+
+
+ if ( empty( $tags ) )
+    wp_die( $tax->labels->not_found );
+
+ if ( is_wp_error( $tags ) )
+    wp_die( $tags->get_error_message() );
+
+ foreach ( $tags as $key => $tag ) {
+    $tags[ $key ]->link = '#';
+    $tags[ $key ]->id = $tag->term_id;
+ }
+
+ // We need raw tag names here, so don't filter the output
+ $return = wp_generate_tag_cloud( $tags, array('format' => 'list', 'largest'=>8) );
+
+ if ( empty($return) )
+    wp_die( 0 );
+
+ echo $return;
+
+ wp_die();
 }
