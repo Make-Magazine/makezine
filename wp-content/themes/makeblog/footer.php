@@ -245,5 +245,14 @@ sg_beacon('init','Mjg4MjQzLTJiMjdlNGU0NmM3ZDM3YWQ2YWJiOTEwNWRhNDM0ZGQ1NTFlZTdhN2
 <!-- Subscribe return path overlay -->
 <?php echo subscribe_return_path_overlay(); ?>
 
+<script>
+  //Temporary GA tracking for clicks to header magazine subsciption cover image
+  jQuery(document).load(function () {
+    jQuery('#trigger-overlay').on( "click", function() {
+      ga('send', 'event', 'Subscription', 'Click', 'Header mag cover click');
+    });
+  });
+</script>
+
 </body>
 </html>

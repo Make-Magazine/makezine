@@ -74,7 +74,4 @@
       });
     })();
   }
-  $('.mz-10siderail').on( "click", function() {
-    ga('send', 'event', 'siderail_story_clicks', 'click', window.location.pathname);
-  });
 });})(window.jQuery);
