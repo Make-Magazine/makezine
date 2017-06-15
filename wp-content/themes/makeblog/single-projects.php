@@ -269,7 +269,7 @@ $post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 
 				<div class="col-xs-12 col-sm-8">
 
-					<?php echo make_author(); ?>
+					<?php make_author_profile(get_queried_object()); ?>
 
 					<div class="ad-unit">
 						<p id="ads-title">Advertisement</p>
