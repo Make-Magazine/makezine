@@ -311,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div id="mz-header-subscribe" class="hidden-xs hidden-sm">
             <div>
               <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
-                <img src="<?php echo get_template_directory_uri() . '/img/Subscribe_CTA_52.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
+                <img id="mz-mag-cover" src="<?php echo get_template_directory_uri() . '/img/magazine-covers/Make-cover-54.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
               </a>
               <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
             </div>
