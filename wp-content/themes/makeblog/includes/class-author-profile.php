@@ -275,15 +275,14 @@ class Make_Authors {
 		$output = '';
 		// If we have a Gravatar object, we'll process that, other wise, we need to hook into WordPress
 		if ( isset( $author->thumbnailUrl ) ) {
-
 			$url = $author->thumbnailUrl . '?s=' . absint( $size ) . '&d=retro';
 
 			$output = '<img src="' . esc_url( $url ) . '" alt="' . esc_attr( $this->author_name( $author ) ) . '" class="avatar avatar-' . absint( $size ) . '" width="' . absint( $size ) . '" height="' . absint( $size ) . '">';
 
 		} else {
 			// Use the featued image if its set, other wise fall to get_avatar which will check for another solution with a fall back to default retro image
-			if ( has_post_thumbnail( absint( $author->ID ) ) ) {
-				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $author->ID ) );
+			if ( has_post_thumbnail( absint( $newauthor->ID ) ) ) {
+				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $newauthor->ID ) );
 				$args = array(
 					'resize' => '300,300',
 					'quality' => get_photon_img_quality(),
@@ -300,6 +299,7 @@ class Make_Authors {
 				$output = get_avatar( sanitize_email( $author->user_email ), absint( $size ), 'retro', esc_attr( $this->author_name( $author ) ) );
 			}
 		}
+		
 
 		return $output;
 	}
