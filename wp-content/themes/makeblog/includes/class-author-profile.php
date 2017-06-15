@@ -231,7 +231,20 @@ class Make_Authors {
 		$output .= '<hr>';
 		return $output;
 	}
+public function author_block_generic( $newauthor,$authorID ) {
 
+		$output = '';
+		$output .= '<div class="row"><div class="col-xs-12 col-sm-3">';
+		$output .= $this->author_avatar( $newauthor, 396 );
+		$output .= '</div><div class="col-xs-12 col-sm-9 -author-profile-bio">';
+		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '">' . esc_html(  $newauthor->display_name ) . '</a></h3>';
+		$output .= '</h3><p>';
+		// Return the Guest Author information.
+		$output .= $this->author_bio( $newauthor );
+		$output .= '<p></div></div>';
+
+		return $output;
+	}
 	public function author_block_story( $newauthor,$authorID ) {
 	 	// Let's get this going...
 		$output = '';
@@ -517,13 +530,17 @@ function make_author_profile( $author = '' ) {
 	echo $make_author_class->author_profile( $author );
 }
 
-function get_author_profile() {
+function get_author_profile($type='story') {
 	global $make_author_class;
 	$authors = get_coauthors();
 
 	// For each author, build a block.
 	foreach ( $authors as $author ) {
-		echo $make_author_class->author_block_story( $author,$author->ID );
+    if ($type=='story')
+    {echo $make_author_class->author_block_story( $author,$author->ID );}
+  else {
+    echo $make_author_class->author_block_generic( $author,$author->ID );
+  }
 	}
 }
 
