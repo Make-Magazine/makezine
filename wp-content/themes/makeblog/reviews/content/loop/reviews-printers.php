@@ -7,7 +7,7 @@
 
 		<div class="ri-feature-image">
 			<a class="ri-link" href="<?php the_permalink(); ?>">
-				<div class="ri-badge boards"></div>
+				<div class="ri-badge printers"></div>
 			</a>
 		</div>
 
