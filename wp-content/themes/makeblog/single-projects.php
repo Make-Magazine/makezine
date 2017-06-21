@@ -265,12 +265,13 @@ $post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 
 			<?php endwhile; ?>
 
-						<?php
-							if ( function_exists( 'coauthors_posts_links' ) ) {
-								get_author_profile('project');
-							} ?>
+
+			<?php
+				if ( function_exists( 'coauthors_posts_links' ) ) {
+					get_author_profile('project');
+				} ?>
 						
-				<div class="row padtop">
+			<div class="row padtop">
 
 				<div class="col-xs-12 col-sm-8">
 
