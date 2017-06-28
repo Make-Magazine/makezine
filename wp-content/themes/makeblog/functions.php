@@ -436,7 +436,7 @@ function subscribe_return_path_overlay() { ?>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 overlay-1">
-                        <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/img/Magazine-cover-47-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
+                        <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/img/magazine-covers/Magazine-cover-47-for-overlay.jpg" alt="Make Magazine Volume 44 Cover" />
                     </div>
                     <div class="col-sm-4 overlay-2">
                         <h2>Get the Magazine</h2>
