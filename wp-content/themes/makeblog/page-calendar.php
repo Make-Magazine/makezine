@@ -105,6 +105,11 @@ get_header('version-2'); ?>
       jQuery('.fancybox-recommend-event-inner1').hide();
       jQuery('.fancybox-recommend-event-inner2').show();
     });
+
+    // Next month button message if no future events
+    jQuery( document ).ready(function() {
+      jQuery('.tribe-events-nav-next:not(:has(a))').text('no more future events').addClass('btnEmpty');
+    });
     </script>
 
 <?php get_footer(); ?>
