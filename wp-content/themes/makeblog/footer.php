@@ -33,7 +33,7 @@
 				<h4>Explore Making</h4>
 				<ul class="list-unstyled">
 					<li><a href="//makerfaire.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Maker Faire</a></li>
-          <li><a href="https://makershare.com" target="_blank">Maker Share</a></li>
+          <li><a href="https://makershare.com/?utm_source=makezine.com&utm_medium=footer" target="_blank">Maker Share</a></li>
 					<li><a href="//www.makershed.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Maker Shed</a></li>
 					<li><a href="//makercamp.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Maker Camp</a></li>
 					<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Get the Magazine</a></li>
@@ -196,7 +196,7 @@
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
-                <li><a href="https://makershare.com" target="_blank">Maker Share</a></li>
+                <li><a href="https://makershare.com/?utm_source=makezine.com&utm_medium=footer" target="_blank">Maker Share</a></li>
 								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
 								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
 								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Get the magazine</a></li>
