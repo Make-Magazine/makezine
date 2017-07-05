@@ -149,7 +149,7 @@ class Mustache {
 	 * @access public
 	 * @return void
 	 */
-	public function __clone() {
+	public function Mclone() {
 		$this->_otag = '{{';
 		$this->_ctag = '}}';
 		$this->_localPragmas = array();
@@ -666,7 +666,7 @@ class Mustache {
 			$partial = preg_replace('/(\\r?\\n)(?!$)/s', "\\1" . $whitespace, $partial);
 		}
 
-		$view = clone($this);
+		$view = Mclone($this);
 
 		if ($leading !== null && $trailing !== null) {
 			return $leading . $view->render($partial);
