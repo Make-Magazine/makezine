@@ -4,9 +4,9 @@
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
- * 
+ *
  */
-get_header('version-2'); 
+get_header('version-2');
 global $wp_query;
 $args = array(
 	'posts_per_page' => 20
@@ -17,9 +17,9 @@ query_posts(
 		$wp_query->query
 	)
 ); ?>
-		
+
 	<div class="single search-results-page">
-	
+
 		<div class="container">
 
 			<div class="row">
@@ -41,15 +41,15 @@ query_posts(
 	                </div>
 		            </div>
                 <p class="padtop">Search by type:</p>
-                <?php 
+                <?php
                 $query_types = get_query_var('post_type');
                 $query_tags = get_query_var('tag'); ?>
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_types)) { echo 'checked="checked"'; } ?> />
+                  <input type="checkbox" name="post_type[]" value="post" <?php if (is_array($query_types) && in_array('post', $query_types)) { echo 'checked="checked"'; } ?> />
                   Stories
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="post_type[]" value="projects" <?php if (in_array('projects', $query_types)) { echo 'checked="checked"'; } ?> />
+                  <input type="checkbox" name="post_type[]" value="projects" <?php if (is_array($query_types) && in_array('projects', $query_types)) { echo 'checked="checked"'; } ?> />
                   Projects
                 </label>
                 <label class="checkbox-inline">
@@ -57,7 +57,7 @@ query_posts(
                   Skill Builders
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="post_type[]" value="products" <?php if (in_array('products', $query_types)) { echo 'checked="checked"'; } ?> />
+                  <input type="checkbox" name="post_type[]" value="products" <?php if (is_array($query_types) && in_array('products', $query_types)) { echo 'checked="checked"'; } ?> />
                   Product Reviews
                 </label>
 							</form>
@@ -93,13 +93,13 @@ query_posts(
 							<article <?php post_class('media'); ?>>
 
 								<a href="<?php the_permalink(); ?>" class="pull-left">
-									<?php echo get_the_post_thumbnail($post_id, 'thumbnail'); ?>
+									<?php echo the_post_thumbnail('thumbnail'); ?>
 								</a>
 
 								<div class="media-body">
 
 									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-									
+
 									<small class="text-muted"><?php the_time('m/d/Y'); ?></small>
 
 									<div class="media-body">
@@ -107,7 +107,7 @@ query_posts(
 									</div>
 
 								</div>
-							
+
 							</article>
 
 						<?php endwhile; ?>
@@ -131,9 +131,9 @@ query_posts(
 						</div>
 
 					<?php else: ?>
-					
+
 						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-					
+
 					<?php endif; ?>
 
           </div>
@@ -141,14 +141,14 @@ query_posts(
 				</div>
 
 				<?php  get_sidebar( 'search' ); ?>
-					
+
 			</div>
 
 		</div>
 
 	</div>
 
-<?php get_footer(); 
+<?php get_footer();
 
 
 
