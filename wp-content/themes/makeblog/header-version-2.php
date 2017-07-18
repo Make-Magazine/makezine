@@ -322,7 +322,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <!-- Subscribe link in Sticky Navbar -->
           <div class="sticky-subscribe">
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe <span>&amp; save</span></a>
+            <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE<span> &amp; save</span></a>
+            <a class="mz-header-signin" href="http://www.mydigitalpublication.com/publication/login.php?i=406521&sub=1&p=2" target="_blank">Sign In</a> 
           </div>
 
         </nav>
