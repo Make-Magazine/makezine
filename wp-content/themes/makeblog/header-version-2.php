@@ -314,7 +314,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img id="mz-mag-cover" src="<?php echo get_template_directory_uri() . '/img/magazine-covers/Make-cover-54.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
               </a>
               <div class="mz-header-rtCol">
-                <a class="mz-header-signin" href="http://www.mydigitalpublication.com/publication/login.php?i=406521&sub=1&p=2" target="_blank">Sign In</a> 
+                <a class="mz-header-signin" href="/account" target="_blank">Sign In</a> 
                 <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE<span> &amp; save</span></a>
               </div>
             </div>
@@ -323,7 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- Subscribe link in Sticky Navbar -->
           <div class="sticky-subscribe">
             <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE<span> &amp; save</span></a>
-            <a class="mz-header-signin" href="http://www.mydigitalpublication.com/publication/login.php?i=406521&sub=1&p=2" target="_blank">Sign In</a> 
+            <a class="mz-header-signin" href="/account" target="_blank">Sign In</a> 
           </div>
 
         </nav>
