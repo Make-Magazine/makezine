@@ -310,16 +310,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- New Header Subscribe stuff -->
           <div id="mz-header-subscribe" class="hidden-xs hidden-sm">
             <div>
-              <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">
+              <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M7HMKZ" target="_blank">
                 <img id="mz-mag-cover" src="<?php echo get_template_directory_uri() . '/img/magazine-covers/Make-cover-54.png'; ?>" alt="Make: Magazine latest magazine cover, subscribe here" />
               </a>
-              <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">SUBSCRIBE</a>
+              <a class="subscribe-red-btn" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M7HMKT" target="_blank">SUBSCRIBE</a>
             </div>
           </div>
 
           <!-- Subscribe link in Sticky Navbar -->
           <div class="sticky-subscribe">
-            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M6GMKZ" target="_blank">Subscribe <span>&amp; save</span></a>
+            <a id="trigger-overlay" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M7HMSB" target="_blank">Subscribe <span>&amp; save</span></a>
           </div>
 
         </nav>
