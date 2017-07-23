@@ -110,7 +110,20 @@ $post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 				</div>
 
 				<div class="col-xs-12 col-sm-4 sidebar">
-
+<div class="date-time">
+								<?php
+								$post_time  = get_post_time( 'U', true, $post, true );
+								$time_now   = date( 'U' );
+								$difference = $time_now - $post_time;
+								if ( $difference > 86400 ) { ?>
+									<time itemprop="startDate"
+										  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
+								<?php } else { ?>
+									<time itemprop="startDate"
+										  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
+								<?php }
+								?>
+							</div>
 					<?php
 						$old_parts = get_the_terms( $post->ID, 'parts' );
 						$parts = get_post_meta( $post->ID , 'parts' );
