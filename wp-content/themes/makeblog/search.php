@@ -16,7 +16,11 @@ query_posts(
 		$args,
 		$wp_query->query
 	)
-); ?>
+); 
+$searchQuery = $_GET["s"];
+
+$search_found_tag = get_term_by( 'name', $searchQuery , 'post_tag');
+        ?>
 
 	<div class="single search-results-page">
 
@@ -87,7 +91,26 @@ query_posts(
 							<div class="clearfix"></div>
 
 						</div>
+                                                <?php if ($search_found_tag) : ?>
+                                            <article class="media post-528965 post type-post status-publish format-standard has-post-thumbnail hentry category-home tag-maker-pro tag-newsletter">
 
+								
+							
+								<div class="media-body">
+
+									<h2>
+                                                                                <a href="/tag/<?php echo $search_found_tag->slug ?>" >Topic: <?php echo $search_found_tag->name ?>
+                                                                            </a></h2>
+
+									<div class="media-body">
+										<p><?php echo $search_found_tag->description ?>
+                                                                                </p>
+									</div>
+
+								</div>
+
+							</article>
+                                                <?php endif; ?>
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 							<article <?php post_class('media'); ?>>
