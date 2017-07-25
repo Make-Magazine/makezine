@@ -106,9 +106,9 @@
 					<h4>Sign Up</h4>
 					<p>Stay inspired with the Make: newsletter</p>
 					<form class="sub-form whatcounts-signup1" action="http://whatcounts.com/bin/listctrl" method="POST">
-						<input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Make: Newsletter -->
-            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
-            <input type="hidden" name="multiadd" value="1" />
+						<input type="hidden" name="slid_1" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
+            <input type="hidden" name="list_makenewsletter" value="yes"/>
+            <input type="hidden" name="list_makermedia" value="yes"/>
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="footer" />
 						<input type="hidden" name="custom_incentive" value="none" />
@@ -149,9 +149,9 @@
 					<h4>Sign Up</h4>
 					<p>Stay inspired with the Make: newsletter</p>
 					<form class="sub-form whatcounts-signup1m" action="http://whatcounts.com/bin/listctrl" method="POST">
-						<input type="hidden" name="slid_1" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Make: Newsletter -->
-            <input type="hidden" name="slid_2" value="6B5869DC547D3D46941051CC68679543" /><!-- Maker Media Newsletter -->
-            <input type="hidden" name="multiadd" value="1" />
+            <input type="hidden" name="slid_1" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
+            <input type="hidden" name="list_makenewsletter" value="yes"/>
+            <input type="hidden" name="list_makermedia" value="yes"/>
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="footer" />
 						<input type="hidden" name="custom_incentive" value="none" />
