@@ -34,8 +34,8 @@ if (user_can($current_user, 'administrator')) {
 
 					<form class="sub-form whatcounts-signupTagArchive" action="http://whatcounts.com/bin/listctrl" method="POST">
 						<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
-            <input type="hidden" name="list_makenewsletter" value="yes"/>
-            <input type="hidden" name="list_makermedia" value="yes"/>
+            <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
+            <input type="hidden" name="custom_list_makermedia" value="yes"/>
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="tag page" />
 						<input type="hidden" name="custom_incentive" value="none" />
