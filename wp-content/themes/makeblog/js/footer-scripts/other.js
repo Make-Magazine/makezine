@@ -157,6 +157,15 @@ jQuery(document).ready(function($){
     $('.nl-thx-p1').hide();
     $('.nl-thx-p2').show();
   });
+  // Build your own page template
+  $(document).on('submit', '.whatcounts-signup3', function (e) {
+    e.preventDefault();
+    var bla = $('#wc-email').val();
+    $.post('http://whatcounts.com/bin/listctrl', $('.whatcounts-signup3').serialize());
+    $('.fancybox-thx').trigger('click');
+    $('.nl-modal-email-address').text(bla);
+    $('.whatcounts-signup2 #email').val(bla);
+  });
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
     $.post('http://whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
