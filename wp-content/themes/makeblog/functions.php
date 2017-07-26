@@ -511,6 +511,7 @@ function display_thank_you_modal_if_signed_up() { ?>
                 <div class="col-xs-12">
                     <h4>You might also like these newsletters:</h4>
                     <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
+                        <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"><!-- Confirmation -->
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" id="email" name="email" value="" />
                         <input type="hidden" name="goto" value="" />
