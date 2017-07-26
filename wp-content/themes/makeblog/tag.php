@@ -31,11 +31,11 @@ if (user_can($current_user, 'administrator')) {
 						<form class="sub-form whatcounts-signupTagArchive" action="http://whatcounts.com/bin/listctrl" method="POST">
 							<?php
 							if ( $tag_slug == 'maker-pro' ) {
-							  echo '<input type="hidden" name="custom_list_makerpro" value=“yes" /><!-- Maker Pro Newsletter -->';
+							  echo '<input type="hidden" name="custom_list_makerpro" value="yes" /><!-- Maker Pro Newsletter -->';
 							} elseif ( $tag_slug == 'education' ) {
-							  echo '<input type="hidden" name="custom_list_makeeducation" value=“yes" /><!-- Education Newsletter -->';
+							  echo '<input type="hidden" name="custom_list_makeeducation" value="yes" /><!-- Education Newsletter -->';
 							} else {
-								echo '<input type="hidden" name="custom_list_makenewsletter" value=“yes" /><!-- Make: Newsletter -->';
+								echo '<input type="hidden" name="custom_list_makenewsletter" value="yes" /><!-- Make: Newsletter -->';
 							} ?>
 	            <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
 	            <input type="hidden" name="custom_list_makermedia" value="yes" />
