@@ -75,6 +75,13 @@ get_header('version-2'); ?>
               <h4>Make: Education</h4><p>How making is transforming learning</p>
               <hr />
 
+              <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
+                <input type="checkbox" id="list_6B5869DC547D3D46072290AE725EC932_yes" name="custom_list_maker_share" value="yes" />
+                <span for="list_6B5869DC547D3D46072290AE725EC932_yes" class="newcheckbox"></span>
+              </label>
+              <h4>Maker Share Community Updates</h4><p>Create. Connect. Learn.</p>
+              <hr />
+
               <input class="btn-cyan" type="submit" value="Submit" />
               <div class="clearfix"></div>
             </form>
