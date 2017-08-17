@@ -1158,7 +1158,7 @@ function newsletter_signup_sidebar_shortcode() {
 									<input value="Sign Up" class="btn-cyan" type="submit">
 								</div>
 							</form>
-							<p><a href="/join">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+							<p><a href="/join">Discover Newsletters <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
 						</div>
 						<script>
                 jQuery(function() {
