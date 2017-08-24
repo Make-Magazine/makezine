@@ -133,7 +133,7 @@ function get_story_with_ajax() {
                     <div class="js-ad scroll-load" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                 </div>
             </aside>
-            <div class="essb_right_flag"></div>
+            <div class="infinite-scroll-trigger"></div>
         </div>
     </div>
     <script>
@@ -294,7 +294,7 @@ function get_story_with_ajax2() {
                       <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
                   </div>
               </aside>
-              <div class="essb_right_flag"></div>
+              <div class="infinite-scroll-trigger"></div>
           </div>
       </div>
       <script>

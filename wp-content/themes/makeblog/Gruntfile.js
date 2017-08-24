@@ -3,7 +3,6 @@ module.exports = function(grunt) {
     'less/**/*.less',
     'version-2/less/**/*.less',
     'reviews/less/**/**/*.less',
-    'version-2/js/single-story/*.js',
     'js/footer-scripts/*.js',
   ];
   var lessSrcFiles = {
@@ -45,7 +44,6 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'version-2/js/single-story.js': ['version-2/js/single-story/*.js'],
           'js/footer-scripts/min/misc.js': ['js/footer-scripts/*.js'],
         }
       },
@@ -58,7 +56,6 @@ module.exports = function(grunt) {
           banner: '// Compiled file - any changes will be overwritten by grunt task\n',
         },
         files: {
-          'version-2/js/single-story.js': 'version-2/js/single-story.js',
           'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
         }
       }

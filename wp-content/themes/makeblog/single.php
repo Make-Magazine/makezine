@@ -9,101 +9,18 @@
  */
 // first story
 get_header( 'version-2' );
-global $post; ?>
-<?php $main_post_id = get_the_ID(); ?>
-<?php $current_user = wp_get_current_user();
-if ( user_can( $current_user, 'administrator' ) ) {
-	$login_admin = 'admin_is_login';
-}
-?>
-<div class="mz-story-infinite-view <?php echo $login_admin ?>">
+global $post; 
+global $make;
+$make->ad_vars = new MakeAdVars;
+$make->ad_vars->getVars();
+$main_post_id = get_the_ID(); ?>
 
+<div class="mz-story-infinite-view">
 	<div class="wrapper">
 		<div class="ad-unit first-ad">
-			<?php global $make;
-			print $make->ads->ad_leaderboard;
-			?>
+			<?php print $make->ads->ad_leaderboard; ?>
 		</div>
-		<div class="row navigator sticky-sidebar-posts-nav">
-			<div class="hamburger">
-				<div class="hamburger-navigator">
-					<img class="initial" src="<?php echo get_template_directory_uri() . '/version-2/img/bitmap.png' ?>" scale="0">
-					<img class="x" src="<?php echo get_template_directory_uri() . '/version-2/img/x.png' ?>" scale="0">
-					<img class="x-hover" src="<?php echo get_template_directory_uri() . '/version-2/img/x-hover.png' ?>" scale="0">
 
-					<h2>Latest 10</h2>
-				</div>
-			</div>
-			<div class="thumbnails">
-				<div class="posts-navigator">
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<div class="latest-story first" id="0">
-
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted mz-10siderail" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
-								<?php
-								$args = array(
-									'resize' => '370,240',
-									'quality' => get_photon_img_quality(),
-									'strip' => 'all',
-								);
-								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
-								preg_match_all($re, $url, $matches);
-								$str = $matches[2][0];
-								$photon = jetpack_photon_url($str, $args);
-								if(strlen($url) == 0){
-									$photon = catch_first_image_story_nav();
-									$photon = jetpack_photon_url( $photon, $args );
-								} ?>
-								<div class="thumbnail-image" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
-								<h3><?php the_title(); ?></h3></a>
-
-						</div>
-					<?php endwhile; ?>
-					<?php else: ?>
-					<?php endif; ?>
-					<?php wp_reset_query(); ?>
-					<?php $i   = 1;
-					$the_query = new WP_Query( array( 'showposts'    => '9',
-						'post_status'  => 'publish',
-						'post__not_in' => array( $main_post_id )
-					) ); ?>
-					<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<div class="latest-story" id="<?php echo $i; ?>">
-
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left mz-10siderail"
-							   id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
-								<?php
-								$args = array(
-									'resize' => '370,240',
-									'quality' => get_photon_img_quality(),
-									'strip' => 'all',
-								);
-								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
-								preg_match_all($re, $url, $matches);
-								$str = $matches[2][0];
-								$photon = jetpack_photon_url($str, $args);
-								if(strlen($url) == 0){
-									$photon = catch_first_image_story_nav();
-									$photon = jetpack_photon_url( $photon, $args );
-								} ?>
-								<div class="thumbnail-image"
-									 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
-								<h3><?php the_title(); ?></h3></a>
-
-						</div>
-						<?php $i ++; ?>
-					<?php endwhile; ?>
-
-					<?php else: ?>
-						<?php echo '<h1>No content found</h1>' ?>
-					<?php endif; ?>
-					<?php wp_reset_query(); ?>
-					<a href="<?php echo site_url( '/blog', 'http' ); ?>" class="see-all-stories"><h3 class="heading">See all stories</h3><div class="arrow-right"></div></a>
-				</div>
-			</div>
-		</div>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<article itemscope itemtype="http://schema.org/ScholarlyArticle">
 				<div class="story-header first-story" id="<?php echo get_the_ID(); ?>">
@@ -246,23 +163,143 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 						</aside>
 						<div class="ctx-social-container"></div>
-						<div class="essb_right_flag"></div>
 					</div>
 				</div>
 			</article>
 		<?php endwhile; ?>
 		<?php else: ?>
-
 			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-
 		<?php endif; ?>
-		<div class="infinity"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
-	</div>
 
+
+	</div><!-- end .wrapper -->
+</div><!-- end .mz-story-infinite-view -->
+
+
+<div class="page-load-status">
+  <div class="loader-ellips infinite-scroll-request">
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+  </div>
+  <p class="infinite-scroll-last">End of content</p>
+  <p class="infinite-scroll-error">No more pages to load</p>
 </div>
-<div class="ad-unit">
-	<div class='js-ad scroll-load' data-size='[[728,90],[970,90],[320,50]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
-</div>
+
+
+<!-- .story-item template HTML -->
+<script type="text/html" id="story-item-template">
+
+  <div class="ad-unit">
+    <div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+  </div>
+
+	<article itemscope itemtype="http://schema.org/ScholarlyArticle">
+		<div class="story-header first-story" id='{{id}}'>
+
+			<div class="container">
+				<div class="story-title">
+					<h1 itemprop="name">{{title.rendered}}</h1>
+				</div>
+				<div class="author-info">
+
+					<div class="author-wrapper">
+						<div class="col-md-3 avatar">
+							<img src="" alt="" class="avatar" />
+							<div class="hover-info">
+								<i class="fa fa-sort-asc sort-up fa-lg"></i>
+								<div class="author-wrapper">
+									<div class="author-name">
+										<h3>
+											<a href="">{{author}}</a>
+										</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<time itemprop="datePublished" datetime="{{date}}">{{date}}</time>
+				</div>
+			</div>
+
+
+
+		</div>
+		<meta itemprop="name" content="Make: Magazine">
+		<div class="container">
+			<div class="row content">
+				<div class="col-sm-7 col-md-8">
+					<div>
+
+						<div class="article-body" itemprop="articleBody">
+							{{content.rendered}}
+							<div id="nativobelow"></div>
+						</div>
+					</div>
+
+					<div class="ad-unit">
+						<p id="ads-title">Advertisement</p>
+						<div class='js-ad scroll-load' data-size='[[728,90],[320,50]]' data-size-map='[[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
+					</div>
+
+					<div class="comments">
+
+
+						<!-- Modal -->
+						<div id="disqus-modal" class="modal fade" role="dialog">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+					</div>
+				</div>
+				<aside class="col-sm-5 col-md-4 sidebar">
+					<div class="author-info">
+						<div class="author-wrapper">
+							<div class="col-md-3 avatar">
+								<img src="" alt="" class="avatar" />
+								<div class="hover-info">
+									<i class="fa fa-sort-asc sort-up fa-lg"></i>
+									<div class="author-wrapper">
+										<div class="author-name">
+											<h3>
+												<a href="">{{author}}</a>
+											</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="date-time">
+						<time itemprop="datePublished" datetime="{{date}}">{{date}}</time>
+					</div>
+
+					<div class="ad-unit">
+						<p id="ads-title">Advertisement</p>
+						<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600],[300,250]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
+					</div>
+
+
+
+					<div class="ad-unit">
+						<p id="ads-title">Advertisement</p>
+						<div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"'></div>
+					</div>
+
+					<div class="ad-unit">
+						<p id="ads-title">Advertisement</p>
+						<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
+					</div>
+
+				</aside>
+				<div class="ctx-social-container"></div>
+				<div class="infinite-scroll-trigger"></div>
+			</div>
+		</div>
+	</article>
+
+</script>
 
 <script type="text/javascript">
 	var disqus_shortname = 'makezine';
