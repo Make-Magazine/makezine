@@ -195,7 +195,7 @@ $main_post_id = get_the_ID(); ?>
     <div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
   </div>
 
-	<article itemscope itemtype="http://schema.org/ScholarlyArticle">
+	<article class="infinite-scroll-post" itemscope itemtype="http://schema.org/ScholarlyArticle">
 		<div class="story-header first-story" id='{{id}}'>
 
 			<div class="container">
@@ -302,34 +302,34 @@ $main_post_id = get_the_ID(); ?>
 </script>
 
 <script type="text/javascript">
-	var disqus_shortname = 'makezine';
-	var disqus_identifier;
-	var disqus_url;
-	var disqus_config = function () {
-		this.language = "en";
-	};
-	/* * * DON'T EDIT BELOW THIS LINE * * */
-	(function () {
-		var dsq = document.createElement('script');
-		dsq.type = 'text/javascript';
-		dsq.async = true;
-		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-	/* * * Disqus Reset Function * * */
-	var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
-		jQuery('#disqus_thread').remove();
-		jQuery('#disqus-modal').append('<div id="disqus_thread"></div>');
-		DISQUS.reset({
-			reload: true,
-			config: function () {
-				this.page.identifier = newIdentifier;
-				this.page.url = newUrl;
-				this.page.title = newTitle;
-				this.language = newLanguage;
-			}
-		});
-	};
+	// var disqus_shortname = 'makezine';
+	// var disqus_identifier;
+	// var disqus_url;
+	// var disqus_config = function () {
+	// 	this.language = "en";
+	// };
+	// /* * * DON'T EDIT BELOW THIS LINE * * */
+	// (function () {
+	// 	var dsq = document.createElement('script');
+	// 	dsq.type = 'text/javascript';
+	// 	dsq.async = true;
+	// 	dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	// 	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	// })();
+	// /* * * Disqus Reset Function * * */
+	// var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+	// 	jQuery('#disqus_thread').remove();
+	// 	jQuery('#disqus-modal').append('<div id="disqus_thread"></div>');
+	// 	DISQUS.reset({
+	// 		reload: true,
+	// 		config: function () {
+	// 			this.page.identifier = newIdentifier;
+	// 			this.page.url = newUrl;
+	// 			this.page.title = newTitle;
+	// 			this.language = newLanguage;
+	// 		}
+	// 	});
+	// };
 </script>
 
 <?php get_footer(); ?>

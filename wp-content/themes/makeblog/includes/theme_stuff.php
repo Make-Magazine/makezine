@@ -285,7 +285,7 @@ function make_load_resources() {
 
 
 	// What page are we on? And what is the pages limit?
-	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+//	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 	// File Input
 	wp_enqueue_script( 'make-fileinput', get_stylesheet_directory_uri() . '/js/fileinput.js', array( 'jquery' ) );
