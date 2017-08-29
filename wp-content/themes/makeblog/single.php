@@ -16,7 +16,7 @@ $make->ad_vars->getVars();
 $main_post_id = get_the_ID(); ?>
 
 <div class="mz-story-infinite-view">
-	<div class="wrapper">
+	<div class="js-infinite-scroll-container">
 		<div class="ad-unit first-ad">
 			<?php print $make->ads->ad_leaderboard; ?>
 		</div>
