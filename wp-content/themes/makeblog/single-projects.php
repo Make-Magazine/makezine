@@ -24,12 +24,6 @@ $post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 
 	<div class="row" style="position:relative;">
 
-		<?php /* if( has_term( 'Weekend Project', 'flags' ) ) : ?>
-			<div style="position:absolute; right:0; top:-15px;">
-				<a href="http://pubads.g.doubleclick.net/gampad/clk?id=42844138&amp;iu=/11548178/Makezine"><img src="<?php echo get_template_directory_uri(); ?>/images/weekend-projects-btn.png" title="Weekend Projects Powered by Radio Shack" /></a>
-			</div>
-		<?php endif; */?>
-
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 		<div <?php post_class('col-xs-12'); ?> itemscope itemtype="http://schema.org/TechArticle">

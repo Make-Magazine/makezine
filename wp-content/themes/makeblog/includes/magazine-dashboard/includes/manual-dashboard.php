@@ -202,27 +202,6 @@ function make_posts_per_page_dropdown( $posts_per_page ) {
 }
 
 
-/**
- * Generate a dropdown to filter the sections. Duh.
- * @return html
- */
-function make_section_dropdown() {
-
-	$query_vars = make_get_query_vars();
-	$terms = get_terms( 'section', array( 'hide_empty' => false ) );
-
-	$output = '<select name="section" id="section-dropdown">';
-	$output .= '<option value="all">All Sections</option>';
-
-	foreach ( $terms as $term ) {
-		$output .= '<option value="' . sanitize_text_field( $term->slug ) . '"' . selected( sanitize_text_field( $query_vars['section'] ), sanitize_text_field( $term->slug ), false ) . '>' . esc_html( $term->name ) . '</option>';
-	}
-
-	$output .= '</select>';
-
-	return $output;
-}
-
 
 /**
  * Return a list of all the post statuses

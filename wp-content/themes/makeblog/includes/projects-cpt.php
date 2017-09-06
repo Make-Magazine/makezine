@@ -181,46 +181,6 @@ function make_projects_add_review($content) {
 //add_filter( 'the_content', 'make_projects_add_review' );
 
 
-add_action( 'init', 'make_register_taxonomy_flags' );
-
-/**
- * Register the flags taxonomy
- *
- */
-function make_register_taxonomy_flags() {
-
-	$labels = array(
-		'name' => _x( 'Flags', 'flags' ),
-		'singular_name' => _x( 'Flag', 'flags' ),
-		'search_items' => _x( 'Search Flags', 'flags' ),
-		'popular_items' => _x( 'Popular Flags', 'flags' ),
-		'all_items' => _x( 'All Flags', 'flags' ),
-		'parent_item' => _x( 'Parent Flag', 'flags' ),
-		'parent_item_colon' => _x( 'Parent Flag:', 'flags' ),
-		'edit_item' => _x( 'Edit Flag', 'flags' ),
-		'update_item' => _x( 'Update Flag', 'flags' ),
-		'add_new_item' => _x( 'Add New Flag', 'flags' ),
-		'new_item_name' => _x( 'New Flag', 'flags' ),
-		'separate_items_with_commas' => _x( 'Separate flags with commas', 'flags' ),
-		'add_or_remove_items' => _x( 'Add or remove flags', 'flags' ),
-		'choose_from_most_used' => _x( 'Choose from the most used flags', 'flags' ),
-		'menu_name' => _x( 'Flags', 'flags' ),
-	);
-
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'show_in_nav_menus' => true,
-		'show_ui' => true,
-		'show_tagcloud' => true,
-		'hierarchical' => true,
-		'rewrite' => true,
-		'query_var' => true
-	);
-
-	register_taxonomy( 'flags', array('projects'), $args );
-}
-
 
 add_action( 'init', 'register_taxonomy_tools' );
 
@@ -303,45 +263,6 @@ function register_taxonomy_parts() {
 	register_taxonomy( 'parts', array('projects'), $args );
 }
 
-add_action( 'init', 'register_taxonomy_types' );
-
-/**
- * Add the types taxonomy
- *
- */
-function register_taxonomy_types() {
-
-	$labels = array(
-		'name' => _x( 'Types', 'types' ),
-		'singular_name' => _x( 'Type', 'types' ),
-		'search_items' => _x( 'Search Types', 'types' ),
-		'popular_items' => _x( 'Popular types', 'types' ),
-		'all_items' => _x( 'All types', 'Types' ),
-		'parent_item' => _x( 'Parent Type', 'types' ),
-		'parent_item_colon' => _x( 'Parent Type:', 'types' ),
-		'edit_item' => _x( 'Edit Type', 'types' ),
-		'update_item' => _x( 'Update Type', 'types' ),
-		'add_new_item' => _x( 'Add New Type', 'types' ),
-		'new_item_name' => _x( 'New Type', 'types' ),
-		'separate_items_with_commas' => _x( 'Separate types with commas', 'types' ),
-		'add_or_remove_items' => _x( 'Add or remove types', 'types' ),
-		'choose_from_most_used' => _x( 'Choose from most used types', 'types' ),
-		'menu_name' => _x( 'Types', 'types' ),
-	);
-
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'show_in_nav_menus' => true,
-		'show_ui' => true,
-		'show_tagcloud' => true,
-		'hierarchical' => true,
-		'rewrite' => true,
-		'query_var' => true
-	);
-
-	register_taxonomy( 'types', array('projects', 'post', 'review', 'magazine', 'craft' ), $args );
-}
 
 /**
  * Simple grid for the projects landing page.

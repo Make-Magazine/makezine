@@ -356,41 +356,6 @@ function make_magazine_parent_page($post) {
 	} // end hierarchical check.
 }
 
-add_action( 'init', 'register_taxonomy_section' );
-
-function register_taxonomy_section() {
-
-	$labels = array(
-		'name' => _x( 'Section', 'section' ),
-		'singular_name' => _x( 'Section', 'section' ),
-		'search_items' => _x( 'Search Sections', 'section' ),
-		'popular_items' => _x( 'Popular Sections', 'section' ),
-		'all_items' => _x( 'All Sections', 'section' ),
-		'parent_item' => _x( 'Parent Section', 'section' ),
-		'parent_item_colon' => _x( 'Parent Section:', 'section' ),
-		'edit_item' => _x( 'Edit Section', 'section' ),
-		'update_item' => _x( 'Update Section', 'section' ),
-		'add_new_item' => _x( 'Add New Section', 'section' ),
-		'new_item_name' => _x( 'New Section', 'section' ),
-		'separate_items_with_commas' => _x( 'Separate section with commas', 'section' ),
-		'add_or_remove_items' => _x( 'Add or remove section', 'section' ),
-		'choose_from_most_used' => _x( 'Choose from the most used section', 'section' ),
-		'menu_name' => _x( 'Sections', 'section' ),
-	);
-
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'show_in_nav_menus' => true,
-		'show_ui' => true,
-		'show_tagcloud' => true,
-		'hierarchical' => true,
-		'rewrite' => true,
-		'query_var' => true
-	);
-
-	register_taxonomy( 'section', array( 'magazine', 'projects', 'review' ), $args );
-}
 
 $field_data = array (
 	'advanced_testgroup' => array (

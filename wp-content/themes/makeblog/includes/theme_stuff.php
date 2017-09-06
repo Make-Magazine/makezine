@@ -1285,22 +1285,6 @@ function make_remove_metaboxes_for_authors() {
 		remove_meta_box( 'edit-flow-notifications', 'review', 'advanced' );
 		remove_meta_box( 'edit-flow-notifications', 'video', 'advanced' );
 
-		// Remove Makers Taxonomy
-		remove_meta_box( 'tagsdiv-maker', 'post', 'side' );
-		remove_meta_box( 'tagsdiv-maker', 'projects', 'side' );
-		remove_meta_box( 'tagsdiv-maker', 'magazine', 'side' );
-		remove_meta_box( 'tagsdiv-maker', 'review', 'side' );
-		remove_meta_box( 'tagsdiv-maker', 'craft', 'side' );
-		remove_meta_box( 'tagsdiv-maker', 'video', 'side' );
-
-		// Remove Makers Location Taxonomy
-		remove_meta_box( 'tagsdiv-location', 'post', 'side' );
-		remove_meta_box( 'tagsdiv-location', 'projects', 'side' );
-		remove_meta_box( 'tagsdiv-location', 'magazine', 'side' );
-		remove_meta_box( 'tagsdiv-location', 'review', 'side' );
-		remove_meta_box( 'tagsdiv-location', 'craft', 'side' );
-		remove_meta_box( 'tagsdiv-location', 'video', 'side' );
-
 		// Remove Primary Section Taxonomy
 		remove_meta_box( 'mob_section_primary_term_div', 'post', 'side' );
 		remove_meta_box( 'mob_section_primary_term_div', 'projects', 'side' );
@@ -1314,18 +1298,12 @@ function make_remove_metaboxes_for_authors() {
 		remove_meta_box( 'mob_types_primary_term_div', 'review', 'side' );
 		remove_meta_box( 'mob_types_primary_term_div', 'craft', 'side' );
 
-		// Remove Primary Flag
-		remove_meta_box( 'mob_flags_primary_term_div', 'projects', 'side' );
-
 		// Remove Primary Difficulty
 		remove_meta_box( 'mob_difficulty_primary_term_div', 'projects', 'side' );
 		remove_meta_box( 'mob_difficulty_primary_term_div', 'video', 'side' );
 
 		// Remove Primary Playlist
 		remove_meta_box( 'mob_playlist_primary_term_div', 'video', 'side' );
-
-		// Remove Flags Taxonomy
-		remove_meta_box( 'flagsdiv', 'projects', 'side' );
 
 		// Remove Magazine Meta
 		remove_meta_box( 'magazine_meta', 'post', 'side' );

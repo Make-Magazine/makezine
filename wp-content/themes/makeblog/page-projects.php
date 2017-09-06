@@ -18,13 +18,6 @@ get_header('version-2'); ?>
                 <div class="col-xs-12 col-sm-4">
                   <?php
                   $args = array(
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'flags',
-                        'field' => 'slug',
-                        'terms' => 'featured-guide'
-                      )
-                    ),
                     'post_type' => 'projects',
                     'post_status' => 'publish',
                     'posts_per_page' => 1,
@@ -49,7 +42,7 @@ get_header('version-2'); ?>
                   <?php endwhile; else: endif; ?>
                 </div>
               </div>
-              <?php echo make_projects_grid( 'Featured Projects', 4, 'flags', 'featured-guide' ); ?>
+              <?php echo make_projects_grid( 'Featured Projects', 4, 'featured-guide' ); ?>
               <div class="mag">
                 <div class="page-header">
                   <h3>From MAKE magazine</h3>
@@ -57,13 +50,6 @@ get_header('version-2'); ?>
                 <div class="row">
                     <?php
                     $args = array(
-                      'tax_query' => array(
-                        array(
-                          'taxonomy' => 'flags',
-                          'field' => 'slug',
-                          'terms' => 'from-make-magazine'
-                        )
-                      ),
                       'post_type' => 'projects',
                       'post_status' => 'publish',
                       'posts_per_page' => 2,
