@@ -21,20 +21,11 @@ class Theme {
 		// Enqueue our Product Review styles.
 		wp_enqueue_script( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/js/src/index.js', array( 'jquery', 'bootstrap-js' ) );
 
-
-		if ($_SERVER['HTTPS'] != "on") { 
-			wp_localize_script( 'make-reviews', 'MakeReviews', array(
-				'ajax_url'    => set_url_scheme( admin_url( 'admin-ajax.php' ), 'http' ),
-				'ajax_action' => AJAX::FILTER_ACTION,
-				'post_id'     => get_the_ID()
-			) );
-		} else {
-			wp_localize_script( 'make-reviews', 'MakeReviews', array(
-				'ajax_url'    => set_url_scheme( admin_url( 'admin-ajax.php' ), 'https' ),
-				'ajax_action' => AJAX::FILTER_ACTION,
-				'post_id'     => get_the_ID()
-			) );
-		}
+		wp_localize_script( 'make-reviews', 'MakeReviews', array(
+			'ajax_url'    => set_url_scheme( admin_url( 'admin-ajax.php' ), 'https' ),
+			'ajax_action' => AJAX::FILTER_ACTION,
+			'post_id'     => get_the_ID()
+		) );
 
 		// Enqueue our Product Review styles.
 		wp_enqueue_style( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/css/master.css', array(
