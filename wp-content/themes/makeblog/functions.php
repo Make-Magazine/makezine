@@ -555,7 +555,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="col-sm-8 col-xs-12 nl-modal">
                 <h3>Awesome!</h3>
-                <p>Thanks for signing up.</p>
+                <p>Thanks for signing up. Please check your email to confirm.</p>
             </div>
             <div class="clearfix"></div>
         </div>
