@@ -28,7 +28,7 @@ if (user_can($current_user, 'administrator')) {
 				<div class="row">
 					<div class="col-xs-12">
 
-						<form class="sub-form whatcounts-signupTagArchive" action="http://whatcounts.com/bin/listctrl" method="POST">
+						<form class="sub-form whatcounts-signupTagArchive" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 							<?php
 							if ( $tag_slug == 'maker-pro' ) {
 							  echo '<input type="hidden" name="custom_list_makerpro" value="yes" /><!-- Maker Pro Newsletter -->';

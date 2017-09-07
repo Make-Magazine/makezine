@@ -452,7 +452,7 @@ function subscribe_return_path_overlay() { ?>
                             $isSecure = "https://";
                         }
                         ?>
-                        <form class="sub-form whatcounts-signup1o" action="http://whatcounts.com/bin/listctrl" method="POST">
+                        <form class="sub-form whatcounts-signup1o" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
                             <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"/><!-- Confirmation -->
                             <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
                             <input type="hidden" name="custom_list_makermedia" value="yes"/>
@@ -510,7 +510,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="nl-modal-div2">
                 <div class="col-xs-12">
                     <h4>You might also like these newsletters:</h4>
-                    <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
+                    <form class="whatcounts-signup2" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
                         <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"><!-- Confirmation -->
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" id="email" name="email" value="" />

@@ -74,7 +74,7 @@ add_shortcode( 'newsletter', 'make_newsletter' );
 
 function make_marketron_newsletter( $atts, $content = null ) {
 	return '
-		<form class="form-stacked" action="http://whatcounts.com/bin/listctrl" method="POST">
+		<form class="form-stacked" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 			<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
 			<input type="hidden" name="custom_list_makerpro" value=“yes" />
 			<input type="hidden" name="cmd" value="subscribe" />
@@ -1141,7 +1141,7 @@ add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );
 function newsletter_signup_sidebar_shortcode() {
 	$output = '<div class="mz-sidebar-subscribe">
 							<h4>Let\'s Stay in Touch!</h4>
-							<form class="sub-form whatcounts-signup1s" action="//whatcounts.com/bin/listctrl" method="POST">
+							<form class="sub-form whatcounts-signup1s" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 								<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"><!-- Confirmation -->
 								<input type="hidden" name="custom_list_makermedia" value="yes" />
 								<input type="hidden" name="custom_list_makenewsletter" value="yes" />
