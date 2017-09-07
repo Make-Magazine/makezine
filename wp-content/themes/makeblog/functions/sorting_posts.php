@@ -147,7 +147,7 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
             }
             $post_id = get_the_ID();
             $output .= '">';
-            $output .= '<article itemscope itemtype="http://schema.org/Article">';
+            $output .= '<article itemscope itemtype="https://schema.org/Article">';
             $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
             $link = get_the_permalink();
             $output .= $link;
@@ -590,7 +590,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             }
             $post_id = get_the_ID();
             $output .= '">';
-            $output .= '<article itemscope itemtype="http://schema.org/Article">
+            $output .= '<article itemscope itemtype="https://schema.org/Article">
                             <div class="gradient-wrapper">
                                 <div class="gradient_animation">
                                     <a href="';
@@ -1020,7 +1020,7 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
             }
             $post_id = get_the_ID();
             $output .= '">';
-            $output .= '<article itemscope itemtype="http://schema.org/Article">';
+            $output .= '<article itemscope itemtype="https://schema.org/Article">';
             $output .= '<div class="gradient-wrapper"><div class="gradient_animation"><a href="';
             $link = get_the_permalink();
             $output .= $link;

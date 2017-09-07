@@ -9,7 +9,7 @@
  */
 get_header('version-2'); ?>
 
-	<div class="category-top author-page" itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<div class="category-top author-page" itemprop="author" itemscope itemtype="https://schema.org/Person">
 
 		<div class="container">
 

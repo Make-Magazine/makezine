@@ -32,7 +32,7 @@ class Make_Authors {
 
 				// We need to hash out the email so we can properlly and securely request the right Gravatar account
 				$hash = md5( strtolower( trim( $email ) ) );
-				$url_gravatar = esc_url( 'http://www.gravatar.com/' . $hash . '.json');
+				$url_gravatar = esc_url( 'https://www.gravatar.com/' . $hash . '.json');
 				// Request the data from gravatar
 				$output = wp_remote_get( esc_url( $url_gravatar )  );
 				$gdata = $output['body'];
@@ -73,7 +73,7 @@ class Make_Authors {
 			
 				// We need to hash out the email so we can properlly and securely request the right Gravatar account
 				$hash = md5( strtolower( trim( $email ) ) );
-				$url_gravatar = esc_url( 'http://www.gravatar.com/' . $hash . '.json');
+				$url_gravatar = esc_url( 'https://www.gravatar.com/' . $hash . '.json');
 				// Request the data from gravatar
 				$output = wp_remote_get( esc_url( $url_gravatar )  );
 				$gdata = $output['body'];
@@ -152,7 +152,7 @@ class Make_Authors {
 					$urls = $author->urls;
 					foreach ( $urls as $url ) {
 						$haystack = $url->value;
-						$needle   = 'http://twitter';
+						$needle   = 'https://twitter';
 						$pos      = strripos( $haystack, $needle );
 						if ( $pos !== false ) {
 							$output .= '<a class="twitter" href="' . esc_url( $url->value ) . '"><i class="fa fa-twitter"></i></a>';
