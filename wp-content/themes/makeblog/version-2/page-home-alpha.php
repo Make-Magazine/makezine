@@ -259,7 +259,7 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
   $make_home3x_1title = get_theme_mod( 'make_home3x_1title' );
   $make_home3x_1smallbot = get_theme_mod( 'make_home3x_1smallbot' );
   $make_home3x_1btn = get_theme_mod( 'make_home3x_1btn' );
-  $make_home3x_1img = get_theme_mod( 'make_home3x_1img' );
+  $make_home3x_1img = get_theme_mod_img( 'make_home3x_1img' );
 
   $make_home3x_2url = get_theme_mod( 'make_home3x_2url' );
   $make_home3x_2top = get_theme_mod( 'make_home3x_2top' );
@@ -267,7 +267,7 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
   $make_home3x_2title = get_theme_mod( 'make_home3x_2title' );
   $make_home3x_2smallbot = get_theme_mod( 'make_home3x_2smallbot' );
   $make_home3x_2btn = get_theme_mod( 'make_home3x_2btn' );
-  $make_home3x_2img = get_theme_mod( 'make_home3x_2img' );
+  $make_home3x_2img = get_theme_mod_img( 'make_home3x_2img' );
 
   $make_home3x_3url = get_theme_mod( 'make_home3x_3url' );
   $make_home3x_3top = get_theme_mod( 'make_home3x_3top' );
@@ -275,7 +275,7 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
   $make_home3x_3title = get_theme_mod( 'make_home3x_3title' );
   $make_home3x_3smallbot = get_theme_mod( 'make_home3x_3smallbot' );
   $make_home3x_3btn = get_theme_mod( 'make_home3x_3btn' );
-  $make_home3x_3img = get_theme_mod( 'make_home3x_3img' );
+  $make_home3x_3img = get_theme_mod_img( 'make_home3x_3img' );
   ?>
 
   <div class="home-event-info-3x container">

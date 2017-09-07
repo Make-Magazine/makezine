@@ -950,3 +950,11 @@ if ( ! isset( $_POST['tax'] ) ) {
 
  wp_die();
 }
+
+
+//
+// Change the get_theme_mod function to https
+//
+function get_theme_mod_img($mod_name){
+    return str_replace(array('http:', 'https:'), '', get_theme_mod($mod_name));
+}
