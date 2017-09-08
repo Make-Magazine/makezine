@@ -36,13 +36,9 @@ jQuery( "a.sumome-share-client-share" ).ready(function() {
 
 // Open external links in new tab
 jQuery(document).ready(function($) {
-  $('a').not('[href*="mailto:"]').each(function() {
-    var a = new RegExp('https://' + window.location.host + '/');
-    var href = this.href;
-    if (!a.test(href)) {
-      $(this).attr('target', '_blank');
-    }
-  });
+  $(document.links).filter(function() {
+    return this.hostname != window.location.hostname;
+  }).attr('target', '_blank');
 });
 
 

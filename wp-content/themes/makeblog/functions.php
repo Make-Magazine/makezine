@@ -958,3 +958,9 @@ if ( ! isset( $_POST['tax'] ) ) {
 function get_theme_mod_img($mod_name){
     return str_replace(array('http:', 'https:'), '', get_theme_mod($mod_name));
 }
+
+
+//
+// Using wp_get_attachment_url filter, we can fix the dreaded mixed content browser warning
+//
+add_filter( 'wp_get_attachment_url', 'set_url_scheme' );
