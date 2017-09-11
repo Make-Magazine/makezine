@@ -421,7 +421,7 @@ get_header('version-2'); ?>
                 <p>Interesting projects and events to your inbox weekly.</p>
               </div>
               <div class="col-xs-12 col-sm-6">
-                <form class="form-inline sub-form whatcounts-signup3" action="http://whatcounts.com/bin/listctrl" method="POST">
+                <form class="form-inline sub-form whatcounts-signup3" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
                   <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
                   <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
                   <input type="hidden" name="custom_list_makermedia" value="yes"/>
@@ -448,7 +448,7 @@ get_header('version-2'); ?>
           </div>
           <div class="col-sm-8 col-xs-12 nl-modal">
             <h3>Awesome!</h3>
-            <p>Thanks for signing up.</p>
+            <p>Thanks for signing up. Please check your email to confirm.</p>
           </div>
           <div class="clearfix"></div>
         </div>

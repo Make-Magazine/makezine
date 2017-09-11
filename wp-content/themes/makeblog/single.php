@@ -105,7 +105,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			</div>
 		</div>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<article itemscope itemtype="http://schema.org/ScholarlyArticle">
+			<article itemscope itemtype="https://schema.org/ScholarlyArticle">
 				<div class="story-header first-story" id="<?php echo get_the_ID(); ?>">
 
 					<div class="container">
@@ -168,7 +168,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						<div class="col-sm-7 col-md-8">
 							<div <?php post_class(); ?>>
 								<?php
-								$url   = str_replace( home_url(), 'http://makezine.com', get_permalink() );
+								$url   = str_replace( home_url(), 'https://makezine.com', get_permalink() );
 								$title = get_the_title();
 								echo do_shortcode( '[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="' . $url . '" text="' . $title . '"]' );
 								?>
@@ -188,7 +188,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								<button type="button" class="btn btn-info btn-lg"
 										data-toggle="modal" data-target="#disqus-modal"
 										onclick="reset('<?php echo get_the_ID(); ?>',
-											'<?php echo 'http://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>',
+											'<?php echo 'https://makezine.com' . str_replace( home_url(), '', get_permalink() ); ?>',
 											'<?php echo get_the_title(); ?>', 'en');">
 									Show comments
 								</button>
@@ -276,7 +276,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 		var dsq = document.createElement('script');
 		dsq.type = 'text/javascript';
 		dsq.async = true;
-		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	})();
 	/* * * Disqus Reset Function * * */

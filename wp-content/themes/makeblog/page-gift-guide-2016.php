@@ -143,7 +143,7 @@ $products = get_field('products');
     <div id="innerDiv" class="inner">
   <div class="gg2016-body-bg">
 
-    <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="http://schema.org/ItemList">
+    <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="https://schema.org/ItemList">
 
     <?php if( have_rows('products') ): ?>
 
@@ -166,7 +166,7 @@ $products = get_field('products');
           <article class="gg2016-review gg2016-review-even1 mix
           <?php if( $category ): echo implode(' ', $category); ?>
           <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
-          <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+          <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
             <div class="gg2016-review-flex-cont">
               <div class="gg2016-review-img">
                 <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
@@ -225,7 +225,7 @@ $products = get_field('products');
         <article class="gg2016-review gg2016-review-even1 mix gg2016-sponsored
         <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
         <?php if($ctf){ echo 'ctf-move';} ?>
-        <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" style="display:inline-block;">
+        <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" style="display:inline-block;">
           <h5>SPONSORED</h5>
           <div class="gg2016-review-flex-cont">
             <div class="gg2016-review-img">

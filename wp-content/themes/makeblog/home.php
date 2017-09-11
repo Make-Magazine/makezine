@@ -32,7 +32,7 @@ if (user_can($current_user, 'administrator')) {
 			<div class="row">
 				<div class="col-xs-12">
 
-					<form class="sub-form whatcounts-signupTagArchive" action="http://whatcounts.com/bin/listctrl" method="POST">
+					<form class="sub-form whatcounts-signupTagArchive" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 						<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
             <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
             <input type="hidden" name="custom_list_makermedia" value="yes"/>

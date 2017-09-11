@@ -33,9 +33,9 @@ $how_scoring_works_title = ! empty( $how_scoring_works_title ) ? $how_scoring_wo
 	    $description = get_sub_field('description2');
 	    ?>
 
-				<a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/<?php echo $yt_id; ?>?autoplay=1">
+				<a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/<?php echo $yt_id; ?>?autoplay=1">
 					<div class="yt-sb-video">
-						<img class="img-responsive" src="http://img.youtube.com/vi/<?php echo $yt_id; ?>/mqdefault.jpg" alt="Product Review Videos" />
+						<img class="img-responsive" src="https://img.youtube.com/vi/<?php echo $yt_id; ?>/mqdefault.jpg" alt="Product Review Videos" />
 						<img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
 					</div>
 					<p><?php echo $description; ?></p>

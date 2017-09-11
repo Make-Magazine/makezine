@@ -31,7 +31,7 @@ function get_story_with_ajax() {
       <div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
   </div>
 
-  <article itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <article itemscope itemtype="https://schema.org/ScholarlyArticle">
     <div class="story-header" id="<?php echo get_the_ID(); ?>">
         <div class="container">
             <div class="story-title">
@@ -71,7 +71,7 @@ function get_story_with_ajax() {
             <div class="col-sm-7 col-md-8">
                 <div <?php post_class(); ?>>
                     <?php
-                    $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
+                    $url = str_replace(home_url(), 'https://makezine.com', get_permalink());
                     $title = get_the_title();
                     echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
                     ?>
@@ -84,7 +84,7 @@ function get_story_with_ajax() {
                     <button type="button" class="btn btn-info btn-lg"
                       data-toggle="modal" data-target="#disqus-modal"
                       onclick="reset('<?php echo get_the_ID(); ?>',
-                        '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>',
+                        '<?php echo 'https://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>',
                         '<?php echo get_the_title(); ?>', 'en');">
                       Show comments
                     </button>
@@ -189,7 +189,7 @@ function get_story_with_ajax2() {
         <div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
     </div>
 
-    <article itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <article itemscope itemtype="https://schema.org/ScholarlyArticle">
       <div class="story-header" id="<?php echo get_the_ID(); ?>">
           <div class="container">
               <div class="row">
@@ -233,7 +233,7 @@ function get_story_with_ajax2() {
               <div class="col-sm-7 col-md-8">
                   <div <?php post_class(); ?>>
                       <?php
-                      $url = str_replace(home_url(), 'http://makezine.com', get_permalink());
+                      $url = str_replace(home_url(), 'https://makezine.com', get_permalink());
                       $title = get_the_title();
                       echo do_shortcode('[easy-social-share buttons="facebook,twitter,google,reddit,pinterest,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="'.$url.'" text="'.$title.'"]');
                       ?>
@@ -246,7 +246,7 @@ function get_story_with_ajax2() {
                       <button type="button" class="btn btn-info btn-lg"
                         data-toggle="modal" data-target="#disqus-modal"
                         onclick="reset('<?php echo get_the_ID(); ?>',
-                          '<?php echo 'http://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>',
+                          '<?php echo 'https://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>',
                           '<?php echo get_the_title(); ?>', 'en');">
                         Show comments
                       </button>

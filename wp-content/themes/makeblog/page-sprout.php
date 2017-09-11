@@ -38,8 +38,8 @@ get_header( 'version-2' );
       <div class="row post_row home-sprout-row"> 
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/nHyaYb7RkqA?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/nHyaYb7RkqA/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/nHyaYb7RkqA?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/nHyaYb7RkqA/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
               <p class="sprout-video-caption">Build an Air Powered Rocket using Sprout by HP</p>
@@ -47,8 +47,8 @@ get_header( 'version-2' );
         </div> 
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/W3zJCG_JtfI?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/W3zJCG_JtfI/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/W3zJCG_JtfI?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/W3zJCG_JtfI/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
           <p class="sprout-video-caption">3D Capture Stage is a special turntable that allows true 3d scanning using 3d Object Capture.</p>
@@ -56,8 +56,8 @@ get_header( 'version-2' );
         </div>
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/HyWn4_22cN8?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/HyWn4_22cN8/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/HyWn4_22cN8?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/HyWn4_22cN8/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
               <p class="sprout-video-caption">Our edit team checks in with the Sprout team to see how the platform is inspiring makers to learn and create.</p>
@@ -67,8 +67,8 @@ get_header( 'version-2' );
       <div class="row post_row home-sprout-row">
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/wYP_UIBQExk?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/wYP_UIBQExk/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/wYP_UIBQExk?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/wYP_UIBQExk/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
               <p class="sprout-video-caption">Designers and developers describe their first experiences with the Sprout and its potential to transform the way digital media is created.</p>
@@ -76,8 +76,8 @@ get_header( 'version-2' );
         </div>      
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/re7xpfUuCXE?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/re7xpfUuCXE/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/re7xpfUuCXE?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/re7xpfUuCXE/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
           <p class="sprout-video-caption">The story of how Sprout by HP was used to create a one-of-a-kind cast cover and made a young boy feel like a superhero.</p>
@@ -85,8 +85,8 @@ get_header( 'version-2' );
         </div>
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/Tw5v00RAqow?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/Tw5v00RAqow/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/Tw5v00RAqow?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/Tw5v00RAqow/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
               <p class="sprout-video-caption">HP's Sprout division and Dremel move toward a full-cycle approach to 3D printing and scanning.</p>
@@ -96,8 +96,8 @@ get_header( 'version-2' );
       <div class="row post_row home-sprout-row">
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
-              <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/icKZ_ND9p0Q?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/icKZ_ND9p0Q/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+              <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/icKZ_ND9p0Q?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/icKZ_ND9p0Q/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
               <p class="sprout-video-caption">Sprout is an all-new computer interface that embraces creativity and accessibility. The creator, Brad Short, gives a feature tour.</p>
@@ -106,7 +106,7 @@ get_header( 'version-2' );
         <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="sprout-video">
               <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/LETmOKDkH-A?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/LETmOKDkH-A/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+                <img class="img-responsive" src="https://img.youtube.com/vi/LETmOKDkH-A/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
               </a>
           <p class="sprout-video-caption">Inspired by family mementos, this set of grandparents uses the HP Sprout to create a unique and lovely mobile for their baby granddaughter.</p>

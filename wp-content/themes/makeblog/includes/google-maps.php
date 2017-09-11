@@ -16,7 +16,7 @@
 	 */
 	function make_makercamp_map_shortcode( $atts, $content ) {
 
-		$output = '<iframe src="http://mapsengine.google.com/map/u/0/embed?mid=z6jknjwOuQEA.kwp_h1l1fm4s" width="99.5%" height="464"></iframe>';
+		$output = '<iframe src="https://mapsengine.google.com/map/u/0/embed?mid=z6jknjwOuQEA.kwp_h1l1fm4s" width="99.5%" height="464"></iframe>';
 
 		return $output;
 	}

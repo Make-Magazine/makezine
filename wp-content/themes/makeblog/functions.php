@@ -415,8 +415,8 @@ function youtube_shortcode_modal($atts){
 
     <div class="post col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <div class="sprout-video">
-            <a class="fancytube fancybox.iframe" href="http://www.youtube.com/embed/<?php echo $id; ?>?autoplay=1">
-                <img class="img-responsive" src="http://img.youtube.com/vi/<?php echo $id; ?>/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
+            <a class="fancytube fancybox.iframe" href="https://www.youtube.com/embed/<?php echo $id; ?>?autoplay=1">
+                <img class="img-responsive" src="https://img.youtube.com/vi/<?php echo $id; ?>/mqdefault.jpg" alt="MakerCon Conference Videos" height="180" width="100%" />
                 <img class="yt-play-btn" src="<?php echo get_stylesheet_directory_uri(); ?>/img/play-btn.png" alt="Youtube overlay play button" />
             </a>
         </div>
@@ -452,7 +452,7 @@ function subscribe_return_path_overlay() { ?>
                             $isSecure = "https://";
                         }
                         ?>
-                        <form class="sub-form whatcounts-signup1o" action="http://whatcounts.com/bin/listctrl" method="POST">
+                        <form class="sub-form whatcounts-signup1o" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
                             <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"/><!-- Confirmation -->
                             <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
                             <input type="hidden" name="custom_list_makermedia" value="yes"/>
@@ -510,7 +510,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             <div class="nl-modal-div2">
                 <div class="col-xs-12">
                     <h4>You might also like these newsletters:</h4>
-                    <form class="whatcounts-signup2" action="http://whatcounts.com/bin/listctrl" method="POST">
+                    <form class="whatcounts-signup2" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
                         <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"><!-- Confirmation -->
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" id="email" name="email" value="" />
@@ -555,7 +555,7 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="col-sm-8 col-xs-12 nl-modal">
                 <h3>Awesome!</h3>
-                <p>Thanks for signing up.</p>
+                <p>Thanks for signing up. Please check your email to confirm.</p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -950,3 +950,17 @@ if ( ! isset( $_POST['tax'] ) ) {
 
  wp_die();
 }
+
+
+//
+// Change the get_theme_mod function to https
+//
+function get_theme_mod_img($mod_name){
+    return str_replace(array('http:', 'https:'), '', get_theme_mod($mod_name));
+}
+
+
+//
+// Using wp_get_attachment_url filter, we can fix the dreaded mixed content browser warning
+//
+add_filter( 'wp_get_attachment_url', 'set_url_scheme' );

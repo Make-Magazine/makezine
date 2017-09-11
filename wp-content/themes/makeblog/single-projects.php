@@ -26,7 +26,7 @@ $post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<div <?php post_class('col-xs-12'); ?> itemscope itemtype="http://schema.org/TechArticle">
+		<div <?php post_class('col-xs-12'); ?> itemscope itemtype="https://schema.org/TechArticle">
 
 			<div class="projects-masthead">
 
