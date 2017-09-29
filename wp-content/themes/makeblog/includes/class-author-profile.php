@@ -206,7 +206,7 @@ class Make_Authors {
 	 * @since   1.1
 	 */
 	public function author_block( $newauthor ) {
-     global $authordata;
+    global $authordata;
 	
 		// Get the true author data
 		$author = $authordata;
@@ -219,19 +219,17 @@ class Make_Authors {
 		$output .= '<div class="col-xs-12 col-sm-9 -author-profile-bio">';
 		// Author name
 		$output .= '<h3 class="jumbo"><a href="' . esc_url( home_url( 'author/' . $newauthor->user_nicename ) ) . '" itemprop="author">' . esc_html( $this->author_name( $author ) ) . '</a></h3>';
-
 		
-			$output .= $this->author_bio( $author );
-			$output .= $this->author_contact_info( $author );
-			$output .= $this->author_urls( $author );
+		$output .= $this->author_bio( $author );
+		$output .= $this->author_contact_info( $author );
+		$output .= $this->author_urls( $author );
 		
-
 		$output .= '</div>';
 		$output .= '</div>';
 		$output .= '<hr>';
 		return $output;
 	}
-public function author_block_generic( $newauthor,$authorID ) {
+	public function author_block_generic( $newauthor,$authorID ) {
 
 		$output = '';
 		$output .= '<div class="row mz-author-row"><div class="col-xs-12 col-sm-3 col-lg-2 mz-author-img">';
@@ -450,26 +448,34 @@ public function author_block_generic( $newauthor,$authorID ) {
 	 */
 	public function author_urls( $author ) {
 
+		$hash = md5( strtolower( trim( $author->user_email ) ) );
+		$str = file_get_contents( 'https://www.gravatar.com/' . $hash . '.php' );
+		$profile = unserialize( $str );
+		if ( is_array( $profile ) && isset( $profile['entry'] ) ) {
+    	$gravatar_urls = $profile['entry'][0]['urls'];
+    }
+
 		// Load this if we have either a list of links from Gravatar or a single website from Guest Authors
-		if ( isset( $author->urls ) || isset( $author->website ) ) {
+		if ( isset( $gravatar_urls) || isset( $author->website ) ) {
+
+			$output = '';
 
 			// Update our URLs into a one variable so we have less code. First is Gravatar, second is Guest Authors which only allows one option.
-			if ( isset( $author->urls ) ) {
-				$urls = $author->urls;
+			if ( isset( $gravatar_urls ) ) {
+				$urls = $gravatar_urls;
+				foreach ( $urls as $url ) {
+					if ( ! empty( $url['value'] ) ) {
+						$output .= '<p><i class="fa fa-globe" aria-hidden="true"></i> <a href="' . esc_url( $url['value'] ) . '">' . esc_html( $url['title'] ) . '</a></p>';
+					}
+				}
 			} else {
 				$urls = array( (object) array( 'title' => 'Website', 'value' => $author->website ) );
-			}
-
-			$output = '<ul class="links">';
-
-			foreach ( $urls as $url ) {
-				if ( ! empty( $url->value ) ) {
-					$output .= '<li><a class="noborder button red small-button" href="' . esc_url( $url->value ) . '">' . esc_html( $url->title ) . '</a></li>';
+				foreach ( $urls as $url ) {
+					if ( ! empty( $url->value ) ) {
+						$output .= '<p><i class="fa fa-globe" aria-hidden="true"></i> <a href="' . esc_url( $url->value ) . '">' . esc_html( $url->title ) . '</a></p>';
+					}
 				}
-
 			}
-
-			$output .= '</ul>';
 
 			return $output;
 		}
