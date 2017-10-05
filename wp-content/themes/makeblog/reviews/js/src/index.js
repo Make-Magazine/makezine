@@ -211,8 +211,9 @@ var ReviewsFilters = {
 
 jQuery( document ).ready(function($) {
 
-        // Clear out the filters
-        $('#rf-filters-form')[0].reset();
+  // Clear out the filters
+  //$('#rf-filters-form')[0].reset();
+
 	// Init the filter dropdowns on desktop
 	$('.fl-filter .dropdown-toggle').dropdown();
 
