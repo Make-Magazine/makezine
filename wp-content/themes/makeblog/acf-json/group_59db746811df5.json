@@ -1,0 +1,645 @@
+{
+    "key": "group_59db746811df5",
+    "title": "Gift Guide 2017",
+    "fields": [
+        {
+            "key": "field_59db746821dd3",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59db746821eb4",
+            "label": "Header Title",
+            "name": "header_title",
+            "type": "text",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59db746821ec5",
+            "label": "Header Subtitle",
+            "name": "header_subtitle",
+            "type": "text",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59db746821ed5",
+            "label": "Header Description",
+            "name": "header_description",
+            "type": "wysiwyg",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_59db74e6b31dd",
+            "label": "Header banner",
+            "name": "header_banner",
+            "type": "image",
+            "value": null,
+            "instructions": "This banner sits below the header description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": ""
+        },
+        {
+            "key": "field_59db746821ee4",
+            "label": "Categories and filters",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59db746821ef4",
+            "label": "Categories filters",
+            "name": "categories_filters",
+            "type": "select",
+            "value": null,
+            "instructions": "Add all categories to be shown in navigation. Category and filter nav bar will be hidden is no categories added here. To add new categories to the list just ask dev.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "category-hackers": "For Hackers",
+                "category-artists": "For Artists",
+                "category-workshopMavens": "For Workshop Mavens",
+                "category-digitalFab": "For Digital Fabricators",
+                "category-kidsCorner": "Kid’s Corner"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "array",
+            "placeholder": ""
+        },
+        {
+            "key": "field_59db746821f03",
+            "label": "Gift Guide Products",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_59db746821f13",
+            "label": "Frequency of ads",
+            "name": "frequency_of_ads",
+            "type": "number",
+            "value": null,
+            "instructions": "An ad will appear after every set of this many products",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 12,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_59db746821f22",
+            "label": "Click the \"Add New Product\" button and fill out all the required fields. Then scroll to the top of this page and click the \"Update\" button to save the new product.",
+            "name": "products",
+            "type": "repeater",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add New Product",
+            "sub_fields": [
+                {
+                    "key": "field_59db7468442a4",
+                    "label": "Product name",
+                    "name": "product_name",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59db7468442d3",
+                    "label": "Product description",
+                    "name": "product_description",
+                    "type": "textarea",
+                    "value": null,
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_59db75bcb31de",
+                    "label": "Author image",
+                    "name": "author_image",
+                    "type": "image",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": 1,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_59db7468442e1",
+                    "label": "Author name",
+                    "name": "author_name",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "Product recommendation \"By\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59db760ab31df",
+                    "label": "Author description",
+                    "name": "author_description",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "300 character limit",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 300
+                },
+                {
+                    "key": "field_59db7468442ee",
+                    "label": "Price (shown)",
+                    "name": "price",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "This price is displayed as entered.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59db7468442fb",
+                    "label": "Price (Used for sorting, not shown)",
+                    "name": "price_used_for_sorting_not_shown",
+                    "type": "number",
+                    "value": null,
+                    "instructions": "Enter a whole number to use for the price sorting feature. No commas, dollar signs, dashes, or decimals.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_59db746844307",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59db746844314",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "value": null,
+                    "instructions": "Try and keep all images as square as possible. Resize to 800px by 800px and under 200kb file size. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 850,
+                    "max_height": 850,
+                    "max_size": ".2",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_59db746844321",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "select",
+                    "value": null,
+                    "instructions": "Add one category, multiple categories, or none.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-hackers": "For Hackers",
+                        "category-artists": "For Artists",
+                        "category-workshopMavens": "For Workshop Mavens",
+                        "category-digitalFab": "For Digital Fabricators",
+                        "category-kidsCorner": "Kid’s Corner"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59db74684432e",
+                    "label": "Sponsored",
+                    "name": "sponsored",
+                    "type": "true_false",
+                    "value": null,
+                    "instructions": "Check here if this is a sponsored product.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_59db74684433a",
+                    "label": "Daily pick",
+                    "name": "daily_pick",
+                    "type": "true_false",
+                    "value": null,
+                    "instructions": "Check here if this is the Daily Pick. Only 1 at a time.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_59db746844347",
+                    "label": "Category Takeover Featured",
+                    "name": "category_takeover_featured",
+                    "type": "select",
+                    "value": null,
+                    "instructions": "Brings the product to the top of the list for this category takeover.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-tec": "Technology",
+                        "category-dig": "Digital Fabrication",
+                        "category-cra": "Craft & Design",
+                        "category-dro": "Drones & Vehicles",
+                        "category-sci": "Science",
+                        "category-hom": "Home",
+                        "category-wor": "Workshop",
+                        "category-hackers": "For Hackers",
+                        "category-artists": "For Artists",
+                        "category-workshopMavens": "For Workshop Mavens",
+                        "category-digitalFab": "For Digital Fabricators",
+                        "category-kidsCorner": "Kid’s Corner"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_59db746821f4b",
+            "label": "Takeovers",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_59db74682220e",
+            "label": "Click the \"Add a Takeover\" button for each category takeover",
+            "name": "choose_a_takeover_category",
+            "type": "repeater",
+            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add a Takeover",
+            "sub_fields": [
+                {
+                    "key": "field_59db74687f26e",
+                    "label": "Category",
+                    "name": "category",
+                    "type": "select",
+                    "value": null,
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-hackers": "For Hackers",
+                        "category-artists": "For Artists",
+                        "category-workshopMavens": "For Workshop Mavens",
+                        "category-digitalFab": "For Digital Fabricators",
+                        "category-kidsCorner": "Kid’s Corner"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59db74687f289",
+                    "label": "Full width background image",
+                    "name": "full_width_background_image",
+                    "type": "image",
+                    "value": null,
+                    "instructions": "768px by 1300px",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 2600,
+                    "max_height": 1400,
+                    "max_size": ".2",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_59db74687f2b1",
+                    "label": "Small square image",
+                    "name": "small_square_image",
+                    "type": "image",
+                    "value": null,
+                    "instructions": "200px by 200px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 500,
+                    "max_height": 500,
+                    "max_size": ".15",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-gift-guide-2017.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1507556473
+}
