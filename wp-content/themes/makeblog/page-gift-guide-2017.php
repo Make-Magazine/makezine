@@ -78,8 +78,10 @@ $ad_freq = get_field('frequency_of_ads');
     </div>
 
     <?php $header_banner = get_field('header_banner');
-    if ($header_banner) { ?>
-      <img class="gg2017-header-banner" src="<?php echo get_resized_remote_image_url($header_banner); ?>?w=1600" alt="Gift Guide banner image" />
+    if ($header_banner) { 
+      $args = array('strip' => 'all');
+      $gg_photon_banner = jetpack_photon_url($header_banner, $args); ?>
+      <img class="gg2017-header-banner" src="<?php echo $gg_photon_banner; ?>?w=1600" alt="Gift Guide banner image" />
     <?php } ?>
   </header>
 
