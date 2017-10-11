@@ -45,7 +45,7 @@ $ad_freq = get_field('frequency_of_ads');
 
             $product_name = get_sub_field('product_name');
             $url = get_sub_field('url');
-            $image = get_sub_field('image');
+            $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
             $daily_pick = get_sub_field('daily_pick'); ?>
 
             <div class="col-xs-12 col-sm-6 gg2017-dp">
@@ -79,7 +79,7 @@ $ad_freq = get_field('frequency_of_ads');
 
     <?php $header_banner = get_field('header_banner');
     if ($header_banner) { ?>
-      <img class="gg2017-header-banner" src="<?php echo $header_banner; ?>" alt="" />
+      <img class="gg2017-header-banner" src="<?php echo get_resized_remote_image_url($header_banner,1600); ?>" alt="Gift Guide banner image" />
     <?php } ?>
   </header>
 
@@ -144,11 +144,11 @@ if( $cats ) { ?>
               $product_description = get_sub_field('product_description');
               $author_name = get_sub_field('author_name');
               $author_description = get_sub_field('author_description');
-              $author_image = get_sub_field('author_image');
+              $author_image = get_resized_remote_image_url(get_sub_field('author_image'),150,150);
               $price = get_sub_field('price');
               $price2 = get_sub_field('price_used_for_sorting_not_shown');
               $url = get_sub_field('url');
-              $image = get_sub_field('image');
+              $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
               $category = get_sub_field('category');
               $priceNoComma = str_replace( ',', '', $price2 );
               $ctf = get_sub_field('category_takeover_featured');
@@ -214,11 +214,11 @@ if( $cats ) { ?>
         $product_description = get_sub_field('product_description');
         $author_name = get_sub_field('author_name');
         $author_description = get_sub_field('author_description');
-        $author_image = get_sub_field('author_image');
+        $author_image = get_resized_remote_image_url(get_sub_field('author_image'),150,150);
         $price = get_sub_field('price');
         $price2 = get_sub_field('price_used_for_sorting_not_shown');
         $url = get_sub_field('url');
-        $image = get_sub_field('image');
+        $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
         $category = get_sub_field('category');
         $priceNoComma = str_replace( ',', '', $price2 );
         $ctf = get_sub_field('category_takeover_featured');
