@@ -10,6 +10,7 @@
   
   .gg2017-header {
     margin-top: 15px;
+    margin-bottom: 15px;
     h1 {
       font-size: 42px;
       line-height: 1.1em;
@@ -116,7 +117,22 @@
   .gg2017-nav {
     background-color: #3FAFED;
     color: #fff;
-    margin-top: 15px;
+    &.affix {
+      top: 51px;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      z-index: 9;
+      @media screen and (max-width: 991px) {
+        top: 0;
+      }
+      .logged-in & {
+        top: 83px;
+        @media screen and (max-width: 991px) {
+          top: 32px;
+        }
+      }
+    }
     .gg2017-nav-flex {
       padding: 0;
       margin: 0;
@@ -274,6 +290,16 @@
           background-color: #3FAFED;
         }
       }
+    }
+  }
+
+  .gg2017-header-affixed {
+    padding-top: 42px;
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      padding-top: 40px;
+    }
+    @media screen and (max-width: 991px) {
+      padding-top: 34px;
     }
   }
 

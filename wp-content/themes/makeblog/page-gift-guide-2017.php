@@ -86,7 +86,7 @@ $ad_freq = get_field('frequency_of_ads');
 <?php 
 $cats = get_field('categories_filters');
 if( $cats ) { ?>
-  <nav class="gg2017-nav">
+  <nav id="gg2017-nav" class="gg2017-nav">
     <div class="container">
 
       <div class="dropdown gg2017-dd1">
@@ -468,6 +468,29 @@ if( $cats ) { ?>
     //scroll to top when switching categories
     jQuery("a.btn-link").click(function() {
       jQuery("#scrollPane").animate({ scrollTop: 0 }, "slow");
+    });
+
+
+    // Navbar affix
+    var affixElement = '#gg2017-nav';
+    var affixPixelAjust = 51;
+    if (jQuery(window).width() < 991) {
+      affixPixelAjust = 0;
+    }
+
+    jQuery(affixElement).affix({
+      offset: {
+        // Distance of between element and top page
+        top: function () {
+          return (this.top = jQuery(affixElement).offset().top - affixPixelAjust)
+        }
+      }
+    });
+    jQuery(affixElement).on('affixed.bs.affix', function(){
+      jQuery("#scrollPane").addClass("gg2017-header-affixed");
+    });
+    jQuery(affixElement).on('affixed-top.bs.affix', function(){
+      jQuery("#scrollPane").removeClass("gg2017-header-affixed");
     });
   });
 </script>
