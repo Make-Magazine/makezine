@@ -56,7 +56,7 @@ $ad_freq = get_field('frequency_of_ads');
                     </div>
                   </div>
                   <div class="col-xs-6">
-                    <span>DAILY PICK</span>
+                    <span>Daily Pick</span>
                     <h4><?php echo $product_name; ?></h4>
                     <button href="<?php echo $url; ?>" class="btn-red ">Check it Out</button>
                   </div>
@@ -96,6 +96,9 @@ if( $cats ) { ?>
           <span>Filter By </span>Type <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
         </button>
         <ul class="gg2017-nav-flex dropdown-menu list-unstyled" aria-labelledby="gg2017-cat-menu">
+          <li>
+            <p>Find gifts for:</p>
+          </li>
           <li>
             <button onclick="removeHashFunction();" class="btn btn-link filter" data-filter="all">All</button>
           </li>
@@ -149,6 +152,7 @@ if( $cats ) { ?>
               $author_image = get_resized_remote_image_url(get_sub_field('author_image'),150,150);
               $price = get_sub_field('price');
               $price2 = get_sub_field('price_used_for_sorting_not_shown');
+              $price_color = get_sub_field('price_color');
               $url = get_sub_field('url');
               $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
               $category = get_sub_field('category');
@@ -163,8 +167,8 @@ if( $cats ) { ?>
                 <div class="gg2017-review-flex-cont">
                   <div class="gg2017-review-details">
                     <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
+                      <p class="gg2017-review-price <?php if($price_color='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
                       <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
-                        <p class="gg2017-review-price"><?php echo $price; ?></p>
                       </div>
                       <h4 itemprop="name"><?php echo $product_name; ?></h4>
                       <div class="gg2017-review-btn">
@@ -219,6 +223,7 @@ if( $cats ) { ?>
         $author_image = get_resized_remote_image_url(get_sub_field('author_image'),150,150);
         $price = get_sub_field('price');
         $price2 = get_sub_field('price_used_for_sorting_not_shown');
+        $price_color = get_sub_field('price_color');
         $url = get_sub_field('url');
         $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
         $category = get_sub_field('category');
@@ -233,8 +238,8 @@ if( $cats ) { ?>
           <div class="gg2017-review-flex-cont">
             <div class="gg2017-review-details">
               <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
+                <p class="gg2017-review-price <?php if($price_color='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
                 <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
-                  <p class="gg2017-review-price"><?php echo $price; ?></p>
                 </div>
                 <h4 itemprop="name"><?php echo $product_name; ?></h4>
                 <div class="gg2017-review-btn">
@@ -271,7 +276,7 @@ if( $cats ) { ?>
   </div><!-- #gg2017-sponsors -->
 
   <div class="container">
-    <p class="text-muted">The Make: Gift Guide uses affiliate links for some of our recommendations. This helps support our site and keep the gears turning.</p>
+    <p class="text-muted text-center">The Make: Gift Guide uses affiliate links for some of our recommendations. This helps support our site and keep the gears turning.</p>
   </div>
 
   <div class="gg2017-back-to-top" id="gg2017-back-to-top" title="Back to top">

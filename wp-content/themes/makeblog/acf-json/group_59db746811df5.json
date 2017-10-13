@@ -354,6 +354,34 @@
                     "step": ""
                 },
                 {
+                    "key": "field_59e0bd0f77158",
+                    "label": "Price color",
+                    "name": "price_color",
+                    "type": "select",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "gg2017-dark": "Dark",
+                        "gg2017-light": "Light"
+                    },
+                    "default_value": [
+                        "dark"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_59db746844307",
                     "label": "URL",
                     "name": "url",
@@ -641,5 +669,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507556473
+    "modified": 1507900920
 }
