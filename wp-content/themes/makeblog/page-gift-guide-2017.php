@@ -52,7 +52,8 @@ $ad_freq = get_field('frequency_of_ads');
               <a href="<?php echo $url; ?>" target="_blank" rel="nofollow">
                 <div class="row">
                   <div class="col-xs-6">
-                    <div class="gg2017-dp-img" style="background: url(<?php echo $image; ?>);">
+                    <div class="gg2017-dp-img-cont">
+                      <div class="gg2017-dp-img" style="background: url(<?php echo $image; ?>);"></div>
                     </div>
                   </div>
                   <div class="col-xs-6">

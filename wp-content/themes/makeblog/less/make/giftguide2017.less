@@ -55,13 +55,25 @@
           padding-right: 0;
         }
       }
+      .gg2017-dp-img-cont {
+        overflow: hidden;
+        position: relative;
+      }
       .gg2017-dp-img {
         position: relative;
+        margin-left: auto;
         height: 160px;
         max-width: 205px;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
+        transition: transform .2s cubic-bezier(.4, 0, 1, 1);
+      }
+      a:hover {
+        .gg2017-dp-img {
+          transform: scale(1.03);
+          transition: transform .3s cubic-bezier(.4, 0, 1, 1);
+        }
       }
       span {
         display: block;
