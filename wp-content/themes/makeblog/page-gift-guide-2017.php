@@ -168,7 +168,7 @@ if( $cats ) { ?>
                 <div class="gg2017-review-flex-cont">
                   <div class="gg2017-review-details">
                     <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                      <p class="gg2017-review-price <?php if($price_color='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
+                      <p class="gg2017-review-price <?php if($price_color==='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
                       <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
                       </div>
                       <h4 itemprop="name"><?php echo $product_name; ?></h4>
