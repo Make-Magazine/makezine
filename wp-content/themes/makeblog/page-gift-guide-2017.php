@@ -151,6 +151,7 @@ if( $cats ) { ?>
               $author_name = get_sub_field('author_name');
               $author_description = get_sub_field('author_description');
               $author_image = get_resized_remote_image_url(get_sub_field('author_image'),150,150);
+              $author_url = get_sub_field('author_url');
               $price = get_sub_field('price');
               $price2 = get_sub_field('price_used_for_sorting_not_shown');
               $price_color = get_sub_field('price_color');
@@ -183,10 +184,16 @@ if( $cats ) { ?>
                     <?php if( $author_name ): ?>
                       <div class="gg2017-review-author">
                         <?php if( $author_image ): ?>
-                          <div class="gg2017-review-person-image img-circle" style="background: url(<?php echo $author_image; ?>);"></div>
+                          <?php if( $author_url ): echo '<a href="' . $author_url . '">'; endif; ?>
+                            <div class="gg2017-review-person-image img-circle" style="background: url(<?php echo $author_image; ?>);"></div>
+                          <?php if( $author_url ): echo '</a>'; endif; ?>
                         <?php endif; ?>
                         <div class="pull-left">
-                          <p class="gg2017-review-person"><?php echo $author_name; ?></p>
+                          <p class="gg2017-review-person">
+                            <?php if( $author_url ): echo '<a href="' . $author_url . '">'; endif; ?>
+                              <?php echo $author_name; ?>
+                            <?php if( $author_url ): echo '</a>'; endif; ?>
+                          </p>
                           <?php if( $author_description ): ?>
                             <p class="gg2017-review-person-description"><?php echo $author_description; ?></p>
                           <?php endif; ?>
@@ -222,6 +229,7 @@ if( $cats ) { ?>
         $author_name = get_sub_field('author_name');
         $author_description = get_sub_field('author_description');
         $author_image = get_resized_remote_image_url(get_sub_field('author_image'),150,150);
+        $author_url = get_sub_field('author_url');
         $price = get_sub_field('price');
         $price2 = get_sub_field('price_used_for_sorting_not_shown');
         $price_color = get_sub_field('price_color');
@@ -254,10 +262,16 @@ if( $cats ) { ?>
               <?php if( $author_name ): ?>
                 <div class="gg2017-review-author">
                   <?php if( $author_image ): ?>
-                    <div class="gg2017-review-person-image img-circle" style="background: url(<?php echo $author_image; ?>);"></div>
+                    <?php if( $author_url ): echo '<a href="' . $author_url . '">'; endif; ?>
+                      <div class="gg2017-review-person-image img-circle" style="background: url(<?php echo $author_image; ?>);"></div>
+                    <?php if( $author_url ): echo '</a>'; endif; ?>
                   <?php endif; ?>
                   <div class="pull-left">
-                    <p class="gg2017-review-person"><?php echo $author_name; ?></p>
+                    <p class="gg2017-review-person">
+                      <?php if( $author_url ): echo '<a href="' . $author_url . '">'; endif; ?>
+                        <?php echo $author_name; ?>
+                      <?php if( $author_url ): echo '</a>'; endif; ?>
+                    </p>
                     <?php if( $author_description ): ?>
                       <p class="gg2017-review-person-description"><?php echo $author_description; ?></p>
                     <?php endif; ?>

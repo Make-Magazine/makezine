@@ -58,21 +58,23 @@
       .gg2017-dp-img-cont {
         overflow: hidden;
         position: relative;
-      }
-      .gg2017-dp-img {
-        position: relative;
         margin-left: auto;
         height: 160px;
         max-width: 205px;
+      }
+      .gg2017-dp-img {
+        position: relative;
+        height: 100%;
+        width: 100%;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
-        transition: transform .2s cubic-bezier(.4, 0, 1, 1);
+        transition: transform .2s;
       }
       a:hover {
         .gg2017-dp-img {
           transform: scale(1.03);
-          transition: transform .3s cubic-bezier(.4, 0, 1, 1);
+          transition: transform .4s;
         }
       }
       span {
@@ -439,7 +441,7 @@
           background-position: center center !important;
           background-repeat: no-repeat !important;
           background-size: cover !important;
-          transition: transform .2s cubic-bezier(.4, 0, 1, 1);
+          transition: transform .2s;
           @media screen and (min-width: 992px) and (max-width: 1199px) {
             height: 230px;
           }
@@ -456,7 +458,7 @@
           &:hover {
             .gg2017-review-img {
               transform: scale(1.03);
-              transition: transform .3s cubic-bezier(.4, 0, 1, 1);
+              transition: transform .4s;
             }
             .btn-red {
               background-color: #ea002a;

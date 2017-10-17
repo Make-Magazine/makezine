@@ -203,7 +203,7 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "Add New Product",
             "sub_fields": [
                 {
@@ -247,71 +247,6 @@
                     "new_lines": "br"
                 },
                 {
-                    "key": "field_59db75bcb31de",
-                    "label": "Author image",
-                    "name": "author_image",
-                    "type": "image",
-                    "value": null,
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": 1,
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_59db7468442e1",
-                    "label": "Author name",
-                    "name": "author_name",
-                    "type": "text",
-                    "value": null,
-                    "instructions": "Product recommendation \"By\"",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_59db760ab31df",
-                    "label": "Author description",
-                    "name": "author_description",
-                    "type": "text",
-                    "value": null,
-                    "instructions": "300 character limit",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 300
-                },
-                {
                     "key": "field_59db7468442ee",
                     "label": "Price (shown)",
                     "name": "price",
@@ -321,7 +256,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -341,7 +276,7 @@
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -363,7 +298,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -404,7 +339,7 @@
                     "name": "image",
                     "type": "image",
                     "value": null,
-                    "instructions": "Try and keep all images as square as possible. Resize to 800px by 800px and under 200kb file size. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "instructions": "Try and keep images under 300kb file size and less then 2000px width or height. Use http:\/\/picresize.com or Photoshop to resize photos.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -418,9 +353,9 @@
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
-                    "max_width": 850,
-                    "max_height": 850,
-                    "max_size": ".2",
+                    "max_width": 2000,
+                    "max_height": 2000,
+                    "max_size": ".3",
                     "mime_types": ""
                 },
                 {
@@ -433,7 +368,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -462,7 +397,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -482,7 +417,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -502,7 +437,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -526,6 +461,88 @@
                     "ui": 0,
                     "ajax": 0,
                     "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59db75bcb31de",
+                    "label": "Author image",
+                    "name": "author_image",
+                    "type": "image",
+                    "value": null,
+                    "instructions": "Try and keep images under 200kb file size and less then 2000px width or height. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": 2000,
+                    "max_height": 2000,
+                    "max_size": ".2",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_59db7468442e1",
+                    "label": "Author name",
+                    "name": "author_name",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "Product recommendation \"By\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59db760ab31df",
+                    "label": "Author description",
+                    "name": "author_description",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "300 character limit",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 300
+                },
+                {
+                    "key": "field_59e6047df6f92",
+                    "label": "Author URL",
+                    "name": "author_url",
+                    "type": "url",
+                    "value": null,
+                    "instructions": "Add url to link to author account or website.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
                     "placeholder": ""
                 }
             ]
@@ -669,5 +686,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507900920
+    "modified": 1508249589
 }
