@@ -49,20 +49,20 @@ $ad_freq = get_field('frequency_of_ads');
             $daily_pick = get_sub_field('daily_pick'); ?>
 
             <div class="col-xs-12 col-sm-6 gg2017-dp">
-              <a href="<?php echo $url; ?>" target="_blank" rel="nofollow">
-                <div class="row">
-                  <div class="col-xs-6">
+              <div class="row">
+                <div class="col-xs-6">
+                  <a href="<?php echo $url; ?>" target="_blank" rel="nofollow">
                     <div class="gg2017-dp-img-cont">
                       <div class="gg2017-dp-img" style="background: url(<?php echo $image; ?>);"></div>
                     </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <span>Daily Pick</span>
-                    <h4><?php echo $product_name; ?></h4>
-                    <button href="<?php echo $url; ?>" class="btn-red ">Check it Out</button>
-                  </div>
+                  </a>
                 </div>
-              </a>
+                <div class="col-xs-6">
+                  <span>Daily Pick</span>
+                  <h4><?php echo $product_name; ?></h4>
+                  <a href="<?php echo $url; ?>" target="_blank" rel="nofollow" class="btn-red">Check it Out</a>
+                </div>
+              </div>
             </div>
 
           <?php
@@ -179,7 +179,6 @@ if( $cats ) { ?>
                     </a>
                   </div>
                   <div class="gg2017-review-info">
-                    <h5>Maker Review:</h5>
                     <div class="gg2017-review-desc" itemprop="description"><?php echo $product_description; ?></div>
                     <?php if( $author_name ): ?>
                       <div class="gg2017-review-author">
@@ -191,7 +190,7 @@ if( $cats ) { ?>
                         <div class="pull-left">
                           <p class="gg2017-review-person">
                             <?php if( $author_url ): echo '<a href="' . $author_url . '">'; endif; ?>
-                              <?php echo $author_name; ?>
+                              Recommended by <?php echo $author_name; ?>
                             <?php if( $author_url ): echo '</a>'; endif; ?>
                           </p>
                           <?php if( $author_description ): ?>
@@ -257,7 +256,6 @@ if( $cats ) { ?>
               </a>
             </div>
             <div class="gg2017-review-info">
-              <h5>Sponsored:</h5>
               <div class="gg2017-review-desc" itemprop="description"><?php echo $product_description; ?></div>
               <?php if( $author_name ): ?>
                 <div class="gg2017-review-author">
@@ -269,7 +267,7 @@ if( $cats ) { ?>
                   <div class="pull-left">
                     <p class="gg2017-review-person">
                       <?php if( $author_url ): echo '<a href="' . $author_url . '">'; endif; ?>
-                        <?php echo $author_name; ?>
+                        Sponsored by <?php echo $author_name; ?>
                       <?php if( $author_url ): echo '</a>'; endif; ?>
                     </p>
                     <?php if( $author_description ): ?>

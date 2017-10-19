@@ -80,11 +80,11 @@
         },
         {
             "key": "field_59db74e6b31dd",
-            "label": "Header banner",
+            "label": "Sponsored product hero",
             "name": "header_banner",
             "type": "image",
             "value": null,
-            "instructions": "This banner sits below the header description.",
+            "instructions": "Upload image for background. Mark 4 products as featured in this sponsored product hero",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -134,10 +134,10 @@
                 "id": ""
             },
             "choices": {
-                "category-hackers": "For Hackers",
-                "category-artists": "For Artists",
-                "category-workshopMavens": "For Workshop Mavens",
-                "category-digitalFab": "For Digital Fabricators",
+                "category-hackers": "Hackers",
+                "category-artists": "Artists",
+                "category-workshopMavens": "Workshop Mavens",
+                "category-digitalFab": "Digital Fabricators",
                 "category-kidsCorner": "Kid’s Corner"
             },
             "default_value": [],
@@ -368,21 +368,50 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
-                        "category-hackers": "For Hackers",
-                        "category-artists": "For Artists",
-                        "category-workshopMavens": "For Workshop Mavens",
-                        "category-digitalFab": "For Digital Fabricators",
+                        "category-hackers": "Hackers",
+                        "category-artists": "Artists",
+                        "category-workshopMavens": "Workshop Mavens",
+                        "category-digitalFab": "Digital Fabricators",
                         "category-kidsCorner": "Kid’s Corner"
                     },
                     "default_value": [],
                     "allow_null": 1,
                     "multiple": 1,
                     "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59db746844347",
+                    "label": "Category Takeover Featured",
+                    "name": "category_takeover_featured",
+                    "type": "select",
+                    "value": null,
+                    "instructions": "Brings the product to the top of the list for this category takeover.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "category-hackers": "Hackers",
+                        "category-artists": "Artists",
+                        "category-workshopMavens": "Workshop Mavens",
+                        "category-digitalFab": "Digital Fabricators",
+                        "category-kidsCorner": "Kid’s Corner"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
                     "ajax": 0,
                     "return_format": "value",
                     "placeholder": ""
@@ -397,7 +426,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -417,7 +446,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -428,40 +457,24 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_59db746844347",
-                    "label": "Category Takeover Featured",
-                    "name": "category_takeover_featured",
-                    "type": "select",
+                    "key": "field_59e8519b03458",
+                    "label": "Feature in sponsored product hero",
+                    "name": "feature_in_sponsored_product_hero",
+                    "type": "true_false",
                     "value": null,
-                    "instructions": "Brings the product to the top of the list for this category takeover.",
+                    "instructions": "4 products can be shown in the sponsored product hero in the header.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "category-tec": "Technology",
-                        "category-dig": "Digital Fabrication",
-                        "category-cra": "Craft & Design",
-                        "category-dro": "Drones & Vehicles",
-                        "category-sci": "Science",
-                        "category-hom": "Home",
-                        "category-wor": "Workshop",
-                        "category-hackers": "For Hackers",
-                        "category-artists": "For Artists",
-                        "category-workshopMavens": "For Workshop Mavens",
-                        "category-digitalFab": "For Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner"
-                    },
-                    "default_value": [],
-                    "allow_null": 1,
-                    "multiple": 0,
+                    "message": "",
+                    "default_value": 0,
                     "ui": 0,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_59db75bcb31de",
@@ -598,10 +611,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "category-hackers": "For Hackers",
-                        "category-artists": "For Artists",
-                        "category-workshopMavens": "For Workshop Mavens",
-                        "category-digitalFab": "For Digital Fabricators",
+                        "category-hackers": "Hackers",
+                        "category-artists": "Artists",
+                        "category-workshopMavens": "Workshop Mavens",
+                        "category-digitalFab": "Digital Fabricators",
                         "category-kidsCorner": "Kid’s Corner"
                     },
                     "default_value": [],
@@ -686,5 +699,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1508253735
+    "modified": 1508399862
 }

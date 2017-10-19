@@ -107,6 +107,11 @@
       .btn-red {
         border-radius: 12px;
         padding: 12px;
+        transition: background-color .2s;
+        &:hover {
+          background-color: #ea002a;
+          transition: background-color .2s;
+        }
       }
     }
     .gg2017-header-decription {
@@ -122,8 +127,38 @@
     }
     .gg2017-header-banner {
       display: block;
+      height: 385px;
       margin-top: 15px;
       margin-bottom: 10px;
+      position: relative;
+      .gg2017-hb-product {
+        width: 250px;
+        position: absolute;
+        &:first-child {
+          top: 0;
+          left: 0;
+        }
+        &:nth-child(2) {
+          left: 25%;
+          bottom: 0; 
+        }
+        &:nth-child(3) {
+          left: 50%;
+          top: 0; 
+        }
+        &:nth-child(4) {
+          left: 75%;
+          bottom: 0;
+        }
+      }
+      .gg2017-hb-relative {
+        position: relative;
+        .gg2017-hb-title {
+          span {
+            float: left;
+          }
+        }
+      }
     }
   }
   
@@ -265,6 +300,7 @@
         }
         &.open>.dropdown-menu {
           background-color: #3FAFED;
+          z-index: 9;
         }
       }
       .gg2017-dd2 {
@@ -315,6 +351,7 @@
         }
         &.open>.dropdown-menu {
           background-color: #3FAFED;
+          z-index: 9;
         }
       }
     }
