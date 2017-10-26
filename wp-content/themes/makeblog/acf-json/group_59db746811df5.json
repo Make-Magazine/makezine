@@ -138,7 +138,14 @@
                 "category-artists": "Artists",
                 "category-workshopMavens": "Workshop Mavens",
                 "category-digitalFab": "Digital Fabricators",
-                "category-kidsCorner": "Kid’s Corner"
+                "category-kidsCorner": "Kid’s Corner",
+                "category-kidsFam": "Kids & Families",
+                "categorydronesRockets-": "Drones & Rockets",
+                "category-robots": "Robots",
+                "category-discovery": "Discovery",
+                "category-electronics": "Electronics",
+                "category-workshop": "Workshop",
+                "category-digFab": "Digital Fabrication"
             },
             "default_value": [],
             "allow_null": 0,
@@ -377,7 +384,14 @@
                         "category-artists": "Artists",
                         "category-workshopMavens": "Workshop Mavens",
                         "category-digitalFab": "Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner"
+                        "category-kidsCorner": "Kid’s Corner",
+                        "category-kidsFam": "Kids & Families",
+                        "categorydronesRockets-": "Drones & Rockets",
+                        "category-robots": "Robots",
+                        "category-discovery": "Discovery",
+                        "category-electronics": "Electronics",
+                        "category-workshop": "Workshop",
+                        "category-digFab": "Digital Fabrication"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -406,7 +420,14 @@
                         "category-artists": "Artists",
                         "category-workshopMavens": "Workshop Mavens",
                         "category-digitalFab": "Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner"
+                        "category-kidsCorner": "Kid’s Corner",
+                        "category-kidsFam": "Kids & Families",
+                        "categorydronesRockets-": "Drones & Rockets",
+                        "category-robots": "Robots",
+                        "category-discovery": "Discovery",
+                        "category-electronics": "Electronics",
+                        "category-workshop": "Workshop",
+                        "category-digFab": "Digital Fabrication"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -615,7 +636,14 @@
                         "category-artists": "Artists",
                         "category-workshopMavens": "Workshop Mavens",
                         "category-digitalFab": "Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner"
+                        "category-kidsCorner": "Kid’s Corner",
+                        "category-kidsFam": "Kids & Families",
+                        "categorydronesRockets-": "Drones & Rockets",
+                        "category-robots": "Robots",
+                        "category-discovery": "Discovery",
+                        "category-electronics": "Electronics",
+                        "category-workshop": "Workshop",
+                        "category-digFab": "Digital Fabrication"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -699,5 +727,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1508399862
+    "modified": 1508939147
 }

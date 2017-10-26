@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Gift Guide Xmas 2017
+ * Template Name: Gift Guide 2017
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
@@ -82,7 +82,43 @@ $ad_freq = get_field('frequency_of_ads');
     if ($header_banner) { 
       $args = array('strip' => 'all');
       $gg_photon_banner = jetpack_photon_url($header_banner, $args); ?>
-      <img class="gg2017-header-banner" src="<?php echo $gg_photon_banner; ?>?w=1600" alt="Gift Guide banner image" />
+      <div class="gg2017-header-banner" style="background: url(<?php echo $gg_photon_banner; ?>?w=1600);">
+        <div class="gg2017-header-banner-cont">
+
+          <?php if( have_rows('products') ):
+            while( have_rows('products') ): the_row();
+              if(get_sub_field('feature_in_sponsored_product_hero')) {
+
+                $product_name = get_sub_field('product_name');
+                $url = get_sub_field('url');
+                $image = get_sub_field('image');
+                $daily_pick = get_sub_field('feature_in_sponsored_product_hero');
+                $gg_photon_banner_product = get_resized_remote_image_url($image,600,600); ?>
+
+                <div class="gg2017-hb-product">
+                  <div class="gg2017-hb-relative">
+                    <a href="<?php echo $url; ?>">
+                      <img src="<?php echo $gg_photon_banner_product; ?>" class="img-responsive" alt="Featured sponsored product" />
+                    </a>
+                    <a href="<?php echo $url; ?>" class="gg2017-hb-title">
+                      <div>
+                        <span class="fa-stack">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-arrow-down fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </div>
+                      <p><?php echo $product_name; ?></p>
+                    </a>
+                  </div>
+                </div>
+
+              <?php
+              }
+            endwhile;
+          endif; ?>
+
+        </div>
+      </div>
     <?php } ?>
   </header>
 
@@ -514,7 +550,6 @@ if( $cats ) { ?>
     });
   });
 </script>
-
 
 <?php get_footer(); ?>
 
