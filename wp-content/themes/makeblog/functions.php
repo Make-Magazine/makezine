@@ -891,7 +891,7 @@ add_action('admin_init','customize_meta_boxes');
 
 function customize_meta_boxes() {
   global $current_user;
-  get_currentuserinfo();
+  wp_get_current_user();
   $user = wp_get_current_user();
 
   if ( !in_array( 'administrator', (array) $user->roles ) ) {
