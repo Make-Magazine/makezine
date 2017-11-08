@@ -113,7 +113,7 @@ class Reviews {
 			return;
 		}
 
-		if ( ! empty( $_GET['post'] ) && self::is_scoring_enabled( absint( $_GET['post'] ) ) ) {
+		//if ( ! empty( $_GET['post'] ) && self::is_scoring_enabled( absint( $_GET['post'] ) ) ) {
 
 			register_field_group( array(
 				'id'         => 'acf_scoring-criteria',
@@ -163,7 +163,7 @@ class Reviews {
 				),
 				'menu_order' => 0,
 			) );
-		}
+      //}
 
 		register_field_group( array(
 			'id'         => 'acf_content',
