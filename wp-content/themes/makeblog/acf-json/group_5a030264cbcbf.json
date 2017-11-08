@@ -1,9 +1,9 @@
 {
-    "key": "group_59db746811df5",
-    "title": "Gift Guide 2017",
+    "key": "group_5a030264cbcbf",
+    "title": "Gift Guide Xmas 2017",
     "fields": [
         {
-            "key": "field_59db746821dd3",
+            "key": "field_5a030264d6932",
             "label": "Header",
             "name": "",
             "type": "tab",
@@ -19,11 +19,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_59db746821eb4",
+            "key": "field_5a030264d6983",
             "label": "Header Title",
             "name": "header_title",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,11 +38,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_59db746821ec5",
+            "key": "field_5a030264d69a7",
             "label": "Header Subtitle",
             "name": "header_subtitle",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -59,11 +57,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_59db746821ed5",
+            "key": "field_5a030264d69d5",
             "label": "Header Description",
             "name": "header_description",
             "type": "wysiwyg",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -79,11 +76,10 @@
             "delay": 0
         },
         {
-            "key": "field_59db74e6b31dd",
+            "key": "field_5a03036a27b4d",
             "label": "Sponsored product hero",
             "name": "header_banner",
             "type": "image",
-            "value": null,
             "instructions": "Upload image for background. Mark 4 products as featured in this sponsored product hero",
             "required": 0,
             "conditional_logic": 0,
@@ -100,11 +96,11 @@
             "min_size": "",
             "max_width": "",
             "max_height": "",
-            "max_size": 1,
+            "max_size": "",
             "mime_types": ""
         },
         {
-            "key": "field_59db746821ee4",
+            "key": "field_5a030264d6a12",
             "label": "Categories and filters",
             "name": "",
             "type": "tab",
@@ -120,11 +116,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_59db746821ef4",
+            "key": "field_5a030264d6a44",
             "label": "Categories filters",
             "name": "categories_filters",
             "type": "select",
-            "value": null,
             "instructions": "Add all categories to be shown in navigation. Category and filter nav bar will be hidden is no categories added here. To add new categories to the list just ask dev.",
             "required": 0,
             "conditional_logic": 0,
@@ -138,14 +133,7 @@
                 "category-artists": "Artists",
                 "category-workshopMavens": "Workshop Mavens",
                 "category-digitalFab": "Digital Fabricators",
-                "category-kidsCorner": "Kid’s Corner",
-                "category-kidsFam": "Kids & Families",
-                "category-dronesRockets": "Drones & Rockets",
-                "category-robots": "Robots",
-                "category-discovery": "Discovery",
-                "category-electronics": "Electronics",
-                "category-workshop": "Workshop",
-                "category-digFab": "Digital Fabrication"
+                "category-kidsCorner": "Kid’s Corner"
             },
             "default_value": [],
             "allow_null": 0,
@@ -156,7 +144,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_59db746821f03",
+            "key": "field_5a030264d6a69",
             "label": "Gift Guide Products",
             "name": "",
             "type": "tab",
@@ -172,11 +160,10 @@
             "endpoint": 1
         },
         {
-            "key": "field_59db746821f13",
+            "key": "field_5a030264d6e85",
             "label": "Frequency of ads",
             "name": "frequency_of_ads",
             "type": "number",
-            "value": null,
             "instructions": "An ad will appear after every set of this many products",
             "required": 1,
             "conditional_logic": 0,
@@ -194,11 +181,10 @@
             "step": ""
         },
         {
-            "key": "field_59db746821f22",
+            "key": "field_5a030264d7a3f",
             "label": "Click the \"Add New Product\" button and fill out all the required fields. Then scroll to the top of this page and click the \"Update\" button to save the new product.",
             "name": "products",
             "type": "repeater",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -214,11 +200,10 @@
             "button_label": "Add New Product",
             "sub_fields": [
                 {
-                    "key": "field_59db7468442a4",
+                    "key": "field_5a03026501b66",
                     "label": "Product name",
                     "name": "product_name",
                     "type": "text",
-                    "value": null,
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -234,11 +219,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_59db7468442d3",
+                    "key": "field_5a030265024cb",
                     "label": "Product description",
                     "name": "product_description",
                     "type": "textarea",
-                    "value": null,
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -254,11 +238,10 @@
                     "new_lines": "br"
                 },
                 {
-                    "key": "field_59db7468442ee",
+                    "key": "field_5a0302650303a",
                     "label": "Price (shown)",
                     "name": "price",
                     "type": "text",
-                    "value": null,
                     "instructions": "This price is displayed as entered.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -274,11 +257,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_59db7468442fb",
+                    "key": "field_5a0302650312d",
                     "label": "Price (Used for sorting, not shown)",
                     "name": "price_used_for_sorting_not_shown",
                     "type": "number",
-                    "value": null,
                     "instructions": "Enter a whole number to use for the price sorting feature. No commas, dollar signs, dashes, or decimals.",
                     "required": 1,
                     "conditional_logic": 0,
@@ -296,11 +278,10 @@
                     "step": ""
                 },
                 {
-                    "key": "field_59e0bd0f77158",
+                    "key": "field_5a03056e10d7a",
                     "label": "Price color",
                     "name": "price_color",
                     "type": "select",
-                    "value": null,
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -310,12 +291,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "gg2017-dark": "Dark",
-                        "gg2017-light": "Light"
+                        "gg2017-dark: Dark": "gg2017-dark: Dark",
+                        "gg2017-light: Light": "gg2017-light: Light"
                     },
-                    "default_value": [
-                        "dark"
-                    ],
+                    "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -324,11 +303,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_59db746844307",
+                    "key": "field_5a0302650335c",
                     "label": "URL",
                     "name": "url",
                     "type": "url",
-                    "value": null,
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -341,12 +319,11 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_59db746844314",
+                    "key": "field_5a03026504760",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
-                    "value": null,
-                    "instructions": "Try and keep images under 300kb file size and less then 2000px width or height. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -360,17 +337,16 @@
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
-                    "max_width": 2000,
-                    "max_height": 2000,
-                    "max_size": ".3",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
                     "mime_types": ""
                 },
                 {
-                    "key": "field_59db746844321",
+                    "key": "field_5a03026504e23",
                     "label": "Category",
                     "name": "category",
                     "type": "select",
-                    "value": null,
                     "instructions": "Add one category, multiple categories, or none.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -384,14 +360,7 @@
                         "category-artists": "Artists",
                         "category-workshopMavens": "Workshop Mavens",
                         "category-digitalFab": "Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner",
-                        "category-kidsFam": "Kids & Families",
-                        "category-dronesRockets": "Drones & Rockets",
-                        "category-robots": "Robots",
-                        "category-discovery": "Discovery",
-                        "category-electronics": "Electronics",
-                        "category-workshop": "Workshop",
-                        "category-digFab": "Digital Fabrication"
+                        "category-kidsCorner": "Kid’s Corner"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -402,11 +371,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_59db746844347",
+                    "key": "field_5a0306d410d7b",
                     "label": "Category Takeover Featured",
                     "name": "category_takeover_featured",
                     "type": "select",
-                    "value": null,
                     "instructions": "Brings the product to the top of the list for this category takeover.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -420,14 +388,7 @@
                         "category-artists": "Artists",
                         "category-workshopMavens": "Workshop Mavens",
                         "category-digitalFab": "Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner",
-                        "category-kidsFam": "Kids & Families",
-                        "category-dronesRockets": "Drones & Rockets",
-                        "category-robots": "Robots",
-                        "category-discovery": "Discovery",
-                        "category-electronics": "Electronics",
-                        "category-workshop": "Workshop",
-                        "category-digFab": "Digital Fabrication"
+                        "category-kidsCorner": "Kid’s Corner"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -438,11 +399,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_59db74684432e",
+                    "key": "field_5a03026505abf",
                     "label": "Sponsored",
                     "name": "sponsored",
                     "type": "true_false",
-                    "value": null,
                     "instructions": "Check here if this is a sponsored product.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -458,11 +418,10 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_59db74684433a",
+                    "key": "field_5a03026506007",
                     "label": "Daily pick",
                     "name": "daily_pick",
                     "type": "true_false",
-                    "value": null,
                     "instructions": "Check here if this is the Daily Pick. Only 1 at a time.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -478,11 +437,10 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_59e8519b03458",
+                    "key": "field_5a0307b310d7c",
                     "label": "Feature in sponsored product hero",
                     "name": "feature_in_sponsored_product_hero",
                     "type": "true_false",
-                    "value": null,
                     "instructions": "4 products can be shown in the sponsored product hero in the header.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -498,12 +456,11 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_59db75bcb31de",
+                    "key": "field_5a030cde10d7d",
                     "label": "Author image",
                     "name": "author_image",
                     "type": "image",
-                    "value": null,
-                    "instructions": "Try and keep images under 200kb file size and less then 2000px width or height. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -517,18 +474,17 @@
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
-                    "max_width": 2000,
-                    "max_height": 2000,
-                    "max_size": ".2",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
                     "mime_types": ""
                 },
                 {
-                    "key": "field_59db7468442e1",
+                    "key": "field_5a030265024fe",
                     "label": "Author name",
                     "name": "author_name",
                     "type": "text",
-                    "value": null,
-                    "instructions": "Product recommendation \"By\"",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -543,11 +499,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_59db760ab31df",
+                    "key": "field_5a030d9010d7e",
                     "label": "Author description",
                     "name": "author_description",
                     "type": "text",
-                    "value": null,
                     "instructions": "150 character limit",
                     "required": 0,
                     "conditional_logic": 0,
@@ -563,11 +518,10 @@
                     "maxlength": 150
                 },
                 {
-                    "key": "field_59e6047df6f92",
+                    "key": "field_5a030e0510d7f",
                     "label": "Author URL",
                     "name": "author_url",
                     "type": "url",
-                    "value": null,
                     "instructions": "Add url to link to author account or website.",
                     "required": 0,
                     "conditional_logic": 0,
@@ -582,7 +536,7 @@
             ]
         },
         {
-            "key": "field_59db746821f4b",
+            "key": "field_5a030264d7a78",
             "label": "Takeovers",
             "name": "",
             "type": "tab",
@@ -598,11 +552,10 @@
             "endpoint": 1
         },
         {
-            "key": "field_59db74682220e",
+            "key": "field_5a030264d8843",
             "label": "Click the \"Add a Takeover\" button for each category takeover",
             "name": "choose_a_takeover_category",
             "type": "repeater",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -618,11 +571,10 @@
             "button_label": "Add a Takeover",
             "sub_fields": [
                 {
-                    "key": "field_59db74687f26e",
+                    "key": "field_5a03026532b22",
                     "label": "Category",
                     "name": "category",
                     "type": "select",
-                    "value": null,
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -636,14 +588,7 @@
                         "category-artists": "Artists",
                         "category-workshopMavens": "Workshop Mavens",
                         "category-digitalFab": "Digital Fabricators",
-                        "category-kidsCorner": "Kid’s Corner",
-                        "category-kidsFam": "Kids & Families",
-                        "category-dronesRockets": "Drones & Rockets",
-                        "category-robots": "Robots",
-                        "category-discovery": "Discovery",
-                        "category-electronics": "Electronics",
-                        "category-workshop": "Workshop",
-                        "category-digFab": "Digital Fabrication"
+                        "category-kidsCorner": "Kid’s Corner"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -654,11 +599,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_59db74687f289",
+                    "key": "field_5a03026532b3a",
                     "label": "Full width background image",
                     "name": "full_width_background_image",
                     "type": "image",
-                    "value": null,
                     "instructions": "768px by 1300px",
                     "required": 1,
                     "conditional_logic": 0,
@@ -679,11 +623,10 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_59db74687f2b1",
+                    "key": "field_5a03026532b4b",
                     "label": "Small square image",
                     "name": "small_square_image",
                     "type": "image",
-                    "value": null,
                     "instructions": "200px by 200px",
                     "required": 0,
                     "conditional_logic": 0,
@@ -727,5 +670,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1508939147
+    "modified": 1510150420
 }

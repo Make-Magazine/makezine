@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Gift Guide Xmas 2017
+ * Template Name: Gift Guide Books 2017
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
