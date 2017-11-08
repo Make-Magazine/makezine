@@ -372,27 +372,21 @@ if( $cats ) { ?>
     //end page scroll counter
 
     var loadCount = 1;
-    //removeHashFunction();
-    var hash = window.location.hash;
 
+
+    // Set ALL filter to url hash or default
     origFilter = 'all'; //default to all
 
-        <?php if( have_rows('products') ):
+    var hash = window.location.hash;
 
-          while( have_rows('products') ): the_row();
+    // if (hash) { 
+    //   <?php
+    //   $cats = get_field('categories_filters');
+    //   if($cats) { ?>
 
-            $category = get_sub_field('category'); ?>
-
-            if(hash=='#<?php echo $category['value']; ?>') {
-              origFilter = '.<?php echo $category['value']; ?>';
-            }
-
-          <?php endwhile;
-
-        endif; ?>
-
-    //console.log(loadCount);
-
+    //       if(hash=='#<?php echo $category; ?>') {
+    //         origFilter = '.<?php echo $category; ?>';
+    //       }
 
     jQuery('#gg2017-sponsors').mixItUp({
       load: {
