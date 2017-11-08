@@ -1,6 +1,6 @@
 {
     "key": "group_580014c6e3612",
-    "title": "Gift Guide 2016",
+    "title": "Gift Guide Xmas 2016",
     "fields": [
         {
             "key": "field_58065e59505e7",
@@ -72,7 +72,8 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_58065e1f505e6",
@@ -104,8 +105,8 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": "",
-            "max": "",
+            "min": 0,
+            "max": 0,
             "layout": "table",
             "button_label": "Add New Product",
             "sub_fields": [
@@ -227,7 +228,7 @@
                     "label": "Image",
                     "name": "image",
                     "type": "image",
-                    "instructions": "Try and keep all images as square as possible. Resize to 800px by 800px and under 200kb file size. Use http:\/\/picresize.com or Photoshop to resize photos.",
+                    "instructions": "Try and keep all images as square as possible. Resize to 800px by 800px and under 400kb file size. Use http:\/\/picresize.com or Photoshop to resize photos.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -243,7 +244,7 @@
                     "min_size": "",
                     "max_width": 850,
                     "max_height": 850,
-                    "max_size": ".2",
+                    "max_size": ".5",
                     "mime_types": ""
                 },
                 {
@@ -290,7 +291,10 @@
                         "id": ""
                     },
                     "message": "",
-                    "default_value": 0
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_58001ce8ca9ec",
@@ -306,7 +310,10 @@
                         "id": ""
                     },
                     "message": "",
-                    "default_value": 0
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_58177ba316d18",
@@ -370,8 +377,8 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": "",
-            "max": "",
+            "min": 0,
+            "max": 0,
             "layout": "table",
             "button_label": "Add a Takeover",
             "sub_fields": [
@@ -426,7 +433,7 @@
                     "min_size": "",
                     "max_width": 2600,
                     "max_height": 1400,
-                    "max_size": ".2",
+                    "max_size": ".5",
                     "mime_types": ""
                 },
                 {
@@ -450,7 +457,7 @@
                     "min_size": "",
                     "max_width": 500,
                     "max_height": 500,
-                    "max_size": ".1",
+                    "max_size": ".5",
                     "mime_types": ""
                 }
             ]
@@ -461,7 +468,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-gift-guide-2016.php"
+                "value": "page-gift-guide-xmas-2016.php"
             }
         ]
     ],
@@ -478,5 +485,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1477934323
+    "modified": 1510140614
 }
