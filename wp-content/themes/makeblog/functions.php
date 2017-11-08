@@ -796,7 +796,7 @@ function the_titlesmall($before = '', $after = '', $echo = true, $length = false
 
 // Global photon image quality.
 function get_photon_img_quality() {
-    $quality = '55';
+    $quality = '70';
     return $quality;
 }
 
@@ -891,7 +891,7 @@ add_action('admin_init','customize_meta_boxes');
 
 function customize_meta_boxes() {
   global $current_user;
-  get_currentuserinfo();
+  wp_get_current_user();
   $user = wp_get_current_user();
 
   if ( !in_array( 'administrator', (array) $user->roles ) ) {

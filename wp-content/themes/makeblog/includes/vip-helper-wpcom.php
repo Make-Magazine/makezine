@@ -825,7 +825,7 @@ function wpcom_vip_notify_on_new_user_added_to_site( $emails ) {
 		if ( ! $invitee || is_wp_error( $invitee ) )
 			return;
 
-		get_currentuserinfo();
+		wp_get_current_user();
 
 		$invitee_name = ( $invitee->display_name != $invitee->user_login ) ? "{$invitee->display_name} ({$invitee->user_login})" : 'someone with the username "' . $invitee->user_login . '"';
 		$inviter_name = ( $current_user->display_name != $current_user->user_login ) ? "{$current_user->display_name} ({$current_user->user_login})" : 'someone with the username "' . $current_user->user_login . '"';

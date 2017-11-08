@@ -1,14 +1,13 @@
 <?php
 /**
- * Template Name: Gift Guide
+ * Template Name: Gift Guide Xmas 2016
  *
  * @package    makeblog
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  *
  */
-get_header('version-2');
+get_header('version-2'); 
 $products = get_field('products');
-$ad_freq = get_field('frequency_of_ads');
 
 //Check if there are any daily picks  
   $dp_found = false;
@@ -42,14 +41,16 @@ $ad_freq = get_field('frequency_of_ads');
 
         while( have_rows('products') ): the_row();
 
-          if(get_sub_field('daily_pick')) {
+          $daily_pick = get_sub_field('daily_pick');
+
+          if($daily_pick) {
 
             $product_name = get_sub_field('product_name');
+            $product_description = get_sub_field('product_description');
             $author_name = get_sub_field('author_name');
             $price = get_sub_field('price');
             $url = get_sub_field('url');
-            $image = get_sub_field('image');
-            $daily_pick = get_sub_field('daily_pick'); ?>
+            $image = get_sub_field('image'); ?>
 
             <div class="col-xs-12 col-sm-5 col-md-6">
               <div class="gg2016-dp" style="background: url(<?php echo $image; ?>);">
@@ -57,6 +58,7 @@ $ad_freq = get_field('frequency_of_ads');
                 <div class="gg2016-dp-text">
                   <a href="<?php echo $url; ?>" target="_blank" rel="nofollow">
                     <h4><?php echo $product_name; ?></h4>
+                    <p class="gg2016-dp-desc"><?php echo $product_description; ?></p>
                   </a>
                   <?php if( $author_name ): ?>
                     <p class="gg2016-dp-author">Recommended by <?php echo $author_name; ?></p>
@@ -79,9 +81,6 @@ $ad_freq = get_field('frequency_of_ads');
     </div>
   </header>
 
-<?php 
-$cats = get_field('categories_filters');
-if( $cats ) { ?>
   <nav class="gg2016-nav">
     <div class="container">
 
@@ -93,16 +92,34 @@ if( $cats ) { ?>
           <li>
             <button onclick="removeHashFunction();" class="btn btn-link filter" data-filter="all">All</button>
           </li>
-
-          <?php foreach ($cats as $cat) { ?>
-
-              <li class="gg2016-li-border"></li>
-              <li>
-                <a href="#<?php echo $cat['value']; ?>" class="btn btn-link filter" data-filter=".<?php echo $cat['value']; ?>"><?php echo $cat['label']; ?></a>
-              </li>
-
-          <?php } ?>
-
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#technology" class="btn btn-link filter" data-filter=".category-tec">Technology</a>
+          </li>
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#digital-fabrication" class="btn btn-link filter" data-filter=".category-dig">Digital Fabrication</a>
+          </li>
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#craft&design" class="btn btn-link filter" data-filter=".category-cra">Craft &amp; Design</a>
+          </li>
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#drones&vehicles" class="btn btn-link filter" data-filter=".category-dro">Drones &amp; Vehicles</a>
+          </li>
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#science" class="btn btn-link filter" data-filter=".category-sci">Science</a>
+          </li>
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#home" class="btn btn-link filter" data-filter=".category-hom">Home</a>
+          </li>
+          <li class="gg2016-li-border"></li>
+          <li>
+            <a href="#workshop" class="btn btn-link filter" data-filter=".category-wor">Workshop</a>
+          </li>
         </ul>
       </div>
 
@@ -122,67 +139,66 @@ if( $cats ) { ?>
 
     </div>
   </nav>
-<?php } ?>
-
   <div id="scrollPane">
     <div id="innerDiv" class="inner">
-      <div class="gg2016-body-bg">
+  <div class="gg2016-body-bg">
 
-        <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="https://schema.org/ItemList">
+    <div id="gg2016-js" class="gg2016-body container" itemscope itemtype="https://schema.org/ItemList">
 
-        <?php if( have_rows('products') ): ?>
+    <?php if( have_rows('products') ): ?>
 
-          <?php while( have_rows('products') ): the_row();
+      <?php while( have_rows('products') ): the_row();
 
-            if(!get_sub_field('sponsored')) { 
+        if(!get_sub_field('sponsored')) { 
 
-              $product_name = get_sub_field('product_name');
-              $product_description = get_sub_field('product_description');
-              $author_name = get_sub_field('author_name');
-              $price = get_sub_field('price');
-              $price2 = get_sub_field('price_used_for_sorting_not_shown');
-              $url = get_sub_field('url');
-              $image = get_sub_field('image');
-              $category = get_sub_field('category');
-              $priceNoComma = str_replace( ',', '', $price2 );
-              $ctf = get_sub_field('category_takeover_featured');
-              $dp = get_sub_field('daily_pick'); ?>
+          $product_name = get_sub_field('product_name');
+          $product_description = get_sub_field('product_description');
+          $author_name = get_sub_field('author_name');
+          $price = get_sub_field('price');
+          $price2 = get_sub_field('price_used_for_sorting_not_shown');
+          $url = get_sub_field('url');
+          $image = get_sub_field('image');
+          $category = get_sub_field('category');
+          $priceNoComma = str_replace( ',', '', $price2 );
+          $ctf = get_sub_field('category_takeover_featured');
+          $dp = get_sub_field('daily_pick'); ?>
 
-              <article class="gg2016-review gg2016-review-even1 mix
-              <?php if( $category ): echo implode(' ', $category); ?>
-              <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
-              <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
-                <div class="gg2016-review-flex-cont">
-                  <div class="gg2016-review-img">
-                    <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                      <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
-                    </a>
-                  </div>
-                  <div class="gg2016-review-info">
-                    <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                      <h4 itemprop="name"><?php echo $product_name; ?></h4>
-                    </a>
-                    <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
-                    <?php if( $author_name ): ?>
-                      <p class="gg2016-review-person">Recommended by <?php echo $author_name; ?></p>
-                    <?php endif; ?>
-                    <?php if( $price ): ?>
-                      <p class="gg2016-review-price"><?php echo $price; ?></p>
-                    <?php endif; ?>
-                    <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
-                  </div>
-                </div>
-              </article>
+          <article class="gg2016-review gg2016-review-even1 mix
+          <?php if( $category ): echo implode(' ', $category); ?>
+          <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
+          <?php if($dp){ echo 'gg2016-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+            <div class="gg2016-review-flex-cont">
+              <div class="gg2016-review-img">
+                <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
+                  <img src="<?php echo $image; ?>" alt="Maker Gift Guide Image" class="img-responsive" itemprop="image" />
+                </a>
+              </div>
+              <div class="gg2016-review-info">
+                <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
+                  <h4 itemprop="name"><?php echo $product_name; ?></h4>
+                </a>
+                <div class="gg2016-review-desc" itemprop="description"><?php echo $product_description; ?></div>
+                <?php if( $author_name ): ?>
+                  <p class="gg2016-review-person">Recommended by <?php echo $author_name; ?></p>
+                <?php endif; ?>
+                <?php if( $price ): ?>
+                  <p class="gg2016-review-price"><?php echo $price; ?></p>
+                <?php endif; ?>
+                <a href="<?php echo $url; ?>" class="btn-red padleft padright" target="_blank" itemprop="url" rel="nofollow">Buy</a>
+              </div>
+            </div>
+          </article>
 
-            <?php }
+        <?php }
 
-          endwhile; ?>
+      endwhile; ?>
 
-        <?php endif; ?>
+    <?php endif; ?>
 
-        </div><!-- #gg2016-js.gg2016-body -->
-      </div><!-- .gg2016-body-bg -->
-    </div>
+    </div><!-- #gg2016-js.gg2016-body -->
+
+  </div><!-- .gg2016-body-bg -->
+  </div>
   </div>
 
 
@@ -293,21 +309,27 @@ if( $cats ) { ?>
     var hash = window.location.hash;
 
     origFilter = 'all'; //default to all
-
-        <?php if( have_rows('products') ):
-
-          while( have_rows('products') ): the_row();
-
-            $category = get_sub_field('category'); ?>
-
-            if(hash=='#<?php echo $category['value']; ?>') {
-              origFilter = '.<?php echo $category['value']; ?>';
-            }
-
-          <?php endwhile;
-
-        endif; ?>
-
+    if(hash=='#technology') {
+      origFilter = '.category-tec';
+    }
+    if(hash=='#digital-fabrication') {
+      origFilter = '.category-dig';
+    }
+    if(hash=='#craft&design') {
+      origFilter = '.category-cra';
+    }
+    if(hash=='#drones&vehicles') {
+      origFilter = '.category-dro';
+    }
+    if(hash=='#science') {
+      origFilter = '.category-sci';
+    }
+    if(hash=='#home') {
+      origFilter = '.category-hom';
+    }
+    if(hash=='#workshop') {
+      origFilter = '.category-wor';
+    }
     //console.log(loadCount);
 
 
@@ -343,15 +365,78 @@ if( $cats ) { ?>
           <?php if( have_rows('choose_a_takeover_category') ):
             while( have_rows('choose_a_takeover_category') ): the_row();
               $category = get_sub_field('category');
-              $bg_sp_image = get_sub_field('full_width_background_image');
-              echo "
-                if (state.activeFilter == '." . $category . "') {
-                  jQuery('.gg2016-body-bg').css('background', 'url(" . $bg_sp_image . ")');
-                  jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
-                  if (state.activeSort == 'random') {
-                    jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
-                  }
-                }";
+
+              if( $category == 'category-tec' ) {
+                $tecBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-tec') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $tecBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              } elseif ( $category == 'category-dig' ) {
+                $digBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-dig') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $digBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              } elseif ( $category == 'category-cra' ) {
+                $craBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-cra') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $craBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              } elseif ( $category == 'category-dro' ) {
+                $droBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-dro') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $droBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              } elseif ( $category == 'category-sci' ) {
+                $sciBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-sci') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $sciBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              } elseif ( $category == 'category-hom' ) {
+                $homBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-hom') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $homBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              } elseif ( $category == 'category-wor' ) {
+                $worBG = get_sub_field('full_width_background_image');
+                echo "
+                  if (state.activeFilter == '.category-wor') {
+                    jQuery('.gg2016-body-bg').css('background', 'url(" . $worBG . ")');
+                    jQuery('.gg2016-body-bg').addClass('gg2016-active-to');
+                    if (state.activeSort == 'random') {
+                      jQuery('.ctf-move').insertBefore('#gg2016-js .gg2016-review:first-child');
+                    }
+                  }";
+              }
             endwhile;
           endif; ?>
 
@@ -367,6 +452,49 @@ if( $cats ) { ?>
 
           //console.log(state.activeFilter);
 
+          //Set the ad vars cat to the correct navigation category
+          if (state.activeFilter == '.category-tec') {
+            var ad_vars_cat = {
+              cat: ['technology']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-dig') {
+            var ad_vars_cat = {
+              cat: ['digital-fabrication']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-cra') {
+            var ad_vars_cat = {
+              cat: ['craft-&-design']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-dro') {
+            var ad_vars_cat = {
+              cat: ['drones-&-vehicles']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-sci') {
+            var ad_vars_cat = {
+              cat: ['science']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-hom') {
+            var ad_vars_cat = {
+              cat: ['home']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else if (state.activeFilter == '.category-wor') {
+            var ad_vars_cat = {
+              cat: ['workshop']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          } else {
+            var ad_vars_cat = {
+              cat: ['']
+            };
+            jQuery.extend( ad_vars, ad_vars_cat );
+          }
+
           console.log('loadcount = ' + loadCount);
 
           //Only do this stuff on state changes that are not the first page load
@@ -374,7 +502,7 @@ if( $cats ) { ?>
             //Injecting ads after every 12 products, on state change
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
-              var modulus = (i + 1) % <?php echo $ad_freq; ?>;
+              var modulus = (i + 1) % 12;
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
@@ -415,7 +543,7 @@ if( $cats ) { ?>
             //Injecting ads after every 12 products, only on 1st page load
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review').each(function(i) {
-              var modulus = (i + 1) % <?php echo $ad_freq; ?>;
+              var modulus = (i + 1) % 12;
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
@@ -447,4 +575,5 @@ if( $cats ) { ?>
 
 
 <?php get_footer(); ?>
+
 
