@@ -345,6 +345,38 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5a043a7ac41cc",
+                    "label": "Image 2 (featured in sponsored hero image)",
+                    "name": "image_2",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5a031206b8133",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
                     "key": "field_5a031206b80fc",
                     "label": "Category",
                     "name": "category",
@@ -678,5 +710,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510150881
+    "modified": 1510226702
 }

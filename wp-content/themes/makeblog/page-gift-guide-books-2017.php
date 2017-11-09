@@ -90,17 +90,16 @@ $ad_freq = get_field('frequency_of_ads');
               if(get_sub_field('feature_in_sponsored_product_hero')) {
 
                 $product_name = get_sub_field('product_name');
-                $url = get_sub_field('url');
-                $image = get_sub_field('image');
+                $image_2 = get_sub_field('image_2');
                 $daily_pick = get_sub_field('feature_in_sponsored_product_hero');
-                $gg_photon_banner_product = get_resized_remote_image_url($image,600,600); ?>
+                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600); ?>
 
                 <div class="gg2017-hb-product">
                   <div class="gg2017-hb-relative">
-                    <a href="<?php echo $url; ?>">
+                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="btn-link-down">
                       <img src="<?php echo $gg_photon_banner_product; ?>" class="img-responsive" alt="Featured sponsored product" />
                     </a>
-                    <a href="<?php echo $url; ?>" class="gg2017-hb-title">
+                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="gg2017-hb-title btn-link-down">
                       <div>
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
@@ -198,7 +197,7 @@ if( $cats ) { ?>
               $ctf = get_sub_field('category_takeover_featured');
               $dp = get_sub_field('daily_pick'); ?>
 
-              <article class="gg2017-review gg2017-review-even1 mix
+              <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix
               <?php if( $category ): echo implode(' ', $category); ?>
               <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
               <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
@@ -275,7 +274,7 @@ if( $cats ) { ?>
         $ctf = get_sub_field('category_takeover_featured');
         $dp = get_sub_field('daily_pick'); ?>
 
-        <article class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
+        <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
         <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
         <?php if($ctf){ echo 'ctf-move';} ?>
         <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" style="display:inline-block;">
@@ -515,11 +514,26 @@ if( $cats ) { ?>
       })
     }).call(this);
 
-    //scroll to top when switching categories
-    jQuery("a.btn-link").click(function() {
-      jQuery("#scrollPane").animate({ scrollTop: 0 }, "slow");
-    });
+    // Product anchor link smooth scrolling
+    jQuery(".btn-link-down").on('click', function(event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        jQuery('html, body').animate({
+          scrollTop: jQuery(hash).offset().top-150
+        }, 600, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          //window.location.hash = hash;
+        });
+      }
+    });
 
     // Navbar affix
     var affixElement = '#gg2017-nav';
