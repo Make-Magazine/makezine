@@ -336,6 +336,7 @@ if( $cats ) { ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 <script>
+  // Change the URL in the address bar, and update the history
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
   }
@@ -395,7 +396,6 @@ if( $cats ) { ?>
         sort: 'random'
       }
     });
-
     jQuery('#gg2017-js').mixItUp({
       load: {
         filter: origFilter,
@@ -403,7 +403,7 @@ if( $cats ) { ?>
       },
       callbacks: {
         onMixStart: function(state){
-          console.log('mix start');
+          //console.log('mix start');
           jQuery('#gg2017-header-ad .js-ad').remove();
           jQuery('#gg2017-js .js-ad').remove();
           jQuery('#gg2017-js .fake-leaderboard-span').remove();
@@ -414,7 +414,7 @@ if( $cats ) { ?>
         },
 
         onMixEnd: function(state){
-          console.log('mix end');
+          //console.log('mix end');
           
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
@@ -445,7 +445,7 @@ if( $cats ) { ?>
 
           //console.log(state.activeFilter);
 
-          console.log('loadcount = ' + loadCount);
+          //console.log('loadcount = ' + loadCount);
 
           //Only do this stuff on state changes that are not the first page load
           if (loadCount >= 3) {
@@ -475,7 +475,7 @@ if( $cats ) { ?>
         },
 
         onMixLoad: function(state){
-          console.log('mix load');
+          //console.log('mix load');
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2017-sponsors .gg2017-sponsored').each(function() {
@@ -516,7 +516,8 @@ if( $cats ) { ?>
       })
     }).call(this);
 
-    // Product anchor link smooth scrolling
+
+    // Sponsored product anchor link smooth scrolling
     jQuery(".btn-link-down").on('click', function(event) {
       // Make sure this.hash has a value before overriding default behavior
       if (this.hash !== "") {
@@ -529,13 +530,10 @@ if( $cats ) { ?>
         // Using jQuery's animate() method to add smooth page scroll
         jQuery('html, body').animate({
           scrollTop: jQuery(hash).offset().top-150
-        }, 600, function(){
-     
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          //window.location.hash = hash;
-        });
+        }, 600, function(){ });
       }
     });
+
 
     // Navbar affix
     var affixElement = '#gg2017-nav';
@@ -543,7 +541,6 @@ if( $cats ) { ?>
     if (jQuery(window).width() < 991) {
       affixPixelAjust = 0;
     }
-
     jQuery(affixElement).affix({
       offset: {
         // Distance of between element and top page
@@ -558,6 +555,8 @@ if( $cats ) { ?>
     jQuery(affixElement).on('affixed-top.bs.affix', function(){
       jQuery("#scrollPane").removeClass("gg2017-header-affixed");
     });
+    // End Navbar affix
+
   });
 </script>
 
