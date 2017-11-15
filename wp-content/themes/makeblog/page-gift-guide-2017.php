@@ -379,15 +379,30 @@ if( $cats ) { ?>
 
     var hash = window.location.hash;
 
-    // if (hash) { 
-    //   <?php
-    //   $cats = get_field('categories_filters');
-    //   if($cats) { ?>
+    // Check if the url hash is one of the categories, then default filtering to that
+    <?php
+    $categories_filters = get_field('categories_filters');
+    if ($categories_filters) {
+      foreach ($categories_filters as $categories_filter) { ?>
+        //console.warn('<?php echo $categories_filter["value"]; ?>');
+        if(hash=='#<?php echo $categories_filter["value"]; ?>') {
+          origFilter = '.<?php echo $categories_filter["value"]; ?>';
+        }
+      <?php
+      }
+    } ?>
 
-    //       if(hash=='#<?php echo $category; ?>') {
-    //         origFilter = '.<?php echo $category; ?>';
-    //       }
-    // }
+    // CHeck if url hash is a product, then auto scroll to that product
+    // <?php
+    // if ($products) {
+    //   foreach ($products as $product) { ?>
+    //     console.warn('<?php echo $product["product_name"]; ?>');
+    //     if(hash=='#<?php echo $product["product_name"]; ?>') {
+
+    //     }
+    //   <?php
+    //   }
+    // } ?>
 
 
     jQuery('#gg2017-sponsors').mixItUp({
@@ -472,6 +487,7 @@ if( $cats ) { ?>
           loadCount++;
           //console.log(loadCount);
           //console.log('end end');
+          //console.log(state.activeFilter);
         },
 
         onMixLoad: function(state){
@@ -523,6 +539,13 @@ if( $cats ) { ?>
       if (this.hash !== "") {
         // Prevent default anchor click behavior
         event.preventDefault();
+
+        // Reset any filters
+        // jQuery('#scrollPane').mixItUp({
+        //   load: {
+        //     filter: '',
+        //   }
+        // });
 
         // Store hash
         var hash = this.hash;

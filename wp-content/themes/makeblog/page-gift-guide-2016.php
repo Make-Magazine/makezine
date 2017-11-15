@@ -294,19 +294,19 @@ if( $cats ) { ?>
 
     origFilter = 'all'; //default to all
 
-        <?php if( have_rows('products') ):
+    <?php if( have_rows('products') ):
 
-          while( have_rows('products') ): the_row();
+      while( have_rows('products') ): the_row();
 
-            $category = get_sub_field('category'); ?>
+        $category = get_sub_field('category'); ?>
 
-            if(hash=='#<?php echo $category['value']; ?>') {
-              origFilter = '.<?php echo $category['value']; ?>';
-            }
+        if(hash=='#<?php echo $category['value']; ?>') {
+          origFilter = '.<?php echo $category['value']; ?>';
+        }
 
-          <?php endwhile;
+      <?php endwhile;
 
-        endif; ?>
+    endif; ?>
 
     //console.log(loadCount);
 
