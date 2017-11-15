@@ -16,7 +16,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 		<div class="tc-container mz-body">
 			<section class="tc-content">
 			
-				<img class="scores-large" src="<?php echo $image['url']; ?>" alt=""/>
+				<img class="scores-large" src="<?php echo $image['url']; ?>" alt="Product review scoring image"/>
 
 				<ul id="score-list">
 					<?php
@@ -29,7 +29,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 						if( ! empty( $mobile_image ) ){
 						?>
 							<li>
-								<img src="<?php echo $mobile_image['url']; ?>" alt=""/>
+								<img src="<?php echo $mobile_image['url']; ?>" alt="Product review scoring image mobile"/>
 							</li>
 						<?php	
 						}
