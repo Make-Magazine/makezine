@@ -185,7 +185,7 @@ if( $cats ) { ?>
 
               $product_name = get_sub_field('product_name');
               $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
-              $product_name = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized);
+              $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized);
               $product_description = get_sub_field('product_description');
               $author_name = get_sub_field('author_name');
               $author_description = get_sub_field('author_description');
