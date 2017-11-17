@@ -89,17 +89,19 @@ $ad_freq = get_field('frequency_of_ads');
             while( have_rows('products') ): the_row();
               if(get_sub_field('feature_in_sponsored_product_hero')) {
 
-                $product_name = get_sub_field('product_name');
                 $image_2 = get_sub_field('image_2');
                 $daily_pick = get_sub_field('feature_in_sponsored_product_hero');
-                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600); ?>
+                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600);
+                $product_name = get_sub_field('product_name');
+                $product_name = str_replace(' ', '-', strtolower($product_name));
+                $product_name = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name); // Removes special chars ?>
 
                 <div class="gg2017-hb-product">
                   <div class="gg2017-hb-relative">
-                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="btn-link-down">
+                    <a href="#<?php echo $product_name; ?>" class="btn-link-down">
                       <img src="<?php echo $gg_photon_banner_product; ?>" class="img-responsive" alt="Featured sponsored product" />
                     </a>
-                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="gg2017-hb-title btn-link-down">
+                    <a href="#<?php echo $product_name; ?>" class="gg2017-hb-title btn-link-down">
                       <div>
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
@@ -182,6 +184,8 @@ if( $cats ) { ?>
             if(!get_sub_field('sponsored')) { 
 
               $product_name = get_sub_field('product_name');
+              $product_name = str_replace(' ', '-', strtolower($product_name));
+              $product_name = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name);
               $product_description = get_sub_field('product_description');
               $author_name = get_sub_field('author_name');
               $author_description = get_sub_field('author_description');
@@ -197,7 +201,7 @@ if( $cats ) { ?>
               $ctf = get_sub_field('category_takeover_featured');
               $dp = get_sub_field('daily_pick'); ?>
 
-              <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix
+              <article id="<?php echo $product_name;?>" class="gg2017-review gg2017-review-even1 mix
               <?php if( $category ): echo implode(' ', $category); ?>
               <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
               <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
@@ -259,6 +263,8 @@ if( $cats ) { ?>
       if(get_sub_field('sponsored')) { 
 
         $product_name = get_sub_field('product_name');
+        $product_name = str_replace(' ', '-', strtolower($product_name));
+        $product_name = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name);
         $product_description = get_sub_field('product_description');
         $author_name = get_sub_field('author_name');
         $author_description = get_sub_field('author_description');
@@ -274,7 +280,7 @@ if( $cats ) { ?>
         $ctf = get_sub_field('category_takeover_featured');
         $dp = get_sub_field('daily_pick'); ?>
 
-        <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
+        <article id="<?php echo $product_name;?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
         <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
         <?php if($ctf){ echo 'ctf-move';} ?>
         <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" style="display:inline-block;">
