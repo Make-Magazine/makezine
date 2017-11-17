@@ -14,8 +14,11 @@
             $.each(scores, function (__i, total_field) {
                 total += parseFloat($(total_field).val());
             });
+            $.each(possibleScore, function (__i, total_field) {
+                possibleScoreNumber = parseFloat($(total_field).val());
+            });
 
-            var totalPercent = (total * 100) / possibleScore;
+            var totalPercent = (total * 100) / possibleScoreNumber;
 
             row_label.html(totalPercent);
         });

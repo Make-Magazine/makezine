@@ -38,8 +38,8 @@ foreach ( $products as $product ) {
 				abs( $value ), esc_attr( $product->ID ), esc_attr( $criteria ) );
     }
 	}
-	$percentage = ($total / $totalPossible) * 100;
-	echo '<td><span class="total_score_label">' . $total . '</span></td>';
+	$percentage = round(($total / $totalPossible) * 100);
+	echo '<td><span class="total_score_label">' . $percentage . '%</span></td>';
 
 	echo '</tr>';
 }
