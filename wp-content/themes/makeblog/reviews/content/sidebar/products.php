@@ -1,4 +1,6 @@
 <?php
+global $post;
+$postID = $post->ID;
 $why_buy_content    = get_field( 'why_to_buy' );
 $why_buy_title      = get_field( 'why_to_buy_title' );
 $why_buy_title      = ! empty( $why_buy_title ) ? $why_buy_title : 'Why To Buy';
@@ -10,7 +12,7 @@ $scored_image_title = get_field( 'scores_image_title' );
 $scored_image_title = ! empty( $scored_image_title ) ? $scored_image_title : 'How this scored';
 $awards 						= get_field('winners');
 $container 			= Reviews()->container();
-$parent    			= $container['Relationships']->get_review_for_product( get_the_ID() );
+$parent    			= $container['Relationships']->get_review_for_product( $postID);
 $parent_title 	= $parent[0]->post_name;
 $parent_id = $parent[0]->ID;
 $modal_image    = get_field( 'magazine_thumbnail', $parent_id );
@@ -41,7 +43,7 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 		<ul>
 			<?php
 
-			$authors = get_coauthors( get_the_ID() );
+			$authors = get_coauthors( $postID );
 			$author_data = new Make_Authors();
 			foreach ( $authors as $author ) {
 					?>
@@ -124,22 +126,22 @@ endif;
 			<div class="sidebar-wrapper">
 				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
 			</div>
-		<?php } 
+		<?php }
 	} else if ( $parent_title === '3dprinters' ) {
 		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
 			<div class="clearfix"></div>
 			<div class="sidebar-wrapper">
 				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
 			</div>
-		<?php } 
+		<?php }
 	} else if ( $parent_title === 'drones' ) {
 		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
 			<div class="clearfix"></div>
 			<div class="sidebar-wrapper">
 				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
 			</div>
-		<?php } 
-	}  
+		<?php }
+	}
 ?>
 
 <div class="meta-block ad-2 desktop">
@@ -150,7 +152,7 @@ endif;
 $parent_link = '';
 if ( function_exists( 'Reviews' ) ) {
 	$container = Reviews()->container();
-	$parent    = $container['Relationships']->get_review_for_product( get_the_ID() );
+	$parent    = $container['Relationships']->get_review_for_product( $postID );
 	if ( ! empty( $parent ) ) {
 		$parent      = array_shift( $parent );
 		$parent_link = \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $parent->ID );
@@ -161,6 +163,6 @@ if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_sc
 	<div class="meta-block how-scored">
 		<h4><?php echo $scored_image_title; ?></h4>
 		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Product Review Scores"/>
-		<p><a href="<?php echo esc_url( $parent_link ); ?>">See all the Scores</a></p>
+		<p><a href="<?php echo esc_url( $parent_link ); ?>">See Scoring Criteria</a></p>
 	</div><!-- .meta-block.how-scored -->
 <?php endif;
