@@ -89,17 +89,19 @@ $ad_freq = get_field('frequency_of_ads');
             while( have_rows('products') ): the_row();
               if(get_sub_field('feature_in_sponsored_product_hero')) {
 
-                $product_name = get_sub_field('product_name');
                 $image_2 = get_sub_field('image_2');
                 $daily_pick = get_sub_field('feature_in_sponsored_product_hero');
-                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600); ?>
+                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600);
+                $product_name = get_sub_field('product_name');
+                $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
+                $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized); // Removes special chars ?>
 
                 <div class="gg2017-hb-product">
                   <div class="gg2017-hb-relative">
-                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="btn-link-down">
+                    <a href="#<?php echo $product_name_sanitized; ?>" class="btn-link-down">
                       <img src="<?php echo $gg_photon_banner_product; ?>" class="img-responsive" alt="Featured sponsored product" />
                     </a>
-                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="gg2017-hb-title btn-link-down">
+                    <a href="#<?php echo $product_name_sanitized; ?>" class="gg2017-hb-title btn-link-down">
                       <div>
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
@@ -136,7 +138,7 @@ if( $cats ) { ?>
             <p>Find gifts for:</p>
           </li>
           <li>
-            <button onclick="removeHashFunction();" class="btn btn-link filter" data-filter="all">All</button>
+            <button onclick="removeHashFunction();" id="gg-nav-all" class="btn btn-link filter" data-filter="all">All</button>
           </li>
 
           <?php foreach ($cats as $cat) { ?>
@@ -182,6 +184,8 @@ if( $cats ) { ?>
             if(!get_sub_field('sponsored')) { 
 
               $product_name = get_sub_field('product_name');
+              $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
+              $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized);
               $product_description = get_sub_field('product_description');
               $author_name = get_sub_field('author_name');
               $author_description = get_sub_field('author_description');
@@ -197,7 +201,7 @@ if( $cats ) { ?>
               $ctf = get_sub_field('category_takeover_featured');
               $dp = get_sub_field('daily_pick'); ?>
 
-              <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix
+              <article id="<?php echo $product_name_sanitized;?>" class="gg2017-review gg2017-review-even1 mix
               <?php if( $category ): echo implode(' ', $category); ?>
               <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
               <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
@@ -259,6 +263,8 @@ if( $cats ) { ?>
       if(get_sub_field('sponsored')) { 
 
         $product_name = get_sub_field('product_name');
+        $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
+        $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized);
         $product_description = get_sub_field('product_description');
         $author_name = get_sub_field('author_name');
         $author_description = get_sub_field('author_description');
@@ -274,7 +280,7 @@ if( $cats ) { ?>
         $ctf = get_sub_field('category_takeover_featured');
         $dp = get_sub_field('daily_pick'); ?>
 
-        <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
+        <article id="<?php echo $product_name_sanitized;?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
         <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
         <?php if($ctf){ echo 'ctf-move';} ?>
         <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" style="display:inline-block;">
@@ -373,36 +379,24 @@ if( $cats ) { ?>
 
     var loadCount = 1;
 
-
     // Set ALL filter to url hash or default
     origFilter = 'all'; //default to all
 
     var hash = window.location.hash;
-
-    // Check if the url hash is one of the categories, then default filtering to that
-    <?php
-    $categories_filters = get_field('categories_filters');
-    if ($categories_filters) {
-      foreach ($categories_filters as $categories_filter) { ?>
-        //console.warn('<?php echo $categories_filter["value"]; ?>');
-        if(hash=='#<?php echo $categories_filter["value"]; ?>') {
-          origFilter = '.<?php echo $categories_filter["value"]; ?>';
-        }
+    if (hash != "") {
+      // Check if the url hash is one of the categories, then default filtering to that
       <?php
-      }
-    } ?>
-
-    // CHeck if url hash is a product, then auto scroll to that product
-    // <?php
-    // if ($products) {
-    //   foreach ($products as $product) { ?>
-    //     console.warn('<?php echo $product["product_name"]; ?>');
-    //     if(hash=='#<?php echo $product["product_name"]; ?>') {
-
-    //     }
-    //   <?php
-    //   }
-    // } ?>
+      $categories_filters = get_field('categories_filters');
+      if ($categories_filters) {
+        foreach ($categories_filters as $categories_filter) { ?>
+          //console.warn('<?php echo $categories_filter["value"]; ?>');
+          if(hash=='#<?php echo $categories_filter["value"]; ?>') {
+            origFilter = '.<?php echo $categories_filter["value"]; ?>';
+          }
+        <?php
+        }
+      } ?>
+    }
 
 
     jQuery('#gg2017-sponsors').mixItUp({
@@ -429,7 +423,7 @@ if( $cats ) { ?>
         },
 
         onMixEnd: function(state){
-          //console.log('mix end');
+          console.warn('mix end');
           
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
@@ -486,12 +480,31 @@ if( $cats ) { ?>
 
           loadCount++;
           //console.log(loadCount);
-          //console.log('end end');
+          console.warn('end end');
           //console.log(state.activeFilter);
+
+          // Check if url hash is a product, then auto scroll to that product
+          <?php
+          if ($products) {
+            foreach ($products as $product) { 
+              $productNamesFiltered = (str_replace(' ', '-', strtolower($product["product_name"]))); ?>
+              console.warn('<?php echo $product["product_name"]; ?>');
+              console.warn('<?php echo $productNamesFiltered; ?>');
+
+              if(hash=='#<?php echo $productNamesFiltered; ?>') {
+                // Using jQuery's animate() method to add smooth page scroll
+                jQuery('html, body').animate({
+                  scrollTop: jQuery(hash).offset().top-150
+                }, 600);
+
+              }
+            <?php
+            }
+          } ?>
         },
 
         onMixLoad: function(state){
-          //console.log('mix load');
+          console.warn('mix load');
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2017-sponsors .gg2017-sponsored').each(function() {
@@ -540,20 +553,16 @@ if( $cats ) { ?>
         // Prevent default anchor click behavior
         event.preventDefault();
 
-        // Reset any filters
-        // jQuery('#scrollPane').mixItUp({
-        //   load: {
-        //     filter: '',
-        //   }
-        // });
-
         // Store hash
         var hash = this.hash;
+
+        // Reset any filters
+        jQuery('#gg-nav-all').click();
 
         // Using jQuery's animate() method to add smooth page scroll
         jQuery('html, body').animate({
           scrollTop: jQuery(hash).offset().top-150
-        }, 600, function(){ });
+        }, 600);
       }
     });
 
