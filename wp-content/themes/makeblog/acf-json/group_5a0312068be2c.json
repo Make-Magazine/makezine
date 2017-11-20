@@ -293,8 +293,8 @@
                         "id": ""
                     },
                     "choices": {
-                        "gg2017-dark: Dark": "gg2017-dark: Dark",
-                        "gg2017-light: Light": "gg2017-light: Light"
+                        "gg2017-dark": "Dark",
+                        "gg2017-light": "Light"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -710,5 +710,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510226702
+    "modified": 1511176371
 }
