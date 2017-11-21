@@ -456,6 +456,27 @@ if( $cats ) { ?>
 
           //console.log('loadcount = ' + loadCount);
 
+          if (loadCount == 2) {
+            // Check if url hash is a product, then auto scroll to that product
+            <?php
+            if ($products) {
+              foreach ($products as $product) { 
+                $productNamesFiltered = (str_replace(' ', '-', strtolower($product["product_name"]))); ?>
+                console.warn('<?php echo $product["product_name"]; ?>');
+                console.warn('<?php echo $productNamesFiltered; ?>');
+
+                if(hash=='#<?php echo $productNamesFiltered; ?>') {
+                  // Using jQuery's animate() method to add smooth page scroll
+                  jQuery('html, body').animate({
+                    scrollTop: jQuery(hash).offset().top-150
+                  }, 600);
+
+                }
+              <?php
+              }
+            } ?>
+          }
+
           //Only do this stuff on state changes that are not the first page load
           if (loadCount >= 3) {
             //Injecting ads after every 12 products, on state change
@@ -479,28 +500,9 @@ if( $cats ) { ?>
           }
 
           loadCount++;
-          //console.log(loadCount);
+          console.log(loadCount);
           console.warn('end end');
           //console.log(state.activeFilter);
-
-          // Check if url hash is a product, then auto scroll to that product
-          <?php
-          if ($products) {
-            foreach ($products as $product) { 
-              $productNamesFiltered = (str_replace(' ', '-', strtolower($product["product_name"]))); ?>
-              console.warn('<?php echo $product["product_name"]; ?>');
-              console.warn('<?php echo $productNamesFiltered; ?>');
-
-              if(hash=='#<?php echo $productNamesFiltered; ?>') {
-                // Using jQuery's animate() method to add smooth page scroll
-                jQuery('html, body').animate({
-                  scrollTop: jQuery(hash).offset().top-150
-                }, 600);
-
-              }
-            <?php
-            }
-          } ?>
         },
 
         onMixLoad: function(state){
