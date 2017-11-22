@@ -27,6 +27,9 @@ $ad_freq = get_field('frequency_of_ads');
 
   <header class="gg2016-header container">
     <div class="row">
+      <div class="alert alert-warning" role="alert">Looking for the 2017 Make: Gift Guide? <a href="/giftguide">Click Here</a></div>
+    </div>
+    <div class="row">
       <div class="col-xs-12 <?php if($dp_found){ echo 'col-sm-7 col-md-6';} ?> gg2016-header-info">
         <?php
         $header_title = get_field('header_title');
