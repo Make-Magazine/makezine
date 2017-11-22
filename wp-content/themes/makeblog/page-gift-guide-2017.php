@@ -423,7 +423,7 @@ if( $cats ) { ?>
         },
 
         onMixEnd: function(state){
-          console.warn('mix end');
+          //console.warn('mix end');
           
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
@@ -462,9 +462,6 @@ if( $cats ) { ?>
             if ($products) {
               foreach ($products as $product) { 
                 $productNamesFiltered = (str_replace(' ', '-', strtolower($product["product_name"]))); ?>
-                console.warn('<?php echo $product["product_name"]; ?>');
-                console.warn('<?php echo $productNamesFiltered; ?>');
-
                 if(hash=='#<?php echo $productNamesFiltered; ?>') {
                   jQuery(window).bind("load", function() {
                     // Using jQuery's animate() method to add smooth page scroll
@@ -500,21 +497,21 @@ if( $cats ) { ?>
             });
           }
 
-          console.warn(loadCount);
+          //console.warn(loadCount);
           loadCount++;
-          console.warn('end end');
+          //console.warn('end end');
           //console.log(state.activeFilter);
         },
 
         onMixLoad: function(state){
-          console.warn('mix load');
+          //console.warn('mix load');
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2017-sponsors .gg2017-sponsored').each(function() {
             jQuery('#gg2017-js').mixItUp('insert', count, jQuery(this));
             jQuery(this).show();
             count += 4;
-            console.warn('sponsor product added');
+            //console.warn('sponsor product added');
           });
 
           //Check if Daily Pick is also the 1st random product on the list, if so place it lower
@@ -530,7 +527,7 @@ if( $cats ) { ?>
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
-              console.warn('ad inserted');
+              //console.warn('ad inserted');
             });
             make.gpt.loadDyn();
           }
