@@ -208,7 +208,7 @@ if( $cats ) { ?>
                 <div class="gg2017-review-flex-cont">
                   <div class="gg2017-review-details">
                     <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                      <p class="gg2017-review-price <?php if($price_color==='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
+                      <p class="gg2017-review-price"><?php echo $price; ?></p>
                       <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
                       </div>
                       <h4 itemprop="name"><?php echo $product_name; ?></h4>
@@ -287,7 +287,7 @@ if( $cats ) { ?>
           <div class="gg2017-review-flex-cont">
             <div class="gg2017-review-details">
               <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                <p class="gg2017-review-price <?php if($price_color==='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
+                <p class="gg2017-review-price"><?php echo $price; ?></p>
                 <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
                 </div>
                 <h4 itemprop="name"><?php echo $product_name; ?></h4>
@@ -347,7 +347,7 @@ if( $cats ) { ?>
     history.pushState("", document.title, window.location.pathname);
   }
 
-  jQuery( document ).ready(function() {
+  jQuery(document).ready(function() {
 
     //page scroll counter
     var box = jQuery("#scrollPane"),
@@ -456,7 +456,7 @@ if( $cats ) { ?>
 
           //console.log('loadcount = ' + loadCount);
 
-          if (loadCount == 2) {
+          if (loadCount == 2 && hash != "") {
             // Check if url hash is a product, then auto scroll to that product
             <?php
             if ($products) {
@@ -466,11 +466,12 @@ if( $cats ) { ?>
                 console.warn('<?php echo $productNamesFiltered; ?>');
 
                 if(hash=='#<?php echo $productNamesFiltered; ?>') {
-                  // Using jQuery's animate() method to add smooth page scroll
-                  jQuery('html, body').animate({
-                    scrollTop: jQuery(hash).offset().top-150
-                  }, 600);
-
+                  jQuery(window).bind("load", function() {
+                    // Using jQuery's animate() method to add smooth page scroll
+                    jQuery('html, body').animate({
+                      scrollTop: jQuery(hash).offset().top-150
+                    }, 600);
+                  });
                 }
               <?php
               }
@@ -499,8 +500,8 @@ if( $cats ) { ?>
             });
           }
 
+          console.warn(loadCount);
           loadCount++;
-          console.log(loadCount);
           console.warn('end end');
           //console.log(state.activeFilter);
         },
@@ -513,6 +514,7 @@ if( $cats ) { ?>
             jQuery('#gg2017-js').mixItUp('insert', count, jQuery(this));
             jQuery(this).show();
             count += 4;
+            console.warn('sponsor product added');
           });
 
           //Check if Daily Pick is also the 1st random product on the list, if so place it lower
@@ -528,6 +530,7 @@ if( $cats ) { ?>
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
+              console.warn('ad inserted');
             });
             make.gpt.loadDyn();
           }
