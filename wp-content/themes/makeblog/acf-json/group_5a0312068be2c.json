@@ -280,31 +280,6 @@
                     "step": ""
                 },
                 {
-                    "key": "field_5a031206b80d2",
-                    "label": "Price color",
-                    "name": "price_color",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "gg2017-dark: Dark": "gg2017-dark: Dark",
-                        "gg2017-light: Light": "gg2017-light: Light"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
                     "key": "field_5a031206b80df",
                     "label": "URL",
                     "name": "url",
@@ -313,7 +288,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -710,5 +685,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510226702
+    "modified": 1511353093
 }

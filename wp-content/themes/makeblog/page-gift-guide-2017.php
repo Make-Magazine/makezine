@@ -89,17 +89,19 @@ $ad_freq = get_field('frequency_of_ads');
             while( have_rows('products') ): the_row();
               if(get_sub_field('feature_in_sponsored_product_hero')) {
 
-                $product_name = get_sub_field('product_name');
                 $image_2 = get_sub_field('image_2');
                 $daily_pick = get_sub_field('feature_in_sponsored_product_hero');
-                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600); ?>
+                $gg_photon_banner_product = get_resized_remote_image_url($image_2,600,600);
+                $product_name = get_sub_field('product_name');
+                $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
+                $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized); // Removes special chars ?>
 
                 <div class="gg2017-hb-product">
                   <div class="gg2017-hb-relative">
-                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="btn-link-down">
+                    <a href="#<?php echo $product_name_sanitized; ?>" class="btn-link-down">
                       <img src="<?php echo $gg_photon_banner_product; ?>" class="img-responsive" alt="Featured sponsored product" />
                     </a>
-                    <a href="#<?php echo (str_replace(' ', '-', strtolower($product_name))); ?>" class="gg2017-hb-title btn-link-down">
+                    <a href="#<?php echo $product_name_sanitized; ?>" class="gg2017-hb-title btn-link-down">
                       <div>
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
@@ -136,7 +138,7 @@ if( $cats ) { ?>
             <p>Find gifts for:</p>
           </li>
           <li>
-            <button onclick="removeHashFunction();" class="btn btn-link filter" data-filter="all">All</button>
+            <button onclick="removeHashFunction();" id="gg-nav-all" class="btn btn-link filter" data-filter="all">All</button>
           </li>
 
           <?php foreach ($cats as $cat) { ?>
@@ -182,6 +184,8 @@ if( $cats ) { ?>
             if(!get_sub_field('sponsored')) { 
 
               $product_name = get_sub_field('product_name');
+              $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
+              $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized);
               $product_description = get_sub_field('product_description');
               $author_name = get_sub_field('author_name');
               $author_description = get_sub_field('author_description');
@@ -197,14 +201,14 @@ if( $cats ) { ?>
               $ctf = get_sub_field('category_takeover_featured');
               $dp = get_sub_field('daily_pick'); ?>
 
-              <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix
+              <article id="<?php echo $product_name_sanitized;?>" class="gg2017-review gg2017-review-even1 mix
               <?php if( $category ): echo implode(' ', $category); ?>
               <?php endif; ?> <?php if($ctf){ echo 'ctf-move';} ?>
               <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
                 <div class="gg2017-review-flex-cont">
                   <div class="gg2017-review-details">
                     <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                      <p class="gg2017-review-price <?php if($price_color==='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
+                      <p class="gg2017-review-price"><?php echo $price; ?></p>
                       <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
                       </div>
                       <h4 itemprop="name"><?php echo $product_name; ?></h4>
@@ -259,6 +263,8 @@ if( $cats ) { ?>
       if(get_sub_field('sponsored')) { 
 
         $product_name = get_sub_field('product_name');
+        $product_name_sanitized = str_replace(' ', '-', strtolower($product_name));
+        $product_name_sanitized = preg_replace('/[^A-Za-z0-9\-]/', '', $product_name_sanitized);
         $product_description = get_sub_field('product_description');
         $author_name = get_sub_field('author_name');
         $author_description = get_sub_field('author_description');
@@ -274,14 +280,14 @@ if( $cats ) { ?>
         $ctf = get_sub_field('category_takeover_featured');
         $dp = get_sub_field('daily_pick'); ?>
 
-        <article id="<?php echo (str_replace(' ', '-', strtolower($product_name)));?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
+        <article id="<?php echo $product_name_sanitized;?>" class="gg2017-review gg2017-review-even1 mix gg2017-sponsored
         <?php if( $category ): echo implode(' ', $category); ?> <?php endif; ?>
         <?php if($ctf){ echo 'ctf-move';} ?>
         <?php if($dp){ echo 'gg2017-pd-move';} ?>" data-myorder="<?php echo round($priceNoComma); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" style="display:inline-block;">
           <div class="gg2017-review-flex-cont">
             <div class="gg2017-review-details">
               <a href="<?php echo $url; ?>" target="_blank" itemprop="url" rel="nofollow">
-                <p class="gg2017-review-price <?php if($price_color==='gg2017-light'){echo 'gg2017-light';}?>"><?php echo $price; ?></p>
+                <p class="gg2017-review-price"><?php echo $price; ?></p>
                 <div style="background: url(<?php echo $image; ?>);" class="gg2017-review-img">
                 </div>
                 <h4 itemprop="name"><?php echo $product_name; ?></h4>
@@ -336,11 +342,12 @@ if( $cats ) { ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 <script>
+  // Change the URL in the address bar, and update the history
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
   }
 
-  jQuery( document ).ready(function() {
+  jQuery(document).ready(function() {
 
     //page scroll counter
     var box = jQuery("#scrollPane"),
@@ -372,21 +379,24 @@ if( $cats ) { ?>
 
     var loadCount = 1;
 
-
     // Set ALL filter to url hash or default
     origFilter = 'all'; //default to all
 
     var hash = window.location.hash;
-
-    // if (hash) { 
-    //   <?php
-    //   $cats = get_field('categories_filters');
-    //   if($cats) { ?>
-
-    //       if(hash=='#<?php echo $category; ?>') {
-    //         origFilter = '.<?php echo $category; ?>';
-    //       }
-    // }
+    if (hash != "") {
+      // Check if the url hash is one of the categories, then default filtering to that
+      <?php
+      $categories_filters = get_field('categories_filters');
+      if ($categories_filters) {
+        foreach ($categories_filters as $categories_filter) { ?>
+          //console.warn('<?php echo $categories_filter["value"]; ?>');
+          if(hash=='#<?php echo $categories_filter["value"]; ?>') {
+            origFilter = '.<?php echo $categories_filter["value"]; ?>';
+          }
+        <?php
+        }
+      } ?>
+    }
 
 
     jQuery('#gg2017-sponsors').mixItUp({
@@ -395,7 +405,6 @@ if( $cats ) { ?>
         sort: 'random'
       }
     });
-
     jQuery('#gg2017-js').mixItUp({
       load: {
         filter: origFilter,
@@ -403,7 +412,7 @@ if( $cats ) { ?>
       },
       callbacks: {
         onMixStart: function(state){
-          console.log('mix start');
+          //console.log('mix start');
           jQuery('#gg2017-header-ad .js-ad').remove();
           jQuery('#gg2017-js .js-ad').remove();
           jQuery('#gg2017-js .fake-leaderboard-span').remove();
@@ -414,7 +423,7 @@ if( $cats ) { ?>
         },
 
         onMixEnd: function(state){
-          console.log('mix end');
+          //console.warn('mix end');
           
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
@@ -445,7 +454,26 @@ if( $cats ) { ?>
 
           //console.log(state.activeFilter);
 
-          console.log('loadcount = ' + loadCount);
+          //console.log('loadcount = ' + loadCount);
+
+          if (loadCount == 2 && hash != "") {
+            // Check if url hash is a product, then auto scroll to that product
+            <?php
+            if ($products) {
+              foreach ($products as $product) { 
+                $productNamesFiltered = (str_replace(' ', '-', strtolower($product["product_name"]))); ?>
+                if(hash=='#<?php echo $productNamesFiltered; ?>') {
+                  jQuery(window).bind("load", function() {
+                    // Using jQuery's animate() method to add smooth page scroll
+                    jQuery('html, body').animate({
+                      scrollTop: jQuery(hash).offset().top-150
+                    }, 600);
+                  });
+                }
+              <?php
+              }
+            } ?>
+          }
 
           //Only do this stuff on state changes that are not the first page load
           if (loadCount >= 3) {
@@ -469,19 +497,21 @@ if( $cats ) { ?>
             });
           }
 
+          //console.warn(loadCount);
           loadCount++;
-          //console.log(loadCount);
-          //console.log('end end');
+          //console.warn('end end');
+          //console.log(state.activeFilter);
         },
 
         onMixLoad: function(state){
-          console.log('mix load');
+          //console.warn('mix load');
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2017-sponsors .gg2017-sponsored').each(function() {
             jQuery('#gg2017-js').mixItUp('insert', count, jQuery(this));
             jQuery(this).show();
             count += 4;
+            //console.warn('sponsor product added');
           });
 
           //Check if Daily Pick is also the 1st random product on the list, if so place it lower
@@ -497,6 +527,7 @@ if( $cats ) { ?>
               if (modulus === 0) {
                 jQuery(this).after('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>');
               }
+              //console.warn('ad inserted');
             });
             make.gpt.loadDyn();
           }
@@ -516,7 +547,8 @@ if( $cats ) { ?>
       })
     }).call(this);
 
-    // Product anchor link smooth scrolling
+
+    // Sponsored product anchor link smooth scrolling
     jQuery(".btn-link-down").on('click', function(event) {
       // Make sure this.hash has a value before overriding default behavior
       if (this.hash !== "") {
@@ -526,16 +558,16 @@ if( $cats ) { ?>
         // Store hash
         var hash = this.hash;
 
+        // Reset any filters
+        jQuery('#gg-nav-all').click();
+
         // Using jQuery's animate() method to add smooth page scroll
         jQuery('html, body').animate({
           scrollTop: jQuery(hash).offset().top-150
-        }, 600, function(){
-     
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          //window.location.hash = hash;
-        });
+        }, 600);
       }
     });
+
 
     // Navbar affix
     var affixElement = '#gg2017-nav';
@@ -543,7 +575,6 @@ if( $cats ) { ?>
     if (jQuery(window).width() < 991) {
       affixPixelAjust = 0;
     }
-
     jQuery(affixElement).affix({
       offset: {
         // Distance of between element and top page
@@ -558,6 +589,8 @@ if( $cats ) { ?>
     jQuery(affixElement).on('affixed-top.bs.affix', function(){
       jQuery("#scrollPane").removeClass("gg2017-header-affixed");
     });
+    // End Navbar affix
+
   });
 </script>
 

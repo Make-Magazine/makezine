@@ -28,7 +28,10 @@
 
       // Detect footer and shrink sticky sidebar to not overlap footer:
       var stickySideBarDetectsFooter = function() {
-        var footerPos = $('#footer').offset().top;
+        var footerCont = $('#footer');
+        if (footerCont.length) {
+          var footerPos = footerCont.offset().top;
+        }
         var currentScroll = $(window).scrollTop();
         var sidebarElem = $('.sticky-sidebar-posts-nav');
         if (!$('#footer').is(':visible') || footerPos > $(window).height() + currentScroll) {
