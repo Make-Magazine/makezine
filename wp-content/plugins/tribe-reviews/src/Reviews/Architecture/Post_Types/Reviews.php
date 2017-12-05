@@ -353,6 +353,12 @@ class Reviews {
 							'rows'          => '',
 							'formatting'    => 'none',
 						),
+            array(
+              'key'           => 'field_56304bb70bf92',
+              'label'         => 'Image',
+              'name'          => 'criteria-image',
+              'type'          => 'image',
+            ),
 					),
 					'row_min'           => 0,
 					'row_limit'         => '',
