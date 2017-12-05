@@ -50,8 +50,8 @@ if ( ! empty( $image ) ){
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 		</div><!-- .col -->
-		<div class="home-ads">
-      <?php global $make; print $make->ads->ad_leaderboard; ?>
+		<div class="ad-2">
+      <?php global $make; print $make->ads->ad_leaderboard_alt_btf; ?>
     </div>
 	</div><!-- .cw-content -->
 </div><!-- .container -->
