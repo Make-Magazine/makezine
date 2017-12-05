@@ -532,12 +532,16 @@ class Reviews {
 			$p2p_id = $wpdb->get_var( $wpdb->prepare( "Select p2p_id from $wpdb->p2p where p2p_from = %d and p2p_to = %d", $product_id, get_the_ID() ) );
 
 			$total = 0.0;
+			$totalscore = 0.0;
+			$totalPercent = 0.000;
 			foreach ( $scores as $key => $value ) {
        	p2p_update_meta( $p2p_id, $key, $value );
 				$total+=abs($value);
 			}
+			$totalscore= p2p_get_meta( $p2p_id, 'total-score', true );
+			$totalPercent = ((($total - $totalscore) / $totalscore) * 100);
 
-			update_post_meta( $product_id, 'total_score', $total );
+			update_post_meta( $product_id, 'total_score', round($totalPercent) );
 		}
 	}
 
