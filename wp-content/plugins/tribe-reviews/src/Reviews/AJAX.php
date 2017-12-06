@@ -124,9 +124,11 @@ class AJAX {
 		$data = [ ];
 
 		foreach ( $posts as $post ) {
+      $subtitle = (get_post_meta( $post->ID, 'discontinued', true )=='yes'?'Discontinued by manufacturer':'');
 			$data[] = [
 				'ID'        => $post->ID,
 				'title'     => $post->post_title,
+        'subtitle'  => $subtitle,
 				'most_recent' => $post->post_date,
 				'price'     => '$' . absint( get_post_meta( $post->ID, 'price_as_tested', true ) ),
 				'buy_url'   => get_post_meta( $post->ID, 'buy_link', true ),

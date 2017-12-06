@@ -38,6 +38,7 @@ var ReviewsFilters = {
 				var row = $(filters.model).clone();
 				row.removeClass('reviews-model');
 				row.find('.ri-item-title').html(v.title);
+        row.find('.ri-item-subtitle').html(v.subtitle);
 				row.find('.ri-score-price').find('.ri-price span').html(v.price);
 				row.find('.ri-type').html(v.type);
 				row.find('.ri-score-price').find('.ri-score span').html(v.score + '%');

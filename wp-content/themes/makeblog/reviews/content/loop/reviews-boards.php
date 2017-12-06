@@ -16,8 +16,9 @@
 			<div class="ri-details">
 				<div class="ri-details-title-type">
 					<a class="ri-link" href="<?php the_permalink(); ?>">
-						<h2 class="ri-item-title"></h2>
+						<h2 class="ri-item-title"></h2> 
 					</a>
+          <h5 class="ri-item-subtitle"></h5>
 					<div class="ri-type"></div>
 				</div>
 				<div class="ri-item-meta"><span>AWARDS: </span></div>
