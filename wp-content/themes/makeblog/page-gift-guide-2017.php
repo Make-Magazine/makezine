@@ -45,7 +45,7 @@ $ad_freq = get_field('frequency_of_ads');
 
             $product_name = get_sub_field('product_name');
             $url = get_sub_field('url');
-            $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
+            $image = get_resized_remote_image_url(get_sub_field('image'),800,650);
             $daily_pick = get_sub_field('daily_pick'); ?>
 
             <div class="col-xs-12 col-sm-6 gg2017-dp">
@@ -195,7 +195,7 @@ if( $cats ) { ?>
               $price2 = get_sub_field('price_used_for_sorting_not_shown');
               $price_color = get_sub_field('price_color');
               $url = get_sub_field('url');
-              $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
+              $image = get_resized_remote_image_url(get_sub_field('image'),800,650);
               $category = get_sub_field('category');
               $priceNoComma = str_replace( ',', '', $price2 );
               $ctf = get_sub_field('category_takeover_featured');
@@ -274,7 +274,7 @@ if( $cats ) { ?>
         $price2 = get_sub_field('price_used_for_sorting_not_shown');
         $price_color = get_sub_field('price_color');
         $url = get_sub_field('url');
-        $image = get_resized_remote_image_url(get_sub_field('image'),800,500);
+        $image = get_resized_remote_image_url(get_sub_field('image'),800,650);
         $category = get_sub_field('category');
         $priceNoComma = str_replace( ',', '', $price2 );
         $ctf = get_sub_field('category_takeover_featured');
