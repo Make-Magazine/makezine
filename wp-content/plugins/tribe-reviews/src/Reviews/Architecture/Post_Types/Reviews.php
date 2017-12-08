@@ -116,6 +116,125 @@ class Reviews {
 		//if ( ! empty( $_GET['post'] ) && self::is_scoring_enabled( absint( $_GET['post'] ) ) ) {
 
 			register_field_group( array(
+				'id'         => 'acf_previous_testers',
+				'title'      => 'Previous testers',
+				'fields'     => array(
+					array(
+						'key'          => 'field_5a2a752baa411',
+						'label'        => '',
+						'name'         => 'previous_testers',
+						'type'         => 'repeater',
+						'instructions' => 'Click the "Add previous tester" button to add site users or coauthors. Order can be set by dragging and dropping each tester up or down.',
+						'sub_fields'   => array(
+							array(
+								'key'           => 'field_5a2a75bfaa412',
+								'label'         => 'Author type',
+								'name'          => 'author_type',
+								'type'          => 'radio',
+                'instructions' 	=> '',
+                'required' 			=> 0,
+                'conditional_logic' => 0,
+                'wrapper'    => array(
+                  'width' => '',
+                  'class' => '',
+                  'id' => ''
+                ),
+								'choices'    => array(
+                  'user' => 'User',
+                  'coauthor' => 'Co-author'
+                ),
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => '',
+                'layout' => 'vertical',
+                'return_format' => 'value'
+							),
+              array(
+                'key' => 'field_5a2a760aaa413',
+                'label' => 'Makezine users',
+                'name' => 'makezine_users',
+                'type' => 'user',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+									array(
+										array(
+                      'field' => 'field_5a2a75bfaa412',
+                      'operator' => '==',
+                      'value' => 'user'
+										),
+									),
+								),
+                'wrapper'    => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => ''
+                ),
+                'role' => '',
+                'allow_null' => 0,
+                'multiple' => 0
+              ),
+              array(
+                'key' => 'field_5a2a7630aa415',
+                'label' => 'Co-authors',
+                'name' => 'coauthors',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+									array(
+										array(
+                      'field' => 'field_5a2a75bfaa412',
+                      'operator' => '==',
+                      'value' => 'coauthor'
+										),
+									),
+								),
+                'wrapper'    => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => ''
+                ),
+                'post_type' => array(
+                    'guest-author'
+                ),
+                'filters' => array(
+                    'search'
+                ),
+                'elements' => '',
+                'min' => '',
+                'max' => 1,
+                'return_format' => 'object'
+              ),
+						),
+						'row_min'      => 0,
+						'row_limit'    => '',
+						'layout'       => 'table',
+						'button_label' => 'Add previous tester',
+					),
+				),
+				'location'   => array(
+					array(
+						array(
+							'param'    => 'post_type',
+							'operator' => '==',
+							'value'    => 'reviews',
+							'order_no' => 0,
+							'group_no' => 0,
+						),
+					),
+				),
+				'options'    => array(
+					'position'       => 'normal',
+					'layout'         => 'default',
+					'hide_on_screen' => array(),
+				),
+				'menu_order' => 0,
+			) );
+
+
+			register_field_group( array(
 				'id'         => 'acf_scoring-criteria',
 				'title'      => 'Scoring Criteria',
 				'fields'     => array(
@@ -161,7 +280,7 @@ class Reviews {
 					'layout'         => 'default',
 					'hide_on_screen' => array(),
 				),
-				'menu_order' => 0,
+				'menu_order' => 2,
 			) );
       //}
 
@@ -461,7 +580,7 @@ class Reviews {
 				'layout'         => 'default',
 				'hide_on_screen' => array(),
 			),
-			'menu_order' => 0,
+			'menu_order' => 1,
 		) );
 
 	}
