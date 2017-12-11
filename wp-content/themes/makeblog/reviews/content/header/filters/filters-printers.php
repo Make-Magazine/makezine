@@ -186,6 +186,23 @@
 								</label>
 							</div>
 						</div><!-- .fl-more-options -->
+            <div style="display:none" class="fl-filter fl-extruder dropdown">
+							<button id="fl-extruder-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+								EXTRUDER<i class="fa fa-chevron-down"></i>
+							</button>
+							<div class="fl-filter-options dropdown-menu dropdown-menu-right" aria-labelledby="fl-extruder-btn">
+								<label for="single">
+									<input id="single" type="checkbox" name="extruder" value="single">
+									<span>Single</span>
+								</label>
+								<label for="multi">
+									<input id="multi" type="checkbox" name="extruder" value="multi">
+									<span>
+                  Multi</span>
+								</label>
+							</div>
+						</div><!-- .fl-hotend -->
+
 
 					</div><!-- .fl-group -->
 
@@ -204,7 +221,7 @@
 
 	<div class="fl-filters-selected clearfix">
 		<h3 class="screen-reader-text sr-only">Selected Filters:</h3>
-		
+
 		<div class="fs-selected">
 
 		</div><!-- .fs-seletcted -->

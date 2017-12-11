@@ -287,7 +287,20 @@ class Products {
 					'default_value'     => '',
 					'layout'            => 'horizontal',
 				),
-
+				array(
+					'key'               => 'field_563051e827c6c',
+					'label'             => 'Extruder',
+					'name'              => 'extruder',
+					'type'              => 'radio',
+					'choices'           => array(
+						'single' => 'Single',
+						'multi' => 'Multi',
+					),
+					'other_choice'      => 0,
+					'save_other_choice' => 0,
+					'default_value'     => '',
+					'layout'            => 'horizontal',
+				),
 			),
 			'location'   => array(
 				array(
@@ -603,7 +616,7 @@ class Products {
 					),
 					'default_value' => 'no',
 				),
-       
+
 			),
 			'location'   => array(
 				array(
