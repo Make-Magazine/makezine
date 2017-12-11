@@ -63,7 +63,6 @@ var ReviewsFilters = {
 
 	filters.update = function () {
 		sessionStorage.setItem("filters_data", JSON.stringify(filters.filters_data));
-
 		filters._update_selected_filter_list();
 		filters._update_from_remote();
 	};
@@ -109,7 +108,24 @@ var ReviewsFilters = {
 	};
 
 	filters.sort_change = function(){
+    var ascSorted = false;
+    //find current sort order
+    if ($(this).hasClass('asc')){
+      ascSorted = true;
+    }
+
+    //remove sort icons from all sort headers
+    $(filters.sort_form_id + ' :input').removeClass('asc');
+    $(filters.sort_form_id + ' :input').removeClass('dsc');
+
+    //set sort order. if not set, set it to ascending. if previously ascending, set to descending
+    if (ascSorted){
+      $(this).addClass('dsc');
+    } else {
+      $(this).addClass('asc');
+    }
 		filters.sortby = $(this).val();
+    alert ('sort change '+filters.sortby);
 		sessionStorage.setItem("sort", filters.sortby);
 		filters._update_from_remote();
 	};
@@ -184,7 +200,7 @@ var ReviewsFilters = {
 	};
 
 	$(document).ready(function () {
-		$(filters.sort_form_id + ' :input').on('change', filters.sort_change);
+		$(filters.sort_form_id + ' :input').on('click', filters.sort_change);
 		$(filters.form_id + ' :input').on('change', filters.form_change);
 		$(filters.form_id).on('reset', filters.reset);
 		$(filters.selected_class).on('click', 'button', filters.delete_selected_filter);

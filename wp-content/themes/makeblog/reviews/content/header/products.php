@@ -27,19 +27,19 @@ if ( ! empty( $image ) ) {
 						<div class="meta-wrapper col-sm-4">
 							<div class="product-meta">
 								<h2 class="product-title"><?php the_title();?></h2>
-									
+
 									<div class="authors-mobile">
-									
+
 									<?php if ( class_exists( 'CoAuthorsIterator' ) ): ?>
 										<?php
 										$my_date_mobile = the_date('M j, Y', '', '', FALSE);
 										$i = new CoAuthorsIterator();
 										$count = $i->count;
-										
+
 										if( $count === 1 ){
 										?>
-											
-											<p>By 
+
+											<p>By
 												<?php
 												$i->iterate();
 												do {
@@ -59,7 +59,7 @@ if ( ! empty( $image ) ) {
 										<?php
 										}else{
 										?>
-											<p>By 
+											<p>By
 												<?php
 												$i->iterate();
 												do {
@@ -82,7 +82,7 @@ if ( ! empty( $image ) ) {
 										}
 										?>
 									<?php endif; ?>
-								
+
 								</div><!-- .authors-mobile" -->
 							</div><!-- .product-meta -->
 
@@ -129,18 +129,20 @@ if ( ! empty( $image ) ) {
 										esc_url($asset_path),
 										$rootpath
 									); ?>
-								
+
 									<div class="virtual-tour">
 										<?php
 										if (! empty($view_config_path) ) {
 											$config_xml = simplexml_load_file($asset_path);
 											//Load first image from XML
-											$image1 = $config_xml->images->image[0]->attributes();									
+                      if(!is_null($config_xml->images->image[0]->attributes())){
+                        $image1 = $config_xml->images->image[0]->attributes();
+                      }
 										}
 										$firstFile = $rootpath . '/' . $image1;
-										
+
 										echo do_shortcode( $wr_shortcode ); ?>
-										
+
 										<div id="virtual-placeholder">
 											<div class="inner">
 												<img src="<?php echo $firstFile;?>" alt="<?php the_title();?>"/>
@@ -151,8 +153,8 @@ if ( ! empty( $image ) ) {
 											</div><!-- .inner -->
 										</div><!-- #virtual-placeholder -->
 									</div><!-- .virtual-tour -->
-								
-								<?php endif; 
+
+								<?php endif;
 
 							} ?>
 
