@@ -110,12 +110,14 @@
 				transition: all 150ms;
 				font-weight: 400;
 			}
-      i {
-        display: none
-      }
 		}
-    input.asc i, input.dsc i {
-      display: inline-block;
+    .rl-sort-choice.asc:after {
+      font-family: FontAwesome;
+      content:"\f107";
+    }
+    .rl-sort-choice.dsc:after {
+      font-family: FontAwesome;
+      content:"\f106";
     }
 	}
 }

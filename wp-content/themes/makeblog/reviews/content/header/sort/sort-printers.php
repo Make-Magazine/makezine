@@ -12,25 +12,29 @@
 				<h3 class="rl-sort-header rl-sort-cell">SORT BY</h3>
 
 				<label for="az" class="details rl-sort-cell">
-					<input id="az" type="radio" name="sort" value="title">
-					<span>A-Z <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+          <span class="rl-sort-choice">
+            <input id="az" type="radio" name="sort" value="title">
+					  A-Z </span>
 				</label>
 
 				<label for="recent" class="recent rl-sort-cell">
-					<input id="recent" type="radio" name="sort" value="most_recent">
-					<span>Recently Reviewed <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+          <span class="rl-sort-choice">
+            <input id="recent" type="radio" name="sort" value="most_recent">
+            Recently Reviewed </span>
 				</label>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
 				<label for="score" class="score rl-sort-cell">
-					<input id="score" type="radio" name="sort" value="score" checked>
-					<span>Score <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+          <span class="rl-sort-choice">
+            <input id="score" type="radio" name="sort" value="score" checked>
+            Score </span>
 				</label>
 				<?php endif; ?>
 
 				<label for="price" class="price rl-sort-cell">
-					<input id="price" type="radio" name="sort" value="price">
-					<span>Price <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+          <span class="rl-sort-choice">
+            <input id="price" type="radio" name="sort" value="price">
+            Price </span>
 				</label>
 
 			</div>

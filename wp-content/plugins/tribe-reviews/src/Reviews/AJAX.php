@@ -48,6 +48,8 @@ class AJAX {
 
 	private function process_sort( $args ) {
 		$sortby = ! empty( $_POST['sort'] ) && in_array( $_POST['sort'], [ 'score', 'price', 'title', 'most_recent' ], true ) ? $_POST['sort'] : 'score';
+    $orderDef = ($_POST['sort']=='score'||$_POST['sort']=='most_recent'?'DESC':'ASC');
+    $order  = (!empty( $_POST['order'] ) ? $_POST['order'] : $orderDef);
 
 		if ( ! Reviews::is_scoring_enabled( $_POST['post_id'] ) && $sortby === 'score' ) {
 			$sortby = 'title';
@@ -58,23 +60,23 @@ class AJAX {
 			case 'score':
 				$args['meta_key'] = 'total_score';
 				$args['orderby']  = 'meta_value_num';
-				$args['order']    = 'DESC';
+				$args['order']    = $order;
 				break;
 
 			case 'price':
 				$args['meta_key'] = 'price_as_tested';
 				$args['orderby']  = 'meta_value_num';
-				$args['order']    = 'ASC';
+				$args['order']    = $order;
 				break;
 
 			case 'title':
 				$args['orderby'] = 'title';
-				$args['order']   = 'ASC';
+				$args['order']   = $order;
 				break;
 
 			case 'most_recent':
 				$args['orderby'] = 'most_recent';
-				$args['order']   = 'DESC';
+				$args['order']   = $order;
 				break;
 
 		}
