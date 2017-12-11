@@ -18,6 +18,14 @@ $parent_id = $parent[0]->ID;
 $modal_image    = get_field( 'magazine_thumbnail', $parent_id );
 $modal_text     = get_field( 'magazine_label', $parent_id );
 
+if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
+	<div class="meta-block how-scored">
+		<h4><?php echo $scored_image_title; ?></h4>
+		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Product Review Scores"/>
+		<p><a href="<?php echo esc_url( $parent_link ); ?>">See Scoring Criteria</a></p>
+	</div><!-- .meta-block.how-scored -->
+<?php endif;
+
 if( $awards && ( ! in_array('', $awards) ) ): ?>
 	<div class="sidebar-awards meta-block">
 		<div class="sidebar-awards-left <?php
@@ -158,11 +166,3 @@ if ( function_exists( 'Reviews' ) ) {
 		$parent_link = \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $parent->ID );
 	}
 }
-
-if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
-	<div class="meta-block how-scored">
-		<h4><?php echo $scored_image_title; ?></h4>
-		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Product Review Scores"/>
-		<p><a href="<?php echo esc_url( $parent_link ); ?>">See Scoring Criteria</a></p>
-	</div><!-- .meta-block.how-scored -->
-<?php endif;
