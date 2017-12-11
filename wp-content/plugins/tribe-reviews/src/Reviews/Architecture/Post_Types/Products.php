@@ -592,6 +592,18 @@ class Products {
 					'formatting' => 'none',
 					'maxlength' => '',
 				),
+        array(
+					'key'           => 'field_prodDisc',
+					'label'         => 'Discontinued',
+					'name'          => 'discontinued',
+					'type'          => 'radio',
+					'choices'       => array(
+						'no'          => 'No',
+						'yes'         => 'Yes'
+					),
+					'default_value' => 'no',
+				),
+       
 			),
 			'location'   => array(
 				array(
@@ -736,7 +748,7 @@ class Products {
 					),
 					'default_value' => '',
 				),
-          
+
           //Select One: 0-600', 601'-1200', 1201'-3000', 3001+
 				array(
 					'key'               => 'field_drones003',
@@ -783,7 +795,7 @@ class Products {
 					'default_value'     => '',
 					'layout'            => 'horizontal',
 				),
-				
+
           //Select One: 4K, Variable, 2.7K, 1080p
 				array(
 					'key'           => 'field_drones005',
@@ -814,7 +826,7 @@ class Products {
 					'default_value' => '',
 					'layout'        => 'horizontal'
 				),
-				
+
 			),
 			'location' => array(
 				array(
@@ -839,7 +851,7 @@ class Products {
 		) );
 
 	}
-  
-  
+
+
 
 }

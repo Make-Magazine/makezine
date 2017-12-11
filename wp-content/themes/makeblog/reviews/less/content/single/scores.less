@@ -24,7 +24,32 @@ main#scores {
 	border-top: 1px dashed @med-gray;
 	width: 100%;
 	float: left;
+  color: #4a4a4a;
 	font-size: 12px;
+  .criteria-img {
+    background-color: black;
+    margin: 0;
+    background-size: contain;
+    position: relative;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .scoringRow {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    line-height: 1.2em;
+  }
+  .criteria-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  .criteria-desc {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
 	.column {
 		width: 28%;
 		margin-right: 8%;
@@ -45,7 +70,7 @@ main#scores {
 		}
 		h5 {
 			font-weight: 600;
-			
+
 		}
 		p {
 			margin-bottom: 20px;
