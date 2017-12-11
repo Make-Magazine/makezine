@@ -47,11 +47,18 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					}
 					$evenOdd = ( ($postcount % 2) == 0 ) ? " clear-2" : "";
 					?>
+<?php 
 
+// echo '<pre>';
+
+//   var_dump( $author );
+
+// echo '</pre>';
+
+?>
 					<div class="author col-sm-3 <?php echo $clear_count; echo $evenOdd; ?>">
 						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
 							<?php echo $author_data->author_avatar( $author ); ?>
-							
 
 							<?php
 							$description = $author_data->author_bio( $author );
@@ -72,9 +79,11 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 						$twitter = get_user_meta( $author->ID, 'twitter', true );
 						if ( ! empty( $twitter ) ):
 							?>
-							<p><a class="twitter-link" target="_blank"
-							      href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>"><i
-										class="fa fa-twitter"></i> <span><?php echo esc_html( $twitter ); ?></span></a></p>
+							<p>
+								<a class="twitter-link" target="_blank" href="<?php echo esc_url( 'https://twitter.com/intent/follow?screen_name=' . $twitter ); ?>">
+									<i class="fa fa-twitter"></i> <span><?php echo esc_html( $twitter ); ?></span>
+								</a>
+							</p>
 						<?php endif; ?>
 
 					</div>
@@ -83,8 +92,78 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 				}
 				?>
 
-			</div>
-			<!-- .row -->
+			</div><!-- .testing-authors-->
+
+			
+			<?php if( have_rows('previous_testers') ): ?>
+
+				<h4 class="authors-title">Privious Testers</h4>
+
+				<div class="row previous-testing-authors">
+
+				<?php while( have_rows('previous_testers') ): the_row(); 
+
+					$author_type = get_sub_field('author_type'); 
+
+					if($author_type == 'user') {
+						$user_object = get_sub_field('makezine_users');
+						$description = $user_object['user_description'] ?>
+
+						<div class="author col-sm-3 col-md-4 col-lg-4">
+							<a href="/author/<?php echo $user_object['user_nicename']; ?>" class="author-target">
+								<?php echo get_avatar( $user_object['ID'] ); ?>
+								<?php
+								if (!empty($description)) {
+									?>
+									<div class="description">
+										<p><?php echo strip_tags( $description ); ?></p>
+										<div class="gradient"></div>
+									</div>
+								<?php } ?>
+							</a>
+							<h5><?php echo ($user_object["display_name"]); ?></h5>
+						</div>
+
+					<?php
+					} else {
+						$coauthor_object = get_sub_field('coauthors');
+						$authors = get_coauthors( $coauthor_object[0]->ID );
+						$author_data = new Make_Authors();
+						$description = $coauthor_object[0]->user_description; ?>
+<?php 
+
+// echo '<pre>';
+
+//   var_dump( $coauthor_object[0] );
+
+// echo '</pre>';
+
+?>
+						<div class="author col-sm-3 col-md-4 col-lg-4">
+							<a href="/author/<?php echo $coauthor_object[0]->post_name; ?>" class="author-target">
+								<!--img src="<?php echo get_avatar_url( $coauthor_object[0]->ID ); ?>" this pull the wrong author. It pulls WP users instead of coauthors -->
+								<?php echo $author_data->author_avatar( $coauthor_object[0] ); ?>
+								<?php
+								if (!empty($description)) {
+									?>
+									<div class="description">
+										<p><?php echo strip_tags( $description ); ?></p>
+										<div class="gradient"></div>
+									</div>
+								<?php } ?>
+							</a>
+							<h5><?php echo $coauthor_object[0]->post_title; ?></h5>
+						</div>
+						
+					<?php } ?>
+
+
+				<?php endwhile; ?>
+
+				</div><!-- .previous-testing-authors -->
+
+			<?php endif; ?>
+
 
 		</div>
 		<!-- .col -->
