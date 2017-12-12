@@ -462,7 +462,7 @@ if( $cats ) { ?>
             if ($products) {
               foreach ($products as $product) { 
                 $productNamesFiltered = (str_replace(' ', '-', strtolower($product["product_name"])));
-                $productNamesFiltered = (str_replace(/[^a-zA-Z ]/g, '', $productNamesFiltered)); ?>
+                $productNamesFiltered = (str_replace(array('<', '>', '/', '!', ',', '?', '.'), '', $productNamesFiltered)); ?>
                 if(hash=='#<?php echo $productNamesFiltered; ?>') {
                   jQuery(window).bind("load", function() {
                     // Using jQuery's animate() method to add smooth page scroll
