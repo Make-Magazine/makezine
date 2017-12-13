@@ -35,28 +35,8 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 				<?php
 				$authors = get_coauthors( get_the_ID() );
 				$author_data = new Make_Authors();
-				$postcount = -1;
-				foreach ( $authors as $author ) {
-					$postcount++;
-					if($postcount % 4 == 0){
-					    $clear_count = 'clear-4';
-					}else if($postcount % 3 == 0){
-					    $clear_count = 'clear-3';
-					}else{
-						$clear_count = '';
-					}
-					$evenOdd = ( ($postcount % 2) == 0 ) ? " clear-2" : "";
-					?>
-<?php 
-
-// echo '<pre>';
-
-//   var_dump( $author );
-
-// echo '</pre>';
-
-?>
-					<div class="author col-sm-3 <?php echo $clear_count; echo $evenOdd; ?>">
+				foreach ( $authors as $author ) {	?>
+					<div class="author col-xs-6 col-sm-3 col-md-4 col-lg-4">
 						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
 							<?php echo $author_data->author_avatar( $author ); ?>
 
@@ -109,9 +89,9 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 						$user_object = get_sub_field('makezine_users');
 						$description = $user_object['user_description'] ?>
 
-						<div class="author col-sm-3 col-md-4 col-lg-4">
+						<div class="author col-xs-6 col-sm-3 col-md-4 col-lg-4">
 							<a href="/author/<?php echo $user_object['user_nicename']; ?>" class="author-target">
-								<?php echo get_avatar( $user_object['ID'] ); ?>
+								<?php echo get_avatar( $user_object['ID'], 300 ); ?>
 								<?php
 								if (!empty($description)) {
 									?>
@@ -129,21 +109,11 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 						$coauthor_object = get_sub_field('coauthors');
 						$authors = get_coauthors( $coauthor_object[0]->ID );
 						$author_data = new Make_Authors();
-						$description = $coauthor_object[0]->user_description; ?>
-<?php 
-
-// echo '<pre>';
-
-//   var_dump( $coauthor_object[0] );
-
-// echo '</pre>';
-
-?>
-						<div class="author col-sm-3 col-md-4 col-lg-4">
+						$image = $author_data->author_avatar( $authors[0] );
+						$description = $author_data->author_bio($authors[0] ); ?>
+						<div class="author col-xs-6 col-sm-3 col-md-4 col-lg-4">
 							<a href="/author/<?php echo $coauthor_object[0]->post_name; ?>" class="author-target">
-								<!--img src="<?php echo get_avatar_url( $coauthor_object[0]->ID ); ?>" this pull the wrong author. It pulls WP users instead of coauthors -->
-								<?php echo $author_data->author_avatar( $coauthor_object[0] ); ?>
-								<?php
+								<?php echo $image;
 								if (!empty($description)) {
 									?>
 									<div class="description">

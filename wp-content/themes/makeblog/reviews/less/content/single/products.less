@@ -697,54 +697,19 @@
 .previous-testing-authors {
 	color: @dark-gray;
 	.author {
-		//background-color: #eaeaea;
 		margin-bottom: 30px;
 		font-size: 13px;
-		width: 50%;
-		float: left;
-		&.clear-2 {
-			clear: both;
-			@media screen and (min-width: 500px) {
-				clear: none;
-			}
-		}
-		&.clear-3 {
-			@media screen and (min-width: 500px) and (max-width: 599px) {
-				clear: both;
-			}
-			@media screen and (min-width: 768px) and (max-width: 914px) {
-				clear: both;
-			}
-		}
-		&.clear-4 {
-			@media screen and (min-width: 600px) and (max-width: 767px) {
-				clear: both;
-			}
-			@media screen and (min-width: 915px) {
-				clear: both;
-			}
-		}
-		@media screen and (min-width: 500px) {
-			width: 33.3333%;
-		}
-		@media screen and (min-width: 600px) {
-			width: 25%;
-		}
-		@media screen and (min-width: 768px) {
-			width: 33.3333%;
-		}
-		@media screen and (min-width: 915px) {
-			width: 25%;
-		}
-		> p {
-			margin-bottom: 0 !important;
-			float: left;
+		p {
+			font-size: 11px !important;
+			margin-bottom: 0;
 			width: 100%;
-			line-height: 1 !important;
+			line-height: 1.3em;
 		}
-		> h5 {
-			float: left;
-			width: 100%;
+		h5 {
+		  text-align: center;
+		  margin-bottom: 0;
+		  height: 29px;
+		  max-height: 29px;
 		}
 		.twitter-link {
 			position: relative;
@@ -768,14 +733,13 @@
 		}
 	}
 	.author-target {
-		display: inline-block;
-		float: left;
 		img {
 			border-radius: 300px;
 			-webkit-border-radius: 300px;
 			border: 1px solid @med-dark-gray;
 			width: 100%;
 			margin-bottom: 0;
+			float: none !important;
 		}
 		.description {
 			position: absolute;
@@ -784,7 +748,6 @@
 			width: 100%;
 			height: 100%;
 			background-color: @font-shed-product-price-color;
-			//color: #ffffff;
 			overflow: hidden;
 			padding: 15px;
 			text-align: left;
@@ -797,9 +760,6 @@
 			@media screen and (max-width: 767px) {
 				display: none !important;
 				visibility: hidden !important;
-			}
-			p {
-				font-size: 11px !important;
 			}
 			.inner {
 				text-overflow: ellipsis;
@@ -817,7 +777,6 @@
 				background: -webkit-linear-gradient(top,  rgba(74,74,74,0) 0%,rgba(74,74,74,0.84) 84%,rgba(74,74,74,1) 100%);
 				background: linear-gradient(to bottom,  rgba(74,74,74,0) 0%,rgba(74,74,74,0.84) 84%,rgba(74,74,74,1) 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004a4a4a', endColorstr='#4a4a4a',GradientType=0 );
-
 			}
 		}
 		&:hover {
