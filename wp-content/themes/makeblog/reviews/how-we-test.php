@@ -77,7 +77,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			
 			<?php if( have_rows('previous_testers') ): ?>
 
-				<h4 class="authors-title">Privious Testers</h4>
+				<h4 class="authors-title">Previous Testers</h4>
 
 				<div class="row previous-testing-authors">
 
