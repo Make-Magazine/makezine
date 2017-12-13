@@ -36,7 +36,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 				$authors = get_coauthors( get_the_ID() );
 				$author_data = new Make_Authors();
 				foreach ( $authors as $author ) {	?>
-					<div class="author col-xs-6 col-sm-3 col-md-4 col-lg-4">
+					<div class="author col-xs-4 col-sm-4 col-md-3 col-lg-3">
 						<a href="<?php echo get_author_posts_url( $author->ID, $author->user_nicename ); ?>" class="author-target">
 							<?php echo $author_data->author_avatar( $author ); ?>
 
@@ -89,7 +89,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 						$user_object = get_sub_field('makezine_users');
 						$description = $user_object['user_description'] ?>
 
-						<div class="author col-xs-6 col-sm-3 col-md-4 col-lg-4">
+						<div class="author col-xs-4 col-sm-4 col-md-3 col-lg-3">
 							<a href="/author/<?php echo $user_object['user_nicename']; ?>" class="author-target">
 								<?php echo get_avatar( $user_object['ID'], 300 ); ?>
 								<?php
@@ -111,7 +111,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 						$author_data = new Make_Authors();
 						$image = $author_data->author_avatar( $authors[0] );
 						$description = $author_data->author_bio($authors[0] ); ?>
-						<div class="author col-xs-6 col-sm-3 col-md-4 col-lg-4">
+						<div class="author col-xs-4 col-sm-4 col-md-3 col-lg-3">
 							<a href="/author/<?php echo $coauthor_object[0]->post_name; ?>" class="author-target">
 								<?php echo $image;
 								if (!empty($description)) {
