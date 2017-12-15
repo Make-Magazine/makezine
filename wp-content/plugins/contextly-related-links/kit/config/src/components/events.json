@@ -1,0 +1,11 @@
+{
+  "include": [
+    "jquery",
+    "components/api-client"
+  ],
+
+  "base": "components",
+  "js": [
+    "events"
+  ]
+}

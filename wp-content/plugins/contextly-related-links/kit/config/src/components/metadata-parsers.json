@@ -1,0 +1,19 @@
+{
+  "include": [
+    "jquery"
+  ],
+
+  "base": "components/metadata/parsers",
+  "js": [
+    "base",
+    "base-single",
+    "base-multi",
+    "foreign-helper",
+    "default",
+    "dublin-core",
+    "json-ld",
+    "open-graph",
+    "parsely-page",
+    "parsely-tags"
+  ]
+}

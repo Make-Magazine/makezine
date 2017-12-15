@@ -1,0 +1,7 @@
+{
+  "aggregate": true,
+
+  "js": [
+    "examples/default"
+  ]
+}

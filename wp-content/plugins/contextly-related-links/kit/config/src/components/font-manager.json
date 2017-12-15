@@ -1,0 +1,14 @@
+{
+  "include": [
+    "jquery",
+    "webfontloader",
+
+    "components/proxy-each"
+  ],
+
+  "base": "components",
+  "js": [
+    "font-manager"
+  ]
+
+}
