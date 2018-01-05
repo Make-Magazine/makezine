@@ -227,6 +227,12 @@ var ReviewsFilters = {
 		});
 
 		filters.load_stored_data();
+    //add icon to default sort
+    if(filters.order == 'desc') {
+      $(filters.sort_form_id + ' .'+filters.sortby+ ' .rl-sort-choice').addClass('dsc');
+    } else {
+      $(filters.sort_form_id + ' .'+filters.sortby+ ' .rl-sort-choice').addClass('asc');
+    }
 
 		filters.update();
 	});
