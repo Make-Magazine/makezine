@@ -45,7 +45,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5761e02c5eb32",
@@ -127,7 +129,8 @@
                                     "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "full",
-                                    "media_upload": 1
+                                    "media_upload": 1,
+                                    "delay": 0
                                 },
                                 {
                                     "key": "field_5761df725eb2e",
@@ -235,7 +238,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5761ba4c2fe57",
@@ -295,7 +300,8 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "full",
-                            "media_upload": 1
+                            "media_upload": 1,
+                            "delay": 0
                         },
                         {
                             "key": "field_5761b9f62fe54",
@@ -364,7 +370,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5763084d823d6",
@@ -469,7 +477,8 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "full",
-                            "media_upload": 1
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -501,7 +510,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "vertical"
+                            "layout": "vertical",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5761beb4a8eea",
@@ -547,7 +558,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Left",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5761bd7fa8ee6",
@@ -628,7 +641,8 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "full",
-                            "media_upload": 1
+                            "media_upload": 1,
+                            "delay": 0
                         },
                         {
                             "key": "field_5761bca2a8ee2",
@@ -720,7 +734,8 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "full",
-                            "media_upload": 1
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -752,7 +767,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "vertical"
+                            "layout": "vertical",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5761bc10a8ed8",
@@ -791,7 +808,8 @@
                             "default_value": "",
                             "tabs": "text",
                             "toolbar": "full",
-                            "media_upload": 1
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -823,7 +841,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "vertical"
+                            "layout": "vertical",
+                            "allow_null": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5761bba4a8ed0",
@@ -851,7 +871,7 @@
                             "label": "Tag slug",
                             "name": "tag",
                             "type": "text",
-                            "instructions": "Enter the tag slug here to pull the posts from. The tag slug would be something like summer-of-making, this is different from tag name which would be something like \"summer of making\". You can find the list of slugs here http:\/\/makezine.com\/wp-admin\/edit-tags.php?taxonomy=post_tag",
+                            "instructions": "Enter the tag slug here to pull the posts from. The tag slug would be something like summer-of-making, this is different from tag name which would be something like \"summer of making\". You can find the list of slugs here http:\/\/makezine.staging.wpengine.com\/wp-admin\/edit-tags.php?taxonomy=post_tag",
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -897,7 +917,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Active",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0,
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -1041,5 +1063,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1467055685
+    "modified": 1512732485
 }
