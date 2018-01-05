@@ -298,7 +298,7 @@ class Products {
 					),
 					'other_choice'      => 0,
 					'save_other_choice' => 0,
-					'default_value'     => '',
+					'default_value'     => 'single',
 					'layout'            => 'horizontal',
 				),
 			),

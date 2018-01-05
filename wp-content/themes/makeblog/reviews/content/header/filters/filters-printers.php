@@ -186,7 +186,7 @@
 								</label>
 							</div>
 						</div><!-- .fl-more-options -->
-            <div style="display:none" class="fl-filter fl-extruder dropdown">
+            <div class="fl-filter fl-extruder dropdown">
 							<button id="fl-extruder-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 								EXTRUDER<i class="fa fa-chevron-down"></i>
 							</button>
