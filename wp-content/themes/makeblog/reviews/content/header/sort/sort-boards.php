@@ -20,7 +20,7 @@
 				<label for="recent" class="recent rl-sort-cell">
           <span class="rl-sort-choice">
             <input id="recent" type="radio" name="sort" value="most_recent">
-            Most Recent </span>
+            Recently Reviewed </span>
 				</label>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( get_the_ID() ) ) : ?>
