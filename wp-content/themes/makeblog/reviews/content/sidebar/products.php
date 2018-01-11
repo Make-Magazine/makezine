@@ -20,6 +20,7 @@ $modal_text     = get_field( 'magazine_label', $parent_id );
 
 if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $parent->ID ) ): ?>
 	<div class="meta-block how-scored">
+		<h4>35 (out of 40)</h4>
 		<h4><?php echo $scored_image_title; ?></h4>
 		<img class="product-scores" src="<?php echo esc_attr( $scored_image['url'] ); ?>" alt="Product Review Scores"/>
 		<p><a href="<?php echo esc_url( $parent_link ); ?>">See Scoring Criteria</a></p>
