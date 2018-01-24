@@ -63,6 +63,7 @@ if (user_can($current_user, 'administrator')) {
 								</div>
 							</div>
 							<br />
+							<div id="recapcha-tag" class="g-recaptcha" style="transform:scale(0.7);-webkit-transform:scale(0.7);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-12px;"></div>
 							<div class="float-label-control">
 								<input name="email" class="form-control" placeholder="your email here" required type="email">
 							</div>

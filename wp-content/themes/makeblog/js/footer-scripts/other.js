@@ -131,6 +131,16 @@ jQuery( document ).ready( function( $ ) {
         'sitekey' : recaptchaKey
       });
     }
+    if ( jQuery('#recapcha-tag').length ) {
+      recaptchaTag = grecaptcha.render('recapcha-tag', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-page-builder').length ) {
+      recaptchaPageBuilder = grecaptcha.render('recapcha-page-builder', {
+        'sitekey' : recaptchaKey
+      });
+    }
   };
 
 // Fancybox subscribe modal stuff
@@ -222,19 +232,27 @@ jQuery(document).ready(function($){
   // Tag Archive page
   $(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
     e.preventDefault();
-    $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signupTagArchive').serialize());
-    $('.fancybox-thx').trigger('click');
-    $('.nl-thx-p1').hide();
-    $('.nl-thx-p2').show();
+    if ( grecaptcha.getResponse(recaptchaTag) != "" ) {
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signupTagArchive').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-thx-p1').hide();
+      $('.nl-thx-p2').show();
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
   });
   // Build your own page template
   $(document).on('submit', '.whatcounts-signup3', function (e) {
     e.preventDefault();
-    var bla = $('#wc-email').val();
-    $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup3').serialize());
-    $('.fancybox-thx').trigger('click');
-    $('.nl-modal-email-address').text(bla);
-    $('.whatcounts-signup2 #email').val(bla);
+    if ( grecaptcha.getResponse(recaptchaPageBuilder) != "" ) {
+      var bla = $('#wc-email').val();
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup3').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-modal-email-address').text(bla);
+      $('.whatcounts-signup2 #email').val(bla);
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
   });
   // Modal to sign up to more newsletters
   $(document).on('submit', '.whatcounts-signup2', function (e) {
