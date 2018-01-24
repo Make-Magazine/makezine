@@ -18,12 +18,6 @@
 		jQuery( "#modal-capture-btn.class-3dprinters" ).click(function() {
 			jQuery(".fancybox3D").trigger('click');
 		});
-    if ( grecaptcha.getResponse(recaptchaGuidesPdf) != "" ) {
-      jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.wc-guides-pdf').serialize());
-      location.href = '/?subscribed-to-make-newsletter';
-    } else {
-      jQuery('.nl-modal-error').trigger('click');
-    }
 	});
 </script>
 <div class="fancybox3D" style="display:none;">
@@ -34,15 +28,15 @@
 			if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 				$isSecure = "https://";
 			} ?>
-			<form class="whatcounts-signup-footer wc-guides-pdf" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
+			<form class="whatcounts-signup-footer" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 				<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Makezine -->
 				<input type="hidden" name="cmd" value="subscribe" />
 				<input type="hidden" name="custom_source" value="modal-3Dpdf" />
 				<input type="hidden" name="custom_incentive" value="3Dpdf" />
 				<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
 				<input type="hidden" id="format_mime" name="format" value="mime" />
+				<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=free-pdf" />
 				<input type="hidden" name="errors_to" value="" />
-				<div id="recapcha-guides-free-pdf" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
 				<div class="mz-form-horizontal">
 					<input name="email" placeholder="Enter your Email" required type="email"><br>
 					<input value="GO" class="btn-cyan" type="submit">
@@ -82,7 +76,7 @@
 			if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 				$isSecure = "https://";
 			} ?>
-			<form class="whatcounts-signup-footer wc-guides-pdf" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
+			<form class="whatcounts-signup-footer" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 				<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 				<input type="hidden" name="cmd" value="subscribe" />
 				<input type="hidden" name="custom_source" value="modal-boardsPDF" />
@@ -91,7 +85,6 @@
 				<input type="hidden" id="format_mime" name="format" value="mime" />
 				<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=free-pdf" />
 				<input type="hidden" name="errors_to" value="" />
-				<div id="recapcha-guides-free-pdf" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
 				<div class="mz-form-horizontal">
 					<input name="email" placeholder="Enter your Email" required type="email"><br>
 					<input value="GO" class="btn-cyan" type="submit">
@@ -131,7 +124,7 @@
 			if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 				$isSecure = "https://";
 			} ?>
-			<form class="whatcounts-signup-footer wc-guides-pdf" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
+			<form class="whatcounts-signup-footer" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 				<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" />
 				<input type="hidden" name="cmd" value="subscribe" />
 				<input type="hidden" name="custom_source" value="modal-dronesPDF" />
@@ -140,7 +133,6 @@
 				<input type="hidden" id="format_mime" name="format" value="mime" />
 				<input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=free-pdf" />
 				<input type="hidden" name="errors_to" value="" />
-				<div id="recapcha-guides-free-pdf" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
 				<div class="mz-form-horizontal">
 					<input name="email" placeholder="Enter your Email" required type="email"><br>
 					<input value="GO" class="btn-cyan" type="submit">

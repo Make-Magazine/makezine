@@ -1150,6 +1150,7 @@ function newsletter_signup_sidebar_shortcode() {
 								<input type="hidden" name="goto" value="">
 								<input type="hidden" name="custom_host" value="makezine.com">
 								<input type="hidden" name="errors_to" value="">
+								<div id="recapcha-post-side" class="g-recaptcha" style="transform:scale(0.7);-webkit-transform:scale(0.7);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-12px;"></div>
 								<div class="mz-form-horizontal">
 									<input id="wc-email" name="email" placeholder="Enter your Email" required="" type="text">
 									<input value="Sign Up" class="btn-cyan" type="submit">

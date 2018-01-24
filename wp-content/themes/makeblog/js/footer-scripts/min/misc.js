@@ -186,24 +186,36 @@ jQuery( document ).ready( function( $ ) {
   var recaptchaFootDesk;
   var recaptchaFootMob;
   var onloadCallback = function() {
-    recaptchaFootDesk = grecaptcha.render('recapcha-footer-desktop', {
-      'sitekey' : recaptchaKey
-    });
-    recaptchaFootMob = grecaptcha.render('recapcha-footer-mobile', {
-      'sitekey' : recaptchaKey
-    });
-    recaptchaHeaderOver = grecaptcha.render('recapcha-header-overlay', {
-      'sitekey' : recaptchaKey
-    });
-    recaptchaHeaderMob = grecaptcha.render('recapcha-header-mobile', {
-      'sitekey' : recaptchaKey
-    });
-    recaptchaJoinPage = grecaptcha.render('recapcha-join-page', {
-      'sitekey' : recaptchaKey
-    });
-    recaptchaGuidesPdf = grecaptcha.render('recapcha-guides-free-pdf', {
-      'sitekey' : recaptchaKey
-    });
+    if ( jQuery('#recapcha-footer-desktop').length ) {
+      recaptchaFootDesk = grecaptcha.render('recapcha-footer-desktop', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-footer-mobile').length ) {
+      recaptchaFootMob = grecaptcha.render('recapcha-footer-mobile', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-header-overlay').length ) {
+      recaptchaHeaderOver = grecaptcha.render('recapcha-header-overlay', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-header-mobile').length ) {
+      recaptchaHeaderMob = grecaptcha.render('recapcha-header-mobile', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-join-page').length ) {
+      recaptchaJoinPage = grecaptcha.render('recapcha-join-page', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-post-side').length ) {
+      recaptchaPostSide = grecaptcha.render('recapcha-post-side', {
+        'sitekey' : recaptchaKey
+      });
+    }
   };
 
 // Fancybox subscribe modal stuff
@@ -256,11 +268,15 @@ jQuery(document).ready(function($){
   // Sidebar
   $(document).on('submit', '.whatcounts-signup1s', function (e) {
     e.preventDefault();
-    var bla = $('#wc-email').val();
-    $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1s').serialize());
-    $('.fancybox-thx').trigger('click');
-    $('.nl-modal-email-address').text(bla);
-    $('.whatcounts-signup2 #email').val(bla);
+    if ( grecaptcha.getResponse(recaptchaPostSide) != "" ) {
+      var bla = $('#wc-email').val();
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1s').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-modal-email-address').text(bla);
+      $('.whatcounts-signup2 #email').val(bla);
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
   });
   // Header Overlay
   $(document).on('submit', '.whatcounts-signup1o', function (e) {
