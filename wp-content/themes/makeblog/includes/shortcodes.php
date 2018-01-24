@@ -75,8 +75,7 @@ add_shortcode( 'newsletter', 'make_newsletter' );
 function make_marketron_newsletter( $atts, $content = null ) {
 	return '
 		<form class="form-stacked" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-			<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
-			<input type="hidden" name="custom_list_makerpro" value=“yes" />
+			<input type="hidden" name="slid" value="6B5869DC547D3D467B33E192ADD9BE4B" /><!-- MakerPro -->
 			<input type="hidden" name="cmd" value="subscribe" />
 			<input type="hidden" name="custom_source" value="Newsletter Shortcode" /> 
 			<input type="hidden" name="custom_incentive" value="none" /> 
@@ -86,7 +85,7 @@ function make_marketron_newsletter( $atts, $content = null ) {
 			<input type="hidden" name="custom_host" value="' . $_SERVER["HTTP_HOST"] . '" />
 			<input type="hidden" name="errors_to" value="" />
 			<fieldset>
-                <legend><p>From the editors of <i>Make</i>:, the Maker Pro Newsletter covers hardware startups, new products, incubators, and innovators, plus technology and market trends. Sign up below for weekly Maker Pro updates in your inbox.</p></legend>
+        <legend><p>From the editors of <i>Make</i>:, the Maker Pro Newsletter covers hardware startups, new products, incubators, and innovators, plus technology and market trends. Sign up below for weekly Maker Pro updates in your inbox.</p></legend>
 				<div class="form-group">
 				  <!-- Name -->
 				  <label class="control-label" for="first">Name</label>
@@ -1142,9 +1141,7 @@ function newsletter_signup_sidebar_shortcode() {
 	$output = '<div class="mz-sidebar-subscribe">
 							<h4>Let\'s Stay in Touch!</h4>
 							<form class="sub-form whatcounts-signup1s" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-								<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"><!-- Confirmation -->
-								<input type="hidden" name="custom_list_makermedia" value="yes" />
-								<input type="hidden" name="custom_list_makenewsletter" value="yes" />
+								<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"><!-- Makezine -->
 								<input type="hidden" name="cmd" value="subscribe">
 								<input type="hidden" name="custom_source" value="right-rail">
 								<input type="hidden" name="custom_incentive" value="none">

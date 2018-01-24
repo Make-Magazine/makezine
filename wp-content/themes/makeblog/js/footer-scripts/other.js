@@ -97,6 +97,29 @@ jQuery( document ).ready( function( $ ) {
     });
 });
 
+  var recaptchaKey = '6Lffo0EUAAAAABhGRLPk751JrmCLqR5bvUR9RYZJ';
+  var recaptchaFootDesk;
+  var recaptchaFootMob;
+  var onloadCallback = function() {
+    recaptchaFootDesk = grecaptcha.render('recapcha-footer-desktop', {
+      'sitekey' : recaptchaKey
+    });
+    recaptchaFootMob = grecaptcha.render('recapcha-footer-mobile', {
+      'sitekey' : recaptchaKey
+    });
+    recaptchaHeaderOver = grecaptcha.render('recapcha-header-overlay', {
+      'sitekey' : recaptchaKey
+    });
+    recaptchaHeaderMob = grecaptcha.render('recapcha-header-mobile', {
+      'sitekey' : recaptchaKey
+    });
+    recaptchaJoinPage = grecaptcha.render('recapcha-join-page', {
+      'sitekey' : recaptchaKey
+    });
+    recaptchaGuidesPdf = grecaptcha.render('recapcha-guides-free-pdf', {
+      'sitekey' : recaptchaKey
+    });
+  };
 
 // Fancybox subscribe modal stuff
 jQuery(document).ready(function($){
@@ -109,23 +132,41 @@ jQuery(document).ready(function($){
       this.content = this.content.html();
     }
   });
+  $(".nl-modal-error").fancybox({
+    autoSize : false,
+    width  : 250,
+    autoHeight : true,
+    padding : 0,
+    afterLoad   : function() {
+      this.content = this.content.html();
+    }
+  });
+
   // Footer Desktop
   $(document).on('submit', '.whatcounts-signup1', function (e) {
     e.preventDefault();
-    var bla = $('#wc-email').val();
-    $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
-    $('.fancybox-thx').trigger('click');
-    $('.nl-modal-email-address').text(bla);
-    $('.whatcounts-signup2 #email').val(bla);
+    if ( grecaptcha.getResponse(recaptchaFootDesk) != "" ) {
+      var bla = $('#wc-email').val();
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-modal-email-address').text(bla);
+      $('.whatcounts-signup2 #email').val(bla);
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
   });
   // Footer Mobile
   $(document).on('submit', '.whatcounts-signup1m', function (e) {
     e.preventDefault();
-    var bla = $('#wc-email-m').val();
-    $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1m').serialize());
-    $('.fancybox-thx').trigger('click');
-    $('.nl-modal-email-address').text(bla);
-    $('.whatcounts-signup2 #email').val(bla);
+    if ( grecaptcha.getResponse(recaptchaFootMob) != "" ) {
+      var bla = $('#wc-email-m').val();
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1m').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-modal-email-address').text(bla);
+      $('.whatcounts-signup2 #email').val(bla);
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
   });
   // Sidebar
   $(document).on('submit', '.whatcounts-signup1s', function (e) {
@@ -139,11 +180,28 @@ jQuery(document).ready(function($){
   // Header Overlay
   $(document).on('submit', '.whatcounts-signup1o', function (e) {
     e.preventDefault();
-    var bla = $('#wc-email-o').val();
-    $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1o').serialize());
-    $('.fancybox-thx').trigger('click');
-    $('.nl-modal-email-address').text(bla);
-    $('.whatcounts-signup2 #email').val(bla);
+    if ( grecaptcha.getResponse(recaptchaHeaderOver) != "" ) {
+      var bla = $('#wc-email-o').val();
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1o').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-modal-email-address').text(bla);
+      $('.whatcounts-signup2 #email').val(bla);
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
+  });
+  // Header mobile
+  $(document).on('submit', '.whatcounts-head-mobile', function (e) {
+    e.preventDefault();
+    if ( grecaptcha.getResponse(recaptchaHeaderMob) != "" ) {
+      var bla = $('#wc-email-o').val();
+      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-head-mobile').serialize());
+      $('.fancybox-thx').trigger('click');
+      $('.nl-modal-email-address').text(bla);
+      $('.whatcounts-signup2 #email').val(bla);
+    } else {
+      $('.nl-modal-error').trigger('click');
+    }
   });
   // Tag Archive page
   $(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
@@ -162,6 +220,7 @@ jQuery(document).ready(function($){
     $('.nl-modal-email-address').text(bla);
     $('.whatcounts-signup2 #email').val(bla);
   });
+  // Modal to sign up to more newsletters
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
     $.post('https://secure.whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());

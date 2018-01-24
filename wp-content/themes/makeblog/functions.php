@@ -453,9 +453,7 @@ function subscribe_return_path_overlay() { ?>
                         }
                         ?>
                         <form class="sub-form whatcounts-signup1o" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-                            <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"/><!-- Confirmation -->
-                            <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
-                            <input type="hidden" name="custom_list_makermedia" value="yes"/>
+                            <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/><!-- Makezine -->
                             <input type="hidden" name="cmd" value="subscribe"/>
                             <input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
                             <input type="hidden" name="custom_incentive" value="none"/>
@@ -464,7 +462,8 @@ function subscribe_return_path_overlay() { ?>
                             <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
                             <input type="hidden" name="custom_host" value="makezine.com" />
                             <input type="hidden" name="errors_to" value=""/>
-                            <input name="email" id="wc-email-o" class="overlay-input" placeholder="Enter your email" required type="email"><br>
+                            <div id="recapcha-header-overlay" class="g-recaptcha" style="transform:scale(0.68);-webkit-transform:scale(0.68);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
+                            <input name="email" id="wc-email-o" class="overlay-input" placeholder="Enter your email" required type="email">
                             <input value="GO" class="black-overlay-btn" type="submit">
                         </form>
                     </div>
@@ -511,7 +510,6 @@ function display_thank_you_modal_if_signed_up() { ?>
                 <div class="col-xs-12">
                     <h4>You might also like these newsletters:</h4>
                     <form class="whatcounts-signup2" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-                        <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6"><!-- Confirmation -->
                         <input type="hidden" name="cmd" value="subscribe" />
                         <input type="hidden" id="email" name="email" value="" />
                         <input type="hidden" name="goto" value="" />
@@ -619,6 +617,13 @@ function display_thank_you_modal_if_signed_up() { ?>
             </div>
             <div class="clearfix"></div>
         </div>
+    </div>
+
+    <div class="nl-modal-error" style="display:none;">
+        <div class="col-xs-12 nl-modal padtop">
+            <p class="lead">The reCAPTCHA box was not checked. Please try again.</p>
+        </div>
+        <div class="clearfix"></div>
     </div>
 <?php }
 

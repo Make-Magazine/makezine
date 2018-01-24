@@ -268,10 +268,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   }
                   ?>
                   <h4>Sign Up For Our Newsletter</h4>
-                  <form class="sub-form" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-                    <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
-                    <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
-                    <input type="hidden" name="custom_list_makermedia" value="yes"/>
+                  <form class="sub-form whatcounts-head-mobile" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
+                    <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Makezine -->
                     <input type="hidden" name="cmd" value="subscribe" />
                     <input type="hidden" name="custom_source" value="Mobile Header" />
                     <input type="hidden" name="custom_incentive" value="none" />
@@ -280,13 +278,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
                     <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
                     <input type="hidden" name="errors_to" value="" />
+                    <div id="recapcha-header-mobile" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
                     <div class="mz-form-horizontal">
                       <input name="email" placeholder="Enter your Email" required="required" type="email">
                       <input value="GO" class="btn-cyan" type="submit">
                     </div>
                   </form>
                 </div><!-- End subscribe div -->
-                <h6>Copyright © 2004-2017 Maker Media, Inc.</br>
+                <h6>Copyright © 2004-2018 Maker Media, Inc.</br>
                   All rights reserved</h6>
               </div><!-- End mobile-social div -->
             </div><!-- End #makezine-navbar-collapse-1 -->

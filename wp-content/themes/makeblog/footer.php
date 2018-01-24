@@ -10,9 +10,7 @@
 ?>
 
 </div></div></div>
-
 </div></div></div>
-<!-- These extra closing divs are to close all the divs opened by the functions that pull in cat posts -->
 
 <section id="footer" class="new-footer">
 	<div class="container">
@@ -64,7 +62,7 @@
         </div>
         <div class="clearfix"></div>
         
-        <div class="fancybox-feedback" style="display:none;">
+<!--         <div class="fancybox-feedback" style="display:none;">
           <div class="fancybox-feedback-inner">
             <div class="fancybox-feedback-inner1">
               <h3>Makers, we want to hear from you!</h3>
@@ -86,6 +84,7 @@
                 </div>
                 <input id="saveForm" name="saveForm" class="footer-feedback-submit btn-cyan" type="submit" value="Submit" />
                 <input type="hidden" id="idstamp" name="idstamp" value="WH028EiOADf/hZl3yIPszD+rnU6UVQ2++DXf7i7lt38=" />
+                <div id="recaptcha-footer-feedback" class="g-recaptcha" data-sitekey="6Lf_-kEUAAAAAHtDfGBAleSvWSynALMcgI1hc_tP" data-size="invisible" data-badge="inline"></div>
               </form>
             </div>
             <div class="fancybox-feedback-inner2" style="display:none;">
@@ -93,7 +92,7 @@
               <p>We can't guarantee a response to each submission, but we promise to think about every one.</p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="clearfix"></div>
 
 				<div class="mz-footer-subscribe">
@@ -106,9 +105,7 @@
 					<h4>Sign Up</h4>
 					<p>Stay inspired with the Make: newsletter</p>
 					<form class="sub-form whatcounts-signup1" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-						<input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
-            <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
-            <input type="hidden" name="custom_list_makermedia" value="yes"/>
+						<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Makezine -->
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="footer" />
 						<input type="hidden" name="custom_incentive" value="none" />
@@ -117,6 +114,7 @@
 						<input type="hidden" name="goto" value="" />
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
+            <div id="recapcha-footer-desktop" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
 						<div class="mz-form-horizontal">
 							<input id="wc-email" name="email" placeholder="Enter your Email" required type="text">
 							<input value="GO" class="btn-cyan" type="submit">
@@ -149,9 +147,7 @@
 					<h4>Sign Up</h4>
 					<p>Stay inspired with the Make: newsletter</p>
 					<form class="sub-form whatcounts-signup1m" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-            <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
-            <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
-            <input type="hidden" name="custom_list_makermedia" value="yes"/>
+            <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Makezine -->
 						<input type="hidden" name="cmd" value="subscribe" />
 						<input type="hidden" name="custom_source" value="footer" />
 						<input type="hidden" name="custom_incentive" value="none" />
@@ -160,6 +156,7 @@
 						<input type="hidden" name="goto" value="" />
 						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
 						<input type="hidden" name="errors_to" value="" />
+            <div id="recapcha-footer-mobile" class="g-recaptcha" style="margin-left:auto;margin-right:auto;display:table;margin-bottom:8px;"></div>
 						<div class="mz-form-horizontal">
 							<input id="wc-email-m" name="email" placeholder="Enter your Email" required type="text">
 							<input value="GO" class="btn-cyan" type="submit">
@@ -249,10 +246,12 @@ sg_beacon('init','Mjg4MjQzLTJiMjdlNGU0NmM3ZDM3YWQ2YWJiOTEwNWRhNDM0ZGQ1NTFlZTdhN2
 
 <script>
   //Temporary GA tracking for clicks to header magazine subsciption cover image
-  jQuery('#mz-mag-cover').on( "click", function() {
-    ga('send', 'event', 'Subscription', 'Click', 'Header mag cover click', 1);
-  });
+  // jQuery('#mz-mag-cover').on( "click", function() {
+  //   ga('send', 'event', 'Subscription', 'Click', 'Header mag cover click', 1);
+  // });
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 </html>

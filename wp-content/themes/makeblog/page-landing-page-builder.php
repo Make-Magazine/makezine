@@ -422,9 +422,7 @@ get_header('version-2'); ?>
               </div>
               <div class="col-xs-12 col-sm-6">
                 <form class="form-inline sub-form whatcounts-signup3" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-                  <input type="hidden" name="slid" value="6B5869DC547D3D4690C43FE9E066FBC6" /><!-- Confirmation -->
-                  <input type="hidden" name="custom_list_makenewsletter" value="yes"/>
-                  <input type="hidden" name="custom_list_makermedia" value="yes"/>
+                  <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Makezine -->
                   <input type="hidden" name="cmd" value="subscribe" />
                   <input type="hidden" name="custom_source" value="MZ Custom Landing page" />
                   <input type="hidden" name="custom_incentive" value="none" />
