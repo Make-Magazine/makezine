@@ -100,6 +100,12 @@ jQuery( document ).ready( function( $ ) {
   var recaptchaKey = '6Lffo0EUAAAAABhGRLPk751JrmCLqR5bvUR9RYZJ';
   var recaptchaFootDesk;
   var recaptchaFootMob;
+  var recaptchaHeaderOver;
+  var recaptchaHeaderMob;
+  var recaptchaJoinPage;
+  var recaptchaPostSide;
+  var recaptchaTag;
+  var recaptchaPageBuilder;
   var onloadCallback = function() {
     if ( jQuery('#recapcha-footer-desktop').length ) {
       recaptchaFootDesk = grecaptcha.render('recapcha-footer-desktop', {
