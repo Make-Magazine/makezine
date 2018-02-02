@@ -36,6 +36,9 @@ if( $detect->isTablet() ){
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -45,9 +48,6 @@ if( $detect->isTablet() ){
   })(window,document,'script','dataLayer','GTM-PC5R77');</script>
   <!-- End Google Tag Manager -->
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
@@ -128,12 +128,12 @@ if( $detect->isTablet() ){
   <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>" style="display: none;"></time>
 
   <!-- Google Optimize -->
-  <style>.async-hide { opacity: 0 !important} </style>
+  <!--style>.async-hide { opacity: 0 !important} </style>
   <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
   h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
   })(window,document.documentElement,'async-hide','dataLayer',4000,
-  {'GTM-TXW38JQ':true});</script>
+  {'GTM-TXW38JQ':true});</script-->
   <!-- End Google Optimize -->
 
   <!-- Google Universal Analytics -->

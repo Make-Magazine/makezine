@@ -24,86 +24,37 @@ if ( user_can( $current_user, 'administrator' ) ) {
 			print $make->ads->ad_leaderboard;
 			?>
 		</div>
+
+		<!-- 10 story side bar -->
 		<div class="row navigator sticky-sidebar-posts-nav">
 			<div class="hamburger">
 				<div class="hamburger-navigator">
 					<img class="initial" src="<?php echo get_template_directory_uri() . '/version-2/img/bitmap.png' ?>" scale="0">
 					<img class="x" src="<?php echo get_template_directory_uri() . '/version-2/img/x.png' ?>" scale="0">
 					<img class="x-hover" src="<?php echo get_template_directory_uri() . '/version-2/img/x-hover.png' ?>" scale="0">
-
 					<h2>Latest 10</h2>
 				</div>
 			</div>
 			<div class="thumbnails">
 				<div class="posts-navigator">
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<div class="latest-story first" id="0">
-
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted mz-10siderail" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
-								<?php
-								$args = array(
-									'resize' => '370,240',
-									'quality' => get_photon_img_quality(),
-									'strip' => 'all',
-								);
-								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
-								preg_match_all($re, $url, $matches);
-								$str = $matches[2][0];
-								$photon = jetpack_photon_url($str, $args);
-								if(strlen($url) == 0){
-									$photon = catch_first_image_story_nav();
-									$photon = jetpack_photon_url( $photon, $args );
-								} ?>
-								<div class="thumbnail-image" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
-								<h3><?php the_title(); ?></h3></a>
-
-						</div>
-					<?php endwhile; ?>
-					<?php else: ?>
-					<?php endif; ?>
-					<?php wp_reset_query(); ?>
-					<?php $i   = 1;
-					$the_query = new WP_Query( array( 'showposts'    => '9',
-						'post_status'  => 'publish',
-						'post__not_in' => array( $main_post_id )
-					) ); ?>
-					<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<div class="latest-story" id="<?php echo $i; ?>">
-
-							<a href="#<?php echo get_the_ID(); ?>" class="pull-left mz-10siderail"
-							   id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
-								<?php
-								$args = array(
-									'resize' => '370,240',
-									'quality' => get_photon_img_quality(),
-									'strip' => 'all',
-								);
-								$url = wp_get_attachment_image(get_post_thumbnail_id(), 'project-thumb');
-								$re = "/^(.*? src=\")(.*?)(\".*)$/m";
-								preg_match_all($re, $url, $matches);
-								$str = $matches[2][0];
-								$photon = jetpack_photon_url($str, $args);
-								if(strlen($url) == 0){
-									$photon = catch_first_image_story_nav();
-									$photon = jetpack_photon_url( $photon, $args );
-								} ?>
-								<div class="thumbnail-image"
-									 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
-								<h3><?php the_title(); ?></h3></a>
-
-						</div>
-						<?php $i ++; ?>
-					<?php endwhile; ?>
-
-					<?php else: ?>
-						<?php echo '<h1>No content found</h1>' ?>
-					<?php endif; ?>
-					<?php wp_reset_query(); ?>
+					<div class="latest-story first" id="0">
+						<a href="#<?php echo get_the_ID(); ?>" class="pull-left highlighted mz-10siderail" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
+							<div class="thumbnail-image" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+							<h3><?php the_title(); ?></h3>
+						</a>
+					</div>
+					<div class="latest-story" id="<?php echo $i; ?>">
+						<a href="#<?php echo get_the_ID(); ?>" class="pull-left mz-10siderail" id="<?php echo str_replace( home_url(), '', get_permalink() ); ?>">
+							<div class="thumbnail-image" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+							<h3><?php the_title(); ?></h3>
+						</a>
+					</div>
 					<a href="<?php echo site_url( '/blog', 'http' ); ?>" class="see-all-stories"><h3 class="heading">See all stories</h3><div class="arrow-right"></div></a>
 				</div>
 			</div>
 		</div>
+		<!-- end 10 story side bar -->
+
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<article itemscope itemtype="https://schema.org/ScholarlyArticle">
 				<div class="story-header first-story" id="<?php echo get_the_ID(); ?>">
@@ -112,32 +63,12 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						<div class="story-title">
 							<h1 itemprop="name"><?php echo get_the_title(); ?></h1>
 						</div>
-						<div class="author-info">
-							<?php
-							if ( function_exists( 'coauthors_posts_links' ) ) {
-								get_author_profile();
-							} else {
-								the_author_posts_link();
-							} ?>
-							<?php
-							$post_time  = get_post_time( 'U', true, $post, true );
-							$time_now   = date( 'U' );
-							$difference = $time_now - $post_time;
-							if ( $difference > 86400 ) { ?>
-								<time itemprop="datePublished"
-									  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
-							<?php } else { ?>
-								<time itemprop="datePublished"
-									  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
-							<?php }
-							?>
-						</div>
 					</div>
 
 	        <?php
-	        //Hero Image
+	        // if Hero Image
 	        $hero_id = get_field('hero_image');
-	        // Featured Image
+	        // else Featured Image
 	        $args = array(
 	        	'resize' => '1200,670',
 	        	'strip' => 'all',
@@ -150,18 +81,16 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 	        if(get_field('hero_image')) { ?>
 	            <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image" />
-	            <div class="story-hero-image-l-xl"
-	                 style="background: url(<?php echo $hero_id['url']; ?>) no-repeat center center;"></div>
+	            <div class="story-hero-image-l-xl" style="background: url(<?php echo $hero_id['url']; ?>) no-repeat center center;"></div>
 	        <?php }
 	        elseif(strlen($url) == 0){ ?>
 	            <div class="hero-wrapper-clear"></div>
 	        <?php } else { ?>
 	            <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image" />
-	            <div class="story-hero-image-l-xl"
-	                 style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+	            <div class="story-hero-image-l-xl" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
 	        <?php } ?>
-
 				</div>
+
 				<meta itemprop="name" content="Make: Magazine">
 				<div class="container">
 					<div class="row content first-story">
@@ -184,7 +113,6 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							</div>
 
 							<div class="comments">
-
 								<button type="button" class="btn btn-info btn-lg"
 										data-toggle="modal" data-target="#disqus-modal"
 										onclick="reset('<?php echo get_the_ID(); ?>',
@@ -198,7 +126,8 @@ if ( user_can( $current_user, 'administrator' ) ) {
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
 								</div>
 							</div>
-						</div>
+						</div><!-- end story body -->
+
 						<aside class="col-sm-5 col-md-4 sidebar">
 							<div class="author-info">
 								<?php get_author_profile(); ?>
@@ -209,11 +138,9 @@ if ( user_can( $current_user, 'administrator' ) ) {
 								$time_now   = date( 'U' );
 								$difference = $time_now - $post_time;
 								if ( $difference > 86400 ) { ?>
-									<time itemprop="startDate"
-										  datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
+									<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
 								<?php } else { ?>
-									<time itemprop="startDate"
-										  datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
+									<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
 								<?php }
 								?>
 							</div>
@@ -247,19 +174,22 @@ if ( user_can( $current_user, 'administrator' ) ) {
 						</aside>
 						<div class="ctx-social-container"></div>
 						<div class="essb_right_flag"></div>
-					</div>
+					</div><!-- end .first-story -->
 				</div>
 			</article>
+
 		<?php endwhile; ?>
 		<?php else: ?>
-
 			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-
 		<?php endif; ?>
-		<div class="infinity"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
-	</div>
 
-</div>
+		<div class="infinity">
+			<i class="fa fa-spinner fa-pulse fa-5x"></i>
+		</div>
+
+	</div><!-- .wrapper -->
+</div><!-- .mz-story-infinite-view -->
+
 <div class="ad-unit">
 	<div class='js-ad scroll-load' data-size='[[728,90],[970,90],[320,50]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
 </div>
