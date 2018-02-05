@@ -143,12 +143,14 @@ if( $detect->isTablet() ){
     $cats = get_the_category();
     $primarycat = array();
     foreach ( $cats as $cat ) {
-      if ( $cat->category_parent < 1 )
+      if ( $cat->category_parent < 1 ) {
         $primarycat[] = $cat->category_nicename;
-      elseif ( $cat->category_parent > 0 )
+      }
+      elseif ( $cat->category_parent > 0 ) {
         $parent_cat_id = $cat->category_parent;
-      $cat2 = get_cat_name($parent_cat_id);
-      $primarycat[] = $cat2;
+        $cat2 = get_cat_name($parent_cat_id);
+        $primarycat[] = $cat2;
+      }
     }
     $primary_cat_dimension = (isset($primarycat[0])?$primarycat[0]:'');
   ?>

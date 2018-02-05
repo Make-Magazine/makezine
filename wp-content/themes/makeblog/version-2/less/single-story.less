@@ -245,17 +245,17 @@ body.single.single-post {
         }
       }
     }
-    .infinity {
-      padding: 50px 0;
-      color: #f40b0b;
+    /* AJAX spinner for slow connections */
+    @keyframes spinner {
+        to {transform: rotate(360deg);}
+    }
+    .ajax-loader {
+      margin-top: 30px;
+      margin-bottom: 30px;
       text-align: center;
-      .fa {
-        display: none;
-      }
-      &.current {
-        .fa {
-          display: inline-block;
-        }
+      padding: .7em;
+      img {
+        animation: spinner .6s linear infinite;
       }
     }
     .thumbnail-image {
@@ -323,7 +323,7 @@ body.single.single-post {
           width: 15%;
         }
       }
-      .content.first-story, .story-header.first-story, .row.more, .row.new-story, .row.thumbnails, .infinity, .row.more-thumbnails {
+      .content.first-story, .story-header.first-story, .row.more, .row.new-story, .row.thumbnails, .row.more-thumbnails {
         display: block;
       }
       .story-header {

@@ -279,9 +279,19 @@ function make_load_resources() {
 	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ));
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/js/fancybox.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'single-story', get_stylesheet_directory_uri() . '/js/storyInfiniteScroll.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery', 'fancybox' ), false, true );
 
+
+  if ( is_singular( 'post' ) ){
+    wp_enqueue_script( 'storyInfiniteScroll', get_stylesheet_directory_uri() . '/js/storyInfiniteScroll.min.js', array( 'jquery' ), false, true );
+    wp_localize_script( 'storyInfiniteScroll', 'postdata',
+      array(
+        'post_id' => get_the_ID(),
+        'theme_uri' => get_stylesheet_directory_uri(),
+        'rest_url' => rest_url('wp/v2/'),
+      )
+    );
+  }
 
 	// What page are we on? And what is the pages limit?
 	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
