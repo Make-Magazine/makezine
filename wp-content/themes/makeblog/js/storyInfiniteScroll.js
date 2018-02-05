@@ -34,6 +34,8 @@
     // Build the resource request URL for the REST API.
     var json_url = rest_url + 'posts/' + previous_post_ID + '?_embed=true';
 
+    $('.ajax-loader').css('visibility', 'visible');
+
     // Run AJAX on the resource request URL
     $.ajax({
       dataType: 'json',
@@ -41,15 +43,15 @@
     })
     // If AJAX succeeds:
     .done(function(object) {
-        the_previous_post(object)
+      the_previous_post(object)
     })
     // If AJAX fails:
     .fail(function(){
-        console.log('error');
+      console.log('error');
     })
     // When everything is done:
     .always(function(){
-        console.log('AJAX complete');
+      console.log('AJAX complete');
     });
   } // END get_previous_post()
 
@@ -57,46 +59,20 @@
   
   function the_previous_post(object) {
 
-    // Get the featured image ID (0 if no featured image):
-    var featured_img_ID = object.featured_media;
-
-    // Create an empty container for theoretical featured image.
-    var feat_image;
-
-    // Get the featured image if there is a featured image.
-    function get_featured_image() {
-      if (featured_img_ID === 0) {
-        feat_image = '';
-      } else {
-        var featured_object = object._embedded['wp:featuredmedia'][0];
-        var img_large = '';
-        var img_width = featured_object.media_details.sizes.full.width;
-        var img_height = featured_object.media_details.sizes.full.height;
-        if (featured_object.media_details.sizes.hasOwnProperty("large")) {
-          img_large = featured_object.media_details.sizes.large.source_url +  ' 1024w, ';
-        }
-        feat_image = '<div class="single-featured-image-header">' +
-                     '<img src="' + featured_object.media_details.sizes.full.source_url + '" ' +
-                     'width="' + img_width + '" ' +
-                     'height="' + img_height + '" ' +
-                     'class="attachment-twentyseventeen-featured-image size-twentyseventeen-featured-image wp-post-image" ' +
-                     'alt="" ' +
-                     'srcset="' + featured_object.media_details.sizes.full.source_url + ' ' + img_width + 'w, ' + img_large + featured_object.media_details.sizes.medium.source_url + ' 300w" ' +
-                     'sizes="100vw">' +
-                     '</div>';
-      }
-      return feat_image;
-    }
-
     // Build the post, with or without the featured image.
     function build_post() {
       var date = new Date(object.date);
+
+      // Get the featured image ID (0 if no featured image):
+      var featured_img_ID = object.featured_media;
+
+      var featured_object = object._embedded['wp:featuredmedia'][0];
       var heroImage = '';
-      var featureImage = get_featured_image();
-      object.link
-      date
-      date.toDateString()
-      object.content.rendered
+      var featureImage = '';
+      // object.link
+      // date
+      // date.toDateString()
+      // object.content.rendered
       var previous_post_content =
         '<div class="ad-unit">' +
           '<div class="js-ad scroll-load" data-size="[[728,90],[970,90]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]" data-pos="btf"></div><span class="fake-leaderboard-span"></span>' +
@@ -114,9 +90,9 @@
             if(heroImage) {
               '<img class="story-hero-image" src="" alt="Article Featured Image" />' +
               '<div class="story-hero-image-l-xl" style="background: url() no-repeat center center;"></div>'
-            } else if(featureImage) {
-              '<img class="story-hero-image" src="' + get_featured_image() + '" alt="Article Featured Image" />' +
-              '<div class="story-hero-image-l-xl" style="background: url(' + get_featured_image() +') no-repeat center center;"></div>'      
+            } else if(featured_img_ID) {
+              '<img class="story-hero-image" src="' + featured_img_ID + '" alt="Article Featured Image" />' +
+              '<div class="story-hero-image-l-xl" style="background: url(' + featured_img_ID +') no-repeat center center;"></div>'      
             } else {
               '<div class="hero-wrapper-clear"></div>'
             }

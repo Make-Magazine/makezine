@@ -200,6 +200,50 @@ function make_richClean($text) {
 	return($text);
 }
 
+
+/**
+ * Add fields to the REST API response
+ */
+add_action( 'rest_api_init', 'restAPI_register_fields' );
+function restAPI_register_fields() {
+  register_rest_field( 'post',
+    'previous_post_ID',
+    array(
+      'get_callback'    => 'restAPI_get_previous_post_ID',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+  register_rest_field( 'post',
+    'previous_post_title',
+    array(
+      'get_callback'    => 'restAPI_get_previous_post_title',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+  register_rest_field( 'post',
+    'previous_post_link',
+    array(
+      'get_callback'    => 'restAPI_get_previous_post_link',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+}
+function restAPI_get_previous_post_ID() {
+  return get_previous_post()->ID;
+}
+
+function restAPI_get_previous_post_title() {
+  return get_previous_post()->post_title;
+}
+
+function restAPI_get_previous_post_link() {
+  return get_permalink( get_previous_post()->ID );
+}
+
+
 add_action('widgets_init', 'make_register_sidebar');
 /**
  * Register the WordPress sidebar to site.
