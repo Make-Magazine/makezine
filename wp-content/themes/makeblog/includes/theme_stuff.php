@@ -230,6 +230,22 @@ function restAPI_register_fields() {
       'schema'          => null,
     )
   );
+  register_rest_field( 'post',
+    'curent_post_classes',
+    array(
+      'get_callback'    => 'restAPI_curent_post_classes',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+  register_rest_field( 'post',
+    'curent_post_photon_hero',
+    array(
+      'get_callback'    => 'restAPI_curent_post_photon_hero',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
 }
 function restAPI_get_previous_post_ID() {
   return get_previous_post()->ID;
@@ -241,6 +257,19 @@ function restAPI_get_previous_post_title() {
 
 function restAPI_get_previous_post_link() {
   return get_permalink( get_previous_post()->ID );
+}
+
+function restAPI_curent_post_classes() {
+  return join( ' ', get_post_class() );
+}
+
+function restAPI_curent_post_photon_hero() {
+	$args = array(
+		'resize' => '1200,670',
+		'strip' => 'all',
+	);
+	$hero_id = get_field('hero_image');
+  return jetpack_photon_url($hero_id['url'], $args);
 }
 
 

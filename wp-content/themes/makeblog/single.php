@@ -67,26 +67,29 @@ if ( user_can( $current_user, 'administrator' ) ) {
         <?php
         // if Hero Image
         $hero_id = get_field('hero_image');
+
         // else Featured Image
         $args = array(
         	'resize' => '1200,670',
         	'strip' => 'all',
         );
         $url = wp_get_attachment_image(get_post_thumbnail_id(), 'story-thumb');
-        $re = "/^(.*? src=\")(.*?)(\".*)$/m";
-        preg_match_all($re, $url, $matches);
-        $str = $matches[2][0];
-        $photon = jetpack_photon_url($str, $args);
 
-        if(get_field('hero_image')) { ?>
-            <img class="story-hero-image" src="<?php echo $hero_id['url']; ?>" alt="Article Featured Image" />
-            <div class="story-hero-image-l-xl" style="background: url(<?php echo $hero_id['url']; ?>) no-repeat center center;"></div>
+        if($hero_id) {
+        	$hero_url = $hero_id['url'];
+	        $photon = jetpack_photon_url($hero_url, $args); ?>
+          <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image" />
+          <div class="story-hero-image-l-xl" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
         <?php }
-        elseif(strlen($url) == 0){ ?>
-            <div class="hero-wrapper-clear"></div>
+        elseif($url) {
+	        $re = "/^(.*? src=\")(.*?)(\".*)$/m";
+	        preg_match_all($re, $url, $matches);
+	        $str = $matches[2][0];
+	        $photon = jetpack_photon_url($str, $args); ?>
+          <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image" />
+          <div class="story-hero-image-l-xl" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
         <?php } else { ?>
-            <img class="story-hero-image" src="<?php echo $photon; ?>" alt="Article Featured Image" />
-            <div class="story-hero-image-l-xl" style="background: url(<?php echo $photon; ?>) no-repeat center center;"></div>
+        	<div class="hero-wrapper-clear"></div>
         <?php } ?>
 			</div>
 
@@ -137,7 +140,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 							$time_now   = date( 'U' );
 							$difference = $time_now - $post_time;
 							if ( $difference > 86400 ) { ?>
-								<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y, g:i a T' ); ?></time>
+								<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'F j\, Y' ); ?></time>
 							<?php } else { ?>
 								<time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>"><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
 							<?php }
