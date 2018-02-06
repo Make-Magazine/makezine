@@ -7,24 +7,27 @@ class ESSBOptionsInterface {
 		
 		$active_section = isset($_REQUEST['section']) ? $_REQUEST['section'] : '';
 		$active_subsection = isset($_REQUEST['subsection']) ? $_REQUEST['subsection'] : '';
-		
+						
 		$active_section = sanitize_text_field($active_section);
 		$active_subsection = sanitize_text_field($active_subsection);
 		
 		$admin_template = '';
-		/*$admin_template = ESSBOptionValuesHelper::options_value($essb_options, 'admin_template');
-		if (!empty($admin_template)) {
-			$admin_template = "essb-template-".$admin_template;
-		}*/
 		
-		//echo '<div id="essb-scroll-top"></div>';
 		echo '<script type="text/javascript">var loadedEditorControls = {};</script>';
 		echo '<form id="essb_options_form" enctype="multipart/form-data" method="post" action="">';
 		if ($custom && !empty($group)) {
-			settings_fields( $group );
+			//settings_fields( $group );
+			echo '<input type="hidden" name="action" value="update"/>';
+			echo '<input type="hidden" name="option_page" value="'.$group.'"/>';
+			wp_nonce_field( 'essb_setup', 'essb_token' );
+			echo '<input type="hidden" name="essb_salt" value="'.sanitize_text_field(essb_admin_setting_token()).'"/>';
 		}
 		else {
-			settings_fields( 'essb_settings_group' );
+			//settings_fields( 'essb_settings_group' );
+			echo '<input type="hidden" name="action" value="update"/>';
+			echo '<input type="hidden" name="option_page" value="essb_settings_group"/>';
+			wp_nonce_field( 'essb_setup', 'essb_token' );
+			echo '<input type="hidden" name="essb_salt" value="'.sanitize_text_field(essb_admin_setting_token()).'"/>';
 		}
 		echo '<input id="section" name="section" type="hidden" value="'.sanitize_text_field($active_section).'"/>';
 		echo '<input id="subsection" name="subsection" type="hidden" value="'.sanitize_text_field($active_subsection).'"/>';

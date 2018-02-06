@@ -50,6 +50,7 @@ if (! function_exists ( 'essb_popular_posts' )) {
 				'date_range' => '',
 				'only_pt' => '' 
 				), $atts );
+		
 				
 		$title = (! empty ( $attributes ['title'] )) ? $attributes ['title'] : '';
 		$number = (! empty ( $attributes ['number'] )) ? absint ( $attributes ['number'] ) : 5;
@@ -66,6 +67,9 @@ if (! function_exists ( 'essb_popular_posts' )) {
 			$show_num_text = 'shares';
 		
 		$same_cat = isset ( $attributes ['same_cat'] ) ? $attributes ['same_cat'] : 'false';
+		if ($same_cat == 'yes') {
+			$same_cat = 'true';
+		}
 		
 		$show_thumb = isset($attributes['show_thumb']) ? $attributes ['show_thumb'] : 'false';
 		$thumb_size = isset($attributes['thumb_size']) ? $attributes ['thumb_size'] : 'full';

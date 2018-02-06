@@ -162,6 +162,13 @@ class ESSBNetworks_SubscribeActions {
 				break;
 		}
 		
+		// @since 5.3 add if exising thank you redirect
+		$thankyou_redirect = essb_option_value('subscribe_success');
+		if ($thankyou_redirect != '') {
+			$output['redirect_new'] = essb_option_bool_value('subscribe_success_new');
+			$output['redirect'] = $thankyou_redirect;
+		}
+		
 		return $output;
 	}
 	

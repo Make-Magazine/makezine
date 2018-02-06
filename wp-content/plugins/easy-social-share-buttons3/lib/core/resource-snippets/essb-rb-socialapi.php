@@ -15,6 +15,12 @@ function essb_load_social_api_code($network = '') {
 		$facebook_appid = "";
 		$facebook_async = essb_option_bool_value('facebook_like_button_api_async') ? 'true' : 'false';
 
+		$chat_app_id = essb_option_value('fbmessenger_appid');
+		if ($chat_app_id != '') {
+			$facebook_appid = $chat_app_id;
+		}
+		
+		
 		essb_socialapi_generate_facebook_api_code($facebook_lang, $facebook_appid, $facebook_async);
 	}
 	if ($network == 'google') {
@@ -83,7 +89,7 @@ function essb_socialapi_generate_facebook_api_code($lang = 'en_US', $app_id = ''
 	var js, fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) return;
 	js = d.createElement(s); js.id = id; '.$js_async.'
-	js.src = "//connect.facebook.net/'.$lang.'/sdk.js#version=v2.8&xfbml=1'.$app_id.'"
+	js.src = "//connect.facebook.net/'.$lang.'/sdk.js#version=v2.11&xfbml=1'.$app_id.'"
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, \'script\', \'facebook-jssdk\'));</script>';
 }

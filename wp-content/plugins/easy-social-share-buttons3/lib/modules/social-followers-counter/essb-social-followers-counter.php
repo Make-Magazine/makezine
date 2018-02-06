@@ -464,7 +464,7 @@ class ESSBSocialFollowersCounter {
 				}
 				break;
 			case 'github' :
-				return 'http://github.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+				return 'https://github.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'vimeo' :
 				if (ESSBSocialFollowersCounterHelper::get_option ( $social . '_account_type', 'channel' ) == 'user') {
@@ -482,13 +482,13 @@ class ESSBSocialFollowersCounter {
 				}
 				break;
 			case 'dribbble' :
-				return 'http://dribbble.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+				return 'https://dribbble.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'soundcloud' :
 				return 'https://soundcloud.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'behance' :
-				return 'http://www.behance.net/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+				return 'https://www.behance.net/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'foursquare' :
 				if (intval ( ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' ) ) && intval ( ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' ) ) == ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' )) {
@@ -508,7 +508,7 @@ class ESSBSocialFollowersCounter {
 				break;
 			case 'instgram' :
 			case 'instagram' :
-				return 'http://instagram.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_username' );
+				return 'https://instagram.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_username' );
 				break;
 			case 'youtube' :
 				$account_type = ESSBSocialFollowersCounterHelper::get_option ( $social . '_account_type' );
@@ -523,15 +523,15 @@ class ESSBSocialFollowersCounter {
 				if (ESSBSocialFollowersCounterHelper::get_option ( $social . '_ref' )) {
 					$ref = '?ref=' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_ref' );
 				}
-				return 'http://www.' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_site' ) . '.net/user/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' ) . $ref;
+				return 'https://www.' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_site' ) . '.net/user/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' ) . $ref;
 				break;
 			case 'vk' :
 				$account_type = ESSBSocialFollowersCounterHelper::get_option ( $social . '_account_type' );
 				if ($account_type == 'community') {
-					return 'http://www.vk.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+					return 'https://www.vk.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				}
 				else {
-					return 'http://www.vk.com/id' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+					return 'https://www.vk.com/id' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				}
 				break;
 			case 'rss' :
@@ -545,13 +545,13 @@ class ESSBSocialFollowersCounter {
 				if ($basename2arr == 'www')
 					return 'http://' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_basename' );
 				else
-					return 'http://www.tumblr.com/follow/' . @$basename2arr [0];
+					return 'https://www.tumblr.com/follow/' . @$basename2arr [0];
 				break;
 			case 'slideshare' :
-				return 'http://www.slideshare.net/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_username' );
+				return 'https://www.slideshare.net/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_username' );
 				break;
 			case '500px' :
-				return 'http://500px.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_username' );
+				return 'https://500px.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_username' );
 				break;
 			case 'flickr' :
 				return 'https://www.flickr.com/photos/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
@@ -565,10 +565,10 @@ class ESSBSocialFollowersCounter {
 				return 'https://audioboo.fm/users/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'steamcommunity' :
-				return 'http://steamcommunity.com/groups/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+				return 'https://steamcommunity.com/groups/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'weheartit' :
-				return 'http://weheartit.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
+				return 'https://weheartit.com/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );
 				break;
 			case 'love' :
 				return ESSBSocialFollowersCounterHelper::get_option ( $social . '_url' );
@@ -577,7 +577,7 @@ class ESSBSocialFollowersCounter {
 				return ESSBSocialFollowersCounterHelper::get_option ( $social . '_url' );
 				break;
 			case 'feedly' :
-				return 'http://feedly.com/i/subscription/feed' . urlencode ( '/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_url' ) );
+				return 'https://feedly.com/i/subscription/feed' . urlencode ( '/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_url' ) );
 				break;
 			case 'mymail':
 				return ESSBSocialFollowersCounterHelper::get_option ( $social . '_url' );
@@ -586,7 +586,7 @@ class ESSBSocialFollowersCounter {
 				return ESSBSocialFollowersCounterHelper::get_option ( $social . '_url' );
 				break;
 			case 'twitch' :
-				return 'http://www.twitch.tv/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' ).'/profile';
+				return 'https://www.twitch.tv/' . ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' ).'/profile';
 				break;
 			case 'spotify' :
 				return ESSBSocialFollowersCounterHelper::get_option ( $social . '_id' );

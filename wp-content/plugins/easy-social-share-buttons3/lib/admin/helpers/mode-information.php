@@ -47,7 +47,7 @@
 			<td class="value">11</td>
 			<td class="value">16</td>
 			<td class="value">16</td>
-			<td class="value">19</td>
+			<td class="value">ALL</td>
 		</tr>
 		<tr>
 			<td class="feature">Social Networks</td>
@@ -186,7 +186,21 @@
 			<td class="value"><i class="ti-check"></i></td>
 			<td class="value"><i class="ti-check"></i></td>			
 		</tr>		
-
+		<tr>
+			<td class="feature">Facebook Messenger Live Chat</td>
+			<td class="value"><i class="ti-close"></i></td>
+			<td class="value"><i class="ti-close"></i></td>
+			<td class="value"><i class="ti-close"></i></td>
+			<td class="value"><i class="ti-check"></i></td>
+			<td class="value"><i class="ti-check"></i></td>			
+		</tr>		<tr>
+			<td class="feature">Skype Live Chat</td>
+			<td class="value"><i class="ti-close"></i></td>
+			<td class="value"><i class="ti-close"></i></td>
+			<td class="value"><i class="ti-close"></i></td>
+			<td class="value"><i class="ti-check"></i></td>
+			<td class="value"><i class="ti-check"></i></td>			
+		</tr>
 		<tr>
 			<td class="feature">Subscribe Forms</td>
 			<td class="value"><i class="ti-close"></i></td>
@@ -195,6 +209,7 @@
 			<td class="value"><i class="ti-check"></i></td>
 			<td class="value"><i class="ti-check"></i></td>			
 		</tr>		
+		
 		<tr>
 			<td class="feature">Native Social Buttons</td>
 			<td class="value"><i class="ti-close"></i></td>

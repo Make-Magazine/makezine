@@ -38,7 +38,7 @@ if (!function_exists('essb5_generate_corner_bar')) {
 			$cornerbar_style = 'transparent';
 		}
 		
-		$output .= '<div class="essb-cornerbar essb-cornerbar-'.$cornerbar_pos.' essb-cornerbar-'.$cornerbar_style.($cornerbar_show != '' ? ' essb-cornerbar-hidden' : '').'" data-show="'.$cornerbar_show.'" data-hide="'.$cornerbar_hide.'">';
+		$output .= '<div class="essb-cornerbar essb-cornerbar-'.$cornerbar_pos.' essb-cornerbar-'.$cornerbar_style.($cornerbar_show != '' ? ' essb-cornerbar-hidden' : '').'" data-show="'.$cornerbar_show.'" data-hide="'.$cornerbar_hide.'" '.($custom_styles != '' ? 'style="'.$custom_styles.'"': '').'>';
 		$output .= $share_buttons;
 		$output .= '</div>';
 		

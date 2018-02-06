@@ -170,7 +170,7 @@ class ESSBCoreExtenderTweetOptimization {
 			$current_message_length += strlen($user) + 5;
 		}
 	
-		return 140 - $current_message_length;
+		return 240 - $current_message_length;
 	}
 	
 }

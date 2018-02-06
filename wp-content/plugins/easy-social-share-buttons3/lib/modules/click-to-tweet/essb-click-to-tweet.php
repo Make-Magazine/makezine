@@ -159,11 +159,11 @@ function essb_ctt_shortcode($atts) {
 	
 	if ($url != 'no') {
 		
-		$short = essb_ctt_shorten ( $text, (117 - ($handle_length)) );
+		$short = essb_ctt_shorten ( $text, (217 - ($handle_length)) );
 	
 	} else {
 		
-		$short = essb_ctt_shorten ( $text, (140 - ($handle_length)) );
+		$short = essb_ctt_shorten ( $text, (240 - ($handle_length)) );
 	
 	}
 	

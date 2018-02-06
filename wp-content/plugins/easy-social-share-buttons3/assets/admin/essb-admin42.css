@@ -3638,3 +3638,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b6a94', end
 }
 
 .essb-options .media-select { display: none; }
+
+/** legacy shared interface fix */
+
+.essb-options-header { margin-left: 0 !important; }
+.essb-options-title { float: none; }
