@@ -41,6 +41,8 @@
       // exclude first post
       // 'excludeId': firstPostId
     })
+
+    
     // If AJAX succeeds:
     .done(function(object) {
       the_previous_post(object)
@@ -207,9 +209,9 @@
       // Reininitialize the new ads
       make.gpt.loadDyn();
 
-      // ga('send', 'pageview',
-      //   {'page': location.pathname + location.search + location.hash}
-      // );
+      ga('send', 'pageview',
+        {'page': location.pathname + location.search + location.hash}
+      );
 
       // Reininitialize the previous post trigger on new content.
       previous_post_trigger();
