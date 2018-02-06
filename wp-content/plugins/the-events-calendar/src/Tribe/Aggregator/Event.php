@@ -103,29 +103,26 @@ class Tribe__Events__Aggregator__Event {
 		);
 
 		$venue_field_map = array(
-			'facebook_id'           => 'VenueFacebookID',
-			'meetup_id'             => 'VenueMeetupID',
-			'venue'                 => 'Venue',
-			'address'               => 'Address',
-			'city'                  => 'City',
-			'country'               => 'Country',
-			'state'                 => 'State',
-			'stateprovince'         => 'Province',
-			'zip'                   => 'Zip',
-			'phone'                 => 'Phone',
-			'website'               => 'URL',
-			'overwrite_coordinates' => 'OverwriteCoords',
-			'latitude'              => 'Lat',
-			'longitude'             => 'Lng',
+			'facebook_id' => 'VenueFacebookID',
+			'meetup_id' => 'VenueMeetupID',
+			'venue' => 'Venue',
+			'address' => 'Address',
+			'city' => 'City',
+			'country' => 'Country',
+			'state' => 'State',
+			'stateprovince' => 'Province',
+			'zip' => 'Zip',
+			'phone' => 'Phone',
+			'website' => 'URL'
 		);
 
 		$organizer_field_map = array(
 			'facebook_id' => 'OrganizerFacebookID',
-			'meetup_id'   => 'OrganizerMeetupID',
-			'organizer'   => 'Organizer',
-			'phone'       => 'Phone',
-			'email'       => 'Email',
-			'website'     => 'Website',
+			'meetup_id' => 'OrganizerMeetupID',
+			'organizer' => 'Organizer',
+			'phone' => 'Phone',
+			'email' => 'Email',
+			'website' => 'Website',
 		);
 
 		foreach ( $field_map as $origin_field => $target_field ) {
@@ -149,20 +146,12 @@ class Tribe__Events__Aggregator__Event {
 
 		if ( ! empty( $item->organizer ) ) {
 			$event['Organizer'] = array();
-			$organizer_entries = is_array( $item->organizer ) ? $item->organizer : array( $item->organizer );
-
-			foreach ( $organizer_entries as $organizer_entry ) {
-				$this_organizer = array();
-
-				foreach ( $organizer_field_map as $origin_field => $target_field ) {
-					if ( ! isset( $organizer_entry->$origin_field ) ) {
-						continue;
-					}
-
-					$this_organizer[ $target_field ] = $organizer_entry->$origin_field;
+			foreach ( $organizer_field_map as $origin_field => $target_field ) {
+				if ( ! isset( $item->organizer->$origin_field ) ) {
+					continue;
 				}
 
-				$event['Organizer'][] = $this_organizer;
+				$event['Organizer'][ $target_field ] = $item->organizer->$origin_field;
 			}
 		}
 

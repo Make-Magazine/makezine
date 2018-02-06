@@ -940,16 +940,6 @@ select.tribe-events-dropdown {
 	color: #333;
 }
 
-.venue-address {
-	margin-top: 1em;
-	
-}
-
-.venue-address>* {
-	display: block;
-	margin-top: 0.5em;
-}
-
 /* = Single Event Template Styles
    @ Template: single-event.php
 =============================================*/
@@ -1020,7 +1010,7 @@ select.tribe-events-dropdown {
 }
 
 .single-tribe_events .tribe-events-schedule .tribe-events-cost {
-	vertical-align: baseline;
+	vertical-align: middle;
 }
 
 /* Featured Image */
@@ -1029,12 +1019,6 @@ select.tribe-events-dropdown {
 	clear: both;
 	margin-bottom: 30px;
 	text-align: center;
-}
-
-/* Export Links */
-
-.single-tribe_events .tribe-events-cal-links {
-	clear: both;
 }
 
 /* Meta Sections */
@@ -2514,7 +2498,7 @@ input[name*='tribe-bar-']:-moz-placeholder {
 	}
 
 	#tribe-events-bar [class^='tribe-bar-button-']::after {
-		background-image: url(../../../common/vendor/tribe-select2/select2x2.png);
+		background-image: url(../../../common/vendor/select2/select2x2.png);
 	}/* Default icon */
 
 	.tribe-select2-results-views span[class^='tribe-icon-'],

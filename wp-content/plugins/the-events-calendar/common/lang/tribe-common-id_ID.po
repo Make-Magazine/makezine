@@ -11,10 +11,6 @@ msgstr ""
 "Language: id\n"
 "Project-Id-Version: Tribe Common\n"
 
-#: src/Tribe/Validate.php:534
-msgid "%s must be an email address."
-msgstr ""
-
 #: src/Tribe/Languages/Locations.php:252
 msgid "Sint Maarten"
 msgstr ""
@@ -816,7 +812,7 @@ msgstr ""
 msgid "Go to plugins page"
 msgstr ""
 
-#: src/Tribe/Cost_Utils.php:114
+#: src/Tribe/Cost_Utils.php:108
 msgid "Free"
 msgstr "Gratis"
 
@@ -2290,19 +2286,19 @@ msgstr "Pengaturan disimpan."
 msgid "General"
 msgstr "Umum "
 
-#: src/Tribe/Field.php:617
+#: src/Tribe/Field.php:616
 msgid "No select options specified"
 msgstr "Tidak ada opsi select ditentukan"
 
-#: src/Tribe/Field.php:559
+#: src/Tribe/Field.php:558
 msgid "No checkbox options specified"
 msgstr "Tidak ada checkbox  centang yang ditentukan"
 
-#: src/Tribe/Field.php:523
+#: src/Tribe/Field.php:522
 msgid "No radio options specified"
 msgstr "Tidak ada pilihan radio yang ditentukan"
 
-#: src/Tribe/Field.php:228
+#: src/Tribe/Field.php:227
 msgid "Invalid field type specified"
 msgstr "Jenis field tidak valid"
 

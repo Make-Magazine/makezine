@@ -11,10 +11,6 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: Tribe Common\n"
 
-#: src/Tribe/Validate.php:534
-msgid "%s must be an email address."
-msgstr ""
-
 #: src/Tribe/Languages/Locations.php:252
 msgid "Sint Maarten"
 msgstr ""
@@ -816,7 +812,7 @@ msgstr "Eklentiler sayfasına dön"
 msgid "Go to plugins page"
 msgstr "Eklentiler sayfasına git "
 
-#: src/Tribe/Cost_Utils.php:114
+#: src/Tribe/Cost_Utils.php:108
 msgid "Free"
 msgstr "Ücretsiz"
 
@@ -2290,19 +2286,19 @@ msgstr "Ayarlar kaydedildi."
 msgid "General"
 msgstr "Genel"
 
-#: src/Tribe/Field.php:617
+#: src/Tribe/Field.php:616
 msgid "No select options specified"
 msgstr "Seçim opsiyonu belirtilmedi"
 
-#: src/Tribe/Field.php:559
+#: src/Tribe/Field.php:558
 msgid "No checkbox options specified"
 msgstr "Checkbox seçeneği belirtilmedi"
 
-#: src/Tribe/Field.php:523
+#: src/Tribe/Field.php:522
 msgid "No radio options specified"
 msgstr "Radyo butonu seçeneği seçilmedi"
 
-#: src/Tribe/Field.php:228
+#: src/Tribe/Field.php:227
 msgid "Invalid field type specified"
 msgstr "Hatalı alan tipi seçildi"
 

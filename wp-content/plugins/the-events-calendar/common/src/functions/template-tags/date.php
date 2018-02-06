@@ -79,9 +79,7 @@ if ( ! function_exists( 'tribe_beginning_of_day' ) ) {
 		if ( is_null( $date ) || empty( $date ) ) {
 			$date = date( $format, strtotime( date( 'Y-m-d' ) . ' +' . $hours_to_add . ' hours ' . $minutes_to_add . ' minutes' ) );
 		} else {
-			$date      = Tribe__Date_Utils::is_timestamp( $date ) ? $date : strtotime( $date );
-			$timestamp = strtotime( date( 'Y-m-d', $date ) . ' +' . $hours_to_add . ' hours ' . $minutes_to_add . ' minutes' );
-			$date      = date( $format, $timestamp );
+			$date = date( $format, strtotime( date( 'Y-m-d', strtotime( $date ) ) . ' +' . $hours_to_add . ' hours ' . $minutes_to_add . ' minutes' ) );
 		}
 
 		/**
@@ -116,9 +114,7 @@ if ( ! function_exists( 'tribe_end_of_day' ) ) {
 		if ( is_null( $date ) || empty( $date ) ) {
 			$date = date( $format, strtotime( 'tomorrow  +' . $hours_to_add . ' hours ' . $minutes_to_add . ' minutes' ) - 1 );
 		} else {
-			$date      = Tribe__Date_Utils::is_timestamp( $date ) ? $date : strtotime( $date );
-			$timestamp = strtotime( date( 'Y-m-d', $date ) . ' +1 day ' . $hours_to_add . ' hours ' . $minutes_to_add . ' minutes' ) - 1;
-			$date      = date( $format, $timestamp );
+			$date = date( $format, strtotime( date( 'Y-m-d', strtotime( $date ) ) . ' +1 day ' . $hours_to_add . ' hours ' . $minutes_to_add . ' minutes' ) - 1 );
 		}
 
 		/**
@@ -267,12 +263,10 @@ if ( ! function_exists( 'tribe_get_start_date' ) ) {
 	 *
 	 * @category Events
 	 *
-	 * @since 4.7.6 Deprecated the $timezone parameter.
-	 *
 	 * @param int    $event        (optional)
 	 * @param bool   $display_time If true shows date and time, if false only shows date
 	 * @param string $date_format  Allows date and time formating using standard php syntax (http://php.net/manual/en/function.date.php)
-	 * @param string $timezone     Deprecated. Timezone in which to present the date/time (or default behaviour if not set)
+	 * @param string $timezone     Timezone in which to present the date/time (or default behaviour if not set)
 	 *
 	 * @return string|null Date
 	 */
@@ -296,7 +290,7 @@ if ( ! function_exists( 'tribe_get_start_date' ) ) {
 
 		// @todo move timezones to Common
 		if ( class_exists( 'Tribe__Events__Timezones' ) ) {
-			$start_date = Tribe__Events__Timezones::event_start_timestamp( $event->ID );
+			$start_date = Tribe__Events__Timezones::event_start_timestamp( $event->ID, $timezone );
 		} else {
 			return null;
 		}
@@ -319,12 +313,10 @@ if ( ! function_exists( 'tribe_get_end_date' ) ) {
 	 *
 	 * @category Events
 	 *
-	 * @since 4.7.6 Deprecated the $timezone parameter.
-	 *
 	 * @param int    $event        (optional)
 	 * @param bool   $display_time If true shows date and time, if false only shows date
 	 * @param string $date_format  Allows date and time formating using standard php syntax (http://php.net/manual/en/function.date.php)
-	 * @param string $timezone     Deprecated. Timezone in which to present the date/time (or default behaviour if not set)
+	 * @param string $timezone     Timezone in which to present the date/time (or default behaviour if not set)
 	 *
 	 * @return string|null Date
 	 */
@@ -348,7 +340,7 @@ if ( ! function_exists( 'tribe_get_end_date' ) ) {
 
 		// @todo move timezones to Common
 		if ( class_exists( 'Tribe__Events__Timezones' ) ) {
-			$end_date = Tribe__Events__Timezones::event_end_timestamp( $event->ID );
+			$end_date = Tribe__Events__Timezones::event_end_timestamp( $event->ID, $timezone );
 		} else {
 			return null;
 		}

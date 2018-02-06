@@ -11,10 +11,6 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: Tribe Common\n"
 
-#: src/Tribe/Validate.php:534
-msgid "%s must be an email address."
-msgstr ""
-
 #: src/Tribe/Languages/Locations.php:252
 msgid "Sint Maarten"
 msgstr ""
@@ -818,7 +814,7 @@ msgstr "Keer terug naar pluginpagina"
 msgid "Go to plugins page"
 msgstr "Ga naar pluginpagina"
 
-#: src/Tribe/Cost_Utils.php:114
+#: src/Tribe/Cost_Utils.php:108
 msgid "Free"
 msgstr "Gratis"
 
@@ -2292,19 +2288,19 @@ msgstr "Instellingen opgeslagen"
 msgid "General"
 msgstr "Algemeen"
 
-#: src/Tribe/Field.php:617
+#: src/Tribe/Field.php:616
 msgid "No select options specified"
 msgstr "Geen selecteeropties gegeven"
 
-#: src/Tribe/Field.php:559
+#: src/Tribe/Field.php:558
 msgid "No checkbox options specified"
 msgstr "Geen checkbox-opties gegeven"
 
-#: src/Tribe/Field.php:523
+#: src/Tribe/Field.php:522
 msgid "No radio options specified"
 msgstr "Geen radio-opties gegeven"
 
-#: src/Tribe/Field.php:228
+#: src/Tribe/Field.php:227
 msgid "Invalid field type specified"
 msgstr "Ongeldig veldtype gegeven"
 
