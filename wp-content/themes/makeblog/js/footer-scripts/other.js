@@ -102,6 +102,7 @@ jQuery( document ).ready( function( $ ) {
   var recaptchaFootMob;
   var recaptchaHeaderOver;
   var recaptchaHeaderMob;
+  var recaptchaJoinPage;
   var recaptchaPostSide;
   var recaptchaTag;
   var recaptchaPageBuilder;
@@ -123,6 +124,11 @@ jQuery( document ).ready( function( $ ) {
     }
     if ( jQuery('#recapcha-header-mobile').length ) {
       recaptchaHeaderMob = grecaptcha.render('recapcha-header-mobile', {
+        'sitekey' : recaptchaKey
+      });
+    }
+    if ( jQuery('#recapcha-join-page').length ) {
+      recaptchaJoinPage = grecaptcha.render('recapcha-join-page', {
         'sitekey' : recaptchaKey
       });
     }

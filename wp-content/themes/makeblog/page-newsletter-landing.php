@@ -86,16 +86,6 @@ get_header('version-2'); ?>
               <div class="clearfix"></div>
             </form>
             <script>
-              var recaptchaKey = '6Lffo0EUAAAAABhGRLPk751JrmCLqR5bvUR9RYZJ';
-              var recaptchaJoinPage;
-              var onloadCallback = function() {
-                if ( jQuery('#recapcha-join-page').length ) {
-                  recaptchaJoinPage = grecaptcha.render('recapcha-join-page', {
-                    'sitekey' : recaptchaKey
-                  });
-                }
-              };
-
               jQuery(document).on('submit', '#nlp-form', function (e) {
                 e.preventDefault();
                 // First check if any checkboxes are checked
