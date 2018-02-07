@@ -4,6 +4,8 @@
   var post_id = postdata.post_id;
   var theme_uri = postdata.theme_uri;
   var rest_url = postdata.rest_url;
+  var most_recent_post_ID = postdata.most_recent_post_ID;
+  var page_scroll = 1;
 
   function previous_post_trigger() {
     // When the trigger is activated, do all the things.
@@ -27,10 +29,17 @@
   // The function in which all the magic happens.
   function get_previous_post(trigger) {
 
-    // Get the previous post ID from the clicked trigger above.
-    var previous_post_ID = trigger.attr('data-id');
-    // Build the resource request URL for the REST API.
-    var json_url = rest_url + 'posts/' + previous_post_ID + '?_embed=true';
+    if ((post_id !== most_recent_post_ID) && (page_scroll == 1)) {
+      // Build the resource request URL for the REST API
+      var json_url = rest_url + 'posts/' + most_recent_post_ID + '?_embed=true';
+    } else {
+      // Get the previous post ID from the clicked trigger above.
+      var previous_post_ID = trigger.attr('data-id');
+      // Build the resource request URL for the REST API.
+      var json_url = rest_url + 'posts/' + previous_post_ID + '?_embed=true';
+    }
+
+    page_scroll++;
 
     $('.ajax-loader').css('visibility', 'visible');
 
@@ -38,11 +47,9 @@
     $.ajax({
       dataType: 'json',
       url: json_url,
-      // exclude first post
-      // 'excludeId': firstPostId
+      //'excludeId': post_id
     })
 
-    
     // If AJAX succeeds:
     .done(function(object) {
       the_previous_post(object)
@@ -124,7 +131,7 @@
 
             '<div class="container">' +
               '<div class="story-title">' +
-                '<h1 itemprop="name">' + object.title.rendered + '</h1>' +
+                '<h1 itemprop="name">' + object.title.rendered + ' ' + page_scroll + '</h1>' +
               '</div>' +
             '</div>' +
 
