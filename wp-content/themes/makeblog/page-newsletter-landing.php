@@ -38,13 +38,12 @@ get_header('version-2'); ?>
               <input type="hidden" name="cmd" value="subscribe" />
               <input type="hidden" id="email" name="email" value="" />
               <input type="hidden" id="format_mime" name="format" value="mime" />
-              <input type="hidden" name="goto" value="" />
               <input type="hidden" name="custom_source" value="landing-page_signup" />
               <input type="hidden" name="custom_incentive" value="none" />
               <input type="hidden" name="custom_url" value="makezine.com/join" />
               <input type="hidden" id="format_mime" name="format" value="mime" />
               <input type="hidden" name="custom_host" value="makezine.com" />
-
+              <input type=hidden name="multiadd" value="1" />
               <label class="list-radio pull-right" data-toggle="tooltip" data-placement="right" title="Please choose at least one checkbox">
                 <input type="checkbox" id="list_6B5869DC547D3D46B52F3516A785F101_yes" name="custom_list_makenewsletter" value="yes" />
                 <span for="list_6B5869DC547D3D46B52F3516A785F101_yes" class="newcheckbox"></span>
