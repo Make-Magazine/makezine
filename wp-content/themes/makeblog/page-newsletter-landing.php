@@ -113,6 +113,8 @@ get_header('version-2'); ?>
                     if ( grecaptcha.getResponse(recaptchaJoinPage) != "" ) {
                       jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('#nlp-form').serialize());
                       jQuery('.fancybox-thx').trigger('click');
+                      jQuery('.nl-thx-p1').hide();
+                      jQuery('.nl-thx-p2').show();
                     } else {
                       jQuery('.nl-modal-error').trigger('click');
                     }
