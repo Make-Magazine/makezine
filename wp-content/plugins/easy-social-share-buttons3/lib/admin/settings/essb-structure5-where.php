@@ -403,9 +403,14 @@ if (!essb_option_bool_value('deactivate_method_image')) {
 	ESSBOptionsStructureHelper::field_section_start_full_panels($where_to_display, 'display-13');
 	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_selector', __('Default image share selector', 'essb'), __('Provide your own custom image selector that will allow to pickup share images. Leave blank for use the default or use <b>.essbis_site img</b> to allow share of any image on site.', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_dontshow', __('Do not show on', 'essb'), __('Set image classes and IDs for which on media display buttons won\'t show. Separate several selectors with commas. (example: .notshow or .notshow,#notshow', 'essb'));
-	//ESSBOptionsStructureHelper::field_textbox($where_to_display, 'display-13', 'sis_dontaddclass', __('Do not move following classes', 'essb'), __('Provide image classes that you wish not to be moved to on media sharing element. If you use multiple selectors separate them with ,', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end_full_panels($where_to_display, 'display-13');
+
+	ESSBOptionsStructureHelper::field_section_start_full_panels($where_to_display, 'display-13');
 	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_minWidth', __('Minimal width', 'essb'), __('Minimum width of image for sharing. Use value without px.', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_minHeight', __('Minimal height', 'essb'), __('Minimum height of image for sharing. Use value without px.', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_minWidthMobile', __('Minimal width on Mobile', 'essb'), __('Minimum width of image for sharing. Use value without px.', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_minHeightMobile', __('Minimal height on Mobile', 'essb'), __('Minimum height of image for sharing. Use value without px.', 'essb'));
+	
 	ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'display-13', 'sis_always_visible', __('Always visible share icons', 'essb'), __('Use this option to make on media share buttons always visible on desktop. The function may not work if you have lazy loading images.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-13', 'sis_facebookapp', __('Facebook Application ID', 'essb'), __('If you wish to make plugin selected image on Facebook you need to create application and make it public to use advanced sharing. Advanced sharing will allow to post any image on Facebook but it will allow share on personal timeline only.', 'essb'));
 	ESSBOptionsStructureHelper::field_section_end_full_panels($where_to_display, 'display-13');
@@ -422,10 +427,6 @@ if (!essb_option_bool_value('deactivate_method_image')) {
 	$listOfNetworksAdvanced = array( "facebook" => "Facebook", "twitter" => "Twitter", "google" => "Google", "linkedin" => "LinkedIn", "pinterest" => "Pinterest", "tumblr" => "Tumblr", "reddit" => "Reddit", "digg" => "Digg", "delicious" => "Delicious", "vkontakte" => "VKontakte", "odnoklassniki" => "Odnoklassniki");
 	ESSBOptionsStructureHelper::field_checkbox_list($where_to_display, 'display-13', 'sis_networks', __('Activate networks', 'essb'), __('Choose active social networks', 'essb'), $listOfNetworksAdvanced);
 	ESSBOptionsStructureHelper::field_simplesort($where_to_display, 'display-13', 'sis_network_order', __('Display order', 'essb'), __('Arrange network appearance using drag and drop', 'essb'), $listOfNetworks);
-	//ESSBOptionsStructureHelper::field_section_start($where_to_display, 'display-13', __('Share Options', 'essb'), __('', 'essb'));
-	//ESSBOptionsStructureHelper::field_switch($where_to_display, 'display-13', 'sis_sharer', __('Share selected image<div class="essb-new"><span></span></div><div class="essb-beta"><span></span></div>', 'essb'), __('Activate this option to make plugin include selected image into share. Please note that activating that option will make share counter not to include that shares in it because url structure will change.<br/><br/>Please note that if you have long descriptions, titles or urls you will need <a href="http://appscreo.com/self-hosted-short-urls/" target="_blank"><b>Self-Hosted Short URLs add-on</b></a> for proper sharing.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-	//ESSBOptionsStructureHelper::field_switch($where_to_display, 'display-13', 'sis_pinterest_alt', __('Use provided image alternative text for Pinterest share<div class="essb-new"><span></span></div><div class="essb-beta"><span></span></div>', 'essb'), __('Activate this option to allow Pinterest share take image alternative text as share description. If no alternative texts is provided it will use post title. If this option is not active Pinterest share will use post title.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-	//ESSBOptionsStructureHelper::field_section_end($where_to_display, 'display-13');
 	ESSBOptionsStructureHelper::panel_end($where_to_display, 'display-13');
 	ESSBOptionsStructureHelper::panel_start($where_to_display, 'display-13', __('Visual display setup', 'essb'), __('Customize look and feel of your social share buttons that appear on images', 'essb'), 'fa21 ti-layout-grid2-alt', array("mode" => "toggle"));
 	
@@ -447,14 +448,10 @@ if (!essb_option_bool_value('deactivate_method_image')) {
 	
 	$listOfTemplates = array("tiny" => "Tiny", "flat-small" => "Small", "flat" => "Regular", "round" => "Round");
 	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'display-13', 'sis_style', __('Template', 'essb'), __('Choose buttons template. You can use only build into module templates to avoid misconfiguration', 'essb'), $listOfTemplates);
-	//$listOfOptions = array("left" => "Left", "right" => "Right", "center-x" => "Center");
-	//ESSBOptionsStructureHelper::field_select($where_to_display, 'display-13', 'sis_align_x', __('Horizontal Align', 'essb'), '', $listOfOptions);
-	//$listOfOptions = array("top" => "Top", "bottom" => "Bottom", "center-y" => "Center");
-	//ESSBOptionsStructureHelper::field_select('social', 'positions-30', 'sis_align_y', __('Vertical Align', 'essb'), '', $listOfOptions);
+	$listOfTemplates = array("" => "Default", "tiny" => "Tiny", "flat-small" => "Small", "flat" => "Regular", "round" => "Round");
+	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'display-13', 'sis_mobile_style', __('Template on Mobile', 'essb'), __('Choose buttons template that will be used on a mobile device. You can use only build into module templates to avoid misconfiguration', 'essb'), $listOfTemplates);
 	$listOfOptions = array("horizontal" => __("Horizontal", 'essb'), "vertical" => __("Vertical", 'essb'));
 	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'display-13', 'sis_orientation', __('Orientation', 'essb'), __('Display buttons aligned horizontal or vertical', 'essb'), $listOfOptions);
-	//ESSBOptionsStructureHelper::field_textbox($where_to_display, 'display-13', 'sis_offset_x', __('Move buttons horizontally', 'essb'), __('Provide custom value if you wish to move buttons horizontally from the edge of image', 'essb'));
-	//ESSBOptionsStructureHelper::field_textbox($where_to_display, 'display-13', 'sis_offset_y', __('Move buttons vertically', 'essb'), __('Provide custom value if you wish to move buttons vertically from the edge of image.', 'essb'));
 	ESSBOptionsStructureHelper::field_section_end_full_panels($where_to_display, 'display-13');
 	ESSBOptionsStructureHelper::panel_end($where_to_display, 'display-13');
 }
@@ -553,7 +550,8 @@ if (!essb_options_bool_value('deactivate_method_point')) {
 	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'display-16', 'point_shape', __('Point button shape', 'essb'), __('Choose the shape of share point - default is round', 'essb'), $point_display_style);
 
 	ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'display-16', 'point_allowall', __('Display share point anywhere on site', 'essb'), __('Default point setup is made to appear on posts, custom post types and pages but it will not appear on lists of posts, dynamic pages activate this option.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-
+	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-16', 'point_close', __('Automatic close after seconds', 'essb'), __('Enter a value if you wish to setup automated close of the point display method once it is is opened on screen (numeric value, example: 5 (5 seconds))', 'essb'), '', 'input60', 'fa-arrows-v', 'right');
+	
 	ESSBOptionsStructureHelper::field_section_end_full_panels($where_to_display, 'display-16');
 	ESSBOptionsStructureHelper::panel_end($where_to_display, 'display-16');
 	

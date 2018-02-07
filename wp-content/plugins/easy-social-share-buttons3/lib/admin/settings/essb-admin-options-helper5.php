@@ -1,5 +1,24 @@
 <?php
 
+function essb_get_post_types() {
+	global $wp_post_types;
+
+	$pts = get_post_types ( array ('show_ui' => true, '_builtin' => true ) );
+	$cpts = get_post_types ( array ('show_ui' => true, '_builtin' => false ) );
+
+	$current_posttypes = array();
+
+	foreach ($pts as $pt) {
+		$current_posttypes[$pt] = $wp_post_types [$pt]->label;
+	}
+
+	foreach ($cpts as $pt) {
+		$current_posttypes[$pt] = $wp_post_types [$pt]->label;
+	}
+
+	return $current_posttypes;
+}
+
 if (!function_exists('essb5_available_content_positions')) {
 	function essb5_available_content_positions($wizard_mode = false) {
 		$essb_avaliable_content_positions = array ();
@@ -841,3 +860,4 @@ class ESSBOptionsStructureHelper {
 		);
 	}
 }
+

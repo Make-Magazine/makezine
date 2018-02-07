@@ -21,6 +21,62 @@ if (!essb_option_bool_value('deactivate_module_natives')) {
 	ESSBOptionsStructureHelper::submenu_item('display', 'native-3', __('Social Privacy', 'essb'));
 }
 
+if (!essb_option_bool_value('deactivate_module_facebookchat')) {
+	ESSBOptionsStructureHelper::menu_item('display', 'facebookchat', __('Facebook Messenger Live Chat', 'essb'), 'ti-facebook');
+
+	if (!ESSBActivationManager::isActivated()) {
+		if (!ESSBActivationManager::isThemeIntegrated()) {
+			ESSBOptionsStructureHelper::hint('display', 'facebookchat', __('Activate Plugin To Use This Feature', 'essb'), 'Hello! Please <a href="admin.php?page=essb_redirect_update&tab=update">activate your copy</a> of Easy Social Share Buttons for WordPress to unlock and use this feature.', 'fa24 fa fa-lock', 'glow');
+		}
+		else {
+			ESSBOptionsStructureHelper::hint('display', 'facebookchat', __('Direct Customer Benefit ', 'essb'), sprintf(__('Access to one click ready made styles install is benefit for direct plugin customers. <a href="%s" target="_blank"><b>See all direct customer benefits</b></a>', 'essb'), ESSBActivationManager::getBenefitURL()), 'fa24 fa fa-lock', 'glow');
+		}
+	
+	}
+	else {
+		ESSBOptionsStructureHelper::panel_start('display', 'facebookchat', __('Activate display of Facebook Messenger Customer Live Chat', 'essb'), __('The Messenger Platform\'s customer chat plugin allows you to integrate your Messenger experience directly into your website. This allows your customers to interact with your business anytime with the same personalized, rich-media experience they get in Messenger.', 'essb'), 'fa21 fa fa-cogs', array("mode" => "switch", 'switch_id' => 'fbmessenger_active', 'switch_on' => __('Yes', 'essb'), 'switch_off' => __('No', 'essb')));
+	
+		ESSBOptionsStructureHelper::field_checkbox_list('display', 'facebookchat', 'fbmessenger_posttypes', __('Appear only on selected post types', 'essb'), __('Limit function to work only on selected post types. Leave non option selected to make it work on all', 'essb'), essb_get_post_types());
+		ESSBOptionsStructureHelper::field_switch('display', 'facebookchat', 'fbmessenger_deactivate_homepage', __('Deactivate display on homepage', 'essb'), __('Exclude display of function on home page of your site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'facebookchat', 'fbmessenger_pageid', __('Facebook Page ID', 'essb'), __('Enter your Facebook Page ID to connect live page with it (live chat cannot connect to personal profiles). To use live chat you also need to whitelist your domain in the Page settings. To do this visit your Facebook Page Settings and add/remove whitelisted domains (you need to add a valid domain - example: https://socialsharingplugin.com). Live chat works only if your site uses SSL protocol and can run only on a real domain (no IP address or localhost enviroment).', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'facebookchat', 'fbmessenger_appid', __('Facebook Application ID', 'essb'), __('Required to load Facebook API. To create one visit Facebook Developer Center.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'facebookchat', 'fbmessenger_exclude', __('Exclude display on', 'essb'), __('Exclude appearance on posts/pages with these IDs. Comma separated: "11, 15, 125".', 'essb'), '');
+		ESSBOptionsStructureHelper::field_switch('display', 'facebookchat', 'fbmessenger_minimized', __('Appear minimized', 'essb'), __('Set this option if you wish the chat to appear minimized', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_switch('display', 'facebookchat', 'fbmessenger_left', __('Appear on the left', 'essb'), __('Change default appearance position to Left', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		
+		
+		ESSBOptionsStructureHelper::panel_end('display', 'facebookchat');
+	}
+}
+
+if (!essb_option_bool_value('deactivate_module_skypechat')) {
+	ESSBOptionsStructureHelper::menu_item('display', 'skypechat', __('Skype Live Chat', 'essb'), 'ti-facebook');
+
+	if (!ESSBActivationManager::isActivated()) {
+		if (!ESSBActivationManager::isThemeIntegrated()) {
+			ESSBOptionsStructureHelper::hint('display', 'skypechat', __('Activate Plugin To Use This Feature', 'essb'), 'Hello! Please <a href="admin.php?page=essb_redirect_update&tab=update">activate your copy</a> of Easy Social Share Buttons for WordPress to unlock and use this feature.', 'fa24 fa fa-lock', 'glow');
+		}
+		else {
+			ESSBOptionsStructureHelper::hint('display', 'skypechat', __('Direct Customer Benefit ', 'essb'), sprintf(__('Access to one click ready made styles install is benefit for direct plugin customers. <a href="%s" target="_blank"><b>See all direct customer benefits</b></a>', 'essb'), ESSBActivationManager::getBenefitURL()), 'fa24 fa fa-lock', 'glow');
+		}
+
+	}
+	else {
+		ESSBOptionsStructureHelper::panel_start('display', 'skypechat', __('Activate display of Skype Live Chat', 'essb'), __('Connect with your customers like never before', 'essb'), 'fa21 fa fa-cogs', array("mode" => "switch", 'switch_id' => 'skype_active', 'switch_on' => __('Yes', 'essb'), 'switch_off' => __('No', 'essb')));
+
+		ESSBOptionsStructureHelper::field_checkbox_list('display', 'skypechat', 'skype_posttypes', __('Appear only on selected post types', 'essb'), __('Limit function to work only on selected post types. Leave non option selected to make it work on all', 'essb'), essb_get_post_types());
+		ESSBOptionsStructureHelper::field_switch('display', 'skypechat', 'skype_deactivate_homepage', __('Deactivate display on homepage', 'essb'), __('Exclude display of function on home page of your site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'skypechat', 'skype_user', __('Your Skype UserID', 'essb'), __('Enter your user ID to start a chat with your visitors.', 'essb'));
+		ESSBOptionsStructureHelper::field_select('display', 'skypechat', 'skype_type', __('Chat Button Style', 'essb'), __('Choose the initial chat style.', 'essb'), array('bubble' => 'Chat Bubble', 'rounded' => 'Rounded Button With Text'));
+		
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'skypechat', 'skype_text', __('Custom chat button text', 'essb'), __('The custom chat button text will appear only if you select a rounded button style.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'skypechat', 'skype_exclude', __('Exclude display on', 'essb'), __('Exclude appearance on posts/pages with these IDs. Comma separated: "11, 15, 125".', 'essb'), '');
+
+		ESSBOptionsStructureHelper::panel_end('display', 'skypechat');
+	}
+}
+
+
 if (!essb_option_bool_value('deactivate_module_natives')) {
 	// native buttons
 	ESSBOptionsStructureHelper::panel_start('display', 'native-1', __('Activate usage of native like, follow and subscribe buttons', 'essb'), __('Native social buttons are great way to encourage more like, shares and follows as they are easy recognizable by users. Usage of them may affect site loading speed because they add additional calls and code to page load once they are initialized. Use them with caution.', 'essb'), 'fa21 fa fa-cogs', array("mode" => "switch", 'switch_id' => 'native_active', 'switch_on' => __('Yes', 'essb'), 'switch_off' => __('No', 'essb')));

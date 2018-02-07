@@ -18,18 +18,26 @@ class ESSBAdminControler {
 	
 	function __construct() {
 		global $pagenow;
+		$page = isset($_REQUEST['page']) ? $_REQUEST['page'] : '';	
 		
 		$deactivate_appscreo = essb_option_bool_value('deactivate_appscreo');
 		
-		//add_action ('init',array ($this, 'essb_settings_redirect' )  );
+		// determine access level to setup
+		$essb_settings_access = essb_option_value('essb_access');
+		if ($essb_settings_access == '') {
+			$essb_settings_access = 'manage_options';
+		}
+		
 		add_action ( 'admin_menu', 	array ($this, 'register_menu' ) );
 		add_action ( 'admin_enqueue_scripts', array ($this, 'register_admin_assets' ), 99 );	
-		add_action ( 'wp_ajax_essb_process_search', array($this, 'essb_action_process_search' ));
 		
 		$hook = (defined ( 'WP_NETWORK_ADMIN' ) && WP_NETWORK_ADMIN) ? 'network_admin_menu' : 'admin_menu';
-		add_action ( $hook, array ($this, 'handle_save_settings' ) );
 		
-		if (is_admin()) {
+		if (current_user_can($essb_settings_access) && strpos($page, 'essb_') !== false ) {
+			add_action ( $hook, array ($this, 'handle_save_settings' ) );
+		}
+		
+		if (is_admin() && current_user_can($essb_settings_access)) {
 			add_action ( 'wp_ajax_essb_settings_save', array ($this, 'actions_download_settings' ) );
 		}
 		
@@ -45,19 +53,7 @@ class ESSBAdminControler {
 		if (ESSB3_ADDONS_ACTIVE) {
 			include_once(ESSB3_PLUGIN_ROOT . 'lib/admin/addons/essb-addons-helper4.php');
 			ESSBAddonsHelper::get_instance();
-		}
-		
- 		$easymode = isset($_REQUEST['easymode']) ? $_REQUEST['easymode'] : '';
- 		if (!empty($easymode)) {
- 			if ($easymode == "activate") {
- 				update_option(ESSB3_EASYMODE_NAME, 'true');
- 			}
- 			if ($easymode == "deactivate") {
- 				update_option(ESSB3_EASYMODE_NAME, 'false');
- 			}
- 			
- 			$this->essb_settings_redirect_after_easymode();
- 		}
+		}	
  		
  		if(isset($pagenow) && $pagenow == 'plugins.php' && !ESSBActivationManager::isActivated()){
  			if (!ESSBActivationManager::isThemeIntegrated()) {
@@ -73,11 +69,7 @@ class ESSBAdminControler {
  			
  		}
 	}
-	
-	function essb_action_process_search() {
-		include_once(ESSB3_PLUGIN_ROOT . 'lib/admin/essb-admin-search.php');
-	}
-	
+		
 	function setupReminder() {
 		if ( ESSBActivationManager::isDevelopment() ) {
 			return;
@@ -177,7 +169,7 @@ class ESSBAdminControler {
 	 */
 	public function add_dashboard_widget() {
 		// Create the widget
-		wp_add_dashboard_widget( 'appscreo_news', apply_filters( 'appscreo_dashboard_widget_title', __( 'AppsCreo News', 'essb' ) ), array( $this, 'display_news_dashboard_widget' ) );
+		wp_add_dashboard_widget( 'appscreo_news', apply_filters( 'appscreo_dashboard_widget_title', __( 'AppsCreo Overview', 'essb' ) ), array( $this, 'display_news_dashboard_widget' ) );
 		
 		// Make sure our widget is on top off all others
 		global $wp_meta_boxes;
@@ -197,6 +189,145 @@ class ESSBAdminControler {
 	}
 	
 	public function display_news_dashboard_widget() {
+		?>
+		
+		<style type="text/css">
+		
+			.essb-admindash-overview {
+				display: table;
+				box-shadow: 0 5px 8px rgba(0,0,0,.05);
+				-webkit-box-shadow: 0 5px 8px rgba(0,0,0,.05);
+				margin: 0 -12px 8px;
+				padding: 0 12px 12px;
+				width: 100%;
+}
+		
+	        .essb-admindash-overview-logo { 	        	
+	        background-color: #2B6A94; background: linear-gradient(to right, #2b6a94 1%,#23577a 100%); width: 42px; height: 42px;
+	        display: table-cell;
+	        border-radius: 3px;
+	        position: relative;
+			 }
+			 
+			 .essb-admindash-overview-logo .essb-logo {
+			 	position: absolute; display: block; width: 28px; height: 28px; top: 0; left: 0; margin:7px; background-size: 28px; }
+			 
+			 .essb-admindash-overview-ver { display: table-cell; padding: 0 10px; vertical-align: middle; font-size: 0.9em; }
+	        
+			 .essb-admindash-row .essb-admindash-heading {
+			 		font-weight: 700;
+			 	border-bottom: 1px solid #eee;
+			 	margin: 0 -12px;
+			 	padding: 6px 12px;
+}
+.essb-admindash-footer {
+	border-top: 1px solid #eee;
+	margin: 0 -12px -12px;
+	padding: 12px;
+	margin-top: 20px;
+}
+
+.essb-admindash-footer ul { margin: 0; padding: 0; }
+.essb-admindash-footer ul li {
+	padding: 0 5px;
+	margin: 0;
+	border-left: 1px solid #eee;
+	display: inline-block;
+}
+
+.essb-admindash-footer ul li:first-child {
+	padding-left: 0;
+	border-left: 0;
+}
+	    </style>
+		
+		<div class="essb-admin-dashboard-widget">
+			<div class="essb-admindash-overview">
+				<div class="essb-admindash-overview-logo">
+					<div class="essb-logo"></div>
+				</div>
+				<div class="essb-admindash-overview-ver">
+					Easy Social Share Buttons for WordPress v<?php echo ESSB3_VERSION; ?><br/>
+					Activation Status: <?php 
+					if (ESSBActivationManager::isActivated()) {
+						echo '<span style="color:#71BA51; font-weight: bold;">Activated</span>';
+					}
+					else if (ESSBActivationManager::isThemeIntegrated()) {
+						echo '<span style="color:#FD5B03; font-weight: bold;">Theme Integrated</span>';
+					}
+					else {
+						echo '<span style="color:#CF000F; font-weight: bold;">Not Activated</span>';
+					}
+					?>
+				</div>
+			</div>
+		
+			<?php 
+			if (!ESSBActivationManager::isActivated()) {
+				echo '<div class="essb-admindash-row">';
+				$activate_url = admin_url('admin.php?page=essb_redirect_update&tab=update');			
+				
+				if (!ESSBActivationManager::isThemeIntegrated()) {
+					echo '<p>Activate Easy Social Share Buttons for WordPress to <a href="https://socialsharingplugin.com/direct-customer-benefits/" target="_blank"><b>unlock automatic plugin updates and direct customer benefits</b></a>. You can <a href="'.$activate_url.'"><b>Enter an existing licence key</b></a> or <a href="https://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="_blank"><b>Purchase a licence key</b></a>.</p>';
+				}
+				else {
+					echo '<p>Your copy of Easy Social Share Buttons for WordPress is theme integrated. To <a href="https://socialsharingplugin.com/direct-customer-benefits/" target="_blank"><b>unlock automatic plugin updates and direct customer benefits</b></a> you can <a href="'.$activate_url.'"><b>Enter an existing Easy Social Share Buttons for WordPress licence key</b></a> or <a href="https://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="_blank"><b>Purchase a new Easy Social Share Buttons for WordPress licence key</b></a>.</p>';
+				}
+				echo '</div>';
+			}
+			?>
+		
+			<div class="essb-admindash-row">
+				<div class="essb-admindash-heading" style="margin-bottom: 10px;">News & Updates</div>
+			</div>
+			
+			<?php 
+			$feeds = array(
+					'first' => array(
+							'link'         => 'https://appscreo.com/',
+							'url'          => 'https://appscreo.com/feed/',
+							'title'        => __( 'AppsCreo News', 'essb' ),
+							'items'        => 4,
+							'show_summary' => 0,
+							'show_author'  => 0,
+							'show_date'    => 1,
+					),
+			);
+				
+				
+			wp_dashboard_primary_output( 'appscreo_news', $feeds );
+			?>
+			<div class="essb-admindash-row" style="margin-top: 20px;">
+				<div class="essb-admindash-heading" style="margin-bottom: 10px; border-bottom:0;">Subscribe for News & Updates</div>
+			</div>
+			<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://appscreo.us13.list-manage.com/subscribe/post?u=a1d01670c240536f6a70e7778&amp;id=c896311986" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input style="width: 62%; display: inline-block;" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px; width:60%; display: inline-block;" aria-hidden="true"><input type="text" name="b_a1d01670c240536f6a70e7778_c896311986" tabindex="-1" value=""></div>
+    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-primary" style="display: inline-block; width: 35%;">
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+			<div class="essb-admindash-footer">
+				<ul>
+				<li class=""><a href="https://socialsharingplugin.com/version-changes/" target="_blank">What's New <span class="screen-reader-text"><?php esc_html_e( '(opens in a new window)', 'essb' ); ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></li>
+				<li class=""><a href="https://docs.socialsharingplugin.com" target="_blank">Docs <span class="screen-reader-text"><?php esc_html_e( '(opens in a new window)', 'essb' ); ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></li>
+				<li class=""><a href="http://support.creoworx.com" target="_blank">Get Support <span class="screen-reader-text"><?php esc_html_e( '(opens in a new window)', 'essb' ); ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></li>
+				<li class=""><a href="http://go.appscreo.com/portfolio" target="_blank" style="color:#FD5B03;">Our Products <span class="screen-reader-text"><?php esc_html_e( '(opens in a new window)', 'essb' ); ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<?php 
+	}
+	
+	public function display_news_dashboard_widget1() {
 		$deactivate_appscreo = essb_option_bool_value('deactivate_appscreo');
 		
 		if (!$deactivate_appscreo) {
@@ -670,6 +801,17 @@ class ESSBAdminControler {
 	public function handle_save_settings() {
 		if (@$_POST && isset ( $_POST ['option_page'] )) {
 			$changed = false;
+			
+			if (! isset( $_POST['essb_token'] ) || !wp_verify_nonce( $_POST['essb_token'], 'essb_setup' )) {
+				print 'Sorry, your nonce did not verify.';
+				exit;
+			}
+			
+			if (!essb_admin_settings_verify_token('essb_salt')) {
+				print 'Unauthorized settings access.';
+				exit;
+			}
+			
 			if ('essb_settings_group' == $this->getval($_POST, 'option_page' )) {
 				if (defined ('ESSB3_SETTING5')) {
 					$this->update_options5();
@@ -1244,13 +1386,6 @@ class ESSBAdminControler {
 							essb_depend_load_function('essb_admin_build_resources', 'lib/admin/helpers/resource-builder-functions.php');
 							essb_admin_build_resources($list_of_styles);
 						}
-
-						/*if ($id == 'use_scriptbuilder' && $option_value == 'true') {
-							$list_of_styles = isset($user_options['stylebuilder_js']) ? $user_options['stylebuilder_js'] : array();
-							essb_depend_load_function('essb_admin_build_js_resources', 'lib/admin/helpers/resource-builder-functions.php');
-							essb_admin_build_js_resources($list_of_styles);
-						}*/
-						
 						
 						break;
 				}
@@ -1258,7 +1393,7 @@ class ESSBAdminControler {
 		}
 		
 		// setting up plugin mode using wizard
-		if ($current_tab == 'quick') {
+		if ($current_tab == 'quick' || $current_tab == 'modes') {
 			$functions_mode = isset($user_options['functions_mode']) ? $user_options['functions_mode'] : '';
 			
 			// clear all fields before setup the correct mode
@@ -1273,6 +1408,8 @@ class ESSBAdminControler {
 			$current_options['deactivate_module_profiles'] = 'false';
 			$current_options['deactivate_module_natives'] = 'false';
 			$current_options['deactivate_module_subscribe'] = 'false';
+			$current_options['deactivate_module_facebookchat'] = 'false';
+			$current_options['deactivate_module_skypechat'] = 'false';
 			
 			$current_options['deactivate_method_float'] = 'false';
 			$current_options['deactivate_method_postfloat'] = 'false';
@@ -1303,6 +1440,8 @@ class ESSBAdminControler {
 				$current_options['deactivate_module_profiles'] = 'true';
 				$current_options['deactivate_module_natives'] = 'true';
 				$current_options['deactivate_module_subscribe'] = 'true';
+				$current_options['deactivate_module_facebookchat'] = 'true';
+				$current_options['deactivate_module_skypechat'] = 'true';
 					
 				$current_options['deactivate_method_float'] = 'true';
 				$current_options['deactivate_method_postfloat'] = 'true';
@@ -1330,6 +1469,8 @@ class ESSBAdminControler {
 				$current_options['deactivate_module_followers'] = 'true';
 				$current_options['deactivate_module_profiles'] = 'true';
 				$current_options['deactivate_module_natives'] = 'true';
+				$current_options['deactivate_module_facebookchat'] = 'true';
+				$current_options['deactivate_module_skypechat'] = 'true';
 					
 				$current_options['deactivate_method_postfloat'] = 'true';
 				$current_options['deactivate_method_topbar'] = 'true';
@@ -1351,6 +1492,8 @@ class ESSBAdminControler {
 				$current_options['deactivate_module_followers'] = 'true';
 				$current_options['deactivate_module_profiles'] = 'true';
 				$current_options['deactivate_module_natives'] = 'true';
+				$current_options['deactivate_module_facebookchat'] = 'true';
+				$current_options['deactivate_module_skypechat'] = 'true';
 					
 				$current_options['deactivate_method_native'] = 'true';
 				$current_options['deactivate_method_heroshare'] = 'true';
@@ -1756,6 +1899,29 @@ class ESSBAdminControler {
 		header("Expires: 0" );
 		echo $backup_string;
 		exit;
+	}
+}
+
+if (!function_exists('essb_admin_setting_token')) {
+	function essb_admin_setting_token() {
+		$token = get_option('essb-admin-settings-token');
+		
+		if (!$token || $token == '') {
+			$token = mt_rand();
+			update_option('essb-admin-settings-token', $token);
+		}
+		
+		return $token;
+	}
+}
+
+if (!function_exists('essb_admin_settings_verify_token')) {
+	function essb_admin_settings_verify_token($token_param) {
+		$value = isset($_REQUEST[$token_param]) ? $_REQUEST[$token_param] : '';
+		
+		$token = get_option('essb-admin-settings-token');
+		
+		return $value == $token ? true : false;
 	}
 }
 

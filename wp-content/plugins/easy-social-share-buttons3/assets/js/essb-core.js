@@ -562,6 +562,19 @@ jQuery(document).ready(function($){
 							if (typeof(essb_subscribe_tracking) != 'undefined') {
 								essb_subscribe_tracking(usedPosition);
 							}
+							
+							// redirecting users if successful redirect URL is set
+							if (data['redirect']) {
+								setTimeout(function() {
+									
+									if (data['redirect_new']) {
+										var win = window.open(data['redirect'], '_blank');
+										win.focus();
+									}
+									else
+										window.location.href = data['redirect'];
+								}, 200);
+							}
 						}
 						else {
 							var storedMessage = $('.essb-subscribe-form-' + key).find('.essb-subscribe-form-content-error').attr('data-message') || '';
@@ -706,6 +719,26 @@ jQuery(document).ready(function($){
 		});
 	}
 	
+	essb.update_pinterest_counter = function(url, recovery_url) {
+		$.get('https://api.pinterest.com/v1/urls/count.json?callback=?&url=' + url, {
+		}, function (data) { 
+			var total_shares1 = data['count'] ? data['count'] : 0; 
+			
+			console.log('total_shares1 = ' + total_shares1);
+
+			$.post(essb_settings.ajax_url, {
+				'action': 'essb_pinterest_counter_update',
+				'post_id': essb_settings.post_id,
+				'count': total_shares1.toString(),
+				'nonce': essb_settings.essb3_nonce
+			}, function (data) { if (data) {
+				console.log(data);
+			}},'json');
+
+		},'json');
+		
+	}
+	
 	window.essb = essb;
 	/**
 	 * Incore Specific Functions & Events
@@ -739,7 +772,7 @@ jQuery(document).ready(function($){
 	};
 
 	
-	var essb_ga_tracking = function(service, position, url) {
+	var essb_ga_tracking = function(service, url, position) {
 		var essb_ga_type = essb_settings.essb3_ga_mode;
 
 		if ( 'ga' in window && window.ga !== undefined && typeof window.ga === 'function' ) {
@@ -1714,6 +1747,13 @@ jQuery(document).ready(function($){
 							$('.essb-point-share-buttons').addClass('essb-point-share-buttons-active');
 							if (essb_point_mode != 'simple') $('.essb-point').toggleClass('essb-point-open');
 							essb_point_triggered = true;
+							
+							if (essb_point_autoclose > 0) {
+								setTimeout(function() {
+									$('.essb-point-share-buttons').removeClass('essb-point-share-buttons-active');
+									if (essb_point_mode != 'simple') $('.essb-point').removeClass('essb-point-open');
+								}, essb_point_autoclose * 1000)
+							}
 						}
 					}
 				}
@@ -1724,6 +1764,13 @@ jQuery(document).ready(function($){
 							$('.essb-point-share-buttons').addClass('essb-point-share-buttons-active');
 							if (essb_point_mode != 'simple') $('.essb-point').toggleClass('essb-point-open');
 							essb_point_triggered = true;
+							
+							if (essb_point_autoclose > 0) {
+								setTimeout(function() {
+									$('.essb-point-share-buttons').removeClass('essb-point-share-buttons-active');
+									if (essb_point_mode != 'simple') $('.essb-point').removeClass('essb-point-open');
+								}, essb_point_autoclose * 1000)
+							}
 						}
 					}
 				}
@@ -1731,6 +1778,7 @@ jQuery(document).ready(function($){
 			
 			var essb_point_onscroll = $('.essb-point').attr('data-trigger-scroll') || "";
 			var essb_point_mode = $('.essb-point').attr('data-point-type') || "simple";
+			var essb_point_autoclose = Number($('.essb-point').attr('data-autoclose') || 0) || 0;
 			
 			if (essb_point_onscroll == 'end' || essb_point_onscroll == 'middle') {
 				essb_point_trigger_mode = essb_point_onscroll;
@@ -1742,6 +1790,13 @@ jQuery(document).ready(function($){
 				$('.essb-point-share-buttons').toggleClass('essb-point-share-buttons-active');
 				
 				if (essb_point_mode != 'simple') $('.essb-point').toggleClass('essb-point-open');
+				
+				if (essb_point_autoclose > 0) {
+					setTimeout(function() {
+						$('.essb-point-share-buttons').removeClass('essb-point-share-buttons-active');
+						if (essb_point_mode != 'simple') $('.essb-point').removeClass('essb-point-open');
+					}, essb_point_autoclose * 1000)
+				}
 	        });
 		}
 		
@@ -1894,6 +1949,9 @@ jQuery(document).ready(function($){
 		
 		if (essb_settings['facebook_client']) {
 			essb.update_facebook_counter(essb_settings['facebook_post_url'] || '', essb_settings['facebook_post_recovery_url'] || '');
+		}
+		if (essb_settings['pinterest_client']) {
+			essb.update_pinterest_counter(essb_settings['facebook_post_url'] || '', essb_settings['facebook_post_recovery_url'] || '');
 		}
 	});
 	

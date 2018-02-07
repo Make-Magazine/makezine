@@ -23,8 +23,12 @@ ESSBOptionsStructureHelper::init();
 ESSBOptionsStructureHelper::tab('social', __('Social Sharing', 'essb'), __('Social Sharing', 'essb'), 'ti-sharethis');
 ESSBOptionsStructureHelper::tab('where', __('Where to Display', 'essb'), __('Where to Display', 'essb'), 'ti-layout');
 
-if (!essb_option_bool_value('deactivate_module_natives') || !essb_option_bool_value('deactivate_module_profiles') || !essb_option_bool_value('deactivate_module_followers')) {
-	ESSBOptionsStructureHelper::tab('display', __('Social Follow', 'essb'), __('Social Follow', 'essb'), 'ti-heart');
+if (!essb_option_bool_value('deactivate_module_natives') || 
+		!essb_option_bool_value('deactivate_module_profiles') || 
+		!essb_option_bool_value('deactivate_module_followers') ||
+		!essb_option_bool_value('deactivate_module_facebookchat') ||
+		!essb_option_bool_value('deactivate_module_skypechat')) {
+	ESSBOptionsStructureHelper::tab('display', __('Social Follow & Chat', 'essb'), __('Social Follow & Chat', 'essb'), 'ti-heart');
 }
 
 if (!essb_option_bool_value('deactivate_module_subscribe')) {
@@ -76,6 +80,7 @@ if (essb_installed_wpml() || essb_installed_polylang()) {
 
 ESSBOptionsStructureHelper::tab('about', __('About', 'essb'), __('About', 'essb'), 'ti-info-alt', '', true, false, true);
 
+ESSBOptionsStructureHelper::tab('modes', __('Switch Plugin Modes', 'essb'), __('Switch Plugin Modes', 'essb'), 'ti-info-alt', '', false, true, false, true);
 ESSBOptionsStructureHelper::tab('functions', __('Manage Plugin Functions', 'essb'), __('Manage Plugin Functions', 'essb'), 'ti-info-alt', '', false, true, false, true);
 
 ESSBOptionsStructureHelper::tab('support', __('Need Help?', 'essb'), __('Need Help?', 'essb'), 'ti-info-alt', '', true, true, false, true);

@@ -434,7 +434,18 @@ VK.Widgets.Subscribe("vk_subscribe", {soft: 1}, '.$afterclose_like_vk.');
 	}
 	
 	public function generate_popular_posts() {
-		$code = do_shortcode('[easy-popular-posts title="'.__('Popular posts', 'essb').'" show_num="yes" num_text="'.__('Shares', 'essb').'" number="4" same_cat="true" show_thumb="true" thumb_size="thumb"]');
+		
+		$user_title = essb_option_value('translate_as_popular_title');
+		if ($user_title == '') {
+			$user_title = __('Popular posts', 'essb');
+		}
+		
+		$user_shares = essb_option_value('translate_as_popular_shares');
+		if ($user_shares == '') {
+			$user_shares = __('Shares', 'essb');
+		}
+		
+		$code = do_shortcode('[easy-popular-posts title="'.$user_title.'" show_num="yes" num_text="'.$user_shares.'" number="4" same_cat="true" show_thumb="true" thumb_size="thumb"]');
 		$this->popupWindowGenerate($code, 'follow', '500');
 	}
 }

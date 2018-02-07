@@ -122,7 +122,7 @@ ESSBOptionsStructureHelper::field_textbox_panel('social', 'share-1', 'twitterhas
 ESSBOptionsStructureHelper::field_switch_panel('social', 'share-1', 'twitter_message_tags_to_hashtags', __('Use post tags as hashtags', 'essb'), __('Activate this option to use your current post tags as hashtags. When this option is active the default hashtags will be replaced with post tags when there are such post tags.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
 
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Twitter message optimization', 'essb'), __('Twitter message optimization allows you to truncate your message if it exceeds the 140 characters length of message.', 'essb'), '');
+ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Twitter message optimization', 'essb'), __('Twitter message optimization allows you to truncate your message if it exceeds the 240 characters length of message.', 'essb'), '');
 ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'twitter_message_optimize', __('Activate', 'essb'), __('Activate message optimization.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 $listOfOptions = array("1" => "Remove hashtags, remove via username, truncate message", "2" => "Remove via username, remove hashtags, truncate message", "3" => "Remove via username, truncate message", "4" => "Remove hashtags, truncate message", "5" => "Truncate only message");
 ESSBOptionsStructureHelper::field_select('social', 'share-1', 'twitter_message_optimize_method', __('Method of optimization', 'essb'), __('Choose the order of components to be removed till reaching the limit of characters', 'essb'), $listOfOptions);
@@ -357,6 +357,11 @@ ESSBOptionsStructureHelper::structure_row_start('social', 'sharecnt');
 ESSBOptionsStructureHelper::structure_section_start('social', 'sharecnt', 'c6');
 ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'cache_counter_facebook_async', __('Client side Facebook counter update', 'essb'), __('Use client side Facebook counter update to eliminate Facebook rate policy for number of connection you can send. The client side update will ensure your counters will frequently update. Option is compatible with share recovery.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
 ESSBOptionsStructureHelper::structure_section_end('social', 'sharecnt');
+
+ESSBOptionsStructureHelper::structure_section_start('social', 'sharecnt', 'c6');
+ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'cache_counter_pinterest_async', __('Client side Pinterest counter update', 'essb'), __('TPinterest apply restrictions when you are using few hosts that avoid Pinterest counter extraction. In such case please activate this option to avoid missing Pinterest counters. Due to Pinterest rate limitations this option cannot work with share recovery.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
+ESSBOptionsStructureHelper::structure_section_end('social', 'sharecnt');
+
 ESSBOptionsStructureHelper::structure_row_end('social', 'sharecnt');
 
 
@@ -426,7 +431,7 @@ ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'googl
 
 ESSBOptionsStructureHelper::structure_row_start('social', 'sharecnt');
 ESSBOptionsStructureHelper::structure_section_start('social', 'sharecnt', 'c6');
-ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'active_internal_counters', __('Activate internal counters for all networks that does not support API count', 'essb'), __('Activate internal
+ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'active_internal_counters', __('Activate internal counters for all networks that do not support API count', 'essb'), __('Activate internal
 		counters for all networks that does not have access to API
 		counter functions. If this option is active counters are stored
 		in each post/page options and may be different from actual', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '9');

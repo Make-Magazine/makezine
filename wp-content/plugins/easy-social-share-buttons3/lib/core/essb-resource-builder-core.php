@@ -350,10 +350,17 @@ function essb_js_build_admin_ajax_access_code($buffer) {
 	}
 	
 	// since 5.2 - client side counter update
-	if (essb_option_bool_value('cache_counter_facebook_async')) {
-		$code_options['facebook_client'] = true;
-		$code_options['facebook_post_url'] = get_permalink(get_the_ID());
+	if (essb_option_bool_value('cache_counter_facebook_async') || essb_option_bool_value('cache_counter_pinterest_async')) {
 		
+		if (essb_option_bool_value('cache_counter_facebook_async')) {
+			$code_options['facebook_client'] = true;
+		}
+		if (essb_option_bool_value('cache_counter_pinterest_async')) {
+			$code_options['pinterest_client'] = true;
+		}
+		
+		$code_options['facebook_post_url'] = get_permalink(get_the_ID());
+				
 		if (defined('ESSB3_SHARED_COUNTER_RECOVERY')) {
 			$code_options['facebook_post_recovery_url'] = essb_recovery_get_alt_permalink(get_permalink(get_the_ID()), get_the_ID());
 		}
