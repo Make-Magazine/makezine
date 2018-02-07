@@ -86,7 +86,7 @@ get_header('version-2'); ?>
               <div class="clearfix"></div>
             </form>
             <script>
-              jQuery(document).on('submit', '#nlp-form', function (e) {
+              jQuery(document).on('submit', '.nlp-form', function (e) {
                 e.preventDefault();
                 // First check if any checkboxes are checked
                 var anyBoxesChecked = false;
@@ -111,7 +111,7 @@ get_header('version-2'); ?>
                   }
                   else {
                     if ( grecaptcha.getResponse(recaptchaJoinPage) != "" ) {
-                      jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('#nlp-form').serialize());
+                      jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.nlp-form').serialize());
                       jQuery('.fancybox-thx').trigger('click');
                       jQuery('.nl-thx-p1').hide();
                       jQuery('.nl-thx-p2').show();
