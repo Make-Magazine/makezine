@@ -108,6 +108,8 @@ $options = $essb_section_options [$current_tab];
 	.essb-header-status .essb-flex-grid-c { padding-top: 0px; padding-bottom: 0px; }
 	.essb-header-status { position: relative; }
 	.essb-header-status .close-icon { position: absolute; top: 5px; right: 20px; font-size: 16px; cursor: pointer; }
+	.essb-headbutton { font-size: 13px; border-radius: 0; border-bottom: 2px solid transparent; }
+	.essb-headbutton:hover, .essb-headbutton.active { border-bottom: 2px solid #2B6A94; }
 
 </style>
 
@@ -206,20 +208,13 @@ $options = $essb_section_options [$current_tab];
 		<?php
 
 		$additional_buttons = '';
+		
+	
 
-		//if (ESSB3_ADDONS_ACTIVE) {
-		//	$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_addons").'"  text="' . __ ( 'Extensions', 'essb' ) . '" class="essb-btn essb-btn-plain" style="margin-right: 5px;"><i class="fa fa-gear"></i>&nbsp;' . __ ( 'Extensions', 'essb' ) . '</a>';
-		//}
-		//$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_quick&tab=quick").'"  text="' . __ ( 'Quick Setup Wizard', 'essb' ) . '" class="essb-btn essb-btn-red" style="margin-right: 5px;"><i class="fa fa-bolt"></i>&nbsp;' . __ ( 'Quick Setup Wizard', 'essb' ) . '</a>';
-		//$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_readymade&tab=readymade").'"  text="' . __ ( 'Ready Made Styles', 'essb' ) . '" class="essb-btn essb-btn-green" style="margin-right: 5px;"><i class="fa fa-bolt"></i>&nbsp;' . __ ( 'Apply Ready Made Styles', 'essb' ) . '</a>';
-		//$additional_buttons .= '<a href="http://support.creoworx.com" target="_blank" text="' . __ ( 'Need Help? Click here to visit our support center', 'essb' ) . '" class="essb-btn essb-btn-blue"><i class="fa fa-question"></i>&nbsp;' . __ ( 'Get Support', 'essb' ) . '</a>';
-		//if (ESSB3_ADDONS_ACTIVE) {
-		//	$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_addons").'"  text="' . __ ( 'Extensions', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper" style="margin-right: 5px;"><i class="fa fa-gear"></i>&nbsp;' . __ ( 'Extensions', 'essb' ) . '</a>';
-		//}
-
-		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_functions&tab=functions").'"  text="' . __ ( 'Activate or Deactivate Plugin Features', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper" style="margin-right: 5px;"><i class="fa fa-cog"></i>&nbsp;' . __ ( 'Manage Plugin Features', 'essb' ) . '</a>';
-		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_quick&tab=quick").'"  text="' . __ ( 'Quick Setup Wizard', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper" style="margin-right: 5px;"><i class="fa fa-bolt"></i>&nbsp;' . __ ( 'Quick Setup Wizard', 'essb' ) . '</a>';
-		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_support&tab=support").'" text="' . __ ( 'Need Help? Click here to visit our support center', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper"><i class="fa fa-question"></i>&nbsp;' . __ ( 'Need Help?', 'essb' ) . '</a>';
+		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_modes&tab=modes").'"  text="' . __ ( 'Activate or Deactivate Plugin Features', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper essb-headbutton'.($current_tab == 'modes' ? ' active': '').'" style="margin-right: 5px;" title="Change between different plugin working modes to make plugin fits best into your needs"><i class="fa fa-magic"></i>&nbsp;' . __ ( 'Switch Plugin Mode', 'essb' ) . '</a>';
+		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_functions&tab=functions").'"  text="' . __ ( 'Activate or Deactivate Plugin Features', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper essb-headbutton'.($current_tab == 'functions' ? ' active': '').'" style="margin-right: 5px;" title="Activate/deactivate functions of plugin"><i class="fa fa-cog"></i>&nbsp;' . __ ( 'Manage Plugin Features', 'essb' ) . '</a>';
+		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_quick&tab=quick").'"  text="' . __ ( 'Quick Setup Wizard', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper  essb-headbutton" style="margin-right: 5px;" title="Quick configuration wizard for the most common functions"><i class="fa fa-bolt"></i>&nbsp;' . __ ( 'Setup Wizard', 'essb' ) . '</a>';
+		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_support&tab=support").'" text="' . __ ( 'Need Help? Click here to visit our support center', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper  essb-headbutton" title="Need a hand working with plugin?"><i class="fa fa-question"></i>&nbsp;' . __ ( 'Need Help?', 'essb' ) . '</a>';
 
 
 		if ($current_tab != 'analytics' && $current_tab != 'shortcode' && $current_tab != 'status' && $current_tab != 'welcome' &&
@@ -998,13 +993,15 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 			</div>
 			
 			<div class="actions">
-				<a href="<?php echo admin_url('admin.php?page=essb_redirect_quick&tab=quick');?>" class="essb-firsttime-button essb-firsttime-button-default">Run Setup Wizard</a>
+				<a href="<?php echo admin_url('admin.php?page=essb_redirect_modes&tab=modes');?>" class="essb-firsttime-button essb-firsttime-button-color2">Switch Plugin Modes</a>
 				<a href="<?php echo admin_url('admin.php?page=essb_redirect_functions&tab=functions');?>" class="essb-firsttime-button essb-firsttime-button-color3">Personalize Active Modules</a>
+			</div>
+			
+			<div class="actions">
+				<a href="<?php echo admin_url('admin.php?page=essb_redirect_quick&tab=quick');?>" class="essb-firsttime-button essb-firsttime-button-default">Run Setup Wizard</a>				
 				<a href="https://docs.socialsharingplugin.com" target="_blank" class="essb-firsttime-button essb-firsttime-button-color1">Visit Knowledge Base</a>
-			</div>
-			<div class="actions" style="margin-top:15px;">
 				<a href="http://support.creoworx.com" target="_blank" class="essb-firsttime-button essb-firsttime-button-color2">Need Help? Visit Our Support System</a>
-			</div>
+				</div>
 			<div class="actions" style="margin-top: 10px">
 				<a href="" class="essb-firsttime-button essb-firsttime-button-transparent essb-close-firsttime">Close this screen</a>
 			</div>

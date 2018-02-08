@@ -185,7 +185,7 @@ ESSBOptionsStructureHelper::field_func('advanced', 'administrative', 'essb3_rese
 
 
 if (!essb_option_bool_value('deactivate_module_translate')) {
-	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Mail form texts', 'essb'), __('Translate mail form texts', 'essb'), 'fa ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
+	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Mail form texts', 'essb'), __('Translate mail form texts', 'essb'), 'ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_title', __('Share this with a friend', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_email', __('Your Email', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_recipient', __('Recipient Email', 'essb'), __('', 'essb'));
@@ -198,12 +198,12 @@ if (!essb_option_bool_value('deactivate_module_translate')) {
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_message_error_send', __('Error sending message!', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 	
-	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Love this button messages', 'essb'), __('Translate love this button messages', 'essb'), 'fa ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
+	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Love this button messages', 'essb'), __('Translate love this button messages', 'essb'), 'ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_love_thanks', __('Thank you for loving this.', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_love_loved', __('You already love this today.', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 	
-	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Subscribe Forms', 'essb'), __('Translate subscribe forms module texts', 'essb'), 'fa ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
+	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Subscribe Forms', 'essb'), __('Translate subscribe forms module texts', 'essb'), 'ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_subscribe_invalidemail', __('Invalid email address', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 	
@@ -212,8 +212,13 @@ if (!essb_option_bool_value('deactivate_module_translate')) {
 	essb3_prepare_texts_on_button_hover('advanced', 'localization');
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 	
-	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Click to Tweet', 'essb'), __('Translate click-to-tweet module texts', 'essb'), 'fa ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
+	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Click to Tweet', 'essb'), __('Translate click-to-tweet module texts', 'essb'), 'ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_clicktotweet', __('Translate Click To Tweet text', 'essb'), __('', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
+
+	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('After Share Actions', 'essb'), __('Translate after share specific texts', 'essb'), 'ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_as_popular_title', __('Popular Posts Title', 'essb'), __('', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_as_popular_shares', __('Popular Posts shares text', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 }
 

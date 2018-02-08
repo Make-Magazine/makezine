@@ -40,6 +40,7 @@ if (has_filter('essb_external_subscribe_connectors')) {
 }
 
 ESSBOptionsStructureHelper::field_switch('optin', 'optin-0', 'subscribe_widget', __('Activate subscribe widget & shortcode', 'essb'), __('Activation of this option will allow you to use subscribe widget and shortcode anywhere on your site not connected with subscribe button inside share buttons', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+
 ESSBOptionsStructureHelper::panel_start('optin', 'optin-0', __('Subscribe Button in Share Buttons', 'essb'), __('Configure functionality of subscribe button that you can add along with your share buttons', 'essb'), 'fa21 essb_icon_subscribe', array("mode" => "toggle", 'state' => 'opened'));
 
 $listOfValues = array ("form" => "Open content box", "link" => "Open subscribe link", "mailchimp" => "Easy Optin Subscribe Form (Ready made forms with automatic service integrations)" );
@@ -193,6 +194,9 @@ ESSBOptionsStructureHelper::panel_end('optin', 'optin-12');
 	ESSBOptionsStructureHelper::panel_end('optin', 'optin-12');
 
 ESSBOptionsStructureHelper::field_select('optin', 'optin-1', 'subscribe_connector', __('Choose your service', 'essb'), __('Select service that you wish to integrate with Easy Optin forms. Please note that for correct work you need to fill all required authorizations details for it below', 'essb'), $optin_connectors);
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_success', __('Redirect to page on successful subscribe', 'essb'), __('If you wish to redirect users to page (example: Thank you page) fill its URL here. If field is blank plugin will not redirect. The URL should be filled in full - example: https://socialsharingplugin.com/thank-you/', 'essb'));
+ESSBOptionsStructureHelper::field_switch('optin', 'optin-1', 'subscribe_success_new', __('Open successful redirect in a new window', 'essb'), __('Set to Yes if you wish the successful URL to appear in a popup instead of redirect on same page.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+
 
 ESSBOptionsStructureHelper::holder_start('optin', 'optin-1', 'essb-subscribe-connector', 'essb-subscribe-connector-mailchimp');
 ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('MailChimp', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
@@ -257,22 +261,27 @@ ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
 ESSBOptionsStructureHelper::holder_start('optin', 'optin-1', 'essb-subscribe-connector', 'essb-subscribe-connector-mailpoet');
 ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('MailPoet', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
 $listOfOptions = array();
-if (class_exists('WYSIJA')) {
-	$model_list = WYSIJA::get('list', 'model');
-	$mailpoet_lists = $model_list->get(array('name', 'list_id'), array('is_enabled'=>1));
-	if (sizeof($mailpoet_lists) > 0) {
-		foreach ($mailpoet_lists as $list) {
-			$listOfOptions[$list['list_id']] = $list['name'];
+try {
+	if (class_exists('WYSIJA')) {
+		$model_list = WYSIJA::get('list', 'model');
+		$mailpoet_lists = $model_list->get(array('name', 'list_id'), array('is_enabled'=>1));
+		if (sizeof($mailpoet_lists) > 0) {
+			foreach ($mailpoet_lists as $list) {
+				$listOfOptions[$list['list_id']] = $list['name'];
+			}
+		}
+	}
+	if (class_exists('\MailPoet\API\API')) {
+		$subscription_lists = \MailPoet\API\API::MP('v1')->getLists();
+		if (is_array($subscription_lists)) {
+			foreach ($subscription_lists as $list) {
+				$listOfOptions[$list['id']] = $list['name'];
+			}
 		}
 	}
 }
-if (class_exists('\MailPoet\API\API')) {
-	$subscription_lists = \MailPoet\API\API::MP('v1')->getLists();
-	if (is_array($subscription_lists)) {
-		foreach ($subscription_lists as $list) {
-			$listOfOptions[$list['id']] = $list['name'];
-		}
-	}
+catch (Exception $e) {
+	
 }
 
 ESSBOptionsStructureHelper::field_select('optin', 'optin-1', 'subscribe_mp_list', __('MailPoet List', 'essb'), __('Select your list. Please ensure that MailPoet plugin is installed.', 'essb'), $listOfOptions);
@@ -532,23 +541,3 @@ ESSBOptionsStructureHelper::field_color_panel('optin', 'optin-10', 'customizer_s
 ESSBOptionsStructureHelper::field_color_panel('optin', 'optin-10', 'customizer_subscribe_accent9', __('Accent color', 'essb'), __('', 'essb'));
 ESSBOptionsStructureHelper::field_color_panel('optin', 'optin-10', 'customizer_subscribe_button9', __('Button text color', 'essb'), __('', 'essb'));
 ESSBOptionsStructureHelper::field_section_end_full_panels('optin', 'optin-10');
-
-
-function essb_get_post_types() {
-	global $wp_post_types;
-
-	$pts = get_post_types ( array ('show_ui' => true, '_builtin' => true ) );
-	$cpts = get_post_types ( array ('show_ui' => true, '_builtin' => false ) );
-
-	$current_posttypes = array();
-	
-	foreach ($pts as $pt) {
-		$current_posttypes[$pt] = $wp_post_types [$pt]->label;
-	}
-
-	foreach ($cpts as $pt) {
-		$current_posttypes[$pt] = $wp_post_types [$pt]->label;
-	}
-
-	return $current_posttypes;
-}

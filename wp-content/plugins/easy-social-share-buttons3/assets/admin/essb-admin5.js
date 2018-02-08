@@ -287,7 +287,8 @@ jQuery(document).ready(function($){
 	if (typeof(essb5_active_tag) != 'undefined') {
 		if (essb5_active_tag == 'functions')
 			$('#essb-container-functions').fadeIn(200);
-		
+		if (essb5_active_tag == 'modes')
+			$('#essb-container-modes').fadeIn(200);
 		if (essb5_active_tag == 'status')
 			$('#essb-container-status').fadeIn(200);
 		
@@ -1222,7 +1223,7 @@ jQuery(document).ready(function($){
 					cached_code_insideafter =  essbPreviewButtons.generateButtonCounterCode('_'+counter_pos);
 				}
 				if (counter_pos == 'insidebeforename') {
-					cached_code_insidebefore =  essbPreviewButtons.generateButtonCounterCode('_'+counter_pos, );
+					cached_code_insidebefore =  essbPreviewButtons.generateButtonCounterCode('_'+counter_pos);
 				}
 				if (counter_pos == 'hidden') {
 					cached_code_right =  essbPreviewButtons.generateButtonCounterCode('_'+counter_pos);

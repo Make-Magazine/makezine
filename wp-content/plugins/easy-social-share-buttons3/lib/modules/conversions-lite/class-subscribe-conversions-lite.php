@@ -230,6 +230,17 @@ class ESSBSubscribeConversionsLite {
 	public function register_tracking() {
 		$update_url = essb_get_current_page_url();
 		
+		if (defined('ESSB_FORCE_SSL')) {
+			$update_url = str_replace('http://', 'https://', $update_url);
+		}
+		else {
+			// second level of protection against non https connection calls when http is detected instead of https
+			$current_page_url = get_permalink();
+			if (strpos($current_page_url, 'https://') !== false && strpos($update_url, 'https://') === false) {
+				$update_url = str_replace('http://', 'https://', $update_url);
+			}
+		}
+		
 		$output = '
 		
 		function essbConversionsLiteLog() {
@@ -278,6 +289,18 @@ class ESSBSubscribeConversionsLite {
 	
 	public function register_log() {
 		$update_url = essb_get_current_page_url();
+		
+		if (defined('ESSB_FORCE_SSL')) {
+			$update_url = str_replace('http://', 'https://', $update_url);
+		}
+		else {
+			// second level of protection against non https connection calls when http is detected instead of https
+			$current_page_url = get_permalink();
+			if (strpos($current_page_url, 'https://') !== false && strpos($update_url, 'https://') === false) {
+				$update_url = str_replace('http://', 'https://', $update_url);
+			}
+		}
+		
 		$output = '
 		function essb_subscribe_tracking(instance_postion) {
 		

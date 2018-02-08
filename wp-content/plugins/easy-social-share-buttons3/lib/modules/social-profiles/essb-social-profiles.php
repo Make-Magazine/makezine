@@ -163,16 +163,24 @@ class ESSBSocialProfiles {
 			$code .= sprintf ( '<li class="essbfc-%1$s">', $social_display );
 			
 			$link_title = isset($names[$social]) ? ' title="'.$names[$social].'"' : '';
+			
+			$network_nofollow = $link_nofollow;
+			if ($social == 'rss') {
+				$deactivate_trigger = false;
+				$deactivate_trigger = apply_filters('essb5_remove_profile_rss_nofollow', $deactivate_trigger);
+				
+				if ($deactivate_trigger) {
+					$network_nofollow = '';
+				}
+			}
 		
 			$follow_url = $url;
 			if (! empty ( $follow_url )) {
-				$code .= sprintf ( '<a href="%1$s"%2$s%3$s%4$s>', $follow_url, $link_newwindow, $link_nofollow, $link_title );
+				$code .= sprintf ( '<a href="%1$s"%2$s%3$s%4$s>', $follow_url, $link_newwindow, $network_nofollow, $link_title );
 			}
 		
 			$code .= '<div class="essbfc-network">';
 			$code .= sprintf ( '<i class="essbfc-icon essbfc-icon-%1$s%2$s%3$s"></i>', $social_display, $class_animation, $social_custom_icon );
-			//printf ( '<span class="essbfc-followers-count">%1$s</span>', self::followers_number ( $social_followers_counter ) );
-			//printf ( '<span class="essbfc-followers-text">%1$s</span>', $social_followers_text );
 			$code .= '</div>';
 		
 			if (! empty ( $follow_url )) {

@@ -22,9 +22,16 @@ class ESSBOptionsInterface {
 		echo '<form id="essb_options_form" enctype="multipart/form-data" method="post" action="">';
 		if ($custom && !empty($group)) {
 			settings_fields( $group );
+			wp_nonce_field( 'essb_setup', 'essb_token' );
+			echo '<input type="hidden" name="essb_salt" value="'.sanitize_text_field(essb_admin_setting_token()).'"/>';
 		}
 		else {
-			settings_fields( 'essb_settings_group' );
+			echo '<input type="hidden" name="action" value="update"/>';
+			echo '<input type="hidden" name="option_page" value="essb_settings_group"/>';
+			wp_nonce_field( 'essb_setup', 'essb_token' );
+			echo '<input type="hidden" name="essb_salt" value="'.sanitize_text_field(essb_admin_setting_token()).'"/>';
+				
+			//settings_fields( 'essb_settings_group' );
 		}
 		echo '<input id="section" name="section" type="hidden" value="'.sanitize_text_field($active_section).'"/>';
 		echo '<input id="subsection" name="subsection" type="hidden" value="'.sanitize_text_field($active_subsection).'"/>';

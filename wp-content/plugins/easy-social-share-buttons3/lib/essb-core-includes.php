@@ -228,6 +228,16 @@ if (essb_option_bool_value('optin_flyout_activate')) {
 if (essb_option_bool_value('optin_booster_activate')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/optin-booster/class-optin-booster.php');
 }
+
+if (essb_option_bool_value('fbmessenger_active')) {
+	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/social-chat/essb-messenger-live-chat.php');
+}
+
+if (essb_option_bool_value('skype_active')) {
+	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/social-chat/essb-skype-live-chat.php');
+}
+
+
 // visual composer element bridge
 if (function_exists('vc_map')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/visual-composer/essb-visual-composer-map.php');
@@ -276,6 +286,10 @@ if (essb_option_bool_value('conversions_lite_run')) {
 
 if (essb_option_bool_value('conversions_subscribe_lite_run')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/conversions-lite/class-subscribe-conversions-lite.php');
+}
+
+if (class_exists('REALLY_SIMPLE_SSL')) {
+	include_once (ESSB3_PLUGIN_ROOT . 'lib/core/integrations/reallysimplessl.php');
 }
 
 if (has_filter('essb4_options_extender_after_load')) {

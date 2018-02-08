@@ -485,36 +485,12 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 		// @since version 3.0.4
 		if ($shortcode_parameters ['mobilebar']) {
 			$display_as_key = "sharebar";
-			if (! essb_resource_builder ()->is_activated ( 'mobile' )) {
-				//$style_url = ESSB3_PLUGIN_URL . '/assets/css/essb-mobile' . $use_minifed_css . '.css';
-				//essb_resource_builder ()->add_static_resource_footer ( $style_url, 'easy-social-share-buttons-mobile', 'css' );
-				
-				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-mobile' . $use_minifed_js . '.js';
-				essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-mobile', 'js' );
-				essb_resource_builder ()->activate_resource ( 'mobile' );
-			}
 		}
 		if ($shortcode_parameters ['mobilebuttons']) {
 			$display_as_key = "sharebottom";
-			if (! essb_resource_builder ()->is_activated ( 'mobile' )) {
-				//$style_url = ESSB3_PLUGIN_URL . '/assets/css/essb-mobile' . $use_minifed_css . '.css';
-				//essb_resource_builder ()->add_static_resource_footer ( $style_url, 'easy-social-share-buttons-mobile', 'css' );
-				
-				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-mobile' . $use_minifed_js . '.js';
-				essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-mobile', 'js' );
-				essb_resource_builder ()->activate_resource ( 'mobile' );
-			}
 		}
 		if ($shortcode_parameters ['mobilepoint']) {
 			$display_as_key = "sharepoint";
-			if (! essb_resource_builder ()->is_activated ( 'mobile' )) {
-				//$style_url = ESSB3_PLUGIN_URL . '/assets/css/essb-mobile' . $use_minifed_css . '.css';
-				//essb_resource_builder ()->add_static_resource_footer ( $style_url, 'easy-social-share-buttons-mobile', 'css' );
-				
-				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-mobile' . $use_minifed_js . '.js';
-				essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-mobile', 'js' );
-				essb_resource_builder ()->activate_resource ( 'mobile' );
-			}
 		}
 		
 		$special_shortcode_options = array ();

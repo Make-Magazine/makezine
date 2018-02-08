@@ -106,6 +106,13 @@ class ESSBSocialImageShare {
 		if (essb_option_value('sis_minHeight') != '') {
 			$default_setup['minImageHeight'] = intval(essb_option_value('sis_minHeight'));
 		}
+
+		if (essb_option_value('sis_minWidthMobile') != '') {
+			$default_setup['minImageWidthMobile'] = intval(essb_option_value('sis_minWidthMobile'));
+		}
+		if (essb_option_value('sis_minHeightMobile') != '') {
+			$default_setup['minImageHeightMobile'] = intval(essb_option_value('sis_minHeightMobile'));
+		}
 		
 		if (essb_option_bool_value('sis_always_visible')) {
 			$default_setup['alwaysVisible'] = true;
@@ -153,6 +160,9 @@ class ESSBSocialImageShare {
 		
 		if (essb_option_value('sis_style') != '') {
 			$default_setup['theme'] = essb_option_value('sis_style');
+		}
+		if (essb_options_value('sis_mobile_style') != '') {
+			$default_setup['theme_mobile'] = essb_option_value('sis_mobile_style');
 		}
 		
 		

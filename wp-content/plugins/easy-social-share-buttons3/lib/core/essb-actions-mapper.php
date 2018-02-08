@@ -16,6 +16,12 @@ if (essb_option_bool_value('cache_counter_facebook_async')) {
 	add_action ( 'wp_ajax_essb_facebook_counter_update', 'essb_actions_update_facebook_count' );
 }
 
+if (essb_option_bool_value('cache_counter_pinterest_async')) {
+	add_action ( 'wp_ajax_nopriv_essb_pinterest_counter_update', 'essb_actions_update_pinterest_count' );
+	add_action ( 'wp_ajax_essb_pinterest_counter_update', 'essb_actions_update_pinterest_count' );
+}
+
+
 // loading events only if real time counters are used - @since 5.0
 if (essb_option_value('counter_mode') == '') {
 	add_action ( 'wp_ajax_nopriv_essb_counts', 'essb_actions_get_share_counts' );
@@ -155,8 +161,24 @@ function essb_actions_update_facebook_count() {
 		update_post_meta( $post_id, 'essb_c_facebook', $count );
 	}
 	
-	echo json_encode(array('past_shares' => $past_shares, 'new_shares' => $count));
+	echo json_encode(array('network' => 'facebook', 'past_shares' => $past_shares, 'new_shares' => $count));
 	
+	wp_die();
+}
+
+function essb_actions_update_pinterest_count() {
+	$post_id = $_POST['post_id'];
+	$count = $_POST['count'];
+
+	$past_shares = intval(get_post_meta($post_id, 'essb_c_pinterest', true));
+
+	if ( $count > $past_shares || essb_option_bool_value('cache_counter_force') ) {
+		delete_post_meta( $post_id, 'essb_c_pinterest' );
+		update_post_meta( $post_id, 'essb_c_pinterest', $count );
+	}
+
+	echo json_encode(array('network' => 'pinterest', 'past_shares' => $past_shares, 'new_shares' => $count));
+
 	wp_die();
 }
 

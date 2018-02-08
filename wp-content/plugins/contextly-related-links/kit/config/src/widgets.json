@@ -18,7 +18,8 @@
     "components/visitor",
     "components/receiver",
     "components/metadata-providers",
-    "components/integration"
+    "components/integration",
+    "components/direct"
   ],
   "expose": [
     "widgets/sidebar/default",

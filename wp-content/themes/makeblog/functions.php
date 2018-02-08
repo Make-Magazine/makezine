@@ -511,27 +511,25 @@ function display_thank_you_modal_if_signed_up() { ?>
                     <h4>You might also like these newsletters:</h4>
                     <form class="whatcounts-signup2" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
                         <input type="hidden" name="cmd" value="subscribe" />
+                        <input type=hidden name="multiadd" value="1" />
                         <input type="hidden" id="email" name="email" value="" />
-                        <input type="hidden" name="goto" value="" />
                         <input type="hidden" id="format_mime" name="format" value="mime" />
-                        <input type="hidden" name="goto" value="" />
-
                         <label class="list-radio pull-right">
-                          <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="custom_list_makerpro" value="yes" />
+                          <input type="checkbox" id="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" name="slid_1" value="6B5869DC547D3D467B33E192ADD9BE4B" />
                           <span for="list_6B5869DC547D3D467B33E192ADD9BE4B_yes" class="newcheckbox"></span>
                         </label>
                         <h4>Maker Pro</h4><p>The latest news about startups, products, incubators, and innovators</p>
                         <hr />
 
                         <label class="list-radio pull-right">
-                          <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="custom_list_makerfaire" value="yes" />
+                          <input type="checkbox" id="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" name="slid_2" value="6B5869DC547D3D46E66DEF1987C64E7A" />
                           <span for="list_6B5869DC547D3D46E66DEF1987C64E7A_yes" class="newcheckbox"></span>
                         </label>
                         <h4>Maker Faire</h4><p>Keep up with the Greatest Show(and tell) on Earth</p>
                         <hr />
 
                         <label class="list-radio pull-right">
-                          <input type="checkbox" id="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" name="custom_list_makeeducation" value="yes" />
+                          <input type="checkbox" id="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" name="slid_3" value="6B5869DC547D3D4637EA6E33C6C8170D" />
                           <span for="list_6B5869DC547D3D4637EA6E33C6C8170D_yes" class="newcheckbox"></span>
                         </label>
                         <h4>Make: Education</h4><p>How making is transforming learning</p>

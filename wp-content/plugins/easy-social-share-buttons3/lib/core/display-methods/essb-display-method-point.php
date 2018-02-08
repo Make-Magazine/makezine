@@ -28,6 +28,8 @@ class ESSBDisplayMethodPoint {
 		
 		$point_animation = ESSBOptionValuesHelper::options_value($options, 'point_animation');
 		
+		$point_autoclose = essb_option_value('point_close');
+		
 		if ($is_shortcode) {
 			$shortcode_point_style = isset($shortcode_options['point_type']) ? $shortcode_options['point_type'] : '';
 			if ($shortcode_point_style != '') {
@@ -65,7 +67,7 @@ class ESSBDisplayMethodPoint {
 		if ($total_style != '') $total_style = ' style="'.$total_style.'"';
 		
 		
-		$output .= '<div class="essb-point essb-point-'.$point_position.' essb-point-'.$point_shape.' '.$point_animation.'" id="essb-point" data-trigger-scroll="'.($point_open_end).'" data-point-type="'.$point_display_style.'">';
+		$output .= '<div class="essb-point essb-point-'.$point_position.' essb-point-'.$point_shape.' '.$point_animation.'" id="essb-point" data-trigger-scroll="'.($point_open_end).'" data-point-type="'.$point_display_style.'" data-autoclose="'.$point_autoclose.'">';
 		$output .= '<i class="essbpb-share essb_icon_share"'.$point_style.'></i>';
 		
 		if ($point_display_total) {
