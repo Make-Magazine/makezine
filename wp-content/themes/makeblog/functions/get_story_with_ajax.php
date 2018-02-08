@@ -90,7 +90,7 @@ function get_story_with_ajax() {
                     </button>
                 </div>
             </div>
-            <aside class="col-md-4 sidebar">
+            <aside class="col-sm-5 col-md-4 sidebar">
                 <div class="row author-info">
                     <?php
                     if (function_exists('coauthors_posts_links')) {
@@ -252,7 +252,7 @@ function get_story_with_ajax2() {
                       </button>
                   </div>
               </div>
-              <aside class="col-md-4 sidebar">
+              <aside class="col-sm-5 col-md-4 sidebar">
                   <div class="row author-info">
                       <?php
                       if (function_exists('coauthors_posts_links')) {
