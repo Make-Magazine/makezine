@@ -120,6 +120,14 @@
     // Build the post, with or without the featured image.
     function build_post() {
       var date = new Date(object.date);
+      //var time = new Date(object.date).toLocaleTimeString();
+      var m_names = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+      var curr_date = date.getDate();
+      var curr_month = date.getMonth();
+      var curr_year = date.getFullYear();
+      var curr_hour = date.getHours();
+      var curr_min = date.getMinutes();
+      var curr_sec = date.getSeconds();
 
       var previous_post_content =
         '<div class="ad-unit">' +
@@ -178,7 +186,7 @@
                 '</div>' +
                 '<div class="date-time">' +
                   '<time itemprop="startDate" datetime="' + date + '">' +
-                  date.toDateString() +
+                  m_names[curr_month]  + ' ' + curr_date + ', ' + curr_year +
                   '</time>' +
                 '</div>' +
                 '<div class="ad-unit">' +
@@ -201,8 +209,17 @@
 
               '<div class="ctx-social-container"></div>' +
               '<div class="essb_right_flag"></div>' +
-            '</div><!-- end .first-story -->' +
+            '</div><!-- end .row .content -->' +
           '</div>' +
+          '<script>' +
+            'Contextly.ready("widgets", [{' +
+                'context: ".post-' + object.id + '",' +
+                'metadata: {' +
+                  'title: "' + object.title.rendered + '",' +
+                  'pub_date: "' + curr_year + '/' + curr_month + '/' + curr_date + ' ' + curr_hour + ':' + curr_min + ':' + curr_sec + '",' +
+                  'url: "' + object.link + '",}' +
+            '}]);' +
+          '</script>' +
 
 
 
