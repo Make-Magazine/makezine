@@ -275,7 +275,7 @@ $post_price_custom = get_post_meta($post->ID, 'custom_price_value'); ?>
 
 			<?php
 				if ( function_exists( 'coauthors_posts_links' ) ) {
-					get_author_profile('project');
+					echo get_author_profile('project');
 				} ?>
 						
 			<div class="row padtop">

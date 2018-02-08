@@ -132,7 +132,7 @@ if ( user_can( $current_user, 'administrator' ) ) {
 
 					<aside class="col-sm-5 col-md-4 sidebar">
 						<div class="author-info">
-							<?php get_author_profile(); ?>
+							<?php echo get_author_profile(); ?>
 						</div>
 						<div class="date-time">
 							<?php

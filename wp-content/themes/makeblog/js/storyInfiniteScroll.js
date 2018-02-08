@@ -174,7 +174,7 @@
 
               '<aside class="col-sm-5 col-md-4 sidebar">' +
                 '<div class="author-info">' +
-                  // echo get_author_profile();
+                  object.curent_author_profile +
                 '</div>' +
                 '<div class="date-time">' +
                   '<time itemprop="startDate" datetime="' + date + '">' +

@@ -543,10 +543,10 @@ function get_author_profile($type='story') {
 	// For each author, build a block.
 	foreach ( $authors as $author ) {
     if ($type=='story') {
-    	echo $make_author_class->author_block_story( $author,$author->ID );
+    	return $make_author_class->author_block_story( $author,$author->ID );
     }
 	  else {
-	    echo $make_author_class->author_block_generic( $author,$author->ID );
+	    return $make_author_class->author_block_generic( $author,$author->ID );
 	  }
 	}
 }
