@@ -369,7 +369,7 @@ function make_load_resources() {
         'post_id' => get_the_ID(),
         'theme_uri' => get_stylesheet_directory_uri(),
         'rest_url' => rest_url('wp/v2/'),
-        'most_recent_post_ID' => (wp_get_recent_posts(array('numberposts' => '1')))[0]['ID'],
+        'most_recent_post_ID' => wp_get_recent_posts(array('numberposts' => '1'))[0]['ID'],
       )
     );
   }
