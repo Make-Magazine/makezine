@@ -215,7 +215,7 @@
             'Contextly.ready("widgets", [{' +
                 'context: ".post-' + object.id + '",' +
                 'metadata: {' +
-                  'title: "' + object.title.rendered + '",' +
+                  'title: "' + escape(object.title.rendered) + '",' +
                   'pub_date: "' + curr_year + '/' + curr_month + '/' + curr_date + ' ' + curr_hour + ':' + curr_min + ':' + curr_sec + '",' +
                   'url: "' + object.link + '",}' +
             '}]);' +
