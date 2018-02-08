@@ -159,9 +159,9 @@
 
                 '<div class="comments">' +
                   '<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#disqus-modal" ' +
-                      'onclick="reset(' + object.id + ', ' +
-                      object.link + ', ' +
-                      object.title.rendered + ', \'en\');">' +
+                      'onclick="reset(' + object.id + ', \'' +
+                      object.link + '\', \'' +
+                      object.title.rendered + '\', \'en\');">' +
                     'Show comments' +
                   '</button>' +
 

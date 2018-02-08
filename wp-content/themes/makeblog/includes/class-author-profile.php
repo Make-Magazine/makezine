@@ -92,10 +92,10 @@ class Make_Authors {
 			
 			elseif ($author->type === 'guest-author' ) {
 				$author = $author;
-				}
+			}
 			else {
 				$author = false;
-				}
+			}
 		} else {
 			$author = false;
 		}
@@ -326,14 +326,12 @@ class Make_Authors {
 	 */
 	public function author_name( $author ) {
 		$output = '';
-		if (
-		 !is_array( $author ) &&  empty ( $author->display_name ))
-		$author = $this->get_post_author_data($author);
+		if (!is_array($author) &&  empty($author->display_name)) {
+			$author = $this->get_post_author_data($author);
 
-		// Get the Display name from Gravatar or from Guest Authors...
-		$output = esc_html( $author->display_name );
-		
-		
+			// Get the Display name from Gravatar or from Guest Authors...
+			$output = esc_html( $author->display_name );
+		}
 		return $output;
 	}
 
