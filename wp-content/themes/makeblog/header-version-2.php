@@ -278,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter" />
                     <input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
                     <input type="hidden" name="errors_to" value="" />
-                    <div id="recapcha-header-mobile" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
+                    <div id="recapcha-header-mobile" class="g-recaptcha" data-size="invisible"></div>
                     <div class="mz-form-horizontal">
                       <input name="email" placeholder="Enter your Email" required="required" type="email">
                       <input value="GO" class="btn-cyan" type="submit">

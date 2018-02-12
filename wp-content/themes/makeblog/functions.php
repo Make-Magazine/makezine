@@ -462,7 +462,7 @@ function subscribe_return_path_overlay() { ?>
                             <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
                             <input type="hidden" name="custom_host" value="makezine.com" />
                             <input type="hidden" name="errors_to" value=""/>
-                            <div id="recapcha-header-overlay" class="g-recaptcha" style="transform:scale(0.68);-webkit-transform:scale(0.68);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
+                            <div id="recapcha-header-overlay" class="g-recaptcha" data-size="invisible"></div>
                             <input name="email" id="wc-email-o" class="overlay-input" placeholder="Enter your email" required type="email">
                             <input value="GO" class="black-overlay-btn" type="submit">
                         </form>

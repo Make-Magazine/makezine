@@ -79,48 +79,11 @@ get_header('version-2'); ?>
               <h4>Maker Share Community Updates</h4><p>Create. Connect. Learn.</p>
               <hr />
 
-              <div id="recapcha-join-page" class="g-recaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
+              <div id="recapcha-join-page" class="g-recaptcha" data-size="invisible"></div>
 
               <input class="btn-cyan" type="submit" value="Submit" />
               <div class="clearfix"></div>
             </form>
-            <script>
-              jQuery(document).on('submit', '.nlp-form', function (e) {
-                e.preventDefault();
-                // First check if any checkboxes are checked
-                var anyBoxesChecked = false;
-                jQuery('#nlp-form input[type="checkbox"]').each(function() {
-                  if (jQuery(this).is(":checked")) {
-                    anyBoxesChecked = true;
-                  }
-                });
-                if (anyBoxesChecked == false) {
-                  jQuery('.list-radio[data-toggle="tooltip"]').tooltip()
-                  jQuery('.list-radio[data-toggle="tooltip"]').tooltip('show')
-                  return false;
-                }
-                // Now get the email into the form and send
-                else {
-                  var nlpEmail = jQuery('#nlp-input').val();
-                  jQuery('#nlp-form #email').val(nlpEmail);
-                  if (jQuery('#nlp-form #email').val() == '') {
-                    jQuery('#nlp-input').tooltip()
-                    jQuery('#nlp-input').tooltip('show')
-                    return false;
-                  }
-                  else {
-                    if ( grecaptcha.getResponse(recaptchaJoinPage) != "" ) {
-                      jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.nlp-form').serialize());
-                      jQuery('.fancybox-thx').trigger('click');
-                      jQuery('.nl-thx-p1').hide();
-                      jQuery('.nl-thx-p2').show();
-                    } else {
-                      jQuery('.nl-modal-error').trigger('click');
-                    }
-                  }
-                }
-              });
-            </script>
 
           </div>
 

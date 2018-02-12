@@ -182,57 +182,40 @@ jQuery( document ).ready( function( $ ) {
     });
 });
 
-  var recaptchaKey = '6Lffo0EUAAAAABhGRLPk751JrmCLqR5bvUR9RYZJ';
-  var recaptchaFootDesk;
-  var recaptchaFootMob;
-  var recaptchaHeaderOver;
-  var recaptchaHeaderMob;
-  var recaptchaJoinPage;
-  var recaptchaPostSide;
-  var recaptchaTag;
-  var recaptchaPageBuilder;
-  var onloadCallback = function() {
-    if ( jQuery('#recapcha-footer-desktop').length ) {
-      recaptchaFootDesk = grecaptcha.render('recapcha-footer-desktop', {
-        'sitekey' : recaptchaKey
+
+// Join page scripts
+jQuery(document).on('submit', '.nlp-form', function (e) {
+  e.preventDefault();
+  // First check if any checkboxes are checked
+  var anyBoxesChecked = false;
+  jQuery('#nlp-form input[type="checkbox"]').each(function() {
+    if (jQuery(this).is(":checked")) {
+      anyBoxesChecked = true;
+    }
+  });
+  if (anyBoxesChecked == false) {
+    jQuery('.list-radio[data-toggle="tooltip"]').tooltip()
+    jQuery('.list-radio[data-toggle="tooltip"]').tooltip('show')
+    return false;
+  }
+  // Now get the email into the form and send
+  else {
+    var nlpEmail = jQuery('#nlp-input').val();
+    jQuery('#nlp-form #email').val(nlpEmail);
+    if (jQuery('#nlp-form #email').val() == '') {
+      jQuery('#nlp-input').tooltip()
+      jQuery('#nlp-input').tooltip('show')
+      return false;
+    }
+    else {
+      jQuery(document).on('submit', '.nlp-form', function (e) {
+        e.preventDefault();
+        onSubmitJoinPage();
       });
     }
-    if ( jQuery('#recapcha-footer-mobile').length ) {
-      recaptchaFootMob = grecaptcha.render('recapcha-footer-mobile', {
-        'sitekey' : recaptchaKey
-      });
-    }
-    if ( jQuery('#recapcha-header-overlay').length ) {
-      recaptchaHeaderOver = grecaptcha.render('recapcha-header-overlay', {
-        'sitekey' : recaptchaKey
-      });
-    }
-    if ( jQuery('#recapcha-header-mobile').length ) {
-      recaptchaHeaderMob = grecaptcha.render('recapcha-header-mobile', {
-        'sitekey' : recaptchaKey
-      });
-    }
-    if ( jQuery('#recapcha-join-page').length ) {
-      recaptchaJoinPage = grecaptcha.render('recapcha-join-page', {
-        'sitekey' : recaptchaKey
-      });
-    }
-    if ( jQuery('#recapcha-post-side').length ) {
-      recaptchaPostSide = grecaptcha.render('recapcha-post-side', {
-        'sitekey' : recaptchaKey
-      });
-    }
-    if ( jQuery('#recapcha-tag').length ) {
-      recaptchaTag = grecaptcha.render('recapcha-tag', {
-        'sitekey' : recaptchaKey
-      });
-    }
-    if ( jQuery('#recapcha-page-builder').length ) {
-      recaptchaPageBuilder = grecaptcha.render('recapcha-page-builder', {
-        'sitekey' : recaptchaKey
-      });
-    }
-  };
+  }
+});
+
 
 // Fancybox subscribe modal stuff
 jQuery(document).ready(function($){
@@ -255,96 +238,7 @@ jQuery(document).ready(function($){
     }
   });
 
-  // Footer Desktop
-  $(document).on('submit', '.whatcounts-signup1', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaFootDesk) != "" ) {
-      var bla = $('#wc-email').val();
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-modal-email-address').text(bla);
-      $('.whatcounts-signup2 #email').val(bla);
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
-  // Footer Mobile
-  $(document).on('submit', '.whatcounts-signup1m', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaFootMob) != "" ) {
-      var bla = $('#wc-email-m').val();
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1m').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-modal-email-address').text(bla);
-      $('.whatcounts-signup2 #email').val(bla);
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
-  // Sidebar
-  $(document).on('submit', '.whatcounts-signup1s', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaPostSide) != "" ) {
-      var bla = $('#wc-email').val();
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1s').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-modal-email-address').text(bla);
-      $('.whatcounts-signup2 #email').val(bla);
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
-  // Header Overlay
-  $(document).on('submit', '.whatcounts-signup1o', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaHeaderOver) != "" ) {
-      var bla = $('#wc-email-o').val();
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup1o').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-modal-email-address').text(bla);
-      $('.whatcounts-signup2 #email').val(bla);
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
-  // Header mobile
-  $(document).on('submit', '.whatcounts-head-mobile', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaHeaderMob) != "" ) {
-      var bla = $('#wc-email-o').val();
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-head-mobile').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-modal-email-address').text(bla);
-      $('.whatcounts-signup2 #email').val(bla);
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
-  // Tag Archive page
-  $(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaTag) != "" ) {
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signupTagArchive').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-thx-p1').hide();
-      $('.nl-thx-p2').show();
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
-  // Build your own page template
-  $(document).on('submit', '.whatcounts-signup3', function (e) {
-    e.preventDefault();
-    if ( grecaptcha.getResponse(recaptchaPageBuilder) != "" ) {
-      var bla = $('#wc-email').val();
-      $.post('https://secure.whatcounts.com/bin/listctrl', $('.whatcounts-signup3').serialize());
-      $('.fancybox-thx').trigger('click');
-      $('.nl-modal-email-address').text(bla);
-      $('.whatcounts-signup2 #email').val(bla);
-    } else {
-      $('.nl-modal-error').trigger('click');
-    }
-  });
+
   // Modal to sign up to more newsletters
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
@@ -419,6 +313,149 @@ jQuery(document).ready(function($){
     $(".fancybox-contribute-submission").trigger('click');
   }
 });
+
+// Footer Desktop
+var onSubmitFooterDesktop = function(token) {
+  var bla = jQuery('#wc-email').val();
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup1').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-modal-email-address').text(bla);
+  jQuery('.whatcounts-signup2 #email').val(bla);
+}
+jQuery(document).on('submit', '.whatcounts-signup1', function (e) {
+  e.preventDefault();
+  onSubmitFooterDesktop();
+});
+// Footer Mobile
+var onSubmitFooterMobile = function(token) {
+  var bla = jQuery('#wc-email-m').val();
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup1m').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-modal-email-address').text(bla);
+  jQuery('.whatcounts-signup2 #email').val(bla);
+}
+jQuery(document).on('submit', '.whatcounts-signup1m', function (e) {
+  e.preventDefault();
+  onSubmitFooterMobile();
+});
+// Sidebar
+var onSubmitPostSide = function(token) {
+  var bla = jQuery('#wc-email').val();
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup1s').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-modal-email-address').text(bla);
+  jQuery('.whatcounts-signup2 #email').val(bla);
+}
+jQuery(document).on('submit', '.whatcounts-signup1s', function (e) {
+  e.preventDefault();
+  onSubmitPostSide();
+});
+// Header Overlay
+var onSubmitHeaderOverlay = function(token) {
+  var bla = jQuery('#wc-email-o').val();
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup1o').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-modal-email-address').text(bla);
+  jQuery('.whatcounts-signup2 #email').val(bla);
+}
+jQuery(document).on('submit', '.whatcounts-signup1o', function (e) {
+  e.preventDefault();
+  onSubmitHeaderOverlay();
+});
+// Header mobile
+var onSubmitHeaderMobile = function(token) {
+  var bla = jQuery('#wc-email-o').val();
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-head-mobile').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-modal-email-address').text(bla);
+  jQuery('.whatcounts-signup2 #email').val(bla);
+} 
+jQuery(document).on('submit', '.whatcounts-head-mobile', function (e) {
+  e.preventDefault();
+  onSubmitHeaderMobile();
+});
+// Tag Archive page
+var onSubmitTag = function(token) {
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signupTagArchive').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-thx-p1').hide();
+  jQuery('.nl-thx-p2').show();
+} 
+jQuery(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
+  e.preventDefault();
+  onSubmitTag();
+});
+// Build your own page template
+var onSubmitPageBuilder = function(token) {
+  var bla = jQuery('#wc-email').val();
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup3').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-modal-email-address').text(bla);
+  jQuery('.whatcounts-signup2 #email').val(bla);
+} 
+jQuery(document).on('submit', '.whatcounts-signup3', function (e) {
+  e.preventDefault();
+  onSubmitPageBuilder();
+});
+// Join page
+var onSubmitJoinPage = function(token) {
+  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.nlp-form').serialize());
+  jQuery('.fancybox-thx').trigger('click');
+  jQuery('.nl-thx-p1').hide();
+  jQuery('.nl-thx-p2').show();
+}
+
+var recaptchaKey = '6Lf_-kEUAAAAAHtDfGBAleSvWSynALMcgI1hc_tP';
+onloadCallback = function() {
+  if ( jQuery('#recapcha-footer-desktop').length ) {
+    grecaptcha.render('recapcha-footer-desktop', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitFooterDesktop
+    });
+  }
+  if ( jQuery('#recapcha-footer-mobile').length ) {
+    grecaptcha.render('recapcha-footer-mobile', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitFooterMobile
+    });
+  }
+  if ( jQuery('#recapcha-header-overlay').length ) {
+    grecaptcha.render('recapcha-header-overlay', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitHeaderOverlay
+    });
+  }
+  if ( jQuery('#recapcha-header-mobile').length ) {
+    grecaptcha.render('recapcha-header-mobile', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitHeaderMobile
+    });
+  }
+  if ( jQuery('#recapcha-join-page').length ) {
+    grecaptcha.render('recapcha-join-page', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitJoinPage
+    });
+  }
+  if ( jQuery('#recapcha-post-side').length ) {
+    grecaptcha.render('recapcha-post-side', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitPostSide
+    });
+  }
+  if ( jQuery('#recapcha-tag').length ) {
+    grecaptcha.render('recapcha-tag', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitTag
+    });
+  }
+  if ( jQuery('#recapcha-page-builder').length ) {
+    grecaptcha.render('recapcha-page-builder', {
+      'sitekey' : recaptchaKey,
+      'callback' : onSubmitPageBuilder
+    });
+  }
+}
 
 
 // Initialize the Lazyload function
