@@ -228,6 +228,15 @@ jQuery(document).ready(function($){
       this.content = this.content.html();
     }
   });
+  $(".nl-thx-p2").fancybox({
+    autoSize : false,
+    width  : 400,
+    autoHeight : true,
+    padding : 0,
+    afterLoad   : function() {
+      this.content = this.content.html();
+    }
+  });
   $(".nl-modal-error").fancybox({
     autoSize : false,
     width  : 250,
