@@ -243,8 +243,8 @@ jQuery(document).ready(function($){
   $(document).on('submit', '.whatcounts-signup2', function (e) {
     e.preventDefault();
     $.post('https://secure.whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
-    $('.nl-thx-p1').hide();
-    $('.nl-thx-p2').show();
+    jQuery('.fancybox-close').click();
+    jQuery('.nl-thx-p2').trigger('click');
   });
   $('input[type="checkbox"]').click(function(e){
     e.stopPropagation();
@@ -272,9 +272,7 @@ jQuery(document).ready(function($){
         this.content = this.content.html();
       }
     });
-    $(".fancybox-thx").trigger('click');
-    $('.nl-thx-p1').hide();
-    $('.nl-thx-p2').show();
+    $(".nl-thx-p2").trigger('click');
   }
   else if(window.location.href.indexOf("?thankyou=true&subscribed-to=free-pdf") > -1) {
     $(".fancybox-thx-free-pdf").fancybox({
@@ -377,9 +375,7 @@ jQuery(document).on('submit', '.whatcounts-head-mobile', function (e) {
 // Tag Archive page
 var onSubmitTag = function(token) {
   jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signupTagArchive').serialize());
-  jQuery('.fancybox-thx').trigger('click');
-  jQuery('.nl-thx-p1').hide();
-  jQuery('.nl-thx-p2').show();
+  jQuery('.nl-thx-p2').trigger('click');
 } 
 jQuery(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
   e.preventDefault();
@@ -400,9 +396,7 @@ jQuery(document).on('submit', '.whatcounts-signup3', function (e) {
 // Join page
 var onSubmitJoinPage = function(token) {
   jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.nlp-form').serialize());
-  jQuery('.fancybox-thx').trigger('click');
-  jQuery('.nl-thx-p1').hide();
-  jQuery('.nl-thx-p2').show();
+  jQuery('.nl-thx-p2').trigger('click');
 }
 
 var recaptchaKey = '6Lf_-kEUAAAAAHtDfGBAleSvWSynALMcgI1hc_tP';
