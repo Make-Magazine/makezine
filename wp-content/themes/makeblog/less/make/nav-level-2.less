@@ -1,0 +1,73 @@
+.universal-nav.main-nav-scrolled .nav-level-2 {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  .admin-bar & {
+    top: 32px;
+  }
+}
+
+.nav-level-2 {
+  height: 55px;
+  background-color: #333;
+  position: relative;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  .container {
+    height: 100%;
+  }
+  #menu-secondary_universal_menu {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    li, a {
+      height: 100%;
+    }
+    a {
+      color: #fff;
+      font-weight: 300;
+      line-height: 1.2em;
+      padding: 0;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: .6;
+      &:hover {
+        background-color: transparent;;
+        opacity: 1;
+      }
+    }
+    li.active {
+        a {
+            opacity: 1;
+        }
+    }
+    span {
+      height: 35px;
+      width: 115px;
+      border-right: 1px solid #999;
+      padding: 0 23px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: font-weight .1s ease-in-out;
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        padding: 0 19px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 0 7px;
+        font-size: 14px;
+      }
+    }
+    li:last-child span {
+      border-right: none;
+    }
+  }
+}

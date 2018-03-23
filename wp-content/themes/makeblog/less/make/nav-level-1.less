@@ -1,0 +1,361 @@
+header.universal-nav {
+  position: relative;
+  background: #fff;
+}
+.nav-level-1 {
+  height: 75px;
+  position: relative;
+  @media screen and (max-width: 767px) {
+    height: 55px;
+	background: #fff;
+	position: fixed;
+	width: 100%;
+	z-index: 11;
+	top: 0px;
+	box-shadow: 1px 1px 10px #666;
+  }
+  nav.container, .nav-level-1-nav, .nav-level-1-auth, li {
+    height: 100%;
+  }
+
+  .nav-level-1-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 170px;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      margin-left: 98px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      margin-left: 100px;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+    li {
+      display: inline;
+      float: left;
+      position: relative;
+      &:nth-child(4) {
+        margin-left: 180px;
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          margin-left: 166px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          margin-left: 134px;
+        }
+      }
+      a {
+        padding: 0 23px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        span {
+          color: #333;
+          opacity: .6;
+          line-height: 1em;
+          padding-top: 1px;
+        }
+        &:hover, &:active {
+          text-decoration: none;
+          span {
+            opacity: 1;
+            text-decoration: none;
+          }
+        }
+        span::after {
+          display: block;
+          content: attr(title);
+          height: 1px;
+          color: transparent;
+          overflow: hidden;
+          visibility: hidden;
+        }
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          padding: 0 19px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          padding: 0 7px;
+          font-size: 14px;
+        }
+      }
+      .nav-level-2-arrow {
+        opacity: 0;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #333;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transition: opacity 0.1s ease-in-out;;
+      }
+      &.active-site {
+        a span{
+          opacity: 1;
+        }
+        .nav-level-2-arrow {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .navbar-brand {
+    width: 134px;
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      width: 120px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 90px;
+    }
+  }
+}
+.nav-level-1-auth {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  float: right;
+  position: absolute;
+  right: 130px;
+  @media screen and (max-width: 1200px) {
+    right: 8%;
+  }
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
+  li {
+    display: inline-block;
+    float: left;
+    a, span {
+      color: #333;
+      opacity: .6;
+      padding: 0 5px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+      font-size: 14px;
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        font-size: 14px;
+      }
+      &:hover, &:active {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+    span {
+      padding: 0;
+    }
+  }
+}
+
+.search-button {
+    li {
+        list-style: none;
+    }
+}
+
+.search-bar-mobile {
+  margin-bottom: 3px;
+  height: 54px;
+  margin: 0;
+  width: 100%;
+  background-color: #ecf0f1;
+  border-bottom: 1px solid #979797;
+  border-top: 0;
+  padding: 0;
+  height: 54px;
+  overflow: hidden;
+  .search-form label {
+    margin: 0;
+    width: 100%;
+    height: 27px;
+    float: right;
+    cursor: initial;
+  }
+  input.search-field[type="search"] {
+    background: url(/wp-content/themes/makeblog/version-2/img/search.png);
+    cursor: text;
+    border: none;
+    height: 30px;
+    padding: 0 25px 0 30px;
+    position: relative;
+    outline: 0;
+    width: 100%;
+    box-shadow: none;
+    float: right;
+    text-transform: capitalize;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-left: 21px;
+    background-color: #ecf0f1;
+    border-radius: 0;
+    z-index: 0;
+    opacity: 1;
+    margin-top: 12px;
+    background-size: 21px;
+    margin-right: 16px;
+  }
+  .search-submit {
+    display: none;
+  }
+}
+
+  //Search bar stuff
+  .sb-search {
+    position: relative;
+    width: 0%;
+    min-width: 32px;
+    height: 32px;
+    float: right;
+    overflow: hidden;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    right: 5%;
+    bottom: 20px;
+    @media (max-width: 767px) {
+       bottom: 12px;
+    }
+    .search-form {
+      height: inherit;
+    }
+    .sb-search-input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none !important;
+      border-radius: 0 !important;
+      outline: none !important;
+      background: #fff;
+      width: 100%;
+      height: 32px !important;
+      margin: 0;
+      z-index: 10;
+      padding: 4px 65px 7px 15px !important;
+      font-family: inherit;
+      font-size: 18px !important;
+      font-weight: 400;
+      color: #333 !important;
+    }
+    .sb-search-input::-webkit-input-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .sb-search-input:-moz-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .sb-search-input:-ms-input-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .search-form > .fa-search,
+    .sb-search-submit,
+    .sb-search-open-trigger i  {
+      width: 32px;
+      height: 32px;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .sb-search-submit {
+      background: #fff; // IE needs this 
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; // IE 8 
+      filter: alpha(opacity=0); // IE 5-7
+      opacity: 0;
+      color: transparent;
+      border: none;
+      outline: none;
+      z-index: 100;
+    }
+    .search-form > .fa-search {
+      color: #f40b0b;
+      background: #fff;
+      z-index: 101;
+      font-size: 22px;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    // Open state 
+    &.sb-search-open {
+      width: 350px;
+      border: 1px solid #d4d4d4;
+      @media (max-width: 480px) {
+         width: 70%;
+      }
+    }
+    &.sb-search-open .search-form > .fa-search {
+      background: #fff;
+      color: #333;
+      z-index: 11;
+      margin-top: -1px;
+      margin-right: -1px;
+      border-left: 1px solid #d4d4d4;
+    }
+    &.sb-search-open .sb-search-open-trigger {
+      i {
+        color: #151515;
+        z-index: 30;
+      }
+    }
+    &.sb-search-open .sb-search-submit {
+      z-index: 90;
+    }
+  }
+  .sticky-header {
+    #mz-header-subscribe {
+      display: none;
+    }
+  }
+
+
+@media screen and (max-width: 767px) {
+    #page-content .front-page.container{
+        margin-top: 55px;
+    }
+}

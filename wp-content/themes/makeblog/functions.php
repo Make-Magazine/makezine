@@ -165,6 +165,10 @@ include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/home-menu-curator.php';
 
+// Universal Nav Includes
+
+require_once('lib/wp_bootstrap_navwalker.php');
+
 // DFP functions.
 include_once dirname(__FILE__) . '/dfp.php';
 
@@ -462,7 +466,7 @@ function subscribe_return_path_overlay() { ?>
                             <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
                             <input type="hidden" name="custom_host" value="makezine.com" />
                             <input type="hidden" name="errors_to" value=""/>
-                            <div id="recapcha-header-overlay" class="g-recaptcha" data-size="invisible"></div>
+                            <div id="recapcha-header-overlay" class="g-recaptcha" style="transform:scale(0.68);-webkit-transform:scale(0.68);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"></div>
                             <input name="email" id="wc-email-o" class="overlay-input" placeholder="Enter your email" required type="email">
                             <input value="GO" class="black-overlay-btn" type="submit">
                         </form>
@@ -541,20 +545,20 @@ function display_thank_you_modal_if_signed_up() { ?>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="nl-modal-cont nl-thx-p2" style="display:none;">
-        <div class="col-sm-4 hidden-xs nl-modal">
-            <span class="fa-stack fa-4x">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
-            </span>
+        <div class="nl-modal-cont nl-thx-p2" style="display:none;">
+            <div class="col-sm-4 hidden-xs nl-modal">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="col-sm-8 col-xs-12 nl-modal">
+                <h3>Awesome!</h3>
+                <p>Thanks for signing up. Please check your email to confirm.</p>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="col-sm-8 col-xs-12 nl-modal">
-            <h3>Awesome!</h3>
-            <p>Thanks for signing up. Please check your email to confirm.</p>
-        </div>
-        <div class="clearfix"></div>
     </div>
 
     <div class="fancybox-thx-free-pdf" style="display:none;">

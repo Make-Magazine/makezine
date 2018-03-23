@@ -10,7 +10,7 @@
 $pagename = get_query_var('pagename');
 /** Adding enqueue here to prevent projects.js from loading on every page. */
 wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
-get_header('version-2'); ?>
+get_header('universal'); ?>
 <div class="ad-unit adds">
 	<?php
 	global $make;
