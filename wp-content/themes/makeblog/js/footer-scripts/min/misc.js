@@ -103,13 +103,14 @@ if ( typeof define === 'function' && define.amd ) {
   var e = $(".universal-nav");
   var hamburger = $(".nav-hamburger");
   var y_pos = $(".nav-level-2").offset().top;
+  var nextItemUnderNav = e.nextAll().eq(2); // Look two elements down for the item that appears under the secondary nav
   $(window).on('resize', function(){
       if ($(window).width() < 767) {
           y_pos = 0;
-          $(".second-nav").css("margin-top", "55px");
+          nextItemUnderNav.css("margin-top", "55px");
       }else{
           y_pos = 75;
-          $(".second-nav").css("margin-top", "0px");
+          nextItemUnderNav.css("margin-top", "0px");
       }
   });
   jQuery(document).scroll(function() {
@@ -117,12 +118,12 @@ if ( typeof define === 'function' && define.amd ) {
       if(scrollTop > y_pos && $(window).width() > 767){
           e.addClass("main-nav-scrolled"); 
           hamburger.addClass("ham-menu-animate");
-          $(".second-nav").css("margin-top", "55px");
+          nextItemUnderNav.css("margin-top", "55px");
       }else if(scrollTop <= y_pos){
           e.removeClass("main-nav-scrolled"); 
           hamburger.removeClass("ham-menu-animate");
           if ($(window).width() > 767) {
-            $(".second-nav").css("margin-top", "0px");
+            nextItemUnderNav.css("margin-top", "0px");
           }
       }
   });
