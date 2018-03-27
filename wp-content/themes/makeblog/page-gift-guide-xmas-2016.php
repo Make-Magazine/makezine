@@ -6,7 +6,7 @@
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  *
  */
-get_header('version-2'); 
+get_header('universal'); 
 $products = get_field('products');
 
 //Check if there are any daily picks  

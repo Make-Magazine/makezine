@@ -7,7 +7,7 @@
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  * 
  */
-get_header('version-2'); ?>
+get_header('universal'); ?>
 
 <div id="som"> <?php
 

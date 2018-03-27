@@ -7,7 +7,7 @@
  * @author     Cole Geissinger <cgeissinger@makermedia.com>
  * 
  */
-get_header('version-2'); ?>
+get_header('universal'); ?>
     
   <div class="single calendar-page">
   

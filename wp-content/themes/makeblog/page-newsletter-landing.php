@@ -6,7 +6,7 @@
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  * 
  */
-get_header('version-2'); ?>
+get_header('universal'); ?>
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

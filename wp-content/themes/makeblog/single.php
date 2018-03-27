@@ -8,7 +8,7 @@
  *
  */
 // first story
-get_header( 'version-2' );
+get_header( 'universal' );
 global $post; ?>
 <?php $main_post_id = get_the_ID(); ?>
 <?php $current_user = wp_get_current_user();

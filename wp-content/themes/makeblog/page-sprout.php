@@ -16,7 +16,7 @@ if( $detect->isTablet() ){
   $device = 'tablet';
 }
 
-get_header( 'version-2' );
+get_header( 'universal' );
 
 ?>
 <div id="sprout-page">

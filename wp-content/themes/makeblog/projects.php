@@ -2,7 +2,7 @@
 /**
  * Template Name: Project Page
  */
-get_header('version-2'); ?>
+get_header(''); ?>
 
 <div class="all-projects">
     <div class="content">

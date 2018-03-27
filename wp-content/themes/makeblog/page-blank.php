@@ -7,7 +7,7 @@
  * @author     Rich Haynie
  * 
  */
-get_header('version-2');
+get_header('universal');
 ?>
 
 <div style="padding:0px" class="single">

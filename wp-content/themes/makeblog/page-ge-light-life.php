@@ -8,7 +8,7 @@
  * @author     Rich Haynie
  * 
  */
-get_header('version-2'); ?>
+get_header('universal'); ?>
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <?php the_content(); ?>
   <?php endwhile;

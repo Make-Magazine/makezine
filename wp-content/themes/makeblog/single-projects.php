@@ -9,7 +9,7 @@
  */
 $steps = get_post_custom_values('Steps');
 wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery', 'lazyload' ), false, true );
-get_header('version-2');
+get_header('universal');
 $time = get_post_custom_values('TimeRequired');
 $post_duration = get_post_meta($post->ID, 'project_duration');
 $post_difficulty = get_post_meta($post->ID, 'project_difficulty');

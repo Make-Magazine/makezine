@@ -6,7 +6,7 @@
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  *
  */
-get_header('version-2');
+get_header('universal');
 global $wp_query;
 $args = array(
 	'posts_per_page' => 20

@@ -9,7 +9,7 @@
  * 
  */
 global $catslugs;
-get_header('version-2'); ?>
+get_header('universal'); ?>
 		
 <!-- 	<div class="projects-home">
 	

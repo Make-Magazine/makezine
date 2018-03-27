@@ -4,7 +4,7 @@
 Template Name: Make: Projects
 */
 
-get_header('version-2'); ?>
+get_header('universal'); ?>
     <div class="clear"></div>
     <div class="sand">
       <div class="container">

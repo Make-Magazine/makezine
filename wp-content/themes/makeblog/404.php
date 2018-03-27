@@ -5,7 +5,7 @@
 Template Name: 404
 */
 
-get_header( 'version-2' );
+get_header( 'universal' );
 
 ?>
 
