@@ -17,7 +17,7 @@ if( $detect->isTablet() ){
     $device = 'tablet';
 }
 
-get_header('universal'); ?>
+get_header('version-2'); ?>
 
 <div class="home-ads">
     <?php global $make; print $make->ads->ad_leaderboard; ?>

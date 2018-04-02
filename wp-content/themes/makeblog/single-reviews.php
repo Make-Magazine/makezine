@@ -3,7 +3,7 @@
  * Single Reviews Template
  *
  */
-get_header( 'universal' );
+get_header( 'version-2' );
 ?>
 
 <?php // Reviews Section Header

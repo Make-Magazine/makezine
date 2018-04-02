@@ -188,14 +188,6 @@ if( $detect->isTablet() ){
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div id="search-modal">
-  <form role="search" method="get" class="search-form" action="/">
-      <label class="sb-search-label" for="search">Search</label>
-        <input class="sb-search-input search-field" placeholder="What are you searching for?" value="" name="s" id="search" title="" type="text">
-        <input class="sb-search-submit" name="submit" value="Search" type="submit">
-  </form>
-</div>
-
 <header id="universal-nav" class="universal-nav">
   
   <div class="nav-level-1">
@@ -250,9 +242,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#">Signup</a></li>
       </ul>
         
+      <ul class="search-button">
+        <li>
+          <div id="sb-search" class="sb-search">
+            <form role="search" method="get" class="search-form" action="http://makezine.staging.wpengine.com">
+              <label class="sb-search-label">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="sb-search-input search-field" placeholder="Search Make: Magazine" value="" name="s" id="search" title="" type="text">
+              </label>
+              <label class="sb-search-open-trigger">
+                <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                <input class="sb-search-submit" value="" type="submit">
+              </label>
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
         
     </nav>
   </div><!-- .nav-level-1 -->
+
   <div id="nav-level-2" class="nav-level-2">
     <div class="container">
         <?php
@@ -271,16 +281,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ?>
     </div>
   </div><!-- .nav-level-2 -->
-  <div class="container">
-    <ul class="search-button">
-        <li>
-          <div id="sb-search" class="sb-search">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </div>
-        </li>
-    </ul>
-  </div>
- 
 
   <div id="nav-flyout">
 

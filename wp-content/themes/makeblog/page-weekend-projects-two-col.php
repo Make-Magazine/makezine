@@ -8,7 +8,7 @@
  * @author     Cole Geissinger <cgeissinger@makermedia.com>
  * 
  */
-get_header('universal'); ?>
+get_header('version-2'); ?>
 
 <!-- 	<div class="projects-home">
 

@@ -1,4 +1,4 @@
-<?php get_header('universal'); ?>
+<?php get_header('version-2'); ?>
 
 <?php // Reviews Section Header
 get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>

@@ -3,7 +3,7 @@
  * Single Products Template
  *
  */
-get_header('universal'); ?>
+get_header('version-2'); ?>
 
 	
 	<?php get_template_part( 'reviews/content/header/products' ); ?>

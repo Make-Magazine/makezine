@@ -18,7 +18,7 @@ if( $detect->isTablet() ){
 }
 
 wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
-get_header('universal'); ?>
+get_header('version-2'); ?>
 
 <div class="home-ads">
     <?php global $make; print $make->ads->ad_leaderboard; ?>

@@ -2,7 +2,7 @@
 /*
  * Template name: Volume Page
  */
-  get_header('universal'); ?>
+  get_header('version-2'); ?>
     <div class="single">
       <div class="container">
          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

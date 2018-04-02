@@ -6,7 +6,7 @@
  * @license    http://opensource.org/licenses/gpl-license.php  GNU Public License
  * 
  */
-get_header('universal'); ?>
+get_header('version-2'); ?>
   
 <div id="gg2015">
 

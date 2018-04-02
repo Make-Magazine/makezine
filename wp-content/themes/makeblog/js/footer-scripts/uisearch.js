@@ -93,7 +93,6 @@
 					self.inputEl.value = self.inputEl.value.trim();
 					
 					if( !classie.has( self.el, 'sb-search-open' ) ) { // open it
-
 						ev.preventDefault();
 						self.open();
 					}

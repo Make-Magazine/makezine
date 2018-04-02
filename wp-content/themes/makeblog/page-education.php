@@ -7,7 +7,7 @@
  * @author     Jake Spurlock <jspurlock@makermedia.com>
  * 
  */
-get_header('universal'); ?>
+get_header('version-2'); ?>
 		
 	<div class="single">
 	

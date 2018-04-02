@@ -8,7 +8,7 @@
  * @author     Matt Abernathy <matt@makermedia.com>
  * 
  */
-get_header('universal'); ?>
+get_header('version-2'); ?>
 
 <div class="container">
 
