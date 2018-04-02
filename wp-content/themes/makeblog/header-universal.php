@@ -233,7 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
 
       <a href="https://makezine.com/" class="navbar-brand">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Make_logo.svg" class="img-responsive" alt="Make: brand logo" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/make_logo.svg" class="img-responsive" alt="Make: brand logo" />
       </a>
 
       <ul class="nav-level-1-auth hidden-xs">
