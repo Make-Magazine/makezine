@@ -103,10 +103,7 @@ if ( typeof define === 'function' && define.amd ) {
   var e = $(".universal-nav");
   var hamburger = $(".nav-hamburger");
   var y_pos = $(".nav-level-2").offset().top;
-  var nextItemUnderNav = $("#home-featured");
-    if($(".second-nav")) {
-        nextItemUnderNav = $(".second-nav");
-    }
+  var nextItemUnderNav = e.nextAll().eq(2); // Look two elements down for the item that appears under the secondary nav
   $(window).on('resize', function(){
       if ($(window).width() < 767) {
           y_pos = 0;
