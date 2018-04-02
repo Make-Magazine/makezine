@@ -38,7 +38,7 @@
 					$('.latest-events').hide().removeClass('nav-transition');
 					$('.latest-shop').hide().removeClass('nav-transition');
 					$('.nav-guides').hide().removeClass('nav-transition');
-					$('.nav-share-row').hide().removeClass('nav-transition');
+					$('.nav-share').hide().removeClass('nav-transition');
 					$('.dynamic-header-content').children().removeClass('moove-left moove-right');
 					$('.menu-sub-menu > .sub-menu').hide().removeClass('nav-transition');
 					$('.menu-sub-menu > .sub-menu').removeClass('moove-left moove-right');

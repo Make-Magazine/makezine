@@ -114,16 +114,12 @@ if( $detect->isTablet() ){
     <?php endif; ?>
   <!-- end nativo script -->
 
-  <?php 
-    $make_ads_1x1 = get_theme_mod('make_ads_1x1_enable');
-    if (!empty($make_ads_1x1)): ?>
+  <?php if (!empty(get_theme_mod('make_ads_1x1_enable'))): ?>
     <!-- 1x1 ad unit -->
     <?php print $make->ads->ad_1x1; ?>
   <?php endif; ?>
 
-  <?php 
-    $make_ads_scroll = get_theme_mod('make_ads_scroll_enable');
-    if (!empty($make_ads_scroll)): ?>
+  <?php if (!empty(get_theme_mod('make_ads_scroll_enable'))): ?>
     <!-- scroll loading flag -->
     <script type="text/javascript">var make_ads_scroll_load = true;</script>
   <?php endif; ?>
@@ -484,7 +480,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <?php endif; ?>
         </div>
 
-        <div class="nav-share-row row">
+        <div class="nav-share row">
           <?php if( have_rows('get_involved_nav', 'option') ): ?>
             <?php while( have_rows('get_involved_nav', 'option') ): the_row();
 

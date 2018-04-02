@@ -20,6 +20,145 @@
 }
 
 
+@media (min-width: 992px) {
+  //Search bar stuff
+  .sb-search {
+    position: relative;
+    width: 0%;
+    min-width: 32px;
+    height: 32px;
+    float: right;
+    overflow: hidden;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    right: 25%;
+    bottom: 5px;
+    @media (min-width: 1200px) {
+      .mobile-sticky & {
+        right: 18%;
+      }
+    }
+    @media (max-width: 1199px) {
+      right: 21%;
+      .mobile-sticky & {
+        right: 20%;
+      }
+    }
+    .search-form {
+      height: inherit;
+    }
+    .sb-search-input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none !important;
+      border-radius: 0 !important;
+      outline: none !important;
+      background: #fff;
+      width: 350px;
+      height: 32px !important;
+      margin: 0;
+      z-index: 10;
+      padding: 4px 65px 7px 15px !important;
+      font-family: inherit;
+      font-size: 18px !important;
+      font-weight: 400;
+      color: #333 !important;
+    }
+    .sb-search-input::-webkit-input-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .sb-search-input:-moz-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .sb-search-input::-moz-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .sb-search-input:-ms-input-placeholder {
+      color: #9b9b9b;
+      font-size: 16px;
+      letter-spacing: -.5px;
+      line-height: 1.2em;
+    }
+    .search-form > .fa-search,
+    .sb-search-submit,
+    .sb-search-open-trigger i  {
+      width: 32px;
+      height: 32px;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .sb-search-submit {
+      background: #fff; /* IE needs this */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+      filter: alpha(opacity=0); /* IE 5-7 */
+      opacity: 0;
+      color: transparent;
+      border: none;
+      outline: none;
+      z-index: -1;
+    }
+    .search-form > .fa-search {
+      color: #f40b0b;
+      background: #fff;
+      z-index: 90;
+      font-size: 22px;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Open state */
+    &.sb-search-open {
+      width: 350px;
+      border: 1px solid #d4d4d4;
+    }
+    &.sb-search-open .search-form > .fa-search {
+      background: #fff;
+      color: #333;
+      z-index: 11;
+      margin-top: -1px;
+      margin-right: -1px;
+      border-left: 1px solid #d4d4d4;
+    }
+    &.sb-search-open .sb-search-open-trigger {
+      i {
+        color: #151515;
+        z-index: 30;
+      }
+    }
+    &.sb-search-open .sb-search-submit {
+      z-index: 90;
+    }
+  }
+  .sticky-header {
+    #mz-header-subscribe {
+      display: none;
+    }
+  }
+}
+
 
 // New Subscribe stuff
 #mz-header-subscribe {
@@ -328,7 +467,7 @@
 }
 
 body.mobile-sticky {
-  // padding-top: 105px; throws off universal nav
+  padding-top: 105px;
   .header-wrapper {
     position: fixed;
     width: 100%;
@@ -522,7 +661,7 @@ body.mobile-sticky {
 
 .nav-guides,
 .latest-shop,
-.nav-share-row {
+.nav-share {
   padding-top: 20px;
   display: none;
   width: inherit;
@@ -812,11 +951,11 @@ ul.sub-menu.moove-right {
   }
 }
 
-/*@media only screen and (min-width: 768px) and (max-width: 991px) {
-  header .container {        Universal Nav don't need this sh*t
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  header .container {
     width: 100%;
   }
-}*/
+}
 
 @media only screen and (max-width: 992px) {
   .dynamic-header-posts {

@@ -3,7 +3,7 @@
 Template Name: Home Page Alpha
 */
 $device = '';
-get_header( 'universal' );
+get_header( 'version-2' );
 
 wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2/js/homegrid.js', array( 'jquery' ), false, true );
 
