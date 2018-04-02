@@ -104,7 +104,7 @@ if ( typeof define === 'function' && define.amd ) {
   var hamburger = $(".nav-hamburger");
   var y_pos = $(".nav-level-2").offset().top;
   var nextItemUnderNav = $("#home-featured");
-    if($(".second-nav").length) {
+    if($(".second-nav")) {
         nextItemUnderNav = $(".second-nav");
     }
   $(window).on('resize', function(){
@@ -163,6 +163,8 @@ if ( typeof define === 'function' && define.amd ) {
   $(".fa-search").click(function(e){
        $("#search-modal").trigger('click');
   });
+
+ 
     
   // to keep this nav universal, let's not have each site's style sheet highlight a different active manually
   var site = window.location.hostname;
