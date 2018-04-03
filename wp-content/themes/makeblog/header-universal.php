@@ -245,7 +245,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
 
       <ul class="nav-level-1-auth">
-        <li><button id="a0LoginButton">Login | Signup</button></li>
+        <li>
+          <button id="a0LoginButton">Login | Signup</button>
+          <div id="a0Avatar">Logged In</div>
+        </li>
       </ul>
 
 

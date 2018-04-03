@@ -1,7 +1,8 @@
 // Compiled file - any changes will be overwritten by grunt task
 //!!
 //!! js/footer-scripts/auth0.js
-
+//jQuery('#a0LoginButton').hide();
+jQuery('#a0Avatar').hide();
 var ignore_sso = false;
 //document.addEventListener("DOMContentLoaded", function() {
 
@@ -225,7 +226,9 @@ var ignore_sso = false;
         // Handle error
         return;
       }
-
+      //authenticated
+      jQuery('#a0LoginButton').hide();
+      jQuery('#a0Avatar').show();
       //document.getElementById('nick').textContent = profile.nickname;
 
       localStorage.setItem('accessToken', authResult.accessToken);
