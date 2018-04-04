@@ -246,8 +246,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <ul class="nav-level-1-auth">
         <li>
-          <button id="a0LoginButton">Login | Signup</button>
-          <div id="a0Avatar">Logged In</div>
+          <button id="qsLoginBtn">Login | Signup</button>
+          <span id="qsLogoutBtn">Log Out</span>
         </li>
       </ul>
 
