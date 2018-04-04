@@ -110,9 +110,9 @@
         break;  
     case "maker-faire":
     case "makerfaire":
-    case "https://makerfaire.wpengine.com":
-    case "https://makerfaire.staging.wpengine.com":
-    case "https://makerfaire.com":
+    case "makerfaire.wpengine.com":
+    case "makerfaire.staging.wpengine.com":
+    case "makerfaire.com":
         universalNavActive("faire")
         break;
     default:
