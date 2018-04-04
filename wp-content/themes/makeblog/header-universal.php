@@ -113,19 +113,19 @@ if( $detect->isTablet() ){
     <?php endif; ?>
   <!-- end nativo script -->
 
-    
+
   <!-----------------------------------------------------------
       For Some reason this part needed to be commented out before getting my local up and running
   ------------------------------------------------------------>
-    
-  <?php 
+
+  <?php
     $make_ads_1x1 = get_theme_mod('make_ads_1x1_enable');
     if (!empty($make_ads_1x1)): ?>
     <!-- 1x1 ad unit -->
     <?php print $make->ads->ad_1x1; ?>
   <?php endif; ?>
 
-  <?php 
+  <?php
     $make_ads_scroll = get_theme_mod('make_ads_scroll_enable');
     if (!empty($make_ads_scroll)): ?>
     <!-- scroll loading flag -->
@@ -197,7 +197,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <header id="universal-nav" class="universal-nav">
-  
+
   <div class="nav-level-1">
     <nav class="container">
 
@@ -244,13 +244,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Make_logo.svg" class="img-responsive" alt="Make: brand logo" />
       </a>
 
-      <ul class="nav-level-1-auth hidden-xs">
-        <li><a href="#">Login</a></li>
-        <li><span>|</span></li>
-        <li><a href="#">Signup</a></li>
+      <ul class="nav-level-1-auth">
+        <li>
+          <button id="a0LoginButton">Login | Signup</button>
+          <div id="a0Avatar">Logged In</div>
+        </li>
       </ul>
-        
-        
+
+
     </nav>
   </div><!-- .nav-level-1 -->
   <div id="nav-level-2" class="nav-level-2">
@@ -280,12 +281,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
     </ul>
   </div>
- 
+
 
   <div id="nav-flyout">
 
     <?php get_template_part('mega-menu-remove-this-when-made-external'); ?>
-  
+
   </div>
 
   <div id="nav-hamburger" class="nav-hamburger">
