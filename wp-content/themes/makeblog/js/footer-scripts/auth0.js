@@ -1,4 +1,5 @@
  window.addEventListener('load', function() {
+  var userProfile;
   var webAuth = new auth0.WebAuth({
     domain: AUTH0_DOMAIN,
     clientID: AUTH0_CLIENT_ID,

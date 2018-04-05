@@ -6,6 +6,7 @@ var AUTH0_DOMAIN='makermedia.auth0.com';
 var AUTH0_CALLBACK_URL=location.href;;//!!
 //!! js/footer-scripts/auth0.js
  window.addEventListener('load', function() {
+  var userProfile;
   var webAuth = new auth0.WebAuth({
     domain: AUTH0_DOMAIN,
     clientID: AUTH0_CLIENT_ID,
