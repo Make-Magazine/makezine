@@ -12,7 +12,7 @@ var AUTH0_CALLBACK_URL=location.href;;//!!
     redirectUri: AUTH0_CALLBACK_URL,
     audience: 'https://' + AUTH0_DOMAIN + '/userinfo',
     responseType: 'token id_token',
-    scope: 'openid',
+    scope: 'openid profile',
     leeway: 60
   });
 
@@ -21,7 +21,7 @@ var AUTH0_CALLBACK_URL=location.href;;//!!
   // buttons and event listeners
   var loginBtn = document.getElementById('qsLoginBtn');
   var logoutBtn = document.getElementById('qsLogoutBtn');
-
+  var profileView = document.getElementById('profile-view');
 
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -74,12 +74,39 @@ var AUTH0_CALLBACK_URL=location.href;;//!!
   function displayButtons() {
     if (isAuthenticated()) {
       loginBtn.style.display = 'none';
-      logoutBtn.style.display = 'flex';
+      getProfile();
+      profileView.style.display = 'flex';
     } else {
       loginBtn.style.display = 'flex';
-      logoutBtn.style.display = 'none';
+      profileView.style.display = 'none';
     }
   }
+
+  function getProfile() {
+    if (!userProfile) {
+      var accessToken = localStorage.getItem('access_token');
+
+      if (!accessToken) {
+        console.log('Access token must exist to fetch profile');
+      }
+
+      webAuth.client.userInfo(accessToken, function(err, profile) {
+        if (profile) {
+          userProfile = profile;
+          displayProfile();
+        }
+      });
+    } else {
+      displayProfile();
+    }
+  }
+
+  function displayProfile() {
+    // display the avatar
+    document.querySelector('#profile-view img').src = userProfile.picture;
+  }
+
+  //handle authentication
   handleAuthentication();
 });;//!!
 //!! js/footer-scripts/classie.js
