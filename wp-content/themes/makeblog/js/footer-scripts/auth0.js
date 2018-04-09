@@ -1,4 +1,13 @@
- window.addEventListener('load', function() {
+window.addEventListener('load', function() {
+  // buttons and event listeners
+  var loginBtn    = document.getElementById('qsLoginBtn');
+  var logoutBtn   = document.getElementById('qsLogoutBtn');
+  var profileView = document.getElementById('profile-view');
+  //default profile view to hidden
+  loginBtn.style.display    = 'none';
+  profileView.style.display = 'none';
+  localStorage.setItem('redirect_to',AUTH0_REDIRECT_URL);
+
   var userProfile;
   var webAuth = new auth0.WebAuth({
     domain: AUTH0_DOMAIN,
@@ -9,13 +18,6 @@
     scope: 'openid profile',
     leeway: 60
   });
-
-  var loginView = document.getElementById('login-view');
-
-  // buttons and event listeners
-  var loginBtn = document.getElementById('qsLoginBtn');
-  var logoutBtn = document.getElementById('qsLogoutBtn');
-  var profileView = document.getElementById('profile-view');
 
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();

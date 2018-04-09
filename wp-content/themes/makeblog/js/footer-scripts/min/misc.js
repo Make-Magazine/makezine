@@ -3,9 +3,19 @@
 //!! js/footer-scripts/auth0-variables.js
 var AUTH0_CLIENT_ID='0sR3MQz8ihaSnLstc1dABgENHS5PQR8d';
 var AUTH0_DOMAIN='makermedia.auth0.com';
-var AUTH0_CALLBACK_URL=location.href;;//!!
+var AUTH0_CALLBACK_URL = templateUrl + "/authenticated/";
+var AUTH0_REDIRECT_URL = location.href;;//!!
 //!! js/footer-scripts/auth0.js
- window.addEventListener('load', function() {
+window.addEventListener('load', function() {
+  // buttons and event listeners
+  var loginBtn    = document.getElementById('qsLoginBtn');
+  var logoutBtn   = document.getElementById('qsLogoutBtn');
+  var profileView = document.getElementById('profile-view');
+  //default profile view to hidden
+  loginBtn.style.display    = 'none';
+  profileView.style.display = 'none';
+  localStorage.setItem('redirect_to',AUTH0_REDIRECT_URL);
+
   var userProfile;
   var webAuth = new auth0.WebAuth({
     domain: AUTH0_DOMAIN,
@@ -16,13 +26,6 @@ var AUTH0_CALLBACK_URL=location.href;;//!!
     scope: 'openid profile',
     leeway: 60
   });
-
-  var loginView = document.getElementById('login-view');
-
-  // buttons and event listeners
-  var loginBtn = document.getElementById('qsLoginBtn');
-  var logoutBtn = document.getElementById('qsLogoutBtn');
-  var profileView = document.getElementById('profile-view');
 
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();

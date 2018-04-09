@@ -86,6 +86,9 @@ if( $detect->isTablet() ){
   <!-- Begin Chartbeat Code -->
   <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
   <!-- End Chartbeat Code -->
+  <script type="text/javascript">
+    var templateUrl = '<?= get_site_url(); ?>';
+  </script>
 
   <?php wp_head(); ?>
 
@@ -247,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="nav-level-1-auth">
         <li>
           <button id="qsLoginBtn">Login | Signup</button>
-          <div id="profile-view" class="dropdown show">
+          <div id="profile-view" class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img class="avatar" style="width:38px" alt="avatar">
             </a>
