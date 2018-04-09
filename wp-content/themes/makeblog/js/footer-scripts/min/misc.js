@@ -65,11 +65,9 @@ window.addEventListener('load', function() {
         window.location.hash = '';
         setSession(authResult);
         loginBtn.style.display = 'none';
-        //after login redirect to previous page (after 8 second delay)
+        //after login redirect to previous page (after 5 second delay)
         var redirect_url = localStorage.getItem('redirect_to');
-        //location.href=redirect_url;
-        setTimeout(function(){location.href=redirect_url} , 8000);
-
+        setTimeout(function(){location.href=redirect_url} , 5000);
       } else if (err) {
         console.log(err);
         alert(
