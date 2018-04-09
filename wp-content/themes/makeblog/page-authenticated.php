@@ -2,8 +2,8 @@
 /**
  * Template Name: Authenticated
  */
-?>
-<?php get_header(); ?>
+
+get_header('universal'); ?>
 <div class="container page-content">
   <div class="row">
     <div class="col-xs-12">
@@ -13,7 +13,3 @@
 </div><!-- end .page-content -->
 
 <?php get_footer(); ?>
-<script type="text/javascript">
-  var redirect_url = localStorage.getItem('redirect_to');
-  setTimeout(function(){location.href=redirect_url} , 2000);
-</script>

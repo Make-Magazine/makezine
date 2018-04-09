@@ -6,7 +6,6 @@ window.addEventListener('load', function() {
   //default profile view to hidden
   loginBtn.style.display    = 'none';
   profileView.style.display = 'none';
-  localStorage.setItem('redirect_to',AUTH0_REDIRECT_URL);
 
   var userProfile;
   var webAuth = new auth0.WebAuth({
@@ -21,6 +20,7 @@ window.addEventListener('load', function() {
 
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();
+    localStorage.setItem('redirect_to',AUTH0_REDIRECT_URL);
     webAuth.authorize();
   });
 
@@ -57,6 +57,9 @@ window.addEventListener('load', function() {
         window.location.hash = '';
         setSession(authResult);
         loginBtn.style.display = 'none';
+        //after login redirect to previous page
+        var redirect_url = localStorage.getItem('redirect_to');
+        location.href=redirect_url;
       } else if (err) {
         console.log(err);
         alert(
