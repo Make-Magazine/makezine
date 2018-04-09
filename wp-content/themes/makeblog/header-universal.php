@@ -86,6 +86,9 @@ if( $detect->isTablet() ){
   <!-- Begin Chartbeat Code -->
   <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
   <!-- End Chartbeat Code -->
+  <script type="text/javascript">
+    var templateUrl = '<?= get_site_url(); ?>';
+  </script>
 
   <?php wp_head(); ?>
 
@@ -246,8 +249,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <ul class="nav-level-1-auth">
         <li>
-          <button id="a0LoginButton">Login | Signup</button>
-          <div id="a0Avatar">Logged In</div>
+          <button id="qsLoginBtn">Login | Signup</button>
+          <div id="profile-view" class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="avatar" style="width:38px" alt="avatar">
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="https://ww.makershare.com">MakerShare Profile</a>
+              <a class="dropdown-item" href="https://www.makerfaire.com/manage-entries">MakerFaire Portfolio</a>
+              <a class="dropdown-item" href="https://www.makeco.wpengine.com">My Membership Account</a>
+              <span class="dropdown-item" id="qsLogoutBtn">Log Out</span>
+            </div>
+          </div>
         </li>
       </ul>
 
