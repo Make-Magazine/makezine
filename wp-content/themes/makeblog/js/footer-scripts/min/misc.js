@@ -280,7 +280,7 @@ if ( typeof define === 'function' && define.amd ) {
   $(".fa-search").click(function(e){
        $("#search-modal").trigger('click');
        // essb sharing popup is being triggered when logged in to admin
-       $(".essb-live-customizer-main, .essb-live-customizer-buttons").attr('style', 'display: none !important');
+       $(".essb-live-customizer-main, .essb-live-buttons-customizer").attr('style', 'display: none !important');
   });
     
   // to keep this nav universal, let's not have each site's style sheet highlight a different active manually
