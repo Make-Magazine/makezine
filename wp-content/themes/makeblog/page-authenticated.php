@@ -15,5 +15,5 @@
 <?php get_footer(); ?>
 <script type="text/javascript">
   var redirect_url = localStorage.getItem('redirect_to');
-  setTimeout(function(){location.href=redirect_url} , 1000);
+  setTimeout(function(){location.href=redirect_url} , 2000);
 </script>
