@@ -78,6 +78,8 @@
 
   $(".fa-search").click(function(e){
        $("#search-modal").trigger('click');
+       // essb sharing popup is being triggered when logged in to admin
+       $(".essb-live-customizer-main, .essb-live-customizer-buttons").toggle();
   });
     
   // to keep this nav universal, let's not have each site's style sheet highlight a different active manually
