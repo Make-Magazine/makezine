@@ -1,3 +1,4 @@
+
 (function($) {   
   $('#hamburger-icon, #hamburger-makey, .nav-flyout-underlay').click(function() {
     $('#hamburger-icon').toggleClass('open');
