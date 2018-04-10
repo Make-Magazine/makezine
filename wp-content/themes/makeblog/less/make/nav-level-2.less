@@ -13,7 +13,7 @@
           span {
             border-right: 0px;
           }
-          &:after {
+          /*&:after {
               background-image: url('/wp-content/themes/makeblog/img/Make_logo-white.svg');
               background-size: 134px 40px;
               display: inline-block;
@@ -22,12 +22,22 @@
               content: "";
               margin-top: 8px;
               float: left;
-          }
+          }*/
+      }
+      li.second-nav-banner {
+        min-width: 134px;
+        height:40px;
+        background: url("/wp-content/themes/makeblog/img/Make_logo-white.svg") no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: .5s ease-in-out;
+        span { display:none; }
       }
   }
 }
 .universal-nav.main-nav-scrolled .search-button {
     top: 5px;
+    width: 10%;
 }
 
 .nav-level-2 {
