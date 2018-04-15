@@ -283,9 +283,29 @@
   }
   .subscribe-call-out {
       display: none;
+      //opacity: 0;
+      //transition: opacity .4s ease-in-out;
       float: left;
       color: #fff;
-      .icon-star-empty { float: left; }
+      margin-left: -80px;
+      .subscribe-text {
+          float: left;
+          text-align: right;
+          line-height: 18px;
+          margin-top: 3px;
+          a {
+            color: #fff;
+            font-size: 12px;
+          }
+      }
+      .lnr-star {
+          float: left;
+          color: #fff;
+          display: block;
+          font-size: 24px;
+          font-weight: bold;
+          padding: 9px;
+      }
   }
 }
 /* only for headerversion-2 */

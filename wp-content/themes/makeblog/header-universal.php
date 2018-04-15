@@ -290,8 +290,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <ul class="search-button">
         <div class="subscribe-call-out">
-            <div class="subscribe=text"></div>Want the full magazine:<br />SUBSCRIBE TODAY!</div>
-            <i class="icon-star-empty"></i>
+            <div class="subscribe-text">
+                <a href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M7HMKT">
+                    Want the full magazine:<br />SUBSCRIBE TODAY!
+                </a>
+            </div>
+            <span class="lnr lnr-star"></span>
         </div>
         <li>
           <div id="sb-search" class="sb-search">
