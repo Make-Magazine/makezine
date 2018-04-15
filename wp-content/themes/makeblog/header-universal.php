@@ -289,6 +289,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div><!-- .nav-level-2 -->
   <div class="container">
     <ul class="search-button">
+        <div class="subscribe-call-out">
+            <div class="subscribe=text"></div>Want the full magazine:<br />SUBSCRIBE TODAY!</div>
+            <i class="icon-star-empty"></i>
+        </div>
         <li>
           <div id="sb-search" class="sb-search">
             <i class="fa fa-search" aria-hidden="true"></i>
