@@ -34,10 +34,12 @@ jQuery( "a.sumome-share-client-share" ).ready(function() {
 });
 
 
-// Open external links in new tab
+// Open external links in new tab, unless it's supposed to be opened in same tab
 jQuery(document).ready(function($) {
   $(document.links).filter(function() {
-    return this.hostname != window.location.hostname;
+    if($(this).attr("target") != "_self"){
+        return this.hostname != window.location.hostname;
+    }
   }).attr('target', '_blank');
 });
 
