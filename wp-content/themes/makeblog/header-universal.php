@@ -196,7 +196,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <label class="sb-search-label" for="search">Search</label>
         <input class="sb-search-input search-field" placeholder="What are you searching for?" value="" name="s" id="search" title="" type="text">
         <input class="sb-search-submit" name="submit" value="Search" type="submit">
-  </form>
+  </form>  
+  <div id="popular-links">
+    <h5>POPULAR SEARCHES:</h5>
+    <ul class="pop-links-list">
+        <li><a href="/pages/search-results?q=arduino">Arduino</a></li>
+        <li><a href="/pages/search-results?q=cnc">CNC</a></li>
+        <li><a href="/pages/search-results?q=raspberry pi">Raspberry Pi</a></li>
+        <li><a href="/pages/search-results?q=wood working">Woodworking</a></li>
+    </ul>
+    <ul class="pop-links-list">
+        <li><a href="/pages/search-results?q=3d printing">3D Printing</a></li>
+        <li><a href="/pages/search-results?q=iot">IOT</a></li>
+        <li><a href="/pages/search-results?q=robot">Robot</a></li>
+        <li><a href="/pages/search-results?q=maker faire">Maker Faire</a></li>
+    </ul>
+  </div>
 </div>
 
 <header id="universal-nav" class="universal-nav">
@@ -256,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <h3>My Account</h3>
+              <h3 class="expanding-underline">My Account</h3>
               <a class="dropdown-item" href="https://ww.makershare.com">MakerShare Profile</a>
               <a class="dropdown-item" href="https://www.makerfaire.com/manage-entries">MakerFaire Portfolio</a>
               <a class="dropdown-item" href="https://www.makeco.wpengine.com">My Membership Account</a>

@@ -139,26 +139,62 @@
         text-align:center;
         margin-bottom: 80px;
     }
-    .sb-search-input {
-        background: transparent;
-        color: #fff;
-        border: 0px;
-        border-bottom: solid white 1px;
-        outline-width: 0;
-        font-weight: normal;
-        width: 495px;
-        margin-right: 20px;
+    .search-form {
+        .sb-search-input {
+            background: transparent;
+            color: #fff;
+            border: 0px;
+            border-bottom: solid white 1px;
+            outline-width: 0;
+            font-weight: normal;
+            width: 495px;
+            margin-right: 20px;
+            text-align: center;
+            padding-bottom: 8px;
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: #fff;
+                opacity: 1; /* Firefox */
+            }
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #fff;
+            }
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                color: #fff;
+            }
+        }
+        .sb-search-submit {
+            background: #ED1C24;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 25px;
+            color: #fff;
+            font-weight: normal;
+            font-size: 22px;
+        }
+    }
+    #popular-links {
+        width: 340px;
+        margin: 40px auto 0px;
         text-align: center;
-        padding-bottom: 8px;
-        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        h5 { 
             color: #fff;
-            opacity: 1; /* Firefox */
+            font-family: "Roboto-Light";
+            font-size: 18px;
+            font-weight: normal;
         }
-        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: #fff;
-        }
-        &::-ms-input-placeholder { /* Microsoft Edge */
-            color: #fff;
+        ul.pop-links-list {
+            float: left;
+            text-align: left;
+            margin-left: 20px;
+            &:last-child { float: right; }
+            li {
+                padding: 10px;
+                a { 
+                    color: #ED1C24;
+                    opacity: .9;
+                    &:hover { opacity: 1; }
+                }
+            }
         }
     }
     .fancybox-close {
@@ -171,17 +207,6 @@
         &:before {
             content: "\e870";
         }
-    }
-}
-.search-form {
-    .sb-search-submit {
-        background: #ED1C24;
-        border: none;
-        border-radius: 20px;
-        padding: 8px 25px;
-        color: #fff;
-        font-weight: normal;
-        font-size: 22px;
     }
 }
 

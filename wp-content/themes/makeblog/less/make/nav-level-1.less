@@ -172,24 +172,81 @@ header.universal-nav {
     }
   }
   #profile-view {
-      margin-top: 10px;
+      #dropdownMenuLink {
+          position: relative;
+          z-index: 1002;
+      }
+      @media screen and (min-width: 767px) {
+          margin-top: 10px;
+      }
       .avatar:hover {
           opacity: .8;
       }
       .dropdown-menu {
-          padding: 10px;
+          padding: 15px 25px;
           font-family: 'Roboto', serif;
-          h3{ margin-top: 0px; }
-          a {
-              color: #ED1C24;
+          margin-left: -45px;
+          margin-top: -70px;
+          padding-top: 90px;
+          width: 239px;
+          h3 { 
+              margin-top: 0px; 
+              margin-bottom: 20px;
               display: block;
-              margin-bottom: 5px;
+              position: relative;
+              line-height: .8em;
+              color: #333;
+              padding-bottom: 2px;
+              opacity: .85;
+              font-size: 20px;
+              font-weight: 500;
+              font-family: 'Roboto', serif;
+              transition: font-weight .1s ease-in-out;
+              line-height: 1em;
+              display: inline;
+              position: relative;
+              overflow: hidden;
+              &:after {
+                  content: "";
+                  position: absolute;
+                  z-index: -1;
+                  left: 0;
+                  right: 50%;
+                  bottom: -5px;
+                  background: #ED1C24;
+                  height: 4px;
+                  transition-property: left right;
+                  transition-duration: 0.3s;
+                  transition-timing-function: ease-out;
+                }
+                @media screen and (min-width: 768px) and (max-width: 991px) {
+                    font-size: 18px;
+                }
+                @media screen and (min-width: 576px) and (max-width: 767px) {
+                    font-size: 16px;
+                }
+                @media screen and (max-width: 576px) {
+                    margin-top: 35px;
+                    display: block;
+                    overflow: visible;
+                }
           }
+          a {
+              color: #333;
+              display: block;
+              margin-bottom: 15px;
+              opacity: .6;
+              font-size: 16px;
+              &:hover {
+                  opacity: 1;
+              }
+          }
+      }
+      .dropdown-menu:after {
+          left: 43%;
       }
   }
 }
-
-
 
 @media screen and (max-width: 767px) {
     #page-content .front-page.container{
