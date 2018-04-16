@@ -1,3 +1,4 @@
+body { overflow-x: hidden; }
 header.universal-nav {
   position: relative;
   background: #fff;
@@ -185,9 +186,9 @@ header.universal-nav {
       .dropdown-menu {
           padding: 90px 25px 20px;
           font-family: 'Roboto', serif;
-          margin-left: -45px;
-          margin-top: -90px;
-          width: 242px;
+          margin-left: -125px;
+          margin-top: -70px;
+          width: 660px;
           border-radius: none;
           &:after {
             font-family: 'Linearicons-Free';
@@ -195,9 +196,12 @@ header.universal-nav {
             color: #ED1C24;
             font-size: 36px;
             position: absolute;
-            top: -2px;
-            left: 65%;
+            top: 30px;
+            left: 55%;
             border: none;
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
           }
           h3 { 
               margin-top: 0px; 
