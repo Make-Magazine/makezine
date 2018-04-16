@@ -175,11 +175,6 @@ header.universal-nav {
       #dropdownMenuLink {
           position: relative;
           z-index: 1002;
-          &:after {
-            font-family: 'Linearicons-Free';
-            content: "\e870";
-            background: #ED1C24; 
-          }
       }
       @media screen and (min-width: 767px) {
           margin-top: 10px;
@@ -194,6 +189,15 @@ header.universal-nav {
           margin-top: -70px;
           padding-top: 90px;
           width: 239px;
+          &:after {
+            font-family: 'Linearicons-Free';
+            content: "\e870";
+            color: #ED1C24;
+            font-size: 36px;
+            position: absolute;
+            top: -2px;
+            left: 60px;
+          }
           h3 { 
               margin-top: 0px; 
               margin-bottom: 20px;
