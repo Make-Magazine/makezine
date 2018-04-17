@@ -259,7 +259,7 @@ if ( typeof define === 'function' && define.amd ) {
     }
   });
     
-  $('.dropdown-menu:after').click(function(){
+  $('.dropdown-menu').blur(function(){
       $('.dropdown-menu').toggle();
   });
   // fix nav to top on scrolldown, stay fixed for transition from mobile to desktop
