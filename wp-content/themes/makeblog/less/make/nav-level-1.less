@@ -179,7 +179,7 @@ header.universal-nav {
           position: relative;
           z-index: 1002;
       }
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 768px) {
           margin-top: 10px;
       }
       @media screen and (max-width: 576px) {
@@ -199,6 +199,9 @@ header.universal-nav {
           margin-top: -70px;
           width: 660px;
           border-radius: none;
+          @media screen and (max-width: 576px) {
+              margin-left: 25px;
+          }
           &:after {
             font-family: 'Linearicons-Free';
             content: "\e870";
@@ -208,7 +211,7 @@ header.universal-nav {
             top: 30px;
             left: 30%;
             border: none;
-            @media screen and (min-width: 568px) (max-width: 767px) {
+            @media screen and (min-width: 568px) and (max-width: 768px) {
                 display: none;
             }
           }
