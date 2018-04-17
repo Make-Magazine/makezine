@@ -258,6 +258,10 @@ if ( typeof define === 'function' && define.amd ) {
       $(this).next('.nav-flyout-ul').slideToggle();
     }
   });
+    
+  $('.dropdown-menu:after').click(function(){
+      $('.dropdown-menu').toggle();
+  });
   // fix nav to top on scrolldown, stay fixed for transition from mobile to desktop
   var e = $(".universal-nav");
   var hamburger = $(".nav-hamburger");

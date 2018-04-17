@@ -9,14 +9,15 @@
   background-color: #fff;
   z-index: 999;
   box-shadow:0px 5px 10px #000;
-  overflow-x: hidden;
   @media screen and (max-width: 576px) {
     width: 360px;
     padding-top: 10px;
-    height: 100vh;
+    height: 90vh;
+    overflow: scroll;
   }
   .container {
     position: relative;
+    overflow-x: hidden;
   }
   .nav-flyout-logo {
     display: flex;
@@ -297,8 +298,6 @@
       }
     }
   }
-
-
 }
 
 .nav-hamburger {

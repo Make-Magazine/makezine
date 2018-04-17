@@ -11,7 +11,9 @@
       li:nth-child(2) {
           a { float: left; }
           span {
-            border-right: 0px;
+            @media screen and (min-width: 992px) {
+                border-right: 0px;
+            }
           }
           /*&:after {
               background-image: url('/wp-content/themes/makeblog/img/Make_logo-white.svg');
@@ -33,6 +35,9 @@
         margin-bottom: 0px;
         transition: all .5s ease-in-out;
         span { display:none; }
+          @media screen and (min-width: 992px) {
+              display: none;
+          }
       }
   }
 }
@@ -223,6 +228,7 @@
     @media (max-width: 767px) {
         right: 2%;
         top: 5px;
+        position: fixed;
     }
     li {
        list-style: none;
