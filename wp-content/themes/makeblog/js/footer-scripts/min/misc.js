@@ -259,9 +259,6 @@ if ( typeof define === 'function' && define.amd ) {
     }
   });
     
-  $('.dropdown-menu').blur(function(){
-      $('.dropdown-menu').toggle();
-  });
   // fix nav to top on scrolldown, stay fixed for transition from mobile to desktop
   var e = $(".universal-nav");
   var hamburger = $(".nav-hamburger");
