@@ -127,6 +127,7 @@ window.addEventListener('load', function() {
   function displayProfile() {
     // display the avatar
     document.querySelector('#profile-view img').src = userProfile.picture;
+    document.querySelector('#profile-view img').style.display = "block";
   }
 
   function renewToken() {
@@ -265,6 +266,9 @@ if ( typeof define === 'function' && define.amd ) {
     if($(".second-nav").length) {
         nextItemUnderNav = $(".second-nav");
     }
+  if ($(window).width() < 578) {
+          jQuery(".auth-target").append(jQuery(".nav-level-1-auth"));
+  }
   $(window).on('resize', function(){
       if ($(window).width() < 767) {
           y_pos = 0;
@@ -272,6 +276,11 @@ if ( typeof define === 'function' && define.amd ) {
       }else{
           y_pos = 75;
           nextItemUnderNav.css("margin-top", "0px");
+      }
+      if ($(window).width() < 578) {
+          jQuery(".auth-target").append(jQuery(".nav-level-1-auth"));
+      }else{
+          jQuery("nav.container").prepend(jQuery(".nav-level-1-auth"));
       }
   });
   jQuery(document).scroll(function() {
@@ -371,11 +380,11 @@ if ( typeof define === 'function' && define.amd ) {
     case "makershare.com/learning":
         universalNavActive("share")
         break;
-    case "maker-share/makers":
-    case "makershare/makers":
-    case "makeshare.wpengine.com/makers":
-    case "makershare.staging.wpengine.com/makers":
-    case "makershare.com/makers":
+    case "maker-share/":
+    case "makershare/":
+    case "makeshare.wpengine.com/":
+    case "makershare.staging.wpengine.com/":
+    case "makershare.com/":
         universalNavActive("share-p")
         break;
     default:

@@ -144,7 +144,9 @@ header.universal-nav {
     right: 8%;
   }
   @media screen and (max-width: 576px) {
-    display: none;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 15px;
   }
   li {
     display: inline-block;
@@ -180,8 +182,15 @@ header.universal-nav {
       @media screen and (min-width: 767px) {
           margin-top: 10px;
       }
-      .avatar:hover {
+      @media screen and (max-width: 576px) {
+              margin-left: -55px;
+              padding-left: 65px;
+      }
+      .avatar {
+        display: none;
+        &:hover {
           opacity: .8;
+        }
       }
       .dropdown-menu {
           padding: 90px 25px 25px;
@@ -199,7 +208,7 @@ header.universal-nav {
             top: 30px;
             left: 30%;
             border: none;
-            @media screen and (max-width: 767px) {
+            @media screen and (min-width: 568px) (max-width: 767px) {
                 display: none;
             }
           }

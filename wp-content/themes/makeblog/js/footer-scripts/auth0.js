@@ -119,6 +119,7 @@ window.addEventListener('load', function() {
   function displayProfile() {
     // display the avatar
     document.querySelector('#profile-view img').src = userProfile.picture;
+    document.querySelector('#profile-view img').style.display = "block";
   }
 
   function renewToken() {
