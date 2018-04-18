@@ -174,10 +174,18 @@ header.universal-nav {
       padding: 0;
     }
   }
+  .btn:active, button:active, .btn:focus, button:focus{
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: 0;
+  }
   #profile-view {
       #dropdownMenuLink {
           position: relative;
           z-index: 1002;
+          @media screen and (max-width: 576px) {
+              width: 200px;
+          }
       }
       @media screen and (min-width: 768px) {
           margin-top: 10px;
