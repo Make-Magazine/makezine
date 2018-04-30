@@ -1,10 +1,10 @@
-
 (function($) { 
   $('#hamburger-icon, #hamburger-makey, .nav-flyout-underlay').click(function() {
     $('#hamburger-icon').toggleClass('open');
     $('#hamburger-makey').animate({opacity: 'toggle'});
     $('#nav-flyout').animate({opacity: 'toggle'});
     $('body').toggleClass('nav-open-no-scroll');
+    $('html').toggleClass('nav-open-no-scroll');
     $('.nav-flyout-underlay').animate({opacity: 'toggle'});
   });
 

@@ -241,13 +241,13 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 ;//!!
 //!! js/footer-scripts/navigation.js
-
 (function($) { 
   $('#hamburger-icon, #hamburger-makey, .nav-flyout-underlay').click(function() {
     $('#hamburger-icon').toggleClass('open');
     $('#hamburger-makey').animate({opacity: 'toggle'});
     $('#nav-flyout').animate({opacity: 'toggle'});
     $('body').toggleClass('nav-open-no-scroll');
+    $('html').toggleClass('nav-open-no-scroll');
     $('.nav-flyout-underlay').animate({opacity: 'toggle'});
   });
 
@@ -912,4 +912,12 @@ jQuery(document).on('submit', '#form13', function (e) {
   jQuery('.fancybox-feedback-inner2').show();
 });
 
-
+// Safari only code
+(function($){
+    // console.log(navigator.userAgent);
+    /* Adjustments for Safari on Mac */
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Mac') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+        // console.log('Safari on Mac detected, applying class...');
+        $('html').addClass('safari-mac'); // provide a class for the safari-mac specific css to filter with
+    }
+})(jQuery);

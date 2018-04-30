@@ -12,9 +12,10 @@
   @media screen and (max-width: 576px) {
     width: 360px;
     padding-top: 10px;
-    height: 90vh;
+    height: 100vh;
     overflow: auto;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
   .container {
     position: relative;
@@ -463,6 +464,13 @@
   }
 }
 
+
+.safari-mac {
+    .ham-menu-animate {
+        position: fixed;
+        animation: none;
+    }
+}
 .nav-open-no-scroll {
   overflow: hidden;
 }
