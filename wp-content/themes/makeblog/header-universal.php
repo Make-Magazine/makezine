@@ -323,7 +323,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="nav-flyout">
 
-    <?php get_template_part('mega-menu-remove-this-when-made-external'); ?>
+    <?php
+      //get_template_part('mega-menu-remove-this-when-made-external');
+      echo file_get_contents('https://s3-us-west-2.amazonaws.com/universalnav/universal-megamenu.php');    
+    ?>
 
   </div>
 

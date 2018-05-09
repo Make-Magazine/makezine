@@ -2,7 +2,7 @@
 /**
  * Template Name: Project Page
  */
-get_header(''); ?>
+get_header('universal'); ?>
 
 <div class="all-projects">
     <div class="content">

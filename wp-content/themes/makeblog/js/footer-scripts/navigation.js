@@ -55,7 +55,6 @@
           }
       }
   });
-    
   $("#search-modal").fancybox({
         wrapCSS : 'search-modal-wrapper',
         autoSize : true,

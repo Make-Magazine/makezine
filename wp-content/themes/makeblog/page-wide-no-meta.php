@@ -7,7 +7,7 @@
  * @author     Cole Geissinger <cgeissinger@makermedia.com>
  * 
  */
-get_header('univeral'); ?>
+get_header('universal'); ?>
 		
 	<div class="single">
 	
