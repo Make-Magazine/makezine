@@ -324,8 +324,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="nav-flyout">
 
     <?php
-      //get_template_part('mega-menu-remove-this-when-made-external');
-      echo file_get_contents('https://make.co/wp-content/themes/memberships/universal-nav/universal-megamenu.html');    
+      echo file_get_contents('https://make.co/universal-nav-flyout.html');    
     ?>
 
   </div>

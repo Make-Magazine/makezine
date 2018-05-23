@@ -11,7 +11,7 @@
       li:nth-child(2) {
           a { float: left; }
           span {
-            @media screen and (min-width: 992px) {
+            @media screen and (max-width: 992px) {
                 border-right: 0px;
             }
           }
@@ -35,7 +35,7 @@
         margin-bottom: 0px;
         transition: all .5s ease-in-out;
         span { display:none; }
-          @media screen and (min-width: 992px) {
+          @media screen and (max-width: 992px) {
               display: none;
           }
       }
@@ -46,7 +46,7 @@
     width: 10%;
 }
 
-.universal-nav.main-nav-scrolled .subscribe-call-out {
+.universal-nav .subscribe-call-out {
     @media screen and (min-width: 1200px) {
         display: block;
     }
