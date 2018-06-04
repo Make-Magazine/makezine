@@ -272,9 +272,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <h3 class="expanding-underline">My Account</h3>
-              <a class="dropdown-item" href="https://www.makershare.com">Maker Share Profile</a>
-              <a class="dropdown-item" href="https://www.makerfaire.com/manage-entries">Maker Faire Portal</a>
-              <a class="dropdown-item" href="https://www.makeco.wpengine.com">My Membership Account</a>
+              <a class="dropdown-item" href="https://makershare.com/portfolio">Maker Share Profile</a>
+              <a class="dropdown-item" href="https://makerfaire.com/manage-entries">Maker Faire Portal</a>
+              <a class="dropdown-item" href="https://make.co/myaccount">My Membership Account</a>
               <span class="dropdown-item" id="qsLogoutBtn">Log Out</span>
             </div>
           </div>
@@ -322,11 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   <div id="nav-flyout">
-
-    <?php
-      echo file_get_contents('https://make.co/wp-content/themes/memberships/universal-nav/universal-megamenu.html');    
-    ?>
-
+    <?php echo file_get_contents( 'https://make.co/wp-content/themes/memberships/universal-nav/universal-megamenu.html' ); ?>
   </div>
 
   <div id="nav-hamburger" class="nav-hamburger">
