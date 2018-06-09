@@ -147,5 +147,4 @@
     default:
           break;
   }
-    
 })(jQuery);

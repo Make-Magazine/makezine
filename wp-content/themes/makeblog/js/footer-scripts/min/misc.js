@@ -390,7 +390,6 @@ if ( typeof define === 'function' && define.amd ) {
     default:
           break;
   }
-    
 })(jQuery);;//!!
 //!! js/footer-scripts/other.js
 // This file contains common JavaScript that is loaded into every page.
