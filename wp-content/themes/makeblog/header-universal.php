@@ -258,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
       </ul>
 
-      <a href="https://makezine.com/" class="navbar-brand">
+      <a href="https://makezine.com/" class="navbar-brand" target="_self">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Make_logo.svg" class="img-responsive" alt="Make: brand logo" />
       </a>
 
@@ -271,9 +271,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="https://makershare.com/portfolio">Maker Share Profile</a>
-              <a class="dropdown-item" href="https://makerfaire.com/manage-entries">Maker Faire Portal</a>
-              <a class="dropdown-item" href="https://make.co/myaccount">My Membership Account</a>
+              <a class="dropdown-item" href="https://makershare.com/portfolio" target="_self">Maker Share Profile</a>
+              <a class="dropdown-item" href="https://makerfaire.com/manage-entries"  target="_self">Maker Faire Portal</a>
+              <a class="dropdown-item" href="https://make.co/myaccount" target="_self">My Membership Account</a>
               <span class="dropdown-item" id="qsLogoutBtn">Log Out</span>
             </div>
           </div>

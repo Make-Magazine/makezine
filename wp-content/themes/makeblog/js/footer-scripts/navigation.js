@@ -147,4 +147,6 @@
     default:
           break;
   }
+  // just in case, make sure that nav-share is visible
+  $(".nav-level-1-nav .nav-share").css("display", "block");
 })(jQuery);

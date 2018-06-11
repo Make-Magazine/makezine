@@ -390,6 +390,8 @@ if ( typeof define === 'function' && define.amd ) {
     default:
           break;
   }
+  // just in case, make sure that nav-share is visible
+  $(".nav-level-1-nav .nav-share").css("display", "block");
 })(jQuery);;//!!
 //!! js/footer-scripts/other.js
 // This file contains common JavaScript that is loaded into every page.
