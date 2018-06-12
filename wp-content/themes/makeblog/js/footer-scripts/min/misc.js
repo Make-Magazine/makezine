@@ -250,7 +250,11 @@ if ( typeof define === 'function' && define.amd ) {
     $('html').toggleClass('nav-open-no-scroll');
     $('.nav-flyout-underlay').animate({opacity: 'toggle'});
   });
+  // forcing some issues - avatar dropdown to open in same tab and search links to actually link
   $(".dropdown-item").attr('target', '_self');
+  $(".pop-links-list li a").click(function() {
+      window.location.href = $(this).attr('href');
+  });
 
   $('.nav-flyout-column').on('click', '.expanding-underline', function(event) {
     if ($(window).width() < 577) { 

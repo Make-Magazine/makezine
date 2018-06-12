@@ -206,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="/?s=wood working" target="_self">Woodworking</a></li>
     </ul>
     <ul class="pop-links-list">
-        <li><a href="/?s=3d printing" target="_self"3D Printing</a></li>
+        <li><a href="/?s=3d printing" target="_self">3D Printing</a></li>
         <li><a href="/?s=iot" target="_self">IOT</a></li>
         <li><a href="/?s=robot" target="_self">Robot</a></li>
         <li><a href="/?s=maker faire" target="_self">Maker Faire</a></li>
