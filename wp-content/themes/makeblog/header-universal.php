@@ -221,44 +221,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <ul class="nav-level-1-nav">
         <li class="nav-zine">
-          <a href="https://makezine.com/" target="_self">
+          <a href="https://makezine.com/">
             <span title="Latest">Latest</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-make">
-          <a href="http://www.make.co/" target="_self">
+          <a href="http://www.make.co/">
             <span title="Membership">Membership</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-shed">
-          <a href="https://www.makershed.com/">
+          <a href="https://www.makershed.com/" target="_blank">
             <span title="Shop">Shop</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-share">
-          <a href="https://makershare.com/learning/" target="_self">
+          <a href="https://makershare.com/learning/">
             <span title="Learn">Learn</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-share-p">
-          <a href="https://makershare.com/makers" target="_self">
+          <a href="https://makershare.com/makers">
             <span title="Portfolios">Portfolios</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-faire">
-          <a href="https://makerfaire.com/" target="_self">
+          <a href="https://makerfaire.com/">
             <span title="Events">Events</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
       </ul>
 
-      <a href="https://makezine.com/" class="navbar-brand" target="_self">
+      <a href="https://makezine.com/" class="navbar-brand">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Make_logo.svg" class="img-responsive" alt="Make: brand logo" />
       </a>
 
@@ -271,9 +271,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="https://makershare.com/portfolio" target="_self">Makers Share Profile</a>
-              <a class="dropdown-item" href="https://makerfaire.com/manage-entries"  target="_self">Maker Faire Portal</a>
-              <a class="dropdown-item" href="https://make.co/myaccount" target="_self">My Membership Account</a>
+              <a class="dropdown-item" href="https://makershare.com/portfolio">Makers Share Profile</a>
+              <a class="dropdown-item" href="https://makerfaire.com/manage-entries">Maker Faire Portal</a>
+              <a class="dropdown-item" href="https://make.co/myaccount">My Membership Account</a>
               <span class="dropdown-item" id="qsLogoutBtn">Log Out</span>
             </div>
           </div>
