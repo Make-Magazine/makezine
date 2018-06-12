@@ -233,7 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-shed">
-          <a href="https://www.makershed.com/" target="_self">
+          <a href="https://www.makershed.com/">
             <span title="Shop">Shop</span>
           </a>
           <div class="nav-level-2-arrow"></div>
