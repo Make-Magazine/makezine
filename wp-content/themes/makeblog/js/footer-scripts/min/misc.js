@@ -250,6 +250,7 @@ if ( typeof define === 'function' && define.amd ) {
     $('html').toggleClass('nav-open-no-scroll');
     $('.nav-flyout-underlay').animate({opacity: 'toggle'});
   });
+  $(".dropdown-item").attr('target', '_self');
 
   $('.nav-flyout-column').on('click', '.expanding-underline', function(event) {
     if ($(window).width() < 577) { 
@@ -431,7 +432,7 @@ jQuery( "a.sumome-share-client-share" ).ready(function() {
 
 
 // Open external links in new tab, unless it's supposed to be opened in same tab
-$(window).bind("load", function() {
+jQuery(document).ready(function($) {
   $(document.links).filter(function() {
     if($(this).attr("target") != "_self"){
         return this.hostname != window.location.hostname;

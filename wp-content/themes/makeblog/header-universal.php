@@ -200,16 +200,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="popular-links">
     <h5>POPULAR SEARCHES:</h5>
     <ul class="pop-links-list">
-        <li><a href="/pages/search-results?q=arduino">Arduino</a></li>
-        <li><a href="/pages/search-results?q=cnc">CNC</a></li>
-        <li><a href="/pages/search-results?q=raspberry pi">Raspberry Pi</a></li>
-        <li><a href="/pages/search-results?q=wood working">Woodworking</a></li>
+        <li><a href="/?s=arduino" target="_self">Arduino</a></li>
+        <li><a href="/?s=cnc" target="_self">CNC</a></li>
+        <li><a href="/?s=raspberry pi" target="_self">Raspberry Pi</a></li>
+        <li><a href="/?s=wood working" target="_self">Woodworking</a></li>
     </ul>
     <ul class="pop-links-list">
-        <li><a href="/pages/search-results?q=3d printing">3D Printing</a></li>
-        <li><a href="/pages/search-results?q=iot">IOT</a></li>
-        <li><a href="/pages/search-results?q=robot">Robot</a></li>
-        <li><a href="/pages/search-results?q=maker faire">Maker Faire</a></li>
+        <li><a href="/?s=3d printing" target="_self"3D Printing</a></li>
+        <li><a href="/?s=iot" target="_self">IOT</a></li>
+        <li><a href="/?s=robot" target="_self">Robot</a></li>
+        <li><a href="/?s=maker faire" target="_self">Maker Faire</a></li>
     </ul>
   </div>
 </div>
@@ -271,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="https://makershare.com/portfolio" target="_self">Maker Share Profile</a>
+              <a class="dropdown-item" href="https://makershare.com/portfolio" target="_self">Makers Share Profile</a>
               <a class="dropdown-item" href="https://makerfaire.com/manage-entries"  target="_self">Maker Faire Portal</a>
               <a class="dropdown-item" href="https://make.co/myaccount" target="_self">My Membership Account</a>
               <span class="dropdown-item" id="qsLogoutBtn">Log Out</span>

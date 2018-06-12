@@ -7,6 +7,7 @@
     $('html').toggleClass('nav-open-no-scroll');
     $('.nav-flyout-underlay').animate({opacity: 'toggle'});
   });
+  $(".dropdown-item").attr('target', '_self');
 
   $('.nav-flyout-column').on('click', '.expanding-underline', function(event) {
     if ($(window).width() < 577) { 
