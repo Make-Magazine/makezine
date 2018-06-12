@@ -30,10 +30,10 @@
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col" >
 				<h4>Explore Making</h4>
 				<ul class="list-unstyled">
-					<li><a href="//makerfaire.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Maker Faire</a></li>
-          <li><a href="https://makershare.com/?utm_source=makezine.com&utm_medium=footer" target="_blank">Maker Share</a></li>
-					<li><a href="//www.makershed.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Maker Shed</a></li>
-					<li><a href="//makercamp.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Maker Camp</a></li>
+					<li><a href="//makerfaire.com/?utm_source=makezine&utm_campaign=makezinefooter">Maker Faire</a></li>
+          <li><a href="https://makershare.com/?utm_source=makezine.com&utm_medium=footer">Maker Share</a></li>
+					<li><a href="//www.makershed.com/?utm_source=makezine&utm_campaign=makezinefooter">Maker Shed</a></li>
+					<li><a href="//makercamp.com/?utm_source=makezine&utm_campaign=makezinefooter">Maker Camp</a></li>
 					<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M7HMKZ?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Get the Magazine</a></li>
 				</ul>
 			</div>
@@ -41,9 +41,9 @@
 			<div class="col-sm-12 col-sm-6 col-md-3 social-foot-col">
 				<h4>Our Company</h4>
 				<ul class="list-unstyled">
-					<li><a href="//makermedia.com/?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">About Us</a></li>
+					<li><a href="//makermedia.com/?utm_source=makezine&utm_campaign=makezinefooter">About Us</a></li>
 					<li><a href="//makermedia.com/work-with-us/advertising?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Advertise with Us</a></li>
-					<li><a href="//makermedia.com/jobs?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Careers</a></li>
+					<li><a href="//makermedia.com/jobs?utm_source=makezine&utm_campaign=makezinefooter">Careers</a></li>
 					<li><a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Subscriber Services</a></li>
 					<li><a href="//help.makermedia.com/hc/en-us?utm_source=makezine&utm_campaign=makezinefooter" target="_blank">Help</a></li>
           <li><a href="/join/?utm_source=makezine&utm_campaign=makezinefooter">Newsletters</a></li>
@@ -192,10 +192,10 @@
 					<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire" target="_blank">Maker Faire</a></li>
-                <li><a href="https://makershare.com/?utm_source=makezine.com&utm_medium=footer" target="_blank">Maker Share</a></li>
+								<li><a href="//makerfaire.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makerfaire">Maker Faire</a></li>
+                <li><a href="https://makershare.com/?utm_source=makezine.com&utm_medium=footer">Maker Share</a></li>
 								<li><a href="//www.makershed.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makershed" target="_blank">Maker Shed</a></li>
-								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp" target="_blank">Maker Camp</a></li>
+								<li><a href="//makercamp.com/?utm_source=makezine.com&utm_medium=footer&utm_term=makercamp">Maker Camp</a></li>
 								<li><a href="//readerservices.makezine.com/mk/default.aspx?pc=MK&pk=M5BMKZ" target="_blank">Get the magazine</a></li>
 							</ul>
 						</div>
@@ -210,9 +210,9 @@
 					<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="//makermedia.com" target="_blank">About Us</a></li>
-								<li><a href="//makermedia.com/work-with-us/advertising" target="_blank">Advertise with Us</a></li>
-								<li><a href="//makermedia.com/work-with-us/job-openings" target="_blank">Careers</a></li>
+								<li><a href="//makermedia.com">About Us</a></li>
+								<li><a href="//makermedia.com/work-with-us/advertising">Advertise with Us</a></li>
+								<li><a href="//makermedia.com/work-with-us/job-openings">Careers</a></li>
 								<li><a href="//help.makermedia.com/hc/en-us" target="_blank">Help</a></li>
 								<li><a href="//help.makermedia.com/hc/en-us/categories/200341459-Make-Magazine" target="_blank">Make: Subscription Services</a></li>
                 <li><a href="/join/?utm_source=makezine&utm_campaign=makezinefooter">Newsletters</a></li>
