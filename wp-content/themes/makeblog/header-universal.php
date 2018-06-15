@@ -196,7 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <label class="sb-search-label" for="search">Search</label>
         <input class="sb-search-input search-field" placeholder="What are you searching for?" value="" name="s" id="search" title="" type="text">
         <input class="sb-search-submit" name="submit" value="Search" type="submit">
-  </form>  
+  </form>
   <div id="popular-links">
     <h5>POPULAR SEARCHES:</h5>
     <ul class="pop-links-list">
@@ -264,8 +264,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <ul class="nav-level-1-auth">
         <li>
-          <button id="qsLoginBtn">Login | Signup</button>
-          <div id="profile-view" class="dropdown">
+          <button style="display:none" id="qsLoginBtn">Login | Signup</button>
+          <div style="display:none" id="profile-view" class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img class="avatar" style="width:38px" alt="avatar">
             </a>
