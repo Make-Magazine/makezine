@@ -25,10 +25,19 @@
   var e = $(".universal-nav");
   var hamburger = $(".nav-hamburger");
   var y_pos = $(".nav-level-2").offset().top;
+  // maybe one day we can just wrap the below the nav content in something consistent
   var nextItemUnderNav = $("#home-featured");
-    if($(".second-nav").length) {
+    if($(".second-nav").length && $(".second-nav").css("display") != "none"){
         nextItemUnderNav = $(".second-nav");
+    }else{
+        if($(".mz-story-infinite-view").length) {
+            nextItemUnderNav = $(".mz-story-infinite-view");
+        }
+        if($(".ad-unit").length) {
+            nextItemUnderNav = $(".ad-unit");
+        }
     }
+    
   if ($(window).width() < 578) {
           jQuery(".auth-target").append(jQuery(".nav-level-1-auth"));
   }
