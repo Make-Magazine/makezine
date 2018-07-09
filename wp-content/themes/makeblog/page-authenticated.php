@@ -5,7 +5,7 @@
 
 get_header('universal'); ?>
 <div class="single">
-  <div class="container">
+  <div id="authenticated-redirect"  class="container">
     <div class="row">
       <div class="col-sm-3 col-xs-12">
         <img src="/wp-content/themes/makeblog/img/makey-stickers-slanted.png" />
