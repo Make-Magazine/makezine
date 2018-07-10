@@ -303,6 +303,18 @@ function my_wp_default_styles($styles)
 
 add_action("wp_default_styles", "my_wp_default_styles");
 
+function load_scripts() {
+    
+  $my_theme = wp_get_theme();
+  $my_version = $my_theme->get('Version');
+  if (strpos($_SERVER['REQUEST_URI'], "authenticate-redirect") !== false){
+    wp_enqueue_script('billboard', get_stylesheet_directory_uri() . '/js/billboard.js', array('jquery'), $my_version);
+  }
+
+}
+
+add_action('wp_enqueue_scripts', 'load_scripts');
+
 // Force Parent Category selection
 
 function parent_category_toggle()
