@@ -307,7 +307,7 @@ function load_scripts() {
     
   $my_theme = wp_get_theme();
   $my_version = $my_theme->get('Version');
-  if (strpos($_SERVER['REQUEST_URI'], "authenticate-redirect") !== false){
+  if (strpos($_SERVER['REQUEST_URI'], "authenticated") !== false){
     wp_enqueue_script('billboard', get_stylesheet_directory_uri() . '/js/billboard.js', array('jquery'), $my_version);
   }
 
