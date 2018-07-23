@@ -147,8 +147,9 @@ class ESSBSubscribeConversionsLite {
 			 */
 			
 			
-			
-			update_option ( $this->data_holder, $ab_stats );
+			delete_option($this->data_holder);
+			update_option($this->data_holder, $ab_stats, 'no', 'no');
+			//update_option ( $this->data_holder, $ab_stats );
 			die(json_encode($ab_stats));
 		}
 		
@@ -220,7 +221,9 @@ class ESSBSubscribeConversionsLite {
 			}
 				
 			
-			update_option ( $this->data_holder, $ab_stats );
+			delete_option($this->data_holder);
+			update_option($this->data_holder, $ab_stats, 'no', 'no');
+			//update_option ( $this->data_holder, $ab_stats );
 			die(json_encode($ab_stats));
 		}
 	}

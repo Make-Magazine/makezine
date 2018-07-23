@@ -3,10 +3,10 @@
 /*
 * Plugin Name: Easy Social Share Buttons for WordPress
 * Description: Easy Social Share Buttons automatically adds beautiful share buttons to all your content with support of Facebook, Twitter, Google+, LinkedIn, Pinterest, Digg, StumbleUpon, VKontakte, Tumblr, Reddit, Print, E-mail and more than 40 other social networks and mobile messengers. Easy show on 27+ automatic display locations or use powerful shortcodes. Compatible with most popular e-commerce plugins, social plugins and affiliate plugins
-* Plugin URI: http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo
-* Version: 5.3
+* Plugin URI: https://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo
+* Version: 5.5.2
 * Author: CreoApps
-* Author URI: http://codecanyon.net/user/appscreo/portfolio?ref=appscreo
+* Author URI: https://codecanyon.net/user/appscreo/portfolio?ref=appscreo
 */
 
 
@@ -17,7 +17,7 @@ if (! defined ( 'WPINC' ))
 
 define ( 'ESSB3_SELF_ENABLED', false );
 
-define ( 'ESSB3_VERSION', '5.3' );
+define ( 'ESSB3_VERSION', '5.5.2' );
 define ( 'ESSB3_PLUGIN_ROOT', dirname ( __FILE__ ) . '/' );
 define ( 'ESSB3_PLUGIN_URL', plugins_url () . '/' . basename ( dirname ( __FILE__ ) ) );
 define ( 'ESSB3_PLUGIN_BASE_NAME', plugin_basename ( __FILE__ ) );

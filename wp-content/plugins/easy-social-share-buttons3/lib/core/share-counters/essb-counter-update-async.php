@@ -82,22 +82,33 @@ class ESSBAsyncShareCounters {
 					}
 					break;
 				case 'linkedin' :
-					$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
+					if (essb_option_value('linked_counter_type') == 'self') {
+						if (! $recover_mode) {
+							$this->counters [$k] = $this->get_internal_count ( $this->post_id, $k );
+						} else {
+							$this->counters [$k] = 0;
+						}
+						$this->counters ['total'] += intval ( isset ( $this->counters [$k] ) ? $this->counters [$k] : 0 );
+					}
+					else {
+						$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
+					}
 					break;
 				case 'pinterest' :
 					$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
 					break;
 				case 'google' :
 					//$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
-					if (essb_option_value('google_counter_type') == 'self') {
+					if (essb_option_value('google_counter_type') == 'api') {
+						$this->counters[$k] = $this->get_google_count_api($url);
+					}
+					else {
 						if (! $recover_mode) {
 							$this->counters [$k] = $this->get_internal_count ( $this->post_id, $k );
 						} else {
 							$this->counters [$k] = 0;
 						}
-					}
-					else {
-						$this->counters[$k] = $this->get_google_count_api($url);
+						$this->counters ['total'] += intval ( isset ( $this->counters [$k] ) ? $this->counters [$k] : 0 );
 					}
 					break;
 				case 'stumbleupon' :

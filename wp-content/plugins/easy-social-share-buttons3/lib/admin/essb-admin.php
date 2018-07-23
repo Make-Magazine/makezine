@@ -934,7 +934,9 @@ class ESSBAdminControler {
 				
 			if (is_array($imported_options)) {
 				$result = true;
-				update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $imported_options);
+				delete_option(ESSB3_OPTIONS_NAME_FANSCOUNTER);
+				update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $imported_options, 'no', 'no');
+				//update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $imported_options);
 			}
 		}
 		
@@ -1107,7 +1109,9 @@ class ESSBAdminControler {
 		}
 		
 		//print_r($current_options);
-		update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $current_options);
+		delete_option(ESSB3_OPTIONS_NAME_FANSCOUNTER);
+		update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $current_options, 'no', 'no');
+		//update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $current_options);
 		
 		// clear cached timeouts for social networks
 		if (defined('ESSB3_SOCIALFANS_ACTIVE')) {
@@ -1555,7 +1559,9 @@ class ESSBAdminControler {
 			$history_container[$now] = $options;
 		}
 		
-		update_option(ESSB5_SETTINGS_ROLLBACK, $history_container);
+		// stop autoloading of settings rollback option
+		delete_option(ESSB5_SETTINGS_ROLLBACK);
+		update_option(ESSB5_SETTINGS_ROLLBACK, $history_container, 'no', 'no');
 	}
 	
 	public function update_optons() {

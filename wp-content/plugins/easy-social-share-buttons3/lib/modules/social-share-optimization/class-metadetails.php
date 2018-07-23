@@ -91,10 +91,10 @@ class ESSB_FrontMetaDetails {
 				 $this->title = get_post_meta ( get_the_ID(), 'essb_post_og_title', true );
 				 
 				 // import SEO details
-				 if (empty($this->title) && $this->wpseo_detected()) {
+				 if (empty($this->title) && $this->wpseo_detected() && !essb_option_bool_value('deactivate_pair_yoast_sso')) {
 				 	$this->title = get_post_meta( get_the_ID(), '_yoast_wpseo_opengraph-title' , true );
 				 }
-				 if (empty($this->title) && $this->wpseo_detected()) {
+				 if (empty($this->title) && $this->wpseo_detected() && !essb_option_bool_value('deactivate_pair_yoast_seo')) {
 				 	$this->title = get_post_meta( get_the_ID(), '_yoast_wpseo_title' , true );
 				 }
 				 
@@ -205,10 +205,10 @@ class ESSB_FrontMetaDetails {
 				 $this->description = get_post_meta ( get_the_ID(), 'essb_post_og_desc', true );
 				 
 				 // import SEO details
-				 if (empty($this->description) && $this->wpseo_detected()) {
+				 if (empty($this->description) && $this->wpseo_detected() && !essb_option_bool_value('deactivate_pair_yoast_sso')) {
 				 	$this->description = get_post_meta( get_the_ID(), '_yoast_wpseo_opengraph-description' , true );
 				 }
-				 if (empty($this->description) && $this->wpseo_detected()) {
+				 if (empty($this->description) && $this->wpseo_detected() && !essb_option_bool_value('deactivate_pair_yoast_seo')) {
 				 	$this->description = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc' , true );
 				 }
 				 

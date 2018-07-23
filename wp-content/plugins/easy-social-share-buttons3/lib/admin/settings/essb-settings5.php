@@ -70,7 +70,10 @@ if (! is_array ( $essb_admin_options_fanscounter )) {
 	}
 
 	$essb_admin_options_fanscounter = ESSBSocialFollowersCounterHelper::create_default_options_from_structure ( ESSBSocialFollowersCounterHelper::options_structure () );
-	update_option ( ESSB3_OPTIONS_NAME_FANSCOUNTER, $essb_admin_options_fanscounter );
+	//update_option ( ESSB3_OPTIONS_NAME_FANSCOUNTER, $essb_admin_options_fanscounter );
+
+	delete_option(ESSB3_OPTIONS_NAME_FANSCOUNTER);
+	update_option(ESSB3_OPTIONS_NAME_FANSCOUNTER, $essb_admin_options_fanscounter, 'no', 'no');
 }
 
 if (count ( $essb_navigation_tabs ) > 0) {

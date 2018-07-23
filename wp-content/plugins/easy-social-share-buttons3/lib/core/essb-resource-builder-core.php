@@ -291,6 +291,9 @@ function essb_js_build_admin_ajax_access_code($buffer) {
 		$code_options['essb3_ga_mode'] = 'layers';
 	}
 	
+	if (essb_option_bool_value('deactivate_postcount')) {
+		$code_options['stop_postcount'] = true;
+	}
 	
 	$postfloat_top = essb_option_value('postfloat_top');
 	if (!empty($postfloat_top)) {
@@ -349,6 +352,11 @@ function essb_js_build_admin_ajax_access_code($buffer) {
 		$code_options['postfloat_percent'] = $postfloat_percent;
 	}
 	
+	$subscribe_terms_error = essb_option_value('subscribe_terms_error');
+	if ($subscribe_terms_error != '') {
+		$code_options['subscribe_terms_error'] = stripslashes($subscribe_terms_error);
+	}
+	
 	// since 5.2 - client side counter update
 	if (essb_option_bool_value('cache_counter_facebook_async') || essb_option_bool_value('cache_counter_pinterest_async')) {
 		
@@ -364,6 +372,10 @@ function essb_js_build_admin_ajax_access_code($buffer) {
 		if (defined('ESSB3_SHARED_COUNTER_RECOVERY')) {
 			$code_options['facebook_post_recovery_url'] = essb_recovery_get_alt_permalink(get_permalink(get_the_ID()), get_the_ID());
 		}
+	}
+	
+	if (has_filter('essb_extend_ajax_options')) {
+		$code_options = apply_filters('essb_extend_ajax_options', $code_options);
 	}
 	
 	$output = 'var essb_settings = '.json_encode($code_options).';';

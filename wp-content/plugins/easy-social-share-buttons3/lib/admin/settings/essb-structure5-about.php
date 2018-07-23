@@ -181,42 +181,6 @@ a.essb-bg-red:hover {
 		<div class="essb-welcome-button-container">
 			<a href="http://codecanyon.net/downloads" target="_blank" class="essb-btn essb-btn-orange" style="margin-right: 100px;">Rate us <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a>
 		</div>
-
-			<div class="essb-welcome-button-container essb-welcome-button-container-facebook">
-			<div class="fb-like" style="top: 7px; margin-left: -70px;" data-href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-			<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-			</div>
-			
-					<div class="essb-welcome-button-container essb-welcome-button-container-twitter">
-			<a href="https://twitter.com/share" class="twitter-share-button"
-				data-text="I just install the best #socialsharing plugin for #wordpress Easy Social Share Buttons by @appscreo"
-				data-url="http://bit.ly/socialsharewp" data-size="large"
-				data-counturl="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476">Tweet</a>
-			<script>! function ( d, s, id ) {
-				var js, fjs = d.getElementsByTagName( s )[ 0 ], p = /^http:/.test( d.location ) ? 'http' : 'https';
-				if ( ! d.getElementById( id ) ) {
-					js = d.createElement( s );
-					js.id = id;
-					js.src = p + '://platform.twitter.com/widgets.js';
-					fjs.parentNode.insertBefore( js, fjs );
-				}
-			}( document, 'script', 'twitter-wjs' );</script>
-		</div>
-					<div
-			class="essb-welcome-button-container essb-welcome-button-container-google">
-
-			<!-- Place this tag where you want the +1 button to render. -->
-			<div class="g-plusone"
-				data-href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476"></div>
-		</div>
-			
 	</div>
 
 	<!-- new welcome screen -->

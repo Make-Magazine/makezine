@@ -20,9 +20,12 @@ class ESSBCachedCounters {
 		
 		$internal_counters = essb_option_bool_value('active_internal_counters');
 		$no_mail_print_counter = essb_option_bool_value('deactive_internal_counters_mail');
-		$twitter_counter = essb_option_value('twitter_counters');
+		$twitter_counter = essb_option_value('twitter_counters');		
 		
 		if ($twitter_counter == '')  {$twitter_counter = 'api'; }
+		
+		$linkedin_counter_type = essb_option_value('linkedin_counter_type');
+		$google_counter_type = essb_option_value('google_counter_type');
 		
 		$basic_array = explode(',', $basic_network_list);
 		$avoid_array = explode(',', $avoid_network_list);
@@ -32,6 +35,18 @@ class ESSBCachedCounters {
 		foreach ($networks as $k) {
 			
 			if (!in_array ( $k, $active_networks_list)) {
+				continue;
+			}
+			
+			if ($k == 'linkedin' && $linkedin_counter_type == 'no') {
+				continue;
+			}
+			
+			if ($k == 'google' && $google_counter_type == 'no') {
+				continue;
+			}
+			
+			if ($k == 'twitter' && $twitter_counter == 'no') {
 				continue;
 			}
 			

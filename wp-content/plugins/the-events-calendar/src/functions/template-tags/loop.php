@@ -58,7 +58,11 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return bool
 	 */
 	function tribe_is_past() {
-		global $wp_query;
+
+		if ( ! $wp_query = tribe_get_global_query_object() ) {
+			return;
+		}
+
 		$is_past = ! empty( $wp_query->tribe_is_past ) && ! tribe_is_showing_all() ? $wp_query->tribe_is_past : false;
 
 		/**
@@ -77,7 +81,11 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return bool
 	 */
 	function tribe_is_upcoming() {
-		global $wp_query;
+
+		if ( ! $wp_query = tribe_get_global_query_object() ) {
+			return;
+		}
+
 		$is_upcoming = ( tribe_is_list_view() && ! tribe_is_past() ) ? true : false;
 
 		/**
@@ -158,7 +166,10 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @todo move logic to template classes
 	 */
 	function tribe_get_events_title( $depth = true ) {
-		global $wp_query;
+
+		if ( ! $wp_query = tribe_get_global_query_object() ) {
+			return;
+		}
 
 		$events_label_plural = tribe_get_event_label_plural();
 
@@ -245,9 +256,13 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return bool
 	 */
 	function tribe_has_previous_event() {
-		global $wp_query;
-
+		$wp_query = tribe_get_global_query_object();
 		$has_previous = false;
+
+		if ( null === $wp_query ) {
+			return apply_filters( 'tribe_has_previous_event', $has_previous );
+		}
+
 		$past         = tribe_is_past();
 		$upcoming     = ! $past;
 		$cur_page     = (int) $wp_query->get( 'paged' );
@@ -269,7 +284,6 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 			// Indicate we're interested in past events
 			$args['tribe_is_past'] = true;
-
 			// Make some efficiency savings
 			$args['no_paging']      = true;
 			$args['no_found_rows']  = true;
@@ -288,9 +302,14 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return bool
 	 */
 	function tribe_has_next_event() {
-		global $wp_query;
 
+		$wp_query = tribe_get_global_query_object();
 		$has_next  = false;
+
+		if ( null === $wp_query ) {
+			return apply_filters( 'tribe_has_next_event', $has_next );
+		}
+
 		$past      = tribe_is_past();
 		$upcoming  = ! $past;
 		$cur_page  = (int) $wp_query->get( 'paged' );
@@ -388,7 +407,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 			 *
 			 */
 			if ( $wp_query->current_post === 0 || ( $prev_event_month != $event_month || ( $prev_event_month == $event_month && $prev_event_year != $event_year ) ) ) {
-				$html .= sprintf( "<span class='tribe-events-list-separator-month'><span>%s</span></span>", tribe_get_start_date( $post, false, $month_year_format ) );
+				$html .= sprintf( "<h2 class='tribe-events-list-separator-month'><span>%s</span></h2>", tribe_get_start_date( $post, false, $month_year_format ) );
 			}
 
 			echo apply_filters( 'tribe_events_list_the_date_headers', $html, $event_month, $event_year );

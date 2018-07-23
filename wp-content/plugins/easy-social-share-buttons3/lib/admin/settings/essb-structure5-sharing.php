@@ -142,6 +142,11 @@ ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Facebook Messen
 ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'fbmessengerapp', __('Facebook Application ID:', 'essb'), __('Facebook Application ID connected with your site is required to make messenger sharing work. If you use Facebook Advanced Sharing feature then it is not needed to fill this parameter as application is already applied into Facebook Advanced Sharing settings', 'essb'));
 ESSBOptionsStructureHelper::panel_end('social', 'share-1');
 
+ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('WhatsApp', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_whatsapp', array("mode" => "toggle", 'state' => 'closed'));
+ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'whatsapp_api', __('Use WhatsApp for Any Device', 'essb'), __('Use this option of you wish to make WhatsApp work for any device. Setting option to Yes will initiate share via the WhatsApp web API which allows share also to web based or mobile version.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+
+
 ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('VKontakte', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_vk', array("mode" => "toggle", 'state' => 'closed'));
 ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'vkontakte_fullshare', __('Send all sharable details for post/page:', 'essb'), __('VKontakte like most of social networks read data from socail share optimization tags that you have on page. In case when you share nothing appears please activate this option to allow plugin send all details to VKontakte. Please note that if this option is active the details from Social Share Optimization will not appear in share dialog!', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::panel_end('social', 'share-1');
@@ -334,7 +339,7 @@ ESSBOptionsStructureHelper::panel_start('social', 'sharecnt', __('Advanced count
 
 ESSBOptionsStructureHelper::structure_row_start('social', 'sharecnt');
 ESSBOptionsStructureHelper::structure_section_start('social', 'sharecnt', 'c6');
-ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'cache_counter_refresh_cache', __('Cache plugin/server compatible mode', 'essb'), __('Recommended to be active on sites that uses cache plugin or cache server. Activation of this option will ensure your counters will update on background at the time you set but you will see the new share value once your cache expires (usually once per hour or once per day).', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
+ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'cache_counter_refresh_cache', __('Cache plugin/server compatible mode', 'essb'), __('Activation of this option will start a second check after each page load to check if share counters should update or not. This will be done on background and it will ensure that share values will be up-to-date when site cache is updated (usually once/twice per day for most cache solutions). Warning! This option may produce slow down if you use too frequent counter update or when you have high traffic on site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
 ESSBOptionsStructureHelper::structure_section_end('social', 'sharecnt');
 
 ESSBOptionsStructureHelper::structure_section_start('social', 'sharecnt', 'c6');
@@ -424,10 +429,15 @@ ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'faceb
 $listOfOptions = array ("" => "API Endpoint #1", "api2" => "API Endpoint #2", "api3" => "API Endpoint #3");
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'facebook_counter_api', __('Facebook counter update API', 'essb'), __('Facebook have right now several active API endpoints that you can use to get share counter. The default is API Endpoint #1 but if you experience issue with counters try also API Endpoint #2', 'essb'), $listOfOptions, '', '6');
 
-$listOfOptions = array ("" => "Google+ Official Counter (till it is available)", "self" => "Self-hosted counter (internally counted by click on buttons)");
+
+$listOfOptions = array ("" => "LinkedIn Official Counter (till it is available)", "self" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
+ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'linkedin_counter_type', __('LinkedIn share counter', 'essb'), __('LinkedIn recenly <a href="https://developer.linkedin.com/blog/posts/2018/deprecating-the-inshare-counter" target="_blank">announced that they are removing share counters</a> from their button and API. The API may still return data for your site but it is adviced to switch to internal counters.', 'essb'), $listOfOptions, '', '6');
+
+
+$listOfOptions = array ("api" => "Google+ Official Counter (till it is available)", "" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'google_counter_type', __('Google+ share counter', 'essb'), __('Google+ recenly <a href="https://plus.google.com/110610523830483756510/posts/Z1FfzduveUo" target="_blank">announced that they are removing share counters</a> from their button and API. When that become globally you can switch to internal counter.', 'essb'), $listOfOptions, '', '6');
 
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'google_counter_token', __('Google+ API key', 'essb'), __('Very rear Google+ may not show out counter because of too many connections to their API. In this case you will need to build access key and paste it here inside Google Developer Console', 'essb'), '', '', '', '', '6');
+//ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'google_counter_token', __('Google+ API key', 'essb'), __('Very rear Google+ may not show out counter because of too many connections to their API. In this case you will need to build access key and paste it here inside Google Developer Console', 'essb'), '', '', '', '', '6');
 
 ESSBOptionsStructureHelper::structure_row_start('social', 'sharecnt');
 ESSBOptionsStructureHelper::structure_section_start('social', 'sharecnt', 'c6');
@@ -442,6 +452,9 @@ ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'deactive_interna
 ESSBOptionsStructureHelper::structure_section_end('social', 'sharecnt');
 
 ESSBOptionsStructureHelper::structure_row_end('social', 'sharecnt');
+
+ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'deactivate_postcount', __('Fully deactivate internal share counter tracking', 'essb'), __('Even when you do not display share counters on site at this moment plugin tracks internal counter with each button click. This is made to provide a share counter value when you decide to show or use share counters. Activation of this option will completely remove the execution and work of code for all internal tracked share counters - if you have any existing internal counter values they will stop increase and for all others it will not add a value. Hint: Rember that major networks like LinkedIn and Google+ removed share counters and there is no alternative of counter value at this time rather than internal counter.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '9');
+
 
 $counter_value_mode = array("" => __('Automatically shorten values above 1000', 'essb'), 'full' => __('Always display full value (default server settings)', 'essb'), 'fulldot' => __('Always display full value - dot thousand separator (example 5.000)', 'essb'), 'fullcomma' => __('Always display full value - comma thousand separator (example 5,000)', 'essb'), 'fullspace' => __('Always display full value - space thousand separator (example 5 000)', 'essb'));
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'counter_format', __('Share counter format', 'essb'), __('Choose how you wish to present your share counter value - short number of full number. This option will not work if you use real time share counters - in this mode you will always see short number format.', 'essb'), $counter_value_mode, '', '6');
@@ -564,6 +577,7 @@ if (!essb_option_bool_value('deactivate_module_shareoptimize')) {
 	ESSBOptionsStructureHelper::field_section_start_full_panels('social', 'optimize');
 	ESSBOptionsStructureHelper::field_switch_panel('social', 'optimize', 'sso_imagesize', __('Generate image size tags', 'essb'), __('Image size tags are not required - they are optional but in some cases without them Facebook may not recongnize the correct image. In case this happens to you try activating this option.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::field_switch_panel('social', 'optimize', 'sso_gifimages', __('GIF images support', 'essb'), __('Set this to Yes if your site uses GIF images as featured or optimized for sharing and you wish to see that appearing inside Facebook sharing', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_switch_panel('social', 'optimize', 'sso_deactivate_woogallery', __('Deactivate WooCommerce Gallery Integration', 'essb'), __('Set this option to Yes if you wish to avoid generation of all gallery images into social share optimization tags.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::field_switch_panel('social', 'optimize', 'sso_multipleimages', __('Allow more than one share image', 'essb'), __('This option will allow to choose up to 5 additional images on each post that will appear in social share optimization tags.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::field_section_end_full_panels('social', 'optimize');
 	

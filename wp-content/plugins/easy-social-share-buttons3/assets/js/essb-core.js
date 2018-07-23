@@ -211,7 +211,9 @@ jQuery(document).ready(function($){
 			
 		}
 	
-		essb_self_postcount(service, instance_post_id);
+		if (typeof(essb_settings) != 'undefined') {			
+			if (typeof(essb_settings.stop_postcount) == 'undefined') essb_self_postcount(service, instance_post_id);
+		}
 	
 		if (typeof(essb_abtesting_logger) != "undefined") 
 			essb_abtesting_logger(service, instance_post_id, instance);
@@ -538,6 +540,19 @@ jQuery(document).ready(function($){
 		var usedPosition = $(positionContainer).attr('data-position') || '';
 		
 		if (formContainer.length) {
+			// Additional check for require agree to terms check
+			if ($(formContainer).find('.essb-subscribe-confirm').length) {
+				var state = $(formContainer).find('.essb-subscribe-confirm').is(":checked");
+				if (!state) {
+					
+					if (essb_settings.subscribe_terms_error)
+						alert(essb_settings.subscribe_terms_error);
+					else
+						alert('You need to confirm that you agree with our terms');
+					return;
+				}
+			}
+			
 			var user_mail = $(formContainer).find('.essb-subscribe-form-content-email-field').val();
 			var user_name = $(formContainer).find('.essb-subscribe-form-content-name-field').length ? $(formContainer).find('.essb-subscribe-form-content-name-field').val() : '';
 			$(formContainer).find('.submit').prop('disabled', true);
@@ -1061,8 +1076,12 @@ jQuery(document).ready(function($){
 			}
 		}
 		
-		if ((essb_settings.sidebar_disappear_pos || '') != '' || (essb_settings.sidebar_appear_pos || '') != '')
-			$(window).scroll(debounce(essb_sidebar_onscroll, 1));
+		if ((essb_settings.sidebar_disappear_pos || '') != '' || (essb_settings.sidebar_appear_pos || '') != '') {
+			
+			if ($( window ).width() > 800) {
+				$(window).scroll(debounce(essb_sidebar_onscroll, 1));
+			}
+		}
 		
 		/**
 		 * Display Method: Post Bar

@@ -175,7 +175,7 @@ if (!function_exists('essb_generate_morebutton_code')) {
 					<div class="essb_morepopup_content essb_morepopup_content_%1$s">%2$s</div>%5$s</div>
 					<div class="essb_morepopup_shadow essb_morepopup_shadow_%1$s%6$s" onclick="essb.toggle_less_popup(\'%1$s\'); return false;"></div>',
 					$salt,
-					$user_message_inpop.ESSBButtonHelper::draw_share_buttons($post_share_details, $button_style,
+					$user_message_inpop.essb_draw_share_buttons($post_share_details, $button_style,
 							$more_social_networks, $more_social_networks_order, $social_networks_names, "more_popup", $more_salt, 'share'),
 					$position, $additional_popup, $add_pointer, $additional_popup_shadow);
 		

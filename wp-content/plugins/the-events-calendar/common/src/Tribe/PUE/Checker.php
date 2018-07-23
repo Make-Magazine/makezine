@@ -622,9 +622,9 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 							$validity_msg.html(data.message);
 
 							switch ( data.status ) {
-								case 1: $validity_msg.addClass( 'valid-key' ); break;
+								case 1: $validity_msg.addClass( 'valid-key' ).removeClass( 'invalid-key' ); break;
 								case 2: $validity_msg.addClass( 'valid-key service-msg' ); break;
-								default: $validity_msg.addClass( 'invalid-key' ); break;
+								default: $validity_msg.addClass( 'invalid-key' ).removeClass( 'valid-key' ); break;
 							}
 						});
 					}
@@ -682,9 +682,9 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 						AND `deleted` = '0'
 				";
 
-				$stats['multisite']         = 1;
-				$stats['network_activated'] = (int) $this->is_plugin_active_for_network();
-				$stats['active_sites']      = (int) $wpdb->get_var( $sql_count );
+				$stats['network']['multisite']         = 1;
+				$stats['network']['network_activated'] = (int) $this->is_plugin_active_for_network();
+				$stats['network']['active_sites']      = (int) $wpdb->get_var( $sql_count );
 			}
 
 			self::$stats = $stats;

@@ -92,11 +92,14 @@ if (! function_exists ( 'essb_popular_posts' )) {
 		if ($same_cat == 'true') {
 			global $post;
 			
-			$post_type = get_post_type($post->ID);
-			$post_categories = get_the_category($post->ID);
 			$post_category = '';
-			if ($post_categories) {
-				$post_category = $post_categories[0]->cat_ID;
+			
+			if (isset($post)) {
+				$post_type = get_post_type($post->ID);
+				$post_categories = get_the_category($post->ID);
+				if ($post_categories) {
+					$post_category = $post_categories[0]->cat_ID;
+				}
 			}
 			
 			$args_query = apply_filters( 'widget_posts_args', array(

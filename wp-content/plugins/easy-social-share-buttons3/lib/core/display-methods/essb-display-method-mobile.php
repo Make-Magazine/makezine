@@ -15,12 +15,12 @@ class ESSBDisplayMethodMobile {
 		$output = '';
 		
 		$output .= '<div class="essb-mobile-sharepoint" onclick="essb.mobile_sharebar_open();">';
-		$output .= '<div class="essb-mobile-sharepoint-icon"></div>';
+		$output .= '<div class="essb-mobile-sharepoint-icon"><i class="essb_icon_share"></i></div>';
 		$output .= '</div>';
 		
 		$output .= '<div class="essb-mobile-sharebar-window">';
 		$output .= '<div class="essb-mobile-sharebar-window-close-title" onclick="essb.mobile_sharebar_close(); return false;">';
-		$output .= '<a href="#" class="essb-mobile-sharebar-window-close" ></a>';
+		$output .= '<a href="#" class="essb-mobile-sharebar-window-close" ><i class="essb_icon_close"></i></a>';
 		$output .= '</div>';
 		$output .= '<div class="essb-mobile-sharebar-window-content">';
 		$output .= $share_buttons;
@@ -42,12 +42,12 @@ class ESSBDisplayMethodMobile {
 		$output = "";
 			
 		$output .= '<div class="essb-mobile-sharebar" onclick="essb.mobile_sharebar_open();">';
-		$output .= sprintf ('<div class="essb-mobile-sharebar-icon"></div><div class="essb-mobile-sharebar-text">%1$s</div>', $mobile_sharebar_text);
+		$output .= sprintf ('<div class="essb-mobile-sharebar-icon"><i class="essb_icon_share"></i></div><div class="essb-mobile-sharebar-text">%1$s</div>', $mobile_sharebar_text);
 		$output .= '</div>';
 			
 		$output .= '<div class="essb-mobile-sharebar-window">';
 		$output .= '<div class="essb-mobile-sharebar-window-close-title" onclick="essb.mobile_sharebar_close(); return false;">';
-		$output .= '<a href="#" class="essb-mobile-sharebar-window-close" ></a>';
+		$output .= '<a href="#" class="essb-mobile-sharebar-window-close" ><i class="essb_icon_close"></i></a>';
 		$output .= '</div>';
 		$output .= '<div class="essb-mobile-sharebar-window-content">';
 		

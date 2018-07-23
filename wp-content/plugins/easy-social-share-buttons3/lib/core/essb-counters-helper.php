@@ -67,11 +67,11 @@ class ESSBCountersHelper {
 				}
 				break;
 			case 'google':
-				if (essb_option_value('google_counter_type') == 'self') {
-					$count = self::getSelfPostCount($postID, $network);
+				if (essb_option_value('google_counter_type') == 'api') {
+					$count = self::getGplusShares($url);
 				}
 				else {
-					$count = self::getGplusShares($url);
+					$count = self::getSelfPostCount($postID, $network);
 				}
 				break;
 			case 'reddit':
@@ -100,7 +100,7 @@ class ESSBCountersHelper {
 				$count = self::get_comments_count($postID);
 				break;
 			case 'linkedin':
-				$count = self::get_linkedin($url);
+				$count = self::getSelfPostCount($postID, $network); //  self::get_linkedin($url);
 				break;
 			default:
 				$count = self::getSelfPostCount($postID, $network);

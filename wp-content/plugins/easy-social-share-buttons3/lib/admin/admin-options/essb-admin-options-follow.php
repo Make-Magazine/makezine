@@ -215,10 +215,10 @@ ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 
 ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('MyMail', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
 $listOfOptions = array();
-if (function_exists('mymail')) {
-	$lists = mymail('lists')->get();
+if (function_exists('mailster')) {
+	$lists = mailster('lists')->get();
 	foreach ($lists as $list) {
-		if (function_exists('mymail')) $id = $list->ID;
+		if (function_exists('mailster')) $id = $list->ID;
 		else $id = $list->term_id;
 
 		$listOfOptions[$id] = $list->name;

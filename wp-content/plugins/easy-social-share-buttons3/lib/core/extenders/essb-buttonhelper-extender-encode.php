@@ -38,6 +38,8 @@ function essb_correct_url_on_tracking_code($share, $network) {
 		$share['url'] = str_replace('{title}', $utm_title, $share['url']);
 		$share['full_url'] = str_replace('{title}', $utm_title, $share['full_url']);
 		$share['clear_twitter_url'] = false;
+		$share['url'] = str_replace('{postid}', $share['post_id'], $share['url']);
+		$share['full_url'] = str_replace('{postid}', $share['post_id'], $share['full_url']);
 	
 		
 		// rebuild shorturls if GA tracking is active

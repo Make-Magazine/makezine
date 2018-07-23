@@ -39,7 +39,9 @@ class ESSBAddonsHelper {
 			$remote_result = stripslashes ( $remote_result );
 			$info = json_decode($remote_result, true);
 			if (is_array($info)) {
-				update_option($this->cache_options_slug, $info);
+				delete_option($this->cache_options_slug);
+				update_option($this->cache_options_slug, $info, 'no', 'no');
+				//update_option($this->cache_options_slug, $info);
 			}
 		}
 	}

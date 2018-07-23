@@ -38,19 +38,19 @@ class ESSBCore {
 	/**
 	 * Cloning disabled
 	 */
-	private function __clone() {
+	public function __clone() {
 	}
 	
 	/**
 	 * Serialization disabled
 	 */
-	private function __sleep() {
+	public function __sleep() {
 	}
 	
 	/**
 	 * De-serialization disabled
 	 */
-	private function __wakeup() {
+	public function __wakeup() {
 	}
 	
 	
@@ -179,6 +179,11 @@ class ESSBCore {
 
 		$template_url = ESSB3_PLUGIN_URL.'/assets/css/easy-social-share-buttons'.$use_minifed_css.'.css';
 		essb_resource_builder()->add_static_resource($template_url, 'easy-social-share-buttons', 'css');
+		
+		// activating core form styles if option is set
+		if (essb_option_bool_value('subscribe_css_always')) {
+			essb_resource_builder()->add_static_resource(ESSB3_PLUGIN_URL .'/assets/css/essb-subscribe'.(ESSBGlobalSettings::$use_minified_css ? ".min": "").'.css', 'easy-social-share-buttons-subscribe', 'css');
+		}
 		
 		$core_js = ESSB3_PLUGIN_URL.'/assets/js/essb-core'.$use_minifed_js.'.js';
 		essb_resource_builder()->add_static_resource($core_js, 'easy-social-share-buttons-core', 'js');
@@ -1051,6 +1056,8 @@ class ESSBCore {
 	
 	function trigger_bottom_mark($content) {
 		$deactivate_trigger = false;
+		$deactivate_trigger = essb_option_bool_value('deactivate_bottom_mark');
+		
 		$deactivate_trigger = apply_filters('essb5_remove_bottom_mark', $deactivate_trigger);
 		
 		if ($deactivate_trigger) {
@@ -2299,7 +2306,7 @@ class ESSBCore {
 		}
 		
 		
-		$ssbuttons = ESSBButtonHelper::draw_share_buttons($post_share_details, $button_style, 
+		$ssbuttons = essb_draw_share_buttons($post_share_details, $button_style, 
 				$social_networks, $social_networks_order, $social_networks_names, $position, $salt, $likeshare, $post_native_details);
 		
 		

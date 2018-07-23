@@ -26,19 +26,19 @@ class ESSBAmpSupport {
 	/**
 	 * Cloning disabled
 	 */
-	private function __clone() {
+	public function __clone() {
 	}
 	
 	/**
 	 * Serialization disabled
 	 */
-	private function __sleep() {
+	public function __sleep() {
 	}
 	
 	/**
 	 * De-serialization disabled
 	 */
-	private function __wakeup() {
+	public function __wakeup() {
 	}
 	
 	public function activate_amp_support() {

@@ -177,6 +177,9 @@ var tribe_events_bar_action;
 
 		$currentli.prependTo( $tribebarviews ).addClass( 'tribe-bar-active' );
 
+		// Disable the select
+		$tribebarselect.hide();
+
 		// toggle the views dropdown
 		$tribebar.on( 'click', '#tribe-bar-views', function( e ) {
 			e.stopPropagation();
@@ -294,22 +297,16 @@ var tribe_events_bar_action;
 
 			tribe_events_bar_action = 'change_view';
 
-			if ( ts.view === 'month' && $tribedate.length ) {
+			if ( 'month' === ts.view && $tribedate.length ) {
 				var dp_date = $tribedate.val();
 				var day     = tf.get_day();
 
-				if ( ts.datepicker_format !== '0' ) {
-					if ( day.length ) {
-						dp_date = tribeDateFormat( $tribedate.bootstrapDatepicker( 'getDate' ), 'tribeMonthQuery' );
-						$tribedate.val( dp_date + day );
-					}
-					else {
-						$tribedate.val( '' );
-					}
-
+				if ( '0' != ts.datepicker_format ) {
+					dp_date = tribeDateFormat( $tribedate.bootstrapDatepicker( 'getDate' ), 'tribeMonthQuery' );
+					$tribedate.val( dp_date + day );
 				}
 				else {
-					if ( dp_date.length === 7 ) {
+					if ( 7 === dp_date.length ) {
 						$tribedate.val( dp_date + day );
 					}
 				}
@@ -331,8 +328,8 @@ var tribe_events_bar_action;
 
 			$inputs.each( function() {
 				var $this = $( this );
-				if ( $this.val() && $this.val().length && !$this.hasClass( 'tribe-no-param' ) ) {
-					if ( ts.view !== 'month' && '0' !== ts.datepicker_format && $this.is( $tribedate ) ) {
+				if ( $this.val() && $this.val().length && ! $this.hasClass( 'tribe-no-param' ) ) {
+					if ( 'month' !== ts.view  && '0' !== ts.datepicker_format && $this.is( $tribedate ) ) {
 
 						ts.url_params[ $this.attr( 'name' ) ] = tribeDateFormat( $this.bootstrapDatepicker( 'getDate' ), 'tribeQuery' );
 
@@ -340,7 +337,19 @@ var tribe_events_bar_action;
 					else {
 						if ( $this.is( ':checkbox' ) ) {
 							if ( $this.is( ':checked' ) ) {
-								ts.url_params[ $this.attr( 'name' ) ] = $this.val();
+
+								// if checkbox and not defined setup as an array
+								if ( 'undefined' === typeof ts.url_params[ $this.attr( 'name' ) ] ) {
+									ts.url_params[$this.attr( 'name' )] = [];
+								}
+
+								// add value to array
+								ts.url_params[ $this.attr( 'name' ) ].push( $this.val() );
+							}
+						}
+						else if ( 'radio' === $this.attr( 'type' ) ) {
+							if ( $this.is( ':checked' ) ) {
+								ts.url_params[$this.attr( 'name' )] = $this.val();
 							}
 						}
 						else if ( 'undefined' !== typeof $this.attr( 'name' ) ) {
@@ -349,6 +358,12 @@ var tribe_events_bar_action;
 					}
 				}
 			} );
+
+			// setup redirected param to prevent after initial redirect
+			var redirected = $( '.tribe-bar-views-option-' + td.default_mobile_view ).data( 'redirected' );
+			if ( td.redirected_view || redirected ) {
+				ts.url_params['tribe_redirected'] = true;
+			}
 
 			ts.url_params = $.param( ts.url_params );
 

@@ -4,6 +4,14 @@ defined( 'WPINC' ) or die;
 
 class Tribe__Events__Aggregator {
 	/**
+	 * Cache key used to storage the services list returned by the call to:
+	 * - Tribe__Events__Aggregator__Service::instance()->get_origins();
+	 *
+	 * @since 4.6.12
+	 */
+	public $KEY_CACHE_SERVICES = 'tribe_aggregator_services_list';
+
+	/**
 	 * @var Tribe__Events__Aggregator__Meta_Box Event Aggregator Meta Box object
 	 */
 	public $meta_box;
@@ -100,7 +108,7 @@ class Tribe__Events__Aggregator {
 	 * Set up any necessary notices
 	 */
 	public function setup_notices() {
-		if ( ! is_admin() || Tribe__Main::instance()->doing_ajax() ) {
+		if ( ! is_admin() || tribe( 'context' )->doing_ajax() ) {
 			return;
 		}
 
@@ -288,6 +296,27 @@ class Tribe__Events__Aggregator {
 	 */
 	public static function is_service_active() {
 		return ! is_wp_error( tribe( 'events-aggregator.service' )->api() );
+	}
+
+	/**
+	 * Verifies if user has a license key
+	 *
+	 * @return boolean
+	 *
+	 * @since 4.6.19
+	 */
+	public function has_license_key() {
+		$key = get_option( 'pue_install_key_event_aggregator' );
+		if ( is_multisite() ) {
+			$network_key = get_network_option( null, 'pue_install_key_event_aggregator' );
+			$key         = ! empty( $key ) && $network_key !== $key ? $key : $network_key;
+		}
+
+		if ( empty( $key ) ) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
@@ -567,6 +596,9 @@ class Tribe__Events__Aggregator {
 		// Add admin bar items for Aggregator
 		add_action( 'wp_before_admin_bar_render', array( $this, 'add_admin_bar_items' ), 10 );
 
+		// Remove caches associated with the list of services
+		add_action( 'tribe_settings_after_save', array( $this, 'clear_services_list_cache' ) );
+
 		// Let's prevent events-importer-ical from DESTROYING its saved recurring imports when it gets deactivated
 		if ( class_exists( 'Tribe__Events__Ical_Importer__Main' ) ) {
 			remove_action(
@@ -581,5 +613,16 @@ class Tribe__Events__Aggregator {
 		add_filter( 'wp_check_filetype_and_ext', array( $this, 'add_csv_mimes' ), 10, 4 );
 
 		return true;
+	}
+
+	/**
+	 * Function used to remove cache stored in transients.
+	 *
+	 * @since 4.6.12
+	 *
+	 * @return boolean
+	 */
+	public function clear_services_list_cache() {
+		return delete_transient( $this->KEY_CACHE_SERVICES );
 	}
 }

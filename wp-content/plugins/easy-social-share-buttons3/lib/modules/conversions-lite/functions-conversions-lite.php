@@ -93,7 +93,10 @@ function essb_conversions_dashboard_report() {
 	
 	if ($reset_conversion == 'true') {
 		$conversions_data = array();
-		update_option('essb-conversions-lite', $conversions_data);
+		
+		delete_option('essb-conversions-lite');
+		update_option('essb-conversions-lite', $conversions_data, 'no', 'no');
+		//update_option('essb-conversions-lite', $conversions_data);
 		
 		echo '<script type="text/javascript">';
 		echo 'location.href = "admin.php?page=essb_redirect_conversions&section=share&subsection";';

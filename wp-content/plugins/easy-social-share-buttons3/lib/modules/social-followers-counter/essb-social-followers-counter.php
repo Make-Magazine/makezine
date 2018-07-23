@@ -347,6 +347,10 @@ class ESSBSocialFollowersCounter {
 		
 		$expire_time = ESSBSocialFollowersCounterHelper::get_option ( 'update' );
 		
+		if ($expire_time == '' || intval($expire_time) == 0) {
+			$expire_time = 1440;
+		}
+		
 		update_option ( $this->essb3_cache_option_name, $counters );
 		update_option ( $this->essb3_expire_name, (time () + ($expire_time * 60)) );
 		

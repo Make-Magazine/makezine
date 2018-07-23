@@ -479,7 +479,8 @@ class ESSBSocialFollowersCounterUpdater {
 		}
 		
 		try {
-			$response = $this->remote_update ( 'https://api.instagram.com/v1/users/' . $id . '?access_token=' . $api_key );
+			$response = $this->remote_update ( 'https://api.instagram.com/v1/users/' . $id . '?access_token=' . $api_key );			
+			
 			if (isset ( $response["data"] ) && isset ( $response["data"]["counts"] ) && isset ( $response["data"]["counts"]["followed_by"] )) {
 				return $response["data"]["counts"]["followed_by"];
 			}
@@ -490,7 +491,7 @@ class ESSBSocialFollowersCounterUpdater {
 	
 	public function update_youtube() {
 		
-		$api_key = ESSBSocialFollowersCounterHelper::get_option ( 'youtube_api_key' );
+		$api_key = ESSBSocialFollowersCounterHelper::get_option ( 'youtube_api_key' );		
 		
 		if (ESSBSocialFollowersCounterHelper::get_option ( 'youtube_account_type' ) == 'channel')
 			return $this->update_youtube_api3_channel ( $api_key );
@@ -532,7 +533,7 @@ class ESSBSocialFollowersCounterUpdater {
 		
 		if (false == $request) {
 			return null;
-		}
+		}		
 		
 		$response = @json_decode ( $request );	
 		
@@ -630,7 +631,7 @@ class ESSBSocialFollowersCounterUpdater {
 		$result = 0;
 		try {
 			
-			$data = $this->remote_update ( "http://api.vk.com/method/groups.getById?gid=$id&fields=members_count" );
+			$data = $this->remote_update ( "http://api.vk.com/method/groups.getById?group_id=$id&fields=members_count&v=5.61" );
 			
 			$result = ( int ) $data ['response'] [0] ['members_count'];
 		} catch ( Exception $e ) {

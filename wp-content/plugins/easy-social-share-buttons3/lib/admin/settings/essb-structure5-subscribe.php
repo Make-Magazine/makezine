@@ -28,7 +28,7 @@ ESSBOptionsStructureHelper::submenu_item('optin', 'optin-10', __('Customize Desi
 // Easy Optin
 $optin_connectors = array("mailchimp" => "MailChimp",
 		"getresponse" => "GetResponse",
-		"mymail" => "MyMail",
+		"mymail" => "Mailster",
 		"mailpoet" => "MailPoet",
 		"mailerlite" => "MailerLite",
 		"activecampaign" => "ActiveCampaign",
@@ -40,6 +40,7 @@ if (has_filter('essb_external_subscribe_connectors')) {
 }
 
 ESSBOptionsStructureHelper::field_switch('optin', 'optin-0', 'subscribe_widget', __('Activate subscribe widget & shortcode', 'essb'), __('Activation of this option will allow you to use subscribe widget and shortcode anywhere on your site not connected with subscribe button inside share buttons', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_switch('optin', 'optin-0', 'subscribe_css_always', __('Always load subscribe form styles', 'essb'), __('Set this to Yes if for some reason styles for subscribe forms does not appear on your site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 
 ESSBOptionsStructureHelper::panel_start('optin', 'optin-0', __('Subscribe Button in Share Buttons', 'essb'), __('Configure functionality of subscribe button that you can add along with your share buttons', 'essb'), 'fa21 essb_icon_subscribe', array("mode" => "toggle", 'state' => 'opened'));
 
@@ -194,8 +195,17 @@ ESSBOptionsStructureHelper::panel_end('optin', 'optin-12');
 	ESSBOptionsStructureHelper::panel_end('optin', 'optin-12');
 
 ESSBOptionsStructureHelper::field_select('optin', 'optin-1', 'subscribe_connector', __('Choose your service', 'essb'), __('Select service that you wish to integrate with Easy Optin forms. Please note that for correct work you need to fill all required authorizations details for it below', 'essb'), $optin_connectors);
+
+ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Redirect on successful subscribe', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_success', __('Redirect to page on successful subscribe', 'essb'), __('If you wish to redirect users to page (example: Thank you page) fill its URL here. If field is blank plugin will not redirect. The URL should be filled in full - example: https://socialsharingplugin.com/thank-you/', 'essb'));
 ESSBOptionsStructureHelper::field_switch('optin', 'optin-1', 'subscribe_success_new', __('Open successful redirect in a new window', 'essb'), __('Set to Yes if you wish the successful URL to appear in a popup instead of redirect on same page.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
+
+ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Include agree to terms confirmation', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+ESSBOptionsStructureHelper::field_switch('optin', 'optin-1', 'subscribe_terms', __('Include I agree to terms confirmation', 'essb'), __('Set this option to Yes to add in form a checkbox that will require users to confirm that they agree with terms before submitting. (Recommended for usage in EU).', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_terms_text', __('Custom terms confirmation text', 'essb'), __('Set a custom text that will appear in the confirmation check before submission', 'essb'));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_terms_error', __('Custom not checked confirmation error', 'essb'), __('Set your own error message when confirmation box is not set.', 'essb'));
+ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 
 
 ESSBOptionsStructureHelper::holder_start('optin', 'optin-1', 'essb-subscribe-connector', 'essb-subscribe-connector-mailchimp');
@@ -229,6 +239,7 @@ ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('ActiveCampaign',
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_ac_api_url', __('ActiveCampaign API URL', 'essb'), __('Enter your ActiveCampaign API URL. To get API URL please go to your ActiveCampaign Account >> My Settings >> Developer.', 'essb'));
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_ac_api', __('ActiveCampaign API Key', 'essb'), __('Enter your ActiveCampaign API Key. To get API Key please go to your ActiveCampaign Account >> My Settings >> Developer.', 'essb'));
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_ac_list', __('ActiveCapaign List ID', 'essb'), __('Entery your ActiveCampaign List ID. To get your list ID visit lists pages and copy ID that you see in browser when you open list ?listid=<yourid>.', 'essb'));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_ac_form', __('ActiveCapaign Form ID', 'essb'), __('	Optional subscription Form ID, to inherit those redirection settings. Example: 1001. This will allow you to mimic adding the contact through a subscription form, where you can take advantage of the redirection settings.', 'essb'));
 ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
 
@@ -243,10 +254,10 @@ ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
 ESSBOptionsStructureHelper::holder_start('optin', 'optin-1', 'essb-subscribe-connector', 'essb-subscribe-connector-mymail');
 ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('MyMail', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
 $listOfOptions = array();
-if (function_exists('mymail')) {
-	$lists = mymail('lists')->get();
+if (function_exists('mailster')) {
+	$lists = mailster('lists')->get();
 	foreach ($lists as $list) {
-		if (function_exists('mymail')) $id = $list->ID;
+		if (function_exists('mailster')) $id = $list->ID;
 		else $id = $list->term_id;
 
 		$listOfOptions[$id] = $list->name;

@@ -61,7 +61,9 @@ class ESSBShortcodeGenerator5 {
 			unset($saved_codes[$key]);
 		}
 		
-		update_option($this->shortcode_cache_option, $saved_codes);
+		delete_option($this->shortcode_cache_option);
+		update_option($this->shortcode_cache_option, $saved_codes, 'no', 'no');
+		//update_option($this->shortcode_cache_option, $saved_codes);
 	}
 	
 	public function generated_stored_shortcodes() {
@@ -490,7 +492,9 @@ jQuery(document).ready(function(){
 		}
 		
 		$saved_codes[$key] = array('name' => $shortcode_name, 'settings' => $options, 'shortcode' => $this->shortcode);
-		update_option($this->shortcode_cache_option, $saved_codes);
+		delete_option($this->shortcode_cache_option);
+		update_option($this->shortcode_cache_option, $saved_codes, 'no', 'no');
+		//update_option($this->shortcode_cache_option, $saved_codes);
 		
 		return $key;
 	}

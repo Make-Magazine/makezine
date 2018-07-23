@@ -22,6 +22,24 @@ class ESSBNetworks_Subscribe {
 		}
 	}
 	
+	public static function generate_if_needed_agree_check() {
+		$code = '';
+		
+		if (essb_option_bool_value('subscribe_terms')) {
+			$text = essb_option_value('subscribe_terms_text');
+			
+			if ($text == '') {
+				$text = __('I agree to the privacy policy and terms', 'essb');
+			}
+			
+			$code = '<div class="essb-subscribe-confirm">';
+			$code .= '<input type="checkbox" class="essb-subscribe-confirm" id="essb-subscribe-confirm"/><label for="essb-subscribe-confirm">'.do_shortcode(stripslashes($text)).'</label>';
+			$code .= '</div>';
+		}
+		
+		return $code;
+	}
+	
 	public static function draw_subscribe_form($position, $salt, $subscribe_position = '') {
 		$output = '';
 		$popup_mode = ($position != 'top' && $position != 'bottom' && $position != 'shortcode') ? true : false;

@@ -147,8 +147,9 @@ class ESSBSocialConversionsLite {
 			 */
 			
 			
-			
-			update_option ( $this->data_holder, $ab_stats );
+			delete_option($this->data_holder);
+			update_option($this->data_holder, $ab_stats, 'no', 'no');
+			//update_option ( $this->data_holder, $ab_stats );
 			die();
 		}
 		
@@ -219,8 +220,9 @@ class ESSBSocialConversionsLite {
 					}
 			}
 				
-			
-			update_option ( $this->data_holder, $ab_stats );
+			delete_option($this->data_holder);
+			update_option($this->data_holder, $ab_stats, 'no', 'no');
+			//update_option ( $this->data_holder, $ab_stats );
 			die();
 		}
 	}

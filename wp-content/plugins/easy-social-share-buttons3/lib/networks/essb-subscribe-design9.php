@@ -94,6 +94,9 @@ if (!function_exists('essb_subscribe_form_design9')) {
 		}
 		
 		$output .= '<input class="essb-subscribe-form-content-email-field '.$input_cols.'" type="text" value="" placeholder="'.$subscribe_mc_email.'" name="mailchimp_email">';
+		
+		$output .= ESSBNetworks_Subscribe::generate_if_needed_agree_check();
+		
 		$output .= '<input class="submit '.$submit_width.'" name="submit" type="submit" value="'.$subscribe_mc_button.'" onclick="essb.ajax_subscribe(\''.$salt.'\', event);">';
 		$output .= '</form>';
 		

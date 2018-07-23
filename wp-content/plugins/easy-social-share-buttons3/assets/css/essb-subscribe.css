@@ -2150,3 +2150,15 @@ font-weight: 400;
 .essb-optinbooster .essb-optinbooster-closeicon i:before {
 	font-size: 18px;
 }
+
+/** Subscribe Confirmation Box **/
+.essb-subscribe-form-content .essb-subscribe-confirm input {
+	width: auto;
+	height: auto;
+	margin-right: 5px;
+}
+
+.essb-subscribe-form-content .essb-subscribe-confirm {
+	margin: 10px 0;
+	font-size: 13px;
+}

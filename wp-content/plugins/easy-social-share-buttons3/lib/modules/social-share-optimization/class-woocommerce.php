@@ -59,10 +59,12 @@ class ESSB_WooCommerceOpenGraph {
 			$img_ids = $product->get_gallery_attachment_ids();
 		}
 	
-		if ( is_array( $img_ids ) && $img_ids !== array() ) {
-			foreach ( $img_ids as $img_id ) {
-				$img_url = wp_get_attachment_url( $img_id );
-				$this->og_tag('og:image', $img_url );
+		if (!essb_option_bool_value('sso_deactivate_woogallery')) {
+			if ( is_array( $img_ids ) && $img_ids !== array() ) {
+				foreach ( $img_ids as $img_id ) {
+					$img_url = wp_get_attachment_url( $img_id );
+					$this->og_tag('og:image', $img_url );
+				}
 			}
 		}
 	

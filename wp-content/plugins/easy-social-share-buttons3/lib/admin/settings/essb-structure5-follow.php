@@ -43,6 +43,10 @@ if (!essb_option_bool_value('deactivate_module_facebookchat')) {
 		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'facebookchat', 'fbmessenger_exclude', __('Exclude display on', 'essb'), __('Exclude appearance on posts/pages with these IDs. Comma separated: "11, 15, 125".', 'essb'), '');
 		ESSBOptionsStructureHelper::field_switch('display', 'facebookchat', 'fbmessenger_minimized', __('Appear minimized', 'essb'), __('Set this option if you wish the chat to appear minimized', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 		ESSBOptionsStructureHelper::field_switch('display', 'facebookchat', 'fbmessenger_left', __('Appear on the left', 'essb'), __('Change default appearance position to Left', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'facebookchat', 'fbmessenger_logged_greeting', __('Logged in users greeting', 'essb'), __('Optional. The greeting text that will be displayed if the user is currently logged in to Facebook. Maximum 80 characters.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'facebookchat', 'fbmessenger_loggedout_greeting', __('Logged out users greeting', 'essb'), __('Optional. The greeting text that will be displayed if the user is currently not logged in to Facebook. Maximum 80 characters.', 'essb'));
+		ESSBOptionsStructureHelper::field_color('display', 'facebookchat', 'fbmessenger_color', __('Theme color', 'essb'), __('Optional. Set custom theme color for the chat.', 'essb'));
 		
 		
 		ESSBOptionsStructureHelper::panel_end('display', 'facebookchat');

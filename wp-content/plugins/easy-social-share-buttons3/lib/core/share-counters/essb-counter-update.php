@@ -54,23 +54,35 @@ function essb_counter_update_simple($post_id, $url, $full_url, $networks = array
 				}
 				break;
 			case 'linkedin' :
-				$cached_counters [$k] = essb_get_linkedin_count( $url );
-				break;
-			case 'pinterest' :
-				$cached_counters [$k] = essb_get_pinterest_count( $url );
-				break;
-			case 'google' :
 				
-				if (essb_option_value('google_counter_type') == 'self') {
+				if (essb_option_value('linkedin_counter_type') != 'self') {
+					$cached_counters [$k] = essb_get_linkedin_count( $url );
+				}
+				else {
 					if (!$recover_mode) {
 						$cached_counters [$k] = essb_get_internal_count( $post_id, $k );
 					}
 					else {
 						$cached_counters[$k] = 0;
 					}
+				}				
+			
+				break;
+			case 'pinterest' :
+				$cached_counters [$k] = essb_get_pinterest_count( $url );
+				break;
+			case 'google' :
+				
+				if (essb_option_value('google_counter_type') == 'api') {
+					$cached_counters [$k] = essb_get_google_count_api($url);
 				}
 				else {
-					$cached_counters [$k] = essb_get_google_count_api($url);
+					if (!$recover_mode) {
+						$cached_counters [$k] = essb_get_internal_count( $post_id, $k );
+					}
+					else {
+						$cached_counters[$k] = 0;
+					}					
 				}
 				break;
 			case 'stumbleupon' :
@@ -176,7 +188,7 @@ function essb_counter_request( $encUrl ) {
 	curl_close( $ch );
 
 	if ($errmsg != '' || $err != '') {
-		print_r($errmsg);
+		//print_r($errmsg);
 	}
 	return $content;
 }

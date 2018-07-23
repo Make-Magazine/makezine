@@ -134,8 +134,9 @@ class ESSBNetworks_SubscribeActions {
 				$ac_api_url = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_ac_api_url' );
 				$ac_api = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_ac_api' );
 				$ac_list = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_ac_list' );
+				$ac_form = essb_option_value('subscribe_ac_form');
 								
-				$output = self::subscribe_activecampaign($ac_api_url, $ac_api, $ac_list, $user_email, $user_name);
+				$output = self::subscribe_activecampaign($ac_api_url, $ac_api, $ac_list, $user_email, $user_name, $ac_form);
 				break;
 			case "campaignmonitor":
 				$cm_api = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_cm_api' );
@@ -319,8 +320,8 @@ class ESSBNetworks_SubscribeActions {
 			$response ['code'] = '1';
 			$response ['message'] = 'Thank you';
 			
-			if (function_exists('mymail')) {
-				$list = mymail('lists')->get($list_id);
+			if (function_exists('mailster')) {
+				$list = mailster('lists')->get($list_id);
 			} else {
 				$list = get_term_by('id', $list_id, 'newsletter_lists');
 			}
@@ -329,7 +330,7 @@ class ESSBNetworks_SubscribeActions {
 				try {
 					// set as pending state when double opt-in is set to Yes
 					$double = essb_option_bool_value('subscribe_mm_double');
-					if (function_exists('mymail')) {
+					if (function_exists('mailster')) {
 						$entry = array(
 								'firstname' => $name,
 								'email' => $email,
@@ -340,12 +341,12 @@ class ESSBNetworks_SubscribeActions {
 								'signup' =>time()
 						);
 						
-						$subscriber_id = mymail('subscribers')->add($entry, true);
+						$subscriber_id = mailster('subscribers')->add($entry, true);
 						if (is_wp_error( $subscriber_id )) {
 							$response['code'] = '99';
 							return $response;
 						}
-						$result = mymail('subscribers')->assign_lists($subscriber_id, array($list->ID));
+						$result = mailster('subscribers')->assign_lists($subscriber_id, array($list->ID));
 					} else {
 						$result = mymail_subscribe($_subscriber['{subscription-email}'], array('firstname' => $_subscriber['{subscription-name}']), array($list->slug), $double);
 					}
@@ -412,7 +413,7 @@ class ESSBNetworks_SubscribeActions {
 		return $response;
 	}
 
-	public static function subscribe_activecampaign($api_url, $api_key, $list_id, $email, $name = '') {
+	public static function subscribe_activecampaign($api_url, $api_key, $list_id, $email, $name = '', $ac_form = '') {
 	
 		$response = array();
 	
@@ -427,6 +428,10 @@ class ESSBNetworks_SubscribeActions {
 		if ($name != '') {
 			$data['first_name'] = $name;
 			$data['last_name'] = '';
+		}
+		
+		if ($ac_form != '') {
+			$data['form'] = $ac_form;
 		}
 		
 		$request = http_build_query($data);

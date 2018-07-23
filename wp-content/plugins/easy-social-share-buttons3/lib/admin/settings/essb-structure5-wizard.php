@@ -234,7 +234,7 @@ ESSBOptionsStructureHelper::holder_start('quick', 'quick-6', 'essb-wizard-subscr
 // Easy Optin
 $optin_connectors = array("mailchimp" => "MailChimp",
 		"getresponse" => "GetResponse",
-		"mymail" => "MyMail",
+		"mymail" => "Mailster",
 		"mailpoet" => "MailPoet",
 		"mailerlite" => "MailerLite",
 		"activecampaign" => "ActiveCampaign",
@@ -312,10 +312,10 @@ ESSBOptionsStructureHelper::holder_end('quick', 'quick-6');
 ESSBOptionsStructureHelper::holder_start('quick', 'quick-6', 'essb-subscribe-connector', 'essb-subscribe-connector-mymail');
 ESSBOptionsStructureHelper::panel_start('quick', 'quick-6', __('MyMail', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
 $listOfOptions = array();
-if (function_exists('mymail')) {
-	$lists = mymail('lists')->get();
+if (function_exists('mailster')) {
+	$lists = mailster('lists')->get();
 	foreach ($lists as $list) {
-		if (function_exists('mymail')) $id = $list->ID;
+		if (function_exists('mailster')) $id = $list->ID;
 		else $id = $list->term_id;
 
 		$listOfOptions[$id] = $list->name;

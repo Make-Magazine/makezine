@@ -8,8 +8,10 @@
  * 
  */
 
-add_action ( 'wp_ajax_nopriv_essb_self_postcount', 'essb_actions_update_post_count' );
-add_action ( 'wp_ajax_essb_self_postcount', 'essb_actions_update_post_count' );
+if (!essb_option_bool_value('deactivate_postcount')) {
+	add_action ( 'wp_ajax_nopriv_essb_self_postcount', 'essb_actions_update_post_count' );
+	add_action ( 'wp_ajax_essb_self_postcount', 'essb_actions_update_post_count' );
+}
 
 if (essb_option_bool_value('cache_counter_facebook_async')) {
 	add_action ( 'wp_ajax_nopriv_essb_facebook_counter_update', 'essb_actions_update_facebook_count' );
