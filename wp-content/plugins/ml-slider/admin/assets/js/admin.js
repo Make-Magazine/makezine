@@ -47,21 +47,58 @@ jQuery(function($) {
         /**
          * Filter out spaces when copying the shortcode.
          */
-        document.getElementById('ms-entire-code')
-                .addEventListener('copy', function(event) {
-            var text = window.getSelection()
-                .toString().split("'").map(function(string, index) {
-                    return (index === 1) ? string.replace(/\s/g, '').replace('ri', 'r i') : string;
-            }).join("'");
+		document.getElementById('ms-entire-code') &&
+			document.getElementById('ms-entire-code').addEventListener('copy', function(event) {
+				var text = window.getSelection()
+					.toString().split("'")
+					.map(function(string, index) {
+						return (index === 1) ? string.replace(/\s/g, '').replace('ri', 'r i') : string;
+					}).join("'");
             event.clipboardData.setData('text/plain', text);
             event.preventDefault()
         });
 
         /**
+         * Event listening to media library edits
+         */
+        var media_library_events = {
+            loaded: false,
+            /**
+             * Attaches listenTo event to the library collection
+             * 
+             * @param modal object wp.media modal 
+             */
+            attach_event: function(modal) {
+                var library = modal.state().get('library');
+                modal.listenTo(library, 'change', function(model) { 
+                    media_library_events.update_slide_infos({
+                        id: model.get('id'),
+                        caption: model.get('caption'),
+                        title: model.get('title'),
+                        alt: model.get('alt'),
+                    });
+                });
+            },
+            /**
+             * Updates slide caption and other infos when a media is edited in a modal
+             * 
+             * @param object infos 
+             */
+            update_slide_infos: function(infos) {
+                var $slides = $('.slide').filter(function(i){
+                    return $(this).data('attachment-id') == infos.id;
+                });
+                infos.caption ? $('.caption .default', $slides).html(infos.caption) : $('.caption .default', $slides).html('&nbsp;');
+                infos.title ? $('.title .default', $slides).html(infos.title) : $('.title .default', $slides).html('&nbsp;');
+                infos.alt ? $('.alt .default', $slides).html(infos.alt) : $('.alt .default', $slides).html('&nbsp;');
+            }
+        };
+        
+        /**
          * UI for adding a slide. Managed through the WP media upload UI
          * Event managed here.
          */
-        var create_slides = wp.media.frames.file_frame = wp.media({
+        var create_slides = window.create_slides = wp.media.frames.file_frame = wp.media({
             multiple: 'add',
             frame: 'post',
             library: {type: 'image'}
@@ -80,7 +117,7 @@ jQuery(function($) {
                 selection: slide_ids,
                 _wpnonce: metaslider.create_slide_nonce
             };
-    
+
             // TODO: Create micro feedback to the user. 
             // TODO: Adding lots of slides locks up the page due to 'resizeSlides' event
             $.ajax({
@@ -88,7 +125,7 @@ jQuery(function($) {
                 data: data,
                 type: 'POST',
                 beforeSend: function() { MetaSlider_Helpers.loading(true); },
-                complete: function() {MetaSlider_Helpers.loading(false); },
+                complete: function() { MetaSlider_Helpers.loading(false); },
                 error: function(response) {    
                     alert(response.responseJSON.data.message);
                 },
@@ -99,12 +136,22 @@ jQuery(function($) {
                      * TODO: instead have it return data and use JS to render it
                      */
                     $(".metaslider .left table").append(response);
-                    MetaSlider_Helpers.loading(false)
+                    MetaSlider_Helpers.loading(false);
                     $(".metaslider .left table").trigger('resizeSlides');
+                    $(document).trigger('metaslider/slides-added');
                 }
             });
         });
-    
+
+        /**
+         * Starts to watch the media library for changes 
+         */
+        create_slides.on('attach', function() {
+            if (!media_library_events.loaded) {
+                media_library_events.attach_event(create_slides);
+            }
+        });
+
         /**
          * I for changing slide image. Managed through the WP media upload UI
          * Initialized dynamically due to multiple slides.
@@ -114,7 +161,7 @@ jQuery(function($) {
         /**
          * Opens the UI for the slide selection.
          */
-        $('.metaslider').on('click', '.add-slide', function(event){
+        $('.metaslider').on('click', '.add-slide', function(event) {
             event.preventDefault();
             create_slides.open();
     
@@ -129,7 +176,8 @@ jQuery(function($) {
         $('.metaslider').on('click', '.update-image', function(event) {
             event.preventDefault();
             var $this = $(this);
-            
+            var current_id = $this.data('attachment-id');
+
             /**
              * Opens up a media window showing images
              */
@@ -139,8 +187,32 @@ jQuery(function($) {
                 button: {
                     text: MetaSlider_Helpers.capitalize($this.attr('data-button-text'))
                 }
-            }).open();
-    
+            });
+
+            /**
+             * Selects current image
+             */
+            update_slide_frame.on('open', function() {
+                if (current_id) {
+                    var selection = update_slide_frame.state().get('selection');
+                    selection.reset([wp.media.attachment(current_id)]);
+                }
+            });
+
+            /**
+             * Starts to watch the media library for changes 
+             */            
+            update_slide_frame.on('attach', function() {
+                if (!media_library_events.loaded) {
+                    media_library_events.attach_event(update_slide_frame);
+                }
+            });
+            
+            /**
+             * Open media modal
+             */
+            update_slide_frame.open();
+            
             /**
              * Handles changing an image in DB and UI
              */
@@ -149,12 +221,13 @@ jQuery(function($) {
                 selection.map(function(attachment) {
                     attachment = attachment.toJSON();
                     new_image_id = attachment.id;
+                    selected_item = attachment;
                 });
     
                 /**
                  * Updates the meta information on the slide
                  */
-                var data = {
+                var data = { 
                     action: 'update_slide_image',
                     _wpnonce: metaslider.update_slide_image_nonce,
                     slide_id: $this.data('slideId'),
@@ -172,19 +245,50 @@ jQuery(function($) {
                         alert(response.responseJSON.data.message);
                     },
                     success: function(response) {
-    
                        /**
                         * Updates the image on success
                         */
                         $('#slide-' + $this.data('slideId') + ' .thumb')
                             .css('background-image', 'url(' + response.data.img_url + ')');
-                        $(".metaslider .left table").trigger('resizeSlides');            
+                        // set new attachment ID
+                        var $edited_slide_elms = $('#slide-' + $this.data('slideId') + ', #slide-' + $this.data('slideId') + ' .update-image');
+                        $edited_slide_elms.data('attachment-id', selected_item.id);
+                        
+                        // update default infos to new image
+                        media_library_events.update_slide_infos({
+                            id: selected_item.id,
+                            caption: selected_item.caption,
+                            title: selected_item.title,
+                            alt: selected_item.alt,
+                        });
+                        $(".metaslider .left table").trigger('resizeSlides');
                     }
                 });
             });
         });
 
+        /** 
+        * Handles changing caption mode
+        */
+        $('.metaslider').on('change', '.js-inherit-from-image', function(e){
+            var $this = $(this);
+            var $parent = $this.parents('.can-inherit');
+            var input = $parent.children('textarea,input[type=text]');
+            var default_item = $parent.children('.default');
+            if ($this.is(':checked')) {
+                $parent.addClass('inherit-from-image');
+            } else {
+                $parent.removeClass('inherit-from-image');
+                input.focus();
+                if ('' === input.val()) {
+                    if (0 === default_item.find('.no-content').length) {
+                        input.val(default_item.html());
+                    }
+                }
+            }
     
+        });
+
         /**
          * delete a slide using ajax (avoid losing changes)
          */
@@ -421,7 +525,7 @@ jQuery(function($) {
                 var slide_row = $(this).closest('tr');
                 var crop_changed = slide_row.data('crop_changed');
     
-                if (thumb_width != slideshow_width || thumb_height != slideshow_height || crop_changed === true ) {
+                if (thumb_width != slideshow_width || thumb_height != slideshow_height || crop_changed === true) {
                     $this.attr("data-width", slideshow_width);
                     $this.attr("data-height", slideshow_height);
     
@@ -442,7 +546,7 @@ jQuery(function($) {
                             if (crop_changed === true) {
                                 slide_row.data('crop_changed', false);
                             }
-    
+
                             if (console && console.log) {
                                 console.log(data);
                             }
@@ -557,60 +661,62 @@ jQuery(function($) {
             return confirm(metaslider.confirm);
         });
     
-        // AJAX save & preview
-        $(".metaslider form").find("button[type=submit]").on("click", function(e) {
-            e.preventDefault();
-    
-            $(".metaslider .spinner").show().css('visibility', 'visible');
-            $(".metaslider input[type=submit]").attr("disabled", "disabled");
-    
-            // update slide order
-            $(".metaslider .left table").trigger('updateSlideOrder');
-    
-            fixIE10PlaceholderText();
-    
-            // get some values from elements on the page:
-            var the_form = $(this).parents("form");
-            var data = the_form.serialize();
-            var url = the_form.attr("action");
-            var button = $(this);
-    
-            $.ajax({
-                type: "POST",
-                data : data,
-                cache: false,
-                url: url,
-                success: function(data) {
-                    var response = $(data);
-                    $.when($(".metaslider .left table").trigger("resizeSlides")).done(function() {
-    
-                        $("button[data-thumb]", response).each(function() {
-                            var $this = $(this);
-                            var editor_id = $this.attr("data-editor_id");
-                            $("button[data-editor_id=" + editor_id + "]")
-                                .attr("data-thumb", $this.attr("data-thumb"))
-                                .attr("data-width", $this.attr("data-width"))
-                                .attr("data-height", $this.attr("data-height"));
-                        });
-    
-                        fixIE10PlaceholderText();
-    
-                        if ("ms-preview" === button.prop("id")) {
-                            $.colorbox({
-                                iframe: true,
-                                href: metaslider.iframeurl + "&slider_id=" + button.data("slider_id"),
-                                transition: "elastic",
-                                innerHeight: getLightboxHeight(),
-                                innerWidth: getLightboxWidth(),
-                                scrolling: false,
-                                fastIframe: false
-                            });
-                        }
-    
-                    });
-                }
-            });
-        });
+	// AJAX save & preview
+	$(".metaslider form").find("button[type=submit]").on("click", function(e) {
+		e.preventDefault()
+		$(".metaslider .spinner").show().css('visibility', 'visible')
+		$(".metaslider input[type=submit]").attr("disabled", "disabled")
+
+		// update slide order
+		$(".metaslider .left table").trigger('updateSlideOrder')
+		fixIE10PlaceholderText();
+
+		// get some values from elements on the page:
+		var the_form = $(this).parents("form")
+		var url = the_form.attr("action")
+		var button = $(this)
+
+		var form_data = new FormData()
+		the_form.serializeArray().forEach(function(data) {
+			form_data.append(data.name, data.value)
+		})
+
+		$.ajax({
+			type: "POST",
+			data: form_data,
+			cache: false,
+			contentType: false,
+			processData: false,
+			url: url,
+			success: function(data) {
+				var response = $(data)
+				$.when($(".metaslider .left table").trigger("resizeSlides")).done(function() {
+
+					$("button[data-thumb]", response).each(function() {
+						var $this = $(this)
+						var editor_id = $this.attr("data-editor_id")
+						$("button[data-editor_id=" + editor_id + "]")
+							.attr("data-thumb", $this.attr("data-thumb"))
+							.attr("data-width", $this.attr("data-width"))
+							.attr("data-height", $this.attr("data-height"))
+					});
+					fixIE10PlaceholderText()
+
+					if ("ms-preview" === button.prop("id")) {
+						$.colorbox({
+							iframe: true,
+							href: metaslider.iframeurl + "&slider_id=" + button.data("slider_id"),
+							transition: "elastic",
+							innerHeight: getLightboxHeight(),
+							innerWidth: getLightboxWidth(),
+							scrolling: true,
+							fastIframe: false
+						})
+					}
+				})
+			}
+		})
+	})
 
     // UI/Feedback
     // Events for the slideshow title
@@ -655,7 +761,7 @@ var MetaSlider_Helpers = {
      * @return string Returns capitalised string
      */
     capitalize: function(string) {
-        return string.replace(/\b\w/g, function(l){ return l.toUpperCase(); });
+        return string.replace(/\b\w/g, function(l) { return l.toUpperCase(); });
     },
 
     /**
@@ -672,7 +778,7 @@ var MetaSlider_Helpers = {
             jQuery(".metaslider .spinner").hide().css('visibility', '');
             jQuery(".metaslider button[type=submit]").removeAttr("disabled");
         }
-    },
+    }
 };
 
 /**
@@ -687,7 +793,7 @@ var MS_Binder = function(selector) {
  
 MS_Binder.prototype.bind = function(value){
     if (value === this.value) return;
-     
+    
     this.value = value;
     this.dom.innerText = this.value;
 };
@@ -778,7 +884,7 @@ MS_Notification.prototype.fire = function(delay, callback) {
             MS_Notification.call(_this[_callback]());
         });
     } else {
-        
+
         // If the callback is a custom function
         this.notice.on('click', function() {
             _this.hide();

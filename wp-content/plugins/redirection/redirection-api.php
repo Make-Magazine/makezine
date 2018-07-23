@@ -1,17 +1,13 @@
 <?php
 
-include_once dirname( __FILE__ ).'/api/api-group.php';
-include_once dirname( __FILE__ ).'/api/api-redirect.php';
-include_once dirname( __FILE__ ).'/api/api-log.php';
-include_once dirname( __FILE__ ).'/api/api-404.php';
-include_once dirname( __FILE__ ).'/api/api-settings.php';
-include_once dirname( __FILE__ ).'/api/api-plugin.php';
-include_once dirname( __FILE__ ).'/api/api-import.php';
-include_once dirname( __FILE__ ).'/api/api-export.php';
-
-if ( ! function_exists( 'get_home_path' ) ) {
-	include ABSPATH . '/wp-admin/includes/file.php';
-}
+include_once dirname( __FILE__ ) . '/api/api-group.php';
+include_once dirname( __FILE__ ) . '/api/api-redirect.php';
+include_once dirname( __FILE__ ) . '/api/api-log.php';
+include_once dirname( __FILE__ ) . '/api/api-404.php';
+include_once dirname( __FILE__ ) . '/api/api-settings.php';
+include_once dirname( __FILE__ ) . '/api/api-plugin.php';
+include_once dirname( __FILE__ ) . '/api/api-import.php';
+include_once dirname( __FILE__ ) . '/api/api-export.php';
 
 define( 'REDIRECTION_API_NAMESPACE', 'redirection/v1' );
 
@@ -89,14 +85,10 @@ class Redirection_Api_Filter_Route extends Redirection_Api_Route {
 			$this->get_route( WP_REST_Server::EDITABLE, $callback ),
 			'args' => array_merge( $this->get_filter_args( $filters, $orders ), array(
 				'items' => array(
-					'description' => 'Array of item IDs to perform action on',
-					'type' => 'array',
+					'description' => 'Comma separated list of item IDs to perform action on',
+					'type' => 'string|integer',
 					'required' => true,
-					'items' => array(
-						'type' => 'integer',
-						'minumum' => 1,
-					)
-				)
+				),
 			) ),
 		) );
 	}
@@ -110,7 +102,7 @@ class Redirection_Api {
 		if ( is_null( self::$instance ) ) {
 			self::$instance = new Redirection_Api();
 
-			load_plugin_textdomain( 'redirection', false, dirname( plugin_basename( REDIRECTION_FILE ) ).'/locale/' );
+			load_plugin_textdomain( 'redirection', false, dirname( plugin_basename( REDIRECTION_FILE ) ) . '/locale/' );
 		}
 
 		return self::$instance;

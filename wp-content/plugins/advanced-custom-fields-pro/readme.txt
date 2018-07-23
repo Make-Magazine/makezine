@@ -66,6 +66,31 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.0 =
+* Core: Major JavaScript updates
+* Core: Improved conditional logic with new types and more supported fields
+* Core: Improved localization and internationalization
+* Repeater field: Improved logic that remembers collapsed row states
+* Repeater field: Added support to collapse multiple rows (hold shift)
+* API: Improved lookup to find fields without a reference value
+* Language: Added Croatian translation - Thanks to Vlado Bosnjak
+* Language: Updated Italian translation - thanks to Davide Pantè
+* Language: Updated Romanian translation - thanks to Ionut Staicu
+* Language: Updated German translation - thanks to Ralf Koller
+* Language: Updated Arabic translation - thanks to Karim Ramadan
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+
+= 5.6.10 =
+* Core: Minor fixes and improvements
+
+= 5.6.9 =
+* User field: Added new 'Return Format' setting (Array, Object, ID)
+* Core: Added basic compatibility with Gutenberg - values now save
+* Core: Fixed bug affecting the loading of fields on new Menu Items
+* Core: Removed private ('show_ui' => false) post types from the 'Post Type' location rule choices
+* Core: Minor fixes and improvements
+* Language: Updated French translation - thanks to Maxime Bernard-Jacquet
+
 = 5.6.8 =
 * API: Fixed bug causing have_rows() to fail with PHP 7.2
 * Core: Fixed bug causing "Add new term" form to hide after submit

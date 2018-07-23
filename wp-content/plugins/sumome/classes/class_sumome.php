@@ -4,12 +4,26 @@ class WP_Plugin_SumoMe {
     add_action('wp_ajax_sumome_main', array($this, 'ajax_sumome_main'));
     add_action('wp_ajax_sumome_dashboard_welcome', array($this, 'ajax_sumome_dashboard_welcome'));
     add_action('wp_ajax_sumome_hide_dashboard_overlay', array($this, 'ajax_sumome_hide_dashboard_overlay'));
-    add_action('wp_head', array($this, 'append_script_code'));
-    add_action('admin_head', array($this, 'append_admin_script_code'));
+    add_action('wp_footer', array($this, 'append_script_code'));
+    add_action('admin_footer', array($this, 'append_admin_script_code'));
     add_action('admin_menu', array($this, 'admin_menu'));
     add_action('admin_init', array($this, 'admin_init'));
     add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
     add_action('wp_dashboard_setup', array($this, 'dashboard_setup'));
+
+    //add to front end footer
+    add_action('wp_footer', array($this, 'woocommerce_cart_scripts'));
+    //add to backend footer
+    add_action('admin_footer', array($this, 'woocommerce_cart_scripts'));
+
+    // WooCommerce helpers
+    add_action('wp_ajax_nopriv_sumo_get_woocommerce_cart_subtotal', array($this, 'ajax_sumo_get_woocommerce_cart_subtotal'));
+    add_action('wp_ajax_nopriv_sumo_add_woocommerce_coupon', array($this, 'ajax_sumo_add_woocommerce_coupon'));
+    add_action('wp_ajax_nopriv_sumo_remove_woocommerce_coupon', array($this, 'ajax_sumo_remove_woocommerce_coupon'));
+
+    add_action('wp_ajax_sumo_get_woocommerce_cart_subtotal', array($this, 'ajax_sumo_get_woocommerce_cart_subtotal'));
+    add_action('wp_ajax_sumo_add_woocommerce_coupon', array($this, 'ajax_sumo_add_woocommerce_coupon'));
+    add_action('wp_ajax_sumo_remove_woocommerce_coupon', array($this, 'ajax_sumo_remove_woocommerce_coupon'));
 
     $this->dataSumoPlatform="wordpress";
     if (get_option('endurance_user')==1)  $this->dataSumoPlatform="wordpress-endurance";
@@ -111,38 +125,61 @@ class WP_Plugin_SumoMe {
     if ($site_id && in_array($site_id, $blacklist)) return true;
   }
 
-
   public function upgrade_manual_sumome_installation() {
-    $headerFile=get_template_directory()."/header.php";
+    $wpThemeFiles=array("header","footer");
+    foreach ($wpThemeFiles as $wpThemeFile) {   
+      $themeFile=get_template_directory()."/".$wpThemeFile.".php";
 
-    if (file_exists($headerFile) && is_writable($headerFile)) {
-      $header_contents = file_get_contents($headerFile);
+      if (file_exists($themeFile) && is_writable($themeFile)) {
+        $themeFile_contents = file_get_contents($themeFile);
 
-      $pattern='/<script\\b[^>]*>(.*?)<\\/script>/i';
-      preg_match($pattern, $header_contents, $manuallyInsertedScriptTag);
+        libxml_use_internal_errors(true);
+        $pageDom = new \DOMDocument('1.0', 'utf-8');
+        $pageDom->loadHTML($themeFile_contents);
+        $scripts = $pageDom->getElementsByTagName('script');
 
-      if ($manuallyInsertedScriptTag) {
-        $dom = new \DOMDocument('1.0', 'utf-8');
-        $dom->loadHTML($manuallyInsertedScriptTag[0]);
-        $nodes = $dom->getElementsByTagName('script');
-        $manuallyInsertedScriptTagSiteID=$nodes->item(0)->getAttribute('data-sumo-site-id');
-      }
+        for ($i = 0; $i < $scripts->length; $i++) {
 
-      if (trim($manuallyInsertedScriptTagSiteID)!="") {
+          $scriptDoc = new \DOMDocument('1.0', 'utf-8');
+          $scriptDoc->appendChild($scriptDoc->importNode($scripts->item($i), true));
+          $scriptLine=$scriptDoc->saveHTML();
 
-        //save users site ID from the manually inserted tag
-        update_option('sumome_site_id', $manuallyInsertedScriptTagSiteID);
+          if ($scriptLine) {
+            $dom = new \DOMDocument('1.0', 'utf-8');
+            $dom->loadHTML($scriptLine);
+            $nodes = $dom->getElementsByTagName('script');
 
-        $sumomeScriptTag[]='<script src="//load.sumome.com/" data-sumo-site-id="' . esc_attr($manuallyInsertedScriptTagSiteID) . '" async="async"></script>';
-        $sumomeScriptTag[]='<script src="//load.sumo.com/" data-sumo-site-id="' . esc_attr($manuallyInsertedScriptTagSiteID) . '" async="async"></script>';
-        $sumomeScriptTag[]="<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='".esc_attr($manuallyInsertedScriptTagSiteID)."';j.dataset.sumoPlatform='".$this->dataSumoPlatform."';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>";
-        $modified_header = str_replace($sumomeScriptTag,"",$header_contents);
+            if (substr_count($scriptLine, 'data-sumo-site-id')>0) {
+              $manuallyInsertedScriptTagSiteID=$nodes->item(0)->getAttribute('data-sumo-site-id');
+            } else {
+              $scriptBreakdown=explode(';', $scriptLine);
+              
+              if ($scriptBreakdown) foreach ($scriptBreakdown as $scriptBreakdownSpec) {
+                if (substr_count($scriptBreakdownSpec, 'j.dataset.sumoSiteId'))  $siteIDLine=$scriptBreakdownSpec;
+              }
+              $findSiteID[]="'";
+              $findSiteID[]="j.dataset.sumoSiteId=";
+              $manuallyInsertedScriptTagSiteID=str_replace($findSiteID,"",$siteIDLine);
+            }        
+          }
+        }
 
-        //make backup of header.php just in case
-        copy($headerFile,get_template_directory()."/header.bak[".date('Y-m-d_H.i.s')."].php");
+        if (trim($manuallyInsertedScriptTagSiteID)!="") {
 
-        //remove manually inserted SumoMe tag
-        if (trim($modified_header)) file_put_contents($headerFile,$modified_header);
+          //save users site ID from the manually inserted tag
+          update_option('sumome_site_id', $manuallyInsertedScriptTagSiteID);
+
+          $sumomeScriptTag[]='<script src="//load.sumome.com/" data-sumo-site-id="' . esc_attr($manuallyInsertedScriptTagSiteID) . '" async="async"></script>';
+          $sumomeScriptTag[]='<script src="//load.sumo.com/" data-sumo-site-id="' . esc_attr($manuallyInsertedScriptTagSiteID) . '" async="async"></script>';
+          $sumomeScriptTag[]="<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='".esc_attr($manuallyInsertedScriptTagSiteID)."';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>";
+          $modified_themeFile = str_replace($sumomeScriptTag,"",$themeFile_contents);
+
+          //make backup of theme file just in case
+          copy($themeFile,get_template_directory()."/".$wpThemeFile.".bak[".date('Y-m-d_H.i.s')."].php");
+
+          //remove manually inserted SumoMe tag
+          if (trim($modified_themeFile)) file_put_contents($themeFile,$modified_themeFile);
+        }
       }
     }
   }
@@ -281,6 +318,62 @@ class WP_Plugin_SumoMe {
         jQuery('.sumome-wp-dash-logged-out').removeClass('status-logged-in');
       }
       </script>
+    <?php
+  }
+
+  public function ajax_sumo_add_woocommerce_coupon() {
+    $code = $_POST['code'];
+    WC()->cart->apply_coupon($code);
+    wp_die();
+  }
+
+  public function ajax_sumo_remove_woocommerce_coupon() {
+    $code = $_POST['code'];
+    WC()->cart->remove_coupon($code);
+    wp_die();
+  }
+
+  public function ajax_sumo_get_woocommerce_cart_subtotal() {
+    echo WC()->cart->subtotal;
+    wp_die();
+  }
+
+  public function woocommerce_cart_scripts() {
+    ?>
+    <script type="application/javascript">
+      var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+
+      function sumo_add_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_add_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_remove_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_remove_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_get_woocommerce_cart_subtotal(callback) {
+        jQuery.ajax({
+          method: 'POST',
+          url: ajaxurl,
+          dataType: 'html',
+          data: {
+            action: 'sumo_get_woocommerce_cart_subtotal',
+          },
+          success: function(subtotal) {
+            return callback(null, subtotal);
+          },
+          error: function(err) {
+            return callback(err, 0);
+          }
+        });
+      }
+    </script>
     <?php
   }
 

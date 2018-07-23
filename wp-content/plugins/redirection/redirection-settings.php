@@ -1,10 +1,23 @@
 <?php
 
 define( 'REDIRECTION_OPTION', 'redirection_options' );
+define( 'REDIRECTION_API_JSON', 0 );
+define( 'REDIRECTION_API_JSON_INDEX', 1 );
+define( 'REDIRECTION_API_ADMIN', 2 );
+define( 'REDIRECTION_API_JSON_RELATIVE', 3 );
+define( 'REDIRECTION_API_POST', 4 );
+
+function red_get_plugin_data( $plugin ) {
+	if ( ! function_exists( 'get_plugin_data' ) ) {
+		include_once ABSPATH . '/wp-admin/includes/plugin.php';
+	}
+
+	return get_plugin_data( $plugin );
+}
 
 function red_get_post_types( $full = true ) {
 	$types = get_post_types( array( 'public' => true ), 'objects' );
-	$types[] = (object)array( 'name' => 'trash', 'label' => __( 'Trash' ) );
+	$types[] = ( object )array( 'name' => 'trash', 'label' => __( 'Trash' ) );
 
 	$post_types = array();
 	foreach ( $types as $type ) {
@@ -26,7 +39,11 @@ function red_set_options( array $settings = array() ) {
 	$options = red_get_options();
 	$monitor_types = array();
 
-	if ( isset( $settings['rest_api'] ) && in_array( intval( $settings['rest_api'], 10 ), array( 0, 1, 2 ) ) ) {
+	if ( isset( $settings['version'] ) ) {
+		$options['version'] = $settings['version'];
+	}
+
+	if ( isset( $settings['rest_api'] ) && in_array( intval( $settings['rest_api'], 10 ), array( 0, 1, 2, 3, 4 ) ) ) {
 		$options['rest_api'] = intval( $settings['rest_api'] );
 	}
 
@@ -59,7 +76,7 @@ function red_set_options( array $settings = array() ) {
 
 		if ( ! Red_Group::get( $options['monitor_post'] ) && $options['monitor_post'] !== 0 ) {
 			$groups = Red_Group::get_all();
-			$options['monitor_post'] = $groups[ 0 ]['id'];
+			$options['monitor_post'] = $groups[0]['id'];
 		}
 	}
 
@@ -72,7 +89,7 @@ function red_set_options( array $settings = array() ) {
 
 		if ( ! Red_Group::get( $options['last_group_id'] ) ) {
 			$groups = Red_Group::get_all();
-			$options['last_group_id'] = $groups[ 0 ]['id'];
+			$options['last_group_id'] = $groups[0]['id'];
 		}
 	}
 
@@ -84,7 +101,11 @@ function red_set_options( array $settings = array() ) {
 		$options['token'] = $settings['token'];
 	}
 
-	if ( !isset( $settings['token'] ) || trim( $options['token'] ) === '' ) {
+	if ( isset( $settings['https'] ) ) {
+		$options['https'] = $settings['https'] ? true : false;
+	}
+
+	if ( ! isset( $settings['token'] ) || trim( $options['token'] ) === '' ) {
 		$options['token'] = md5( uniqid() );
 	}
 
@@ -117,7 +138,7 @@ function red_set_options( array $settings = array() ) {
 		$options['modules'][2] = $module->update( $settings );
 	}
 
-	if ( !empty( $options['monitor_post'] ) && count( $options['monitor_types'] ) === 0 ) {
+	if ( ! empty( $options['monitor_post'] ) && count( $options['monitor_types'] ) === 0 ) {
 		// If we have a monitor_post set, but no types, then blank everything
 		$options['monitor_post'] = 0;
 		$options['associated_redirect'] = '';
@@ -148,6 +169,8 @@ function red_get_options() {
 		'ip_logging'          => 1,   // Full IP logging
 		'last_group_id'       => 0,
 		'rest_api'            => false,
+		'https'               => false,
+		'version'             => REDIRECTION_VERSION,
 	) );
 
 	foreach ( $defaults as $key => $value ) {
@@ -164,14 +187,22 @@ function red_get_options() {
 	return $options;
 }
 
-function red_get_rest_api() {
-	$options = red_get_options();
+function red_get_rest_api( $type = false ) {
+	if ( $type === false ) {
+		$options = red_get_options();
+		$type = $options['rest_api'];
+	}
 
-	$url = get_rest_url();
-	if ( $options['rest_api'] === 1 ) {
+	$url = get_rest_url();  // REDIRECTION_API_JSON
+
+	if ( $type === REDIRECTION_API_JSON_INDEX ) {
 		$url = home_url( '/index.php?rest_route=/' );
-	} elseif ( $options['rest_api'] === 2 ) {
+	} elseif ( $type === REDIRECTION_API_ADMIN ) {
 		$url = admin_url( 'admin-ajax.php?action=red_proxy&rest_path=' );
+	} elseif ( $type === REDIRECTION_API_JSON_RELATIVE ) {
+		$url = parse_url( $url, PHP_URL_PATH );
+	} elseif ( $type === REDIRECTION_API_POST ) {
+		$url = admin_url( 'tools.php?page=redirection.php&action=red_proxy&rest_path=' );
 	}
 
 	return $url;

@@ -8,7 +8,8 @@ if (!defined('ABSPATH')) die('No direct access.');
  * @param  string $name name of the plugin 'ml-slider'
  * @return bool|string - will return path, ex. 'ml-slider/ml-slider.php'
  */
-function metaslider_is_plugin_installed($name) {
+function metaslider_plugin_is_installed($name) {
+    if (!function_exists('get_plugins')) include_once(ABSPATH.'wp-admin/includes/plugin.php');
 	foreach (get_plugins() as $plugin => $data) {
 		if ($data['TextDomain'] == $name)
 			return $plugin;
@@ -20,8 +21,8 @@ function metaslider_is_plugin_installed($name) {
  *
  * @return bool
  */
-function metaslider_is_pro_installed() {
-    return (bool) metaslider_is_plugin_installed('ml-slider-pro');
+function metaslider_pro_is_installed() {
+    return (bool) metaslider_plugin_is_installed('ml-slider-pro');
 }
 
 /**
@@ -29,16 +30,16 @@ function metaslider_is_pro_installed() {
  *
  * @return bool
  */
-function metaslider_is_pro_active() {
-    return is_plugin_active(metaslider_is_plugin_installed('ml-slider-pro'));
+function metaslider_pro_is_active() {
+    return is_plugin_active(metaslider_plugin_is_installed('ml-slider-pro'));
 }
 /**
  * Returns true if the user does not have the pro version installed
  *
  * @return bool
  */
-function metaslider_sees_upgrade_page() {
-    return (bool) apply_filters('metaslider_show_upgrade_page', !metaslider_is_pro_installed());
+function metaslider_user_sees_upgrade_page() {
+    return (bool) apply_filters('metaslider_show_upgrade_page', !metaslider_pro_is_installed());
 }
 
 /**
@@ -46,27 +47,32 @@ function metaslider_sees_upgrade_page() {
  *
  * @return bool
  */
-function metaslider_sees_call_to_action() {
-    return (bool) apply_filters('metaslider_show_upgrade_page', !metaslider_is_pro_installed());
+function metaslider_user_sees_call_to_action() {
+    return (bool) apply_filters('metaslider_show_upgrade_page', !metaslider_pro_is_installed());
 }
 
 /**
  * Returns true if the user is ready to see notices. Exceptions include
  * when they have no slideshows (first start) and while on the initial tour. 
  *
- * @param  array $plugin Plugin details
  * @return boolean
  */
-function metaslider_sees_notices($plugin) {
+function metaslider_user_is_ready_for_notices() {
 
-    // If no slideshows, don't show an ad
-    if (!count($plugin->all_meta_sliders())) {
-        return false;
-    }
+	$args = array(
+		'post_type' => 'ml-slider',
+		'post_status' => 'publish',
+		'suppress_filters' => 1, // wpml, ignore language filter
+		'order' => 'ASC',
+		'posts_per_page' => -1
+	);
 
-    // If they have slideshows but have yet to finish the tour or cancel it,
-    // hold off on showing the ads
-    return (bool) get_option('metaslider_tour_cancelled_on');
+	// If no slideshows, don't show a notice
+	if (!count(get_posts($args))) return false;
+
+	// If they have slideshows but have yet to finish the tour or cancel it,
+	// hold off on showing notices
+	return (bool) get_option('metaslider_tour_cancelled_on');
 }
 
 /**
@@ -75,7 +81,7 @@ function metaslider_sees_notices($plugin) {
  * @param  string $page_name Admin page name
  * @return boolean
  */
-function metaslider_is_on_admin_page($page_name = 'admin.php') {
+function metaslider_user_is_on_admin_page($page_name = 'admin.php') {
     global $pagenow;
     return ($pagenow == $page_name);
 }
@@ -86,14 +92,11 @@ function metaslider_is_on_admin_page($page_name = 'admin.php') {
  * @return string
  */
 function metaslider_get_upgrade_link() {
-    return apply_filters('metaslider_hoplink', esc_url(
-        add_query_arg(array(
-            'utm_source' => 'lite',
-            'utm_medium' => 'nag',
-            'utm_campaign' => 'pro'
-        ),
-        'https://www.metaslider.com/upgrade/'))
-    );
+	return esc_url(apply_filters('metaslider_hoplink', add_query_arg(array(
+		'utm_source' => 'lite',
+		'utm_medium' => 'banner',
+		'utm_campaign' => 'pro', 
+	), 'https://www.metaslider.com/upgrade'))); 
 }
 
 /**

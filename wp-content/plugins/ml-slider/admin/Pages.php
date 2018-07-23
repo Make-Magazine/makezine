@@ -1,16 +1,12 @@
 <?php
+
+if (!defined('ABSPATH')) die('No direct access.');
+
 /**
  * Entry point for building the wordpress admin pages.
  * Temporarily extends the MetaSlider Class until more refactoring can be done.
  */
 Class MetaSlider_Admin_Pages extends MetaSliderPlugin {
-
-    /**
-     * The minimum capability to view the admin page
-     *
-     * @var string $capability
-     */
-    private $capability;
 
     /**
      * The MetaSlider plugin class
@@ -33,7 +29,6 @@ Class MetaSlider_Admin_Pages extends MetaSliderPlugin {
      */
     public function __construct($plugin) {
         $this->plugin = $plugin;
-        $this->capability = apply_filters('metaslider_capability', 'edit_others_posts');
         $this->notices = new MetaSlider_Notices($plugin);
         $this->tour = new MetaSlider_Tour($plugin, 'toplevel_page_metaslider');
         add_action('admin_enqueue_scripts', array($this, 'load_icon_css'));
@@ -96,7 +91,19 @@ Class MetaSlider_Admin_Pages extends MetaSliderPlugin {
             'useWithCaution' => __("Caution: This setting is for advanced developers only. If you're unsure, leave it checked.", "ml-slider")
         ));
         wp_enqueue_script('metaslider-admin-script');
-        do_action('metaslider_register_admin_scripts');
+		do_action('metaslider_register_admin_scripts');
+		
+		/* 
+		Register components and add support for the REST API
+		if (function_exists('register_rest_route')) {
+			wp_register_script('metaslider-admin-components', METASLIDER_ADMIN_URL . 'assets/js/app.js', array(), METASLIDER_VERSION, true);
+			wp_localize_script('metaslider-admin-components', 'wpApiSettings', array(
+				'root' => esc_url_raw(rest_url()),
+				'nonce' => wp_create_nonce('wp_rest')
+			));
+			wp_enqueue_script('metaslider-admin-components');
+		}
+		*/
     }
 
     /**
@@ -144,7 +151,9 @@ Class MetaSlider_Admin_Pages extends MetaSliderPlugin {
             return false;
         }
         $this->current_page = $slug;
-        $page = ('' == $parent) ? add_menu_page($title, $title, $this->capability, $slug, array($this, $method)) : add_submenu_page($parent, $title, $title, $this->capability, $slug, array($this, $method));
+        $capability = apply_filters('metaslider_capability', 'edit_others_posts');
+
+        $page = ('' == $parent) ? add_menu_page($title, $title, $capability, $slug, array($this, $method)) : add_submenu_page($parent, $title, $title, $capability, $slug, array($this, $method));
         
         // Load assets on all pages
         add_action('load-' . $page, array($this, 'fix_conflicts'));
