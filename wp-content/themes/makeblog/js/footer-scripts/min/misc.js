@@ -1,16 +1,35 @@
 // Compiled file - any changes will be overwritten by grunt task
 //!!
 //!! js/footer-scripts/auth0-variables.js
-var AUTH0_CLIENT_ID='0sR3MQz8ihaSnLstc1dABgENHS5PQR8d';
-var AUTH0_DOMAIN='makermedia.auth0.com';
-var AUTH0_CALLBACK_URL = templateUrl + "/authenticated/";
-var AUTH0_REDIRECT_URL = location.href;;//!!
+var AUTH0_CLIENT_ID    = '0sR3MQz8ihaSnLstc1dABgENHS5PQR8d';
+var AUTH0_DOMAIN       = 'makermedia.auth0.com';
+var AUTH0_CALLBACK_URL = templateUrl + "/authenticated/";;//!!
 //!! js/footer-scripts/auth0.js
 window.addEventListener('load', function() {
   // buttons and event listeners
-  var loginBtn    = document.getElementById('qsLoginBtn');
-  var logoutBtn   = document.getElementById('qsLogoutBtn');
-  var profileView = document.getElementById('profile-view');
+  /*    If the login button, logout button or profile view elements do not exist
+   *    (such as in wp-admin and wp - login pages) default to a 'fake' element
+   */
+  if ( !jQuery( "#qsLoginBtn" ).length ) {
+    var loginBtn = document.createElement('div');
+    loginBtn.setAttribute("id", "qsLoginBtn");
+  }else{
+    var loginBtn    = document.getElementById('qsLoginBtn');
+  }
+
+  if ( !jQuery( "#qsLogoutBtn" ).length ) {
+    var logoutBtn = document.createElement('div');
+    logoutBtn.setAttribute("id", "qsLogoutBtn");
+  }else{
+    var logoutBtn    = document.getElementById('qsLogoutBtn');
+  }
+
+  if ( !jQuery( "#profile-view" ).length ) {
+    var profileView = document.createElement('div');
+    profileView.setAttribute("id", "profile-view");
+  }else{
+    var profileView    = document.getElementById('profile-view');
+  }
 
   //default profile view to hidden
   loginBtn.style.display    = 'none';
@@ -33,7 +52,17 @@ window.addEventListener('load', function() {
     webAuth.authorize(); //login to auth0
   });
 
-  logoutBtn.addEventListener('click', logout);
+  logoutBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Remove tokens and expiry time from localStorage
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('expires_at');
+
+    //redirect to auth0 logout page
+    window.location.href = 'https://makermedia.auth0.com/v2/logout?returnTo='+templateUrl+ '&client_id='+AUTH0_CLIENT_ID;
+  });
 
   function setSession(authResult) {
     // Set the time that the access token will expire at
@@ -45,25 +74,8 @@ window.addEventListener('load', function() {
     localStorage.setItem('expires_at', expiresAt);
   }
 
-  function logout() {
-    // Remove tokens and expiry time from localStorage
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('expires_at');
-
-    window.location.href = 'https://makermedia.auth0.com/v2/logout?returnTo='+templateUrl;
-    /*
-    //logout of auth0 - return to home page of site when logout
-    webAuth.logout({
-      returnTo: templateUrl
-    });
-
-    displayButtons();*/
-  }
-
   function isAuthenticated() {
-    // Check whether the current time is past the
-    // access token's expiry time
+    // Check whether the current time is past the access token's expiry time
     if(localStorage.getItem('expires_at')){
       var expiresAt = JSON.parse(localStorage.getItem('expires_at'));
       return new Date().getTime() < expiresAt;
@@ -72,32 +84,24 @@ window.addEventListener('load', function() {
     }
   }
 
-  function handleAuthentication() {
-    webAuth.parseHash(function(err, authResult) {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
-        setSession(authResult);
-
-        //after login redirect to previous page (after 2 second delay)
-        var redirect_url = localStorage.getItem('redirect_to');
-        setTimeout(function(){location.href=redirect_url;} , 2000);
-      } else if (err) {
-        console.log(err);
-        /* Do not display error message
-        alert(
-          'Error: ' + err.error + '. Check the console for further details.'
-        );
-        */
-      }
-      setTimeout(function(){displayButtons();}, 1500); // hold off on displaying the buttons until we know we're logged in
-    });
-  }
-
   function displayButtons() {
     if (isAuthenticated()) {
       loginBtn.style.display = 'none';
-      getProfile();
+
+      //get user profile from auth0
       profileView.style.display = 'flex';
+      getProfile();
+
+      //login redirect
+      if ( jQuery( '#authenticated-redirect' ).length ) { //are we on the authentication page?
+        if(localStorage.getItem('redirect_to')){    //redirect
+          var redirect_url = localStorage.getItem('redirect_to'); //retrieve redirect URL
+          localStorage.removeItem('redirect_to'); //unset after retrieved
+          location.href=redirect_url;
+        }else{  //redirect to home page
+          location.href=templateUrl;
+        }
+      }
     } else {
       loginBtn.style.display = 'flex';
       profileView.style.display = 'none';
@@ -105,28 +109,21 @@ window.addEventListener('load', function() {
   }
 
   function getProfile() {
-    if (!userProfile) {
-      var accessToken = localStorage.getItem('access_token');
+    var accessToken = localStorage.getItem('access_token');
 
-      if (!accessToken) {
-        console.log('Access token must exist to fetch profile');
-      }
-
-      webAuth.client.userInfo(accessToken, function(err, profile) {
-        if (profile) {
-          userProfile = profile;
-          displayProfile();
-        }
-      });
-    } else {
-      displayProfile();
+    if (!accessToken) {
+      console.log('Access token must exist to fetch profile');
     }
-  }
 
-  function displayProfile() {
-    // display the avatar
-    document.querySelector('#profile-view img').src = userProfile.picture;
-    document.querySelector('#profile-view img').style.display = "block";
+    webAuth.client.userInfo(accessToken, function(err, profile) {
+      if (profile) {
+        userProfile = profile;
+        // display the avatar
+        document.querySelector('#profile-view img').src = userProfile.picture;
+        document.querySelector('#profile-view img').style.display = "block";
+      }
+    });
+
   }
 
   //check if logged in another place
@@ -142,13 +139,10 @@ window.addEventListener('load', function() {
         }
       } else {
         setSession(result);
-        displayButtons();
       }
+      displayButtons();
     }
   );
-
-  //handle authentication
-  handleAuthentication();
 });;//!!
 //!! js/footer-scripts/classie.js
 /*!
@@ -260,10 +254,19 @@ if ( typeof define === 'function' && define.amd ) {
   var e = $(".universal-nav");
   var hamburger = $(".nav-hamburger");
   var y_pos = $(".nav-level-2").offset().top;
+  // maybe one day we can just wrap the below the nav content in something consistent
   var nextItemUnderNav = $("#home-featured");
-    if($(".second-nav").length) {
+    if($(".second-nav").length && $(".second-nav").css("display") != "none"){
         nextItemUnderNav = $(".second-nav");
+    }else{
+        if($(".mz-story-infinite-view").length) {
+            nextItemUnderNav = $(".mz-story-infinite-view");
+        }
+        if($(".ad-unit").length) {
+            nextItemUnderNav = $(".ad-unit");
+        }
     }
+    
   if ($(window).width() < 578) {
           jQuery(".auth-target").append(jQuery(".nav-level-1-auth"));
   }
