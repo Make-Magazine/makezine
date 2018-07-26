@@ -2770,11 +2770,12 @@
 				}
 				
 				// construct args
-				var args = acf.arrayArgs(arguments);
-				args.push( $(e.currentTarget) );
+				var args = acf.arrayArgs( arguments );
+				var extraArgs = args.slice(1);
+				var eventArgs = [ e, $(e.currentTarget) ].concat( extraArgs );
 				
 				// callback
-				callback.apply(this, args);
+				callback.apply(this, eventArgs);
 			});
 		},
 		
@@ -9749,7 +9750,7 @@
 		
 		remove: function(){
 			this.frame.detach();
-			this.frame.dispose();
+			this.frame.remove();
 		},
 		
 		getFrameOptions: function(){
@@ -10120,7 +10121,7 @@
 		initialize: function(){
 			
 			// bail early if no media views
-			if( !wp || !acf.isset(wp, 'media', 'view') ) {
+			if( !acf.isset(window, 'wp', 'media', 'view') ) {
 				return;
 			}
 			
@@ -10236,46 +10237,30 @@
 					// Each instance will attempt to render when a new modal is created.
 					// Use a property to avoid this and only render once per instance.
 					if( this.rendered ) {
-						//console.log('ignore render', this.cid);
 						return this;
 					}
-					this.rendered = true;
 					
-					// render
-					//console.log('render', this.cid);
+					// render HTML
 					AttachmentCompat.prototype.render.apply( this, arguments );
+					
+					// when uploading, render is called twice.
+					// ignore first render by checking for #acf-form-data element
+					if( !this.$('#acf-form-data').length ) {
+						return this;
+					}
 					
 					// clear timeout
 					clearTimeout( timeout );
 					
 					// setTimeout
 					timeout = setTimeout($.proxy(function(){
-						
-						// check if element is visible to avoid logic on previous instances (which are hidden)
-						if( this.$el.is(':visible') ) {
-							//console.log('append', this.cid);
-							acf.doAction('append', this.$el);
-						}
-						
+						this.rendered = true;
+						acf.doAction('append', this.$el);
 					}, this), 50);
 					
 					// return
 					return this;
-				},
-				
-				// commented out function causing JS errors when navigating through media grid
-				// dispose (and remove) are called after the element has been detached, so this only causes extra JS initialization
-				dispose: function(){
-						
-					// remove
-					if( this.$el.is(':visible') ) {
-						//acf.doAction('remove', this.$el);
-						console.log('removed visible');
-					}
-					// dispose
-					return AttachmentCompat.prototype.dispose.apply( this, arguments );
 				}
-			
 			});
 
 		},
@@ -11317,6 +11302,7 @@
 			var locale = acf.get('locale');
 			var rtl = acf.get('rtl');
 			var l10n = acf.get('select2L10n');
+			var version = getVersion();
 			
 			// bail ealry if no l10n
 			if( !l10n ) {
@@ -11329,9 +11315,9 @@
 			}
 			
 			// initialize
-			if( getVersion() == 4 ) {
+			if( version == 4 ) {
 				this.addTranslations4();
-			} else {
+			} else if( version == 3 ) {
 				this.addTranslations3();
 			}
 		},
