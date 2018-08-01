@@ -41,7 +41,10 @@
 	});
 	
 	jQuery('.sumome-react-wysiwyg-popup-container').on('DOMNodeRemoved', function(e) {
-		if (typeof sumoHeight !== 'undefined') { sumomeActive(); }
+		if (typeof sumoHeight !== 'undefined') { 
+			sumomeActive(); 
+			jQuery(".nav-hamburger").css('margin-top', '');
+		}
 	});
     
   // fix nav to top on scrolldown, stay fixed for transition from mobile to desktop
