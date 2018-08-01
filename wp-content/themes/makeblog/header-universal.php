@@ -345,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span></span>
           <span></span>
         </div>
-        <img id="hamburger-makey" src="<?php echo get_stylesheet_directory_uri(); ?>/img/makey_outlined.svg" alt="Makey roboto logo" />
+        <span id="hamburger-text">More</span>
       </div>
     </div>
   </div><!-- .nav-hamburger -->

@@ -227,28 +227,41 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 ;//!!
 //!! js/footer-scripts/navigation.js
-(function($) { 
-  $('#hamburger-icon, #hamburger-makey, .nav-flyout-underlay').click(function() {
-    $('#hamburger-icon').toggleClass('open');
-    $('#hamburger-makey').animate({opacity: 'toggle'});
-    $('#nav-flyout').animate({opacity: 'toggle'});
-    $('body').toggleClass('nav-open-no-scroll');
-    $('html').toggleClass('nav-open-no-scroll');
-    $('.nav-flyout-underlay').animate({opacity: 'toggle'});
-  });
-  // forcing some issues - avatar dropdown to open in same tab and search links to actually link
-  $(".dropdown-item").attr('target', '_self');
-  $(".pop-links-list li a").click(function() {
-      window.location.href = $(this).attr('href');
-  });
+function sumomeActive() {
+	if ( document.querySelector(".sumome-react-wysiwyg-popup-container") != null ) {
+		jQuery('body').addClass('sumome-active');
+	} else {
+		jQuery('body').removeClass('sumome-active');
+	}
+}
 
-  $('.nav-flyout-column').on('click', '.expanding-underline', function(event) {
-    if ($(window).width() < 577) { 
-      event.preventDefault();
-      $(this).toggleClass('underline-open');
-      $(this).next('.nav-flyout-ul').slideToggle();
-    }
-  });
+(function($) { 
+	$('#hamburger-icon, #hamburger-text, .nav-flyout-underlay').click(function() {
+		$('#hamburger-icon').toggleClass('open');
+		$('#hamburger-text').animate({opacity: 'toggle'});
+		$('#nav-flyout').animate({opacity: 'toggle'});
+		$('body').toggleClass('nav-open-no-scroll');
+		$('html').toggleClass('nav-open-no-scroll');
+		$('.nav-flyout-underlay').animate({opacity: 'toggle'});
+		sumomeActive();
+	});
+	// forcing some issues - avatar dropdown to open in same tab and search links to actually link
+	$(".dropdown-item").attr('target', '_self');
+	$(".pop-links-list li a").click(function() {
+		window.location.href = $(this).attr('href');
+	});
+
+	$('.nav-flyout-column').on('click', '.expanding-underline', function(event) {
+	 	if ($(window).width() < 577) { 
+			event.preventDefault();
+			$(this).toggleClass('underline-open');
+			$(this).next('.nav-flyout-ul').slideToggle();
+	 	}
+	});
+	
+	jQuery('.sumome-react-wysiwyg-popup-container').on('DOMNodeRemoved', function(e) {
+		sumomeActive();
+	});
     
   // fix nav to top on scrolldown, stay fixed for transition from mobile to desktop
   var e = $(".universal-nav");
@@ -297,6 +310,7 @@ if ( typeof define === 'function' && define.amd ) {
             nextItemUnderNav.css("margin-top", "0px");
           }
       }
+	   sumomeActive();
   });
   $("#search-modal").fancybox({
         wrapCSS : 'search-modal-wrapper',
