@@ -258,14 +258,15 @@ add_filter( 'wp_feed_cache_transient_lifetime', function() { return 900; } );
 function make_load_resources() {
 	global $wp_query;
 
-	// To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
+  // To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
   //wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
-	wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
+  wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-	wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
+  wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
   wp_enqueue_style( 'roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
   wp_enqueue_style( 'roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
   wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
+  wp_enqueue_style('universal.css', 'https://make.co/wp-content/themes/memberships/universal-nav/css/universal.css');
 
 	// Load optimizely A/B testing script
 	//wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
@@ -286,6 +287,7 @@ function make_load_resources() {
   $my_theme = wp_get_theme();
   $my_version = $my_theme->get('Version');
 	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery', 'fancybox' ), $my_version, true );
+	wp_enqueue_script('universal', 'https://make.co/wp-content/themes/memberships/universal-nav/js/min/universal.min.js');
 
 
 	// What page are we on? And what is the pages limit?
