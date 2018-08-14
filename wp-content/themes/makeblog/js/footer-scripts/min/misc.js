@@ -596,6 +596,8 @@ jQuery(document).ready(function($){
     e.preventDefault();
     $.post('https://secure.whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
     jQuery('.fancybox-close').click();
+	 jQuery(".fancybox-overlay").css("display", "none");
+	 jQuery(".fancybox-wrap").css("display", "none");
     jQuery('.nl-thx-p2').trigger('click');
   });
   $('input[type="checkbox"]').click(function(e){
