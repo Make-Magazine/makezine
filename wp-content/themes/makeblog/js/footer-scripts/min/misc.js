@@ -593,8 +593,8 @@ jQuery(document).ready(function($){
 
   // Modal to sign up to more newsletters
   $(document).on('submit', '.whatcounts-signup2', function (e) {
-    e.preventDefault();
     $.post('https://secure.whatcounts.com/bin/listctrl', $('.fancybox-inner .whatcounts-signup2').serialize());
+	  e.preventDefault();
     jQuery('.fancybox-close').click();
     jQuery('.nl-thx-p2').trigger('click');
 	 jQuery(".fancybox-overlay").css("display", "none");
