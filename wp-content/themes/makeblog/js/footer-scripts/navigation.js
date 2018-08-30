@@ -3,17 +3,12 @@
 	jQuery(window).load(function () {
 		var sumoHeight = jQuery(".sumome-react-wysiwyg-popup-container").height();
 	});
+	
 	function sumomeActive() {
 		if ( document.querySelector(".sumome-react-wysiwyg-popup-container") != null ) {
-			jQuery("#nav-flyout").css('padding-top', sumoHeight * 1.23 + 'px');
-			jQuery("#nav-flyout").css('height', 560 * (sumoHeight/100) + 'px');
-			jQuery(".ham-menu-animate").css('margin-top', sumoHeight * 1.08 + 'px');
-			//jQuery('body').addClass('sumome-active');
+			jQuery('body').addClass('sumome-active');
 		} else {
-			//jQuery('body').removeClass('sumome-active');
-			jQuery("#nav-flyout").css('padding-top', '17px');
-			jQuery("#nav-flyout").css('height', '560px');
-			jQuery(".ham-menu-animate").css('margin-top', '');
+			jQuery('body').removeClass('sumome-active');
 		}
 	}
 
