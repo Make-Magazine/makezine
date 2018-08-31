@@ -220,12 +220,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="container">
 
       <ul class="nav-level-1-nav">
-        <li class="nav-zine">
-          <a href="https://makezine.com/">
-            <span title="Latest">Latest</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
         <li class="nav-make">
           <a href="http://www.make.co/">
             <span title="Membership">Membership</span>
@@ -233,7 +227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="nav-level-2-arrow"></div>
         </li>
         <li class="nav-shed">
-          <a href="https://www.makershed.com/" target="_blank">
+          <a target="_blank" href="https://www.makershed.com/">
             <span title="Shop">Shop</span>
           </a>
           <div class="nav-level-2-arrow"></div>
@@ -244,9 +238,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
-        <li class="nav-share-p">
-          <a href="https://makershare.com/makers">
-            <span title="Portfolios">Portfolios</span>
+        <li class="nav-job-board">
+          <a href="https://jobs.makershare.com" target="_blank">
+            <span title="Jobs">Job Board</span>
+          </a>
+          <div class="nav-level-2-arrow"></div>
+        </li>
+        <li class="nav-community">
+          <a href="https://makershare.com/">
+            <span title="Community">Community</span>
           </a>
           <div class="nav-level-2-arrow"></div>
         </li>
@@ -258,13 +258,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
       </ul>
 
-      <a href="https://makezine.com/" class="navbar-brand">
+      <a href="https://makezine.com/" class="navbar-brand" data-toggle="tooltip" data-placement="right" title="The latest from Makezine.com">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Make_logo.svg" class="img-responsive" alt="Make: brand logo" />
       </a>
 
       <ul class="nav-level-1-auth">
         <li>
-          <button style="display:none" id="qsLoginBtn">Login | Signup</button>
+          <button style="display:none" id="qsLoginBtn">Login</button>
           <div style="display:none" id="profile-view" class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img class="avatar" style="width:38px" alt="avatar">
