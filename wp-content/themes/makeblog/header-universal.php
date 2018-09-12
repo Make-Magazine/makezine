@@ -274,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <a class="dropdown-item" href="https://makershare.com/portfolio">Makers Share Profile</a>
               <a class="dropdown-item" href="https://makerfaire.com/manage-entries">Maker Faire Portal</a>
               <a class="dropdown-item" href="https://make.co/myaccount">My Member Account</a>
-              <span class="dropdown-item" id="qsLogoutBtn">Log Out</span>
+              <a class="dropdown-item" id="qsLogoutBtn">Log Out</a>
             </div>
           </div>
         </li>
