@@ -272,7 +272,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <div class="profile-email"></div>
-              <a class="dropdown-item" href="https://makershare.com/portfolio">Makers Share Profile</a>
+              <a class="dropdown-item" href="https://makershare.com/portfolio">Maker Share Profile</a>
               <a class="dropdown-item" href="https://makerfaire.com/manage-entries">Maker Faire Portal</a>
               <a class="dropdown-item" href="https://make.co/myaccount">My Member Account</a>
               <a class="dropdown-item" id="qsLogoutBtn">Log Out</a>
