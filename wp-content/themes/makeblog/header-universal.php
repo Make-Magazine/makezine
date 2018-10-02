@@ -216,74 +216,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header id="universal-nav" class="universal-nav">
 
-  <div class="nav-level-1">
-    <nav class="container">
-
-      <ul class="nav-level-1-nav">
-        <li class="nav-make">
-          <a href="http://www.make.co/">
-            <span title="Membership">Membership</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
-        <li class="nav-shed">
-          <a target="_blank" href="https://www.makershed.com/">
-            <span title="Shop">Shop</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
-        <li class="nav-share">
-          <a href="https://makershare.com/learning/">
-            <span title="Learn">Learn</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
-        <li class="nav-job-board">
-          <a href="https://jobs.makershare.com" target="_blank">
-            <span title="Jobs">Job Board</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
-        <li class="nav-community">
-          <a href="https://makershare.com/">
-            <span title="Community">Community</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
-        <li class="nav-faire">
-          <a href="https://makerfaire.com/">
-            <span title="Events">Events</span>
-          </a>
-          <div class="nav-level-2-arrow"></div>
-        </li>
-      </ul>
-
-      <a href="https://makezine.com/" class="navbar-brand" data-toggle="tooltip" data-placement="right" title="The latest from Makezine.com">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Make_logo.svg" class="img-responsive" alt="Make: brand logo" />
-      </a>
-
-      <ul class="nav-level-1-auth">
-        <li>
-          <button style="display:none" id="qsLoginBtn">Login</button>
-          <div style="display:none" id="profile-view" class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img class="avatar" style="width:38px" alt="avatar">
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <div class="profile-email"></div>
-              <a class="dropdown-item" href="https://makershare.com/portfolio">Maker Share Profile</a>
-              <a class="dropdown-item" href="https://makerfaire.com/manage-entries">Maker Faire Portal</a>
-              <a class="dropdown-item" href="https://make.co/myaccount">My Member Account</a>
-              <a class="dropdown-item" id="qsLogoutBtn">Log Out</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-
-    </nav>
-  </div><!-- .nav-level-1 -->
+	<?php // Nav Level 1 and Hamburger
+	  $username = 'makeco';
+	  $password = 'memberships';
+	  $context = stream_context_create(array(
+			'http' => array(
+				 'header'  => "Authorization: Basic " . base64_encode("$username:$password")
+			)
+	  ));
+	  if((class_exists('Jetpack') && Jetpack::is_staging_site()) || $_SERVER['SERVER_PORT'] == "8888") {
+		 echo file_get_contents('https://makeco.staging.wpengine.com/wp-content/themes/memberships/universal-nav/universal-topnav.html', false, $context);
+	  }else{
+		 echo file_get_contents('https://make.co/wp-content/themes/memberships/universal-nav/universal-topnav.html');
+	  }
+	?>
+	
   <div id="nav-level-2" class="nav-level-2">
     <div class="container">
         <?php
@@ -322,13 +269,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="nav-flyout">
     <?php
-        $username = 'makeco';
-        $password = 'memberships';
-        $context = stream_context_create(array(
-            'http' => array(
-                'header'  => "Authorization: Basic " . base64_encode("$username:$password")
-            )
-        ));
         if(class_exists('Jetpack') && Jetpack::is_staging_site()) {
           echo file_get_contents('https://makeco.staging.wpengine.com/wp-content/themes/memberships/universal-nav/universal-megamenu.html', false, $context);
         }else{
@@ -337,19 +277,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ?>
    </div>
 
-  <div id="nav-hamburger" class="nav-hamburger">
-    <div class="container">
-      <div id="hamburger-click-event">
-        <div id="hamburger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span id="hamburger-text">More</span>
-      </div>
-    </div>
-  </div><!-- .nav-hamburger -->
 
 </header>
 <div class="nav-flyout-underlay"></div>
