@@ -10,18 +10,18 @@ window.addEventListener('load', function() {
   /*    If the login button, logout button or profile view elements do not exist
    *    (such as in wp-admin and wp - login pages) default to a 'fake' element
    */
-  if ( !jQuery( "#qsLoginBtn" ).length ) {
+  if ( !jQuery( "#newLoginBtn" ).length ) {
     var loginBtn = document.createElement('div');
-    loginBtn.setAttribute("id", "qsLoginBtn");
+    loginBtn.setAttribute("id", "newLoginBtn");
   }else{
-    var loginBtn    = document.getElementById('qsLoginBtn');
+    var loginBtn    = document.getElementById('newLoginBtn');
   }
 
-  if ( !jQuery( "#qsLogoutBtn" ).length ) {
+  if ( !jQuery( "#newLogoutBtn" ).length ) {
     var logoutBtn = document.createElement('div');
-    logoutBtn.setAttribute("id", "qsLogoutBtn");
+    logoutBtn.setAttribute("id", "newLogoutBtn");
   }else{
-    var logoutBtn    = document.getElementById('qsLogoutBtn');
+    var logoutBtn    = document.getElementById('newLogoutBtn');
   }
 
   if ( !jQuery( "#profile-view" ).length ) {
@@ -233,36 +233,12 @@ if ( typeof define === 'function' && define.amd ) {
 	jQuery(window).load(function () {
 		var sumoHeight = jQuery(".sumome-react-wysiwyg-popup-container").height();
 	});
-	
-	function sumomeActive() {
-		if ( document.querySelector(".sumome-react-wysiwyg-popup-container") != null ) {
-			jQuery('body').addClass('sumome-active');
-		} else {
-			jQuery('body').removeClass('sumome-active');
-		}
-	}
 
-	$('#hamburger-icon, #hamburger-text, .nav-flyout-underlay').click(function() {
-		$('#hamburger-icon').toggleClass('open');
-		$('#hamburger-text').animate({opacity: 'toggle'});
-		$('#nav-flyout').animate({opacity: 'toggle'});
-		$('body').toggleClass('nav-open-no-scroll');
-		$('html').toggleClass('nav-open-no-scroll');
-		$('.nav-flyout-underlay').animate({opacity: 'toggle'});
-		if (typeof sumoHeight !== 'undefined') { sumomeActive(); }
-	});
+
 	// forcing some issues - avatar dropdown to open in same tab and search links to actually link
 	$(".dropdown-item").attr('target', '_self');
 	$(".pop-links-list li a").click(function() {
 		window.location.href = $(this).attr('href');
-	});
-
-	$('.nav-flyout-column').on('click', '.expanding-underline', function(event) {
-	 	if ($(window).width() < 577) { 
-			event.preventDefault();
-			$(this).toggleClass('underline-open');
-			$(this).next('.nav-flyout-ul').slideToggle();
-	 	}
 	});
 	
 	jQuery('.sumome-react-wysiwyg-popup-container').on('DOMNodeRemoved', function(e) {
@@ -271,59 +247,7 @@ if ( typeof define === 'function' && define.amd ) {
 			jQuery(".nav-hamburger").css('margin-top', '');
 		}
 	});
-    
-  // fix nav to top on scrolldown, stay fixed for transition from mobile to desktop
-  var e = $(".universal-nav");
-  var hamburger = $(".nav-hamburger");
-  var y_pos = $(".nav-level-2").offset().top;
-  // maybe one day we can just wrap the below the nav content in something consistent
-  var nextItemUnderNav = $("#home-featured");
-    if($(".second-nav").length && $(".second-nav").css("display") != "none"){
-        nextItemUnderNav = $(".second-nav");
-    }else{
-        if($(".mz-story-infinite-view").length) {
-            nextItemUnderNav = $(".mz-story-infinite-view");
-        }
-        if($(".ad-unit").length) {
-            nextItemUnderNav = $(".ad-unit");
-        }
-    }
-    
-  if ($(window).width() < 578) {
-          jQuery(".auth-target").append(jQuery(".nav-level-1-auth"));
-  }
-  $(window).on('resize', function(){
-	   sumoHeight = jQuery(".sumome-react-wysiwyg-popup-container").height();
-      if ($(window).width() < 767) {
-          y_pos = 0;
-          nextItemUnderNav.css("margin-top", "55px");
-      }else{
-          y_pos = 75;
-          nextItemUnderNav.css("margin-top", "0px");
-      }
-      if ($(window).width() < 578) {
-          jQuery(".auth-target").append(jQuery(".nav-level-1-auth"));
-      }else{
-          jQuery("nav.container").prepend(jQuery(".nav-level-1-auth"));
-      }
-  });
-  jQuery(document).scroll(function() {
-	   sumoHeight = jQuery(".sumome-react-wysiwyg-popup-container").height();
-      var scrollTop = $(this).scrollTop();
-      if(scrollTop > y_pos && $(window).width() > 767){
-          e.addClass("main-nav-scrolled"); 
-          hamburger.addClass("ham-menu-animate");
-          nextItemUnderNav.css("margin-top", "55px");
-      }else if(scrollTop <= y_pos){
-          e.removeClass("main-nav-scrolled"); 
-			 jQuery(".nav-hamburger").css('margin-top', '');
-          hamburger.removeClass("ham-menu-animate");
-          if ($(window).width() > 767) {
-            nextItemUnderNav.css("margin-top", "0px");
-          }
-      }
-	   if (typeof sumoHeight !== 'undefined') { sumomeActive(); }
-  });
+  
   $("#search-modal").fancybox({
         wrapCSS : 'search-modal-wrapper',
         autoSize : true,
@@ -358,64 +282,7 @@ if ( typeof define === 'function' && define.amd ) {
        // essb sharing popup is being triggered when logged in to admin
        $(".essb-live-customizer-main, .essb-live-buttons-customizer").attr('style', 'display: none !important');
   });
-    
-  // to keep this nav universal, let's not have each site's style sheet highlight a different active manually
-  var site = window.location.hostname;
-  var firstpath = $(location).attr('pathname');
-    firstpath.indexOf(1);
-    firstpath.toLowerCase();
-    firstpath = firstpath.split("/")[1];
-  var shareSection = site + "/" + firstpath;
-  function universalNavActive( site ) {
-    jQuery(".nav-" + site).addClass("active-site");
-    jQuery(".nav-" + site + " .nav-level-2-arrow").addClass("active-site")
-  }
-  // each one has to apply to a number of environments
-  switch(site) {
-    case "make-zine":
-    case "makezine":
-    case "makezine.wpengine.com":
-    case "makezine.staging.wpengine.com":
-    case "makezine.com":
-        universalNavActive("zine");
-        break;
-    case "makeco":
-    case "makeco.wpengine.com":
-    case "makeco.staging.wpengine.com/":
-    case "makeco.com":
-        universalNavActive("make");
-        break;
-    case "makershed.com":
-        universalNavActive("shed")
-        break;  
-    case "maker-faire":
-    case "makerfaire":
-    case "makerfaire.wpengine.com":
-    case "makerfaire.staging.wpengine.com":
-    case "makerfaire.com":
-        universalNavActive("faire")
-        break;
-    default:
-          break;
-  }
-  switch(shareSection) {
-    case "maker-share/learning":
-    case "makershare/learning":
-    case "makeshare.wpengine.com/learning":
-    case "makershare.staging.wpengine.com/learning":
-    case "makershare.com/learning":
-        universalNavActive("share")
-        break;
-    case "maker-share/":
-    case "makershare/":
-    case "makeshare.wpengine.com/":
-    case "makershare.staging.wpengine.com/":
-    case "makershare.com/":
-        universalNavActive("share-p")
-        break;
-    default:
-          break;
-  }
+
   // just in case, make sure that nav-share is visible
   $(".nav-level-1-nav .nav-share").css("display", "block");
 })(jQuery);;//!!
