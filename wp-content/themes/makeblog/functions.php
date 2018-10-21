@@ -311,6 +311,8 @@ function load_scripts() {
     wp_enqueue_script('billboard', get_stylesheet_directory_uri() . '/js/billboard.js', array('jquery'), $my_version);
   }
 
+  //wp_enqueue_script('vue','https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js');
+  wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/gift-guide-fe/dist/main.min.js');
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
