@@ -311,7 +311,7 @@ function load_scripts() {
     wp_enqueue_script('billboard', get_stylesheet_directory_uri() . '/js/billboard.js', array('jquery'), $my_version);
   }
 
-  //wp_enqueue_script('vue','https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js');
+   // TODO (ts): add conditional to only load this for the applicable page?
   wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/gift-guide-fe/dist/main.min.js');
 }
 
@@ -985,3 +985,25 @@ function get_theme_mod_img($mod_name){
 // Using wp_get_attachment_url filter, we can fix the dreaded mixed content browser warning
 //
 add_filter( 'wp_get_attachment_url', 'set_url_scheme' );
+
+
+
+////////////////////////////////////////////////////////////////////
+// Add custom post type for Gift Guide
+// https://codex.wordpress.org/Post_Types#Custom_Post_Types
+////////////////////////////////////////////////////////////////////
+function create_post_type() {
+   register_post_type( 'gift_guide',
+     array(
+       'labels' => array(
+         'name' => __( 'Gift Guide Items' ),
+         'singular_name' => __( 'Gift Guide Item' )
+       ),
+       'public' => true,
+       'has_archive' => true,
+       'show_in_rest' => true
+     )
+   );
+}
+add_action( 'init', 'create_post_type' );
+

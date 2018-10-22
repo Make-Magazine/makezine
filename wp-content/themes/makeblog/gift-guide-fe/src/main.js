@@ -12,3 +12,4 @@ window.addEventListener('load', function () {
       render: render => render(App)
    });
 });
+

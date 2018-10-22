@@ -46,10 +46,22 @@ module.exports = function(grunt) {
           debug: true
         },
         transform: [
-          ['vueify',["babelify", { "presets": ["es2015"] }]]
+          [
+            'vueify'
+         ]
         ]
       }
     },
+   //  babel: {
+   //    options: {
+   //      sourceMap: true
+   //    },
+   //    dist: {
+   //      files: {
+   //        "gift-guide-fe/dist/main.min.js": "gift-guide-fe/src/main.js"
+   //      }
+   //    }
+   // },
 
     // Concat js files
     concat: {
@@ -84,11 +96,11 @@ module.exports = function(grunt) {
     watch: {
       prod: {
         files: watchFiles,
-        tasks: ['less:prod', 'concat', 'uglify', 'browserify']
+        tasks: ['less:prod', 'concat', 'uglify', 'browserify']//, 'babel']
       },
       dev: {
         files: watchFiles,
-        tasks: ['less:dev', 'concat', 'browserify']
+        tasks: ['less:dev', 'concat', 'browserify']//, 'babel']
       },
       reload: {
         files: watchFiles,
