@@ -452,8 +452,8 @@ class Make_Authors {
 		$str = file_get_contents( 'https://www.gravatar.com/' . $hash . '.php' );
 		$profile = unserialize( $str );
 		if ( is_array( $profile ) && isset( $profile['entry'] ) ) {
-    	$gravatar_urls = $profile['entry'][0]['urls'];
-    }
+    		$gravatar_urls = $profile['entry'][0]['urls'];
+    	}
 
 		// Load this if we have either a list of links from Gravatar or a single website from Guest Authors
 		if ( isset( $gravatar_urls) || isset( $author->website ) ) {
