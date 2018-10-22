@@ -11,7 +11,7 @@ module.exports = {
    props: ['post'],
    data: function() {
       return {
-         //content: 
+         
       }
    },
 }
