@@ -3,11 +3,30 @@
     "title": "Gift Guide General Page",
     "fields": [
         {
+            "key": "field_5bcdf7e8d8663",
+            "label": "Page Header Banner Ad",
+            "name": "page_header_banner_ad",
+            "type": "text",
+            "instructions": "TBD - this is the field to embed an ad at the top of the page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5bcdf774d865f",
             "label": "Page Title Text",
             "name": "page_title_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "The main title of the page; will be replaced by an image, but must be provided for SEO and accessibility purposes.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -26,7 +45,7 @@
             "label": "Page Title Image",
             "name": "page_title_image",
             "type": "image",
-            "instructions": "TBD specific size",
+            "instructions": "Image to feature as the Page Title (will replace the Page Title Text visually). Image should be 496px wide by 88px high",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -37,63 +56,20 @@
             "return_format": "url",
             "preview_size": "thumbnail",
             "library": "all",
-            "min_width": "",
-            "min_height": "",
+            "min_width": 496,
+            "min_height": 88,
             "min_size": "",
-            "max_width": "",
-            "max_height": "",
+            "max_width": 496,
+            "max_height": 88,
             "max_size": "",
             "mime_types": ""
         },
         {
-            "key": "field_5bcdf7c4d8661",
-            "label": "Page Header Intro",
-            "name": "page_header_intro",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_5bcdf7d7d8662",
-            "label": "Page Header Hero Image",
-            "name": "page_header_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5bcdf7e8d8663",
-            "label": "Page Header Banner Ad",
-            "name": "page_header_banner_ad",
+            "key": "field_5bce4ca450246",
+            "label": "Page Subtitle Text",
+            "name": "page_subtitle_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "Text that will appear just below the Title Text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -106,6 +82,49 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5bcdf7c4d8661",
+            "label": "Page Header Intro Text",
+            "name": "page_header_intro_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5bcdf7d7d8662",
+            "label": "Page Header Hero Image",
+            "name": "page_header_hero_image",
+            "type": "image",
+            "instructions": "Choose or upload an image to feature at the top of the page, just below the Title\/Subtitle\/Intro Text. The image should be no larger than 970px wide by 400px high",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 970,
+            "max_height": 400,
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5bce2737d8dd9",
@@ -148,6 +167,25 @@
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_5bce4e2b50247",
+            "label": "Page Footer Banner Ad",
+            "name": "page_footer_banner_ad",
+            "type": "text",
+            "instructions": "TBD - this is the field to embed an ad at the bottom of the page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -169,5 +207,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540237319
+    "modified": 1540247826
 }
