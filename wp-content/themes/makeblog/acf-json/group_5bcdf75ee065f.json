@@ -106,6 +106,48 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5bce2737d8dd9",
+            "label": "Editor's Pick Frequency",
+            "name": "editors_pick_frequency",
+            "type": "number",
+            "instructions": "How often an Editor's Pick appears in the list, e.g. \"Every 6 items\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5bce27afd8dda",
+            "label": "Sponsored Item Frequency",
+            "name": "sponsored_item_frequency",
+            "type": "number",
+            "instructions": "How often a Sponsored Item appears in the list, e.g. \"Every 6 items\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         }
     ],
     "location": [
@@ -127,5 +169,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540225130
+    "modified": 1540237319
 }

@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     browserify: {
       bundle: {
         src: 'gift-guide-fe/src/main.js',
-        dest: 'gift-guide-fe/dist/main.min.js'
+        dest: 'gift-guide-fe/dist/main.js'
       },
       options: {
         browserifyOptions: {
@@ -47,21 +47,12 @@ module.exports = function(grunt) {
         },
         transform: [
           [
-            'vueify'
+            'vueify',
+            ['babelify', { presets: "es2015" }]
          ]
         ]
       }
     },
-   //  babel: {
-   //    options: {
-   //      sourceMap: true
-   //    },
-   //    dist: {
-   //      files: {
-   //        "gift-guide-fe/dist/main.min.js": "gift-guide-fe/src/main.js"
-   //      }
-   //    }
-   // },
 
     // Concat js files
     concat: {
@@ -79,7 +70,6 @@ module.exports = function(grunt) {
         }
       },
     },
-    // uglify js
     uglify: {
       js: {
         options: {
@@ -89,14 +79,14 @@ module.exports = function(grunt) {
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
           'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
-          //'gift-guide-fe/dist/main.min.js': 'gift-guide-fe/dist/main.js',
+          'gift-guide-fe/dist/main.min.js': 'gift-guide-fe/dist/main.js',
         }
       }
     },
     watch: {
       prod: {
         files: watchFiles,
-        tasks: ['less:prod', 'concat', 'uglify', 'browserify']//, 'babel']
+        tasks: ['less:prod', 'concat', 'browserify', 'uglify']//, 'babel']
       },
       dev: {
         files: watchFiles,

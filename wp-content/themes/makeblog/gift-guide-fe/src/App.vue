@@ -1,9 +1,6 @@
 
 <template>
-   <div>
-      <h1>{{ title }}</h1>
-      <GiftGuide></GiftGuide>
-   </div>
+   <GiftGuide></GiftGuide>
 </template>
 
 <script>

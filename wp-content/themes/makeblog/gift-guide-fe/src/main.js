@@ -9,7 +9,9 @@ window.addEventListener('load', function () {
          'title': 'test from vue',
          'foo': 'bar'
       },
-      render: render => render(App)
+      //render: render => render(App)
+      render: function(createElement) {
+         return createElement(App);
+      }
    });
 });
-

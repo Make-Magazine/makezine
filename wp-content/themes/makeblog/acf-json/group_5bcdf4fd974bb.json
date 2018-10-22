@@ -3,6 +3,28 @@
     "title": "Gift Guide Item",
     "fields": [
         {
+            "key": "field_5bce26811a16a",
+            "label": "Item Visibility",
+            "name": "item_visibility",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "visible": "Visible",
+                "hidden": "Hidden"
+            },
+            "allow_null": 0,
+            "default_value": "visible",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5bcdf521d98f8",
             "label": "Item Name",
             "name": "item_name",
@@ -65,6 +87,25 @@
             "delay": 0
         },
         {
+            "key": "field_5bce25ab1a169",
+            "label": "Why To Buy",
+            "name": "why_to_buy",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5bcdf590d98fb",
             "label": "Item Price",
             "name": "item_price",
@@ -103,7 +144,7 @@
             "key": "field_5bcdf5d2d98fd",
             "label": "Item: Sponsored",
             "name": "item_sponsored",
-            "type": "radio",
+            "type": "button_group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -116,12 +157,10 @@
                 "yes": "Yes",
                 "no": "No"
             },
-            "allow_null": 1,
-            "other_choice": 0,
+            "allow_null": 0,
             "default_value": "no",
             "layout": "horizontal",
-            "return_format": "value",
-            "save_other_choice": 0
+            "return_format": "value"
         },
         {
             "key": "field_5bcdf61cd98fe",
@@ -151,7 +190,7 @@
             "key": "field_5bcdf644d98ff",
             "label": "Item: Editor's Pick",
             "name": "item_editor's_pick",
-            "type": "radio",
+            "type": "button_group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -165,11 +204,9 @@
                 "no": "No"
             },
             "allow_null": 0,
-            "other_choice": 0,
             "default_value": "no",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
+            "layout": "horizontal",
+            "return_format": "value"
         },
         {
             "key": "field_5bcdf670d9900",
@@ -259,5 +296,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540224833
+    "modified": 1540237609
 }
