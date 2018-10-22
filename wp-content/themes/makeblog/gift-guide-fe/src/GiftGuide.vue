@@ -1,12 +1,19 @@
 
 <template>
-   <div class="container">
-      <div class="row">
-         <div class="col-sm-12">Filters</div>
+   <div>
+      <div class="filter-container">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  Filters
+               </div>
+            </div>
+         </div>
       </div>
-      <div v-if="loading === true">Loading....</div>
-      <GiftGuideItem v-for="post of posts" v-bind:key="post.id" v-bind:post="post" style="margin-bottom: 12px; overflow: hidden"></GiftGuideItem>
-
+      <div class="container">
+         <div v-if="loading === true"><h2>Loading....</h2></div>
+         <GiftGuideItem v-for="post of posts" v-bind:key="post.id" v-bind:post="post" style="margin-bottom: 12px; overflow: hidden"></GiftGuideItem>
+      </div>
    </div>
 </template>
 
@@ -34,3 +41,12 @@ module.exports = {
    }
 }
 </script>
+
+<style lang="css">
+   .filter-container {
+      background-color: #005E9A;
+      color: #fff;
+      padding: 12px 0;
+   }
+</style>
+

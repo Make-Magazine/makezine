@@ -25,7 +25,6 @@ if (have_posts()) {
       echo '<p>'.$page_header_intro.'</p>';
    }
 ?>
-   <div id="gift-guide-container"></div>
 <?php 
 } else {
 ?>
@@ -36,6 +35,7 @@ if (have_posts()) {
          </div>
       </div>
    </div>
+   <div id="gift-guide-container"></div>
 </div>
 
 <?php get_footer(); ?>
