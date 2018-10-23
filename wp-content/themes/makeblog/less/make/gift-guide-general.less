@@ -38,23 +38,77 @@
       }
    }
 
-   .filter-container {
-      background-color: #005E9A;
-      color: #fff;
-      padding: 12px 0;
-      .filters {
-         display: flex;
-         flex-direction: row;
-         span {
-            width: 20%;
+   .gift-guide {
+      .filter-container {
+         background-color: #005E9A;
+         color: #fff;
+         padding: 12px 0;
+         .filters {
+            display: flex;
+            flex-direction: row;
+            span {
+               width: 20%;
+            }
+         }
+   
+         select {
+            background-color: #005E9A;
+            border: none;
          }
       }
 
-      select {
-         background-color: #005E9A;
-         border: none;
+      .item-list {
+         margin-top: 40px;
+         padding-bottom: 60px;
+         .btn-blue {
+            padding: 12px 24px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #005E9A;
+            border-color: #005E9A;
+            border-radius: 3px;
+            &:hover {
+               background-color: lighten(#005E9A, 10%)
+            }
+         }
+         .btn-load-more {
+            width: 100%;
+         }
+         .item-instance {
+            font-family: 'Roboto-Light', serif;
+            margin-bottom: 36px;
+            box-shadow: 1px 1px 3px rgb(0,0,0);
+            box-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
+            .item-name {
+               font-size: 36px;
+               padding-right: 12px;
+            }
+            .item-desc {
+               font-size: 14px;
+               margin-bottom: 16px;
+               padding-right: 12px;
+            }
+            .why-to-buy {
+               font-size: 14px;
+               font-weight: 700;
+               margin-bottom: 16px;
+               padding-right: 12px;
+            }
+            .item-price {
+               font-size: 36px;
+               margin-bottom: 16px;
+            }
+            .btn-item-buy {
+               margin-bottom: 12px;
+               display: block;
+               width: 200px;
+               text-align: center; 
+            }
+         }
       }
+
    }
+
 
 
 }

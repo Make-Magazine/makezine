@@ -1,0 +1,44 @@
+{
+   "categories": [
+      {
+         "value": 0,
+         "text": "All Categories"
+      },
+      {
+         "value": 1,
+         "text": "Welding/Fabrication"
+      },
+      {
+         "value": 2,
+         "text": "Text &amp; Measurement"
+      },
+      {
+         "value": 3,
+         "text": "Tools"
+      },
+      {
+         "value": 4,
+         "text": "Printing - 3D"
+      },
+      {
+         "value": 5,
+         "text": "Electronics/Components"
+      },
+      {
+         "value": 6,
+         "text": "STEM Toys / Microscopes"
+      },
+      {
+         "value": 7,
+         "text": "Crafts"
+      },
+      {
+         "value": 8,
+         "text": "Apparel"
+      },
+      {
+         "value": 9,
+         "text": "Uniquely eBay"
+      }
+   ]
+}
