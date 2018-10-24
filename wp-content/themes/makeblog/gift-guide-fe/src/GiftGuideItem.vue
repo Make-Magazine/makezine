@@ -14,7 +14,8 @@
                <div class="item-price">$<span v-html="post.item_price"></span></div>
                <a class="btn btn-blue btn-item-buy" v-bind:href="post.item_purchase_url">Buy</a>
                <div>
-                  <span v-for="cat of post.item_categories">{{ cat }} | </span> | 
+                  Cats: <span v-for="cat of post.item_categories" v-bind:key="cat.value">{{ cat }} | </span>
+                  Recips: <span v-for="recip of post.item_recipients" v-bind:key="recip.value">{{ recip }} | </span>
                </div>
             </div>
          </div>
