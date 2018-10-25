@@ -10,7 +10,7 @@
                      <label for="category-select" class="sr-only sr-only-focusable">Categories</label>
                      <select name="category-select" id="category-select" v-model="filter_cat_model" v-on:change="filterChange">
                         <option v-for="option in categories" v-bind:key="option.value" v-bind:value="option.value">
-                           {{ option.text }} {{ option.value }}
+                           {{ option.text }} <!-- {{ option.value }} -->
                         </option>
                      </select>
                   </span>
@@ -18,7 +18,7 @@
                      <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
                      <select name="recipient-select" id="recipient-select" v-model="filter_recip_model" v-on:change="filterChange">
                         <option v-for="option in recipients" v-bind:key="option.value" v-bind:value="option.value">
-                           {{ option.text }} {{ option.value }}
+                           {{ option.text }} <!-- {{ option.value }} -->
                         </option>
                      </select>
                   </span>
