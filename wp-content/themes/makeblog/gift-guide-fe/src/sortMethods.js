@@ -1,19 +1,30 @@
 
 module.exports = {
+
+   default: function(a,b) {
+      //console.log('sorting default');
+      var aRaw = a.item_list_order,
+         bRaw = b.item_list_order,
+         aInt = parseInt(aRaw),
+         bInt = parseInt(bRaw),
+         diff = aInt - bInt;
+      //console.log(aRaw, aInt, bRaw, bInt, diff);
+      return diff;
+   },
    name: {
       asc : function(a,b) {
          //console.log('sorting name asc');
-         if (a.item_name.toLowerCase() < b.item_name.toLowerCase())
+         if (a.title.toLowerCase() < b.title.toLowerCase())
             return -1;
-         if (a.item_name.toLowerCase() > b.item_name.toLowerCase())
+         if (a.title.toLowerCase() > b.title.toLowerCase())
             return 1;
          return 0;
       },
       desc : function(a,b) {
          //console.log('sorting name desc');
-         if (a.item_name.toLowerCase() > b.item_name.toLowerCase())
+         if (a.title.toLowerCase() > b.title.toLowerCase())
             return -1;
-         if (a.item_name.toLowerCase() < b.item_name.toLowerCase())
+         if (a.title.toLowerCase() < b.title.toLowerCase())
             return 1;
          return 0;
       }
@@ -25,9 +36,9 @@ module.exports = {
             bRaw = b.item_price,
             aInt = Math.floor(parseFloat(aRaw)),
             bInt = Math.floor(parseFloat(bRaw)),
-            test = aInt - bInt;
-         //console.log(aRaw, aInt, bRaw, bInt, test);
-         return test;
+            diff = aInt - bInt;
+         //console.log(aRaw, aInt, bRaw, bInt, diff);
+         return diff;
       },
       desc : function(a,b) {
          //console.log('sorting price asc');
@@ -35,9 +46,9 @@ module.exports = {
             bRaw = b.item_price,
             aInt = Math.floor(parseFloat(aRaw)),
             bInt = Math.floor(parseFloat(bRaw)),
-            test = bInt - aInt;
-         //console.log(aRaw, aInt, bRaw, bInt, test);
-         return test;
+            diff = bInt - aInt;
+         //console.log(aRaw, aInt, bRaw, bInt, diff);
+         return diff;
       }
    }
 }

@@ -15,6 +15,8 @@ get_header('universal');
       <div class="container">
          <div class="row">
             <div class="col-sm-12 title-image-block">
+               <!-- TODO (ts): Ad goes here -->
+               <div class="gg-header-ad"><div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div></div>
 <?php 
 if (have_posts()) {
    while (have_posts()) {
@@ -42,7 +44,8 @@ if (have_posts()) {
          </div>
       </div>
    </div>
-   <div id="gift-guide-container"></div>
+   <div id="gift-guide-container"><h2 class="initial-loading-indicator" style="text-align: center;">Loading... <i class="fa fa-spinner"></i></h2></div>
+   <div class="gg-footer-ad"><div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div></div>
 </div>
 
 <?php get_footer(); ?>

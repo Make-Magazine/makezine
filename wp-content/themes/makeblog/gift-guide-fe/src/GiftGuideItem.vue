@@ -1,14 +1,18 @@
 
 <template>
 <transition appear>
-   <div class="item-instance">
+   <div class="item-instance" v-bind:id="post.slug">
 
          <div class="row">
             <div class="col-sm-5">
-               <img v-bind:src="post.item_image" />
+               <div class="item-image">
+                  <a v-bind:href="post.item_purchase_url"><img v-bind:src="post.item_image" /></a>
+                  <div v-if="post.item_editors_pick === 'yes'" class="gg-badge gg-badge-editor"><img v-bind:src="post.editors_pick_badge" alt="Editor's Pick"></div>
+                  <div v-if="post.item_sponsored === 'yes'" class="gg-badge gg-badge-sponsored"><img v-bind:src="post.sponsored_badge" alt="Sponsored"></div>
+               </div>
             </div>
             <div class="col-sm-7">
-               <h2 class="item-name" v-html="post.item_name"></h2>
+               <h2 class="item-name"><a v-bind:href="post.item_purchase_url" v-html="post.title"></a></h2>
                <div class="item-desc" v-html="post.item_description"></div>
                <div class="why-to-buy">Why to buy: <span v-html="post.why_to_buy"></span></div>
                <div class="item-price">$<span v-html="post.item_price"></span></div>

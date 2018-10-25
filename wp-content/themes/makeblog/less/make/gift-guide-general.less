@@ -2,7 +2,14 @@
    .hero-header {
       background-color: #fff;
    }
+   // .gg-header-ad {
+   //    margin-bottom: 24px;
+   // }
+   .gg-footer-ad {
+      margin-bottom: 24px;
+   }
    .title-image-block {
+      padding-top: 24px;
       .page-title {
          width: 496px;
          height: 88px;
@@ -14,13 +21,13 @@
          }
       }
       .hero-subtitle {
-         font-family: 'Roboto-Light', serif;
+         font-family: 'Roboto-Light', sans-serif;
          font-size: 56px;
          text-align: center;
       }
       .header-intro-text {
          p {
-            font-family: 'Roboto-Light', serif;
+            font-family: 'Roboto-Light', sans-serif;
             font-size: 16px;
             text-align: center;
          }
@@ -38,6 +45,25 @@
       }
    }
 
+   @-moz-keyframes spinLoader {
+      from { -moz-transform: rotate(0deg); }
+      to { -moz-transform: rotate(360deg); }
+   }
+   @-webkit-keyframes spinLoader {
+      from { -webkit-transform: rotate(0deg); }
+      to { -webkit-transform: rotate(360deg); }
+   }
+   @keyframes spinLoader {
+      from {transform:rotate(0deg);}
+      to {transform:rotate(360deg);}
+   }
+
+      .initial-loading-indicator {
+         .fa {
+            animation: spinLoader 0.85s linear infinite;
+         }
+      }
+   
    .gift-guide {
       .filter-container {
          background-color: #005E9A;
@@ -47,7 +73,7 @@
             display: flex;
             flex-direction: row;
             span {
-               width: 20%;
+               // width: 20%;
             }
          }
    
@@ -59,6 +85,7 @@
 
       .item-list {
          margin-top: 40px;
+         // min-height: 800px;
          padding-bottom: 60px;
          .btn-blue {
             padding: 12px 24px;
@@ -75,10 +102,24 @@
             width: 100%;
          }
          .item-instance {
-            font-family: 'Roboto-Light', serif;
+            font-family: 'Roboto-Light', sans-serif;
             margin-bottom: 36px;
             box-shadow: 1px 1px 3px rgb(0,0,0);
             box-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
+            background-color: #fff;
+            .item-image {
+               position: relative;
+               padding: 12px;
+               img {
+                  margin: 0 auto;
+                  display: block;
+               }
+               .gg-badge {
+                  position: absolute;
+                  bottom: 12px;
+                  left: 27px;
+               }
+            }
             .item-name {
                font-size: 36px;
                padding-right: 12px;
@@ -89,6 +130,7 @@
                padding-right: 12px;
             }
             .why-to-buy {
+               font-family: "Roboto Bold", sans-serif;
                font-size: 14px;
                font-weight: 700;
                margin-bottom: 16px;

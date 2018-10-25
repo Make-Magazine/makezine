@@ -1,6 +1,6 @@
 
 <template>
-   <div class="gift-guide">
+   <div ref="giftGuide" class="gift-guide hidden">
       <div class="filter-container">
          <div class="container">
             <div class="row">
@@ -30,26 +30,20 @@
                         </option>
                      </select>
                   </span>
-                  <span>
-                     <label for="sort-select" class="sr-only sr-only-focusable">Sort Dir</label>
-                     <select name="sort-select" id="sort-select" v-model="sort_dir_model" v-on:change="sortChange">
-                        <option v-for="option in sortDirDynamic()" v-bind:key="option.value" v-bind:value="option.value">
-                           {{ option.text }}
-                        </option>
-                     </select>
-                  </span>
                </div>
             </div>
          </div>
       </div>
 
-      <div class="container item-list">
-         <div v-if="loading === true"><h2>Loading....</h2></div>
-         <p>{{ postsDisplayed() }} Results</p>
+      <div ref="itemList" class="container item-list">
+         <p>{{ postsAvailable() }} Items <span v-if="loading === true"><span class="initial-loading-indicator"> Loading... <i class="fa fa-spinner"></i></span></span></p>
          <transition-group name="list" tag="div">
-            <GiftGuideItem v-for="post in visiblePosts" v-bind:key="post._id" v-bind:post="post"></GiftGuideItem>
+            <div v-for="(post, index) in visiblePosts" v-bind:key="post.item_id" class="item-list-inner">
+               <GiftGuideItem v-bind:post="post"></GiftGuideItem>
+               <!-- <div v-if="showAd(index)" class="dynamic-ad">Show Add here {{index}}: {{index % 3 }}</div> -->
+            </div>
          </transition-group>
-         <button class="btn btn-blue btn-load-more" v-if="showLoadButton()" v-on:click="loadMore">Load More</button>
+         <button ref="loadMoreBtn" class="btn btn-blue btn-load-more" v-if="showLoadButton()" v-on:click="loadMore">Load More</button>
       </div>
    </div>
 </template>
@@ -68,45 +62,36 @@ module.exports = {
          filter_recip_model: '',
          sort_by_model: '',
          sort_dir_model: '',
-         filters: {},
          categories: [],
          recipients: [],
          sort: [
             {
                "value": "0",
-               "text": "Name"
+               "text": "Default"
             },
             {
                "value": "1",
-               "text": "Price"
+               "text": "Price High - Low"
+            },
+            {
+               "value": "2",
+               "text": "Price Low - High"
+            },
+            {
+               "value": "3",
+               "text": "A - Z"
+            },
+            {
+               "value": "4",
+               "text": "Z - A"
             },
          ],
-         sortDir: {
-            "0" : [ // for "Name"
-               {
-                  "value": "0",
-                  "text": "A to Z"
-               },
-               {
-                  "value": "1",
-                  "text": "Z to A"
-               }
-            ],
-            "1" : [ // for "Price"
-               {
-                  "value": "0",
-                  "text": "Low to High"
-               },
-               {
-                  "value": "1",
-                  "text": "High to Low"
-               }
-            ]
-         },
          origPosts: [], // this is our internal, complete list; it doesn't get displayed
-         posts: [], // this is a mutable copy of the list that gets filtered & sorted
+         currentPosts: [], // this is a mutable copy of the list that gets filtered & sorted
          visiblePosts: [], // this is the visble posts
-         postLimit: 12
+         initialRender: false,
+         postLimitInterval: 3,
+         postLimit: 3
       }
    },
    created: function() {
@@ -116,38 +101,61 @@ module.exports = {
             _self.filter_recip_model = 0;
             _self.sort_by_model = 0;
             _self.sort_dir_model = 0;
-      //axios.get('/wp-json/wp/v2/posts')
-      axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/categories.json')
+      //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/categories.json')
+      axios.get('/wp-json/wp/v2/gift_guide_category/')
          .then(function (response) {
-            //console.log(response.data);
-            _self.categories = response.data.categories;
-            _self.loading = false;
-            //console.log( _self.categories);
+            console.log(response.data);
+            var catsParsed = [
+               {
+                  'value': 0,
+                  'text': "All Categories"
+               }
+            ];
+            response.data.forEach(function(el) {
+               var thisCat = {
+                  'value': el.id,
+                  'text': el.name
+               };
+               catsParsed.push(thisCat);
+            });
+            _self.categories = catsParsed;
          })
          .catch(function (error) {
             console.log(error);
             _self.loading = false;
          });
 
-      axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/recipients.json')
+      //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/recipients.json')
+      axios.get('/wp-json/wp/v2/gift_guide_recipient/')
          .then(function (response) {
-            //console.log(response.data);
-            _self.recipients = response.data.recipients;
-            _self.loading = false;
-            //console.log( _self.recipients);
+            console.log(response.data);
+            var recipsParsed = [
+               {
+                  'value': 0,
+                  'text': "All Recipients"
+               }
+            ];
+            response.data.forEach(function(el) {
+               var thisCat = {
+                  'value': el.id,
+                  'text': el.name
+               };
+               recipsParsed.push(thisCat);
+            });
+            _self.recipients = recipsParsed;
          })
          .catch(function (error) {
             console.log(error);
             _self.loading = false;
          });
 
-      axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/gift_guide_json.json')
+      //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/gift_guide_json.json')
+      axios.get('/wp-json/gift-guide/v1/items/')
          .then(function (response) {
-            //console.log(response.data);
+            console.log(response.data);
             _self.origPosts = response.data;
-            _self.posts = _self.origPosts;
-            _self.loading = false;
-            _self.sortPosts('name','asc');
+            _self.currentPosts = _self.origPosts;
+            //_self.sortPosts('name','asc');
             _self.showPosts();
          })
          .catch(function (error) {
@@ -155,68 +163,111 @@ module.exports = {
             _self.loading = false;
          });
    },
+   mounted: function() {
+      this.$refs.giftGuide.classList.remove('hidden');
+      window.addEventListener('scroll', this.onScroll);
+   },
    components: {
       'GiftGuideItem': GiftGuideItem
    },
    methods : {
-      sortPosts: function(mode, dir) {
-         //this.origPosts.sort(SortMethods[mode][dir]);
-         this.posts.sort(SortMethods[mode][dir]);
-      },
-      sortChange: function() {
+      sortPosts: function(mode) {
+         this.loading = true;
          var mode = {
-            0: 'name',
-            1: 'price'
+            0: SortMethods['default'],
+            1: SortMethods['price']['desc'],
+            2: SortMethods['price']['asc'],
+            3: SortMethods['name']['asc'],
+            4: SortMethods['name']['desc']
          }
-         var dir = {
-            0: 'asc',
-            1: 'desc'
-         }
-         //console.log(mode[this.sort_by_model], dir[this.sort_dir_model]);
-         this.sortPosts(mode[this.sort_by_model], dir[this.sort_dir_model]);
+         this.currentPosts.sort(mode[this.sort_by_model]);
          this.showPosts();
       },
+      sortChange: function() {
+         this.sortPosts();
+      },
       filterChange: function() {
+         this.loading = true;
          //console.log(this.filter_cat_model, this.filter_recip_model);
          var _self = this,
             filteredPosts;
          // If both category and recipient have '0', just show the whole (original) list
          if(_self.filter_cat_model === 0 && _self.filter_recip_model === 0) {
-            this.posts = this.origPosts;
+            this.currentPosts = this.origPosts;
          } else {
             filteredPosts = this.origPosts.filter(function(obj) {
                // this is the case for all categories, but a specific recipient
                if(_self.filter_cat_model === 0 && _self.filter_recip_model > 0) {
-                  return obj.item_recipients.indexOf(_self.filter_recip_model) > -1;
+                  if(obj.item_recipients) {
+                     return obj.item_recipients.indexOf(_self.filter_recip_model) > -1;
+                  }
                }
                // this is the case for all recipients, but a specific category
                else if(_self.filter_cat_model > 0 && _self.filter_recip_model === 0) {
-                  return obj.item_categories.indexOf(_self.filter_cat_model) > -1;
+                  if(obj.item_categories) {
+                     return obj.item_categories.indexOf(_self.filter_cat_model) > -1;
+                  }
                }
                // this is the case for a specific category, and a specific recipient
                else {
-                  return obj.item_categories.indexOf(_self.filter_cat_model) > -1 && obj.item_recipients.indexOf(_self.filter_recip_model) > -1;
+                  if(obj.item_categories && obj.item_recipients) {
+                     return obj.item_categories.indexOf(_self.filter_cat_model) > -1 && obj.item_recipients.indexOf(_self.filter_recip_model) > -1;
+                  }
                }
             });
-            this.posts = filteredPosts;
-            this.showPosts();
+            this.currentPosts = filteredPosts;
          }
+         this.showPosts();
       },
       showPosts: function() {
-         this.visiblePosts = this.posts.slice(0,this.postLimit);
+         var _self = this;
+         this.visiblePosts = this.currentPosts.slice(0,this.postLimit);
+         setTimeout(function(){
+            _self.loading = false;
+            if(!_self.initialRender) {
+               _self.initialRender = true;
+            }
+         },600);
+      },
+      postsAvailable: function() {
+         return this.currentPosts.length;
       },
       postsDisplayed: function() {
          return this.visiblePosts.length;
       },
       showLoadButton: function() {
-         return this.visiblePosts.length < this.posts.length;
+         return this.visiblePosts.length < this.currentPosts.length;
       },
       loadMore: function() {
-         this.postLimit += 12;
-         this.showPosts();
+         if(this.visiblePosts < this.currentPosts) {
+            //console.log('Load more!');
+            this.postLimit += this.postLimitInterval;
+            this.showPosts();
+         }
       },
-      sortDirDynamic: function() {
-         return this.sortDir[this.sort_by_model];
+      // showAd: function(idx) {
+      //    console.log(idx);
+      //    if(idx > 0) {
+      //       return idx % 3 === 0;
+      //    } else {
+      //       return false;
+      //    }
+      // },
+      getItemsHeight: function() {
+         return this.$refs.itemList.clientHeight;
+      },
+      onScroll: function() {
+         var scrollPos = this.getScrollTop(),
+            listHeight = this.getItemsHeight();
+         if(this.initialRender && (scrollPos > 600) && (scrollPos+300) >= listHeight ) {
+            //console.log('load more...', scrollPos, listHeight);
+            this.loadMore();
+         }
+      },
+      getScrollTop: function() {
+         return (window.pageYOffset !== undefined) ? window.pageYOffset
+         : (document.documentElement || document.body.parentNode || document.body)
+      	.scrollTop;
       }
    }
 }

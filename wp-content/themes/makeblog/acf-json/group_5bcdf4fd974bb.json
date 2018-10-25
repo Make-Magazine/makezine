@@ -25,11 +25,32 @@
             "return_format": "value"
         },
         {
+            "key": "field_5bd0bbdf9d514",
+            "label": "Item List Order",
+            "name": "item_list_order",
+            "type": "number",
+            "instructions": "Enter a whole number representing the default position of this item in the list. Lower numbers come first\r\n<em>If other items have the same number, the ordering of these items will be unpredictable<\/em>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": 1
+        },
+        {
             "key": "field_5bcdf54ed98f9",
             "label": "Item Image",
             "name": "item_image",
             "type": "image",
-            "instructions": "Select or upload an image for this item. Image size should be 435wide X 385high",
+            "instructions": "Select or upload an image for this item. Image size should be at least 300px wide X 300px high",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -40,8 +61,8 @@
             "return_format": "url",
             "preview_size": "thumbnail",
             "library": "all",
-            "min_width": 435,
-            "min_height": 385,
+            "min_width": 300,
+            "min_height": 300,
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -170,7 +191,7 @@
         {
             "key": "field_5bcdf644d98ff",
             "label": "Item: Editor's Pick",
-            "name": "item_editor's_pick",
+            "name": "item_editors_pick",
             "type": "button_group",
             "instructions": "",
             "required": 0,
@@ -217,7 +238,7 @@
             "key": "field_5bcdf6991499f",
             "label": "Item Categories",
             "name": "item_categories",
-            "type": "select",
+            "type": "taxonomy",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -226,20 +247,20 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
-            "default_value": [],
-            "allow_null": 1,
-            "multiple": 1,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "taxonomy": "gift_guide_category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
         },
         {
             "key": "field_5bcdf6eb149a0",
             "label": "Item Recipients",
             "name": "item_recipients",
-            "type": "select",
+            "type": "taxonomy",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -248,14 +269,14 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
-            "default_value": [],
+            "taxonomy": "gift_guide_recipient",
+            "field_type": "multi_select",
             "allow_null": 0,
-            "multiple": 1,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
         }
     ],
     "location": [
@@ -277,5 +298,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540246602
+    "modified": 1540495330
 }
