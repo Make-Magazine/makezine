@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     'reviews/less/**/**/*.less',
     'version-2/js/single-story/*.js',
     'js/footer-scripts/*.js',
-    'gift-guide-fe/src/main.js',
-    'gift-guide-fe/src/*.vue',
+    'Vue/gift-guide/src/*.js',
+    'Vue/gift-guide/src/*.vue',
   ];
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
     },
     browserify: {
       bundle: {
-        src: 'gift-guide-fe/src/main.js',
-        dest: 'gift-guide-fe/dist/main.js'
+        src: 'Vue/gift-guide/src/main.js',
+        dest: 'Vue/gift-guide/dist/main.js'
       },
       options: {
         browserifyOptions: {
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
           'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
-          'gift-guide-fe/dist/main.min.js': 'gift-guide-fe/dist/main.js',
+          'Vue/gift-guide/dist/main.min.js': 'Vue/gift-guide/dist/main.js',
         }
       }
     },

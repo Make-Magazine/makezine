@@ -36,14 +36,18 @@
       </div>
 
       <div ref="itemList" class="container item-list">
-         <p>{{ postsAvailable() }} Items <span v-if="loading === true"><span class="initial-loading-indicator"> Loading... <i class="fa fa-spinner"></i></span></span></p>
+         <p>{{ postsAvailable() }} Items <span v-if="loading === true">
+            <transition appear>
+               <span class="initial-loading-indicator"> Loading... <i class="fa fa-spinner"></i></span>
+            </transition>
+            </span></p>
          <transition-group name="list" tag="div">
             <div v-for="(post, index) in visiblePosts" v-bind:key="post.item_id" class="item-list-inner">
                <GiftGuideItem v-bind:post="post"></GiftGuideItem>
                <!-- <div v-if="showAd(index)" class="dynamic-ad">Show Add here {{index}}: {{index % 3 }}</div> -->
             </div>
          </transition-group>
-         <div v-if="postsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
+         <div v-if="initialRender && postsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
          <!-- <button ref="loadMoreBtn" class="btn btn-blue btn-load-more" v-if="showLoadButton()" v-on:click="loadMore">Load More</button> -->
       </div>
    </div>
@@ -89,7 +93,7 @@ module.exports = {
          ],
          origPosts: [], // this is our internal, complete list; it doesn't get displayed
          currentPosts: [], // this is a mutable copy of the list that gets filtered & sorted
-         visiblePosts: [], // this is the visble posts
+         visiblePosts: [], // this is the visble posts NOTE (ts): this only applies for lazy-loading posts (not images), which is shut off now; so visible and current are now the same
          initialRender: false,
          postLimitInterval: 3,
          postLimit: 3
@@ -216,7 +220,7 @@ module.exports = {
                   }
                }
             });
-            console.log('showPosts: ', 'Orig: ', this.origPosts, 'Cur: ', this.currentPosts, 'Vis: ', this.visiblePosts);
+            //console.log('showPosts: ', 'Orig: ', this.origPosts, 'Cur: ', this.currentPosts, 'Vis: ', this.visiblePosts);
             this.currentPosts = filteredPosts;
          }
          this.showPosts();
@@ -224,9 +228,10 @@ module.exports = {
       showPosts: function() {
          var _self = this;
          //this.visiblePosts = this.currentPosts.slice(0,this.postLimit); // if lazy loading whole items
-         this.visiblePosts = this.currentPosts;
-            console.log('showPosts: ', 'Orig: ', this.origPosts, 'Cur: ', this.currentPosts, 'Vis: ', this.visiblePosts);
+         this.visiblePosts = this.currentPosts; // this will load all available items; images are lazy-loaded however
+            //console.log('showPosts: ', 'Orig: ', this.origPosts, 'Cur: ', this.currentPosts, 'Vis: ', this.visiblePosts);
          setTimeout(function(){
+            // Manufacturing a slight delay before hiding the working indicator so it doesn't flicker
             _self.loading = false;
             if(!_self.initialRender) {
                _self.initialRender = true;
@@ -277,21 +282,3 @@ module.exports = {
 }
 </script>
 
-
-
-<style>
-.list-item {
-  display: block;
-  /* margin-right: 10px; */
-}
-.list-enter-active, .list-leave-active {
-  transition: all 0.5s;
-}
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.list-move {
-  transition: transform 0.5s;
-}
-</style>

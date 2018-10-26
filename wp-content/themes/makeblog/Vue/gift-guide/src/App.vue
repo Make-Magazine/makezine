@@ -7,9 +7,7 @@
 const GiftGuide = require('./GiftGuide.vue');
 module.exports = {
    data: function() {
-      return {
-         title: 'hello world'
-      }
+      return {}
    },
    components: {
       'GiftGuide': GiftGuide

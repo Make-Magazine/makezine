@@ -1,15 +1,18 @@
 
 module.exports = {
-
    default: function(a,b) {
-      //console.log('sorting default');
+      console.log('sorting default');
       var aRaw = a.item_list_order,
          bRaw = b.item_list_order,
          aInt = parseInt(aRaw),
          bInt = parseInt(bRaw),
          diff = aInt - bInt;
-      //console.log(aRaw, aInt, bRaw, bInt, diff);
-      return diff;
+      console.log(aRaw, aInt, bRaw, bInt, diff);
+      if(isNaN(aInt) || isNaN(bInt)) {
+         return 1;
+      } else {
+         return diff;
+      }
    },
    name: {
       asc : function(a,b) {

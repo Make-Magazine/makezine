@@ -311,8 +311,9 @@ function load_scripts() {
     wp_enqueue_script('billboard', get_stylesheet_directory_uri() . '/js/billboard.js', array('jquery'), $my_version);
   }
 
-   // TODO (ts): add conditional to only load this for the applicable page?
-  wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/gift-guide-fe/dist/main.min.js');
+   if(is_page_template( 'page-gift-guide-general.php' ) ) {
+      wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/Vue/gift-guide/dist/main.min.js');
+   }
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
@@ -1122,7 +1123,7 @@ function get_gift_guide_response() {
          //'meta_type' => 'numeric',
          'orderby' => 'meta_value_num',
          'order' => 'ASC',
-         'posts_per_page' => 100//$resultCount
+         'posts_per_page' => -1//$resultCount
        );
    $loop = new WP_Query( $args );
    //var_dump($loop);
@@ -1176,7 +1177,7 @@ function add_gift_guide_columns($columns) {
 add_filter('manage_gift_guide_posts_columns' , 'add_gift_guide_columns');
 /* ADMIN COLUMN - HEADERS
 */
-add_filter("manage_edit-gift_guide_sortable_columns", 'gift_guide_sort');
+add_filter('manage_edit-gift_guide_sortable_columns', 'gift_guide_sort');
 function gift_guide_sort($columns) {
    $columns['item_list_order'] = 'item_list_order';
    return $columns;

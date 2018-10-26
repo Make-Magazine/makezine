@@ -1,3 +1,23 @@
+
+
+
+
+
+
+@-moz-keyframes GGSpinLoader {
+   from { -moz-transform: rotate(0deg); }
+   to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes GGSpinLoader {
+   from { -webkit-transform: rotate(0deg); }
+   to { -webkit-transform: rotate(360deg); }
+}
+@keyframes GGSpinLoader {
+   from {transform:rotate(0deg);}
+   to {transform:rotate(360deg);}
+}
+
+
 .page-template-page-gift-guide-general {
    .hero-header {
       background-color: #fff;
@@ -45,22 +65,9 @@
       }
    }
 
-   @-moz-keyframes spinLoader {
-      from { -moz-transform: rotate(0deg); }
-      to { -moz-transform: rotate(360deg); }
-   }
-   @-webkit-keyframes spinLoader {
-      from { -webkit-transform: rotate(0deg); }
-      to { -webkit-transform: rotate(360deg); }
-   }
-   @keyframes spinLoader {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(360deg);}
-   }
-
       .initial-loading-indicator {
          .fa {
-            animation: spinLoader 0.85s linear infinite;
+            animation: GGSpinLoader 0.85s linear infinite;
          }
       }
    
@@ -101,6 +108,22 @@
          .btn-load-more {
             width: 100%;
          }
+
+         // Vue animation-related styles
+         .item-list-inner {
+            display: block;
+         }
+         .list-enter-active, .list-leave-active {
+            transition: all 0.5s;
+         }
+         .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+            opacity: 0;
+            transform: translateY(30px);
+         }
+         .list-move {
+            transition: transform 0.5s;
+         }
+
          .item-instance {
             font-family: 'Roboto-Light', sans-serif;
             margin-bottom: 36px;
@@ -147,6 +170,8 @@
                text-align: center; 
             }
          }
+
+
       }
 
    }
