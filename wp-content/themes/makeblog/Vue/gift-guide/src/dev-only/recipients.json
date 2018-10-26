@@ -1,0 +1,20 @@
+{
+   "recipients": [
+      {
+         "value": 0,
+         "text": "All Recipients"
+      },
+      {
+         "value": 1,
+         "text": "Kids"
+      },
+      {
+         "value": 2,
+         "text": "Digital Fabricators"
+      },
+      {
+         "value": 3,
+         "text": "Educators"
+      }
+   ]
+}

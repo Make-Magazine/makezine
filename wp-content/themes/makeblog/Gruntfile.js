@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     'reviews/less/**/**/*.less',
     'version-2/js/single-story/*.js',
     'js/footer-scripts/*.js',
+    'Vue/gift-guide/src/*.js',
+    'Vue/gift-guide/src/*.vue',
   ];
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
@@ -34,6 +36,24 @@ module.exports = function(grunt) {
         files: lessSrcFiles
       }
     },
+    browserify: {
+      bundle: {
+        src: 'Vue/gift-guide/src/main.js',
+        dest: 'Vue/gift-guide/dist/main.js'
+      },
+      options: {
+        browserifyOptions: {
+          debug: true
+        },
+        transform: [
+          [
+            'vueify',
+            ['babelify', { presets: "es2015" }]
+         ]
+        ]
+      }
+    },
+
     // Concat js files
     concat: {
       options: {
@@ -50,7 +70,6 @@ module.exports = function(grunt) {
         }
       },
     },
-    // uglify js
     uglify: {
       js: {
         options: {
@@ -60,17 +79,18 @@ module.exports = function(grunt) {
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
           'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
+          'Vue/gift-guide/dist/main.min.js': 'Vue/gift-guide/dist/main.js',
         }
       }
     },
     watch: {
       prod: {
         files: watchFiles,
-        tasks: ['less:prod', 'concat', 'uglify']
+        tasks: ['less:prod', 'concat', 'browserify', 'uglify']//, 'babel']
       },
       dev: {
         files: watchFiles,
-        tasks: ['less:dev', 'concat']
+        tasks: ['less:dev', 'concat', 'browserify']//, 'babel']
       },
       reload: {
         files: watchFiles,

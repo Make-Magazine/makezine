@@ -1,0 +1,181 @@
+
+
+
+
+
+
+@-moz-keyframes GGSpinLoader {
+   from { -moz-transform: rotate(0deg); }
+   to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes GGSpinLoader {
+   from { -webkit-transform: rotate(0deg); }
+   to { -webkit-transform: rotate(360deg); }
+}
+@keyframes GGSpinLoader {
+   from {transform:rotate(0deg);}
+   to {transform:rotate(360deg);}
+}
+
+
+.page-template-page-gift-guide-general {
+   .hero-header {
+      background-color: #fff;
+   }
+   // .gg-header-ad {
+   //    margin-bottom: 24px;
+   // }
+   .gg-footer-ad {
+      margin-bottom: 24px;
+   }
+   .title-image-block {
+      padding-top: 24px;
+      .page-title {
+         width: 496px;
+         height: 88px;
+         max-width: 100%;
+         margin: 0 auto;
+         background-repeat: no-repeat;
+         h2 {
+            text-indent: -200vw;
+         }
+      }
+      .hero-subtitle {
+         font-family: 'Roboto-Light', sans-serif;
+         font-size: 56px;
+         text-align: center;
+      }
+      .header-intro-text {
+         p {
+            font-family: 'Roboto-Light', sans-serif;
+            font-size: 16px;
+            text-align: center;
+         }
+
+      }
+      .hero-image {
+         width: 1170px;
+         height: 400px;
+         max-width: 100%;
+         img {
+            //width: 100%;
+            margin: 0 auto;
+            display: block;
+         }
+      }
+   }
+
+      .initial-loading-indicator {
+         .fa {
+            animation: GGSpinLoader 0.85s linear infinite;
+         }
+      }
+   
+   .gift-guide {
+      .filter-container {
+         background-color: #005E9A;
+         color: #fff;
+         padding: 12px 0;
+         .filters {
+            display: flex;
+            flex-direction: row;
+            span {
+               // width: 20%;
+            }
+         }
+   
+         select {
+            background-color: #005E9A;
+            border: none;
+         }
+      }
+
+      .item-list {
+         margin-top: 40px;
+         // min-height: 800px;
+         padding-bottom: 60px;
+         .btn-blue {
+            padding: 12px 24px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #005E9A;
+            border-color: #005E9A;
+            border-radius: 3px;
+            &:hover {
+               background-color: lighten(#005E9A, 10%)
+            }
+         }
+         .btn-load-more {
+            width: 100%;
+         }
+
+         // Vue animation-related styles
+         .item-list-inner {
+            display: block;
+         }
+         .list-enter-active, .list-leave-active {
+            transition: all 0.5s;
+         }
+         .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+            opacity: 0;
+            transform: translateY(30px);
+         }
+         .list-move {
+            transition: transform 0.5s;
+         }
+
+         .item-instance {
+            font-family: 'Roboto-Light', sans-serif;
+            margin-bottom: 36px;
+            box-shadow: 1px 1px 3px rgb(0,0,0);
+            box-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
+            background-color: #fff;
+            .item-image {
+               position: relative;
+               padding: 12px;
+               img {
+                  margin: 0 auto;
+                  display: block;
+               }
+               .gg-badge {
+                  position: absolute;
+                  bottom: 12px;
+                  left: 27px;
+               }
+            }
+            .item-name {
+               font-size: 36px;
+               padding-right: 12px;
+            }
+            .item-desc {
+               font-size: 14px;
+               margin-bottom: 16px;
+               padding-right: 12px;
+            }
+            .why-to-buy {
+               font-family: "Roboto Bold", sans-serif;
+               font-size: 14px;
+               font-weight: 700;
+               margin-bottom: 16px;
+               padding-right: 12px;
+            }
+            .item-price {
+               font-size: 36px;
+               margin-bottom: 16px;
+            }
+            .btn-item-buy {
+               margin-bottom: 12px;
+               display: block;
+               width: 200px;
+               text-align: center; 
+            }
+         }
+
+
+      }
+
+   }
+
+
+
+}

@@ -1,0 +1,302 @@
+{
+    "key": "group_5bcdf4fd974bb",
+    "title": "Gift Guide Item",
+    "fields": [
+        {
+            "key": "field_5bce26811a16a",
+            "label": "Item Visibility",
+            "name": "item_visibility",
+            "type": "button_group",
+            "instructions": "Prevent this item from being displayed by choosing \"Hidden\"",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "visible": "Visible",
+                "hidden": "Hidden"
+            },
+            "allow_null": 0,
+            "default_value": "visible",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5bd0bbdf9d514",
+            "label": "Item List Order",
+            "name": "item_list_order",
+            "type": "number",
+            "instructions": "Enter a whole number representing the default position of this item in the list. Lower numbers come first\r\n<em>If other items have the same number, the ordering of these items will be unpredictable<\/em>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": 1
+        },
+        {
+            "key": "field_5bcdf54ed98f9",
+            "label": "Item Image",
+            "name": "item_image",
+            "type": "image",
+            "instructions": "Select or upload an image for this item. Image size should be at least 300px wide X 300px high",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 300,
+            "min_height": 300,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5bcdf578d98fa",
+            "label": "Item Description",
+            "name": "item_description",
+            "type": "wysiwyg",
+            "instructions": "Provide a brief description of the item.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5bce25ab1a169",
+            "label": "Why To Buy",
+            "name": "why_to_buy",
+            "type": "text",
+            "instructions": "This appears below the description, and above the price.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bcdf590d98fb",
+            "label": "Item Price",
+            "name": "item_price",
+            "type": "text",
+            "instructions": "Enter the price of the item in decimal form without a dollar sign.\r\nExample 99.98",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bcdf5afd98fc",
+            "label": "Item Purchase URL",
+            "name": "item_purchase_url",
+            "type": "url",
+            "instructions": "Enter the URL pointing to the remote page where the item can be purchased.\r\nExample: https:\/\/www.ebay.com\/itm\/362439866587",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5bcdf5d2d98fd",
+            "label": "Item: Sponsored",
+            "name": "item_sponsored",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "allow_null": 0,
+            "default_value": "no",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5bcdf61cd98fe",
+            "label": "Sponsored Badge",
+            "name": "sponsored_badge",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5bcdf644d98ff",
+            "label": "Item: Editor's Pick",
+            "name": "item_editors_pick",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "allow_null": 0,
+            "default_value": "no",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5bcdf670d9900",
+            "label": "Editor's Pick Badge",
+            "name": "editors_pick_badge",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5bcdf6991499f",
+            "label": "Item Categories",
+            "name": "item_categories",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "gift_guide_category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5bcdf6eb149a0",
+            "label": "Item Recipients",
+            "name": "item_recipients",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "gift_guide_recipient",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gift_guide"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1540495330
+}
