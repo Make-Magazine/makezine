@@ -9,25 +9,19 @@
                   <span>
                      <label for="category-select" class="sr-only sr-only-focusable">Categories</label>
                      <select name="category-select" id="category-select" v-model="filter_cat_model" v-on:change="filterChange">
-                        <option v-for="option in categories" v-bind:key="option.value" v-bind:value="option.value">
-                           {{ option.text }} <!-- {{ option.value }} -->
-                        </option>
+                        <option v-for="option in categories" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
                      </select>
                   </span>
                   <span>
                      <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
                      <select name="recipient-select" id="recipient-select" v-model="filter_recip_model" v-on:change="filterChange">
-                        <option v-for="option in recipients" v-bind:key="option.value" v-bind:value="option.value">
-                           {{ option.text }} <!-- {{ option.value }} -->
-                        </option>
+                        <option v-for="option in recipients" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
                      </select>
                   </span>
                   <span>
                      <label for="sort-select" class="">Sort By</label>
                      <select name="sort-select" id="sort-select" v-model="sort_by_model" v-on:change="sortChange">
-                        <option v-for="option in sort" v-bind:key="option.value" v-bind:value="option.value">
-                           {{ option.text }}
-                        </option>
+                        <option v-for="option in sort" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
                      </select>
                   </span>
                </div>

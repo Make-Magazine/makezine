@@ -138,7 +138,7 @@ function get_gift_guide_response() {
          'posts_per_page' => -1//$resultCount
        );
    $loop = new WP_Query( $args );
-   //var_dump($loop);
+   $unorderedValue =  $loop->post_count + 1;
    while ( $loop->have_posts() ) {
       $loop->the_post();
       global $post;
@@ -160,6 +160,10 @@ function get_gift_guide_response() {
       $curItem['item_categories'] = get_field('item_categories');
       $curItem['item_recipients'] = get_field('item_recipients');
       if(!$curItem['item_list_order']) {
+         // Add a value greater than the number of items as the 'item_list_order' 
+         // for items that don't have that defined; this prevents issues with sorting
+         // in the 'default' order in JS on the frontend
+         $curItem['item_list_order'] = $unorderedValue;
          $gg_items_unordered[] = $curItem;
       }
       else {
