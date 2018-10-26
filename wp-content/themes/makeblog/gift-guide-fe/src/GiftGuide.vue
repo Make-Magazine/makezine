@@ -43,7 +43,8 @@
                <!-- <div v-if="showAd(index)" class="dynamic-ad">Show Add here {{index}}: {{index % 3 }}</div> -->
             </div>
          </transition-group>
-         <button ref="loadMoreBtn" class="btn btn-blue btn-load-more" v-if="showLoadButton()" v-on:click="loadMore">Load More</button>
+         <div v-if="postsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
+         <!-- <button ref="loadMoreBtn" class="btn btn-blue btn-load-more" v-if="showLoadButton()" v-on:click="loadMore">Load More</button> -->
       </div>
    </div>
 </template>
@@ -215,13 +216,16 @@ module.exports = {
                   }
                }
             });
+            console.log('showPosts: ', 'Orig: ', this.origPosts, 'Cur: ', this.currentPosts, 'Vis: ', this.visiblePosts);
             this.currentPosts = filteredPosts;
          }
          this.showPosts();
       },
       showPosts: function() {
          var _self = this;
-         this.visiblePosts = this.currentPosts.slice(0,this.postLimit);
+         //this.visiblePosts = this.currentPosts.slice(0,this.postLimit); // if lazy loading whole items
+         this.visiblePosts = this.currentPosts;
+            console.log('showPosts: ', 'Orig: ', this.origPosts, 'Cur: ', this.currentPosts, 'Vis: ', this.visiblePosts);
          setTimeout(function(){
             _self.loading = false;
             if(!_self.initialRender) {
@@ -261,7 +265,7 @@ module.exports = {
             listHeight = this.getItemsHeight();
          if(this.initialRender && (scrollPos > 600) && (scrollPos+300) >= listHeight ) {
             //console.log('load more...', scrollPos, listHeight);
-            this.loadMore();
+            //this.loadMore(); // if lazy loading whole items
          }
       },
       getScrollTop: function() {
@@ -277,17 +281,17 @@ module.exports = {
 
 <style>
 .list-item {
-  display: inline-block;
-  margin-right: 10px;
+  display: block;
+  /* margin-right: 10px; */
 }
 .list-enter-active, .list-leave-active {
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
 }
 .list-move {
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 </style>
