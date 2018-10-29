@@ -211,8 +211,8 @@ function manage_gift_guide_columns($column_name, $post_id) {
 
   switch ($column_name) {
      case 'item_list_order':
-        echo get_post_meta( $post_id , 'item_list_order' , true );
-        break;
+         echo get_post_meta( $post_id , 'item_list_order' , true );
+         break;
       case 'item_editors_pick':
          echo get_post_meta( $post_id , 'item_editors_pick' , true ) === 'yes' ? 'yes' : '';
          break;
@@ -232,13 +232,14 @@ function manage_gift_guide_columns($column_name, $post_id) {
          }
          $itemCats = get_post_meta( $post_id , 'item_categories' , true );
          $catString = '';
-         foreach($itemCats as $cat) {
-            $catString .= $localTerms[$cat] . ', ';
-         };
-         echo substr($catString, 0, -2);
-           break;
+         if(count($itemCats) > 0) {
+            foreach($itemCats as $cat) {
+               $catString .= $localTerms[$cat] . ', ';
+            };
+            echo substr($catString, 0, -2);
+         }
+         break;
 
-           
       case 'item_recipients':
          //echo get_post_meta( $post_id , 'item_recipients' , true );
          $terms = get_terms([
@@ -253,13 +254,16 @@ function manage_gift_guide_columns($column_name, $post_id) {
          }
          $itemCats = get_post_meta( $post_id , 'item_recipients' , true );
          $catString = '';
-         foreach($itemCats as $cat) {
-            $catString .= $localTerms[$cat] . ', ';
-         };
-         echo substr($catString, 0, -2);
+         if(count($itemCats) > 0) {
+            foreach($itemCats as $cat) {
+               $catString .= $localTerms[$cat] . ', ';
+            };
+            echo substr($catString, 0, -2);
+         }
          break;
+
      default:
-        break;
+         break;
   } // end switch
 }
 /*
