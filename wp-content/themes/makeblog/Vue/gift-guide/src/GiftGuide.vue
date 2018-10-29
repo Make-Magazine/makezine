@@ -38,7 +38,9 @@
          <transition-group name="list" tag="div">
             <div v-for="(post, index) in visiblePosts" v-bind:key="post.item_id" class="item-list-inner">
                <GiftGuideItem v-bind:post="post"></GiftGuideItem>
-               <!-- <div v-if="showAd(index)" class="dynamic-ad">Show Add here {{index}}: {{index % 3 }}</div> -->
+               <div v-if="insertAd(index)" class="dynamic-ad">
+                  <div class="js-ad scroll-load " data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div>
+               </div>
             </div>
          </transition-group>
          <div v-if="initialRender && postsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
@@ -90,7 +92,9 @@ module.exports = {
          visiblePosts: [], // this is the visble posts NOTE (ts): this only applies for lazy-loading posts (not images), which is shut off now; so visible and current are now the same
          initialRender: false,
          postLimitInterval: 3,
-         postLimit: 3
+         postLimit: 3,
+         doAds: false,
+         adFreq: 0
       }
    },
    created: function() {
@@ -164,7 +168,8 @@ module.exports = {
    },
    mounted: function() {
       this.$refs.giftGuide.classList.remove('hidden');
-      window.addEventListener('scroll', this.onScroll);
+      this.setupDynAds();
+      //window.addEventListener('scroll', this.onScroll);
    },
    components: {
       'GiftGuideItem': GiftGuideItem
@@ -172,6 +177,7 @@ module.exports = {
    methods : {
       sortPosts: function(mode) {
          this.loading = true;
+         this.clearDynamicAds();
          var mode = {
             0: SortMethods['default'],
             1: SortMethods['price']['desc'],
@@ -187,6 +193,7 @@ module.exports = {
       },
       filterChange: function() {
          this.loading = true;
+         this.clearDynamicAds();
          //console.log(this.filter_cat_model, this.filter_recip_model);
          var _self = this,
             filteredPosts;
@@ -231,6 +238,9 @@ module.exports = {
                _self.initialRender = true;
             }
          },600);
+         if(_self.initialRender) {
+            this.refreshAds();
+         }
       },
       postsAvailable: function() {
          return this.currentPosts.length;
@@ -248,29 +258,60 @@ module.exports = {
             this.showPosts();
          }
       },
-      // showAd: function(idx) {
-      //    console.log(idx);
-      //    if(idx > 0) {
-      //       return idx % 3 === 0;
-      //    } else {
-      //       return false;
-      //    }
-      // },
       getItemsHeight: function() {
          return this.$refs.itemList.clientHeight;
       },
       onScroll: function() {
-         var scrollPos = this.getScrollTop(),
-            listHeight = this.getItemsHeight();
-         if(this.initialRender && (scrollPos > 600) && (scrollPos+300) >= listHeight ) {
-            //console.log('load more...', scrollPos, listHeight);
-            //this.loadMore(); // if lazy loading whole items
-         }
+         // var scrollPos = this.getScrollTop(),
+         //    listHeight = this.getItemsHeight();
+         // if(this.initialRender && (scrollPos > 600) && (scrollPos+300) >= listHeight ) {
+         //    //console.log('load more...', scrollPos, listHeight);
+         //    //this.loadMore(); // if lazy loading whole items
+         // }
       },
       getScrollTop: function() {
          return (window.pageYOffset !== undefined) ? window.pageYOffset
          : (document.documentElement || document.body.parentNode || document.body)
       	.scrollTop;
+      },
+      clearDynamicAds: function() {
+         var ads = document.querySelectorAll('.dynamic-ad');
+        // console.log(ads);
+         ads.forEach(function(el) {
+            googletag.destroySlots(el);
+         })
+      },
+      insertAd: function(idx) {
+         //console.log(idx);
+         if(idx > 0) {
+            return idx % this.adFreq === 0;
+         } else {
+            return false;
+         }
+      },
+      refreshAds: function() {
+         if(this.adFreq > 0) {
+            //googletag.destroySlots();
+            //googletag.pubads().refresh();
+            make.gpt.loadDyn();
+         }
+      },
+      setupDynAds: function() {
+         var outerCont = document.querySelector('.gift-guide-container'),
+            adFreq = outerCont.getAttribute('data-ad-freq');
+         //console.log(outerCont, adFreq);
+         this.adFreq = adFreq;
+         if(this.adFreq > 0) {
+            this.doAds = true;
+            // NOTE (ts): this is (or should be) part of the encompassing page
+            if(make) {
+               window.setTimeout(function() {
+                  //console.log('set up ads...');
+                  make.gpt.loadDyn();
+               }, 2000);
+            }
+         }
+         //this.refreshAds();
       }
    }
 }

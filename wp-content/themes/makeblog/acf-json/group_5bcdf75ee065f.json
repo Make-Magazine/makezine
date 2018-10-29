@@ -3,25 +3,6 @@
     "title": "Gift Guide General Page",
     "fields": [
         {
-            "key": "field_5bcdf7e8d8663",
-            "label": "Page Header Banner Ad",
-            "name": "page_header_banner_ad",
-            "type": "text",
-            "instructions": "TBD - this is the field to embed an ad at the top of the page",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5bcdf774d865f",
             "label": "Page Title Text",
             "name": "page_title_text",
@@ -127,6 +108,27 @@
             "mime_types": ""
         },
         {
+            "key": "field_5bd720063d057",
+            "label": "Ad Frequency",
+            "name": "ad_frequency",
+            "type": "number",
+            "instructions": "For dynamically appearing banner ads; this number determines how many items will appear before the next banner ad. Note that that banner ads will automatically be inserted at the top and bottom of the guide as a whole, and these won't be affected by the choice made here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": 100,
+            "step": 1
+        },
+        {
             "key": "field_5bce2737d8dd9",
             "label": "Editor's Pick Frequency",
             "name": "editors_pick_frequency",
@@ -167,25 +169,6 @@
             "min": "",
             "max": "",
             "step": ""
-        },
-        {
-            "key": "field_5bce4e2b50247",
-            "label": "Page Footer Banner Ad",
-            "name": "page_footer_banner_ad",
-            "type": "text",
-            "instructions": "TBD - this is the field to embed an ad at the bottom of the page",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -207,5 +190,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540247826
+    "modified": 1540825585
 }
