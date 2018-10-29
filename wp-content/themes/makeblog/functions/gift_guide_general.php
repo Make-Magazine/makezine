@@ -232,7 +232,7 @@ function manage_gift_guide_columns($column_name, $post_id) {
          }
          $itemCats = get_post_meta( $post_id , 'item_categories' , true );
          $catString = '';
-         if(count($itemCats) > 0) {
+         if(is_array($itemCats)) {
             foreach($itemCats as $cat) {
                $catString .= $localTerms[$cat] . ', ';
             };
@@ -254,7 +254,7 @@ function manage_gift_guide_columns($column_name, $post_id) {
          }
          $itemCats = get_post_meta( $post_id , 'item_recipients' , true );
          $catString = '';
-         if(count($itemCats) > 0) {
+         if(is_array($itemCats)) {
             foreach($itemCats as $cat) {
                $catString .= $localTerms[$cat] . ', ';
             };
