@@ -72,6 +72,7 @@ function gift_guide_recipient_init() {
       'hierarchical'            => false,
       'public'                  => true,
       'show_in_nav_menus'       => true,
+      //'show_admin_column'       => true,
       'show_ui'                 => true,
       'show_in_rest'            => true,
       'query_var'               => 'gift_guide_recipient',
@@ -153,8 +154,8 @@ function get_gift_guide_response() {
       $curItem['why_to_buy'] = get_field('why_to_buy');
       $curItem['item_price'] = get_field('item_price');
       $curItem['item_purchase_url'] = get_field('item_purchase_url');
-      $curItem['item_sponsored'] = get_field('item_sponsored');
-      $curItem['sponsored_badge'] = get_field('sponsored_badge');
+      // $curItem['item_sponsored'] = get_field('item_sponsored');
+      // $curItem['sponsored_badge'] = get_field('sponsored_badge');
       $curItem['item_editors_pick'] = get_field('item_editors_pick');
       $curItem['editors_pick_badge'] = get_field('editors_pick_badge');
       $curItem['item_categories'] = get_field('item_categories');
@@ -185,8 +186,10 @@ function add_gift_guide_columns($columns) {
    return array_merge($columns, 
             array(
                'item_list_order' => __('Item List Order'),
+               'item_categories' => __('Item Categories'),
+               'item_recipients' => __('Item Recipients'),
                'item_editors_pick' => __('Editor\'s Pick'),
-               'item_sponsored' => __('Sponsored')
+               //'item_sponsored' => __('Sponsored')
             )
          );
 }
@@ -196,6 +199,8 @@ add_filter('manage_gift_guide_posts_columns' , 'add_gift_guide_columns');
 add_filter('manage_edit-gift_guide_sortable_columns', 'gift_guide_sort');
 function gift_guide_sort($columns) {
    $columns['item_list_order'] = 'item_list_order';
+   $columns['item_editors_pick'] = 'item_editors_pick';
+   // $columns['item_list_order'] = 'item_list_order';
    return $columns;
 }
 /*
@@ -203,6 +208,7 @@ function gift_guide_sort($columns) {
 */
 add_action('manage_gift_guide_posts_custom_column', 'manage_gift_guide_columns', 10, 2);
 function manage_gift_guide_columns($column_name, $post_id) {
+
   switch ($column_name) {
      case 'item_list_order':
         echo get_post_meta( $post_id , 'item_list_order' , true );
@@ -210,8 +216,47 @@ function manage_gift_guide_columns($column_name, $post_id) {
       case 'item_editors_pick':
          echo get_post_meta( $post_id , 'item_editors_pick' , true ) === 'yes' ? 'yes' : '';
          break;
-      case 'item_sponsored':
-         echo get_post_meta( $post_id , 'item_sponsored' , true ) === 'yes' ? 'yes' : '';
+      // case 'item_sponsored':
+      //    echo get_post_meta( $post_id , 'item_sponsored' , true ) === 'yes' ? 'yes' : '';
+      //    break;
+      case 'item_categories':
+         $terms = get_terms([
+            'taxonomy' => 'gift_guide_category',
+            'hide_empty' => false,
+         ]);
+         $localTerms = [];
+         foreach($terms as $key => $term) {
+            $tid = $term->term_id;
+            $tmt = $term->name;
+            $localTerms[$tid] = $tmt;
+         }
+         $itemCats = get_post_meta( $post_id , 'item_categories' , true );
+         $catString = '';
+         foreach($itemCats as $cat) {
+            $catString .= $localTerms[$cat] . ', ';
+         };
+         echo substr($catString, 0, -2);
+           break;
+
+           
+      case 'item_recipients':
+         //echo get_post_meta( $post_id , 'item_recipients' , true );
+         $terms = get_terms([
+            'taxonomy' => 'gift_guide_recipient',
+            'hide_empty' => false,
+         ]);
+         $localTerms = [];
+         foreach($terms as $key => $term) {
+            $tid = $term->term_id;
+            $tmt = $term->name;
+            $localTerms[$tid] = $tmt;
+         }
+         $itemCats = get_post_meta( $post_id , 'item_recipients' , true );
+         $catString = '';
+         foreach($itemCats as $cat) {
+            $catString .= $localTerms[$cat] . ', ';
+         };
+         echo substr($catString, 0, -2);
          break;
      default:
         break;
