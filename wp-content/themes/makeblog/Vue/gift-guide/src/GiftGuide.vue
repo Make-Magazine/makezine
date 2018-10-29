@@ -39,7 +39,7 @@
             <div v-for="(post, index) in visiblePosts" v-bind:key="post.item_id" class="item-list-inner">
                <GiftGuideItem v-bind:post="post"></GiftGuideItem>
                <div v-if="insertAd(index)" class="dynamic-ad">
-                  <div class="js-ad scroll-load " data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div>
+                  <div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div>
                </div>
             </div>
          </transition-group>
@@ -107,7 +107,7 @@ module.exports = {
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/categories.json')
       axios.get('/wp-json/wp/v2/gift_guide_category/')
          .then(function (response) {
-            console.log(response.data);
+            //console.log(response.data);
             var catsParsed = [
                {
                   'value': 0,
@@ -131,7 +131,7 @@ module.exports = {
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/recipients.json')
       axios.get('/wp-json/wp/v2/gift_guide_recipient/')
          .then(function (response) {
-            console.log(response.data);
+            //console.log(response.data);
             var recipsParsed = [
                {
                   'value': 0,
@@ -155,7 +155,7 @@ module.exports = {
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/gift_guide_json.json')
       axios.get('/wp-json/gift-guide/v1/items/')
          .then(function (response) {
-            console.log(response.data);
+            //console.log(response.data);
             _self.origPosts = response.data;
             _self.currentPosts = _self.origPosts;
             //_self.sortPosts('name','asc');
@@ -276,10 +276,12 @@ module.exports = {
       },
       clearDynamicAds: function() {
          var ads = document.querySelectorAll('.dynamic-ad');
-        // console.log(ads);
-         ads.forEach(function(el) {
-            googletag.destroySlots(el);
-         })
+      //   // console.log(ads);
+      //    ads.forEach(function(el) {
+      //       googletag.destroySlots(el);
+      //    })
+         //var ads = make.gpt.scrollAds;//document.querySelector('.gift-guide-container'),
+         googletag.destroySlots(ads);
       },
       insertAd: function(idx) {
          //console.log(idx);
@@ -291,9 +293,14 @@ module.exports = {
       },
       refreshAds: function() {
          if(this.adFreq > 0) {
-            //googletag.destroySlots();
+            // var ads = make.gpt.scrollAds;//document.querySelector('.gift-guide-container'),
+            // googletag.destroySlots(ads);
             //googletag.pubads().refresh();
-            make.gpt.loadDyn();
+            // make.gpt.refresh();
+            // make.gpt.loadDyn();
+            this.setupDynAds();
+            //make.gpt.refresh();
+
          }
       },
       setupDynAds: function() {
