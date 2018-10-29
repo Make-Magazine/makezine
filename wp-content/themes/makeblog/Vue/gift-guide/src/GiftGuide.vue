@@ -276,7 +276,7 @@ module.exports = {
       },
       clearDynamicAds: function() {
          var ads = document.querySelectorAll('.dynamic-ad');
-         console.log(ads);
+        // console.log(ads);
          ads.forEach(function(el) {
             googletag.destroySlots(el);
          })
@@ -299,14 +299,14 @@ module.exports = {
       setupDynAds: function() {
          var outerCont = document.querySelector('.gift-guide-container'),
             adFreq = outerCont.getAttribute('data-ad-freq');
-         console.log(outerCont, adFreq);
+         //console.log(outerCont, adFreq);
          this.adFreq = adFreq;
          if(this.adFreq > 0) {
             this.doAds = true;
             // NOTE (ts): this is (or should be) part of the encompassing page
             if(make) {
                window.setTimeout(function() {
-                  console.log('set up ads...');
+                  //console.log('set up ads...');
                   make.gpt.loadDyn();
                }, 2000);
             }
