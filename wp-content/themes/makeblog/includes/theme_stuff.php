@@ -480,11 +480,15 @@ function make_add_custom_types( $query ) {
 add_filter( 'pre_get_posts', 'make_add_custom_types' );
 /**
  * Change the default look to be by added date for admin pages.
+ * NOTE (ts): updated 2018-10-26, to allow user-selected sorting criteria 
+ * to pass through, only default if no user choice
  */
 function make_set_default_sort( $query ) {
 	if ( is_admin() && $query->is_main_query() && empty( $query->query_vars['suppress_filters'] ) ) {
-		$query->set( 'orderby', 'date' );
-		$query->set( 'order', 'DESC' );
+      if($query->get('orderby') === '') {
+         $query->set( 'orderby', 'date' );
+         $query->set( 'order', 'DESC' );
+      }
 		return $query;
 	}
 }
