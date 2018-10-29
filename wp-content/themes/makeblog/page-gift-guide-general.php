@@ -33,10 +33,10 @@ if (have_posts()) {
             <div class="col-sm-12 title-image-block">
                <!-- TODO (ts): Ad goes here -->
                <div class="gg-header-ad"><div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div></div>
-               <div class="page-title" style="background-image: url('<?php echo $page_title_image; ?>');"><h2><?php echo $page_title_text; ?></h2></div>
+               <div class="page-title" style="background-image: url('<?php echo $page_title_image; ?>');background-size: contain;"><h2><?php echo $page_title_text; ?></h2></div>
                <h3 class="hero-subtitle"><?php echo $page_subtitle_text; ?></h3>
                <div class="header-intro-text"><?php echo $page_header_intro_text; ?></div>
-               <div class="hero-image"><img src="<?php echo $page_header_hero_image; ?>" /></div>
+               <div class="hero-image hidden-md hidden-sm hidden-xs"><img src="<?php echo $page_header_hero_image; ?>" /></div>
             </div>
          </div>
       </div>
