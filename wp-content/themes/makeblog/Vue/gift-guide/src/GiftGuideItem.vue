@@ -12,16 +12,18 @@
                </div>
             </div>
             <div class="col-sm-7">
-               <h2 class="item-name"><a v-bind:href="post.item_purchase_url" v-html="post.title"></a></h2>
-               <div class="item-desc" v-html="post.item_description"></div>
-               <div class="why-to-buy" v-if="post.why_to_buy">Why to buy: <span v-html="post.why_to_buy"></span></div>
-               <div class="item-price">$<span v-html="post.item_price"></span></div>
-               <a class="btn btn-blue btn-item-buy" v-bind:href="post.item_purchase_url">Buy</a>
-               <!-- <div>Order: {{post.item_list_order}}</div> -->
-               <!-- <div>
-                  Cats: <span v-for="cat of post.item_categories" v-bind:key="cat.value">{{ cat }} | </span>
-                  Recips: <span v-for="recip of post.item_recipients" v-bind:key="recip.value">{{ recip }} | </span>
-               </div> -->
+               <div class="item-text">
+                  <h2 class="item-name"><a v-bind:href="post.item_purchase_url" v-html="post.title"></a></h2>
+                  <div class="item-desc" v-html="post.item_description"></div>
+                  <div class="why-to-buy" v-if="post.why_to_buy">Why to buy: <span v-html="post.why_to_buy"></span></div>
+                  <div class="item-price">$<span v-html="post.item_price"></span></div>
+                  <a class="btn btn-blue btn-item-buy" v-bind:href="post.item_purchase_url">Buy</a>
+                  <!-- <div>Order: {{post.item_list_order}}</div> -->
+                  <!-- <div>
+                     Cats: <span v-for="cat of post.item_categories" v-bind:key="cat.value">{{ cat }} | </span>
+                     Recips: <span v-for="recip of post.item_recipients" v-bind:key="recip.value">{{ recip }} | </span>
+                  </div> -->
+               </div>
             </div>
          </div>
 
