@@ -8,13 +8,13 @@
                   <span><label>Filter By: </label></span>
                   <span class="select-container">
                      <label for="category-select" class="sr-only sr-only-focusable">Categories</label>
-                     <select name="category-select" id="category-select" v-model="filter_cat_model" v-on:change="filterChange">
+                     <select name="category-select" id="category-select" v-model="filter_cat_model" v-on:change="filterChange" onchange="jQuery(this).css('width', 'auto');">
                         <option v-for="option in categories" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
                      </select>
                   </span>
                   <span class="select-container">
                      <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
-                     <select name="recipient-select" id="recipient-select" v-model="filter_recip_model" v-on:change="filterChange">
+                     <select name="recipient-select" id="recipient-select" v-model="filter_recip_model" v-on:change="filterChange" onchange="jQuery(this).css('width', 'auto');">
                         <option v-for="option in recipients" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
                      </select>
                   </span>
@@ -33,7 +33,7 @@
                 </span></p>
 					<span class="select-container">
 						<label for="sort-select" class="">Sort By: </label>
-						<select name="sort-select" id="sort-select" v-model="sort_by_model" v-on:change="sortChange">
+						<select name="sort-select" id="sort-select" v-model="sort_by_model" v-on:change="sortChange" onchange="jQuery(this).css('width', 'auto');">
 							<option v-for="option in sort" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
 						</select>
 					</span>
