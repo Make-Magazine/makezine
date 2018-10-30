@@ -36,23 +36,26 @@ module.exports = function(grunt) {
         files: lessSrcFiles
       }
     },
-    browserify: {
-      bundle: {
-        src: 'Vue/gift-guide/src/main.js',
-        dest: 'Vue/gift-guide/dist/main.js'
-      },
+
+   run: {
       options: {
-        browserifyOptions: {
-          debug: true
-        },
-        transform: [
-          [
-            'vueify',
-            ['babelify', { presets: "es2015" }]
+
+      },
+      gg_dev: {
+         cmd: 'npm',
+         args: [
+           'run',
+           'buildGG:dev'
          ]
-        ]
+      },
+      gg_prod: {
+         cmd: 'npm',
+         args: [
+           'run',
+           'buildGG:prod'
+         ]
       }
-    },
+   },
 
     // Concat js files
     concat: {
@@ -78,19 +81,18 @@ module.exports = function(grunt) {
         },
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
-          'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
-          'Vue/gift-guide/dist/main.min.js': 'Vue/gift-guide/dist/main.js',
+          'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js'
         }
       }
     },
     watch: {
       prod: {
         files: watchFiles,
-        tasks: ['less:prod', 'concat', 'browserify', 'uglify']//, 'babel']
+        tasks: ['less:prod', 'concat', 'run:gg_prod', 'uglify']
       },
       dev: {
         files: watchFiles,
-        tasks: ['less:dev', 'concat', 'browserify']//, 'babel']
+        tasks: ['less:dev', 'concat', 'run:gg_dev']
       },
       reload: {
         files: watchFiles,
@@ -104,12 +106,13 @@ module.exports = function(grunt) {
 
   // Simplify the repetivite work of listing each plugin in grunt.loadNpmTasks(), just get the list from package.json and load them...
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.loadNpmTasks('grunt-run');
 
   // Register the tasks with Grunt
   // To only watch for less changes and process without browser reload type in "grunt"
-  grunt.registerTask('default', ['less:prod', 'concat', 'uglify', 'watch:prod']);
+  grunt.registerTask('default', ['less:prod', 'concat', 'uglify', 'run:gg_prod', 'watch:prod']);
   // Dev mode build task
-  grunt.registerTask('dev', ['less:dev', 'concat', 'watch:dev']);
+  grunt.registerTask('dev', ['less:dev', 'concat', 'run:gg_dev', 'watch:dev']);
   // To watch for less changes and process them with livereload type in "grunt reload"
   grunt.registerTask('reload', ['less', 'watch:reload']);
 

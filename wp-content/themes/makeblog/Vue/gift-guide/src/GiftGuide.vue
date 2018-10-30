@@ -266,6 +266,7 @@ module.exports = {
          return this.$refs.itemList.clientHeight;
       },
       onScroll: function() {
+         
          // var scrollPos = this.getScrollTop(),
          //    listHeight = this.getItemsHeight();
          // if(this.initialRender && (scrollPos > 600) && (scrollPos+300) >= listHeight ) {
