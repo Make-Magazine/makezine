@@ -143,32 +143,34 @@ function get_gift_guide_response() {
    while ( $loop->have_posts() ) {
       $loop->the_post();
       global $post;
-      $curItem = [];
-      $curItem['title'] = get_the_title();
-      $curItem['slug'] = $post->post_name;
-      $curItem['item_list_order'] = get_field('item_list_order');
-      $curItem['item_description'] = get_field('item_description');
-      $curItem['item_id'] = get_the_ID('ID');
-      $curItem['item_visibility'] = get_field('item_visibility');
-      $curItem['item_image'] = get_field('item_image');
-      $curItem['why_to_buy'] = get_field('why_to_buy');
-      $curItem['item_price'] = get_field('item_price');
-      $curItem['item_purchase_url'] = get_field('item_purchase_url');
-      // $curItem['item_sponsored'] = get_field('item_sponsored');
-      // $curItem['sponsored_badge'] = get_field('sponsored_badge');
-      $curItem['item_editors_pick'] = get_field('item_editors_pick');
-      $curItem['editors_pick_badge'] = get_field('editors_pick_badge');
-      $curItem['item_categories'] = get_field('item_categories');
-      $curItem['item_recipients'] = get_field('item_recipients');
-      if(!$curItem['item_list_order']) {
-         // Add a value greater than the number of items as the 'item_list_order' 
-         // for items that don't have that defined; this prevents issues with sorting
-         // in the 'default' order in JS on the frontend
-         $curItem['item_list_order'] = $unorderedValue;
-         $gg_items_unordered[] = $curItem;
-      }
-      else {
-         $gg_items_ordered[] = $curItem;
+      if(get_field('item_visibility') === 'visible') {
+         $curItem = [];
+         $curItem['title'] = get_the_title();
+         $curItem['slug'] = $post->post_name;
+         $curItem['item_list_order'] = get_field('item_list_order');
+         $curItem['item_description'] = get_field('item_description');
+         $curItem['item_id'] = get_the_ID('ID');
+         $curItem['item_visibility'] = get_field('item_visibility');
+         $curItem['item_image'] = get_field('item_image');
+         $curItem['why_to_buy'] = get_field('why_to_buy');
+         $curItem['item_price'] = get_field('item_price');
+         $curItem['item_purchase_url'] = get_field('item_purchase_url');
+         // $curItem['item_sponsored'] = get_field('item_sponsored');
+         // $curItem['sponsored_badge'] = get_field('sponsored_badge');
+         $curItem['item_editors_pick'] = get_field('item_editors_pick');
+         $curItem['editors_pick_badge'] = get_field('editors_pick_badge');
+         $curItem['item_categories'] = get_field('item_categories');
+         $curItem['item_recipients'] = get_field('item_recipients');
+         if(!$curItem['item_list_order']) {
+            // Add a value greater than the number of items as the 'item_list_order' 
+            // for items that don't have that defined; this prevents issues with sorting
+            // in the 'default' order in JS on the frontend
+            $curItem['item_list_order'] = $unorderedValue;
+            $gg_items_unordered[] = $curItem;
+         }
+         else {
+            $gg_items_ordered[] = $curItem;
+         }
       }
    };
    wp_reset_query();
