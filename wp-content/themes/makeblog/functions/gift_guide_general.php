@@ -191,6 +191,7 @@ function add_gift_guide_columns($columns) {
                'item_categories' => __('Item Categories'),
                'item_recipients' => __('Item Recipients'),
                'item_editors_pick' => __('Editor\'s Pick'),
+               'item_permalink' => __('Item Permalink'),
                //'item_sponsored' => __('Sponsored')
             )
          );
@@ -217,6 +218,12 @@ function manage_gift_guide_columns($column_name, $post_id) {
          break;
       case 'item_editors_pick':
          echo get_post_meta( $post_id , 'item_editors_pick' , true ) === 'yes' ? 'yes' : '';
+         break;
+      case 'item_permalink':
+         $post = get_post( $post_id );
+         $slug = $post->post_name;
+         $permalink = get_site_url() . '/giftguide/#' . $slug;
+         echo '<a href="'.$permalink.'" target="_blank">'.$permalink.'</a>';
          break;
       // case 'item_sponsored':
       //    echo get_post_meta( $post_id , 'item_sponsored' , true ) === 'yes' ? 'yes' : '';
