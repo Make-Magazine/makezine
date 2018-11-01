@@ -344,5 +344,4 @@ module.exports = {
    }
 
 }
-
 </script>

@@ -6,7 +6,7 @@
          <div class="row">
             <div class="col-sm-5">
                <div class="item-image" v-lazy-container="{ selector: 'img' }">
-                  <a v-bind:href="post.item_purchase_url"><img v-bind:data-src="post.item_image" /></a>
+                  <a v-bind:href="post.item_purchase_url"><img v-bind:data-item-url="post.slug" v-bind:data-item-title="post.title" v-bind:data-src="post.item_image" /></a>
                   <div v-if="post.item_editors_pick === 'yes'" class="gg-badge gg-badge-editor"><img v-bind:data-src="post.editors_pick_badge" alt="Editor's Pick"></div>
                   <div v-if="post.item_sponsored === 'yes'" class="gg-badge gg-badge-sponsored"><img v-bind:data-src="post.sponsored_badge" alt="Sponsored"></div>
                </div>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+// NOTE (ts): the <img> tag has a couple of data-attr that we use to pass along data
+// to the Google Tag Manager Virtual Pageview event; see main.js
 module.exports = {
    props: ['post'],
    data: function() {
