@@ -1,4 +1,3 @@
-
 <template>
    <div ref="giftGuide" class="gift-guide hidden">
       <div class="filter-container">
@@ -8,16 +7,32 @@
                   <span><label>Filter By: </label></span>
                   <span class="select-container">
                      <label for="category-select" class="sr-only sr-only-focusable">Categories</label>
-                     <select name="category-select" id="category-select" v-model="filter_cat_model" v-on:change="filterChange" onchange="jQuery(this).css('width', 'auto');">
-                        <option v-for="option in categories" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
-                     </select>
+							<v-select 
+							   name="category-select" id="category-select"
+								v-model="filter_cat_model" 
+								v-on:input="filterChange"
+								:searchable="false" 
+								:options="returnCategories"
+								placeholder="Country"></v-select> <!-- placeholder isn't working either -->
                   </span>
                   <span class="select-container">
                      <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
-                     <select name="recipient-select" id="recipient-select" v-model="filter_recip_model" v-on:change="filterChange" onchange="jQuery(this).css('width', 'auto');">
-                        <option v-for="option in recipients" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
-                     </select>
+							<v-select 
+							   name="recipient-select" id="recipient-select"
+								v-model="filter_recip_model" 
+								v-on:input="filterChange" 
+								:searchable="false"
+								:options="returnRecipients" ></v-select>
                   </span>
+						<span class="select-container">
+							<label for="sort-select" class="">Sort By: </label>
+							<v-select 
+								name="sort-select" id="sort-select"
+								v-model="sort_by_model" 
+								v-on:input="sortChange" 
+								:searchable="false"
+								:options="returnSortBy"></v-select>
+					   </span>
                </div>
             </div>
          </div>
@@ -31,12 +46,6 @@
 							<span class="initial-loading-indicator"> Loading... <i class="fa fa-spinner"></i></span>
 						 </transition>
                 </span></p>
-					<span class="select-container">
-						<label for="sort-select" class="">Sort By: </label>
-						<select name="sort-select" id="sort-select" v-model="sort_by_model" v-on:change="sortChange" onchange="jQuery(this).css('width', 'auto');">
-							<option v-for="option in sort" v-bind:key="option.value" v-bind:value="option.value" v-html="option.text"></option>
-						</select>
-					</span>
 				</div>
 			</div>
          <transition-group name="list" tag="div">
@@ -56,15 +65,19 @@
 <script>
 
 const axios = require('axios');
+import Vue from 'vue'
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect)
 const GiftGuideItem = require('./GiftGuideitem.vue');
 const SortMethods = require('./sortMethods.js');
+//require('./optionStyling.js');
 
 module.exports = {
    data: function() {
       return {
          loading: true,
-         filter_cat_model: '',
-         filter_recip_model: '',
+         filter_cat_model: [],
+         filter_recip_model: [],
          sort_by_model: '',
          sort_dir_model: '',
          categories: [],
@@ -72,7 +85,7 @@ module.exports = {
          sort: [
             {
                "value": "0",
-               "text": "Select"
+               "text": "Default"
             },
             {
                "value": "1",
@@ -104,11 +117,14 @@ module.exports = {
    created: function() {
       var _self = this;
       this.loading = true;
-      _self.filter_cat_model = 0;
-      _self.filter_recip_model = 0;
+      _self.filter_cat_model.value = 0;
+      _self.filter_recip_model.value = 0;
+		_self.filter_cat_model.text = "All Categories";  // this is working to set the default value
+      _self.filter_recip_model.text = "All Recipients";
       _self.sort_by_model = 0;
       _self.sort_dir_model = 0;
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/categories.json')
+		
       axios.get('/wp-json/wp/v2/gift_guide_category/')
          .then(function (response) {
             //console.log(response.data);
@@ -126,12 +142,12 @@ module.exports = {
                catsParsed.push(thisCat);
             });
             _self.categories = catsParsed;
+				//console.log(catsParsed);
          })
          .catch(function (error) {
             console.log(error);
             _self.loading = false;
          });
-
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/recipients.json')
       axios.get('/wp-json/wp/v2/gift_guide_recipient/')
          .then(function (response) {
@@ -178,6 +194,17 @@ module.exports = {
    components: {
       'GiftGuideItem': GiftGuideItem
    },
+	computed: {
+	   returnCategories: function() {
+		   return( this.categories.map(cat => ({label: cat.text, value: cat.value})) );
+	   },
+		returnRecipients: function() {
+		   return( this.recipients.map(rec => ({label: rec.text, value: rec.value})) );
+		},
+		returnSortBy: function() {
+		   return( this.sort.map(sor => ({label: sor.text, value: sor.value})) );
+		},
+	},
    methods : {
       sortPosts: function(mode) {
          this.loading = true;
@@ -189,7 +216,7 @@ module.exports = {
             3: SortMethods['name']['asc'],
             4: SortMethods['name']['desc']
          }
-         this.currentPosts.sort(mode[this.sort_by_model]);
+         this.currentPosts.sort(mode[this.sort_by_model.value]);
          this.showPosts();
       },
       sortChange: function() {
@@ -198,30 +225,30 @@ module.exports = {
       filterChange: function() {
          this.loading = true;
          this.clearDynamicAds();
-         //console.log(this.filter_cat_model, this.filter_recip_model);
+         //console.log(this.filter_cat_model.value, this.filter_recip_model.value);
          var _self = this,
             filteredPosts;
          // If both category and recipient have '0', just show the whole (original) list
-         if(_self.filter_cat_model === 0 && _self.filter_recip_model === 0) {
+         if(_self.filter_cat_model.value === 0 && _self.filter_recip_model.value === 0) {
             this.currentPosts = this.origPosts;
          } else {
             filteredPosts = this.origPosts.filter(function(obj) {
                // this is the case for all categories, but a specific recipient
-               if(_self.filter_cat_model === 0 && _self.filter_recip_model > 0) {
+               if(_self.filter_cat_model.value === 0 && _self.filter_recip_model.value > 0) {
                   if(obj.item_recipients) {
-                     return obj.item_recipients.indexOf(_self.filter_recip_model) > -1;
+                     return obj.item_recipients.indexOf(_self.filter_recip_model.value ) > -1;
                   }
                }
                // this is the case for all recipients, but a specific category
-               else if(_self.filter_cat_model > 0 && _self.filter_recip_model === 0) {
+               else if(_self.filter_cat_model.value > 0 && _self.filter_recip_model.value  === 0) {
                   if(obj.item_categories) {
-                     return obj.item_categories.indexOf(_self.filter_cat_model) > -1;
+                     return obj.item_categories.indexOf(_self.filter_cat_model.value) > -1;
                   }
                }
                // this is the case for a specific category, and a specific recipient
                else {
                   if(obj.item_categories && obj.item_recipients) {
-                     return obj.item_categories.indexOf(_self.filter_cat_model) > -1 && obj.item_recipients.indexOf(_self.filter_recip_model) > -1;
+                     return obj.item_categories.indexOf(_self.filter_cat_model.value) > -1 && obj.item_recipients.indexOf(_self.filter_recip_model.value ) > -1;
                   }
                }
             });
@@ -313,6 +340,7 @@ module.exports = {
          }
       }
    }
-}
-</script>
 
+}
+
+</script>

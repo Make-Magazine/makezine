@@ -28,7 +28,8 @@
     "vueify": "^9.4.1"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "vue-select": "^2.5.1"
   },
   "main": "Gruntfile.js",
   "directories": {
