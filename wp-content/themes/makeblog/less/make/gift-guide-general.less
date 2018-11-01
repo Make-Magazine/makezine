@@ -13,14 +13,35 @@
 
 
 .page-template-page-gift-guide-general {
-   .hero-header {
+
+   .social-buttons {
+      z-index: 100;
+      position: fixed;
+      margin-top: 40px; // <-- avoid the sticky filter bar; may not need this once that is actually sticky
+      .sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share {
+         width: 60px!important; // <--- this is admittedy terrible, but we're forced to override a previous !important... thems the apples
+      }
+   }
+   @media screen and (max-width: 768px) {
+      .social-buttons {
+         display: none;
+      }
+   }
+
+   .hero-header, .hero-image-container {
       background-color: #fff;
+   }
+   .page-header-sponsor-tag {
+      margin-bottom: 24px;
+      img {
+         margin: 0 auto;
+         display: block;
+      }
    }
    /*.gg-header-ad {
       max-width:97%;
 		img {width:100%;} //does image need to be responsive? smaller ads are served for smaller viewports
    }*/
-	
    .gg-footer-ad {
       margin-bottom: 24px;
    }
@@ -53,9 +74,6 @@
             text-align: center;
 				max-width: 950px;
     			margin: 0 auto;
-				@media screen and (max-width: 1200px) {
-					margin-bottom: 30px;
-				}
          }
 
       }
