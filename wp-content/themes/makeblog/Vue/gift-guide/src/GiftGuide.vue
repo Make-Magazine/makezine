@@ -11,9 +11,14 @@
 							   name="category-select" id="category-select"
 								v-model="filter_cat_model" 
 								v-on:input="filterChange"
+								item-value="label"
 								:searchable="false" 
 								:options="returnCategories"
-								placeholder="Country"></v-select> <!-- placeholder isn't working either -->
+								:selected="option == '0'"
+								label="label"
+								placeholder="label">
+								<option :value="0">All Categories</option>
+							</v-select> <!-- placeholder isn't working either -->
                   </span>
                   <span class="select-container">
                      <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
@@ -22,10 +27,10 @@
 								v-model="filter_recip_model" 
 								v-on:input="filterChange" 
 								:searchable="false"
-								:options="returnRecipients" ></v-select>
+								:options="returnRecipients"></v-select>
                   </span>
+						<label for="sort-select" class="">Sort By: </label>
 						<span class="select-container">
-							<label for="sort-select" class="">Sort By: </label>
 							<v-select 
 								name="sort-select" id="sort-select"
 								v-model="sort_by_model" 
@@ -70,7 +75,7 @@ import vSelect from 'vue-select'
 Vue.component('v-select', vSelect)
 const GiftGuideItem = require('./GiftGuideitem.vue');
 const SortMethods = require('./sortMethods.js');
-//require('./optionStyling.js');
+require('./stickyFilters.js');
 
 module.exports = {
    data: function() {
@@ -119,8 +124,6 @@ module.exports = {
       this.loading = true;
       _self.filter_cat_model.value = 0;
       _self.filter_recip_model.value = 0;
-		_self.filter_cat_model.text = "All Categories";  // this is working to set the default value
-      _self.filter_recip_model.text = "All Recipients";
       _self.sort_by_model = 0;
       _self.sort_dir_model = 0;
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/categories.json')
@@ -142,7 +145,6 @@ module.exports = {
                catsParsed.push(thisCat);
             });
             _self.categories = catsParsed;
-				//console.log(catsParsed);
          })
          .catch(function (error) {
             console.log(error);
@@ -196,13 +198,13 @@ module.exports = {
    },
 	computed: {
 	   returnCategories: function() {
-		   return( this.categories.map(cat => ({label: cat.text, value: cat.value})) );
+		   return( this.categories.map(cat => ({label: unescape(cat.text), value: cat.value})) );
 	   },
 		returnRecipients: function() {
-		   return( this.recipients.map(rec => ({label: rec.text, value: rec.value})) );
+		   return( this.recipients.map(rec => ({label: unescape(rec.text), value: rec.value})) );
 		},
 		returnSortBy: function() {
-		   return( this.sort.map(sor => ({label: sor.text, value: sor.value})) );
+		   return( this.sort.map(sor => ({label: unescape(sor.text), value: sor.value})) );
 		},
 	},
    methods : {
