@@ -4,7 +4,7 @@
 </template>
 
 <script>
-const GiftGuide = require('./GiftGuide.vue');
+import GiftGuide from './GiftGuide.vue';
 module.exports = {
    data: function() {
       return {}

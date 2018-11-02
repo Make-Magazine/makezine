@@ -1,12 +1,19 @@
 // gift guide entry point
+// Note that we can't use `import` here until we get Babel set up stand-alone
+// But down in the Vue files, `vueify` incorporates Babel automatically
+// so ES6 goodness works just fine there...
+// See https://github.com/vuejs/vueify/issues/108
 const Vue = require('vue');
 const App = require('./App.vue');
 const VueLazyLoad = require('vue-lazyload');
 
 Vue.use(VueLazyLoad);
 
-
-
+// Note (ts): wrapping this in a load event listener so that the root `el` below is 
+// in the DOM when we try to hang the application off it
+// TBD: at some point in the future consider splitting up our application so
+// that the data fetching can happen in the background before load event 
+// even fires, to help speed up the overall impression of 'loaded' for the user
 window.addEventListener('load', function () {
    vm = new Vue({
       el: '#gift-guide-temp',
