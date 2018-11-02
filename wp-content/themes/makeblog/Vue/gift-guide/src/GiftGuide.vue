@@ -11,14 +11,9 @@
 							   name="category-select" id="category-select"
 								v-model="filter_cat_model" 
 								v-on:input="filterChange"
-								item-value="label"
-								:searchable="false" 
-								:options="returnCategories"
-								:selected="option == '0'"
-								label="label"
-								placeholder="label">
-								<option :value="0">All Categories</option>
-							</v-select> <!-- placeholder isn't working either -->
+								:searchable="false"
+								:options="returnCategories">
+							</v-select> 
                   </span>
                   <span class="select-container">
                      <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
@@ -81,8 +76,8 @@ module.exports = {
    data: function() {
       return {
          loading: true,
-         filter_cat_model: [],
-         filter_recip_model: [],
+         filter_cat_model: ["All Categories"],
+         filter_recip_model: ["All Recipients"],
          sort_by_model: '',
          sort_dir_model: '',
          categories: [],
@@ -124,7 +119,7 @@ module.exports = {
       this.loading = true;
       _self.filter_cat_model.value = 0;
       _self.filter_recip_model.value = 0;
-      _self.sort_by_model = 0;
+      _self.sort_by_model = "Default";
       _self.sort_dir_model = 0;
       //axios.get('/wp-content/themes/makeblog/gift-guide-fe/src/categories.json')
 		
