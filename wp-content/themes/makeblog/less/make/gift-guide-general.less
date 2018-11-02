@@ -32,7 +32,7 @@
       background-color: #fff;
    }
    .page-header-sponsor-tag {
-      margin-bottom: 24px;
+      padding-bottom: 24px;
       img {
          margin: 0 auto;
          display: block;
@@ -99,9 +99,9 @@
 		.select-container {
 			position:relative; 
 			display: inline;
-			padding-left: 1em;
+			padding-left: .5em;
 			min-width: 200px;
-			@media screen and (max-width: 650px) {
+			@media screen and (max-width: 992px) {
 				 display: block;
 				 text-align: center;
 			}
@@ -113,7 +113,7 @@
 					.open-indicator::before {
 						border-color: #fff;
 					}
-					input[type="search"] { }
+					input[type="search"] { padding: 0px; }
 				}
 				.selected-tag { color: #fff; }
 				&.open .selected-tag { position: relative !important; }
@@ -152,20 +152,39 @@
              flex-direction: row;
 				 align-items: center;
 				 justify-content: center;
-				 @media screen and (max-width: 650px) {
+				 padding: 0px;
+				.select-section { display: flex; }
+				 @media screen and (max-width: 992px) {
 					 display: block;
+					 padding: 5px 15px 0px;
+					 margin: 0 auto;
+					 max-width: 430px;
+					 .select-section {
+						 display: grid;
+						 position: relative;
+    					 top: -5px;
+						 max-width: 360px;
+					 }
 				}
          }
 			label { 
 				font-weight: normal; 
 				margin-bottom: 0px;
-				@media screen and (max-width: 650px) {
-					display: block;
-					text-align: center;
-					width: 100%;
+				@media screen and (max-width: 992px) {
+					display: flex;
+					float: left;
+					width: 90px;
 				}
 			}
       }
+		label[for='sort-select'] {
+			@media screen and (min-width: 1200px) {
+				margin-left: 80px;
+			}
+			@media screen and (min-width: 992px) {
+			 	margin-left: 20px; 
+			}
+	   }
 
       .item-list {
          margin-top: 40px;
@@ -261,23 +280,5 @@
       }
 
    }
-
-	.secondary-filters {
-		p { float: left; font-size: 20px; }
-		.select-container {
-			float: right; font-size: 22px;
-			label { font-weight: normal; }
-			&::after { 
-				background: #F0F0F0; 
-			   @media screen and (max-width: 650px) {
-					right: 0px;
-				}
-			}
-			select { 
-				background: transparent; 
-				width: 120px;
-			}
-		}
-	}
 
 }

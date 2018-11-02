@@ -4,36 +4,40 @@
       <div class="filter-container">
          <div class="container">
             <div class="row">
-               <div class="col-sm-12 filters">
-                  <span><label>Filter By: </label></span>
-                  <span class="select-container">
-                     <label for="category-select" class="sr-only sr-only-focusable">Categories</label>
-							<v-select 
-							   name="category-select" id="category-select"
-								v-model="filter_cat_model" 
-								v-on:input="filterChange" 
-								:searchable="false" 
-								:options="categories">
-							</v-select> 
-                  </span>
-                  <span class="select-container">
-                     <label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
-							<v-select 
-							   name="recipient-select" id="recipient-select"
-								v-model="filter_recip_model" 
-								v-on:input="filterChange" 
-								:searchable="false" 
-								:options="recipients"></v-select>
-                  </span>
-						<label for="sort-select" class="">Sort By: </label>
-						<span class="select-container">
-							<v-select 
-								name="sort-select" id="sort-select"
-								v-model="sort_by_model" 
-								v-on:input="sortChange" 
-                        :options="sort" 
-								:searchable="false"></v-select>
-					   </span>
+               <div class="col-md-12 filters">
+                  <label>Filter By: </label>
+						<div class="select-section">
+							<span class="select-container">
+								<label for="category-select" class="sr-only sr-only-focusable">Categories</label>
+								<v-select 
+									name="category-select" id="category-select"
+									v-model="filter_cat_model" 
+									v-on:input="filterChange" 
+									:searchable="false" 
+									:options="categories">
+								</v-select> 
+							</span>
+							<span class="select-container">
+								<label for="recipient-select" class="sr-only sr-only-focusable">Recipients</label>
+								<v-select 
+									name="recipient-select" id="recipient-select"
+									v-model="filter_recip_model" 
+									v-on:input="filterChange" 
+									:searchable="false" 
+									:options="recipients"></v-select>
+							</span>
+						</div>
+						<label for="sort-select">Sort By: </label>
+						<div class="select-section">
+							<span class="select-container">
+								<v-select 
+									name="sort-select" id="sort-select"
+									v-model="sort_by_model" 
+									v-on:input="sortChange" 
+									:options="sort" 
+									:searchable="false"></v-select>
+							</span>
+						</div>
                </div>
             </div>
          </div>
@@ -66,6 +70,26 @@
 </template>
 
 <script>
+// My suggestion is we move a function like this to global where we can just cover the most commonly used entities, but something like this would undoubtedly be useful in other areas as well
+function decodeHTMLEntities(text) {  
+    var entities = [
+        ['amp', '&'],
+        ['apos', '\''],
+        ['#x27', '\''],
+        ['#x2F', '/'],
+        ['#39', '\''],
+        ['#47', '/'],
+        ['lt', '<'],
+        ['gt', '>'],
+        ['nbsp', ' '],
+        ['quot', '"']
+    ];
+
+    for (var i = 0, max = entities.length; i < max; ++i) 
+        text = text.replace(new RegExp('&'+entities[i][0]+';', 'g'), entities[i][1]);
+
+    return text;
+}
 
 import axios from 'axios';
 import vSelect from 'vue-select';
@@ -127,9 +151,10 @@ module.exports = {
                }
             ];
             response.data.forEach(function(el) {
+				   var label = el.name;
                var thisCat = {
                   'value': el.id,
-                  'label': el.name
+                  'label': decodeHTMLEntities(el.name)
                };
                catsParsed.push(thisCat);
             });
@@ -152,7 +177,7 @@ module.exports = {
             response.data.forEach(function(el) {
                var thisCat = {
                   'value': el.id,
-                  'label': el.name
+                  'label': decodeHTMLEntities(el.name)
                };
                recipsParsed.push(thisCat);
             });
