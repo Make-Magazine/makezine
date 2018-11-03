@@ -6,8 +6,21 @@
 const Vue = require('vue');
 const App = require('./App.vue');
 const VueLazyLoad = require('vue-lazyload');
-
 Vue.use(VueLazyLoad);
+const VueScrollTo = require('vue-scrollto');
+Vue.use(VueScrollTo, {
+   container: "body",
+   duration: 200,
+   easing: "ease",
+   offset: -200,
+   force: true,
+   cancelable: true,
+   onStart: false,
+   onDone: false,
+   onCancel: false,
+   x: false,
+   y: true
+})
 
 // Note (ts): wrapping this in a load event listener so that the root `el` below is 
 // in the DOM when we try to hang the application off it

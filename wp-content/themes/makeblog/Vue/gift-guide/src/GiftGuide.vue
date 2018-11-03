@@ -107,6 +107,7 @@ module.exports = {
          origItems: [], // this is our internal, complete list; it doesn't get displayed
          currentItems: [], // this is a mutable copy of the list that gets filtered & sorted
          initialRender: false,
+         scrolledOnce: false,
          postLimitInterval: 3,
          postLimit: 3,
          doAds: false,
@@ -237,6 +238,7 @@ module.exports = {
       },
       itemsRendered: function() {
          var _self = this;
+         _self.scrollToItem();
          setTimeout(function(){
             // Manufacturing a slight delay before hiding the working indicator so it doesn't flicker
             _self.loading = false;
@@ -253,6 +255,26 @@ module.exports = {
       },
       itemsDisplayed: function() {
          return this.currentItems.length;
+      },
+      scrollToItem: function() {
+         var _self = this;
+         this.$nextTick(function() {
+            //console.log('next tick...');
+            var hash = window.location.hash,
+               element,
+               duration = 200,
+               options = {},
+               cancelScroll;
+            if(!_self.scrolledOnce && hash) { //!_self.initialRender && 
+               element = document.querySelector(hash);
+               if(element) {
+                  console.log('Scroll to: ', hash, element);
+                  cancelScroll = _self.$scrollTo(element, duration, options);
+                  _self.scrolledOnce = true;
+               }
+            }
+         });
+
       },
       clearDynamicAds: function() {
          var ads = document.querySelectorAll('.dynamic-ad');
