@@ -6,7 +6,7 @@
          <div class="row">
             <div class="col-sm-5">
                <div class="item-image">
-                  <a v-bind:href="item.item_purchase_url"><img v-bind:data-item-url="item.slug" v-bind:data-item-title="item.title" v-bind:data-src="item.item_image" /></a>
+                  <a v-bind:href="item.item_purchase_url"><img v-bind:data-item-url="item.item_link" v-bind:data-item-title="item.title" v-bind:data-src="item.item_image" /></a>
                </div>
             </div>
             <div class="col-sm-7">

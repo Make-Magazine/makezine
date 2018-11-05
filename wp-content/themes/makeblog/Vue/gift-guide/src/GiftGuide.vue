@@ -63,7 +63,7 @@
                </div>
             </div>
          </transition-group>
-         <div v-if="initialRender && itemsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
+         <div v-if="initialRenderComplete && itemsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
       </div>
 
    </div>
@@ -130,7 +130,7 @@ module.exports = {
          ],
          origItems: [], // this is our internal, complete list; it doesn't get displayed
          currentItems: [], // this is a mutable copy of the list that gets filtered & sorted
-         initialRender: false,
+         initialRenderComplete: false,
          scrolledOnce: false,
          postLimitInterval: 3,
          postLimit: 3,
@@ -267,11 +267,11 @@ module.exports = {
          setTimeout(function(){
             // Manufacturing a slight delay before hiding the working indicator so it doesn't flicker
             _self.loading = false;
-            if(!_self.initialRender) {
-               _self.initialRender = true;
+            if(!_self.initialRenderComplete) {
+               _self.initialRenderComplete = true;
             }
-         },600);
-         if(_self.initialRender) {
+         },1000);
+         if(_self.initialRenderComplete) {
             this.refreshAds();
          }
       },
@@ -287,10 +287,10 @@ module.exports = {
                duration = 200,
                options = {},
                cancelScroll;
-            if(!_self.scrolledOnce && hash) { //!_self.initialRender && 
+            if(!_self.scrolledOnce && hash) {
                element = document.querySelector(hash);
                if(element) {
-                  console.log('Scroll to: ', hash, element);
+                  //console.log('Scroll to: ', hash, element);
                   cancelScroll = _self.$scrollTo(element, duration, options);
                   _self.scrolledOnce = true;
                }

@@ -45,6 +45,7 @@ window.addEventListener('load', function () {
       var data = img.el.dataset,
          virtualUrl,
          virtualTitle;
+      //console.log('lazyload loaded...', data);
       // first we check that this particular image has something meaningful (i.e. something we've added)
       if(data.itemUrl) {
          // then we construct some values to pass along with the GTM event
