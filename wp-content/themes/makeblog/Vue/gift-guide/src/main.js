@@ -36,6 +36,7 @@ window.addEventListener('load', function () {
          return createElement(App);
       }
    });
+   var requestedItem = [];
    // Google Tag Manager - Virtual Pageview Tracking
    vm.$Lazyload.$on('loaded', function (img) {
       // The requirement is to register a pageview everytime an image is loaded
@@ -45,21 +46,26 @@ window.addEventListener('load', function () {
       var data = img.el.dataset,
          virtualUrl,
          virtualTitle;
-      //console.log('lazyload loaded...', data);
+      console.log('lazyload loaded...', data, requestedItem);
       // first we check that this particular image has something meaningful (i.e. something we've added)
       if(data.itemUrl) {
-         // then we construct some values to pass along with the GTM event
-         virtualUrl = window.location.href + '#' + data.itemUrl;
-         virtualTitle = data.itemTitle;
-         console.log(virtualTitle, virtualUrl);
-         // TBD (ts): move this custom GTM implementation into global.js?
-         if(window.dataLayer) {
-            window.dataLayer.push({
-               'event': 'VirtualPageview',
-               'virtualPageURL': virtualUrl,
-               'virtualPageTitle' : virtualTitle
-            });
-         }
+         // first determine if this image has already been requested
+         if(requestedItem.indexOf(data.itemUrl) === -1) {
+            //if Notification, add it to the list, and proceed with GTM tracking
+            requestedItem.push(data.itemUrl);
+            // then we construct some values to pass along with the GTM event
+            virtualUrl = window.location.href + '#' + data.itemUrl;
+            virtualTitle = data.itemTitle;
+            console.log(virtualTitle, virtualUrl);
+            // TBD (ts): move this custom GTM implementation into global.js?
+            if(window.dataLayer) {
+               window.dataLayer.push({
+                  'event': 'VirtualPageview',
+                  'virtualPageURL': virtualUrl,
+                  'virtualPageTitle' : virtualTitle
+               });
+            }
+         } // else we don't fire another pageview
       }
     });
 });
