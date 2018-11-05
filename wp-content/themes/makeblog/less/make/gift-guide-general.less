@@ -190,6 +190,7 @@
          margin-top: 40px;
          padding-top: 20px;
          padding-bottom: 60px;
+         position: relative;
          .btn-blue {
             padding: 6px;
             font-size: 20px;
@@ -203,6 +204,27 @@
          }
          .btn-load-more {
             width: 100%;
+         }
+         .back-to-top {
+            position: fixed;
+            /* top: 200px; */
+            bottom: 15px;
+            right: 15px;
+            a {
+               display: block;
+               padding: 12px;
+               color: #fff;
+               background-color: #005E9A;
+               background-color: rgba(0,94,154,0.4); 
+               // border-color: #005E9A;
+               border-radius: 3px;
+               font-size: 28px;
+               transition: 2s background-color;
+               &:hover {
+                  background-color: lighten(#005E9A, 10%);
+                  cursor: pointer;
+               }
+            }
          }
 
          // Vue animation-related styles

@@ -64,6 +64,9 @@
             </div>
          </transition-group>
          <div v-if="initialRenderComplete && itemsAvailable() < 1">Sorry, no items match the filters you've chosen.</div>
+
+         <div ref="btt" v-if="showBTT" class="back-to-top"><a @click.prevent="backToTop" href="#" title="Back to Top"><span class="sr-only sr-only-focusable">Back to Top</span> <i class="fa fa-arrow-circle-up"></i></a></div>
+
       </div>
 
    </div>
@@ -90,12 +93,26 @@ function decodeHTMLEntities(text) {
 
     return text;
 }
-
+import Vue from 'vue';
 import axios from 'axios';
 import vSelect from 'vue-select';
 import GiftGuideItem from './GiftGuideitem.vue';
 import SortMethods from './sortMethods.js';
 import './stickyFilters.js';
+import VueScrollTo from 'vue-scrollto';
+Vue.use(VueScrollTo, {
+   container: "body",
+   duration: 200,
+   easing: "ease",
+   offset: 0,
+   force: true,
+   cancelable: true,
+   onStart: false,
+   onDone: false,
+   onCancel: false,
+   x: false,
+   y: true
+})
 
 module.exports = {
    data: function() {
@@ -135,7 +152,8 @@ module.exports = {
          postLimitInterval: 3,
          postLimit: 3,
          doAds: false,
-         adFreq: 0
+         adFreq: 0,
+         showBTT: false
       }
    },
    created: function() {
@@ -200,10 +218,18 @@ module.exports = {
             console.log(error);
             _self.loading = false;
          });
+
+   },
+   destroyed: function() {
+      window.removeEventListener('scroll', this.handlePageScroll);
    },
    mounted: function() {
       this.$refs.giftGuide.classList.remove('hidden');
       this.setupDynAds();
+      this.$nextTick(function() {
+
+         window.addEventListener('scroll', this.handlePageScroll);
+      });
    },
    components: {
       'GiftGuideItem': GiftGuideItem,
@@ -296,6 +322,23 @@ module.exports = {
                }
             }
          });
+      },
+      handlePageScroll: function() {
+         var top = document.documentElement.scrollTop || document.body.scrollTop,
+            listHeight = this.$refs.giftGuide.clientHeight;
+         //console.log(top);
+         if(top > 400 && top < (listHeight-200)) {
+            //console.log('Show BTT', top, listHeight);
+            this.showBTT = true;
+         } else {
+            //console.log('Hide BTT');
+            this.showBTT = false;
+         }
+      },
+      backToTop: function() {
+         var body = document.querySelector('body');
+         //console.log('Back to Top...', body);
+         VueScrollTo.scrollTo(body, 500);
       },
       clearDynamicAds: function() {
          var ads = document.querySelectorAll('.dynamic-ad');
