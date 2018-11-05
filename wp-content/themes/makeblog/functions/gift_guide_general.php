@@ -1,6 +1,10 @@
 <?php
 // PHP stuff for gift-guide-general (2018)
 
+// NOTE (ts): because we're using the post slug as a fragment identifier
+// we need to prefix the slug with letters-only, in case the slug starts with 
+// a number, which isn't a valid fragment ID
+// Made it a constant so we don't have to declare it global elsewhere 
 define('ITEM_LINK_PREFIX', 'item-');
 
 ////////////////////////////////////////////////////////////////////
@@ -190,6 +194,7 @@ function add_gift_guide_columns($columns) {
    return array_merge($columns, 
             array(
                'item_list_order' => __('Item List Order'),
+               'item_visibility' => __('Item Visibility'),
                'item_categories' => __('Item Categories'),
                'item_recipients' => __('Item Recipients'),
                'item_editors_pick' => __('Editor\'s Pick'),
@@ -204,6 +209,7 @@ add_filter('manage_gift_guide_posts_columns' , 'add_gift_guide_columns');
 add_filter('manage_edit-gift_guide_sortable_columns', 'gift_guide_sort');
 function gift_guide_sort($columns) {
    $columns['item_list_order'] = 'item_list_order';
+   $columns['item_visibility'] = 'item_visibility';
    $columns['item_editors_pick'] = 'item_editors_pick';
    // $columns['item_list_order'] = 'item_list_order';
    return $columns;
@@ -217,6 +223,9 @@ function manage_gift_guide_columns($column_name, $post_id) {
   switch ($column_name) {
      case 'item_list_order':
          echo get_post_meta( $post_id , 'item_list_order' , true );
+         break;
+      case 'item_visibility':
+         echo get_post_meta( $post_id , 'item_visibility' , true );// === 'yes' ? 'yes' : '';
          break;
       case 'item_editors_pick':
          echo get_post_meta( $post_id , 'item_editors_pick' , true ) === 'yes' ? 'yes' : '';
@@ -290,6 +299,11 @@ function gift_guide_column_orderby( $query ) {
       $query->set('orderby','meta_value');
       $query->set('meta_key','item_list_order');
       $query->set( 'meta_type', 'numeric' );
+   }
+   if( 'item_visibility' == $orderby ) {
+      $query->set('orderby','meta_value');
+      $query->set('meta_key','item_visibility');
+      //$query->set( 'meta_type', 'numeric' );
    }
 }
 
