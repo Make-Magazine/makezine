@@ -51,7 +51,7 @@ window.addEventListener('load', function () {
          // then we construct some values to pass along with the GTM event
          virtualUrl = window.location.href + '#' + data.itemUrl;
          virtualTitle = data.itemTitle;
-         //console.log(virtualTitle, virtualUrl);
+         console.log(virtualTitle, virtualUrl);
          // TBD (ts): move this custom GTM implementation into global.js?
          if(window.dataLayer) {
             window.dataLayer.push({
