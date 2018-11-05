@@ -1,7 +1,7 @@
 
 <template>
 <transition appear>
-   <div class="item-instance" v-bind:id="item.slug" v-lazy-container="{ selector: 'img' }">
+   <div class="item-instance" v-bind:id="item.item_link" v-lazy-container="{ selector: 'img' }">
 
          <div class="row">
             <div class="col-sm-5">

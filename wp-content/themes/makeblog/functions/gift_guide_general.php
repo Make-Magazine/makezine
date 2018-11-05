@@ -1,6 +1,8 @@
 <?php
 // PHP stuff for gift-guide-general (2018)
 
+define('ITEM_LINK_PREFIX', 'item-');
+
 ////////////////////////////////////////////////////////////////////
 // Add custom post type for Gift Guide
 // https://codex.wordpress.org/Post_Types#Custom_Post_Types
@@ -146,7 +148,7 @@ function get_gift_guide_response() {
       if(get_field('item_visibility') === 'visible') {
          $curItem = [];
          $curItem['title'] = get_the_title();
-         $curItem['slug'] = $post->post_name;
+         $curItem['item_link'] = ITEM_LINK_PREFIX . $post->post_name;
          $curItem['item_list_order'] = get_field('item_list_order');
          $curItem['item_description'] = get_field('item_description');
          $curItem['item_id'] = get_the_ID('ID');
@@ -222,7 +224,7 @@ function manage_gift_guide_columns($column_name, $post_id) {
       case 'item_permalink':
          $post = get_post( $post_id );
          $slug = $post->post_name;
-         $permalink = get_site_url() . '/giftguide/#' . $slug;
+         $permalink = get_site_url() . '/giftguide/#' . ITEM_LINK_PREFIX . $slug;
          echo '<a href="'.$permalink.'" target="_blank">'.$permalink.'</a>';
          break;
       // case 'item_sponsored':

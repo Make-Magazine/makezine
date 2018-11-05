@@ -278,9 +278,6 @@ module.exports = {
       itemsAvailable: function() {
          return this.currentItems.length;
       },
-      itemsDisplayed: function() {
-         return this.currentItems.length;
-      },
       scrollToItem: function() {
          var _self = this;
          this.$nextTick(function() {
@@ -299,7 +296,6 @@ module.exports = {
                }
             }
          });
-
       },
       clearDynamicAds: function() {
          var ads = document.querySelectorAll('.dynamic-ad');
