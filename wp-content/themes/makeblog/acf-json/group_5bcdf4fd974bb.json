@@ -29,7 +29,7 @@
             "label": "Item List Order",
             "name": "item_list_order",
             "type": "number",
-            "instructions": "Enter a whole number representing the default position of this item in the list. Lower numbers come first\r\n<em>If other items have the same number, the ordering of these items will be unpredictable<\/em>",
+            "instructions": "Enter a whole number representing the default position of this item in the list. Lower numbers come first. NOTE: Items having the same number will be ordered unpredictably.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -143,52 +143,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_5bcdf5d2d98fd",
-            "label": "Item: Sponsored",
-            "name": "item_sponsored",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "yes": "Yes",
-                "no": "No"
-            },
-            "allow_null": 0,
-            "default_value": "no",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
-            "key": "field_5bcdf61cd98fe",
-            "label": "Sponsored Badge",
-            "name": "sponsored_badge",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5bcdf644d98ff",
             "label": "Item: Editor's Pick",
             "name": "item_editors_pick",
@@ -298,5 +252,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540495330
+    "modified": 1541437213
 }
