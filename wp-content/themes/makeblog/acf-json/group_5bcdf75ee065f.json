@@ -108,49 +108,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_5bda2d4112fb5",
-            "label": "Page Header Sponsor Tag Text",
-            "name": "page_header_sponsor_tag_text",
-            "type": "text",
-            "instructions": "The sponsor tagline in text form for accessibility, e.g. \"Powered by eBay\". Only displays on small screens when the Header Hero Image is hidden, and even then only as a text fallback for the Page Header Sponsor Tag Image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5bda2d8f12fb6",
-            "label": "Page Header Sponsor Tag Image",
-            "name": "page_header_sponsor_tag_image",
-            "type": "image",
-            "instructions": "The sponsor tagline in image form for accessibility, e.g. \"Powered by eBay\". Only displays on small screens when the Header Hero Image is hidden",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5bd720063d057",
             "label": "Ad Frequency",
             "name": "ad_frequency",
@@ -233,5 +190,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541025731
+    "modified": 1541529723
 }
