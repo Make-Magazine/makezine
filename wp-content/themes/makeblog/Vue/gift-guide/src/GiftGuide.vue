@@ -1,7 +1,7 @@
 <template>
    <div ref="giftGuide" class="gift-guide hidden">
 
-      <div class="filter-container">
+      <div ref="filters" class="filter-container">
          <div class="container">
             <div class="row">
                <div class="col-md-12 filters">
@@ -304,6 +304,22 @@ module.exports = {
       itemsAvailable: function() {
          return this.currentItems.length;
       },
+      getHeaderOffset: function() {
+         var nav1 = document.querySelector('.nav-level-1'),
+            nav1Height = nav1.clientHeight,
+            nav2 = document.querySelector('#nav-level-2'),
+            nav2Height = nav2.clientHeight,
+            filtersHeight = this.$refs.filters.clientHeight,
+            totalHeight;// = nav1Height + nav2Height + filtersHeight;
+         //console.log('getHeaderAreaHeight: ', nav1Height, nav2Height, filtersHeight, totalHeight);
+         if(nav2Height === 0) {
+            // this means mobile
+            totalHeight = nav1Height;
+         } else {
+            totalHeight = nav2Height + filtersHeight
+         }
+         return totalHeight * -1
+      },
       scrollToItem: function() {
          var _self = this;
          this.$nextTick(function() {
@@ -311,13 +327,12 @@ module.exports = {
             var hash = window.location.hash,
                element,
                duration = 200,
-               options = {},
                cancelScroll;
             if(!_self.scrolledOnce && hash) {
                element = document.querySelector(hash);
                if(element) {
                   //console.log('Scroll to: ', hash, element);
-                  cancelScroll = _self.$scrollTo(element, duration, options);
+                  cancelScroll = _self.$scrollTo(element, duration, {offset: this.getHeaderOffset()});
                   _self.scrolledOnce = true;
                }
             }
