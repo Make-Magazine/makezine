@@ -25,11 +25,11 @@
     "matchdep": "^0.3.0",
     "vue": "^2.5.17",
     "vue-lazyload": "^1.2.6",
+    "vue-scrollto": "^2.13.0",
     "vueify": "^9.4.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vue-scrollto": "^2.13.0",
     "vue-select": "^2.5.1"
   },
   "main": "Gruntfile.js",
