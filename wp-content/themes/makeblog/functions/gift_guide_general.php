@@ -38,6 +38,7 @@ function gift_guide_category_init() {
       'show_in_nav_menus'       => true,
       'show_ui'                 => true,
       'show_in_rest'            => true,
+      'meta_box_cb'             => false, // hide the right-column meta box
       'query_var'               => 'gift_guide_category',
       'rewrite'                 => true,
       'capabilities'            => array(
@@ -78,9 +79,9 @@ function gift_guide_recipient_init() {
       'hierarchical'            => false,
       'public'                  => true,
       'show_in_nav_menus'       => true,
-      //'show_admin_column'       => true,
       'show_ui'                 => true,
       'show_in_rest'            => true,
+      'meta_box_cb'             => false, // hide the right-column meta box
       'query_var'               => 'gift_guide_recipient',
       'rewrite'                 => true,
       'capabilities'            => array(
