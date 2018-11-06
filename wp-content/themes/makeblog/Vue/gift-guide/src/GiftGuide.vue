@@ -316,7 +316,7 @@ module.exports = {
             // this means mobile
             totalHeight = nav1Height;
          } else {
-            totalHeight = nav2Height + filtersHeight
+            totalHeight = 20 + nav2Height + filtersHeight
          }
          return totalHeight * -1
       },
