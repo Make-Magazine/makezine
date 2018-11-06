@@ -5,7 +5,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12 filters">
-                  <label>Filter By: </label>
+                  <label>Filter by: </label>
 						<div class="select-section">
 							<span class="select-container">
 								<label for="category-select" class="sr-only sr-only-focusable">Categories</label>
@@ -27,7 +27,7 @@
 									:options="recipients"></v-select>
 							</span>
 						</div>
-						<label for="sort-select">Sort By: </label>
+						<label for="sort-select">Sort by: </label>
 						<div class="select-section">
 							<span class="select-container">
 								<v-select 
@@ -46,7 +46,7 @@
       <div ref="itemList" class="container item-list">
 		   <div class="row">
             <div class="col-sm-12 item-count">
-               <p>{{ itemsAvailable() }} Items 
+               <p>{{ itemsAvailable() }} Results
                   <span v-if="loading === true">
                      <transition appear>
                         <span class="initial-loading-indicator"> Loading... <i class="fa fa-spinner"></i></span>
