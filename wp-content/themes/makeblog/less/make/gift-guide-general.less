@@ -30,6 +30,13 @@
 
    .hero-header, .hero-image-container {
       background-color: #fff;
+		@media screen and (max-width: 768px) {
+			img {
+				padding-top: 10px;
+				max-width: 150%;
+				margin-left: -25%;
+			}
+		}
    }
    .page-header-sponsor-tag {
       padding-bottom: 24px;
@@ -85,15 +92,16 @@
             //width: 100%;
             margin: 0 auto;
             display: block;
+				
          }
       }
    }
 
-      .initial-loading-indicator {
-         .fa {
-            animation: GGSpinLoader 0.85s linear infinite;
-         }
-      }
+	.initial-loading-indicator {
+		.fa {
+			animation: GGSpinLoader 0.85s linear infinite;
+		}
+	}
    
    .gift-guide {
 		.select-container {
@@ -191,6 +199,12 @@
          padding-top: 20px;
          padding-bottom: 60px;
          position: relative;
+			@media screen and (max-width: 768px) {
+				padding: 0px;
+				.item-count {
+					margin-left: 15px;
+				}
+			}
          .btn-blue {
             padding: 6px;
             font-size: 20px;

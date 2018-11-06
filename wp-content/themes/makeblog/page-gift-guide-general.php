@@ -44,8 +44,8 @@ if (have_posts()) {
       </div>
    </div>
    <div class="hero-image-container">
-      <div class="page-header-sponsor-tag hidden-lg hidden-xl"><img src="<?php echo $page_header_sponsor_tag_image;?>" alt="<?php echo $page_header_sponsor_tag_text;?>"></div>
-      <div class="hero-image hidden-md hidden-sm hidden-xs"><img src="<?php echo $page_header_hero_image; ?>" /></div>
+      <div class="page-header-sponsor-tag hidden-md hidden-sm hidden-xs hidden-lg hidden-xl"><img src="<?php echo $page_header_sponsor_tag_image;?>" alt="<?php echo $page_header_sponsor_tag_text;?>"></div>
+      <div class="hero-image"><img src="<?php echo $page_header_hero_image; ?>" /></div>
    </div>
    <div id="gift-guide-temp"><h2 class="initial-loading-indicator" style="text-align: center;">Loading... <i class="fa fa-spinner"></i></h2></div>
    <div class="gg-footer-ad"><div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="btf"></div></div>

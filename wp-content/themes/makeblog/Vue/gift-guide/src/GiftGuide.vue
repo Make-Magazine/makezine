@@ -45,7 +45,7 @@
 
       <div ref="itemList" class="container item-list">
 		   <div class="row">
-            <div class="col-sm-12 secondary-filters">
+            <div class="col-sm-12 count">
                <p>{{ itemsAvailable() }} Items 
                   <span v-if="loading === true">
                      <transition appear>
