@@ -304,7 +304,10 @@ function gift_guide_column_orderby( $query ) {
    if( 'item_visibility' == $orderby ) {
       $query->set('orderby','meta_value');
       $query->set('meta_key','item_visibility');
-      //$query->set( 'meta_type', 'numeric' );
+   }
+   if( 'item_editors_pick' == $orderby ) {
+      $query->set('orderby','meta_value');
+      $query->set('meta_key','item_editors_pick');
    }
 }
 
