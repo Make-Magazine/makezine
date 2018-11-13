@@ -15,7 +15,7 @@
 				this.content = this.content.html();
 			}
 		});
-		jQuery( "#modal-capture-btn.class-3dprinters" ).click(function() {
+		jQuery( "#modal-capture-btn.class-printers" ).click(function() {
 			jQuery(".fancybox3D").trigger('click');
 		});
 	});

@@ -3,7 +3,7 @@
  * The Reviews Section Header
  */
 
-// Get the correct comaprison post ID
+// Get the correct comparison post ID
 $id        = get_the_ID();
 $container = Reviews()->container();
 
@@ -17,9 +17,6 @@ if ( is_singular( \Reviews\Architecture\Post_Types\Products::NAME ) ) {
 $modal_image    = get_field( 'magazine_thumbnail', $id );
 $modal_text     = get_field( 'magazine_label', $id );
 $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
-if ($slug == 'printers') {
-	$slug = '3dprinters';
-}
 
 ?>
 
