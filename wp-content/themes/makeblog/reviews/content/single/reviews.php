@@ -10,7 +10,7 @@ $slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get
 <div class="tc-container mz-body">
 
 	<?php // Filters	
-	get_template_part( 'reviews/content/header/filters/filters', $slug );?>
+	get_template_part( 'reviews/content/header/filters/filters' );?>
 
 	<section class="reviews-listings tc-content">
 

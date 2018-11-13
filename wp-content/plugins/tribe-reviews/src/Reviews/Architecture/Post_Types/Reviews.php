@@ -651,7 +651,7 @@ class Reviews {
 		global $wpdb;
 
 		$prodcut_scores = (array) $_POST['scores'];
-    print_r($prodcut_scores);
+     // print_r($prodcut_scores);
 		foreach ( $prodcut_scores as $product_id => $scores ) {
 
 			$p2p_id = $wpdb->get_var( $wpdb->prepare( "Select p2p_id from $wpdb->p2p where p2p_from = %d and p2p_to = %d", $product_id, get_the_ID() ) );

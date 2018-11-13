@@ -42,32 +42,17 @@ if ($slug == 'printers') {
 			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
-					Compare <?php echo $slug; ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
+					<?php echo(get_field('compare_button')); ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
 				</a>
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
-					<?php
-					if ( $slug === 'boards' ) {
-						$choosing_a_cat = 'How to Choose <i class="fa fa-angle-right" aria-hidden="true"></i>';
-					}
-          elseif ( $slug === 'drones' ) {
-						$choosing_a_cat = 'How We Test <i class="fa fa-angle-right" aria-hidden="true"></i>';
-					}
-          elseif ( $slug === '3dprinters' ) {
-						$choosing_a_cat = 'How We Test <i class="fa fa-angle-right" aria-hidden="true"></i>';
-					}
-					echo $choosing_a_cat;
-					?>
+					<?php echo(get_field('how_button')); ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
 				</a>
 
-				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $id ) ) {
-          if ( $slug === 'drones' ) {
-						$scoring = 'Drone Scoring';
-					}
-          elseif ( $slug === '3dprinters' ) {
-						$scoring = '3D Printer Scoring';
-					} ?>
-					<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>"><?php echo $scoring; ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $id ) ) { ?>
+					<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>">
+					  <?php echo(get_field('scoring_button')); ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
+				   </a>
 				<?php } ?>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>

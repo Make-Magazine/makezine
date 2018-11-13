@@ -851,6 +851,7 @@ if (is_page_template('page-ge-light-life.php'))
 function add_taxonomies_to_pages() {
   register_taxonomy_for_object_type( 'post_tag', 'page' );
   register_taxonomy_for_object_type( 'category', 'page' );
+  register_taxonomy_for_object_type( 'product-categories', 'reviews' ); // On each review page, we'll use the product category to determine what filters to show
 }
 add_action( 'init', 'add_taxonomies_to_pages' );
 

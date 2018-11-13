@@ -86,8 +86,10 @@
 	@media screen and (min-width:@mq-sm-min) {
 		float: none;
 		width: auto;
-		margin-bottom: @spacer;
 		padding: 0;
+		padding-top: @spacer;
+		padding-right: 10px;
+		border-left: 1px solid @lt-gray;
 	}
 
 	// Filter drop-down trigger
@@ -270,7 +272,8 @@
 .fl-recommended,
 .fl-group {
 	@media screen and (min-width: @mq-sm-min) {
-		display: table-cell;
+		display: grid;
+		grid-template-columns: auto auto auto auto;
 		padding: 15px 10px;
 		vertical-align: top;
 	}
@@ -278,7 +281,6 @@
 		padding: 15px 15px;
 	}
 }
-
 .fl-recommended {
 	@media screen and (max-width: @mq-xs-max) {
 		margin-bottom: 15px;
@@ -300,9 +302,6 @@
 // Filter Groups
 .fl-group {
 	@media screen and (min-width: @mq-sm-min) {
-		border-left: 1px solid @lt-gray;
-		width: 32%;
-		display: inline-block;
 		&:last-of-type {
 			padding-right: 0;
 		}
@@ -310,7 +309,6 @@
 }
 
 .more-filters {
-	width: 66.6%;
 	display: inline-block;
 	overflow: visible!important;
 	padding-left: 0;
