@@ -50,7 +50,7 @@
             "label": "Item Image",
             "name": "item_image",
             "type": "image",
-            "instructions": "Select or upload an image for this item. Image size should be at least 300px wide X 300px high",
+            "instructions": "Select or upload an image for this item. Image size should be at least 430px wide X 382px high",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -61,8 +61,8 @@
             "return_format": "url",
             "preview_size": "thumbnail",
             "library": "all",
-            "min_width": 300,
-            "min_height": 300,
+            "min_width": 430,
+            "min_height": 382,
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -74,7 +74,7 @@
             "label": "Item Description",
             "name": "item_description",
             "type": "wysiwyg",
-            "instructions": "Provide a brief description of the item.",
+            "instructions": "Provide a brief description of the item. Should probably be in the ballpark of 600 characters, but that's assuming one large paragraph. If the description has formatting like bullets, it will occupy a larger amount of vertical space, so the overall number of characters should less.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -252,5 +252,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541437213
+    "modified": 1542143091
 }

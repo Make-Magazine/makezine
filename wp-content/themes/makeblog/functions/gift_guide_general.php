@@ -16,7 +16,9 @@ function create_post_type() {
      array(
        'labels' => array(
          'name' => __( 'Gift Guide Items' ),
-         'singular_name' => __( 'Gift Guide Item' )
+         'singular_name' => __( 'Gift Guide Item' ),
+         'add_new_item' => __( 'Create New Gift Guide Item' ),
+         'edit_item' => __( 'Edit Gift Guide Item' )
        ),
        'public' => true,
        'has_archive' => true,
@@ -26,6 +28,17 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
+////////////////////////////////////////////////////////////////////
+// Add Title label for custom post type Gift Guide
+// https://codex.wordpress.org/Function_Reference/register_taxonomy
+////////////////////////////////////////////////////////////////////
+
+function top_form_edit( $post ) {
+   if( 'gift_guide' == $post->post_type ) {
+      echo '<em style="font-size: 13px;">(Limit the Title to 40 characters or less if possible)</em>';
+   }
+}
+add_action( 'edit_form_top', 'top_form_edit' );
 
 ////////////////////////////////////////////////////////////////////
 // Add "Category" taxonomy for Gift Guide
