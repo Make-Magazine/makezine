@@ -162,12 +162,12 @@
             "wrapper": {
                 "width": "",
                 "class": "more-options",
-                "id": ""
+                "id": "underline"
             },
             "choices": {
-                "os-windows": "OS Windows",
-                "os-mac": "OS Mac",
-                "os-linux": "OS Linux"
+                "os-windows": "OS: Windows",
+                "os-mac": "OS: Mac",
+                "os-linux": "OS: Linux"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -235,7 +235,7 @@
             "wrapper": {
                 "width": "",
                 "class": "more-options",
-                "id": ""
+                "id": "underline"
             },
             "choices": {
                 "1": "Yes",
@@ -343,5 +343,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add key meta information about the product to power the filters for 3d printers",
-    "modified": 1542139194
+    "modified": 1542214591
 }

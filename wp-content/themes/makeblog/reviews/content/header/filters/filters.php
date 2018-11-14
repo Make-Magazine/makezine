@@ -13,16 +13,6 @@ $field_group = acf_get_fields($filter);
 $more_options = [];
 $boolean_options = [];
 
-function cleanString($string) {
-    $string = strtolower($string);
-    //Make alphanumeric (removes all other characters)
-    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
-    //Clean up multiple dashes or whitespaces
-    $string = preg_replace("/[\s-]+/", " ", $string);
-    //Convert whitespaces and underscore to dash
-    $string = preg_replace("/[\s_]/", "-", $string);
-    return $string;
-}
 
 ?>
 <section class="review-filters">
@@ -45,7 +35,7 @@ function cleanString($string) {
 						array_push($more_options, $field); 
 					} else {
 			  ?>
-				<div class="fl-filter fl-<?php echo(cleanString($field['label'])); ?> dropdown">
+				<div class="fl-filter fl-<?php echo($field['name']); ?> dropdown">
 					<button id="fl-recommended-btn" class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
 						<?php echo($field['label']); ?> <i class="fa fa-chevron-down"></i>
 					</button>
@@ -78,26 +68,29 @@ function cleanString($string) {
 							<?php
 							  foreach ($more_options as &$sub_select) {
 								  $sub_options = $sub_select['choices'];
+							?>
+								 <div class="option-wrapper <?php echo($sub_select['name']); ?> <?php if($sub_select['wrapper']['id']) { echo($sub_select['wrapper']['id']); } ?>" >
+							<?php
 								  foreach ($sub_options as $key => $value) { 
 									  if($key != "0" && $key != "1") {
-							 ?>
-									  <label for="<?php echo($key); ?>">
+							?>
+									  <label for="<?php echo($key); ?>" class="non-boolean">
 											<input id="<?php echo($key); ?>" type="checkbox" name="<?php echo($sub_select['name']); ?>" value="<?php echo(str_replace("os-","",$key)); ?>">
 											<span><?php echo($value); ?></span>
 									  </label>
-							   <?php
+							<?php
 									  }else if($key != "0"){
-								?>
+							?>
 								     <label for="<?php echo($sub_select['name']); ?>">
 											<input id="<?php echo($sub_select['name']); ?>" type="checkbox" name="<?php echo($sub_select['name']); ?>" value="<?php echo($key); ?>">
 											<span><?php echo($sub_select['label']); ?></span>
 									  </label>
-								<?php
+							<?php
 									  }
 								  }
-							?>
-							     <hr />
-							<?php
+								  ?>
+								</div>
+								<?php 
 							  }
 							?>
 							</div>
