@@ -18,9 +18,13 @@ $the_query = new WP_Query( $args );
 get_header('universal'); ?>
 		
 	<div class="tool-guide">
-	   <h1><?php the_title(); ?></h1>
+	   
 		<div class="container">
-
+         <div class="row">
+				<div class="col-xs-12">
+					<h1><?php the_title(); ?></h1>
+				</div>
+			</div>
 			<div class="row">
 
 				<div class="col-xs-12">
@@ -29,16 +33,21 @@ get_header('universal'); ?>
 			
 					<div class="tool-guide-header">
 						<?php
-						  var_dump($post->ID);
-						  $termID = [];
+						  $image = get_stylesheet_directory_uri() . '/img/tool-guide-default.jpg';
+						  $name = "What's that guide?";
+						  $count = 0;
+						  
 						  $terms = get_the_terms($post->ID, 'product-categories');
-						  var_dump($terms);
 						  foreach ($terms as $term) {
-    						 $termID[] = $term->term_id;
+							 $termsPlus = apply_filters( 'taxonomy-images-get-terms', '', array('taxonomy' => 'product-categories', 'term_args' => array( 'slug' => $term->slug,)) );
+							 var_dump($images);
+							 $image = wp_get_attachment_image_src($termsPlus[0]->image_id);
+							 $name = $termsPlus[0]->name;
+							 $count = $termsPlus[0]->count - 1;
 						  }
-						  var_dump($termID);
 						?>
-						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+						<h4><a href="<?php the_permalink(); ?>"><?php echo($name); ?> (<?php echo($count); ?>)</a></h4>
+						<a href="<?php the_permalink(); ?>"><img src="<?php echo($image[0]); ?>" /> </a>
 						
 					</div>
 		

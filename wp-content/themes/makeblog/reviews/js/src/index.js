@@ -24,6 +24,7 @@ var ReviewsFilters = {
 };
 
 (function ($, filters) {
+
 	'use strict';
 
 	filters.update_records = function () {
@@ -34,7 +35,9 @@ var ReviewsFilters = {
 			$(filters.no_results).show();
 		} else {
 			$(filters.no_results).hide();
-
+			
+			$('#count').html("(" + filters.remote_data.length + ")");
+			
 			$.each(filters.remote_data, function(i,v){
 				var row = $(filters.model).clone();
 				row.removeClass('reviews-model');
@@ -238,6 +241,7 @@ var ReviewsFilters = {
 	});
 
 })(jQuery, ReviewsFilters);
+
 
 jQuery( document ).ready(function($) {
 

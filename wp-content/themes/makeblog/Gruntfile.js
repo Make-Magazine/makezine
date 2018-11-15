@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     'reviews/less/**/**/*.less',
     'version-2/js/single-story/*.js',
     'js/footer-scripts/*.js',
+	 'reviews/js/src/index.js',
   ];
   var lessSrcFiles = {
     'css/style.css': 'less/style.less',
@@ -60,6 +61,7 @@ module.exports = function(grunt) {
         files: {
           'version-2/js/single-story.js': 'version-2/js/single-story.js',
           'js/footer-scripts/min/misc.min.js': 'js/footer-scripts/min/misc.js',
+			 'reviews/js/min/index.min.js': ['reviews/js/src/index.js'],
         }
       }
     },

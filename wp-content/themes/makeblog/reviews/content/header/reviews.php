@@ -6,6 +6,7 @@
 // Get the correct comparison post ID
 $id        = get_the_ID();
 $container = Reviews()->container();
+// $count = get_the_terms($id, 'product-categories')[0]->count;
 
 if ( is_singular( \Reviews\Architecture\Post_Types\Products::NAME ) ) {
 	$review = $container['Relationships']->get_review_for_product( get_the_ID() );
@@ -13,6 +14,7 @@ if ( is_singular( \Reviews\Architecture\Post_Types\Products::NAME ) ) {
 		$id = $review[0]->ID;
 	}
 }
+
 
 $modal_image    = get_field( 'magazine_thumbnail', $id );
 $modal_text     = get_field( 'magazine_label', $id );
@@ -39,16 +41,16 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
-					<?php echo(get_field('compare_button')); ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
+					<?php echo(get_field('compare_button') . " <span id='count'></span>"); ?> 
 				</a>
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
-					<?php echo(get_field('how_button')); ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
+					<?php echo(get_field('how_button')); ?>
 				</a>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $id ) ) { ?>
 					<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>">
-					  <?php echo(get_field('scoring_button')); ?> <i class="fa fa-angle-right" aria-hidden="true"></i>
+					  <?php echo(get_field('scoring_button')); ?>
 				   </a>
 				<?php } ?>
 
