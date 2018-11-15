@@ -30,12 +30,21 @@
 .ri-link {
 	transition: all 200ms;
 	color: @black-alt;
-
+	display: flex;
+	align-items: center;
+   .ri-date {
+		color: #999;
+		font-size: 14px;
+		margin-left: auto
+	}
 	&:hover,
 	&:focus,
 	&:active {
 		outline: 0;
 		color: @grey-mid;
+		.ri-date {
+			color: #999;
+		}
 	}
 }
 

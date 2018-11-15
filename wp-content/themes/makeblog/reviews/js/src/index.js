@@ -18,8 +18,8 @@ var ReviewsFilters = {
 	item:'.reviews-item',
 	model:'.reviews-item.reviews-model',
 	sort_form_id:'#rl-sort-form',
-	sortby:'score',
-  order: 'desc',
+	sortby:'recent',
+   order: 'desc',
 	loading_class: 'filters-loading'
 };
 
@@ -28,7 +28,6 @@ var ReviewsFilters = {
 	'use strict';
 
 	filters.update_records = function () {
-
 		$(filters.item + ":visible").remove();
 
 		if (! filters.remote_data.length) {
@@ -42,8 +41,13 @@ var ReviewsFilters = {
 				var row = $(filters.model).clone();
 				row.removeClass('reviews-model');
 				row.find('.ri-item-title').html(v.title);
-        row.find('.ri-item-subtitle').html(v.subtitle);
+            row.find('.ri-item-subtitle').html(v.subtitle);
 				row.find('.ri-score-price').find('.ri-price span').html(v.price);
+				if(v.most_recent) {
+					var date = new Date(v.most_recent);
+					var formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
+					row.find('.ri-date').html(formattedDate);
+				}
 				row.find('.ri-type').html(v.type);
 				row.find('.ri-score-price').find('.ri-score span').html(v.score + '%');
 				if (v.buy_url) {
@@ -244,7 +248,7 @@ var ReviewsFilters = {
 
 
 jQuery( document ).ready(function($) {
-
+	//$(".recent  span.rl-sort-choice").click();
   // Clear out the filters if on the list page
   if ( $('#rf-filters-form').length ) {
   	$('#rf-filters-form')[0].reset();

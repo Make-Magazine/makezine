@@ -17,6 +17,7 @@ $slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( get
 			<div class="ri-details">
 				<a class="ri-link" href="<?php the_permalink(); ?>">
 					<h2 class="ri-item-title"></h2>
+					<div class="ri-date">Date</div>
 				</a>
         <h5 class="ri-item-subtitle"></h5>
 				<div class="ri-type"></div>

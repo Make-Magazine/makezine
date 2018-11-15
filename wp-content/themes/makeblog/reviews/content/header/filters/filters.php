@@ -5,15 +5,12 @@
 
 $filter = get_field('filter_group');
 
-// I don't think we even need to add the taxonomy anymore. the filter group gives us the acf value of the right filter category
-$category = wp_get_post_terms($post->ID, "product-categories", array("fields" => "all"))[0]->slug;
+if($filter != "none") {
 
-$field_group = acf_get_fields($filter);
-// These two groupings of select fields will be treated differently
-$more_options = [];
-$boolean_options = [];
-
-
+	$field_group = acf_get_fields($filter);
+	// These two groupings of select fields will be treated differently
+	$more_options = [];
+	$boolean_options = [];
 ?>
 <section class="review-filters">
 
@@ -122,3 +119,5 @@ $boolean_options = [];
 	</div>
 
 </section><!-- .review-filters -->
+	
+<?php } //end if filter = none ?>

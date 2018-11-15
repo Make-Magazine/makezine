@@ -25,7 +25,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 <div class="row">
 	<header class="reviews-header col-xs-12">
 
-		<h1 class="review-title"><?php echo get_the_title( $id ); ?></h1>
+		<h1>Digital Fabrication Tool Guide</h1>
 
 		<nav class="review-nav">
 
@@ -41,7 +41,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
-					<?php echo(get_field('compare_button') . " <span id='count'></span>"); ?> 
+					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span>"); ?> </div>
 				</a>
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">

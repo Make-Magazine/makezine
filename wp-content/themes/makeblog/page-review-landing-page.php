@@ -34,7 +34,7 @@ get_header('universal'); ?>
 					
 						<?php
 						  $image = get_stylesheet_directory_uri() . '/img/tool-guide-default.jpg';
-						  $name = "If you're getting an error hear, make sure the Comparison page has the right product category tag";
+						  $name = "If you're getting an error here, make sure the Comparison page has the right product category tag";
 						  $count = 0;
 						  
 						  $terms = get_the_terms($post->ID, 'product-categories');
