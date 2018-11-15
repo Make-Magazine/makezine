@@ -1,0 +1,359 @@
+@-moz-keyframes GGSpinLoader {
+   from { -moz-transform: rotate(0deg); }
+   to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes GGSpinLoader {
+   from { -webkit-transform: rotate(0deg); }
+   to { -webkit-transform: rotate(360deg); }
+}
+@keyframes GGSpinLoader {
+   from {transform:rotate(0deg);}
+   to {transform:rotate(360deg);}
+}
+
+
+.page-template-page-gift-guide-general {
+	.gift-guide-container {
+		overflow-x: hidden;
+	}
+   .social-buttons {
+      z-index: 100;
+      position: fixed;
+      margin-top: 40px; // <-- avoid the sticky filter bar; may not need this once that is actually sticky
+      .sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share {
+         width: 60px!important; // <--- this is admittedy terrible, but we're forced to override a previous !important... thems the apples
+      }
+   }
+   @media screen and (max-width: 768px) {
+      .social-buttons {
+         display: none;
+      }
+   }
+
+   .hero-header, .hero-image-container {
+      background-color: #fff;
+		@media screen and (max-width: 768px) {
+			img {
+				padding-top: 10px;
+				max-width: 150%;
+				margin-left: -25%;
+			}
+		}
+   }
+   .page-header-sponsor-tag {
+      padding-bottom: 24px;
+      img {
+         margin: 0 auto;
+         display: block;
+      }
+   }
+   /*.gg-header-ad {
+      max-width:97%;
+		img {width:100%;} //does image need to be responsive? smaller ads are served for smaller viewports
+   }*/
+   .gg-footer-ad {
+      margin-bottom: 24px;
+   }
+
+   // .js-ad iframe {
+   //    max-width: 100%;
+   // }
+
+   .title-image-block {
+      padding-top: 24px;
+      .page-title {
+         width: 496px;
+         height: 88px;
+         max-width: 100%;
+         margin: 0 auto;
+         background-repeat: no-repeat;
+         h2 {
+            text-indent: -200vw;
+         }
+      }
+      .hero-subtitle {
+         font-family: 'Roboto Light', sans-serif;
+         font-size: 55px;
+         text-align: center;
+			@media screen and (max-width: 992px) {
+				font-size: 36px;
+			}
+      }
+      .header-intro-text {
+         p {
+            font-family: 'Roboto Light', sans-serif;
+            font-size: 24px;
+            text-align: center;
+				max-width: 950px;
+    			margin: 0 auto;
+         }
+
+      }
+   }
+
+	.initial-loading-indicator {
+		.fa {
+			animation: GGSpinLoader 0.85s linear infinite;
+		}
+	}
+   
+   .gift-guide {
+		.select-container {
+			position:relative; 
+			display: inline;
+			padding-left: .4em;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				min-width: 200px;
+			}
+			@media screen and (max-width: 992px) {
+				 display: block;
+				 text-align: center;
+			}
+			label { float: left; }
+			.dropdown {
+				padding-top: 0px;
+				.dropdown-toggle {
+					border: none;
+					.open-indicator::before {
+						border-color: #fff;
+					}
+					input[type="search"] { padding: 0px; }
+				}
+				.selected-tag { color: #fff; }
+				&.open .selected-tag { position: relative !important; }
+				.dropdown-menu {
+					min-width: 300px;
+					margin-top: 12px;
+					@media screen and (max-width: 992px) {
+						margin-top: 0px;
+					}
+					li { 
+						font-size: 20px;
+						color: #4A4A4A;
+						&.active a { 
+							background: #fff;
+							&::before {
+								font-family: "FontAwesome";		
+								content: "\f00c";
+								font-size: 14px;
+								margin-left: -18px;
+								margin-top: -3px;
+							}
+						}
+						&.highlight a {
+							background: #fff;
+							color: #4A4A4A;
+							&:hover {
+								background: #f0f0f0;
+							}
+						}
+					}
+					li>a {
+						padding-left: 25px;
+					}
+				}
+			}
+		}
+
+      .filter-container{
+         background-color: #005E9A;
+         color: #fff;
+         padding: 12px 0;
+			font-size: 22px;
+			-webkit-box-shadow: 0px 6px 15px -5px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 6px 15px -5px rgba(0,0,0,0.75);
+			box-shadow: 0px 6px 15px -5px rgba(0,0,0,0.75);
+			@media screen and (max-width: 992px) {
+				font-size: 20px;
+			}
+			&.scrolling {
+				position: fixed;
+				width: 100%;
+				top: 55px;
+				right: 0px;
+				z-index: 999;
+			}
+         .filters {
+             display: flex;
+             flex-direction: row;
+				 align-items: center;
+				 justify-content: center;
+				 padding: 0px;
+				.select-section { display: flex; }
+				 @media screen and (max-width: 992px) {
+					 display: block;
+					 padding: 5px 15px 0px;
+					 margin: 0 auto;
+					 max-width: 430px;
+					 .select-section {
+						 display: grid;
+						 position: relative;
+    					 top: -5px;
+						 max-width: 360px;
+					 }
+				}
+         }
+			label { 
+				font-weight: normal; 
+				margin-bottom: 0px;
+				font-size: 20px;
+				@media screen and (max-width: 992px) {
+					margin-top: 5px;
+					font-size: 16px;
+					display: flex;
+					float: left;
+					width: 70px;
+				}
+			}
+      }
+		label[for='sort-select'] {
+			@media screen and (min-width: 992px) {
+			 	margin-left: 20px; 
+			}
+			@media screen and (min-width: 1200px) {
+				margin-left: 80px;
+			}
+	   }
+
+      .item-list {
+         margin-top: 40px;
+         padding-top: 20px;
+         padding-bottom: 60px;
+         position: relative;
+			@media screen and (max-width: 768px) {
+				padding: 0px;
+				.item-count {
+					font-size: 20px;
+					margin-top: 15px;
+					margin-left: 15px;
+				}
+			}
+         .btn-blue {
+            padding: 6px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #005E9A;
+            border-color: #005E9A;
+            border-radius: 3px;
+            &:hover {
+               background-color: lighten(#005E9A, 10%)
+            }
+         }
+         .btn-load-more {
+            width: 100%;
+         }
+         .back-to-top {
+            position: fixed;
+            /* top: 200px; */
+            bottom: 15px;
+            right: 15px;
+            a {
+               display: block;
+               padding: 12px;
+               color: #fff;
+               background-color: #005E9A;
+               background-color: rgba(0,94,154,0.4); 
+               // border-color: #005E9A;
+               border-radius: 3px;
+               font-size: 28px;
+               transition: 2s background-color;
+               &:hover {
+                  background-color: lighten(#005E9A, 10%);
+                  cursor: pointer;
+               }
+            }
+         }
+
+         // Vue animation-related styles
+         .item-list-inner {
+            display: block;
+         }
+         .list-enter-active, .list-leave-active {
+            transition: all 0.5s;
+         }
+         .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+            opacity: 0;
+            transform: translateY(30px);
+         }
+         .list-move {
+            transition: transform 0.5s;
+         }
+
+         .item-instance {
+            font-family: 'Roboto Light', sans-serif;
+            margin-bottom: 36px;
+            box-shadow: 1px 1px 3px rgb(0,0,0);
+            box-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
+            background-color: #fff;
+            position: relative;
+            .item-image {
+               //position: relative;
+               padding: 12px;
+               img {
+                  margin: 0 auto;
+                  display: block;
+               }
+            }
+            .gg-badge {
+               position: absolute;
+               bottom: 12px;
+               left: 27px;
+               max-width: 140px;
+					@media screen and (max-width: 768px) {
+						bottom: 0px;
+						top: 30px;
+					}
+            }
+            .item-text {
+               padding: 0 50px 34px 50px;
+					@media screen and (max-width: 768px) {
+						padding: 0 30px 34px 30px;
+					}
+            }
+            .item-name {
+               margin-top: 34px;
+               font-size: 26px;
+               font-weight: 200;
+					@media screen and (max-width: 768px) {
+						font-size: 32px;
+					}
+               a {
+                  color: #4A4A4A;
+               }
+            }
+            .item-desc {
+               font-size: 14px;
+               margin-bottom: 16px;
+					color: #4A4A4A;
+					font-family: "Roboto Light", sans-serif;
+					@media screen and (max-width: 768px) {
+						font-size: 18px;
+					}
+            }
+            .why-to-buy {
+               font-family: "Roboto Bold", sans-serif;
+               font-size: 14px;
+               font-weight: 700;
+               margin-bottom: 16px;
+					@media screen and (max-width: 768px) {
+						font-size: 18px;
+					}
+            }
+            .item-price {
+               font-size: 36px;
+               margin-bottom: 16px;
+            }
+            .btn-item-buy {
+               margin-bottom: 12px;
+               min-width: 138px;
+               text-align: center; 
+            }
+         }
+
+         .dynamic-ad {
+            margin-bottom: 30px;
+         }
+
+      }
+   }
+}

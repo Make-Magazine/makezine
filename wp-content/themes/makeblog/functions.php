@@ -311,6 +311,9 @@ function load_scripts() {
     wp_enqueue_script('billboard', get_stylesheet_directory_uri() . '/js/billboard.js', array('jquery'), $my_version);
   }
 
+   if(is_page_template( 'page-gift-guide-general.php' ) ) {
+      wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/Vue/gift-guide/dist/main.min.js');
+   }
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
@@ -985,3 +988,4 @@ function get_theme_mod_img($mod_name){
 // Using wp_get_attachment_url filter, we can fix the dreaded mixed content browser warning
 //
 add_filter( 'wp_get_attachment_url', 'set_url_scheme' );
+
