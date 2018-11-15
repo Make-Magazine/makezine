@@ -34,15 +34,17 @@ get_header('universal'); ?>
 					
 						<?php
 						  $image = get_stylesheet_directory_uri() . '/img/tool-guide-default.jpg';
-						  $name = "What's that guide?";
+						  $name = "If you're getting an error hear, make sure the Comparison page has the right product category tag";
 						  $count = 0;
 						  
 						  $terms = get_the_terms($post->ID, 'product-categories');
 						  foreach ($terms as $term) {
-							 $termsPlus = apply_filters( 'taxonomy-images-get-terms', '', array('taxonomy' => 'product-categories', 'term_args' => array( 'slug' => $term->slug,)) );
-							 $image = wp_get_attachment_image_src($termsPlus[0]->image_id);
-							 $name = $termsPlus[0]->name;
-							 $count = $termsPlus[0]->count - 1;
+							 if(isset($term)) {
+								 $termsPlus = apply_filters( 'taxonomy-images-get-terms', '', array('taxonomy' => 'product-categories', 'term_args' => array( 'slug' => $term->slug,)) );
+								 $image = wp_get_attachment_image_src($termsPlus[0]->image_id);
+								 $name = $termsPlus[0]->name;
+								 $count = $termsPlus[0]->count - 1;
+							 }
 						  }
 						?>
 						<div class="tool-guide-item">

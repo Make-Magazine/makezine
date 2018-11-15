@@ -159,7 +159,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "reviews"
+                "value": "products"
             },
             {
                 "param": "post_taxonomy",
@@ -176,5 +176,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add key meta information about the product to power the filters for drones",
-    "modified": 1542142103
+    "modified": 1542301078
 }
