@@ -22,6 +22,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 
 ?>
 
+
 <div class="row">
 	<header class="reviews-header col-xs-12">
 
@@ -29,14 +30,14 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 
 		<nav class="review-nav">
 
-			<?php if ( $modal_image ): ?>
+			<?php if ( $modal_image ) { ?>
 				<div class="review-nav-mag">
 					<button id="modal-capture-btn" class="modal-capture-btn class-<?php echo $slug; ?>">
 						<img alt="Review guide featured image" src="<?php echo esc_attr( $modal_image['sizes'][ 'p1' ] ); ?>" />
 						<?php echo $modal_text; ?>
 					</button>
 				</div>
-			<?php endif; ?>
+			<?php } ?>
 
 			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
 
@@ -45,14 +46,14 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 					<div id="category-dropdown">
 						<?php 
 						
-							$posts = get_posts([
+							$categories = get_posts([
   								'post_type' => 'reviews',
   								'post_status' => 'publish'
 							]);
-						   foreach($posts as $post){
+						   foreach($categories as $category){
 								$terms = get_the_terms( get_the_ID(), 'product-categories' );
 						?>
-						   <a href="<?php get_permalink($post); ?>"><?php echo(ucfirst($post->post_name)); ?></a>
+						   <a href="<?php get_permalink($category); ?>"><?php echo(ucfirst($category->post_name)); ?></a>
 						<?php
 							}
 							
@@ -70,9 +71,9 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 				   </a>
 				<?php } ?>
 
-				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ): ?>
+				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?>
 					<button id="show-filters-btn" type="button" class="show-filters-btn visible-xs-inline-block" aria-haspopup="true" aria-expanded="false">Filter</button>
-				<?php endif; ?>
+				<?php } ?>
 			</div>
 
 		</nav>
