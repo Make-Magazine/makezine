@@ -291,10 +291,9 @@ jQuery( document ).ready(function($) {
 	});
 	
 	if($("#compare").hasClass("active")) {
-		console.log("conditions were met");
 		$("#category-picker").click(function(e){
-			$("#category-dropdown").toggle();
 			e.preventDefault();
+			$("#category-dropdown").toggle();
 		});
 	}
 

@@ -14,7 +14,7 @@ jQuery(window).load(function() {
 		jQuery(document).scroll(function() {
 			var filterHeight = jQuery(".filter-container").outerHeight();
 			var scrollTop = jQuery(this).scrollTop();
-			if ( jQuery(".gift-guide .item-list").offset().top <= (scrollTop + filterHeight + 55)) {		
+			if ( jQuery(".gift-guide .item-list").offset().top <= (scrollTop + filterHeight + topElementOffset)) {		
 			   jQuery(".filter-container").addClass("scrolling");
 				jQuery(".gift-guide .item-list").css("margin-top",filterHeight);
 			} else  {

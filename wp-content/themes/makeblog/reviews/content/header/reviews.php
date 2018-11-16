@@ -15,13 +15,11 @@ if ( is_singular( \Reviews\Architecture\Post_Types\Products::NAME ) ) {
 	}
 }
 
-
 $modal_image    = get_field( 'magazine_thumbnail', $id );
 $modal_text     = get_field( 'magazine_label', $id );
 $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
 
 ?>
-
 
 <div class="row">
 	<header class="reviews-header col-xs-12">
@@ -39,27 +37,29 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 				</div>
 			<?php } ?>
 
-			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
-
+			<div class="review-nav-choosing">
+			<?php $oldCodeWas = '<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >' ?>
+            <div class="btn-wrapper hidden-lg hidden-md hidden-sm">
+					<a href="/digital-fabrication-tool-guide"><?php echo(get_field('compare_button')); ?></a>
+				</div>
+				<span class="hidden-xs">
 				<a id="compare" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
 					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span><span id='category-picker' class='lnr lnr-chevron-down hidden-xs'></span>"); ?> </div>
 					<div id="category-dropdown">
 						<?php 
-						
 							$categories = get_posts([
   								'post_type' => 'reviews',
   								'post_status' => 'publish'
 							]);
+						   $categoryDropdownOutput = '';
 						   foreach($categories as $category){
-								$terms = get_the_terms( get_the_ID(), 'product-categories' );
-						?>
-						   <a href="<?php get_permalink($category); ?>"><?php echo(ucfirst($category->post_name)); ?></a>
-						<?php
+								$categoryDropdownOutput .= '<a href="' . get_permalink($category->ID) . '">Compare ' . ucwords(str_replace("-"," ",$category->post_name)) . '</a>';
 							}
-							
+							echo($categoryDropdownOutput);
 						?>
 					</div>
 				</a>
+				</span>
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
 					<?php echo(get_field('how_button')); ?>
