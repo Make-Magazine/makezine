@@ -1,8 +1,15 @@
 jQuery(window).load(function() {
+	var topElementOffset = jQuery("#menu-secondary_universal_menu").height();
+	if( document.querySelector(".sumome-smartbar-popup") != null ) {
+		topElementOffset += jQuery(".sumome-smartbar-popup").height();
+	}
 	if(!jQuery('html').hasClass('mobile')){
 		jQuery(".filter-container").addClass("scrolling");
 		jQuery(window).on('resize', function(){
 			filterHeight = jQuery(".filter-container").height();
+			if( document.querySelector(".sumome-smartbar-popup") != null ) {
+				topElementOffset += jQuery(".sumome-smartbar-popup").height();
+			}
 		});
 		jQuery(document).scroll(function() {
 			var filterHeight = jQuery(".filter-container").outerHeight();
@@ -17,4 +24,3 @@ jQuery(window).load(function() {
 		});
 	}
 });
-
