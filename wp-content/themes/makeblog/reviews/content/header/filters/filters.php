@@ -11,6 +11,7 @@ if($filter != "none") {
 	// These two groupings of select fields will be treated differently
 	$more_options = [];
 	$boolean_options = [];
+	
 ?>
 <section class="review-filters">
 

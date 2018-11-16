@@ -40,8 +40,24 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 
 			<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >
 
-				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
-					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span>"); ?> </div>
+				<a id="compare" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
+					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span><span id='category-picker' class='lnr lnr-chevron-down hidden-xs'></span>"); ?> </div>
+					<div id="category-dropdown">
+						<?php 
+						
+							$posts = get_posts([
+  								'post_type' => 'reviews',
+  								'post_status' => 'publish'
+							]);
+						   foreach($posts as $post){
+								$terms = get_the_terms( get_the_ID(), 'product-categories' );
+						?>
+						   <a href="<?php get_permalink($post); ?>"><?php echo(ucfirst($post->post_name)); ?></a>
+						<?php
+							}
+							
+						?>
+					</div>
 				</a>
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">

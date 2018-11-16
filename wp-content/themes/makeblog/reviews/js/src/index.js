@@ -248,7 +248,7 @@ var ReviewsFilters = {
 
 
 jQuery( document ).ready(function($) {
-	//$(".recent  span.rl-sort-choice").click();
+	
   // Clear out the filters if on the list page
   if ( $('#rf-filters-form').length ) {
   	$('#rf-filters-form')[0].reset();
@@ -289,5 +289,13 @@ jQuery( document ).ready(function($) {
 		$(this).fadeOut();
 		$('.virtual-tour .webrotate360').addClass('show');
 	});
+	
+	if($("#compare").hasClass("active")) {
+		console.log("conditions were met");
+		$("#category-picker").click(function(e){
+			$("#category-dropdown").toggle();
+			e.preventDefault();
+		});
+	}
 
 });
