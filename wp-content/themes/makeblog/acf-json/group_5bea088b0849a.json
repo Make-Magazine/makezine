@@ -16,7 +16,7 @@
                 "id": ""
             },
             "choices": {
-                "robotics: Robotics": "robotics: Robotics",
+                "robotics": "Robotics",
                 "wearables": "Wearables",
                 "education": "Education",
                 "light-and-sound": "Light and Sound",
@@ -25,7 +25,7 @@
             },
             "allow_custom": 0,
             "default_value": [],
-            "layout": "vertical",
+            "layout": "horizontal",
             "toggle": 0,
             "return_format": "value",
             "save_custom": 0
@@ -51,7 +51,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
         },
@@ -76,7 +76,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
         },
@@ -103,7 +103,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
         },
@@ -128,7 +128,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
         },
@@ -154,7 +154,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
         },
@@ -179,7 +179,7 @@
             },
             "allow_custom": 0,
             "default_value": [],
-            "layout": "vertical",
+            "layout": "horizontal",
             "toggle": 0,
             "return_format": "value",
             "save_custom": 0
@@ -303,5 +303,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add key meta information about the product to power the filters for boards",
-    "modified": 1542594412
+    "modified": 1542667142
 }
