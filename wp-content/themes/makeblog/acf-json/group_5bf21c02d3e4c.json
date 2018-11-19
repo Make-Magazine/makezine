@@ -1,0 +1,130 @@
+{
+    "key": "group_5bf21c02d3e4c",
+    "title": "Tool Guide Filters - Laser Cutters",
+    "fields": [
+        {
+            "key": "field_5bf21d2247d17",
+            "label": "Make: Recommendations",
+            "name": "winners",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "best-overall": "Best Overall",
+                "best-value": "Best Value",
+                "best-for-beginners": "Best for Beginners",
+                "best-for-schools": "Best for Schools",
+                "most-portable": "Most Portable"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5bf21d9447d18",
+            "label": "Price",
+            "name": "price",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0-1999": "$0–$1,999",
+                "2000–3999": "$2,000–$3,999",
+                "4000+": "$4,000 & Up"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5bf21e3e47d19",
+            "label": "Cutting Dimensions",
+            "name": "cutting_dimensions",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5bf21e9047d1a",
+            "label": "Laser Type",
+            "name": "laser_type",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "CO2": "CO²",
+                "diode": "Diode"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "products"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "product-categories:laser-cutters"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1542594416
+}

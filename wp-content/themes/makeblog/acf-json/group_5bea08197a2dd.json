@@ -19,7 +19,8 @@
                 "none": "Select",
                 "543456": "printers",
                 "543474": "boards",
-                "543486": "drones"
+                "543486": "drones",
+                "543538": "laser"
             },
             "default_value": [],
             "allow_null": 0,
@@ -161,5 +162,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "All the new fields added to make the comparison\/reviews templates more dynamic",
-    "modified": 1542309072
+    "modified": 1542594475
 }
