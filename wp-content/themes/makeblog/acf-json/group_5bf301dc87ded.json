@@ -61,7 +61,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "product-categories:sla"
+                "value": "product-categories:cnc"
             }
         ]
     ],
@@ -73,5 +73,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542652972
+    "modified": 1542666675
 }
