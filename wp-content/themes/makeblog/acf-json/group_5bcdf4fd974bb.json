@@ -111,7 +111,7 @@
             "key": "field_5bcdf590d98fb",
             "label": "Item Price",
             "name": "item_price",
-            "type": "text",
+            "type": "number",
             "instructions": "Enter the price of the item in decimal form without a dollar sign.\r\nExample 99.98",
             "required": 1,
             "conditional_logic": 0,
@@ -124,7 +124,9 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_5bcdf5afd98fc",
@@ -252,5 +254,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542143091
+    "modified": 1542318216
 }

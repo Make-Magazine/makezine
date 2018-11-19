@@ -1,6 +1,5 @@
 <template>
    <div ref="giftGuide" class="gift-guide hidden">
-
       <div ref="filters" class="filter-container">
          <div class="container">
             <div class="row">
