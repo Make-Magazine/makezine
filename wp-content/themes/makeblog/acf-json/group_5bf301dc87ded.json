@@ -54,7 +54,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "products"
             }
         ],
         [
@@ -73,5 +73,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542666675
+    "modified": 1542747508
 }

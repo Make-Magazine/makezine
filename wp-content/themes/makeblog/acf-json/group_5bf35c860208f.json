@@ -45,7 +45,7 @@
             "choices": {
                 "0-1999": "$0–$1,999",
                 "2000–3999": "$2,000–$3,999",
-                "4000+": "$4,000 & Up"
+                "4000-up": "$4,000 & Up"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -114,7 +114,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "product-categories:laser-cutters"
+                "value": "product-categories:lasers"
             }
         ]
     ],
@@ -123,8 +123,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542675590
+    "modified": 1542747828
 }

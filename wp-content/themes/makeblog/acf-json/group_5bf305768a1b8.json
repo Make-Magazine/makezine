@@ -63,7 +63,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "product-categories:waterjet-cutters"
+                "value": "product-categories:waterjets"
             }
         ]
     ],
@@ -75,5 +75,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542675517
+    "modified": 1542747997
 }
