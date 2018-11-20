@@ -15,7 +15,7 @@ $args = array(
 $the_query = new WP_Query( $args );
 
 get_header('universal'); ?>
-		
+	<div class="ad-unit"></div>
 	<div class="tool-guide">
 	   
 		<div class="container">
