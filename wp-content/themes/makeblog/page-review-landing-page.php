@@ -35,23 +35,23 @@ get_header('universal'); ?>
 								  $image = get_stylesheet_directory_uri() . '/img/tool-guide-default.jpg';
 								  $name = "If you're getting an error here, make sure the Comparison page has the right product category tag";
 								  $count = 0;
-						  
-								  $terms = get_the_terms($post->ID, 'product-categories');
-								  foreach ($terms as $term) {
-									 if(isset($term)) {
-										 $termsPlus = apply_filters( 'taxonomy-images-get-terms', '', array('taxonomy' => 'product-categories', 'term_args' => array( 'slug' => $term->slug,)) );
-										 $image = wp_get_attachment_image_src($termsPlus[0]->image_id);
-										 $name = $termsPlus[0]->name;
-										 $count = $termsPlus[0]->count - 1; // -1 is the review page itself
-									 }
-								  }
+						        if(get_the_terms($post->ID, 'product-categories')) {
+									  $terms = get_the_terms($post->ID, 'product-categories');
+									  foreach ($terms as $term) {
+										 if(isset($term)) {
+											 $termsPlus = apply_filters( 'taxonomy-images-get-terms', '', array('taxonomy' => 'product-categories', 'term_args' => array( 'slug' => $term->slug,)) );
+											 $image = wp_get_attachment_image_src($termsPlus[0]->image_id);
+											 $name = $termsPlus[0]->name;
+											 $count = $termsPlus[0]->count - 1; // -1 is the review page itself
+										 }
+									  }
 						?>
 						<div class="tool-guide-item">
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo($image[0]); ?>" /> </a>
 							<h4><a href="<?php the_permalink(); ?>"><?php echo($name); ?> (<?php echo($count); ?>)</a></h4>
 						</div>
 					
-					  <?php } ?>
+					  <?php }  } ?>
 					
 					<?php }else{ ?>
 					
