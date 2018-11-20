@@ -130,7 +130,7 @@ class AJAX {
 			$data[] = [
 				'ID'        => $post->ID,
 				'title'     => $post->post_title,
-        'subtitle'  => $subtitle,
+            'subtitle'  => $subtitle,
 				'most_recent' => $post->post_date,
 				'price'     => '$' . absint( get_post_meta( $post->ID, 'price_as_tested', true ) ),
 				'buy_url'   => get_post_meta( $post->ID, 'buy_link', true ),
@@ -157,9 +157,9 @@ class AJAX {
 			'wearables'               => 'Wearables',
 			'education'               => 'Education',
 			'light-and-sound'         => 'Light and Sound',
-			'IoT'         						=> 'IoT',
+			'IoT'         				  => 'IoT',
 			'sub-10'                  => 'Dirt Cheap',
-      'overall'                 => 'Best Overall',
+         'overall'                 => 'Best Overall',
 			'beginners'               => 'Best for Beginners',
 			'hackable'                => 'Most Hackable',
 		);

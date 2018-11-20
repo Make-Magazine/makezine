@@ -42,7 +42,7 @@ get_header('universal'); ?>
 										 $termsPlus = apply_filters( 'taxonomy-images-get-terms', '', array('taxonomy' => 'product-categories', 'term_args' => array( 'slug' => $term->slug,)) );
 										 $image = wp_get_attachment_image_src($termsPlus[0]->image_id);
 										 $name = $termsPlus[0]->name;
-										 $count = $termsPlus[0]->count - 1;
+										 $count = $termsPlus[0]->count - 1; // -1 is the review page itself
 									 }
 								  }
 						?>

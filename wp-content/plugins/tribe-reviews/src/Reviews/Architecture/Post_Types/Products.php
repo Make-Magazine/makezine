@@ -328,6 +328,4 @@ class Products {
  
 	}
 
-
-
 }

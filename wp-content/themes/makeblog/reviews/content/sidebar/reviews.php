@@ -52,28 +52,15 @@ $how_scoring_works_title = ! empty( $how_scoring_works_title ) ? $how_scoring_wo
 	<?php endif;
 
 	$slug = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
-	if ( $slug === 'boards' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
-			</div>
-		<?php } 
-	} else if ( $slug === 'printers' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
-			</div>
-		<?php } 
-	} else if ( $slug === 'drones' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
-			</div>
-		<?php } 
-	}?>
+	if ($slug === 'printers') {
+		$slug = '3dprinter'; // let's work around a bad design
+	}
+	if ( is_active_sidebar( 'sidebar_comparison_' . $slug ) ) { ?>
+		<div class="clearfix"></div>
+		<div class="sidebar-wrapper">
+			<?php dynamic_sidebar('sidebar_comparison_' . $slug ); ?>
+		</div>
+	<?php } ?>
 
 	<?php if ( ! empty( $how_scoring_works ) ): ?>
 	<div class="meta-block how-scoring-works">

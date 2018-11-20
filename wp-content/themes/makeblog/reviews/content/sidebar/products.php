@@ -28,14 +28,7 @@ if ( ! empty( $scored_image ) && \Reviews\Architecture\Post_Types\Reviews::is_sc
 
 if( $awards && ( ! in_array('', $awards) ) ): ?>
 	<div class="sidebar-awards meta-block">
-		<div class="sidebar-awards-left <?php
-			if ( $parent_title === 'boards' ) {
-				echo 'sd-boards-badge';
-			} else if ( $parent_title === '3dprinters' ) {
-				echo 'sd-3dprinters-badge';
-			} else if ( $parent_title === 'drones' ) {
-				echo 'sd-drones-badge';
-			}  ?>">
+		<div class="sidebar-awards-left <?php echo 'sd-' . $parent_title . '-badge'; ?>">
 		</div>
 		<div class="sidebar-awards-right">
 			<h6>AWARDS</h6>
@@ -128,28 +121,15 @@ endif;
 <?php endif; ?>
 
 <?php
-	if ( $parent_title === 'boards' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_boards' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_boards'); ?>
-			</div>
-		<?php }
-	} else if ( $parent_title === '3dprinters' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_3dprinter' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_3dprinter'); ?>
-			</div>
-		<?php }
-	} else if ( $parent_title === 'drones' ) {
-		if ( is_active_sidebar( 'sidebar_comparison_drones' ) ) { ?>
-			<div class="clearfix"></div>
-			<div class="sidebar-wrapper">
-				<?php dynamic_sidebar('sidebar_comparison_drones'); ?>
-			</div>
-		<?php }
+   if ( $parent_title === '3dprinters' ) {
+		$parent_title = '3dprinter'; // once again, this needs a stupid exceptions
 	}
+	if ( is_active_sidebar( 'sidebar_comparison_' . $parent_title) ) { ?>
+		<div class="clearfix"></div>
+		<div class="sidebar-wrapper">
+			<?php dynamic_sidebar('sidebar_comparison_' . $parent_title); ?>
+		</div>
+	<?php }
 ?>
 
 <div class="meta-block ad-2 desktop">
