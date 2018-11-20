@@ -1,5 +1,5 @@
 {
-    "key": "group_5bf21c02d3e4c",
+    "key": "group_5bf35c860208f",
     "title": "Tool Guide Filters - Laser Cutters",
     "fields": [
         {
@@ -123,8 +123,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [],
     "active": 1,
     "description": "",
-    "modified": 1542594416
+    "modified": 1542675590
 }

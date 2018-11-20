@@ -20,7 +20,11 @@
                 "543456": "printers",
                 "543474": "boards",
                 "543486": "drones",
-                "543538": "laser"
+                "543538": "laser-cutters",
+                "543555": "waterjet-cutters",
+                "543558": "vinyl-cutters",
+                "543552": "cnc",
+                "543546": "sla"
             },
             "default_value": [],
             "allow_null": 0,
@@ -162,5 +166,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "All the new fields added to make the comparison\/reviews templates more dynamic",
-    "modified": 1542594475
+    "modified": 1542675895
 }

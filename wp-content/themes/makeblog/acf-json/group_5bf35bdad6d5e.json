@@ -1,5 +1,5 @@
 {
-    "key": "group_5bf3055b60d36",
+    "key": "group_5bf35bdad6d5e",
     "title": "Tool Guide Filters – Vinyl Cutters",
     "fields": [
         {
@@ -74,8 +74,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [],
     "active": 1,
     "description": "",
-    "modified": 1542653462
+    "modified": 1542675418
 }
