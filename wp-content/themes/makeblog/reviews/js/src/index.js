@@ -18,7 +18,7 @@ var ReviewsFilters = {
 	item:'.reviews-item',
 	model:'.reviews-item.reviews-model',
 	sort_form_id:'#rl-sort-form',
-	sortby:'recent',
+	sortby:'most_recent',
    order: 'desc',
 	loading_class: 'filters-loading'
 };
