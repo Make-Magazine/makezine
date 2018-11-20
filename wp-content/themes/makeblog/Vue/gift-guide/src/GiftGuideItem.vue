@@ -38,7 +38,7 @@ module.exports = {
       'price_localized': function(value) {
          // Basically this is just adding the thousands separator
          var price_num = parseFloat(this.item.item_price);
-         return price_num.toLocaleString();
+         return price_num.toLocaleString('en-US', { minimumFractionDigits: 2 });
       }
    }
 }
