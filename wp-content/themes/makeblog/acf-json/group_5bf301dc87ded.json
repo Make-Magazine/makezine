@@ -32,7 +32,7 @@
             "label": "Build Volume",
             "name": "build_volume",
             "type": "checkbox",
-            "instructions": "small : Small\r\nmedium : Medium\r\nlarge : Large",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -40,7 +40,11 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
             "allow_custom": 0,
             "default_value": [],
             "layout": "horizontal",
@@ -55,9 +59,7 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "products"
-            }
-        ],
-        [
+            },
             {
                 "param": "post_taxonomy",
                 "operator": "==",
@@ -73,5 +75,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542747508
+    "modified": 1542749656
 }
