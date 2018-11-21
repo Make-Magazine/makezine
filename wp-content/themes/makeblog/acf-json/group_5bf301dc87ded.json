@@ -6,7 +6,7 @@
             "key": "field_5bf301f103b94",
             "label": "Price",
             "name": "price",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -20,18 +20,18 @@
                 "1000-4999": "$1,000–$4,999",
                 "5000-up": "$5,000 & Up"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
         },
         {
             "key": "field_5bf302c103b95",
             "label": "Build Volume",
             "name": "build_volume",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -45,12 +45,12 @@
                 "medium": "Medium",
                 "large": "Large"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -75,5 +75,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542749656
+    "modified": 1542822787
 }

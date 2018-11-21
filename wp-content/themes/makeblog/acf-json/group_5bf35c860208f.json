@@ -47,7 +47,7 @@
                 "2000–3999": "$2,000–$3,999",
                 "4000-up": "$4,000 & Up"
             },
-            "allow_null": 0,
+            "allow_null": 1,
             "other_choice": 0,
             "default_value": "",
             "layout": "horizontal",
@@ -58,7 +58,7 @@
             "key": "field_5bf21e3e47d19",
             "label": "Cutting Dimensions",
             "name": "cutting_dimensions",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -72,18 +72,18 @@
                 "medium": "Medium",
                 "large": "Large"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
         },
         {
             "key": "field_5bf21e9047d1a",
             "label": "Laser Type",
             "name": "laser_type",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -96,12 +96,12 @@
                 "CO2": "CO²",
                 "diode": "Diode"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -126,5 +126,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542747828
+    "modified": 1542823005
 }

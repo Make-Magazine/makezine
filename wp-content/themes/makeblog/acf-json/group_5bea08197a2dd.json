@@ -131,10 +131,10 @@
         },
         {
             "key": "field_5bec747d263e4",
-            "label": "Current Year's Guide?",
-            "name": "current_year",
+            "label": "Digital Fabrication Guide Category?",
+            "name": "digital_fabrication",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "If this box is checked, this guide will show up on the digital fabrication tool guide landing page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -166,5 +166,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "All the new fields added to make the comparison\/reviews templates more dynamic",
-    "modified": 1542675895
+    "modified": 1542819303
 }

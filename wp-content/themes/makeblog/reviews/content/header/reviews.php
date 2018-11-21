@@ -45,6 +45,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 				<span class="hidden-xs">
 				<a id="compare" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
 					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span><span id='category-picker' class='lnr lnr-chevron-down hidden-xs'></span>"); ?> </div>
+					<?php if( get_field('digital_fabrication') === true ) { ?>
 					<div id="category-dropdown">
 						<?php 
 							$categories = get_posts([
@@ -53,11 +54,14 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 							]);
 						   $categoryDropdownOutput = '';
 						   foreach($categories as $category){
-								$categoryDropdownOutput .= '<a href="' . get_permalink($category->ID) . '">Compare ' . ucwords(str_replace("-"," ",$category->post_name)) . '</a>';
+								if( get_field('digital_fabrication', $category->ID) === true ) { 
+									$categoryDropdownOutput .= '<a href="' . get_permalink($category->ID) . '">Compare ' . ucwords(str_replace("-"," ",$category->post_name)) . '</a>';
+								}
 							}
 							echo($categoryDropdownOutput);
 						?>
 					</div>
+					<?php } ?>
 				</a>
 				</span>
 

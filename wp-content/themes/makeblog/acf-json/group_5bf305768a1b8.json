@@ -6,7 +6,7 @@
             "key": "field_5bf304bea7619",
             "label": "Price",
             "name": "price",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -20,18 +20,18 @@
                 "5000-9999": "$5,000–$9,999",
                 "10000-up": "$10,000 & Up"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
         },
         {
             "key": "field_5bf304efa761a",
             "label": "Cutting Dimensions",
             "name": "cutting_dimensions",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -45,12 +45,12 @@
                 "medium": "Medium",
                 "large": "Large"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -75,5 +75,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542747997
+    "modified": 1542822927
 }

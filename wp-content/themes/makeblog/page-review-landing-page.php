@@ -35,7 +35,7 @@ get_header('universal'); ?>
 								  $image = get_stylesheet_directory_uri() . '/img/tool-guide-default.jpg';
 								  $name = "If you're getting an error here, make sure the Comparison page has the right product category tag";
 								  $count = 0;
-						        if(get_the_terms($post->ID, 'product-categories')) {
+						        if(get_the_terms($post->ID, 'product-categories' && get_field('digital_fabrication') === true )) {
 									  $terms = get_the_terms($post->ID, 'product-categories');
 									  foreach ($terms as $term) {
 										 if(isset($term)) {
