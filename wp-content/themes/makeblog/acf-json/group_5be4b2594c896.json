@@ -33,7 +33,7 @@
         {
             "key": "field_5be4b41ea0063",
             "label": "Build Volume",
-            "name": "build_volume",
+            "name": "build_volume_filter",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -343,5 +343,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add key meta information about the product to power the filters for 3d printers",
-    "modified": 1542214591
+    "modified": 1542831605
 }

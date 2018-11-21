@@ -312,7 +312,7 @@ function load_scripts() {
   }
 
    if(is_page_template( 'page-gift-guide-general.php' ) ) {
-      wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/Vue/gift-guide/dist/main.min.js');
+      wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/Vue/gift-guide/dist/main.min.js', array(), $my_version);
    }
 }
 

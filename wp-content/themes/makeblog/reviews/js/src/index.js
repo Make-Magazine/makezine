@@ -42,10 +42,10 @@ var ReviewsFilters = {
 				row.removeClass('reviews-model');
 				row.find('.ri-item-title').html(v.title);
             row.find('.ri-item-subtitle').html(v.subtitle);
-				row.find('.ri-score-price').find('.ri-price span').html(v.price);
+				row.find('.ri-score-price').find('.ri-price span').html(v.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
 				if(v.most_recent) {
 					var date = new Date(v.most_recent);
-					var formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
+					var formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
 					row.find('.ri-date').html(formattedDate);
 				}
 				row.find('.ri-type').html(v.type);
@@ -116,24 +116,27 @@ var ReviewsFilters = {
 	};
 
 	filters.sort_change = function(){
-    var ascSorted = false;
+    var descSorted = false;
     //find current sort order
-    if ($(this).hasClass('asc')){
-      ascSorted = true;
+    if ($(this).hasClass('desc')){
+      descSorted = true;
     }
-
     //remove sort icons from all sort headers
     $(filters.sort_form_id + ' .rl-sort-choice').removeClass('asc');
     $(filters.sort_form_id + ' .rl-sort-choice').removeClass('dsc');
 
     //set sort order. if not set, set it to ascending. if previously ascending, set to descending
-    if (ascSorted){
-      $(this).addClass('dsc');
-      filters.order = 'desc';
-    } else {
+	 // review date and scores default from high to low, prices and name default from low to high
+    if (descSorted){
       $(this).addClass('asc');
       filters.order = 'asc';
-    }
+    } else if($(this).children().is('#recent') || $(this).children().is("#score")){
+      $(this).addClass('desc');
+      filters.order = 'desc';
+    } else {
+		$(this).addClass('asc');
+      filters.order = 'asc';
+	 }
 
 		filters.sortby = $(this).find(':input').val();
 		sessionStorage.setItem("sort", filters.sortby);
@@ -181,7 +184,7 @@ var ReviewsFilters = {
 			post_id: filters.post_id,
 			filters: filters.filters_data,
 			sort: filters.sortby,
-      order: filters.order
+      	order: filters.order
 		};
 
 		$('body').addClass(filters.loading_class);
@@ -240,7 +243,6 @@ var ReviewsFilters = {
     } else {
       $(filters.sort_form_id + ' .'+filters.sortby+ ' .rl-sort-choice').addClass('asc');
     }
-
 		filters.update();
 	});
 
@@ -251,7 +253,7 @@ jQuery( document ).ready(function($) {
 	
   // Clear out the filters if on the list page
   if ( $('#rf-filters-form').length ) {
-  	$('#rf-filters-form')[0].reset();
+  	  $('#rf-filters-form')[0].reset();
   }
 
 	// Init the filter dropdowns on desktop
