@@ -28,7 +28,7 @@ if (have_posts()) {
 
 ?>
 
-<div class="gift-guide-container ad-unit" data-ad-freq="<?php echo $ad_frequency; ?>">
+<div class="gift-guide-container" data-ad-freq="<?php echo $ad_frequency; ?>">
    <a class="social-buttons" data-sumome-share-id=66063407-7e20-418b-a8eb-03e9d38886be></a>
    <div class="hero-header">
       <div class="container">
