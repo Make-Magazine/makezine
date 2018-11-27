@@ -117,25 +117,41 @@ var ReviewsFilters = {
 
 	filters.sort_change = function(){
     var descSorted = false;
-    //find current sort order
-    if ($(this).hasClass('desc')){
+    // set initial sort order (different depending on filter)
+    if (($(this).children().is('#recent') || $(this).children().is("#score")) && $(this).hasClass('dsc')){
       descSorted = true;
-    }
+    } else if (($(this).children().is('#az') || $(this).children().is("#price")) && $(this).hasClass('asc')) {
+		 descSorted = true;
+	 } else {
+		 descSorted = false;
+	 }
+	 
     //remove sort icons from all sort headers
     $(filters.sort_form_id + ' .rl-sort-choice').removeClass('asc');
     $(filters.sort_form_id + ' .rl-sort-choice').removeClass('dsc');
 
-    //set sort order. if not set, set it to ascending. if previously ascending, set to descending
+    //set sort. if not set, set it to default sort for category, otherwise, reverse
 	 // review date and scores default from high to low, prices and name default from low to high
-    if (descSorted){
-      $(this).addClass('asc');
-      filters.order = 'asc';
-    } else if($(this).children().is('#recent') || $(this).children().is("#score")){
-      $(this).addClass('desc');
-      filters.order = 'desc';
+    if (descSorted == false){
+		if($(this).children().is('#recent') || $(this).children().is("#score")){
+			$(this).removeClass('asc');
+			$(this).addClass('dsc');
+			filters.order = 'dsc';
+		}else {
+			$(this).removeClass('dsc');
+			$(this).addClass('asc');
+			filters.order = 'asc';
+		}
     } else {
-		$(this).addClass('asc');
-      filters.order = 'asc';
+		if($(this).children().is('#recent') || $(this).children().is("#score")){
+			$(this).removeClass('dsc');
+			$(this).addClass('asc');
+			filters.order = 'asc';
+		 } else {
+			$(this).removeClass('asc');
+			$(this).addClass('dsc');
+			filters.order = 'dsc';
+		 }
 	 }
 
 		filters.sortby = $(this).find(':input').val();
