@@ -52,7 +52,5 @@ sg_beacon('init','Mjg4MjQzLTJiMjdlNGU0NmM3ZDM3YWQ2YWJiOTEwNWRhNDM0ZGQ1NTFlZTdhN2
   // });
 </script>
 
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-
 </body>
 </html>
