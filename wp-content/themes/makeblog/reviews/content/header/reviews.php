@@ -66,12 +66,20 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 				</span>
 
 				<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_how_we_test_link( $id ); ?>">
-					<?php echo(get_field('how_button')); ?>
+					<?php 
+					   if(get_field('how_button') && get_field('how_button') != "") {
+					   	echo(get_field('how_button')); 
+						} else { echo("How we test"); }
+					?>
 				</a>
 
 				<?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scoring_enabled( $id ) ) { ?>
 					<a <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_scores() ) { ?> class="active"  <?php } ?> href="<?php echo \Reviews\Architecture\Post_Types\Reviews::get_scores_link( $id ); ?>">
-					  <?php echo(get_field('scoring_button')); ?>
+					  <?php
+						   if(get_field('scoring_button') && get_field('scoring_button') != "") {
+								echo(get_field('scoring_button')); 
+							} else { echo("Scoring"); }
+					  ?>
 				   </a>
 				<?php } ?>
 
