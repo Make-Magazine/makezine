@@ -48,6 +48,6 @@ sg_beacon('init','Mjg4MjQzLTJiMjdlNGU0NmM3ZDM3YWQ2YWJiOTEwNWRhNDM0ZGQ1NTFlZTdhN2
   //   ga('send', 'event', 'Subscription', 'Click', 'Header mag cover click', 1);
   // });
 </script>
-
+<script>alert('Hello I am OK!');</script>
 </body>
 </html>
