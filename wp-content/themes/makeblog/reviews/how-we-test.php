@@ -22,7 +22,7 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			
 			<a data-sumome-share-id="002914e1-bbce-4a58-b59e-8846991ae71c"></a>
 
-			<h2 class="product-title"><?php echo get_field('title'); ?></h2>
+			<h2 class="how-we-test-title"><?php echo get_field('title'); ?></h2>
 
 			<p><?php echo get_field( 'how_we_test' ); ?></p>
 			<?php
