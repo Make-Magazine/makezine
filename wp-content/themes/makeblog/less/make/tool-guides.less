@@ -10,12 +10,17 @@
 		padding: 10px 30px 20px;
 		margin-bottom: 50px;
 		.tool-guide-grid {
+			display: -ms-grid;
 			display: grid;
+			-ms-grid-columns: auto auto auto;
 			grid-template-columns: auto auto auto;
+			-ms-grid-auto-columns: 1fr;
 			grid-auto-columns: 1fr;
+			-ms-grid-row-gap: 20px;
 			grid-row-gap: 20px;
 			text-align: center;
 			@media (max-width: 767px) {
+				-ms-grid-columns: 50% 50%;
 				grid-template-columns: 50% 50%;
 			}
 			.tool-guide-item {
