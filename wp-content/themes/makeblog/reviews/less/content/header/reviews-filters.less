@@ -173,6 +173,10 @@
 
 		span {
 			display: block;
+			@media (max-width: 767px) {
+				max-width: 200px;
+    			white-space: pre-wrap;
+			}
 			&:before,
 			&:after {
 				content: '';
