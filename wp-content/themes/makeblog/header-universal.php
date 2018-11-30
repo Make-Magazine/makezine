@@ -217,18 +217,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header id="universal-nav" class="universal-nav">
 
 	<?php // Nav Level 1 and Hamburger
-	  $username = 'makeco';
-	  $password = 'memberships';
-	  $context = stream_context_create(array(
-			'http' => array(
-				 'header'  => "Authorization: Basic " . base64_encode("$username:$password")
-			)
-	  ));
-	  if((class_exists('Jetpack') && Jetpack::is_staging_site()) || $_SERVER['SERVER_PORT'] == "8888") {
-		 echo file_get_contents('https://makeco.staging.wpengine.com/wp-content/themes/memberships/universal-nav/universal-topnav.html', false, $context);
-	  }else{
-		 echo file_get_contents('https://make.co/wp-content/themes/memberships/universal-nav/universal-topnav.html');
-	  }
+     $context = null;
+     if(UNIVERSAL_ASSET_USER && UNIVERSAL_ASSET_PASS) {
+        $context = stream_context_create(array(
+              'http' => array(
+                 'header'  => "Authorization: Basic " . base64_encode(UNIVERSAL_ASSET_USER.':'.UNIVERSAL_ASSET_PASS)
+              )
+        ));
+     }
+     echo file_get_contents( UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/universal-topnav.html', false, $context);
 	?>
 	
   <div id="nav-level-2" class="nav-level-2">
@@ -269,11 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="nav-flyout">
     <?php
-        if(class_exists('Jetpack') && Jetpack::is_staging_site()) {
-          echo file_get_contents('https://makeco.staging.wpengine.com/wp-content/themes/memberships/universal-nav/universal-megamenu.html', false, $context);
-        }else{
-          echo file_get_contents('https://make.co/wp-content/themes/memberships/universal-nav/universal-megamenu.html');
-        }
+      echo file_get_contents( UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/universal-megamenu.html', false, $context);
     ?>
    </div>
 
