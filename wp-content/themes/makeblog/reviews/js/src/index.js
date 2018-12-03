@@ -314,5 +314,9 @@ jQuery( document ).ready(function($) {
 			$("#category-dropdown").toggle();
 		});
 	}
+	if(!$("#category-dropdown").html() || $("#category-dropdown").html() == "") {
+		console.log("test");
+		$("#category-picker").css('pointer-events', 'none');
+	}
 
 });
