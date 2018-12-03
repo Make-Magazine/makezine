@@ -248,6 +248,48 @@ function make_register_sidebar() {
 add_filter( 'wp_feed_cache_transient_lifetime', function() { return 900; } );
 
 
+/*
+   Set some CONST for universal assets (nav and footer)
+   enclosed in a function for safety
+   this needs to appear before the scripts/styles are enqueued 
+*/
+function set_universal_asset_constants() {
+   // Assume that we're in prod; only change if we are definitively in another
+   $universal_asset_env = 'make.co';
+   $universal_asset_proto = 'https://';
+   $universal_asset_user = false;
+   $universal_asset_pass = false;
+   $host = $_SERVER['HTTP_HOST'];
+   // dev environments
+   if(strpos($host, 'dev.') === 0) {
+      $universal_asset_env = 'dev.make.co';
+      $universal_asset_user = 'makecodev';
+      $universal_asset_pass = '8f86ba87';
+   }
+   // stage environments
+   else if(strpos($host, 'stage.') === 0) {
+      $universal_asset_env = 'stage.make.co';
+      $universal_asset_user = 'makecstage';
+      $universal_asset_pass = 'c2792563';
+   }
+   // legacy staging environments
+   else if(strpos($host, '.staging.wpengine.com') > -1) {
+      $universal_asset_env = 'makeco.staging.wpengine.com';
+      $universal_asset_user = 'makeco';
+      $universal_asset_pass = 'memberships';
+   }
+   // local environments
+   else if(strpos($host, ':8888') > -1) {
+      $universal_asset_env = 'makeco:8888'; // this will require that we use `makeco` as our local
+      $universal_asset_proto = 'http://';
+   }
+   // Set the important bits as CONSTANTS that can easily be used elsewhere
+   define('UNIVERSAL_ASSET_URL_PREFIX', $universal_asset_proto . $universal_asset_env);
+   define('UNIVERSAL_ASSET_USER', $universal_asset_user);
+   define('UNIVERSAL_ASSET_PASS', $universal_asset_pass);
+}
+set_universal_asset_constants();
+
 /**
  * Enqueue all scripts and stylesheets.
  * @return void
@@ -266,7 +308,7 @@ function make_load_resources() {
   wp_enqueue_style( 'roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
   wp_enqueue_style( 'roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
   wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
-  wp_enqueue_style('universal.css', 'https://make.co/wp-content/themes/memberships/universal-nav/css/universal.css');
+  wp_enqueue_style('universal.css', UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/css/universal.css');
 
 	// Load optimizely A/B testing script
 	//wp_enqueue_script( 'make-optimizely', '//cdn.optimizely.com/js/2101321427.js', array( 'jquery' ) );
@@ -287,7 +329,7 @@ function make_load_resources() {
   $my_theme = wp_get_theme();
   $my_version = $my_theme->get('Version');
 	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery', 'fancybox' ), $my_version, true );
-	wp_enqueue_script('universal', 'https://make.co/wp-content/themes/memberships/universal-nav/js/min/universal.min.js');
+	wp_enqueue_script('universal', UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/js/min/universal.min.js', array(), $my_version, true);
 
 
 	// What page are we on? And what is the pages limit?
