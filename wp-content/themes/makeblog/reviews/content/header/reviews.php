@@ -19,12 +19,13 @@ $modal_image    = get_field( 'magazine_thumbnail', $id );
 $modal_text     = get_field( 'magazine_label', $id );
 $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $id );
 
+$terms = get_the_terms( $id, 'product-categories' )[0];
+$cat_name = $terms->name;
 ?>
 
 <div class="row">
 	<header class="reviews-header col-xs-12">
-
-		<h1>Digital Fabrication Tool Guide</h1>
+		<h1>Digital Fabrication Tool Guide - <?php echo $cat_name ?></h1>
 
 		<nav class="review-nav">
 
@@ -40,7 +41,7 @@ $slug  = \Reviews\Architecture\Post_Types\Reviews::get_product_category_slug( $i
 			<div class="review-nav-choosing">
 			<?php $oldCodeWas = '<div class="review-nav-choosing" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_how_we_test() ) { ?> class="active"  <?php } ?> >' ?>
             <div class="btn-wrapper hidden-lg hidden-md hidden-sm">
-					<a href="/digital-fabrication-tool-guide"><?php echo(get_field('compare_button')); ?></a>
+					<a href="/digital-fabrication-tool-guide">Other tools</a>
 				</div>
 				<span class="hidden-xs">
 				<a id="compare" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
