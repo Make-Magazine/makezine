@@ -45,7 +45,7 @@ $cat_name = $terms->name;
 				</div>
 				<span class="hidden-xs">
 				<a id="compare" <?php if ( \Reviews\Architecture\Post_Types\Reviews::is_review() ) { ?> class="active" <?php } ?> href="<?php echo get_permalink( $id ); ?>">
-					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span><span id='category-picker' class='lnr lnr-chevron-down hidden-xs'></span>"); ?> </div>
+					<div class="btn-wrapper"><?php echo(get_field('compare_button') . " <span id='count'></span><span id='category-picker' class='lnr lnr-chevron-down hidden-xs' style='display:none;'></span>"); ?> </div>
 					<?php if( get_field('digital_fabrication') === true ) { ?>
 					<div id="category-dropdown">
 						<?php 
