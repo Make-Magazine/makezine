@@ -122,7 +122,6 @@ window.addEventListener('load', function() {
 			errorMsg("There was an issue logging in at the getProfile phase. That error was: " + JSON.stringify(err));
 		}
     });
-
   }
 
   //check if logged in another place
