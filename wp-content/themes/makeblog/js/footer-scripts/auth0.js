@@ -1,4 +1,5 @@
 window.addEventListener('load', function() {
+
   // buttons and event listeners
   /*    If the login button, logout button or profile view elements do not exist
    *    (such as in wp-admin and wp - login pages) default to a 'fake' element
@@ -47,7 +48,7 @@ window.addEventListener('load', function() {
 
   logoutBtn.addEventListener('click', function(e) {
     e.preventDefault();
-
+   
     // Remove tokens and expiry time from localStorage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
@@ -106,6 +107,7 @@ window.addEventListener('load', function() {
 
     if (!accessToken) {
       console.log('Access token must exist to fetch profile');
+		errorMsg('Login attempted without Access Token');
     }
 
     webAuth.client.userInfo(accessToken, function(err, profile) {
@@ -116,6 +118,9 @@ window.addEventListener('load', function() {
         document.querySelector('#profile-view img').style.display = "block";
         document.querySelector('#profile-view .profile-email').innerHTML = userProfile.email; 
       }
+		if (err) {
+			errorMsg("There was an issue logging in at the getProfile phase. That error was: " + JSON.stringify(err));
+		}
     });
 
   }
@@ -129,7 +134,7 @@ window.addEventListener('load', function() {
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
         if(err.error!=='login_required'){
-          console.log(err);
+          errorMsg(userProfile.email + " had an issue logging in at the checkSession phase. That error was: " + JSON.stringify(err));
         }
       } else {
         setSession(result);
@@ -137,4 +142,13 @@ window.addEventListener('load', function() {
       displayButtons();
     }
   );
+	function errorMsg(message) {
+		var data = {
+			'action'       : 'make_error_log',
+			'make_error'   : message
+		};
+		jQuery.post(ajax_object.ajax_url, data, function(response) {});
+		
+	}
+   
 });
