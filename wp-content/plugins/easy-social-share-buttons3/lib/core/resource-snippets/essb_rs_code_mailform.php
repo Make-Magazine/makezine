@@ -106,6 +106,11 @@ if (!function_exists('essb_rs_mailform_code')) {
 	function essb_rs_mailform_code($buffer) {
 		$code = "";
 		
+		$translate_mail_message_error_fill = essb_option_value('translate_mail_message_error_fill');
+		if ($translate_mail_message_error_fill == '') {
+			$translate_mail_message_error_fill = 'Please fill all fields in form';
+		}
+		
 		$code .= '		
 var essb_mailform_opened = false;
 function essb_open_mailform(unique_id) {
@@ -179,7 +184,7 @@ function essb_mailform_send() {
 	var custom_message = jQuery("#essb_mailform_custom").length ? jQuery("#essb_mailform_custom").val() : "";
 	
 	if (sender_email == "" || recepient_email == "" || (captcha == "" && captcha_validate)) {
-		alert("Please fill all fields in form!");
+		alert("'.$translate_mail_message_error_fill.'");
 		return;
 	}
 	

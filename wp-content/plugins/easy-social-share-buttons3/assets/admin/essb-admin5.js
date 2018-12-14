@@ -1108,6 +1108,8 @@ jQuery(document).ready(function($){
 			if (drawSettings['essb_counters'])
 				additional_classes += ' essb_counters';
 			
+			if (drawSettings['button_size']) additional_classes += ' essb_size_'+drawSettings['button_size'];
+			
 			var additional_link_styles = '';
 			var additional_full_width_correction = '';
 			var fullwidth_first = '';

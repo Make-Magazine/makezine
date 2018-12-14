@@ -1,7 +1,11 @@
 <?php
 
-add_action( 'widgets_init' , create_function( '' , 'return register_widget( "ESSBSocialFollowersCounterWidget" );' ) );
-add_action( 'widgets_init' , create_function( '' , 'return register_widget( "ESSBSocialFollowersCounterWidgetLayout" );' ) );
+function init_wp_widget_essb_followers_counter() {
+	register_widget( 'ESSBSocialFollowersCounterWidget' );
+	register_widget( 'ESSBSocialFollowersCounterWidgetLayout' );
+}
+
+add_action( 'widgets_init', 'init_wp_widget_essb_followers_counter' );
 
 /**
  * Social Followers Widget

@@ -1,6 +1,11 @@
 <?php
 
-add_action( 'widgets_init' , create_function( '' , 'return register_widget( "ESSBSocialProfilesWidget" );' ) );
+
+function init_wp_widget_essb_profiles() {
+	register_widget( 'ESSBSocialProfilesWidget' );
+}
+
+add_action( 'widgets_init', 'init_wp_widget_essb_profiles' );
 
 if (!defined('ESSB3_SOCIALPROFILES_ACTIVE')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/social-profiles/essb-social-profiles.php');
@@ -48,6 +53,8 @@ class ESSBSocialProfilesWidget extends WP_Widget {
 		
 		$instance_template = isset($instance['template']) ? $instance['template'] : '';
 		$instance_animation = isset($instance['animation']) ? $instance['animation'] : '';
+		$instance_size = isset($instance['size']) ? $instance['size'] : '';
+		$instance_align = isset($instance['align']) ? $instance['align'] : '';
 		
 		?>
 		
@@ -67,6 +74,32 @@ class ESSBSocialProfilesWidget extends WP_Widget {
 <?php 
 foreach (ESSBSocialProfilesHelper::available_templates() as $key => $text) {
 	$selected = ($key == $instance_template) ? " selected='selected'" : '';
+	
+	printf('<option value="%1$s" %2$s>%3$s</option>', $key, $selected, $text);
+}
+?>
+  </select>
+</p>
+
+<p>
+  <label for="<?php echo $this->get_field_id( 'align' ); ?>"><?php echo __( 'Align' , 'essb' ); ?>:</label>
+  <select name="<?php echo $this->get_field_name( 'align' ); ?>" id="<?php echo $this->get_field_id( 'align' ); ?>" class="widefat">
+<?php 
+foreach (ESSBSocialProfilesHelper::available_alignments() as $key => $text) {
+	$selected = ($key == $instance_align) ? " selected='selected'" : '';
+	
+	printf('<option value="%1$s" %2$s>%3$s</option>', $key, $selected, $text);
+}
+?>
+  </select>
+</p>
+
+<p>
+  <label for="<?php echo $this->get_field_id( 'size' ); ?>"><?php echo __( 'Size' , 'essb' ); ?>:</label>
+  <select name="<?php echo $this->get_field_name( 'size' ); ?>" id="<?php echo $this->get_field_id( 'size' ); ?>" class="widefat">
+<?php 
+foreach (ESSBSocialProfilesHelper::available_sizes() as $key => $text) {
+	$selected = ($key == $instance_align) ? " selected='selected'" : '';
 	
 	printf('<option value="%1$s" %2$s>%3$s</option>', $key, $selected, $text);
 }
@@ -125,6 +158,8 @@ foreach (ESSBSocialProfilesHelper::available_animations() as $key => $text) {
 		$instance['animation'] = $new_instance['animation'];
 		$instance['nospace'] = $new_instance['nospace'];
 		$instance['show_title'] = $new_instance['show_title'];
+		$instance['align'] = $new_instance['align'];
+		$instance['size'] = $new_instance['size'];
 		
 		
 		foreach ($profile_networks as $network) {
@@ -154,6 +189,8 @@ foreach (ESSBSocialProfilesHelper::available_animations() as $key => $text) {
 		
 		$sc_template = isset($instance['template']) ? $instance['template'] : 'flat';
 		$sc_animation = isset($instance['animation']) ? $instance['animation'] : '';
+		$sc_size = isset($instance['size']) ? $instance['size'] : '';
+		$sc_align = isset($instance['align']) ? $instance['align'] : '';
 		$sc_nospace = $instance['nospace'];
 		
 		if (!empty($sc_nospace) && $sc_nospace != '0') {
@@ -200,7 +237,9 @@ foreach (ESSBSocialProfilesHelper::available_animations() as $key => $text) {
 				'template' => $sc_template,
 				'animation' => $sc_animation,
 				'nospace' => $sc_nospace,
-				'networks' => $sc_network_address
+				'networks' => $sc_network_address,
+				'size' => $sc_size,
+				'align' => $sc_align
 		);
 		
 		echo ESSBSocialProfiles::draw_social_profiles($options);

@@ -393,6 +393,15 @@ class ESSBCountersHelper {
 		return $result;
 	}
 	
+	public static function get_tweets_twitcount($url) {
+		//
+		$json_string = self::parse  ( 'https://counts.twitcount.com/counts.php?url=' . $url );
+		$json = json_decode ( $json_string, true );
+		$result = isset ( $json ['count'] ) ? intval ( $json ['count'] ) : 0;
+		
+		return $result;
+	}
+	
 	public static function get_linkedin($url) {
 		$json_string = self::parse ( "https://www.linkedin.com/countserv/count/share?url=$url&format=json" );
 		$json = json_decode ( $json_string, true );

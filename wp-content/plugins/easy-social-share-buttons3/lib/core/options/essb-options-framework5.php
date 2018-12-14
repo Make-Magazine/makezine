@@ -317,12 +317,12 @@ class ESSBOptionsFramework {
 				if ($mode == 'vertical') {
 					self::draw_title($title, $description, 'inner-row');
 					self::draw_options_row_start_full($class);
-					self::draw_fileselect_image_field($id, $settings_group, $option_value, $icon, $class);
+					self::draw_fileselect_image_field($id, $settings_group, $option_value, $icon, $class.$mode);
 					self::draw_options_row_end();
 				}
 				else {
 					self::draw_options_row_start($title, $description, $recommended, $col_width);
-					self::draw_fileselect_image_field($id, $settings_group, $option_value, $icon, $class);
+					self::draw_fileselect_image_field($id, $settings_group, $option_value, $icon, $class.$mode);
 					self::draw_options_row_end();
 				}
 				break;
@@ -379,6 +379,9 @@ class ESSBOptionsFramework {
 			case "hint":
 				self::draw_hint($title, $description, $icon, $style, $in_section);
 				break;	
+			case "help":
+				self::draw_help($title, $description, $in_section, $element_options);
+				break;	
 			case "panel_start":
 				self::draw_panel_start($title, $description, $icon, $element_options, $settings_group);
 				break;
@@ -413,7 +416,10 @@ class ESSBOptionsFramework {
 				self::draw_options_row_end();
 				break;
 			case "toggle-in-panel":
-				self::draw_settings_panel_start($title);
+				
+				$add_class = isset($element_options['extra_class']) ? $element_options['extra_class'] : $id;
+				
+				self::draw_settings_panel_start($title, $add_class);
 				self::draw_toggle_field($id, $listOfValues, $settings_group, $option_value, $element_options);
 				self::draw_settings_panel_end($description, $recommended);
 				break;
@@ -423,7 +429,7 @@ class ESSBOptionsFramework {
 				self::draw_options_row_end();
 				break;
 			case "group-select-in-panel":
-				self::draw_settings_panel_start($title);
+				self::draw_settings_panel_start($title, $id);
 				self::draw_group_select_field($id, $listOfValues, $settings_group, $option_value, $element_options);
 				self::draw_settings_panel_end($description, $recommended);
 				break;
@@ -509,7 +515,8 @@ class ESSBOptionsFramework {
 	
 	public static function draw_network_select($field, $group = 'essb_options', $element_options = array()) {
 		$position = isset($element_options['position']) ? $element_options['position'] : '';
-		essb_component_network_selection($position, $group);
+		$all_networks = isset($element_options['all_networks']) ? $element_options['all_networks'] : false;
+		essb_component_network_selection($position, $group, $all_networks);
 	}
 	
 	public static function draw_toggle_field($field, $listOfValues, $group = 'essb_options', $value = '', $element_options = array()) {
@@ -696,6 +703,41 @@ class ESSBOptionsFramework {
 		
 		print '</div>';
 		
+		self::draw_options_row_end();
+	}
+
+	public static function draw_help($title = '', $description = '', $in_section = 'false', $element_options = array()) {
+			
+		$buttons = isset($element_options['buttons']) ? $element_options['buttons'] : array();		
+		
+		self::draw_options_row_start_full();
+	
+		print '<div class="essb-options-hint essb-options-hint-glowhelp">';
+	
+		print '<div class="essb-options-hint-icon"><i class="fa32 ti-help-alt"></i></div>';
+		print '<div class="essb-options-hint-withicon">';
+	
+		if ($title != '') {
+			printf('<div class="essb-options-hint-title">%1$s</div>', $title);
+		}
+		if ($description != '') {
+			printf('<div class="essb-options-hint-desc">%1$s</div>', $description);
+		}
+		
+		if (count($buttons) > 0 ){
+			print '<div class="essb-options-hint-buttons">';
+			foreach ($buttons as $title => $url) {
+				print '<a href="'.esc_url($url).'" target="_blank">'.$title.'</a>';
+			}
+			print '</div>';
+		}
+	
+	
+		print '</div>';
+
+	
+		print '</div>';
+	
 		self::draw_options_row_end();
 	}
 	

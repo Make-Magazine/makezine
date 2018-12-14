@@ -430,7 +430,13 @@ class ESSBDebugCountersHelper {
 	}
 	
 	public static function get_tweets_newsc($url) {
-		$json_string = self::parse  ( 'https://public.newsharecounts.com/count.json?url=' . $url );
+		
+		if (essb_option_value ('twitter_counters') == 'twitcount') {
+			$json_string = self::parse  ( 'https://counts.twitcount.com/counts.php?url=' . $url );
+		}
+		else {
+			$json_string = self::parse  ( 'https://opensharecount.com/count.json?url=' . $url );
+		}
 		$json = json_decode ( $json_string, true );
 		$result = isset ( $json ['count'] ) ? intval ( $json ['count'] ) : 0;
 		

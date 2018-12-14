@@ -150,6 +150,13 @@ class ESSBNetworks_SubscribeActions {
 				
 				$output = self::subscribe_sendinblue($sib_api, $sib_list, $user_email, $user_name);
 				break;
+			case "madmimi":
+				$subscribe_madmimi_login = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_madmimi_login' );
+				$subscribe_madmimi_api = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_madmimi_api' );
+				$subscribe_madmimi_list = ESSBOptionValuesHelper::options_value ( $essb_options, 'subscribe_madmimi_list' );
+				
+				$output = self::subscribe_madmimi($subscribe_madmimi_login, $subscribe_madmimi_api, $subscribe_madmimi_list, $user_email, $user_name);
+				break;
 			default:								
 				$output['code'] = '99';
 				$output['message'] = __('Service is not supported', 'essb');
@@ -204,6 +211,11 @@ class ESSBNetworks_SubscribeActions {
 			$data['merge_vars']['LNAME'] = $lname;
 		}
 		
+		$gdpr_field = essb_option_value('subscribe_terms_field');
+		if ($gdpr_field != '') {
+			$data['merge_vars'][$gdpr_field] = 'Yes';
+		}
+		
 		$request = json_encode ( $data );
 		$response = array();
 		try {
@@ -255,6 +267,12 @@ class ESSBNetworks_SubscribeActions {
 					'email' => $email,
 					'dayOfCycle' => 0,
 			);
+			
+			$gdpr_field = essb_option_value('subscribe_terms_field');
+			if ($gdpr_field != '') {
+				$data['customFieldValues'][] = array('customFieldId' => $gdpr_field, 'value' => 'Yes');
+			}
+			
 		
 			$result = $api->subscribe($data);
 	
@@ -399,10 +417,16 @@ class ESSBNetworks_SubscribeActions {
 							'email' => $email,
 							'first_name' => $name,
 							'last_name' => '');
-					$data_subscriber = array(
-							'user' => $user_data,
-							'user_list' => array('list_ids' => array($list_id))
+							$data_subscriber = array(
+								'user' => $user_data,
+								'user_list' => array('list_ids' => array($list_id))
 					);
+							
+					$gdpr_field = essb_option_value('subscribe_terms_field');
+					if ($gdpr_field != '') {
+						$user_data['cf_'.$gdpr_field] = 'Yes';
+					}		
+							
 					$subscriber = \MailPoet\API\API::MP('v1')->addSubscriber($user_data, array($list_id));
 				} catch (Exception $e) {
 					$response['code'] = '99';
@@ -428,6 +452,11 @@ class ESSBNetworks_SubscribeActions {
 		if ($name != '') {
 			$data['first_name'] = $name;
 			$data['last_name'] = '';
+		}
+		
+		$gdpr_field = essb_option_value('subscribe_terms_field');
+		if ($gdpr_field != '') {
+			$data['field['.$gdpr_field.',0]'] = 'Yes';
 		}
 		
 		if ($ac_form != '') {
@@ -470,6 +499,12 @@ class ESSBNetworks_SubscribeActions {
 			$options['Name'] = $name;
 			$options['Resubscribe'] = 'true';
 			$options['RestartSubscriptionBasedAutoresponders'] = 'true';
+			
+			$gdpr_field = essb_option_value('subscribe_terms_field');
+			if ($gdpr_field != '') {
+				$options['CustomFields'][] = array('Key' => $gdpr_field, 'Value' => 'Yes');
+			}
+			
 			$post = json_encode($options);
 
 			$curl = curl_init('http://api.createsend.com/api/v3/subscribers/'.urlencode($list_id).'.json');
@@ -524,6 +559,10 @@ class ESSBNetworks_SubscribeActions {
 				'blacklisted' => 0
 			);			
 			
+			$gdpr_field = essb_option_value('subscribe_terms_field');
+			if ($gdpr_field != '') {
+				$data['attributes'][$gdpr_field] = 'Yes';
+			}
 
 			try {
 				$curl = curl_init('https://api.sendinblue.com/v2.0/user/createdituser');
@@ -544,6 +583,43 @@ class ESSBNetworks_SubscribeActions {
 			
 			
 				
+			$response ['code'] = '1';
+			$response ['message'] = 'Thank you';
+		}
+		catch (Exception $e) {
+			$response ['code'] = "99";
+			$response ['message'] = __ ( 'Missing connection', 'essb' );
+		}
+	
+		return $response;
+	}
+	
+	public static function subscribe_madmimi($username, $api_key, $list_id, $email, $name = '') {
+	
+		$response = array();
+			
+		try {
+			$request = http_build_query(array(
+				'email' => $email,
+				'first_name' => $name,
+				'last_name' => '',
+				'username' => $username,
+				'api_key' => $api_key
+			));
+
+			$curl = curl_init('http://api.madmimi.com/audience_lists/'.$list_id.'/add');
+			curl_setopt($curl, CURLOPT_POST, 1);
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $request);
+
+			curl_setopt($curl, CURLOPT_TIMEOUT, 20);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($curl, CURLOPT_FORBID_REUSE, 1);
+			curl_setopt($curl, CURLOPT_FRESH_CONNECT, 1);
+			curl_setopt($curl, CURLOPT_HEADER, 0);
+								
+			$response_api = curl_exec($curl);
+			curl_close($curl);
+			
 			$response ['code'] = '1';
 			$response ['message'] = 'Thank you';
 		}

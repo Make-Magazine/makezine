@@ -119,6 +119,8 @@ class ESSBResourceBuilder {
 		// static CSS and javascripts sources enqueue
 		add_action ( 'wp_enqueue_scripts', array ($this, 'register_front_assets' ), 10 );
 		
+		add_action ( 'wp_enqueue_scripts', array ($this, 'check_optimized_load' ), 1 );
+		
 		// initalize resource builder options based on settings
 		$this->js_head = essb_option_bool_value('scripts_in_head');
 		$this->js_async = essb_option_bool_value('load_js_async');
@@ -129,13 +131,51 @@ class ESSBResourceBuilder {
 		if ($remove_ver_resource) { 
 			$this->resource_version = '';
 		}
+		
+
 	}
 	
-	public function header() {
+	public function check_optimized_load() {
+		if ($this->is_optimized_deactivated()) {
+			$this->deactivate_actions();
+		}
+	}
+	
+	public function is_optimized_deactivated() {
+		$r = false;
+		
+		if (essb_option_value('optimize_load') == 'selected') {
+			$active_types = essb_option_value('display_in_types');			
+			$active_type = get_post_type();
+			
+			if ($active_type == '') {
+				$active_type = 'post';
+			}
+			if (!is_array($active_types)) {
+				$active_types = array();
+			}
+				
+			if (!in_array($active_type, $active_types)) {
+				$r = true;
+			}
+			
+			// deactivating plugin resources on list pages if the option is not activated
+			if (is_archive() || is_front_page() || is_search() || is_tag() || is_post_type_archive() || is_home()) {
+				if (!in_array('all_lists', $active_types)) {
+					$r = true;
+				}
+			}
+		}
+		
+		return $r;
+	}
+	
+	public function header() {	
 		do_action('essb_rs_head');
 	}
 	
 	public function footer() {
+		
 		// since version 4 we introduce new mail form code added here
 		if ($this->is_activated('mail')) {
 			essb_depend_load_function('essb_rs_mailform_build', 'lib/core/resource-snippets/essb_rs_code_mailform.php');				

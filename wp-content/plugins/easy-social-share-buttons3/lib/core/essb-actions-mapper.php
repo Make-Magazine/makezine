@@ -185,8 +185,6 @@ function essb_actions_update_pinterest_count() {
 }
 
 function essb_actions_update_post_count() {
-	global $wpdb, $blog_id;
-
 	$post_id = isset($_POST["post_id"]) ? $_POST["post_id"] : '';
 	$service_id = isset($_POST["service"]) ? $_POST["service"] : '';
 	
@@ -203,10 +201,20 @@ function essb_actions_update_post_count() {
 	$current_value = get_post_meta($post_id, 'essb_pc_'.$service_id, true);
 	$current_value = intval($current_value) + 1;
 	update_post_meta ( $post_id, 'essb_pc_'.$service_id, $current_value );
+	
+	// since 5.6
+	if (essb_is_internal_counted($service_id)) {
+		delete_post_meta( $post_id, 'essb_c_'.$service_id );
+		update_post_meta( $post_id, 'essb_c_'.$service_id, $current_value );
+	}
 
 	// @since 3.6
-	// addint custom hook to execute when click on share buttons
-	do_action('essb_after_sharebutton_click');
+	// adding custom hook to execute when click on share buttons
+	// @revision 5.6 - adding to event as a parameter the shared post_id and network
+	
+	$action_options = array('post_id' => $post_id, 'network' => $service_id);
+	
+	do_action('essb_after_sharebutton_click', $action_options);
 
 	die(json_encode(array("post_id" => $post_id, "service" => $service_id, "current_value" => $current_value)));
 }
@@ -287,6 +295,7 @@ if (!function_exists('essb_actions_sendmail')) {
 		$translate_mail_message_sent = essb_option_value('translate_mail_message_sent');
 		$translate_mail_message_invalid_captcha = essb_option_value('translate_mail_message_invalid_captcha');
 		$translate_mail_message_error_send = essb_option_value('translate_mail_message_error_send');
+		$translate_mail_message_error_mail = essb_option_value('translate_mail_message_error_mail');
 		
 		
 		$output = array("code" => "", "message" => "");
@@ -301,7 +310,7 @@ if (!function_exists('essb_actions_sendmail')) {
 		if (strlen($to) > 80) {
 			$valid = false;
 			$output["code"] = "102";
-			$output["message"] = __('Invalid recepient email', 'essb');		
+			$output["message"] = translate_mail_message_error_mail != '' ? translate_mail_message_error_mail : __('Invalid recepient email', 'essb');		
 		}
 		
 		$mail_salt_check = get_option(ESSB3_MAIL_SALT);
@@ -325,7 +334,7 @@ if (!function_exists('essb_actions_sendmail')) {
 		if (filter_var($to, FILTER_VALIDATE_EMAIL) === false) {
 			$valid = false;
 			$output["code"] = "102";
-			$output["message"] = __('Invalid recepient email', 'essb');
+			$output["message"] = translate_mail_message_error_mail != '' ? translate_mail_message_error_mail : __('Invalid recepient email', 'essb');
 		}
 		
 		if ($valid) {
@@ -382,5 +391,30 @@ if (!function_exists('essb_actions_sendmail')) {
 		
 		echo str_replace('\\/','/',json_encode($output));
 		die();
+	}
+}
+
+function essb_is_internal_counted($network) {
+	$api_counters = array();
+	$api_counters[] = 'facebook';
+	
+	if (essb_option_value('twitter_counters') != 'self') {
+		$api_counters[] = 'twitter';
+	}
+	
+	$api_counters[] = 'pinterest';
+	$api_counters[] = 'vk';
+	$api_counters[] = 'reddit';
+	$api_counters[] = 'buffer';
+	$api_counters[] = 'ok';
+	$api_counters[] = 'mwp';
+	$api_counters[] = 'xing';
+	$api_counters[] = 'yummly';
+	
+	if (in_array($network, $api_counters)) {
+		return false;
+	}
+	else {
+		return true;
 	}
 }

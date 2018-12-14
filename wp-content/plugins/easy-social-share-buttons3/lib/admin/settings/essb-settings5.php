@@ -40,7 +40,7 @@ if ($rollback_settings == 'true' && $rollback_key != '') {
 	if (!is_array($history_container)) {
 		$history_container = array();
 	}
-	
+
 	if (isset($history_container[$rollback_key])) {
 		$options_base = $history_container[$rollback_key];
 		if ($options_base) {
@@ -53,7 +53,7 @@ if ($rollback_settings == 'true' && $rollback_key != '') {
 
 
 
-global $essb_navigation_tabs, $essb_sidebar_sections, $essb_section_options;
+global $essb_navigation_tabs, $essb_sidebar_sections, $essb_section_options, $essb_sidebar_description;
 global $current_tab;
 
 global $essb_admin_options, $essb_options;
@@ -147,7 +147,7 @@ $options = $essb_section_options [$current_tab];
 		<!-- settings navigation: start -->
 		<div class="essb-settings-panel-navigation">
 			<ul class="essb-plugin-menu">
-				<li><div class="essb-logo essb-logo32">
+				<li><div class="essb-logo essb-logo32 essb-new-color-logo">
 					<a href="<?php echo admin_url('admin.php?page=essb_options');?>" class="no-hover"><div class="essb-version-logo"><?php echo ESSB3_VERSION;?></div></a>
 				</div></li>
 
@@ -162,8 +162,12 @@ $options = $essb_section_options [$current_tab];
 						continue;
 					}
 
+
 					$icon = isset ( $tab_sections ['icon'] ) ? $tab_sections ['icon'] : '';
 					$align = isset($tab_sections['align']) ? $tab_sections['align'] : '';
+					$description = isset($essb_sidebar_description[$name]) ? $essb_sidebar_description[$name] : '';
+
+					$desc_code = '';
 
 					$options_handler = ($is_first) ? "essb_options" : 'essb_redirect_' . $name;
 
@@ -178,7 +182,11 @@ $options = $essb_section_options [$current_tab];
 
 					echo ' essb-tab-'.$name;
 
-					echo '" title="'.$label.'">' . ($icon != '' ? '<i class="' . $icon . '"></i>' : '') . '<span>'.$label . '</span>'.($name == 'update' && !ESSBActivationManager::isActivated() && !ESSBActivationManager::isThemeIntegrated() ? '<span class="not-activated"></span>':'').'</a>';
+					//if ($description != '') {
+					//	$desc_code .= '<span class="description">'.$description.'</span>';
+					//}
+
+					echo '" title="'.$label.'">' . ($icon != '' ? '<i class="' . $icon . '"></i>' : '') . '<span>'.$label . '</span>'.$desc_code.($name == 'update' && !ESSBActivationManager::isActivated() && !ESSBActivationManager::isThemeIntegrated() ? '<span class="not-activated"></span>':'').'</a>';
 					$is_first = false;
 
 					if ($current_tab == $name) {
@@ -205,14 +213,14 @@ $options = $essb_section_options [$current_tab];
 		<script type="text/javascript">
 
 		var essb5_active_tag = "<?php echo $current_tab; ?>";
-		
+
 		</script>
-		
+
 		<?php
 
 		$additional_buttons = '';
-		
-	
+
+
 
 		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_modes&tab=modes").'"  text="' . __ ( 'Activate or Deactivate Plugin Features', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper essb-headbutton'.($current_tab == 'modes' ? ' active': '').'" style="margin-right: 5px;" title="Change between different plugin working modes to make plugin fits best into your needs"><i class="fa fa-magic"></i>&nbsp;' . __ ( 'Switch Plugin Mode', 'essb' ) . '</a>';
 		$additional_buttons .= '<a href="'.admin_url ("admin.php?page=essb_redirect_functions&tab=functions").'"  text="' . __ ( 'Activate or Deactivate Plugin Features', 'essb' ) . '" class="essb-btn essb-btn-plain essb-btn-small essb-btn-noupper essb-headbutton'.($current_tab == 'functions' ? ' active': '').'" style="margin-right: 5px;" title="Activate/deactivate functions of plugin"><i class="fa fa-cog"></i>&nbsp;' . __ ( 'Manage Plugin Features', 'essb' ) . '</a>';
@@ -224,17 +232,22 @@ $options = $essb_section_options [$current_tab];
 				$current_tab != 'extensions' && $current_tab != 'about' && $current_tab != 'quick' && $current_tab != 'support') {
 			ESSBOptionsInterface::draw_form_start (false, '', $tab_has_nomenu);
 
+			// drawing additional interface notifications
+			essb_show_interface_notifications();
+			
 			// drawing additional notifications based on user actions
 			essb_settings5_status_notifications();
-				
-			
+
+
 				//ESSBOptionsInterface::draw_sidebar ( $section ['fields'] );
 			//$advanced_settings = '<a href="#" class="essb-btn essb-btn-right" style="margin-top: -8px;"><i class="fa fa-sliders" aria-hidden="true" style="margin-right: 5px;"></i>'.__('Advanced Settings', 'essb').'</a>';
 			$advanced_settings = '';
 
-			ESSBOptionsInterface::draw_header5 ( $section ['title'], $section ['hide_update_button'], $section ['wizard_tab'], $additional_buttons, $advanced_settings );
-			
-			
+			$section_icon = isset($section['icon']) ? $section['icon'] : '';
+
+			ESSBOptionsInterface::draw_header5 ( $section ['title'], $section ['hide_update_button'], $section ['wizard_tab'], $additional_buttons, $advanced_settings, $section_icon );
+
+
 			ESSBOptionsInterface::draw_content ( $options );
 
 			ESSBOptionsInterface::draw_form_end ();
@@ -244,8 +257,9 @@ $options = $essb_section_options [$current_tab];
 
 		}
 		else if ($current_tab == 'analytics') {
-			ESSBOptionsInterface::draw_header5 ( $section ['title'], $section ['hide_update_button'], $section ['wizard_tab'], '', '' );
-			include_once ESSB3_PLUGIN_ROOT . 'lib/modules/social-share-analytics/essb-social-share-analytics-backend-view.php';
+			//ESSBOptionsInterface::draw_header5 ( $section ['title'], $section ['hide_update_button'], $section ['wizard_tab'], '', '' );
+			//include_once ESSB3_PLUGIN_ROOT . 'lib/modules/social-share-analytics/essb-social-share-analytics-backend-view.php';
+			include_once ESSB3_PLUGIN_ROOT . 'lib/modules/social-share-analytics/essb-analytics-dashboard.php';
 		} else if ($current_tab == "shortcode") {
 			include_once ESSB3_PLUGIN_ROOT . 'lib/admin/settings/essb-structure5-shortcode.php';
 		}
@@ -261,7 +275,7 @@ $options = $essb_section_options [$current_tab];
 		else if ($current_tab == 'welcome') {
 			include_once ESSB3_PLUGIN_ROOT . 'lib/admin/admin-options/essb-welcome.php';
 		}
-		else if ($current_tab == 'extensions') {			
+		else if ($current_tab == 'extensions') {
 			ESSBOptionsInterface::draw_header5 ( $section ['title'], $section ['hide_update_button'], $section ['wizard_tab'], '', '' );
 			include_once ESSB3_PLUGIN_ROOT . 'lib/admin/settings/essb-structure5-addons.php';
 		}
@@ -271,14 +285,14 @@ $options = $essb_section_options [$current_tab];
 		?>
 
 		<?php
-		
+
 		//essb_component_single_position_select(essb5_available_content_positions(), 'content_position');
 		//essb_component_multi_position_select(essb_available_button_positions(), 'button_position');
-		
+
 		/*essb_component_network_selection();
 
 		essb_component_network_selection('top');
-		
+
 		print "<div>General Selection</div>";
 		essb_component_template_select();
 		essb_component_buttonstyle_select();
@@ -290,7 +304,7 @@ $options = $essb_section_options [$current_tab];
 		essb_component_buttonstyle_select('top');
 		essb_component_counterpos_select('top');
 		essb_component_totalcounterpos_select('top');
-		
+
 		$select_values = array('plus' => array('title' => 'Plus Icon', 'content' => '<i class="essb_icon_plus"></i>'),
 				'dots' => array('title' => 'Dots Icon', 'content' => '<i class="essb_icon_dots"></i>'),
 				'share' => array('title' => 'Share Icon', 'content' => '<i class="essb_icon_share"></i>'),
@@ -299,7 +313,7 @@ $options = $essb_section_options [$current_tab];
 				'mobile2' => array('title' => 'Share Icon', 'content' => '<i class="fa fa-tablet"></i>', 'padding' => '12px 13px'),
 				'mobile3' => array('title' => 'Share Icon', 'content' => '<i class="ti-tag"></i>'),
 				'text' => array('title' => 'Text Icon', 'content' => 'Text Value', 'isText' => true));
-		
+
 		essb_component_options_group_select('icon', $select_values, '', 'share');
 
 		$select_values = array('auto' => array('title' => 'Automatic Width', 'content' => 'Automatic', 'isText'=>true),
@@ -307,16 +321,16 @@ $options = $essb_section_options [$current_tab];
 				'full' => array('title' => 'Full Width', 'content' => 'Full', 'isText'=>true),
 				'flex' => array('title' => 'Fluid', 'content' => 'Fluid', 'isText'=>true),
 				'columns' => array('title' => 'Columns', 'content' => 'Columns', 'isText'=>true),);
-		
+
 		essb_component_options_group_select('icon', $select_values, '');
 		*/
 		?>
 
 
-		
-		
+
+
 		</div>
-		
+
 		<!-- settings-options: end; -->
 	</div>
 	<!-- settings panel: end; -->
@@ -413,7 +427,7 @@ $options = $essb_section_options [$current_tab];
 
 </div>
 
-<?php 
+<?php
 
 $template_list = essb_available_tempaltes4();
 $templates = array();
@@ -440,21 +454,21 @@ function essbCloseStatusMessage(sender) {
 <?php
 function essb_settings5_status_notifications() {
 	global $essb_admin_options, $current_tab;
-	
+
 	$purge_cache = isset ( $_REQUEST ['purge-cache'] ) ? $_REQUEST ['purge-cache'] : '';
 	$rebuild_resource = isset ( $_REQUEST ['rebuild-resource'] ) ? $_REQUEST ['rebuild-resource'] : '';
-	
+
 	$dismiss_addon = isset ( $_REQUEST ['dismiss'] ) ? $_REQUEST ['dismiss'] : '';
 	if ($dismiss_addon == "true") {
 		$dismiss_addon = isset ( $_REQUEST ['addon'] ) ? $_REQUEST ['addon'] : '';
 		$addons = ESSBAddonsHelper::get_instance ();
-	
+
 		$addons->dismiss_addon_notice ( $dismiss_addon );
 	}
-	
-	
+
+
 	if (class_exists ( 'ESSBAdminActivate' )) {
-	
+
 		$dismissactivate = isset ( $_REQUEST ['dismissactivate'] ) ? $_REQUEST ['dismissactivate'] : '';
 		if ($dismissactivate == "true") {
 			ESSBAdminActivate::dismiss_notice ();
@@ -463,55 +477,55 @@ function essb_settings5_status_notifications() {
 				ESSBAdminActivate::notice_activate ();
 			}
 		}
-	
+
 		ESSBAdminActivate::notice_manager();
-	
+
 		$deactivate_appscreo = essb_options_bool_value('deactivate_appscreo');
 		if (!$deactivate_appscreo) {
 			ESSBAdminActivate::notice_new_addons();
 		}
 	}
-	
+
 	$cache_plugin_message = "";
 	$reset_settings = isset ( $_REQUEST ['reset_settings'] ) ? $_REQUEST ['reset_settings'] : '';
 	if (ESSBCacheDetector::is_cache_plugin_detected ()) {
 		$cache_plugin_message = __(" Cache plugin detected running on site: ", "essb") . ESSBCacheDetector::cache_plugin_name ();
 	}
-	
+
 	$settings_update = isset ( $_REQUEST ['settings-updated'] ) ? $_REQUEST ['settings-updated'] : '';
 	if ($settings_update == "true") {
 		essb_display_status_message(__('Options are saved!', 'essb'), 'Your new setup is ready to use. If you use cache plugin (example: W3 Total Cache, WP Super Cache, WP Rocket) or optimization plugin (example: Autoptimize, BWP Minify) it is highly recommended to clear cache or you may not see the changes. '.$cache_plugin_message, 'fa fa-info-circle', 'essb-status-update');
-	
+
 	}
 
 	$settings_update = isset ( $_REQUEST ['wizard-updated'] ) ? $_REQUEST ['wizard-updated'] : '';
 	if ($settings_update == "true") {
 		essb_display_status_message(__('Your new settings are saved!', 'essb'), 'The initial setup of plugin via quick setup wizard is done. You can make additional adjustments using plugin menu, import ready made styles or just use it that way. If you use cache plugin (example: W3 Total Cache, WP Super Cache, WP Rocket) or optimization plugin (example: Autoptimize, BWP Minify) it is highly recommended to clear cache or you may not see the changes. '.$cache_plugin_message, 'fa fa-info-circle', 'essb-status-update');
-	
+
 	}
-	
+
 	$settings_imported = isset ( $_REQUEST ['settings-imported'] ) ? $_REQUEST ['settings-imported'] : '';
 	if ($settings_imported == "true") {
 		essb_display_status_message(__('Options are imported!', 'essb'), 'If you use cache plugin (example: W3 Total Cache, WP Super Cache, WP Rocket) or optimization plugin (example: Autoptimize, BWP Minify) it is highly recommended to clear cache or you may not see the changes. '.$cache_plugin_message, 'fa fa-info-circle');
-	
+
 	}
 	if ($reset_settings == 'true') {
 		essb_display_status_message(__('Options are reset to default!', 'essb'), 'If you use cache plugin (example: W3 Total Cache, WP Super Cache, WP Rocket) or optimization plugin (example: Autoptimize, BWP Minify) it is highly recommended to clear cache or you may not see the changes. '.$cache_plugin_message, 'fa fa-info-circle');
-	
+
 	}
-	
+
 	// cache is running
 	$general_cache_active = ESSBOptionValuesHelper::options_bool_value ( $essb_admin_options, 'essb_cache' );
 	$general_cache_active_static = ESSBOptionValuesHelper::options_bool_value ( $essb_admin_options, 'essb_cache_static' );
 	$general_cache_active_static_js = ESSBOptionValuesHelper::options_bool_value ( $essb_admin_options, 'essb_cache_static_js' );
 	$general_cache_mode = ESSBOptionValuesHelper::options_value ( $essb_admin_options, 'essb_cache_mode' );
 	$is_cache_active = false;
-	
+
 	$general_precompiled_resources = ESSBOptionValuesHelper::options_bool_value ( $essb_admin_options, 'precompiled_resources' );
-	
+
 	$backup = isset ( $_REQUEST ['backup'] ) ? $_REQUEST ['backup'] : '';
-	
-	
+
+
 	$display_cache_mode = "";
 	if ($general_cache_active) {
 		if ($general_cache_mode == "full") {
@@ -523,7 +537,7 @@ function essb_settings5_status_notifications() {
 		}
 		$is_cache_active = true;
 	}
-	
+
 	if ($general_cache_active_static || $general_cache_active_static_js) {
 		if ($display_cache_mode != '') {
 			$display_cache_mode .= ", ";
@@ -531,37 +545,37 @@ function essb_settings5_status_notifications() {
 		$display_cache_mode .= __("Combine into sigle file all plugin static CSS files", "essb");
 		$is_cache_active = true;
 	}
-	
+
 	if ($is_cache_active) {
 		$cache_clear_address = esc_url_raw ( add_query_arg ( array ('purge-cache' => 'true' ), essb_get_current_page_url () ) );
-	
+
 		$dismiss_addons_button = '<a href="' . $cache_clear_address . '"  text="' . __ ( 'Purge Cache', 'essb' ) . '" class="status_button float_right" style="margin-right: 5px;"><i class="fa fa-close"></i>&nbsp;' . __ ( 'Purge Cache', 'essb' ) . '</a>';
 		essb_display_status_message(__('Plugin Cache is Running!', 'essb'), sprintf('%2$s %1$s', $dismiss_addons_button, $display_cache_mode), 'fa fa-database');
 	}
-	
+
 	if ($general_precompiled_resources) {
 		$cache_clear_address = esc_url_raw ( add_query_arg ( array ('rebuild-resource' => 'true' ), essb_get_current_page_url () ) );
-	
+
 		$dismiss_addons_button = '<a href="' . $cache_clear_address . '"  text="' . __ ( 'Rebuild Resources', 'essb' ) . '" class="status_button float_right" style="margin-right: 5px;"><i class="fa fa-close"></i>&nbsp;' . __ ( 'Rebuild Resources', 'essb' ) . '</a>';
 		essb_display_status_message(__('Precompiled Resource Mode is Active!', 'essb'), sprintf('In precompiled mode plugin will load default setup into single static files that will run on entire site. %1$s', $dismiss_addons_button), 'fa fa-history');
 	}
-	
+
 	if ($backup == 'true') {
 		essb_display_status_message(__('Backup is ready!', 'essb'), 'Backup of your current settings is generated. Copy generated configuration string and save it on your computer. You can use it to restore settings or transfer them to other site.', 'fa fa-gear');
 	}
-	
-	
+
+
 	$rollback_settings = isset($_REQUEST['rollback_setup']) ? $_REQUEST['rollback_setup'] : '';
 	$rollback_key = isset($_REQUEST['rollback_key']) ? $_REQUEST['rollback_key'] : '';
 	if ($rollback_settings == 'true' && $rollback_key != '') {
 		essb_display_status_message(__('Settings Rollback Completed!', 'essb'), 'Your setup from '.date(DATE_RFC822, $rollback_key).' is restored!', 'fa fa-gear');
-		
+
 	}
-	
+
 	if (essb_option_value('counter_mode') == '' && essb_option_value('show_counter')) {
 		essb_display_status_message(__('Real time share counters warning!', 'essb'), __('You are using real time share counters update on your site. It is highly recommended to avoid that on a production site because you may cause overload of server or send too many requests to social API which will lead to missing share counters for a period of time', 'essb'), 'fa fa-exclamation-circle');
 	}
-		
+
 	if ($purge_cache == 'true') {
 		if (class_exists ( 'ESSBDynamicCache' )) {
 			ESSBDynamicCache::flush ();
@@ -570,22 +584,144 @@ function essb_settings5_status_notifications() {
 			purge_essb_cache_static_cache ();
 		}
 		essb_display_status_message(__('Cache is Cleared!', 'essb'), 'Build in cache of plugin is fully cleared!', 'fa fa-info-circle');
-	
+
 	}
-	
+
 	if ($rebuild_resource == "true") {
 		if (class_exists ( 'ESSBPrecompiledResources' )) {
 			ESSBPrecompiledResources::flush ();
 		}
 	}
-	
+
 	if (function_exists('essb3_apply_readymade_style')) {
 		essb3_apply_readymade_style();
+	}
+	
+	$reset_analytics = isset($_REQUEST['reset_analytics']) ? $_REQUEST['reset_analytics'] : '';
+	if ($reset_analytics == 'true') {
+		essb_display_status_message(__('Analytics data is cleared!', 'essb'), 'All current analytics data is removed and stats will start again. This data is not connected to share counters on your site.', 'fa fa-info-circle');
+		global $wpdb;
+		$table  = $wpdb->prefix . ESSB3_TRACKER_TABLE;
+		$delete = $wpdb->query("TRUNCATE TABLE $table");
+	}
+	
+	$reset_short = isset($_REQUEST['reset_short']) ? $_REQUEST['reset_short'] : '';
+	if ($reset_short == 'true') {
+		essb_display_status_message(__('Short URL cache is cleared!', 'essb'), 'All stored short URLs are removed from post meta information.', 'fa fa-info-circle');
+		delete_post_meta_by_key('essb_shorturl_googl');
+		delete_post_meta_by_key('essb_shorturl_post');
+		delete_post_meta_by_key('essb_shorturl_bitly');
+		delete_post_meta_by_key('essb_shorturl_ssu');
+		delete_post_meta_by_key('essb_shorturl_rebrand');
+	}
+	
+	$reset_counterupdate = isset($_REQUEST['reset_counterupdate']) ? $_REQUEST['reset_counterupdate'] : '';
+	if ($reset_counterupdate == 'true') {
+		essb_display_status_message(__('Share Counter Update is Scheduled!', 'essb'), 'You have successfully clear the counter update time. All share coutners will update as soon as post/page is loaded.', 'fa fa-info-circle');
+		delete_post_meta_by_key('essb_cache_expire');
+	}
+	
+	$reset_alldata = isset($_REQUEST['reset_alldata']) ? $_REQUEST['reset_alldata'] : '';
+	if ($reset_alldata == 'true') {
+		essb_display_status_message(__('Plugin Information is Removed!', 'essb'), 'You remove all data that was stored by plugin', 'fa fa-info-circle');
+		
+		// short URLs
+		delete_post_meta_by_key('essb_shorturl_googl');
+		delete_post_meta_by_key('essb_shorturl_post');
+		delete_post_meta_by_key('essb_shorturl_bitly');
+		delete_post_meta_by_key('essb_shorturl_ssu');
+		delete_post_meta_by_key('essb_shorturl_rebrand');
+		
+		// share counters
+		delete_post_meta_by_key('essb_cache_expire');
+		$networks = essb_available_social_networks();
+			
+		foreach ($networks as $key => $data) {
+			delete_post_meta_by_key('essb_c_'.$key);
+			delete_post_meta_by_key('essb_pc_'.$key);
+		}
+		delete_post_meta_by_key('_essb_love');
+		delete_post_meta_by_key('essb_metrics_data');
+		
+		// post setup data
+		delete_post_meta_by_key('essb_off');
+		delete_post_meta_by_key('essb_post_button_style');
+		delete_post_meta_by_key('essb_post_template');
+		delete_post_meta_by_key('essb_post_counters');
+		delete_post_meta_by_key('essb_post_counter_pos');
+		delete_post_meta_by_key('essb_post_total_counter_pos');
+		delete_post_meta_by_key('essb_post_customizer');
+		delete_post_meta_by_key('essb_post_animations');
+		delete_post_meta_by_key('essb_post_optionsbp');
+		delete_post_meta_by_key('essb_post_content_position');
+		foreach ( essb_available_button_positions() as $position => $name ) {
+			delete_post_meta_by_key("essb_post_button_position_{$position}");
+		}
+		delete_post_meta_by_key('essb_post_native');
+		delete_post_meta_by_key('essb_post_native_skin');
+		delete_post_meta_by_key('essb_post_share_message');
+		delete_post_meta_by_key('essb_post_share_url');
+		delete_post_meta_by_key('essb_post_share_image');
+		delete_post_meta_by_key('essb_post_share_text');
+		delete_post_meta_by_key('essb_post_pin_image');
+		delete_post_meta_by_key('essb_post_fb_url');
+		delete_post_meta_by_key('essb_post_plusone_url');
+		delete_post_meta_by_key('essb_post_twitter_hashtags');
+		delete_post_meta_by_key('essb_post_twitter_username');
+		delete_post_meta_by_key('essb_post_twitter_tweet');
+		delete_post_meta_by_key('essb_activate_ga_campaign_tracking');
+		delete_post_meta_by_key('essb_post_og_desc');
+		delete_post_meta_by_key('essb_post_og_author');
+		delete_post_meta_by_key('essb_post_og_title');
+		delete_post_meta_by_key('essb_post_og_image');
+		delete_post_meta_by_key('essb_post_og_video');
+		delete_post_meta_by_key('essb_post_og_video_w');
+		delete_post_meta_by_key('essb_post_og_video_h');
+		delete_post_meta_by_key('essb_post_og_url');
+		delete_post_meta_by_key('essb_post_twitter_desc');
+		delete_post_meta_by_key('essb_post_twitter_title');
+		delete_post_meta_by_key('essb_post_twitter_image');
+		delete_post_meta_by_key('essb_post_google_desc');
+		delete_post_meta_by_key('essb_post_google_title');
+		delete_post_meta_by_key('essb_post_google_image');
+		delete_post_meta_by_key('essb_activate_sharerecovery');
+		delete_post_meta_by_key('essb_post_og_image1');
+		delete_post_meta_by_key('essb_post_og_image2');
+		delete_post_meta_by_key('essb_post_og_image3');
+		delete_post_meta_by_key('essb_post_og_image4');
+		
+		// removing plugin saved possible options
+		delete_option('essb3_addons');
+		delete_option('essb3_addons_announce');
+		delete_option(ESSB3_OPTIONS_NAME);
+		delete_option('essb_dismissed_notices');
+		
+		delete_option(ESSB3_OPTIONS_NAME_FANSCOUNTER);
+		delete_option(ESSB3_FIRST_TIME_NAME);
+		delete_option('essb-shortcodes');
+		delete_option('essb-hook');
+		delete_option('essb3-translate-notice');
+		delete_option('essb3-subscribe-notice');
+		delete_option(ESSB3_EASYMODE_NAME);
+		delete_option(ESSB5_SETTINGS_ROLLBACK);
+		delete_option('essb-admin-settings-token');
+		delete_option('essb_cache_static_cache_ver');
+		delete_option('essb4-activation');
+		delete_option('essb4-latest-version');
+		delete_option('essb-conversions-lite');
+		delete_option('essb-subscribe-conversions-lite');
+		delete_option('essbfcounter_cached');
+		delete_option('essbfcounter_expire');
+		delete_option(ESSB3_MAIL_SALT);
+		
+		global $wpdb;
+		$table  = $wpdb->prefix . ESSB3_TRACKER_TABLE;
+		$wpdb->query( "DROP TABLE IF EXISTS ".$table );
 	}
 }
 ?>
 
-<?php 
+<?php
 
 $deactivate_ajaxsubmit = essb_option_bool_value('deactivate_ajaxsubmit');
 
@@ -637,7 +773,7 @@ if (!$deactivate_ajaxsubmit) {
     -webkit-transform: rotate(360deg);
   }
 }
-/* for demo purposes only — not required */
+/* for demo purposes only ï¿½ not required */
 .preloader {
   top: 0;
   bottom: 0;
@@ -692,7 +828,7 @@ if (!$deactivate_ajaxsubmit) {
 	font-weight: 700;
 }
 
-.sweet-overlay { 
+.sweet-overlay {
 background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -712,7 +848,7 @@ background-color: rgba(0, 0, 0, 0.7);
 .essb-scroll-effect::-webkit-scrollbar-thumb
 {
 	background-color: #0ae;
-	
+
 	background-image: -webkit-gradient(linear, 0 0, 0 100%,
 	                   color-stop(.5, rgba(255, 255, 255, .2)),
 					   color-stop(.5, transparent), to(transparent));
@@ -748,8 +884,8 @@ jQuery(document).ready(function($){
 						catch (e) {
 						}
 					}
-				});		        
-				
+				});
+
 				$.ajax({
 		            type: frmSettings.attr('method'),
 		            url: frmSettings.attr('action'),
@@ -763,7 +899,7 @@ jQuery(document).ready(function($){
 
 			}
 		});
-	
+
 
 
 		$('#essb-btn-update').on('click', function(e) {
@@ -777,7 +913,7 @@ jQuery(document).ready(function($){
 
 			$('.preloader-holder').fadeIn(100);
 			var plugin_is_activated = <?php if (ESSBActivationManager::isActivated()) { echo 'true'; } else { echo 'false'; }?>;
-			var version_api = '<?php echo ESSBActivationManager::getApiUrl('api')?>version.php'; 
+			var version_api = '<?php echo ESSBActivationManager::getApiUrl('api')?>version.php';
 			$.ajax({
 				type: "GET",
 		        url: version_api,
@@ -787,7 +923,7 @@ jQuery(document).ready(function($){
 	                console.log(data);
 	                if (typeof(data) == "string")
 	                	data = JSON.parse(data);
-	                
+
 	                var code = data['code'] || '';
 	                var version = data['version'] || '';
 
@@ -825,29 +961,29 @@ jQuery(document).ready(function($){
 		});
 	}
 
-	
+
 });
-	
+
 </script>
 <?php } ?>
 
-<?php 
-/** 
- * Detect first time run to suggest visitor run a plugin wizard 
+<?php
+/**
+ * Detect first time run to suggest visitor run a plugin wizard
  */
 
 $is_for_firsttime = get_option ( ESSB3_FIRST_TIME_NAME );
-if (!$is_for_firsttime) { $is_for_firsttime = 'false'; }	
+if (!$is_for_firsttime) { $is_for_firsttime = 'false'; }
 
 if ($current_tab != 'about' && $is_for_firsttime == 'true') {
-	
+
 	// first time wizard displayed
 	update_option(ESSB3_FIRST_TIME_NAME, 'false');
-	
+
 	?>
 
 	<style type="text/css">
-	
+
 	.essb-firsttime {
 		background: #2b6a94; /* Old browsers */
 		background: -moz-linear-gradient(top, #2b6a94 0%, #23577a 100%); /* FF3.6-15 */
@@ -863,8 +999,8 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 		top: 0;
 		border-radius: 10px;
 	}
-	
-.essb-firsttime .essb-logo {	
+
+.essb-firsttime .essb-logo {
 	display: block;
 	width: 72px;
 	height: 72px;
@@ -909,7 +1045,7 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 		text-decoration: none;
 		cursor: pointer;
 	}
-	
+
 	.essb-firsttime-button-default {
 		background-color: #3498db;
 	}
@@ -922,11 +1058,11 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 		.essb-firsttime-button-color1 {
 		background-color: #BB3658;
 	}
-	
+
 	.essb-firsttime-button-color2 {
 		background-color: #FD5B03;
 }
-	
+
 	.essb-firsttime-button-color3 {
 		background-color: #2ebf99;
 }
@@ -942,11 +1078,11 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 		color: #fff;
 		text-decoration: none !important;
 	}
-	
+
 	.essb-firsttime-button-transparent {
 		text-decoration: underline;
 	}
-	
+
 	.essb-firsttime-button-transparent:hover, .essb-firsttime-button-transparent:focus, .essb-firsttime-button-transparent:active {
 		color: #fff;
 		text-decoration: none;
@@ -957,11 +1093,11 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 		color: #fff;
 		text-decoration: none !important;
 	}
-	
-	
+
+
 	.essb-firsttime .actions { text-align: center; margin-top: 30px; }
 	.essb-firsttime .actions .essb-firsttime-button { margin-right: 10px; }
-	
+
 	.essb-firsttime-holder {
 	position: fixed;
   width: 100%;
@@ -972,7 +1108,7 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
   left: 0;
   display: none;
 }
-	
+
 	.essb-firsttime-notice {
 		font-size: 12px;
 		margin-top: 5px;
@@ -980,28 +1116,28 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 }
 
 	</style>
-	
+
 	<div class="essb-firsttime-holder"></div>
-	
+
 	<div class="essb-firsttime">
 		<div class="essb-firsttime-inner">
 			<div class="essb-logo essb-logo32">
 				<div class="essb-version-logo"><?php echo ESSB3_VERSION; ?></div>
 			</div>
-			
+
 			<h1><?php echo sprintf( __( 'Welcome to Easy Social Share Buttons for WordPress', 'essb' ), preg_replace( '/^(\d+)(\.\d+)?(\.\d)?/', '$1$2', ESSB3_VERSION ) ) ?></h1>
 
 			<div class="about-text">
 				<?php _e( 'Thank you for choosing the best social sharing plugin for WordPress. You are about to use most powerful social media plugin for WordPress ever - get ready to increase your social shares, followers and mail list subscribers. We hope you enjoy it!', 'essb' )?>
 			</div>
-			
+
 			<div class="actions">
 				<a href="<?php echo admin_url('admin.php?page=essb_redirect_modes&tab=modes');?>" class="essb-firsttime-button essb-firsttime-button-color2">Switch Plugin Modes</a>
 				<a href="<?php echo admin_url('admin.php?page=essb_redirect_functions&tab=functions');?>" class="essb-firsttime-button essb-firsttime-button-color3">Personalize Active Modules</a>
 			</div>
-			
+
 			<div class="actions">
-				<a href="<?php echo admin_url('admin.php?page=essb_redirect_quick&tab=quick');?>" class="essb-firsttime-button essb-firsttime-button-default">Run Setup Wizard</a>				
+				<a href="<?php echo admin_url('admin.php?page=essb_redirect_quick&tab=quick');?>" class="essb-firsttime-button essb-firsttime-button-default">Run Setup Wizard</a>
 				<a href="https://docs.socialsharingplugin.com" target="_blank" class="essb-firsttime-button essb-firsttime-button-color1">Visit Knowledge Base</a>
 				<a href="http://support.creoworx.com" target="_blank" class="essb-firsttime-button essb-firsttime-button-color2">Need Help? Visit Our Support System</a>
 				</div>
@@ -1013,7 +1149,7 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 			</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript">
 
 	jQuery(document).ready(function($){
@@ -1022,18 +1158,18 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 	            return this.each(function() {
 	                var top = (jQuery(window).height() - jQuery(this).outerHeight()) / 2;
 	                var left = (jQuery(window).width() - jQuery(this).outerWidth()) / 2;
-	                
+
 	                if (jQuery('#adminmenuwrap').length)
 	                	left = left + (jQuery('#adminmenuwrap').width() / 2);
-	                
+
 	                jQuery(this).css({position:'fixed', margin:0, top: (top > 0 ? top : 0)+'px', left: (left > 0 ? left : 0)+'px'});
 	            });
 	        }
-	    }); 
-		
-		
+	    });
+
+
 		$('.essb-firsttime').centerWithAdminBarWelcome();
-		
+
 		$('.essb-firsttime-holder').fadeIn(200);
 		$('.essb-firsttime').fadeIn(400);
 
@@ -1045,7 +1181,7 @@ if ($current_tab != 'about' && $is_for_firsttime == 'true') {
 		});
 	});
 	</script>
-	<?php 
+	<?php
 }
 
 ?>

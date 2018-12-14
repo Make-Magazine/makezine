@@ -597,7 +597,7 @@ display: inline-block;
 .preloader-holder { display: none; }
 
 .media-modal { z-index: 2600000 !important; }
-.screen-reader-text { display: none; }
+.essb-live-customizer .screen-reader-text { display: none; }
 
 /** Switch Control **/
 /*

@@ -155,6 +155,7 @@ class ESSBOptinBooster {
 		}
 		
 		$ofob_single = $this->option_bool_value('ofob_single');
+		$ofob_single_time = $this->option_bool_value('ofob_single_time');
 		$ofob_creditlink = $this->option_bool_value('ofob_creditlink');
 		
 		if ($this->option_bool_value('ofob_time')) {
@@ -164,6 +165,11 @@ class ESSBOptinBooster {
 			
 			if ($ofob_time_delay != '') {
 				$callback = ' data-delay="'.$ofob_time_delay.'" data-single="'.$ofob_single.'"';
+				
+				if ($ofob_single_time != '') {
+					$callback .= ' data-single-days="'.$ofob_single_time.'"';
+				}
+				
 				$this->draw_form_code('time', $of_time_design, $of_time_bgcolor, $callback, $ofob_creditlink);
 			}
 		}
@@ -175,6 +181,11 @@ class ESSBOptinBooster {
 				
 			if ($ofob_scroll_percent != '') {
 				$callback = ' data-scroll="'.$ofob_scroll_percent.'" data-single="'.$ofob_single.'"';
+				
+				if ($ofob_single_time != '') {
+					$callback .= ' data-single-days="'.$ofob_single_time.'"';
+				}
+				
 				$this->draw_form_code('scroll', $of_scroll_design, $of_scroll_bgcolor, $callback, $ofob_creditlink);
 			}
 		}
@@ -183,6 +194,11 @@ class ESSBOptinBooster {
 			$of_exit_design = $this->option_value('of_exit_design');
 			$of_exit_bgcolor = $this->option_value('of_exit_bgcolor');				
 			$callback = ' data-exit="1" data-single="'.$ofob_single.'"';
+			
+			if ($ofob_single_time != '') {
+				$callback .= ' data-single-days="'.$ofob_single_time.'"';
+			}
+				
 			$this->draw_form_code('exit', $of_exit_design, $of_exit_bgcolor, $callback, $ofob_creditlink);
 				
 		}

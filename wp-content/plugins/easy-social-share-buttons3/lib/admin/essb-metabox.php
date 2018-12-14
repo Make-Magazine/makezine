@@ -32,6 +32,7 @@ function essb_register_settings_metabox_optimize() {
 	$essb_activate_sharerecovery = "";
 	
 	$essb_post_pin_image = "";
+	$essb_post_pin_desc = '';
 	
 	$post_address = "";
 	
@@ -61,6 +62,7 @@ function essb_register_settings_metabox_optimize() {
 		$essb_activate_ga_campaign_tracking = isset($custom['essb_activate_ga_campaign_tracking']) ? $custom['essb_activate_ga_campaign_tracking'][0] : "";
 		
 		$essb_post_pin_image = isset ( $custom ["essb_post_pin_image"] ) ? $custom ["essb_post_pin_image"] [0] : "";
+		$essb_post_pin_desc = isset ( $custom ["essb_post_pin_desc"] ) ? $custom ["essb_post_pin_desc"] [0] : "";
 		
 		$essb_activate_sharerecovery = isset($custom['essb_activate_sharerecovery']) ? $custom['essb_activate_sharerecovery'][0] : '';
 			
@@ -209,7 +211,8 @@ function essb_register_settings_metabox_optimize() {
 				//$essb_post_og_url
 				
 				ESSBOptionsFramework::draw_options_row_start_full('inner-row-small');
-				ESSBOptionsFramework::draw_hint(__('Did you know that Facebook has share data cache?', 'essb'), __('All changes that you made on site will not appear immediately unless you clear cache and make Facebook bot revisit your site. The quick way to do this is to use Easy Social Share Buttons top menu in WordPress bar where in Validation you will find link to test and update Facebook information. You can read more about this tool in this article <a href="http://appscreo.com/facebook-debugger-tool/" target="_blank">http://appscreo.com/facebook-debugger-tool/</a> in our blog. ', 'essb'), 'fa21 ti-info-alt');
+				//ESSBOptionsFramework::draw_hint(__('Did you know that Facebook has share data cache?', 'essb'), __('All changes that you made on site will not appear immediately unless you clear cache and make Facebook bot revisit your site. The quick way to do this is to use Easy Social Share Buttons top menu in WordPress bar where in Validation you will find link to test and update Facebook information. You can read more about this tool in this article <a href="http://appscreo.com/facebook-debugger-tool/" target="_blank">http://appscreo.com/facebook-debugger-tool/</a> in our blog. ', 'essb'), 'fa21 ti-info-alt');
+				ESSBOptionsFramework::draw_help(__('Optimize your social share message on all social networks', 'essb'), __('Social Sharing Optimization is important for each site. Without using it you have no control over shared information on social networks. We highly recommend to activate it (Facebook sharing tags are used on almost all social networks so they are the minimal required).', 'essb'), '', array('buttons' => array('How to customize shared information' => 'https://docs.socialsharingplugin.com/knowledgebase/how-to-customize-personalize-shared-information-on-social-networks/', 'I see wrong share information' => 'https://docs.socialsharingplugin.com/knowledgebase/facebook-is-showing-the-wrong-image-title-or-description/', 'Test & Fix Facebook Showing Wrong Information' => 'https://docs.socialsharingplugin.com/knowledgebase/how-to-test-and-fix-facebook-sharing-wrong-information-using-facebook-open-graph-debugger/')));
 				ESSBOptionsFramework::draw_options_row_end();
 
 				ESSBOptionsFramework::draw_title(__('Customize Open Graph URL', 'essb'), __('Important! This field is needed only if you made a change in your URL structure and you need to customize og:url tag to preserve shares you have. Do not fill here anything unless you are completely sure you need it - not proper usage will lead to loose of your current social shares and comments.', 'essb'), 'inner-row');
@@ -297,6 +300,10 @@ function essb_register_settings_metabox_optimize() {
 			ESSBOptionsFramework::reset_row_status();
 			ESSBOptionsFramework::draw_options_row_start(__('Change default Pinterest image', 'essb'), __('Choose personalized image that will be used to when you press Pinterest share button <span class="essb-inner-recommend">We recommend using an image that is formatted in a 2:3 aspect ratio like 735 x 1102.</span>', 'essb'));
 			ESSBOptionsFramework::draw_fileselect_image_field('essb_post_pin_image', 'essb_metabox', $essb_post_pin_image);
+			ESSBOptionsFramework::draw_options_row_end();
+			
+			ESSBOptionsFramework::draw_options_row_start(__('Description', 'essb'), __('Add a custom description to your Pin.', 'essb'));
+			ESSBOptionsFramework::draw_textarea_field('essb_post_pin_desc', 'essb_metabox', $essb_post_pin_desc);
 			ESSBOptionsFramework::draw_options_row_end();
 			ESSBMetaboxInterface::draw_content_section_end();
 		}
@@ -697,262 +704,7 @@ function essb_register_settings_metabox_stats() {
 		$sqlMonthsData = ESSBSocialShareAnalyticsBackEnd::essb_stats_by_networks_by_date_for_post($essb_date_from, $essb_date_to, $post_id);
 		
 		
-		?>
-		<div class="essb-dashboard essb-metabox-dashboard">
-		<!--  dashboard type2  -->
-	<!--  dashboard overall  -->
-	<div class="essb-dashboard-panel">
-		
-		<div class="essb-dashboard-panel-content">
-
-			<div class="row">
-				<div class="oneforth">
-					<div class="essb-stats-panel shadow panel100 total">
-						<div class="essb-stats-panel-inner">
-							<div class="essb-stats-panel-text">
-								<div class="essb-stats-panel-text1">
-									<strong>
-								<?php echo __('Total clicks on share buttons', 'essb'); ?></strong>
-								</div>
-								<div class="essb-stats-panel-devices">
-								<?php
-	
-	if (isset ( $device_stats )) {
-		$desktop = $device_stats->desktop;
-		$mobile = $device_stats->mobile;
-		
-		if ($calculated_total != 0) {
-			$percentd = $desktop * 100 / $calculated_total;
-		} else {
-			$percentd = 0;
-		}
-		$print_percentd = round ( $percentd, 2 );
-		$percentd = round ( $percentd );
-		
-		if ($percentd > 90) {
-			$percentd -= 2;
-		}
-		
-		if ($calculated_total != 0) {
-			$percentm = $mobile * 100 / $calculated_total;
-		} else {
-			$percentm = 0;
-		}
-		$print_percentm = round ( $percentm, 2 );
-		$percentm = round ( $percentm );
-		if ($percentm > 90) {
-			$percentm -= 2;
-		}
-	}
-	
-	?>
-				<div class="essb-stats-device-position total-values">
-										<div class="inline left">
-											<div class="essb-stats-device-icon">
-												<i class="ti-desktop"></i>
-											</div>
-											<div class="essb-stats-device-info">
-												<span class="text-title">
-						<?php echo __('Desktop', 'essb'); ?></span> <span class="value"><?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($desktop); ?></span>
-												<span class="percent"><?php echo $print_percentd;?> %</span>
-											</div>
-										</div>
-										<div class="inline right">
-											<div class="essb-stats-device-icon"
-												style="margin-left: 20px;">
-												<i class="ti-mobile"></i>
-											</div>
-											<div class="essb-stats-device-info">
-												<span class="text-title">
-						<?php echo __('Mobile', 'essb'); ?></span> <span class="value"><?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($mobile); ?></span>
-												<span class="percent"><?php echo $print_percentm;?> %</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="essb-stats-panel-value"><?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($calculated_total); ?>
-						</div>
-						</div>
-
-
-
-
-					</div> <!--  end stat panel overall -->
-					<!-- Most popular position and social network -->
-					<?php 
-					$best_position_value = 0;
-					$best_position_key = "";
-					
-					$best_network_value = 0;
-					$best_network_key = "";
-					
-					if (isset ( $overall_stats )) {
-						foreach ( ESSBSocialShareAnalyticsBackEnd::$positions as $k ) {
-								
-							$key = "position_" . $k;
-								
-							$single = intval ( $position_stats->{$key} );
-							
-							if ($single > $best_position_value) {
-								$best_position_value = $single;
-								$best_position_key = $k;
-							}
-						}
-						
-						foreach ( $essb_networks as $k => $v ) {
-								
-							$single = intval ( $overall_stats->{$k} );
-							
-							if ($single > $best_network_value) {
-								$best_network_value = $single;
-								$best_network_key = $v["name"];
-							}
-						}
-					}
-					
-					?>
-					
-					<div class="essb-most-popular">
-						<div class="essb-most-popular-position">
-							<div class="twocols">
-								<?php echo __('Most popular social network:', 'essb');?>
-							</div>
-							<div class="twocols">
-								<strong><?php echo $best_network_key; ?></strong> (<?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($best_network_value); ?>)
-							</div>
-						
-						</div>
-					<div class="essb-most-popular-position">
-							<div class="twocols">
-								<?php echo __('Most popular position:', 'essb');?>
-							</div>
-							<div class="twocols">
-								<strong><?php echo strtoupper($best_position_key); ?></strong> (<?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($best_position_value); ?>)
-							</div>
-						
-						</div>
-					</div>
-					
-				</div>
-				<!-- end left -->
-				<!-- start right -->
-				<div class="threeforth">
-					<!-- begin stats by displayed position -->
-<?php
-	
-	if (isset ( $overall_stats )) {
-		$cnt = 0;
-		foreach ( ESSBSocialShareAnalyticsBackEnd::$positions as $k ) {
-			
-			$key = "position_" . $k;
-			
-			$single = intval ( $position_stats->{$key} );
-			
-			if ($single > 0) {
-				if ($calculated_total != 0) {
-					$percent = $single * 100 / $calculated_total;
-				} else {
-					$percent = 0;
-				}
-				$print_percent = round ( $percent, 2 );
-				$percent = round ( $percent );
-				?>
-			
-			<div class="essb-stats-panel shadow panel20" onclick="essb_analytics_position_report('<?php echo $k; ?>'); return false;" style="cursor: pointer;" title="Click on position to see best performing network and content">
-						<div class="essb-stats-panel-inner">
-							<div class="essb-stats-panel-text"><?php echo $k; ?> <span
-									class="percent"><?php echo $print_percent;?> %</span>
-							</div>
-							<div class="essb-stats-panel-value"><?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($single); ?>
-						</div>
-						</div>
-						<div class="essb-stats-panel-graph">
-
-							<div class="graph widget-color-ok" style="width: <?php echo $percent;?>%;"></div>
-
-						</div>
-					</div>
-									
-									<?php
-			}
-		}
-	}
-	
-	?>					
-				</div>
-
-
-
-				<div class="row">
-					<div class="essb-title5">
-						<div>Clicks by social networks</div>
-					</div>
-
-
-					
-<?php
-	
-	if (isset ( $overall_stats )) {
-		$cnt = 0;
-		foreach ( $essb_networks as $k => $v ) {
-			
-			$single = intval ( $overall_stats->{$k} );
-			
-			if ($single > 0) {
-				$percent = $single * 100 / $calculated_total;
-				$print_percent = round ( $percent, 2 );
-				$percent = round ( $percent );
-				?>
-			
-			<div
-						class="essb-stats-panel essb-stat-network shadow panel20 widget-color-<?php echo $k; ?>">
-						<div class="essb-stats-panel-inner">
-							<div class="essb-stats-panel-text">
-								<i class="essb_icon_<?php echo $k; ?>"></i> <span
-									class="details"><?php echo $v["name"]; ?><br /> <span
-									class="percent"><?php echo $print_percent;?> %</span></span>
-							</div>
-							<div class="essb-stats-panel-value"><?php echo ESSBSocialShareAnalyticsBackEnd::prettyPrintNumber($single); ?>
-						</div>
-						</div>
-						<div class="essb-stats-panel-graph">
-
-							<div class="graph widget-color-white" style="width: <?php echo $percent;?>%;"></div>
-
-						</div>
-					</div>
-									
-									<?php
-			}
-		}
-	}
-	
-	?>
-				</div>
-
-			</div>
-
-
-
-		</div>
-	</div>
-	<div class="clear"></div>
-		
-	<!--  end dashboard 2 -->
-		<div class="essb-dashboard-panel">
-		<div class="essb-dashboard-panel-title">
-			<h4>Social activity for the last 30 days</h4>
-
-		</div>
-		<div class="essb-dashboard-panel-content">
-			<?php ESSBSocialShareAnalyticsBackEnd::essb_stat_admin_detail_by_month ($sqlMonthsData, $networks_with_data, '', 'Date'); ?>
-			</div>
-	</div>
-
-	<div class="clear"></div>
-		</div>
-		<?php 
+		include_once ESSB3_PLUGIN_ROOT . 'lib/modules/social-share-analytics/dashboard/template-metabox-post.php';
 	}
 }
 

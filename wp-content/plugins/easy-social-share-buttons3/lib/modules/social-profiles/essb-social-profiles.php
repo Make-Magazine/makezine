@@ -103,6 +103,7 @@ class ESSBSocialProfiles {
 	 */
 	public static function draw_social_profiles($options) {
 		
+		
 		$instance_position = isset ( $options ['position'] ) ? $options ['position'] : '';
 		$instance_new_window = 1;
 		$instance_nofollow = 1;
@@ -110,6 +111,10 @@ class ESSBSocialProfiles {
 		$instance_animation = isset ( $options ['animation'] ) ? $options ['animation'] : '';
 		$instance_nospace = isset ( $options ['nospace'] ) ? $options ['nospace'] : 0;
 		$instance_networks = isset($options['networks']) ? $options['networks'] : array();
+		
+		$instance_align = isset($options['align']) ? $options['align'] : '';
+		$instance_size = isset($options['size']) ? $options['size'] : '';
+		$instance_class = isset($options['class']) ? $options['class'] : '';
 
 		// compatibility with previous template slugs
 		if (!empty($instance_template)) {
@@ -133,6 +138,13 @@ class ESSBSocialProfiles {
 				
 		$class_position = ($instance_position != '') ? ' essbfc-profiles-bar essbfc-profiles-'.$instance_position : '';
 		
+		$class_align = !empty($instance_align) ? ' essbfc-profiles-align-'.$instance_align : '';
+		$class_size = !empty($instance_size) ? ' essbfc-profiles-size-'.$instance_size : '';
+		
+		if ($instance_class != '') {
+			$class_size .= ' '.$instance_class;
+		}
+		
 		$link_nofollow = (intval ( $instance_nofollow ) == 1) ? ' rel="nofollow"' : '';
 		$link_newwindow = (intval ( $instance_new_window ) == 1) ? ' target="_blank"' : '';
 		
@@ -143,7 +155,7 @@ class ESSBSocialProfiles {
 		
 		$code = '';
 		// followers main element
-		$code .= sprintf ( '<div class="essbfc-container essbfc-container-profiles %1$s%2$s%3$s%4$s%5$s">', '', $class_columns, $class_template, $class_nospace, $class_position );
+		$code .= sprintf ( '<div class="essbfc-container essbfc-container-profiles %1$s%2$s%3$s%4$s%5$s%6$s%7$s">', '', $class_columns, $class_template, $class_nospace, $class_position, $class_align, $class_size );
 		
 		
 		$code .= '<ul>';

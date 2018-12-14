@@ -49,7 +49,7 @@ function essb_short_rebrandly($url, $post_id = '', $deactivate_cache = false, $a
 		
 	}
 
-	// Return the URL if the request got an error.
+	// Return the URL if the request got an error.	
 	if (is_wp_error ( $result ))
 		return $url;
 
@@ -57,7 +57,7 @@ function essb_short_rebrandly($url, $post_id = '', $deactivate_cache = false, $a
 	$shortlink = isset($result->shortUrl) ? $result->shortUrl : '';
 
 	if ($shortlink != '') {
-		$shortlink = 'http://'.$shortlink;
+		$shortlink = (essb_option_bool_value('shorturl_rebrandpi_https') ? 'https://' : 'http://').$shortlink;
 		
 		if ($post_id != '') {
 			update_post_meta ( $post_id, 'essb_shorturl_rebrand', $shortlink );
@@ -200,6 +200,10 @@ function essb_short_bitly($url, $user = '', $api = '', $post_id = '', $deactivat
 
 function essb_short_ssu($url, $post_id, $deactivate_cache = false) {
 	$result = $url;
+	
+	if (is_user_logged_in() && (essb_option_bool_value('mycred_referral_activate') || essb_option_bool_value('affwp_active'))) {
+		$deactivate_cache = true;
+	}
 
 	if (!empty($post_id) && !$deactivate_cache) {
 		$exist_shorturl = get_post_meta($post_id, 'essb_shorturl_ssu', true);
@@ -208,14 +212,22 @@ function essb_short_ssu($url, $post_id, $deactivate_cache = false) {
 			return $exist_shorturl;
 		}
 	}
-
+	$short_url = '';
 	if (defined('ESSB3_SSU_VERSION')) {
 		if (class_exists('ESSBSelfShortUrlHelper')) {
-			$short_url = ESSBSelfShortUrlHelper::get_external_short_url ( $url );
+			if ($post_id != '' && !essb_option_bool_value('mycred_referral_activate') && !essb_option_bool_value('affwp_active')) {
+				$short_url = ESSBSelfShortUrlHelper::get_post_shorturl($post_id);
+			}
+			
+			if ($short_url == '') {
+				$short_url = ESSBSelfShortUrlHelper::get_external_short_url ( $url );
+			}
 
 			if (!empty($short_url)) {
 				$result = ESSBSelfShortUrlHelper::get_base_path () . $short_url;
-				update_post_meta ( $post_id, 'essb_shorturl_ssu', $result );
+				if (!essb_option_bool_value('mycred_referral_activate') && !essb_option_bool_value('affwp_active')) {
+					update_post_meta ( $post_id, 'essb_shorturl_ssu', $result );
+				}
 			}
 		}
 	}
@@ -275,7 +287,7 @@ function essb_short_url($url, $provider, $post_id = '', $bitly_user = '', $bitly
 
 	// @since 3.4 affiliate intergration with wp shorturl
 	$affwp_active = essb_options_bool_value('affwp_active');
-	if ($affwp_active) {
+	if ($affwp_active && $provider != 'ssu') {
 		essb_depend_load_function('essb_generate_affiliatewp_referral_link', 'lib/core/integrations/affiliatewp.php');
 		$short_url = essb_generate_affiliatewp_referral_link($short_url);
 	}

@@ -114,6 +114,7 @@ function essb_apply_position_style_settings($postion, $basic_style) {
 
 		$basic_style['button_align'] = essb_option_value($postion.'_button_pos');
 		$basic_style['button_width'] = essb_option_value($postion.'_button_width');
+		$basic_style['button_size'] = essb_option_value($postion.'_button_size');
 		$basic_style['button_width_fixed_value'] = essb_option_value($postion.'_fixed_width_value');
 		$basic_style['button_width_fixed_align'] = essb_option_value($postion.'_fixed_width_align');
 		$basic_style['button_width_full_container'] = essb_option_value($postion.'_fullwidth_share_buttons_container');

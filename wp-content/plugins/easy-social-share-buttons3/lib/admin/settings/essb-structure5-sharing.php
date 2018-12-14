@@ -52,7 +52,7 @@ if (!essb_option_bool_value('deactivate_module_conversions')) {
 }
 
 // share-1 stucture
-ESSBOptionsStructureHelper::hint('social', 'share-1', __('Additional network settings are available', 'essb'), __('Some of social networks has additional options that you can use to personalize their function. All that options you can find grouped by social network inside <b>Additional Network Options</b> tab.', 'essb'), 'fa24 ti-widget', 'glow');
+ESSBOptionsStructureHelper::help('social', 'share-1', __('Additional network settings are available', 'essb'), __('Few of the social networks has additional options. Those additional options can help tune up the work of each button or to provide additional functionality. All available options for networks you can find inside <strong>Additional Network Options</strong> tab. You can also remove the unused social networks from the plugin. This you can from the Manage Plugin Features menu inside the Available Networks tab.', 'essb'), array('Help with Networks Setup' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-setup-social-networks/', 'How to work with more button' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-how-to-set-up-more-button/'));
 
 ESSBOptionsStructureHelper::tabs_start('social', 'share-1', 'buttons-tabs', array('<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Social Networks', 'essb'), '<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Additional Network Options', 'essb')), 'false', 'true');
 ESSBOptionsStructureHelper::tab_start('social', 'share-1', 'buttons-tabs-0', 'true');
@@ -67,178 +67,207 @@ ESSBOptionsStructureHelper::tab_end('social', 'share-1');
 ESSBOptionsStructureHelper::tab_start('social', 'share-1', 'buttons-tabs-1');
 ESSBOptionsStructureHelper::hint('social', 'share-1', '', __('Few social networks has additional network options. Below you can make adjustments for all networks that you will use on your site.', 'essb'));
 
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('More Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_more', array("mode" => "toggle", 'state' => 'closed'));
-$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'more_button_func', __('More button', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
-$more_options = array ("plus" => "Plus icon", "dots" => "Dots icon" );
+if (essb_is_active_social_network('more')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('More Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_more', array("mode" => "toggle", 'state' => 'closed'));
+	$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'more_button_func', __('More button', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
+	$more_options = array ("plus" => "Plus icon", "dots" => "Dots icon" );
+	
+	$select_values = array('plus' => array('title' => 'Plus Icon', 'content' => '<i class="essb_icon_more"></i>'),
+			'dots' => array('title' => 'Dots Icon', 'content' => '<i class="essb_icon_more_dots"></i>'));
+	ESSBOptionsStructureHelper::field_toggle('social', 'share-1', 'more_button_icon', __('More button icon', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $select_values);
+	
+	
+	ESSBOptionsStructureHelper::field_section_start_panels('social', 'share-1', '', '');
+	$more_options = array ("" => "Classic Style", "modern" => "Modern Style" );
+	ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'more_button_popstyle', __('More button pop up style', 'essb'), __('Choose the style of your pop up with social networks', 'essb'), $more_options);
+	ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'more_button_poptemplate', __('Template of social networks in more pop up', 'essb'), __('Choose different tempate of buttons in pop up with share buttons or leave usage of default template', 'essb'), essb_available_tempaltes4(true));
+	ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-$select_values = array('plus' => array('title' => 'Plus Icon', 'content' => '<i class="essb_icon_more"></i>'),
-		'dots' => array('title' => 'Dots Icon', 'content' => '<i class="essb_icon_more_dots"></i>'));
-ESSBOptionsStructureHelper::field_toggle('social', 'share-1', 'more_button_icon', __('More button icon', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $select_values);
+if (essb_is_active_social_network('share')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Share Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_share', array("mode" => "toggle", 'state' => 'closed'));
+	//$more_options = array ("1" => "Display all active networks after share button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up" );
+	$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'share_button_func', __('Share button function', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
+	ESSBOptionsStructureHelper::field_section_start_panels('social', 'share-1', '', '');
+	$more_options = array ("" => "Classic Style", "modern" => "Modern Style" );
+	ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'share_button_popstyle', __('More button pop up style', 'essb'), __('Choose the style of your pop up with social networks', 'essb'), $more_options);
+	ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'share_button_poptemplate', __('Template of social networks in more pop up', 'essb'), __('Choose different tempate of buttons in pop up with share buttons or leave usage of default template', 'essb'), essb_available_tempaltes4(true));
+	ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
+	
+	
+	$select_values = array('plus' => array('title' => '', 'content' => '<i class="essb_icon_more"></i>'),
+			'dots' => array('title' => '', 'content' => '<i class="essb_icon_more_dots"></i>'),
+					'share' => array('title' => '', 'content' => '<i class="essb_icon_share"></i>'),
+					'share-alt-square' => array('title' => '', 'content' => '<i class="essb_icon_share-alt-square"></i>'),
+			'share-alt' => array('title' => '', 'content' => '<i class="essb_icon_share-alt"></i>'),
+			'share-tiny' => array('title' => '', 'content' => '<i class="essb_icon_share-tiny"></i>'),
+			'share-outline' => array('title' => '', 'content' => '<i class="essb_icon_share-outline"></i>')
+			);
+	ESSBOptionsStructureHelper::field_toggle('social', 'share-1', 'share_button_icon', __('Share button icon', 'essb'), __('Choose the share button icon you will use (default is share if nothing is selected)', 'essb'), $select_values);
+	
+	
+	$more_options = array ("" => "Default from settings (like other share buttons)", "icon" => "Icon only", "button" => "Button", "text" => "Text only" );
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'share_button_style', __('Share button style', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $more_options);
+	
+	$share_counter_pos = array("hidden" => "No counter", "inside" => "Inside button without text", "insidename" => "Inside button after text", "insidebeforename" => "Inside button before text", "topn" => "Top", "bottom" => "Bottom");
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'share_button_counter', __('Display total counter with the following position', 'essb'), __('Choose where you wish to display total counter of shares assigned with this button. <br/> To view total counter you need to have share counters active and they should not be running in real time mode. Also you need to have your share button set with style button. When you use share button with counter we highly recommend to hide total counter by setting position to be hidden - this will avoid having two set of total value on screen.', 'essb'), $share_counter_pos);
+	
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
+if (essb_is_active_social_network('twitter')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Twitter', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_twitter', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_section_start_panels('social', 'share-1', __('Username and Hashtags', 'essb'), __('Provide default Twitter username and hashtags to be included into messages.', 'essb'), 'yes');
+	ESSBOptionsStructureHelper::field_textbox_panel('social', 'share-1', 'twitteruser', __('Username to be mentioned:', 'essb'), __('If you wish a twitter username to be mentioned in tweet write it here. Enter your username without @ - example twittername. This text will be appended to tweet message at the end. Please note that if you activate custom share address option this will be added to custom share message.', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_panel('social', 'share-1', 'twitterhashtags', __('Hashtags to be added:', 'essb'), __('If you wish hashtags to be added to message write them here. You can set one or more (if more then one separate them with comma (,)) Example: demotag1,demotag2.', 'essb'));
+	ESSBOptionsStructureHelper::field_switch_panel('social', 'share-1', 'twitter_message_tags_to_hashtags', __('Use post tags as hashtags', 'essb'), __('Activate this option to use your current post tags as hashtags. When this option is active the default hashtags will be replaced with post tags when there are such post tags.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
+	
+	ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Twitter message optimization', 'essb'), __('Twitter message optimization allows you to truncate your message if it exceeds the 240 characters length of message.', 'essb'), '');
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'twitter_message_optimize', __('Activate', 'essb'), __('Activate message optimization.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	$listOfOptions = array("1" => "Remove hashtags, remove via username, truncate message", "2" => "Remove via username, remove hashtags, truncate message", "3" => "Remove via username, truncate message", "4" => "Remove hashtags, truncate message", "5" => "Truncate only message");
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'twitter_message_optimize_method', __('Method of optimization', 'essb'), __('Choose the order of components to be removed till reaching the limit of characters', 'essb'), $listOfOptions);
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'twitter_message_optimize_dots', __('Add read more dots when truncate message', 'essb'), __('Add ... (read more dots) to truncated tweets.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-ESSBOptionsStructureHelper::field_section_start_panels('social', 'share-1', '', '');
-$more_options = array ("" => "Classic Style", "modern" => "Modern Style" );
-ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'more_button_popstyle', __('More button pop up style', 'essb'), __('Choose the style of your pop up with social networks', 'essb'), $more_options);
-ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'more_button_poptemplate', __('Template of social networks in more pop up', 'essb'), __('Choose different tempate of buttons in pop up with share buttons or leave usage of default template', 'essb'), essb_available_tempaltes4(true));
-ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+if (essb_is_active_social_network('facebook')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Facebook', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_facebook', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Facebook Advanced Sharing', 'essb'), __('For proper work of advanced Facebook sharing you need to provide application id. If you don\'t have you need to create one. To create Facebook Application use this link: http://developers.facebook.com/apps/', 'essb'), '');
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'facebookadvanced', __('Activate', 'essb'), '', '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'facebookadvancedappid', __('Facebook Application ID:', 'essb'), '');
+	ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Share Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_share', array("mode" => "toggle", 'state' => 'closed'));
-//$more_options = array ("1" => "Display all active networks after share button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up" );
-$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'share_button_func', __('Share button function', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
-ESSBOptionsStructureHelper::field_section_start_panels('social', 'share-1', '', '');
-$more_options = array ("" => "Classic Style", "modern" => "Modern Style" );
-ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'share_button_popstyle', __('More button pop up style', 'essb'), __('Choose the style of your pop up with social networks', 'essb'), $more_options);
-ESSBOptionsStructureHelper::field_select_panel('social', 'share-1', 'share_button_poptemplate', __('Template of social networks in more pop up', 'essb'), __('Choose different tempate of buttons in pop up with share buttons or leave usage of default template', 'essb'), essb_available_tempaltes4(true));
-ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
+if (essb_is_active_social_network('messenger')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Facebook Messenger', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_messenger', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'fbmessengerapp', __('Facebook Application ID:', 'essb'), __('Facebook Application ID connected with your site is required to make messenger sharing work. If you use Facebook Advanced Sharing feature then it is not needed to fill this parameter as application is already applied into Facebook Advanced Sharing settings', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
+if (essb_is_active_social_network('whatsapp')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('WhatsApp', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_whatsapp', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'whatsapp_api', __('Use WhatsApp for Any Device', 'essb'), __('Use this option of you wish to make WhatsApp work for any device. Setting option to Yes will initiate share via the WhatsApp web API which allows share also to web based or mobile version.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-$select_values = array('plus' => array('title' => '', 'content' => '<i class="essb_icon_more"></i>'),
-		'dots' => array('title' => '', 'content' => '<i class="essb_icon_more_dots"></i>'),
-				'share' => array('title' => '', 'content' => '<i class="essb_icon_share"></i>'),
-				'share-alt-square' => array('title' => '', 'content' => '<i class="essb_icon_share-alt-square"></i>'),
-		'share-alt' => array('title' => '', 'content' => '<i class="essb_icon_share-alt"></i>'),
-		'share-tiny' => array('title' => '', 'content' => '<i class="essb_icon_share-tiny"></i>'),
-		'share-outline' => array('title' => '', 'content' => '<i class="essb_icon_share-outline"></i>')
-		);
-ESSBOptionsStructureHelper::field_toggle('social', 'share-1', 'share_button_icon', __('Share button icon', 'essb'), __('Choose the share button icon you will use (default is share if nothing is selected)', 'essb'), $select_values);
+if (essb_is_active_social_network('vk')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('VKontakte', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_vk', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'vkontakte_fullshare', __('Send all sharable details for post/page:', 'essb'), __('VKontakte like most of social networks read data from socail share optimization tags that you have on page. In case when you share nothing appears please activate this option to allow plugin send all details to VKontakte. Please note that if this option is active the details from Social Share Optimization will not appear in share dialog!', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
+if (essb_is_active_social_network('pinterest')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Pinterest', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_pinterest', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::structure_row_start('social', 'share-1');
+	ESSBOptionsStructureHelper::structure_section_start('social', 'share-1', 'c6');
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'pinterest_sniff_disable', __('Disable Pinterest Pin any image:', 'essb'), __('If you disable Pinterest sniff for images plugin will use for share post featured image or custom share image you provide in post settings.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
+	ESSBOptionsStructureHelper::structure_section_end('social', 'share-1');
+	ESSBOptionsStructureHelper::structure_section_start('social', 'share-1', 'c6');
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'pinterest_save_anyimage', __('Include Pinterest Save Any Image Button:', 'essb'), __('Use this option to include save of any image on site to Pinterest. That is the quick image share function. If you wish to use more than one social network than you can take a look of the On Media sharing function inside Where to Display.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
+	ESSBOptionsStructureHelper::structure_section_end('social', 'share-1');
+	ESSBOptionsStructureHelper::structure_row_end('social', 'share-1');
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-$more_options = array ("" => "Default from settings (like other share buttons)", "icon" => "Icon only", "button" => "Button", "text" => "Text only" );
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'share_button_style', __('Share button style', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $more_options);
+if (essb_is_active_social_network('subscribe')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Subscribe Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_subscribe', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::hint('social', 'share-1', __('', 'essb'), __('If you choose to use the build in opt-in module Easy Optin please pay attention of settings in <b>Subscribe Forms</b> menu. In that place you will find all required to setup options for mailing list service connection and you can also customize the design you choose.', 'essb'), 'fa21 mr10 fa fa-envelope-o');
+	
+	$listOfValues = array ("form" => "Open content box", "link" => "Open subscribe link", "mailchimp" => "Easy Optin Subscribe Form (Ready made forms with automatic service integrations)" );
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'subscribe_function', __('Specify subscribe button function', 'essb'), __('Specify if the subscribe button is opening a content box below the button or if the button is linked to the "subscribe url" below.', 'essb'), $listOfValues);
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'subscribe_link', __('Subscribe URL', 'essb'), __('Link the Subscribe button to this URL. This can be the url to your subscribe page, facebook fanpage, RSS feed etc. e.g. http://yoursite.com/subscribe', 'essb'));
+	ESSBOptionsStructureHelper::field_editor('social', 'share-1', 'subscribe_content', __('Subscribe content box', 'essb'), __('Define the content of the opening toggle subscribe window here. Use formulars, like button, links or any other text. Shortcodes are supported, e.g.: [contact-form-7]. Note that if you use subscribe button outside content display positions content will open as popup', 'essb'), 'htmlmixed');
+	$listOfValues = essb_optin_designs();
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'subscribe_optin_design', __('Specify subscribe button Easy Optin design for content', 'essb'), __('Choose default design that you will use with Easy Optin for content display methods', 'essb'), $listOfValues);
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'subscribe_optin_design_popup', __('Specify subscribe button Easy Optin design for popup', 'essb'), __('Choose default design that you will use with Easy Optin for content display methods', 'essb'), $listOfValues);
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-$share_counter_pos = array("hidden" => "No counter", "inside" => "Inside button without text", "insidename" => "Inside button after text", "insidebeforename" => "Inside button before text", "topn" => "Top", "bottom" => "Bottom");
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'share_button_counter', __('Display total counter with the following position', 'essb'), __('Choose where you wish to display total counter of shares assigned with this button. <br/> To view total counter you need to have share counters active and they should not be running in real time mode. Also you need to have your share button set with style button. When you use share button with counter we highly recommend to hide total counter by setting position to be hidden - this will avoid having two set of total value on screen.', 'essb'), $share_counter_pos);
+if (essb_is_active_social_network('mail')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Email', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_mail', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Email button send options', 'essb'), __('', 'essb'), '');
+	$listOfValues = array ("form" => "Send mail using pop up form", "link" => "Send mail using mailto link and user mail client" );
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'mail_function', __('Send to mail button function', 'essb'), __('Choose how you wish mail button to operate. By default it uses the build in pop up window with sendmail option but you can change this to link option to force use of client mail program.', 'essb'), $listOfValues);
+	//ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'use_wpmandrill', __('Use wpMandrill for send mail', 'essb'), __('To be able to send messages with wpMandrill you need to have plugin installed.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_copyaddress', __('Send copy of all messages to', 'essb'), __('Provide email address if you wish to get copy of each message that is sent via form', 'essb'));
+	//ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_inline_code', __('Append inline mail send code', 'essb'), __('Activate this option if you use Initite scroll plugin and mail button do not work', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
+	
+	ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Pop up mail form options', 'essb'), __('', 'essb'), '');
+	$listOfValues = array ("host" => "Using host mail function", "wp" => "Using WordPress mail function" );
+	//ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_disable_editmessage', __('Disable editing of mail message', 'essb'), __('Activate this option to prevent users from changing the default message.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	//ESSBOptionsStructureHelper::field_select('social', 'share-1', 'mail_function_command', __('Use the following command to send mails when form is used', 'essb'), __('Choose the default function you will use to send mails when mail form is active. If you use external plugin in WordPress for send mail (like Easy WP SMTP) you need to choose WordPress mail function to get your messages sent.', 'essb'), $listOfValues);
+	$listOfValues = array ("level1" => "Advanced security check", "level2" => "Basic security check" );
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'mail_function_security', __('Use the following security check when form is used', 'essb'), __('Security check is made to prevent unauthorized access to send mail function of plugin. The default option is to use advanced security check but if you get message invalid security key during send process switch to lower level check - Basic security check.', 'essb'), $listOfValues);
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_popup_mobile', __('Allow usage of pop up mail form on mobile devices', 'essb'), __('Activate this option to allow usage of pop up form when site is browsed with mobile device. Default setting is to use build in mobile device mail application.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
+	
+	
+	ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Antispam Captcha Verification', 'essb'), __('Fill both fields for question and answer to prevent sending message without entering the correct answer.', 'essb'), '');
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_captcha', __('Captcha Message', 'essb'), __('Enter captcha question you wish to ask users to validate that they are human.', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_captcha_answer', __('Captcha Answer', 'essb'), __('Enter answer you wish users to put to verify them.', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
+	
+	ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Customize default mail message', 'essb'), __('You can customize texts to display when visitors share your content by mail button. To perform customization, you can use %%title%%, %%siteurl%%, %%permalink%% or %%image%% variables.', 'essb'), '');
+	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_subject', __('Subject', 'essb'), __('', 'essb'));
+	ESSBOptionsStructureHelper::field_textarea('social', 'share-1', 'mail_body', __('Message', 'essb'), '');
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_popup_preview', __('Display preview of mail message', 'essb'), __('Include non editable preview of mail message in the popup form.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_popup_edit', __('Allow custom user message', 'essb'), __('Activate this option to allow user include own custom message along with default.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+if (essb_is_active_social_network('print')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Print', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_print', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'print_use_printfriendly', __('Use for printing printfriendly.com', 'essb'), __('Activate that option to use printfriendly.com as printing service instead of default print function of browser', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
+if (essb_is_active_social_network('stumbleupon')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('StumbleUpon', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_stumbleupon', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'stumble_noshortlink', __('Do not generate shortlinks', 'essb'), __('', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Twitter', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_twitter', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_section_start_panels('social', 'share-1', __('Username and Hashtags', 'essb'), __('Provide default Twitter username and hashtags to be included into messages.', 'essb'), 'yes');
-ESSBOptionsStructureHelper::field_textbox_panel('social', 'share-1', 'twitteruser', __('Username to be mentioned:', 'essb'), __('If you wish a twitter username to be mentioned in tweet write it here. Enter your username without @ - example twittername. This text will be appended to tweet message at the end. Please note that if you activate custom share address option this will be added to custom share message.', 'essb'));
-ESSBOptionsStructureHelper::field_textbox_panel('social', 'share-1', 'twitterhashtags', __('Hashtags to be added:', 'essb'), __('If you wish hashtags to be added to message write them here. You can set one or more (if more then one separate them with comma (,)) Example: demotag1,demotag2.', 'essb'));
-ESSBOptionsStructureHelper::field_switch_panel('social', 'share-1', 'twitter_message_tags_to_hashtags', __('Use post tags as hashtags', 'essb'), __('Activate this option to use your current post tags as hashtags. When this option is active the default hashtags will be replaced with post tags when there are such post tags.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_section_end_panels('social', 'share-1');
+if (essb_is_active_social_network('buffer')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Buffer', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_buffer', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'buffer_twitter_user', __('Add Twitter username to buffer shares', 'essb'), __('Append also Twitter username into Buffer shares', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Twitter message optimization', 'essb'), __('Twitter message optimization allows you to truncate your message if it exceeds the 240 characters length of message.', 'essb'), '');
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'twitter_message_optimize', __('Activate', 'essb'), __('Activate message optimization.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-$listOfOptions = array("1" => "Remove hashtags, remove via username, truncate message", "2" => "Remove via username, remove hashtags, truncate message", "3" => "Remove via username, truncate message", "4" => "Remove hashtags, truncate message", "5" => "Truncate only message");
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'twitter_message_optimize_method', __('Method of optimization', 'essb'), __('Choose the order of components to be removed till reaching the limit of characters', 'essb'), $listOfOptions);
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'twitter_message_optimize_dots', __('Add read more dots when truncate message', 'essb'), __('Add ... (read more dots) to truncated tweets.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+if (essb_is_active_social_network('telegram')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Telegram', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_telegram', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'telegram_alternative', __('Use alternative Telegram share', 'essb'), __('Alternative Telegram share method uses Telegram website to share data instead of direct call to mobile application. This method currently supports share to web application too.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
+if (essb_is_active_social_network('flattr')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Flattr', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_flattr', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_textbox('social', 'share-1', 'flattr_username', __('Flattr Username', 'essb'), __('The Flattr account to which the buttons will be assigned.', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox('social', 'share-1', 'flattr_tags', __('Additional Flattr tags for your posts', 'essb'), __('Comma separated list of additional tags to use in Flattr buttons.', 'essb'));
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'flattr_cat', __('Default category for your posts', 'essb'), __('', 'essb'), ESSBNetworks_Flattr::getCategories());
+	ESSBOptionsStructureHelper::field_select('social', 'share-1', 'flattr_lang', __('Default language for your posts', 'essb'), __('', 'essb'), ESSBNetworks_Flattr::getLanguages());
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Facebook', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_facebook', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Facebook Advanced Sharing', 'essb'), __('For proper work of advanced Facebook sharing you need to provide application id. If you don\'t have you need to create one. To create Facebook Application use this link: http://developers.facebook.com/apps/', 'essb'), '');
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'facebookadvanced', __('Activate', 'essb'), '', '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'facebookadvancedappid', __('Facebook Application ID:', 'essb'), '');
-ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Facebook Messenger', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_messenger', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'fbmessengerapp', __('Facebook Application ID:', 'essb'), __('Facebook Application ID connected with your site is required to make messenger sharing work. If you use Facebook Advanced Sharing feature then it is not needed to fill this parameter as application is already applied into Facebook Advanced Sharing settings', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('WhatsApp', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_whatsapp', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'whatsapp_api', __('Use WhatsApp for Any Device', 'essb'), __('Use this option of you wish to make WhatsApp work for any device. Setting option to Yes will initiate share via the WhatsApp web API which allows share also to web based or mobile version.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('VKontakte', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_vk', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'vkontakte_fullshare', __('Send all sharable details for post/page:', 'essb'), __('VKontakte like most of social networks read data from socail share optimization tags that you have on page. In case when you share nothing appears please activate this option to allow plugin send all details to VKontakte. Please note that if this option is active the details from Social Share Optimization will not appear in share dialog!', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Pinterest', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_pinterest', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::structure_row_start('social', 'share-1');
-ESSBOptionsStructureHelper::structure_section_start('social', 'share-1', 'c6');
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'pinterest_sniff_disable', __('Disable Pinterest Pin any image:', 'essb'), __('If you disable Pinterest sniff for images plugin will use for share post featured image or custom share image you provide in post settings.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
-ESSBOptionsStructureHelper::structure_section_end('social', 'share-1');
-ESSBOptionsStructureHelper::structure_section_start('social', 'share-1', 'c6');
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'pinterest_save_anyimage', __('Include Pinterest Save Any Image Button:', 'essb'), __('Use this option to include save of any image on site to Pinterest. That is the quick image share function. If you wish to use more than one social network than you can take a look of the On Media sharing function inside Where to Display.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
-ESSBOptionsStructureHelper::structure_section_end('social', 'share-1');
-ESSBOptionsStructureHelper::structure_row_end('social', 'share-1');
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Subscribe Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_subscribe', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::hint('social', 'share-1', __('', 'essb'), __('If you choose to use the build in opt-in module Easy Optin please pay attention of settings in <b>Subscribe Forms</b> menu. In that place you will find all required to setup options for mailing list service connection and you can also customize the design you choose.', 'essb'), 'fa21 mr10 fa fa-envelope-o');
-
-$listOfValues = array ("form" => "Open content box", "link" => "Open subscribe link", "mailchimp" => "Easy Optin Subscribe Form (Ready made forms with automatic service integrations)" );
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'subscribe_function', __('Specify subscribe button function', 'essb'), __('Specify if the subscribe button is opening a content box below the button or if the button is linked to the "subscribe url" below.', 'essb'), $listOfValues);
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'subscribe_link', __('Subscribe URL', 'essb'), __('Link the Subscribe button to this URL. This can be the url to your subscribe page, facebook fanpage, RSS feed etc. e.g. http://yoursite.com/subscribe', 'essb'));
-ESSBOptionsStructureHelper::field_editor('social', 'share-1', 'subscribe_content', __('Subscribe content box', 'essb'), __('Define the content of the opening toggle subscribe window here. Use formulars, like button, links or any other text. Shortcodes are supported, e.g.: [contact-form-7]. Note that if you use subscribe button outside content display positions content will open as popup', 'essb'), 'htmlmixed');
-$listOfValues = essb_optin_designs();
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'subscribe_optin_design', __('Specify subscribe button Easy Optin design for content', 'essb'), __('Choose default design that you will use with Easy Optin for content display methods', 'essb'), $listOfValues);
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'subscribe_optin_design_popup', __('Specify subscribe button Easy Optin design for popup', 'essb'), __('Choose default design that you will use with Easy Optin for content display methods', 'essb'), $listOfValues);
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Email', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_mail', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Email button send options', 'essb'), __('', 'essb'), '');
-$listOfValues = array ("form" => "Send mail using pop up form", "link" => "Send mail using mailto link and user mail client" );
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'mail_function', __('Send to mail button function', 'essb'), __('Choose how you wish mail button to operate. By default it uses the build in pop up window with sendmail option but you can change this to link option to force use of client mail program.', 'essb'), $listOfValues);
-//ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'use_wpmandrill', __('Use wpMandrill for send mail', 'essb'), __('To be able to send messages with wpMandrill you need to have plugin installed.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_copyaddress', __('Send copy of all messages to', 'essb'), __('Provide email address if you wish to get copy of each message that is sent via form', 'essb'));
-//ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_inline_code', __('Append inline mail send code', 'essb'), __('Activate this option if you use Initite scroll plugin and mail button do not work', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Pop up mail form options', 'essb'), __('', 'essb'), '');
-$listOfValues = array ("host" => "Using host mail function", "wp" => "Using WordPress mail function" );
-//ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_disable_editmessage', __('Disable editing of mail message', 'essb'), __('Activate this option to prevent users from changing the default message.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-//ESSBOptionsStructureHelper::field_select('social', 'share-1', 'mail_function_command', __('Use the following command to send mails when form is used', 'essb'), __('Choose the default function you will use to send mails when mail form is active. If you use external plugin in WordPress for send mail (like Easy WP SMTP) you need to choose WordPress mail function to get your messages sent.', 'essb'), $listOfValues);
-$listOfValues = array ("level1" => "Advanced security check", "level2" => "Basic security check" );
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'mail_function_security', __('Use the following security check when form is used', 'essb'), __('Security check is made to prevent unauthorized access to send mail function of plugin. The default option is to use advanced security check but if you get message invalid security key during send process switch to lower level check - Basic security check.', 'essb'), $listOfValues);
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_popup_mobile', __('Allow usage of pop up mail form on mobile devices', 'essb'), __('Activate this option to allow usage of pop up form when site is browsed with mobile device. Default setting is to use build in mobile device mail application.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
-
-
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Antispam Captcha Verification', 'essb'), __('Fill both fields for question and answer to prevent sending message without entering the correct answer.', 'essb'), '');
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_captcha', __('Captcha Message', 'essb'), __('Enter captcha question you wish to ask users to validate that they are human.', 'essb'));
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_captcha_answer', __('Captcha Answer', 'essb'), __('Enter answer you wish users to put to verify them.', 'essb'));
-ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::field_section_start('social', 'share-1', __('Customize default mail message', 'essb'), __('You can customize texts to display when visitors share your content by mail button. To perform customization, you can use %%title%%, %%siteurl%%, %%permalink%% or %%image%% variables.', 'essb'), '');
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'share-1', 'mail_subject', __('Subject', 'essb'), __('', 'essb'));
-ESSBOptionsStructureHelper::field_textarea('social', 'share-1', 'mail_body', __('Message', 'essb'), '');
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_popup_preview', __('Display preview of mail message', 'essb'), __('Include non editable preview of mail message in the popup form.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'mail_popup_edit', __('Allow custom user message', 'essb'), __('Activate this option to allow user include own custom message along with default.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::field_section_end('social', 'share-1');
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Print', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_print', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'print_use_printfriendly', __('Use for printing printfriendly.com', 'essb'), __('Activate that option to use printfriendly.com as printing service instead of default print function of browser', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('StumbleUpon', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_stumbleupon', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'stumble_noshortlink', __('Do not generate shortlinks', 'essb'), __('', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Buffer', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_buffer', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'buffer_twitter_user', __('Add Twitter username to buffer shares', 'essb'), __('Append also Twitter username into Buffer shares', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Telegram', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_telegram', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_switch('social', 'share-1', 'telegram_alternative', __('Use alternative Telegram share', 'essb'), __('Alternative Telegram share method uses Telegram website to share data instead of direct call to mobile application. This method currently supports share to web application too.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Flattr', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_flattr', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_textbox('social', 'share-1', 'flattr_username', __('Flattr Username', 'essb'), __('The Flattr account to which the buttons will be assigned.', 'essb'));
-ESSBOptionsStructureHelper::field_textbox('social', 'share-1', 'flattr_tags', __('Additional Flattr tags for your posts', 'essb'), __('Comma separated list of additional tags to use in Flattr buttons.', 'essb'));
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'flattr_cat', __('Default category for your posts', 'essb'), __('', 'essb'), ESSBNetworks_Flattr::getCategories());
-ESSBOptionsStructureHelper::field_select('social', 'share-1', 'flattr_lang', __('Default language for your posts', 'essb'), __('', 'essb'), ESSBNetworks_Flattr::getLanguages());
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
-
-ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Comment Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_comments', array("mode" => "toggle", 'state' => 'closed'));
-ESSBOptionsStructureHelper::field_textbox('social', 'share-1', 'comments_address', __('Comments button address', 'essb'), __('If you use external comment system like Disqus you may need to personalize address to comments element (default is #comments).', 'essb'));
-ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+if (essb_is_active_social_network('comments')) {
+	ESSBOptionsStructureHelper::panel_start('social', 'share-1', __('Comment Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_comments', array("mode" => "toggle", 'state' => 'closed'));
+	ESSBOptionsStructureHelper::field_textbox('social', 'share-1', 'comments_address', __('Comments button address', 'essb'), __('If you use external comment system like Disqus you may need to personalize address to comments element (default is #comments).', 'essb'));
+	ESSBOptionsStructureHelper::panel_end('social', 'share-1');
+}
 
 ESSBOptionsStructureHelper::tab_end('social', 'share-1');
 ESSBOptionsStructureHelper::tabs_end('social', 'share-1');
 
 // share-2 button styles
+ESSBOptionsStructureHelper::help('social', 'share-2', '', __('The style settings will make the look of your share buttons. You can setup global styles for entire site and you also have the chance to personalize for each location too.', 'essb'), array('Help with Style Settings' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-share-buttons-style/'));
+
 ESSBOptionsStructureHelper::field_func('social', 'share-2', 'essb5_custom_position_settings', '', '');
 
 ESSBOptionsStructureHelper::structure_row_start('social', 'share-2');
@@ -252,6 +281,16 @@ ESSBOptionsStructureHelper::field_func('social', 'share-2', 'essb5_main_buttonst
 //essb5_main_alignment_choose
 ESSBOptionsStructureHelper::title('social', 'share-2', __('Buttons align', 'essb'), '', 'inner-row');
 ESSBOptionsStructureHelper::field_func('social', 'share-2', 'essb5_main_alignment_choose', '', '');
+
+$select_values = array('' => array('title' => 'Default', 'content' => 'Default'),
+		'xs' => array('title' => 'Extra Small', 'content' => 'XS'),
+		's' => array('title' => 'Small', 'content' => 'S'),
+		'm' => array('title' => 'Medium', 'content' => 'M'),
+		'l' => array('title' => 'Large', 'content' => 'L'),
+		'xl' => array('title' => 'Extra Large', 'content' => 'XL'),
+		'xxl' => array('title' => 'Extra Extra Large', 'content' => 'XXL')
+		);
+ESSBOptionsStructureHelper::field_toggle_panel('social', 'share-2', 'button_size', __('Button Size', 'essb'), __('Change size of exisiting template. May not work properly for all templates.', 'essb'), $select_values, '', '', 'button_size');
 
 ESSBOptionsStructureHelper::field_switch('social', 'share-2', 'nospace', __('Without space between buttons', 'essb'), __('Activate this option if you wish to connect share buttons without any space between them.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
 //essb5_main_animation_selection
@@ -322,12 +361,14 @@ ESSBOptionsStructureHelper::title('social', 'share-2', __('Live Style Preview', 
 ESSBOptionsStructureHelper::field_func('social', 'share-2', 'essb5_live_preview', '', '');
 
 /** Share Counters **/
+ESSBOptionsStructureHelper::help('social', 'sharecnt', '', __('This section holds all options that are outside design settings for share counter update and display. Changes that you make here will be used on entire site.', 'essb'), array('Help with Counter Setup' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-counters-setup/', 'How to recover shares after SSL migration' => 'https://docs.socialsharingplugin.com/knowledgebase/how-to-recover-shares-when-you-switch-to-https-activate-ssl/', 'My Share Counters Are Not Updating/Accurate' => 'https://docs.socialsharingplugin.com/knowledgebase/my-share-counts-are-not-showing-not-updating-or-not-accurate/'));
 ESSBOptionsStructureHelper::tabs_start('social', 'sharecnt', 'counter-tabs', array('<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Counter Update', 'essb'), 
 		'<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Single Button Counter', 'essb'),
 		'<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Total Counter', 'essb'),
 		'<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Advanced Update Settings', 'essb')), 'false', 'true');
 
 ESSBOptionsStructureHelper::tab_start('social', 'sharecnt', 'counter-tabs-0', 'true');
+
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'counter_mode', __('Counter update interval', 'essb'), __('Choose how your counters will update. Real-time share counter will update on each page load and usage on production site can produce extreme load over admin-ajax WordPress component - use it with caution. We strongly recommend using updated on interval counters. They will update once on chosen interval and ensure your site will work fast and smooth (if you use cache plugin and they do not update frequently you can activate in advanced options cache compatible update mode).', 'essb'), essb_cached_counters_update(), '', '8');
 
 ESSBOptionsStructureHelper::panel_start('social', 'sharecnt', __('Avoid social negative proof', 'essb'), __('Avoid social negative proof allows you to hide button counters or total counter till a defined value of shares is reached', 'essb'), 'fa21 fa fa-cogs', array("mode" => "switch", 'switch_id' => 'social_proof_enable', 'switch_on' => __('Yes', 'essb'), 'switch_off' => __('No', 'essb')));
@@ -419,7 +460,7 @@ ESSBOptionsStructureHelper::field_heading('social', 'sharecnt', 'heading5', __('
 ESSBOptionsStructureHelper::panel_start('social', 'sharecnt', __('Additional social network counter settings that you need to pay attention', 'essb'), __('Depends on networks that are set on site you may need to configure additional fields in this section like Twitter counter function, usage of internal counters, number format or Facebook Token for consistent Facebook counter update', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle", 'state' => 'opened'));
 
 ESSBOptionsStructureHelper::structure_row_start('social', 'sharecnt');
-$listOfOptions = array ("self" => "Self-hosted counter (internally counted by click on buttons)", "newsc" => "Using NewShareCounts.com", "opensc" => "Using OpenShareCount.com", "no" => "No counter for Twitter button" );
+$listOfOptions = array ("self" => "Self-hosted counter (internally counted by click on buttons)", "twitcount" => "Using twitcount.com",  "newsc" => "Using NewShareCounts.com", "opensc" => "Using OpenShareCount.com", "no" => "No counter for Twitter button" );
 $counter_redirect = "";
 $twitter_counters = ESSBOptionValuesHelper::options_value($essb_options, 'twitter_counters');
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'twitter_counters', __('Twitter share counter', 'essb'), __('Choose your Twitter counter working mode. If you select usage of NewShareCounts.com or OpenShareCount.com to make it work you need to visit their site and fill your site address and click sign in button using your Twitter account. Visit <a href="http://newsharecounts.com/" target="_blank">http://newsharecounts.com/</a> or <a href="http://opensharecount.com/" target="_blank">http://opensharecount.com/</a>'.$counter_redirect, 'essb'), $listOfOptions, '', '6');
@@ -430,11 +471,13 @@ $listOfOptions = array ("" => "API Endpoint #1", "api2" => "API Endpoint #2", "a
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'facebook_counter_api', __('Facebook counter update API', 'essb'), __('Facebook have right now several active API endpoints that you can use to get share counter. The default is API Endpoint #1 but if you experience issue with counters try also API Endpoint #2', 'essb'), $listOfOptions, '', '6');
 
 
-$listOfOptions = array ("" => "LinkedIn Official Counter (till it is available)", "self" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
+//$listOfOptions = array ("" => "LinkedIn Official Counter (till it is available)", "self" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
+$listOfOptions = array ("" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'linkedin_counter_type', __('LinkedIn share counter', 'essb'), __('LinkedIn recenly <a href="https://developer.linkedin.com/blog/posts/2018/deprecating-the-inshare-counter" target="_blank">announced that they are removing share counters</a> from their button and API. The API may still return data for your site but it is adviced to switch to internal counters.', 'essb'), $listOfOptions, '', '6');
 
 
-$listOfOptions = array ("api" => "Google+ Official Counter (till it is available)", "" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
+//$listOfOptions = array ("api" => "Google+ Official Counter (till it is available)", "" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
+$listOfOptions = array ("" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'google_counter_type', __('Google+ share counter', 'essb'), __('Google+ recenly <a href="https://plus.google.com/110610523830483756510/posts/Z1FfzduveUo" target="_blank">announced that they are removing share counters</a> from their button and API. When that become globally you can switch to internal counter.', 'essb'), $listOfOptions, '', '6');
 
 //ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'google_counter_token', __('Google+ API key', 'essb'), __('Very rear Google+ may not show out counter because of too many connections to their API. In this case you will need to build access key and paste it here inside Google Developer Console', 'essb'), '', '', '', '', '6');
@@ -532,6 +575,7 @@ ESSBOptionsStructureHelper::tabs_end('social', 'sharecnt');
 /** Analytics **/
 if (!essb_option_bool_value('deactivate_module_analytics')) {
 	ESSBOptionsStructureHelper::field_heading('social', 'analytics', 'heading5', __('Activate build-in analytics', 'essb'));
+	ESSBOptionsStructureHelper::help('social', 'analytics', '', __('The plugin analytics, if activated, collects anonymous data for click over share buttons. Based on that data you can select the networks and positions that works best on your site. As the data is logged with each button click. That makes it usually to be different from the official share counter.', 'essb'), array('Learn more for data in analytics' => 'https://docs.socialsharingplugin.com/knowledgebase/how-built-in-analytics-works-and-what-data-is-collected/'));
 	ESSBOptionsStructureHelper::field_switch('social', 'analytics', 'stats_active', __('Activate analytics and collect data for click over buttons', 'essb'), __('Build-in analytics is exteremly powerful tool which will let you to track how your visitors interact with share buttons. Get reports by positions, device type, social networks, for periods or for content', 'essb'), 'recommended', __('Yes', 'essb'), __('No', 'essb'));
 	
 	ESSBOptionsStructureHelper::field_heading('social', 'analytics', 'heading5', __('Google Analytics Tracking', 'essb'));
@@ -564,9 +608,9 @@ if (!essb_option_bool_value('deactivate_module_metrics')) {
 
 /** Optimize **/
 if (!essb_option_bool_value('deactivate_module_shareoptimize')) {
-	ESSBOptionsStructureHelper::hint('social', 'optimize', __('Optimize your social share message on all social networks', 'essb'), __('Social Sharing Optimization is important for each site. Without using it you have no control over shared information on social networks. We highly recommend to activate it (Facebook sharing tags are used on almost all social networks so they are the minimal required).', 'essb'), 'fa21 mr10 fa fa-info', 'glow');
+	ESSBOptionsStructureHelper::help('social', 'optimize', __('Optimize your social share message on all social networks', 'essb'), __('Social Sharing Optimization is important for each site. Without using it you have no control over shared information on social networks. We highly recommend to activate it (Facebook sharing tags are used on almost all social networks so they are the minimal required).', 'essb'), array('How to customize shared information' => 'https://docs.socialsharingplugin.com/knowledgebase/how-to-customize-personalize-shared-information-on-social-networks/', 'I see wrong share information' => 'https://docs.socialsharingplugin.com/knowledgebase/facebook-is-showing-the-wrong-image-title-or-description/', 'Test & Fix Facebook Showing Wrong Information' => 'https://docs.socialsharingplugin.com/knowledgebase/how-to-test-and-fix-facebook-sharing-wrong-information-using-facebook-open-graph-debugger/'));
 	
-	ESSBOptionsStructureHelper::panel_start('social', 'optimize', __('Homepage settings', 'essb'), __('Configure global homepage share options that will be used on your homepage when it is not a static page (page generated from list of posts or dynamic generated page by theme). Those settings will work only when one of options below is active.', 'essb'), 'fa21 fa fa-home', array("mode" => "toggle", 'state' => 'closed-no'));
+	ESSBOptionsStructureHelper::panel_start('social', 'optimize', __('Set Optimized Share Message for Homepage', 'essb'), __('You need to use those fields when your site has a dynamic home page (example: list of posts). In this case there is no existing page where you can do the changes.', 'essb'), 'fa21 fa fa-home', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
 	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'optimize', 'sso_frontpage_title', __('Title', 'essb'), __('Title that will be displayed on frontpage.', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'optimize', 'sso_frontpage_description', __('Description', 'essb'), __('Description that will be displayed on frontpage', 'essb'));
 	ESSBOptionsStructureHelper::field_image('social', 'optimize', 'sso_frontpage_image', __('Image', 'essb'), __('Image that will be displayed on frontpage', 'essb'), '', 'vertical1');
@@ -626,6 +670,7 @@ if (!essb_option_bool_value('deactivate_module_shorturl')) {
 	ESSBOptionsStructureHelper::field_heading('social', 'shorturl', 'heading5', __('Rebrandly Access Configuration', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'shorturl', 'shorturl_rebrandpi', __('Rebrandly API key', 'essb'), __('Rebrandly service require API key to generate your short URLs. To get such please visit this address <a href="https://www.rebrandly.com/api-settings" target="_blank">Rebrandly API Settings page</a>', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('social', 'shorturl', 'shorturl_rebrandpi_domain', __('Rebrandly Domain ID', 'essb'), __('If you have your own branded domain name fill in here its ID. To get domian ID visit <a href="https://www.rebrandly.com/domains/all" target="_blank">Rebrandly Domain list page</a> and copy from URL its ID. ID is the bold part marked in here https://www.rebrandly.com/domains/<b>1234334343asda34adsa</b>', 'essb'));
+	ESSBOptionsStructureHelper::field_switch('social', 'shorturl', 'shorturl_rebrandpi_https', __('Generate HTTPS version of Short URL', 'essb'), __('Set to Yes if you wish the generated URLs to be with https protocol instead of http', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::holder_end('social', 'shorturl');
 	ESSBOptionsStructureHelper::holder_start('social', 'shorturl', 'essb-short-post', 'essb-short-post');
 	ESSBOptionsStructureHelper::field_heading('social', 'shorturl', 'heading5', __('po.st Access Configuration', 'essb'));
@@ -802,7 +847,7 @@ function essb_postions_with_custom_networks5($as_text = false) {
 		$key = str_replace("content_", "", $key);
 		$position_networks = essb_option_value ( $key.'_networks' );
 
-		if (is_array($position_networks)) {
+		if (is_array($position_networks) && essb_option_bool_value($key.'_activate')) {
 			$result[] = array('key' => $key, 'title' => $data ['label']);
 		}
 	}
@@ -985,6 +1030,7 @@ function essb5_live_preview() {
 			'networks': [ {'key': 'facebook', 'name': 'Facebook'}, {'key': 'twitter', 'name': 'Twitter'}, {'key': 'google', 'name': 'Google'}, {'key': 'pinterest', 'name': 'Pinterest'}, {'key': 'linkedin', 'name': 'LinkedIn'}],
 			'template': 'essb_field_style',
 			'button_style': 'essb_field_button_style',
+			'button_size': 'essb_options_button_size',
 			'align': 'essb_options_button_pos',
 			'nospace': 'essb_field_nospace',
 			'counter': 'essb_field_show_counter',

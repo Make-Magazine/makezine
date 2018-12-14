@@ -234,8 +234,9 @@ function essb4_text_automatic_updates() {
 		if (ESSBActivationManager::isActivated()) {
 		?>
 		<div class="essb-activate-welcome">
-		<p style="text-align: center; font-weight: bold;">In order to register your purchase code on another domain, deregister it first by clicking the button above or get another purchase code. You can also check and manage your activations via Manage my activations button</p>
-	<p style="text-align:center;"><a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="blank" class="essb-activation-button essb-activation-button-color2">Purchase new copy of Easy Social Share Buttons for just $19</a></p>
+		<p style="text-align: center; font-weight: bold;">In order to register your purchase code on another domain, deregister it first by clicking the button above or get another purchase code. You can also check and manage your activations via Manage my activations button. If you need to use plugin on multiple sites at same time than you need to have a separate license for each active domain.</p>
+		<p style="text-align:center;"><a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="blank" class="essb-activation-button essb-activation-button-color2">Purchase new copy of Easy Social Share Buttons</a></p>
+		<p style="text-align:center;">Purchase of Easy Social Share Buttons for WordPress is $20 one time payment without year or month fees and including 6 months of premium support. Each license can be used on one site at same time (you can transfer the license to new site).</p>
 		</div>
 		<?php 
 		}
@@ -249,7 +250,8 @@ function essb4_text_automatic_updates() {
 			
 			<p>To activate plugin you need to fill in valid purchase code for Easy Social Share Buttons for WordPress. <b>If you have plugin bundled into theme that you bought to activate automatic updates, access to our add-ons library, full access to ready made presents library and our premium support you need to buy separate license for Easy Social Share Buttons for WordPress.</b>.</p>
 			<p>One purchase code can be used on one domain. If registered elsewhere please deactivate that registration first. Usage of one purchase code on multiple sites at same time will block automatic updates for all of them and you will not be able to access restricted by activation functions of plugin.</p>
-	<p style="text-align:center;"><a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="blank" class="essb-activation-button essb-activation-button-color2">Purchase new copy of Easy Social Share Buttons for just $19</a></p>
+	<p style="text-align:center;"><a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="blank" class="essb-activation-button essb-activation-button-color2">Purchase new copy of Easy Social Share Buttons</a></p>
+	<p style="text-align:center;">Purchase of Easy Social Share Buttons for WordPress is $20 one time payment without year or month fees and including 6 months of premium support. Each license can be used on one site at same time (you can transfer the license to new site).</p>
 			
 		<?php 
 		
@@ -276,8 +278,8 @@ If you purchase direct license for Easy Social Share Buttons for WordPress there
 <li>Manage your licenses at Activation Manager;</li>
 <li>Support your beloved page builder plugin for rapid development.</li>
 </ul>
-	<p style="text-align:center;"><a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="blank" class="essb-btn essb-btn-red" style="padding: 15px;">Purchase copy of Easy Social Share Buttons for just $19</a></p>
-
+	<p style="text-align:center;"><a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref=appscreo&license=regular&open_purchase_for_item_id=6394476&purchasable=source" target="blank" class="essb-btn essb-btn-red" style="padding: 15px;">Purchase copy of Easy Social Share Buttons</a></p>
+<p style="text-align:center;">Purchase of Easy Social Share Buttons for WordPress is $20 one time payment without year or month fees and including 6 months of premium support. Each license can be used on one site at same time (you can transfer the license to new site).</p>
 		</div>
 		<?php } ?>
 		

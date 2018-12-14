@@ -8,10 +8,15 @@ $slug = "essb_about";
 
 ?>
 <!--  sweet alerts -->
-<script src="<?php echo ESSB3_PLUGIN_URL?>/assets/admin/sweetalert.min.js"></script> 
+<script src="<?php echo ESSB3_PLUGIN_URL?>/assets/admin/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo ESSB3_PLUGIN_URL?>/assets/admin/sweetalert.css">
 
 <style type="text/css">
+
+/** new admin styles **/
+.essb-wrap-about .essb-settings-panel-navigation { display: none; }
+.essb-wrap-about .essb-settings-panel-options { width: 100%; }
+.essb-wrap-about .essb-settings-panel { background-color: transparent; }
 
 #mce-EMAIL { background-color: #d9d9d9; border: 0px; padding: 8px !important; }
 
@@ -27,21 +32,21 @@ $slug = "essb_about";
 	left: 0;
 }
 
-.about-wrap { max-width: 1500px; }
-.about-wrap .wp-badge { right: 20px; }
+.about-wrap { max-width: 800px; margin: 0 auto; }
+.about-wrap .wp-badge { right: 0px; }
 
 .essb-welcome { margin-top: 30px; }
 
-.about-wrap h1 { font-size: 32px; }
+.about-wrap h1 { font-size: 32px; margin-top: 40px; letter-spacing: -0.5px; }
 .about-wrap img { border: 0px; }
-.about-wrap .about-text { margin: 1em 180px 1em 0; }
-.essb-dash-widget 				{	background:#fff; width:48%; height:310px; overflow: hidden; float:left; margin-right:20px; margin-bottom:20px;box-sizing: border-box;-moz-box-sizing: border-box; display: block; position: relative;}
-.essb-dash-shadow { box-shadow: 0 0 5px rgba(0,0,0,0.08); -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.08); }
+.about-wrap .about-text { margin: 1em 180px 1em 0; font-size: 15px; }
+.essb-dash-widget 				{	background:#fff; width:100%;  margin-bottom:30px;box-sizing: border-box;-moz-box-sizing: border-box; display: block; position: relative;}
+.essb-dash-shadow { box-shadow: 0 0 35px rgba(0,0,0,0.1); -webkit-box-shadow: 0 0 35px rgba(0,0,0,0.1); }
 .essb-dash-doublewidget 		 	{	width:980px;}
 .essb-dash-fullwidget 		 	{	width:100%; max-width: 1480px; }
 
 .essb-dash-title-wrap 		 	{	line-height:63px; border-bottom:1px solid #e5e5e5;  border-bottom:1px solid rgba(0,0,0,0.1); padding:0px 20px;}
-.essb-dash-widget-inner 			{	padding:30px 20px 20px;position: relative;max-height:246px; min-height:246px;width:100%;overflow: hidden; font-size:13px; font-weight: 400; line-height: 17px; position: relative;box-sizing: border-box;-moz-box-sizing: border-box; color:#444;}
+.essb-dash-widget-inner 			{	padding:30px 20px 20px;position: relative;width:100%;overflow: hidden; font-size:13px; font-weight: 400; line-height: 17px; position: relative;box-sizing: border-box;-moz-box-sizing: border-box; color:#444;}
 .essb-dash-doublewidget .essb-dash-widget-inner { width:488px; display: inline-block;}
 .essb-dash-bottom-wrapper	{	position: absolute;bottom:20px;left:20px;width:100%;}
 .essb-dash-title-button 	{	font-weight:600;border-radius: 4px; padding:0px 15px; line-height: 32px; color:#fff; font-size:13px; position: absolute;right:20px;top:16px;}
@@ -95,7 +100,7 @@ a.essb-bg-red:hover {
 
 .essb-feature-text b, .essb-feature-text span {
 	display: block;
-	
+
 }
 
 .essb-feature-icon i {
@@ -127,11 +132,11 @@ a.essb-bg-red:hover {
 	float: right;
 }
 
-.essb-bg-orange { 
+.essb-bg-orange {
 	background: #FF7416;
 }
 
-.essb-dash-featureimage { 
+.essb-dash-featureimage {
 	display: inline-block;
 	width: 300px;
 	margin-right: 30px;
@@ -154,6 +159,14 @@ a.essb-bg-red:hover {
 	margin-right: 10px;
 }
 
+.essb-welcome-button-container .essb-btn {
+	font-size: 14px;
+	text-transform: capitalize;
+	font-weight: 600;
+	padding: 15px 20px;
+	letter-spacing: 0px;
+}
+
 .essb-page-welcome .essb-welcome-button-container.essb-welcome-button-container-google {
 	position: relative;
 	top: 8px;
@@ -161,8 +174,35 @@ a.essb-bg-red:hover {
 
 .essb-welcome-button-container-twitter iframe { margin-bottom: -10px; }
 
+.essb-dash-activate .essb-dash-feature {
+	width: 49%;
+	display: inline-block;;
+	vertical-align: top;
+	margin-bottom: 35px;
+}
 
+.essb-dash-activate .essb-feature-icon, .essb-dash-activate .essb-feature-text { display: block; }
 
+.essb-dash-support .essb-dash-feature-extension {
+	width: calc(33% - 20px);
+	padding: 20px;
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+}
+
+.essb-dash-support .essb-dash-feature-extension  .essb-feature-icon i {
+	display: block;
+	margin-right: 0;
+	margin-bottom: 20px;
+}
+
+.essb-dash-support .essb-dash-feature-extension .essb-tl-right {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.essb-dash-button-small { padding: 5px 15px; }
 
 </style>
 
@@ -179,22 +219,23 @@ a.essb-bg-red:hover {
 
 
 		<div class="essb-welcome-button-container">
-			<a href="http://codecanyon.net/downloads" target="_blank" class="essb-btn essb-btn-orange" style="margin-right: 100px;">Rate us <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a>
+		<a href="<?php echo admin_url('admin.php?page=essb_options');?>" class="essb-btn essb-btn-blue" style="margin-right: 10px;">Configure Plugin <i class="fa fa-cog"></i></a>
+		<a href="http://codecanyon.net/downloads" target="_blank" class="essb-btn essb-btn-orange" style="margin-right: 100px;">Rate us <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a>
 		</div>
 	</div>
 
 	<!-- new welcome screen -->
 	<div class="essb-welcome">
-	
+
 		<!-- widget activation -->
-		<div class="essb-dash-widget essb-dash-shadow">
+		<div class="essb-dash-widget essb-dash-shadow essb-dash-activate">
 			<div class="essb-dash-title-wrap">
 				<div class="essb-dash-title <?php if (ESSBActivationManager::isActivated()) { echo "essb-c-green";} else { echo "essb-c-red"; } ?>"><i class="ti-key" style="margin-right: 10px; font-size: 24px; float: left; line-height: 32px;"></i>Plugin Activation</div>
 				<a href="<?php echo admin_url('admin.php?page=essb_redirect_update');?>" class="essb-dash-title-button essb-dash-button <?php if (ESSBActivationManager::isActivated()) { echo "essb-bg-green";} else { echo "essb-bg-red"; } ?>">
 					<i class="fa <?php if (ESSBActivationManager::isActivated()) { echo "fa-check";} else { echo "fa-ban"; } ?>"></i>
 					<?php if (ESSBActivationManager::isActivated()) { echo "Activated";} else { echo "Activate Plugin to Unlock"; } ?>
 				</a>
-				
+
 			</div>
 			<div class="essb-dash-widget-inner">
 				<div class="essb-dash-feature">
@@ -237,20 +278,98 @@ a.essb-bg-red:hover {
 		</div>
 		<!-- end: widget activate -->
 
-		<?php 
+		<div class="essb-dash-widget essb-dash-shadow">
+			<div class="essb-dash-title-wrap">
+				<div class="essb-dash-title">What's new in version <?php echo ESSB3_VERSION; ?></div>
+				<a href="http://socialsharingplugin.com/version-changes/" target="_blank" class="essb-dash-title-button essb-dash-button essb-dash-blue">
+					Read the full changelog
+				</a>
+			</div>
+			<div class="essb-dash-widget-inner essb-dash-widget-nomargin">
+
+			</div>
+		</div>
+
+		<!-- widget support -->
+		<div class="essb-dash-widget essb-dash-shadow essb-dash-support">
+			<div class="essb-dash-title-wrap">
+				<div class="essb-dash-title"><i class="fa fa-life-ring" style="margin-right: 10px; font-size: 24px; float: left; line-height: 32px;"></i>Product Support</div>
+								<?php
+
+				if (!ESSBActivationManager::isActivated()) {
+					echo '<div class="essb-dash-title-button essb-dash-button essb-dash-grey">Activate plugin to unlock support</div>';
+				}
+
+				?>
+
+			</div>
+			<div class="essb-dash-widget-inner">
+				<div class="essb-dash-feature essb-dash-feature-extension">
+					<div class="essb-feature-icon">
+						<i class="ti-info-alt"></i>
+					</div>
+					<div class="essb-feature-text">
+						<b>Useful tips</b>
+						<span>Read our blog for useful tips on how to work with plugin</span>
+						<div class="essb-dash-feature essb-tl-right" style="margin-bottom: 0px;">
+							<div class="essb-feature-text">
+								<a href="http://appscreo.com/?utm_source=about&utm_campaign=panel&utm_medium=button" class="essb-dash-button essb-dash-blue essb-dash-button-small" target="_blank">Visit our blog</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="essb-dash-feature essb-dash-feature-extension">
+					<div class="essb-feature-icon">
+						<i class="ti-help-alt"></i>
+					</div>
+					<div class="essb-feature-text">
+						<b>Online Support</b>
+						<span>Visit our online support system for dedicated help with plugin work</span>
+						<div class="essb-dash-feature essb-tl-right"  style="margin-bottom: 0px;">
+							<div class="essb-feature-text">
+								<a href="http://support.creoworx.com/?utm_source=about&utm_campaign=panel&utm_medium=button" class="essb-dash-button essb-dash-blue essb-dash-button-small" target="_blank">Go to support system</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="essb-dash-feature essb-dash-feature-extension">
+					<div class="essb-feature-icon">
+						<i class="ti-book"></i>
+					</div>
+					<div class="essb-feature-text">
+						<b>Knowledge Base</b>
+						<span>Read our knowledge base to get know how to use most common functions</span>
+						<div class="essb-dash-feature essb-tl-right" style="margin-bottom: 0px;">
+							<div class="essb-feature-text">
+								<a href="https://docs.socialsharingplugin.com/?utm_source=about&utm_campaign=panel&utm_medium=button" class="essb-dash-button essb-dash-blue essb-dash-button-small" target="_blank">Visit Knowledge Base</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="essb-dash-bottom-wrapper">
+
+			</div>
+		</div>
+		<!-- end: widget support -->
+
+		<?php
 		$current_list = array ();
-		
+
 		if (class_exists ( 'ESSBAddonsHelper' )) {
-		
+
 			$essb_addons = ESSBAddonsHelper::get_instance ();
 			$current_list = $essb_addons->get_addons ();
 		}
-		
-		
+
+
 		if (! isset ( $current_list )) {
 			$current_list = array ();
 		}
-		
+
 		$count = 0;
 		$filters_offset = 0;
 		foreach ( $current_list as $addon_key => $addon_data ) {
@@ -261,9 +380,9 @@ a.essb-bg-red:hover {
 
 			$count++;
 		}
-		
+
 		?>
-		
+
 		<!-- widget extensions -->
 		<div class="essb-dash-widget essb-dash-shadow">
 			<div class="essb-dash-title-wrap">
@@ -272,22 +391,22 @@ a.essb-bg-red:hover {
 					<i class="fa fa-gear"></i>
 					Browse All <?php echo $count; ?> Extensions
 				</a>
-				
+
 			</div>
 			<div class="essb-dash-widget-inner">
-			
-				<?php 
 
-				
-				
+				<?php
+
+
+
 				$count = 0;
 				$filters_offset = 0;
-				foreach ( $current_list as $addon_key => $addon_data ) {			
-					if ($addon_key == "filters") { 
-						$filters_offset = 1; 
-						continue; 
+				foreach ( $current_list as $addon_key => $addon_data ) {
+					if ($addon_key == "filters") {
+						$filters_offset = 1;
+						continue;
 					}
-					
+
 					if ($count < 6) {
 						echo '<div class="essb-dash-feature essb-dash-feature-extension">';
 						echo '<div class="essb-feature-text">';
@@ -299,28 +418,28 @@ a.essb-bg-red:hover {
 					}
 					$count++;
 				}
-				
+
 				?>
 							<div class="essb-dash-bottom-wrapper">
-				<?php 
-				
+				<?php
+
 				if (!ESSBActivationManager::isActivated()) {
 					echo '<div class="essb-dash-button essb-dash-grey">Activate plugin to unlock extensions library</div>';
 				}
-				
+
 				?>
 			</div>
-				
-				
+
+
 			</div>
 		</div>
 		<!-- end: widget extensions -->
-		
+
 		<!-- widget update -->
-		<div class="essb-dash-widget essb-dash-shadow">
+		<div class="essb-dash-widget essb-dash-shadow" style="display: none;">
 			<div class="essb-dash-title-wrap">
 				<div class="essb-dash-title"><i class="ti-reload" style="margin-right: 10px; font-size: 24px; float: left; line-height: 32px;"></i>Plugin Updates</div>
-				
+
 				<?php if (ESSBActivationManager::existNewVersion()) { ?>
 				<div class="essb-dash-title-button essb-dash-button essb-bg-orange">
 					<i class="fa fa-refresh"></i>
@@ -330,7 +449,7 @@ a.essb-bg-red:hover {
 			</div>
 			<div class="essb-dash-widget-inner">
 				<div class="essb-dash-feature">
-					
+
 					<div class="essb-feature-text">
 						<b>Installed Version</b>
 						<span><?php echo ESSB3_VERSION; ?></span>
@@ -340,17 +459,17 @@ a.essb-bg-red:hover {
 					<div class="essb-feature-text">
 						<b>Latest Version</b>
 						<span>
-						<?php 
-						
+						<?php
+
 						$latest = ESSBActivationManager::getLatestVersion();
 						if ($latest == '') { $latest = ESSB3_VERSION; }
-						
+
 						if (version_compare ( $latest, ESSB3_VERSION, '<' )) {
 							$latest = ESSB3_VERSION;
 						}
-						
+
 						echo $latest;
-						
+
 						?>
 						</span>
 					</div>
@@ -362,17 +481,17 @@ a.essb-bg-red:hover {
 				</div>
 			</div>
 			<div class="essb-dash-bottom-wrapper">
-				<?php 
-				
+				<?php
+
 				if (!ESSBActivationManager::isActivated()) {
 					echo '<div class="essb-dash-button essb-dash-grey">Activate plugin to unlock automatic updates</div>';
 				}
-				
+
 				?>
 			</div>
 		</div>
 		<!-- end: widget update -->
-		
+
 		<!-- widget newsletter -->
 		<div class="essb-dash-widget essb-dash-shadow">
 			<div class="essb-dash-title-wrap">
@@ -397,29 +516,30 @@ a.essb-bg-red:hover {
 						<span>Be the first to know for what is new in social sharing or in Easy Social Share Buttons</span>
 					</div>
 				</div>
+
+				<div>
+					<?php
+
+					//if (!ESSBActivationManager::isActivated()) {
+					//	echo '<div class="essb-dash-button essb-dash-grey">Activate plugin to unlock automatic updates</div>';
+					//}
+					$code = '<div class="essb-admin-widget">';
+					$code .= '<form action="//appscreo.us13.list-manage.com/subscribe/post?u=a1d01670c240536f6a70e7778&amp;id=c896311986" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>';
+					$code .= '<div class="" id="title-wrap" style="margin-top: 5px;">';
+					//print '<label class="screen-reader-text prompt" for="mce-EMAIL" id="title-prompt-text">Enter your email</label>';
+					$code .= '<input type="email" name="EMAIL" id="mce-EMAIL" autocomplete="off" placeholder="Enter your email" style="width: 250px; border-radius: 3px; font-size: 12px; padding: 3px;" />';
+					$code .= '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="essb-btn" value="Subscribe" style="font-size:11px; box-shadow: none;">';
+					$code .= '</div>';
+					$code .= '</form>';
+					$code .= '</div>';
+					echo $code;
+
+					?>
 			</div>
-			<div class="essb-dash-bottom-wrapper">
-				<?php 
-				
-				//if (!ESSBActivationManager::isActivated()) {
-				//	echo '<div class="essb-dash-button essb-dash-grey">Activate plugin to unlock automatic updates</div>';
-				//}
-				$code = '<div class="essb-admin-widget">';
-				$code .= '<form action="//appscreo.us13.list-manage.com/subscribe/post?u=a1d01670c240536f6a70e7778&amp;id=c896311986" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>';
-				$code .= '<div class="" id="title-wrap" style="margin-top: 5px;">';
-				//print '<label class="screen-reader-text prompt" for="mce-EMAIL" id="title-prompt-text">Enter your email</label>';
-				$code .= '<input type="email" name="EMAIL" id="mce-EMAIL" autocomplete="off" placeholder="Enter your email" style="width: 250px; border-radius: 3px; font-size: 12px; padding: 3px;" />';
-				$code .= '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="essb-btn" value="Subscribe" style="font-size:11px; box-shadow: none;">';
-				$code .= '</div>';
-				$code .= '</form>';
-				$code .= '</div>';
-				echo $code;
-				
-				?>
-			</div>
+</div>
 		</div>
 		<!-- end: widget newsletter -->
-		
+
 		<!-- widget translate -->
 		<div class="essb-dash-widget essb-dash-shadow">
 			<div class="essb-dash-title-wrap">
@@ -428,118 +548,42 @@ a.essb-bg-red:hover {
 			<div class="essb-dash-widget-inner">
 				<div class="essb-dash-feature">
 					<div class="essb-feature-text">
-					
+
 					<b>Help us make Easy Social Share Buttons speak in your language</b>
-							
+
 					</div>
 				</div>
-				
+
 				<div class="essb-dash-feature">
 					<div class="essb-feature-text">
 
 					<span>
 					<?php echo 'Version 4 of Easy Social Share Buttons for WordPress has fully translatable admin panel. Help up us and our customers by translating plugin in your language.'; ?>
-					</span>					
+					</span>
 					</div>
 				</div>
 				<div class="essb-dash-feature">
 					<div class="essb-feature-text">
-					
+
 					<b>Completed translations</b>
 					</div>
 				</div>
 				<div class="essb-dash-feature">
 					<div class="essb-feature-text">
-					
-					<span><div class="essb-dash-button essb-bg-orange">EN</div> <div class="essb-dash-button essb-bg-orange">FR</div> <div class="essb-dash-button essb-bg-orange">ES</div>	</span>							
+
+					<span><div class="essb-dash-button essb-bg-orange">EN</div> <div class="essb-dash-button essb-bg-orange">FR</div> <div class="essb-dash-button essb-bg-orange">ES</div>	</span>
 					</div>
 				</div>
 				</div>
 			<div class="essb-dash-bottom-wrapper">
 
-								
+
 			</div>
 		</div>
 		<!-- end: widget translate -->
-		
-		<!-- widget support -->
-		<div class="essb-dash-widget essb-dash-shadow">
-			<div class="essb-dash-title-wrap">
-				<div class="essb-dash-title"><i class="fa fa-life-ring" style="margin-right: 10px; font-size: 24px; float: left; line-height: 32px;"></i>Product Support</div>
-								<?php 
-				
-				if (!ESSBActivationManager::isActivated()) {
-					echo '<div class="essb-dash-title-button essb-dash-button essb-dash-grey">Activate plugin to unlock support</div>';
-				}
-				
-				?>
-				
-			</div>
-			<div class="essb-dash-widget-inner">
-				<div class="essb-dash-feature essb-dash-feature-extension">
-					<div class="essb-feature-icon">
-						<i class="ti-info-alt"></i>
-					</div>
-					<div class="essb-feature-text">
-						<b>Useful tips</b>
-						<span>Read our blog for useful tips on how to work with plugin</span>
-					</div>
-				</div>
-				<div class="essb-dash-feature essb-tl-right" style="margin-bottom: 0px;">
-					<div class="essb-feature-text">
-						<a href="http://appscreo.com/?utm_source=about&utm_campaign=panel&utm_medium=button" class="essb-dash-button essb-dash-blue essb-dash-button-small" target="_blank">Visit our blog</a>					
-					</div>
-				</div>
-				<div class="essb-dash-feature essb-dash-feature-extension">
-					<div class="essb-feature-icon">
-						<i class="ti-help-alt"></i>
-					</div>
-					<div class="essb-feature-text">
-						<b>Online Support</b>
-						<span>Visit our online support system for dedicated help with plugin work</span>
-						
-					</div>
-				</div>
-				<div class="essb-dash-feature essb-tl-right"  style="margin-bottom: 0px;">
-					<div class="essb-feature-text">
-						<a href="http://support.creoworx.com/?utm_source=about&utm_campaign=panel&utm_medium=button" class="essb-dash-button essb-dash-blue essb-dash-button-small" target="_blank">Go to support system</a>
-					</div>
-				</div>
-				<div class="essb-dash-feature essb-dash-feature-extension">
-					<div class="essb-feature-icon">
-						<i class="ti-book"></i>
-					</div>
-					<div class="essb-feature-text">
-						<b>Knowledge Base</b>
-						<span>Read our knowledge base to get know how to use most common functions</span>
-					</div>
-				</div>
-				<div class="essb-dash-feature essb-tl-right" style="margin-bottom: 0px;">
-					<div class="essb-feature-text">
-						<a href="https://docs.socialsharingplugin.com/?utm_source=about&utm_campaign=panel&utm_medium=button" class="essb-dash-button essb-dash-blue essb-dash-button-small" target="_blank">Visit Knowledge Base</a>
-					</div>
-				</div>
-			</div>
-			<div class="essb-dash-bottom-wrapper">
 
-			</div>
-		</div>
-		<!-- end: widget support -->
-		
-		<div class="essb-dash-widget essb-dash-fullwidget">
-			<div class="essb-dash-title-wrap">
-				<div class="essb-dash-title">What's new in version <?php echo ESSB3_VERSION; ?></div>
-				<a href="http://socialsharingplugin.com/version-changes/" target="_blank" class="essb-dash-title-button essb-dash-button essb-dash-blue">
-					Read the full changelog
-				</a>
-			</div>
-			<div class="essb-dash-widget-inner essb-dash-widget-nomargin">
-				
-			</div>
-		</div>
-		
 	</div>
-	
+
 	<p class="essb-thank-you">
 			Thank you for choosing <b>Easy Social Share Buttons for WordPress</b>.
 			If you like our work please <a href="http://codecanyon.net/downloads"
@@ -602,14 +646,14 @@ a.essb-bg-red:hover {
 			myCode += "<!-- Example code 3 -->\r\n";
 			myCode += '<a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref='+envatoUsername+'" target="_blank" title="Easy Social Share Buttons for WordPress">This site uses Easy Social Share Buttons for WordPress</a>';
 			myCode += "\r\n\r\n";
-			
+
 			myCode += "<!-- Example code 4 -->\r\n";
 			myCode += '<a href="http://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476?ref='+envatoUsername+'" target="_blank" title="Social Sharing Plugin for WordPress">Social Sharing Plugin for WordPress that will help increase your social presentation</a>';
 			myCode += "\r\n\r\n";
-			
-			
+
+
 			$('#user-generated-code').val(myCode);
-			
+
 			$('#usercode').show();
 		});
 	});
@@ -661,7 +705,7 @@ a.essb-bg-red:hover {
     -webkit-transform: rotate(360deg);
   }
 }
-/* for demo purposes only — not required */
+/* for demo purposes only ï¿½ not required */
 .preloader {
   top: 0;
   bottom: 0;
@@ -716,7 +760,7 @@ a.essb-bg-red:hover {
 	font-weight: 700;
 }
 
-.sweet-overlay { 
+.sweet-overlay {
 background-color: rgba(0, 0, 0, 0.7);
 }
 </style>
@@ -735,7 +779,7 @@ jQuery(document).ready(function($){
 
 			$('.preloader-holder').fadeIn(100);
 			var plugin_is_activated = <?php if (ESSBActivationManager::isActivated()) { echo 'true'; } else { echo 'false'; }?>;
-			var version_api = '<?php echo ESSBActivationManager::getApiUrl('api')?>version.php'; 
+			var version_api = '<?php echo ESSBActivationManager::getApiUrl('api')?>version.php';
 			$.ajax({
 				type: "GET",
 		        url: version_api,
@@ -745,7 +789,7 @@ jQuery(document).ready(function($){
 	                console.log(data);
 	                if (typeof(data) == "string")
 	                	data = JSON.parse(data);
-	                
+
 	                var code = data['code'] || '';
 	                var version = data['version'] || '';
 
@@ -783,5 +827,5 @@ jQuery(document).ready(function($){
 		});
 	}
 });
-	
+
 </script>

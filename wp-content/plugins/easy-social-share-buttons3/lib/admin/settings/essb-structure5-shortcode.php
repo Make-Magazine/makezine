@@ -31,6 +31,9 @@ $scg->activate($active_shortcode);
 			<a href="<?php echo esc_url(add_query_arg ( 'code', 'easy-total-followers', 'admin.php?page=essb_redirect_shortcode&tab=shortcode' ));?>" class="essb-shortcode essb-shortcode-fixed">[easy-total-followers]<br/><span class="essb-shortcode-comment">Display total followers counter (as number)</span></a>
 			<a href="<?php echo esc_url(add_query_arg ( 'code', 'easy-popular-posts', 'admin.php?page=essb_redirect_shortcode&tab=shortcode' ));?>" class="essb-shortcode essb-shortcode-fixed">[easy-popular-posts]<br/><span class="essb-shortcode-comment">Display popular posts</span></a>
 			<a href="<?php echo esc_url(add_query_arg ( 'code', 'easy-subscribe', 'admin.php?page=essb_redirect_shortcode&tab=shortcode' ));?>" class="essb-shortcode essb-shortcode-fixed">[easy-subscribe]<br/><span class="essb-shortcode-comment">Display build in subscribe form</span></a>
+			<a href="<?php echo esc_url(add_query_arg ( 'code', 'easy-tweet', 'admin.php?page=essb_redirect_shortcode&tab=shortcode' ));?>" class="essb-shortcode essb-shortcode-fixed">[easy-tweet]<br/><span class="essb-shortcode-comment">Sharable Quotes (a.k.a. Click to Tweet)</span></a>
+			<a href="<?php echo esc_url(add_query_arg ( 'code', 'easy-click2chat', 'admin.php?page=essb_redirect_shortcode&tab=shortcode' ));?>" class="essb-shortcode essb-shortcode-fixed">[easy-click2chat]<br/><span class="essb-shortcode-comment">Content Click 2 Chat Button</span></a>
+			<a href="<?php echo esc_url(add_query_arg ( 'code', 'easy-social-share-cta', 'admin.php?page=essb_redirect_shortcode&tab=shortcode' ));?>" class="essb-shortcode essb-shortcode-fixed">[easy-social-share-cta]<br/><span class="essb-shortcode-comment">Share CTA Button</span></a>
 			
 		</div>
 

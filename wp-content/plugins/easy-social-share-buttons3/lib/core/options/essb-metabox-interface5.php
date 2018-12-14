@@ -25,7 +25,6 @@ class ESSBMetaboxInterface {
 		echo '<div class="essb-options-sidebar essb-settings-panel-navigation'.$data_instance_class.'" id="essb-options-sidebar" data-instance="'.$data_instance_id.'">';
 
 		echo '<ul class="essb-plugin-menu essb-options-group-menu'.$data_instance_menu_class.'" id="sticky-navigation">';
-		
 		foreach ($options as $single) {
 			$type = $single['type'];
 			$field_id = isset($single['field_id']) ? $single['field_id'] : '';
@@ -33,6 +32,12 @@ class ESSBMetaboxInterface {
 			$sub_menuaction = isset($single['action']) ? $single['action'] : '';
 			$default_child = isset($single['default_child']) ? $single['default_child'] : '';
 			$icon = isset($single['icon']) ? $single['icon'] : '';
+			
+			$description = isset($single['description']) ? $single['description'] : '';
+			
+			if ($description != '') {
+				$title .= '<span class="description">'.$description.'</span>';
+			}
 			
 			if ($icon == 'default') {
 				$icon = 'gear';

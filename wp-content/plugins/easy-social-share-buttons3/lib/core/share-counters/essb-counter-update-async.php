@@ -69,6 +69,9 @@ class ESSBAsyncShareCounters {
 					else if ($twitter_counter == 'opensc') {
 						$RollingCurlX->addRequest ( $this->prepare_request_url ( 'twitter_opensc', $full_url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
 					}
+					else if ($twitter_counter == 'twitcount') {
+						$RollingCurlX->addRequest ( $this->prepare_request_url ( 'twitter_twitcount', $full_url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
+					}
 					else {
 						if ($twitter_counter == 'self') {
 							if (! $recover_mode) {
@@ -82,7 +85,7 @@ class ESSBAsyncShareCounters {
 					}
 					break;
 				case 'linkedin' :
-					if (essb_option_value('linked_counter_type') == 'self') {
+					if (essb_option_value('linked_counter_type') != 'no') {
 						if (! $recover_mode) {
 							$this->counters [$k] = $this->get_internal_count ( $this->post_id, $k );
 						} else {
@@ -90,17 +93,17 @@ class ESSBAsyncShareCounters {
 						}
 						$this->counters ['total'] += intval ( isset ( $this->counters [$k] ) ? $this->counters [$k] : 0 );
 					}
-					else {
-						$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
-					}
+					//else {
+					//	$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
+					//}
 					break;
 				case 'pinterest' :
 					$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
 					break;
 				case 'google' :
 					//$RollingCurlX->addRequest ( $this->prepare_request_url ( $k, $url ), $post_data, array ($this, 'get_counts' ), array ($k ), $headers );
-					if (essb_option_value('google_counter_type') == 'api') {
-						$this->counters[$k] = $this->get_google_count_api($url);
+					if (essb_option_value('google_counter_type') == 'no') {
+						//$this->counters[$k] = $this->get_google_count_api($url);
 					}
 					else {
 						if (! $recover_mode) {
@@ -198,6 +201,9 @@ class ESSBAsyncShareCounters {
 			case 'twitter_opensc' :
 				$callback_url = 'https://opensharecount.com/count.json?url=' . $url;
 				break;
+			case 'twitter_twitcount' :
+				$callback_url = 'https://counts.twitcount.com/counts.php?url=' . $url;
+				break;				
 				
 			case 'linkedin' :
 				$callback_url = 'https://www.linkedin.com/countserv/count/share?url=' . $url . '&format=json';

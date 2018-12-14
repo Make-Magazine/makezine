@@ -110,7 +110,7 @@ class ESSBGlobalSettings {
 		
 		self::$subscribe_function = essb_options_value( 'subscribe_function' );
 		self::$subscribe_link = essb_options_value( 'subscribe_link' );
-		self::$subscribe_content = essb_options_value( 'subscribe_content' );
+		self::$subscribe_content = stripslashes(essb_options_value( 'subscribe_content' ));
 		
 		self::$use_minified_css = essb_options_bool_value('use_minified_css');
 		self::$use_minified_js = essb_options_bool_value('use_minified_js');

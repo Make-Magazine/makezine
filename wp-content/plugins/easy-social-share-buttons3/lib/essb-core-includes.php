@@ -237,6 +237,10 @@ if (essb_option_bool_value('skype_active')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/social-chat/essb-skype-live-chat.php');
 }
 
+if (essb_option_bool_value('click2chat_activate')) {
+	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/social-chat/essb-click2chat.php');
+}
+
 
 // visual composer element bridge
 if (function_exists('vc_map')) {
@@ -267,6 +271,10 @@ if (essb_option_value('functions_mode_mobile') == 'auto') {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/core/extenders/essb-core-extender-automatic-mobile.php');	
 }
 
+if (essb_option_bool_value('activate_networks_manage')) {
+	include_once (ESSB3_PLUGIN_ROOT . 'lib/core/extenders/essb-core-extender-manage-networks.php');
+}
+
 if (essb_option_bool_value('activate_fake')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/modules/fake-share-counters/fakesharecounters-front.php');
 }
@@ -290,6 +298,10 @@ if (essb_option_bool_value('conversions_subscribe_lite_run')) {
 
 if (class_exists('REALLY_SIMPLE_SSL')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/core/integrations/reallysimplessl.php');
+}
+
+if (essb_option_bool_value('activate_sw_bridge')) {
+	include_once (ESSB3_PLUGIN_ROOT . 'lib/core/integrations/warfare.php');
 }
 
 if (has_filter('essb4_options_extender_after_load')) {

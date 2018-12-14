@@ -126,6 +126,34 @@ if (!function_exists('essb_is_plugin_deactivated_on')) {
 	}
 }
 
+if (!function_exists('essb_is_module_deactivated_on_category')) {
+	function essb_is_module_deactivated_on_category($module = 'share') {
+		if (is_admin()) {
+			return;
+		}
+	
+		$is_deactivated = false;
+		$exclude_from = essb_options_value( 'deactivate_on_'.$module.'_cats');
+		if (!empty($exclude_from) && is_single()) {
+			$excule_from = explode(',', $exclude_from);
+	
+			$excule_from = array_map('trim', $excule_from);
+			
+			$categories = get_the_category();
+			if ($categories) {
+				foreach ($categories as $cat) {
+					if (in_array($cat->term_id, $excule_from, false)) {
+						$is_deactivated = true;
+					}
+				}
+			}
+			
+			
+		}
+		return $is_deactivated;
+	}
+}
+
 if (!function_exists('essb_is_module_deactivated_on')) {
 	function essb_is_module_deactivated_on($module = 'share') {
 		if (is_admin()) {
@@ -213,20 +241,32 @@ if (!function_exists('essb_depend_load_class')) {
 
 if (!function_exists('essb_installed_wpml')) {
 	function essb_installed_wpml() {
-		if (class_exists ( 'SitePress' ))
-			return (true);
-		else
-			return (false);
+		
+		if (essb_option_bool_value('deactivate_wpml_bridge')) {
+			return false;
+		}
+		else {
+			if (class_exists ( 'SitePress' ))
+				return (true);
+			else
+				return (false);
+		}
 	}
 }
 
 if (!function_exists('essb_installed_polylang')) {
 	function essb_installed_polylang() {
-		if (function_exists('pll_languages_list')) {
-			return true;
+		
+		if (essb_option_bool_value('deactivate_wpml_bridge')) {
+			return false;
 		}
 		else {
-			return false;
+			if (function_exists('pll_languages_list')) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 }

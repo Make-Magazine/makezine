@@ -21,6 +21,83 @@ if (!essb_option_bool_value('deactivate_module_natives')) {
 	ESSBOptionsStructureHelper::submenu_item('display', 'native-3', __('Social Privacy', 'essb'));
 }
 
+if (!essb_option_bool_value('deactivate_module_clicktochat')) {
+	ESSBOptionsStructureHelper::menu_item('display', 'clicktochat', __('Click To Chat: WhatsApp, Viber', 'essb'), 'ti-facebook');
+	//
+	if (!ESSBActivationManager::isActivated()) {
+		if (!ESSBActivationManager::isThemeIntegrated()) {
+			ESSBOptionsStructureHelper::hint('display', 'clicktochat', __('Activate Plugin To Use This Feature', 'essb'), 'Hello! Please <a href="admin.php?page=essb_redirect_update&tab=update">activate your copy</a> of Easy Social Share Buttons for WordPress to unlock and use this feature.', 'fa24 fa fa-lock', 'glow');
+		}
+		else {
+			ESSBOptionsStructureHelper::hint('display', 'clicktochat', __('Direct Customer Benefit ', 'essb'), sprintf(__('Access to one click ready made styles install is benefit for direct plugin customers. <a href="%s" target="_blank"><b>See all direct customer benefits</b></a>', 'essb'), ESSBActivationManager::getBenefitURL()), 'fa24 fa fa-lock', 'glow');
+		}	
+	}
+	else {
+		ESSBOptionsStructureHelper::field_switch('display', 'clicktochat', 'click2chat_activate', __('Activate Click To Chat Usage', 'essb'), __('Set this option to Yes if you wish to use the Click to Chat module on your site', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_text', __('Chat Button Text', 'essb'), __('Enter your own custom text that will appear on chat start button', 'essb'));
+		ESSBOptionsStructureHelper::field_color('display', 'clicktochat', 'click2chat_bgcolor', __('Button Background Color', 'essb'), __('Customize the background color of chat button.', 'essb'));
+		ESSBOptionsStructureHelper::field_color('display', 'clicktochat', 'click2chat_color', __('Button Text Color', 'essb'), __('Customize the text color of chat button.', 'essb'));
+		$select_values = array('whatsapp' => array('title' => 'WhatsApp Icon', 'content' => '<i class="essb_icon_whatsapp"></i>'),
+				'comments' => array('title' => 'Chat Icon', 'content' => '<i class="essb_icon_comments"></i>'),
+				'comment-o' => array('title' => 'Chat Icon', 'content' => '<i class="essb_icon_comment-o"></i>'),
+				'viber' => array('title' => 'Viber Icon', 'content' => '<i class="essb_icon_viber"></i>'));
+		ESSBOptionsStructureHelper::field_toggle('display', 'clicktochat', 'click2chat_icon', __('Button Icon', 'essb'), __('Select custom icon that will be used on button', 'essb'), $select_values);
+		$more_options = array ("right" => "Bottom Right", "left" => "Bottom Left" );
+		ESSBOptionsStructureHelper::field_select('display', 'clicktochat', 'click2chat_location', __('Chat Button Location', 'essb'), __('Choose where button will appear on screen.', 'essb'), $more_options);
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_welcome_text', __('Welcome Text', 'essb'), __('The welcome text will appear just above the section with operators. If not set default text will not appear.', 'essb'));
+		
+		
+		ESSBOptionsStructureHelper::field_checkbox_list('display', 'clicktochat', 'click2chat_posttypes', __('Appear only on selected post types', 'essb'), __('Limit function to work only on selected post types. Leave non option selected to make it work on all', 'essb'), essb_get_post_types());
+		ESSBOptionsStructureHelper::field_switch('display', 'facebookchat', 'click2chat_deactivate_homepage', __('Deactivate display on homepage', 'essb'), __('Exclude display of function on home page of your site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_exclude', __('Exclude display on', 'essb'), __('Exclude appearance on posts/pages with these IDs. Comma separated: "11, 15, 125".', 'essb'), '');
+		
+		ESSBOptionsStructureHelper::panel_start('display', 'clicktochat', __('Operator #1 Details', 'essb'), __('Configure details and usage of operator #1', 'essb'), '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+		ESSBOptionsStructureHelper::field_switch('display', 'clicktochat', 'click2chat_operator1_active', __('Active Operator', 'essb'), __('Set to Yes if you wish this operator to be visible and available for chat.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator1_name', __('Name', 'essb'), __('Enter Name that will appear on screen', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator1_title', __('Title', 'essb'), __('Required to load Facebook API. To create one visit Facebook Developer Center.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator1_number', __('Contact Number', 'essb'), __('Enter the contact number which will be used to contact with you. This number should contain the selected chat application installed.', 'essb'), '');
+		$more_options = array ("" => "WhatsApp", "viber" => "Viber" );
+		ESSBOptionsStructureHelper::field_select('display', 'clicktochat', 'click2chat_operator1_app', __('Application', 'essb'), __('Choose the used for chat application for this operator', 'essb'), $more_options);
+		ESSBOptionsStructureHelper::field_image('display', 'clicktochat', 'click2chat_operator1_image', __('Profile Image', 'essb'), __('Image that will be displayed as profile picture', 'essb'), '', 'vertical1');
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator1_text', __('Auto Text', 'essb'), __('This text will pre-poluate the chat field. You can use [title] and [url] to as variables to set the current page title or URL. (WhatsApp Only)', 'essb'), '');
+		ESSBOptionsStructureHelper::panel_end('display', 'clicktochat');
+
+		ESSBOptionsStructureHelper::panel_start('display', 'clicktochat', __('Operator #2 Details', 'essb'), __('Configure details and usage of operator #1', 'essb'), '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+		ESSBOptionsStructureHelper::field_switch('display', 'clicktochat', 'click2chat_operator2_active', __('Active Operator', 'essb'), __('Set to Yes if you wish this operator to be visible and available for chat.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator2_name', __('Name', 'essb'), __('Enter Name that will appear on screen', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator2_title', __('Title', 'essb'), __('Required to load Facebook API. To create one visit Facebook Developer Center.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator2_number', __('Contact Number', 'essb'), __('Enter the contact number which will be used to contact with you. This number should contain the selected chat application installed.', 'essb'), '');
+		$more_options = array ("" => "WhatsApp", "viber" => "Viber" );
+		ESSBOptionsStructureHelper::field_select('display', 'clicktochat', 'click2chat_operator2_app', __('Application', 'essb'), __('Choose the used for chat application for this operator', 'essb'), $more_options);
+		ESSBOptionsStructureHelper::field_image('display', 'clicktochat', 'click2chat_operator2_image', __('Profile Image', 'essb'), __('Image that will be displayed as profile picture', 'essb'), '', 'vertical1');
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator2_text', __('Auto Text', 'essb'), __('This text will pre-poluate the chat field. You can use [title] and [url] to as variables to set the current page title or URL. (WhatsApp Only)', 'essb'), '');
+		ESSBOptionsStructureHelper::panel_end('display', 'clicktochat');
+
+		ESSBOptionsStructureHelper::panel_start('display', 'clicktochat', __('Operator #3 Details', 'essb'), __('Configure details and usage of operator #1', 'essb'), '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+		ESSBOptionsStructureHelper::field_switch('display', 'clicktochat', 'click2chat_operator3_active', __('Active Operator', 'essb'), __('Set to Yes if you wish this operator to be visible and available for chat.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator3_name', __('Name', 'essb'), __('Enter Name that will appear on screen', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator3_title', __('Title', 'essb'), __('Required to load Facebook API. To create one visit Facebook Developer Center.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator3_number', __('Contact Number', 'essb'), __('Enter the contact number which will be used to contact with you. This number should contain the selected chat application installed.', 'essb'), '');
+		$more_options = array ("" => "WhatsApp", "viber" => "Viber" );
+		ESSBOptionsStructureHelper::field_select('display', 'clicktochat', 'click2chat_operator3_app', __('Application', 'essb'), __('Choose the used for chat application for this operator', 'essb'), $more_options);
+		ESSBOptionsStructureHelper::field_image('display', 'clicktochat', 'click2chat_operator3_image', __('Profile Image', 'essb'), __('Image that will be displayed as profile picture', 'essb'), '', 'vertical1');
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator3_text', __('Auto Text', 'essb'), __('This text will pre-poluate the chat field. You can use [title] and [url] to as variables to set the current page title or URL. (WhatsApp Only)', 'essb'), '');
+		ESSBOptionsStructureHelper::panel_end('display', 'clicktochat');
+
+		ESSBOptionsStructureHelper::panel_start('display', 'clicktochat', __('Operator #4 Details', 'essb'), __('Configure details and usage of operator #1', 'essb'), '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+		ESSBOptionsStructureHelper::field_switch('display', 'clicktochat', 'click2chat_operator4_active', __('Active Operator', 'essb'), __('Set to Yes if you wish this operator to be visible and available for chat.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator4_name', __('Name', 'essb'), __('Enter Name that will appear on screen', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator4_title', __('Title', 'essb'), __('Required to load Facebook API. To create one visit Facebook Developer Center.', 'essb'));
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator4_number', __('Contact Number', 'essb'), __('Enter the contact number which will be used to contact with you. This number should contain the selected chat application installed.', 'essb'), '');
+		$more_options = array ("" => "WhatsApp", "viber" => "Viber" );
+		ESSBOptionsStructureHelper::field_select('display', 'clicktochat', 'click2chat_operator4_app', __('Application', 'essb'), __('Choose the used for chat application for this operator', 'essb'), $more_options);
+		ESSBOptionsStructureHelper::field_image('display', 'clicktochat', 'click2chat_operator4_image', __('Profile Image', 'essb'), __('Image that will be displayed as profile picture', 'essb'), '', 'vertical1');
+		ESSBOptionsStructureHelper::field_textbox_stretched('display', 'clicktochat', 'click2chat_operator4_text', __('Auto Text', 'essb'), __('This text will pre-poluate the chat field. You can use [title] and [url] to as variables to set the current page title or URL. (WhatsApp Only)', 'essb'), '');
+		ESSBOptionsStructureHelper::panel_end('display', 'clicktochat');
+		
+	}
+}
+
 if (!essb_option_bool_value('deactivate_module_facebookchat')) {
 	ESSBOptionsStructureHelper::menu_item('display', 'facebookchat', __('Facebook Messenger Live Chat', 'essb'), 'ti-facebook');
 

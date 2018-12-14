@@ -359,6 +359,17 @@
   content: "\3d";
 }
 
+.essb_icon_fintel:before {
+  content: "\5b";
+}
+.essb_icon_mix:before {
+  content: "\5d";
+}
+
+.essb_icon_instapaper:before {
+  content: "\5e";
+}
+
 /*********************************************************************************/
 /* 1. Global settings for all templates                                          */
 /*********************************************************************************/
@@ -937,6 +948,22 @@
 	{
 	background-color: #6cbdc5 !important;
 }
+
+.essb_links .essb_link_fintel a,.essb_links .essb_link_fintel a:hover,.essb_links .essb_link_fintel a:focus
+	{
+	background-color: #404040 !important;
+}
+
+.essb_links .essb_link_mix a,.essb_links .essb_link_mix a:hover,.essb_links .essb_link_mix a:focus
+	{
+	background-color: #ff8226 !important;
+}
+
+.essb_links .essb_link_instapaper a,.essb_links .essb_link_instapaper a:hover,.essb_links .essb_link_instapaper a:focus
+	{
+	background-color: #404040 !important;
+}
+
 
 
 /*********************************************************************************/
@@ -1541,6 +1568,19 @@
 	color: #6cbdc5 !important;
 }
 
+.essb_links.essb_template_light-retina .essb_link_fintel a {
+	color: #404040 !important;
+}
+
+.essb_links.essb_template_light-retina .essb_link_instapaper a {
+	color: #404040 !important;
+}
+
+
+.essb_links.essb_template_light-retina .essb_link_mix a {
+	color: #ff8226 !important;
+}
+
 
 /** Flat Retina **/
 .essb_links.essb_template_flat-retina li a {
@@ -1826,6 +1866,19 @@
 	color: #6cbdc5 !important;
 }
 
+.essb_links.essb_template_round-retina .essb_link_fintel a {
+	color: #404040 !important;
+}
+
+.essb_links.essb_template_round-retina .essb_link_instapaper a {
+	color: #404040 !important;
+}
+
+.essb_links.essb_template_round-retina .essb_link_mix a {
+	color: #ff8226 !important;
+}
+
+
 /** Modern Retina **/
 .essb_links.essb_template_modern-retina li a {
 	border-top-left-radius: 7px;
@@ -2094,6 +2147,17 @@
 	border-bottom: 3px inset #6cbdc5;
 }
 
+.essb_links.essb_template_modern-retina .essb_link_fintel a,
+.essb_links.essb_template_modern-retina .essb_link_instapaper a {
+	color: #404040 !important;
+	border-bottom: 3px inset #404040;
+}
+
+.essb_links.essb_template_modern-retina .essb_link_mix a {
+	color: #ff8226 !important;
+	border-bottom: 3px inset #ff8226;
+}
+
 /** Circles Retina **/
 .essb_links.essb_template_circles-retina li a {
 	border-radius: 18px;
@@ -2355,6 +2419,17 @@
 .essb_links.essb_template_circles-retina .essb_link_meetedgar a {
 	color: #6cbdc5 !important;
 	border: 2px solid #6cbdc5;
+}
+
+.essb_links.essb_template_circles-retina .essb_link_fintel a,
+.essb_links.essb_template_circles-retina .essb_link_instapaper a {
+	color: #404040 !important;
+	border: 2px solid #404040;
+}
+
+.essb_links.essb_template_circles-retina .essb_link_mix a {
+	color: #ff8226 !important;
+	border: 2px solid #ff8226;
 }
 
 /** Blocks Retina **/
@@ -2644,6 +2719,17 @@
 	background-color: #6cbdc5 !important;
 }
 
+.essb_links.essb_template_clear-retina .essb_link_fintel a .essb_icon,
+.essb_links.essb_template_clear-retina .essb_link_instapaper a .essb_icon
+	{
+	background-color: #404040 !important;
+}
+
+.essb_links.essb_template_clear-retina .essb_link_mix a .essb_icon
+	{
+	background-color: #ff8226 !important;
+}
+
 /* Copy Retina */
 .essb_links.essb_template_copy-retina a {
 	-webkit-border-radius: 3px;
@@ -2927,6 +3013,15 @@
 
 .essb_links.essb_template_dimmed-retina .essb_link_meetedgar a {
 	color: #6cbdc5 !important;
+}
+
+.essb_links.essb_template_dimmed-retina .essb_link_fintel a,
+.essb_links.essb_template_dimmed-retina .essb_link_instapaper a {
+	color: #404040 !important;
+}
+
+.essb_links.essb_template_dimmed-retina .essb_link_mix a {
+	color: #ff8226 !important;
 }
 
 /** Grey Retina **/
@@ -3653,6 +3748,22 @@
 .essb_links.essb_template_grey-circles-outline-retina .essb_link_meetedgar a:hover,
 .essb_links.essb_template_grey-circles-outline-retina .essb_link_meetedgar a:focus
 	{
+	color: #404040 !important;
+	border-color: #404040 !important;
+}
+
+.essb_links.essb_template_grey-circles-outline-retina .essb_link_fintel a:hover,
+.essb_links.essb_template_grey-circles-outline-retina .essb_link_fintel a:focus,
+.essb_links.essb_template_grey-circles-outline-retina .essb_link_instapaper a:hover,
+.essb_links.essb_template_grey-circles-outline-retina .essb_link_instapaper a:focus
+	{
+	color: #ff8226 !important;
+	border-color: #ff8226 !important;
+}
+
+.essb_links.essb_template_grey-circles-outline-retina .essb_link_mix a:hover,
+.essb_links.essb_template_grey-circles-outline-retina .essb_link_mix a:focus
+	{
 	color: #6cbdc5 !important;
 	border-color: #6cbdc5 !important;
 }
@@ -4127,6 +4238,17 @@ transition-property: background-color;
 .essb_links.essb_template_lollipop-retina .essb_link_meetedgar a .essb_icon
 	{
 	background-color: #6cbdc5 !important;
+}
+
+.essb_links.essb_template_lollipop-retina .essb_link_fintel a .essb_icon,
+.essb_links.essb_template_lollipop-retina .essb_link_instapaper a .essb_icon
+	{
+	background-color: #404040 !important;
+}
+
+.essb_links.essb_template_lollipop-retina .essb_link_mix a .essb_icon
+	{
+	background-color: #ff8226 !important;
 }
 
 
@@ -4759,3 +4881,59 @@ background: linear-gradient(224.65793970864146deg, #8043af, #8442aa 2.9%, #8740a
 .essb-cornerbar-bottom-left.essb-cornerbar-hidden, .essb-cornerbar-top-left.essb-cornerbar-hidden, .essb-cornerbar-bottom-left.essb-cornerbar-hiddenend, .essb-cornerbar-top-left.essb-cornerbar-hiddenend { margin-left: -2000px; }
 .essb-cornerbar-bottom-right.essb-cornerbar-hidden, .essb-cornerbar-top-right.essb-cornerbar-hidden, .essb-cornerbar-bottom-right.essb-cornerbar-hiddenend, .essb-cornerbar-top-right.essb-cornerbar-hiddenend { margin-right: -2000px; }
 .essb-cornerbar .essb_message_before { margin-right: 10px !important; }
+
+/** Click2Chat **/
+.essb-click2chat { position: fixed; bottom: 20px; right: 20px; background-color: #00b0ff; color: #fff; cursor: pointer; font-size: 14px; padding: 7px 20px; border-radius: 4px; z-index: 1000; }
+.essb-click2chat i { margin-right: 5px; }
+.essb-click2chat span { font-size: 14px; }
+.essb-click2chat-window { display: none; border-radius: 4px;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,0.2); position: fixed; right: 20px; bottom: 70px; background-color: #fff; width: 340px; z-index: 10002; }
+.essb-click2chat-window.active { display: block; }
+
+.essb-click2chat-inline { position: static; bottom: auto; right: auto; display: inline-block; width: auto;}
+.essb-click2chat-button { margin: 1em 0; }
+.essb-click2chat-button.position-center { text-align: center;}
+.essb-click2chat-button.position-right { text-align: right;}
+
+.essb-click2chat-window .window-header {
+	background-color: #00b0ff; color: #fff;  font-size: 14px; min-height: 24px;
+}
+
+.essb-click2chat-window .window-header .chat-close { float: right; font-size: 18px; margin-left: 5px; margin-right: 5px; cursor: pointer; }
+.essb-click2chat-window .window-header .welcome-text { padding: 10px; }
+
+.essb-click2chat-window .operator-list { padding: 10px; }
+.essb-click2chat-window .operator-list .operator { padding: 10px; cursor: pointer; line-height: 1; }
+.essb-click2chat-window .operator-list .operator:hover { background: #f1f3f5; }
+
+.essb-click2chat-window .operator-list .operator .image { width: 50px; display: inline-block; vertical-align: top;}
+.essb-click2chat-window .operator-list .operator .data { width: calc(100% - 60px); padding-left: 10px; display: inline-block; font-size: 14px; vertical-align: top; line-height: 1.3;}
+.essb-click2chat-window .operator-list .operator .data .title { color: rgba(0,0,0,0.6); font-size: 12px; display: block;}
+.essb-click2chat-window .operator-list .operator .data .name { font-weight: bold; color: #000; line-height: 1.5em; }
+.essb-click2chat-window .operator-list .operator-app-whatsapp .data .title.app span { background: #1D9E11; color: #fff; padding: 3px 5px; font-size: 10px; text-transform: uppercase; }
+.essb-click2chat-window .operator-list .operator-app-viber .data .title.app span { background: #7d539d;color: #fff; padding: 3px 5px; font-size: 10px; text-transform: uppercase; }
+
+/** Button Size Control **/
+.essb_links.essb_size_xs .essb_icon { width: 24px !important; height: 24px !important; }
+.essb_links.essb_size_xs .essb_icon:before { font-size: 14px !important; top: 5px !important; left: 5px !important; }
+.essb_links.essb_size_xs li a .essb_network_name { font-size: 11px !important; text-transform: uppercase !important; font-weight: 400 !important; line-height: 12px !important; }
+
+.essb_links.essb_size_s .essb_icon { width: 30px !important; height: 30px !important; }
+.essb_links.essb_size_s .essb_icon:before { font-size: 16px !important; top: 7px !important; left: 7px !important; }
+.essb_links.essb_size_s li a .essb_network_name { font-size: 12px !important; font-weight: 400 !important; line-height: 12px !important; }
+
+.essb_links.essb_size_m .essb_icon { width: 36px !important; height: 36px !important; }
+.essb_links.essb_size_m .essb_icon:before { font-size: 18px !important; top: 9px !important; left: 9px !important; }
+.essb_links.essb_size_m li a .essb_network_name { font-size: 13px !important; font-weight: 400 !important; line-height: 12px !important; }
+
+.essb_links.essb_size_l .essb_icon { width: 42px !important; height: 42px !important; }
+.essb_links.essb_size_l .essb_icon:before { font-size: 20px !important; top: 11px !important; left: 11px !important; }
+.essb_links.essb_size_l li a .essb_network_name { font-size: 14px !important; font-weight: 400 !important; line-height: 12px !important; }
+
+.essb_links.essb_size_xl .essb_icon { width: 46px !important; height: 46px !important; }
+.essb_links.essb_size_xl .essb_icon:before { font-size: 24px !important; top: 11px !important; left: 11px !important; }
+.essb_links.essb_size_xl li a .essb_network_name { font-size: 14px !important; font-weight: 400 !important; line-height: 12px !important; }
+
+.essb_links.essb_size_xxl .essb_icon { width: 50px !important; height: 50px !important; }
+.essb_links.essb_size_xxl .essb_icon:before { font-size: 28px !important; top: 11px !important; left: 11px !important; }
+.essb_links.essb_size_xxl li a .essb_network_name { font-size: 14px !important; font-weight: 400 !important; line-height: 12px !important; }

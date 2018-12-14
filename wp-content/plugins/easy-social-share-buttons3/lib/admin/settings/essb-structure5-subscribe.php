@@ -33,7 +33,8 @@ $optin_connectors = array("mailchimp" => "MailChimp",
 		"mailerlite" => "MailerLite",
 		"activecampaign" => "ActiveCampaign",
 		"campaignmonitor" => "CampaignMonitor",
-		"sendinblue" => "SendinBlue");
+		"sendinblue" => "SendinBlue",
+		"madmimi" => "Mad Mimi");
 
 if (has_filter('essb_external_subscribe_connectors')) {
 	$optin_connectors = apply_filters('essb_external_subscribe_connectors', $optin_connectors);
@@ -83,8 +84,9 @@ ESSBOptionsStructureHelper::field_checkbox_list('optin', 'optin-11', 'essb3_ofob
 ESSBOptionsStructureHelper::field_switch('optin', 'optin-11', 'essb3_ofob|deactivate_homepage', __('Deactivate display on homepage', 'essb'), __('Exclude display of function on home page of your site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::panel_end('optin', 'optin-11');
 
-	ESSBOptionsStructureHelper::field_switch('optin', 'optin-11', 'essb3_ofob|ofob_single', __('Appear once for user', 'easy-optin-booster'), __('Activate this option if you wish to make event appear only once for user in the next 14 days. ', 'easy-optin-booster'), '', __('Yes', 'easy-optin-booster'), __('No', 'easy-optin-booster'));
-	ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-11', 'essb3_ofob|ofob_exclude', __('Exclude display on', 'essb'), __('Exclude buttons on posts/pages with these IDs. Comma separated: "11, 15, 125". This will deactivate automated display of buttons on selected posts/pages but you are able to use shortcode on them.', 'essb'), '');
+	ESSBOptionsStructureHelper::field_switch_panel('optin', 'optin-11', 'essb3_ofob|ofob_single', __('Appear once for user', 'easy-optin-booster'), __('Activate this option if you wish to make event appear only once for user in the next 14 days. ', 'easy-optin-booster'), '', __('Yes', 'easy-optin-booster'), __('No', 'easy-optin-booster'));
+	ESSBOptionsStructureHelper::field_textbox_panel('optin', 'optin-11', 'essb3_ofob|ofob_single_time', __('Custom appear once period (days)', 'easy-optin-booster'), __('If the option to show once is set the default period is 14 days. Fill here a custom days value (numeric)', 'easy-optin-booster'), '');
+	ESSBOptionsStructureHelper::field_textbox_panel('optin', 'optin-11', 'essb3_ofob|ofob_exclude', __('Exclude display on', 'essb'), __('Exclude buttons on posts/pages with these IDs. Comma separated: "11, 15, 125". This will deactivate automated display of buttons on selected posts/pages but you are able to use shortcode on them.', 'essb'), '');
 	
 	ESSBOptionsStructureHelper::panel_start('optin', 'optin-11', __('Display after amount of seconds', 'easy-optin-booster'), __('Automatically display selected opt-in form after amount of seconds. If you wish to trigger immediately after load then you can use 1 as value', 'easy-optin-booster'), 'fa21 fa fa-cogs', array("mode" => "toggle", 'switch_id' => '', 'switch_on' => __('Yes', 'easy-optin-booster'), 'switch_off' => __('No', 'easy-optin-booster')));
 	ESSBOptionsStructureHelper::field_switch('optin', 'optin-11', 'essb3_ofob|ofob_time', __('Activate', 'easy-optin-booster'), __('Set this option to Yes to use this event', 'easy-optin-booster'), '', __('Yes', 'easy-optin-booster'), __('No', 'easy-optin-booster'));
@@ -201,10 +203,23 @@ ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscri
 ESSBOptionsStructureHelper::field_switch('optin', 'optin-1', 'subscribe_success_new', __('Open successful redirect in a new window', 'essb'), __('Set to Yes if you wish the successful URL to appear in a popup instead of redirect on same page.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 
-ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Include agree to terms confirmation', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Additional form settings', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+ESSBOptionsStructureHelper::structure_row_start('optin', 'optin-1');
+ESSBOptionsStructureHelper::structure_section_start('optin', 'optin-1', 'c6');
+ESSBOptionsStructureHelper::field_switch('optin', 'optin-1', 'subscribe_require_name', __('Make name field required', 'essb'), __('Set this option to Yes if you need to make the name field mandatory when it is used in a design.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '9');
+ESSBOptionsStructureHelper::structure_section_end('optin', 'optin-1');
+ESSBOptionsStructureHelper::structure_section_start('optin', 'optin-1', 'c6');
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_require_name_error', __('Not filled in name error', 'essb'), __('Localize the text of error message that name field is blank or leave blank to show the default', 'essb'));
+ESSBOptionsStructureHelper::structure_section_end('optin', 'optin-1');
+ESSBOptionsStructureHelper::structure_row_end('optin', 'optin-1');
+ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
+
+
+ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Include agree to terms confirmation (GDPR Recommended', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
 ESSBOptionsStructureHelper::field_switch('optin', 'optin-1', 'subscribe_terms', __('Include I agree to terms confirmation', 'essb'), __('Set this option to Yes to add in form a checkbox that will require users to confirm that they agree with terms before submitting. (Recommended for usage in EU).', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_terms_text', __('Custom terms confirmation text', 'essb'), __('Set a custom text that will appear in the confirmation check before submission', 'essb'));
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_terms_error', __('Custom not checked confirmation error', 'essb'), __('Set your own error message when confirmation box is not set.', 'essb'));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_terms_field', __('Forward confirmation status to mailing list custom field', 'essb'), __('For selected services it is possible to automatically write in a custom field that user confirm the sign up with the check. If your is in the supported list you can enter here the custom list parameter ID and plugin will store Yes. Supported by: MailChimp, GetReponse, MailPoet, ActiveCampaign, CampaignMonitor, SendInBlue', 'essb'));
 ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 
 
@@ -252,7 +267,7 @@ ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
 
 ESSBOptionsStructureHelper::holder_start('optin', 'optin-1', 'essb-subscribe-connector', 'essb-subscribe-connector-mymail');
-ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('MyMail', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
+ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Mailster', 'essb'), __('Configure mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
 $listOfOptions = array();
 if (function_exists('mailster')) {
 	$lists = mailster('lists')->get();
@@ -263,7 +278,7 @@ if (function_exists('mailster')) {
 		$listOfOptions[$id] = $list->name;
 	}
 }
-ESSBOptionsStructureHelper::field_select('optin', 'optin-1', 'subscribe_mm_list', __('MyMail List', 'essb'), __('Select your list. Please ensure that MyMail plugin is installed.', 'essb'), $listOfOptions);
+ESSBOptionsStructureHelper::field_select('optin', 'optin-1', 'subscribe_mm_list', __('Mailster List', 'essb'), __('Select your list. Please ensure that Mailster plugin is installed.', 'essb'), $listOfOptions);
 ESSBOptionsStructureHelper::field_switch_panel('optin', 'optin-1', 'subscribe_mm_double', __('Use pending state for new subscribers', 'essb'), __('Use this to setup Pending state of all your new subscribers and manually review at later.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
@@ -305,6 +320,16 @@ ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscri
 ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_sib_list', __('SendinBlue List ID', 'essb'), __('Enter your list ID.', 'essb'));
 ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
 ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
+
+
+ESSBOptionsStructureHelper::holder_start('optin', 'optin-1', 'essb-subscribe-connector', 'essb-subscribe-connector-madmimi');
+ESSBOptionsStructureHelper::panel_start('optin', 'optin-1', __('Mad Mimi', 'essb'), __('Mad Mimi mailing list service access details', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle"));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_madmimi_login', __('Mad Mimi Username/Email', 'essb'), __('Enter your username or e-mail address using to access the system', 'essb'));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_madmimi_api', __('Mad Mimi API Key', 'essb'), __('Enter your Mad Mimi API Key. You can get your API Key <a href="https://madmimi.com/user/edit?account_info_tabs=account_info_personal" target="_blank">here</a>.', 'essb'));
+ESSBOptionsStructureHelper::field_textbox_stretched('optin', 'optin-1', 'subscribe_madmimi_list', __('Mad Mimi List ID', 'essb'), __('Enter your list ID.', 'essb'));
+ESSBOptionsStructureHelper::panel_end('optin', 'optin-1');
+ESSBOptionsStructureHelper::holder_end('optin', 'optin-1');
+
 
 $custom_connectors = array();
 $custom_connectors_options = array();

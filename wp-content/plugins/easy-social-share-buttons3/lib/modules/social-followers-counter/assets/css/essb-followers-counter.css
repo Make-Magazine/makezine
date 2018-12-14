@@ -455,6 +455,11 @@
 	color: #2c9ab7 !important
 }
 
+.essbfc-template-color .essbfc-icon-subscribe {
+	color: #2c9ab7 !important
+}
+
+
 .essbfc-template-color .essbfc-icon-youtube {
 	color: #CD332D !important;
 }
@@ -677,6 +682,11 @@
 	background-color: #2c9ab7 !important
 }
 
+.essbfc-template-roundcolor .essbfc-icon-subscribe {
+	background-color: #2c9ab7 !important
+}
+
+
 .essbfc-template-roundcolor .essbfc-icon-youtube {
 	background-color: #CD332D !important;
 }
@@ -895,6 +905,11 @@
 	background-color: #2c9ab7 !important
 }
 
+.essbfc-template-outlinecolor li:hover .essbfc-icon-subscribe {
+	background-color: #2c9ab7 !important
+}
+
+
 .essbfc-template-outlinecolor li:hover .essbfc-icon-youtube {
 	background-color: #CD332D !important;
 }
@@ -1094,6 +1109,12 @@
 	color: #2c9ab7 !important;
 	border: 2px solid #2c9ab7 !important;
 }
+
+.essbfc-template-outlinecolor .essbfc-icon-subscribe {
+	color: #2c9ab7 !important;
+	border: 2px solid #2c9ab7 !important;
+}
+
 
 .essbfc-template-outlinecolor .essbfc-icon-youtube {
 	color: #CD332D !important;
@@ -1385,6 +1406,11 @@
 	background-color: #2c9ab7 !important;
 }
 
+.essbfc-template-metro .essbfc-subscribe .essbfc-network {
+	background-color: #2c9ab7 !important;
+}
+
+
 .essbfc-template-metro .essbfc-youtube .essbfc-network {
 	background-color: #CD332D !important;
 }
@@ -1605,6 +1631,11 @@
 .essbfc-template-flat .essbfc-mailchimp .essbfc-network {
 	background-color: #2c9ab7 !important;
 }
+
+.essbfc-template-flat .essbfc-subscribe .essbfc-network {
+	background-color: #2c9ab7 !important;
+}
+
 
 .essbfc-template-flat .essbfc-youtube .essbfc-network {
 	background-color: #CD332D !important;
@@ -1838,6 +1869,11 @@
 .essbfc-template-tinycolor .essbfc-mailchimp .essbfc-network {
 	background-color: #2c9ab7 !important;
 }
+
+.essbfc-template-tinycolor .essbfc-subscribe .essbfc-network {
+	background-color: #2c9ab7 !important;
+}
+
 
 .essbfc-template-tinycolor .essbfc-youtube .essbfc-network {
 	background-color: #CD332D !important;
@@ -2238,10 +2274,26 @@
 	border-bottom: 3px solid #2c9ab7 !important
 }
 
+.essbfc-template-modern .essbfc-subscribe:hover .essbfc-network,
+.essbfc-template-modernlight .essbfc-subscribe:hover .essbfc-network {
+	background-color: #2c9ab7 !important;
+}
+
+.essbfc-template-modern .essbfc-subscribe .essbfc-network {
+	border-bottom: 3px solid #2c9ab7 !important
+}
+
+
 .essbfc-template-modern .essbfc-mailchimp .essbfc-network i,
 .essbfc-template-modernlight .essbfc-mailchimp .essbfc-network  {
 	color: #2c9ab7 !important;
 }
+
+.essbfc-template-modern .essbfc-subscribe .essbfc-network i,
+.essbfc-template-modernlight .essbfc-subscribe .essbfc-network  {
+	color: #2c9ab7 !important;
+}
+
 
 .essbfc-template-modern .essbfc-youtube:hover .essbfc-network,
 .essbfc-template-modernlight .essbfc-youtube:hover .essbfc-network {
@@ -2868,6 +2920,10 @@
 	content: '\e808';
 } /* 'РѕВ в‚¬' */
 
+.essbfc-icon-subscribe:before {
+	content: '\e808';
+}
+
 .essbfc-icon-instagram:before { content: '\e822'; } /* 'РѕВ Сћ' */
 .essbfc-icon-youtube-play:before { content: '\f16a'; } /* 'РївЂ¦Р„' */
 
@@ -3111,6 +3167,14 @@
 	padding: 0px !important;
 }
 
+.essbfc-container.essbfc-container-profiles.essbfc-profiles-align-center ul {
+	text-align: center !important;
+}
+
+.essbfc-container.essbfc-container-profiles.essbfc-profiles-align-right ul {
+	text-align: right !important;
+}
+
 .essbfc-container.essbfc-container-profiles.essbfc-template-metro li .essbfc-network,
 .essbfc-container.essbfc-container-profiles.essbfc-template-flat li .essbfc-network,
 .essbfc-container.essbfc-container-profiles.essbfc-template-dark li .essbfc-network,
@@ -3173,6 +3237,37 @@
 	font-size: 16px !important;
 }
 
+.essbfc-container.essbfc-container-profiles.essbfc-profiles-size-small i {
+	font-size: 14px;
+    line-height: 20px;
+    margin: 6px !important;
+    width: 20px;
+    padding: 0px !important;
+}
+
+.essbfc-container.essbfc-container-profiles.essbfc-profiles-size-medium i {
+	font-size: 20px;
+    line-height: 26px;
+    margin: 6px !important;
+    width: 26px;
+    padding: 0px !important;
+}
+
+.essbfc-container.essbfc-container-profiles.essbfc-profiles-size-large i {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 8px !important;
+    width: 30px;
+    padding: 0px !important;
+}
+
+.essbfc-container.essbfc-container-profiles.essbfc-profiles-size-xlarge i {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 10px !important;
+    width: 32px;
+    padding: 0px !important;
+}
 /*
  * Cover Box Design
  */

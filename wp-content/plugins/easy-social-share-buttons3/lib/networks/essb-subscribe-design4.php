@@ -63,7 +63,7 @@ if (!function_exists('essb_subscribe_form_design4')) {
 		$secure_nonce = wp_create_nonce('essb3_subscribe_nonce');
 		$current_url = add_query_arg('essb3_subscribe_nonce', $secure_nonce, $current_url);
 		
-		$output = '<div class="essb-subscribe-form-content essb-subscribe-from-design4'.($is_widget ? " essb-subscribe-form-inwidget" :"").($subscribe_mc_imagealign3 == 'right' ? " essb-subscribe-from-left" : " essb-subscribe-form-right").'" data-position="'.$position.'">';
+		$output = '<div class="essb-subscribe-form-content essb-subscribe-from-design4'.($is_widget ? " essb-subscribe-form-inwidget" :"").($subscribe_mc_imagealign3 == 'right' ? " essb-subscribe-from-left" : " essb-subscribe-form-right").'" data-position="'.$position.'"  data-design="design4">';
 		
 		if ($subscribe_mc_imagealign3 == '' || $subscribe_mc_imagealign3 == 'left') {
 			$output .= '<div class="essb-subscribe-form-content-subscribeholder">';

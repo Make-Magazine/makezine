@@ -86,7 +86,7 @@ class ESSBCore {
 			wp_reset_postdata();
 		}
 
-		if (essb_is_plugin_deactivated_on() || essb_is_module_deactivated_on('share')) {
+		if (essb_is_plugin_deactivated_on() || essb_is_module_deactivated_on('share') || essb_is_module_deactivated_on_category('share')) {
 			$this->deactivate_stored_filter_and_actions();
 			return;
 		}
@@ -279,6 +279,10 @@ class ESSBCore {
 		
 		
 		if (in_array('flyin', $this->general_options['button_position'])) {
+			$display_locations_style = true;
+		}
+		
+		if (in_array('sharebutton', $this->general_options['button_position'])) {
 			$display_locations_style = true;
 		}
 		
@@ -968,7 +972,7 @@ class ESSBCore {
 			}
 		}
 		
-		if (essb_is_module_deactivated_on('share')) {
+		if (essb_is_module_deactivated_on('share') || essb_is_module_deactivated_on_category('share')) {
 			$is_singular = false;
 			$is_lists_authorized = false;
 		}
@@ -1095,6 +1099,23 @@ class ESSBCore {
 				
 			$share_buttons = $this->generate_share_buttons('cornerbar');
 			$output .= essb5_generate_corner_bar($share_buttons);
+		}
+	
+		echo $output;
+	}
+
+	function display_sharebutton() {
+		$post_types = $this->general_options['display_in_types'];
+		$is_valid = $this->check_applicability($post_types, 'sharebutton');
+	
+		$output = '';
+	
+		if ($is_valid) {
+			$share_buttons = $this->generate_share_buttons('sharebutton');
+				
+			essb_depend_load_function('essb5_generate_share_button', 'lib/core/display-methods/essb-display-method-button.php');
+				
+			$output .= essb5_generate_share_button($share_buttons);
 		}
 	
 		echo $output;
@@ -1840,9 +1861,6 @@ class ESSBCore {
 	function generate_share_buttons($position, $likeshare = 'share', $share_options = array(), $is_shortcode = false, $shortcode_options = array(), $media_url = '') {
 		global $post;
 						
-		//return "";
-		//timer_start();
-		
 		// @since 3.5 - runtime cache
 		$cache_key_runtime = '';
 		if (ESSBGlobalSettings::$cache_runtime) {
@@ -1942,6 +1960,7 @@ class ESSBCore {
 				
 				if ($ga_campaign_tracking != '') {
 					$post_share_details['url'] = essb_attach_tracking_code($post_share_details['url'], $ga_campaign_tracking);
+					$post_share_details['ga_mode'] = true;
 				}						
 			}
 		}
@@ -2121,6 +2140,16 @@ class ESSBCore {
 					$button_style['total_counter_pos'] = 'leftbig';
 					$button_style['counter_pos'] = 'hidden';
 					$button_count_correction_when_total = 1;
+				}
+				
+				if (essb_option_bool_value('mobile_sharebuttonsbar_counter')) {
+					$button_style['show_counter'] = true;
+					$button_style['counter_pos'] = 'inside';
+					$button_style['button_style'] = 'button';
+					
+					if (!essb_option_bool_value('mobile_sharebuttonsbar_total')) {
+						$button_style['total_counter_pos'] = 'hidden';
+					}
 				}
 				
 				$available_networks_count = essb_option_value('mobile_sharebuttonsbar_count');
@@ -2464,6 +2493,8 @@ class ESSBCore {
 		$style['share_button_func'] = essb_option_value('share_button_func');
 		$style['share_button_icon'] = essb_option_value('share_button_icon');		
 		$style['share_button_style'] = essb_option_value('share_button_style');
+		
+		$style['button_size'] = essb_option_value('button_size');
 		
 		if (has_filter('essb4_button_visual_options')) {
 			$style = apply_filters('essb4_button_visual_options', $style, $position);

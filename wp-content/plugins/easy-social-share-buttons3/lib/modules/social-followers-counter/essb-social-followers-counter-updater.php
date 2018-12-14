@@ -113,24 +113,51 @@ class ESSBSocialFollowersCounterUpdater {
 	}
 	
 	public function update_facebook() {
-		
 		$id = ESSBSocialFollowersCounterHelper::get_option ( 'facebook_id' );
 		$access_token = ESSBSocialFollowersCounterHelper::get_option ( 'facebook_access_token' );
 		$account_type = ESSBSocialFollowersCounterHelper::get_option ( 'facebook_account_type', 'page' );
+		$update_method = ESSBSocialFollowersCounterHelper::get_option( 'facebook_update_method', 'method1');
 		
-		if (! empty ( $id ) && empty ( $access_token )) {
-			return $this->update_facebook_no_token ( $id );
-		} else {
-			if (($account_type == 'page' && empty ( $id )) || ($account_type == 'followers' && (empty ( $id ) || empty ( $access_token )))) {
-				return 0;
-			}
-			
-			if ($account_type == 'followers') {
-				return $this->update_facebook_followers ();
+		if (!empty($id) && $update_method == 'method2') {
+			return $this->update_facebook_without_token($id);
+		}
+		else {
+			if (! empty ( $id ) && empty ( $access_token )) {
+				return $this->update_facebook_no_token ( $id );
 			} else {
-				return $this->update_facebook_page ();
+				if (($account_type == 'page' && empty ( $id )) || ($account_type == 'followers' && (empty ( $id ) || empty ( $access_token )))) {
+					return 0;
+				}
+				
+				if ($account_type == 'followers') {
+					return $this->update_facebook_followers ();
+				} else {
+					return $this->update_facebook_page ();
+				}
 			}
 		}
+	}
+	
+	private function update_facebook_without_token($id) {
+		$data = $this->remote_update( "https://www.facebook.com/plugins/likebox.php?href=https://facebook.com/".$id."&show_faces=true&header=false&stream=false&show_border=false&locale=en_US", false);
+		
+		$counter = 0;
+		
+		$pattern = '/_1drq[^>]+>(.*?)<\/a/s';
+		preg_match( $pattern, $data, $matches );
+		
+		if ( ! empty( $matches[1] ) ) {
+			$number  = strip_tags( $matches[1] );
+			$counter = '';
+		
+			foreach ( str_split( $number ) as $char ) {
+				if ( is_numeric( $char ) ){
+					$counter .= $char;
+				}
+			}
+		}
+		
+		return $counter;
 	}
 	
 	private function update_facebook_no_token($id) {
@@ -150,6 +177,7 @@ class ESSBSocialFollowersCounterUpdater {
 	
 	private function update_facebook_page() {
 		try {
+			
 			$response = $this->remote_update ( 'https://graph.facebook.com/v2.8/' . ESSBSocialFollowersCounterHelper::get_option ( 'facebook_id' ) . '?fields=fan_count&access_token=' . ESSBSocialFollowersCounterHelper::get_option ( 'facebook_access_token' ) );
 
 			if (isset ( $response ['fan_count'] )) {
@@ -275,9 +303,10 @@ class ESSBSocialFollowersCounterUpdater {
 			elseif( $type == 'company' && ! empty( $id )){
 		
 				$page_id = sprintf('https://api.linkedin.com/v1/companies/%s/num-followers?format=json', $id );
-		
+
 				try {
 					$data = $this->remote_get( $page_id, true, $args);
+	//print_r($data);
 					if( !is_array( $data )){
 						$result = $data;
 					}
@@ -623,6 +652,7 @@ class ESSBSocialFollowersCounterUpdater {
 	
 	public function update_vk_community() {
 		$id = ESSBSocialFollowersCounterHelper::get_option ( 'vk_id' );
+		$token = ESSBSocialFollowersCounterHelper::get_option('vk_access_token');
 		
 		if (empty ( $id )) {
 			return 0;
@@ -631,7 +661,7 @@ class ESSBSocialFollowersCounterUpdater {
 		$result = 0;
 		try {
 			
-			$data = $this->remote_update ( "http://api.vk.com/method/groups.getById?group_id=$id&fields=members_count&v=5.61" );
+			$data = $this->remote_update ( "https://api.vk.com/method/groups.getById?group_id=$id&fields=members_count&v=5.61&access_token=".$token );
 			
 			$result = ( int ) $data ['response'] [0] ['members_count'];
 		} catch ( Exception $e ) {
@@ -644,12 +674,13 @@ class ESSBSocialFollowersCounterUpdater {
 	public function update_vk_profile() {
 		
 		$id = ESSBSocialFollowersCounterHelper::get_option ( 'vk_id' );
+		$token = ESSBSocialFollowersCounterHelper::get_option('vk_access_token');
 		
 		if (empty ( $id )) {
 			return 0;
 		}
 		
-		$request = @wp_remote_post ( 'https://api.vk.com/method/users.getFollowers', array ('body' => array ('count' => '0', 'user_id' => $id ) ) );
+		$request = @wp_remote_post ( 'https://api.vk.com/method/users.getFollowers', array ('body' => array ('count' => '0', 'user_id' => $id, 'access_token' => $token ) ) );
 		
 		if (false == $request)
 			return 0;

@@ -67,6 +67,17 @@ if (! function_exists ( 'essb_rs_css_build_customizer' )) {
 							$singleCss .= 'color:' . $global_textcolor . '!important;';
 						}
 						$singleCss .= '}';
+						
+						if ($k == 'more') {
+							$singleCss .= '.essb_links.essb_share .essb_link_more_dots a, .essb_links.essb_share .essb_link_less a { ';
+							if ($global_bgcolor != '') {
+								$singleCss .= 'background-color:' . $global_bgcolor . '!important;';
+							}
+							if ($global_textcolor != '') {
+								$singleCss .= 'color:' . $global_textcolor . '!important;';
+							}
+							$singleCss .= '}';
+						}
 					}
 					if ($global_hovercolor != '' || $global_hovertextcolor != '') {
 						$singleCss .= '.essb_links.essb_share .essb_link_' . $k . ' a:hover, .essb_links .essb_link_' . $k . ' a:focus { ';
@@ -77,6 +88,17 @@ if (! function_exists ( 'essb_rs_css_build_customizer' )) {
 							$singleCss .= 'color:' . $global_hovertextcolor . '!important;';
 						}
 						$singleCss .= '}';
+						
+						if ($k == 'more') {
+							$singleCss .= '.essb_links.essb_share .essb_link_more_dots a:hover, .essb_links .essb_link_more_dots a:focus, .essb_links.essb_share .essb_link_less a:hover, .essb_links .essb_link_less a:focus { ';
+							if ($global_hovercolor != '') {
+								$singleCss .= 'background-color:' . $global_hovercolor . '!important;';
+							}
+							if ($global_hovertextcolor != '') {
+								$singleCss .= 'color:' . $global_hovertextcolor . '!important;';
+							}
+							$singleCss .= '}';
+						}
 					}
 					
 					$snippet .= ($singleCss);
@@ -140,7 +162,7 @@ if (! function_exists ( 'essb_rs_css_build_customizer' )) {
 					$sigleCss .= '}';
 					
 					if ($k == "more") {
-						$sigleCss .= '.essb_links.essb_share .essb_link_less a { ';
+						$sigleCss .= '.essb_links.essb_share .essb_link_less a, .essb_links.essb_share .essb_link_more_dots a { ';
 						if ($network_bgcolor != '') {
 							$sigleCss .= 'background-color:' . $network_bgcolor . '!important;';
 						}
@@ -161,7 +183,7 @@ if (! function_exists ( 'essb_rs_css_build_customizer' )) {
 					$sigleCss .= '}';
 					
 					if ($k == "more") {
-						$sigleCss .= '.essb_links.essb_share .essb_link_less a:hover, .essb_links.essb_share .essb_link_less a:focus { ';
+						$sigleCss .= '.essb_links.essb_share .essb_link_less a:hover, .essb_links.essb_share .essb_link_less a:focus, .essb_links.essb_share .essb_link_more_dots a:hover, .essb_links.essb_share .essb_link_more_dots a:focus { ';
 						if ($network_hovercolor != '') {
 							$sigleCss .= 'background-color:' . $network_hovercolor . '!important;';
 						}

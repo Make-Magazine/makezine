@@ -16,12 +16,44 @@ add_shortcode ('easy-popular-posts', 'essb_shortcode_popular_posts');
 add_shortcode ( 'easy-social-share-popup', 'essb_shortcode_share_popup');
 add_shortcode ( 'easy-social-share-flyin', 'essb_shortcode_share_flyin');
 add_shortcode ( 'easy-total-shares', 'essb_shortcode_total_shares');
+add_shortcode ( 'easy-social-share-cta', 'essb_shortcode_share_cta');
 // shortcodes
 add_shortcode ( 'essb', 'essb_shortcode_share');
 add_shortcode ( 'easy-share', 'essb_shortcode_share');
 add_shortcode ( 'easy-social-share-buttons', 'essb_shortcode_share');
 
 add_shortcode ( 'easy-social-share', 'essb_shortcode_share_vk');
+
+add_shortcode( 'essb-click2chat' , 'essb_shortcode_click2chat' );
+add_shortcode( 'easy-click2chat' , 'essb_shortcode_click2chat' );
+
+function essb_shortcode_share_cta($attrs = array()) {
+	$defaults = array('text' => '', 'icon' => '', 'style' => '', 'background' => '', 'color' => '', 'stretched' => '', 'shortcode' => 'true', 'total' => '');
+	$attrs = shortcode_atts( $defaults , $attrs );
+	
+	$share_buttons = essb_core()->generate_share_buttons('sharebutton');
+	
+	essb_depend_load_function('essb5_generate_share_button', 'lib/core/display-methods/essb-display-method-button.php');
+	
+	$output = essb5_generate_share_button($share_buttons, $attrs);
+	
+	return $output;
+}
+
+function essb_shortcode_click2chat($attrs = array()) {
+	$defaults = array('text' => '', 'background' => '', 'color' => '', 'icon' => '');
+
+	$attrs = shortcode_atts( $defaults , $attrs );
+	$attrs['shortcode'] = 'true';
+
+	essb_depend_load_function('essb_click2chat_draw', 'lib/modules/social-chat/essb-click2chat.php');
+	
+	ob_start();
+	essb_click2chat_draw($attrs);
+	$html = ob_get_contents();
+	ob_end_clean();
+	return $html;
+}
 
 /*** shortcode functions ***/
 function essb_shortcode_profiles($atts) {

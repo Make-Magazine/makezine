@@ -46,6 +46,9 @@ include_once (ESSB3_PLUGIN_ROOT . 'lib/admin/essb-admin-activate.php');
 include_once (ESSB3_PLUGIN_ROOT . 'lib/admin/essb-admin.php');
 include_once (ESSB3_PLUGIN_ROOT . 'lib/admin/essb-twitter-counter-recovery.php');
 
+include_once (ESSB3_PLUGIN_ROOT . 'lib/admin/essb-global-wordpress-notifications.php');
+include_once (ESSB3_PLUGIN_ROOT . 'lib/admin/essb-trigger-notifications.php');
+
 if (!class_exists('ESSBShortcodeGenerator')) {
 	include_once (ESSB3_PLUGIN_ROOT . 'lib/admin/essb-shortcode-generator.php');
 }

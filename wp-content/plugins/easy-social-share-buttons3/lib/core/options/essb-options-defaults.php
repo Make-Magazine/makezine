@@ -112,7 +112,7 @@ if (!function_exists('essb_available_tempaltes4')) {
 
 
 if (!function_exists('essb_available_social_networks')) {
-	function essb_available_social_networks() {
+	function essb_available_social_networks($always_show_all = false) {
 		$essb_available_social_networks = array (
 				'facebook' => array ('name' => 'Facebook', 'type' => 'buildin', 'supports' => 'desktop,mobile' ),
 				'twitter' => array ('name' => 'Twitter', 'type' => 'buildin', 'supports' => 'desktop,mobile' ),
@@ -167,14 +167,29 @@ if (!function_exists('essb_available_social_networks')) {
 				'share' => array( 'name' => 'Share', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only'),
 				'livejournal' => array( 'name' => 'LiveJournal', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only'),
 				'yammer' => array( 'name' => 'Yammer', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only'),
-				'meetedgar' => array('name' => 'Edgar', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only')
+				'meetedgar' => array('name' => 'Edgar', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only'),
+				'fintel' => array('name' => 'Fintel', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only'),
+				'mix' => array('name' => 'Mix', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only'),
+				'instapaper' => array('name' => 'Instapaper', 'type' => 'buildin', 'supports' => 'desktop,mobile,retina templates only')
 		);
 		
 		if (has_filter('essb4_social_networks')) {
 			$essb_available_social_networks = apply_filters('essb4_social_networks', $essb_available_social_networks);
 		}
 		
+		if (!$always_show_all && has_filter('essb_manage_networks')) {
+			$essb_available_social_networks = apply_filters('essb_manage_networks', $essb_available_social_networks);
+		}
+		
 		return $essb_available_social_networks;
+	}
+}
+
+if (!function_exists('essb_is_active_social_network')) {
+	function essb_is_active_social_network($network) {
+		$all_networks = essb_available_social_networks();
+		
+		return isset($all_networks[$network]) ? true : false;
 	}
 }
 

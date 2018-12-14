@@ -397,6 +397,7 @@ class ESSBAdminControler {
 		$turnoff_essb_optimize_box = essb_option_bool_value('turnoff_essb_optimize_box');
 		$turnoff_essb_stats_box = essb_option_bool_value('turnoff_essb_stats_box');
 		$turnoff_essb_advanced_box = essb_option_bool_value('turnoff_essb_advanced_box');
+		$turnoff_essb_main_box = essb_option_bool_value('turnoff_essb_main_box');
 		
 		$stats_are_activated =essb_option_bool_value('stats_active');
 		if (!$stats_are_activated) {
@@ -415,16 +416,12 @@ class ESSBAdminControler {
 				add_meta_box('essb_metabox_optmize', __('Easy Social Share Buttons: Share Options', 'essb'), 'essb_register_settings_metabox_optimize', $pt, 'normal', 'high');				
 			}
 			
-			//if (defined('ESSB3_SSO_ACTIVE') && !$turnoff_essb_optimize_box) {
-			//	add_meta_box('essb_metabox_sso', __('Easy Social Share Buttons: Social Share Optimization', 'essb'), 'essb_register_settings_metabox_optimization', $pt, 'normal', 'high');				
-			//}
 			if (in_array($pt, $display_in_types)) {
-				add_meta_box('essb_metabox', __('Easy Social Share Buttons', 'essb'), 'essb_register_settings_metabox_onoff', $pt, 'side', 'high');
 				
-				//if (!$turnoff_essb_optimize_box) {
-				//	add_meta_box('essb_metabox_share', __('Easy Social Share Buttons: Share Customization', 'essb'), 'essb_register_settings_metabox_customization', $pt, 'normal', 'high');
-				//}
-				
+				if (!$turnoff_essb_main_box) {
+					add_meta_box('essb_metabox', __('Easy Social Share Buttons', 'essb'), 'essb_register_settings_metabox_onoff', $pt, 'side', 'high');
+				}
+								
 				if (!$turnoff_essb_advanced_box) {
 					add_meta_box('essb_metabox_visual', __('Easy Social Share Buttons: Visual Customization', 'essb'), 'essb_register_settings_metabox_visual', $pt, 'normal', 'high');
 				}
@@ -444,15 +441,10 @@ class ESSBAdminControler {
 				add_meta_box('essb_metabox_optmize', __('Easy Social Share Buttons: Social Share Optimization', 'essb'), 'essb_register_settings_metabox_optimize', $cpt, 'normal', 'high');
 			}
 			
-			//if (defined('ESSB3_SSO_ACTIVE') && !$turnoff_essb_optimize_box) {
-			//	add_meta_box('essb_metabox_sso', __('Easy Social Share Buttons: Social Share Optimization', 'essb'), 'essb_register_settings_metabox_optimization', $cpt, 'normal', 'high');				
-			//}
 			if (in_array($cpt, $display_in_types)) {
-				add_meta_box('essb_metabox', __('Easy Social Share Buttons', 'essb'), 'essb_register_settings_metabox_onoff', $cpt, 'side', 'high');
-				
-				//if (!$turnoff_essb_optimize_box) {
-				//	add_meta_box('essb_metabox_share', __('Easy Social Share Buttons: Share Customization', 'essb'), 'essb_register_settings_metabox_customization', $cpt, 'normal', 'high');
-				//}
+				if (!$turnoff_essb_main_box) {
+					add_meta_box('essb_metabox', __('Easy Social Share Buttons', 'essb'), 'essb_register_settings_metabox_onoff', $cpt, 'side', 'high');
+				}
 				
 				if (!$turnoff_essb_advanced_box) {
 					add_meta_box('essb_metabox_visual', __('Easy Social Share Buttons: Visual Customization', 'essb'), 'essb_register_settings_metabox_visual', $cpt, 'normal', 'high');
@@ -505,6 +497,7 @@ class ESSBAdminControler {
 		$this->save_metabox_value ( $post_id, 'essb_post_share_image', $essb_metabox );
 		$this->save_metabox_value ( $post_id, 'essb_post_share_text', $essb_metabox );
 		$this->save_metabox_value ( $post_id, 'essb_post_pin_image', $essb_metabox );
+		$this->save_metabox_value ( $post_id, 'essb_post_pin_desc', $essb_metabox);
 		$this->save_metabox_value ( $post_id, 'essb_post_fb_url', $essb_metabox );
 		$this->save_metabox_value ( $post_id, 'essb_post_plusone_url', $essb_metabox );
 		$this->save_metabox_value ( $post_id, 'essb_post_twitter_hashtags', $essb_metabox );
@@ -794,8 +787,6 @@ class ESSBAdminControler {
 		
 		wp_enqueue_script ( 'essb-morris', ESSB3_PLUGIN_URL . '/assets/admin/morris.min.js', array ('jquery' ), ESSB3_VERSION );
 		wp_enqueue_script ( 'essb-raphael', ESSB3_PLUGIN_URL . '/assets/admin/raphael-min.js', array ('jquery' ), ESSB3_VERSION );
-		
-		//wp_enqueue_script ( 'essb-chartjs', ESSB3_PLUGIN_URL . '/assets/admin/chart.min.js', array ('jquery' ), ESSB3_VERSION );
 	}
 	
 	public function handle_save_settings() {
@@ -1429,8 +1420,10 @@ class ESSBAdminControler {
 			$current_options['deactivate_method_heroshare'] = 'false';
 			$current_options['deactivate_method_integrations'] = 'false';
 			
-			$current_options['activate_fake'] = 'false';
-			$current_options['activate_hooks'] = 'false';
+			// @since 5.6 - deactivation of fake and hooks will not happen unless a mode that exludes them
+			// is selected
+			//$current_options['activate_fake'] = 'false';
+			//$current_options['activate_hooks'] = 'false';
 			
 			if ($functions_mode == 'light') {
 				$current_options['deactivate_module_aftershare'] = 'true';

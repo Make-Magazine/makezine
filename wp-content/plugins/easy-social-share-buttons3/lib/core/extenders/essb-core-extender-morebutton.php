@@ -104,6 +104,12 @@ if (!function_exists('essb_generate_morebutton_code')) {
 			
 			if (in_array('mail', $more_social_networks)) {
 				essb_resource_builder()->activate_resource('mail');
+				
+				if (!function_exists('essb_sharing_prepare_mail')) {
+					include_once (ESSB3_PLUGIN_ROOT . 'lib/core/extenders/essb-core-extender-sharing.php');
+				}
+						
+				$post_share_details = essb_sharing_prepare_mail($post_share_details);
 			}
 			
 			if (in_array("love", $more_social_networks)) {
@@ -164,6 +170,8 @@ if (!function_exists('essb_generate_morebutton_code')) {
 				$user_message_inpop .= '<div class="essb-morepopup-modern-link"><a href="'.$sharing_url.'" target="_blank">'.$sharing_url.'</a></div>';
 				$user_message_inpop .= '</div>';
 			}
+			
+			$user_message_inpop = apply_filters('essb_morepopup_message', $user_message_inpop);			
 			
 			$add_pointer = '';
 			if ($user_set_morebutton_func == '4' || $user_set_morebutton_func == '5') {

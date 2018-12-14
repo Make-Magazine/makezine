@@ -100,6 +100,18 @@ class ESSBSocialProfilesHelper {
 		return $templates;
 	}
 	
+	public static function available_alignments() {
+		$alignments = array('' => 'Left', 'center' => 'Center', 'right' => 'Right');
+		
+		return $alignments;
+	}
+	
+	public static function available_sizes() {
+		$sizes = array('' => 'Default', 'small' => 'Small', 'medium' => 'Medium', 'large' => 'Large', 'xlarge' => 'Extra Large');
+		
+		return $sizes;
+	}
+	
 	public static function available_animations() {
 		$animations = array('' => 'Without animation', 'pulse' => "Pulse", "down" => "Down", "up" => "Up", "pulse-grow" => "Pulse Grow", "pop" => "Pop", "wobble-horizontal" => "Wobble Horizontal", "wobble-vertical" => "Wobble Vertical", "buzz-out" => "Buzz Out");
 		

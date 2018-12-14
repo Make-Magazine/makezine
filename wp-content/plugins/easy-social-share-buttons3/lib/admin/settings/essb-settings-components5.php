@@ -1,9 +1,9 @@
 <?php
 
-function essb_component_network_selection($position = '', $options_group = 'essb_options') {
+function essb_component_network_selection($position = '', $options_group = 'essb_options', $show_all = false) {
 	$active_networks = array();
 	//$active_networks_order = array();
-	$essb_networks = essb_available_social_networks();
+	$essb_networks = essb_available_social_networks($show_all);
 	
 	if ($position == '') {
 		$active_networks = essb_option_value('networks');
@@ -12,10 +12,6 @@ function essb_component_network_selection($position = '', $options_group = 'essb
 	else {
 		$active_networks = essb_option_value($position.'_networks');
 	}
-	
-	//if (count($active_networks_order) > 0) {
-	//	$network_order = apply_filters('essb4_social_networks_update_order', $active_networks_order);
-	//}
 	
 	$salt = mt_rand();
 	

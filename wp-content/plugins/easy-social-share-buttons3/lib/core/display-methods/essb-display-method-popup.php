@@ -38,11 +38,14 @@ class ESSBDisplayMethodPopup {
 			if (!empty($shortcode_popafter)) {
 				$popup_window_popafter = $shortcode_popafter;
 			}
+			
 		
 			$shortcode_window_title = isset($shortcode_options['popup_title']) ? $shortcode_options['popup_title'] : '';
 			$shortcode_window_message = isset($shortcode_options['popup_message']) ? $shortcode_options['popup_message'] : '';
 			$shortcode_pop_on_percent = isset($shortcode_options['popup_percent']) ? $shortcode_options['popup_percent'] : '';
 			$shortcode_pop_end = isset($shortcode_options['popup_end']) ? $shortcode_options['popup_end'] : '';
+			
+			$shortcode_manaualonly = isset($shortcode_options['manualonly']) ? $shortcode_options['manualonly'] : '';
 		
 			if (!empty($shortcode_window_title)) {
 				$popup_window_title = $shortcode_window_title;
@@ -55,6 +58,14 @@ class ESSBDisplayMethodPopup {
 			}
 			if (!empty($shortcode_pop_end)) {
 				$popup_display_end = ESSBOptionValuesHelper::unified_true($shortcode_pop_end);
+			}
+			
+			//
+			if ($shortcode_manaualonly == 'true' || $shortcode_manaualonly == 'yes') {
+				$popup_display_end = false;
+				$popup_display_exit = false;
+				$popup_user_percent = '';
+				$popup_user_manual_show = true;
 			}
 		}
 			

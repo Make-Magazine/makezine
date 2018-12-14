@@ -169,6 +169,8 @@ class ESSBSocialFollowersCounterHelper {
 		$socials['snapchat'] = 'Snapchat';
 		$socials['telegram'] = 'Telegram';
 		
+		$socials['subscribe'] = 'Generic Subscribe Button';
+		
 		if (has_filter('essb4_follower_networks')) {
 			$socials = apply_filters('essb4_follower_networks', $socials);
 		}
@@ -215,6 +217,7 @@ class ESSBSocialFollowersCounterHelper {
 		$settings['facebook']['id'] = array('type' => 'textbox', 'text' => 'Page ID/Name or profile');
 		$settings['facebook']['account_type'] = array('type' => 'select', 'text' => 'Account type', 'values' => array('page' => 'Page', 'followers' => 'Followers'), 'default' => 'page');
 		$settings['facebook']['access_token'] = array('type' => 'textbox', 'text' => 'Access token', 'description' => 'Access token is optional parameter. Generate and fill this parameter only if you are not able to see followers counter without it (usually this is required to be filled when Facebook page has limitation set - for age, country or other). To generate access token please visit this link and follow instructions: <a href="http://tools.creoworx.com/facebook/" target="_blank">http://tools.creoworx.com/facebook/</a>', 'authfield' => true);
+		$settings['facebook']['update_method'] = array('type' => 'select', 'text' => 'Updated Method', 'values' => array('method1' => 'Method #1', 'method2' => 'Method #2'), 'default' => 'method1');
 		$settings['facebook']['text'] = array('type' => 'textbox', 'text' => 'Text below number', 'description' => 'Text that will appear below number of followers (fans, likes, subscribers, followers and etc.)', 'default' => 'Fans');
 		$settings['facebook']['uservalue'] = array('type' => 'textbox', 'text' => 'Manual user value of followers');
 		
@@ -306,6 +309,7 @@ class ESSBSocialFollowersCounterHelper {
 		
 		$settings['vk']['id'] = array('type' => 'textbox', 'text' => 'Your VK.com ID number or Community ID/Name');
 		$settings['vk']['account_type'] = array('type' => 'select', 'text' => 'Profile type', 'values' => array('profile' => 'Profile', 'community' => 'Community ID/Name'));
+		$settings['vk']['access_token'] = array('type' => 'textbox', 'text' => 'Access Token Key', 'description' => 'Reading data from that network require access data key. You may not see number of followers appearing if that key is not filled or properly generarated. You can refer to the network support for key generation if you are not sure how this happens.', 'authfield' => true);
 		$settings['vk']['text'] = array('type' => 'textbox', 'text' => 'Text below number', 'description' => 'Text that will appear below number of followers (fans, likes, subscribers, followers and etc.)', 'default' => 'Followers');
 		$settings['vk']['uservalue'] = array('type' => 'textbox', 'text' => 'Manual user value of followers');
 		
@@ -393,12 +397,15 @@ class ESSBSocialFollowersCounterHelper {
 		$settings['mymail']['uservalue'] = array('type' => 'textbox', 'text' => 'Manual user value of followers');
 		
 		$mailpoet_lists = self::mailpoet_get_lists();
-		$mailpoet_lists = array_merge( array( array( 'list_id' => 'all', 'name' => __(' Total Subscribers', ESSB3_TEXT_DOMAIN ))), $mailpoet_lists);
+		$mailpoet_lists = array_merge( array( array( 'list_id' => 'all', 'name' => __(' Total Subscribers from All Lists', ESSB3_TEXT_DOMAIN ))), $mailpoet_lists);
 		$mailpoet_lists = array_merge( array( array( 'list_id' => '', 'name' => __(' ', ESSB3_TEXT_DOMAIN ))), $mailpoet_lists);
 		
 		$parsed_lists = array();
 		foreach ($mailpoet_lists as $list) {
 			$list_id = isset($list['list_id']) ? $list['list_id'] : '';
+			if ($list_id == '') {
+				$list_id = isset($list['id']) ? $list['id'] : '';
+			}
 			$list_name = isset($list['name']) ? $list['name'] : '';
 			$parsed_lists[$list_id] = $list_name;
 		}
@@ -439,6 +446,10 @@ class ESSBSocialFollowersCounterHelper {
 		$settings['telegram']['text'] = array('type' => 'textbox', 'text' => 'Text below number', 'description' => 'Text that will appear below number of followers (fans, likes, subscribers, followers and etc.)','default' => 'Posts');
 		$settings['telegram']['uservalue'] = array('type' => 'textbox', 'text' => 'Manual user value of followers or custom text (provided networks does not support social counter update)');
 		$settings['telegram']['url'] = array('type' => 'textbox', 'text' => 'URL address to network profile (address where users will go once button is clicked)');
+
+		$settings['subscribe']['text'] = array('type' => 'textbox', 'text' => 'Text below number', 'description' => 'Text that will appear below number of followers (fans, likes, subscribers, followers and etc.)','default' => 'Subscribers');
+		$settings['subscribe']['uservalue'] = array('type' => 'textbox', 'text' => 'Manual user value of followers or custom text (provided networks does not support social counter update)');
+		$settings['subscribe']['url'] = array('type' => 'textbox', 'text' => 'URL address to network profile (address where users will go once button is clicked)');
 		
 		if (has_filter('essb4_follower_networks_settings')) {
 			$settings = apply_filters('essb4_follower_networks_settings', $settings);
@@ -478,7 +489,13 @@ class ESSBSocialFollowersCounterHelper {
 	
 	//Get Mail Lists
 	public static function mailpoet_get_lists(){
-		if( class_exists( 'WYSIJA' ) ){
+		
+		if (class_exists('MP')) {
+			$subscription_lists = \MailPoet\API\API::MP('v1')->getLists();
+			return $subscription_lists;
+		}
+		
+		else if( class_exists( 'WYSIJA' ) ){
 			$helper_form_engine = WYSIJA::get('form_engine', 'helper');
 			$lists = $helper_form_engine->get_lists();
 			return $lists ;

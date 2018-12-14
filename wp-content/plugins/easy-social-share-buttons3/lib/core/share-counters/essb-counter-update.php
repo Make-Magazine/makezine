@@ -39,6 +39,9 @@ function essb_counter_update_simple($post_id, $url, $full_url, $networks = array
 				else if ($twitter_counter == 'newsc') {
 					$cached_counters [$k] = essb_get_tweets_newsc_count($full_url);
 				}
+				else if ($twitter_counter == 'twitcount') {
+					$cached_counters [$k] = essb_get_tweets_twitcount_count($full_url);
+				}
 				else if ($twitter_counter == 'opensc') {
 					$cached_counters [$k] = essb_get_tweets_opensc_count($full_url);
 				}
@@ -55,17 +58,17 @@ function essb_counter_update_simple($post_id, $url, $full_url, $networks = array
 				break;
 			case 'linkedin' :
 				
-				if (essb_option_value('linkedin_counter_type') != 'self') {
-					$cached_counters [$k] = essb_get_linkedin_count( $url );
-				}
-				else {
+				//if (essb_option_value('linkedin_counter_type') != 'self') {
+				//	$cached_counters [$k] = essb_get_linkedin_count( $url );
+				//}
+				//else {
 					if (!$recover_mode) {
 						$cached_counters [$k] = essb_get_internal_count( $post_id, $k );
 					}
 					else {
 						$cached_counters[$k] = 0;
 					}
-				}				
+				//}				
 			
 				break;
 			case 'pinterest' :
@@ -73,17 +76,17 @@ function essb_counter_update_simple($post_id, $url, $full_url, $networks = array
 				break;
 			case 'google' :
 				
-				if (essb_option_value('google_counter_type') == 'api') {
-					$cached_counters [$k] = essb_get_google_count_api($url);
-				}
-				else {
+				//if (essb_option_value('google_counter_type') == 'api') {
+				//	$cached_counters [$k] = essb_get_google_count_api($url);
+				//}
+				//else {
 					if (!$recover_mode) {
 						$cached_counters [$k] = essb_get_internal_count( $post_id, $k );
 					}
 					else {
 						$cached_counters[$k] = 0;
 					}					
-				}
+				//}
 				break;
 			case 'stumbleupon' :
 				$cached_counters [$k] = essb_get_stumbleupon_count($url);
@@ -487,6 +490,14 @@ function essb_get_facebook_count($url) {
 
 function essb_get_tweets_newsc_count($url) {
 	$json_string = essb_counter_request( 'https://public.newsharecounts.com/count.json?url=' . $url );
+	$json = json_decode ( $json_string, true );
+	$result = isset ( $json ['count'] ) ? intval ( $json ['count'] ) : 0;
+
+	return $result;
+}
+
+function essb_get_tweets_twitcount_count($url) {
+	$json_string = essb_counter_request( 'https://counts.twitcount.com/counts.php?url=' . $url );
 	$json = json_decode ( $json_string, true );
 	$result = isset ( $json ['count'] ) ? intval ( $json ['count'] ) : 0;
 

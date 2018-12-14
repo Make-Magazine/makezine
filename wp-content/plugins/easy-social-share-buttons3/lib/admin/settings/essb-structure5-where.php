@@ -34,6 +34,10 @@ if (!essb_options_bool_value('deactivate_method_booster')) {
 	ESSBOptionsStructureHelper::submenu_item($where_to_display, 'display-20', __('Share Booster', 'essb'),  'default', 'menu', '');
 }
 
+if (!essb_options_bool_value('deactivate_method_sharebutton')) {
+	ESSBOptionsStructureHelper::submenu_item($where_to_display, 'display-21', __('Share Button', 'essb'),  'default', 'menu', '');
+}
+
 
 if (!essb_options_bool_value('deactivate_method_postfloat')) {
 	ESSBOptionsStructureHelper::submenu_item($where_to_display, 'display-7', __('Post vertical float', 'essb'),  'default', 'menu', '');
@@ -106,6 +110,8 @@ if (!essb_option_bool_value('deactivate_method_integrations')) {
 
 /*** Where to Display **/
 ESSBOptionsStructureHelper::field_heading($where_to_display, 'posts', 'heading5', __('Choose post types to display buttons', 'essb'));
+ESSBOptionsStructureHelper::help($where_to_display, 'posts', '', __('Select post types and positions where share buttons will appear automatically. You can also setup share buttons appearance with shortcode or with the custom actions/filters integration.', 'essb'), array('Help with Settings' => 'https://docs.socialsharingplugin.com/knowledgebase/social-share-buttons-choosing-post-types-positions-where-buttons-will-appear/#Selecting_Post_Types_(Posts,_Pages,_Products_and_etc.)'));
+
 ESSBOptionsStructureHelper::field_func($where_to_display, 'posts', 'essb3_post_type_select', __('Where to display buttons', 'essb'), __('Choose post types where you wish buttons to appear. If you are running WooCommerce store you can choose between post type Products which will display share buttons into product description or option to display buttons below price.', 'essb'));
 ESSBOptionsStructureHelper::panel_start($where_to_display, 'posts', __('Display in post excerpt', 'essb'), __('Activate this option if your theme is using excerpts and you wish to display share buttons in excerpts', 'essb'), 'fa21 fa fa-cogs', array("mode" => "switch", 'switch_id' => 'display_excerpt', 'switch_on' => __('Yes', 'essb'), 'switch_off' => __('No', 'essb')));
 //ESSBOptionsStructureHelper::field_switch($where_to_display, 'posts', 'display_excerpt', __('Activate', 'essb'), __('', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
@@ -162,6 +168,7 @@ if (!essb_options_bool_value('deactivate_method_integrations')) {
 }
 
 // positions
+ESSBOptionsStructureHelper::help($where_to_display, 'positions', '', __('Choose between automatically packed share button positions. You also have the chance to select different positions per post type.', 'essb'), array('Help with Settings' => 'https://docs.socialsharingplugin.com/knowledgebase/social-share-buttons-choosing-post-types-positions-where-buttons-will-appear/#Selecting_Position_of_Share_Buttons_on_Site', 'Different Positions By Post Type' => 'https://docs.socialsharingplugin.com/knowledgebase/social-share-buttons-choosing-post-types-positions-where-buttons-will-appear/#Selecting_Different_Share_Button_Positions_for_Each_Post_Type', 'Access Position Settings' => 'https://docs.socialsharingplugin.com/knowledgebase/social-share-buttons-choosing-post-types-positions-where-buttons-will-appear/#Access_Position_Settings'));
 
 ESSBOptionsStructureHelper::title($where_to_display, 'positions',  __('Primary content display position', 'essb'), __('Choose default method that will be used to render buttons inside content', 'essb'));
 ESSBOptionsStructureHelper::field_single_position_select($where_to_display, 'positions', 'content_position', essb5_available_content_positions());
@@ -674,6 +681,40 @@ if (!essb_options_bool_value('deactivate_method_booster')) {
 	
 	essb_prepare_location_advanced_customization($where_to_display, 'display-20', 'booster');
 }
+
+if (!essb_options_bool_value('deactivate_method_sharebutton')) {
+	ESSBOptionsStructureHelper::panel_start($where_to_display, 'display-21', __('Button Appearance', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+	ESSBOptionsStructureHelper::field_section_start_full_panels($where_to_display, 'display-21');
+	ESSBOptionsStructureHelper::field_textbox_panel($where_to_display, 'display-21', 'sharebutton_text', __('Share Button Text', 'essb'), __('Set custom text inside button (example: Share with friends)', 'essb'), '', '');
+	ESSBOptionsStructureHelper::field_color_panel($where_to_display, 'display-21', 'sharebutton_bg', __('Button Background Color', 'essb'), __('Set custom background of the default share button.', 'essb'), '', 'true');
+	ESSBOptionsStructureHelper::field_color_panel($where_to_display, 'display-21', 'sharebutton_color', __('Button Text Color', 'essb'), __('Set custom button text color.', 'essb'), '', 'true');
+	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'display-21', 'sharebutton_style', __('Button Style', 'essb'), __('Control the button style', 'essb'), array('' => 'Button with background color', 'outline' => 'Outline button', 'modern' => 'Modern button'));
+	$point_positions = array("" => __('Bottom Right', 'essb'), 'bottomleft' => __('Bottom Left', 'essb'), 'topright' => __('Top Right', 'essb'), 'topleft' => __('Top Left', 'essb'), 'manual' => __('Manual window open with function call', 'essb'));
+	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'display-21', 'sharebutton_position', __('Button Appearance', 'essb'), __('Choose where you wish sharing button to appear', 'essb'), $point_positions);
+	ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'display-21', 'sharebutton_total', __('Display Total Counter', 'essb'), __('Activate this option to display total share counter.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	$select_values = array(
+			'' => array('title' => '', 'content' => '<i class="essb_icon_share"></i>'),
+			'share-alt-square' => array('title' => '', 'content' => '<i class="essb_icon_share-alt-square"></i>'),
+			'share-alt' => array('title' => '', 'content' => '<i class="essb_icon_share-alt"></i>'),
+			'share-tiny' => array('title' => '', 'content' => '<i class="essb_icon_share-tiny"></i>'),
+			'share-outline' => array('title' => '', 'content' => '<i class="essb_icon_share-outline"></i>')
+	);
+	ESSBOptionsStructureHelper::field_toggle($where_to_display, 'display-21', 'sharebutton_icon', __('Share button icon', 'essb'), __('Choose the share button icon you will use (default is share if nothing is selected)', 'essb'), $select_values);
+	
+	
+	ESSBOptionsStructureHelper::field_section_end_panels($where_to_display, 'display-21');
+	ESSBOptionsStructureHelper::panel_end($where_to_display, 'display-21');
+
+	ESSBOptionsStructureHelper::panel_start($where_to_display, 'display-21', __('Personalize Pop-up Share Window Content', 'essb'), '', '', array("mode" => "toggle", "state" => "closed", "css_class" => "essb-auto-open"));
+	ESSBOptionsStructureHelper::field_section_start_full_panels($where_to_display, 'display-21');
+	ESSBOptionsStructureHelper::field_textbox_stretched($where_to_display, 'display-21', 'sharebutton_window_title', __('Pop up window title', 'essb'), __('Set your custom pop up window title.', 'essb'));
+	ESSBOptionsStructureHelper::field_editor($where_to_display, 'display-21', 'sharebutton_user_message', __('Pop up window message', 'essb'), __('Set your custom message that will appear above buttons', 'essb'), "htmlmixed");
+	ESSBOptionsStructureHelper::field_section_end_panels($where_to_display, 'display-21');
+	ESSBOptionsStructureHelper::panel_end($where_to_display, 'display-21');
+	
+	essb_prepare_location_advanced_customization($where_to_display, 'display-21', 'sharebutton');
+}
+
 //ESSBOptionsStructureHelper::field_heading($where_to_display, 'mobile-1', 'heading1', __('Mobile: Display Options', 'essb'));
 //ESSBOptionsStructureHelper::hint($where_to_display, 'mobile-1', __('', 'essb'), __('Please note that not all popular cache plugins support mobile cache (you have one version of site on all devices). If you use such cache plugin you may not see your mobile settings working. If that is so you can deactivate cache of for mobile devices and get full control of mobile sharing or activate client side mobile detection (a.k.a. responsive butons) which will control only mobile display methods (option is located at the bottom of this screen).<br/><br/><b>Recommended cache plugin for usage with mobile settings is <a href="http://wp-rocket.me" target="_blank">WP Rocket</a>. <a href="http://wp-rocket.me" target="_blank">WP Rocket</a> supports separate mobile caching and you will be able to gain the full power of our mobile share options.</b>.', 'essb'), '');
 if (essb_option_value('functions_mode_mobile') != 'auto' && essb_option_value('functions_mode_mobile') != 'deactivate') {
@@ -709,7 +750,10 @@ if (essb_option_value('functions_mode_mobile') != 'auto' && essb_option_value('f
 	ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'mobile-1', 'mobile_sharebuttonsbar_names', __('Display network names', 'essb'), __('Activate this option to display network names (default display is icons only).', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	//ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'mobile-1', 'mobile_sharebuttonsbar_fix', __('Fix problem with buttons not displayed in full width', 'essb'), __('Some themes may overwrite the default buttons style and in this case buttons do not take the full width of screen. Activate this option to fix the overwritten styles.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'mobile-1', 'mobile_sharebuttonsbar_total', __('Display total counter', 'essb'), __('Activate this option to display total share counter as first button. If you activate it please keep in mind that you need to set number of columns to be with one more than buttons you except to see (total counter will act as single button)', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+	ESSBOptionsStructureHelper::field_switch_panel($where_to_display, 'mobile-1', 'mobile_sharebuttonsbar_counter', __('Display button counter', 'essb'), __('Set to Yes if you wish to show individual share counter for each button in the mobile share buttons bar.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 	ESSBOptionsStructureHelper::field_select_panel($where_to_display, 'mobile-1', 'mobile_sharebuttonsbar_total_source', __('Total value source', 'essb'), __('Choose the source of total values that you will see - shares or views/reads (require views/reads extension)', 'essb'), array('' => 'Shares', 'views' => 'Views/Reads'));
+	
+	
 	ESSBOptionsStructureHelper::field_section_end_full_panels($where_to_display, 'mobile-1');
 	
 	ESSBOptionsStructureHelper::title($where_to_display, 'mobile-1', __('Bar appearance', 'essb'), __('By default share bar will be visible after page is fully loaded. If you wish using fields below you can set to appear/disappear on scroll.', 'essb'));
@@ -822,6 +866,11 @@ function essb_prepare_location_advanced_customization($tab_id, $menu_id, $locati
 
 		if ($location != 'postbar' && $location != 'point') {
 			// Position Style Settings version 5
+			ESSBOptionsStructureHelper::holder_start($tab_id, $menu_id, 'essb-advanced-location-setup');
+			
+			ESSBOptionsStructureHelper::help($tab_id, $menu_id, __('Setting a Custom Share Buttons Style', 'essb'), __('Right now you activate the personalized location settings. When personalized location settings are active plugin will always take the settings here and it will not refer to the global changes you made.', 'essb'), array('Help with Style Settings' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-share-buttons-style/'));
+				
+			
 			ESSBOptionsStructureHelper::structure_row_start($tab_id, $menu_id);
 			ESSBOptionsStructureHelper::structure_section_start($tab_id, $menu_id, 'c4');
 			
@@ -837,6 +886,16 @@ function essb_prepare_location_advanced_customization($tab_id, $menu_id, $locati
 					'right' => array('title' => 'Right', 'content' => '<i class="ti-align-right"></i>'));
 			ESSBOptionsStructureHelper::title($tab_id, $menu_id, __('Buttons align', 'essb'), '', 'inner-row');
 			ESSBOptionsStructureHelper::field_toggle($tab_id, $menu_id, $location.'_button_pos', '', '', $select_values);
+
+			$select_values = array('' => array('title' => 'Default', 'content' => 'Default'),
+					'xs' => array('title' => 'Extra Small', 'content' => 'XS'),
+					's' => array('title' => 'Small', 'content' => 'S'),
+					'm' => array('title' => 'Medium', 'content' => 'M'),
+					'l' => array('title' => 'Large', 'content' => 'L'),
+					'xl' => array('title' => 'Extra Large', 'content' => 'XL'),
+					'xxl' => array('title' => 'Extra Extra Large', 'content' => 'XXL')
+			);
+			ESSBOptionsStructureHelper::field_toggle_panel($tab_id, $menu_id, $location.'_button_size', __('Button Size', 'essb'), __('Change size of exisiting template. May not work properly for all templates.', 'essb'), $select_values, '', '', 'button_size');
 				
 			
 			ESSBOptionsStructureHelper::field_switch($tab_id, $menu_id, $location.'_nospace', __('Without space between buttons', 'essb'), __('Activate this option if you wish to connect share buttons without any space between them.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '8');
@@ -912,7 +971,7 @@ function essb_prepare_location_advanced_customization($tab_id, $menu_id, $locati
 			ESSBOptionsStructureHelper::title($tab_id, $menu_id, __('Live Style Preview', 'essb'), __('This style preview is illustrative showing how your buttons will look. All displayed share counters are random generated for preview purpose - real share values will appear on each post. Once you save settings you will be able to test the exact preview on site with networks you choose', 'essb'));				
 			ESSBOptionsStructureHelper::field_func($tab_id, $menu_id, 'essb5_live_preview_single_position', '', '', '', array('position' => $location));
 				
-
+			ESSBOptionsStructureHelper::holder_end($tab_id, $menu_id);
 
 		}
 
@@ -920,6 +979,8 @@ function essb_prepare_location_advanced_customization($tab_id, $menu_id, $locati
 			ESSBOptionsStructureHelper::field_heading($tab_id, $menu_id, 'heading5', __('Personalize social networks', 'essb'));
 			ESSBOptionsStructureHelper::tabs_start($tab_id, $menu_id, $location.'buttons-tabs', array('<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Social Networks', 'essb'), '<i class="ti-settings" style="margin-right: 5px;"></i>'.__('Additional Network Options', 'essb')), 'false', 'true');
 			ESSBOptionsStructureHelper::tab_start($tab_id, $menu_id, $location.'buttons-tabs-0', 'true');
+			
+			ESSBOptionsStructureHelper::help($tab_id, $menu_id, __('Setting a Custom Social Network List', 'essb'), __('When no networks are selected inside the networks field below, plugin will always use those that you set inside Social Sharing settings. In case you need to change that list, please do that here. Also remember that once you setup a personalized list of networks any other global change will not reflect here (until at least one network is selected)', 'essb'), array('Help with Networks Setup' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-setup-social-networks/', 'How to work with more button' => 'https://docs.socialsharingplugin.com/knowledgebase/social-sharing-how-to-set-up-more-button/'));
 				
 			ESSBOptionsStructureHelper::title($tab_id, $menu_id, __('Personalize Displayed Social Networks', 'essb'), __('Choose a personalized list of social networks that will run for this display only (different than global set). Leave blank to use the global set list of social networks', 'essb'));
 			ESSBOptionsStructureHelper::field_network_select($tab_id, $menu_id, $location.'_networks', $location);
@@ -928,42 +989,44 @@ function essb_prepare_location_advanced_customization($tab_id, $menu_id, $locati
 			
 			ESSBOptionsStructureHelper::tab_start($tab_id, $menu_id, $location.'buttons-tabs-1');
 				
-			ESSBOptionsStructureHelper::panel_start($tab_id, $menu_id, __('More Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_more', array("mode" => "toggle", 'state' => 'opened'));
-			$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
-			ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_more_button_func', __('More button', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
-			$more_options = array ("plus" => "Plus icon", "dots" => "Dots icon" );
-			
-			$select_values = array('plus' => array('title' => 'Plus Icon', 'content' => '<i class="essb_icon_more"></i>'),
-					'dots' => array('title' => 'Dots Icon', 'content' => '<i class="essb_icon_more_dots"></i>'));
-			ESSBOptionsStructureHelper::field_toggle($tab_id, $menu_id, $location.'_more_button_icon', __('More button icon', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $select_values);
-			
-			
-			ESSBOptionsStructureHelper::panel_end($tab_id, $menu_id);
-			
-			ESSBOptionsStructureHelper::panel_start($tab_id, $menu_id, __('Share Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_share', array("mode" => "toggle", 'state' => 'opened'));
-			$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
-			ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_share_button_func', __('Share button function', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
-			
-			
-			$select_values = array('plus' => array('title' => '', 'content' => '<i class="essb_icon_more"></i>'),
-					'dots' => array('title' => '', 'content' => '<i class="essb_icon_more_dots"></i>'),
-					'share' => array('title' => '', 'content' => '<i class="essb_icon_share"></i>'),
-					'share-alt-square' => array('title' => '', 'content' => '<i class="essb_icon_share-alt-square"></i>'),
-					'share-alt' => array('title' => '', 'content' => '<i class="essb_icon_share-alt"></i>'),
-					'share-tiny' => array('title' => '', 'content' => '<i class="essb_icon_share-tiny"></i>'),
-					'share-outline' => array('title' => '', 'content' => '<i class="essb_icon_share-outline"></i>')
-			);
-			ESSBOptionsStructureHelper::field_toggle($tab_id, $menu_id, $location.'_share_button_icon', __('Share button icon', 'essb'), __('Choose the share button icon you will use (default is share if nothing is selected)', 'essb'), $select_values);
-			
-			
-			$more_options = array ("" => "Default from settings (like other share buttons)", "icon" => "Icon only", "button" => "Button", "text" => "Text only" );
-			ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_share_button_style', __('Share button style', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $more_options);
-			
-			$share_counter_pos = array("hidden" => "No counter", "inside" => "Inside button without text", "insidename" => "Inside button after text", "insidebeforename" => "Inside button before text", "topn" => "Top", "bottom" => "Bottom");
-			ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_share_button_counter', __('Display total counter with the following position', 'essb'), __('Choose where you wish to display total counter of shares assigned with this button. <br/> To view total counter you need to have share counters active and they should not be running in real time mode. Also you need to have your share button set with style button. When you use share button with counter we highly recommend to hide total counter by setting position to be hidden - this will avoid having two set of total value on screen.', 'essb'), $share_counter_pos);
-			
-			ESSBOptionsStructureHelper::panel_end($tab_id, $menu_id);
+			if (essb_is_active_social_network('more')) {
+				ESSBOptionsStructureHelper::panel_start($tab_id, $menu_id, __('More Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_more', array("mode" => "toggle", 'state' => 'opened'));
+				$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
+				ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_more_button_func', __('More button', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
+				$more_options = array ("plus" => "Plus icon", "dots" => "Dots icon" );
 				
+				$select_values = array('plus' => array('title' => 'Plus Icon', 'content' => '<i class="essb_icon_more"></i>'),
+						'dots' => array('title' => 'Dots Icon', 'content' => '<i class="essb_icon_more_dots"></i>'));
+				ESSBOptionsStructureHelper::field_toggle($tab_id, $menu_id, $location.'_more_button_icon', __('More button icon', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $select_values);
+				ESSBOptionsStructureHelper::panel_end($tab_id, $menu_id);
+			}
+
+			if (essb_is_active_social_network('share')) {
+				ESSBOptionsStructureHelper::panel_start($tab_id, $menu_id, __('Share Button', 'essb'), __('Configure additional options for this network', 'essb'), 'fa21 essb_icon_share', array("mode" => "toggle", 'state' => 'opened'));
+				$more_options = array ("1" => "Display all active networks after more button", "2" => "Display all social networks as pop up", "3" => "Display only active social networks as pop up", "4" => "Display all active networks after more button in popup" );
+				ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_share_button_func', __('Share button function', 'essb'), __('Select networks that you wish to appear in your list. With drag and drop you can rearrange them.', 'essb'), essb_available_more_button_commands());
+				
+				
+				$select_values = array('plus' => array('title' => '', 'content' => '<i class="essb_icon_more"></i>'),
+						'dots' => array('title' => '', 'content' => '<i class="essb_icon_more_dots"></i>'),
+						'share' => array('title' => '', 'content' => '<i class="essb_icon_share"></i>'),
+						'share-alt-square' => array('title' => '', 'content' => '<i class="essb_icon_share-alt-square"></i>'),
+						'share-alt' => array('title' => '', 'content' => '<i class="essb_icon_share-alt"></i>'),
+						'share-tiny' => array('title' => '', 'content' => '<i class="essb_icon_share-tiny"></i>'),
+						'share-outline' => array('title' => '', 'content' => '<i class="essb_icon_share-outline"></i>')
+				);
+				ESSBOptionsStructureHelper::field_toggle($tab_id, $menu_id, $location.'_share_button_icon', __('Share button icon', 'essb'), __('Choose the share button icon you will use (default is share if nothing is selected)', 'essb'), $select_values);
+				
+				
+				$more_options = array ("" => "Default from settings (like other share buttons)", "icon" => "Icon only", "button" => "Button", "text" => "Text only" );
+				ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_share_button_style', __('Share button style', 'essb'), __('Select more button icon style. You can choose from default + symbol or dots symbol', 'essb'), $more_options);
+				
+				$share_counter_pos = array("hidden" => "No counter", "inside" => "Inside button without text", "insidename" => "Inside button after text", "insidebeforename" => "Inside button before text", "topn" => "Top", "bottom" => "Bottom");
+				ESSBOptionsStructureHelper::field_select($tab_id, $menu_id, $location.'_share_button_counter', __('Display total counter with the following position', 'essb'), __('Choose where you wish to display total counter of shares assigned with this button. <br/> To view total counter you need to have share counters active and they should not be running in real time mode. Also you need to have your share button set with style button. When you use share button with counter we highly recommend to hide total counter by setting position to be hidden - this will avoid having two set of total value on screen.', 'essb'), $share_counter_pos);
+				
+				ESSBOptionsStructureHelper::panel_end($tab_id, $menu_id);
+			}
+			
 			ESSBOptionsStructureHelper::tab_end($tab_id, $menu_id);
 			ESSBOptionsStructureHelper::tabs_end($tab_id, $menu_id);
 				
@@ -1133,6 +1196,7 @@ function essb5_live_preview_single_position($options) {
 	'networks': [ {'key': 'facebook', 'name': 'Facebook'}, {'key': 'twitter', 'name': 'Twitter'}, {'key': 'google', 'name': 'Google'}, {'key': 'pinterest', 'name': 'Pinterest'}, {'key': 'linkedin', 'name': 'LinkedIn'}],
 	'template': 'essb_field_".$position."_template',
 	'button_style': 'essb_field_".$position."_button_style',
+	'button_size': 'essb_options_".$position."_button_size',
 	'align': 'essb_options_".$position."_button_pos',
 	'nospace': 'essb_field_".$position."_nospace',
 	'counter': 'essb_field_".$position."_show_counter',

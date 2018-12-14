@@ -36,6 +36,10 @@ if (!function_exists('essb5_generate_booster')) {
 			$booster_message = do_shortcode($booster_message);
 		}
 		
+		if ($booster_manualclose_text != '') {
+			$booster_manualclose_text = stripslashes($booster_manualclose_text);
+		}
+		
 		if ($booster_manualclose_text == '') {
 			$booster_manualclose_text = __('I am not interested. Take me back to content', 'essb');
 		}

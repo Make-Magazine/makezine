@@ -35,7 +35,12 @@ class ESSBOptionsInterface {
 		echo '<div class="essb-options '.$admin_template.' '.($without_menu ? "essb-options-nomenu":'').'" id="essb-options">';
 	}
 	
-	public static function draw_header5($title = '', $hide_update_button = false, $wizard_tab = false, $custom_code = '', $advanced_settings = '') {
+	public static function draw_header5($title = '', $hide_update_button = false, $wizard_tab = false, $custom_code = '', $advanced_settings = '', $header_icon = '') {
+		
+		if ($header_icon != '') {
+			$header_icon = '<i class="'.$header_icon.' title-icon"></i>';
+		}
+		
 		if ($hide_update_button) {
 			echo '<div class="essb-options-header" id="essb-options-header">
 			'.$custom_code.'
@@ -44,7 +49,7 @@ class ESSBOptionsInterface {
 			</div>';
 			
 			echo '<div class="essb-options-title">
-			' . $title . '
+			'.$header_icon . $title . '
 			</div>';
 			
 		
@@ -65,7 +70,7 @@ class ESSBOptionsInterface {
 			</div>';
 			
 			echo '<div class="essb-options-title">
-			' . $title . '<span class="essb-options-subtitle"></span>
+			' .$header_icon. $title . '<span class="essb-options-subtitle"></span>
 			'.($advanced_settings != '' ? $advanced_settings : '').'
 			</div>';
 			
@@ -113,7 +118,7 @@ class ESSBOptionsInterface {
 		echo '<div class="essb-options-sidebar" id="essb-options-sidebar">';
 
 		echo '<ul class="essb-options-group-menu" id="sticky-navigation">';
-		
+				
 		foreach ($options as $single) {
 			$type = $single['type'];
 			$field_id = isset($single['field_id']) ? $single['field_id'] : '';
@@ -121,6 +126,7 @@ class ESSBOptionsInterface {
 			$sub_menuaction = isset($single['action']) ? $single['action'] : '';
 			$default_child = isset($single['default_child']) ? $single['default_child'] : '';
 			$icon = isset($single['icon']) ? $single['icon'] : '';
+			$description = isset($single['description']) ? $single['description'] : '';
 			
 			$level2 = isset($single['level2']) ? $single['level2'] : '';
 			
@@ -140,6 +146,10 @@ class ESSBOptionsInterface {
 				else {
 					$icon = sprintf('<i class="essb-sidebar-icon fa fa-%1$s"></i>', $icon);
 				}
+			}
+			
+			if ($description != '') {
+				$title .= '<span class="description">'.$description.'</span>';
 			}
 			
 			$css_class = "";

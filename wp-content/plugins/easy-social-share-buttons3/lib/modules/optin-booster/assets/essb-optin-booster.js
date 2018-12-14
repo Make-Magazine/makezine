@@ -13,12 +13,17 @@ jQuery(document).ready(function($){
 		
 		if (!$(base_element).length) return;
 		
-		var singleDisplay = $(base_element).attr('data-single') || '';
+		var singleDisplay = $(base_element).attr('data-single') || '',
+			singleDisplayDelay = $(base_element).attr('data-single-days') || '';
+		
 		if (singleDisplay == '1') {
 			var cookie_name = "essbOptinBooster";
 			var cookieSet = essbGetCookie(cookie_name);
 			if (cookieSet == "yes") { return; }
-			essbSetCookie(cookie_name, "yes", 14);
+			
+			singleDisplayDelay = (singleDisplayDelay == '' || !Number(singleDisplayDelay)) ? 14 : Number(singleDisplayDelay);
+			
+			essbSetCookie(cookie_name, "yes", singleDisplayDelay);
 		}
 		
 		jQuery.fn.extend({

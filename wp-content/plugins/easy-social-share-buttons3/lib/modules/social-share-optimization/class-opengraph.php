@@ -502,6 +502,8 @@ class ESSB_OpenGraph {
 		
 		$img = $this->meta_details->image();
 		
+		$img = trim( apply_filters( 'essb_opengraph_image', $img ) );
+		
 		if (!empty($img) && is_string($img)) {
 			$this->og_tag( 'og:image', esc_url( $img ) );
 			

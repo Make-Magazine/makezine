@@ -506,6 +506,7 @@ function essb_get_post_share_details($position) {
 
 	$twitter_customtweet = $title;
 	$post_pin_image = '';
+	$post_pin_desc = '';
 	// apply post custom share options
 	if (isset($post) && !$list_of_articles_mode) {
 			
@@ -523,6 +524,34 @@ function essb_get_post_share_details($position) {
 		$post_essb_twitter_username = get_post_meta($post->ID, 'essb_post_twitter_username', true);
 		$post_essb_twitter_hastags = get_post_meta($post->ID, 'essb_post_twitter_hashtags', true);
 		$post_essb_twitter_tweet = get_post_meta($post->ID, 'essb_post_twitter_tweet', true);
+		$post_essb_og_title = get_post_meta ( $post->ID, 'essb_post_og_title', true );
+		$post_pin_desc = get_post_meta( $post->ID, 'essb_post_pin_desc', true);
+		
+		
+		if ($post_essb_twitter_tweet == '' && $post_essb_og_title != '') {
+			$post_essb_twitter_tweet = $post_essb_og_title;
+		}
+		
+		// SW Bridge running here
+		if (essb_option_bool_value('activate_sw_bridge') && function_exists('essb_sw_custom_data')) {
+			$sw_setup = essb_sw_custom_data();
+			
+			if ($sw_setup['og_title'] != '' && $post_essb_post_share_text == '') {
+				$post_essb_post_share_text = $sw_setup['og_title'];
+			}
+			if ($sw_setup['og_description'] != '' && $post_essb_post_share_message == '') {
+				$post_essb_post_share_message = $sw_setup['og_description'];
+			}
+			if ($sw_setup['og_image'] != '' && $post_essb_post_share_image == '') {
+				$post_essb_post_share_image = $sw_setup['og_image'];
+			}
+			if ($sw_setup['custom_tweet'] != '' && $post_essb_twitter_tweet == '') {
+				$post_essb_twitter_tweet = $sw_setup['custom_tweet'];
+			}
+			if ($sw_setup['pin_image'] != '' && $post_pin_image == '') {
+				$post_pin_image = $sw_setup['pin_image'];
+			}	
+		}
 			
 		if (defined('WPSEO_VERSION')) {	
 			
@@ -561,6 +590,7 @@ function essb_get_post_share_details($position) {
 		if ($post_essb_twitter_hastags != '') {
 			$twitter_hashtags = $post_essb_twitter_hastags;
 		}
+		
 		if ($post_essb_twitter_tweet != '') {
 			$twitter_customtweet = $post_essb_twitter_tweet;
 		}
@@ -594,7 +624,8 @@ function essb_get_post_share_details($position) {
 	
 	return array('url' => $url, 'title' => $title, 'image' => $image, 'description' => $description, 'twitter_user' => $twitter_user,
 			'twitter_hashtags' => $twitter_hashtags, 'twitter_tweet' => $twitter_customtweet, 'post_id' => isset($post) ? $post->ID : 0, 'user_image_url' => '', 'title_plain' => $title_plain,
-			'short_url_whatsapp' => '', 'short_url_twitter' => '', 'short_url' => '', 'pinterest_image' => $post_pin_image);
+			'short_url_whatsapp' => '', 'short_url_twitter' => '', 'short_url' => '', 
+			'pinterest_image' => $post_pin_image, 'pinterest_desc' => $post_pin_desc);
 }
 
 function essb_get_post_tags_as_list($post) {

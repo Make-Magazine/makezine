@@ -101,6 +101,9 @@ if (! function_exists ( 'essb_popular_posts' )) {
 					$post_category = $post_categories[0]->cat_ID;
 				}
 			}
+			else {
+				$post_type = '';
+			}
 			
 			$args_query = apply_filters( 'widget_posts_args', array(
 					'posts_per_page'      => $number,

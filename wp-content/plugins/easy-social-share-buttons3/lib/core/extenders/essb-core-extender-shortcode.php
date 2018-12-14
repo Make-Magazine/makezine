@@ -32,6 +32,10 @@ if (!function_exists('essb_shortcode_map_shareoptions')) {
 			$post_share_details['description'] = $shortcode_options['description'];
 		}
 		
+		if ($shortcode_options['postid'] != '') {
+			$post_share_details['post_id'] = $shortcode_options['postid'];
+		}
+		
 		// customize tweet message
 		if ($shortcode_options['twitter_user'] != '') {
 			$post_share_details['twitter_user'] = $shortcode_options['twitter_user'];
@@ -175,6 +179,12 @@ if (!function_exists('essb_shortcode_map_visualoptions')) {
 			
 		if (!empty($shortcode_options['sidebar_pos'])) {
 			$button_style['sidebar_pos'] = $shortcode_options['sidebar_pos'];
+		}
+		
+		if (isset($shortcode_options['size'])) {
+			if (!empty($shortcode_options['size'])) {
+				$button_style['button_size'] = $shortcode_options['size'];
+			}
 		}
 			
 		$button_style['nospace'] = $shortcode_options['nospace'];

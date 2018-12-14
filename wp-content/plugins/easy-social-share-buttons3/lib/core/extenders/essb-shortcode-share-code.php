@@ -107,7 +107,10 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 				'sharebtn_counter' => 'string',
 				'vcgridpost' => '',
 				'email_subject' => 'string',
-				'email_message' => 'string' );
+				'email_message' => 'string',
+				'postid' => 'string',
+				'size' => 'string',
+				'manualonly' => 'bool' );
 		$shortcode_options = array (
 				'buttons' => '', 
 				'counters' => 0, 
@@ -180,7 +183,10 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 				'sharebtn_counter' => '',
 				'vcgridpost' => '',
 				'email_subject' => '',
-				'email_message' => '' );
+				'email_message' => '',
+				'postid' => '',
+				'size' => '',
+				'manualonly' => 'no' );
 		
 		$atts = shortcode_atts ( $shortcode_options, $atts );
 		
@@ -316,29 +322,6 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 		
 		$use_minifed_css = (ESSBGlobalSettings::$use_minified_css) ? ".min" : "";
 		$use_minifed_js = (ESSBGlobalSettings::$use_minified_js) ? ".min" : "";
-		// load mail resource on access
-		if (in_array ( 'mail', $networks )) {
-			if (! essb_resource_builder ()->is_activated ( 'mail' )) {
-				//$style_url = ESSB3_PLUGIN_URL . '/assets/css/essb-mailform' . $use_minifed_css . '.css';
-				//essb_resource_builder ()->add_static_resource_footer ( $style_url, 'easy-social-share-buttons-mailform', 'css' );
-				
-				//$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-mailform.js';
-				//essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-mailform', 'js', true );
-				
-				//essb_resource_builder ()->activate_resource ( 'mail' );
-			}
-		}
-		
-		/*if (in_array ( 'print', $networks )) {
-			if (! essb_resource_builder ()->is_activated ( 'print' )) {
-				if (! essb_option_bool_value ( 'print_use_printfriendly' )) {
-					//essb_resource_builder ()->add_js ( ESSBResourceBuilderSnippets::js_build_window_print_code (), true, 'essb-printing-code' );
-					essb_depend_load_function('essb_rs_js_build_window_print_code', 'lib/core/resource-snippets/essb_rs_js_build_window_print_code.php');
-						
-					essb_resource_builder ()->activate_resource ( 'print' );
-				}
-			}
-		}*/
 		
 		if ($shortcode_parameters ['counters'] == 1) {
 			if (! essb_resource_builder ()->is_activated ( 'counters' )) {
@@ -370,12 +353,6 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 				essb_resource_builder ()->activate_resource ( 'display_positions_style' );
 			}
 			
-			if (! essb_resource_builder ()->is_activated ( 'popup' )) {
-				
-				/*$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-popup' . $use_minifed_js . '.js';
-				essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-popup', 'js', true );
-				essb_resource_builder ()->activate_resource ( 'popup' );*/
-			}
 		}
 		
 		if ($shortcode_parameters ['heroshare']) {
@@ -403,13 +380,7 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 				essb_resource_builder ()->add_static_resource_footer ( $style_url, 'easy-social-share-buttons-display-methods', 'css' );
 				essb_resource_builder ()->activate_resource ( 'display_positions_style' );
 			}
-			
-			/*if (! essb_resource_builder ()->is_activated ( 'flyin' )) {
-				
-				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-flyin' . $use_minifed_js . '.js';
-				essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-flyin', 'js' );
-				essb_resource_builder ()->activate_resource ( 'flyin' );
-			}*/
+
 		}
 		if ($shortcode_parameters ['postfloat']) {
 			$display_as_key = "postfloat";
@@ -421,7 +392,6 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 			}
 			if (! essb_resource_builder ()->is_activated ( 'display_positions_script' )) {
 				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-display-methods' . $use_minifed_js . '.js';
-				//essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-display-methods', 'js' );
 				essb_resource_builder ()->activate_resource ( 'display_positions_script' );
 			
 			}
@@ -436,7 +406,6 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 			}
 			if (! essb_resource_builder ()->is_activated ( 'display_positions_script' )) {
 				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-display-methods' . $use_minifed_js . '.js';
-				//essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-display-methods', 'js' );
 				essb_resource_builder ()->activate_resource ( 'display_positions_script' );
 			
 			}
@@ -453,7 +422,6 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 			
 			if (! essb_resource_builder ()->is_activated ( 'display_positions_script' )) {
 				$script_url = ESSB3_PLUGIN_URL . '/assets/js/essb-display-methods' . $use_minifed_js . '.js';
-				//essb_resource_builder ()->add_static_resource_footer ( $script_url, 'essb-display-methods', 'js' );
 				essb_resource_builder ()->activate_resource ( 'display_positions_script' );
 					
 			}				
@@ -494,7 +462,6 @@ if (! function_exists ( 'essb_shortcode_share_prepare' )) {
 		}
 		
 		$special_shortcode_options = array ();
-		// print_r($shortcode_parameters);
 		if (! $shortcode_parameters ['native']) {
 			$special_shortcode_options ['only_share'] = true;
 		}

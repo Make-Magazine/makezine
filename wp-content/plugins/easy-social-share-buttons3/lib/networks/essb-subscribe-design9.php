@@ -75,7 +75,7 @@ if (!function_exists('essb_subscribe_form_design9')) {
 		$secure_nonce = wp_create_nonce('essb3_subscribe_nonce');
 		$current_url = add_query_arg('essb3_subscribe_nonce', $secure_nonce, $current_url);
 		
-		$output = '<div class="essb-subscribe-form-content essb-subscribe-from-design9'.($is_widget ? " essb-subscribe-form-inwidget" :"").'" data-position="'.$position.'">';
+		$output = '<div class="essb-subscribe-form-content essb-subscribe-from-design9'.($is_widget ? " essb-subscribe-form-inwidget" :"").'" data-position="'.$position.'" data-design="design9">';
 		$output .= '<div class="essb-subscribe9-icon"><i class="essb_icon_envelope-o"></i></div>';
 		
 		$output .= '<div class="essb-subscribe-form-content-top">';

@@ -65,6 +65,7 @@ ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'remo
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'precompiled_resources', __('Use plugin precompiled resources', 'essb'), __('Activating this option will precompile and cache plugin dynamic resources to save load time. Precompiled resources can be used only when you use same configuration on your entire site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_select_panel('advanced', 'optimization', 'precompiled_mode', __('Precompiled mode', 'essb'), __('Using mode control you can select which type of resources to include inside precompiled resources - CSS, javascript or both (default).', 'essb'), array('' => 'CSS and Javascript', 'css' => 'CSS Only', 'js' => 'Javascript Only'));
 ESSBOptionsStructureHelper::field_select_panel('advanced', 'optimization', 'precompiled_folder', __('Precompiled data storage', 'essb'), __('Choose where you wish to store the cached data. If you wish to use custom path there are filters available.', 'essb'), array('' => 'WordPress Content Folder', 'uploads' => 'WordPress Uploads Folder', 'plugin' => 'Plugin Folder'));
+ESSBOptionsStructureHelper::field_select_panel('advanced', 'optimization', 'optimize_load', __('Load resources (beta)', 'essb'), __('Choose where plugin static resources will be loaded. You can select always or only on associated post types. If you are using shortcode/visual builder share buttons display or you have a custom integration it is not recommended to change the setting.', 'essb'), array('' => 'Default (anywhere on site)', 'selected' => 'On selected post types only'));
 ESSBOptionsStructureHelper::field_section_end_full_panels('advanced', 'optimization');
 //ESSBOptionsStructureHelper::panel_end('advanced', 'optimization');
 
@@ -141,7 +142,7 @@ ESSBOptionsStructureHelper::panel_end('advanced', 'advanced');
 //ESSBOptionsStructureHelper::field_heading('advanced', 'administrative', 'heading1', __('Administrative Options', 'essb'));
 //$admin_style = array ("" => "Dark", "light" => "Light" );
 //ESSBOptionsStructureHelper::field_select('advanced', 'administrative', 'admin_template', __('Plugin Settings Style', 'essb'), __('Change plugin default options style', 'essb'), $admin_style);
-ESSBOptionsStructureHelper::panel_start('advanced', 'administrative', __('Disable plugin functionalities', 'essb'), __('Disable special plugin functions that you will not use or you do not need.', 'essb'), 'fa21 fa fa-times', array("mode" => "toggle", 'state' => 'opened'));
+ESSBOptionsStructureHelper::panel_start('advanced', 'administrative', __('Administrative Tools', 'essb'), __('With administrative tools you can control advanced plugin features work.', 'essb'), 'fa21 fa fa-times', array("mode" => "toggle", 'state' => 'opened'));
 ESSBOptionsStructureHelper::field_section_start_full_panels('advanced', 'administrative');
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'deactivate_ajaxsubmit', __('Deactivate AJAX submit of settings', 'essb'), __('Activate this option if for some reason your settings inside plugin do not save.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', 'true');
 //disable_welcome
@@ -156,6 +157,13 @@ ESSBOptionsStructureHelper::field_section_start_full_panels('advanced', 'adminis
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'deactivate_appscreo', __('Deactivate checks for news and extensions', 'essb'), __('Plugin has build in option to display latest useful tips from our blogs and notifcations for add-ons that we release. If your server is located in zone that prevents access from specific country hosted servers than you may see delay in load of WordPress admin or strange notice messages. If that happens activate this option to turn off those checks.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'live_customizer_disabled', __('Turn off front end Quick plugin setup', 'essb'), __('The front end quick setup is limited for usage by administrators only. Activate this option if you wish to remove it completely.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '');
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'disable_translation', __('Do not load translations of interface', 'essb'), __('All plugin translations are made with love from our customers. If you do not wish to use it activate this option and plugin will load with default English language.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'), '', '');
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'activate_sw_bridge', __('Use previous data set in Social Warfare (Beta)', 'essb'), __('If you use in past Social Warfare and you have a customizations made in social sharing than you can activate this option and allow plugin read all that stored values.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_section_end_full_panels('advanced', 'administrative');
+
+ESSBOptionsStructureHelper::field_section_start_full_panels('advanced', 'administrative');
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'deactivate_updates', __('Stop Automatic Updates', 'essb'), __('Registered versions of plugin do an automated check for updates using the WordPress update. The update happens from external server and in case your host does not allow that you can set this option to Yes and do a manual plugin updates.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'deactivate_wpml_bridge', __('Deactivate automated WPML & Polylang bridge', 'essb'), __('When WPML or Polylang is found in the current WordPress setup plugin will setup a multilangual setup fields. This with version change may cause a problem in settings work. If such appear please activate this option temporary', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'deactivate_helphints', __('Deactivate Internal Help Hints', 'essb'), __('Inside plugin you have a help hint sections that provide useful links to the knowledge base. If you already know the features and that panel bothers you just hit Yes to hide them.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_section_end_full_panels('advanced', 'administrative');
 
 
@@ -176,11 +184,12 @@ ESSBOptionsStructureHelper::field_section_start_full_panels('advanced', 'adminis
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'turnoff_essb_advanced_box', __('Remove post advanced visual settings metabox', 'essb'), __('Activation of this option will remove the advanced meta box on each post that allow customizations of visual styles for post.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'turnoff_essb_optimize_box', __('Remove post share customization metabox', 'essb'), __('Activation of this option will remove the share customization meta box on each post (allows changing social share optimization tags, customize share and etc.).', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'turnoff_essb_stats_box', __('Remove post detailed stats metabox', 'essb'), __('Activation of this option will remove the detailed stats meta box from each post/page when social share analytics option is activated.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'turnoff_essb_main_box', __('Remove post plugin deactivation box', 'essb'), __('Set this to Yes if you wish to remove the post metabox fields for plugin deactivation.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_section_end_full_panels('advanced', 'administrative');
 ESSBOptionsStructureHelper::panel_end('advanced', 'administrative');
 
 
-ESSBOptionsStructureHelper::field_func('advanced', 'administrative', 'essb3_reset_postdata', __('Reset plugin settings', 'essb'), __('Warning! Pressing this button will restore initial plugin configuration values and all settings that you apply after plugin activation will be removed.', 'essb'));
+ESSBOptionsStructureHelper::field_func('advanced', 'administrative', 'essb3_reset_postdata', __('Reset Plugin Settings & Clear Data', 'essb'), __('Warning! Pressing any of buttons will reset/clear data stored by plugin. Once action is completed the data can be restored only if you have made a backup before.', 'essb'));
 
 
 //ESSBOptionsStructureHelper::field_heading('advanced', 'counterrecovery', 'heading1', __('Share Counter Recovery', 'essb'));
@@ -199,6 +208,11 @@ if (!essb_option_bool_value('deactivate_module_translate')) {
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_message_sent', __('Message sent!', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_message_invalid_captcha', __('Invalid Captcha code!', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_message_error_send', __('Error sending message!', 'essb'), __('', 'essb'));
+
+	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_message_error_mail', __('Invalid recepient email', 'essb'), __('', 'essb'));
+	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_mail_message_error_fill', __('Please fill all fields in form!', 'essb'), __('', 'essb'));
+	
+	
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 	
 	ESSBOptionsStructureHelper::panel_start('advanced', 'localization', __('Love this button messages', 'essb'), __('Translate love this button messages', 'essb'), 'ti-world fa21', array("mode" => "toggle", 'state'=> 'closed1'));
@@ -325,10 +339,48 @@ function essb3_reset_postdata() {
 	var redirect_url = "admin.php?page=essb_redirect_advanced&tab=advanced&reset_settings=true";
 	if (confirm("Are you sure you want to reset settings to default?")) location.href = redirect_url;
 	} 
+	
+	function essb_clear_statconfirmation() {
+	var redirect_url1 = "admin.php?page=essb_redirect_advanced&tab=advanced&reset_analytics=true";
+	if (confirm("Are you sure you want to clear the collected analytics data? Once data is removed you cannot restore it back unless you have a database backup")) location.href = redirect_url1;
+	} 
+
+	function essb_clear_shortconfirm() {
+	var redirect_url1 = "admin.php?page=essb_redirect_advanced&tab=advanced&reset_short=true";
+	if (confirm("Are you sure you wish to clear short URL cache? The cache clear will make plugin rebuild all short URLs when post/page is loaded.")) location.href = redirect_url1;
+	} 
+
+	function essb_clear_counterconfirm() {
+	var redirect_url1 = "admin.php?page=essb_redirect_advanced&tab=advanced&reset_counterupdate=true";
+	if (confirm("Are you sure you wish to clear the last share counter update? Doing such clear will make plugin update share counters for all posts/pages when they are loaded again.")) location.href = redirect_url1;
+	} 
+
+	function essb_clear_dataconfirm() {
+	var redirect_url1 = "admin.php?page=essb_redirect_advanced&tab=advanced&reset_alldata=true";
+	if (confirm("Removing all plugin data is an operation that will remove all plugin settings, custom post setups (example: customized social share information data, customized tweets, custom images), stored short URLs cache, stored share counters and all internal share counters. Once data is removed you will be able to restore it only if you have made a database backup. Please confirm that you wish to proceed with full data remove?")) location.href = redirect_url1;
+	} 
 	';
 	echo '</script>';
 	
+	echo '<div style="margin-bottom: 15px;">';
 	echo '<a href="#" class="essb-btn essb-btn-red" onclick="essb_reset_confirmation(); return false;">'.__('I want to reset plugin settings to default', 'essb').'</a>';
+	echo '</div>';
+
+	echo '<div style="margin-bottom: 15px;">';
+	echo '<a href="#" class="essb-btn essb-btn-red" onclick="essb_clear_statconfirmation(); return false;">'.__('I want to reset plugin build-in analytics stored data', 'essb').'</a>';
+	echo '</div>';
+
+	echo '<div style="margin-bottom: 15px;">';
+	echo '<a href="#" class="essb-btn essb-btn-red" onclick="essb_clear_shortconfirm(); return false;">'.__('I want to clear stored short URLs from cache', 'essb').'</a>';
+	echo '</div>';
+
+	echo '<div style="margin-bottom: 15px;">';
+	echo '<a href="#" class="essb-btn essb-btn-red" onclick="essb_clear_counterconfirm(); return false;">'.__('I want to clear share counter last update time to force immediate update', 'essb').'</a>';
+	echo '</div>';
+
+	echo '<div style="margin-bottom: 15px;">';
+	echo '<a href="#" class="essb-btn essb-btn-red" onclick="essb_clear_dataconfirm(); return false;">'.__('I want to remove all stored plugin data', 'essb').'</a>';
+	echo '</div>';
 }
 
 function essb5_stylebuilder_select() {

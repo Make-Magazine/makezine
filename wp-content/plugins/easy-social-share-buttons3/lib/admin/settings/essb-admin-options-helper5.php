@@ -97,6 +97,11 @@ if (!function_exists('essb5_available_button_positions')) {
 		if (!essb_options_bool_value('deactivate_method_booster')) {
 			$essb_available_button_positions ['booster'] = array ('image' => 'assets/images/display-positions-28.png', 'label' => 'Share Booster', 'link' => 'essb-menu-display|essb-menu-display-20' );
 		}
+
+		if (!essb_options_bool_value('deactivate_method_sharebutton')) {
+			$essb_available_button_positions ['sharebutton'] = array ('image' => 'assets/images/display-positions-29.png', 'label' => 'Share Button', 'link' => 'essb-menu-display|essb-menu-display-21' );
+		}
+		
 		
 		$essb_available_button_positions ['widget'] = array ('image' => 'assets/images/display-positions-25.png', 'label' => 'Widget' );
 
@@ -656,6 +661,20 @@ class ESSBOptionsStructureHelper {
 				'in_section' => $in_section
 		);
 	}
+	
+	public static function help($tab_id, $menu_id, $title = '', $description = '', $buttons = array(), $in_section = 'false') {
+		global $essb_navigation_tabs, $essb_sidebar_sections, $essb_section_options;
+		
+		if (!essb_option_bool_value('deactivate_helphints')) {
+			$essb_section_options[$tab_id][$menu_id][] = array(
+					'type' => 'help',
+					'title' => $title,
+					'description' => $description,
+					'in_section' => $in_section,
+					'element_options' => array('buttons' => $buttons)
+			);
+		}
+	}
 
 	public static function panel_start($tab_id, $menu_id, $title = '', $description = '', $icon = '', $element_options = array()) {
 		global $essb_navigation_tabs, $essb_sidebar_sections, $essb_section_options;
@@ -748,7 +767,7 @@ class ESSBOptionsStructureHelper {
 		);
 	}
 	
-	public static function field_toggle_panel ($tab_id, $menu_id, $id, $title, $description, $values, $recommended = '', $size = '') {
+	public static function field_toggle_panel ($tab_id, $menu_id, $id, $title, $description, $values, $recommended = '', $size = '', $extra_class = '') {
 		global $essb_navigation_tabs, $essb_sidebar_sections, $essb_section_options;
 		$essb_section_options[$tab_id][$menu_id][] = array(
 				'id' => $id,
@@ -757,7 +776,7 @@ class ESSBOptionsStructureHelper {
 				'description' => $description,
 				'recommeded' => $recommended,
 				'values' => $values,
-				'element_options' => array('size' => $size)
+				'element_options' => array('size' => $size, 'extra_class' => $extra_class)
 		);
 	}
 	
@@ -788,12 +807,12 @@ class ESSBOptionsStructureHelper {
 		);
 	}
 
-	public static function field_network_select ($tab_id, $menu_id, $id, $position = '') {
+	public static function field_network_select ($tab_id, $menu_id, $id, $position = '', $all_networks = false) {
 		global $essb_navigation_tabs, $essb_sidebar_sections, $essb_section_options;
 		$essb_section_options[$tab_id][$menu_id][] = array(
 				'id' => $id,
 				'type' => 'network-select',
-				'element_options' => array('position' => $position)
+				'element_options' => array('position' => $position, 'all_networks' => $all_networks)
 		);
 	}
 

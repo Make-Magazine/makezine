@@ -23,8 +23,7 @@ class ESSBButtonHelper {
 
 function essb_draw_share_buttons($share = array(), $style = array(), $networks = array(), 
 			$networks_order = array(), $network_names = array(),
-			$position = '', $salt = '', $like_or_share = 'share', $native_buttons = '') {
-		
+			$position = '', $salt = '', $like_or_share = 'share', $native_buttons = '') {		
 		
 		$content = '';		
 		$share['salt'] = $salt;	
@@ -76,6 +75,10 @@ function essb_draw_share_buttons($share = array(), $style = array(), $networks =
 		$button_follow_state = 'nofollow';
 		if (ESSBGlobalSettings::$use_rel_me) {
 			$button_follow_state = 'me';
+		}
+		
+		if (has_filter('essb_share_link_rel')) {
+			$button_follow_state = apply_filters('essb_share_link_rel', $button_follow_state);
 		}
 		
 		if (isset($style['more_button_icon'])) {
@@ -414,10 +417,10 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 		essb_depend_load_function('essb_apply_advanced_custom_share', 'lib/core/extenders/essb-buttonhelper-extender-advancedshare.php');
 		$share = essb_apply_advanced_custom_share($share, $network);
 	}
-
+	
 	// @since version 3.0.3 - fixes the GA Campaign tracking fields
 	$ga_tracking_code = ESSBGlobalSettings::$activate_ga_campaign_tracking;//ESSBOptionValuesHelper::options_value($essb_options, 'activate_ga_campaign_tracking');
-	if ($ga_tracking_code != '') {		
+	if ($ga_tracking_code != '' || isset($share['ga_mode'])) {		
 		essb_depend_load_function('essb_correct_url_on_tracking_code', 'lib/core/extenders/essb-buttonhelper-extender-encode.php');
 		$share = essb_correct_url_on_tracking_code($share, $network);
 	}
@@ -451,7 +454,11 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 	$share['title'] = esc_attr($share['title']);
 	$share['image'] = esc_attr($share['image']);
 	$share['description'] = esc_attr($share['description']);
-
+	
+	// adding additional support for hashtags everywhere
+	$share['title'] = str_replace('#', '%23', $share['title']);
+	$share['description'] = str_replace('#', '%23', $share['description']);
+	
 	if (isset($share['mail_subject'])) {
 		$share['mail_subject'] = esc_attr(stripslashes($share['mail_subject']));
 	}
@@ -459,10 +466,14 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 		$share['mail_body'] = esc_attr(stripslashes($share['mail_body']));
 	}
 
-	$pinterest_description = $share['description'];
-	if (empty($pinterest_description)) {
-		$pinterest_description = $share['title'];
+	$pinterest_description = $share['title'];
+	$custom_pinterest_desc = isset($share['pinterest_desc']) ? $share['pinterest_desc'] : '';
+	if (!empty($custom_pinterest_desc)) {
+		$pinterest_description = $custom_pinterest_desc;
 	}
+	//if (empty($pinterest_description)) {
+	//	$pinterest_description = $share['title'];
+	//}
 
 	// @since version 3.0.4 - fix for shorturl
 	$shorturl_activate = essb_options_bool_value( 'shorturl_activate');
@@ -514,10 +525,11 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 			if (isset($share['clear_twitter_url'])) {
 				if ($share['clear_twitter_url']) { $share['short_url_twitter'] = ''; }
 			}
-
+			
 			$use_tweet = $share ['twitter_tweet'];
 			$use_tweet = str_replace('#', '%23', $use_tweet);
 			$use_tweet = str_replace('|', '%7C', $use_tweet);
+			$use_tweet = str_replace('&', '%26', $use_tweet);
 
 			// @since 3.1 Twitter message optimization
 			$twitter_message_optimize = ESSBGlobalSettings::$twitter_message_optimize;//ESSBOptionValuesHelper::options_bool_value($essb_options, 'twitter_message_optimize');
@@ -717,7 +729,8 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 			break;
 		case 'line':
 			//$url = sprintf('http://line.me/R/msg/text/%1$s%20%2$s', essb_core_helper_urlencode ( $share ['title'] ), rawurlencode ( $share ['short_url_whatsapp'] ));
-			$url = sprintf('line://msg/text/%1$s%3$s%2$s', essb_core_helper_urlencode ( $share ['title_plain'] ), rawurlencode ( $share ['short_url_whatsapp'] ), '%20');
+			//$url = sprintf('line://msg/text/%1$s%3$s%2$s', essb_core_helper_urlencode ( $share ['title_plain'] ), rawurlencode ( $share ['short_url_whatsapp'] ), '%20');
+			$url = 'https://social-plugins.line.me/lineit/share?url='.rawurlencode($share['url']);
 			$api_command = "essb.tracking_only('', 'line', '".$salt."', true);";
 
 			break;
@@ -802,6 +815,15 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 		case 'meetedgar':
 			$url = htmlentities('javascript:(function()%7B!function()%7Bvar e%3Ddocument.getElementsByTagName("head")%5B0%5D,t%3Ddocument.createElement("script")%3Bt.type%3D"text/javascript",t.src%3D"//app.meetedgar.com/share.js%3F"%2BMath.floor(99999*Math.random()),e.appendChild(t)%7D()%7D)()%3B');
 			$api_command = "essb.tracking_only('', 'meetedgar', '".$salt."', true);";
+			break;
+		case 'fintel':
+			$url = sprintf('https://fintel.io/submit?url=%1$s', $share ['url']);
+			break;
+		case 'instapaper':
+			$url = sprintf('https://www.instapaper.com/hello2?url=%1$s&title=%2$s&description=%3$s', $share ['url'], $share['title'], $share['description']);
+			break;			
+		case 'mix':
+			$url = sprintf('https://mix.com/extension/add?source=%1$s', $share ['url']);
 			break;
 		default:
 			// @since 3.0 - module parsing social buttons or custom social buttons
@@ -924,6 +946,12 @@ function essb_draw_buttons_start($style = array(), $position = '', $salt = '', $
 
 	if ($style['button_width'] == 'flex') {
 		$css_class_width .= ' essb_width_flex';
+	}
+	
+	if (isset($style['button_size'])) {
+		if ($style['button_size'] != '') {
+			$css_class_width .= ' essb_size_'.$style['button_size'];
+		}
 	}
 
 	$css_class_align = '';

@@ -284,9 +284,16 @@ if (! isset ( $current_list )) {
 			
 		$check_exist = $addon_data ['check'];
 		$is_installed = false;
+		$check_function = isset($addon_data['check_function']) ? $addon_data['check_function'] : '';
 			
 		if (! empty ( $check_exist )) {
 			if (defined ( $check_exist )) {
+				$is_installed = true;
+			}
+		}
+		
+		if (!empty($check_function)) {
+			if (function_exists($check_function)) {
 				$is_installed = true;
 			}
 		}

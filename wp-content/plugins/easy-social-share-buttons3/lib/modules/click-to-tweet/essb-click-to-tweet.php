@@ -64,6 +64,7 @@ function essb_ctt_shortcode($atts) {
 
 	, $atts ) );
 	
+	
 	$handle = $user;
 	
 	if (function_exists ( 'mb_internal_encoding' )) {
@@ -182,6 +183,7 @@ function essb_ctt_shortcode($atts) {
 		$rel = '';
 	
 	}
+	
 	
 	if (! is_feed ()) {
 		
