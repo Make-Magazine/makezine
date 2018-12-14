@@ -1,5 +1,5 @@
 {
-  "cdn": "https://assets.contextly.com/kit/",
+  "cdn": "https://assets.context.ly/kit/",
   "main": {
     "dev": "//dev.contextly.com/",
     "live": "//contextly.com/"
