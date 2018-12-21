@@ -330,7 +330,14 @@ function make_load_resources() {
   $my_version = $my_theme->get('Version');
 	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery', 'fancybox' ), $my_version, true );
 	wp_enqueue_script('universal', UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/js/min/universal.min.js', array(), $my_version, true);
-
+	// Just what's necessary to have js files use the admin-ajax
+   wp_localize_script('misc-scripts', 'ajax_object',
+	  array(
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'home_url' => get_home_url(),
+			'logout_nonce' => wp_create_nonce('ajax-logout-nonce'),
+	  )
+	);
 
 	// What page are we on? And what is the pages limit?
 	wp_localize_script( 'make-projects', 'vars', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -342,6 +349,7 @@ function make_load_resources() {
 	if ( is_page( 315793 ) )
 		wp_enqueue_script( 'make-sort-table', get_stylesheet_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), false, true );
 	}
+
 
 add_action( 'wp_enqueue_scripts', 'make_load_resources' );
 

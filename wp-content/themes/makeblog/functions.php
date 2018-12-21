@@ -314,6 +314,7 @@ function load_scripts() {
    if(is_page_template( 'page-gift-guide-general.php' ) ) {
       wp_enqueue_script('vue-app', get_stylesheet_directory_uri() . '/Vue/gift-guide/dist/main.min.js', array(), $my_version);
    }
+
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
@@ -983,9 +984,18 @@ function get_theme_mod_img($mod_name){
     return str_replace(array('http:', 'https:'), '', get_theme_mod($mod_name));
 }
 
-
 //
 // Using wp_get_attachment_url filter, we can fix the dreaded mixed content browser warning
 //
 add_filter( 'wp_get_attachment_url', 'set_url_scheme' );
 
+
+// Making error logs for ajax to call
+add_action( 'wp_ajax_make_error_log', 'make_error_log' );
+add_action( 'wp_ajax_nopriv_make_error_log', 'make_error_log' );
+
+/** Write to PHP error log */
+function make_error_log(){
+  $error = filter_input(INPUT_POST, 'make_error', FILTER_SANITIZE_STRING);
+  error_log(print_r($error, TRUE));
+}
