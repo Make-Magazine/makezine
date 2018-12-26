@@ -228,6 +228,9 @@
         &:before {
             content: "\e870";
         }
+        @media (max-width: 767px) {
+            margin-top: 0;
+        }
     }
 }
 
@@ -238,9 +241,13 @@
     width: 11.2%;
     z-index: 99;
     @media (max-width: 767px) {
-        right: 2%;
+         position: fixed;
+        right: 68px;
         top: 5px;
-        position: fixed;
+        z-index: 1000;
+    }
+    @media (max-width: 577px) {
+        right: 16px;
     }
     li {
        list-style: none;
@@ -262,6 +269,7 @@
     top: 10px;
     @media (max-width: 767px) {
        bottom: 12px;
+       overflow: visible;
     }
     .fa-search {
       color: #fff;
