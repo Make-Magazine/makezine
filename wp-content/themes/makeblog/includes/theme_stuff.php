@@ -302,9 +302,9 @@ function make_load_resources() {
 
   // To ensure CSS files are downloaded in parallel, always include CSS before JavaScript.
   //wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
-  wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.css' );
-  wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.css');
-  wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
+  wp_enqueue_style( 'make-css', get_stylesheet_directory_uri() . '/css/style.min.css' );
+  wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/version-2/css/style.min.css');
+  wp_enqueue_style( 'make-print', get_stylesheet_directory_uri() . '/css/print.min.css', array(), false, 'print' );
   wp_enqueue_style( 'roboto-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700', false );
   wp_enqueue_style( 'roboto-slab-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
   wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', false );
@@ -319,7 +319,7 @@ function make_load_resources() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), false, false );
 	wp_enqueue_script( 'header-version-2', get_stylesheet_directory_uri() . '/version-2/js/header.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'single-story', get_stylesheet_directory_uri() . '/version-2/js/single-story.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'single-story', get_stylesheet_directory_uri() . '/version-2/js/single-story.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/version-2/js/jquery.lazyload.min.js', array( 'jquery' ));
 	wp_enqueue_script( 'make-oembed', get_stylesheet_directory_uri() . '/js/jquery.oembed.js', array( 'jquery' ), false, true );
@@ -328,7 +328,7 @@ function make_load_resources() {
   wp_enqueue_script('auth0', 'https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js', array(), false, true );
   $my_theme = wp_get_theme();
   $my_version = $my_theme->get('Version');
-	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/misc.min.js', array( 'jquery', 'fancybox' ), $my_version, true );
+	wp_enqueue_script( 'misc-scripts', get_stylesheet_directory_uri() . '/js/footer-scripts/min/built.min.js', array( 'jquery', 'fancybox' ), $my_version, true );
 	wp_enqueue_script('universal', UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/js/min/universal.min.js', array(), $my_version, true);
 	// Just what's necessary to have js files use the admin-ajax
    wp_localize_script('misc-scripts', 'ajax_object',

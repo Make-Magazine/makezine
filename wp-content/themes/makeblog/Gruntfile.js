@@ -10,10 +10,10 @@ module.exports = function(grunt) {
     'Vue/gift-guide/src/*.vue',
   ];
   var lessSrcFiles = {
-    'css/style.css': 'less/style.less',
-    'css/print.css': 'less/print.less',
-    'version-2/css/style.css': 'version-2/less/style.less',
-    'reviews/css/master.css': 'reviews/less/master.less'
+   //  'css/style.css': 'less/style.less',
+   //  'css/print.css': 'less/print.less',
+   //  'version-2/css/style.css': 'version-2/less/style.less',
+   //  'reviews/css/master.css': 'reviews/less/master.less'
   };
   // All configurations go here
   grunt.initConfig({
