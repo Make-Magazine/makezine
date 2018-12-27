@@ -33,18 +33,25 @@
     "js:footer:uglify": "uglifyjs js/footer-scripts/*.js -o js/footer-scripts/min/built.min.js -c -m --source-map \"root='../../../', url='built.min.js.map'\"",
     "js:singlestory:uglify": "uglifyjs version-2/js/single-story/*.js -o version-2/js/single-story.min.js -c -m --source-map \"root='../../', url='single-story.min.js.map'\"",
     "js:reviews:uglify": "uglifyjs reviews/js/src/index.js -o reviews/js/min/index.min.js -c -m --source-map \"root='../../', url='index.min.js.map'\"",
-    "buildGGx:prod": "NODE_ENV=production browserify -t vueify -g envify -e ./Vue/gift-guide/src/main.js | uglifyjs -c -m > ./Vue/gift-guide/dist/main.min.js",
-    "buildGG:prod": "NODE_ENV=production browserify ./Vue/gift-guide/src/main.js  -o ./Vue/gift-guide/dist/main.min.js",
-    "buildGG:dev": "NODE_ENV=development browserify -t vueify -g envify -e ./Vue/gift-guide/src/main.js > ./Vue/gift-guide/dist/main.min.js",
-    "testgg": "webpack --config ./Vue/gift-guide/build/webpack.config.dev.js",
+    "js:giftguide:build": "NODE_ENV=production browserify -t vueify -g envify -e ./Vue/gift-guide/src/main.js > ./Vue/gift-guide/dist/main.js -d",
+    "postjs:giftguide:build": "babel ./Vue/gift-guide/dist/main.js -o ./Vue/gift-guide/dist/main.es5.js --source-maps inline && uglifyjs ./Vue/gift-guide/dist/main.es5.js -o ./Vue/gift-guide/dist/main.min.js -c -m --source-map \"root='../../../', url='main.min.js.map', content='inline'\"",
     "onchange:less:mz": "onchange 'less/make/*.less' 'less/bootstrap/*.less' 'less/style.less' -- npm run less:mz:compile",
     "onchange:less:mzprint": "onchange 'less/print.less' -- npm run less:mzprint:compile",
     "onchange:less:v2": "onchange 'version-2/less/*.less' -- npm run less:v2:compile",
-    "onchange:less:reviews": "onchange 'reviews/less/**/*.less' -- npm run less:reviews:compile"
+    "onchange:less:reviews": "onchange 'reviews/less/**/*.less' -- npm run less:reviews:compile",
+    "onchange:js:footer": "onchange 'js/footer-scripts/*.js' -- npm run js:footer:uglify",
+    "onchange:js:singlestory": "onchange 'version-2/js/single-story/*.js' -- npm run js:singlestory:uglify",
+    "onchange:js:reviews": "onchange 'reviews/js/src/index.js' -- npm run js:reviews:uglify",
+    "onchange:js:giftguide": "onchange 'Vue/gift-guide/src/*.js' 'Vue/gift-guide/src/*.vue' -- npm run js:giftguide:build",
+    "build": "npm-run-all js:**:uglify js:**:build less:**:compile",
+    "build:cachebust": "npm-run-all cachebust:update js:**:uglify  js:**:build less:**:compile",
+    "dev": "npm-run-all build -p onchange:js:** onchange:less:**"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
     "babelify": "^8.0.0",
     "bootstrap-less": "^3.3.8",
     "browserify": "^16.2.3",
@@ -69,16 +76,17 @@
     "uglify-js": "^3.4.9",
     "vue": "^2.5.17",
     "vue-lazyload": "^1.2.6",
-    "vue-loader": "^15.4.2",
     "vue-scrollto": "^2.13.0",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.5.21",
-    "vueify": "^9.4.1",
-    "webpack": "^4.28.2",
-    "webpack-cli": "^3.1.2"
+    "vueify": "^9.4.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "vue-select": "^2.5.1"
-  }
+  },
+  "babel": {
+      "presets": ["env"]
+   },
+   "vue": {
+      "productionSourceMap": true
+   }
 }

@@ -28,7 +28,7 @@ Vue.use(VueScrollTo, {
 // that the data fetching can happen in the background before load event 
 // even fires, to help speed up the overall impression of 'loaded' for the user
 window.addEventListener('load', function () {
-   vm = new Vue({
+   var vm = new Vue({
       el: '#gift-guide-temp',
       data: {},
       //render: render => render(App) // this is the ES6 way, but don't use it until we have proper babel set up
