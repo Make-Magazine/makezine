@@ -25,7 +25,7 @@ $cat_name = $terms->name;
 
 <div class="row">
 	<header class="reviews-header col-xs-12">
-		<h1>Digital Fabrication Tool Guide - <?php echo $cat_name ?></h1>
+		<h1><?php echo the_title(); ?></h1>
 
 		<nav class="review-nav">
 
