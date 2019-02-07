@@ -36,7 +36,7 @@ window.addEventListener('load', function() {
     redirectUri: AUTH0_CALLBACK_URL,
     audience: 'https://' + AUTH0_DOMAIN + '/userinfo',
     responseType: 'token id_token',
-    scope: 'openid profile email',
+    scope: 'openid profile email user_metadata',
     leeway: 60
   });
 
@@ -114,9 +114,11 @@ window.addEventListener('load', function() {
       if (profile) {
         userProfile = profile;
         // display the avatar
-        document.querySelector('#profile-view img').src = userProfile.picture;
-        document.querySelector('#profile-view img').style.display = "block";
-        document.querySelector('#profile-view .profile-email').innerHTML = userProfile.email; 
+        document.querySelector('.dropdown-toggle img').src = userProfile.picture;
+		  document.querySelector('.profile-info img').src = userProfile.picture;
+        document.querySelector('.dropdown-toggle img').style.display = "block";
+		  document.querySelector('.profile-email').innerHTML = userProfile.email; 
+		  document.querySelector('.profile-info .profile-name').innerHTML = userProfile['http://makershare.com/first_name'] + " " + userProfile['http://makershare.com/last_name']; 
       }
 		if (err) {
 			errorMsg("There was an issue logging in at the getProfile phase. That error was: " + JSON.stringify(err));

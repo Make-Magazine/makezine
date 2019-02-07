@@ -30,7 +30,7 @@ class Theme {
 		) );
 
 		// Enqueue our Product Review styles.
-		wp_enqueue_style( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/css/master.css', array(
+		wp_enqueue_style( 'make-reviews', get_stylesheet_directory_uri() . '/reviews/css/master.min.css', array(
 			'style'
 		) );
 	}
