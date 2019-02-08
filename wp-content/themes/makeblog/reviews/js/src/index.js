@@ -23,7 +23,11 @@ var ReviewsFilters = {
 	loading_class: 'filters-loading'
 };
 
+var storedFilterData,
+	 storedSortData;
+
 (function ($, filters) {
+
 
 	'use strict';
 
@@ -70,7 +74,7 @@ var ReviewsFilters = {
 	};
 
 	filters.update = function () {
-		sessionStorage.setItem("filters_data", JSON.stringify(filters.filters_data));
+		storedFilterData = JSON.stringify(filters.filters_data);
 		filters._update_selected_filter_list();
 		filters._update_from_remote();
 	};
@@ -155,7 +159,7 @@ var ReviewsFilters = {
 	 }
 
 		filters.sortby = $(this).find(':input').val();
-		sessionStorage.setItem("sort", filters.sortby);
+		storedSortData = filters.sortby;
 
 		filters._update_from_remote();
     return false;
@@ -217,13 +221,13 @@ var ReviewsFilters = {
 	};
 
 	filters.load_stored_data = function () {
-		var stored_filters = sessionStorage.getItem("filters_data");
+		var stored_filters = storedFilterData;
 
 		if (stored_filters) {
 			filters.filters_data = JSON.parse(stored_filters);
 		}
 
-		var stored_sort = sessionStorage.getItem("sort");
+		var stored_sort = storedSortData;
 		if (stored_sort) {
 			filters.sortby = stored_sort;
 			$('input[name="sort"][value="' + stored_sort + '"]').attr('checked', true);
