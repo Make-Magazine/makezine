@@ -28,9 +28,7 @@ var storedFilterData,
 
 (function ($, filters) {
 
-
 	'use strict';
-
 	filters.update_records = function () {
 		$(filters.item + ":visible").remove();
 
@@ -74,7 +72,11 @@ var storedFilterData,
 	};
 
 	filters.update = function () {
-		storedFilterData = JSON.stringify(filters.filters_data);
+		if (typeof sessionStorage !== 'undefined') {
+			sessionStorage.setItem("filters_data", JSON.stringify(filters.filters_data));
+		}else{
+			storedFilterData = JSON.stringify(filters.filters_data);
+		}
 		filters._update_selected_filter_list();
 		filters._update_from_remote();
 	};
@@ -159,7 +161,11 @@ var storedFilterData,
 	 }
 
 		filters.sortby = $(this).find(':input').val();
-		storedSortData = filters.sortby;
+		if (typeof sessionStorage !== 'undefined') {
+			sessionStorage.setItem("sort", filters.sortby);
+		}else{
+			storedSortData = filters.sortby;
+		}
 
 		filters._update_from_remote();
     return false;
@@ -221,13 +227,19 @@ var storedFilterData,
 	};
 
 	filters.load_stored_data = function () {
+		
 		var stored_filters = storedFilterData;
-
+		if (typeof sessionStorage !== 'undefined') {
+			stored_filters = sessionStorage.getItem("filters_data");
+		}
 		if (stored_filters) {
 			filters.filters_data = JSON.parse(stored_filters);
 		}
 
 		var stored_sort = storedSortData;
+		if (typeof sessionStorage !== 'undefined') {
+			stored_sort = sessionStorage.getItem("sort");
+		}
 		if (stored_sort) {
 			filters.sortby = stored_sort;
 			$('input[name="sort"][value="' + stored_sort + '"]').attr('checked', true);
