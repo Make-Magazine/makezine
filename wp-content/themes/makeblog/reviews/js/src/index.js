@@ -72,7 +72,7 @@ var storedFilterData,
 	};
 
 	filters.update = function () {
-		if (typeof sessionStorage !== 'undefined') {
+		if (navigator.cookieEnabled) {
 			sessionStorage.setItem("filters_data", JSON.stringify(filters.filters_data));
 		}else{
 			storedFilterData = JSON.stringify(filters.filters_data);
@@ -161,7 +161,7 @@ var storedFilterData,
 	 }
 
 		filters.sortby = $(this).find(':input').val();
-		if (typeof sessionStorage !== 'undefined') {
+		if (navigator.cookieEnabled) {
 			sessionStorage.setItem("sort", filters.sortby);
 		}else{
 			storedSortData = filters.sortby;
@@ -229,7 +229,7 @@ var storedFilterData,
 	filters.load_stored_data = function () {
 		
 		var stored_filters = storedFilterData;
-		if (typeof sessionStorage !== 'undefined') {
+		if (navigator.cookieEnabled) {
 			stored_filters = sessionStorage.getItem("filters_data");
 		}
 		if (stored_filters) {
@@ -237,7 +237,7 @@ var storedFilterData,
 		}
 
 		var stored_sort = storedSortData;
-		if (typeof sessionStorage !== 'undefined') {
+		if (navigator.cookieEnabled) {
 			stored_sort = sessionStorage.getItem("sort");
 		}
 		if (stored_sort) {
