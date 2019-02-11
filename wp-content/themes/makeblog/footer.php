@@ -36,11 +36,6 @@ sg_beacon('init','Mjg4MjQzLTJiMjdlNGU0NmM3ZDM3YWQ2YWJiOTEwNWRhNDM0ZGQ1NTFlZTdhN2
 </script>
 <!-- End Survey Gizmo Beacon -->
 
-<!-- Checks the URL for which thank you modal to how -->
-<?php echo display_thank_you_modal_if_signed_up(); ?>
-
-<!-- Subscribe return path overlay -->
-<?php echo subscribe_return_path_overlay(); ?>
 
 <script>
   //Temporary GA tracking for clicks to header magazine subsciption cover image

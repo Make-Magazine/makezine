@@ -447,64 +447,6 @@ function youtube_shortcode_modal($atts){
 }
 
 
-/**
- * Adds the subscribe header return path overlay
- */
-function subscribe_return_path_overlay() { ?>
-    <div class="overlay-div overlay-slidedown hidden-xs hidden-sm">
-        <div class="container-fluid-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 overlay-1">
-                        <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/img/magazine-covers/Make-magazine-cover-55-for-overlay.jpg" alt="Make: magazine cover, subscribe here" />
-                    </div>
-                    <div class="col-sm-4 overlay-2">
-                        <h2>Get the Magazine</h2>
-                        <p>Make: is the voice of the Maker Movement, empowering, inspiring, and connecting Makers worldwide to tinker and hack. Subscribe to Make Magazine Today!</p>
-                        <a class="black-overlay-btn" target="_blank" href="https://readerservices.makezine.com/mk/default.aspx?pc=MK&pk=">SUBSCRIBE</a>
-                    </div>
-                    <div class="col-sm-4 overlay-3">
-                        <h2>Sign up for the Make: Newsletter</h2>
-                        <p>Stay inspired, keep making.</p>
-                        <?php
-                        $isSecure = "http://";
-                        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-                            $isSecure = "https://";
-                        }
-                        ?>
-                        <form class="sub-form whatcounts-signup1o" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-                            <input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101"/><!-- Makezine -->
-                            <input type="hidden" name="cmd" value="subscribe"/>
-                            <input type="hidden" name="custom_source" value="Subscribe return path overlay"/>
-                            <input type="hidden" name="custom_incentive" value="none"/>
-                            <input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>"/>
-                            <input type="hidden" id="format_mime" name="format" value="mime"/>
-                            <input type="hidden" name="goto" value="<?php  echo $isSecure. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>?thankyou=true&subscribed-to=make-newsletter"/>
-                            <input type="hidden" name="custom_host" value="makezine.com" />
-                            <input type="hidden" name="errors_to" value=""/>
-                            <div id="recapcha-header-overlay" class="g-recaptcha" data-size="invisible" data-sitekey="6Lf_-kEUAAAAAHtDfGBAleSvWSynALMcgI1hc_tP"></div> <!--style="transform:scale(0.68);-webkit-transform:scale(0.68);transform-origin:0 0;-webkit-transform-origin:0 0;margin-bottom:-8px;"-->
-                            <input name="email" id="wc-email-o" class="overlay-input" placeholder="Enter your email" required type="email">
-                            <input value="GO" class="black-overlay-btn" type="submit">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        jQuery('#trigger-overlay, .overlay-div').not('.mobile-sticky #trigger-overlay').hover(
-            function () {
-                jQuery('.overlay-div').stop().addClass( 'open' );
-                jQuery( 'body' ).addClass( 'modal-open' );
-            },
-            function () {
-                jQuery('.overlay-div').stop().removeClass( 'open' );
-                jQuery( 'body' ).removeClass( 'modal-open' );
-            }
-        );
-    </script>
-<?php }
-
 
 /**
  * Checks the URL for which thank you modal to how.

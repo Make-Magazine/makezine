@@ -277,18 +277,7 @@ jQuery(document).on('submit', '.whatcounts-signup1s', function (e) {
   e.preventDefault();
   onSubmitPostSide();
 });
-// Header Overlay
-var onSubmitHeaderOverlay = function(token) {
-  var bla = jQuery('#wc-email-o').val();
-  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signup1o').serialize());
-  jQuery('.fancybox-thx').trigger('click');
-  jQuery('.nl-modal-email-address').text(bla);
-  jQuery('.whatcounts-signup2 #email').val(bla);
-}
-jQuery(document).on('submit', '.whatcounts-signup1o', function (e) {
-  e.preventDefault();
-  onSubmitHeaderOverlay();
-});
+
 // Header mobile
 var onSubmitHeaderMobile = function(token) {
   var bla = jQuery('#wc-email-o').val();
