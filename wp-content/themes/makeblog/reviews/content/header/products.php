@@ -5,8 +5,20 @@ $image = get_field('hero_image');
 $awards = get_field('winners');
 $container = Reviews()->container();
 $parent = $container['Relationships']->get_review_for_product( get_the_ID() );
-$parent_title = $parent[0]->post_name;
+$parent_name = $parent[0]->post_name;
+$parent_title = $parent[0]->post_title;
+$parent_url = get_permalink( $parent[0]->ID );
+?>
 
+<div class="breadcrumbs">
+	<a href="<?php echo($parent_url); ?>">
+		<?php echo ($parent_title); ?>
+	</a>
+	> 
+	<?php echo( get_the_title() ); ?>
+</div>
+
+<?php
 if ( ! empty( $image ) ) {
 ?>
 <div id="hero-products" style="background-image: url(<?php echo esc_attr( $image['url'] );?>);">
@@ -89,11 +101,11 @@ if ( ! empty( $image ) ) {
 							<?php if( $awards && ( ! in_array('', $awards) ) ): ?>
 								<div class="sidebar-awards meta-block visible-xs-block">
 									<div class="sidebar-awards-left <?php
-										if ( $parent_title === 'boards' ) {
+										if ( $parent_name === 'boards' ) {
 											echo 'sd-boards-badge';
-										} else if ( $parent_title === '3dprinters' ) {
+										} else if ( $parent_name === '3dprinters' ) {
 											echo 'sd-3dprinters-badge';
-										} else if ( $parent_title === 'drones' ) {
+										} else if ( $parent_name === 'drones' ) {
 											echo 'sd-drones-badge';
 										}  ?>">
 									</div>
@@ -111,7 +123,7 @@ if ( ! empty( $image ) ) {
 							/**
 							 * Setup the 3D View
 							 */
-							if ( $parent_title === '3dprinters' ) {
+							if ( $parent_name === '3dprinters' ) {
 								//Added get_site_url() to account for any environment.
 								$view_config_path = get_field( '3d_view_config' );
 								$asset_path = get_site_url() . $view_config_path;
