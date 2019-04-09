@@ -35,6 +35,7 @@ abstract class Jetpack_Admin_Page {
 	}
 
 	function add_actions() {
+		global $pagenow;
 
 		// If user is not an admin and site is in Dev Mode, don't do anything
 		if ( ! current_user_can( 'manage_options' ) && Jetpack::is_development_mode() ) {
@@ -61,6 +62,18 @@ abstract class Jetpack_Admin_Page {
 		if ( ! self::$block_page_rendering_for_idc ) {
 			add_action( "admin_print_styles-$hook", array( $this, 'additional_styles' ) );
 		}
+		// If someone just activated Jetpack, let's show them a fullscreen connection banner.
+		if (
+			( 'admin.php' === $pagenow && isset( $_GET['page'] ) && 'jetpack' === $_GET['page'] )
+			&& ! Jetpack::is_active()
+			&& current_user_can( 'jetpack_connect' )
+			&& ! Jetpack::is_development_mode()
+		) {
+			add_action( 'admin_enqueue_scripts', array( 'Jetpack_Connection_Banner', 'enqueue_banner_scripts' ) );
+			add_action( 'admin_print_styles', array( Jetpack::init(), 'admin_banner_styles' ) );
+			add_action( 'admin_notices', array( 'Jetpack_Connection_Banner', 'render_connect_prompt_full_screen' ) );
+			delete_transient( 'activated_jetpack' );
+		}
 
 		// Check if the site plan changed and deactivate modules accordingly.
 		add_action( 'current_screen', array( $this, 'check_plan_deactivate_modules' ) );
@@ -72,12 +85,12 @@ abstract class Jetpack_Admin_Page {
 	function admin_head() {
 		if ( isset( $_GET['configure'] ) && Jetpack::is_module( $_GET['configure'] ) && current_user_can( 'manage_options' ) ) {
 			/**
-			 * Fires in the <head> of a particular Jetpack configuation page.
+			 * Fires in the <head> of a particular Jetpack configuration page.
 			 *
 			 * The dynamic portion of the hook name, `$_GET['configure']`,
 			 * refers to the slug of module, such as 'stats', 'sso', etc.
 			 * A complete hook for the latter would be
-			 * 'jetpack_module_configuation_head_sso'.
+			 * 'jetpack_module_configuration_head_sso'.
 			 *
 			 * @since 3.0.0
 			 */
@@ -130,18 +143,6 @@ abstract class Jetpack_Admin_Page {
 	}
 
 	/**
-	 * Checks if WordPress version is too old to have REST API.
-	 *
-	 * @since 4.3
-	 *
-	 * @return bool
-	 */
-	function is_wp_version_too_old() {
-		global $wp_version;
-		return ( ! function_exists( 'rest_api_init' ) || version_compare( $wp_version, '4.4-z', '<=' ) );
-	}
-
-	/**
 	 * Checks if REST API is enabled.
 	 *
 	 * @since 4.4.2
@@ -184,7 +185,7 @@ abstract class Jetpack_Admin_Page {
 			return false;
 		}
 
-		$current = Jetpack::get_active_plan();
+		$current = Jetpack_Plan::get();
 
 		$to_deactivate = array();
 		if ( isset( $current['product_slug'] ) ) {
@@ -206,7 +207,7 @@ abstract class Jetpack_Admin_Page {
 
 			$to_leave_enabled = array();
 			foreach ( $to_deactivate as $feature ) {
-				if ( Jetpack::active_plan_supports( $feature ) ) {
+				if ( Jetpack_Plan::supports( $feature ) ) {
 					$to_leave_enabled []= $feature;
 				}
 			}
@@ -231,9 +232,9 @@ abstract class Jetpack_Admin_Page {
 				padding-left: 0 !important;
 			}
 			#wpbody-content {
-				background-color: #f3f6f8;
+				background-color: #f6f6f6;
 			}
-			
+
 			#jp-plugin-container .wrap {
 				margin: 0 auto;
 				max-width:45rem;
@@ -241,6 +242,9 @@ abstract class Jetpack_Admin_Page {
 			}
 			#jp-plugin-container.is-wide .wrap {
 				max-width: 1040px;
+			}
+			#jp-plugin-container .wrap .jetpack-wrap-container {
+				margin-top: 1em;
 			}
 			.wp-admin #dolly {
 			    float: none;
