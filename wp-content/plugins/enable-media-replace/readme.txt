@@ -3,7 +3,8 @@ Contributors: ShortPixel
 Donate link: https://www.paypal.me/resizeImage
 Tags: replace, attachment, media, files, replace image, replace jpg, change media, replace media, image, file
 Requires at least: 4.0
-Tested up to: 4.9
+Tested up to: 5.1
+Requires PHP: 5.4
 Stable tag: trunk
 
 Easily replace any attached image/file by simply uploading a new file in the Media Library edit view - a real time saver!
@@ -46,10 +47,24 @@ If you want more control over the format used to display the time, you can use t
 
 == Changelog ==
 
+= 3.2.9 =
+* properly replace thumbnails names in the content when the replaced image has a different aspect ratio, thus the new thumbnails have a different height in the name.
+
+= 3.2.8 =
+* fix for failures in link updating when replacing file because of addslashes - use prepared query instead
+* replace basename with wp_basename because basename doesn't work well with UTF8
+
+= 3.2.7 =
+* Add minimum required php version to run the plugin.
+* Security: Prevent direct access to php files.
+* Security: Prevent direct access to directories.
+* Security: Escape translation strings using `esc_attr__()` and `esc_html__()` functions.
+* Fix RTL issues.
+
 = 3.2.6 =
 * no more 404 error if no image was selected when trying to replace it
 * added preview so you can check the image being replaced and also the image that's being replaced with
-* .dat files can be replaced (functionality accidetanly removed in the previous version)
+* .dat files can be replaced (functionality accidentally removed in the previous version)
 * added compatibility with S3 upload plugin
 * when an image is replaced the date is also updated
 
@@ -255,6 +270,6 @@ Second, if the file really looks unchanged, make sure WordPress has write permis
 3. The upload options.
 4. Get the file ID in the edit file URL
 
-== Wishlist / Coming attractons ==
+== Wishlist / Coming attractions ==
 
 Do you have suggestions? Feel free to contact ShortPixel <a href="https://shortpixel.com/contact" target="_blank">here</a>

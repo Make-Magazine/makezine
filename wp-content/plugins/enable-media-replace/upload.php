@@ -1,11 +1,16 @@
 <?php
+if ( ! defined( 'ABSPATH' ) )
+	exit; // Exit if accessed directly.
+
 if (!current_user_can('upload_files'))
-	wp_die(__('You do not have permission to upload files.', 'enable-media-replace'));
+	wp_die( esc_html__('You do not have permission to upload files.', 'enable-media-replace') );
 
 // Define DB table names
 global $wpdb;
 $table_name = $wpdb->prefix . "posts";
 $postmeta_table_name = $wpdb->prefix . "postmeta";
+
+require_once('thumbnail_updater.php');
 
 /**
  * Delete a media file and its thumbnails.
@@ -18,7 +23,7 @@ function emr_delete_current_files( $current_file, $metadta = null ) {
 
 	// Find path of current file
 	$current_path = substr($current_file, 0, (strrpos($current_file, "/")));
-	
+
 	// Check if old file exists first
 	if (file_exists($current_file)) {
 		// Now check for correct file permissions for old file
@@ -29,11 +34,11 @@ function emr_delete_current_files( $current_file, $metadta = null ) {
 		}
 		else {
 			// File exists, but has wrong permissions. Let the user know.
-			printf(__('The file %1$s can not be deleted by the web server, most likely because the permissions on the file are wrong.', "enable-media-replace"), $current_file);
-			exit;	
+			printf( esc_html__('The file %1$s can not be deleted by the web server, most likely because the permissions on the file are wrong.', "enable-media-replace"), $current_file);
+			exit;
 		}
 	}
-	
+
 	// Delete old resized versions if this was an image
 	$suffix = substr($current_file, (strlen($current_file)-4));
 	$prefix = substr($current_file, 0, (strlen($current_file)-4));
@@ -50,7 +55,6 @@ function emr_delete_current_files( $current_file, $metadta = null ) {
 		if ( empty( $metadata ) ) {
 			$metadata = wp_get_attachment_metadata( $_POST["ID"] );
 		}
-//		var_dump($metadata);exit;
 
 		if (is_array($metadata)) { // Added fix for error messages when there is no metadata (but WHY would there not be? I don't know…)
 			foreach($metadata["sizes"] AS $thissize) {
@@ -202,18 +206,16 @@ function emr_normalize_file_urls( $old, $new ) {
 // Get old guid and filetype from DB
 $sql = "SELECT post_mime_type FROM $table_name WHERE ID = '" . (int) $_POST["ID"] . "'";
 list($current_filetype) = $wpdb->get_row($sql, ARRAY_N);
-$current_filename = wp_get_attachment_url($_POST['ID']);
 
 // Massage a bunch of vars
-$current_guid = $current_filename;
-$current_filename = substr($current_filename, (strrpos($current_filename, "/") + 1));
+$current_guid =wp_get_attachment_url($_POST['ID']);
 
 $ID = (int) $_POST["ID"];
 
 $current_file = get_attached_file($ID, apply_filters( 'emr_unfiltered_get_attached_file', true ));
 $current_path = substr($current_file, 0, (strrpos($current_file, "/")));
 $current_file = preg_replace("|(?<!:)/{2,}|", "/", $current_file);
-$current_filename = basename($current_file);
+$current_filename = wp_basename($current_file);
 $current_metadata = wp_get_attachment_metadata( $_POST["ID"] );
 
 $replace_type = $_POST["replace_type"];
@@ -225,9 +227,12 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
 	$filedata = wp_check_filetype_and_ext($_FILES["userfile"]["tmp_name"], $_FILES["userfile"]["name"]);
 
 	if ($filedata["ext"] == "") {
-		echo __("File type does not meet security guidelines. Try another.", 'enable-media-replace');
+		echo esc_html__("File type does not meet security guidelines. Try another.", 'enable-media-replace');
 		exit;
 	}
+
+	$thumbUpdater = new ThumbnailUpdater($ID);
+	$thumbUpdater->setOldMetadata($current_metadata);
 
 	$new_filename = $_FILES["userfile"]["name"];
 	$new_filesize = $_FILES["userfile"]["size"];
@@ -269,10 +274,17 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
         do_action('wp_handle_upload', array('file' => $current_file, 'url' => wp_get_attachment_url($ID), 'type' => $new_filetype));
 
         // Make thumb and/or update metadata
-		wp_update_attachment_metadata( $ID, wp_generate_attachment_metadata( $ID, $current_file ) );
+			$metadata = wp_generate_attachment_metadata( $ID, $current_file );
+			wp_update_attachment_metadata( $ID, $metadata );
 
-		// Trigger possible updates on CDN and other plugins 
+			$thumbUpdater->setNewMetadata($metadata);
+			$thumbUpdater->updateThumbnails();
+
+
+		// Trigger possible updates on CDN and other plugins
 		update_attached_file( $ID, $current_file);
+
+
 	} elseif ( 'replace_and_search' == $replace_type && apply_filters( 'emr_enable_replace_and_search', true ) ) {
 		// Replace file, replace file name, update meta data, replace links pointing to old file name
 
@@ -315,7 +327,7 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
 			"SELECT meta_value FROM $postmeta_table_name WHERE meta_key = '_wp_attached_file' AND post_id = %d;",
 			$ID
 		);
-		
+
 		$old_meta_name = $wpdb->get_row($sql, ARRAY_A);
 		$old_meta_name = $old_meta_name["meta_value"];
 
@@ -357,18 +369,21 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
 
 				// replace old URLs with new URLs.
 				$post_content = $rows["post_content"];
-				$post_content = addslashes( str_replace( $search_urls, $replace_urls, $post_content ) );
+				$post_content = str_replace( $search_urls, $replace_urls, $post_content );
 
 				$sql = $wpdb->prepare(
-					"UPDATE $table_name SET post_content = '$post_content' WHERE ID = %d;",
-					$rows["ID"]
+					"UPDATE $table_name SET post_content = %s WHERE ID = %d;",
+					array($post_content, $rows["ID"])
 				);
 
 				$wpdb->query( $sql );
 			}
 		}
 
-		// Trigger possible updates on CDN and other plugins 
+		$thumbUpdater->setNewMetadata($new_metadata);
+		$thumbUpdater->updateThumbnails();
+
+		// Trigger possible updates on CDN and other plugins
 		update_attached_file( $ID, $new_file );
 	}
 
@@ -382,7 +397,7 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {
 } else {
 	//TODO Better error handling when no file is selected.
 	//For now just go back to media management
-	$returnurl = admin_url("/wp-admin/upload.php");
+	$returnurl = admin_url("upload.php");
 }
 
 if (FORCE_SSL_ADMIN) {
