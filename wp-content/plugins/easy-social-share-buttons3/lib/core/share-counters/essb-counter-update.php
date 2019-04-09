@@ -128,6 +128,9 @@ function essb_counter_update_simple($post_id, $url, $full_url, $networks = array
 			case 'yummly' :
 				$cached_counters [$k] = essb_get_yummly_count($url);
 				break;
+			case 'addthis' :
+				$cached_counters [$k] = essb_get_addthis_count($url);
+				break;				
 			default:
 				if (!$recover_mode) {
 					$cached_counters [$k] = essb_get_internal_count($post_id, $k);
@@ -560,6 +563,18 @@ function essb_get_yummly_count($url) {
 	if (!empty($return_data)) {
 		$json = json_decode($return_data, true);
 		$result = isset($json['count']) ? intval($json['count']) : 0;
+	}
+
+	return $result;
+}
+
+function essb_get_addthis_count($url) {
+	$return_data = essb_counter_request('https://api-public.addthis.com/url/shares.json?url='.$url);
+
+	$result = 0;
+	if (!empty($return_data)) {
+		$json = json_decode($return_data, true);
+		$result = isset($json['shares']) ? intval($json['shares']) : 0;
 	}
 
 	return $result;
