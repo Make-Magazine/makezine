@@ -124,12 +124,7 @@
 									<div class="social-profile-cont">
 										<span class="sprite"></span>
 									</div>
-								</a>
-								<a class="sprite-googleplus-32" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank">
-									<div class="social-profile-cont">
-										<span class="sprite"></span>
-									</div>
-								</a>
+								</a>								
 							</div>
 							<div class="additional-content hidden-print">
 								<form action="<?php echo home_url(); ?>" class="search-make open">

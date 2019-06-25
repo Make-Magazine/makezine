@@ -99,8 +99,7 @@
 							<a class="sprite sprite-twitter"  href="//twitter.com/make" title="Twitter" target="_blank"></a>
 							<a class="sprite sprite-youtube" href="//youtube.com/make" title="Youtube" target="_blank"></a>
 							<a class="sprite sprite-pinterest" href="//pinterest.com/makemagazine/" title="Pinterest" target="_blank"></a>
-							<a class="sprite sprite-facebook" href="//facebook.com/makemagazine" title="Facebook" target="_blank"></a>
-							<a class="sprite sprite-google-plus" href="//plus.google.com/+MAKE/posts" rel="publisher" title="Google+" target="_blank"></a>
+							<a class="sprite sprite-facebook" href="//facebook.com/makemagazine" title="Facebook" target="_blank"></a>							
 						<!-- END socialArea -->
 						</div>
 					<!-- END span3 about-us -->

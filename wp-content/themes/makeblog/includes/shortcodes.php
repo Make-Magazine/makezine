@@ -511,10 +511,11 @@ function make_rtm() {
 add_shortcode( 'make_road_to_maker_faire', 'make_rtm' );
 
 function join_make_forum() {
-	$output = '<div class="join-make-forum">
+	/*$output = '<div class="join-make-forum">
 		<p>Whether you&#39;re making it with electronics, wood, a 3D printer, or just about anything else, the MAKE: Forum is probably talking about. All that&#39;s missing is you. Stop by and share your projects, ideas, or questions.</p>
 		<a href="https://plus.google.com/communities/105413589856236995389" target="_blank"><img src="http://makezineblog.files.wordpress.com/2013/04/join-make-forum.jpeg" width="620px" height="174px" alt="Join Make Forums" /></a>
-		</div>';
+		</div>';*/
+   $output = ''; //removing google plus
 	return $output;
 }
 
