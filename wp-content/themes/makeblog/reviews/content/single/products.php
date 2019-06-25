@@ -30,10 +30,10 @@ if ( ! empty( $image ) ){
 		<div id="product-sidebar" class="col-sm-4">
 			<?php get_template_part( 'reviews/content/sidebar/products' ); ?>
 		</div><!-- .col -->
+                <!-- comment out disqus code -->
+		<!--<div class="col-sm-12 pull-left">
 
-		<div class="col-sm-12 pull-left">
-
-			<?php echo do_shortcode( '[contextly_main_module]' ); ?>
+			<?php //echo do_shortcode( '[contextly_main_module]' ); ?>
 
 			<div id="disqus_thread"></div>
 			<script>
@@ -49,7 +49,7 @@ if ( ! empty( $image ) ){
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-		</div><!-- .col -->
+		</div>--> <!-- .col -->
 		<div class="ad-2">
       <?php global $make; print $make->ads->ad_leaderboard_alt_btf; ?>
     </div>

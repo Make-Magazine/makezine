@@ -80,6 +80,7 @@ function get_story_with_ajax() {
                       <div id="nativobelow"></div>
                     </div>
                 </div>
+                <!-- remove disqus
                 <div class="comments">
                     <button type="button" class="btn btn-info btn-lg"
                       data-toggle="modal" data-target="#disqus-modal"
@@ -88,7 +89,7 @@ function get_story_with_ajax() {
                         '<?php echo get_the_title(); ?>', 'en');">
                       Show comments
                     </button>
-                </div>
+                </div>-->
             </div>
             <aside class="col-sm-5 col-md-4 sidebar">
                 <div class="row author-info">
