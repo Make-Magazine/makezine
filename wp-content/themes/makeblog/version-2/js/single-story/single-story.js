@@ -591,7 +591,7 @@
                 eventLabel: window.location.href
             });
         });
-		  /*
+		  /* Comment out disqus
         // Disqus modal remove modal-backdrop
         $(document).on('click touchstart', '.modal-backdrop, .comments .close', function () {
             //$('.modal-backdrop').remove();
