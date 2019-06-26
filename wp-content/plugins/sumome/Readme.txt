@@ -1,9 +1,9 @@
-===  Proven Strategies To Automate Your Ecommerce Growth  ===
+===  Sumo - Boost Conversion and Sales  ===
 Contributors: SumoMe
 Tags: ecommerce, marketing, WooCommerce, email marketing, marketing strategies, analytics, campaign monitor, click to tweet, contact form, content analytics, convertkit, drip, email form, ExactTarget, exit-intent, Facebook, facebook share, FeedBlitz, floating social buttons, growth, heat map, heatmaps, Hubspot, image sharing, inbound marketing, Inbox First, infusionsoft, landing page, lightbox, links, mailchimp, mailerlite, mailing list, mailjet, MyEmma, MyNewsletterBuilder, newsletter, Ontraport, pardot, popup, sailthru, scroll box, share, share buttons, share image, sharebar, sharing, site traffic, sms, social, social bookmarking, social media buttons, social plugin, social sharing, subscribers, subscription, traffic growth, tweet button, twitter, twitter share, vero, vertical response, welcome mat, WhatCounts, widget, zapier
 Requires at least: 3.0.1
-Tested up to: 4.9.7
-Stable tag: 1.30
+Tested up to: 5.2.1
+Stable tag: 1.31
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,42 +11,56 @@ Sumo is trusted by over 600,000 businesses — small and large — in growing th
 
 == Description ==
 
-Sumo is trusted by over 600,000 businesses — small and large — in growing their email lists, customer base, and revenue online. With the self-guided and proven "Shortcuts", Sumo is the easiest tool to setup and use to build your mailing list, reduce cart abandonment, and increase your store's average order value.
+We just updated our pricing! Use Sumo for FREE and only pay when you get more customers.
+
+Sumo is the most powerful tool to grow your email list, increase conversions, and generate more sales for online businesses. More than 37,000 online businesses use Sumo to convert more purchases and delight their customers.
 
 Here's what Sumo can do for you:
 
-* Reduce cart abandonment with exit intent popups on your cart and checkout pages
 * Grow your email list with timed popups across your site
-* Increase your average order value with smart bars that incentivise your visitors to buy more
-* Create discount codes you can use to get more customers to buy
-* See the ROI from every email subscriber and sale you make 
+* Schedule one-off marketing emails or email drips to communicate with your subscribers
+* Ecommerce integrations and features to win back customers who abandon their cart and increase average order value
+* See the ROI from every email subscriber and sale you make
+
+
+### What Customers Are Saying About Sumo ######
+
+"Quick update after two months using Sumo - it has helped me generate $20k+ in sales already and it’s only been live for a few weeks! That’s almost $500 A DAY extra!" — Love Aroma
+
+"Sumo is a great platform. ROIs are transparent, and it provides great flexibility for advanced campaign strategies." — Loly in the Sky
+
+"I am actually mad at myself for not buying this sooner. My email signups are now around 8% (it used to be 1.3%) and people have bought after signing up!" — JJ Caprices
+
 
 ### Core Features Overview ######
 
-= PROVEN SUMO SHORTCUTS =
+= Grow your email list =
 
-Our self-guided Shortcuts give you the freedom to set-and-forget proven sales and marketing strategies on your Shopify store. With Shortcuts, you can create, design, and integrate the best eCommerce strategies in 3 minutes or less.
+Grow your email list by collecting email addresses with high-converting opt-in forms as visitors browse your site so you can follow up with them later and turn them into customers.
 
-= INTEGRATED WITH ALL MAJOR EMAIL SERVICES =
+= Email your subscribers =
 
-Connecting Sumo with your favorite email service provider takes seconds. Sumo syncs new email subscribers to your email service in real-time so you can grow your mailing list effectively.
+Send a welcome email to your subscriber as they join your email list and further build the relationship with them by sending them a one-off campaign or automated email drips.
 
-= ALL-IN-ONE MARKETING TOOLKIT =
+= Share your content and product =
 
-Besides Sumo Shortcuts, you can also use advanced form display rules, and activate Sumo's wide range of other tools such as Heat Maps, Push Notifications, and Live Chat to take your business to the next level.
+Add share buttons on your website effortlessly and allow your visitors to share your content and products with their circles on social media.
 
-= ROI-FOCUSED DASHBOARD =
+= Ecommerce features =
 
-Our dashboard doesn't just show you popup performance; it also shows you how much you are making from every email subscriber and sale Sumo generates you. Based on that data, Sumo will give you the best next action-step, so you know exactly what to do to grow your business.
+Sumo seamlessly integrates with WooCommerce to create unique offers and discounts along with beautiful forms that help you increase your average order value and reduce cart abandonment.
 
-= FREE FIRST-CLASS CUSTOMER SUPPORT =
+= Free customer support =
 
-At Sumo, your success is our success. Our Customer Success team is always ready to help you get the most out of Sumo, and accomplish meaningful growth for your business.
+Have questions on how to increase conversions and sales for your online business? Your success is our success. Our dedicated Customer Experience team will make sure your business is growing and you’re getting the most out of Sumo.
 
-= COMPLIANT WITH GOOGLE'S SEO UPDATES AND GDPR =
+= Secure and SEO-friendly =
 
-Our team always make sure Sumo is 100% compliant with Google's latest SEO updates, GDPR, and other security and privacy issues. So you can focus on growing your business and doing what you love.
+Compliant with GDPR and the latest SEO guidelines from Google so you can convert more visitors and make more sales.
 
+= Easy to get started =
+
+Get set up in minutes and use Sumo completely FREE.
 
 = Latest Updates =
 
@@ -87,23 +101,10 @@ Yes, we provide instant integration with MailChimp, Aweber, Constant Contact, Ca
 
 [See all of our screenshots at Sumo.com](http://sumo.com/?src=wordpress_ss)
 
-1. This screen shot is how to Sign up once you have activated the plugin
-2. This view shows the suite of Sumo apps
-3. Fully customizable email pop ups from our List Builder 3 app
-4. Total control of the design and feel of the pop ups
-5. Connect with all major email providers (MailChimp, Aweber, Constant Contact, Campaign Monitor, GetResponse, ActiveCampaign, MyEmma, Mad Mimi, Infusionsoft, Feedblitz, HubSpot, MyNewsletterBuilder, Inbox First, Sailthru, Klaviyo, Vero, Pardot, Zapier, Ontraport, ExactTarget, Vertical Response, Drip, MailerLite, WhatCounts, ConvertKit, MailJet, Maropost)
-6. A/B testing to maximize your conversion rate
-7. Advanced display rules to control which visitors see your pop ups and when
-8. Detailed stats page to track your email growth
-9. Super sexy sharing buttons for mobile and desktop (Share app)
-10. Performance of how your shares are doing
-11. Easily control where you place your share bars
-12. Free Heat Maps to see where your visitors are clicking or not
-13. Image share (social share buttons) to double or triple shares on your images
-14. Scroll box pop up that gets triggered based on a readers scrolling
-15. Content Analytics to track readers scrolling
-16. Let users Highlight text on your site and share it
-17. Welcome Mat shows a full-screen call to action of your choice. Works insanely well.
+1. Reduce Cart Abandonment Shortcut
+2. Grow Email List Shortcut
+3. Track how your forms perform
+4. See conversions and get Sumo Insights
 
 
 == Changelog ==
@@ -193,6 +194,9 @@ Yes, we provide instant integration with MailChimp, Aweber, Constant Contact, Ca
 
 = 1.30 =
 * Added WooCommerce functionality.  Updated Readme.  Tested up to the newest Wordpress version.
+
+= 1.31 =
+* Tested up to the newest Wordpress version.
 
 == Upgrade Notice ==
 
@@ -284,3 +288,6 @@ Yes, we provide instant integration with MailChimp, Aweber, Constant Contact, Ca
 
 = 1.30 =
 * Added WooCommerce functionality.  Updated Readme.  Tested up to the newest Wordpress version.
+
+= 1.31 =
+* Tested up to the newest Wordpress version.

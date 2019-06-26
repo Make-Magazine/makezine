@@ -264,4 +264,180 @@ class Tribe__Utils__Array {
 
 		return $found ? $mapped[0] : false;
 	}
+
+	/**
+	 * Duplicates any key prefixed with '_' creating an un-prefixed duplicate one.
+	 *
+	 * The un-prefixing and duplication is recursive.
+	 *
+	 * @since 4.9.5
+	 *
+	 * @param mixed $array     The array whose keys should be duplicated.
+	 * @param bool  $recursive Whether the un-prefixing and duplication should be
+	 *                         recursive or shallow.
+	 *
+	 * @return array The array with the duplicate, unprefixed, keys or the
+	 *               original input if not an array.
+	 */
+	public static function add_unprefixed_keys_to( $array, $recursive = false ) {
+		if ( ! is_array( $array ) ) {
+			return $array;
+		}
+
+		$unprefixed = array();
+		foreach ( $array as $key => $value ) {
+			if ( $recursive && is_array( $value ) ) {
+				$value = self::add_unprefixed_keys_to( $value, true );
+				// And also add it to the original array.
+				$array[ $key ] = array_merge( $array[ $key ], $value );
+			}
+
+			if ( 0 !== strpos( $key, '_' ) ) {
+				continue;
+			}
+			$unprefixed[ substr( $key, 1 ) ] = $value;
+		}
+
+		return array_merge( $array, $unprefixed );
+	}
+
+	/**
+	 * Filters an associative array non-recursively, keeping only the values attached
+	 * to keys starting with the specified prefix.
+	 *
+	 * @since 4.9.5
+	 *
+	 * @param array $array The array to filter.
+	 * @param string $prefix The prefix, or prefixes, of the keys to keep.
+	 *
+	 * @return array The filtered array.
+	 */
+	public static function filter_prefixed( array $array, $prefix ) {
+		$prefixes = implode( '|', array_map( 'preg_quote', (array) $prefix ) );
+		$pattern  = '/^(' . $prefixes . ')/';
+		$filtered = array();
+		foreach ( $array as $key => $value ) {
+			if ( ! preg_match( $pattern, $key ) ) {
+				continue;
+			}
+			$filtered[ $key ] = $value;
+		}
+
+		return $filtered;
+	}
+
+	/**
+	 * Flattens an array transforming each value that is an array and only contains one
+	 * element into that one element.
+	 *
+	 * Typical use case is to flatten arrays like those returned by `get_post_meta( $id )`.
+	 * Empty arrays are replaced with an empty string.
+	 *
+	 * @since 4.9.5
+	 *
+	 * @param array $array The array to flatten.
+	 *
+	 * @return array The flattened array.
+	 */
+	public static function flatten( array $array ) {
+		foreach ( $array as $key => &$value ) {
+			if ( ! is_array( $value ) ) {
+				continue;
+			}
+
+			$count = count( $value );
+
+			switch ( $count ) {
+				case 0:
+					$value = '';
+					break;
+				case 1:
+					$value = reset( $value );
+					break;
+				default:
+					break;
+			}
+		}
+
+		return $array;
+	}
+
+	/**
+	 * Duplicates any key not prefixed with '_' creating a prefixed duplicate one.
+	 *
+	 * The prefixing and duplication is recursive.
+	 *
+	 * @since 4.9.5
+	 *
+	 * @param mixed $array     The array whose keys should be duplicated.
+	 * @param bool  $recursive Whether the prefixing and duplication should be
+	 *                         recursive or shallow.
+	 *
+	 * @return array The array with the duplicate, prefixed, keys or the
+	 *               original input if not an array.
+	 */
+	public static function add_prefixed_keys_to( $array, $recursive = false ) {
+		if ( ! is_array( $array ) ) {
+			return $array;
+		}
+
+		$prefixed = array();
+		foreach ( $array as $key => $value ) {
+			if ( $recursive && is_array( $value ) ) {
+				$value = self::add_prefixed_keys_to( $value, true );
+				// And also add it to the original array.
+				$array[ $key ] = array_merge( $array[ $key ], $value );
+			}
+
+			if ( 0 === strpos( $key, '_' ) ) {
+				continue;
+			}
+
+			$prefixed[ '_' . $key ] = $value;
+		}
+
+		return array_merge( $array, $prefixed );
+	}
+
+	/**
+	 * Recursively key-sort an array.
+	 *
+	 * @since 4.9.5
+	 *
+	 * @param array $array The array to sort, modified by reference.
+	 *
+	 * @return bool The sorting result.
+	 */
+	public static function recursive_ksort( array &$array ) {
+		foreach ( $array as &$value ) {
+			if ( is_array( $value ) ) {
+				static::recursive_ksort( $value );
+			}
+		}
+
+		return ksort( $array );
+	}
+
+	/**
+	 * Returns the value associated with the first index, among the indexes, that is set in the array..
+	 *
+	 * @since 4.9.11
+	 *
+	 * @param array $array The array to search.
+	 * @param array $indexes The indexes to search; in order the function will look from the first to the last.
+	 * @param null  $default The value that will be returned if the array does not have any of the indexes set.
+	 *
+	 * @return mixed|null The set value or the default value.
+	 */
+	public static function get_first_set( array $array, array $indexes, $default = null ) {
+		foreach ( $indexes as $index ) {
+			if ( ! isset( $array[ $index ] ) ) {
+				continue;
+			}
+
+			return $array[ $index ];
+		}
+
+		return $default;
+	}
 }
