@@ -30,7 +30,8 @@ if ( ! empty( $image ) ){
 		<div id="product-sidebar" class="col-sm-4">
 			<?php get_template_part( 'reviews/content/sidebar/products' ); ?>
 		</div><!-- .col -->
-                <!-- comment out disqus code -->
+		
+      <!-- comment out disqus code -->
 		<!--<div class="col-sm-12 pull-left">
 
 			<?php //echo do_shortcode( '[contextly_main_module]' ); ?>

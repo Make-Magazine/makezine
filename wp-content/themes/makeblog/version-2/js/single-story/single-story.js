@@ -591,7 +591,7 @@
                 eventLabel: window.location.href
             });
         });
-<!-- remove disqus
+		  /*
         // Disqus modal remove modal-backdrop
         $(document).on('click touchstart', '.modal-backdrop, .comments .close', function () {
             //$('.modal-backdrop').remove();
@@ -601,7 +601,7 @@
         $(document).on('click touchstart', '.comments button.btn', function () {
             //console.log('thing');
             //$('html').addClass('modal-open');
-        });-->
+        });*/
 
 
         $('.single .latest-story h3').each(function () {
@@ -614,7 +614,7 @@
             $(this).html(newTitle);
         });
         var windowHeight;
-        <!-- comment out disqus
+        /* double comment out disqus (inside the click was commented out prior to 6/19)
         $(document).on('click', '.comments button', function () {
         /*
             viewPortWidth = $(window).width();
@@ -625,7 +625,7 @@
                 windowHeight = $(window).height() - 77;
                 $('#disqus_thread').css('max-height', windowHeight);
             }*/
-        }); -->
+        /*});*/
         $('.ctx-social-container').remove();
         $('aside').after('<div class="ctx-social-container ctx-clearfix ctx_default_placement"></div>');
         var ctx = $('#ctx-module').remove();
