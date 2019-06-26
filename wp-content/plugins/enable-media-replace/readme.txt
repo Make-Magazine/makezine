@@ -3,7 +3,7 @@ Contributors: ShortPixel
 Donate link: https://www.paypal.me/resizeImage
 Tags: replace, attachment, media, files, replace image, replace jpg, change media, replace media, image, file
 Requires at least: 4.0
-Tested up to: 5.1
+Tested up to: 5.2
 Requires PHP: 5.4
 Stable tag: trunk
 
@@ -46,6 +46,26 @@ If you want more control over the format used to display the time, you can use t
 * [Regenerate Thumbnails Advanced](https://wordpress.org/plugins/regenerate-thumbnails-advanced/) - Fast, free and simple to use plugin to regenerate the thumbnails for your site after changing a theme (for example). Supported & maintained by [ShortPixel](https://ShortPixel.com)
 
 == Changelog ==
+
+= 3.3.1 =
+
+Release date: 18th June 2019
+* Fix error class not found on WPEngine
+
+= 3.3.0 =
+* When replacing an image and changing the name, Search / Replace is now also done on the meta_value of postmeta.
+* Replace PDF thumbnails too
+* Copy title from EXIF
+* RTL View incorporated into the CSS
+* ‘wp_handle_upload’ filter should be treated as such (and not as action)
+* Use wp_attached_file instead of the GUID
+* Fix: replace missing file
+* Fix: aphostrophe breaking the upload
+* Fix: broken "before" image
+* Fix: update properly the date
+* Fix: errors for non-image items in Media Library
+* Fix: empty admin menu item created
+* Refactored all the code
 
 = 3.2.9 =
 * properly replace thumbnails names in the content when the replaced image has a different aspect ratio, thus the new thumbnails have a different height in the name.

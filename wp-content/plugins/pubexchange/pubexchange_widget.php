@@ -3,7 +3,7 @@
  * Plugin Name: PubExchange
  * Plugin URI: https://www.pubexchange.com
  * Description: PubExchange
- * Version: 2.0.3
+ * Version: 2.0.4
  * Author: PubExchange
  */
 
@@ -34,7 +34,7 @@ if (!class_exists('PubExchangeWP')) {
             // Enable sidebar widgets
             if($this->settings->pubexchange_publication_id){
                 //register PubExchange widget
-                add_action('widgets_init', create_function('', 'return register_widget("WP_Widget_PubExchange");'));
+                add_action('widgets_init', function() { register_widget( 'WP_Widget_PubExchange' ); } );
             }
 
             if (is_admin()) {
