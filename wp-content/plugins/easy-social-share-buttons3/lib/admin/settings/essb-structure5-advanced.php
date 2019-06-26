@@ -4,6 +4,7 @@ ESSBOptionsStructureHelper::menu_item('advanced', 'optimization', __('Optimizati
 ESSBOptionsStructureHelper::menu_item('advanced', 'advanced', __('Advanced Options', 'essb'), 'default');
 ESSBOptionsStructureHelper::menu_item('advanced', 'integrate', __('Integrations', 'essb'), 'default');
 ESSBOptionsStructureHelper::menu_item('advanced', 'administrative', __('Administrative Options', 'essb'), 'default');
+ESSBOptionsStructureHelper::menu_item('advanced', 'managenetworks', __('Manage Active Share Networks', 'essb'), 'default');
 
 if (!essb_options_bool_value('deactivate_module_translate')) {
 	ESSBOptionsStructureHelper::menu_item('advanced', 'localization', __('Translate Options', 'essb'), 'default');
@@ -49,25 +50,21 @@ ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'use_
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'scripts_in_head', __('Load scripts in head element', 'essb'), __('If you are using caching plugin like W3 Total Cache you may need to activate this option if counters, send mail form or float do not work.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'load_js_async', __('Load plugin javascript files asynchronous', 'essb'), __('This will load scripts during page load in non render blocking way', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'load_js_defer', __('Load plugin javascript files deferred', 'essb'), __('This will load scripts after page load in non render blocking way', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
-//ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'load_js_delayed', __('Load plugin javascript files delayed', 'essb'), __('This will load scripts after 2 seconds when page is fully loaded', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_section_end_full_panels('advanced', 'optimization');
 
-/*ESSBOptionsStructureHelper::panel_start('advanced', 'optimization', __('Use script builder', 'essb'), __('Script builder allows to generate personalized file with used scripts. Once activated all you need is to selected components you will use on site and plugin will do the rest. <b>Script builder should be used in combination with precompiled mode or build in cache</b>', 'essb'), 'fa21 fa fa-cogs', array("mode" => "switch", 'switch_id' => 'use_scriptbuilder', 'switch_on' => __('Yes', 'essb'), 'switch_off' => __('No', 'essb')));
-ESSBOptionsStructureHelper::field_func('advanced', 'optimization', 'essb5_scriptbuilder_select', '', '');
-ESSBOptionsStructureHelper::panel_end('advanced', 'optimization');
-*/
-//ESSBOptionsStructureHelper::panel_end('advanced', 'optimization');
-
-//ESSBOptionsStructureHelper::panel_start('advanced', 'optimization', __('Global Optimizations', 'essb'), __('Global optimizations applied on all type of static resources used by plugin', 'essb'), 'fa21 fa fa-rocket', array("mode" => "toggle", 'state' => 'opened'));
-ESSBOptionsStructureHelper::field_heading('advanced', 'optimization', 'heading4', __('Global Optimization', 'essb'));
-ESSBOptionsStructureHelper::field_section_start_full_panels('advanced', 'optimization');
-ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'remove_ver_resource', __('Remove version number of static files', 'essb'), __('Activating this option will remove added to resources version number ?ver= which will allow these files to be cached.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_heading('advanced', 'optimization', 'heading4', __('Pre-compiled Static Resources', 'essb'), __('Compile and store all used static and dynamic generated CSS and javascript code into a single file', 'essb'));
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'precompiled_resources', __('Use plugin precompiled resources', 'essb'), __('Activating this option will precompile and cache plugin dynamic resources to save load time. Precompiled resources can be used only when you use same configuration on your entire site.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_select_panel('advanced', 'optimization', 'precompiled_mode', __('Precompiled mode', 'essb'), __('Using mode control you can select which type of resources to include inside precompiled resources - CSS, javascript or both (default).', 'essb'), array('' => 'CSS and Javascript', 'css' => 'CSS Only', 'js' => 'Javascript Only'));
 ESSBOptionsStructureHelper::field_select_panel('advanced', 'optimization', 'precompiled_folder', __('Precompiled data storage', 'essb'), __('Choose where you wish to store the cached data. If you wish to use custom path there are filters available.', 'essb'), array('' => 'WordPress Content Folder', 'uploads' => 'WordPress Uploads Folder', 'plugin' => 'Plugin Folder'));
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'precompiled_unique', __('Unique filename', 'essb'), __('Setting this option will give you a new and unique name each time the resources are cleared (rebuild).', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+
+
+ESSBOptionsStructureHelper::field_heading('advanced', 'optimization', 'heading4', __('Global Optimization', 'essb'));
+ESSBOptionsStructureHelper::field_section_start_full_panels('advanced', 'optimization');
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'optimization', 'remove_ver_resource', __('Remove version number of static files', 'essb'), __('Activating this option will remove added to resources version number ?ver= which will allow these files to be cached.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 ESSBOptionsStructureHelper::field_select_panel('advanced', 'optimization', 'optimize_load', __('Load resources (beta)', 'essb'), __('Choose where plugin static resources will be loaded. You can select always or only on associated post types. If you are using shortcode/visual builder share buttons display or you have a custom integration it is not recommended to change the setting.', 'essb'), array('' => 'Default (anywhere on site)', 'selected' => 'On selected post types only'));
 ESSBOptionsStructureHelper::field_section_end_full_panels('advanced', 'optimization');
-//ESSBOptionsStructureHelper::panel_end('advanced', 'optimization');
+
 
 
 ESSBOptionsStructureHelper::field_heading('advanced', 'optimization', 'heading4', __('Build in cache', 'essb'));
@@ -180,6 +177,8 @@ ESSBOptionsStructureHelper::panel_start('advanced', 'administrative', __('Plugin
 ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'disable_adminbar_menu', __('Disable menu in WordPress admin bar', 'essb'), __('Activation of this option will remove the quick access plugin menu from WordPress top admin bar.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
 $listOfOptions = array("manage_options" => "Administrator", "delete_pages" => "Editor", "publish_posts" => "Author", "edit_posts" => "Contributor");
 ESSBOptionsStructureHelper::field_select_panel('advanced', 'administrative', 'essb_access', __('Plugin access', 'essb'), __('Make settings available for the following user roles (if you use multiple user roles on your site we recommend to select Administrator to disallow other users change settings of plugin).', 'essb'), $listOfOptions);
+ESSBOptionsStructureHelper::field_switch_panel('advanced', 'administrative', 'limit_editor_fields', __('Limit Editor Components Visibility', 'essb'), __('Set to Yes if you need to limit the default editing components visibility on posts/pages.', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_select_panel('advanced', 'administrative', 'limit_editor_fields_access', __('User Access Level', 'essb'), __('Select the role that user should have to access the setup of fields. But only when the previous option is active.', 'essb'), $listOfOptions);
 ESSBOptionsStructureHelper::panel_end('advanced', 'administrative');
 
 ESSBOptionsStructureHelper::panel_start('advanced', 'administrative', __('Metabox visibiltiy', 'essb'), __('Show/hide plugin on post metaboxes', 'essb'), 'fa21 fa fa-eye', array("mode" => "toggle", 'state' => 'opened'));
@@ -240,6 +239,11 @@ if (!essb_option_bool_value('deactivate_module_translate')) {
 	ESSBOptionsStructureHelper::field_textbox_stretched('advanced', 'localization', 'translate_as_popular_shares', __('Popular Posts shares text', 'essb'), __('', 'essb'));
 	ESSBOptionsStructureHelper::panel_end('advanced', 'localization');
 }
+
+ESSBOptionsStructureHelper::field_heading ('advanced', 'managenetworks', 'heading5', __('Manage Active & Working Social Networks', 'essb'));
+ESSBOptionsStructureHelper::hint('advanced', 'managenetworks', '', __('The manage of active networks gives you a chance to let in menu just the networks you will really use. In case you need to add more networks you can do this here or remove all the selected and retore back the default state.', 'essb'), '', 'glow');
+ESSBOptionsStructureHelper::field_switch('advanced', 'managenetworks', 'activate_networks_manage', __('Make plugin use only selected networks', 'essb'), __('Use this feature in case you does not need all networks of plugin. That makes easy to manage and easy to personalize. Also that can save resources on a share counter update because it will refer to active networks only', 'essb'), '', __('Yes', 'essb'), __('No', 'essb'));
+ESSBOptionsStructureHelper::field_network_select('advanced', 'managenetworks', 'functions_networks', 'functions', true);
 
 add_action('admin_init', 'essb3_register_settings_by_posttypes');
 function essb3_register_settings_by_posttypes() {

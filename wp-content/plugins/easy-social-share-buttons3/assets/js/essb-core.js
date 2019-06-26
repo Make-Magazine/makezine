@@ -203,6 +203,7 @@ jQuery(document).ready(function($){
 			h = (service == 'twitter') ? '300' : '500',
 			left = (screen.width/2)-(Number(w)/2),
 			top = (screen.height/2)-(Number(h)/2);
+		
 
 		if (!trackingOnly) 
 			wnd = window.open( url, "essb_share_window", "height="+(service == 'twitter' ? '300' : '500')+",width="+(service == 'twitter' ? '500' : '800')+",resizable=1,scrollbars=yes,top="+top+",left="+left );
@@ -258,6 +259,40 @@ jQuery(document).ready(function($){
 				essb_ga_tracking(service, url, custom_position);			
 		}
 	}
+	
+	essb.fbmessenger = function(app_id, url, saltKey) {
+		var isMobile = windowWidth = $(window).width() <= 1024 ? true : false,
+			cmd = '';
+		
+		if (isMobile) cmd = 'fb-messenger://share/?link=' + url;
+		else cmd = 'https://www.facebook.com/dialog/send?app_id='+app_id+'&link='+url+'&redirect_uri=https://facebook.com';
+		if (isMobile) {
+			window.open(cmd, "_self");
+			essb.tracking_only('', 'messenger', saltKey, true);
+		}
+		else {
+			essb.window(cmd, 'messenger', saltKey);
+		}
+		
+		return false;
+	};
+	
+	essb.whatsapp = function(url, saltKey) {
+		var isMobile = windowWidth = $(window).width() <= 1024 ? true : false,
+			cmd = '';
+		
+		if (isMobile) cmd = 'whatsapp://send?text=' + url;
+		else cmd = 'https://web.whatsapp.com/send?text=' + url;
+		if (isMobile) {
+			window.open(cmd, "_self");
+			essb.tracking_only('', 'whatsapp', saltKey, true);
+		}
+		else {
+			essb.window(cmd, 'whatsapp', saltKey);
+		}
+		
+		return false;
+	};
 
 	essb.tracking_only = function(url, service, instance, afterShare) {
 		if (url == '')
@@ -309,8 +344,11 @@ jQuery(document).ready(function($){
 	}
 	
 	essb.loveThis = function (instance) {
+		if (typeof(essb_love_you_message_loved) == 'undefined') var essb_love_you_message_loved = '';
+		if (typeof(essb_love_you_message_thanks) == 'undefined') var essb_love_you_message_thanks = '';
+		
 		if (essb.clickedLoveThis) {
-			alert(essb_love_you_message_loved);
+			alert(essb_love_you_message_loved ? essb_love_you_message_loved : 'You already love this today');
 			return;
 		}
 
@@ -321,7 +359,7 @@ jQuery(document).ready(function($){
 
 		var cookie_set = essb.getCookie("essb_love_"+instance_post_id);
 		if (cookie_set) {
-			alert(essb_love_you_message_loved);
+			alert(essb_love_you_message_loved ? essb_love_you_message_loved : 'You already love this today');
 			return;
 		}
 
@@ -332,7 +370,7 @@ jQuery(document).ready(function($){
 				'service': 'love',
 				'nonce': essb_settings.essb3_nonce
 			}, function (data) { if (data) {
-				alert(essb_love_you_message_thanks);
+				alert(essb_love_you_message_thanks ? essb_love_you_message_thanks : 'Thank you for loving this');
 			}},'json');
 		}
 
@@ -743,28 +781,23 @@ jQuery(document).ready(function($){
 		
 		if( (/bot|crawl|slurp|spider/i).test(navigator.userAgent) ) return;
 		
-		$.when($.get('https://graph.facebook.com/?fields=og_object{likes.summary(true).limit(0)},share&id=' + url) ,
-				( recovery_url ? $.get('https://graph.facebook.com/?fields=og_object{likes.summary(true).limit(0)},share&id=' + recovery_url) : '')
+		$.when($.get('https://graph.facebook.com/?id=' + url + '&fields=og_object{engagement}') ,
+				( recovery_url ? $.get('https://graph.facebook.com/?id=' + recovery_url + '&fields=og_object{engagement}') : '')
 		).then( function( counter, recovery_counter ) {
-			
-			if( 'undefined' !== typeof counter[0].share ) {
-				var shares1 = parseInt(counter[0].share.share_count),
-					comments1 = parseInt(counter[0].share.comment_count),
+						
+			if( 'undefined' !== typeof counter[0].og_object && counter[0].og_object.engagement ) {
+				var shares1 = parseInt(counter[0].og_object.engagement.count || 0),
+					comments1 = parseInt(counter[0].og_object.engagement.comments || 0),
 					likes1 = 0,
 					total_shares1 = 0,
 					total_shares2 = 0;
 				
-				if ('undefined' !== typeof counter[0].og_object )
-					likes1 = parseInt( counter[0].og_object.likes.summary.total_count );
 				
 				total_shares1 = shares1 + comments1 + likes1;
-				
-				if (recovery_url) {
-					var shares2 = parseInt(recovery_counter[0].share.share_count),
-						comments2 = parseInt(recovery_counter[0].share.comment_count),
+				if (recovery_url && recovery_counter[0] && 'undefined' !== typeof recovery_counter[0].og_object && recovery_counter[0].og_object.engagement) {
+					var shares2 = parseInt(recovery_counter[0].og_object.engagement.count || 0),
+						comments2 = parseInt(recovery_counter[0].og_object.engagement.comments || 0),
 						likes2 = 0;
-					if ('undefined' !== typeof recovery_counter[0].og_object )
-						likes2 = parseInt( recovery_counter[0].og_object.likes.summary.total_count );
 					
 					total_shares2 = shares2 + comments2 + likes2;
 					
@@ -876,6 +909,17 @@ jQuery(document).ready(function($){
 	};
 	
 	$(document).ready(function(){
+		
+		/**
+		 * Facebook Client Side Counter Update
+		 */
+		if (essb_settings['facebook_client']) {
+			essb.update_facebook_counter(essb_settings['facebook_post_url'] || '', essb_settings['facebook_post_recovery_url'] || '');
+		}
+		if (essb_settings['pinterest_client']) {
+			essb.update_pinterest_counter(essb_settings['facebook_post_url'] || '', essb_settings['facebook_post_recovery_url'] || '');
+		}
+		
 		/**
 		 * Mobile Share Bar
 		 */
@@ -931,7 +975,7 @@ jQuery(document).ready(function($){
 					}
 				}
 			}
-		}
+		};
 		
 		if ($('.essb-mobile-sharebottom').length) {
 			
@@ -1144,7 +1188,7 @@ jQuery(document).ready(function($){
 					return;
 				}
 			}
-		}
+		};
 		
 		if (essb.responsiveEventsCanRun($('.essb_displayed_sidebar'))) {
 	 		if ((essb_settings.sidebar_disappear_pos || '') != '' || (essb_settings.sidebar_appear_pos || '') != '') {
@@ -2083,17 +2127,6 @@ jQuery(document).ready(function($){
 		}	
 		
 		/**
-		 * Facebook Client Side Counter Update
-		 */
-		
-		if (essb_settings['facebook_client']) {
-			essb.update_facebook_counter(essb_settings['facebook_post_url'] || '', essb_settings['facebook_post_recovery_url'] || '');
-		}
-		if (essb_settings['pinterest_client']) {
-			essb.update_pinterest_counter(essb_settings['facebook_post_url'] || '', essb_settings['facebook_post_recovery_url'] || '');
-		}
-		
-		/**
 		 * Click2Chat
 		 */
 		if ($('.essb-click2chat').length) {
@@ -2164,6 +2197,7 @@ jQuery(document).ready(function($){
 			else if (image.attr('alt')) pinDescription = image.attr('alt');
 			
 			// give always priority of the custom description if set
+			if (essbPinImages.force_custompin && !essbPinImages.custompin) essbPinImages.custompin = document.title;
 			if (essbPinImages.custompin) pinDescription = essbPinImages.custompin;
 			
 			// if title is not genenrated it will use the Document Title
@@ -2225,20 +2259,39 @@ jQuery(document).ready(function($){
 			});
 		}		
 		
+		if (typeof(essbPinImages) != 'undefined' && $('body').hasClass('tcb-edit-mode')) essbPinImages.active = false;
+		
 		if (typeof(essbPinImages) != 'undefined' && essbPinImages.active) {
 			// Begin detection of potential images and assign the pinterest generation
 			if (!essbPinImages.min_width || !Number(essbPinImages.min_width)) essbPinImages.min_width = 300;
 			if (!essbPinImages.min_height || !Number(essbPinImages.min_height)) essbPinImages.min_height = 300;
 			
+			if ($('.essb-pin.tve_image').length) {
+				$('.essb-pin.tve_image .essb_links').remove();
+				$('.essb-pin img').removeClass('pin-generated');
+			}
+			
 			var essbPinImagesDetect = function() {
-				if (!$('.essb-pinterest-images').length) return;
-				$('.essb-pinterest-images').parent().find('img').each(essbPinImagesGenerateButtons);
+				
+				if (essbPinImages.selector) {
+					$(essbPinImages.selector).each(essbPinImagesGenerateButtons);
+				}
+				else {
+					if (!$('.essb-pinterest-images').length) return;
+					$('.essb-pinterest-images').parent().find('img').each(essbPinImagesGenerateButtons);
+				}
 			}
 			
 			if (essbPinImages.lazyload) $(window).scroll(debounce(essbPinImagesDetect, 10));
 			
-			setTimeout(essbPinImagesDetect, 1);
-			
+			setTimeout(essbPinImagesDetect, 1);			
+		}
+		
+		if ((typeof(essbPinImages) != 'undefined' && !essbPinImages.active) || typeof(essbPinImages) == 'undefined') {
+			if ($('.essb-pin.tve_image').length) {
+				$('.essb-pin.tve_image .essb_links').remove();
+				$('.essb-pin img').removeClass('pin-generated');
+			}
 		}
 	});
 	

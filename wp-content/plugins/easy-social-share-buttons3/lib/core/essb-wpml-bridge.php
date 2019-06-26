@@ -146,6 +146,12 @@ if (!function_exists('essb_wpml_translatable_fields')) {
 		$result['menu3'] = array('type' => 'menu', 'title' => __('Social Networks', 'essb'));
 		$result['networks'] = array('type' => 'networks', 'group' => 'menu3');
 		
+		$result['menu8'] = array('type' => 'menu', 'title' => __('Homepage Social Share Optimization', 'essb'));
+		$result['sso_frontpage_title'] = array('type' => 'field', 'group' => 'menu8', 'tab_id' => 'social', 'menu_id' => 'optimize');
+		$result['sso_frontpage_description'] = array('type' => 'field', 'group' => 'menu8', 'tab_id' => 'social', 'menu_id' => 'optimize');
+		$result['sso_frontpage_image'] = array('type' => 'field', 'group' => 'menu8', 'tab_id' => 'social', 'menu_id' => 'optimize');
+		
+		
 		$result['menu2'] = array('type' => 'menu', 'title' => __('E-mail Message', 'essb'));
 		$result['heading1'] = array('type' => 'heading', 'group' => 'menu2', 'title' => __('Email message customization'));
 		$result['mail_captcha'] = array('type' => 'field', 'group' => 'menu2', 'tab_id' => 'social', 'menu_id' => 'share-1');

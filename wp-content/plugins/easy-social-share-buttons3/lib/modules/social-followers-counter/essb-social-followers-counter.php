@@ -21,7 +21,7 @@ class ESSBSocialFollowersCounter {
 		add_shortcode( 'easy-total-fans' , array ( $this , 'register_plugin_shortcode_totalfans' ) );
 		add_shortcode( 'easy-total-followers' , array ( $this , 'register_plugin_shortcode_totalfans' ) );
 		add_shortcode( 'easy-followers-layout' , array ( $this , 'register_plugin_shortcodes_layout' ) );
-		add_shortcode( 'follome-bar', array($this, 'register_shortcode_followme_bar'));
+		add_shortcode( 'followme-bar', array($this, 'register_shortcode_followme_bar'));
 		
 		add_action( 'wp_enqueue_scripts' , array ( $this , 'register_front_assets' ), 1);
 		
@@ -70,7 +70,7 @@ class ESSBSocialFollowersCounter {
 	 * @param unknown_type $atts
 	 */
 	public function register_shortcode_followme_bar($atts = array()) {
-		
+		return ESSBSocialFollowersCounterDraw::draw_followers_bar();
 	}
 	
 	public function register_plugin_shortcodes($attrs) {

@@ -461,7 +461,7 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 		$share['mail_subject'] = esc_attr(stripslashes($share['mail_subject']));
 	}
 	if (isset($share['mail_body'])) {
-		$share['mail_body'] = esc_attr(stripslashes($share['mail_body']));
+		$share['mail_body'] = esc_attr(stripslashes($share['mail_body']));		
 	}
 
 	$pinterest_description = $share['title'];
@@ -469,6 +469,10 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 	if (!empty($custom_pinterest_desc)) {
 		$pinterest_description = $custom_pinterest_desc;
 	}
+	
+	$pinterest_description = str_replace('#', '%23', $pinterest_description);
+	$pinterest_description = str_replace('|', '%7C', $pinterest_description);
+	$pinterest_description = str_replace('&', '%26', $pinterest_description);
 
 	// @since version 3.0.4 - fix for shorturl
 	$shorturl_activate = essb_options_bool_value( 'shorturl_activate');
@@ -560,6 +564,7 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 			$use_message = str_replace('|', '%7C', $use_message);
 
 			$url = sprintf ( 'https://www.linkedin.com/shareArticle?mini=true&amp;ro=true&amp;trk=EasySocialShareButtons&amp;title=%1$s&amp;url=%2$s', $use_message, $share ['url'] );
+			//$url = sprintf( 'https://www.linkedin.com/cws/share?url=%1$s', $share['url']);
 			break;
 		case 'digg' :
 			$url = sprintf ( 'http://digg.com/submit?phase=2%20&amp;url=%1$s&amp;title=%2$s', $share ['url'], $share ['title'] );
@@ -582,7 +587,7 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 			$url = sprintf ( 'http://www.stumbleupon.com/badge/?url=%1$s', $share ['full_url'] );
 			break;
 		case 'tumblr' :
-			$url = sprintf ( 'https://tumblr.com/share?s=&v=3&t=%1$s&u=%2$s', $share ['title'], urlencode ( $share ['url'] ) );
+			$url = sprintf ( 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=%2$s&amp;title=%1$s&amp;posttype=link', $share ['title'], urlencode ( $share ['url'] ) );
 			break;
 		case 'vk' :
 			if (ESSBGlobalSettings::$vkontakte_fullshare) {
@@ -617,9 +622,8 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 			$api_command = "essb.tracking_only('', 'whatsapp', '".$salt."', true);";
 
 			if (essb_option_bool_value('whatsapp_api')) {
-				$url = sprintf ( 'https://api.whatsapp.com/send?text=%1$s%3$s%2$s', essb_core_helper_urlencode ( $share ['title_plain'] ), rawurlencode ( $share ['short_url_whatsapp'] ), '%20' );
-				$api_command = "essb.tracking_only('', 'whatsapp', '".$salt."', true);";
-
+				//$url = sprintf ( 'https://api.whatsapp.com/send?text=%1$s%3$s%2$s', essb_core_helper_urlencode ( $share ['title_plain'] ), rawurlencode ( $share ['short_url_whatsapp'] ), '%20' );
+				$api_command = "essb.whatsapp('".sprintf('%1$s%3$s%2$s', essb_core_helper_urlencode ( $share ['title_plain'] ), rawurlencode ( $share ['short_url_whatsapp'] ), '%20')."', '".$salt."'); return false;";
 			}
 
 			break;
@@ -644,11 +648,14 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 
 			$share['mail_body'] = str_replace('"', '%22', $share['mail_body']);
 			$share['mail_body'] = str_replace("'", '%27', $share['mail_body']);
+			$share['mail_body'] = str_replace('&nbsp;', ' ', $share['mail_body']);
 			$share['mail_body'] = str_replace('&amp;', '%26', $share['mail_body']);
 			$share['mail_body'] = str_replace('&', '%26', $share['mail_body']);
 			$share['mail_body'] = str_replace('&quot;', '%22', $share['mail_body']);
 			$share['mail_body'] = str_replace('%26quot;', '%22', $share['mail_body']);
 			$share['mail_body'] = str_replace('%26#039;', '%27', $share['mail_body']);
+			$share['mail_body'] = str_replace('\n', '%0A', $share['mail_body']);
+			$share['mail_body'] = str_replace('\r', '%0D', $share['mail_body']);			
 
 			$url = sprintf('mailto:?subject=%1$s&amp;body=%2$s', $share['mail_subject'], $share['mail_body']);
 			$api_command = "essb.tracking_only('', 'mail', '".$salt."', true);";
@@ -788,12 +795,15 @@ function essb_get_share_address($network, $share = array(), $salt = '', $amp_end
 			break;
 
 		case 'messenger':
-			if (essb_is_mobile()) {
-				$url = sprintf('fb-messenger://share/?link=%1$s', $share ['url']);
-			}
-			else {
-				$url = sprintf ( 'https://www.facebook.com/dialog/send?app_id=%1$s&link=%2$s&redirect_uri=https://facebook.com', ESSBGlobalSettings::$fbmessengerapp, $share ['url']);
-			}
+			
+			$url = sprintf('fb-messenger://share/?link=%1$s', $share ['url']);
+			$api_command = "essb.fbmessenger('".ESSBGlobalSettings::$fbmessengerapp."', '".$share['url']."', '".$salt."'); return false;";
+			//if (essb_is_mobile()) {
+			//	$url = sprintf('fb-messenger://share/?link=%1$s', $share ['url']);
+			//}
+			//else {
+			//	$url = sprintf ( 'https://www.facebook.com/dialog/send?app_id=%1$s&link=%2$s&redirect_uri=https://facebook.com', ESSBGlobalSettings::$fbmessengerapp, $share ['url']);
+			//}
 
 			break;
 		case 'livejournal':

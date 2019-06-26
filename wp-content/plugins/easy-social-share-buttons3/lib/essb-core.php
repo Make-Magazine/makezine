@@ -988,27 +988,14 @@ class ESSBCore {
 			$is_singular = false;
 		}
 				
-		// deactivate on mobile devices if selected
-		// deprecated code: The mobile detection is changed and it will run based
-		// on screen resolution of the device. That is made to ensure plugin will operate
-		// and display methods will show hide based on resolution even when a non-mobile
-		// friendly cache plugin appears
-		/*if (essb_is_mobile()) {
-			if (essb_option_bool_value($location.'_mobile_deactivate')) {
-				$is_singular = false;
-				$is_lists_authorized = false;
-			}
-		}
-		
-		if (essb_is_tablet()) {
-			if (essb_option_bool_value($location.'_tablet_deactivate')) {
-				$is_singular = false;
-				$is_lists_authorized = false;
-			}
-		}*/
 		
 		if ($is_exclusive_active) {
 			$is_singular = true;
+		}
+		
+		//** Extra filter so developers can force activation
+		if (has_filter('essb_check_applicability')) {
+			$is_singular = apply_filters('essb_check_applicability', $is_singular);
 		}
 		
 		// check current location settings

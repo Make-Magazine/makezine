@@ -87,7 +87,7 @@ class ESSBOptinBooster {
 	
 	public function load_assets() {
 		if (function_exists('essb_resource_builder')) {
-			essb_resource_builder()->add_static_resource_footer(ESSB3_OFOB_PLUGIN_URL . '/assets/essb-optin-booster.js', 'essb-optin-booster', 'js');
+			essb_resource_builder()->add_static_resource_footer(ESSB3_OFOB_PLUGIN_URL . '/assets/essb-optin-booster.min.js', 'essb-optin-booster', 'js');
 		}
 	}
 	
@@ -155,7 +155,7 @@ class ESSBOptinBooster {
 		}
 		
 		$ofob_single = $this->option_bool_value('ofob_single');
-		$ofob_single_time = $this->option_bool_value('ofob_single_time');
+		$ofob_single_time = $this->option_value('ofob_single_time');
 		$ofob_creditlink = $this->option_bool_value('ofob_creditlink');
 		
 		if ($this->option_bool_value('ofob_time')) {

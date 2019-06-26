@@ -487,16 +487,17 @@ ESSBOptionsStructureHelper::field_switch('social', 'sharecnt', 'active_internal_
 ESSBOptionsStructureHelper::field_heading('social', 'sharecnt', 'heading5', __('Network Specific Counter Update Options', 'essb'));
 ESSBOptionsStructureHelper::panel_start('social', 'sharecnt', __('Additional social network counter settings that you need to pay attention', 'essb'), __('Depends on networks that are set on site you may need to configure additional fields in this section like Twitter counter function, usage of internal counters, number format or Facebook Token for consistent Facebook counter update', 'essb'), 'fa21 fa fa-cogs', array("mode" => "toggle", 'state' => 'opened'));
 
+$listOfOptions = array ("" => "API Endpoint #1", "api2" => "API Endpoint #2");
+ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'facebook_counter_api', __('Facebook counter update API', 'essb'), __('Facebook have right now several active API endpoints that you can use to get share counter. Facebook API Endpoint #2 uses Facebook API 3.0 and require access token to read the share values.', 'essb'), $listOfOptions, '', '6');
+
+ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'facebook_counter_token', __('Facebook access token key', 'essb'), __('To generate your access token key please visit <a href="http://tools.creoworx.com/facebook/" target="_blank">http://tools.creoworx.com/facebook/</a> and follow instructions to generate application based token', 'essb'), '', '', '', '', '6');
+
 ESSBOptionsStructureHelper::structure_row_start('social', 'sharecnt');
 $listOfOptions = array ("self" => "Self-hosted counter (internally counted by click on buttons)", "twitcount" => "Using twitcount.com",  "newsc" => "Using NewShareCounts.com", "opensc" => "Using OpenShareCount.com", "no" => "No counter for Twitter button" );
 $counter_redirect = "";
 $twitter_counters = ESSBOptionValuesHelper::options_value($essb_options, 'twitter_counters');
 ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'twitter_counters', __('Twitter share counter', 'essb'), __('Choose your Twitter counter working mode. If you select usage of NewShareCounts.com or OpenShareCount.com to make it work you need to visit their site and fill your site address and click sign in button using your Twitter account. Visit <a href="http://newsharecounts.com/" target="_blank">http://newsharecounts.com/</a> or <a href="http://opensharecount.com/" target="_blank">http://opensharecount.com/</a>'.$counter_redirect, 'essb'), $listOfOptions, '', '6');
 ESSBOptionsStructureHelper::structure_row_end('social', 'sharecnt');
-
-ESSBOptionsStructureHelper::field_textbox_stretched('social', 'sharecnt', 'facebook_counter_token', __('Facebook access token key', 'essb'), __('To avoid missing Facebook share counter due to rate limits we recommend to fill access token key. Access token generation of counter can work only when you do not use real time counters. To generate your access token key please visit <a href="http://tools.creoworx.com/facebook/" target="_blank">http://tools.creoworx.com/facebook/</a> and follow instructions to generate application based token', 'essb'), '', '', '', '', '6');
-$listOfOptions = array ("" => "API Endpoint #1", "api2" => "API Endpoint #2", "api3" => "API Endpoint #3");
-ESSBOptionsStructureHelper::field_select('social', 'sharecnt', 'facebook_counter_api', __('Facebook counter update API', 'essb'), __('Facebook have right now several active API endpoints that you can use to get share counter. The default is API Endpoint #1 but if you experience issue with counters try also API Endpoint #2', 'essb'), $listOfOptions, '', '6');
 
 
 //$listOfOptions = array ("" => "LinkedIn Official Counter (till it is available)", "self" => "Self-hosted counter (internally counted by click on buttons)", "no" => "Without share counter");
@@ -774,7 +775,7 @@ if (!essb_option_bool_value('deactivate_module_shorturl')) {
 	
 	$listOfOptions = array("wp" => "Build in WordPress function wp_get_shortlink()", "goo.gl" => "goo.gl", "bit.ly" => "bit.ly", 'rebrand.ly' => 'Rebrandly', 'po.st' => 'po.st');
 	if (defined('ESSB3_SSU_VERSION')) {
-		$listOfOptions['ssu'] = "Self-Short URL Add-on for Easy Social Share Buttons";
+		$listOfOptions['ssu'] = __('Social Media Short URLs add-on for Easy Social Share Buttons for WordPress', 'essb');
 	}
 	
 	ESSBOptionsStructureHelper::field_select('social', 'shorturl', 'shorturl_type', __('Choose short url type', 'essb'), __('Please note that usage of bit.ly requires to fill additional fields below or short urls will not be generated. If you choose goo.gl as provider we also recommend to generate API key due to public quota limit provided by Google.'), $listOfOptions);

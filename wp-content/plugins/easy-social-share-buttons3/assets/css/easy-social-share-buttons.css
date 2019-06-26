@@ -4965,6 +4965,7 @@ background: linear-gradient(224.65793970864146deg, #8043af, #8442aa 2.9%, #8740a
 .essb-pin .essb_links.essb_pos_bottom-left { top: auto; bottom: 20px; }
 .essb-pin .essb_links.essb_pos_bottom-right { left: auto; right: 20px; top: auto; bottom: 20px; }
 .essb-pin .essb_links.essb_pos_bottom-middle { left: 50%; margin-left: -40px !imporant; top: auto; bottom: 20px; }
+.essb-pin .essb_links .essb-location-customize { display: none !important; }
 
 @media screen and (max-width: 1100px) {
 	/* Always show the Pin button on mobile device */

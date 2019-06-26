@@ -441,9 +441,11 @@ function essb_js_build_admin_ajax_access_code($buffer) {
 		$pin_options['position'] = essb_option_value('pinterest_position');
 		$pin_options['hideon'] = essb_option_value('pinterest_hideon');
 		$pin_options['reposition'] = essb_option_bool_value('pinterest_reposition');
+		$pin_options['selector'] = essb_option_value('pinterest_selector');
 		
 		if (essb_option_bool_value('pinterest_alwayscustom') && essb_option_bool_value('pinterest_images')) {
 			$pin_options['custompin'] = get_post_meta( get_the_ID(), 'essb_post_pin_desc', true);
+			$pin_options['force_custompin'] = true;
 		}
 		
 		$output .= 'var essbPinImages = '.json_encode($pin_options).';';

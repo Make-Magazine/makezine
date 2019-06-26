@@ -203,7 +203,7 @@ add_shortcode ( 'sharable-quote', 'essb_ctt_shortcode' );
 function essb_ctt_scripts() {
 	
 		if (!essb_is_plugin_deactivated_on() && !essb_is_module_deactivated_on('ctt')) {
-		    essb_resource_builder()->add_static_resource_footer(ESSB3_PLUGIN_URL . '/lib/modules/click-to-tweet/assets/css/styles.css', 'essb-cct-style', 'css');
+		    essb_resource_builder()->add_static_resource_footer(ESSB3_PLUGIN_URL . '/lib/modules/click-to-tweet/assets/css/styles.min.css', 'essb-cct-style', 'css');
 		    
 		}
 }

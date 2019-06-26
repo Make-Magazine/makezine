@@ -261,7 +261,7 @@ class ESSBSocialFollowersCounterUpdater {
 			
 			@preg_match ( ' <meta property="pinterestapp:followers" name="pinterestapp:followers" content="(\d+)" data-app>', $request, $matches );
 			
-			if (count ( $matches > 0 ) && isset ( $matches [1] )) {
+			if (count ( $matches) > 0 && isset ( $matches [1] )) {
 				return $matches [1];
 			}
 		} catch ( Exception $e ) {

@@ -51,8 +51,20 @@ class ESSBAdminControler {
 		}
 
 		// admin meta boxes
-		add_action('add_meta_boxes', array ($this, 'handle_essb_metabox' ) );
-		add_action('save_post',  array ($this, 'handle_essb_save_metabox'));
+		/**
+		 * Since version 6.2 it is possible to modify the access to the plugin metabox editing options on the
+		 * editor. In case the limitation is set in Administrative settings the metaboxes will not be loaded
+		 * and so will happen with the save action
+		 */
+		$can_use_meta = true;
+			
+		if (essb_option_bool_value('limit_editor_fields') && function_exists('essb_editor_capability_can')) {
+			$can_use_meta = essb_editor_capability_can();
+		}
+		if ($can_use_meta) {
+			add_action('add_meta_boxes', array ($this, 'handle_essb_metabox' ) );
+			add_action('save_post',  array ($this, 'handle_essb_save_metabox'));
+		}
 
 		if (!$deactivate_appscreo) {
 			add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );

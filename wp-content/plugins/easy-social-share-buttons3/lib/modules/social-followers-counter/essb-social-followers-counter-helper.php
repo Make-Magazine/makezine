@@ -386,7 +386,7 @@ class ESSBSocialFollowersCounterHelper {
 		
 		$mailpoet_lists = self::mailpoet_get_lists();
 		$mailpoet_lists = array_merge( array( array( 'list_id' => 'all', 'name' => __(' Total Subscribers from All Lists', ESSB3_TEXT_DOMAIN ))), $mailpoet_lists);
-		$mailpoet_lists = array_merge( array( array( 'list_id' => '', 'name' => __(' ', ESSB3_TEXT_DOMAIN ))), $mailpoet_lists);
+		$mailpoet_lists = array_merge( array( array( 'list_id' => '', 'name' => __(' ', 'essb' ))), $mailpoet_lists);
 		
 		$parsed_lists = array();
 		foreach ($mailpoet_lists as $list) {
@@ -478,7 +478,7 @@ class ESSBSocialFollowersCounterHelper {
 	//Get Mail Lists
 	public static function mailpoet_get_lists(){
 		
-		if (class_exists('MP')) {
+		if (class_exists('MailPoet\API\API')) {
 			$subscription_lists = \MailPoet\API\API::MP('v1')->getLists();
 			return $subscription_lists;
 		}

@@ -339,10 +339,19 @@ if (!function_exists('essb_actions_sendmail')) {
 			
 			$post = get_post($post_id);
 			$url = get_permalink($post_id);
-
+			
+			if (has_filter('essb_mailshare_url')) {
+				$url = apply_filters('essb_mailshare_url', $url);
+			}
+			
+			
 			$base_post_url = $url;
 			
 			$site_url = get_site_url();
+			
+			if (has_filter('essb_mailshare_siteurl')) {
+				$site_url = apply_filters('essb_mailshare_siteurl', $site_url);
+			}
 			
 			$base_site_url = $site_url;
 			
