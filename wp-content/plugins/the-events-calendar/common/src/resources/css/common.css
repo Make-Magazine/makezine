@@ -231,6 +231,12 @@
 
 :root {
 	/* -----------------------------------------------------------------------------
+	 * Opacities
+	 * ----------------------------------------------------------------------------- */
+}
+
+:root {
+	/* -----------------------------------------------------------------------------
 	 * Spacers
 	 * ----------------------------------------------------------------------------- */
 }
@@ -280,6 +286,10 @@
  * ----------------------------------------------------------------------------- */
 
 /* -----------------------------------------------------------------------------
+ * SVG - Location
+ * ----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
  * SVG - Map
  * ----------------------------------------------------------------------------- */
 
@@ -296,7 +306,15 @@
  * ----------------------------------------------------------------------------- */
 
 /* -----------------------------------------------------------------------------
+ * SVG - Reset
+ * ----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
  * SVG - Search
+ * ----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+ * SVG - Search Filter
  * ----------------------------------------------------------------------------- */
 
 /* -----------------------------------------------------------------------------
@@ -1134,34 +1152,39 @@ body#top .tribe-common .tribe-common-form-control-tabs__label {
 .tribe-common .tribe-common-form-control-text__input {
 		color: #141827;
 		font-family: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 1.62;
 		font-weight: 400;
-		font-weight: 700;
 
-		border: 1px solid #D5D5D5;
-		padding: 12px 18px;
+		border: none;
+		border-bottom: 1px solid #D5D5D5;
+		padding: 12px 28px 12px 0;
 		width: 100%;
 	}
 
 .tribe-common .tribe-common-form-control-text__input::-webkit-input-placeholder {
 			color: #727272;
-			font-weight: 400;
+			font-style: normal;
 		}
 
 .tribe-common .tribe-common-form-control-text__input:-ms-input-placeholder {
 			color: #727272;
-			font-weight: 400;
+			font-style: normal;
 		}
 
 .tribe-common .tribe-common-form-control-text__input::-ms-input-placeholder {
 			color: #727272;
-			font-weight: 400;
+			font-style: normal;
 		}
 
 .tribe-common .tribe-common-form-control-text__input::placeholder {
 			color: #727272;
-			font-weight: 400;
+			font-style: normal;
+		}
+
+.tribe-common .tribe-common-form-control-text__input:focus {
+			border-bottom-color: #141827;
+			outline: none;
 		}
 
 /* Enfold Compatibility */
@@ -1169,34 +1192,29 @@ body#top .tribe-common .tribe-common-form-control-tabs__label {
 body#top .tribe-common .tribe-common-form-control-text__input {
 			color: #141827;
 			font-family: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
-			font-size: 14px;
+			font-size: 16px;
 			line-height: 1.62;
 			font-weight: 400;
-			font-weight: 700;
 
-			border: 1px solid #D5D5D5;
-			padding: 12px 18px;
+			border-bottom: 1px solid #D5D5D5;
+			padding: 12px 20px 12px 0;
 			width: 100%;
 		}
 
 body#top .tribe-common .tribe-common-form-control-text__input::-webkit-input-placeholder {
 				color: #727272;
-				font-weight: 400;
 			}
 
 body#top .tribe-common .tribe-common-form-control-text__input:-ms-input-placeholder {
 				color: #727272;
-				font-weight: 400;
 			}
 
 body#top .tribe-common .tribe-common-form-control-text__input::-ms-input-placeholder {
 				color: #727272;
-				font-weight: 400;
 			}
 
 body#top .tribe-common .tribe-common-form-control-text__input::placeholder {
 				color: #727272;
-				font-weight: 400;
 			}
 
 /* .tribe-common-form-control-toggle {} */
@@ -1337,11 +1355,29 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 		flex-wrap: wrap;
 	}
 
+.tribe-common .tribe-common-g-row--gutters {
+		margin-left: -21px;
+		margin-right: -21px;
+	}
+
+.tribe-common .tribe-common-g-row--gutters > .tribe-common-g-col {
+			padding-left: 21px;
+			padding-right: 21px;
+		}
+
 /* Typography */
 
 .tribe-common a {
+		color: #141827;
 		cursor: pointer;
 	}
+
+.tribe-common a:hover,
+		.tribe-common a:focus,
+		.tribe-common a:active,
+		.tribe-common a:visited {
+			color: #141827;
+		}
 
 /* -------------------------------------------------------------------------
 	 *
@@ -1367,6 +1403,7 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 
 .tribe-common .tribe-common-anchor-alt {
 		border-bottom: 2px solid #334AFF;
+		color: #141827;
 		transition: color 0.2s ease;
 	}
 
@@ -1474,6 +1511,7 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 
 .tribe-common .tribe-common-cta--alt {
 		border-bottom: 2px solid #334AFF;
+		color: #141827;
 		transition: color 0.2s ease;
 	}
 
@@ -1573,6 +1611,10 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 		line-height: 1.62;
 	}
 
+.tribe-common .tribe-common-h6--alt {
+		font-weight: 400;
+	}
+
 /* -------------------------------------------------------------------------
 	 * Heading: h7
 	 * ------------------------------------------------------------------------- */
@@ -1583,6 +1625,10 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 		font-weight: 700;
 		font-size: 14px;
 		line-height: 1.62;
+	}
+
+.tribe-common .tribe-common-h7--alt {
+		font-weight: 400;
 	}
 
 /* -------------------------------------------------------------------------
@@ -1596,6 +1642,22 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 		font-size: 12px;
 		line-height: 1.38;
 	}
+
+.tribe-common .tribe-common-h8--alt {
+		font-weight: 400;
+	}
+
+/* -------------------------------------------------------------------------
+	 * Heading: h4 for --viewport-medium
+	 * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+	 * Heading: h5 for --viewport-medium
+	 * ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+	 * Heading: h6 for --viewport-medium
+	 * ------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------
 	 * Button
@@ -1626,8 +1688,32 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 	 * ------------------------------------------------------------------------- */
 
 .tribe-common .tribe-common-svgicon {
-		background-size: contain;
 		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+.tribe-common .tribe-common-svgicon--day {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='21' height='21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 .503v19.994c0 .278.19.503.424.503h20.152c.234 0 .424-.225.424-.503V.503C21 .225 20.81 0 20.576 0H.424C.19 0 0 .225 0 .503zm1.156.943h18.66v2.7H1.157v-2.7zm0 4.023h18.66V19.55H1.157V5.469zM14.18 14.53v1.747c0 .482.39.874.873.874h1.747a.873.873 0 0 0 .873-.874v-1.747a.873.873 0 0 0-.873-.873h-1.747a.873.873 0 0 0-.873.873z' fill='%23141827' fill-rule='nonzero'/%3E%3C/svg%3E");
+	}
+
+.tribe-common .tribe-common-svgicon--list {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='21' height='18' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23141827' fill-rule='nonzero'%3E%3Cpath d='M19.883 3.272c.342 0 .622-.21.622-.467v-.464c0-.257-.28-.467-.622-.467H7.127c-.342 0-.622.21-.622.467v.464c0 .257.28.467.622.467h12.756zM1.838 4.207a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM19.883 9.98c.342 0 .622-.21.622-.466v-.465c0-.257-.28-.467-.622-.467H7.127c-.342 0-.622.21-.622.467v.465c0 .256.28.466.622.466h12.756zM1.838 10.916a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5z' fill='%23141827'/%3E%3Cg%3E%3Cpath d='M19.883 16.689c.342 0 .622-.21.622-.467v-.465c0-.256-.28-.466-.622-.466H7.127c-.342 0-.622.21-.622.466v.465c0 .257.28.467.622.467h12.756zM1.838 17.624a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5z' fill='%23141827'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+.tribe-common .tribe-common-svgicon--map {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='21' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath stroke='%23141827' stroke-linejoin='round' d='M13.921 11.632H17.5l3.588 8.421H1l3.488-8.421h4.016'/%3E%3Cpath d='M11.32 15.506c.2-.248 4.93-6.108 4.93-9.04 0-3.015-2.305-5.468-5.138-5.468-2.833 0-5.138 2.453-5.138 5.467 0 2.933 4.729 8.793 4.93 9.041a.268.268 0 0 0 .208.101c.08 0 .155-.037.207-.101zm-4.797-9.04c0-2.693 2.058-4.883 4.589-4.883 2.53 0 4.588 2.19 4.588 4.882 0 2.387-3.667 7.22-4.588 8.397-.922-1.177-4.589-6.009-4.589-8.397z' stroke='%23141827' stroke-width='.4' fill='%23141827' fill-rule='nonzero'/%3E%3Cpath d='M12.85 6.477c0-1.007-.78-1.826-1.738-1.826-.96 0-1.74.819-1.74 1.826 0 1.007.78 1.826 1.74 1.826.959 0 1.739-.82 1.739-1.826zm-3.15 0c0-.817.633-1.482 1.412-1.482.778 0 1.41.665 1.41 1.482s-.632 1.482-1.41 1.482c-.779 0-1.412-.665-1.412-1.482z' stroke='%23141827' stroke-width='.7' fill='%23000' fill-rule='nonzero'/%3E%3C/g%3E%3C/svg%3E");
+	}
+
+.tribe-common .tribe-common-svgicon--month {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='22' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.637 1.063v19.879c0 .276.189.5.422.5h20.037c.232 0 .421-.224.421-.5V1.062c0-.275-.189-.5-.421-.5H1.059c-.233 0-.422.225-.422.5zM1.787 2H20.34v2.685H1.787V2zm0 4H20.34v14H1.787V6zM8 8.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm-8 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm-12 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5z' fill='%23141827' fill-rule='nonzero'/%3E%3C/svg%3E");
+	}
+
+.tribe-common .tribe-common-svgicon--photo {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='17' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23141827' fill-rule='nonzero'%3E%3Cpath d='M19.348.11H.634a.509.509 0 0 0-.52.508v15.017c0 .284.23.508.52.508h18.714c.29 0 .52-.224.52-.508V.618a.509.509 0 0 0-.52-.508zm-.54 1.035v10.837l-2.87-3.084c-.583-.61-1.664-.61-2.246 0l-1.393 1.481-4.034-4.525a1.625 1.625 0 0 0-1.227-.528 1.6 1.6 0 0 0-1.206.548l-4.657 5.175V1.145h17.632zM1.174 15.108v-2.496l5.448-6.089a.529.529 0 0 1 .415-.182c.146 0 .333.06.437.182l4.429 4.972c.104.102.25.183.395.183.166.02.291-.06.395-.162l1.788-1.908c.167-.183.5-.183.686 0l3.66 3.917v1.603H1.175v-.02z' fill='%23141827'/%3E%3Cpath d='M14.19 5.757c1.044 0 1.91-.872 1.91-1.968s-.846-1.969-1.91-1.969c-1.062 0-1.909.873-1.909 1.969s.866 1.968 1.91 1.968zm0-2.902c.493 0 .907.427.907.934 0 .507-.414.933-.906.933-.492 0-.906-.426-.906-.933 0-.507.414-.934.906-.934z' fill='%23141827'/%3E%3C/g%3E%3C/svg%3E");
+	}
+
+.tribe-common .tribe-common-svgicon--week {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='21' height='21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 .503v19.994c0 .278.19.503.424.503h20.152c.234 0 .424-.225.424-.503V.503C21 .225 20.81 0 20.576 0H.424C.19 0 0 .225 0 .503zm1.156.943h18.66v2.7H1.157v-2.7zm0 4.023h18.66V19.55H1.157V5.469zm6.25 6.537v1.006c0 .278.224.503.502.503h1.006a.503.503 0 0 0 .503-.503v-1.006a.503.503 0 0 0-.503-.502H7.908a.503.503 0 0 0-.503.502zm4.022 0v1.006c0 .278.225.503.503.503h1.006a.503.503 0 0 0 .503-.503v-1.006a.503.503 0 0 0-.503-.502H11.93a.503.503 0 0 0-.503.502zm4.023 0v1.006c0 .278.225.503.503.503h1.006a.503.503 0 0 0 .503-.503v-1.006a.503.503 0 0 0-.503-.502h-1.006a.503.503 0 0 0-.503.502zm-12.069 0v1.006c0 .278.225.503.503.503h1.006a.503.503 0 0 0 .503-.503v-1.006a.503.503 0 0 0-.503-.502H3.885a.503.503 0 0 0-.503.502z' fill='%23141827' fill-rule='nonzero'/%3E%3C/svg%3E");
 	}
 
 .tribe-common .tribe-common-svgicon--featured {
@@ -1642,6 +1728,14 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 		width: 10px;
 	}
 
+.tribe-common .tribe-common-svgicon--search {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%23727272'/%3E%3C/svg%3E");
+	}
+
+.tribe-common .tribe-common-svgicon--filters {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23727272' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' transform='translate(1 1)'%3E%3Cpath d='M3 3V0M3 15v-2' stroke='%23727272'/%3E%3Ccircle cx='3' cy='9' r='3' stroke='%23727272'/%3E%3Cpath d='M12 9v6' stroke='%23727272'/%3E%3Ccircle cx='12' cy='3' r='3' transform='matrix(1 0 0 -1 0 6)' stroke='%23727272'/%3E%3C/g%3E%3C/svg%3E");
+	}
+
 /* A11y */
 
 /* -----------------------------------------------------------------------------
@@ -1654,43 +1748,43 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
  * ----------------------------------------------------------------------------- */
 
 /* -----------------------------------------------------------------------------
- * Hide from screenreaders & browsers
- * ----------------------------------------------------------------------------- */
+	 * Hide from screenreaders & browsers
+	 * ----------------------------------------------------------------------------- */
 
-.tribe-common-a11y-hidden {
-	display: none !important;
-	visibility: hidden;
-}
-
-/* -----------------------------------------------------------------------------
- * Hide from browsers & show for screenreaders
- * ----------------------------------------------------------------------------- */
-
-.tribe-common-a11y-visual-hide {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
+.tribe-common .tribe-common-a11y-hidden {
+		display: none !important;
+		visibility: hidden;
+	}
 
 /* -----------------------------------------------------------------------------
- * Show for browsers & screenreaders
- * ----------------------------------------------------------------------------- */
+	 * Hide from browsers & show for screenreaders
+	 * ----------------------------------------------------------------------------- */
 
-.tribe-common-a11y-visual-show {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
+.tribe-common .tribe-common-a11y-visual-hide {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+/* -----------------------------------------------------------------------------
+	 * Show for browsers & screenreaders
+	 * ----------------------------------------------------------------------------- */
+
+.tribe-common .tribe-common-a11y-visual-show {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
 
 /* Components */
 
@@ -1844,17 +1938,17 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 	 * ----------------------------------------------------------------------------- */
 
 .tribe-common .tribe-common-c-btn-icon--filters:before {
-			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 16.75l22 .232M0 9.75l22 .232M0 2.75l22 .232M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 20a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' fill='%23727272' stroke='%23727272'/%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23727272' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' transform='translate(1 1)'%3E%3Cpath d='M3 3V0M3 15v-2' stroke='%23727272'/%3E%3Ccircle cx='3' cy='9' r='3' stroke='%23727272'/%3E%3Cpath d='M12 9v6' stroke='%23727272'/%3E%3Ccircle cx='12' cy='3' r='3' transform='matrix(1 0 0 -1 0 6)' stroke='%23727272'/%3E%3C/g%3E%3C/svg%3E");
 			height: 20px;
 			width: 24px;
 		}
 
 .tribe-common .tribe-common-c-btn-icon--filters:active:before, .tribe-common .tribe-common-c-btn-icon--filters:hover:before, .tribe-common .tribe-common-c-btn-icon--filters:focus:before {
-				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 16.75l22 .232M0 9.75l22 .232M0 2.75l22 .232M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 20a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' fill='%23141827' stroke='%23141827'/%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23727272' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' transform='translate(1 1)'%3E%3Cpath d='M3 3V0M3 15v-2' stroke='%23141827'/%3E%3Ccircle cx='3' cy='9' r='3' stroke='%23141827'/%3E%3Cpath d='M12 9v6' stroke='%23141827'/%3E%3Ccircle cx='12' cy='3' r='3' transform='matrix(1 0 0 -1 0 6)' stroke='%23141827'/%3E%3C/g%3E%3C/svg%3E");
 			}
 
 .tribe-common .tribe-common-c-btn-icon--filters:disabled:before {
-				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 16.75l22 .232M0 9.75l22 .232M0 2.75l22 .232M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 20a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' fill='%23D5D5D5' stroke='%23D5D5D5'/%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23727272' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' transform='translate(1 1)'%3E%3Cpath d='M3 3V0M3 15v-2' stroke='%23D5D5D5'/%3E%3Ccircle cx='3' cy='9' r='3' stroke='%23D5D5D5'/%3E%3Cpath d='M12 9v6' stroke='%23D5D5D5'/%3E%3Ccircle cx='12' cy='3' r='3' transform='matrix(1 0 0 -1 0 6)' stroke='%23D5D5D5'/%3E%3C/g%3E%3C/svg%3E");
 			}
 
 /* -----------------------------------------------------------------------------
@@ -1905,7 +1999,7 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 		transition: background-color 0.2s ease;
 
 		background-color: #334AFF;
-		padding: 16px 22px 17px;
+		padding: 11px 22px 11px;
 		width: 100%;
 	}
 
@@ -1920,17 +2014,6 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 
 .tribe-common .tribe-common-c-btn:disabled {
 			background-color: rgba(51,74,255, 0.07);
-		}
-
-.tribe-common .tribe-common-c-btn:after {
-			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.648 0L9.62 1.956l6.23 6.005H0v2.793h15.85L9.62 16.76l2.028 1.956 9.705-9.358z' fill='%23FFFFFF'/%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-size: contain;
-			content: '';
-			display: inline-block;
-			height: 10px;
-			margin-left: 8px;
-			width: 12px;
 		}
 
 /* -----------------------------------------------------------------------------
@@ -2099,7 +2182,7 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 	 * Example:
 	 * <form action="" method="post" class="tribe-common-c-search">
 	 *   <div class="tribe-common-form-control-input-group tribe-common-c-search__input-group">
-	 *     <div class="tribe-common-form-control-text">
+	 *     <div class="tribe-common-form-control-text tribe-common-c-search__input-control">
 	 *       <label class="tribe-common-form-control-text__label" for="keyword">Keyword</label>
 	 *       <input
 	 *         class="tribe-common-form-control-text__input tribe-common-c-search__input"
@@ -2109,7 +2192,7 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 	 *         placeholder="Keyword"
 	 *       />
 	 *     </div>
-	 *     <div class="tribe-common-form-control-text">
+	 *     <div class="tribe-common-form-control-text tribe-common-c-search__input-control">
 	 *       <label class="tribe-common-form-control-text__label" for="location">Location</label>
 	 *       <input
 	 *         class="tribe-common-form-control-text__input tribe-common-c-search__input"
@@ -2135,21 +2218,39 @@ body#top .tribe-common .tribe-common-form-control-toggle__label {
 	 *
 	 * ----------------------------------------------------------------------------- */
 
-.tribe-common .tribe-common-c-search__input-group > *:first-child {
-				flex: 1 1 34.5%;
+.tribe-common .tribe-common-c-search__input--icon {
+		background-repeat: no-repeat;
+		background-position: right center;
+	}
+
+.tribe-common .tribe-common-c-search__input-control--keyword .tribe-common-c-search__input {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%23727272'/%3E%3C/svg%3E");
+			background-size: 16px;
+		}
+
+.tribe-common .tribe-common-c-search__input-control--keyword .tribe-common-c-search__input:focus {
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%23334AFF'/%3E%3C/svg%3E");
 			}
 
-.tribe-common .tribe-common-c-search__input-group > *:nth-child(2) {
-				flex: 1 1 37.5%;
+.tribe-common .tribe-common-c-search__input-control--keyword-focus .tribe-common-c-search__input {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18.711l-6.044-6.044a7.782 7.782 0 0 0 1.688-4.845c0-2.089-.822-4.044-2.288-5.533C11.866.822 9.91 0 7.822 0S3.778.822 2.29 2.289A7.801 7.801 0 0 0 0 7.822c0 2.09.822 4.045 2.289 5.534a7.801 7.801 0 0 0 5.533 2.288c1.778 0 3.467-.6 4.845-1.688L18.71 20 20 18.711zM3.578 12.067c-2.334-2.334-2.334-6.156 0-8.49a5.968 5.968 0 0 1 4.244-1.755c1.6 0 3.111.622 4.245 1.756 2.333 2.333 2.333 6.155 0 8.489a5.968 5.968 0 0 1-4.245 1.755c-1.6 0-3.11-.622-4.244-1.755z' fill='%23334AFF'/%3E%3C/svg%3E");
+		}
+
+.tribe-common .tribe-common-c-search__input-control--location .tribe-common-c-search__input {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.682 1.548a5.166 5.166 0 0 0-7.375 0C-3.073 5.984 4.959 15.36 4.994 15.36c.051-.001 8.092-9.35 3.688-13.812zM4.994 2.833c1.27 0 2.301 1.043 2.301 2.331 0 1.287-1.03 2.33-2.301 2.33-1.272 0-2.3-1.043-2.3-2.33 0-1.288 1.028-2.331 2.3-2.331z' fill='%23727272' fill-rule='evenodd'/%3E%3C/svg%3E");
+			background-size: 10px 15px;
+		}
+
+.tribe-common .tribe-common-c-search__input-control--location .tribe-common-c-search__input:focus {
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.682 1.548a5.166 5.166 0 0 0-7.375 0C-3.073 5.984 4.959 15.36 4.994 15.36c.051-.001 8.092-9.35 3.688-13.812zM4.994 2.833c1.27 0 2.301 1.043 2.301 2.331 0 1.287-1.03 2.33-2.301 2.33-1.272 0-2.3-1.043-2.3-2.33 0-1.288 1.028-2.331 2.3-2.331z' fill='%23334AFF' fill-rule='evenodd'/%3E%3C/svg%3E");
 			}
 
-.tribe-common .tribe-common-c-search__input-group > *:nth-child(3) {
-				flex: 1 1 28%;
-			}
+.tribe-common .tribe-common-c-search__input-control--location-focus .tribe-common-c-search__input {
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.682 1.548a5.166 5.166 0 0 0-7.375 0C-3.073 5.984 4.959 15.36 4.994 15.36c.051-.001 8.092-9.35 3.688-13.812zM4.994 2.833c1.27 0 2.301 1.043 2.301 2.331 0 1.287-1.03 2.33-2.301 2.33-1.272 0-2.3-1.043-2.3-2.33 0-1.288 1.028-2.331 2.3-2.331z' fill='%23334AFF' fill-rule='evenodd'/%3E%3C/svg%3E");
+		}
 
 .tribe-common .tribe-common-c-search__button {
-		flex: none;
-		margin-top: 8px;
+		margin-top: 24px;
 	}
 
 /* Enfold Compatibility */
@@ -2235,6 +2336,27 @@ body#top .tribe-common .tribe-common-form-control-tabs__label {
 				display: block
 		}
 
+.tribe-common .tribe-common-form-control-text__input {
+			color: #141827;
+			font-family: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.62;
+			font-weight: 400;
+
+			border: none;
+			padding: 20px 20px 20px 40px
+	}
+
+body#top .tribe-common .tribe-common-form-control-text__input {
+				color: #141827;
+				font-family: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+				font-size: 14px;
+				line-height: 1.62;
+				font-weight: 400;
+
+				padding: 12px 18px
+		}
+
 .tribe-common .tribe-common-g-row--gutters {
 			margin-left: -24px;
 			margin-right: -24px
@@ -2280,6 +2402,21 @@ body#top .tribe-common .tribe-common-form-control-tabs__label {
 			line-height: 1.42
 	}
 
+.tribe-common .tribe-common-h4--min-medium {
+			font-size: 24px;
+			line-height: 1.42
+	}
+
+.tribe-common .tribe-common-h5--min-medium {
+			font-size: 18px;
+			line-height: 1.5
+	}
+
+.tribe-common .tribe-common-h6--min-medium {
+			font-size: 16px;
+			line-height: 1.62
+	}
+
 .tribe-common .tribe-common-l-container {
 			padding-left: 42px;
 			padding-right: 42px
@@ -2299,31 +2436,36 @@ body#top .tribe-common .tribe-common-form-control-tabs__label {
 	}
 
 .tribe-common .tribe-common-c-search {
-			display: flex
+			display: flex;
+			align-items: center
 	}
 
 .tribe-common .tribe-common-c-search__input-group {
-			background-color: #FFFFFF;
-			border: 1px solid #D5D5D5;
-			border-right: none;
+			align-items: center;
 			display: flex;
-			flex: auto;
-			max-width: 645px;
-			padding: 8px 0
+			flex: auto
 	}
 
-.tribe-common .tribe-common-c-search__input-group > * {
-				margin-bottom: 0
+.tribe-common .tribe-common-c-search__input-control {
+			border-right: 1px solid #D5D5D5;
+			flex: auto;
+			margin: 12px 0
+	}
+
+.tribe-common .tribe-common-c-search__input-control:last-child {
+				border-right: none
 		}
 
 .tribe-common .tribe-common-c-search__input {
-			border: none;
-			border-right: 1px solid #D5D5D5;
-			height: auto;
-			padding: 7px 18px 8px
+			margin: -12px 0
+	}
+
+.tribe-common .tribe-common-c-search__input--icon {
+			background-position: 16px center
 	}
 
 .tribe-common .tribe-common-c-search__button {
+			flex: none;
 			margin-top: 0
 	}
 
@@ -2333,7 +2475,6 @@ body#top .tribe-common .tribe-common-form-control-text-group {
 
 body#top .tribe-common .tribe-common-c-search__input {
 				border: none;
-				border-right: 1px solid #D5D5D5;
-				padding: 7px 18px 8px
+				border-right: 1px solid #D5D5D5
 		}
 		}
