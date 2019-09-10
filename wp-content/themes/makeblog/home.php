@@ -32,31 +32,7 @@ if (user_can($current_user, 'administrator')) {
 			<div class="row">
 				<div class="col-xs-12">
 
-					<form class="sub-form whatcounts-signupTagArchive" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
-						<input type="hidden" name="slid" value="6B5869DC547D3D46B52F3516A785F101" /><!-- Makezine -->
-						<input type="hidden" name="cmd" value="subscribe" />
-						<input type="hidden" name="custom_source" value="tag page" />
-						<input type="hidden" name="custom_incentive" value="none" />
-						<input type="hidden" name="custom_url" value="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-						<input type="hidden" id="format_mime" name="format" value="mime" />
-						<input type="hidden" name="goto" value="" />
-						<input type="hidden" name="custom_host" value="<?php echo $_SERVER["HTTP_HOST"]; ?>" />
-						<input type="hidden" name="errors_to" value="" />
-
-						<div class="tag-nl-floats">
-							<input value="SIGN UP" class="btn-red" type="submit">
-							<div class="tag-nl-floats-r">
-								<h5>Make: Newsletter</h5>
-								<p>The latest news from Make:</p>
-							</div>
-						</div>
-						<br />
-						<div id="recapcha-tag" class="g-recaptcha" data-size="invisible"></div>
-						<div class="float-label-control">
-							<input name="email" class="form-control" placeholder="your email here" required type="email">
-						</div>
-						<input src="<?php echo get_stylesheet_directory_uri() . '/img/Makey-tag-newlsetter.svg'; ?>" class="btn-makey-tag" type="image" alt="Makey tag page newsletter">
-					</form>
+					&nbsp;
 
 				</div>
 			</div>

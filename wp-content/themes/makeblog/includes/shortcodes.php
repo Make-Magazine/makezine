@@ -73,6 +73,8 @@ function make_newsletter( $atts, $content = null ) {
 add_shortcode( 'newsletter', 'make_newsletter' );
 
 function make_marketron_newsletter( $atts, $content = null ) {
+        return '';
+        //we no longer use whatcounts.
 	return '
 		<form class="form-stacked" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
 			<input type="hidden" name="slid" value="6B5869DC547D3D467B33E192ADD9BE4B" /><!-- MakerPro -->

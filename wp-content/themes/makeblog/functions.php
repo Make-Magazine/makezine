@@ -702,7 +702,7 @@ function catch_first_image_tags() {
     ob_start();
     ob_end_clean();
     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $first_img = $matches[1][0];
+    $first_img = (isset($matches[1][0])?$matches[1][0]:'');
 
     if(empty($first_img)) {
         $first_img = get_template_directory_uri().'/version-2/img/thumbtag.jpg';

@@ -54,7 +54,8 @@ function tags_pulling($offset=0, $tag) {
 
 		$post_id      = get_the_ID();
 		$type_array   = get_post_meta( $post_id, 'story_type' );
-		$story_type[] = $type_array[0];
+                
+		$story_type[] = (isset($type_array[0])?$type_array[0]:'');
 
 		if ( $large_indicator == 1 ) {
 			$post_weight     = 2;
@@ -86,7 +87,7 @@ function tags_pulling($offset=0, $tag) {
 		$url = wp_get_attachment_image( get_post_thumbnail_id( $post_id ), 'project-thumb' );
 		$re  = "/^(.*? src=\")(.*?)(\".*)$/m";
 		preg_match_all( $re, $url, $matches );
-		$str    = $matches[2][0];
+		$str    = (isset($matches[2][0])?$matches[2][0]:'');
 		$photon = jetpack_photon_url( $str, $args );
 		if(strlen($url) == 0){
 			$photon = catch_first_image_tags();
