@@ -65,7 +65,7 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 
-					<div id="contextly"></div>
+					<!--<div id="contextly"></div>-->
 					
 					<div class="comments">
 						<?php comments_template(); ?>

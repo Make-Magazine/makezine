@@ -56,7 +56,7 @@ get_header('universal'); ?>
 					<?php endwhile; ?>
 					
 
-					<div id="contextly"></div>
+					<!--<div id="contextly"></div>-->
 					
 					<?php if (function_exists('make_featured_products')) { make_featured_products(); } ?>
 					

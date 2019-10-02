@@ -1,6 +1,7 @@
 <?php
 // Story API
 function get_story_with_ajax() {
+    /*
   add_shortcode('contextly_auto_sidebar', function($attrs) {
     if ( isset( $attrs[ 'id' ] ) ) {
       return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
@@ -15,7 +16,7 @@ function get_story_with_ajax() {
     } else {
       return '';
     }
-  } );
+  } );*/
   $exclude = $_POST['excludeId'];
   $offset = $_POST['offset'];
   $number = $_POST['number'];
@@ -137,7 +138,7 @@ function get_story_with_ajax() {
             <div class="essb_right_flag"></div>
         </div>
     </div>
-    <script>
+    <!--<script>
     Contextly.ready('widgets', [
       {
         context: '.post-<?php the_ID() ?>',
@@ -148,7 +149,7 @@ function get_story_with_ajax() {
         }
       }
     ]);
-    </script>
+    </script>-->
   </article>
   <?php
   endwhile;
@@ -160,7 +161,7 @@ add_action('wp_ajax_get_story_with_ajax', 'get_story_with_ajax');
 add_action('wp_ajax_nopriv_get_story_with_ajax', 'get_story_with_ajax');
 
 function get_story_with_ajax2() {
-    add_shortcode('contextly_auto_sidebar', function($attrs) {
+    /*add_shortcode('contextly_auto_sidebar', function($attrs) {
         if ( isset( $attrs[ 'id' ] ) ) {
             return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
         } else {
@@ -174,7 +175,7 @@ function get_story_with_ajax2() {
         } else {
             return '';
         }
-    } );
+    } );*/
     $exclude = $_GET['excludeId'];
     $offset = $_GET['offset'];
     $number = $_GET['number'];
@@ -298,6 +299,7 @@ function get_story_with_ajax2() {
               <div class="essb_right_flag"></div>
           </div>
       </div>
+      <!--
       <script>
       Contextly.ready('widgets', [
         {
@@ -309,7 +311,7 @@ function get_story_with_ajax2() {
           }
         }
       ]);
-      </script>
+      </script>-->
     </article>
   <?php
   endwhile;

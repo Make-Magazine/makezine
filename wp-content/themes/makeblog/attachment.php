@@ -145,7 +145,7 @@ get_header('universal'); ?>
 
         <?php endwhile; ?>
 
-          <div id="contextly"></div>
+          <!--<div id="contextly"></div>-->
 
         <?php  else: ?>
 

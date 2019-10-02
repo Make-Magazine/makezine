@@ -70,9 +70,10 @@ function make_action_after_setup_theme() {
 	) );
 	add_theme_support( 'automatic-feed-links' );
 
+        /*
 	if ( array('volume', 'project' ) == get_post_type() ) {
 		remove_action('the_content', 'contextly_linker_widget');
-	}
+	}*/
 
 	// This is hoping to fix the issue that arises, preventing the contribute form from working.
 	if ( ! is_admin() ) {

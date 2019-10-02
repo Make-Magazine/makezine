@@ -55,7 +55,7 @@ get_header('universal'); ?>
 						<div class="comments">
 							<?php comments_template(); ?>
 						</div>
-						<div id="contextly"></div>
+						<!--<div id="contextly"></div>-->
 
 						<?php else: ?>
 

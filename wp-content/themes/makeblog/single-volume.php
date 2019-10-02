@@ -136,7 +136,7 @@
               <div class="comments">
                 <?php comments_template(); ?>
               </div>
-              <div id="contextly"></div>
+              <!--<div id="contextly"></div>-->
               <?php if (function_exists('make_printer_makershed_thing')) { echo make_printer_makershed_thing(); } ?>
               <?php else: ?>
                 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
