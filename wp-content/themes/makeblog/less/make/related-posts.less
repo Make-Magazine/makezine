@@ -1,0 +1,39 @@
+.article-body #jp-relatedposts {
+	a { border-bottom: 0px; }
+	h3.jp-relatedposts-headline {
+		width: 100%;
+		text-align: center;
+		color: #6d6d6d;
+		font-size: 19px;
+		font-family: 'Montserrat';
+	}
+	.jp-relatedposts-items {
+		display: flex;
+		.jp-relatedposts-post {
+			width: 25%;
+			@media screen and (max-width: 1200px) {
+				width: 33%;
+				&:last-of-type {
+					display: none;
+				}
+			}
+			.jp-relatedposts-post-title {
+				a, a:hover, a:focus, a:visited {
+					text-decoration: none;
+					color: #6d6d6d;
+					font-size: 16px;
+					font-family: "Open Sans";
+				}
+			}
+		}
+		@media screen and (max-width: 425px) {
+			flex-direction: column;
+			.jp-relatedposts-post {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				img { width: 38%; }
+			}
+		}
+	}
+}

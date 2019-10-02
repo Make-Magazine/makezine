@@ -241,18 +241,19 @@ function get_story_with_ajax2() {
                       ?>
                       <div class="article-body" itemprop="articleBody">
                         <?php the_content(); ?>
+								 
                         <div id="nativobelow"></div>
                       </div>
                   </div>
-                  <div class="comments">
+                  <!--<div class="comments">
                       <button type="button" class="btn btn-info btn-lg"
                         data-toggle="modal" data-target="#disqus-modal"
-                        onclick="reset('<?php echo get_the_ID(); ?>',
-                          '<?php echo 'https://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>',
-                          '<?php echo get_the_title(); ?>', 'en');">
+                        onclick="reset('<?php //echo get_the_ID(); ?>',
+                          '<?php //echo 'https://makezine.com'. str_replace(home_url(), '', get_permalink()); ?>',
+                          '<?php //echo get_the_title(); ?>', 'en');">
                         Show comments
                       </button>
-                  </div>
+                  </div> -->
               </div>
               <aside class="col-sm-5 col-md-4 sidebar">
                   <div class="row author-info">
