@@ -101,9 +101,6 @@ include_once dirname(__FILE__) . '/includes/video-cpt.php';
 // 27. Errata CPT
 //include_once dirname(__FILE__) . '/includes/errata-cpt.php';
 
-// 28. Contextly
-//include_once dirname( __FILE__ ) . '/includes/contextly-related-links/contextly-linker.php';
-
 // 28. Markdown
 include_once dirname(__FILE__) . '/includes/markdown/markdown.php';
 
