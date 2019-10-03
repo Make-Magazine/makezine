@@ -1,15 +1,20 @@
-.article-body .jp-relatedposts {
+.article-body .jp-relatedposts, .article-body #jp-relatedposts {
 	a { border-bottom: 0px; }
    h3.jp-relatedposts-headline {
 		width: 100%;
 		text-align: center;
 		color: #6d6d6d;
 		font-size: 19px !important;
-		font-family: 'Montserrat' !important;
+		font-family: 'Roboto Light' !important;
 		border-top: 1px solid #e3e3e3;
-		padding-top: 15px;
+		padding: 15px 0px 20px;
+		margin: 0px !important;
 		em {
 			font-style: normal;
+			&::before {
+				margin: 0px;
+				border: 0px;
+			}
 		}
 	}
 	.jp-relatedposts-items {
