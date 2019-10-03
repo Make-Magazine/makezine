@@ -19,7 +19,7 @@ function get_story_with_ajax2() {
 						 $related_post = get_post( $result['id'] );
 						 $return .= '<div class="jp-relatedposts-post jp-relatedposts-post-thumbs" data-post-id="'.$related_post->ID.'" data-post-format="false">
 						               <a href="'.get_permalink($related_post).'" class="jp-relatedposts-post-a">
-						 					  <img class="jp-relatedposts-post-img" src="'.get_resized_remote_image_url(get_the_post_thumbnail_url($related_post, 173, 99)).'" alt="'.$related_post->post_title.'" />
+						 					  <img class="jp-relatedposts-post-img" src="'.get_resized_remote_image_url(get_the_post_thumbnail_url($related_post), 173, 99).'" alt="'.$related_post->post_title.'" />
 											</a>
 											<h4 class="jp-relatedposts-post-title">
 											  <a class="jp-relatedposts-post-a" href="'.get_permalink($related_post).'" title="'.$related_post->post_title.'">'
