@@ -944,3 +944,8 @@ function make_error_log(){
   $error = filter_input(INPUT_POST, 'make_error', FILTER_SANITIZE_STRING);
   error_log(print_r($error, TRUE));
 }
+
+    add_shortcode('contextly_sidebar', function($attrs) {
+        //We disabled contextly but need to return blanks for old shortcodes that are hard coded in the post
+        return '';
+    } );
