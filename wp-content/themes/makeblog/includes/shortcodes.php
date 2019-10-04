@@ -1141,6 +1141,7 @@ add_shortcode( 'prototyple_challenge', 'prototype_wizehive_shortcode' );
 
 // This shortcode adds a simple newsletter signup form in a small sidebar size.
 function newsletter_signup_sidebar_shortcode() {
+    /* we no longer use whatcounts. return blank for now until we get a new newsletter system
 	$output = '<div class="mz-sidebar-subscribe">
 							<h4>Let\'s Stay in Touch!</h4>
 							<form class="sub-form whatcounts-signup1s" action="https://secure.whatcounts.com/bin/listctrl" method="POST">
@@ -1165,7 +1166,8 @@ function newsletter_signup_sidebar_shortcode() {
                 jQuery(function() {
                   jQuery( "#wc_custom_url" ).val( window.location.href );
                 });
-            </script>';
+            </script>';*/
+        $output = '';
 	return $output;
 }
 
