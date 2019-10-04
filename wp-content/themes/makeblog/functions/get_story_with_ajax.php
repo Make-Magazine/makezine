@@ -38,7 +38,7 @@ function get_story_with_ajax2() {
 		 return $return;
 	}
 	add_shortcode( 'jprel', 'jetpackme_custom_related' );
-    /*add_shortcode('contextly_auto_sidebar', function($attrs) {
+    add_shortcode('contextly_auto_sidebar', function($attrs) {
         if ( isset( $attrs[ 'id' ] ) ) {
             return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
         } else {
@@ -47,12 +47,14 @@ function get_story_with_ajax2() {
     } );
     add_shortcode('contextly_sidebar', function($attrs) {
     // We will display sidebar only if we have id for this sidebar
-        if ( isset( $attrs[ 'id' ] ) ) {
+        /*if ( isset( $attrs[ 'id' ] ) ) {
             return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."'></div>";
         } else {
             return '';
-        }
-    } );*/
+        }*/
+        //We disabled contextly but need to return blanks for old shortcodes that are hard coded in the post
+    return '';
+    } );
     $exclude = $_GET['excludeId'];
     $offset = $_GET['offset'];
     $number = $_GET['number'];
@@ -229,7 +231,7 @@ function get_story_with_ajax() {
 		 return $return;
 	}
 	add_shortcode( 'jprel', 'jetpackme_custom_related' );
-    /*
+    
   add_shortcode('contextly_auto_sidebar', function($attrs) {
     if ( isset( $attrs[ 'id' ] ) ) {
       return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."' sidebar-type='auto'></div>";
@@ -239,12 +241,15 @@ function get_story_with_ajax() {
   } );
   add_shortcode('contextly_sidebar', function($attrs) {
   // We will display sidebar only if we have id for this sidebar
+      /*
     if ( isset( $attrs[ 'id' ] ) ) {
       return "<div class='" . esc_attr( 'ctx-sidebar-container' ) . " " . esc_attr( 'ctx-sidebar-container--' . $attrs[ 'id' ] ) ."'></div>";
     } else {
       return '';
-    }
-  } );*/
+    }*/
+    //We disabled contextly but need to return blanks for old shortcodes that are hard coded in the post
+    return '';
+  } );
   $exclude = $_POST['excludeId'];
   $offset = $_POST['offset'];
   $number = $_POST['number'];
