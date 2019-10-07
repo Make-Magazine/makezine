@@ -47,7 +47,21 @@
 				background: url('../../makeblog/img/default-related-article.png');
 				background-size: cover;
 				text-indent: -9999px;
+				width: 100%;
     			min-height: 100px;
+			}
+			&.jp-relatedposts-post-nothumbs {
+				background: url('../../makeblog/img/default-related-article.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin-right: 20px;
+				max-height: 100px;
+				.jp-relatedposts-post-excerpt {
+					 display: none;
+				}
+				.jp-relatedposts-post-title {
+					margin-top: 100px;
+				}
 			}
 		}
 		@media screen and (max-width: 480px) {
