@@ -8,7 +8,8 @@ add_filter( 'jetpack_relatedposts_filter_options', 'jetpackme_more_related_posts
 
 // set that default image
 function jetpack_default_image( $media, $post_id, $args ) {
-    if ( file_exists($media->src) ) {
+
+    if ( is_readable($media[0]['src']) ) {
         return $media;
     } else {
         $permalink = get_permalink( $post_id );
