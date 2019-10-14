@@ -17,6 +17,9 @@ function get_story_with_ajax2() {
 					foreach ( $related as $result ) {
 						 $related_post = get_post( $result['id'] );
 						 $related_image = get_resized_remote_image_url(get_the_post_thumbnail_url($related_post), 173, 99);
+						 if(!$related_image || $related_image == "") {
+							 $related_image = get_template_directory_uri() . '/img/default-related-article.png';
+						 }
 						 $return .= '<div class="jp-relatedposts-post jp-relatedposts-post-thumbs" data-post-id="'.$related_post->ID.'" data-post-format="false">
 						               <a href="'.get_permalink($related_post).'" class="jp-relatedposts-post-a">
 						 					  <img class="jp-relatedposts-post-img" src="'.$related_image.'" alt="'.$related_post->post_title.'" />
