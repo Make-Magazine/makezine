@@ -290,15 +290,18 @@ jQuery(document).on('submit', '.whatcounts-head-mobile', function (e) {
   e.preventDefault();
   onSubmitHeaderMobile();
 });
-// Tag Archive page
+
+// Tag Archive page MAIL CHIMP
 var onSubmitTag = function(token) {
-  jQuery.post('https://secure.whatcounts.com/bin/listctrl', jQuery('.whatcounts-signupTagArchive').serialize());
+  jQuery.post('https://makermedia.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=64d256630b', jQuery('.mailchimp-signupTagArchive').serialize());
   jQuery('.nl-thx-p2').trigger('click');
+  jQuery('.mailchimp-signupTagArchive .form-control').val("");
 } 
-jQuery(document).on('submit', '.whatcounts-signupTagArchive', function (e) {
+jQuery(document).on('submit', '.mailchimp-signupTagArchive', function (e) {
   e.preventDefault();
   onSubmitTag();
 });
+
 // Build your own page template
 var onSubmitPageBuilder = function(token) {
   var bla = jQuery('#wc-email').val();
