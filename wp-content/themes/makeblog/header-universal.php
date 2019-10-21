@@ -270,7 +270,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ?>
    </div>
 
-
+  <script async id="aniviewJS94454388" src="https://play.aniview.com/58fcbed1073ef420086c9d08/5d8c8d3828a061037c01b4b0/makezine1.js"></script>
+	
 </header>
 <div class="nav-flyout-underlay"></div>
 
