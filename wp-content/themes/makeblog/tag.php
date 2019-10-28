@@ -30,7 +30,7 @@ if (user_can($current_user, 'administrator')) {
 				<div class="row">
 					<div class="col-xs-12">
 
-						<form class="sub-form mailchimp-signupTagArchive" action="https://makermedia.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=64d256630b" method="post" target="_blank">
+						<form class="sub-form mailchimp-signupTagArchive" action="https://make.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=609e43360a" method="post" target="_blank">
 
 							<div class="tag-nl-floats">
 								<input value="SIGN UP" class="btn-red" type="submit">
@@ -41,7 +41,7 @@ if (user_can($current_user, 'administrator')) {
 							</div>
 							<br />
 							<div class="float-label-control">
-								<input name="EMAIL" class="form-control" placeholder="your email here" required type="email">
+								<input name="mce-EMAIL" class="form-control" placeholder="your email here" required type="email">
 					         <span class="error-message hidden">Please enter a valid email</span>
 							</div>
 							<input src="<?php echo get_stylesheet_directory_uri() . '/img/Makey-tag-newlsetter.svg'; ?>" class="btn-makey-tag" type="image" alt="Makey tag page newsletter">

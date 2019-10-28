@@ -293,7 +293,7 @@ jQuery(document).on('submit', '.whatcounts-head-mobile', function (e) {
 
 // Tag Archive page MAIL CHIMP
 var onSubmitTag = function(token) {
-  jQuery.post('https://makermedia.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=64d256630b', jQuery('.mailchimp-signupTagArchive').serialize());
+  jQuery.post('https://make.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=609e43360a', jQuery('.mailchimp-signupTagArchive').serialize());
   jQuery('.nl-thx-p2').trigger('click');
   jQuery('.mailchimp-signupTagArchive .form-control').val("");
 } 
