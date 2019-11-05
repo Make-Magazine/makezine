@@ -90,9 +90,11 @@ print $make->ads->ad_leaderboard_alt; ?>
                     <div class="row">
 
                         <div class="col-xs-12 col-sm-8 project-content" >
-
-                            <a id="sumome-project-sharing" data-sumome-share-id="002914e1-bbce-4a58-b59e-8846991ae71c"></a>
-
+                            <?php
+									  $url = str_replace(home_url(), 'https://makezine.com', get_permalink());
+									  $title = get_the_title();
+									  echo do_shortcode('[easy-social-share buttons="facebook,twitter,reddit,pinterest,love,more" morebutton="2" morebutton_icon="dots" counters=1 counter_pos="bottom" total_counter_pos="hidden" style="button" nospace="yes" fullwidth="yes" template="metro-retina" url="' . $url . '" text="' . $title . '"]');
+									 ?>
                             <?php
                             $image = get_post_custom_values('Image');
                             if (!empty($image[0])) {
