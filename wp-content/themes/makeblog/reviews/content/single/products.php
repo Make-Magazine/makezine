@@ -14,7 +14,7 @@ if (!empty($image)) {
 
             <meta itemprop="name" content="Make: Magazine">
 
-            <h2 class="product-title" itemprop="headline"><?php the_title(); ?>!!!</h2>
+            <h2 class="product-title" itemprop="headline"><?php the_title(); ?></h2>
 			   <?php // Social Share
 				  $url = str_replace(home_url(), 'https://makezine.com', get_permalink());
 				  $title = get_the_title();
