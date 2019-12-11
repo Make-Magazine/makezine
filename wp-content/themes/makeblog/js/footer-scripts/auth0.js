@@ -4,18 +4,18 @@ window.addEventListener('load', function() {
   /*    If the login button, logout button or profile view elements do not exist
    *    (such as in wp-admin and wp - login pages) default to a 'fake' element
    */
-  if ( !jQuery( "#newLoginBtn" ).length ) {
+  if ( !jQuery( "#LoginBtn" ).length ) {
     var loginBtn = document.createElement('div');
-    loginBtn.setAttribute("id", "newLoginBtn");
+    loginBtn.setAttribute("id", "LoginBtn");
   }else{
-    var loginBtn    = document.getElementById('newLoginBtn');
+    var loginBtn    = document.getElementById('LoginBtn');
   }
 
-  if ( !jQuery( "#newLogoutBtn" ).length ) {
+  if ( !jQuery( "#LogoutBtn" ).length ) {
     var logoutBtn = document.createElement('div');
-    logoutBtn.setAttribute("id", "newLogoutBtn");
+    logoutBtn.setAttribute("id", "LogoutBtn");
   }else{
-    var logoutBtn    = document.getElementById('newLogoutBtn');
+    var logoutBtn    = document.getElementById('LogoutBtn');
   }
 
   if ( !jQuery( "#profile-view" ).length ) {
