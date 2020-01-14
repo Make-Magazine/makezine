@@ -1,4 +1,4 @@
-d<?php
+<?php
 /**
  * Makezine Universal Nav Template
  *
