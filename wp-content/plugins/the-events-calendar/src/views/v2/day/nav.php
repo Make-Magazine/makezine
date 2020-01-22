@@ -3,7 +3,7 @@
  * View: Day View Nav Template
  *
  * Override this template in your own theme by creating a file at:
- * [your-theme]/tribe/events/views/v2/day/nav.php
+ * [your-theme]/tribe/events/v2/day/nav.php
  *
  * See more documentation about our views templating system.
  *
@@ -26,8 +26,6 @@
 			$this->template( 'day/nav/prev-disabled' );
 		}
 		?>
-
-		<?php $this->template( 'day/nav/today', [ 'link' => '#' ] ); ?>
 
 		<?php
 		if ( ! empty( $next_url ) ) {

@@ -615,4 +615,39 @@ class Tribe__Events__Organizer extends Tribe__Events__Linked_Posts__Base {
 		 */
 		return apply_filters( 'tribe_event_organizer_duplicate_custom_fields', $fields );
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public static function get_fetch_callback( $event ) {
+		$event = Tribe__Main::post_id_helper( $event );
+
+		/**
+		 * Filters the closure that will fetch an Event Organizers.
+		 *
+		 * Returning a non `null` value here will skip the default logic.
+		 *
+		 * @since 4.9.7
+		 *
+		 * @param callable|null The fetch callback.
+		 * @param int $event The event post ID.
+		 *
+		 */
+		$callback = apply_filters( 'tribe_events_organizers_fetch_callback', null, $event );
+
+		if ( null !== $callback ) {
+			return $callback;
+		}
+
+		return static function () use ( $event ) {
+			$organizer_ids = array_map( 'absint', (array) get_post_meta( $event, '_EventOrganizerID' ) );
+
+			$organizers    = ! empty( $organizer_ids )
+				? array_map( 'tribe_get_organizer', $organizer_ids )
+				: [];
+
+			return array_filter( $organizers );
+		};
+	}
+
 }

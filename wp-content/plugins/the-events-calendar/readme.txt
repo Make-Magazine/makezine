@@ -4,8 +4,8 @@ Contributors: ModernTribe, borkweb, barry.hughes, bordoni, brianjessee, aguseo, 
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, modern tribe, tribe, widget
 Donate link: http://m.tri.be/29
 Requires at least: 4.7
-Stable tag: 4.9.4
-Tested up to: 5.2.2
+Stable tag: 4.9.14
+Tested up to: 5.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -214,6 +214,90 @@ Some things to consider before posting on the forum:
 Still not happy? Shoot us an email to support@theeventscalendar.com or tweet to [@TheEventsCal](https://twitter.com/TheEventsCal) and tell us why. We'll do what we can to make it right.
 
 == Changelog ==
+
+= [4.9.14] 2020-01-15 =
+
+* Feature - Add Repository filter `where_meta_related_by_meta` for getting a post by the meta value an associated post. [133333]
+* Tweak - Modifications to the Freemius code initalization to allow better data around plugin uninstalls.
+* Tweak - Adjust tooltip title styles for Twenty Twenty theme. [TEC-2998]
+* Tweak - Changed views: `blocks/event-venue`
+* Fix - Cost field description no longer disapears when editing the block. [TEC-2992]
+* Fix - Organizer theme no longer getting overwritten by Blocks editor styles. [TEC-2974]
+* Fix - Venue block properly receives the correct HTML class. [TEC-3020]
+* Fix - Correct missing block when switching from blocks to classic editor. [131493]
+
+= [4.9.13] 2019-12-10 =
+
+* Tweak - Allow Event Aggregator date refinements for Eventbrite source.
+* Language - 29 new strings added, 201 updated, 0 fuzzied, and 0 obsoleted
+
+= [4.9.12] 2019-11-20 =
+
+* Fix - Blocks Editor date time saving correctly for WordPress 5.3 compatibility. [137421]
+* Tweak - Add the `tribe_get_query_var` function [137262]
+* Tweak - Add `tribe_get_the_content()` and `tribe_the_content()` for PHP 7.2 compatibility with WordPress 5.2
+* Language - 21 new strings added, 162 updated, 0 fuzzied, and 0 obsoleted
+
+= [4.9.11] 2019-11-12 =
+
+* Feature - Opt-in to the newly redesigned views
+* Fix - Fixed issue where DD/MM/YYYY style dates were not supported during Event Aggregator imports [117691]
+* Fix - Resolved issue where non YYYY-MM-DD datepicker formats resulted in unpredictable behavior while navigating views [116086, 126472, 117909]
+* Fix - Fixed date issue where the event date was defaulting to current date when editing an event with the block editor [132735]
+* Tweak - Added additional datepicker formats for simpler selection [116086, 126472, 117909]
+* Tweak - Updated the Repository implementation to handle more complex `orderby` constructs [133303]
+* Tweak - Added the `Tribe__Date_Utils::get_week_start_end` method [133303]
+* Tweak - added the `tribe_events_suppress_query_filters` filter to allow suppressing `Tribe__Events__Query` filters [134827]
+* Language - 5 new strings added, 23 updated, 2 fuzzied, and 13 obsoleted
+
+= [4.9.10] 2019-10-16 =
+
+* Tweak - added the `tribe_sanitize_deep` function to sanitize and validate input values [134427]
+* Tweak - use the `tribe_sanitize_deep` function to sanitize the values returned by the `tribe_get_request_var` function [134427]
+* Tweak - Rename "Datepicker Date Format" to "Compact Date Format" [134526]
+* Tweak - Adjust Promoter loading order to increase compatibility with plugins that use authentication early in the process [134862]
+* Tweak - Add support for Authentication using a Header when using Promoter [133922]
+* Language - 2 new strings added, 25 updated, 0 fuzzied, and 1 obsoleted
+
+= [4.9.9] 2019-09-25 =
+
+* Fix - Set the start date with the current day for the "All" events page for recurring events. Thanks Andy, leapness and others for flagging this! [130350]
+* Tweak - Updated Freemius integration code [133148]
+* Tweak - Conform iCalendar feed to specifications by not putting quotes around the timezone ID. This fixes some custom parsers [133626]
+* Language - 0 new strings added, 16 updated, 0 fuzzied, and 1 obsoleted
+
+= [4.9.8] 2019-09-04 =
+
+* Tweak - Added the Monolog logging library as alternative logging backend [120785]
+* Tweak - Hook Monolog logger on `tribe_log` action [120785]
+* Tweak - Add redirection of `tribe( 'logger' )->log()` calls to the Monolog logger using the `tribe_log_use_action_logger` filter [120785]
+* Fix - Conform iCalendar feed to specifications by not putting quotes around the timezone. This fixes Outlook compatibility [131791]
+* Fix - Additional fields with multiple values using pipes `|` as separators are working properly on importing again. [131510]
+* Fix - Fix default view redirection loop on mobile devices. Thanks Ricardo, cittaslow and others for flagging this! [125567]
+* Fix - Handling of featured image setting during Event Aggregator CSV imports [127132]
+* Language - 1 new strings added, 10 updated, 0 fuzzied, and 0 obsoleted
+
+= [4.9.7] 2019-08-19 =
+
+* Tweak - Update Lodash version on Block editor to prevent any possibility of a security issue with the package. From v4.17.11 to v4.17.15 [131421]
+* Tweak - Add filter 'tribe_events_js_config' to allow filtering the contents of the Javascript configuration [132567]
+* Tweak - Updates to the shortcode Javascript code to allow disabling the URL manipulation behavior [132567]
+* Fix - Prevent mascot image to get blown up out of proportions to a larger size on buggy CSS loading. [131910]
+* Language - 3 new strings added, 191 updated, 1 fuzzied, and 0 obsoleted
+
+= [4.9.6] 2019-08-07 =
+
+* Tweak - Update Event Aggregator to include compatibility with new Meetup API requirements - [See more](http://m.tri.be/1afb) [125635]
+* Language - 5 new strings added, 120 updated, 5 fuzzied, and 10 obsoleted
+
+= [4.9.5] 2019-07-25 =
+
+* Tweak - Update redirection URLs for Freemius actions [130281]
+* Fix - Location filtering for Context class moved out of construct, resolving lots of navigation problems across The Events Calendar [130754]
+* Fix - Featured event AJAX and browser navigation working as expected for all use cases. [127272]
+* Fix - Shortcode properly handling featured param on AJAX requests. [114002]
+* Fix - Remove removing wpautop for gutenberg blocks to fix spacing when content comes from classic editor. [122801]
+* Language - 4 new strings added, 16 updated, 0 fuzzied, and 0 obsoleted
 
 = [4.9.4] 2019-07-03 =
 

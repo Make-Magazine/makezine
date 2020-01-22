@@ -43,6 +43,42 @@ tribe.events.views.accordion = {};
 	};
 
 	/**
+	 * Sets open accordion accessibility attributes
+	 *
+	 * @since 4.9.7
+	 *
+	 * @param {jQuery} $header jQuery object of header
+	 * @param {jQuery} $content jQuery object of contents
+	 *
+	 * @return {void}
+	 */
+	obj.setOpenAccordionA11yAttrs = function( $header, $content ) {
+		$header
+			.attr( 'aria-expanded', 'true' )
+			.attr( 'aria-selected', 'true' );
+		$content
+			.attr( 'aria-hidden', 'false' );
+	};
+
+	/**
+	 * Sets close accordion accessibility attributes
+	 *
+	 * @since 4.9.7
+	 *
+	 * @param {jQuery} $header jQuery object of header
+	 * @param {jQuery} $content jQuery object of contents
+	 *
+	 * @return {void}
+	 */
+	obj.setCloseAccordionA11yAttrs = function( $header, $content ) {
+		$header
+			.attr( 'aria-expanded', 'false' )
+			.attr( 'aria-selected', 'false' );
+		$content
+			.attr( 'aria-hidden', 'true' );
+	};
+
+	/**
 	 * Closes all accordions in $container
 	 *
 	 * @since 4.9.4
@@ -64,7 +100,7 @@ tribe.events.views.accordion = {};
 	/**
 	 * Opens accordion
 	 *
-	 * @since 4.9.4
+	 * @since 4.9.7
 	 *
 	 * @param {jQuery} $header jQuery object of header
 	 * @param {jQuery} $content jQuery object of contents
@@ -72,19 +108,14 @@ tribe.events.views.accordion = {};
 	 * @return {void}
 	 */
 	obj.openAccordion = function( $header, $content ) {
-		// set accessibility attributes and styles
-		$header
-			.attr( 'aria-expanded', 'true' )
-			.attr( 'aria-selected', 'true' );
-		$content
-			.attr( 'aria-hidden', 'false' )
-			.css( 'display', 'block' );
+		obj.setOpenAccordionA11yAttrs( $header, $content );
+		$content.css( 'display', 'block' );
 	};
 
 	/**
 	 * Closes accordion
 	 *
-	 * @since 4.9.4
+	 * @since 4.9.7
 	 *
 	 * @param {jQuery} $header jQuery object of header
 	 * @param {jQuery} $content jQuery object of contents
@@ -92,13 +123,8 @@ tribe.events.views.accordion = {};
 	 * @return {void}
 	 */
 	obj.closeAccordion = function( $header, $content ) {
-		// set accessibility attributes and styles
-		$header
-			.attr( 'aria-expanded', 'false' )
-			.attr( 'aria-selected', 'false' );
-		$content
-			.attr( 'aria-hidden', 'true' )
-			.css( 'display', '' );
+		obj.setCloseAccordionA11yAttrs( $header, $content );
+		$content.css( 'display', '' );
 	};
 
 	/**
@@ -124,6 +150,43 @@ tribe.events.views.accordion = {};
 	};
 
 	/**
+	 * Deinitializes accordion accessibility attributes
+	 *
+	 * @since 4.9.7
+	 *
+	 * @param {jQuery} $header jQuery object of header
+	 * @param {jQuery} $content jQuery object of contents
+	 *
+	 * @return {void}
+	 */
+	obj.deinitAccordionA11yAttrs = function( $header, $content ) {
+		$header
+			.removeAttr( 'aria-expanded' )
+			.removeAttr( 'aria-selected' )
+			.removeAttr( 'aria-controls' );
+		$content
+			.removeAttr( 'aria-hidden' );
+	};
+
+	/**
+	 * Initializes accordion accessibility attributes
+	 *
+	 * @since 4.9.7
+	 *
+	 * @param {jQuery} $header jQuery object of header
+	 * @param {jQuery} $content jQuery object of contents
+	 *
+	 * @return {void}
+	 */
+	obj.initAccordionA11yAttrs = function( $header, $content ) {
+		$header
+			.attr( 'aria-expanded', 'false' )
+			.attr( 'aria-selected', 'false' )
+			.attr( 'aria-controls', $content.attr( 'id' ) );
+		$content.attr( 'aria-hidden', 'true' );
+	};
+
+	/**
 	 * Deinitializes accordion
 	 *
 	 * @since 4.9.4
@@ -138,7 +201,8 @@ tribe.events.views.accordion = {};
 	};
 
 	/**
-	 * Initializes accordion
+	 * Curry function to initialize accordion
+	 * Used to pass in `$container`
 	 *
 	 * @since 4.9.4
 	 *
@@ -147,9 +211,34 @@ tribe.events.views.accordion = {};
 	 * @return {function} function to add event listener to header
 	 */
 	obj.initAccordion = function( $container ) {
+		/**
+		 * Initializes accordion
+		 *
+		 * @since 4.9.4
+		 *
+		 * @param {integer} index jQuery.each index param
+		 * @param {HTMLElement} header header element from which to remove event
+		 *
+		 * @return {void}
+		 */
 		return function( index, header ) {
 			$( header ).on( 'click', { target: header, container: $container }, obj.toggleAccordion );
 		};
+	};
+
+	/**
+	 * Unbinds events for accordion click listeners
+	 *
+	 * @since  4.9.5
+	 *
+	 * @param  {jQuery} $container jQuery object of view container
+	 *
+	 * @return {void}
+	 */
+	obj.unbindAccordionEvents = function( $container ) {
+		$container
+			.find( obj.selectors.accordionTrigger )
+			.each( obj.deinitAccordion );
 	};
 
 	/**
@@ -157,17 +246,47 @@ tribe.events.views.accordion = {};
 	 *
 	 * @since 4.9.4
 	 *
-	 * @param {Event} event event object for 'afterSetup.tribeEvents' event
-	 * @param {integer} index jQuery.each index param from 'afterSetup.tribeEvents' event
-	 * @param {jQuery} $container jQuery object of view container
-	 * @param {object} data data object passed from 'afterSetup.tribeEvents' event
+	 * @param  {jQuery} $container jQuery object of view container
+	 *
+	 * @return {void}
+	 */
+	obj.bindAccordionEvents = function( $container ) {
+		$container
+			.find( obj.selectors.accordionTrigger )
+			.each( obj.initAccordion( $container ) );
+	};
+
+	/**
+	 * Unbinds events for container
+	 *
+	 * @since  4.9.5
+	 *
+	 * @param  {Event}       event    event object for 'beforeAjaxSuccess.tribeEvents' event
+	 * @param  {jqXHR}       jqXHR    Request object
+	 * @param  {PlainObject} settings Settings that this request was made with
+	 *
+	 * @return {void}
+	 */
+	obj.unbindEvents = function( event, jqXHR, settings ) {
+		var $container = event.data.container;
+		obj.unbindAccordionEvents( $container );
+	};
+
+	/**
+	 * Binds events for container
+	 *
+	 * @since  4.9.5
+	 *
+	 * @param  {Event}   event      event object for 'afterSetup.tribeEvents' event
+	 * @param  {integer} index      jQuery.each index param from 'afterSetup.tribeEvents' event
+	 * @param  {jQuery}  $container jQuery object of view container
+	 * @param  {object}  data       data object passed from 'afterSetup.tribeEvents' event
 	 *
 	 * @return {void}
 	 */
 	obj.bindEvents = function( event, index, $container, data ) {
-		$container
-			.find( obj.selectors.accordionTrigger )
-			.each( obj.initAccordion( $container ) );
+		obj.bindAccordionEvents( $container );
+		$container.on( 'beforeAjaxSuccess.tribeEvents', { container: $container }, obj.unbindEvents );
 	};
 
 	/**
@@ -179,12 +298,6 @@ tribe.events.views.accordion = {};
 	 */
 	obj.ready = function() {
 		$document.on( 'afterSetup.tribeEvents', tribe.events.views.manager.selectors.container, obj.bindEvents );
-
-		/**
-		 * @todo: do below for ajax events
-		 */
-		// on 'beforeAjaxBeforeSend.tribeEvents' event, remove all listeners
-		// on 'afterAjaxError.tribeEvents', add all listeners
 	};
 
 	// Configure on document ready
