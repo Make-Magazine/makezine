@@ -1,10 +1,10 @@
 === Jetpack by WordPress.com ===
-Contributors: automattic, adamkheckler, aduth, akirk, allendav, alternatekev, andy, annezazu, apeatling, azaozz, batmoo, barry, beaulebens, blobaugh, cainm, cena, cfinke, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, davoraltman, daniloercoli, designsimply, dllh, drawmyface, dsmart, dzver, ebinnion, eliorivero, enej, eoigal, erania-pinnera, ethitter, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, jblz, jasmussen, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, keoshi, koke, kraftbj, lancewillett, lschuyler, macmanx, martinremy, matt, matveb, mattwiebe, maverick3x6, mcsf, mdawaffe, MichaelArestad, migueluy, mikeyarce, mkaz, nancythanki, nickmomrik, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, ryancowles, richardmuscat, richardmtl, roccotripaldi, samhotchkiss, scarstocea, sdquirk, stephdau, tmoorewp, tyxla, Viper007Bond, westi, yoavf, zinigor
+Contributors: automattic, adamkheckler, aduth, akirk, allendav, alternatekev, andy, annezazu, apeatling, azaozz, batmoo, barry, beaulebens, blobaugh, brbrr, cainm, cena, cfinke, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, davoraltman, daniloercoli, delawski, designsimply, dllh, drawmyface, dsmart, dzver, ebinnion, egregor, eliorivero, enej, eoigal, erania-pinnera, ethitter, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, jblz, jasmussen, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, kbrownkd, keoshi, koke, kraftbj, lancewillett, lschuyler, macmanx, martinremy, matt, matveb, mattwiebe, maverick3x6, mcsf, mdawaffe, MichaelArestad, migueluy, mikeyarce, mkaz, nancythanki, nickmomrik, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, ryancowles, richardmuscat, richardmtl, roccotripaldi, samhotchkiss, scarstocea, scottsweb, sdquirk, simison, stephdau, tmoorewp, tyxla, Viper007Bond, westi, yoavf, zinigor
 Tags: Jetpack, WordPress.com, backup, security, related posts, CDN, speed, anti-spam, social sharing, SEO, video, stats
-Stable tag: 7.5.2
-Requires at least: 5.1
+Stable tag: 8.1
+Requires at least: 5.2
 Requires PHP: 5.6
-Tested up to: 5.2
+Tested up to: 5.3
 
 The ideal plugin for stats, related posts, search engine optimization, social sharing, protection, backups, security, and more.
 
@@ -96,57 +96,47 @@ There are opportunities for developers at all levels to contribute. [Learn more 
 
 == Changelog ==
 
-= 7.5.2 =
+= 8.1 =
 
-* Release date: July 4, 2019
-* Release post: https://wp.me/p1moTy-k9A
-
-**Bug fixes**
-
-* General: Fixes an error when a site's connection to WordPress.com is set to "Safe Mode".
-
-= 7.5.1 =
-
-* Release date: July 2, 2019
-* Release post: https://wp.me/p1moTy-k9A
-
-**Bug fixes**
-
-* General: Fixes an error when trying to delete the Jetpack plugin.
-* General: Fixes supported PHP version declaration.
-
-= 7.5 =
-
-* Release date: July 2, 2019
-* Release post: https://wp.me/p1moTy-k9A
+* Release date: January 14, 2020
+* Release post: https://wp.me/p1moTy-lJT
 
 **Enhancements**
 
-* Admin Page: add an option to send a magic link that will help you log in to the mobile apps in one click.
-* Admin Page: improve style and wording of many different sections of the dashboard to clarify the role of each feature.
-* Admin Page: remove feature that would offer you to activate a list of recommended features upon connecting your site to WordPress.com.
-* Backups: include updates to term relationships when backing up Post object changes.
-* Backups: synchronize ABSPATH value to help setting up SSH credentials when using Jetpack Backups.
-* Faceboook Embeds: support new video URL format.
-* Lazy Load: allow adding event handlers to images.
-* Recurring Payments Block: improve the display of the block in the editor.
-* WordAds: update link to daily earnings stats on WordPress.com.
-* WordAds: provide additional details for custom ads.txt entries in the Jetpack dashboard.
-* WordPress.com Toolbar: add colors to Recovery Mode button.
+* Dashboard: preload connection flow script to improve performance.
+* Dashboard: improvements to backup interface.
+* Mobile Theme: allow one to temporary disable Jetpack's Mobile Theme for testing.
+* Mobile Theme: disable settings when feature is inactive.
+* Site Accelerator: disable a helper library by default and allow themes to enable it when required.
+* Subscriptions: add a wp-admin setting to alert the admin when someone follows the blog.
+* WordPress.com REST API: add flag to determine site eligibility for Full Site Editing.
+* WordPress.com synchronization: improve the reliability of the synchronization events triggered to keep your site up to date with WordPress.com.
+* WordPress.com Toolbar: update the link directing to the WordPress.com Reader.
+* WordPress.com Toolbar: add "My Home" link to the toolbar.
 
 **Improved compatibility**
 
-* Admin Page: improve display of the Jetpack Dashboard in IE11.
-* Sharing: avoid displaying extra list items below the sharing buttons when using the AMP plugin.
-* Staging enviroments: add staging enviroment detection for DreamPress sites.
+* General: improvements to Coding Standards for plugin compatibility files.
+* Notifications: avoid conflicts with Twenty Twenty's instrinsic video resizes.
+* PHP 7.4: fix PHP warnings that may appear on sites running PHP 7.4.
+* Sharing: avoid errors when using the Thrive Architect plugin.
+* Tiled Galleries: fix layout when using a gallery inside a Classic block with the Twenty Twenty theme.
+* Twenty Twenty: improve the display of the Authors and Flickr widget.
+* Twenty Twenty: add Content Options to the Customizer.
+* Twenty Twenty: ensure that Infinite Scroll does not suppress the display of footer widgets.
+* Videos: automatically convert old Flash Jetpack Video embeds so they can use the new player.
+* WooCommerce Services: avoid issues when installing plugin from notification message.
 
 **Bug fixes**
 
-* Admin Page: fix display of backup details in the Jetpack dashboard.
-* Admin Page: do not disable Widget Visibility and Widgets toggles in Development mode.
-* Sitemaps: ensure links to sitemaps appear in robots.txt
-* Slideshow Block: fix CSS class name.
-* Videos: ensure that Video Poster images are always displayed properly.
+* CLI: prevent a PHP notice when running some Jetpack CLI commands.
+* Map Block: fix layout issue when selecting a marker in a map and then scrolling down.
+* Map Block: avoid errors when adding more than 2 points on a map.
+* REST API: correctly validate on/off values for booleans.
+* Star Rating Block: translate block title.
+* Widget Visibility: ensure that the visibility options always appear on old Widgets Options screen.
+* WordAds: ensure that the ads.txt file created by the feature returns a correct HTTP response code.
+* WordPress.com Block Editor: exclude WordPress.com features from Jetpack sites.
 
 --------
 

@@ -94,6 +94,11 @@ class Jetpack_Site extends Abstract_Jetpack_Site {
 		return true;
 	}
 
+	function get_unmapped_url() {
+		// Fallback to the home URL since all Jetpack sites don't have an unmapped *.wordpress.com domain.
+		return $this->get_url();
+	}
+
 	function is_redirect() {
 		return false;
 	}
@@ -121,7 +126,7 @@ class Jetpack_Site extends Abstract_Jetpack_Site {
 	function allowed_file_types() {
 		$allowed_file_types = array();
 
-		// http://codex.wordpress.org/Uploading_Files
+		// https://codex.wordpress.org/Uploading_Files
 		$mime_types = get_allowed_mime_types();
 		foreach ( $mime_types as $type => $mime_type ) {
 			$extras = explode( '|', $type );
@@ -185,6 +190,49 @@ class Jetpack_Site extends Abstract_Jetpack_Site {
 
 	function current_user_can( $role ) {
 		return current_user_can( $role );
+	}
+
+	/**
+	 * Check if full site editing should be considered as currently active. Full site editing
+	 * requires the FSE plugin to be installed and activated, as well the current
+	 * theme to be FSE compatible. The plugin can also be explicitly disabled via the
+	 * a8c_disable_full_site_editing filter.
+	 *
+	 * @since 7.7.0
+	 *
+	 * @return bool true if full site editing is currently active.
+	 */
+	function is_fse_active() {
+		if ( ! Jetpack::is_plugin_active( 'full-site-editing/full-site-editing-plugin.php' ) ) {
+			return false;
+		}
+		return function_exists( '\A8C\FSE\is_full_site_editing_active' ) && \A8C\FSE\is_full_site_editing_active();
+	}
+
+	/**
+	 * Check if site should be considered as eligible for full site editing. Full site editing
+	 * requires the FSE plugin to be installed and activated. For this method to return true
+	 * the current theme does not need to be FSE compatible. The plugin can also be explicitly
+	 * disabled via the a8c_disable_full_site_editing filter.
+	 *
+	 * @since 8.1.0
+	 *
+	 * @return bool true if site is eligible for full site editing
+	 */
+	public function is_fse_eligible() {
+		if ( ! Jetpack::is_plugin_active( 'full-site-editing/full-site-editing-plugin.php' ) ) {
+			return false;
+		}
+		return function_exists( '\A8C\FSE\is_site_eligible_for_full_site_editing' ) && \A8C\FSE\is_site_eligible_for_full_site_editing();
+	}
+
+	/**
+	 * Return the last engine used for an import on the site.
+	 *
+	 * This option is not used in Jetpack.
+	 */
+	function get_import_engine() {
+		return null;
 	}
 
 	/**
