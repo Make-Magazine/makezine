@@ -3,9 +3,9 @@ Contributors: matchalabs, DavidAnderson, dnutbourne, kbat82
 Tags: slideshow, slider, image slider, carousel, gallery, flexslider, wordpress slider, nivoslider, rotating banner, responsive slideshow, seo slideshow, unsplash
 Donate link: https://david.dw-perspective.org.uk/donate
 Requires at least: 3.5
-Stable tag: 3.13.1
+Stable tag: 3.15.3
 Requires PHP: 5.2
-Tested up to: 5.2
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,7 @@ The <a href="https://www.metaslider.com/upgrade">MetaSlider Pro</a> includes ad
 * YouTube & Vimeo slides
 * HTML slides
 * Layer slides with CSS3 animations & HTML5 Video backgrounds
+* Full-featured text editor to include extra CSS
 * Dynamic Post Feed/Featured Image Slides (content slider)
 * Slide scheduling & slide visibility
 * Custom Themes - build your own theme
@@ -164,6 +165,46 @@ See https://www.metaslider.com/documentation/image-cropping/
 
 == Changelog ==
 
+= 3.15.3 - 2019/Nov/28 =
+
+* FIX: Updates layout breaks in WP3.4
+
+= 3.15.2 - 2019/Nov/14 =
+
+* TWEAK: Adds loaded event that other plugins can wait for
+* TWEAK: Updates a few UI elements on the search bar and slideshow drawer
+* TWEAK: Adds better checks for error messages
+* FIX: Fixes an issue where cetain settings would show when not needed
+* FIX: Fixes a layout break in IE11
+* FIX: Address performance issues with a very large collection of slideshows
+
+= 3.15.1 - 2019/Oct/22 =
+
+* FIX: Adds better check for slide image thumbnails and count
+* FIX: Updates $ to jQuery on the admin settings screen
+
+= 3.15.0 - 2019/Oct/21 =
+
+* FEATURE: Adds a new way to navigate slideshows
+* TWEAK: Adds various accessibility enhancements to FlexSlider
+* TWEAK: Adds extra checks for REST enabled sites
+* TWEAK: Updates notices
+* FIX: Updates various RTL language styling issues
+* FIX: Fixes bug where new slides wouldn't crop until pressing save
+* FIX: Fixes various layout breaks from other languages
+
+= 3.14.0 - 2019/July/26 =
+
+* FEATURE: Adds ability to duplicate a slideshow
+* FEATURE: Adds toolbar with various utilities
+* FEATURE: Adds unified notification system
+* REFACTOR: Moves inline styles out of the body tag
+* REFACTOR: Refactors the preview module to be called from anywhere
+* REFACTOR: Refactors the way slides and the slideshow saving works
+* REFACTOR: Refactors the shortcode copy module
+* REFACTOR: Adds helper functions to better manage the routes files
+* FIX: Fixes a bug where adding a class name via Gutenberg crashes the block
+
 = 3.13.1 - 2019/May/11 =
 
 * TWEAK: Corrects a check on a variable in Theme.php, preventing a possible PHP notice
@@ -173,7 +214,7 @@ See https://www.metaslider.com/documentation/image-cropping/
 * FEATURE: Allows captions to inherit the image description
 * FEATURE: Adds support for theme developers to register a theme
 * TWEAK: Adds extra checks for when a theme is missing
-* TWEAK: Removed some ancient code for compatibility with PHP < 5.1
+* TWEAK: Removes some ancient code for compatibility with PHP < 5.1
 * TWEAK: Stops random theme being inherited when user removes it
 * REFACTOR: DOM appended slides are now rendered as Vue components
 
@@ -771,4 +812,4 @@ More info/Comments: http://www.metaslider.com/coming-soon-meta-slider-2-6-free/
 * Initial version
 
 == Upgrade Notice ==
-* 3.13.1 : Upgrade now if you are seeing a PHP notice on your site
+* 3.15.3 : Update now if some styles look broken.
