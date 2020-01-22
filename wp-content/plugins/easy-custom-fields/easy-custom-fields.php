@@ -279,7 +279,7 @@ if ( !class_exists( "Easy_CF_Validator" ) ) {
 		 * Return a sanitized value for writing user submitted data to the database
 		 */
 		public function set( $value='' ) {
-			$value = wp_filter_post_kses( $value );
+			//$value = wp_filter_post_kses( $value );
 			$value = trim( stripslashes( $value ) );
 			return $value;
 		}
