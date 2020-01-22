@@ -1,11 +1,8 @@
 {
   "aggregate": true,
   "include": [
-    "jquery",
-    "json2",
     "webfontloader",
-
-    "libraries/twitter-wjs",
+    "components/dom",
     "components/proxy-each",
     "components/browser",
     "components/api-client",
@@ -18,7 +15,6 @@
     "components/visitor",
     "components/receiver",
     "components/metadata-providers",
-    "components/integration",
     "components/direct"
   ],
   "expose": [
@@ -42,7 +38,6 @@
     "widgets/channel/split-button",
     "widgets/channel/transparent",
     "widgets/channel/colossus",
-    "widgets/social/carousel",
     "widgets/home-personalized/default",
     "widgets/home-personalized/blocks",
     "widgets/home-personalized/blocks2",
@@ -54,7 +49,6 @@
     "js/factory",
     "js/auto-placement",
     "js/containers",
-    "js/tweets-renderer",
     "js/view-watcher",
     "js/responsive-layout",
     "js/page-events",
@@ -73,8 +67,6 @@
     "js/css-builders/personalized-blocks-css",
     "js/css-builders/personalized-blocks2-css",
     "js/css-builders/personalized-float-css",
-    "js/overlays/storyline-overlay",
-    "js/overlays/personalization-overlay",
     "js/overlays/channel-overlay",
     "js/overlays/branding-overlay",
     "js/overlays/video-overlay",
@@ -94,7 +86,6 @@
     "js/types/storyline-widget",
     "js/types/personalization-widget",
     "js/types/channel-widget",
-    "js/types/social-widget",
     "js/types/personalized-default-widget",
     "js/types/personalized-blocks-widget",
     "js/types/personalized-blocks2-widget",

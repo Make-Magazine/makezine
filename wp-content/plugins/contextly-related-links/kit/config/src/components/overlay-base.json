@@ -1,6 +1,5 @@
 {
   "include": [
-    "jquery",
     "components/proxy-each"
   ],
 

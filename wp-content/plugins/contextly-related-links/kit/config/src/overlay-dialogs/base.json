@@ -1,8 +1,8 @@
 {
   "include": [
+    "components/dom",
     "libraries/bootstrap",
     "libraries/font-awesome",
-    "libraries/scroll-to",
     "components/handlebars",
     "components/ui-renderer"
   ],

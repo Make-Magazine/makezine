@@ -1,6 +1,5 @@
 {
   "include": [
-    "jquery",
     "webfontloader",
 
     "components/proxy-each"

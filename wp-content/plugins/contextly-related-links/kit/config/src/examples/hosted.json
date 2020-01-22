@@ -1,7 +1,0 @@
-{
-  "aggregate": true,
-
-  "js": [
-    "examples/hosted"
-  ]
-}

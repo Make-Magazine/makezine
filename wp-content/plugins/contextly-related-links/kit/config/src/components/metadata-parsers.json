@@ -1,8 +1,4 @@
 {
-  "include": [
-    "jquery"
-  ],
-
   "base": "components/metadata/parsers",
   "js": [
     "base",

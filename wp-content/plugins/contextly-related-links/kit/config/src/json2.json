@@ -1,7 +1,0 @@
-{
-  "aggregate": true,
-  "base": "libraries/json2",
-  "js": [
-    "json2"
-  ]
-}

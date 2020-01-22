@@ -14,9 +14,7 @@
 <body class="contextly-overlay">
 <script type="text/javascript">
 Contextly.ready('load', <?php print $this->kit->exportJsVar( 'overlay-dialogs/' . $type ); // WPCS: XSS ok. ?>, function() {
-	jQuery(function() {
-		Contextly.overlayDialog.Controller.render(<?php print $this->kit->exportJsVar( $type ); // WPCS: XSS ok. ?>);
-	});
+    Contextly.overlayDialog.Controller.render(<?php print $this->kit->exportJsVar( $type ); // WPCS: XSS ok. ?>);
 });
 </script>
 </body>
