@@ -308,6 +308,9 @@ function make_tags_local() {
 function wpcom_vip_get_resized_remote_image_url( $url, $width, $height, $escape = true ) {
 	$width = (int) $width;
 	$height = (int) $height;
+	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") { 
+		$url = preg_replace("/^http:/i", "https:", $url);
+	}
 
 	if ( ! function_exists( 'wpcom_is_vip' ) || ! wpcom_is_vip() )
 		return ( $escape ) ? esc_url( $url ) : $url;
