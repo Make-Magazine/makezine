@@ -945,7 +945,17 @@ function make_error_log(){
   error_log(print_r($error, TRUE));
 }
 
-    add_shortcode('contextly_sidebar', function($attrs) {
-        //We disabled contextly but need to return blanks for old shortcodes that are hard coded in the post
-        return '';
-    } );
+ add_shortcode('contextly_sidebar', function($attrs) {
+	  //We disabled contextly but need to return blanks for old shortcodes that are hard coded in the post
+	  return '';
+ } );
+
+// Turn off commenting for the projects post type
+function comments_off( $open, $post_id ) {
+    $post_type = get_post_type( $post_id );
+    // allow comments for built-in "post" post type
+    if ( $post_type == 'projects' ) {
+        return false;
+    }
+}
+add_filter( 'comments_open', 'comments_off', 10 , 2 );
