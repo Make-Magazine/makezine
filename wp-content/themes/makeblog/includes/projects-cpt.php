@@ -503,11 +503,8 @@ function make_projects_parts( $parts ) {
 		if( ! empty( $part['notes'] ) ) {
 			$notes = $part['notes'];
 		}
-		if ($part['url']) {
-			$output .='<li><a itemprop="dependencies" href="' . esc_url( $part['url'] ) . '">' . $part['text'];
-		} else {
-			$output .='<li itemprop="dependencies">' . esc_html( $part['text'] );
-		}
+
+		$output .='<li itemprop="dependencies">' . esc_html( $part['text'] );
 
 		if( ! empty( $part['type'] ) ) {
 			$output .= ', ' . htmlspecialchars_decode( esc_html( $part['type'] ) );
@@ -517,10 +514,6 @@ function make_projects_parts( $parts ) {
 			$output .= ' (';
 			$output .= esc_html( $part['quantity'] );
 			$output .= ')';
-		}
-
-		if ($part['url']) {
-			$output .= '</a> ';
 		}
 
 		$output .= ' <span class="text-muted">';

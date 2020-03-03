@@ -2115,7 +2115,7 @@ Good luck on your costume!',
 		'comment_post_ID' => 268914
 	),
 	array(
-		'comment_content' => 'Great question! This kit is designed as a companion to the Getting Started with Arduino book. If you\'d like a free excerpt of the book, including blinking an LED from the kit contents, you can get it [http://www.makershed.com/Articles.asp?ID=287|here]. There\'s a tutorial [http://makeprojects.com/Project/Arduino-101-Blink-an-LED/1209/1|here] and a project [http://makeprojects.com/Project/Arduino-Morse-Code-Flasher/1425/1|here] that you can do with the kit. And [http://makeprojects.com/c/Arduino|here]\'s every Make: Project we have on Arduino. Have fun!',
+		'comment_content' => 'Great question! This kit is designed as a companion to the Getting Started with Arduino book. If you\'d like a free excerpt of the book, including blinking an LED from the kit contents, you can get it [http://www.makershed.com/Articles.asp?ID=287|here]. There\'s a tutorial [https://makezine.com/Project/Arduino-101-Blink-an-LED/1209/1|here] and a project [https://makezine.com/Project/Arduino-Morse-Code-Flasher/1425/1|here] that you can do with the kit. And [https://makezine.com/c/Arduino|here]\'s every Make: Project we have on Arduino. Have fun!',
 		'comment_date' => 1336682077,
 		'comment_author' => 'Heather',
 		'comment_author_email' => 'heatherh@oreilly.com',
@@ -3251,7 +3251,7 @@ Breck',
 		'comment_post_ID' => 269296
 	),
 	array(
-		'comment_content' => 'This totally qualifies… there are all kinds of recipes in Make: Projects, Magnus! Check out the Food category: http://makeprojects.com/c/Food',
+		'comment_content' => 'This totally qualifies… there are all kinds of recipes in Make: Projects, Magnus! Check out the Food category: https://makezine.com/tag/food/',
 		'comment_date' => 1342642040,
 		'comment_author' => 'Laura Cochrane',
 		'comment_author_email' => 'lcochrane@oreilly.com',
@@ -3295,7 +3295,7 @@ Breck',
 	array(
 		'comment_content' => 'Wayne,
 
-Awesome to hear the project went so well.  Glad to hear the assembly of the launcher was straightforward and thanks for the tip on keeping the seal tight when building the rockets.  YOu want also want to try the High Pressure Foam Rockets on MAKE Projects. See:http://makeprojects.com/Project/High-Pressure-Foam-Rocket/2237/1#.UAlp8Wh9nww
+Awesome to hear the project went so well.  Glad to hear the assembly of the launcher was straightforward and thanks for the tip on keeping the seal tight when building the rockets.  YOu want also want to try the High Pressure Foam Rockets on MAKE Projects. See:https://makezine.com/Project/High-Pressure-Foam-Rocket/2237/1#.UAlp8Wh9nww
 
 These use the same launcher as the paper and tape rockets.  While they don\'t go as high, they still go plenty high and are tons of fun.  Thanks again for supporting the project!
 
@@ -3509,7 +3509,7 @@ William Gurstelle',
 		'comment_content' => 'Mark, I got a couple of questions from the Redpark folks for you:
 
 * Which version of the cable (TTL or RS232) are you using? 
-* Did you declare the protocol as shown in http://makeprojects.com/Project/Connect-an-iPhone-iPad-or-iPod-touch-to-Arduino-with-the-Redpark-Serial-Cable/1130/2#s6073
+* Did you declare the protocol as shown in https://makezine.com/Project/Connect-an-iPhone-iPad-or-iPod-touch-to-Arduino-with-the-Redpark-Serial-Cable/1130/2#s6073
 
 Thanks,
 
@@ -4747,7 +4747,7 @@ Rick Schertle',
 
 Sorry your had some frustrations.  This guide is best if you are building this kit and launcher from scratch.  Literally thousands of people have built this and had a blast.  If you buy the kit, the ONLY additional things you need to provide are a bike pump or compressor, masking tape, two 9 volt batteries and pipe glue.  Everything else is included.  
 
-If you are building from the kit, a new guide has been set up at: http://makeprojects.com/Project/Make%3A+Compressed+Air+Rockets+Kit/2235/1#.UJFUmW_R7K03
+If you are building from the kit, a new guide has been set up at: https://makezine.com/Project/Make%3A+Compressed+Air+Rockets+Kit/2235/1#.UJFUmW_R7K03
 
 Rick Schertle
 Project and Kit Designer',
@@ -5188,7 +5188,7 @@ The complexity comes from the trick of attaching the crank directly to the wheel
 		'comment_post_ID' => 270016
 	),
 	array(
-		'comment_content' => 'The play button of the recording module that I used also functions as the stop button, so if it detects multiple pulses from the receiver, it will start and stop and be very stuttered. This usually would be a problem because the receiver is sending out a ground signal. If it was an issue, you could add a capacitor between the positive terminal of the recording module and the play pin. The capacitor would smooth out any fluctuations in the signal and prevent that problem. I showed a somewhat similar example in my shake activated present prank project: http://makeprojects.com/Project/Shake-Activated+Present+Prank/2281/1#.ULq6-odrhIw',
+		'comment_content' => 'The play button of the recording module that I used also functions as the stop button, so if it detects multiple pulses from the receiver, it will start and stop and be very stuttered. This usually would be a problem because the receiver is sending out a ground signal. If it was an issue, you could add a capacitor between the positive terminal of the recording module and the play pin. The capacitor would smooth out any fluctuations in the signal and prevent that problem. I showed a somewhat similar example in my shake activated present prank project: https://makezine.com/Project/Shake-Activated+Present+Prank/2281/1#.ULq6-odrhIw',
 		'comment_date' => 1354414990,
 		'comment_author' => 'Jason Poel Smith',
 		'comment_author_email' => 'DIYHacksAndHowTos@gmail.com',
@@ -5226,7 +5226,7 @@ If you used a stainless mesh that was finer, less objects would have the possibi
 		'comment_post_ID' => 270014
 	),
 	array(
-		'comment_content' => 'hi saulx350z, the diagram is one Page 2 of the project: http://makeprojects.com/Project/MonoBox+Powered+Speaker/2396/2 - it\'s Step 15, or, if you can\'t see that for some reason, here is the image: http://guide-images.makeprojects.org/igi/X3WB2Tny1O2xSlQb.large - hope this is what you were looking for.',
+		'comment_content' => 'hi saulx350z, the diagram is one Page 2 of the project: https://makezine.com/Project/MonoBox+Powered+Speaker/2396/2 - it\'s Step 15, or, if you can\'t see that for some reason, here is the image: https://makezine.com/wp-content/uploads/make-images/X3WB2Tny1O2xSlQb.jpg - hope this is what you were looking for.',
 		'comment_date' => 1354566682,
 		'comment_author' => 'Nick Normal',
 		'comment_author_email' => 'nick@geekathon.net',
@@ -6218,7 +6218,7 @@ Breck',
 	array(
 		'comment_content' => 'Hello,
 
-Yes, the kit should have come with the mini breadboard. Please contact us with your order # at help(at)makershed.com and we\'ll get one sent to you. For hooking up and using the LCD, please see: http://makeprojects.com/Project/Using+the+MakerShield+-+LCD+Display/2225/1#.UQxSqOguxj0',
+Yes, the kit should have come with the mini breadboard. Please contact us with your order # at help(at)makershed.com and we\'ll get one sent to you. For hooking up and using the LCD, please see: https://makezine.com/Project/Using+the+MakerShield+-+LCD+Display/2225/1#.UQxSqOguxj0',
 		'comment_date' => 1359762111,
 		'comment_author' => 'Michael Castor',
 		'comment_author_email' => 'mcastor@makezine.com',
