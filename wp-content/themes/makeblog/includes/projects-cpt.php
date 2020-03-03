@@ -503,8 +503,12 @@ function make_projects_parts( $parts ) {
 		if( ! empty( $part['notes'] ) ) {
 			$notes = $part['notes'];
 		}
-
-		$output .='<li itemprop="dependencies">' . esc_html( $part['text'] );
+		
+		/*if ($part['url']) {  UNTIL OUTDATED URLS ARE REMOVED
+			$output .='<li><a itemprop="dependencies" href="' . esc_url( $part['url'] ) . '">' . $part['text'];
+		} else {*/
+			$output .='<li itemprop="dependencies">' . esc_html( $part['text'] );
+		//}
 
 		if( ! empty( $part['type'] ) ) {
 			$output .= ', ' . htmlspecialchars_decode( esc_html( $part['type'] ) );
@@ -515,6 +519,10 @@ function make_projects_parts( $parts ) {
 			$output .= esc_html( $part['quantity'] );
 			$output .= ')';
 		}
+
+		/*if ($part['url']) {  UNTIL OUTDATED URLS ARE REMOVED
+			$output .= '</a> ';
+		}*/
 
 		$output .= ' <span class="text-muted">';
 		$output .= wp_kses_post( $notes );
@@ -542,11 +550,11 @@ function make_projects_tools( $tools ) {
 	if ( ! empty( $tools[0] ) && is_array( $tools[0] ) ) {
 		foreach ( $tools[0] as $tool ) {
 
-			if ( ! empty( $tool->url ) ) {
+			/*if ( ! empty( $tool->url ) ) { UNTIL OUTDATED URLS ARE REMOVED
 				$output .= '<li><a itemprop="dependencies" href="' . esc_url( $tool->url ) . '" data-toggle="tooltip" title="' . esc_attr( $tool->text ) .'">' . esc_html( $tool->text ) . '</a>';
-			} else {
+			} else { */
 				$output .= '<li itemprop="dependencies">' . esc_html( $tool->text );
-			}
+			// }
 			$notes = null;
 
 			if( ! empty( $tool->notes ) ) {
