@@ -1,7 +1,83 @@
 {
     "key": "group_56451c1cc14db",
     "title": "Stories Custom Fields",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_55de4a5cb9453",
+            "label": "Display Category",
+            "name": "display_category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_55de4a74b9454",
+            "label": "Story Type",
+            "name": "story_type",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "News & Features": "News & Features",
+                "Reviews": "Reviews",
+                "Skill Builders": "Skill Builders",
+                "How To": "How To"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_56b8f38d31c1e",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "This is an optional field for uploading an optimized hero image. If this field is empty, then the Featured Image will be used for the hero image. The hero image must match the following requirements: a horizontal rectangle; width 1200px, height 670px; image file size under 250 KBs. If the hero does not match these requirements, you will see an error message explaining any discrepancies.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "left-rail-home-thumb",
+            "library": "all",
+            "min_width": 1199,
+            "min_height": 669,
+            "min_size": "",
+            "max_width": 1201,
+            "max_height": 671,
+            "max_size": ".25",
+            "mime_types": ""
+        }
+    ],
     "location": [
         [
             {
@@ -19,5 +95,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466021866
+    "modified": 1583959986
 }
