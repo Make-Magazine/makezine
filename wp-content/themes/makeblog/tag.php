@@ -40,8 +40,6 @@ if (user_can($current_user, 'administrator')) {
 					<div class="col-xs-12 col-md-6">
 
 						<form class="sub-form mailchimp-signupTagArchive" action="https://make.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=609e43360a" method="post" target="_blank">
-
-							<br />
 							<div class="float-label-control">
 								<input name="mce-EMAIL" class="form-control" placeholder="your email here" required type="email">
 					         <span class="error-message hidden">Please enter a valid email</span>
