@@ -103,7 +103,7 @@ function tags_pulling($offset=0, $tag) {
 			$outputs .= '</div>';
 		}
 		$outputs .= '<div class="wrapp">';
-		$outputs .= '<div class="wrapper-story-link"><a href="' . get_the_permalink() . '" class="story-link"></a></div>';
+		$outputs .= '<h3 class="wrapper-story-link"><a href="' . get_the_permalink() . '" class="story-link"></a></h3>';
 		$outputs .= '<div class="img-wrapper"><img src = "' . $photon . '" alt = "thumbnail" ></div>';
 
 		$outputs .= '<div class="about-post">';
