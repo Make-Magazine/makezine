@@ -20,25 +20,27 @@ if (user_can($current_user, 'administrator')) {
 
 	<div class="container all-stories tags <?php echo $login_admin ?>" data-slug="<?php echo $tag_slug; ?>">
 		<div class="row tags-header">
-			<div class="col-xs-12 col-md-7">
+			<div class="col-xs-12 col-md-12">
 				<h1 class="tag-title"><?php echo $tag_name; ?></h1>
 				<?php if (!empty('tag_description')) {
 					echo '<h2>' . tag_description() . '</h2>';
 				} ?>
 			</div>
-			<div class="col-xs-12 col-md-5">
+			<div class="col-xs-12 col-md-12">
 				<div class="row">
-					<div class="col-xs-12">
-
-						<form class="sub-form mailchimp-signupTagArchive" action="https://make.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=609e43360a" method="post" target="_blank">
-
-							<div class="tag-nl-floats">
+					<div class="col-xs-12 col-md-4">
+						<div class="tag-nl-floats">
 								<input value="SIGN UP" class="btn-red" type="submit">
 								<div class="tag-nl-floats-r">
 									<h5>Make: Newsletter</h5>
 									<p>The latest news from Make:</p>
 								</div>
 							</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+
+						<form class="sub-form mailchimp-signupTagArchive" action="https://make.us9.list-manage.com/subscribe/post?u=4e536d5744e71c0af50c0678c&amp;id=609e43360a" method="post" target="_blank">
+
 							<br />
 							<div class="float-label-control">
 								<input name="mce-EMAIL" class="form-control" placeholder="your email here" required type="email">
