@@ -549,7 +549,7 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
     $offset = ( $paged - 1 ) * $post_per_page;
 
     $args = array(
-        'post_type' => array('post', 'projects',),
+        'post_type' => array('post', 'projects', 'products'),
         'meta_query' => $meta_query,
         'posts_per_page' => $post_per_page,
         'page' => $paged,
@@ -646,18 +646,17 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
             } else {
                 $post_categories = get_the_category();
                 foreach ($post_categories as $post_category) {
-                    if (!empty($current_cat_id)) {
-                        if ($post_category->parent == $current_cat_id) {
-                            $child_cat[] = $post_category->name;
-                        }
-                    } else {
-                        if ($post_category->category_parent == 0) {
-                            $parent_cat[] = $post_category->name;
-                            $parent_id[] = $post_category->term_id;
-                        }
-                    }
+				  if (!empty($current_cat_id)) {
+					 if ($post_category->parent == $current_cat_id) {
+						 $child_cat[] = $post_category->name;
+					 }
+				  } else {
+					 if ($post_category->category_parent == 0) {
+						 $parent_cat[] = $post_category->name;
+						 $parent_id[] = $post_category->term_id;
+					 }
+				  }
                 }
-
                 if (!empty($current_cat_id)) {
                     $child_cat_length = count($child_cat);
                     $child_cat_length--;
@@ -691,10 +690,18 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     }
                     $cat_link = get_category_link($child_id[0]) . '';
                 } else {
-                    $parent_cat_length = count($parent_cat);
-                    $parent_cat_length--;
-                    $red_cat_name = $parent_cat[0];
-                    $cat_link = get_category_link($parent_id[0]) . '';
+						if($parent_cat[0]) {
+						  $parent_cat_length = count($parent_cat);
+						  $parent_cat_length--;
+						  $red_cat_name = $parent_cat[0];
+						  $cat_link = get_category_link($parent_id[0]) . '';
+						} else {
+						  if(get_post_type() == "products") {
+							  $product_category = get_the_terms($post_id, "product-categories")[0]->slug;
+							  $red_cat_name = $product_category ." reviews";
+							  $cat_link = "/comparison/" . $product_category;
+						  }
+						}
                 }
             }
             if (empty($red_cat_name)) {
@@ -713,8 +720,10 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                 $output .= $cat_link;
                 if ('post' == get_post_type()) {
                     $output .= '">';
-                } else {
-                    $output .= '"><span class="fa fa-wrench"></span>';
+                } else if(get_post_type() == "products") {
+						 $output .= '"><span class="fa fa-list-alt"></span>';
+					 }else {
+                   $output .= '"><span class="fa fa-wrench"></span>';
                 }
                 $output .= $red_cat_name;
                 $output .= '</a>';
