@@ -137,11 +137,13 @@ window.addEventListener('load', function() {
       if (profile) {
         userProfile = profile;
         // display the avatar
-        document.querySelector('.dropdown-toggle img').src = userProfile.picture;
+          document.querySelector('.dropdown-toggle img').src = userProfile.picture;
 		  document.querySelector('.profile-info img').src = userProfile.picture;
-        document.querySelector('.dropdown-toggle img').style.display = "block";
+          document.querySelector('.dropdown-toggle img').style.display = "block";
 		  document.querySelector('.profile-email').innerHTML = userProfile.email; 
-		  document.querySelector('.profile-info .profile-name').innerHTML = userProfile['http://makershare.com/first_name'] + " " + userProfile['http://makershare.com/last_name']; 
+		  if(userProfile['http://makershare.com/first_name'] != undefined && userProfile['http://makershare.com/last_name'] != undefined) {
+			  document.querySelector('.profile-info .profile-name').innerHTML = userProfile['http://makershare.com/first_name'] + " " + userProfile['http://makershare.com/last_name'];
+		  }
 		  updateProgressBar("75%");
       }
 		if (err) {
