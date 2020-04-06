@@ -11,7 +11,6 @@ pubmatic.com, 157288, RESELLER, 5d62403b186f2ace
 tremorhub.com, cguke-k8ex0, RESELLER, 1a4e959a1b50034a
 pubmatic.com, 157512, RESELLER, 5d62403b186f2ace
 districtm.io, 101673, RESELLER
-appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
 freewheel.tv, 890577, RESELLER
 freewheel.tv, 893377, RESELLER
 gumgum.com, 13679, RESELLER, ffdef49475d318a9
@@ -20,8 +19,12 @@ google.com, pub-4903453974745530, RESELLER, f08c47fec0942fa0
 rhythmone.com, 2288795184, RESELLER, a670c89d4a324e47
 rubiconproject.com, 20598, RESELLER, 0bfd66d529a55807
 openx.com, 540786724, RESELLER, 6a698e2ec38604c6
+openx.com, 540999880, RESELLER, 6a698e2ec38604c6
+indexexchange.com, 191812, RESELLER
 freewheel.tv, 1025009, RESELLER
 freewheel.tv, 1024849, RESELLER
 admanmedia.com, 68, RESELLER
+appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
 appnexus.com, 8804, RESELLER, f5ab79cb980f11d1
+appnexus.com, 11659, RESELLER, f5ab79cb980f11d2 
 selectmedia.asia, 5d8c7c0b28a0615aad6f7026, DIRECT # banner, video
