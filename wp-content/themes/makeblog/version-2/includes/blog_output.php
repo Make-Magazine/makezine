@@ -5,7 +5,7 @@ function story_pulling($offset) {
 	$large_indicator = 0;
 	$post_per_page = 26;
 	$arguments   = array(
-		'post_type'      => 'post',
+		'post_type'      => array('post', 'projects', 'products'),
 		'posts_per_page' => $post_per_page,
 		'post_status'    => 'publish',
 		'offset'         => $offset,
@@ -140,11 +140,18 @@ function story_pulling($offset) {
 					$red_cat_name = '';
 				}
 			} else {
-				$parent_cat_length = count($parent_cat);
-				$parent_cat_length--;
-				$random_cat_number = rand(0, $parent_cat_length);
-				$red_cat_name = $parent_cat[$random_cat_number];
-				$cat_link = get_category_link($parent_id[$random_cat_number]) . '';
+				if($parent_cat[0]) {
+				  $parent_cat_length = count($parent_cat);
+				  $parent_cat_length--;
+				  $red_cat_name = $parent_cat[0];
+				  $cat_link = get_category_link($parent_id[0]) . '';
+				} else {
+				  if(get_post_type() == "products") {
+					  $product_category = get_the_terms($post_id, "product-categories")[0]->slug;
+					  $red_cat_name = $product_category ." reviews";
+					  $cat_link = "/comparison/" . $product_category;
+				  }
+				}
 			}
 		}
 		$red_cat_name = htmlspecialchars_decode($red_cat_name);
