@@ -13,19 +13,11 @@
  if ( !class_exists( 'EF_Custom_Status' ) ) {
 
 class EF_Custom_Status extends EF_Module {
+	use Block_Editor_Compatible;
 
 	var $module;
 
 	private $custom_statuses_cache = array();
-
-	/**
-	 * Define the hooks that need to be unhooked/rehooked to make the module Gutenberg-ready.
-	 *
-	 * @var array
-	 */
-	protected $compat_hooks = [
-		'admin_enqueue_scripts' => 'action_admin_enqueue_scripts',
-	];
 
 	// This is taxonomy name used to store all our custom statuses
 	const taxonomy_key = 'post_status';
@@ -92,6 +84,9 @@ class EF_Custom_Status extends EF_Module {
 		add_action( 'admin_notices', array( $this, 'no_js_notice' ) );
 		add_action( 'admin_print_scripts', array( $this, 'post_admin_header' ) );
 
+		// Add custom statuses to the post states.
+		add_filter( 'display_post_states', array( $this, 'add_status_to_post_states' ), 10, 2 );
+
 		// Methods for handling the actions of creating, making default, and deleting post stati
 		add_action( 'admin_init', array( $this, 'handle_add_custom_status' ) );
 		add_action( 'admin_init', array( $this, 'handle_edit_custom_status' ) );
@@ -100,19 +95,11 @@ class EF_Custom_Status extends EF_Module {
 		add_action( 'wp_ajax_update_status_positions', array( $this, 'handle_ajax_update_status_positions' ) );
 		add_action( 'wp_ajax_inline_save_status', array( $this, 'ajax_inline_save_status' ) );
 
-		// Hook to add the status column to Manage Posts
-
-		add_filter( 'manage_posts_columns', array( $this, '_filter_manage_posts_columns') );
-		add_action( 'manage_posts_custom_column', array( $this, '_filter_manage_posts_custom_column') );
-
-		// We need these for pages (http://core.trac.wordpress.org/browser/tags/3.3.1/wp-admin/includes/class-wp-posts-list-table.php#L283)
-		add_filter( 'manage_pages_columns', array( $this, '_filter_manage_posts_columns' ) );
-		add_action( 'manage_pages_custom_column', array( $this, '_filter_manage_posts_custom_column' ) );
-
 		// These seven-ish methods are hacks for fixing bugs in WordPress core
 		add_action( 'admin_init', array( $this, 'check_timestamp_on_publish' ) );
 		add_filter( 'wp_insert_post_data', array( $this, 'fix_custom_status_timestamp' ), 10, 2 );
-		add_action( 'wp_insert_post', array( $this, 'fix_post_name' ), 10, 2 );
+		add_filter( 'wp_insert_post_data', array( $this, 'maybe_keep_post_name_empty' ), 10, 2 );
+		add_filter( 'pre_wp_unique_post_slug', array( $this, 'fix_unique_post_slug' ), 10, 6 );
 		add_filter( 'preview_post_link', array( $this, 'fix_preview_link_part_one' ) );
 		add_filter( 'post_link', array( $this, 'fix_preview_link_part_two' ), 10, 3 );
 		add_filter( 'page_link', array( $this, 'fix_preview_link_part_two' ), 10, 3 );
@@ -125,9 +112,6 @@ class EF_Custom_Status extends EF_Module {
 
 		// Pagination for custom post statuses when previewing posts
 		add_filter( 'wp_link_pages_link', array( $this, 'modify_preview_link_pagination_url' ), 10, 2 );
-
-		// Filter through Post States and run a function to check if they are also a Status
-		add_filter( 'display_post_states', array( $this, 'check_if_post_state_is_status' ), 10, 2 );
 	}
 
 	/**
@@ -300,9 +284,20 @@ class EF_Custom_Status extends EF_Module {
 	 * - We have other custom code for Quick Edit and JS niceties
 	 */
 	function action_admin_enqueue_scripts() {
-		global $pagenow;
-
 		if ( $this->disable_custom_statuses_for_post_type() ) {
+			return;
+		}
+
+		// Load block editor assets and return early.
+		if ( $this->is_block_editor() ) {
+			global $post;
+
+			wp_enqueue_style( 'edit-flow-block-custom-status-styles', EDIT_FLOW_URL . 'blocks/dist/custom-status.editor.build.css', false, EDIT_FLOW_VERSION );
+			wp_enqueue_script( 'edit-flow-block-custom-status-script', EDIT_FLOW_URL . 'blocks/dist/custom-status.build.js', array( 'wp-blocks', 'wp-element', 'wp-edit-post', 'wp-plugins', 'wp-components' ), EDIT_FLOW_VERSION );
+
+			$custom_statuses = apply_filters( 'ef_custom_status_list', $this->get_custom_statuses(), $post );
+
+			wp_localize_script( 'edit-flow-block-custom-status-script', 'EditFlowCustomStatuses', array_values( $custom_statuses ) );
 			return;
 		}
 
@@ -315,7 +310,6 @@ class EF_Custom_Status extends EF_Module {
 		// Custom javascript to modify the post status dropdown where it shows up
 		if ( $this->is_whitelisted_page() ) {
 			wp_enqueue_script( 'edit_flow-custom_status', $this->module_url . 'lib/custom-status.js', array( 'jquery','post' ), EDIT_FLOW_VERSION, true );
-			wp_enqueue_style( 'edit_flow-custom_status', $this->module_url . 'lib/custom-status.css', false, EDIT_FLOW_VERSION, 'all' );
 			wp_localize_script('edit_flow-custom_status', '__ef_localize_custom_status', array(
 				'no_change' => esc_html__( "&mdash; No Change &mdash;", 'edit-flow' ),
 				'published' => esc_html__( 'Published', 'edit-flow' ),
@@ -705,59 +699,36 @@ class EF_Custom_Status extends EF_Module {
 	}
 
 	/**
-	 * Insert new column header for post status after the title column
+	 * Display our custom post statuses in post listings when needed.
 	 *
-	 * @param array $posts_columns Columns currently shown on the Edit Posts screen
-	 * @return array Same array as the input array with a "status" column added after the "title" column
+	 * @param array   $post_states An array of post display states.
+	 * @param WP_Post $post The current post object.
+	 *
+	 * @return array $post_states
 	 */
-	function _filter_manage_posts_columns( $posts_columns ) {
-		// Return immediately if the supplied parameter isn't an array (which shouldn't happen in practice?)
-		// http://wordpress.org/support/topic/plugin-edit-flow-bug-shows-2-drafts-when-there-are-none-leads-to-error-messages
-		if ( !is_array( $posts_columns ) )
-			return $posts_columns;
-
-		// Only do it for the post types this module is activated for
-		if ( !in_array( $this->get_current_post_type(), $this->get_post_types_for_module( $this->module ) ) )
-			return $posts_columns;
-
-		$result = array();
-		foreach ( $posts_columns as $key => $value ) {
-			if ($key == 'title') {
-				$result[$key] = $value;
-				$result['status'] = __('Status', 'edit-flow');
-			} else $result[$key] = $value;
+	public function add_status_to_post_states( $post_states, $post ) {
+		if ( ! in_array( $post->post_type, $this->get_post_types_for_module( $this->module ), true ) ) {
+			// Return early if this post type doesn't support custom statuses.
+			return $post_states;
 		}
-		return $result;
 
-	}
+		$post_status = get_post_status_object( get_post_status( $post->ID ) );
 
-	/**
-	 * Adds a Post's status to its row on the Edit page
-	 *
-	 * @param string $column_name
-	 **/
-	function _filter_manage_posts_custom_column( $column_name ) {
-
-		if ( $column_name == 'status' ) {
-			global $post;
-			$post_status_obj = get_post_status_object( get_post_status( $post->ID ) );
-			echo esc_html( $post_status_obj->label );
+		$filtered_status = isset( $_REQUEST['post_status'] ) ? $_REQUEST['post_status'] : '';
+		if ( $filtered_status === $post_status->name ) {
+			// No need to display the post status if a specific status was already requested.
+			return $post_states;
 		}
-	}
-	/**
-	 * Check if Post State is a Status and display if it is not.
-	 *
-	 * @param array $post_states An array of post display states.
-	 */
-	function check_if_post_state_is_status( $post_states, $post ) {
 
-		$statuses = get_post_status_object( get_post_status( $post->ID ) );
-		foreach ( $post_states as $state ) {
-			if ( $state !== $statuses->label ) {
-				echo '<span class="show"></span>';
-			}
+		$statuses_to_ignore = array( 'future', 'trash', 'publish' );
+		if ( in_array( $post_status->name, $statuses_to_ignore, true ) ) {
+			// Let WP core handle these more gracefully.
+			return $post_states;
 		}
-			
+
+		// Add the post status to display. Will also ensure the same status isn't shown twice.
+		$post_states[ $post_status->name ] = $post_status->label;
+
 		return $post_states;
 	}
 
@@ -1397,41 +1368,66 @@ class EF_Custom_Status extends EF_Module {
 	}
 
 	/**
-	 * Another hack! hack! hack! until core better supports custom statuses`
+	 * A new hack! hack! hack! until core better supports custom statuses`
 	 *
-	 * @since 0.7.4
+	 * @since 0.9.4
 	 *
-	 * Keep the post_name value empty for posts with custom statuses
-	 * Unless they've set it customly
+	 * If the post_name is set, set it, otherwise keep it empty
+	 * 
 	 * @see https://github.com/Automattic/Edit-Flow/issues/123
 	 * @see http://core.trac.wordpress.org/browser/tags/3.4.2/wp-includes/post.php#L2530
 	 * @see http://core.trac.wordpress.org/browser/tags/3.4.2/wp-includes/post.php#L2646
 	 */
-	public function fix_post_name( $post_id, $post ) {
-		global $pagenow;
-
-		/*
-		 * Filters the $post object that will be modified
-		 *
-		 * @param $post WP_Post Post object being processed.
-		 */
-		$post = apply_filters( 'ef_fix_post_name_post', $post );
-
-		// Only modify if we're using a pre-publish status on a supported custom post type
+	public function maybe_keep_post_name_empty( $data, $postarr ) {
 		$status_slugs = wp_list_pluck( $this->get_custom_statuses(), 'slug' );
-		if ( 'post.php' != $pagenow
-			|| ! in_array( $post->post_status, $status_slugs )
-			|| ! in_array( $post->post_type, $this->get_post_types_for_module( $this->module ) ) )
-			return;
 
-		// The slug has been set by the meta box
-		if ( ! empty( $_POST['post_name'] ) )
-			return;
+		// Ignore if it's not a post status and post type we support
+		if ( ! in_array( $data['post_status'], $status_slugs )
+			|| ! in_array( $data['post_type'], $this->get_post_types_for_module( $this->module ) ) ) {
+				return $data;
+		}
 
-		global $wpdb;
+		// If the post_name was intentionally set, set the post_name
+		if ( ! empty( $postarr['post_name'] ) ) {
+			$data['post_name'] = $postarr['post_name'];
+			return $data;
+		}
 
-		$wpdb->update( $wpdb->posts, array( 'post_name' => '' ), array( 'ID' => $post_id ) );
-		clean_post_cache( $post_id );
+		// Otherwise, keep the post_name empty
+		$data['post_name'] = '';
+
+		return $data;
+	}
+
+/**
+	 * A new hack! hack! hack! until core better supports custom statuses`
+	 *
+	 * @since 0.9.4
+	 *
+	 * `wp_unique_post_slug` is used to set the `post_name`. When a custom status is used, WordPress will try
+	 * really hard to set `post_name`, and we leverage `wp_unique_post_slug` to prevent it being set
+	 * 
+	 * @see: https://github.com/WordPress/WordPress/blob/396647666faebb109d9cd4aada7bb0c7d0fb8aca/wp-includes/post.php#L3932
+	 */
+	public function fix_unique_post_slug( $override_slug, $slug, $post_ID, $post_status, $post_type, $post_parent ) {
+		$status_slugs = wp_list_pluck( $this->get_custom_statuses(), 'slug' );
+
+		if ( ! in_array( $post_status, $status_slugs )
+			|| ! in_array( $post_type, $this->get_post_types_for_module( $this->module ) ) ) {
+			return null;
+		}
+
+		$post = get_post( $post_ID );
+
+		if ( empty( $post ) ) {
+			return null;
+		}
+
+		if ( $post->post_name ) {
+			return $slug;
+		}
+
+		return '';
 	}
 
 
@@ -1512,7 +1508,7 @@ class EF_Custom_Status extends EF_Module {
 	 * @see https://github.com/Automattic/Edit-Flow/issues/513
 	 */
 	public function fix_preview_link_part_three( $preview_link, $query_args ) {
-		if ( $autosave = wp_get_post_autosave( $query_args->ID, $query_args->post_author ) ) {
+		if ( $autosave = wp_get_post_autosave( $query_args->ID, get_current_user_id() ) ) {
 		    foreach ( array_intersect( array_keys( _wp_post_revision_fields( $query_args ) ), array_keys( _wp_post_revision_fields( $autosave ) ) ) as $field ) {
 		        if ( normalize_whitespace( $query_args->$field ) != normalize_whitespace( $autosave->$field ) ) {
 		        	// Pass through, it's a personal preview.
@@ -1520,7 +1516,7 @@ class EF_Custom_Status extends EF_Module {
 		        }
 		   }
 		}
-		return remove_query_arg( [ 'preview_nonce' ], $preview_link );  
+		return remove_query_arg( array( 'preview_nonce' ), $preview_link );
 	}
 
 	/**
@@ -1539,49 +1535,30 @@ class EF_Custom_Status extends EF_Module {
 	 * @return string $link Direct link to complete the action
 	 */
 	public function fix_get_sample_permalink( $permalink, $post_id, $title, $name, $post ) {
-		//Should we be doing anything at all?
-		if( !in_array( $post->post_type, $this->get_post_types_for_module( $this->module ) ) )
+
+		$status_slugs = wp_list_pluck( $this->get_custom_statuses(), 'slug' );
+
+		if ( ! in_array( $post->post_status, $status_slugs )
+			|| ! in_array( $post->post_type, $this->get_post_types_for_module( $this->module ) ) ) {
 			return $permalink;
-
-		//Is this published?
-		if( in_array( $post->post_status, $this->published_statuses ) )
-			return $permalink;
-
-		//Are we overriding the permalink? Don't do anything
-		if( isset( $_POST['action'] ) && $_POST['action'] == 'sample-permalink' )
-			return $permalink;
-
-		list( $permalink, $post_name ) = $permalink;
-
-		$post_name = $post->post_name ? $post->post_name : sanitize_title( $post->post_title );
-		$post->post_name = $post_name;
-
-		$ptype = get_post_type_object( $post->post_type );
-
-		if ( $ptype->hierarchical ) {
-			$post->filter = 'sample';
-
-			$uri = get_page_uri( $post->ID ) . $post_name;
-
-			if ( $uri ) {
-				$uri = untrailingslashit($uri);
-				$uri = strrev( stristr( strrev( $uri ), '/' ) );
-				$uri = untrailingslashit($uri);
-			}
-
-			/** This filter is documented in wp-admin/edit-tag-form.php */
-			$uri = apply_filters( 'editable_slug', $uri, $post );
-
-			if ( !empty($uri) ) {
-				$uri .= '/';
-			}
-
-			$permalink = str_replace('%pagename%', "{$uri}%pagename%", $permalink);
 		}
 
-		unset($post->post_name);
+		remove_filter( 'get_sample_permalink', array( $this, 'fix_get_sample_permalink' ), 10, 5 );
 
-		return array( $permalink, $post_name );
+		$new_name  = ! is_null( $name ) ? $name : $post->post_name;
+		$new_title = ! is_null( $title ) ? $title : $post->post_title;
+
+		$post = get_post( $post_id );
+		$status_before = $post->post_status;
+		$post->post_status = 'draft';
+
+		$permalink = get_sample_permalink( $post, $title, sanitize_title( $new_name ? $new_name : $new_title, $post->ID ) );
+
+		$post->post_status = $status_before;
+
+		add_filter( 'get_sample_permalink', array( $this, 'fix_get_sample_permalink' ), 10, 5 );
+
+		return $permalink;
 	}
 
 	/**
@@ -1596,75 +1573,28 @@ class EF_Custom_Status extends EF_Module {
 	 *
 	 * @since 0.8.2
 	 *
-	 * @param string  $return    Sample permalink HTML markup
-	 * @param int 	  $post_id   Post ID
-	 * @param string  $new_title New sample permalink title
-	 * @param string  $new_slug  New sample permalink kslug
-	 * @param WP_Post $post 	 Post object
+	 * @param string  $return    Sample permalink HTML markup.
+	 * @param int     $post_id   Post ID.
+	 * @param string  $new_title New sample permalink title.
+	 * @param string  $new_slug  New sample permalink slug.
+	 * @param WP_Post $post      Post object.
 	 */
-	function fix_get_sample_permalink_html( $return, $post_id, $new_title, $new_slug, $post ) {
+	public function fix_get_sample_permalink_html( $permalink, $post_id, $new_title, $new_slug, $post ) {
 		$status_slugs = wp_list_pluck( $this->get_custom_statuses(), 'slug' );
 
-		list($permalink, $post_name) = get_sample_permalink($post->ID, $new_title, $new_slug);
-
-		$view_link = false;
-		$preview_target = '';
-
-		if ( current_user_can( 'read_post', $post_id ) ) {
-			if ( in_array( $post->post_status, $status_slugs ) ) {
-				$view_link = $this->get_preview_link( $post );
-				$preview_target = " target='wp-preview-{$post->ID}'";
-			} else {
-				if ( 'publish' === $post->post_status || 'attachment' === $post->post_type ) {
-					$view_link = get_permalink( $post );
-				} else {
-					// Allow non-published (private, future) to be viewed at a pretty permalink.
-					$view_link = str_replace( array( '%pagename%', '%postname%' ), $post->post_name, $permalink );
-				}
-			}
+		if ( ! in_array( $post->post_status, $status_slugs )
+			|| ! in_array( $post->post_type, $this->get_post_types_for_module( $this->module ) ) ) {
+			return $permalink;
 		}
 
-		// Permalinks without a post/page name placeholder don't have anything to edit
-		if ( false === strpos( $permalink, '%postname%' ) && false === strpos( $permalink, '%pagename%' ) ) {
-			$return = '<strong>' . __( 'Permalink:' ) . "</strong>\n";
+		remove_filter( 'get_sample_permalink_html', array( $this, 'fix_get_sample_permalink_html' ), 10, 5 );
 
-			if ( false !== $view_link ) {
-				$display_link = urldecode( $view_link );
-				$return .= '<a id="sample-permalink" href="' . esc_url( $view_link ) . '"' . $preview_target . '>' . $display_link . "</a>\n";
-			} else {
-				$return .= '<span id="sample-permalink">' . $permalink . "</span>\n";
-			}
+		$post->post_status = 'draft';
+		$sample_permalink_html = get_sample_permalink_html( $post, $new_title, $new_slug );
 
-			// Encourage a pretty permalink setting
-			if ( '' == get_option( 'permalink_structure' ) && current_user_can( 'manage_options' ) && !( 'page' == get_option('show_on_front') && $id == get_option('page_on_front') ) ) {
-				$return .= '<span id="change-permalinks"><a href="options-permalink.php" class="button button-small" target="_blank">' . __('Change Permalinks') . "</a></span>\n";
-			}
-		} else {
-			if ( function_exists( 'mb_strlen' ) ) {
-				if ( mb_strlen( $post_name ) > 34 ) {
-					$post_name_abridged = mb_substr( $post_name, 0, 16 ) . '&hellip;' . mb_substr( $post_name, -16 );
-				} else {
-					$post_name_abridged = $post_name;
-				}
-			} else {
-				if ( strlen( $post_name ) > 34 ) {
-					$post_name_abridged = substr( $post_name, 0, 16 ) . '&hellip;' . substr( $post_name, -16 );
-				} else {
-					$post_name_abridged = $post_name;
-				}
-			}
+		add_filter( 'get_sample_permalink_html', array( $this, 'fix_get_sample_permalink_html' ), 10, 5 );
 
-			$post_name_html = '<span id="editable-post-name">' . $post_name_abridged . '</span>';
-			$display_link = str_replace( array( '%pagename%', '%postname%' ), $post_name_html, urldecode( $permalink ) );
-
-			$return = '<strong>' . __( 'Permalink:' ) . "</strong>\n";
-			$return .= '<span id="sample-permalink"><a href="' . esc_url( $view_link ) . '"' . $preview_target . '>' . $display_link . "</a></span>\n";
-			$return .= '&lrm;'; // Fix bi-directional text display defect in RTL languages.
-			$return .= '<span id="edit-slug-buttons"><button type="button" class="edit-slug button button-small hide-if-no-js" aria-label="' . __( 'Edit permalink' ) . '">' . __( 'Edit' ) . "</button></span>\n";
-			$return .= '<span id="editable-post-name-full">' . $post_name . "</span>\n";
-		}
-
-		return $return;
+		return $sample_permalink_html;
 	}
 
 
