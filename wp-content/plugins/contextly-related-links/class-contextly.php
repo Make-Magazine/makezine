@@ -185,15 +185,25 @@ class Contextly {
 		}
 
 		if ( null !== $post_object && isset( $post_object->post_type ) ) {
-			$contextly_settings = new ContextlySettings();
-			$display_types      = $contextly_settings->get_widget_display_type();
-
-			if ( in_array( $post_object->post_type, array_values( $display_types ), true ) ) {
+			if ( $this->is_post_type_display_allowed( $post_object->post_type ) ) {
 				return true;
 			}
 		}
 
 		return false;
+	}
+
+	/**
+	 * Check if some post type allowed for display modules.
+	 *
+	 * @param $post_type
+	 * @return bool
+	 */
+	public function is_post_type_display_allowed( $post_type ) {
+		$contextly_settings = new ContextlySettings();
+		$display_types      = $contextly_settings->get_widget_display_type();
+
+		return in_array( $post_type, array_values( $display_types ) );
 	}
 
 	/**
@@ -679,10 +689,12 @@ class Contextly {
 	 */
 	public function is_load_widget() {
 		global $post;
+
 		$contextly_settings = new ContextlySettings();
+		$page_type = $contextly_settings->get_wp_page_type();
 
 		if ( $this->check_widget_display_type() && ! $contextly_settings->is_page_display_disabled( $post->ID ) ) {
-			return is_page() || is_single() || $this->is_admin_edit_page();
+			return $page_type || $this->is_admin_edit_page();
 		} else {
 			return false;
 		}
@@ -852,6 +864,7 @@ class Contextly {
 	 */
 	public function insert_footer_scripts() {
 		global $post;
+
 		$params = array(
 			// Give some context, to let filters know who initiated the call.
 			'source'   => 'contextly-linker',
@@ -1401,13 +1414,19 @@ class Contextly {
 	 * @return array updated metadata array.
 	 */
 	public function fill_post_metadata( $metadata, $post ) {
-		if ( ! empty( $post->ID ) ) {
+		$contextly_settings = new ContextlySettings();
+		$wp_page_type = $contextly_settings->get_wp_page_type();
+
+		$is_wp_regular_page = in_array($wp_page_type, ['post', 'page']);
+
+		// metadata for post or any other page type
+		if ( ( ! empty( $post->ID ) && $this->is_post_type_display_allowed( $wp_page_type ) ) || $is_wp_regular_page ) {
 			$metadata += array(
 				'title'               => esc_html( $post->post_title ),
 				'url'                 => get_permalink( $post->ID ),
 				'pub_date'            => esc_html( $post->post_date ),
 				'mod_date'            => esc_html( $post->post_modified ),
-				'type'                => esc_html( $post->post_type ),
+				'type'           	  => esc_html( $post->post_type ),
 				'post_id'             => esc_html( $post->ID ),
 				'author_id'           => esc_html( $post->post_author ),
 				'author_name'         => esc_html( $this->get_author_full_name( $post ) ),
@@ -1421,6 +1440,14 @@ class Contextly {
 			if ( $image_alt ) {
 				$metadata['image_alt'] = esc_html( $image_alt );
 			}
+		} else {
+			global $wp;
+
+			$metadata += array(
+				'url'                 => home_url( $wp->request ),
+				'type'           	  => esc_html( $wp_page_type ),
+				'type_term'           => esc_html( single_term_title('', false) ),
+			);
 		}
 
 		return $metadata;
@@ -1431,6 +1458,7 @@ class Contextly {
 	 */
 	public function insert_metatags() {
 		global $post;
+
 		$params = array(
 			// Give some context, to let filters know who initiated the call.
 			'source'  => 'contextly-linker',
