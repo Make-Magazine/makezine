@@ -488,6 +488,7 @@ new Jetpack_JSON_API_Sync_Status_Endpoint(
 			'full_queue_next_sync'  => '(float) Time in seconds before trying to sync the full sync queue again',
 			'cron_size'             => '(int) Size of the current cron array',
 			'next_cron'             => '(int) The number of seconds till the next item in cron.',
+			'progress'              => '(array) Full Sync status by module',
 		),
 		'example_request'  => 'https://public-api.wordpress.com/rest/v1.1/sites/example.wordpress.org/sync/status',
 	)
@@ -709,8 +710,9 @@ new Jetpack_JSON_API_Sync_Close_Endpoint( array(
 	),
 	'request_format' => array(
 		'item_ids'  => '(array) Item IDs to delete from the queue.',
-		'queue'      => '(string) sync or full_sync',
-		'buffer_id'  => '(string) buffer ID that was opened during the checkout step.',
+		'queue'     => '(string) sync or full_sync',
+		'buffer_id' => '(string) buffer ID that was opened during the checkout step.',
+		'continue'  => '(bool=false) Perform another checkout from queue.',
 	),
 	'response_format' => array(
 		'success' => '(bool) Closed the buffer successfully?'

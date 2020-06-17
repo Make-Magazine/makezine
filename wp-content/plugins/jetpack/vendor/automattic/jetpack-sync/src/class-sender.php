@@ -7,6 +7,7 @@
 
 namespace Automattic\Jetpack\Sync;
 
+use Automattic\Jetpack\Connection\Manager;
 use Automattic\Jetpack\Constants;
 
 /**
@@ -199,7 +200,8 @@ class Sender {
 	 * @access public
 	 */
 	public function maybe_set_user_from_token() {
-		$verified_user = \Jetpack::connection()->verify_xml_rpc_signature();
+		$connection    = new Manager();
+		$verified_user = $connection->verify_xml_rpc_signature();
 		if ( Constants::is_true( 'XMLRPC_REQUEST' ) &&
 			! is_wp_error( $verified_user )
 			&& $verified_user
@@ -429,6 +431,7 @@ class Sender {
 		if ( $queue->size() === 0 ) {
 			return new \WP_Error( 'empty_queue_' . $queue->id );
 		}
+
 		/**
 		 * Now that we're sure we are about to sync, try to ignore user abort
 		 * so we can avoid getting into a bad state.
@@ -466,57 +469,64 @@ class Sender {
 			 *
 			 * @since 4.2.0
 			 *
-			 * @param array $data The action buffer
+			 * @param array  $data The action buffer
 			 * @param string $codec The codec name used to encode the data
 			 * @param double $time The current time
 			 * @param string $queue The queue used to send ('sync' or 'full_sync')
+			 * @param float  $checkout_duration The duration of the checkout operation.
+			 * @param float  $preprocess_duration The duration of the pre-process operation.
+			 * @param int    $queue_size The size of the sync queue at the time of processing.
 			 */
 			Settings::set_is_sending( true );
-			$processed_item_ids = apply_filters( 'jetpack_sync_send_data', $items_to_send, $this->codec->name(), microtime( true ), $queue->id, $checkout_duration, $preprocess_duration );
+			$processed_item_ids = apply_filters( 'jetpack_sync_send_data', $items_to_send, $this->codec->name(), microtime( true ), $queue->id, $checkout_duration, $preprocess_duration, $queue->size(), $buffer->id );
 			Settings::set_is_sending( false );
 		} else {
 			$processed_item_ids = $skipped_items_ids;
 			$skipped_items_ids  = array();
 		}
 
-		if ( ! $processed_item_ids || is_wp_error( $processed_item_ids ) ) {
-			$checked_in_item_ids = $queue->checkin( $buffer );
-			if ( is_wp_error( $checked_in_item_ids ) ) {
-				// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
-				error_log( 'Error checking in buffer: ' . $checked_in_item_ids->get_error_message() );
-				$queue->force_checkin();
-			}
-			if ( is_wp_error( $processed_item_ids ) ) {
-				return new \WP_Error( 'wpcom_error', $processed_item_ids->get_error_code() );
-			}
-			// Returning a wpcom_error is a sign to the caller that we should wait a while before syncing again.
-			return new \WP_Error( 'wpcom_error', 'jetpack_sync_send_data_false' );
-		} else {
-			// Detect if the last item ID was an error.
-			$had_wp_error = is_wp_error( end( $processed_item_ids ) );
-			if ( $had_wp_error ) {
-				$wp_error = array_pop( $processed_item_ids );
-			}
-			// Also checkin any items that were skipped.
-			if ( count( $skipped_items_ids ) > 0 ) {
-				$processed_item_ids = array_merge( $processed_item_ids, $skipped_items_ids );
-			}
-			$processed_items = array_intersect_key( $items, array_flip( $processed_item_ids ) );
-			/**
-			 * Allows us to keep track of all the actions that have been sent.
-			 * Allows us to calculate the progress of specific actions.
-			 *
-			 * @since 4.2.0
-			 *
-			 * @param array $processed_actions The actions that we send successfully.
-			 */
-			do_action( 'jetpack_sync_processed_actions', $processed_items );
-			$queue->close( $buffer, $processed_item_ids );
-			// Returning a WP_Error is a sign to the caller that we should wait a while before syncing again.
-			if ( $had_wp_error ) {
-				return new \WP_Error( 'wpcom_error', $wp_error->get_error_code() );
+		if ( 'non-blocking' !== $processed_item_ids ) {
+			if ( ! $processed_item_ids || is_wp_error( $processed_item_ids ) ) {
+				$checked_in_item_ids = $queue->checkin( $buffer );
+				if ( is_wp_error( $checked_in_item_ids ) ) {
+					// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+					error_log( 'Error checking in buffer: ' . $checked_in_item_ids->get_error_message() );
+					$queue->force_checkin();
+				}
+				if ( is_wp_error( $processed_item_ids ) ) {
+					return new \WP_Error( 'wpcom_error', $processed_item_ids->get_error_code() );
+				}
+
+				// Returning a wpcom_error is a sign to the caller that we should wait a while before syncing again.
+				return new \WP_Error( 'wpcom_error', 'jetpack_sync_send_data_false' );
+			} else {
+				// Detect if the last item ID was an error.
+				$had_wp_error = is_wp_error( end( $processed_item_ids ) );
+				if ( $had_wp_error ) {
+					$wp_error = array_pop( $processed_item_ids );
+				}
+				// Also checkin any items that were skipped.
+				if ( count( $skipped_items_ids ) > 0 ) {
+					$processed_item_ids = array_merge( $processed_item_ids, $skipped_items_ids );
+				}
+				$processed_items = array_intersect_key( $items, array_flip( $processed_item_ids ) );
+				/**
+				 * Allows us to keep track of all the actions that have been sent.
+				 * Allows us to calculate the progress of specific actions.
+				 *
+				 * @since 4.2.0
+				 *
+				 * @param array $processed_actions The actions that we send successfully.
+				 */
+				do_action( 'jetpack_sync_processed_actions', $processed_items );
+				$queue->close( $buffer, $processed_item_ids );
+				// Returning a WP_Error is a sign to the caller that we should wait a while before syncing again.
+				if ( $had_wp_error ) {
+					return new \WP_Error( 'wpcom_error', $wp_error->get_error_code() );
+				}
 			}
 		}
+
 		return true;
 	}
 
@@ -565,7 +575,7 @@ class Sender {
 	 */
 	private function create_action_to_send( $action_name, $data ) {
 		return array(
-			microtime( true ) => array(
+			(string) microtime( true ) => array(
 				$action_name,
 				$data,
 				get_current_user_id(),
