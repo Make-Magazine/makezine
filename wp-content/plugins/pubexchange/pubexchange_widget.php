@@ -3,7 +3,7 @@
  * Plugin Name: PubExchange
  * Plugin URI: https://www.pubexchange.com
  * Description: PubExchange
- * Version: 2.0.4
+ * Version: 2.0.5
  * Author: PubExchange
  */
 
@@ -102,10 +102,10 @@ if (!class_exists('PubExchangeWP')) {
                 }
 
                 if (!empty($url)) {
-                    echo "<meta name='pubexchange:image' content='".$url."'>\n";
+                    echo "<meta name=\"pubexchange:image\" content=\"".$url."\">\n";
                 }
                 if ($headline = get_the_title( $post->ID )) {
-                    echo "<meta name='pubexchange:title' content='".substr(addslashes($headline),0,255)."'>\n";
+                    echo "<meta name=\"pubexchange:title\" content=\"".substr(addcslashes($headline, '"\\/'),0,255)."\">\n";
                 }
             }
         }
