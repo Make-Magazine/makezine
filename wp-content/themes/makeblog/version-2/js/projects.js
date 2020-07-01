@@ -810,8 +810,10 @@ jQuery(document).ready(function ($) {
         if ((!$('.all-stories').hasClass('tags')) && ($('p').is('#blog-load-posts') === false)) {
             $('#footer').removeClass('non-visible');
         }
-        var $sticky_adds_block = $('.all-stories .ad-refresh .js-ad').eq(0);
-        var ads_position = $sticky_adds_block.offset().top - 57;
+		if(gdprValue == "yes") {
+			var $sticky_adds_block = $('.all-stories .ad-refresh .js-ad').eq(0);
+			var ads_position = $sticky_adds_block.offset().top - 57;
+		}
         var contentHeight;
         var notSticky = 0;
         $(window).scroll(function () {
