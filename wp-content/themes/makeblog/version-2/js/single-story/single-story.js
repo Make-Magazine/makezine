@@ -1,4 +1,6 @@
 (function ($) { $(function() {
+	var gdprValue = $.cookie("cookielawinfo-checkbox-non-necessary");
+	
     if ($('div').hasClass('mz-story-infinite-view')) { (function(){
 
         /* social share buttons reload counters */
@@ -490,9 +492,11 @@
         });
         
         function sendGA() {
-            ga('send', 'pageview',
-                {'page': location.pathname + location.search + location.hash}
-            );
+			if(gdprValue == "yes") {
+				ga('send', 'pageview',
+					{'page': location.pathname + location.search + location.hash}
+				);
+			}
         }
 
         function getStoryThumbnail($offset) {
@@ -533,7 +537,9 @@
                         id = 0;
                     }
                     essb_get_counters();
-                    make.gpt.loadDyn();
+					if(gdprValue == "yes") {
+						make.gpt.loadDyn();
+					}
                     $('.single .story-header .story-title h1').each(function () {
                         newTitle = $(this).html().replace('&nbsp;', ' ');
                         $(this).html(newTitle);
@@ -584,12 +590,14 @@
             } else {
                 socialNetwork = 'Social network';
             }
-            ga('send', {
-                hitType: 'event',
-                eventCategory: 'Stories social',
-                eventAction: socialNetwork,
-                eventLabel: window.location.href
-            });
+			if(gdprValue == "yes") {
+				ga('send', {
+					hitType: 'event',
+					eventCategory: 'Stories social',
+					eventAction: socialNetwork,
+					eventLabel: window.location.href
+				});
+			}
         });
 		  /* Comment out disqus
         // Disqus modal remove modal-backdrop

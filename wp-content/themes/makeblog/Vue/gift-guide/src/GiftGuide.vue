@@ -72,6 +72,7 @@
 </template>
 
 <script>
+
 // My suggestion is we move a function like this to global where we can just cover the most commonly used entities, but something like this would undoubtedly be useful in other areas as well
 function decodeHTMLEntities(text) {  
     var entities = [
@@ -98,7 +99,9 @@ import vSelect from 'vue-select';
 import GiftGuideItem from './GiftGuideitem.vue';
 import SortMethods from './sortMethods.js';
 import './stickyFilters.js';
+import '../../../js/footer-scripts/jquery.cookie.js';
 import VueScrollTo from 'vue-scrollto';
+var gdprValue = jQuery.cookie("cookielawinfo-checkbox-non-necessary");
 Vue.use(VueScrollTo, {
    container: "body",
    duration: 200,
@@ -356,7 +359,9 @@ module.exports = {
       },
       clearDynamicAds: function() {
          var ads = document.querySelectorAll('.dynamic-ad');
-         googletag.destroySlots(ads);
+		 if(gdprValue == "yes") {
+         	googletag.destroySlots(ads);
+		 }
       },
       insertAd: function(idx) {
          if(idx > 0) {
@@ -372,12 +377,12 @@ module.exports = {
       },
       setupDynAds: function() {
          var outerCont = document.querySelector('.gift-guide-container'),
-            adFreq = outerCont.getAttribute('data-ad-freq');
+         adFreq = outerCont.getAttribute('data-ad-freq');
          this.adFreq = adFreq;
          if(this.adFreq > 0) {
             this.doAds = true;
             // NOTE (ts): this is (or should be) part of the encompassing page
-            if(make) {
+            if(make && gdprValue == "yes") {
                window.setTimeout(function() {
                   make.gpt.loadDyn();
                }, 2000);

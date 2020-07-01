@@ -3,11 +3,14 @@
 wp_enqueue_script('make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array('jquery'), false, true);
 get_header('universal');
 ?>
-<div class="ad-unit tag-page">
-    <?php global $make;
-    print $make->ads->ad_leaderboard;
-    ?>
-</div>
+<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	<div class="ad-unit tag-page">
+		<?php global $make;
+		print $make->ads->ad_leaderboard;
+		?>
+	</div>
+<?php } ?>
+
 <?php
 $tag_name = single_tag_title("", false);
 $tag = get_queried_object();
@@ -73,7 +76,7 @@ if (user_can($current_user, 'administrator')) {
             </div>
             <div class="col-md-3 col-sm-5 col-xs-12 aside">
                 <div class="sidebar-wrapper tags_sidebar sidebar">
-<?php dynamic_sidebar('sidebar_tags_page'); ?>
+					<?php dynamic_sidebar('sidebar_tags_page'); ?>
                 </div>
             </div>
         </div>

@@ -12,11 +12,12 @@
 ?>
 
 <div class="sidebar col-sm-5 col-md-4">
-
-	<div class="sidebar-ad">
-		<p id="ads-title">Advertisement</p>
-		<?php global $make; print $make->ads->ad_300x250_atf; ?>
-	</div>
+    <?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+		<div class="sidebar-ad">
+			<p id="ads-title">Advertisement</p>
+			<?php global $make; print $make->ads->ad_300x250_atf; ?>
+		</div>
+	<?php } ?>
 
 	<?php dynamic_sidebar( 'sidebar_top' ); ?>
 
@@ -28,16 +29,17 @@
 			}
 		 ?>
 	</div>
+	<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+		<div class="new-dotw widget">
+			<p id="ads-title">Advertisement</p>
+			<?php global $make; print $make->ads->ad_300x250_shed; ?>
+		</div>
 
-	<div class="new-dotw widget">
-		<p id="ads-title">Advertisement</p>
-		<?php global $make; print $make->ads->ad_300x250_shed; ?>
-	</div>
-	
-	<div class="sidebar-ad">
-		<p id="ads-title">Advertisement</p>
-		<?php global $make; print $make->ads->ad_300x250_house; ?>
-	</div>
+		<div class="sidebar-ad">
+			<p id="ads-title">Advertisement</p>
+			<?php global $make; print $make->ads->ad_300x250_house; ?>
+		</div>
+	<?php } ?>
 
 	<?php dynamic_sidebar( 'sidebar_bottom' ); ?>
 

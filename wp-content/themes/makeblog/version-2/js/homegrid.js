@@ -1,4 +1,16 @@
 jQuery(document).ready(function ($) {
+	var gdprValue = $.cookie("cookielawinfo-checkbox-non-necessary");
+	
+	gaSend = function(){
+		if(gdprValue == "yes") {
+			ga('send', 'pageview');
+		}
+	}
+	adRefresh = function() {
+		if(gdprValue == "yes") {
+			googletag.pubads().refresh();
+		}
+	}
 
     // Handle the click actions on the list items in the steps box
     $('body').on('click', '#tabs li.steps', function () {
@@ -13,8 +25,8 @@ jQuery(document).ready(function ($) {
         $('#tabs li:not(#' + id + ')').removeClass('current');
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     // Allows us to advance in the slider
@@ -30,8 +42,8 @@ jQuery(document).ready(function ($) {
         $('#tabs').find('li:not( #' + id + ')').removeClass('current');
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     // Display all projects when we click "View All"
@@ -46,8 +58,8 @@ jQuery(document).ready(function ($) {
         $('#steppers .nexter, #steppers .disabled').hide();
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     jQuery('.carousel').on('slid', function () {
@@ -61,9 +73,9 @@ jQuery(document).ready(function ($) {
         jQuery('.inner-thumbs .active').removeClass('active');
         jQuery('*[data-slide-to="' + index + '"]').addClass('active');
         if (!jQuery(this).hasClass('huffington')) {
-            googletag.pubads().refresh();
+            adRefresh();
         }
-        ga('send', 'pageview');
+        gaSend();
         var urlref = location.href;
         PARSELY.beacon.trackPageView({
             url: urlref,
@@ -164,15 +176,15 @@ jQuery(document).ready(function ($) {
     });
     (function ($) {
         $(document.body).on('post-load', function () {
-            googletag.pubads().refresh();
-            ga('send', 'pageview');
+            adRefresh();
+        	gaSend();
         });
     })(jQuery);
 
     (function ($) {
         $(document.body).on('post-load', function () {
-            googletag.pubads().refresh();
-            ga('send', 'pageview');
+            adRefresh();
+        	gaSend();
         });
     })(jQuery);
 
@@ -452,7 +464,9 @@ jQuery(document).ready(function ($) {
                 }
 
                 // Load Placeholder Ads.
-                make.gpt.loadDyn();
+				if(gdprValue == "yes") {
+                	make.gpt.loadDyn();
+				}
 
                 var error_message = $(".posts-list").find('.error_message');
                 if (error_message.length > 0) {

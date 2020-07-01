@@ -21,12 +21,14 @@ if (user_can($current_user, 'administrator')) {
 <div class="mz-story-infinite-view <?php echo $login_admin ?>">
 
     <div class="wrapper">
-        <div class="ad-unit first-ad">
-            <?php
-            global $make;
-            print $make->ads->ad_leaderboard;
-            ?>
-        </div>
+		<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+			<div class="ad-unit first-ad">
+				<?php
+				global $make;
+				print $make->ads->ad_leaderboard;
+				?>
+			</div>
+		<?php } ?>
         <div class="row navigator sticky-sidebar-posts-nav">
             <div class="hamburger">
                 <div class="hamburger-navigator">
@@ -193,28 +195,12 @@ if (user_can($current_user, 'administrator')) {
                                         <div id="nativobelow"></div>
                                     </div>
                                 </div>
-
-                                <div class="ad-unit">
-                                    <p id="ads-title">Advertisement</p>
-                                    <div class='js-ad scroll-load' data-size='[[728,90],[320,50]]' data-size-map='[[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
-                                </div>
-                                <!-- comment out diqus -->
-                                <!--
-                                <div class="comments">
-
-                                    <button type="button" class="btn btn-info btn-lg"
-                                            data-toggle="modal" data-target="#disqus-modal"
-                                            onclick="reset('<?php /* echo get_the_ID(); */ ?>',
-                                                            '<?php /* echo 'https://makezine.com' . str_replace(home_url(), '', get_permalink()); */ ?>',
-                                                            '<?php /* echo get_the_title(); */ ?>', 'en');">
-                                        Show comments
-                                    </button>
-
-                                    <!-- Modal -->
-                                    <!--<div id="disqus-modal" class="modal fade" role="dialog">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                </div>-->
+								<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+									<div class="ad-unit">
+										<p id="ads-title">Advertisement</p>
+										<div class='js-ad scroll-load' data-size='[[728,90],[320,50]]' data-size-map='[[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
+									</div>
+								<?php } ?>
                             </div>
                             <aside class="col-sm-5 col-md-4 sidebar">
                                 <div class="author-info">
@@ -235,10 +221,12 @@ if (user_can($current_user, 'administrator')) {
                                     <?php }
                                     ?>
                                 </div>
-                                <div class="ad-unit">
-                                    <p id="ads-title">Advertisement</p>
-                                    <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600],[300,250]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
-                                </div>
+								<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+									<div class="ad-unit">
+										<p id="ads-title">Advertisement</p>
+										<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600],[300,250]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
+									</div>
+								<?php } ?>
                                 <?php
                                 $posttags = get_the_tags();
                                 if ($posttags) {
@@ -251,17 +239,20 @@ if (user_can($current_user, 'administrator')) {
                                             </li>
             <?php } ?>
                                     </ul>
-        <?php }
-        ?>
-                                <div class="ad-unit">
-                                    <p id="ads-title">Advertisement</p>
-                                    <div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"'></div>
-                                </div>
-                <?php echo do_shortcode('[newsletter_signup_sidebar]'); ?>
-                                <div class="ad-unit">
-                                    <p id="ads-title">Advertisement</p>
-                                    <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
-                                </div>
+        <?php } ?>
+								<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+									<div class="ad-unit">
+										<p id="ads-title">Advertisement</p>
+										<div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"'></div>
+									</div>
+								<?php } ?>
+								<?php echo do_shortcode('[newsletter_signup_sidebar]'); ?>
+								<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+									<div class="ad-unit">
+										<p id="ads-title">Advertisement</p>
+										<div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"'></div>
+									</div>
+								<?php } ?>
 
                             </aside>
                             <div class="ctx-social-container"></div>
@@ -279,39 +270,10 @@ if (user_can($current_user, 'administrator')) {
     </div>
 
 </div>
-<div class="ad-unit">
-    <div class='js-ad scroll-load' data-size='[[728,90],[970,90],[320,50]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
-</div>
-<!-- comment out disqus
-<script type="text/javascript">
-    var disqus_shortname = 'makezine';
-    var disqus_identifier;
-    var disqus_url;
-    var disqus_config = function () {
-        this.language = "en";
-    };
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    /* * * Disqus Reset Function * * */
-    var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
-        jQuery('#disqus_thread').remove();
-        jQuery('#disqus-modal').append('<div id="disqus_thread"></div>');
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                this.page.identifier = newIdentifier;
-                this.page.url = newUrl;
-                this.page.title = newTitle;
-                this.language = newLanguage;
-            }
-        });
-    };
-</script>-->
+<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	<div class="ad-unit">
+		<div class='js-ad scroll-load' data-size='[[728,90],[970,90],[320,50]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]],[[0,0],[[320,50]]]]' data-pos='"btf"'></div>
+	</div>
+<?php } ?>
 
 <?php get_footer(); ?>

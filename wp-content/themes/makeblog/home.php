@@ -11,12 +11,16 @@ $pagename = get_query_var('pagename');
 /** Adding enqueue here to prevent projects.js from loading on every page. */
 wp_enqueue_script( 'make-projects', get_stylesheet_directory_uri() . '/version-2/js/projects.js', array( 'jquery' ), false, true );
 get_header('universal'); ?>
-<div class="ad-unit adds">
-	<?php
-	global $make;
-	print $make->ads->ad_leaderboard;
-	?>
-</div>
+
+<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	<div class="ad-unit adds">
+		<?php
+		global $make;
+		print $make->ads->ad_leaderboard;
+		?>
+	</div>
+<?php } ?>
+
 <?php $current_user = wp_get_current_user();
 if (user_can($current_user, 'administrator')) {
 	$login_admin = 'admin_is_login';

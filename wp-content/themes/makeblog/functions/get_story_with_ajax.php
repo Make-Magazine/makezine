@@ -67,10 +67,11 @@ function get_story_with_ajax2() {
     $make->ad_vars = new MakeAdVars;
     $make->ad_vars->getVars();
     ?>
-
-    <div class="ad-unit">
-        <div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-    </div>
+    <?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+		<div class="ad-unit">
+			<div class="js-ad scroll-load" data-size='[[728,90],[970,90]]' data-size-map='[[[1000,0],[[728,90],[970,90]]],[[730,0],[[728,90]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+		</div>
+	<?php } ?>
 
     <article itemscope itemtype="https://schema.org/ScholarlyArticle">
       <div class="story-header" id="<?php echo get_the_ID(); ?>">
@@ -172,14 +173,16 @@ function get_story_with_ajax2() {
                       </ul>
                   <?php }
                   ?>
-                  <div class="ad-unit">
-                      <p id="ads-title">ADVERTISEMENT</p>
-                      <div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-                  </div>
-                  <div class="ad-unit">
-                      <p id="ads-title">ADVERTISEMENT</p>
-                      <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-                  </div>
+				  <?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+					  <div class="ad-unit">
+						  <p id="ads-title">ADVERTISEMENT</p>
+						  <div class='js-ad scroll-load' data-size='[[300,250]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+					  </div>
+					  <div class="ad-unit">
+						  <p id="ads-title">ADVERTISEMENT</p>
+						  <div class='js-ad scroll-load' data-size='[[300,250],[300,600]]' data-size-map='[[[730,0],[[300,600]]],[[0,0],[[300,250]]]]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+					  </div>
+				  <?php } ?>
               </aside>
               <div class="essb_right_flag"></div>
           </div>
@@ -360,15 +363,17 @@ function get_story_with_ajax() {
                     </ul>
                 <?php }
                 ?>
-                <div class="ad-unit">
-                    <p id="ads-title">ADVERTISEMENT</p>
-                    <div class="js-ad scroll-load" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-                </div>
-                <div class="ctx-siderail-wrapper"></div>
-                <div class="ad-unit">
-                    <p id="ads-title">ADVERTISEMENT</p>
-                    <div class="js-ad scroll-load" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
-                </div>
+				<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+					<div class="ad-unit">
+						<p id="ads-title">ADVERTISEMENT</p>
+						<div class="js-ad scroll-load" data-size='[300,250]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+					</div>
+					<div class="ctx-siderail-wrapper"></div>
+					<div class="ad-unit">
+						<p id="ads-title">ADVERTISEMENT</p>
+						<div class="js-ad scroll-load" data-size='[300,600]' data-pos='"btf"' data-ad-vars=<?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>></div>
+					</div>
+				<?php } ?>
             </aside>
             <div class="essb_right_flag"></div>
         </div>

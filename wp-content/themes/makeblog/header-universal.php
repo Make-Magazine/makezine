@@ -39,14 +39,6 @@ if( $detect->isTablet() ){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PC5R77');</script>
-  <!-- End Google Tag Manager -->
-
   <title><?php echo make_generate_title_tag(); ?></title>
   <meta name="twitter:widgets:csp" content="on">
   <meta name="p:domain_verify" content="c4e1096cb904ca6df87a2bb867715669" >
@@ -105,17 +97,6 @@ if( $detect->isTablet() ){
   var ad_vars = <?php print str_replace("&amp;", "&", json_encode($make->ad_vars, JSON_UNESCAPED_SLASHES)); ?>;
   </script>
 
-  <!-- Make GPT -->
-  <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
-
-  <!-- nativo script -->
-  <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
-    <?php if (is_page('content')): ?>
-      <meta http-equiv="X-UA-Compatible" content="IE=10" />
-      <meta name="robots" content="noindex, nofollow" />
-    <?php endif; ?>
-  <!-- end nativo script -->
-
 
   <!-----------------------------------------------------------
       For Some reason this part needed to be commented out before getting my local up and running
@@ -137,78 +118,107 @@ if( $detect->isTablet() ){
 
   <!-- Time-tracking for Custom Dimensions -->
   <time itemprop="startDate" datetime="<?php the_time( 'c' ); ?>" style="display: none;"></time>
-
-  <!-- Google Universal Analytics -->
-  <!-- Primary Categories Dimension Query -->
-  <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = (isset($primary_cat_query[0])?$primary_cat_query[0]:''); ?>
-  <?php
-    $cats = get_the_category();
-    $primarycat = array();
-    foreach ( $cats as $cat ) {
-      if ( $cat->category_parent < 1 ) {
-        $primarycat[] = $cat->category_nicename;
-      }
-      elseif ( $cat->category_parent > 0 ) {
-        $parent_cat_id = $cat->category_parent;
-        $cat2 = get_cat_name($parent_cat_id);
-        $primarycat[] = $cat2;
-      }
-    }
-    $primary_cat_dimension = (isset($primarycat[0])?$primarycat[0]:'');
-  ?>
-  <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = (isset($youtube_embed_query[0])?$youtube_embed_query[0]:''); ?>
-  <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-51157-1', 'auto');
-    ga('require', 'GTM-TXW38JQ');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview', {
-      'page': location.pathname + location.search + location.hash
-    });
-    var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
-    ga('set', 'dimension11', dimensionValue11);
-    ga('set', 'dimension13', "<?php echo $primary_cat ?>");
-    ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
-  </script>
-
-  <script type="text/javascript">
-    dataLayer = [];
-  </script>
-
-  <?php if ( is_404() ) : // Load this last. ?>
-    <script>
-      ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
-    </script>
-  <?php endif; ?>
 	
-	<!-- Pinterest Tag -->
-	<script>
-	!function(e){if(!window.pintrk){window.pintrk = function () {
-	window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-	  n=window.pintrk;n.queue=[],n.version="3.0";var
-	  t=document.createElement("script");t.async=!0,t.src=e;var
-	  r=document.getElementsByTagName("script")[0];
-	  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-	pintrk('load', '2617466540835', {em: '<user_email_address>'});
-	pintrk('page');
-	</script>
-	<noscript>
-	<img height="1" width="1" style="display:none;" alt=""
-	  src="https://ct.pinterest.com/v3/?event=init&tid=2617466540835&pd[em]=<hashed_email_address>&noscript=1" />
-	</noscript>
-	<!-- end Pinterest Tag -->
+  <?php
+    // Tracking pixels users can turn off through the cookie law checkbox -- defaults to yes
+	if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) {
+  ?>
+	  <!-- Make GPT -->
+	  <script type='text/javascript' src="<?php print get_template_directory_uri() . '/js/gpt.js'; ?>"></script>
+
+	  <!-- nativo script -->
+	  <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+		<?php if (is_page('content')): ?>
+		  <meta http-equiv="X-UA-Compatible" content="IE=10" />
+		  <meta name="robots" content="noindex, nofollow" />
+		<?php endif; ?>
+	  <!-- end nativo script -->
+	
+	  <!-- Google Tag Manager -->
+	  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	  })(window,document,'script','dataLayer','GTM-PC5R77');</script>
+	  <!-- End Google Tag Manager -->
+
+	  <!-- Google Universal Analytics -->
+	  <!-- Primary Categories Dimension Query -->
+	  <?php $primary_cat_query = get_post_meta( get_the_id(), 'ga_primary_category' ); $primary_cat = (isset($primary_cat_query[0])?$primary_cat_query[0]:''); ?>
+	  <?php
+		$cats = get_the_category();
+		$primarycat = array();
+		foreach ( $cats as $cat ) {
+		  if ( $cat->category_parent < 1 ) {
+			$primarycat[] = $cat->category_nicename;
+		  }
+		  elseif ( $cat->category_parent > 0 ) {
+			$parent_cat_id = $cat->category_parent;
+			$cat2 = get_cat_name($parent_cat_id);
+			$primarycat[] = $cat2;
+		  }
+		}
+		$primary_cat_dimension = (isset($primarycat[0])?$primarycat[0]:'');
+	  ?>
+	  <?php $youtube_embed_query = get_post_meta( get_the_id(), 'ga_youtube_embed' ); $youtube_embed = (isset($youtube_embed_query[0])?$youtube_embed_query[0]:''); ?>
+	  <script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-51157-1', 'auto');
+		ga('require', 'GTM-TXW38JQ');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview', {
+		  'page': location.pathname + location.search + location.hash
+		});
+		var dimensionValue11 = document.getElementsByTagName("time")[0].getAttribute("datetime");
+		ga('set', 'dimension11', dimensionValue11);
+		ga('set', 'dimension13', "<?php echo $primary_cat ?>");
+		ga('set', 'dimension14', "<?php echo $youtube_embed ?>");
+	  </script>
+
+	  <script type="text/javascript">
+		dataLayer = [];
+	  </script>
+
+	  <?php if ( is_404() ) : // Load this last. ?>
+		<script>
+		  ga('send', 'event', '404', document.location.href + document.location.search, document.referrer);
+		</script>
+	  <?php endif; ?>
+
+		<!-- Pinterest Tag -->
+		<script>
+		!function(e){if(!window.pintrk){window.pintrk = function () {
+		window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+		  n=window.pintrk;n.queue=[],n.version="3.0";var
+		  t=document.createElement("script");t.async=!0,t.src=e;var
+		  r=document.getElementsByTagName("script")[0];
+		  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+		pintrk('load', '2617466540835', {em: '<user_email_address>'});
+		pintrk('page');
+		</script>
+		<noscript>
+		<img height="1" width="1" style="display:none;" alt=""
+		  src="https://ct.pinterest.com/v3/?event=init&tid=2617466540835&pd[em]=<hashed_email_address>&noscript=1" />
+		</noscript>
+		<!-- end Pinterest Tag -->
+	<?php } // end cookie law if ?>
 	
 </head>
 <body id="makeblog" <?php body_class(); ?>>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC5R77"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+	
+<?php
+// Tracking pixels users can turn off through the cookie law checkbox -- defaults to yes
+if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) {
+?>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC5R77"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+<?php } // end cookie law if ?>
+	
 <div id="search-modal">
   <form role="search" method="get" class="search-form" action="/">
       <label class="sb-search-label" for="search">Search</label>
@@ -287,8 +297,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       echo file_get_contents( UNIVERSAL_ASSET_URL_PREFIX . '/wp-content/themes/memberships/universal-nav/universal-megamenu.html', false, $context);
     ?>
    </div>
-
-  <script async id="aniviewJS94454388" src="https://play.aniview.com/58fcbed1073ef420086c9d08/5d8c8d3828a061037c01b4b0/makezine1.js"></script>
+	
+	<?php
+	// Tracking pixels users can turn off through the cookie law checkbox -- defaults to yes
+	if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) {
+	?>
+		<script async id="aniviewJS94454388" src="https://play.aniview.com/58fcbed1073ef420086c9d08/5d8c8d3828a061037c01b4b0/makezine1.js"></script>
+	<?php } // end cookie law if ?>
 	
 </header>
 <div class="nav-flyout-underlay"></div>

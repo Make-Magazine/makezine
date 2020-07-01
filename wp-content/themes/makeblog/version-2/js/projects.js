@@ -1,5 +1,25 @@
 jQuery(document).ready(function ($) {
-
+	
+    var gdprValue = $.cookie("cookielawinfo-checkbox-non-necessary");
+	
+	gaSend = function(){
+		if(gdprValue == "yes") {
+			ga('send', 'pageview');
+		}
+	}
+	gaSendPage = function() {
+		if(gdprValue == "yes") {
+			ga('send', 'pageview',
+				{ 'page': location.pathname + location.search + location.hash }
+			);
+		}
+	}
+	adRefresh = function() {
+		if(gdprValue == "yes") {
+			googletag.pubads().refresh();
+		}
+	}
+	
     // Handle the click actions on the list items in the steps box
     $('body').on('click', '#tabs li.steps', function () {
         var id = $(this).attr('id');
@@ -18,8 +38,8 @@ jQuery(document).ready(function ($) {
         $('#tabs li:not(#' + id + ')').removeClass('current');
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     // Allows us to advance in the slider
@@ -39,8 +59,8 @@ jQuery(document).ready(function ($) {
         $('#tabs').find('li:not( #' + id + ')').removeClass('current');
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     // Display all projects steps when we click "View All"
@@ -55,8 +75,8 @@ jQuery(document).ready(function ($) {
         $('#steppers .nexter, #steppers .disabled').hide();
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     jQuery('.carousel').on('slide', function () {
@@ -70,9 +90,9 @@ jQuery(document).ready(function ($) {
         jQuery('.inner-thumbs .active').removeClass('active');
         jQuery('*[data-slide-to="' + index + '"]').addClass('active');
         if (!jQuery(this).hasClass('huffington')) {
-            googletag.pubads().refresh();
+            adRefresh();
         }
-        ga('send', 'pageview');
+        gaSend();
         var urlref = location.href;
         PARSELY.beacon.trackPageView({
             url: urlref,
@@ -173,15 +193,15 @@ jQuery(document).ready(function ($) {
     });
     (function ($) {
         $(document.body).on('post-load', function () {
-            googletag.pubads().refresh();
-            ga('send', 'pageview');
+            adRefresh();
+        	gaSend();
         });
     })(jQuery);
 
     (function ($) {
         $(document.body).on('post-load', function () {
-            googletag.pubads().refresh();
-            ga('send', 'pageview');
+            adRefresh();
+        	gaSend();
         });
     })(jQuery);
 
@@ -495,7 +515,9 @@ jQuery(document).ready(function ($) {
                 }
 
                 // Load placeholder ads.
-                make.gpt.loadDyn();
+				if(gdprValue == "yes") {
+                	make.gpt.loadDyn();
+				}
 
             },
             error: function (errorThrown) {
@@ -524,7 +546,9 @@ jQuery(document).ready(function ($) {
                 $('#pbd-alp-load-posts a').removeClass('first-click');
                 $('#pbd-alp-load-posts').removeClass('loading');
                 // Load placeholder ads.
-                make.gpt.loadDyn();
+				if(gdprValue == "yes") {
+                	make.gpt.loadDyn();
+				}
             });
             return false;
         }
@@ -669,9 +693,7 @@ jQuery(document).ready(function ($) {
                     if ($('p').is('#blog-load-posts') === false) {
                         $('#footer').removeClass('non-visible');
                     }
-                    ga('send', 'pageview',
-                        { 'page': location.pathname + location.search + location.hash }
-                    );
+                    gaSendPage();
                     if(window.navigator.userAgent.indexOf("Chrome") > 0){
                         $window = $(window).width() + 17;
                     }else {
@@ -683,14 +705,18 @@ jQuery(document).ready(function ($) {
                     // Load mobile ads or refresh sidebar ad.
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
-                        make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
-                            'skipCount': 2,
-                            'max' : 3
-                        });
+						if(gdprValue == "yes") {
+							make.gpt.injectAds($start.nextAll(), {
+								'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+								'skipCount': 2,
+								'max' : 3
+							});
+						}
                         $start.toggleClass('rendered', true);
                     } else {
-                        make.gpt.refresh();
+						if(gdprValue == "yes") {
+                        	make.gpt.refresh();
+						}
                     }
                 },
                 error: function (data) {
@@ -723,9 +749,7 @@ jQuery(document).ready(function ($) {
                     if ($('p').is('#tag-load-posts') === false) {
                         $('#footer').removeClass('non-visible');
                     }
-                    ga('send', 'pageview',
-                        { 'page': location.pathname + location.search + location.hash }
-                    );
+                    gaSendPage();
                     if(window.navigator.userAgent.indexOf("Chrome") > 0){
                         $window = $(window).width() + 17;
                     }else {
@@ -737,14 +761,18 @@ jQuery(document).ready(function ($) {
                     // Load mobile ads or refresh sidebar ad.
                     if ($(window).width() < 768) {
                         var $start = $('.page-break:not(.rendered)').eq(0);
-                        make.gpt.injectAds($start.nextAll(), {
-                            'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
-                            'skipCount': 2,
-                            'max' : 3
-                        });
+						if(gdprValue == "yes") {
+							make.gpt.injectAds($start.nextAll(), {
+								'markup': '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+								'skipCount': 2,
+								'max' : 3
+							});
+						}
                         $start.toggleClass('rendered', true);
                     } else {
-                        make.gpt.refresh();
+						if(gdprValue == "yes") {
+                        	make.gpt.refresh();
+						}
                     }
                 },
                 error: function (data) {
@@ -762,12 +790,14 @@ jQuery(document).ready(function ($) {
 
         // Load mobile ads.
         if ($(window).width() < 768) {
-            make.gpt.injectAds($('.post-list .row'), {
-                'markup' : '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
-                'skipCount': 2,
-                'max' : 3,
-                'renderIntial' : false
-            });
+			if(gdprValue == "yes") {
+				make.gpt.injectAds($('.post-list .row'), {
+					'markup' : '<li class=\'row ad-row\'><div class=\'js-ad scroll-load\' data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div></li>',
+					'skipCount': 2,
+					'max' : 3,
+					'renderIntial' : false
+				});
+			}
         }
 
         $('#footer').addClass('non-visible');
@@ -805,34 +835,6 @@ jQuery(document).ready(function ($) {
                 loadMoreTag();
             }
             $window = $(window).width() + 17;
-            var footerMargin;
-            if ($window > 767) {
-                if ($window < 992) {
-                    footerMargin = 58;
-                }else{
-                    footerMargin = 78;
-                }
-                var footer_top_height = $('#footer').offset().top - 678;
-                var finish_ads_position = $('#footer').height() + 57 + footerMargin;
-                if ((!$sticky_adds_block.hasClass('add_sticky')) && (!$sticky_adds_block.hasClass('add_static_position'))) {
-                    ads_position = $sticky_adds_block.offset().top - 57;
-                }
-                /**
-                 * if ads is footer sticky
-                 */
-                if (notSticky == 0){
-                    if (scrollTop > footer_top_height) {
-                        $sticky_adds_block.removeClass('add_sticky').addClass('add_static_position').css('bottom', finish_ads_position);
-                    } else {
-                        $sticky_adds_block.removeClass('add_static_position').css('bottom', '');
-                    }
-                    if ((scrollTop > ads_position) && (scrollTop < footer_top_height)) {
-                        $sticky_adds_block.removeClass('add_static_position').addClass('add_sticky').css('bottom', '');
-                    } else {
-                        $sticky_adds_block.removeClass('add_sticky');
-                    }
-                }
-            }
         });
 
         var newTitle;

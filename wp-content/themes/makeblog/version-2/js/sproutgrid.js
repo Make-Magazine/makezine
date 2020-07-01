@@ -1,4 +1,16 @@
 jQuery(document).ready(function ($) {
+	var gdprValue = $.cookie("cookielawinfo-checkbox-non-necessary");
+	
+	gaSend = function(){
+		if(gdprValue == "yes") {
+			ga('send', 'pageview');
+		}
+	}
+	adRefresh = function() {
+		if(gdprValue == "yes") {
+			googletag.pubads().refresh();
+		}
+	}
 
     // Handle the click actions on the list items in the steps box
     $('body').on('click', '#tabs li.steps', function () {
@@ -13,8 +25,8 @@ jQuery(document).ready(function ($) {
         $('#tabs li:not(#' + id + ')').removeClass('current');
 
         // Run our trackers
-        googletag.pubads().refresh();
-        ga('send', 'pageview');
+        adRefresh();
+        gaSend();
     });
 
     // Allows us to advance in the slider

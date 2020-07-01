@@ -377,12 +377,14 @@ function sorting_posts_sprout($current_cat_id = '', $difficulty = '', $how_to_so
                     $output .= ' before-ads';
                 }
                 $output .= '">';
-                $output .= '<div class="own">';
-                $output .= '<p id="ads-title">Advertisement</p>';
-                $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
-                $output .= '</div>';
-                $output .= '</div>';
+				if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) {
+					$output .= '<div class="own">';
+					$output .= '<p id="ads-title">Advertisement</p>';
+					$output .= '<div class="home-ads">';
+					$output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+					$output .= '</div>';
+					$output .= '</div>';
+				}
                 $output .= '</li>';
                 $counter++;
                 if (($counter == 3) and ($device != 'tablet') and ($device != 'mobile')) {
@@ -829,12 +831,14 @@ function sorting_posts_home($current_cat_id = '', $difficulty = '', $how_to_sort
                     $output .= ' before-ads';
                 }
                 $output .= '">';
-                $output .= '<div class="own">';
-                $output .= '<p id="ads-title">Advertisement</p>';
-                $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
-                $output .= '</div>';
-                $output .= '</div>';
+				if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) {
+					$output .= '<div class="own">';
+					$output .= '<p id="ads-title">Advertisement</p>';
+					$output .= '<div class="home-ads">';
+					$output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+					$output .= '</div>';
+					$output .= '</div>';
+				}
                 $output .= '</li>';
                 $counter++;
             }
@@ -1227,12 +1231,14 @@ function sorting_posts($current_cat_id = '', $difficulty = '', $how_to_sort = 'r
                     $output .= ' before-ads';
                 }
                 $output .= '">';
-                $output .= '<div class="own">';
-                $output .= '<p id="ads-title">Advertisement</p>';
-                $output .= '<div class="home-ads">';
-                $output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
-                $output .= '</div>';
-                $output .= '</div>';
+				if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { 
+					$output .= '<div class="own">';
+					$output .= '<p id="ads-title">Advertisement</p>';
+					$output .= '<div class="home-ads">';
+					$output .= '<div class="js-ad scroll-load" data-size=\'[[300,250]]\' data-pos=\'"btf"\'></div>';
+					$output .= '</div>';
+					$output .= '</div>';
+				}
                 $output .= '</li>';
                 $counter++;
             }

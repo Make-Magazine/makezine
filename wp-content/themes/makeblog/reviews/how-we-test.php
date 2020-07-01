@@ -1,7 +1,10 @@
 <?php get_header('universal'); ?>
 
 <?php // Reviews Section Header
-get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
+if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	get_template_part( 'reviews/content/header/ads-leaderboard' ); 
+}
+?>
 
 <div class="container">
 	<?php get_template_part( 'reviews/content/header/reviews' ); ?>
@@ -145,11 +148,12 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 			
 				<p><?php echo get_field( 'pro_tips' ); ?></p>
 			</div><!-- .meta-block.pro-tips -->
-			
-			<div class="meta-block ad-1">
-				<p id="ads-title">ADVERTISEMENT</p>
-				<?php global $make; print $make->ads->ad_300x250_atf; ?>
-			</div><!-- .meta-block.ad-1 -->
+			<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+				<div class="meta-block ad-1">
+					<p id="ads-title">ADVERTISEMENT</p>
+					<?php global $make; print $make->ads->ad_300x250_atf; ?>
+				</div><!-- .meta-block.ad-1 -->
+			<?php } ?>
 
 			<div class="meta-block pro-tips desktop">
 				<h4><?php echo get_field( 'pro_tips_title' ); ?></h4>
@@ -184,11 +188,12 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<div class="clearfix"><br /><br /></div>
 				<?php } 
 			} ?>
-			
-			<div class="meta-block ad-2 desktop no-border">
-				<p id="ads-title">ADVERTISEMENT</p>
-				<?php global $make; print $make->ads->ad_300x600; ?>
-			</div><!-- .meta-block.ad-2 -->
+			<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+				<div class="meta-block ad-2 desktop no-border">
+					<p id="ads-title">ADVERTISEMENT</p>
+					<?php global $make; print $make->ads->ad_300x600; ?>
+				</div><!-- .meta-block.ad-2 -->
+			<?php } ?>
 			
 		</div><!-- .col -->
 		

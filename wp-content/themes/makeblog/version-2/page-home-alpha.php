@@ -246,10 +246,12 @@ wp_enqueue_script( 'make-homegrid', get_stylesheet_directory_uri() . '/version-2
   </div>
 
   <!-- AD UNIT -->
-  <div class="ad-unit">
-    <div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
-    <?php global $make; print $make->ads->ad_leaderboard; ?>
-  </div>
+  <?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	  <div class="ad-unit">
+		<div class="col-lg-12 hidden-md hidden-sm hidden-xs"></div>
+		<?php global $make; print $make->ads->ad_leaderboard; ?>
+	  </div>
+  <?php } ?>
 
   <!-- DYNAMIC EVENTS PANEL -->
   <?php

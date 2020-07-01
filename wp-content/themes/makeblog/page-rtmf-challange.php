@@ -38,7 +38,9 @@ get_header('universal'); ?>
 				
 				<div class="col-md-4 sidebar-ad">
 					
-					<?php global $make; print $make->ads->ad_300x250_atf; ?>
+					<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { 
+							global $make; print $make->ads->ad_300x250_atf; 
+						  } ?>
 
 				</div>
 

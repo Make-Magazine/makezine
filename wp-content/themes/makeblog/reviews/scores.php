@@ -40,11 +40,12 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 		</div><!-- .tc-container -->
 
 		<aside class="reviews-sidebar tc-sidebar scores-sidebar mz-sidebar">
-
-			<div class="meta-block ad-1">
-				<p id="ads-title">ADVERTISEMENT</p>
-				<?php global $make; print $make->ads->ad_300x250_atf; ?>
-			</div><!-- .meta-block.ad-1 -->
+			<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+				<div class="meta-block ad-1">
+					<p id="ads-title">ADVERTISEMENT</p>
+					<?php global $make; print $make->ads->ad_300x250_atf; ?>
+				</div><!-- .meta-block.ad-1 -->
+			<?php } ?>
 			<?php $how_scoring_works = get_field( 'how_scoring_works' ); ?>
 
 			<?php if ( ! empty( $how_scoring_works ) ): ?>
@@ -82,11 +83,12 @@ get_template_part( 'reviews/content/header/ads-leaderboard' ); ?>
 					<div class="clearfix"><br /><br /></div>
 				<?php }
 			}?>
-
-			<div class="meta-block ad-2 desktop no-border">
-				<p id="ads-title">ADVERTISEMENT</p>
-				<?php global $make; print $make->ads->ad_300x600; ?>
-			</div><!-- .meta-block.ad-2 -->
+			<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+				<div class="meta-block ad-2 desktop no-border">
+					<p id="ads-title">ADVERTISEMENT</p>
+					<?php global $make; print $make->ads->ad_300x600; ?>
+				</div><!-- .meta-block.ad-2 -->
+			<?php } ?>
 
 		</aside><!-- .reviews-sidebar -->
 

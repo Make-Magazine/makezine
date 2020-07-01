@@ -9,10 +9,11 @@ $how_scoring_works_title = ! empty( $how_scoring_works_title ) ? $how_scoring_wo
 ?>
 
 <aside class="reviews-sidebar tc-sidebar mz-sidebar">
-
-	<div class="meta-block ad-1">
-		<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
-	</div><!-- .meta-block.ad-1 -->
+	<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+		<div class="meta-block ad-1">
+			<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
+		</div><!-- .meta-block.ad-1 -->
+	<?php } ?>
 
 	<?php
 	if( have_rows('youtube_videos') ): 
@@ -70,9 +71,10 @@ $how_scoring_works_title = ! empty( $how_scoring_works_title ) ? $how_scoring_wo
 		</div>
 	</div>
 	<?php endif; ?>
-
-	<div class="meta-block ad-2 desktop">
-		<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
-	</div><!-- .meta-block.ad-2 -->
+	<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+		<div class="meta-block ad-2 desktop">
+			<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
+		</div><!-- .meta-block.ad-2 -->
+	<?php } ?>
 
 </aside><!-- .reviews-sidebar -->

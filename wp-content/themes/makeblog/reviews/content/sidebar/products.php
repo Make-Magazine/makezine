@@ -81,10 +81,11 @@ if( $awards && ( ! in_array('', $awards) ) ): ?>
 	<?php global $previousday; $previousday=null; ?>
 	<?php echo the_date('F j, Y', '<p itemprop="datePublished">Published: ', '</p>', FALSE); ?>
 </div><!-- .meta-block.post-date -->
-
-<div class="meta-block ad-1">
-	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
-</div><!-- .meta-block.ad-1 -->
+<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	<div class="meta-block ad-1">
+		<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x250_atf; ?>
+	</div><!-- .meta-block.ad-1 -->
+<?php } ?>
 
 <?php
 if ( $why_buy_content || $link ): ?>
@@ -132,9 +133,11 @@ endif;
 	<?php }
 ?>
 
-<div class="meta-block ad-2 desktop">
-	<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
-</div><!-- .meta-block.ad-2 -->
+<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	<div class="meta-block ad-2 desktop">
+		<?php global $make; print '<p id="ads-title">ADVERTISEMENT</p>' . $make->ads->ad_300x600; ?>
+	</div><!-- .meta-block.ad-2 -->
+<?php } ?>
 
 <?php
 $parent_link = '';

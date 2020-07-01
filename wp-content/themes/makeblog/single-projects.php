@@ -17,10 +17,12 @@ $post_price_group = get_post_meta($post->ID, 'price_group');
 $post_price_custom = get_post_meta($post->ID, 'custom_price_value');
 ?>
 
-<div class="home-ads">
-<?php global $make;
-print $make->ads->ad_leaderboard_alt; ?>
-</div>
+<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+	<div class="home-ads">
+		<?php global $make;
+		print $make->ads->ad_leaderboard_alt; ?>
+	</div>
+<?php } ?>
 
 <div class="container">
 
@@ -175,24 +177,25 @@ print $make->ads->ad_leaderboard_alt; ?>
                                 </div>
 
                                 <?php } ?>
+							<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+								<div class="projects-ad">
+									<p id="ads-title">Advertisement</p>
+									<?php global $make;
+									print $make->ads->ad_300x250_flex_atf; ?>
+								</div>
 
-                            <div class="projects-ad">
-                                <p id="ads-title">Advertisement</p>
-        <?php global $make;
-        print $make->ads->ad_300x250_flex_atf; ?>
-                            </div>
+								<div class="sidebar-ad">
+									<p id="ads-title">Advertisement</p>
+									<?php global $make;
+									print $make->ads->ad_300x250_house; ?>
+								</div>
 
-                            <div class="sidebar-ad">
-                                <p id="ads-title">Advertisement</p>
-                                <?php global $make;
-                                print $make->ads->ad_300x250_house; ?>
-                            </div>
-
-                            <div class="projects-ad">
-                                <p id="ads-title">Advertisement</p>
-        <?php global $make;
-        print $make->ads->ad_300x600; ?>
-                            </div>
+								<div class="projects-ad">
+									<p id="ads-title">Advertisement</p>
+									<?php global $make;
+									print $make->ads->ad_300x600; ?>
+								</div>
+							<?php } // end cookielaw if ?>
 
                         </div><?php //END SIDEBAR ?>
 
@@ -224,12 +227,13 @@ print $make->ads->ad_leaderboard_alt; ?>
                                         <div class="col-xs-12 col-sm-4">
 
             <?php make_projects_steps_list($steps); ?>
-
+										  <?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
                                             <div class="projects-understeps-ad">
                                                 <p id="ads-title">Advertisement</p>
-            <?php global $make;
-            print $make->ads->ad_300x250_house; ?>
+												<?php global $make;
+												print $make->ads->ad_300x250_house; ?>
                                             </div>
+										  <?php } ?>
 
                                         </div>
 
@@ -291,12 +295,13 @@ print $make->ads->ad_leaderboard_alt; ?>
                 <div class="row padtop">
 
                     <div class="col-xs-12 col-sm-8">
-
-                        <div class="ad-unit">
-                            <p id="ads-title">Advertisement</p>
-                        <?php global $make;
-                        print $make->ads->ad_728x90; ?>
-                        </div>
+						<?php if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookielawinfo-checkbox-non-necessary'] == "yes" ) { ?>
+							<div class="ad-unit">
+								<p id="ads-title">Advertisement</p>
+								<?php global $make;
+								print $make->ads->ad_728x90; ?>
+							</div>
+						<?php } // end cookielaw if ?>
 
                         <!--<div id="contextly">
 
