@@ -260,9 +260,9 @@ if( $cats ) { ?>
   function removeHashFunction() {
     history.pushState("", document.title, window.location.pathname);
   }
-
+  
   jQuery( document ).ready(function() {
-
+	var gdprValue = jQuery.cookie("cookielawinfo-checkbox-non-necessary");
     //page scroll counter
     var box = jQuery("#scrollPane"),
     inner = jQuery("> .inner", box),
@@ -277,16 +277,20 @@ if( $cats ) { ?>
       if(Math.abs(inner.offset().top) > page * boxHeight) {
         page++;     //increase current page count
         count++;    //increase page view count
-        ga('send', 'pageview', {
-          'page': location.pathname + location.hash+'/'+page
-        });
+		if(gdprValue == "yes"){
+			ga('send', 'pageview', {
+			  'page': location.pathname + location.hash+'/'+page
+			});
+		}
       }else
       if(Math.abs(inner.offset().top) <= (page * boxHeight) - boxHeight) {
         page--;   //decrease current page
         count++;  //increase page view count
-        ga('send', 'pageview', {
-          'page': location.pathname + location.hash+'/'+page
-        });
+        if(gdprValue == "yes"){
+			ga('send', 'pageview', {
+			  'page': location.pathname + location.hash+'/'+page
+			});
+		}
       }
     });
     //end page scroll counter
@@ -328,7 +332,6 @@ if( $cats ) { ?>
       },
       callbacks: {
         onMixStart: function(state){
-          console.log('mix start');
           jQuery('#gg2016-header-ad .js-ad').remove();
           jQuery('#gg2016-js .js-ad').remove();
           jQuery('#gg2016-js .fake-leaderboard-span').remove();
@@ -339,7 +342,6 @@ if( $cats ) { ?>
         },
 
         onMixEnd: function(state){
-          console.log('mix end');
           
           //If a category takeover is set and active, set images
           //Also move category sponsored product to top of list
@@ -370,10 +372,8 @@ if( $cats ) { ?>
 
           //console.log(state.activeFilter);
 
-          console.log('loadcount = ' + loadCount);
-
           //Only do this stuff on state changes that are not the first page load
-          if (loadCount >= 3) {
+          if (loadCount >= 3 && gdprValue == "yes") {
             //Injecting ads after every 12 products, on state change
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review:visible').each(function(i) {
@@ -400,7 +400,6 @@ if( $cats ) { ?>
         },
 
         onMixLoad: function(state){
-          console.log('mix load');
           //Getting random mixed sponsors and inserting them into poduct order 1,5,9,13,etc
           var count = 1;
           jQuery('#gg2016-sponsors .gg2016-sponsored').each(function() {
@@ -414,7 +413,7 @@ if( $cats ) { ?>
             jQuery('#gg2016-js').append(jQuery('.gg2016-pd-move'));
           }
 
-          if ( loadCount < 3 ) {
+          if ( loadCount < 3 && gdprValue == "yes") {
             //Injecting ads after every 12 products, only on 1st page load
             jQuery('#gg2016-header-ad').append('<div class="js-ad scroll-load" data-size="[[728,90],[970,90],[320,50]]" data-size-map="[[[1000,0],[[728,90],[970,90]]],[[800,0],[[728,90]]],[[0,0],[[320,50]]]]" data-pos="atf"></div>');
             jQuery('#gg2016-js .gg2016-review').each(function(i) {
