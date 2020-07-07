@@ -226,7 +226,7 @@ if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookiel
         <input class="sb-search-submit" name="submit" value="Search" type="submit">
   </form>
   <div id="popular-links">
-    <h5>POPULAR SEARCHES:</h5>
+    <strong>POPULAR SEARCHES:</strong>
     <ul class="pop-links-list">
         <li><a href="/?s=arduino" target="_self">Arduino</a></li>
         <li><a href="/?s=cnc" target="_self">CNC</a></li>
