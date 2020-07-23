@@ -28,5 +28,6 @@ admanmedia.com, 68, RESELLER
 appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
 appnexus.com, 8804, RESELLER, f5ab79cb980f11d1
 appnexus.com, 11659, RESELLER, f5ab79cb980f11d2 
+appnexus.com, 9684,RESELLER, f5ab79cb980f11d1
 selectmedia.asia, 5d8c7c0b28a0615aad6f7026, DIRECT # banner, video
 telaria.com, cguke-k8ex0, RESELLER, 1a4e959a1b50034a 
