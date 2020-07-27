@@ -21,9 +21,24 @@
 			.mz-post-thumb {
 				position: absolute;
 				img {
-					display: block;
-					width: auto;
-					height: auto;
+					min-width: 100%;
+					min-height: 100%;
+					object-fit: cover;
+					-webkit-transition: all 0.3s ease;
+					-o-transition: all 0.3s ease;
+					transition: all 0.3s ease;
+					-webkit-transform: scale(1);
+					-ms-transform: scale(1);
+					-o-transform: scale(1);
+					transform: scale(1);
+					opacity: 1;
+					&:hover {
+						-webkit-transform: scale(1.05);
+						-ms-transform: scale(1.05);
+						-o-transform: scale(1.05);
+						transform: scale(1.05);
+						opacity: 0.8;
+					}
 				}
 			}
 			.mz-post-content {
@@ -290,6 +305,7 @@
 				img {
 					object-fit: cover;
 					width: 100%;
+					height: auto;
 				}
 			}
 		}

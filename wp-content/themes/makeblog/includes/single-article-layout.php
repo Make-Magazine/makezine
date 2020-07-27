@@ -18,7 +18,7 @@ if( has_post_thumbnail() ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>	
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 	  		<div class="col-sm-4 col-xs-12">
 				<div class="nv-article-thumb">
@@ -47,7 +47,7 @@ if( has_post_thumbnail() ) {
 
 					<div class="entry-content">
 						<?php
-							echo get_excerpt(140, 'the_content');
+							echo get_excerpt(180, 'the_content');
 							$news_vibrant_archive_read_more_text = get_theme_mod( 'news_vibrant_archive_read_more_text', __( 'Continue Reading', 'news-vibrant-pro' ) );
 						?>
 						<span class="nv-archive-more"><a href="<?php the_permalink(); ?>" class="btn"><i class="fa fa-arrow-circle-o-right"></i><?php echo esc_html( $news_vibrant_archive_read_more_text ); ?></a></span>
