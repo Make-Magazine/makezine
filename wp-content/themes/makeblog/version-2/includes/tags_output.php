@@ -7,7 +7,7 @@
  *
  * @return string
  */
-function tags_pulling($offset=0, $tag) {
+function tags_pulling($offset=0, $tag, $featuredPostsArray = '') {
 	$outputs     = '';
 	$post_counter = 1;
 	$large_indicator = 0;
@@ -17,14 +17,14 @@ function tags_pulling($offset=0, $tag) {
 		'posts_per_page' => $post_per_page,
 		'post_status'    => 'publish',
 		'offset'         => $offset,
-		'tag'            => $tag
+		'tag'            => $tag,
+		'post__not_in'   => $featuredPostsArray,
 	);
 	$query       = new WP_Query( $arguments );
 	$post_weight = 0;
 	$row_weight  = 0;
 	while ( $query->have_posts() )  :
 		$query->the_post();
-
 		/**
 		 * Set what position should have large card
 		 */

@@ -162,6 +162,9 @@ include_once dirname(__FILE__) . '/includes/vip-helper.php';
 // 48. VIP Helper COM
 include_once dirname(__FILE__) . '/includes/vip-helper-wpcom.php';
 
+// 49. Topic CPT
+include_once dirname(__FILE__) . '/includes/topic-cpt.php';
+
 // Version-2 Includes
 include_once dirname(__FILE__) . '/version-2/includes/makezine_rewrite_rules.php';
 
@@ -939,3 +942,15 @@ function comments_off( $open, $post_id ) {
     }
 }
 add_filter( 'comments_open', 'comments_off', 10 , 2 );
+
+function get_excerpt($limit, $source = null){
+    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $limit);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'&hellip;';
+    return $excerpt;
+}

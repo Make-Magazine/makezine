@@ -1,0 +1,67 @@
+{
+    "key": "group_5f0e02a76235e",
+    "title": "Featured Posts Metabox",
+    "fields": [
+        {
+            "key": "field_5f0e02b003aac",
+            "label": "Featured Posts",
+            "name": "featured_posts",
+            "type": "post_object",
+            "instructions": "Select up to 9 posts you want to feature on the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5f16238b10f65",
+            "label": "Featured Post Display Number",
+            "name": "featured_post_display_number",
+            "type": "number",
+            "instructions": "How many of the featured post should be displayed in a grid",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 9,
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "topic"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1595287221
+}
