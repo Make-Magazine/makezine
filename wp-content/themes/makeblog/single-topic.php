@@ -31,8 +31,10 @@ if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookiel
 			<div class="row">
 
 				<div class="col-sm-12">
-					<h1><?php echo get_the_title(); ?></h1>
-					<?php the_content(); ?>
+					<div class="topic-content">
+						<h1><?php echo get_the_title(); ?></h1>
+						<?php the_content(); ?>
+					</div>
             
 					<?php
 					if( $featured_posts ){ ?>
@@ -51,7 +53,7 @@ if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookiel
 											</a>
 										</div><!-- .mz-post-thumb -->
 										<div class="mz-post-content">
-											<?php if( get_categories() != 1 ) { news_vibrant_post_categories_list( 2 ); } ?>
+											<?php if( get_categories() != 1 ) { news_vibrant_post_categories_list( 1 ); } ?>
 											<h3 class="mz-post-title small-size"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 											<div class="mz-post-meta">
 												<span class="byline">
