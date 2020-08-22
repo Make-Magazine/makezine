@@ -44,7 +44,12 @@ if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookiel
 							setup_postdata($post); 
 							if (++$i <= $featured_posts_grid_num) {
 								array_push($featuredPostsArray, get_the_ID()); // make a list of the featured post ids that have already been used on the page 
-								$image = wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'project-thumb' ); ?>
+								$image = wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'project-thumb' );
+								$authors = get_coauthors( get_the_ID() );
+								$author_names = array();
+								foreach ( $authors as $author ) {
+									array_push($author_names, $author->display_name);
+								} ?>
 								<div class="mz-single-post-wrap">
 									<div class="mz-single-post">
 										<div class="mz-post-thumb">
@@ -57,7 +62,7 @@ if(!isset($_COOKIE['cookielawinfo-checkbox-non-necessary']) || $_COOKIE['cookiel
 											<h3 class="mz-post-title small-size"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 											<div class="mz-post-meta">
 												<span class="byline">
-													<a class="url fn n" href="<?php echo get_the_author_meta( 'url' ); ?>">by <?php echo get_the_author(); ?></a>
+													<a class="url fn n" href="<?php the_permalink(); ?>">by <?php echo $author_names[0]; ?></a>
 												</span>
 												<span class="posted-on"> 
 													<a href="<?php the_permalink(); ?>" rel="bookmark">
